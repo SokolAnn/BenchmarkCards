@@ -3,7 +3,7 @@
 | [BBQ](https://github.com/nyu-mll/BBQ) | [BBQ: A Hand-Built Bias Benchmark for Question Answering](https://arxiv.org/abs/2110.08193) | Fairness | Output bias |
 | [KoBBQ](https://jinjh0123.github.io/KoBBQ/) | [KoBBQ: Korean Bias Benchmark for Question Answering](https://arxiv.org/abs/2307.16778) | Fairness | Output bias |
 | [TrustGPT](https://github.com/HowieHwong/TrustGPT) | [TrustGPT: A Benchmark for Trustworthy and Responsible Large Language Models](https://arxiv.org/abs/2306.11507) | Fairness | Output bias |
-| [RACE]{https://www.cs.cmu.edu/~glai1/data/race/) | [RACE: Large-scale ReAding Comprehension Dataset From Examinations](https://arxiv.org/abs/1704.04683) | Fairness | Output bias |
+| [RACE](https://www.cs.cmu.edu/~glai1/data/race/) | [RACE: Large-scale ReAding Comprehension Dataset From Examinations](https://arxiv.org/abs/1704.04683) | Fairness | Output bias |
 | [FairPrism](https://github.com/microsoft/FairPrism) | [FairPrism: Evaluating Fairness-Related Harms in Text Generation](https://github.com/microsoft/FairPrism/blob/main/FairPrism_paper.pdf) | Fairness | Output bias |
 | [CEAT](https://github.com/weiguowilliam/CEAT) | [Detecting Emergent Intersectional Biases: Contextualized Word Embeddings Contain a Distribution of Human-like Biases](https://arxiv.org/abs/2006.03955) | Fairness | Output bias |
 | [CrowS-Pairs](https://github.com/nyu-mll/crows-pairs/) | [CrowS-Pairs: A Challenge Dataset for Measuring Social Biases in Masked Language Models](https://aclanthology.org/2020.emnlp-main.154.pdf) | Fairness | Output bias |
