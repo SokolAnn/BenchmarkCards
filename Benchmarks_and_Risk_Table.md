@@ -52,7 +52,7 @@
 | [HolisticBiasR](https://github.com/ewsheng/nlg-bias) | [ROBBIE: Robust Bias Evaluation of Large Generative Language Models](https://aclanthology.org/D19-1339.pdf) | Value alignment | Hallucination |
 | Regard| [The Woman Worked as a Babysitter: On Biases in Language Generation](https://arxiv.org/abs/2203.09509) | Value alignment | Hallucination |
 | ToxiGen | [ToxiGen: A Large-Scale Machine-Generated Dataset for Adversarial and Implicit Hate Speech Detection](https://arxiv.org/pdf/2404.08517) | Value alignment | Hallucination |
-| [UnsafeBench](https://github.com/JailbreakBench/jailbreakbench) | [UnsafeBench: Benchmarking Image Safety Classifiers on Real-World and AI-Generated Images](https://arxiv.org/abs/2404.01318) | nan | nan |
+| [UnsafeBench](https://github.com/JailbreakBench/jailbreakbench) | [UnsafeBench: Benchmarking Image Safety Classifiers on Real-World and AI-Generated Images](https://arxiv.org/abs/2404.01318) | Value alignment| Jaikbreaking |
 | [Online_Safety* ](https://eddyluo1232.github.io/JailBreakV28K/) | [Online Safety Analysis for LLMs: a Benchmark, an Assessment, and a Path Forward](https://arxiv.org/abs/2404.03027) | Fairness | Output bias |
 | [JailbreakBench](https://github.com/usail-hkust/JailTrickBench) | [JailbreakBench: An Open Robustness Benchmark for Jailbreaking Large Language Models](https://arxiv.org/abs/2406.09324) | Fairness | Output bias |
 | JailBreakV-28K | [JailBreakV-28K: A Benchmark for Assessing the Robustness of MultiModal Large Language Models against Jailbreak Attacks](https://arxiv.org/pdf/2402.05668) | Fairness | Output bias |
