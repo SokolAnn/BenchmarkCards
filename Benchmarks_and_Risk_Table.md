@@ -30,4 +30,4 @@
 | [BUG](https://github.com/SLAB-NLP/BUG) | [Collecting a Large-Scale Gender Bias Dataset for Coreference Resolution and Machine Translation](https://arxiv.org/abs/2109.03858) | Fairness | Output bias |
 | [Bias-NLI](https://github.com/sunipa/On-Measuring-and-Mitigating-Biased-Inferences-of-Word-Embeddings) | [On Measuring and Mitigating Biased Inferences of Word Embeddings](https://arxiv.org/abs/1908.09369) | Fairness | Output bias |
 | [PANDA](https://github.com/facebookresearch/ResponsibleNLP) | [Perturbation Augmentation for Fairer NLP](https://arxiv.org/abs/2205.12586) | Fairness | Output bias |
-| [BOLD](https://github.com/amazon-science/bold) | [BOLD: Dataset and Metrics for Measuring Biases in Open-Ended Language Generation](https://arxiv.org/abs/2101.11718) | Legal compliance | Legal accountability |
+| [BOLD](https://github.com/amazon-science/bold) | [BOLD: Dataset and Metrics for Measuring Biases in Open-Ended Language Generation](https://arxiv.org/abs/2101.11718) | Fairness | Output bias |
