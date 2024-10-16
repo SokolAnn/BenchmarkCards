@@ -38,7 +38,7 @@
 | [HarmfulQA](https://huggingface.co/datasets/declare-lab/HarmfulQA) | [Red-Teaming Large Language Models using Chain of Utterances for Safety-Alignment](https://arxiv.org/abs/2308.09662) | Fairness | Output bias |
 | [CategoricalHarmfulQA](https://huggingface.co/datasets/declare-lab/CategoricalHarmfulQA) | [Language Models are Homer Simpson! Safety Re-Alignment of Fine-tuned Language Models through Task Arithmetic](https://arxiv.org/pdf/2402.11746) | Fairness | Output bias |
 | [Pile](https://pile.eleuther.ai/) | [The Pile: An 800GB Dataset of Diverse Text for Language Modeling](https://arxiv.org/pdf/2101.00027) | Fairness | Output bias |
-| [Detoxify](https://docs.unitary.ai/detoxify) | [no paper](nan) | Fairness | Output bias |
+| [Detoxify](https://docs.unitary.ai/detoxify) | no paper | Fairness | Output bias |
 | [HELM](https://crfm.stanford.edu/helm/latest/) | [Holistic Evaluation of Text-to-Image Models](https://arxiv.org/pdf/2311.04287) | Legal compliance | Generated content ownership |
 | [DecodingTrust](https://github.com/AI-secure/DecodingTrust) | [DecodingTrust: A Comprehensive Assessment of Trustworthiness in GPT Models](https://arxiv.org/abs/2306.11698) | Fairness | Output bias |
 | [GEM](https://gem-benchmark.com/) | [The GEM Benchmark: Natural Language Generation, its Evaluation and Metrics](https://aclanthology.org/2021.gem-1.10.pdf) | Misuse | Spreading disinformation |
