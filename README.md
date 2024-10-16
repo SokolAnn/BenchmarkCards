@@ -1,15 +1,27 @@
-# BenchmarkCards: Large Language Model and Risk Reporting 📊
+# 📊 BenchmarkCards: Large Language Model and Risk Reporting 📊
 
-This repository contains the paper titled **"BenchmarkCards: Large Language Model and Risk Reporting"** submitted for review. The paper proposes a structured framework to standardize the documentation of benchmarks for large language models (LLMs), focusing on capturing important benchmark properties and risks, and promoting transparency in evaluation.
+Welcome to the **BenchmarkCards** repository! This is where we introduce a structured framework for documenting benchmarks used in large language models (LLMs). Our goal? To make benchmarking LLMs easier, transparent, and more informative by focusing on risks and key metrics.  🚀
+
+---
+
+## 📄 Abstract 
+
+LLMs are powerful tools—but with great power comes great responsibility. These models can also pose risks if not evaluated thoroughly. 
+
+**BenchmarkCards** provides a structured way to document benchmarks for LLMs. This framework captures essential details like datasets, metrics, and risks, helping researchers make informed decisions when choosing benchmarks for model evaluations. 
+
+In other words, we’re not telling you how to measure results, but how to document the essential properties of benchmarks. With **BenchmarkCards**, evaluating the risks and transparency of LLM benchmarks is easier, making it more consistent and reproducible.
 
 ---
 
-## Abstract 📄
+## 🛠️ How to Use this Repository
 
-Large language models (LLMs) offer powerful capabilities but also introduce significant risks. One way to mitigate these risks is through comprehensive pre-deployment evaluations using benchmarks designed to test for specific vulnerabilities. However, the rapidly expanding body of LLM benchmark literature lacks a standardized method for documenting crucial benchmark details, hindering consistent use and informed selection.
+### 🔗 Key Contents
 
-**BenchmarkCards** addresses this gap by providing a structured framework specifically for documenting LLM benchmark properties—including datasets, intended metrics, and pre-/post-processing—rather than defining the entire evaluation process itself. 
+- **BenchmarkCard_Template.md**: 📋 A handy template for creating your very own BenchmarkCard for LLM documentation. Keep it consistent and organized!
+- **ComparisonBenchmarks.md**: ⚖️ Curious how different benchmarks stack up? This file compares various benchmarks used for LLM risk evaluation.
+- **Benchmarks_and_Risk_Table.md**: 🗂 A detailed table with benchmarks found in literature, including key references.
+- **Benchmark_Network.md**: 🌐 A visual network that shows how benchmarks connect and relate, especially when it comes to evaluating LLM risks.
 
-BenchmarkCards do not prescribe how to measure or interpret benchmark results (e.g., defining “correctness”), but instead offer a standardized way to capture and report key characteristics like targeted risks and evaluation methodologies. This structured metadata facilitates informed benchmark selection, enabling researchers to choose appropriate benchmarks for their needs and promoting transparency and reproducibility in LLM evaluation.
 
----
+
