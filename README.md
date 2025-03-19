@@ -1,4 +1,4 @@
-# 📊 BenchmarkCards: Large Language Model and Risk Reporting 📊
+# 📊 BenchmarkCards: Large Language Model and Risk Reporting 
 
 Welcome to the **BenchmarkCards** repository! This is where we introduce a structured framework for documenting benchmarks used in large language models (LLMs). Our goal? To make benchmarking LLMs easier, transparent, and more informative by focusing on risks and key metrics.  🚀
 
