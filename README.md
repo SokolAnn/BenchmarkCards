@@ -1,4 +1,4 @@
-# 📊 BenchmarkCards: Large Language Model and Risk Reporting 
+# BenchmarkCards: Large Language Model and Risk Reporting 
 
 Paper link: 
 
