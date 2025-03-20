@@ -8,11 +8,11 @@ Paper link:
 
 ### 🔗 Key Contents
 
-📋 **BenchmarkCard_Template.md**: A handy template for creating your very own BenchmarkCard for LLM documentation. 
+- 📋 **BenchmarkCard_Template.md**: A handy template for creating your very own BenchmarkCard for LLM documentation. 
 
-⚖️ **ComparisonBenchmarks.md**: Curious about different benchmarks? This document provides examples of benchmarks used for evaluating risks in LLMs. It doesn’t compare them directly but instead illustrates diverse benchmarks to help you understand their various purposes and contexts of use. 
-🗂 **Benchmarks_and_Risk_Table.md**: A detailed table with benchmarks found in literature, including key references.
-🌐 **Benchmark_Network.md**:  A visual network that shows how benchmarks connect and relate, especially when it comes to evaluating LLM risks.
+- ⚖️ **ComparisonBenchmarks.md**: Curious about different benchmarks? This document provides examples of benchmarks used for evaluating risks in LLMs. It doesn’t compare them directly but instead illustrates diverse benchmarks to help you understand their various purposes and contexts of use. 
+- 🗂 **Benchmarks_and_Risk_Table.md**: A detailed table with benchmarks found in literature, including key references.
+- 🌐 **Benchmark_Network.md**:  A visual network that shows how benchmarks connect and relate, especially when it comes to evaluating LLM risks.
 
 ---
 ## 🤝 **Get Involved!**
