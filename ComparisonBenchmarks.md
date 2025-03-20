@@ -54,7 +54,6 @@
 | **Field**                  | **BBQ** | **RealToxicityPrompts** |
 |----------------------------|---------|-------------------------|
 | **Risk Categories**        | Biases related to age, gender, race, religion, and other protected groups in question answering | Risk of generating toxic or harmful language |
-| **Limitations**            | Limited to certain social bias categories and US English | Heavily reliant on automated toxicity detection, potential for misclassification |
 | **Demographic Analysis**   | Assesses bias across demographic groups | Evaluates toxicity risk across various demographic groups |
 | **Harm**                   | Risk of perpetuating harmful stereotypes or biased predictions | Risk of generating offensive or harmful content |
 
