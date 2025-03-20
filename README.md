@@ -33,7 +33,7 @@ If you use this work in your research, please cite:
       primaryClass={cs.CL},
       url={https://arxiv.org/abs/2410.12974}, 
 }
-
+```
 ---
 ## 🤝 **Get Involved!**
 Would you be interested in contributing to the BenchmarkCards initiative? Feel free to explore, fork the repository, and open issues to suggest improvements or new benchmarks. Let's collaborate and shape the future of LLM benchmarking!
