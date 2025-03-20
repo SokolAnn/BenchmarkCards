@@ -26,7 +26,7 @@
 | [WinoQueer](https://github.com/katyfelkner/winoqueer) | [WinoQueer: A Community-in-the-Loop Benchmark for Anti-LGBTQ+ Bias in Large Language Models](https://arxiv.org/abs/2306.15087) | Fairness | Output bias |
 | [WinoPron](https://github.com/uds-lsv/winopron) | [WinoPron: Revisiting English Winogender Schemas for Consistency, Coverage, and Grammatical Case](https://arxiv.org/abs/2409.05653) | Fairness | Output bias |
 | [SweWinogender](https://github.com/aidotse/superlim-baselines) | [The Swedish Winogender Dataset](https://aclanthology.org/2021.nodalida-main.52.pdf) | Fairness | Output bias |
-| [BEC-Pro](https://github.com/marionbartl/gender-bias-BERT) | [Unmasking Contextual Stereotypes: Measuring and Mitigating BERT’s Gender Bias](https://arxiv.org/abs/2010.14534| Fairness | Output bias |
+| [BEC-Pro](https://github.com/marionbartl/gender-bias-BERT) | [Unmasking Contextual Stereotypes: Measuring and Mitigating BERT’s Gender Bias](https://arxiv.org/abs/2010.14534)| Fairness | Output bias |
 | [BUG](https://github.com/SLAB-NLP/BUG) | [Collecting a Large-Scale Gender Bias Dataset for Coreference Resolution and Machine Translation](https://arxiv.org/abs/2109.03858) | Fairness | Output bias |
 | [Bias-NLI](https://github.com/sunipa/On-Measuring-and-Mitigating-Biased-Inferences-of-Word-Embeddings) | [On Measuring and Mitigating Biased Inferences of Word Embeddings](https://arxiv.org/abs/1908.09369) | Fairness | Output bias |
 | [PANDA](https://github.com/facebookresearch/ResponsibleNLP) | [Perturbation Augmentation for Fairer NLP](https://arxiv.org/abs/2205.12586) | Fairness | Output bias |
