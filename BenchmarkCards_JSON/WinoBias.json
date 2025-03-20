@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "name": "WinoBias",
+    "overview": "A benchmark for coreference resolution focused on gender bias using Winograd-schema style sentences with entities corresponding to people referred by their occupation.",
+    "data_type": "Text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Ontonotes",
+      "CoNLL-2011",
+      "CoNLL-2012"
+    ],
+    "resources": [
+      "http://winobias.org"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate and mitigate gender bias in coreference resolution systems.",
+    "audience": [
+      "Researchers",
+      "Developers in Natural Language Processing"
+    ],
+    "tasks": [
+      "Coreference Resolution",
+      "Bias Evaluation"
+    ],
+    "limitations": null,
+    "out_of_scope_uses": null
+  },
+  "data": {
+    "source": "WinoBias dataset created by researchers familiar with the project.",
+    "size": "3,160 sentences",
+    "format": "Text",
+    "annotation": "Sentences created with equal numbers of correct co-reference decisions for all occupations."
+  },
+  "methodology": {
+    "methods": [
+      "Rule-based",
+      "Feature-rich",
+      "Neural Coreference System"
+    ],
+    "metrics": [
+      "F1 Score"
+    ],
+    "calculation": "Average difference in F1 score between pro-stereotyped and anti-stereotyped conditions.",
+    "interpretation": "Systems must link gendered pronouns to pro-stereotypical and anti-stereotypical occupations equally well.",
+    "baseline_results": null,
+    "validation": "Demonstrated through comparison with established datasets like OntoNotes."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias in training data",
+      "Underrepresentation of female entities"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt leaking"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Underrepresentation of female references in training datasets.",
+    "harm": "Amplification of gender stereotypes through biased predictions."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data includes references to occupations and gendered pronouns, anonymized to mitigate bias.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

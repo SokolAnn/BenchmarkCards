@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "name": "NeuTral Rewriter",
+    "overview": "A rule-based and neural approach to gender-neutral rewriting, providing alternatives for gendered English sentences.",
+    "data_type": "Synthetic and natural language data",
+    "domains": [
+      "Natural Language Processing",
+      "Gender-Neutral Language"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "WinoBias",
+      "Sun et al. (2021)"
+    ],
+    "resources": [
+      "https://github.com/anonymous-until-publication/NeuTralRewriter",
+      "https://creativecommons.org/licenses/by-sa/4.0/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Provide gender-neutral alternatives and increase inclusiveness in NLP applications.",
+    "audience": [
+      "Researchers in NLP",
+      "Developers of language technology"
+    ],
+    "tasks": [
+      "Gender-neutral rewriting",
+      "Debiasing training data"
+    ],
+    "limitations": "Currently limited to English; potential to extend to other languages in future work.",
+    "out_of_scope_uses": [
+      "Targeting specific referents for pronoun changes"
+    ]
+  },
+  "data": {
+    "source": "WinoBias+, OpenSubtitles, Reddit",
+    "size": "Over 4 million sentences (including synthetic and natural)",
+    "format": "Text",
+    "annotation": "Manual curation and correction of gender-neutral alternatives"
+  },
+  "methodology": {
+    "methods": [
+      "Rule-based rewriting",
+      "Neural machine translation"
+    ],
+    "metrics": [
+      "Word Error Rate"
+    ],
+    "calculation": "WER calculated by comparing generated outputs to correct neutral forms.",
+    "interpretation": "Lower WER indicates better performance in generating gender-neutral alternatives.",
+    "baseline_results": "WER below 0.18%",
+    "validation": "Errors evaluated on both synthetic and natural benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Data bias",
+      "Output quality",
+      "Legal compliance"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Misuse",
+          "subcategory": [
+            "Improper usage"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Various datasets distributed under open-source or Creative Commons licenses.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "Followed the guidelines of the European Parliament for gender-neutral language."
+  }
+}

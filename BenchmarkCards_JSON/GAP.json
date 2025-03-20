@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "name": "GAP",
+    "overview": "A gender-balanced labeled corpus of 8,908 ambiguous pronoun–name pairs sampled to provide diverse coverage of challenges posed by real-world text.",
+    "data_type": "corpus",
+    "domains": [
+      "natural language understanding",
+      "coreference resolution"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Winograd schemas",
+      "OntoNotes"
+    ],
+    "resources": [
+      "http://goo.gl/language/gap-coreference"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To address gender bias in existing coreference corpora and provide a benchmark for evaluating coreference resolution systems on ambiguous gendered pronouns.",
+    "audience": [
+      "researchers",
+      "developers of NLP systems"
+    ],
+    "tasks": [
+      "coreference resolution",
+      "gender bias analysis"
+    ],
+    "limitations": "Only contains ambiguous pronouns from Wikipedia.",
+    "out_of_scope_uses": [
+      "non-ambiguous pronouns",
+      "data not reflecting gender dynamics"
+    ]
+  },
+  "data": {
+    "source": "Wikipedia",
+    "size": "8,908 ambiguous pronoun-name pairs",
+    "format": "labeled corpus",
+    "annotation": "Human-annotated with multiple labels for coreference resolution."
+  },
+  "methodology": {
+    "methods": [
+      "coreference resolution analysis",
+      "gender bias detection"
+    ],
+    "metrics": [
+      "F1 score",
+      "Bias"
+    ],
+    "calculation": "F1 score calculated overall and by gender; Bias defined as the ratio of feminine to masculine F1 scores.",
+    "interpretation": "Lower F1 scores and high bias indicate systems favoring masculine pronouns.",
+    "baseline_results": "Best scoring baseline achieved 66.9% F1.",
+    "validation": "Inter-annotator agreement was measured using Fleiss' kappa statistics."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "gender bias",
+      "inequitable representation"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on affected communities"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The corpus aims for a balanced 1:1 gender ratio.",
+    "harm": "Potential reinforcement of gender stereotypes if biases are not addressed."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Not applicable as the data is extracted from publicly available Wikipedia articles.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

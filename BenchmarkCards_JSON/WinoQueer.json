@@ -1,0 +1,99 @@
+{
+  "benchmark_details": {
+    "name": "WinoQueer",
+    "overview": "WinoQueer is a benchmark specifically designed to measure whether large language models encode biases that are harmful to the LGBTQ+ community, developed through community feedback and input.",
+    "data_type": "Text",
+    "domains": [
+      "Natural Language Processing",
+      "Bias Measurement"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "StereoSet",
+      "CrowS-Pairs",
+      "HOLISTIC BIAS"
+    ],
+    "resources": [
+      "https://github.com/katyfelkner/winoqueer"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To measure and address anti-LGBTQ+ bias in large language models effectively.",
+    "audience": [
+      "NLP researchers",
+      "Ethicists",
+      "LGBTQ+ Advocates"
+    ],
+    "tasks": [
+      "Benchmarking the performance of language models on LGBTQ+ bias.",
+      "Identifying biases in text generation."
+    ],
+    "limitations": "While WinoQueer aims to address LGBTQ+ biases, it may not encompass all experiences within the community.",
+    "out_of_scope_uses": [
+      "Non-LGBTQ+ bias measurement",
+      "General bias measurement not related to LGBTQ+ issues"
+    ]
+  },
+  "data": {
+    "source": "Community-driven survey of LGBTQ+ individuals",
+    "size": "45540 sentence pairs",
+    "format": "Text",
+    "annotation": "Community input regarding harmful stereotypes and biases."
+  },
+  "methodology": {
+    "methods": [
+      "Community-survey based dataset development",
+      "Fine-tuning language models on QueerNews and QueerTwitter datasets"
+    ],
+    "metrics": [
+      "Pseudo-log-likelihood for bias measurement",
+      "Comparison of likelihood of stereotypical versus counterfactual sentences"
+    ],
+    "calculation": "Scores are calculated based on how frequently a model predicts the stereotypical sentence over the counterfactual.",
+    "interpretation": "Higher scores indicate greater bias towards outputting stereotypical content.",
+    "baseline_results": "Average WinoQueer bias score across models is 66.50.",
+    "validation": "Models were evaluated against a baseline of known biases to confirm effectiveness."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Privacy",
+      "Fairness",
+      "Explainability"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data",
+            "Exposing personal information"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The survey data reflects a range of identities within the LGBTQ+ community.",
+    "harm": "The study addresses tangible biases that have caused psychological harm to LGBTQ+ individuals."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data collected is anonymized and identifiers are removed to ensure participant confidentiality.",
+    "data_licensing": "Data collected from community inputs is used under a participation agreement.",
+    "consent_procedures": "Participants provided informed consent to partake in the survey.",
+    "compliance_with_regulations": "IRB exempt status for the study was established based on participant anonymity and Voluntary participation."
+  }
+}

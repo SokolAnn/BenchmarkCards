@@ -1,0 +1,77 @@
+{
+  "benchmark_details": {
+    "name": "Measuring Social Biases in Sentence Encoders",
+    "overview": "This study extends the Word Embedding Association Test (WEAT) to measure bias in sentence encoders, testing biases against gender, race, and other social constructs across various state-of-the-art models in natural language processing.",
+    "data_type": "Sentences",
+    "domains": null,
+    "languages": null,
+    "similar_benchmarks": null,
+    "resources": [
+      "http://github.com/W4ngatang/sent-bias"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To measure the degree to which pretrained sentence encoders capture a range of social biases and explore the effectiveness of different experimental designs.",
+    "audience": [
+      "Researchers in natural language processing",
+      "Ethics and fairness in AI communities"
+    ],
+    "tasks": [
+      "Measure bias in sentence encoders",
+      "Advocate for considerations of bias in NLP systems"
+    ],
+    "limitations": "Results are preliminary and cannot definitively conclude absence of bias.",
+    "out_of_scope_uses": null
+  },
+  "data": {
+    "source": "Various sentence templates generated for tests",
+    "size": "N/A",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Sentence Encoder Association Test (SEAT)",
+      "Word Embedding Association Test (WEAT)"
+    ],
+    "metrics": [
+      "Effect size",
+      "P-value"
+    ],
+    "calculation": "The SEAT uses cosine similarity to compare sets of sentence embeddings.",
+    "interpretation": "Higher effect size indicates stronger bias; the presence of a significant p-value indicates an association.",
+    "baseline_results": null,
+    "validation": "The results were validated by applying Holm-Bonferroni multiple testing correction."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias evaluation validity",
+      "Intersectional biases in NLP"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on affected communities"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Focused on U.S. contexts including race and gender.",
+    "harm": "Potential reinforcement of stereotypes through bias in NLP systems."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

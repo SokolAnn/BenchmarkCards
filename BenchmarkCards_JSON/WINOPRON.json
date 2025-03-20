@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "name": "WINOPRON",
+    "overview": "WINOPRON is a new dataset created to address issues found in the original Winogender Schemas, focusing on evaluation of gender bias in coreference resolution systems with a corrected and more comprehensive set of templates.",
+    "data_type": "Text",
+    "domains": [
+      "Coreference Resolution",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Winogender Schemas",
+      "WinoBias",
+      "WinoNB"
+    ],
+    "resources": [
+      "github.com/uds-lsv/winopron"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate gender bias in coreference resolution systems with a more reliable dataset.",
+    "audience": [
+      "Researchers in Natural Language Processing",
+      "Coreference Resolution Developers"
+    ],
+    "tasks": [
+      "Coreference resolution evaluation",
+      "Gender bias measurement"
+    ],
+    "limitations": "The dataset may not cover all linguistic variability in English.",
+    "out_of_scope_uses": [
+      "General text classification",
+      "Non-English languages"
+    ]
+  },
+  "data": {
+    "source": "Original Winogender Schemas with additional templates.",
+    "size": "1440 sentences",
+    "format": "Textual templates",
+    "annotation": "Templates verified for grammaticality and unique coreferences."
+  },
+  "methodology": {
+    "methods": [
+      "Empirical evaluation of coreference resolution models",
+      "Bias evaluation using a novel method"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Accuracy",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "Measured across multiple pronoun sets and grammatical cases.",
+    "interpretation": "Understanding model performance based on grammatical case effects.",
+    "baseline_results": null,
+    "validation": "Automatic checks and human verification for grammaticality."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Data bias",
+      "Evaluation consistency",
+      "Data quality"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Lack of training data transparency"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential misrepresentation of model capabilities due to bias in training data."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data does not contain any personal identifiable information.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "All data creation followed ethical guidelines."
+  }
+}
