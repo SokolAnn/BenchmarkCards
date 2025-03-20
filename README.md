@@ -1,5 +1,9 @@
 # BenchmarkCards: Large Language Model and Risk Reporting 
 
+BenchmarkCards offer a standardized way to document LLM benchmarks clearly and transparently. Inspired by Model Cards and Datasheets, BenchmarkCards help researchers and practitioners understand exactly what benchmarks test, how they relate to real-world risks, and how to interpret their results responsibly.
+
+Who is this for? AI researchers, data scientists, auditors, policymakers, and anyone concerned with responsible AI deployment.
+
 Paper link: https://arxiv.org/abs/2410.12974
 
 ---
@@ -15,10 +19,6 @@ Paper link: https://arxiv.org/abs/2410.12974
 - 🌐 **Benchmark_Network.md**:  A visual network that shows how benchmarks connect and relate, especially when it comes to evaluating LLM risks.
 
 ---
-## 🤝 **Get Involved!**
-Would you be interested in contributing to the BenchmarkCards initiative? Feel free to explore, fork the repository, and open issues to suggest improvements or new benchmarks. Let's collaborate and shape the future of LLM benchmarking!
-
-
 ## Citation
 
 If you use this work in your research, please cite:
@@ -33,3 +33,7 @@ If you use this work in your research, please cite:
       primaryClass={cs.CL},
       url={https://arxiv.org/abs/2410.12974}, 
 }
+
+---
+## 🤝 **Get Involved!**
+Would you be interested in contributing to the BenchmarkCards initiative? Feel free to explore, fork the repository, and open issues to suggest improvements or new benchmarks. Let's collaborate and shape the future of LLM benchmarking!
