@@ -1,0 +1,76 @@
+{
+  "benchmark_details": {
+    "name": "INJEC AGENT",
+    "overview": "A benchmark designed to assess the vulnerability of tool-integrated LLM agents to indirect prompt injection (IPI) attacks, comprising 1,054 test cases that cover 17 different user tools and 62 attacker tools.",
+    "data_type": "test cases",
+    "domains": [
+      "finance",
+      "smart home devices",
+      "email"
+    ],
+    "languages": [
+      "N/A"
+    ],
+    "similar_benchmarks": [
+      "N/A"
+    ],
+    "resources": [
+      "https://github.com/uiuc-kang-lab/InjecAgent"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate and mitigate the risks associated with indirect prompt injection attacks on tool-integrated large language model agents.",
+    "audience": [
+      "AI researchers",
+      "developers of LLM agents",
+      "security professionals"
+    ],
+    "tasks": [
+      "assess vulnerability of LLM agents",
+      "establish benchmarks for IPI attacks",
+      "increase awareness of IPI risks"
+    ],
+    "limitations": "The benchmark only focuses on specific user tools and attacker instructions, and does not cover all possible scenarios.",
+    "out_of_scope_uses": [
+      "real-time exploitation of vulnerabilities"
+    ]
+  },
+  "data": {
+    "source": "INJEC AGENT benchmark dataset",
+    "size": "1054 test cases",
+    "format": "JSON-like structure including user instructions and tool response templates",
+    "annotation": "Each test case annotates user instructions, expected tool responses, and includes an attacker instruction placeholder."
+  },
+  "methodology": {
+    "methods": [
+      "Test case generation using GPT-4",
+      "Evaluation of LLM agents using structured test cases"
+    ],
+    "metrics": [
+      "attack success rate (ASR)",
+      "ASR-valid"
+    ],
+    "calculation": "ASR is calculated based on the proportion of successful attacks among valid outputs.",
+    "interpretation": "Higher ASR indicates greater vulnerability to IPI attacks.",
+    "baseline_results": null,
+    "validation": "The evaluation of LLM agents includes valid output analysis to determine their resilience."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Indirect prompt injection",
+      "Data exposure",
+      "Financial loss"
+    ],
+    "atlas_risks": {
+      "risks": null
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The benchmark exposes potential vulnerabilities but aims to strengthen security against them.",
+    "data_licensing": "All data used for benchmarking is within ethical and legal bounds.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "benchmark_details": {
+    "name": "HaluBench",
+    "overview": "HaluBench is a comprehensive hallucination evaluation benchmark, consisting of 15k samples sourced from various real-world domains.",
+    "data_type": "benchmark",
+    "domains": [
+      "finance",
+      "medicine"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Halueval",
+      "RAGTruth"
+    ],
+    "resources": [
+      "HuggingFace Model: https://huggingface.co/PatronusAI/Llama-3-Lynx-70B-Instruct",
+      "HaluBench: https://huggingface.co/datasets/PatronusAI/HaluBench",
+      "GitHub repo: https://github.com/patronus-ai/Lynx-hallucination-detection"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate hallucination detection in LLMs for Retrieval Augmented Generation systems.",
+    "audience": [
+      "Researchers",
+      "Developers of AI systems",
+      "Machine Learning practitioners"
+    ],
+    "tasks": [
+      "Hallucination detection",
+      "Evaluation of LLM responses",
+      "Assessment of RAG systems"
+    ],
+    "limitations": "Focuses solely on hallucination detection; other factors such as factuality not addressed.",
+    "out_of_scope_uses": [
+      "Applications outside of hallucination detection",
+      "Non-English datasets"
+    ]
+  },
+  "data": {
+    "source": "Various question answering datasets",
+    "size": "15,000 samples",
+    "format": "JSON",
+    "annotation": "Annotated for presence of hallucinations"
+  },
+  "methodology": {
+    "methods": [
+      "Finetuning on various QA datasets",
+      "Generating semantic perturbations of answers",
+      "Human annotation for validation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Faithfulness to the context"
+    ],
+    "calculation": "Comparison against baseline models to evaluate performance on hallucination tasks.",
+    "interpretation": "Higher accuracy indicates better performance in detecting hallucinations.",
+    "baseline_results": "LYNX (70B) achieved an overall accuracy of 87.4% on HaluBench against other models.",
+    "validation": "Compared against human annotated examples for quality assurance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential misinformation in AI-assisted applications."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Open Source",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

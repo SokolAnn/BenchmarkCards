@@ -1,0 +1,99 @@
+{
+  "benchmark_details": {
+    "name": "FIHA-v1",
+    "overview": "A benchmark for fine-grained hallucination evaluation in large vision-language models, utilizing Q&A pairs generated automatically without relying on LLMs or annotations.",
+    "data_type": "Q&A pairs",
+    "domains": [
+      "Computer Vision",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "POPE",
+      "NOPE",
+      "AMBER",
+      "HallusionBench"
+    ],
+    "resources": [
+      "https://anonymous.4open.science/r/FIHA-45BB"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate hallucinations in large vision-language models effectively.",
+    "audience": [
+      "Researchers",
+      "Developers in AI and machine learning"
+    ],
+    "tasks": [
+      "Assess hallucination levels in vision-language models",
+      "Generate Q&A pairs for evaluation"
+    ],
+    "limitations": "Does not evaluate non-visual inputs.",
+    "out_of_scope_uses": [
+      "Application in real-time systems"
+    ]
+  },
+  "data": {
+    "source": "MSCOCO, Foggy dataset, Visual Genome",
+    "size": "N/A",
+    "format": "Q&A pairs",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Q&A pair generation from images",
+      "Q&A pair generation from captions",
+      "Dependency modeling using Davidson Scene Graph (DSG)"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Precision",
+      "Recall",
+      "F1 Score",
+      "BERTScore"
+    ],
+    "calculation": "Metrics calculated based on model responses to generated Q&A pairs.",
+    "interpretation": "Scores indicate the level of hallucinations detected in the models.",
+    "baseline_results": "N/A",
+    "validation": "Performance evaluated on multiple LVLMs with significant variations in results."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Data bias",
+      "Output bias"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data collected aligns with privacy standards, minimizing personal data exposure.",
+    "data_licensing": "Open dataset, available for public use.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "Follows regulations concerning dataset usage."
+  }
+}

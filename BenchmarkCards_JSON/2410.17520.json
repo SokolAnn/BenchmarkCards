@@ -1,0 +1,98 @@
+{
+  "benchmark_details": {
+    "name": "MobileSafetyBench",
+    "overview": "A benchmark designed to evaluate the safety of device-control agents within a realistic mobile environment based on Android emulators, focusing on safety in mobile device control tasks.",
+    "data_type": "Task-based evaluation",
+    "domains": [
+      "Mobile Applications",
+      "Device Control",
+      "Safety Assessment"
+    ],
+    "languages": null,
+    "similar_benchmarks": null,
+    "resources": [
+      "https://mobilesafetybench.github.io/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the safety and helpfulness of autonomous agents controlling mobile devices.",
+    "audience": [
+      "Researchers",
+      "Developers",
+      "Practitioners in AI Safety"
+    ],
+    "tasks": [
+      "Evaluate agent performance in mobile tasks",
+      "Assess safety handling of sensitive information",
+      "Measure robustness against injection attacks"
+    ],
+    "limitations": "Evaluated agents may vary significantly in their safety performance, necessitating method improvements over time.",
+    "out_of_scope_uses": null
+  },
+  "data": {
+    "source": "MobileSafetyBench documentation",
+    "size": "80 tasks",
+    "format": "Interactive scenario-based tasks",
+    "annotation": "Human-annotated risk levels and task performance metrics."
+  },
+  "methodology": {
+    "methods": [
+      "Task simulation using Android emulators",
+      "Risk type classification through human annotation",
+      "Prompting methods for agent behavior"
+    ],
+    "metrics": [
+      "Goal achievement rates",
+      "Harm prevention rates",
+      "Task completion success rates"
+    ],
+    "calculation": "Calculated based on the number of successful task completions over total attempts, segregated by task risk levels.",
+    "interpretation": "Scores indicate the relative safety and performance of agents under various operational scenarios.",
+    "baseline_results": "Baseline models include GPT-4o, Gemini-1.5, and Claude-3.5, each evaluated on a suite of tasks with varying risk levels.",
+    "validation": "Empirical evaluation conducted across multiple scenarios."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Misuse risks",
+      "Negative side effects from agent actions",
+      "Vulnerability to indirect prompt injections"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Misuse",
+          "subcategory": [
+            "Improper usage",
+            "Spreading disinformation"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Emphasis on user consent and privacy considerations when accessing sensitive data in mobile tasks.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Agents are encouraged to request user consent for actions that may involve private information or could cause harm.",
+    "compliance_with_regulations": "Task designs prioritize ethical compliance and legal standards in managing user data and preventing misuse."
+  }
+}

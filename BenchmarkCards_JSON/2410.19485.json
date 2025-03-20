@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "name": "A Debate-Driven Experiment on LLM Hallucinations and Accuracy",
+    "overview": "This study investigates the phenomenon of hallucination in LLMs through a debate-like interaction among multiple GPT-4o-Mini models. One model generates false answers while others respond truthfully, aiming to assess the impact of misinformation on model performance.",
+    "data_type": "Text",
+    "domains": [
+      "Natural Language Processing",
+      "Machine Learning"
+    ],
+    "languages": null,
+    "similar_benchmarks": [
+      "TruthfulQA"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2410.19485"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To analyze how misinformation affects the outputs of large language models during inter-model interactions and improve their robustness.",
+    "audience": [
+      "AI Researchers",
+      "Data Scientists",
+      "Developers"
+    ],
+    "tasks": [
+      "Mitigation of LLM hallucinations",
+      "Assessment of model accuracy",
+      "Improvement of inter-model interactions"
+    ],
+    "limitations": "Fixed number of debaters and single type of saboteur strategy.",
+    "out_of_scope_uses": null
+  },
+  "data": {
+    "source": "TruthfulQA Dataset",
+    "size": "N/A",
+    "format": "Text-based question sets",
+    "annotation": "Questions with one correct and one incorrect answer"
+  },
+  "methodology": {
+    "methods": [
+      "Debate-style interactions",
+      "Inter-model comparison"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Factual integrity"
+    ],
+    "calculation": "Percentage accuracy calculated from the total number of correct answers.",
+    "interpretation": "Models' performance evaluated based on their ability to discern accurate from false information.",
+    "baseline_results": "Baseline accuracy of 61.94%",
+    "validation": "Through iterative debates among various configurations of model personas."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Misinformation susceptibility",
+      "Biases in training data"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

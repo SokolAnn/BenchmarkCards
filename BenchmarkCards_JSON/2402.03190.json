@@ -1,0 +1,100 @@
+{
+  "benchmark_details": {
+    "name": "MHaluBench",
+    "overview": "A meta-evaluation benchmark designed for the assessment of hallucination detection methods in multimodal large language models.",
+    "data_type": "Multi-modal",
+    "domains": [
+      "Image-to-Text",
+      "Text-to-Image"
+    ],
+    "languages": null,
+    "similar_benchmarks": [
+      "FactCC",
+      "QAGS",
+      "HaluEval",
+      "POPE",
+      "HaELM",
+      "AMBER"
+    ],
+    "resources": [
+      "https://github.com/zjunlp/EasyDetect",
+      "http://easydetect.openkg.cn"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To facilitate evaluation of hallucination detection capabilities in multimodal large language models.",
+    "audience": [
+      "Researchers",
+      "AI developers",
+      "Data scientists"
+    ],
+    "tasks": [
+      "Detect multimodal hallucinations",
+      "Conduct meta-evaluation of detection frameworks"
+    ],
+    "limitations": null,
+    "out_of_scope_uses": null
+  },
+  "data": {
+    "source": "Generated outputs from leading multimodal models",
+    "size": "200 instances for Image Captioning, 200 for Visual Question Answering, and 220 for Text-to-Image Generation.",
+    "format": "Image and text pairs",
+    "annotation": "Claims labeled as hallucinatory or non-hallucinatory based on claim extraction."
+  },
+  "methodology": {
+    "methods": [
+      "Claim extraction",
+      "Autonomous tool selection",
+      "Parallel tool execution",
+      "Hallucination verification"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score",
+      "Accuracy",
+      "Macro F1 Score"
+    ],
+    "calculation": "Metrics calculated based on detection outcomes from the benchmark.",
+    "interpretation": "Quantitative assessment of model performance against hallucination detection tasks.",
+    "baseline_results": null,
+    "validation": "Validated through extensive evaluation on the MHaluBench benchmark."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Privacy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All data used complies with privacy regulations.",
+    "data_licensing": "The dataset is constructed from publicly available sources.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "Adheres to applicable data privacy laws."
+  }
+}

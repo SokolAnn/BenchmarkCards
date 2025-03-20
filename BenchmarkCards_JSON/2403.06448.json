@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "name": "HELM",
+    "overview": "A benchmark for evaluating hallucination detection across multiple LLMs, featuring diverse LLM outputs and the internal states of LLMs during their inference process.",
+    "data_type": "Text",
+    "domains": [
+      "Natural Language Processing",
+      "Hallucination Detection"
+    ],
+    "languages": [
+      "N/A"
+    ],
+    "similar_benchmarks": [
+      "WikiBio GPT3",
+      "SelfCheckGPT",
+      "HaluEval"
+    ],
+    "resources": [
+      "https://github.com/oneal2000/MIND/tree/main"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive benchmark for hallucination detection in large language models.",
+    "audience": [
+      "Researchers",
+      "Practitioners in NLP",
+      "AI developers"
+    ],
+    "tasks": [
+      "Detect hallucinations in LLM outputs",
+      "Evaluate hallucination detection methods"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": [
+      "Fact verification tasks",
+      "Applications without LLMs"
+    ]
+  },
+  "data": {
+    "source": "Wikipedia",
+    "size": "3582 sentences",
+    "format": "Text",
+    "annotation": "Annotated for truthfulness with hallucination labels"
+  },
+  "methodology": {
+    "methods": [
+      "Unsupervised training data generation",
+      "Hallucination classifier training using MLP"
+    ],
+    "metrics": [
+      "AUC (Area Under the Curve)",
+      "Pearson correlation coefficient"
+    ],
+    "calculation": "AUC calculated at both sentence-level and passage-level.",
+    "interpretation": "Higher AUC values indicate better detection performance.",
+    "baseline_results": "MIND outperforms existing state-of-the-art methods in hallucination detection.",
+    "validation": "Evaluation conducted on HELM dataset."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias in training data",
+      "Inaccurate detection of hallucinations",
+      "Over-reliance on annotations"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "No personally identifiable information used.",
+    "data_licensing": "Publicly available data, e.g., Wikipedia.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "Focused on ethical considerations in development."
+  }
+}
