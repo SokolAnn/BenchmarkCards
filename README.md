@@ -1,6 +1,6 @@
 # BenchmarkCards: Large Language Model and Risk Reporting 
 
-Paper link: 
+Paper link: https://arxiv.org/abs/2410.12974
 
 ---
 
