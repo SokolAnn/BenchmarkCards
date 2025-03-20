@@ -19,3 +19,17 @@ Paper link: https://arxiv.org/abs/2410.12974
 Would you be interested in contributing to the BenchmarkCards initiative? Feel free to explore, fork the repository, and open issues to suggest improvements or new benchmarks. Let's collaborate and shape the future of LLM benchmarking!
 
 
+## Citation
+
+If you use this work in your research, please cite:
+
+```bibtex
+@misc{sokol2024benchmarkcardslargelanguagemodel,
+      title={BenchmarkCards: Large Language Model and Risk Reporting}, 
+      author={Anna Sokol and Nuno Moniz and Elizabeth Daly and Michael Hind and Nitesh Chawla},
+      year={2024},
+      eprint={2410.12974},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2410.12974}, 
+}
