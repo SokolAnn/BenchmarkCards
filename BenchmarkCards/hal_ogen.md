@@ -1,10 +1,10 @@
-# HAL OGEN
+# HALOGEN
 
 ## 📊 Benchmark Details
 
-**Name**: HAL OGEN
+**Name**: HALOGEN
 
-**Overview**: HAL OGEN is a comprehensive hallucination benchmark consisting of 10,923 prompts for generative models spanning nine domains. It includes automatic high-precision verifiers for each use case that decompose LLM generations into atomic units and verify each unit against a high-quality knowledge source.
+**Overview**: HALOGEN is a comprehensive hallucination benchmark consisting of 10,923 prompts for generative models spanning nine domains. It includes automatic high-precision verifiers for each use case that decompose LLM generations into atomic units and verify each unit against a high-quality knowledge source.
 
 **Data Type**: Text
 
