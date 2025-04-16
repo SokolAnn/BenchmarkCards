@@ -1,8 +1,8 @@
-# H ALLU CODE
+# HALLU CODE
 
 ## 📊 Benchmark Details
 
-**Name**: H ALLU CODE
+**Name**: HALLU CODE
 
 **Overview**: A benchmark for evaluating the performance of code LLMs in recognizing hallucinations, established based on a comprehensive analysis of hallucination types in generated code.
 
