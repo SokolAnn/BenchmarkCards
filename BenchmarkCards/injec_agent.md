@@ -1,8 +1,8 @@
-# INJEC AGENT
+# INJECAGENT
 
 ## 📊 Benchmark Details
 
-**Name**: INJEC AGENT
+**Name**: INJECAGENT
 
 **Overview**: A benchmark designed to assess the vulnerability of tool-integrated LLM agents to indirect prompt injection (IPI) attacks, comprising 1,054 test cases that cover 17 different user tools and 62 attacker tools.
 
