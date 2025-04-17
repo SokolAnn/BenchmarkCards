@@ -2,7 +2,7 @@
 
 ## 📊 Benchmark Details
 
-**Name**: BBQ: A Hand-Built Bias Benchmark for Question Answering
+**Name**: BBQ
 
 **Overview**: BBQ is a dataset of question sets that highlight attested social biases against people belonging to protected classes along nine social dimensions relevant for U.S. English-speaking contexts. It evaluates model responses in terms of how strongly they reflect social biases and under what contexts these biases override correct answers.
 
