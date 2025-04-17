@@ -2,7 +2,7 @@
 
 ## 📊 Benchmark Details
 
-**Name**: Benchmark for reli ABilitYand jail Break ha LlUcination Evaluation (BABYBLUE)
+**Name**: BABYBLUE
 
 **Overview**: BABYBLUE introduces a specialized validation framework including various evaluators to enhance existing jailbreak benchmarks, ensuring outputs are useful malicious instructions. It aims to evaluate the true potential of jailbroken LLM outputs to cause harm to human society.
 
