@@ -1,8 +1,8 @@
-# Bi’anBench
+# Bi’an
 
 ## 📊 Benchmark Details
 
-**Name**: Bi’anBench
+**Name**: Bi’an
 
 **Overview**: A bilingual (Chinese-English) benchmark for RAG hallucination detection, featuring a dataset and lightweight judge models.
 
