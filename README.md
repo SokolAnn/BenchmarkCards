@@ -49,6 +49,29 @@ Here's a sneak peek at what the platform will look like:
   - `templates.py`: HTML templates management.
   - `markdown_converter.py`: Convert content to Markdown.
 
+## ⚙️ Quick Setup Instructions
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/SokolAnn/BenchmarkCards.git
+cd BenchmarkCards
+
+# 2. Set up your environment
+pip install -r requirements.txt
+
+# 3. Add your API key
+# Open the config.py file and replace the placeholder with your OpenAI API key
+# Example:
+# OPENAI_API_KEY = "your-openai-api-key-here"
+
+# 4. Run the app
+python app.py
+
+# 5. Access the app
+# Open your browser and go to:
+# http://localhost:8000/
+
+```
 ---
 ## Citation
 If you use this work in your research, please cite:
