@@ -37,7 +37,17 @@ Here's a sneak peek at what the platform will look like:
 **Generated BenchmarkCard Example**:
 ![Generated BenchmarkCard](screenshots/example_card.png)
 
-Stay tuned for updates as we continue development. We're working hard to make benchmark documentation more accessible and standardized for everyone in the AI community!
+**Platform Structure:**
+- `app.py`: Main application entry point.
+- `config.py`: Configuration settings.
+- `requirements.txt`: Project dependencies.
+- `static/`: Static files (CSS, JS, images).
+- `src/`: Core source code modules:
+  - `models.py`: Pydantic data models.
+  - `pdf_extractor.py`: PDF text extraction functionality.
+  - `ai_service.py`: Integration with OpenAI APIs.
+  - `templates.py`: HTML templates management.
+  - `markdown_converter.py`: Convert content to Markdown.
 
 ---
 ## Citation
@@ -56,3 +66,6 @@ If you use this work in your research, please cite:
 ---
 ## 🤝 **Get Involved!**
 Would you be interested in contributing to the BenchmarkCards initiative? Feel free to explore, fork the repository, and open issues to suggest improvements or new benchmarks. Let's collaborate and shape the future of LLM benchmarking!
+
+Edited locally on 2025-04-21.
+
