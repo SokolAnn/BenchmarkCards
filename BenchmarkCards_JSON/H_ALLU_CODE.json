@@ -1,0 +1,103 @@
+{
+  "benchmark_details": {
+    "name": "H ALLU CODE",
+    "overview": "A benchmark for evaluating the performance of code LLMs in recognizing hallucinations, established based on a comprehensive analysis of hallucination types in generated code.",
+    "data_type": "Python",
+    "domains": [
+      "code generation"
+    ],
+    "languages": [
+      "Python"
+    ],
+    "similar_benchmarks": [
+      "HumanEval",
+      "DS-1000",
+      "MBPP",
+      "APPS"
+    ],
+    "resources": [
+      "Code Alpaca dataset"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate and improve the recognition and mitigation of hallucinations in code LLMs.",
+    "audience": [
+      "AI researchers",
+      "Software developers",
+      "Undergraduate and Graduate students in computer science"
+    ],
+    "tasks": [
+      "Evaluate hallucinations in generated code",
+      "Mitigate identified hallucinations"
+    ],
+    "limitations": "Focus exclusively on Python code generation tasks.",
+    "out_of_scope_uses": [
+      "N/A"
+    ]
+  },
+  "data": {
+    "source": "H ALLU CODE",
+    "size": "5,663 Python code generation tasks",
+    "format": "Python code",
+    "annotation": "Annotated with types of hallucinations present."
+  },
+  "methodology": {
+    "methods": [
+      "Thematic analysis",
+      "Statistical analysis"
+    ],
+    "metrics": [
+      "Hallucination recognition accuracy",
+      "Mitigation accuracy"
+    ],
+    "calculation": "Metrics calculated based on the proportion of correctly identified hallucinations and successful mitigations among generated codes.",
+    "interpretation": "Recognized hallucinations and effectiveness of mitigation demonstrated through comparative analysis with HumanEval.",
+    "baseline_results": null,
+    "validation": "Cross-validated with multiple annotators for labeling of hallucination types."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Privacy",
+      "Transparency"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Lack of training data transparency"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Generated code does not contain personally identifiable information.",
+    "data_licensing": "Data used from existing benchmarks is compliant with associated licenses.",
+    "consent_procedures": "Data sources are publicly available and do not require consent-related issues.",
+    "compliance_with_regulations": "All data used complies with data protection and copyright regulations."
+  }
+}

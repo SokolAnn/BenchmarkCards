@@ -1,0 +1,101 @@
+{
+  "benchmark_details": {
+    "name": "ROBBIE: Robust Bias Evaluation of Large Generative Language Models",
+    "overview": "The paper discusses methods to evaluate and mitigate biases in large generative language models (LLMs) across various demographic axes and prompt-based datasets to ensure fair treatment of marginalized groups.",
+    "data_type": "Text",
+    "domains": null,
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Holistic Bias",
+      "RealToxicityPrompts",
+      "BOLD",
+      "ToxiGen (v2)"
+    ],
+    "resources": [
+      "https://github.com/facebookresearch/ResponsibleNLP/tree/main/robbie",
+      "https://github.com/facebookresearch/ResponsibleNLP/tree/main/AdvPromptSet"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To develop comprehensive metrics for measuring and mitigating biases in generative LLMs.",
+    "audience": [
+      "AI Researchers",
+      "Data Scientists",
+      "Practitioners deploying LLMs"
+    ],
+    "tasks": [
+      "Evaluate biases in generative language models",
+      "Develop and compare bias mitigation techniques"
+    ],
+    "limitations": null,
+    "out_of_scope_uses": [
+      "Evaluation of non-generative models"
+    ]
+  },
+  "data": {
+    "source": "Multiple text datasets including web crawls, Wikipedia, and user-generated content.",
+    "size": "Numerous datasets with thousands to millions of prompts.",
+    "format": "Text prompts along with corresponding labels (e.g. toxicity, demographic identities)",
+    "annotation": "Prompts are annotated using classifiers for toxicity and bias."
+  },
+  "methodology": {
+    "methods": [
+      "Quantitative analysis of generated text based on demographic axes",
+      "Use of various bias metrics like AdvPromptSet and HolisticBiasR",
+      "Bias/toxicity mitigation techniques evaluation"
+    ],
+    "metrics": [
+      "Toxicity rate",
+      "Negative regard score",
+      "BiasScore"
+    ],
+    "calculation": "The likelihood of negative responses about demographic subgroups is estimated through bootstrapping methods.",
+    "interpretation": "The interpretation of bias is contextual based on the proportion of negative output related to demographic prompts.",
+    "baseline_results": null,
+    "validation": "Results validated through human evaluators assessing generated text for toxicity and bias."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias in model outputs",
+      "Toxic content generation",
+      "Marginalization of demographic groups"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Decision bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in prompt"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on education: plagiarism",
+            "Impact on affected communities"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": [
+      "Potential for reinforcing stereotypes",
+      "Truthfulness of generated content"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Aggregation of bias data may involve sensitive demographic information, ensuring careful handling and anonymization is essential.",
+    "data_licensing": "Datasets derived from publicly available web content.",
+    "consent_procedures": "Human evaluations conducted with appropriate consent mechanisms.",
+    "compliance_with_regulations": "Adherence to ethical guidelines in AI deployment and data usage."
+  }
+}

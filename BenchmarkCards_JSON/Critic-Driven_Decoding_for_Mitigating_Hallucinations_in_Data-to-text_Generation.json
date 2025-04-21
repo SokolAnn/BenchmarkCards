@@ -1,0 +1,100 @@
+{
+  "benchmark_details": {
+    "name": "Critic-Driven Decoding for Mitigating Hallucinations in Data-to-text Generation",
+    "overview": "The paper presents a novel critic-driven decoding approach that combines the probabilistic output of a generator language model with a specialized text critic classifier. This method mitigates hallucinations in neural data-to-text generation without altering the model architecture or requiring additional training data. Experimental results demonstrate improvements on the WebNLG and OpenDialKG benchmarks.",
+    "data_type": "Text generation",
+    "domains": [
+      "Natural Language Generation",
+      "Data-to-text generation"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "WebNLG",
+      "OpenDialKG"
+    ],
+    "resources": [
+      "https://github.com/langus0/critic-aware-decoding"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To mitigate hallucinations in data-to-text generation without modifying existing models.",
+    "audience": [
+      "Researchers in Natural Language Processing",
+      "Developers working on text generation systems"
+    ],
+    "tasks": [
+      "Data-to-text generation",
+      "Mitigating hallucinations in generated text"
+    ],
+    "limitations": "The performance is limited by the base language model and its ability to predict the most likely next tokens.",
+    "out_of_scope_uses": [
+      "Tasks unrelated to data-to-text generation",
+      "Other forms of text generation not involving hallucination issues"
+    ]
+  },
+  "data": {
+    "source": "WebNLG and OpenDialKG datasets",
+    "size": "N/A",
+    "format": "Text and RDF triples",
+    "annotation": "Data-to-text pairs annotated for evaluating hallucination"
+  },
+  "methodology": {
+    "methods": [
+      "Greedy decoding",
+      "Critic-driven decoding"
+    ],
+    "metrics": [
+      "BLEU",
+      "METEOR",
+      "BERTScore",
+      "NLI",
+      "BLEURT"
+    ],
+    "calculation": "Incorporates probabilistic outputs from both a language model and a critic classifier into the text generation probability.",
+    "interpretation": "Evaluation of text quality and hallucinations based on generated outputs compared to reference texts.",
+    "baseline_results": "The proposed method achieved improvements over baseline language models on multiple metrics.",
+    "validation": "Experimental validation on the WebNLG and OpenDialKG datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Misuse",
+      "Fairness",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack",
+            "Hallucination"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential for hallucinations leading to misinformation"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

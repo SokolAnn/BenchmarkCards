@@ -1,0 +1,104 @@
+{
+  "benchmark_details": {
+    "name": "AMBER",
+    "overview": "AMBER is an LLM-free multi-dimensional benchmark designed for evaluating hallucinations in Multi-modal Large Language Models (MLLMs). It addresses the challenges of evaluating hallucinations effectively across generative and discriminative tasks.",
+    "data_type": "Image and Text",
+    "domains": [
+      "Multi-modal",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": null,
+    "resources": [
+      "https://github.com/junyangwang0410/AMBER"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide an efficient and comprehensive evaluation framework for hallucinations in MLLMs.",
+    "audience": [
+      "Researchers",
+      "Developers of MLLMs",
+      "AI practitioners"
+    ],
+    "tasks": [
+      "Evaluate hallucinations in MLLMs",
+      "Analyze performance across various tasks",
+      "Mitigate hallucination issues"
+    ],
+    "limitations": null,
+    "out_of_scope_uses": null
+  },
+  "data": {
+    "source": "MS-COCO 2014 test set and UnSplash",
+    "size": "1004 images",
+    "format": "Image",
+    "annotation": "Existence, attribute, relation, hallucinatory target objects"
+  },
+  "methodology": {
+    "methods": [
+      "Image collection",
+      "Image annotation",
+      "Prompt template design",
+      "Evaluation pipeline"
+    ],
+    "metrics": [
+      "CHAIR",
+      "Cover",
+      "Hal",
+      "Cog",
+      "Accuracy",
+      "Precision",
+      "Recall",
+      "F1",
+      "AMBER Score"
+    ],
+    "calculation": "Various metrics calculated based on the responses obtained from MLLMs using specific prompts and annotations.",
+    "interpretation": "Evaluation of hallucination types across MLLMs using derived metrics.",
+    "baseline_results": null,
+    "validation": "Responses processed and validated based on established metrics for hallucination evaluation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Hallucination evaluation",
+      "Model performance assessment"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Lack of training data transparency"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Exposing personal information"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data collected from publicly available sources (UnSplash with CC0 license) ensures privacy compliance.",
+    "data_licensing": "Images from MS-COCO test set and UnSplash are used without licensing issues.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

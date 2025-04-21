@@ -1,0 +1,103 @@
+{
+  "benchmark_details": {
+    "name": "Med-HallMark",
+    "overview": "The first benchmark specifically designed for hallucination detection and evaluation within the medical multimodal domain.",
+    "data_type": "medical image data",
+    "domains": [
+      "healthcare",
+      "medical imaging"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": null,
+    "resources": [
+      "https://github.com/path-to-med-hallmark"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a benchmark for detecting and evaluating hallucinations in large vision language models in medical applications.",
+    "audience": [
+      "Researchers",
+      "Medical practitioners",
+      "AI developers"
+    ],
+    "tasks": [
+      "Evaluating hallucinations in medical contexts",
+      "Assessing the performance of large vision language models"
+    ],
+    "limitations": "Currently supports only English and may not cover all potential hallucination types in medical texts.",
+    "out_of_scope_uses": [
+      "Non-medical applications",
+      "General-purpose vision-language tasks"
+    ]
+  },
+  "data": {
+    "source": "Derived from datasets including Slake, VQA-RAD, MIMIC, and OpenI",
+    "size": "Data partitioned with 57.57% for Med-VQA and 42.43% for IRG",
+    "format": "N/A",
+    "annotation": "Detailed annotations for hallucination types, sentence-level assessments, and correctness of model outputs are provided."
+  },
+  "methodology": {
+    "methods": [
+      "Multi-task hallucination support",
+      "Multifaceted hallucination data",
+      "Hierarchical hallucination categorization"
+    ],
+    "metrics": [
+      "MediHall Score",
+      "BERTScore",
+      "METEOR",
+      "ROUGE-1",
+      "ROUGE-2",
+      "BLEU"
+    ],
+    "calculation": "MediHall Score is calculated by averaging scores derived from hallucination categorization across multi-dimensional tasks.",
+    "interpretation": "The MediHall Score offers insight into the severity and implications of hallucinations in medical contexts.",
+    "baseline_results": "Establishes baselines for popular LVLMs indicating their performance in hallucination detection.",
+    "validation": "Validation through extensive experimental evaluations across various models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Misrepresentation of medical information",
+      "Clinical misdiagnosis due to hallucinations"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Lack of training data transparency",
+            "Uncertain data provenance"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": "Potential harm includes misdiagnosis or misleading medical information leading to incorrect clinical decisions."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data sourced from publicly available medical datasets with privacy compliance.",
+    "data_licensing": "The textual content is provided under the CC-BY-4.0 license. Medical images are derived from open datasets and their licensing applies.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "Complies with the requirements of the source datasets regarding the use of medical images."
+  }
+}

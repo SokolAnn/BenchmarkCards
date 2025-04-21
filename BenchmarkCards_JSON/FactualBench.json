@@ -1,0 +1,129 @@
+{
+  "benchmark_details": {
+    "name": "FactualBench",
+    "overview": "A comprehensive and precise factual QA dataset containing 181k Chinese data spanning 21 domains, designed to facilitate both evaluation and training for reducing factual hallucinations in LLMs.",
+    "data_type": "QA",
+    "domains": [
+      "Film & Entertainment",
+      "Education & Training",
+      "Physics, Chemistry, Mathematics & Biology",
+      "History & Traditional Culture",
+      "Biography",
+      "Politics & Law",
+      "Economics & Management",
+      "Computer Science",
+      "Medical",
+      "Sociology & Humanity",
+      "Agriculture, Forestry, Fisheries & Allied Industries",
+      "Astronomy & Geography",
+      "Sports & Tourism",
+      "Digital & Automotive",
+      "Industrial Engineering",
+      "Military & War",
+      "Slang & Memes",
+      "Work & Life",
+      "High Technology",
+      "Religion & Culture",
+      "Others"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "CMMLU",
+      "TruthfulQA",
+      "HalluQA",
+      "HaluEval",
+      "AlignBench",
+      "AlpacaEval"
+    ],
+    "resources": [
+      "arXiv:2502.19127v1",
+      "https://baike.baidu.com/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To mitigate factual hallucinations and enhance the factual accuracy of language models by providing a dataset specifically designed for factual QA.",
+    "audience": [
+      "Researchers",
+      "Developers of AI",
+      "Conversational AI systems"
+    ],
+    "tasks": [
+      "Evaluating language models",
+      "Training language models",
+      "Testing against factuality benchmarks"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": [
+      "Non-factual QA tasks",
+      "Open-ended question generation"
+    ]
+  },
+  "data": {
+    "source": "Internet encyclopedia (Baidu Baike)",
+    "size": "181k",
+    "format": "QA pairs",
+    "annotation": "Human annotations for correctness and domain classification."
+  },
+  "methodology": {
+    "methods": [
+      "Direct Preference Optimization (DPO)",
+      "Self-memory alignment (SMA)"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Factual precision metrics (e.g., FActScore)"
+    ],
+    "calculation": "Performance evaluations based on multiple diverse benchmarks focusing on factuality and comprehensiveness.",
+    "interpretation": "Results are interpreted through comparisons against base models and existing benchmarks.",
+    "baseline_results": "Performance on benchmarks varied, with SMA achieving improvements across all evaluated tasks.",
+    "validation": "Models were validated by testing against FactualBench, which includes a testing subset of 3,462 questions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Data contamination",
+      "Data bias",
+      "Output bias",
+      "Decision bias",
+      "Privacy violations"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Exposing personal information"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning",
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data sourced from publicly available encyclopedias, estimated privacy concerns with individual data use are addressed during data selection.",
+    "data_licensing": "Data was collected in compliance with public use policies of the encyclopedias reviewed.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

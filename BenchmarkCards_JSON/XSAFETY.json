@@ -1,0 +1,105 @@
+{
+  "benchmark_details": {
+    "name": "XSAFETY",
+    "overview": "The first multilingual safety benchmark for LLMs covering 14 commonly used safety issues across ten languages spanning several language families.",
+    "data_type": "Annotated instances",
+    "domains": [
+      "Safety Assessment",
+      "Multilingual Evaluation"
+    ],
+    "languages": [
+      "English",
+      "Chinese",
+      "Spanish",
+      "French",
+      "Bengali",
+      "Arabic",
+      "Hindi",
+      "Russian",
+      "Japanese",
+      "German"
+    ],
+    "similar_benchmarks": [
+      "Commonsense Safety",
+      "Toxicity datasets",
+      "Bias measurement datasets"
+    ],
+    "resources": [
+      "https://github.com/Jarviswang94/Multilingual_safety_benchmark"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the multilingual safety performance of large language models (LLMs) and develop safety alignment strategies for non-English languages.",
+    "audience": [
+      "Researchers",
+      "Developers",
+      "Policymakers"
+    ],
+    "tasks": [
+      "Safety evaluation",
+      "Data collection",
+      "Methodological development"
+    ],
+    "limitations": null,
+    "out_of_scope_uses": [
+      "Uses outside of LLM safety evaluation"
+    ]
+  },
+  "data": {
+    "source": "Multiple safety benchmarks, translated and adapted for multilingual contexts",
+    "size": "2,800 instances across 10 languages resulting in 28,000 annotated instances",
+    "format": "Text",
+    "annotation": "Manually annotated and translated by professional translators"
+  },
+  "methodology": {
+    "methods": [
+      "Safety evaluation through LLM responses",
+      "Prompting method to improve safety alignment"
+    ],
+    "metrics": [
+      "Unsafe response ratio",
+      "Annotation accuracy"
+    ],
+    "calculation": "Unsafe ratios calculated by evaluating LLM responses to translated prompts",
+    "interpretation": "Lower unsafe response ratios indicate better safety alignment",
+    "baseline_results": "N/A",
+    "validation": "Involves human annotation to verify automatic evaluation accuracy"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety alignment",
+      "Cultural bias",
+      "Model evaluation"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": "Higher unsafe response ratios for non-English queries"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Data licensed for research use",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

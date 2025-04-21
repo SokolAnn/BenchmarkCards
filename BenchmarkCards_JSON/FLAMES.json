@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "name": "FLAMES",
+    "overview": "FLAMES is a benchmark designed to evaluate the value alignment of large language models (LLMs) in Chinese, incorporating various dimensions of human values including safety, fairness, morality, legality, and data protection. It consists of adversarial prompts crafted to uncover vulnerabilities in model responses, emphasizing the need for deeper alignment with human values.",
+    "data_type": "Adversarial prompts",
+    "domains": [
+      "Natural Language Processing",
+      "Ethics in AI"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "HHH dataset",
+      "Do-Not-Answer dataset"
+    ],
+    "resources": [
+      "https://github.com/AIFlames/Flames"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the alignment of LLMs with human values, specifically designed for the Chinese context.",
+    "audience": [
+      "Researchers",
+      "AI developers",
+      "Ethicists"
+    ],
+    "tasks": [
+      "Assessing LLM responses to prompts",
+      "Generating detailed evaluations based on model performance"
+    ],
+    "limitations": null,
+    "out_of_scope_uses": null
+  },
+  "data": {
+    "source": "FLAMES - Prompts Dataset",
+    "size": "2,251 prompts",
+    "format": "Manual annotations",
+    "annotation": "Each response from 17 LLMs is annotated for evaluation."
+  },
+  "methodology": {
+    "methods": [
+      "Prompt testing",
+      "Human evaluation of model responses",
+      "Development of a specified scoring model"
+    ],
+    "metrics": [
+      "Harmless rate",
+      "Harmless score"
+    ],
+    "calculation": "Harmless rate is calculated as the percentage of harmless responses out of total responses.",
+    "interpretation": "Higher scores indicate better alignment with human values, revealing vulnerabilities in model responses.",
+    "baseline_results": "Claude achieved the highest harmless rate of 63.77%.",
+    "validation": "Responses were annotated by experts across various fields to ensure quality."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Fairness",
+      "Legality",
+      "Data Protection",
+      "Morality"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset is designed to respect privacy by not incorporating identifiable personal data.",
+    "data_licensing": "The FLAMES dataset is publicly available for research purposes.",
+    "consent_procedures": "Data collection follows ethical guidelines to minimize harm.",
+    "compliance_with_regulations": "The benchmark aims to comply with relevant laws around data privacy and use."
+  }
+}

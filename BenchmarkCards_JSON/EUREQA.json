@@ -1,0 +1,78 @@
+{
+  "benchmark_details": {
+    "name": "EUREQA",
+    "overview": "EUREQA is an entity-searching task where a model finds a missing entity based on described multi-hop relations with other entities. The benchmark probes LLMs' dependency on semantic associations and their ability to follow correct reasoning paths.",
+    "data_type": "Question Answering",
+    "domains": [
+      "Reasoning",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MATH",
+      "FLAN",
+      "HellaSwag"
+    ],
+    "resources": [
+      "https://github.com/VincentLeebang/eureqa"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the reasoning capabilities of LLMs and their reliance on semantic shortcuts.",
+    "audience": [
+      "Researchers",
+      "AI Developers",
+      "Data Scientists"
+    ],
+    "tasks": [
+      "Evaluate reasoning paths",
+      "Assess accuracy in entity identification"
+    ],
+    "limitations": "The benchmark may not cover all reasoning mechanisms utilized by LLMs.",
+    "out_of_scope_uses": [
+      "Non-reasoning tasks",
+      "General question-answering beyond the specified framework"
+    ]
+  },
+  "data": {
+    "source": "DBpedia knowledge base",
+    "size": "2991 questions",
+    "format": "JSON",
+    "annotation": "Questions are generated with a focus on multi-hop reasoning and semantic associations."
+  },
+  "methodology": {
+    "methods": [
+      "Direct prompting",
+      "In-context learning prompting"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Semantic similarity correlation"
+    ],
+    "calculation": "Accuracy is determined based on string-matching with gold references.",
+    "interpretation": "A model's performance is assessed by its ability to correctly identify entities based on their relational context.",
+    "baseline_results": "GPT-4 achieved 62% accuracy in identifying entities on EUREQA.",
+    "validation": "Results are validated through a majority vote from multiple runs, ensuring higher accuracy reliability."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Transparency",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential for biased outputs based on training data disparities."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Care is taken to avoid personal data usage in examples and testing.",
+    "data_licensing": "Data used is adhered to licensing from DBpedia.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "Efforts are made to ensure alignment with data regulation standards."
+  }
+}

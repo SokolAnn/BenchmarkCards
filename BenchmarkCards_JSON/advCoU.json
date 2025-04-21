@@ -1,0 +1,109 @@
+{
+  "benchmark_details": {
+    "name": "Open-source LLM Trustworthiness Assessment",
+    "overview": "This work conducts a comprehensive assessment of open-source LLMs across eight aspects of trustworthiness including toxicity, stereotypes, ethics, hallucination, fairness, sycophancy, privacy, and robustness against adversarial demonstrations using an adversarial prompting strategy called advCoU.",
+    "data_type": "Text",
+    "domains": [
+      "Natural Language Processing",
+      "Adversarial Attacks"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "DECODING TRUST"
+    ],
+    "resources": [
+      "https://github.com/OSU-NLP-Group/Eval-LLM-Trust.models"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the trustworthiness of open-source LLMs using adversarial assessments.",
+    "audience": [
+      "Researchers",
+      "Developers",
+      "Policy makers"
+    ],
+    "tasks": [
+      "Assess LLMs across various trustworthiness aspects",
+      "Develop safer LLMs"
+    ],
+    "limitations": null,
+    "out_of_scope_uses": [
+      "General NLP tasks",
+      "Non-adversarial assessments"
+    ]
+  },
+  "data": {
+    "source": "Adversarial prompts designed for each aspect of trustworthiness",
+    "size": "1.2K toxic prompts, 1,152 stereotypical statements, 1,816 ethical scenarios, 1K multiple-choice questions for hallucination, 100 samples for fairness, 2.5k incorrect addition statements for sycophancy, 1,800 samples for privacy, and 800 counterfactual examples for robustness",
+    "format": "Various datasets",
+    "annotation": "Manual classification based on performance in adversarial contexts"
+  },
+  "methodology": {
+    "methods": [
+      "Chain of Utterances prompting strategy",
+      "In-context learning",
+      "Adversarial demonstrations"
+    ],
+    "metrics": [
+      "Attack success rate (ASR)",
+      "Toxicity scores"
+    ],
+    "calculation": "Average ASR scores calculated across different aspects",
+    "interpretation": "Higher ASR indicates lower trustworthiness",
+    "baseline_results": "DECODING TRUST",
+    "validation": "Comparison with baseline yields insights on model vulnerabilities"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Toxicity",
+      "Stereotype bias",
+      "Ethics violations",
+      "Hallucination occurrences",
+      "Fairness issues",
+      "Sycophancy tendencies",
+      "Privacy breaches",
+      "Robustness weaknesses"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": [
+      "Potentially harmful outputs from LLMs",
+      "Bias against certain demographic groups"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "This research investigates risks related to privacy-sensitive information.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

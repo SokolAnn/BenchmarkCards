@@ -1,0 +1,111 @@
+{
+  "benchmark_details": {
+    "name": "SafeBench",
+    "overview": "A comprehensive framework designed for conducting safety evaluations of multimodal large language models (MLLMs), addressing the limitations in existing safety evaluation benchmarks.",
+    "data_type": "Harmful query dataset, multimodal data",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision",
+      "Audio Processing"
+    ],
+    "languages": [
+      "N/A"
+    ],
+    "similar_benchmarks": [
+      "MM-SafetyBench",
+      "JailbreakV-28K",
+      "FigStep"
+    ],
+    "resources": [
+      "https://safebench-mm.github.io/",
+      "https://huggingface.co/datasets/Zonghao2025/safebench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the safety of multimodal large language models and provide an up-to-date leaderboard on MLLM safety.",
+    "audience": [
+      "AI researchers",
+      "Developers of machine learning models",
+      "Safety evaluators"
+    ],
+    "tasks": [
+      "Safety evaluation of MLLMs",
+      "Dataset benchmarking",
+      "Developing automated evaluation protocols"
+    ],
+    "limitations": "Limited sample size may not fully capture the diversity of harmful queries.",
+    "out_of_scope_uses": [
+      "Evaluation of extreme scenarios?",
+      "Non-harmful use cases?"
+    ]
+  },
+  "data": {
+    "source": "Generated using a combination of LLM judges and surveys of existing guidelines.",
+    "size": "2,300 harmful query pairs across 23 risk scenarios.",
+    "format": "Text, images, audio",
+    "annotation": "High-quality harmful queries generated and categorized by LLM judges."
+  },
+  "methodology": {
+    "methods": [
+      "Jury deliberation evaluation protocol",
+      "Automated dataset generation pipeline"
+    ],
+    "metrics": [
+      "Attack Success Rate (ASR)",
+      "Safety Risk Index (SRI)"
+    ],
+    "calculation": "ASR is computed as the ratio of successful harmful responses to total queries. SRI is the aggregated threat response score normalized to a scale of 0 to 100.",
+    "interpretation": "Higher ASR indicates lower safety performance. Higher SRI indicates better safety performance.",
+    "baseline_results": "N/A",
+    "validation": "Conducted large-scale experiments on 15 open-source MLLMs and 6 commercial MLLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Medical Advice",
+      "Legal Advice",
+      "Investment Advice",
+      "Personal Privacy",
+      "Cybersecurity",
+      "Hate Speech",
+      "Violence",
+      "Illegal Activities"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential generation of harmful outputs including misinformation, privacy violations, and incitement of violence."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "User data is not collected; focuses on generated content safety.",
+    "data_licensing": "Datasets created from LLM outputs and public resources.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "Focuses on safety evaluation without violating ethical standards."
+  }
+}

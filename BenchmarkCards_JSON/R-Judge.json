@@ -1,0 +1,123 @@
+{
+  "benchmark_details": {
+    "name": "R-Judge",
+    "overview": "A benchmark crafted to evaluate the proficiency of LLMs in judging and identifying safety risks given agent interaction records.",
+    "data_type": "text",
+    "domains": [
+      "programming",
+      "internet of things (IoT)",
+      "software",
+      "web",
+      "finance"
+    ],
+    "languages": null,
+    "similar_benchmarks": null,
+    "resources": [
+      "https://github.com/Lordog/R-Judge"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the risk awareness of large language models (LLMs) in interactive environments, specifically in judging safety risks during agent interactions.",
+    "audience": [
+      "Researchers",
+      "Practitioners",
+      "LLM Engineers"
+    ],
+    "tasks": [
+      "Judging safety risks",
+      "Identifying unsafe actions from agent interactions",
+      "Enhancing LLM safety awareness"
+    ],
+    "limitations": null,
+    "out_of_scope_uses": null
+  },
+  "data": {
+    "source": "Curated from diverse agent interaction scenarios and annotated by human experts.",
+    "size": "569 records",
+    "format": "text",
+    "annotation": "High-quality curation with annotated safety labels and risk descriptions."
+  },
+  "methodology": {
+    "methods": [
+      "Human annotation",
+      "Evaluation on 11 LLMs",
+      "Fine-tuning experiments"
+    ],
+    "metrics": [
+      "F1 score",
+      "Recall",
+      "Specificity",
+      "Effectiveness"
+    ],
+    "calculation": "F1 = 2 * (Recall * Precision) / (Recall + Precision)",
+    "interpretation": "The model's ability to accurately identify whether agent actions are safe or unsafe.",
+    "baseline_results": "Random scores indicate a baseline performance, where models generally score lower than random in safety judgment tests.",
+    "validation": "GPT-4 as an automatic scorer to validate model-generated analyses."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety Judgment",
+      "Risk Identification"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Lack of training data transparency"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on Jobs"
+          ]
+        },
+        {
+          "category": "Misuse",
+          "subcategory": [
+            "Non-disclosure"
+          ]
+        },
+        {
+          "category": "Governance",
+          "subcategory": [
+            "Lack of system transparency"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Ensure data safety and minimize risks associated with agent actions."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Dataset includes records of potentially sensitive information; handling must comply with privacy regulations.",
+    "data_licensing": "Data is curated from various sources and must comply with respective licensing agreements.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "Need to ensure models comply with data protection laws and ethical guidelines."
+  }
+}

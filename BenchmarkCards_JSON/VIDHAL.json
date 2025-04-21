@@ -1,0 +1,99 @@
+{
+  "benchmark_details": {
+    "name": "VIDHAL",
+    "overview": "VIDHAL is a benchmark specifically designed to evaluate video-based hallucinations in Vision Large Language Models (VLLMs). It features a diverse range of video instances annotated with captions exhibiting varying levels of hallucination.",
+    "data_type": "Video",
+    "domains": [
+      "Computer Vision",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMHalBench",
+      "Hallu-sionBench",
+      "AMBER"
+    ],
+    "resources": [
+      "https://github.com/Lookuz/VidHal"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive benchmark for evaluating hallucinations in VLLMs using video data.",
+    "audience": [
+      "Researchers",
+      "Developers",
+      "Practitioners"
+    ],
+    "tasks": [
+      "Evaluating hallucination generation",
+      "Understanding spatiotemporal responses",
+      "Fine-grained caption ordering"
+    ],
+    "limitations": "The benchmark uniquely focuses on video hallucinations, excluding text-only or image-only evaluation.",
+    "out_of_scope_uses": [
+      "Non-video language model evaluations",
+      "Comparative studies on image-only benchmarks"
+    ]
+  },
+  "data": {
+    "source": "Public video understanding datasets including TempCompass, MVBench, Perception Test, and AutoEval-Video.",
+    "size": "1,000 video instances",
+    "format": "Annotated videos with multiple captions",
+    "annotation": "Captions that demonstrate varying levels of hallucinations."
+  },
+  "methodology": {
+    "methods": [
+      "Video annotation",
+      "Caption generation using VLLMs",
+      "Human validation for accuracy assessment"
+    ],
+    "metrics": [
+      "Multiple-Choice Question Answering (MCQA)",
+      "NDCG for caption ranking"
+    ],
+    "calculation": "Accuracy is calculated based on match rates between generated captions and ground truth.",
+    "interpretation": "Higher accuracy indicates better performance in understanding and reducing hallucinations.",
+    "baseline_results": null,
+    "validation": "Data was validated by human annotators to ensure reliability."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness Risk",
+      "Privacy Risk",
+      "Robustness Risk"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset respects user privacy and anonymity protocols.",
+    "data_licensing": "Data sourced from public datasets that allow for academic use.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "The dataset conforms to relevant data usage regulations."
+  }
+}

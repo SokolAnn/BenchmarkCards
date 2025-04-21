@@ -1,0 +1,101 @@
+{
+  "benchmark_details": {
+    "name": "MedHallu",
+    "overview": "A comprehensive benchmark designed for detecting medical hallucinations in Large Language Models (LLMs). The dataset comprises 10,000 high-quality question-answer pairs derived from PubMedQA, systematically categorized into easy, medium, and hard detection tiers based on the subtlety of hallucinations.",
+    "data_type": "Medical",
+    "domains": [
+      "Healthcare",
+      "Medicine"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "HaluEval",
+      "HaluBench"
+    ],
+    "resources": [
+      "https://medhallu.github.io/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a structured evaluation resource for the detection of medical hallucinations in LLMs.",
+    "audience": [
+      "Researchers",
+      "Healthcare professionals",
+      "AI developers"
+    ],
+    "tasks": [
+      "Hallucination detection in medical contexts",
+      "Model benchmarking for AI safety in healthcare"
+    ],
+    "limitations": null,
+    "out_of_scope_uses": null
+  },
+  "data": {
+    "source": "PubMedQA",
+    "size": "10,000 samples",
+    "format": "Question-answer pairs",
+    "annotation": "Annotated to distinguish accurate responses from hallucinated content."
+  },
+  "methodology": {
+    "methods": [
+      "LLM-based quality filtering",
+      "Bidirectional entailment",
+      "TextGrad optimization"
+    ],
+    "metrics": [
+      "F1 score",
+      "Precision"
+    ],
+    "calculation": "F1 score calculated based on true positive, false positive, and false negative values.",
+    "interpretation": "Higher F1 scores indicate better hallucination detection performance.",
+    "baseline_results": "Best model achieved F1 score of 0.625 for 'hard' hallucination detection.",
+    "validation": "Validation performed using a multi-model ensemble approach."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Transparency",
+      "Privacy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Lack of training data transparency"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All data uses de-identified biomedical literature.",
+    "data_licensing": "Utilizes publicly available PubMedQA data under MIT licenses.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

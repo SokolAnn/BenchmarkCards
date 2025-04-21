@@ -1,0 +1,118 @@
+{
+  "benchmark_details": {
+    "name": "SG-Bench",
+    "overview": "SG-Bench is a multi-dimensional safety evaluation benchmark designed to assess the generalization of large language model (LLM) safety across various tasks and prompt types. It integrates both generative and discriminative evaluation tasks and includes extended data to examine the impact of prompt engineering and jailbreak techniques on safety performance.",
+    "data_type": "malicious queries",
+    "domains": [
+      "Safety evaluation",
+      "Machine Learning",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SafetyPrompts",
+      "SafetyBench",
+      "EasyJailbreak"
+    ],
+    "resources": [
+      "https://github.com/MurrayTom/SG-Bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation of LLM safety generalization across diverse tasks and prompt types, facilitating safer AI model development.",
+    "audience": [
+      "AI researchers",
+      "Model developers",
+      "Safety engineers"
+    ],
+    "tasks": [
+      "Evaluate safety performance",
+      "Examine safety alignment techniques",
+      "Analyze prompt engineering impacts"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": [
+      "Non-malicious content evaluation",
+      "General LLM performance assessment"
+    ]
+  },
+  "data": {
+    "source": "Collected from multiple public datasets including AdvBench, HarmfulQA, and Beaver-eval",
+    "size": "1442 malicious queries",
+    "format": "Text",
+    "annotation": "Malicious queries categorized into safety issues like toxic content, misinformation, privacy leaks, etc."
+  },
+  "methodology": {
+    "methods": [
+      "Jailbreak attack techniques",
+      "Multiple-choice questions",
+      "Safety judgments"
+    ],
+    "metrics": [
+      "Failure Rate"
+    ],
+    "calculation": "The proportion of harmful responses to the total number of test samples, averaged across multiple tests.",
+    "interpretation": "Lower failure rates indicate better safety performance in LLMs.",
+    "baseline_results": "Claude-3 shows the best safety performance with an average failure rate of 2.99% compared to Qwen1.5-7B-chat with 30.79% average failure rate.",
+    "validation": "Evaluated using LlamaGuard-7B as a classifier for harmful responses."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Malicious Use",
+      "Privacy leak & infringement",
+      "Misinformation",
+      "Stereotyping & Bias",
+      "Toxic content"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack",
+            "Extraction attack",
+            "Data poisoning"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias",
+            "Decision bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data",
+            "Reidentification"
+          ]
+        },
+        {
+          "category": "Explainability",
+          "subcategory": [
+            "Inaccessible training data",
+            "Unexplainable output"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Identified risks involve exposure to harmful information generation and lack of discrimination in responses."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data collected includes potentially harmful queries and was handled according to ethical guidelines to minimize risks.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "Access to potentially harmful queries is limited to authorized researchers adhering to ethical standards."
+  }
+}

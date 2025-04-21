@@ -1,0 +1,122 @@
+{
+  "benchmark_details": {
+    "name": "AI Safety Benchmark v0.5",
+    "overview": "The AI Safety Benchmark v0.5 has been designed to assess the safety risks of AI systems that use language models, specifically focusing on an adult chatting to a general-purpose assistant in English across a limited set of personas.",
+    "data_type": "Text",
+    "domains": [
+      "General AI Safety",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "HELM",
+      "BIG-bench"
+    ],
+    "resources": [
+      "https://github.com/mlcommons/modelbench",
+      "https://mlcommons.org/aisafety"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate and benchmark the safety aspects of systems built on generative Language Models and to identify potential hazards in model responses.",
+    "audience": [
+      "Model providers",
+      "Model integrators",
+      "AI standards makers and regulators",
+      "Researchers",
+      "Civil society groups"
+    ],
+    "tasks": [
+      "Assessing AI safety risks",
+      "Benchmarking model responses"
+    ],
+    "limitations": "Focused on a specific use case and three personas, does not evaluate more sophisticated user interactions.",
+    "out_of_scope_uses": [
+      "Training the models",
+      "General AI model safety outside specified use cases"
+    ]
+  },
+  "data": {
+    "source": "MLCommons AI Safety Working Group",
+    "size": "43,090 test items",
+    "format": "Text prompts",
+    "annotation": "Each prompt has been annotated based on seven hazard categories."
+  },
+  "methodology": {
+    "methods": [
+      "Manual prompt creation",
+      "Automated safety evaluation with LlamaGuard"
+    ],
+    "metrics": [
+      "Percentage of unsafe responses",
+      "Grading system on a 5-point scale"
+    ],
+    "calculation": "Percentage of unsafe responses calculated from the model outputs assessed against benchmark items.",
+    "interpretation": "Grades indicate relative safety risk of models based on the percentage of unsafe responses.",
+    "baseline_results": "N/A",
+    "validation": "Results were annotated by multiple assessors for consistency."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Violent crimes",
+      "Non-violent crimes",
+      "Sex-related crimes",
+      "Child sexual exploitation",
+      "Indiscriminate weapons",
+      "Suicide & self-harm",
+      "Hate"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Lack of training data transparency",
+            "Uncertain data provenance"
+          ]
+        },
+        {
+          "category": "Data Laws",
+          "subcategory": [
+            "Data usage restrictions"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data",
+            "Data privacy rights alignment"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Value Alignment",
+          "subcategory": [
+            "Toxic output"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential for enabling various safety hazards, including violence, scams, and self-harm."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "No individual data is collected; prompts are anonymized.",
+    "data_licensing": "Released under CC-BY license.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "Followed ethical guidelines for safety testing."
+  }
+}

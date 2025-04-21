@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "name": "BackdoorLLM",
+    "overview": "BackdoorLLM is the first comprehensive benchmark for studying backdoor attacks on Large Language Models (LLMs). It features a repository of backdoor benchmarks with a standardized training pipeline, diverse attack strategies, extensive evaluations, and insights into the effectiveness and limitations of backdoors in LLMs.",
+    "data_type": "N/A",
+    "domains": [
+      "Natural Language Processing",
+      "Machine Learning"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "BadChain",
+      "BackdoorBench"
+    ],
+    "resources": [
+      "https://github.com/bboylyg/BackdoorLLM"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a standardized framework to study backdoor attacks on LLMs and raise awareness of related security threats.",
+    "audience": [
+      "Researchers",
+      "AI practitioners",
+      "Safety analysts"
+    ],
+    "tasks": [
+      "Evaluate backdoor attack efficacy",
+      "Develop defense mechanisms against backdoor threats"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": [
+      "N/A"
+    ]
+  },
+  "data": {
+    "source": "Stanford Alpaca, AdvBench, math reasoning data, SST-2, AGNews",
+    "size": "N/A",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Data Poisoning Attacks",
+      "Weight Poisoning Attacks",
+      "Hidden State Attacks",
+      "Chain-of-Thought Attacks"
+    ],
+    "metrics": [
+      "Attack Success Rate (ASR)"
+    ],
+    "calculation": "ASR is measured for both clean prompts and backdoored prompts.",
+    "interpretation": "Higher ASR indicates a more effective backdoor attack.",
+    "baseline_results": null,
+    "validation": "Extensive experiments across 8 backdoor attacks on 7 scenarios and 6 model architectures."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Data poisoning",
+      "Weight poisoning",
+      "Hidden state manipulation",
+      "Chain-of-thought"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Misuse",
+          "subcategory": [
+            "Spreading disinformation",
+            "Dangerous use"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential for generating harmful outputs based on backdoor triggers."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

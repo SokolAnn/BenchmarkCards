@@ -1,0 +1,114 @@
+{
+  "benchmark_details": {
+    "name": "ALERT",
+    "overview": "ALERT is a large-scale benchmark designed to assess the safety of Large Language Models (LLMs) using red teaming methodologies, comprised of over 45k instructions categorized under a novel fine-grained risk taxonomy.",
+    "data_type": "Red teaming prompts",
+    "domains": null,
+    "languages": null,
+    "similar_benchmarks": null,
+    "resources": [
+      "https://github.com/Babelscape/ALERT"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate and enhance the safety of LLMs through comprehensive risk assessment.",
+    "audience": [
+      "Researchers",
+      "Developers",
+      "Policymakers"
+    ],
+    "tasks": [
+      "Assess the safety of LLMs",
+      "Identify vulnerabilities in models",
+      "Improve safety mechanisms"
+    ],
+    "limitations": "The benchmark focuses exclusively on harmful prompts and may not detect evasive or unhelpful responses to harmless prompts.",
+    "out_of_scope_uses": [
+      "General language generation tasks not related to safety"
+    ]
+  },
+  "data": {
+    "source": "Anthropic red-team-attempts dataset",
+    "size": "45k red teaming prompts",
+    "format": "Categorized instructions",
+    "annotation": "Categorized according to a novel safety risk taxonomy"
+  },
+  "methodology": {
+    "methods": [
+      "Red teaming",
+      "Zero-shot classification",
+      "Prompt injection"
+    ],
+    "metrics": [
+      "Safety scores",
+      "Category-specific safety scores"
+    ],
+    "calculation": "Safety scores are calculated based on the number of safe responses divided by total prompts in each category.",
+    "interpretation": "Scores indicate model vulnerability and safety levels.",
+    "baseline_results": null,
+    "validation": "Evaluated against 10 popular LLMs"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Hate Speech & Discrimination",
+      "Criminal Planning",
+      "Regulated or Controlled Substances",
+      "Sexual Content",
+      "Suicide & Self-Harm",
+      "Guns & Illegal Weapons"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Lack of training data transparency",
+            "Uncertain data provenance"
+          ]
+        },
+        {
+          "category": "Data Laws",
+          "subcategory": [
+            "Data usage restrictions",
+            "Data acquisition restrictions",
+            "Data transfer restrictions"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data",
+            "Reidentification"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Legal Compliance",
+          "subcategory": [
+            "Model usage rights restrictions"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on cultural diversity"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Identifies model vulnerabilities in generating harmful content."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Prompts may elicit sensitive information but are focused on safety assessment.",
+    "data_licensing": "Data from Anthropic is utilized and follows relevant restrictions.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "Evaluations can be adjusted according to different legal contexts."
+  }
+}
