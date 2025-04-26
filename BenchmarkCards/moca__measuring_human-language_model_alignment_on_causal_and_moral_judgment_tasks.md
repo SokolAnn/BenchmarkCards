@@ -67,16 +67,12 @@
 ## ⚠️ Targeted Risks
 
 **Risk Categories**:
-- Accuracy
 - Fairness
-- Transparency
 - Explainability
 
 **Atlas Risks**:
-- **Accuracy**: Poor model accuracy
 - **Fairness**: Data bias
 - **Transparency**: Lack of training data transparency
-- **Explainability**: Unexplainable output
 
 ## 🔒 Ethical and Legal Considerations
 
