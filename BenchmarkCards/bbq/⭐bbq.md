@@ -4,7 +4,7 @@
 
 **Name**: BBQ
 
-**Overview**: BBQ is a dataset of question sets that highlight attested social biases against people belonging to protected classes along nine social dimensions relevant for U.S. English-speaking contexts. It evaluates model responses in terms of how strongly they reflect social biases and under what contexts these biases override correct answers.
+**Overview**: BBQ is a dataset of question sets that highlight attested social biases against people belonging to protected classes along nine social dimensions relevant for U.S. English-speaking contexts. It evaluates model responses in terms of how *consistently* responses reflect social biases and under what contexts these biases override correct answers.
 
 **Data Type**: Dataset
 
@@ -13,13 +13,16 @@
 - Natural Language Processing
 
 **Languages**:
-- English
+- English (Original)
+- Korean ([Cho et al., 2024 - K-BBQ](https://direct.mit.edu/tacl/article/doi/10.1162/tacl_a_00661/120915))
+- Dutch, Spanish, Turkish ([Kranen et al., 2024 - Multilingual BBQ Adaptation](https://arxiv.org/pdf/2406.07243))
 
 **Similar Benchmarks**:
 - UnQover
 
 **Resources**:
 - [GitHub Repository](https://github.com/nyu-mll/BBQ)
+- [Original Paper (NeurIPS 2021 Datasets and Benchmarks Track)](https://arxiv.org/abs/2110.08193)
 
 ## 🎯 Purpose and Intended Users
 
@@ -34,7 +37,7 @@
 - Evaluate biases in QA model outputs
 - Identify contexts that lead to biased outputs
 
-**Limitations**: The dataset focuses on biases relevant to the U.S. context and may not generalize to different cultural settings.
+**Limitations**: The dataset focuses on biases relevant to the U.S. context and may not generalize to different cultural settings. It is English-only, though work has expanded BBQ into other languages (e.g., Korean, Dutch, Spanish, Turkish).
 
 **Out of Scope Uses**:
 - Generalizing results to non-U.S. languages or contexts
@@ -45,7 +48,7 @@
 
 **Size**: 58,492 unique examples
 
-**Format**: Templates of questions and contexts
+**Format**: Templated question + answer option sets
 
 **Annotation**: Validated by crowdworkers
 
