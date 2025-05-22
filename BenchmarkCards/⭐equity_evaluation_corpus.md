@@ -67,7 +67,6 @@
 
 **Atlas Risks**:
 - **Fairness**: Data bias
-- **Societal Impact**: Impact on affected communities
 
 **Demographic Analysis**: Biases were statistically analyzed across gender and race.
 
