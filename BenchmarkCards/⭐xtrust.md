@@ -10,13 +10,14 @@
 
 **Domains**:
 - Healthcare
-- Finance
 - Machine Ethics
 - Misinformation
 - Fairness
 - Robustness
 - Privacy
 - Toxicity
+- Illegal Activity
+- Hallucination
 
 **Languages**:
 - Arabic
