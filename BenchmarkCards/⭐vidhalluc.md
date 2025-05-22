@@ -21,7 +21,7 @@
 - EventHallusion
 
 **Resources**:
-- [Resource](https://vid-halluc.github.io)
+- [Resource](https://people-robots.github.io/vidhalluc/)
 
 ## 🎯 Purpose and Intended Users
 
