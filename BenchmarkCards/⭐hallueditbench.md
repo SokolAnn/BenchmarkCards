@@ -41,7 +41,7 @@
 
 **Source**: Wikidata
 
-**Size**: More than 6,000 hallucinations from 12,619, 13,210, and 14,366 for Llama2-7B, Llama3-8B, and Mistral-v0.3-7B respectively
+**Size**: 2,230 hallucinations for Llama2-7B, 2,233 for Llama3-8B, and 2,275 for Mistral-v0.3-7B
 
 **Format**: N/A
 
