@@ -1,4 +1,4 @@
-# ROBBIE: Robust Bias Evaluation of Large Generative Language Models
+# ROBBIE
 
 ## 📊 Benchmark Details
 
