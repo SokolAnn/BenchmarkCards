@@ -15,7 +15,6 @@
 - English
 
 **Similar Benchmarks**:
-- AutoHall
 - HaloCheck
 - MedMCQA
 - Med-HALT
@@ -60,7 +59,6 @@
 
 **Metrics**:
 - DAHL Score
-- Factual Accuracy
 
 **Calculation**: Average factual accuracy of atomic units derived from model responses.
 
