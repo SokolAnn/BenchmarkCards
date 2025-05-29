@@ -40,7 +40,7 @@
 - Performance comparison among different LLMs
 - Holistic assessment of LLM capabilities
 
-**Limitations**: Performance may vary based on language models' ability to understand prompts.
+**Limitations**: CLEVA provides multiple prompt templates per task, and aggregates results across templates (e.g., by averaging) to reduce sensitivity to specific prompts.
 
 **Out of Scope Uses**:
 - Evaluation of non-Chinese LLMs
@@ -91,9 +91,9 @@
 **Atlas Risks**:
 - **Accuracy**: Poor model accuracy
 - **Data Laws**: Data usage restrictions
-- **Privacy**: Personal information in prompt
 - **Fairness**: Data bias
 - **Robustness**: Data poisoning
+- **Privacy**: Not a concern for CLEVA, as all new data is synthetic or translated from English datasets with privacy ensured by original authors.
 
 **Demographic Analysis**: N/A
 
@@ -108,3 +108,10 @@
 **Consent Procedures**: Participants were informed about data usage during the manual collection process.
 
 **Compliance With Regulations**: Followed ethical guidelines for data collection and testing.
+
+---
+
+**Related Benchmark**:  
+A comprehensive bilingual benchmark with systematic contamination prevention, C2LEVA, has recently been released by the CLEVA authors:  
+- [C2LEVA Paper](https://arxiv.org/abs/2412.04947)  
+- [C2LEVA Website](http://www.lavicleva.com/c2leva)
