@@ -75,10 +75,10 @@
 - Fairness
 
 **Atlas Risks**:
-- **Accuracy**: Data contamination, Poor model accuracy
-- **Transparency**: Lack of training data transparency
-- **Privacy**: Personal information in data
-- **Fairness**: Data bias
+- **Accuracy**: The dataset allows evaluation of model accuracy; poor performance on MedHallu indicates hallucination issues in tested models, not in the dataset itself.
+- **Transparency**: No training process is involved in this benchmark; however, models evaluated on MedHallu may lack transparency regarding their own training data.
+- **Privacy**: No personal information exists in MedHallu or its PubMedQA source; all data are de-identified biomedical literature.
+- **Fairness**: The risk of data bias is minimal, as PubMedQA is a well-curated dataset and no modifications introduce bias; any bias observed reflects the models, not the dataset.
 
 ## 🔒 Ethical and Legal Considerations
 
