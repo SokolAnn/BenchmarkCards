@@ -1,4 +1,4 @@
-# AWARE BENCH
+# AWARE 
 
 ## 📊 Benchmark Details
 
@@ -9,7 +9,6 @@
 **Data Type**: Dataset
 
 **Domains**:
-- Natural Language Processing
 - Artificial Intelligence
 
 **Languages**:
