@@ -12,9 +12,11 @@
 - finance
 - smart home devices
 - email
+- health
+- others
 
 **Languages**:
-- N/A
+- English
 
 **Similar Benchmarks**:
 - N/A
@@ -63,16 +65,16 @@
 
 **Calculation**: ASR is calculated based on the proportion of successful attacks among valid outputs.
 
-**Interpretation**: Higher ASR indicates greater vulnerability to IPI attacks.
+**Interpretation**: Higher ASR indicates greater vulnerability to IPI attacks; validation involves analysis of outputs to determine LLM agent resilience against indirect prompt injection.
 
-**Validation**: The evaluation of LLM agents includes valid output analysis to determine their resilience.
+**Validation**: Valid output analysis is used to assess how resilient agents are against IPI attacks.
 
 ## ⚠️ Targeted Risks
 
 **Risk Categories**:
-- Indirect prompt injection
-- Data exposure
-- Financial loss
+- Indirect prompt injection (IPI) attacks
+  - Data stealing attacks
+  - Direct harm attacks
 
 **Atlas Risks**:
 No specific atlas risks defined
