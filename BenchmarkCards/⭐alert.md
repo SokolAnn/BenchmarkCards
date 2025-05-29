@@ -32,11 +32,11 @@
 
 ## 💾 Data
 
-**Source**: Anthropic red-team-attempts dataset
+**Source**: Anthropic red-team-attempts dataset; additional prompts created using templated prompts and LLM rewriting
 
 **Size**: 45k red teaming prompts
 
-**Format**: Categorized instructions
+**Format**: Text prompts
 
 **Annotation**: Categorized according to a novel safety risk taxonomy
 
@@ -46,10 +46,13 @@
 - Red teaming
 - Zero-shot classification
 - Prompt injection
+- Adversarial testing
+- Policy evaluation based on safety categories
 
 **Metrics**:
 - Safety scores
 - Category-specific safety scores
+- LlamaGuard safety classifier
 
 **Calculation**: Safety scores are calculated based on the number of safe responses divided by total prompts in each category.
 
