@@ -59,7 +59,7 @@
 
 **Interpretation**: Scores reflect the ability of LLMs to maintain character identity across specified time points.
 
-**Baseline Results**: Baseline results indicate significant variability in character hallucination rates among different LLMs with some achieving above 90% consistency in ideal scenarios.
+**Baseline Results**: While some LLMs achieve above 90% consistency in ideal scenarios, the most critical finding is that LLMs produce incorrect responses to temporally/spatially grounded questions more than 50% of the time, highlighting substantial limitations in temporal reasoning.
 
 **Validation**: Manually annotated results confirmed via human evaluation showing alignment with outputs.
 
@@ -79,9 +79,9 @@
 
 ## 🔒 Ethical and Legal Considerations
 
-**Privacy And Anonymity**: The dataset consists primarily of publicly available texts, ensuring no private data is included.
+**Privacy And Anonymity**: The dataset is derived from original works of fiction and is shared strictly for research-only purposes. No private data is included.
 
-**Data Licensing**: Utilizes excerpts from copyrighted material under fair use for educational and research purposes.
+**Data Licensing**: Utilizes excerpts from copyrighted material under fair use, strictly for educational and research purposes. Usage is restricted to non-commercial research contexts.
 
 **Consent Procedures**: Not Applicable
 
