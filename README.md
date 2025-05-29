@@ -30,10 +30,18 @@ Paper link: https://arxiv.org/abs/2410.12974
 ---
 ## 🛠️ How to Use this Repository
 ### 🔗 Key Contents
-- 📋 **BenchmarkCard_Template.md**: A handy template for creating your very own BenchmarkCard for LLM documentation. 
-- ⚖️ **ComparisonBenchmarks.md**: Curious about different benchmarks? This document provides examples of benchmarks used for evaluating risks in LLMs. It doesn't compare them directly but instead illustrates diverse benchmarks to help you understand their various purposes and contexts of use. 
-- 🗂 **Benchmarks_and_Risk_Table.md**: A detailed table with benchmarks found in literature, including key references.
-- 🌐 **Benchmark_Network.md**:  A visual network that shows how benchmarks connect and relate, especially when it comes to evaluating LLM risks.
+- 📁 **BenchmarkCards/** – Generated BenchmarkCards in Markdown. When authors suggest fixes, we update the card and add a ⭐ to the filename.  
+- 📁 **BenchmarkCards_JSON/** – JSON versions of the BenchmarkCards for programmatic use.  
+- 🖥️ **platform/** – Source code for the upcoming BenchmarkCards Platform
+- 📸 **screenshots/** – Screnshots of the platforms 
+- 📋 **BenchmarkCard_Template.md** – A ready‑to‑use template for creating new BenchmarkCards.  
+- 📊 **AI_Risk_Atlas.md** – A mapping between IBM Atlas AI risk categories and example benchmarks.  
+
+## 🙏 Acknowledgments
+
+We gratefully thank all benchmark authors who provided feedback and approval for the BenchmarkCards in this repository. Your collaboration is essential for making LLM evaluation more transparent, accurate, and useful. Thank you!
+
+
 
 ## 🚧 BenchmarkCards Platform 🚧
 
@@ -110,5 +118,5 @@ If you use this work in your research, please cite:
 ## 🤝 **Get Involved!**
 Would you be interested in contributing to the BenchmarkCards initiative? Feel free to explore, fork the repository, and open issues to suggest improvements or new benchmarks. Let's collaborate and shape the future of LLM benchmarking!
 
-Edited locally on 2025-04-21.
+
 
