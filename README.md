@@ -104,12 +104,15 @@ python app.py
 ## Citation
 If you use this work in your research, please cite:
 ```bibtex
-@article{sokol2024benchmarkcards,
-  title={BenchmarkCards: Large Language Model and Risk Reporting},
-  author={Sokol, Anna and Moniz, Nuno and Daly, Elizabeth and Hind, Michael and Chawla, Nitesh},
-  journal={arXiv preprint arXiv:2410.12974},
-  year={2024}
-}, 
+@misc{sokol2025benchmarkcardsstandardizeddocumentationlarge,
+      title={BenchmarkCards: Standardized Documentation for Large Language Model Benchmarks}, 
+      author={Anna Sokol and Elizabeth Daly and Michael Hind and David Piorkowski and Xiangliang Zhang and Nuno Moniz and Nitesh Chawla},
+      year={2025},
+      eprint={2410.12974},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2410.12974}, 
+}
 ```
 ---
 ## 🤝 **Get Involved!**
