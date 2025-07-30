@@ -6,16 +6,17 @@
 # BENCHMARKCARDS
 
 <!-- BADGES -->
-<img src="https://img.shields.io/github/license/SokolAnn/BenchmarkCards?style=flat&logo=opensourceinitiative&logoColor=white&color=0080ff" alt="license">
-<img src="https://img.shields.io/github/last-commit/SokolAnn/BenchmarkCards?style=flat&logo=git&logoColor=white&color=0080ff" alt="last-commit">
-<img src="https://img.shields.io/github/languages/top/SokolAnn/BenchmarkCards?style=flat&color=0080ff" alt="repo-top-language">
-<img src="https://img.shields.io/github/languages/count/SokolAnn/BenchmarkCards?style=flat&color=0080ff" alt="repo-language-count">
+<img src="https://img.shields.io/github/license/SokolAnn/BenchmarkCards?style=flat&logo=opensourceinitiative&logoColor=white&color=0080ff" alt="MIT License">
+<img src="https://img.shields.io/github/last-commit/SokolAnn/BenchmarkCards?style=flat&logo=git&logoColor=white&color=0080ff" alt="Last Commit">
+<img src="https://img.shields.io/github/languages/top/SokolAnn/BenchmarkCards?style=flat&color=0080ff" alt="Top Language">
+<img src="https://img.shields.io/github/languages/count/SokolAnn/BenchmarkCards?style=flat&color=0080ff" alt="Language Count">
 
 <img src="https://img.shields.io/badge/JSON-000000.svg?style=flat&logo=JSON&logoColor=white" alt="JSON">
 <img src="https://img.shields.io/badge/FastAPI-009688.svg?style=flat&logo=FastAPI&logoColor=white" alt="FastAPI">
 <img src="https://img.shields.io/badge/Python-3776AB.svg?style=flat&logo=Python&logoColor=white" alt="Python">
 <img src="https://img.shields.io/badge/OpenAI-412991.svg?style=flat&logo=OpenAI&logoColor=white" alt="OpenAI">
 <img src="https://img.shields.io/badge/Pydantic-E92063.svg?style=flat&logo=Pydantic&logoColor=white" alt="Pydantic">
+<img src="https://img.shields.io/badge/Content-License-CC%20BY%204.0-lightgrey.svg?style=flat&logo=creativecommons&logoColor=black" alt="CC BY 4.0">
 
 </div>
 <br/>
@@ -116,6 +117,10 @@ If you use this work in your research, please cite:
 ---
 ## 🤝 **Get Involved!**
 Would you be interested in contributing to the BenchmarkCards initiative? Feel free to explore, fork the repository, and open issues to suggest improvements or new benchmarks. Let's collaborate and shape the future of LLM benchmarking!
+---
+## 📄 License
+All source code in this repository is licensed under the [MIT License](LICENSE).  
+BenchmarkCard content (Markdown and JSON files) is licensed under the [Creative Commons Attribution 4.0 International License (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
 
 
 
