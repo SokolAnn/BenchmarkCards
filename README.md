@@ -18,29 +18,28 @@
 <img src="https://img.shields.io/badge/Pydantic-E92063.svg?style=flat&logo=Pydantic&logoColor=white" alt="Pydantic">
 
 </div>
-<br>
+**<br/>** 
 
 
 BenchmarkCards offer a standardized way to document LLM benchmarks clearly and transparently. Inspired by Model Cards and Datasheets, BenchmarkCards help researchers and practitioners understand exactly what benchmarks test, how they relate to real-world risks, and how to interpret their results responsibly.
 
-Who is this for? AI researchers, data scientists, auditors, policymakers, and anyone concerned with responsible AI deployment.
+**Who is this for?** AI researchers, data scientists, auditors, policymakers, and anyone concerned with responsible AI deployment.
 
-Paper link: https://arxiv.org/abs/2410.12974
+**Paper link:** https://arxiv.org/abs/2410.12974
 
 ---
 ## 🛠️ How to Use this Repository
 ### 🔗 Key Contents
-- 📁 **BenchmarkCards/** – Generated BenchmarkCards in Markdown. When authors suggest fixes, we update the card and add a ⭐ to the filename.  
-- 📁 **BenchmarkCards_JSON/** – JSON versions of the BenchmarkCards for programmatic use.  
-- 🖥️ **platform/** – Source code for the upcoming BenchmarkCards Platform
-- 📸 **screenshots/** – Screnshots of the platforms 
+- 📁 **BenchmarkCards/** – Generated BenchmarkCards in Markdown. Filenames prefixed with ⭐ indicate that the benchmark author reviewed and approved the card.  
+- 📁 **BenchmarkCards_JSON/** – JSON versions of the BenchmarkCards for programmatic access.  
+- 🖥️ **platform/** – Source code for the upcoming BenchmarkCards Platform.  
+- 📸 **screenshots/** – Screenshots illustrating the platform interface.  
 - 📋 **BenchmarkCard_Template.md** – A ready‑to‑use template for creating new BenchmarkCards.  
-- 📊 **AI_Risk_Atlas.md** – A mapping between IBM Atlas AI risk categories and example benchmarks.  
+- 📊 **AI_Risk_Atlas.md** – Maps benchmarks to IBM Atlas AI risk categories and associated benchmarks.
 
 ## 🙏 Acknowledgments
 
-We gratefully thank all benchmark authors who provided feedback and approval for the BenchmarkCards in this repository. Your collaboration is essential for making LLM evaluation more transparent, accurate, and useful. Thank you!
-
+We gratefully thank all benchmark authors who provided feedback and approval for the BenchmarkCards in this repository. **Benchmarks approved by their original authors are marked with a ⭐ in the filename.** Your collaboration is essential for making LLM evaluation more transparent, accurate, and useful. Thank you!
 
 
 ## 🚧 BenchmarkCards Platform 🚧
