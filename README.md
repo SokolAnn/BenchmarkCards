@@ -115,8 +115,9 @@ If you use this work in your research, please cite:
 }
 ```
 ---
-## 🤝 **Get Involved!**
+## 🤝 Get Involved!
 Would you be interested in contributing to the BenchmarkCards initiative? Feel free to explore, fork the repository, and open issues to suggest improvements or new benchmarks. Let's collaborate and shape the future of LLM benchmarking!
+
 ---
 ## 📄 License
 All source code in this repository is licensed under the [MIT License](LICENSE).  
