@@ -6,7 +6,7 @@
 # BENCHMARKCARDS
 
 <!-- BADGES -->
-<img src="https://img.shields.io/github/license/SokolAnn/BenchmarkCards?style=flat&logo=opensourceinitiative&logoColor=white&color=0080ff" alt="MIT License">
+<img src="https://img.shields.io/github/license/SokolAnn/BenchmarkCards" alt="MIT License">
 <img src="https://img.shields.io/github/last-commit/SokolAnn/BenchmarkCards?style=flat&logo=git&logoColor=white&color=0080ff" alt="Last Commit">
 <img src="https://img.shields.io/github/languages/top/SokolAnn/BenchmarkCards?style=flat&color=0080ff" alt="Top Language">
 <img src="https://img.shields.io/github/languages/count/SokolAnn/BenchmarkCards?style=flat&color=0080ff" alt="Language Count">
@@ -16,7 +16,7 @@
 <img src="https://img.shields.io/badge/Python-3776AB.svg?style=flat&logo=Python&logoColor=white" alt="Python">
 <img src="https://img.shields.io/badge/OpenAI-412991.svg?style=flat&logo=OpenAI&logoColor=white" alt="OpenAI">
 <img src="https://img.shields.io/badge/Pydantic-E92063.svg?style=flat&logo=Pydantic&logoColor=white" alt="Pydantic">
-<img src="https://img.shields.io/badge/Content-License-CC%20BY%204.0-lightgrey.svg?style=flat&logo=creativecommons&logoColor=black" alt="CC BY 4.0">
+
 
 </div>
 <br/>
