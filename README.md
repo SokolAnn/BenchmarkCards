@@ -26,7 +26,9 @@ BenchmarkCards offer a standardized way to document LLM benchmarks clearly and t
 
 **Who is this for?** AI researchers, data scientists, auditors, policymakers, and anyone concerned with responsible AI deployment.
 
-**Paper link:** https://arxiv.org/abs/2410.12974
+**Paper link:** https://arxiv.org/abs/2410.12974
+## 🎉 Exciting News!
+Our paper *BenchmarkCards: Standardized Documentation for Large Language Model Benchmarks* has been **accepted to NeurIPS 2025 (Datasets and Benchmarks Track)** — yay!
 
 ---
 ## 🛠️ How to Use this Repository
