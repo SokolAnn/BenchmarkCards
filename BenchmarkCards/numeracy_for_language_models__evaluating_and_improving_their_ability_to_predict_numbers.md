@@ -1,0 +1,84 @@
+# Numeracy for Language Models: Evaluating and Improving their Ability to Predict Numbers
+
+## 📊 Benchmark Details
+
+**Name**: Numeracy for Language Models: Evaluating and Improving their Ability to Predict Numbers
+
+**Overview**: We explore different strategies for modelling numerals with language models (e.g. memorisation, digit-by-digit composition) and propose a novel neural architecture that uses a continuous probability density function to model numerals from an open vocabulary. We evaluate models on clinical and scientific datasets and propose evaluations that adjust for high out-of-vocabulary rates of numerals and account for their numerical value (magnitude).
+
+**Data Type**: text (paragraphs containing numerals and references to tables; numeric tokens with surrounding textual context)
+
+**Domains**:
+- Healthcare
+- Scientific Research
+
+**Resources**:
+- [GitHub Repository](https://github.com/uclmr/numerate-language-models)
+- [Resource](https://arxiv.org/abs/1805.08154)
+
+## 🎯 Purpose and Intended Users
+
+**Goal**: To evaluate and improve the ability of language models to predict numerals by investigating modelling strategies (softmax variants, digit-RNN, mixture of Gaussians, combination) and proposing number-specific evaluation metrics that adjust for high OOV rates and account for numerical magnitude.
+
+**Target Audience**:
+- Machine Learning Researchers
+- Natural Language Processing Researchers
+- Model Developers
+
+**Tasks**:
+- Language Modeling
+- Numerical Value Prediction (regression-style evaluation on number line)
+
+**Limitations**: "This highlights a limitation of evaluating on the number line, when a numeral is not used to represent its magnitude."
+
+## 💾 Data
+
+**Source**: Clinical: clinical records from the London Chest Hospital accompanied by tables with 20 numeric attributes. Scientific: paragraphs from Cornell's ARXIV repository (preprocessed ARXMLIV) where paragraphs reference a table and contain at least one number.
+
+**Size**: Clinical: 11,170 train instances; 1,625 dev instances; 3,220 test instances. Scientific: 14,694 train instances; 2,037 dev instances; 4,231 test instances.
+
+**Format**: Scientific: preprocessed ARXMLIV (custom XML). Clinical: not specified.
+
+**Annotation**: Automatically preprocessed and tokenized. Numerals normalized by removing thousands separators and leading zeros; special mathematical symbols tokenized separately. No manual annotation procedure is described.
+
+## 🔬 Methodology
+
+**Methods**:
+- Automated metrics (per-token perplexity and adjusted perplexity)
+- Regression evaluation on number line (RMSE, MAE, MdAE, MAPE, MdAPE)
+- Adjusted Perplexity (APP) to account for OOV classes
+
+**Metrics**:
+- Perplexity
+- Adjusted Perplexity (APP)
+- Root Mean Squared Error (RMSE)
+- Mean Absolute Error (MAE)
+- Median Absolute Error (MdAE)
+- Mean Absolute Percentage Error (MAPE)
+- Median Absolute Percentage Error (MdAPE)
+
+**Calculation**: Perplexity: PP_test = exp(H_test) where H_test is cross-entropy on test set. Adjusted Perplexity (APP) computed by redistributing probability mass of out-of-vocabulary classes uniformly over their seen types (see Eq. 13-14 in the paper). Regression metrics computed in standard form: RMSE, MAE, MdAE (absolute errors) and percentage variants MAPE and MdAPE (see Eq. 15-16 in the paper).
+
+**Interpretation**: Perplexity is sensitive to out-of-vocabulary rate; APP cancels the effect of differing OOV rates and allows direct comparison across models. RMSE and MAE are sensitive to scale and extreme errors; percentage metrics (MAPE, MdAPE) are scale-independent and preferred when data spans multiple scales. MdAE/MdAPE provide robustness to outliers.
+
+**Baseline Results**: Models compared: softmax, softmax+rnn, h-softmax, h-softmax+rnn, d-RNN, MoG (mixture of Gaussians), and a combination model. Hierarchical models substantially improved perplexity on the subset of numerals by 2 and 4 orders of magnitude (clinical and scientific datasets respectively) versus non-hierarchical variants. The combination model attained the best overall APP results on both datasets. The MoG model achieved the best MAPE on both datasets, reducing MAPE by 18% and 54% compared to the second best strategy on the clinical and scientific datasets respectively.
+
+**Validation**: Held-out development sets used for model selection and early stopping. Models trained with Adam optimizer, LSTM RNNs, dropout of 0.1, and early stopping; final evaluation reported on held-out test sets.
+
+## ⚠️ Targeted Risks
+
+**Risk Categories**:
+- Accuracy
+
+**Atlas Risks**:
+No specific atlas risks defined
+
+## 🔒 Ethical and Legal Considerations
+
+**Privacy And Anonymity**: Not Applicable
+
+**Data Licensing**: Not Applicable
+
+**Consent Procedures**: Not Applicable
+
+**Compliance With Regulations**: Not Applicable

@@ -1,0 +1,108 @@
+# TikTalk: A Video-Based Dialogue Dataset for Multi-Modal Chitchat in Real World
+
+## 📊 Benchmark Details
+
+**Name**: TikTalk: A Video-Based Dialogue Dataset for Multi-Modal Chitchat in Real World
+
+**Overview**: To facilitate the research on intelligent and human-like chatbots with multi-modal context, we introduce a new video-based multi-modal dialogue dataset, called TikTalk. We collect 38K videos from a popular video-sharing platform, along with 367K conversations posted by users beneath them. Users engage in spontaneous conversations based on their multi-modal experiences from watching videos, which helps recreate real-world chitchat context.
+
+**Data Type**: comment-reply multi-modal dialogues (video, audio, text)
+
+**Domains**:
+- Natural Language Processing
+- Computer Vision
+
+**Languages**:
+- Chinese
+
+**Similar Benchmarks**:
+- VisDial
+- AVSD
+- IGC
+- Image-Chat
+- PhotoChat
+- MMDD
+- DialogCC
+- MMChat
+- MMDialog
+- OpenViDial
+- OpenViDial 2.0
+- YTD-18M
+- MLED
+- M3ED
+
+**Resources**:
+- [Resource](https://ruc-aimind.github.io/projects/TikTalk/)
+- [Resource](https://arxiv.org/abs/2301.05880)
+
+## 🎯 Purpose and Intended Users
+
+**Goal**: Introduce a video-based multi-modal chitchat dataset to facilitate research on multi-modal dialogue and human-like chatbots that leverage video, audio, and textual context.
+
+**Target Audience**:
+- Machine Learning Researchers
+- Multi-modal Dialogue Researchers
+- Model Developers
+
+**Tasks**:
+- Dialogue Generation
+- Multi-modal Response Generation
+
+**Limitations**: N/A
+
+## 💾 Data
+
+**Source**: Collected from Douyin (Chinese TikTok) videos posted in 2021, including video titles, comments, and reply relationships.
+
+**Size**: 38,703 videos; 367,670 dialogues; 826,752 turns. Splits: Train: 35,703 videos, 363,589 dialogues; Val: 1,000 videos, 1,353 dialogues; Test: 2,000 videos, 2,728 dialogues. Average video duration 34.03 seconds; average turns per dialogue 2.25; average utterance length 16.41 tokens.
+
+**Format**: N/A
+
+**Annotation**: Constructed from hierarchical comment-reply relationships and split into conversations. Data cleaned with regular expressions to remove mentions ("@[someone]"), merge repeated words, remove unethical comments, and move emoticons to metadata. For analysis, annotators labeled context relevance (vision/audio/text/external knowledge) via an annotation website; validation/test dialogues were selected to have at least five genuine responses and five ground-truth responses were chosen for evaluation.
+
+## 🔬 Methodology
+
+**Methods**:
+- Automated metrics evaluation
+- Human evaluation
+- Baseline model evaluation
+
+**Metrics**:
+- BLEU-2
+- BLEU-4
+- Meteor
+- ROUGE-L
+- CIDEr
+- Distinct-2 (Dist-2)
+- Distinct-3 (Dist-3)
+- Sensibleness (human)
+- Specificity (human)
+- Multi-modal Relevance (human)
+- Overall Quality (human)
+- Fleiss' Kappa (annotator agreement)
+
+**Calculation**: Similarity metrics (BLEU-2, BLEU-4, Meteor, ROUGE-L, CIDEr) are calculated per ground-truth response and averaged across five ground-truth responses per conversation. Diversity metrics: Dist-2 and Dist-3. Human evaluation: three annotators independently rate 100 generated dialogues on four metrics (Sensibleness, Specificity, Multi-modal Relevance, Overall Quality) with scores from 1 (worst) to 5 (best); final score is the mean of annotators. Fleiss' Kappa reported as 0.52.
+
+**Interpretation**: Higher similarity and diversity metric values indicate better automatic performance. Human metrics (Sensibleness, Specificity, Multi-modal Relevance, Overall Quality) are scored 1 (worst) to 5 (best); higher scores indicate better generation quality and relevance to multi-modal context.
+
+**Baseline Results**: Automatic metrics (selected): Maria+C3KG - BLEU-2: 4.74, BLEU-4: 1.64, Meteor: 5.32, ROUGE-L: 11.84, CIDEr: 26.95, Dist-2: 32.82, Dist-3: 54.62. Maria - BLEU-2: 4.31, BLEU-4: 1.48, Meteor: 5.07, ROUGE-L: 11.60, CIDEr: 26.19. BLIP-2_Video - BLEU-2: 3.41, BLEU-4: 0.75, Meteor: 3.72, ROUGE-L: 8.11, CIDEr: 11.61. Text-only ChatGLM-6B - BLEU-2: 3.14, BLEU-4: 0.95, Meteor: 3.84, ROUGE-L: 9.34, CIDEr: 16.73. Human evaluation (selected): Maria+C3KG - Sensibleness: 3.29, Specificity: 2.41, Multi-modal Relevance: 2.31, Quality: 2.71; Maria - Sensibleness: 3.06, Specificity: 2.27, Multi-modal Relevance: 2.15, Quality: 2.53; BLIP-2_Video - Specificity: 2.43. (Results taken directly from Tables 3 and 4.)
+
+**Validation**: Validation and test sets constructed by selecting dialogues with at least five genuine responses and choosing five ground-truth responses per dialogue for evaluation. Human evaluation performed on 100 randomly selected test dialogues with three annotators; Fleiss' Kappa reported as 0.52.
+
+## ⚠️ Targeted Risks
+
+**Risk Categories**:
+- Privacy
+
+**Atlas Risks**:
+- **Privacy**: Personal information in data
+
+## 🔒 Ethical and Legal Considerations
+
+**Privacy And Anonymity**: To protect privacy, the authors state they do not crawl any user information. Emoticons are moved to metadata and user identifiers are not collected.
+
+**Data Licensing**: Not Applicable
+
+**Consent Procedures**: Not Applicable
+
+**Compliance With Regulations**: Not Applicable

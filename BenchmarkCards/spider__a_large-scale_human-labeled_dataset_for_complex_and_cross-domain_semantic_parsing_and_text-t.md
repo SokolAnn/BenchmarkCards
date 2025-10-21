@@ -1,0 +1,109 @@
+# Spider: A Large-Scale Human-Labeled Dataset for Complex and Cross-Domain Semantic Parsing and Text-to-SQL Task
+
+## 📊 Benchmark Details
+
+**Name**: Spider: A Large-Scale Human-Labeled Dataset for Complex and Cross-Domain Semantic Parsing and Text-to-SQL Task
+
+**Overview**: We present Spider, a large-scale, complex and cross-domain semantic parsing and text-to-SQL dataset annotated by 11 college students. It consists of 10,181 questions and 5,693 unique complex SQL queries on 200 databases with multiple tables, covering 138 different domains. We define a new complex and cross-domain semantic parsing and text-to-SQL task where different complex SQL queries and databases appear in train and test sets, requiring the model to generalize to both new SQL queries and new database schemas.
+
+**Data Type**: question and SQL pairs (natural language questions paired with structured SQL queries)
+
+**Domains**:
+- college
+- club
+- TV show
+- government
+- flight information
+
+**Languages**:
+- English
+
+**Similar Benchmarks**:
+- ATIS
+- GeoQuery
+- JOBS
+- Restaurants
+- Scholar
+- Academic
+- IMDB
+- Yelp
+- Advising
+- WikiSQL
+
+**Resources**:
+- [Resource](https://yale-lily.github.io/spider)
+- [Resource](http://www.databaseanswers.org/)
+- [Resource](http://filldb.info/)
+- [GitHub Repository](https://github.com/coleifer/sqlite-web)
+
+## 🎯 Purpose and Intended Users
+
+**Goal**: To provide a large, complex, and cross-domain semantic parsing and text-to-SQL dataset and to define a new task that evaluates a model's ability to generalize to unseen complex SQL queries and unseen database schemas across domains.
+
+**Target Audience**:
+- Natural Language Processing researchers
+- Database researchers
+- Research community
+
+**Tasks**:
+- Semantic Parsing
+- Text-to-SQL
+
+**Limitations**: The current version excludes value-string prediction (values are provided as gold lists for execution evaluation), excludes queries that require outside common-sense knowledge or math calculations, and assumes table and column names are clear and self-contained.
+
+**Out of Scope Uses**:
+- Value prediction (predicting value strings) is excluded in the current task version
+- Queries requiring outside common-sense knowledge are excluded
+- Ambiguous questions requiring multi-turn clarification are excluded
+
+## 💾 Data
+
+**Source**: 200 databases collected from three resources: ~70 complex databases from college database courses, SQL tutorial websites, online CSV files, and textbook examples; ~40 databases from DatabaseAnswers; ~90 databases created based on WikiSQL (selecting and combining tables from WikiSQL). Questions and SQL queries were written and reviewed by 11 computer science students.
+
+**Size**: 10,181 questions; 5,693 unique complex SQL queries; 200 databases; 138 domains; average 27.6 columns per database; average 8.8 foreign keys per database
+
+**Format**: SQLite databases (schemas and populated tables) with accompanying question-SQL pair annotations; official evaluation script to be released
+
+**Annotation**: Manual annotation by 11 computer science students following a defined protocol ensuring SQL pattern coverage, SQL consistency, and question clarity; multi-stage review process (SQL Review, Question Review & Paraphrase, Final Review); total ~1,000 man-hours.
+
+## 🔬 Methodology
+
+**Methods**:
+- Automated metrics (Component Matching, Exact Matching, Execution Accuracy)
+- Model-based evaluation / benchmarking using state-of-the-art semantic parsing models (Seq2Seq variants, Seq2Seq+Attention, Seq2Seq+Copying, SQLNet, TypeSQL)
+
+**Metrics**:
+- Component Matching (F1 Score on exact set matching per SQL component)
+- Exact Matching (Exact match Accuracy across all SQL components)
+- Execution Accuracy
+
+**Calculation**: Component Matching: decompose SQL into components (SELECT, WHERE, GROUP BY, ORDER BY, KEYWORDS), treat each component as a set of subcomponents and compute F1 score on exact set matching. Exact Matching: a predicted query is correct only if all components match (using set comparison per clause). Execution Accuracy: execute predicted SQL (with gold values provided) and compare results; excluded in the current version for automatic reporting but noted as available.
+
+**Interpretation**: Higher Exact Matching and Execution Accuracy indicate better semantic parsing performance. Component Matching F1 provides per-component analysis. Execution Accuracy may yield false positives when different SQLs return the same results; Component and Exact Matching complement Execution Accuracy. Queries are also categorized into hardness levels (easy, medium, hard, extra hard) and performance is reported by difficulty.
+
+**Baseline Results**: On the proposed task, all tested models perform poorly on the database split. Example-best: TypeSQL achieves 33.0% Exact Matching (Example split, All). Database-best: SQLNet achieves 12.4% Exact Matching (Database split, All). Component Matching example numbers: TypeSQL SELECT F1 = 77.3 (Example split); SQLNet SELECT F1 = 44.5 (Database split).
+
+**Validation**: Multi-stage validation including SQL Review by separate annotators, Question Review and paraphrase by native English speakers, Final Review by the most experienced annotator, and execution/parsing scripts that run all SQL labels to verify correctness.
+
+## ⚠️ Targeted Risks
+
+**Risk Categories**:
+- Robustness
+- Accuracy
+
+**Atlas Risks**:
+- **Accuracy**: Data contamination, Unrepresentative data, Poor model accuracy
+
+**Demographic Analysis**: N/A
+
+**Potential Harm**: Addresses harms related to inflated performance due to train/test overlap and model memorization (overfitting/memorization leading to artificially high reported accuracy); aims to detect and prevent overestimation of semantic parsing capability on unseen databases.
+
+## 🔒 Ethical and Legal Considerations
+
+**Privacy And Anonymity**: Not Applicable
+
+**Data Licensing**: Not Applicable
+
+**Consent Procedures**: Not Applicable
+
+**Compliance With Regulations**: Not Applicable

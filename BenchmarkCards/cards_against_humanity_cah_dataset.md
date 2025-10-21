@@ -1,0 +1,109 @@
+# Cards Against Humanity (CAH) dataset
+
+## 📊 Benchmark Details
+
+**Name**: Cards Against Humanity (CAH) dataset
+
+**Overview**: We introduce a novel dataset of 300,000 online Cards Against Humanity (CAH) games, including 785K unique jokes, analyze it and provide insights. We train machine learning models to predict the winning punchline per round and evaluate generalization to novel (unseen) punchlines.
+
+**Data Type**: text (prompt and punchline card pairs)
+
+**Domains**:
+- Natural Language Processing
+- Human-Computer Interaction
+
+**Languages**:
+- N/A
+
+**Similar Benchmarks**:
+- rJokes dataset
+
+**Resources**:
+- [GitHub Repository](https://github.com/ddofer/CAH)
+- [Resource](https://lab.cardsagainsthumanity.com)
+- [Resource](https://www.cardsagainsthumanity.com/privacy-policy)
+- [Resource](https://arxiv.org/abs/2210.13016)
+
+## 🎯 Purpose and Intended Users
+
+**Goal**: Explore humor through a data-driven lens by introducing and analyzing a large dataset of online Cards Against Humanity games and training models to predict winning punchlines and evaluate generalization to novel punchlines.
+
+**Target Audience**:
+- Natural Language Processing researchers
+
+**Tasks**:
+- Humor Recognition
+- Ranking (Predicting Winning Punchline)
+- Generalization to Unseen Punchlines
+
+**Limitations**: The population who play the game online may not be representative of the overall population or of CAH players in general. The study lacked demographic and geographic information and did not consider user demographics, context, or interactions. The data contains offensive humor and should be very carefully used as training data; it is not intended for training models applied to real-world tasks.
+
+**Out of Scope Uses**:
+- Training models applied to real-world tasks ("This data is not intended for and should not be used for training models applied to real-world tasks, since such models might exhibit and propagate those offensive messages.")
+
+## 💾 Data
+
+**Source**: Past games played on the online Cards Against Humanity labs website (https://lab.cardsagainsthumanity.com). Data provided by Cards Against Humanity.
+
+**Size**: 298,955 games (approximately 300,000 games); 785,000 unique jokes (784,974 unique prompt+punchline combos observed); 581 unique prompt (black) cards; 2,128 unique punchline (white) cards; 1,236,368 possible unique prompt-punchline combinations; 248,896 jokes with winning feedback.
+
+**Format**: N/A
+
+**Annotation**: Implicit gameplay labels: the judge-selected winning punchline per round (no additional human annotation).
+
+## 🔬 Methodology
+
+**Methods**:
+- Joke popularity baseline (prior mean win frequency of the combination)
+- Punchline popularity baseline (prior mean win frequency of the punchline)
+- Catboost Ranking model (PairLogitPairwise loss)
+- Catboost gradient boosting tree classifier (with Catboost text encoder and pretrained embeddings)
+- AutoML feature extraction + LightGBM classifier
+- Logistic Regression and Random Forest (evaluated but inferior)
+- Catboost-Meta (classifier with card display order feature)
+
+**Metrics**:
+- Accuracy (Top-1 Acc@1)
+- ROC-AUC (Area Under ROC Curve)
+- Top-2 Accuracy
+- Top-3 Accuracy
+
+**Calculation**: Acc@1: whether the highest-ranked card equals the judge's selected winner. ROC-AUC computed over the binary classification task of whether a given punchline was picked. Top-k accuracy: whether the judge's chosen card is within the top k predictions. Random baseline for top-1 is 10%.
+
+**Interpretation**: Models substantially outperform random: top-1 random baseline is 10%, models achieve roughly twice random (~20% Acc@1). The punchline popularity baseline performs similarly to the best models, indicating strong memorization effects. On novel (unseen) punchlines, model generalization is modest (e.g., Catboost classifier: ROC-AUC 56%, Acc@1 14.6%).
+
+**Baseline Results**: Table 1 (Acc@1 and AUC): Random baseline 10 / 50; Punchline Popularity 20.7 / 64.4; Joke Popularity 15.6 / 55.8; Catboost-Ranker 18.7 / 61; AutoML+LightGBM 20.3 / 64.3; MiniLM DL 17.7 / 59.4; Catboost-Classifier 20.4 / 64.3; Catboost-Meta 21.1 / 64.7; Catboost-Punchline only 20.4 / 64.1; Catboost-Joke only 19.3 / 63.2; Catboost-Prompt only 9.9 / 50.
+
+**Validation**: Standard prediction task: 80/20 split at the round level (195,708 rounds / 746K unique jokes training; 48,928 rounds / 367K unique jokes test). IDs provided in repository. Novel punchlines evaluation: partition at punchline and game level; repeated 500 times with each iteration using 60 games (up to 600 jokes) as test set and training on games with disjoint punchlines, yielding 300,000 (not unique) unseen punchlines.
+
+## ⚠️ Targeted Risks
+
+**Risk Categories**:
+- Fairness
+- Misuse
+- Societal Impact
+- Data Laws
+- Value Alignment
+- Accuracy
+
+**Atlas Risks**:
+- **Fairness**: Data bias
+- **Misuse**: Spreading toxicity
+- **Societal Impact**: Impact on affected communities
+- **Data Laws**: Data transfer restrictions
+- **Value Alignment**: Toxic output
+- **Accuracy**: Unrepresentative data
+
+**Demographic Analysis**: The dataset does not include demographic or geographic user data; the study did not consider demographic breakdowns or interactions.
+
+**Potential Harm**: ['Propagation of offensive/toxic content by models trained on this data', 'Harm to protected or sensitive groups due to offensive content']
+
+## 🔒 Ethical and Legal Considerations
+
+**Privacy And Anonymity**: The data received did not include demographic or geographic characteristics, user identifiers, or personally identifiable information. All user-identifiable data was removed before access. CAH's privacy policy (https://www.cardsagainsthumanity.com/privacy-policy) outlines what data is gathered and limitations on third-party disclosure. The study received IRB approval from the Hebrew University of Jerusalem.
+
+**Data Licensing**: Not Applicable
+
+**Consent Procedures**: Players played voluntarily on the CAH website for fun; they were not annotators or workers. No additional consent procedures are described beyond the website context and CAH data provision.
+
+**Compliance With Regulations**: IRB approval obtained from the Hebrew University of Jerusalem. CAH privacy policy specifies limitations on third-party disclosure.

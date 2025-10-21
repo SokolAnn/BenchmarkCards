@@ -1,0 +1,98 @@
+# New York Times Crosswords Dataset
+
+## 📊 Benchmark Details
+
+**Name**: New York Times Crosswords Dataset
+
+**Overview**: We introduce solving crossword puzzles as a new natural language understanding task and release a corpus of New York Times daily crossword puzzles from December 1, 1993 to December 31, 2018 (approximately 9,152 puzzles). We also release the clue-answer pairs from these puzzles as an open-domain question answering dataset containing over 578,000 unique clue-answer pairs. We provide baselines (sequence-to-sequence, retrieval-augmented generative models) and a constraint-satisfaction crossword solver, and propose an evaluation framework consisting of several complementary performance metrics.
+
+**Data Type**: question-answering pairs (clue-answer pairs) and structured crossword puzzle grids (text)
+
+**Domains**:
+- Natural Language Processing
+
+**Languages**:
+- English
+
+**Similar Benchmarks**:
+- SQuAD
+- Natural Questions
+- HotpotQA
+- WikiQA
+- HellaSwag
+
+**Resources**:
+- [GitHub Repository](https://github.com/text-machine-lab/xword_benchmark)
+- [Resource](https://www.nytimes.com/crosswords)
+- [Resource](https://arxiv.org/abs/2205.10442)
+
+## 🎯 Purpose and Intended Users
+
+**Goal**: Introduce crossword puzzle solving as a new NLP task, release the New York Times Crosswords Dataset and a Clue-Answer open-domain QA dataset, propose an evaluation framework, and provide baseline systems for both clue-answering and full-puzzle solving.
+
+**Target Audience**:
+- ML Researchers
+- Model Developers
+
+**Tasks**:
+- Question Answering
+- Constraint Satisfaction / Puzzle Solving
+
+**Limitations**: Dataset release is contingent on finalizing agreement with The New York Times and exact licensing terms; special puzzles with non-standard rules were removed from validation and test splits; baseline crossword solver is limited (returns "nosat" when hard constraints are unmet) and current baselines rely on oracle-based pre-filtering to produce partial solutions.
+
+## 💾 Data
+
+**Source**: New York Times daily crossword puzzles (daily NYT Crosswords) collected for the date range December 1, 1993 through December 31, 2018. Two specifications released: the NYT Crossword Puzzle dataset and the NYT Clue-Answer dataset (clue-answer pairs derived from the puzzles).
+
+**Size**: 9,152 puzzles (split into 7,293 train / 922 validation / 941 test puzzles); 578,000 unique clue-answer pairs (433,033 train / 72,303 validation / 72,939 test examples).
+
+**Format**: N/A
+
+**Annotation**: Clue-answer pairs automatically extracted from NYT puzzles; duplicates removed across splits (training pairs found in test/validation removed). A random sample of 1,000 test examples was manually annotated for clue type categories.
+
+## 🔬 Methodology
+
+**Methods**:
+- Automated metrics
+- Model-based evaluation (sequence-to-sequence models: T5, BART)
+- Model-based evaluation (retrieval-augmented generation: RAG-wiki, RAG-dict)
+- Constraint satisfaction solver evaluation (SMT-based solver using Z3)
+
+**Metrics**:
+- Exact Match (EM)
+- Contains (In)
+- Exact Match normalized (EM norm)
+- Contains normalized (In norm)
+- Character Accuracy (Acc_char)
+- Word Accuracy (Acc_word)
+- Word Removal (Rem_word)
+- Character Removal (Rem_char)
+
+**Calculation**: Clue-Answer: EM = model output matches ground-truth answer exactly; Contains = model output contains the ground-truth answer as a contiguous substring. Normalized metrics strip diacritics, accents, punctuation and whitespace from model output prior to computing the metric. Metrics are reported for top-k predictions (k from 1 to 20). Crossword Puzzle: Character Accuracy = percentage of characters in predicted solution matching ground-truth; Word Accuracy = percentage of words matching ground-truth; Removal metrics = percentage of words/characters that must be removed from the puzzle grid to produce a partial solution.
+
+**Interpretation**: Higher EM / In (and normalized variants) indicate better clue-answer performance. For puzzle solving, higher Acc_char and Acc_word indicate better full-puzzle solving. Higher Rem_word and Rem_char indicate greater constraint relaxation (i.e., more of the puzzle had to be redacted to obtain a solvable partial solution) and thus less meaningful completed puzzles.
+
+**Baseline Results**: Clue-Answer task (selected results): T5-base Top-1 EM 8.4; BART-large Top-1 EM 13.8; RAG-wiki Top-1 EM 24.2 (EM norm 26.0), RAG-wiki Top-20 EM 50.6 (In norm 56.7); RAG-dict Top-20 EM 50.0 (In norm 56.2). Crossword Puzzle task (Top-20 setting): BART Acc_word 16.6, Acc_char 28.4, Rem_word 55.6, Rem_char 43.4; RAG-wiki Acc_word 23.8, Acc_char 37.8, Rem_word 40.3, Rem_char 26.3; RAG-dict Acc_word 22.1, Acc_char 35.9, Rem_word 40.8, Rem_char 26.8.
+
+**Validation**: Datasets split 80/10/10 (train/validation/test). For the clue-answer dataset duplicates removed; clue-answer pairs found in test or validation removed from training to prevent trivial memorization. A manually annotated subset of 1,000 test examples was used for per-clue-type analysis.
+
+## ⚠️ Targeted Risks
+
+**Risk Categories**:
+- Intellectual Property
+- Legal Compliance
+- Data Laws
+
+**Atlas Risks**:
+- **Intellectual Property**: Copyright infringement, Data usage rights restrictions
+- **Data Laws**: Data usage restrictions
+
+## 🔒 Ethical and Legal Considerations
+
+**Privacy And Anonymity**: Not Applicable
+
+**Data Licensing**: Preliminary approval obtained from The New York Times to release the data under a non-commercial and research use license; exact licensing terms and distribution channels are being finalized with NYT legal department.
+
+**Consent Procedures**: Not Applicable
+
+**Compliance With Regulations**: Not Applicable

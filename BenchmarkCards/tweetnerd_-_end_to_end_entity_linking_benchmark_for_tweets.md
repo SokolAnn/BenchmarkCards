@@ -1,0 +1,102 @@
+# TweetNERD - End to End Entity Linking Benchmark for Tweets
+
+## 📊 Benchmark Details
+
+**Name**: TweetNERD - End to End Entity Linking Benchmark for Tweets
+
+**Overview**: We introduce TweetNERD, a dataset of 340K+ Tweets across 2010-2021, for benchmarking Named Entity Recognition and Disambiguation (NERD) systems on Tweets; the dataset includes annotations of entity mentions linked to Wikidata and provides evaluation setups for Named Entity Recognition (NER), Entity Linking with True Spans (EL), and End to End Entity Linking (End2End).
+
+**Data Type**: text (tweet texts referenced by Tweet IDs, annotated with mention start/end offsets and linked Wikidata entity IDs)
+
+**Domains**:
+- Natural Language Processing
+- Social Media
+
+**Languages**:
+- English
+
+**Similar Benchmarks**:
+- Tgx
+- Broad
+- Entity Profiling
+- NEEL 2016
+- NEEL v2
+- Fang and Chang
+- Twitter NEED
+- Ark POS
+- WikiD
+- WSDM2012
+- Yodie
+
+**Resources**:
+- [Resource](https://doi.org/10.5281/zenodo.6617192)
+- [GitHub Repository](https://github.com/twitter-research/TweetNERD)
+- [Resource](https://arxiv.org/abs/2210.08129)
+
+## 🎯 Purpose and Intended Users
+
+**Goal**: To provide a large-scale, temporally diverse benchmark dataset for evaluating Named Entity Recognition and Disambiguation systems on Tweets and to facilitate research in entity linking on social media.
+
+**Target Audience**:
+- Research community
+
+**Tasks**:
+- Named Entity Recognition
+- Entity Linking with True Spans
+- End to End Entity Linking
+
+**Limitations**: The dataset is non-static (some Tweet IDs may become inaccessible over time); annotation difficulty and inter-annotator disagreement limit the performance ceiling; offset-based (byte offset utf-16-be) format may make it challenging for traditional tokenized NER systems.
+
+## 💾 Data
+
+**Source**: 340K+ Tweets collected from Twitter and hydrated via the Twitter Public API (Tweets sampled from 2010-2021); mentions annotated and linked to entities in Wikidata.
+
+**Size**: 340K unique Tweets; 356K mentions; 90K unique entities; 251K mentions linked to non-NIL entities; 104K mentions linked to NIL entities.
+
+**Format**: Non-tokenized files listing Tweet IDs, start and end offsets (byte offsets using utf-16-be), mention phrase, linked Wikidata entity ID (or NOT FOUND / AMBIGUOUS), and annotator agreement score.
+
+**Annotation**: Manual annotation by trained in-house annotators; each Tweet annotated by three annotators; annotators assign a Wikidata ID, NOT FOUND, or AMBIGUOUS; (m,eid) pairs selected by at least two annotators are considered gold; all annotations (including non-gold) are released.
+
+## 🔬 Methodology
+
+**Methods**:
+- Automated metrics using the neleval evaluation library
+- Benchmarking existing NER, EL, and End2End systems (evaluation of publicly available models)
+
+**Metrics**:
+- strong_mention_match (micro-averaged F1)
+- strong_all_match (micro-averaged F1)
+- entity_match (micro-averaged F1)
+- F1 (harmonic mean of precision and recall)
+
+**Calculation**: Metrics computed using the neleval library: micro-averaged F1 for strong_mention_match (requires exact span match), strong_all_match (strict link match or NIL), and entity_match (tweet-level set-of-titles). NOT FOUND and AMBIGUOUS are mapped to NIL for evaluations.
+
+**Interpretation**: Results are reported as F1 scores; entity_match is more robust to offset/tokenization mismatches, while strong_all_match requires strict span and KB identifier matches. Higher F1 indicates better performance.
+
+**Baseline Results**: Selected evaluation results reported on TweetNERD-OOD and TweetNERD-Academic (F1): NER (strong_mention_match): Spacy 0.377 (OOD) / 0.454 (Academic); StanzaNLP 0.421 / 0.503; AllenNLP 0.454 / 0.552; TwitterNER 0.424 / 0.522. EL (entity_match given true spans): GENRE 0.469 / 0.636; REL 0.463 / 0.614; Lookup 0.621 / 0.645. End2End (entity_match): DBpedia 0.292 / 0.399; NLAI 0.522 / 0.568; TAGME 0.402 / 0.431; REL 0.344 / 0.484; GENRE 0.307 / 0.458.
+
+**Validation**: Two explicit test splits used for evaluation: TweetNERD-OOD (25K Tweets) and TweetNERD-Academic (30K Tweets). Canonical train/validation/test splits provided (random samples: 25K test, 5K validation) excluding OOD and Academic. Gold labels for evaluation defined as mention-entity pairs selected by at least two annotators. Inter-annotator agreement statistics computed and reported.
+
+## ⚠️ Targeted Risks
+
+**Risk Categories**:
+- Fairness
+- Privacy
+- Data Laws
+
+**Atlas Risks**:
+- **Fairness**: Data bias
+- **Privacy**: Personal information in data
+- **Data Laws**: Data usage restrictions
+
+**Demographic Analysis**: N/A
+
+## 🔒 Ethical and Legal Considerations
+
+**Privacy And Anonymity**: Dataset is released as Tweet IDs with annotations (not full tweet text); the paper discusses that TweetNERD-Academic contains potentially personally identifiable or offensive content and notes that use requires lawful access to the Twitter API. No specific anonymization procedure is described.
+
+**Data Licensing**: TweetNERD is released under Creative Commons Attribution 4.0 International (CC BY 4.0). Use of the dataset is subject to obtaining lawful access to the Twitter API and agreeing to the Twitter Developer Terms and Agreements.
+
+**Consent Procedures**: Not Applicable
+
+**Compliance With Regulations**: Use of the dataset is subject to lawful access via the Twitter Public API and compliance with Twitter Developer Terms and Agreements; no explicit mention of GDPR/CCPA compliance is provided.

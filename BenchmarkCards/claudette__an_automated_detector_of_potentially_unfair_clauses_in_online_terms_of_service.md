@@ -1,0 +1,89 @@
+# CLAUDETTE: an Automated Detector of Potentially Unfair Clauses in Online Terms of Service
+
+## 📊 Benchmark Details
+
+**Name**: CLAUDETTE: an Automated Detector of Potentially Unfair Clauses in Online Terms of Service
+
+**Overview**: An experimental study presenting a machine learning-based method and tool (CLAUDETTE) to automatically detect potentially unfair clauses in online Terms of Service; includes an annotated corpus of contracts and a web server for analysis.
+
+**Data Type**: text (sentences with XML tags for clause categories)
+
+**Domains**:
+- Natural Language Processing
+- Legal
+
+**Resources**:
+- [Resource](http://155.185.228.137/claudette/ToS.zip)
+- [Resource](http://155.185.228.137/claudette/)
+- [Resource](https://doi.org/10.1007/s10506-019-09243-2)
+- [Resource](https://stanfordnlp.github.io/CoreNLP/)
+
+## 🎯 Purpose and Intended Users
+
+**Goal**: To partially automate the detection of potentially unfair clauses in online consumer contracts (Terms of Service) using machine learning, and to provide a tool (CLAUDETTE) to assist lawyers, consumer protection organizations, and consumers.
+
+**Target Audience**:
+- Consumer protection organizations
+- Consumer protection agencies
+- Lawyers
+- Consumers
+
+**Tasks**:
+- Text Classification
+- Sentence Classification
+- Clause Type Classification
+
+**Limitations**: Relatively small training set size; fairness of clauses may depend on contextual information not fully captured by sentence-level analysis.
+
+## 💾 Data
+
+**Source**: 50 online consumer contracts (Terms of Service) from major online platforms; selected ToS include those offered by: 9gag.com, Academia.edu, Airbnb, Amazon, Atlas Solutions, Betterpoints, Booking.com, Crowdtangle, Deliveroo, Dropbox, Duolingo, eBay, Endomondo, Evernote, Facebook, Fitbit, Google, Headspace, Instagram, Linden Lab, LinkedIn, Masquerade, Microsoft, Moves-app, musically, Netflix, Nintendo, Oculus, Onavo, Pokemon GO, Rovio, Skype, Skyscanner, Snapchat, Spotify, Supercell, SyncMe, Tinder, TripAdvisor, TrueCaller, Twitter, Uber, Viber, Vimeo, Vivino, WhatsApp, World of Warcraft, Yahoo, YouTube and Zynga.
+
+**Size**: 50 documents (Terms of Service); 12,011 sentences overall; 1,032 positive examples (potentially unfair clauses).
+
+**Format**: XML (annotated corpus); output formats available from the web server include HTML, XML, JSON, and plain text.
+
+**Annotation**: Manual XML annotation identifying eight clause categories (Arbitration, Unilateral change, Content removal, Jurisdiction, Choice of law, Limitation of liability, Unilateral termination, Contract by using). Each tag appended with numeric label: 1 = clearly fair, 2 = potentially unfair, 3 = clearly unfair. Nested tags used where applicable. Sentence-level annotation.
+
+## 🔬 Methodology
+
+**Methods**:
+- Support Vector Machines (SVM)
+- Structured Support Vector Machines (SVM-HMM)
+- Tree Kernels (SSTK)
+- Convolutional Neural Networks (CNN)
+- Long Short-Term Memory Networks (LSTM)
+- Ensemble (voting combination)
+
+**Metrics**:
+- Precision
+- Recall
+- F1 Score
+
+**Calculation**: Precision (P) = fraction of positive predictions that are actually positive. Recall (R) = fraction of positive examples correctly detected. F1 = harmonic mean of precision and recall (F1 = 2PR/(P+R)). Performance aggregated using macro-average over documents for detection; micro-average used for category classification.
+
+**Interpretation**: An ensemble method achieved approximately 80.6% F1 (Precision 82.8%, Recall 79.8%), indicating the system can detect over 80% of potentially unfair clauses with approximately 80% precision. Category classification F1 scores are above 74% for all tags and above 93% for several tags (jurisdiction, choice of law, limitation of liability, contract by using).
+
+**Baseline Results**: Key results (leave-one-document-out): C8 Ensemble: Precision 0.828, Recall 0.798, F1 0.806. C2 (combined SVMs): P 0.806, R 0.779, F1 0.784. Random baseline: P 0.125, R 0.125, F1 0.125. Always-positive baseline: P 0.123, R 1.000, F1 0.217. Category classification micro-averaged F1: Arbitration 0.823, Unilateral change 0.823, Content removal 0.745, Jurisdiction 0.970, Choice of law 0.932, Limitation of liability 0.932, Unilateral termination 0.853, Contract by using 0.953.
+
+**Validation**: Leave-one-document-out (LOO) procedure: each document used in turn as test set; remaining documents split into training (4/5) and validation (1/5) for model selection. Validation sets used to select hyperparameters; macro-averaging over documents used for aggregation.
+
+## ⚠️ Targeted Risks
+
+**Risk Categories**:
+- Consumer protection
+
+**Atlas Risks**:
+No specific atlas risks defined
+
+**Potential Harm**: Consumer harm from potentially unfair contractual terms (loss of rights, loss of digital content, disadvantageous forum or law selection).
+
+## 🔒 Ethical and Legal Considerations
+
+**Privacy And Anonymity**: Not Applicable
+
+**Data Licensing**: Not Applicable
+
+**Consent Procedures**: Not Applicable
+
+**Compliance With Regulations**: Not Applicable

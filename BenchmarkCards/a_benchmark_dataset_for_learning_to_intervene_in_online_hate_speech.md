@@ -1,0 +1,112 @@
+# A Benchmark Dataset for Learning to Intervene in Online Hate Speech
+
+## 📊 Benchmark Details
+
+**Name**: A Benchmark Dataset for Learning to Intervene in Online Hate Speech
+
+**Overview**: We propose a novel task of generative hate speech intervention and introduce two fully-labeled large-scale hate speech intervention datasets collected from Gab and Reddit. These datasets provide conversation segments, hate speech labels, and intervention responses written by Mechanical Turk workers. We analyze the datasets to understand common intervention strategies and evaluate common automatic response generation methods to provide a benchmark for future research.
+
+**Data Type**: text (conversation segments and intervention response pairs)
+
+**Domains**:
+- Natural Language Processing
+- Social Media
+
+**Languages**:
+- English
+
+**Similar Benchmarks**:
+- Waseem and Hovy (2016)
+- Davidson et al. (2017)
+- Golbeck et al. (2017)
+- Founta et al. (2018)
+- Chatzakou et al. (2017)
+- Kennedy III et al. (2017)
+- Warner and Hirschberg (2012)
+- Nobata et al. (2016)
+- Van Hee et al. (2015)
+
+**Resources**:
+- [GitHub Repository](https://github.com/jing-qian/A-Benchmark-Dataset-for-Learning-to-Intervene-in-Online-Hate-Speech)
+- [Resource](https://gab.ai)
+- [Resource](https://www.reddit.com)
+- [Resource](https://www.mturk.com)
+
+## 🎯 Purpose and Intended Users
+
+**Goal**: Introduce the generative hate speech intervention task and provide two fully-labeled hate speech datasets with human-written intervention responses, retaining conversational context to enable generative models to mitigate hate speech in online conversations.
+
+**Target Audience**:
+- Machine Learning Researchers
+- Natural Language Processing Researchers
+
+**Tasks**:
+- Generative Hate Speech Intervention (Response Generation)
+- Hate Speech Detection (Text Classification)
+
+**Limitations**: Authors note differences in characteristics between the two sources: the Gab dataset is larger and more balanced while the Reddit dataset is smaller, more imbalanced, and contains longer/noisier posts. Automatic evaluation metrics may not correlate with human judgment for intervention effectiveness. The experiments used only the text of posts and did not utilize additional available information such as user metadata or Reddit submission titles.
+
+## 💾 Data
+
+**Source**: Conversations collected from Reddit (selected from ten specified subreddits via Reddit API using hate keywords) and Gab (collected from all Gab posts in October 2018 using hate keywords); intervention responses and labels crowdsourced from Amazon Mechanical Turk.
+
+**Size**: Reddit: 5,020 conversations (22,324 comments), 5,257 comments labeled as hate speech, 17,067 labeled non-hate, 10,243 intervention responses. Gab: 11,825 conversations (33,776 posts), 14,614 posts labeled as hate speech, 19,162 labeled non-hate, 31,487 intervention responses. (Additional stats: 21,747 unique intervention responses in aggregated Gab dataset; 7,641 unique intervention responses in aggregated Reddit dataset.)
+
+**Format**: N/A
+
+**Annotation**: Crowdsourced via Amazon Mechanical Turk. Each conversation assigned to three workers; final hate/non-hate label is aggregated by majority (a comment is labeled hate when at least 2 of 3 workers label it as hate). Intervention responses are collected from workers who labeled the conversation as containing hate speech and aggregated accordingly. Workers were restricted to English-speaking countries with HIT approval rate >95%.
+
+## 🔬 Methodology
+
+**Methods**:
+- Logistic Regression
+- Support Vector Machine
+- Convolutional Neural Network
+- Recurrent Neural Network
+- Seq2Seq
+- Variational Auto-Encoder
+- Reinforcement Learning
+- Human evaluation (crowdsourced)
+
+**Metrics**:
+- F1 Score
+- Precision-Recall AUC
+- ROC AUC
+- BLEU
+- ROUGE-L
+- METEOR
+- Human evaluation: Effectiveness and Diversity (crowdsourced preference percentages)
+
+**Calculation**: For detection, models evaluated on a test split randomly selected as 20% of the dataset; metrics reported: F1 Score, Precision-Recall AUC, ROC AUC. For generative intervention, training pairs constructed by dis-aggregating multiple reference responses; testing split randomly selected as 20% of dataset; models evaluated automatically using BLEU, ROUGE-L, and METEOR. Teacher forcing used during training. Human evaluation: 450 sampled conversations from test set; Mechanical Turk workers presented generated responses and asked to select the most effective mitigation and to rate diversity; quality checks and an attention check question used.
+
+**Interpretation**: Authors state that automatic metrics (BLEU, ROUGE-L, METEOR) often do not correlate with human preference for intervention effectiveness; human evaluations are used to assess mitigation effectiveness and response diversity. Higher automatic metric scores do not necessarily indicate better mitigation in human judgments.
+
+**Baseline Results**: Detection (Table 2): On Gab, best reported F1 ~89.6 (CNN with pretrained Word2Vec), PR AUC ~95.2, ROC AUC ~95.8. On Reddit, best reported F1 ~77.5 (RNN with pretrained embeddings), PR AUC ~79.4, ROC AUC ~90.6. Generative (Table 3): Gab Seq2Seq (Complete) BLEU 13.2 ROUGE-L 33.8 METEOR 23.0; Seq2Seq (Filtered) BLEU 15.0 ROUGE-L 34.2 METEOR 23.6; VAE (Filtered) BLEU 12.4 ROUGE-L 32.8 METEOR 21.8; RL (Filtered) BLEU 14.5 ROUGE-L 33.1 METEOR 23.9. Reddit Seq2Seq (Filtered) BLEU 5.9 ROUGE-L 28.2 METEOR 20.0; VAE (Filtered) BLEU 7.0 ROUGE-L 29.1 METEOR 20.1; RL (Filtered) BLEU 4.4 ROUGE-L 29.1 METEOR 18.7. Human evaluation (Table 4): Gab effectiveness: RL wins 41.6%, Seq2Seq 22.4%, VAE 20.0%, Tie 16.0%. Gab diversity: RL 40.0%, Seq2Seq 28.0%, VAE 6.0%, Tie 26.0%. Reddit effectiveness: Seq2Seq 31.1%, RL 30.0%, VAE 26.0%, Tie 12.9%. Reddit diversity: Seq2Seq 34.0%, RL 30.0%, VAE 4.0%, Tie 32.0%.
+
+**Validation**: Test sets created by randomly selecting 20% of data for evaluation. Label quality ensured by 3 annotators per conversation with majority vote; human evaluation of generative outputs conducted on 450 sampled test conversations with quality checks on Mechanical Turk assignments.
+
+## ⚠️ Targeted Risks
+
+**Risk Categories**:
+- Fairness
+- Accuracy
+- Privacy
+
+**Atlas Risks**:
+- **Fairness**: Data bias
+- **Accuracy**: Unrepresentative data, Poor model accuracy
+- **Privacy**: Personal information in data
+
+**Demographic Analysis**: N/A
+
+**Potential Harm**: ['Online harassment', 'Hate speech']
+
+## 🔒 Ethical and Legal Considerations
+
+**Privacy And Anonymity**: Internal Review Board approval obtained. Workers were warned about offensive content and could quit the task at any time. Personally identifiable information such as user names is masked in the datasets.
+
+**Data Licensing**: Not Applicable
+
+**Consent Procedures**: Workers were informed about offensive content and instructed they could quit if uncomfortable; IRB approval was obtained. (No other consent procedures specified.)
+
+**Compliance With Regulations**: Not Applicable

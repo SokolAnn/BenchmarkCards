@@ -1,0 +1,104 @@
+# DROP: A Reading Comprehension Benchmark Requiring Discrete Reasoning Over Paragraphs
+
+## 📊 Benchmark Details
+
+**Name**: DROP: A Reading Comprehension Benchmark Requiring Discrete Reasoning Over Paragraphs
+
+**Overview**: A new English reading comprehension benchmark, DROP, which requires Discrete Reasoning Over the content of Paragraphs. In this crowdsourced, adversarially-created, 96k-question benchmark, a system must resolve references in a question, perhaps to multiple input positions, and perform discrete operations over them (such as addition, counting, or sorting).
+
+**Data Type**: text (question-answer pairs)
+
+**Domains**:
+- Natural Language Processing
+
+**Languages**:
+- English
+
+**Similar Benchmarks**:
+- SQuAD (Stanford Question Answering Dataset)
+- WikiTableQuestions
+- TriviaQA
+- HotpotQA
+- NarrativeQA
+- CoQA
+- ReCoRD
+- LAMBADA
+
+**Resources**:
+- [Resource](https://allennlp.org/drop)
+- [Resource](https://arxiv.org/abs/1903.00161)
+
+## 🎯 Purpose and Intended Users
+
+**Goal**: Encourage research in paragraph understanding by providing reading comprehension questions that require discrete reasoning (e.g., addition, counting, sorting) over paragraph content and to spur methods that combine distributed representations with symbolic reasoning.
+
+**Target Audience**:
+- ML Researchers
+- Natural Language Processing researchers
+- Model Developers
+
+**Tasks**:
+- Question Answering
+- Reading Comprehension
+- Counting
+- Arithmetic (addition/subtraction)
+- Coreference Resolution
+- Comparison/Sorting
+
+**Limitations**: Consists of single passages paired with independent questions; does not include passage retrieval, conversational state tracking, mismatched passages/questions, multi-document reasoning, or integration of external knowledge. Some questions require limited domain knowledge (e.g., sports).
+
+**Out of Scope Uses**:
+- Passage retrieval / open-retrieval question answering
+- Conversational question answering / tracking conversational state
+- Multi-document or multi-hop reasoning across multiple documents
+- Tasks requiring integration of external knowledge sources beyond the single passage
+
+## 💾 Data
+
+**Source**: Passages automatically extracted from Wikipedia (October 2018 dump and scraping), with emphasis on National Football League game summaries and history passages; passages were selected that contained at least twenty numbers; question-answer pairs crowdsourced via Amazon Mechanical Turk.
+
+**Size**: 96,567 question-answer pairs; ~7,000 passages collected; dataset split by passage into train: 77,409 questions (5,565 passages), dev: 9,536 questions (582 passages), test: 9,622 questions (588 passages); total Mechanical Turk budget ~60,000 USD.
+
+**Format**: N/A
+
+**Annotation**: Crowdsourced via Amazon Mechanical Turk with an adversarial annotation protocol where workers could only submit questions that a real-time BiDAF baseline could not answer; workers provided answers as passage spans, dates, or numbers; dev and test questions were validated with at least two additional answers per question; inter-annotator agreement (Cohen's kappa) reported as 0.74 overall (0.81 for numbers, 0.62 for spans, 0.65 for dates).
+
+## 🔬 Methodology
+
+**Methods**:
+- Heuristic baselines (majority, question-only, passage-only)
+- SQuAD-style reading comprehension models (BiDAF, QANet, QANet+ELMo, BERT)
+- Semantic parsers (KDG with SynDep/OpenIE/SRL representations)
+- Neurally-augmented symbolic model NAQANet (numerically-aware QANet variant)
+
+**Metrics**:
+- Exact Match
+- F1 Score (numeracy-focused macro-averaged F1)
+
+**Calculation**: Exact Match uses the same implementation as SQuAD (with simple normalization). F1 measures overlap between a bag-of-words representation of the gold and predicted answers; F1 is defined as 0 when there is a number mismatch between gold and predicted answers regardless of other word overlap. For multiple spans, a greedy one-to-one alignment based on bag-of-word overlap is performed and average F1 over each span is computed. When multiple gold answers exist, metrics take a max over all gold answers.
+
+**Interpretation**: Higher Exact Match and F1 indicate better performance. Human performance is reported as 96.42% F1 on the test set; state-of-the-art reading comprehension models perform substantially worse (e.g., BERT: 32.70% F1 on test), indicating that low model scores (relative to human) reflect the dataset's increased difficulty and the need for discrete reasoning capabilities.
+
+**Baseline Results**: Test set key results: Heuristic baselines: Majority EM 0.07 / F1 1.44; BiDAF EM 24.75 / F1 27.49; QANet EM 25.50 / F1 28.36; QANet+ELMo EM 27.08 / F1 29.67; BERT EM 29.45 / F1 32.70; NAQANet complete model EM 44.07 / F1 47.01; Human performance EM N/A / F1 96.42.
+
+**Validation**: Development and test portions validated with at least two additional annotator answers per question; 0.7% of data marked invalid and filtered out; inter-annotator agreement Cohen's kappa reported as 0.74 overall (0.81 for numbers, 0.62 for spans, 0.65 for dates).
+
+## ⚠️ Targeted Risks
+
+**Risk Categories**:
+- Bias
+- Accuracy
+
+**Atlas Risks**:
+- **Fairness**: Data bias
+- **Accuracy**: Poor model accuracy
+
+## 🔒 Ethical and Legal Considerations
+
+**Privacy And Anonymity**: Not Applicable
+
+**Data Licensing**: Not Applicable
+
+**Consent Procedures**: Not Applicable
+
+**Compliance With Regulations**: Not Applicable
