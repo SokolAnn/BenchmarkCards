@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Leader360V (A Large-scale, Real-world 360 Video Dataset for Multi-task Learning in Diverse Environments)",
+    "abbreviation": "Leader360V",
+    "overview": "Leader360V is the first large-scale (10K+), labeled real-world 360 video dataset specifically designed for instance segmentation and tracking in diverse environments. It integrates existing public datasets with self-collected 360 videos to facilitate automated annotation through A3360V, a three-phase pipeline, thereby enhancing model performance in 360 video understanding.",
+    "data_type": "video",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "N/A"
+    ],
+    "similar_benchmarks": [
+      "360VOS",
+      "PanoVOS",
+      "360VOT"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive and scalable dataset for multi-task learning in 360 video understanding, focusing on instance segmentation and tracking.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Instance Segmentation",
+      "Object Tracking"
+    ],
+    "limitations": "Our current Leader360V dataset does not yet cover all object classes commonly encountered in daily life, nor does it include annotations for the motion states of moving objects.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Integral combination of existing public datasets and self-collected 360 videos in diverse environments.",
+    "size": "10,000+ videos",
+    "format": "360 Video",
+    "annotation": "Automated through the A3360V pipeline, involving LLMs for semantic labeling and human oversight for final revisions."
+  },
+  "methodology": {
+    "methods": [
+      "Automated Annotation Pipelines",
+      "User Studies for Validation"
+    ],
+    "metrics": [
+      "J&F Score",
+      "Region Accuracy",
+      "Boundary Accuracy"
+    ],
+    "calculation": "Metrics are calculated based on frame-level annotations against ground truth for segmentation and tracking tasks.",
+    "interpretation": "Higher J&F scores indicate better performance in object segmentation and tracking accuracy.",
+    "baseline_results": "Performance evaluations against existing benchmarks like YouTube-VOS to demonstrate improvement in segmentation and tracking.",
+    "validation": "Extensive user studies and evaluations confirm the effectiveness of annotation and usage processes."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential data bias due to uneven representation of indoor vs outdoor scenes."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Videos include face anonymization to protect privacy.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

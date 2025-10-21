@@ -1,0 +1,71 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "UR-FUNNY",
+    "abbreviation": "UR-FUNNY",
+    "overview": "This paper presents a diverse multimodal dataset, called UR-FUNNY, to open the door to understanding multimodal language used in expressing humor. The dataset and accompanying studies present a framework in multimodal humor detection for the natural language processing community.",
+    "data_type": "multimodal (text, vision, acoustic)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [],
+    "similar_benchmarks": [
+      "16000 One-Liners",
+      "Pun of the Day",
+      "PTT Jokes",
+      "Ted Laughter",
+      "Big Bang Theory"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Introducing the first multimodal language dataset of humor detection named \"UR-FUNNY\" to enable understanding and modeling humor in a multimodal framework.",
+    "audience": [
+      "Natural Language Processing community"
+    ],
+    "tasks": [
+      "Humor Detection",
+      "Punchline Detection",
+      "Binary Classification"
+    ],
+    "limitations": "We observed that the camera angle and position changes frequently during TED presentations. However, for the majority of time, the camera stays focused on the presenter. Due to the volatile camera work, the only consistently available source of visual information was the speaker’s face.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "TED talks videos and transcripts collected from the TED portal (www.ted.com); audience 'laughter' markers in transcripts used to identify punchlines and construct labels.",
+    "size": "1866 videos; total duration 90.23 hours; 16,514 video segments (8,257 humor instances and 8,257 non-humor instances); 1,741 distinct speakers; 417 distinct topics; 63,727 sentences; 965,573 words; 32,995 unique words.",
+    "format": "N/A",
+    "annotation": "Positive labels (humor) extracted using audience 'laughter' markers in TED transcripts; negative samples chosen at random intervals from the same videos (last sentence not immediately followed by a laughter marker); forced alignment (P2FA) used to align text, audio and video at word/phoneme/sentence levels."
+  },
+  "methodology": {
+    "methods": [
+      "Model-based evaluation (Contextual Memory Fusion Network (C-MFN) and variants)",
+      "Automated metrics (binary accuracy)",
+      "Human evaluation (annotator study for human performance estimate)"
+    ],
+    "metrics": [
+      "Binary Accuracy",
+      "Categorical Cross-Entropy (training loss)"
+    ],
+    "calculation": "All models are trained using categorical cross-entropy. This measure is calculated between the output of the model and ground-truth labels. Binary accuracy is reported as percent correct on the test fold.",
+    "interpretation": "The authors state that while a state-of-the-art model can achieve a reasonable level of success in modeling humor, there is still a large gap between human-level performance and state-of-the-art. Thus higher accuracy closer to human performance indicates better modeling; current models leave a substantial gap.",
+    "baseline_results": "C-MFN (all modalities T+A+V) achieved 65.23% binary accuracy. C-MFN (punchline only) best 64.47% (T+A+V). C-MFN (context only) best 58.45% (T+A+V). Reported human performance on UR-FUNNY is 82.5%. (Results reported in Table 4 of the paper.)",
+    "validation": "Standard train/validation/test folds are provided and are speaker-independent (no shared speakers across folds). Train: 5,306 humor / 5,292 non-humor instances using 1,166 videos and 1,059 speakers. Validation: 1,313 / 1,313 instances using 300 videos and 294 speakers. Test: 1,638 / 1,652 instances using 400 videos and 388 speakers."
+  },
+  "targeted_risks": {
+    "risk_categories": [],
+    "atlas_risks": {
+      "risks": null
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

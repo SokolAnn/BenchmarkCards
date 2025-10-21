@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "mChartQA (Multimodal Chart Question Answering)",
+    "abbreviation": "mChartQA",
+    "overview": "mChartQA is a universal benchmark for multimodal chart question answering based on vision-language alignment and reasoning, facilitating effective processing and integration of complex visual and textual information.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ChartQA",
+      "PlotQA",
+      "FigureQA"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2404.01548"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a benchmark for evaluating and enhancing multimodal chart question answering systems.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The benchmark includes data from various multimodal and question-answering datasets such as ChartQA, PlotQA, and FigureQA.",
+    "size": "300,000 pairs",
+    "format": "JSON",
+    "annotation": "The data is derived from existing datasets and is curated to fit the requirements for the chart question-answering tasks."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Metrics are calculated based on exact matching for textual answers and a tolerance level for numeric answers.",
+    "interpretation": "Predictions must match the correct answer exactly for textual responses, while numeric answers have a tolerance of up to 5% error.",
+    "baseline_results": "mChartQA's performance is benchmarked against various few-shot and fully-supervised models.",
+    "validation": "The model's performance is validated using metrics from the ChartQA, PlotQA, and FigureQA datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Privacy",
+      "Robustness",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination",
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Misinterpretation of critical chart details",
+      "Ambiguities leading to incorrect answers"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

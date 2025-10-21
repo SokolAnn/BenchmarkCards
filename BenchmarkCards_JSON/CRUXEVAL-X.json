@@ -1,0 +1,104 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CRUXEVAL-X: A Benchmark for Multilingual Code Reasoning, Understanding and Execution",
+    "abbreviation": "CRUXEVAL-X",
+    "overview": "CRUXEVAL-X is a multilingual code reasoning benchmark that contains 19 programming languages and is designed to address biases in existing code benchmarks while evaluating the capabilities of large language models in coding.",
+    "data_type": "input-output reasoning pairs",
+    "domains": [
+      "Software Engineering"
+    ],
+    "languages": [
+      "Python",
+      "Java",
+      "C++",
+      "JavaScript",
+      "TypeScript",
+      "Ruby",
+      "PHP",
+      "Rust",
+      "Scala",
+      "Go",
+      "Lua",
+      "Racket",
+      "Shell",
+      "Swift",
+      "D",
+      "Perl",
+      "Julia",
+      "Scala"
+    ],
+    "similar_benchmarks": [
+      "HumanEval",
+      "SWE-bench"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2408.13001"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a benchmark that evaluates the reasoning capabilities of large language models across different programming languages.",
+    "audience": [
+      "ML Researchers",
+      "Software Developers",
+      "Academics"
+    ],
+    "tasks": [
+      "Input Reasoning",
+      "Output Reasoning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed using an automated pipeline that includes code translation and generation steps",
+    "size": "19,000 reasoning pairs",
+    "format": "N/A",
+    "annotation": "Automatically generated from existing code examples with iterative repairs based on execution feedback"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Pass@1"
+    ],
+    "calculation": "Pass@1 accuracy is calculated based on the proportion of correctly answered test cases among total cases.",
+    "interpretation": "A higher Pass@1 indicates a better reasoning capability of the evaluated model.",
+    "baseline_results": "Results based on 24 mainstream LLMs tested against the benchmark.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "IdentityChain",
+    "abbreviation": "N/A",
+    "overview": "IdentityChain is a framework designed to evaluate the self-consistency and conventional accuracy of Code Large Language Models (LLMs), particularly in natural language to programming language (NL-to-PL) and programming language to natural language (PL-to-NL) generation tasks.",
+    "data_type": "program and natural language specifications",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "HumanEval",
+      "MBPP"
+    ],
+    "resources": [
+      "https://github.com/marcusm117/IdentityChain"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate and provide insights into the self-consistency of Code LLMs, identifying weaknesses in their performance.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Code Generation",
+      "Code Summarization"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "HumanEvalPlus-Mini-v0.1 and MBPP datasets.",
+    "size": "164 tasks for HumanEvalPlus, 974 tasks for MBPP",
+    "format": "Python problems",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Test Output Match (TOM) score"
+    ],
+    "calculation": "The accuracy is computed as a percentage based on correctly generated outputs compared to expected outputs.",
+    "interpretation": "Higher scores indicate better self-consistency and model performance.",
+    "baseline_results": "N/A",
+    "validation": "Model performance is validated using a set of benchmark tasks and manual examination of outputs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

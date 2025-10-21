@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "StudyChat",
+    "abbreviation": "N/A",
+    "overview": "The StudyChat dataset captures real-world student interactions with an LLM-powered tutoring chatbot during a semester-long AI course, enabling analysis of student behaviors and their correlation with course outcomes.",
+    "data_type": "dialogue acts annotations",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Science Education"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "TalkMoves",
+      "NCTE",
+      "MathDial"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/wmcnicho/StudyChat"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide insights into student behavior with LLMs and their impact on learning outcomes in higher education.",
+    "audience": [
+      "Researchers",
+      "Educators",
+      "Data Scientists"
+    ],
+    "tasks": [
+      "Dialogue Analysis",
+      "Data Annotation"
+    ],
+    "limitations": "This dataset was collected from a single AI course at a US university, limiting generalizability.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from student interactions in a university AI course using an LLM-powered chatbot.",
+    "size": "16,851 utterances",
+    "format": "JSON",
+    "annotation": "Annotated using a dialogue act labeling schema based on student interactions."
+  },
+  "methodology": {
+    "methods": [
+      "Regression Analysis",
+      "Clustering Analysis",
+      "Human Evaluation"
+    ],
+    "metrics": [
+      "Cohen's Kappa",
+      "R-squared"
+    ],
+    "calculation": "Performance metrics calculated using regression models to analyze relationships between usage patterns and course outcomes.",
+    "interpretation": "Higher R-squared values indicate better explanatory power in predicting student performance.",
+    "baseline_results": null,
+    "validation": "Inter-rater agreement reached kappa values of 0.910 for broad labels."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Privacy",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset includes a diverse range of students from upper-division AI coursework.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "PII was filtered out using systematic analysis and scripts to ensure privacy.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Students provided consent for data collection and usage.",
+    "compliance_with_regulations": "N/A"
+  }
+}

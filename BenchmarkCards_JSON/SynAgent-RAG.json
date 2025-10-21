@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SynAgent-RAG",
+    "abbreviation": "N/A",
+    "overview": "A synthetic dataset designed to enable trainable open-source LLM agents for unified retrieval-augmented generation tasks.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SQuAD",
+      "Natural Questions",
+      "TriviaQA",
+      "MusiQue",
+      "HotpotQA",
+      "2WikiMultiHopQA"
+    ],
+    "resources": [
+      "https://github.com/user/repo"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To empower small LLM agents with capabilities to reason and synthesize information for retrieval-augmented generation tasks.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Synthetic generation using Wikipedia's Vital Articles with questions generated for both single-hop and multi-hop queries.",
+    "size": "16,987 training samples, 1,197 testing samples",
+    "format": "JSON",
+    "annotation": "Annotation includes thoughts, actions, and evidence feedback as part of the reasoning process."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Exact Match (EM)",
+      "Accuracy"
+    ],
+    "calculation": "Metrics calculated based on the overlap between predicted and ground truth answers and the correctness of the predicted answer.",
+    "interpretation": "Higher scores indicate better model performance in generating accurate responses.",
+    "baseline_results": "Competitive performance compared to larger models like GPT-4 and Llama-3-70B-Inst.",
+    "validation": "Model validated using multiple retrieval-augmented generation benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "HomeEmergency",
+    "abbreviation": "N/A",
+    "overview": "The HomeEmergency dataset is aimed at enabling researchers to create embodied agents capable of responding to emergency situations in the home. It benchmarks the abilities of embodied AI agents to identify emergencies based on audio signals.",
+    "data_type": "audio-visual navigation scenarios",
+    "domains": [
+      "Natural Language Processing",
+      "Robotics"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://arxiv.org/abs/2504.01089"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enable home robots to respond to emergency scenarios in the home, preventing injuries and deaths.",
+    "audience": [
+      "Roboticists",
+      "AI Researchers",
+      "Machine Learning Researchers"
+    ],
+    "tasks": [
+      "Emergency Detection",
+      "Navigation",
+      "Audio Classification"
+    ],
+    "limitations": "The assumption of an existing human heatmap and the lack of significant auditory background noise in both simulation and real-world environments are notable limitations.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset is created using the ThreeDWorld simulator to generate household emergency scenarios based on audio signals.",
+    "size": "1152 episodes",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Probabilistic Dynamic Scene Graph (P-DSG)",
+      "Audio Perception Module",
+      "Emergency Identification Module"
+    ],
+    "metrics": [
+      "AudioGoal Success Rate (AG SR)",
+      "AudioGoal Success Rate weighted by Inverse Path Length (AG SPL)",
+      "Emergency Detection False Negative Rate (EDFNR)",
+      "Emergency Detection False Positive Rate (EDFPR)"
+    ],
+    "calculation": "Metrics are calculated based on the fraction of episodes where the agent successfully navigates to and identifies the emergency audio source.",
+    "interpretation": "Higher success rates and lower false negative rates indicate better performance of the agent in detecting emergencies.",
+    "baseline_results": "Agent's AG SR of 0.75 for falls and 0.86 for fires, outperforming baseline methods.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Accuracy",
+      "Bias"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Privacy concerns connected to developing and storing a heatmap of user activity in the home.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

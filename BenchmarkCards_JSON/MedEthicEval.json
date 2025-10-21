@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MedEthicEval",
+    "abbreviation": "N/A",
+    "overview": "MedEthicEval is a novel benchmark designed to systematically evaluate LLMs in the domain of medical ethics. It consists of key components that assess the models' grasp of medical ethics principles and their ability to apply these principles in various scenarios.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "MedSafetyBench",
+      "MedBench"
+    ],
+    "resources": [
+      "https://github.com/X-LANCE/MedEthicEval"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a framework for assessing LLMs’ ability to address complex medical ethics challenges.",
+    "audience": [
+      "ML Researchers",
+      "Healthcare Practitioners",
+      "Ethics Researchers"
+    ],
+    "tasks": [
+      "Ethical Knowledge Assessment",
+      "Violation Detection",
+      "Priority Dilemma Evaluation",
+      "Equilibrium Dilemma Evaluation"
+    ],
+    "limitations": "The relatively small size of the dataset may limit the generalizability of the results.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Developed through collaboration with medical ethics researchers, utilizing existing open-source datasets for knowledge assessment and newly created datasets for application assessments.",
+    "size": "629 questions (Knowledge), 236 questions (Detecting Violation), 100 questions (Priority Dilemma), 100 questions (Equilibrium Dilemma)",
+    "format": "JSON",
+    "annotation": "Reviewed and refined by medical experts to ensure accuracy and relevance."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Expert review"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Safety Score"
+    ],
+    "calculation": "For the knowledge component, accuracy measures the proportion of correctly answered questions. For application components, customized evaluation criteria established by medical ethics experts are used.",
+    "interpretation": "Higher accuracy indicates better ethical reasoning and knowledge application capabilities of LLMs.",
+    "baseline_results": "Qwen2.5 achieved the highest performance in both knowledge and ethical reasoning tasks.",
+    "validation": "Inter-rater reliability assessed and discrepancies resolved through expert judgment."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

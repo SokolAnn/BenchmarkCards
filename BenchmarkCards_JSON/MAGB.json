@@ -1,0 +1,101 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MAGB (Multimodal Attributed Graphs Benchmark)",
+    "abbreviation": "MAGB",
+    "overview": "The MAGB dataset is the first benchmark specifically designed for Multimodal Attributed Graph representation learning (MAGRL), consisting of five curated multimodal attributed graphs from various domains with standardized node attributes across textual and visual modalities.",
+    "data_type": "multimodal attributed graphs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "CS-TAG",
+      "OGB",
+      "DTG",
+      "TEG",
+      "DyTAG"
+    ],
+    "resources": [
+      "https://github.com/sktsherlock/MAGB"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To advance the exploration of Multimodal Attributed Graph representation learning and provide a comprehensive benchmark for evaluating various MAG representation learning methods.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Node Classification",
+      "Link Prediction"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated graphs from e-commerce platforms and social media such as Reddit",
+    "size": "5 graphs",
+    "format": "CSV",
+    "annotation": "Textual and visual attributes processed via data cleaning and augmentation"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "Hits@1",
+      "Hits@3",
+      "Mean Reciprocal Rank (MRR)"
+    ],
+    "calculation": "Metrics calculated based on standard evaluation procedures for node classification and link prediction tasks.",
+    "interpretation": "Higher scores indicate better performance in tasks of node classification and link prediction.",
+    "baseline_results": null,
+    "validation": "Conducted extensive experiments with various settings and random seeds."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Potential for bias in model predictions due to imbalanced training data."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

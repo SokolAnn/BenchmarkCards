@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FinDKG (Financial Dynamic Knowledge Graph)",
+    "abbreviation": "FinDKG",
+    "overview": "FinDKG is an open-source dynamic knowledge graph dataset created from financial news articles, used for detecting trends in financial markets.",
+    "data_type": "quintuples (entities, entity categories, relation types, timestamps)",
+    "domains": [
+      "Finance"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://xiaohui-victor-li.github.io/FinDKG/#data",
+      "https://huggingface.co/victorlxh/ICKG-v3.2"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a dynamic knowledge graph for analyzing financial trends and facilitate thematic investing.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Financial Analysts"
+    ],
+    "tasks": [
+      "Link Prediction",
+      "Temporal Knowledge Graph Learning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Financial news articles collected from the Wall Street Journal via open-source web archives.",
+    "size": "400,000 articles",
+    "format": "Quintuples",
+    "annotation": "Automated extraction of entities, relationships, and timestamps using the Integrated Contextual Knowledge Graph Generator (ICKG)."
+  },
+  "methodology": {
+    "methods": [
+      "Graph Neural Networks",
+      "Attention-Based Learning",
+      "Temporal Embedding Learning"
+    ],
+    "metrics": [
+      "Mean Reciprocal Rank (MRR)",
+      "Hits@3",
+      "Hits@10"
+    ],
+    "calculation": "Performance is evaluated by calculating MRR and Hits metrics based on predicted link ranks.",
+    "interpretation": "Higher values of MRR and Hits metrics indicate better model performance in link prediction tasks.",
+    "baseline_results": null,
+    "validation": "Models utilized a validation set with early stopping mechanism to avoid overfitting."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

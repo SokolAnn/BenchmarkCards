@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "NCSE v2.0 (Nineteenth-Century Serials Edition Version 2.0)",
+    "abbreviation": "NCSE v2.0",
+    "overview": "The NCSE v2.0 dataset features improved article identification, high-quality OCR, and text classified into four types and seventeen topics, created from a collection of 19th-century English newspapers and periodicals using an image-to-text model.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "History"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://doi.org/10.5522/04/28381610.v1",
+      "https://github.com/JonnoB/reading_the_unreadable"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To create a new, cleaned, classified, and searchable dataset of 19th-century newspapers for the benefit of historians and social scientists.",
+    "audience": [
+      "Historians",
+      "Social Scientists",
+      "Researchers"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Optical Character Recognition"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "A collection of 84,000 pages of 19th-century English newspapers and periodicals.",
+    "size": "60 GB (reduced to approximately 27GB after processing)",
+    "format": "PDF, PNG",
+    "annotation": "Manual annotation using bounding box techniques and classification algorithms."
+  },
+  "methodology": {
+    "methods": [
+      "OCR Extraction",
+      "Text Classification",
+      "Statistical Analysis"
+    ],
+    "metrics": [
+      "Character Error Rate (CER)",
+      "F1 Score"
+    ],
+    "calculation": "Character Error Rate (CER) is calculated as the sum of character substitutions, deletions, and insertions divided by the total number of characters.",
+    "interpretation": "A lower CER indicates better OCR accuracy. An F1 Score measures the balance between precision and recall in classification tasks.",
+    "baseline_results": "Pixtral achieved a median CER of 0.01, outperforming all other OCR methods.",
+    "validation": "Evaluation was performed on the NCSE test set and BLN600 for quality assurance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Creative Commons Attribution 4.0 International License (CC BY).",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

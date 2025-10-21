@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SHIELD",
+    "abbreviation": "N/A",
+    "overview": "SHIELD is introduced to evaluate the performance of multimodal large language models in face spoofing and forgery detection tasks. It comprises true/false and multiple-choice questions designed to assess MLLM capabilities on multimodal face data across various attack types.",
+    "data_type": "multimodal",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://www.idiap.ch/en/scientific-research/data/wmca",
+      "https://cvlab.cse.msu.edu/category/downloads.html",
+      "https://github.com/ondyari/FaceForensics/tree/master/dataset",
+      "https://huggingface.co/datasets/OpenRL/DeepFakeFace"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the effectiveness of multimodal large language models in detecting face spoofing and forgery.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Face Anti-Spoofing",
+      "Face Forgery Detection"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "WMCA, SiW-Mv2, and FaceForensics++ datasets.",
+    "size": "500 images",
+    "format": "N/A",
+    "annotation": "Images from various modalities (RGB, infrared, depth) annotated with multiple attack types."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Half Total Error Rate (HTER)"
+    ],
+    "calculation": "Performance is calculated based on the correct response to questions regarding real vs. spoofed faces and the classifications of forgery types.",
+    "interpretation": "Higher accuracy and lower HTER indicate better detection capabilities of models.",
+    "baseline_results": null,
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

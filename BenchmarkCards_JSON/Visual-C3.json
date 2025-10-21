@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Visual-C3",
+    "abbreviation": "N/A",
+    "overview": "Visual-C3 is a large-scale human-annotated Visual Chinese Character Checking dataset with faked and misspelled Chinese characters, consisting of 10,072 sentences represented by images and 12,019 wrong characters. It facilitates automatic detection and correction of faked characters in writing assistance.",
+    "data_type": "sentence-image pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "SIGHAN2013",
+      "SIGHAN2014",
+      "SIGHAN2015"
+    ],
+    "resources": [
+      "https://github.com/THUKElab/Visual-C3"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To improve the correctness and quality of input texts through character checking by detecting and correcting faked and misspelled characters.",
+    "audience": [
+      "NLP Researchers",
+      "Model Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Character Detection",
+      "Character Correction"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Photos of handwritten essays collected from students in a middle school.",
+    "size": "1,611 photos containing 10,072 images and 12,019 wrong characters (5,670 misspelled and 6,349 faked characters)",
+    "format": "Images",
+    "annotation": "Manual annotation by well-trained annotators"
+  },
+  "methodology": {
+    "methods": [
+      "Character-level Annotation",
+      "Sentence-level Annotation"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Precision and Recall are computed for both detection and correction tasks at character and sentence levels.",
+    "interpretation": "High Precision and Recall indicate effective detection and correction of faked and misspelled characters.",
+    "baseline_results": "OCR-based and CLIP-based methods were used as baselines, with varying performance metrics.",
+    "validation": "Annotation accuracy is verified by double-checking by senior annotators, with a Fleiss’ kappa score of 85.20% indicating almost perfect agreement."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All data has been authorized by its providers and desensitized before annotation to ensure privacy.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Written consent obtained from students providing data.",
+    "compliance_with_regulations": "N/A"
+  }
+}

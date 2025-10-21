@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FinNLI (Financial Natural Language Inference)",
+    "abbreviation": "FinNLI",
+    "overview": "FinNLI is a benchmark dataset for Financial Natural Language Inference (NLI) that includes diverse premise-hypothesis pairs across various financial texts such as SEC Filings, Annual Reports, and Earnings Call transcripts. It aims to expose weaknesses in current large language models (LLMs) for financial reasoning.",
+    "data_type": "premise-hypothesis pairs",
+    "domains": [
+      "Finance"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MedNLI",
+      "FinCausal"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/finnli"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The goal of FinNLI is to evaluate and improve NLI model performance in the financial domain, thus enhancing downstream applications of natural language processing in finance.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Natural Language Inference"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset is constructed from real-world financial documents including Annual Reports, SEC Filings, and Earnings Calls.",
+    "size": "21,304 pairs",
+    "format": "N/A",
+    "annotation": "Annotated by finance experts, the dataset includes a high-quality test set of 3,304 instances."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Macro F1 Score"
+    ],
+    "calculation": "The Macro F1 Score is calculated as the average of F1 scores across all classes in the test set.",
+    "interpretation": "Higher Macro F1 Scores indicate better performance of the NLI models on the financial reasoning tasks.",
+    "baseline_results": "The highest Macro F1 scores observed were 74.57% for pre-trained language models and 78.62% for large language models.",
+    "validation": "The dataset was validated through expert annotation and pre-processing to ensure quality."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination",
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset is constructed from publicly available financial documents and does not contain sensitive or personally identifiable information (PII).",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

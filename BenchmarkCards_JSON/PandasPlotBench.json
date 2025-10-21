@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PandasPlotBench",
+    "abbreviation": "N/A",
+    "overview": "This paper introduces the human-curated Pandas-PlotBench dataset, designed to evaluate language models’ effectiveness as assistants in visual data exploration. Our benchmark focuses on generating code for visualizing tabular data—such as a Pandas DataFrame—based on natural language instructions, complementing current evaluation tools and expanding their scope.",
+    "data_type": "tabular",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MatPlotBench"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/JetBrains-Research/PandasPlotBench",
+      "https://github.com/JetBrains-Research/PandasPlotBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess AI models as assistants in visual data exploration.",
+    "audience": [
+      "ML Researchers",
+      "Data Scientists"
+    ],
+    "tasks": [
+      "Code Generation for Data Visualization"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Human-curated from the Matplotlib gallery.",
+    "size": "175 examples",
+    "format": "CSV",
+    "annotation": "Tasks generated with the help of OpenAI GPT-4V."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Visual Score",
+      "Task-based Score"
+    ],
+    "calculation": "Scores are calculated based on the adherence of generated plots to task descriptions and visual fidelity.",
+    "interpretation": "A score of 75 or higher is considered acceptable performance.",
+    "baseline_results": null,
+    "validation": "Models were evaluated multiple times to ensure robustness."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

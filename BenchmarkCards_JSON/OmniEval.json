@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "OmniEval",
+    "abbreviation": "N/A",
+    "overview": "OmniEval is an omnidirectional and automatic benchmark for evaluating retrieval-augmented generation (RAG) systems in the financial domain. It features a multi-dimensional evaluation framework with a structured assessment across various financial topics.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Finance"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "PIXIU",
+      "FinanceBench",
+      "AlphaFin"
+    ],
+    "resources": [
+      "https://github.com/RUC-NLPIR/OmniEval"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive and automatic evaluation benchmark for RAG systems in the finance domain.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Extractive Question Answering",
+      "Multi-hop Reasoning",
+      "Contrast Question Answering",
+      "Long-form Question Answering",
+      "Conversational Question Answering"
+    ],
+    "limitations": "The benchmark may exhibit biases due to limited data availability and human annotation constraints.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Created from a variety of financial documents, including web pages and repositories specific to finance.",
+    "size": "11,400 examples",
+    "format": "JSON",
+    "annotation": "Combination of automated and human annotation methods."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Rouge-L",
+      "Mean Average Precision (MAP)"
+    ],
+    "calculation": "Metrics are calculated based on test examples generated through automated and human annotation methods.",
+    "interpretation": "Evaluations are interpreted through semantic alignment norms and accuracy measures referencing ground truth answers.",
+    "baseline_results": "Various RAG models were compared using the OmniEval dataset.",
+    "validation": "The validation process involved both automated quality checks and human corrections."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

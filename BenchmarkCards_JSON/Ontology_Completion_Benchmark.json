@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Ontology Completion Benchmark",
+    "abbreviation": "N/A",
+    "overview": "This paper introduces a benchmark for evaluating ontology completion methods, designed to include manually validated hard negatives, and thoroughly analyses the strengths and weaknesses of Natural Language Inference (NLI) and concept embedding approaches.",
+    "data_type": "rule pairs",
+    "domains": [
+      "Artificial Intelligence"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/meta-llama/Llama-2-7b-hf",
+      "https://huggingface.co/meta-llama/Llama-2-7b-chat-hf",
+      "https://huggingface.co/meta-llama/Llama-2-13b-hf",
+      "https://huggingface.co/meta-llama/Llama-2-13b-chat-hf",
+      "https://huggingface.co/togethercomputer/Llama-2-7B-32K-Instruct",
+      "https://huggingface.co/mistralai/Mistral-7B-v0.1",
+      "https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2",
+      "https://huggingface.co/lmsys/vicuna-13b-v1.5",
+      "https://huggingface.co/lmsys/vicuna-13b-v1.5-16k"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate and compare ontology completion methods, specifically analyzing NLI and concept embedding approaches.",
+    "audience": [
+      "AI Researchers",
+      "Ontology Engineers"
+    ],
+    "tasks": [
+      "Ontology Completion"
+    ],
+    "limitations": "The area of ontology completion is considerably less mature than related areas, and the methods analyzed should be seen as baselines for future work.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Seven well-known ontologies including Wine, Economy, Olympics, Transport, SUMO, FoodOn, and Gene Ontology.",
+    "size": "103,184 positive examples, 494,708 negative examples in total",
+    "format": "N/A",
+    "annotation": "Manual annotation for negative examples"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Accuracy"
+    ],
+    "calculation": "Metrics are calculated based on the accuracy of identifying valid ontology rules.",
+    "interpretation": "Higher F1 scores indicate better performance in identifying valid rules and their classifications.",
+    "baseline_results": "Results achieved by various models are provided, showing performance across tasks.",
+    "validation": "The benchmark is validated through comparative analysis of NLI and concept embedding methods."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": []
+        },
+        {
+          "category": "Fairness",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

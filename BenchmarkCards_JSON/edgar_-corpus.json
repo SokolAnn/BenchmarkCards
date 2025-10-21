@@ -1,0 +1,78 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "edgar -corpus",
+    "abbreviation": "N/A",
+    "overview": "edgar -corpus is the largest financial NLP corpus available, comprising annual reports from all publicly traded companies in the US, spanning a period of more than 25 years, provided in an easy-to-use JSON format.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Finance"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://zenodo.org/record/5528490",
+      "https://github.com/nlpaueb/edgar-crawler"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive financial NLP corpus that facilitates research in financial text analysis.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Annual reports (10-K filings) from all publicly traded companies in the US collected via web crawling.",
+    "size": "6.5B tokens",
+    "format": "JSON",
+    "annotation": "Manual extraction of sections from annual reports."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "Mean Squared Error (MSE)"
+    ],
+    "calculation": "Standard metrics such as Accuracy, F1 Score, and MSE were used to evaluate the performance in financial NLP tasks.",
+    "interpretation": "Better performance indicates better embeddings for financial NLP tasks.",
+    "baseline_results": "edgar -w2v outperforms generic glove embeddings and other financial embeddings.",
+    "validation": "10-fold cross-validation was used for reliability."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

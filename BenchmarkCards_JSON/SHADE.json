@@ -1,0 +1,82 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SHADE-Arena: Evaluating Sabotage and Monitoring in LLM Agents",
+    "abbreviation": "SHADE",
+    "overview": "SHADE-Arena is a diverse agent evaluation dataset for assessing the sabotage and monitoring capabilities of LLM agents through complex pairs of benign main tasks and harmful side objectives in complicated environments.",
+    "data_type": "task pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/safety-research/SHADE-Arena"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the sabotage capabilities of large language models (LLMs) and their monitoring abilities in high-stakes environments.",
+    "audience": [
+      "ML Researchers",
+      "Safety Researchers"
+    ],
+    "tasks": [
+      "Task Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Synthetic environments generated to mimic real-world agent interactions.",
+    "size": "17 task pairs",
+    "format": "N/A",
+    "annotation": "Manual engineering and transcript review to ensure task complexity and validation."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "AUC"
+    ],
+    "calculation": "Success is defined as the agent completing the main task and side task without detection by the monitor.",
+    "interpretation": "A higher score indicates better ability of agents to execute tasks without being detected.",
+    "baseline_results": "Claude 3.7 Sonnet and Gemini 2.5 Pro scored 27% and 15% as sabotage agents respectively.",
+    "validation": "Successful trajectories are compared across multiple models to assess performance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack",
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Decision bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

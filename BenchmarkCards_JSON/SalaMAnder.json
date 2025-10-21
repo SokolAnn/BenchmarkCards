@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SalaMAnder (Shapley-based Mathematical Expression Attribution and Metric)",
+    "abbreviation": "SalaMAnder",
+    "overview": "SalaMAnder is a framework that employs Shapley-based attribution to enhance understanding and optimization of Chain-of-Thought reasoning in large language models, focusing on few-shot mathematical problem-solving.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Mathematics"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "GSM8K",
+      "MathQA",
+      "AQUA",
+      "MultiArith",
+      "SV AMP"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2509.16561"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a theoretical foundation and practical framework for understanding the contributions of components in Chain-of-Thought reasoning for large language models.",
+    "audience": [
+      "ML Researchers",
+      "Data Scientists",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Mathematical Problem Solving",
+      "Chain-of-Thought Reasoning Analysis"
+    ],
+    "limitations": "Currently limited to mathematical reasoning problems; aiming to broaden application in future.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Utilized existing mathematical benchmarks (GSM8K, MathQA, AQUA, MultiArith, SV AMP).",
+    "size": "Multiple datasets utilized, specifics vary.",
+    "format": "Text-based question-answer pairs",
+    "annotation": "Data derived from pre-existing benchmarks"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Statistical analysis"
+    ],
+    "metrics": [
+      "CoSP (Cardinality of Shapley Positives)"
+    ],
+    "calculation": "Involves Shapley value calculations to quantify contributions of mathematical expressions in reasoning.",
+    "interpretation": "High CoSP values indicate stronger contributions to model performance, while low values suggest minimal influence.",
+    "baseline_results": null,
+    "validation": "Empirical validation across various models and datasets to demonstrate robustness and correlation with model performance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Bias",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FINTAGGING",
+    "abbreviation": "N/A",
+    "overview": "FINTAGGING is the first full-scope, table-aware XBRL benchmark designed to evaluate the structured information extraction and semantic alignment capabilities of large language models (LLMs) in the context of XBRL-based financial reporting.",
+    "data_type": "table-aware information extraction",
+    "domains": [
+      "Finance"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "FiNER",
+      "FNXL"
+    ],
+    "resources": [
+      "https://github.com/The-FinAI/FinTagging",
+      "https://huggingface.co/collections/TheFinAI/fintagging-68270132372c6608ac069bef"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate LLMs on their ability to perform full-scope XBRL tagging, including fact extraction and concept alignment.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Financial Analysts"
+    ],
+    "tasks": [
+      "Structured Information Extraction",
+      "Concept Linking"
+    ],
+    "limitations": "The benchmark focuses primarily on US-GAAP financial reports and does not cover all global accounting standards.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected annual 10-K reports from publicly listed companies filed with the SEC.",
+    "size": "81,325 facts",
+    "format": "Tabular and textual",
+    "annotation": "Gold-standard annotations of numerical entity types and associated US-GAAP concepts."
+  },
+  "methodology": {
+    "methods": [
+      "Zero-shot evaluation"
+    ],
+    "metrics": [
+      "Macro F1 Score",
+      "Micro F1 Score",
+      "Accuracy"
+    ],
+    "calculation": "Computed using pair-level metrics for FinNI and accuracy for FinCL.",
+    "interpretation": "Performance threshold varies based on specific subtask; higher scores indicate better extraction and alignment.",
+    "baseline_results": "Preliminary evaluation results show significant variance in performance across different models.",
+    "validation": "Joint evaluation framework for structured triplet {Fact, Type, Tag} assessment."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Exposing personal information"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Misuse and Misinterpretation",
+      "Coverage Bias",
+      "Overreliance on Automation"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

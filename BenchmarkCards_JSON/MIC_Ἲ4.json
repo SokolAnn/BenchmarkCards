@@ -1,0 +1,117 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MORAL INTEGRITY CORPUS (MIC Ἲ4)",
+    "abbreviation": "MIC Ἲ4",
+    "overview": "The MORAL INTEGRITY CORPUS (MIC Ἲ4) is a new dataset for benchmarking open-domain dialogue systems that captures the moral assumptions of 38k prompt-reply pairs using 99k distinct Rules of Thumb (RoTs). It represents interpretable RoT judgments with structured attributes (Alignment, Global Consensus, Violation Severity, Moral Foundations) and is intended to facilitate systematic understanding of the intuitions, values, and moral judgments reflected in chatbot utterances.",
+    "data_type": "prompt-reply pairs (text) and textual Rules of Thumb (RoTs)",
+    "domains": [
+      "Natural Language Processing",
+      "Human-Computer Interaction"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SOCIAL-CHEM-101",
+      "MORAL STORIES",
+      "ETHICS",
+      "SCRUPLES",
+      "Social Chemistry 101"
+    ],
+    "resources": [
+      "https://github.com/GT-SALT/mic",
+      "https://github.com/FionnD/Reddit-QA-Corpus",
+      "https://arxiv.org/abs/2204.03021"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Provide a resource to systematically observe and benchmark the moral assumptions and normative social commonsense reasoning of conversational agents by collecting prompt-reply pairs annotated with Rules of Thumb (RoTs) and structured attributes.",
+    "audience": [
+      "Machine Learning Researchers",
+      "Conversational AI / Chatbot Developers",
+      "Domain Experts for moderation and safety"
+    ],
+    "tasks": [
+      "Text Generation",
+      "Text Classification",
+      "Multi-label Classification",
+      "Ordinal Regression"
+    ],
+    "limitations": "Dataset limited to English-language prompts and U.S.-based Amazon Mechanical Turk annotators; annotations reflect annotators' worldviews; Reddit prompts are demographically skewed; RoTs are descriptive not authoritative.",
+    "out_of_scope_uses": [
+      "Treating RoTs as global or universally binding ethical judgments is out-of-scope (RoTs are not designed to form a cohesive and universal ethical system).",
+      "Using the Moral Transformers' judgments as moral advice is out-of-scope (the authors state judgments should not be taken as moral advice)."
+    ]
+  },
+  "data": {
+    "source": "Prompts were compiled from a pre-existing public collection of r/AskReddit posts (Fionn Delahunty, 2018). Each prompt was fed to three chatbot systems (BlenderBot, DialoGPT, GPT-Neo) to obtain replies; responses were filtered using keyword filtering (Expanded Moral Foundations Dictionary and subjective-word filter) and an ALBERT-based classifier for moral/sufficient content; retained examples were annotated by Amazon Mechanical Turk workers.",
+    "size": "38,000 unique prompt-reply pairs; 99,000 distinct Rules of Thumb (RoTs); 114,000 annotated prompt-reply-RoT sets",
+    "format": "N/A",
+    "annotation": "Crowdsourced via Amazon Mechanical Turk. Three annotators independently drafted a RoT per prompt-reply pair; annotators answered attribute questions (Reply Alignment, Global Consensus, Violation Severity, Moral Foundations) and provided a Revised Answer. Secondary task: three annotators per RoT provided attribute annotations. Qualification test, staging round, automated and manual quality checks, and IRB review were used."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation",
+      "Model-based evaluation (fine-tuning language models, retrieval baselines)",
+      "Transfer learning experiments"
+    ],
+    "metrics": [
+      "ROUGE-1",
+      "ROUGE-2",
+      "ROUGE-L",
+      "BLEU",
+      "BERTScore",
+      "Precision",
+      "Recall",
+      "F1 Score",
+      "Mean Squared Error (MSE)",
+      "Pearson correlation (r)",
+      "Human evaluation: Well-formedness, Fluency (1-5), Relevance (1-5)",
+      "Inter-annotator agreement (ICC, Krippendorf's alpha)"
+    ],
+    "calculation": "For generation metrics, when three ground-truth RoTs exist per prompt-reply, the maximum score across the three ground truths was taken for each metric. Attribute tasks used train/dev/test splits and appropriate loss formulations: ordinal regression with MSE for Severity and Consensus, Binary Cross Entropy for multi-label Moral Foundations, and standard classification losses for alignment. Experiments used an 80-10-10 train-dev-test split ensuring no prompt-reply pair appears in multiple splits.",
+    "interpretation": "Models approaching human levels on well-formedness, fluency, and relevance are considered strong; ROUGE/BLEU/BERTScore and human ratings indicate quality. The paper notes that even top models generate irrelevant RoTs (relevance < 2) about 28% of the time, indicating that lower relevance or low human evaluation scores indicate poor performance.",
+    "baseline_results": "Best performing T5 model achieves ROUGE-L ≈ 52.6 (paper cites ROUGE-L ≈ 53). Attribute classification: ALBERT achieves r=0.59 (Severity), r=0.44 (Consensus), Alignment F1 = 76.0, Moral Foundations F1 scores vary (e.g., Care 75.3, Fairness 59.6, Liberty 58.0, Loyalty 62.7, Authority 54.3, Sanctity 40.8). RoT generation human-eval relevance for best models approaches human levels (relevance ≈ 4.03 for beam-decoded models in human eval).",
+    "validation": "80-10-10 train-dev-test split with no overlap of prompt-reply pairs across splits; human evaluation with three workers per generation on sampled generations; inter-annotator agreement measured (ICC and Krippendorf's alpha reported for attributes); qualification tests and staging rounds for annotators; automated and manual quality control procedures."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Privacy",
+      "Misuse"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Data Laws",
+          "subcategory": [
+            "Data usage restrictions"
+          ]
+        },
+        {
+          "category": "Misuse",
+          "subcategory": [
+            "Improper usage"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Human exploitation"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Annotators were U.S.-based English-speaking Amazon Mechanical Turk workers who self-reported political leaning and completed an abbreviated Moral Foundations Questionnaire. The worker pool is primarily liberal; the paper reports 25% of workers are conservative-leaning and 22% of annotations were written by conservative-leaning workers. Annotator MFQ scores correlate with political leaning (liberals emphasize Care and Fairness more).",
+    "harm": "Detecting and preventing morally insensitive, hurtful, or incoherent chatbot replies; mitigating erosion of user trust in conversational agents; addressing potential emotional burden on annotators from exposure to disturbing content."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Study was reviewed and approved by an internal review board; annotator meta-data (self-reported political leaning and MFQ responses) were collected. No explicit anonymization protocol described in the paper text.",
+    "data_licensing": "Data Use Agreement is required for users of the data (linked in the project repository). No specific open-data license (e.g., CC BY) is specified in the paper.",
+    "consent_procedures": "Internal review board approval obtained; annotators received content warnings and could skip HITs; qualification test and staging round with feedback were used before granting access to main task.",
+    "compliance_with_regulations": "IRB review/approval is reported. No explicit mention of GDPR, CCPA, or other legal/regulatory frameworks in the paper."
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ISO-B ENCH (Image-State Ordering Benchmark)",
+    "abbreviation": "ISO-B ENCH",
+    "overview": "ISO-B ENCH is a benchmark for evaluating whether models can infer causal dependencies between visual observations and procedural text, constructed to test multimodal causal reasoning abilities in vision-language models.",
+    "data_type": "text-image pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "RecipeQA",
+      "TOMATO",
+      "VCOPA"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/StonyBrookNLP/ISO-Bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective is to test the ability of multimodal models to reason about causal relationships across visual and textual steps in procedural plans.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Causal Reasoning"
+    ],
+    "limitations": "The benchmark only investigates English-language documents, limiting generalizability. It currently lacks a development set for few-shot experiments.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from two instructional video datasets: YouCook2 and CrossTask.",
+    "size": "764 examples",
+    "format": "JSON",
+    "annotation": "Manually annotated with binary labels indicating causal dependencies."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "Evaluation based on per-class precision, recall, and F1 score.",
+    "interpretation": "Higher F1 scores indicate better performance in causal reasoning tasks.",
+    "baseline_results": "Human performance achieves an F1 Score of 0.98 on the benchmark.",
+    "validation": "Results validated through testing various multimodal models on the benchmark."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

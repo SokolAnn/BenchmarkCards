@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Unmasking Implicit Bias: Evaluating Persona-Prompted LLM Responses in Power-Disparate Social Scenarios",
+    "abbreviation": "N/A",
+    "overview": "This study introduces a novel evaluation framework using cosine distance and an LLM-judged Preference Win Rate to measure how demographic prompts affect response quality across power-disparate social scenarios, revealing biases in large language models (LLMs).",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SOTOPIA"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2503.01532"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To quantitatively assess how demographic information influences LLM-generated responses across diverse social contexts and power dynamics.",
+    "audience": [
+      "ML Researchers",
+      "Ethics Researchers",
+      "AI Practitioners"
+    ],
+    "tasks": [
+      "Bias Assessment",
+      "Response Evaluation"
+    ],
+    "limitations": "Responses and findings may not generalize to all contexts or demographics, as the study focused on specific social scenarios.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated social scenarios using LLMs with demographic prompts and responses evaluated for biases and quality.",
+    "size": "100 unique scenarios",
+    "format": "N/A",
+    "annotation": "Responses were evaluated based on qualitative criteria including Helpfulness, Honesty, and Harmlessness."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Preference Win Rate (WR)",
+      "Cosine Distance"
+    ],
+    "calculation": "Cosine distance measures identity shifts in responses induced by demographic prompts; Win Rate compares responses based on evaluated criteria.",
+    "interpretation": "A lower average cosine distance indicates a model's sensitivity to demographic changes; a higher Win Rate reflects better quality responses under demographic prompts.",
+    "baseline_results": null,
+    "validation": "Comparison of LLM judgments with human evaluations showed moderate alignment."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Misuse",
+          "subcategory": [
+            "Nonconsensual use"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The study investigates implicit biases related to demographic information across various axes including race, gender, age, and disability.",
+    "harm": [
+      "Discriminatory outcomes in sensitive applications due to embedded biases."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

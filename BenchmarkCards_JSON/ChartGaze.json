@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ChartGaze",
+    "abbreviation": "N/A",
+    "overview": "ChartGaze is a new eye-tracking dataset that captures human gaze patterns during chart reasoning tasks, designed to improve attention alignment in Large Vision-Language Models (LVLMs) and enhance interpretability and accuracy of chart Question Answering (CQA).",
+    "data_type": "attention maps",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ChartQA",
+      "VisText"
+    ],
+    "resources": [
+      "https://github.com/user/repo",
+      "https://huggingface.co/datasets/chartgaze"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a dataset for improving attention alignment in LVLMs used for chart understanding, thereby enhancing model interpretability and accuracy.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Chart Question Answering"
+    ],
+    "limitations": "The study focuses on Yes/No questions and relatively simple chart types, which may limit generalizability to more complex visualizations and open-ended questions.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from chart images sourced from ChartQA and VisText datasets, combined with human gaze data collected during chart reasoning tasks.",
+    "size": "4,638 attention maps from 1,620 unique chart images",
+    "format": "JSON",
+    "annotation": "Eye-tracking data captured using Tobii Pro Fusion for detailed human gaze mapping during the task."
+  },
+  "methodology": {
+    "methods": [
+      "Gaze-guided attention refinement",
+      "Human evaluation of attention alignment"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Pearson's Correlation Coefficient (CC)",
+      "Kullback–Leibler (KL) divergence",
+      "Histogram intersection (SIM)"
+    ],
+    "calculation": "Metrics calculated based on the alignment of model-derived attention maps with human gaze data and the percentage of questions answered correctly.",
+    "interpretation": "Higher scores in CC and SIM indicate better alignment of model attention with human gaze and higher accuracy reflects improved understanding.",
+    "baseline_results": "LVLMs fine-tuned with gaze-guided attention refinement improved accuracy by up to 2.56 percentage points over those trained with language loss alone.",
+    "validation": "The dataset was validated through human annotation and gaze data quality controls including filtering for accuracy."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Privacy",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Data privacy rights alignment"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Demographics of participants involved in the eye-tracking data collection were balanced across gender and academic fields.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All collected gaze data were de-identified and securely stored on encrypted devices to protect participant privacy.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Participants provided informed consent and were compensated for their participation.",
+    "compliance_with_regulations": "The study was reviewed and approved by the University of British Columbia behavioural research ethics board."
+  }
+}

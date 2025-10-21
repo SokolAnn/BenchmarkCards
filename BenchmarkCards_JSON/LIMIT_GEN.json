@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LIMIT GEN",
+    "abbreviation": "N/A",
+    "overview": "LIMIT GEN is a comprehensive benchmark for evaluating LLMs’ capability to support early-stage feedback and complement human peer review by identifying the limitations of scientific research, particularly in AI.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "N/A"
+    ],
+    "resources": [
+      "https://github.com/yale-nlp/LimitGen",
+      "https://huggingface.co/datasets/yale-nlp/LimitGen"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To systematically evaluate models on identifying and addressing scientific research limitations.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Limitation Identification",
+      "Peer Review Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Data is collected from ICLR 2025 submissions and includes synthetic data created through controlled perturbations of high-quality papers.",
+    "size": "2,000 examples",
+    "format": "JSON",
+    "annotation": "Annotations conducted by human experts and the use of LLMs for synthetic generation."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Jaccard Index",
+      "Recall",
+      "Precision"
+    ],
+    "calculation": "Metrics are calculated based on comparisons between generated limitations and ground truth.",
+    "interpretation": "Higher scores indicate better alignment and relevance of the generated limitations to the actual research limitations.",
+    "baseline_results": "N/A",
+    "validation": "Inter-annotator agreement is measured using Cohen’s Kappa."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC BY 4.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

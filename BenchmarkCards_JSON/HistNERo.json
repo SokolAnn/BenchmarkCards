@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "HistNERo (Historical Named Entity Recognition for the Romanian Language)",
+    "abbreviation": "HistNERo",
+    "overview": "This work introduces HistNERo, the first Romanian corpus for Named Entity Recognition (NER) in historical newspapers. The dataset contains 323k tokens of text, covering more than half of the 19th century until the late part of the 20th century, annotated with five named entities.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Romanian"
+    ],
+    "similar_benchmarks": [
+      "RONECv1",
+      "RONECv2",
+      "LegalNERo",
+      "MicroBloggingNERo"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/avramandrei/histnero"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a valuable resource that advances the state of the art in historical NER, facilitating a more accurate and nuanced analysis of Romanian historical documents.",
+    "audience": [
+      "ML Researchers",
+      "Historicians",
+      "Natural Language Processing Practitioners"
+    ],
+    "tasks": [
+      "Named Entity Recognition"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The ROmanian DIachronic Corpus with Annotations (RODICA) corpus.",
+    "size": "323,865 tokens",
+    "format": "BRAT format",
+    "annotation": "Annotated by eight native Romanian speakers with five named entities."
+  },
+  "methodology": {
+    "methods": [
+      "Evaluation of several Romanian pre-trained language models"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Accuracy"
+    ],
+    "calculation": "The strict F1-score was calculated based on the predicted and true entities.",
+    "interpretation": "Higher F1 scores indicate better model performance in identifying and classifying the named entities.",
+    "baseline_results": "RoBERT-large achieved a strict F1-score of 66.80%.",
+    "validation": "Validation was performed using an 80%, 10%, and 10% train-validation-test split of the dataset."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Open license",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

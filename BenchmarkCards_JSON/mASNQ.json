@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "mASNQ (Multilingual Answer Sentence Selection)",
+    "abbreviation": "mASNQ",
+    "overview": "We introduce new high-quality datasets for Answer Sentence Selection (AS2) in five European languages (French, German, Italian, Portuguese, and Spanish), obtained through supervised Automatic Machine Translation (AMT) of existing English AS2 datasets.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "French",
+      "German",
+      "Italian",
+      "Portuguese",
+      "Spanish"
+    ],
+    "similar_benchmarks": [
+      "ASNQ",
+      "WikiQA",
+      "TREC-QA"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/matteogabburo/mASNQ",
+      "https://huggingface.co/datasets/matteogabburo/mWikiQA",
+      "https://huggingface.co/datasets/matteogabburo/mTRECQA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide high-quality multilingual AS2 datasets to close the performance gap between English and other languages.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Answer Sentence Selection"
+    ],
+    "limitations": "This paper focuses on five European languages, limiting the applicability of findings to other languages.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Translated datasets from existing English AS2 datasets (ASNQ, WikiQA, and TREC-QA).",
+    "size": "100 million question-answer pairs",
+    "format": "N/A",
+    "annotation": "Supervised Automatic Machine Translation"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Mean Average Precision (MAP)",
+      "Precision at 1 (P@1)"
+    ],
+    "calculation": "Metrics calculated as per standard information retrieval evaluation practices.",
+    "interpretation": "Higher MAP and P@1 scores indicate better model performance.",
+    "baseline_results": null,
+    "validation": "Evaluated performance across multiple multilingual models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

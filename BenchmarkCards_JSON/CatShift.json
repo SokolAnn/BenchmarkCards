@@ -1,0 +1,66 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CatShift",
+    "abbreviation": "N/A",
+    "overview": "CatShift is a label-only dataset-inference framework that leverages catastrophic forgetting to detect whether a suspicious dataset was used in training a large language model.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": []
+  },
+  "purpose_and_intended_users": {
+    "goal": "To detect unauthorized usage of proprietary datasets using label-only outputs from large language models.",
+    "audience": [
+      "ML Researchers",
+      "Data Owners"
+    ],
+    "tasks": [
+      "Dataset Inference"
+    ],
+    "limitations": "CatShift may struggle with datasets that substantially overlap with other data in the model’s training corpus.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Experimental datasets created for evaluating membership in large language models.",
+    "size": "Various sizes depending on subsets analyzed.",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Hypothesis testing",
+      "Statistical analysis"
+    ],
+    "metrics": [
+      "AUC Score",
+      "F1 Score"
+    ],
+    "calculation": "Comparison of output shifts before and after fine-tuning using a statistical hypothesis test.",
+    "interpretation": "Lower p-values indicate a higher likelihood that the suspicious dataset was part of the training data.",
+    "baseline_results": "Baseline method achieved an AUC score of 0.707 and F1 score of 0.717; CatShift achieved an AUC score of 0.979 and F1 score of 0.863.",
+    "validation": "Statistical tests such as Kolmogorov-Smirnov are employed to validate results."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Intellectual Property"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

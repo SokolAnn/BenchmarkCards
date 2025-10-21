@@ -1,0 +1,79 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PNGT-26K Dataset",
+    "abbreviation": "N/A",
+    "overview": "PNGT-26K is a comprehensive dataset of approximately 26,000 Persian names, their commonly associated gender, and their English transliteration, systematically curated to address the transliteration bottleneck.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Persian"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/farbodbij/persian-gender-by-name",
+      "https://github.com/farbodbj/Nominalist",
+      "https://github.com/farbodbj/Open-Gender-Detection"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a large, open, and systematically curated resource for Persian names with transliterations, offering researchers and practitioners a foundation for developing culturally-aware NLP applications.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Gender Detection",
+      "Username Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated from existing datasets including iranian-Names-Database-By-Gender, persian-names, and persian-names-gender using careful sampling and validation by native speakers.",
+    "size": "26,000 tuples",
+    "format": "Tuple",
+    "annotation": "Manually validated and annotated by native speakers."
+  },
+  "methodology": {
+    "methods": [
+      "Data Compilation",
+      "Probabilistic Gender Detection",
+      "Username Generation Framework"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Calculated using normalized Levenshtein distance and multimodal approaches combining image and name inference.",
+    "interpretation": "Probabilistic output reflecting confidence in gender prediction based on name and profile analysis.",
+    "baseline_results": "N/A",
+    "validation": "Manual review of flagged records for transliteration and validation against existing name databases."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

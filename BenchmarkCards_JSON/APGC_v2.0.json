@@ -1,0 +1,78 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Arabic Parallel Gender Corpus (APGC v2.0)",
+    "abbreviation": "APGC v2.0",
+    "overview": "We introduce a new parallel corpus for gender identification and rewriting in contexts involving one or two users with independent grammatical gender preferences. The corpus expands on Habash et al. (2019)'s Arabic Parallel Gender Corpus by adding second person targets as well as increasing the total number of sentences over 6.5 times, reaching over 590K words.",
+    "data_type": "sentence pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Arabic",
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Arabic Parallel Gender Corpus v1.0"
+    ],
+    "resources": [
+      "http://resources.camel-lab.com/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The Arabic Parallel Gender Corpus is intended to aid the research and development of gender identification, controlled text generation, and post-editing rewrite systems to personalize NLP applications.",
+    "audience": [
+      "ML Researchers",
+      "Natural Language Processing Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Gender Identification",
+      "Controlled Text Generation",
+      "Post-Editing"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "English-Arabic OpenSubtitles 2018 dataset",
+    "size": "590,000 words",
+    "format": "JSON",
+    "annotation": "Manual annotation by professional linguists"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation"
+    ],
+    "metrics": [
+      "BLEU Score"
+    ],
+    "calculation": "BLEU scores are calculated for machine translation outputs against the target corpus.",
+    "interpretation": "Higher BLEU scores indicate better translation performance, reflecting less gender bias towards masculine grammatical preferences.",
+    "baseline_results": "N/A",
+    "validation": "The dataset was validated through professional linguistic annotations and quality checks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

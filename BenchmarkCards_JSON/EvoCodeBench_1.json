@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "EvoCodeBench",
+    "abbreviation": "N/A",
+    "overview": "EvoCodeBench is a new benchmark for evaluating Large Language Models in code generation, aligning with real-world code repositories and offering comprehensive annotations across multiple dimensions.",
+    "data_type": "code samples",
+    "domains": [
+      "Software Engineering"
+    ],
+    "languages": [
+      "English",
+      "Python"
+    ],
+    "similar_benchmarks": [
+      "HumanEval",
+      "CoNaLa",
+      "MBPP",
+      "APPS",
+      "CoderEval"
+    ],
+    "resources": [
+      "https://github.com/seketeam/EvoCodeBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a benchmark that reflects the real-world capabilities of LLMs in code generation tasks.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Code Generation"
+    ],
+    "limitations": "EvoCodeBench is currently a monolingual benchmark that primarily focuses on English and Python.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from 25 real-world open-source repositories on GitHub",
+    "size": "275 samples",
+    "format": "N/A",
+    "annotation": "Comprehensive annotations including requirements, reference code, and dependencies"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Pass@k",
+      "Recall@k"
+    ],
+    "calculation": "Metrics are calculated based on test cases to evaluate functional correctness and dependency invocation.",
+    "interpretation": "Higher Pass@k and Recall@k values indicate better code generation performance of LLMs.",
+    "baseline_results": "N/A",
+    "validation": "Results are validated against real-world code generation tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": []
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack",
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All samples have been manually checked to ensure no private information or offensive content is included.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

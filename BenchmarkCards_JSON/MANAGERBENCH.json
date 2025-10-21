@@ -1,0 +1,100 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MANAGERBENCH",
+    "abbreviation": "N/A",
+    "overview": "MANAGERBENCH is a benchmark that evaluates LLM decision-making in realistic, human-validated managerial scenarios, focusing on the safety-pragmatism trade-off in autonomous LLMs' actions.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision",
+      "Healthcare",
+      "Finance",
+      "Legal",
+      "Education",
+      "Robotics"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "HARM-Bench",
+      "MoralBench"
+    ],
+    "resources": [
+      "https://github.com/technion-cs-nlp/ManagerBench",
+      "https://arxiv.org/abs/2510.00857"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To expose alignment failures in LLMs and improve the safety and decision-making capabilities in environments where operational goals might conflict with human safety.",
+    "audience": [
+      "ML Researchers",
+      "Policy Makers",
+      "AI Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Decision Making",
+      "Safety Analysis"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated via state-of-the-art LLMs and validated by human evaluators.",
+    "size": "2,440 examples",
+    "format": "JSON",
+    "annotation": "Designed and validated through human assessment for realism and perceived harm."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Harm Avoidance",
+      "Control Pragmatism",
+      "MB-Score",
+      "Tilt Imbalance"
+    ],
+    "calculation": "Scores are computed based on the percentage of times models choose safe actions over harmful ones in a set of deliberately contrived scenarios.",
+    "interpretation": "Scores indicate how well models prioritize safety versus operational objectives, where higher scores reflect better alignment with safety.",
+    "baseline_results": "Reported performance of state-of-the-art models included GPT-4o, GPT-5, and others against the benchmark.",
+    "validation": "Validation involved systematic human assessment to ensure scenario realism and relevance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Ethical Decision Making",
+      "Alignment"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Human harm assessments in operational scenarios",
+      "Overly safe decision making leading to inefficiencies"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

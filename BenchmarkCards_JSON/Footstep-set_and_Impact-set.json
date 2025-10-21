@@ -1,0 +1,69 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Footstep-set and Impact-set",
+    "abbreviation": "N/A",
+    "overview": "Two sound effect datasets designed to evaluate both controllability and sound quality in sound synthesis.",
+    "data_type": "audio",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "N/A"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://zenodo.org/records/14286414"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To benchmark a similarity-based conditioning method for controllable sound effect synthesis.",
+    "audience": [
+      "ML Researchers",
+      "Sound Designers",
+      "Audio Engineers"
+    ],
+    "tasks": [
+      "Sound Effect Generation"
+    ],
+    "limitations": "The effective range of control is densely concentrated around similarity scores of 0.8 to 1.0.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from Freesound, categorized into detailed sound effect categories.",
+    "size": "2,127 footstep sounds and 1,666 impact sounds",
+    "format": "N/A",
+    "annotation": "Categorized based on the material of the contacting surface."
+  },
+  "methodology": {
+    "methods": [
+      "Regression analysis",
+      "Statistical evaluation metrics"
+    ],
+    "metrics": [
+      "Frechet Audio Distance (FAD)",
+      "Log Spectral Distance (LSD)"
+    ],
+    "calculation": "FAD measures the overall similarity between two distributions: the reference dataset and the reconstructed dataset.",
+    "interpretation": "Lower FAD values indicate better synthesis quality.",
+    "baseline_results": null,
+    "validation": "Evaluated using objective metrics (FAD, LSD) against existing models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

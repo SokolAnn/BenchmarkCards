@@ -1,0 +1,82 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PL-Guard",
+    "abbreviation": "N/A",
+    "overview": "We introduce PL-Guard, a manually verified Polish-language benchmark for safety classification, along with PL-Guard-adv, its adversarial extension featuring text perturbations to evaluate model robustness.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Polish"
+    ],
+    "similar_benchmarks": [
+      "WildGuard",
+      "PolyGuard"
+    ],
+    "resources": [
+      "https://huggingface.co/collections/NASK-PIB/PL-Guard-684945df2cff1837f1bc6e95"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a robust evaluation of language model safety specifically for Polish, addressing the gap in non-English safety evaluation.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Safety Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Manually annotated Polish-language data and translated datasets from WildGuard and PolyGuard.",
+    "size": "7,000 samples for PL-Guard; 900 samples for PL-Guard-test.",
+    "format": "N/A",
+    "annotation": "Manual review and re-annotation by trained annotators with high inter-annotator agreement."
+  },
+  "methodology": {
+    "methods": [
+      "Fine-tuning",
+      "Adversarial testing"
+    ],
+    "metrics": [
+      "F1 Score"
+    ],
+    "calculation": "Calculated as macro F1 scores for binary safety and multiclass hazard categories.",
+    "interpretation": "Higher F1 scores indicate better performance in detecting unsafe outputs.",
+    "baseline_results": "HerBERT-based classifier achieves high performance on safety classification tasks.",
+    "validation": "Evaluated using both original and adversarial test datasets to assess robustness."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

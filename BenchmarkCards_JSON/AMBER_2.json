@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "AMBER (An LLM-free Multi-dimensional Benchmark for MLLMs Hallucination Evaluation)",
+    "abbreviation": "AMBER",
+    "overview": "AMBER is a multi-dimensional benchmark designed for evaluating hallucinations in Multi-modal Large Language Models (MLLMs). It assesses generative and discriminative tasks involving existence, attribute, and relation hallucinations without requiring additional LLMs.",
+    "data_type": "image with annotations",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "N/A"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/junyangwang0410/AMBER"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a cost-effective and efficient evaluation benchmark for hallucination in MLLMs across various types of hallucination and tasks.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Generative Task",
+      "Discriminative Task"
+    ],
+    "limitations": "AMBER offers limited evaluation for attributes and relations because it does not guarantee effective generative descriptions.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "MS-COCO 2014 test set and copyright-free image repositories like UnSplash.",
+    "size": "1,004 images",
+    "format": "N/A",
+    "annotation": "Manually annotated by multiple groups of annotators covering existence, attributes, and relations."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "LLM-free evaluation"
+    ],
+    "metrics": [
+      "CHAIR",
+      "Coverage",
+      "Hal",
+      "Cog",
+      "Accuracy",
+      "Precision",
+      "Recall",
+      "F1"
+    ],
+    "calculation": "Metrics are calculated based on responses obtained from MLLMs using specific prompt templates designed for evaluation.",
+    "interpretation": "Lower values in CHAIR and Hal indicate fewer hallucinations. A higher F1 indicates better performance in correctly detecting objects.",
+    "baseline_results": "2023 evaluations of GPT-4V and other mainstream models show variation in hallucination scores.",
+    "validation": "Evaluation tested across multiple MLLMs including GPT-4V, MiniGPT-4, and others."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Existing hallucinations may result in misleading content generation."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Images sourced under Creative Commons Zero (CC0) license.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

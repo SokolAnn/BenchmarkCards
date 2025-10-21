@@ -1,0 +1,105 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "AMBIG QA: Answering Ambiguous Open-domain Questions",
+    "abbreviation": "AMBIG QA",
+    "overview": "A new open-domain question answering task which involves finding every plausible answer to an ambiguous question and rewriting the question for each answer to resolve the ambiguity. The paper also constructs AMBIG NQ, a dataset of annotated disambiguated question-answer pairs derived from NQ-OPEN.",
+    "data_type": "question-answering pairs (text)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "NQ-OPEN (Natural Questions)",
+      "Natural Questions",
+      "TriviaQA",
+      "SearchQA",
+      "BoolQ"
+    ],
+    "resources": [
+      "https://nlp.cs.washington.edu/ambigqa",
+      "https://arxiv.org/abs/2004.10645",
+      "https://github.com/julianmichael/spacro",
+      "https://developers.google.com/custom-search/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Provide a benchmark and dataset to evaluate systems that (1) identify all semantically distinct, equally plausible answers to an open-domain question and (2) generate minimally edited, disambiguated versions of the question corresponding to each answer.",
+    "audience": [
+      "ML Researchers",
+      "Natural Language Processing researchers",
+      "Question Answering researchers"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Question Rewriting / Question Disambiguation",
+      "Open-domain Question Answering"
+    ],
+    "limitations": "Limited annotated data for question disambiguation (the paper notes a lack of annotated data for QD). Distributional differences between NQ-OPEN development and test sets (sampling bias) affect evaluation. Metrics may miss semantically correct but differently phrased edits. The dataset contains time-dependent questions which are rewritten to reduce time-dependence.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Prompt questions drawn from NQ-OPEN (an open-domain version of Natural Questions) with evidence from English Wikipedia; annotations collected via crowdsourcing on Amazon Mechanical Turk using a generation and validation pipeline.",
+    "size": "14,042 examples",
+    "format": "N/A",
+    "annotation": "Crowdsourced via Amazon Mechanical Turk with a two-stage pipeline: generation (workers search English Wikipedia and produce all plausible answers paired with minimal edits of the prompt question) and validation (separate validators review and combine generator outputs). For dev/test: two generators and one validator per prompt; for training: one generator per prompt. Workers were qualified via a qualification test and received feedback; generation and validation payments are reported (USD 0.75 and 0.15 per prompt)."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Model-based evaluation (baseline neural models)",
+      "Human validation of annotations"
+    ],
+    "metrics": [
+      "F1 (answers only) (F1ans)",
+      "F1BLEU (uses BLEU as question similarity f)",
+      "F1EDIT-F1 (uses EDIT-F1 as question similarity f)",
+      "BLEU Score",
+      "EDIT-F1",
+      "Exact Match (EM)"
+    ],
+    "calculation": "Each predicted question-answer pair (x_i, y_i) is assigned a correctness score c_i = max_{j: y_i in Y_j} f(x_i, \u000b x_j), where f is a string-similarity function in [0,1]. precision = sum c_i / m, recall = sum c_i / n, and F1 = 2 * precision * recall / (precision + recall). F1ans sets f=1 for answer-only evaluation. F1BLEU uses BLEU to compute f; F1EDIT-F1 uses EDIT-F1 to compute f.",
+    "interpretation": "F1ans measures answer correctness ignoring question rewrites. F1BLEU rewards surface similarity of predicted disambiguated questions to references. F1EDIT-F1 evaluates whether the predicted edits from the prompt question match the key semantic differences in the gold edits. High F1ans with low F1EDIT-F1 indicates correct answers but poor disambiguation.",
+    "baseline_results": "Reported baselines on AMBIG NQ include: DISAMBIG-FIRST (dev F1ans(all)=28.1, test=24.8), Thresholding+QD (dev 37.1, test 32.3), SPANSEQGEN+QD (dev 39.7, test 33.5). Best reported baseline: SPANSEQGEN (ensemble with co-training) + QD achieved dev F1ans(all)=42.3 and test F1ans(all)=35.9. Zero-shot results (models trained only on NQ-OPEN) reported e.g., SPANSEQGEN EM on NQ-OPEN: dev 42.0 test 42.2 and corresponding F1ans on AMBIG NQ as reported in the paper.",
+    "validation": "Generation stage: workers search English Wikipedia (via Google Search API restricted to Wikipedia) and provide answers and minimal edited questions. Validation stage: validators review multiple generators' outputs, mark correct/incorrect, or provide combined question-answer pairs. Validation is skipped when generators exactly match (37% of cases). Inter-annotator agreement: generators vs generators 60.8 F1ans; average F1ans between co-authors and workers on a sample of validations was 89.0%."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness",
+      "Governance"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Uncertain data provenance"
+          ]
+        },
+        {
+          "category": "Governance",
+          "subcategory": [
+            "Unrepresentative risk testing"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

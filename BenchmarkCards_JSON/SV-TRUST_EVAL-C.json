@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SV-TRUST EVAL-C",
+    "abbreviation": "SV-TRUST EVAL-C",
+    "overview": "SV-TRUST EVAL-C is a benchmark designed to evaluate LLMs’ abilities for vulnerability analysis of code written in the C programming language through structure reasoning and semantic reasoning, assessing how models identify relationships between code elements and their logical consistency under varying data and control flow complexities.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Cybersecurity"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "CVEFixes",
+      "BigVul",
+      "DiverseVul"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/LLMs4CodeSecurity/SV-TrustEval-C-1.0"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the SV-TRUST EVAL-C benchmark is to systematically evaluate the reasoning capabilities of large language models (LLMs) in analyzing vulnerabilities within source code.",
+    "audience": [
+      "Research Scientists",
+      "Software Engineers",
+      "Cybersecurity Professionals"
+    ],
+    "tasks": [
+      "Vulnerability Analysis"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The SV-TRUST EVAL-C dataset is developed based on the Structure-Oriented Variants Generator utilizing components from the Juliet Test Suite.",
+    "size": "9,401 questions",
+    "format": "JSON",
+    "annotation": "Automatically generated based on structural and semantic properties of the code."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Zero-shot inference",
+      "In-context learning"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Metrics are calculated based on the correct identification of vulnerabilities through structured reasoning and semantic understanding in question-answering tasks.",
+    "interpretation": "Higher accuracy indicates better reasoning capabilities of the models in vulnerability analysis.",
+    "baseline_results": "The results show significant variance across11 evaluated LLMs, with top-performing models scoring below 50% in semantic reasoning tasks.",
+    "validation": "The benchmark is validated through extensive testing against known vulnerabilities from the Juliet Test Suite."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "OpenTuringBench",
+    "abbreviation": "OTB",
+    "overview": "OpenTuringBench is a large-scale benchmark designed to train and evaluate machine-generated text detectors on the Turing Test and Authorship Attribution problems, focusing on a representative set of Open Large Language Models (OLLMs) and featuring challenging evaluation tasks including various types of human/machine texts.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/OpenTuringBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive benchmark for assessing the effectiveness of detectors for machine-generated text, particularly in the context of open large language models.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Authorship Attribution"
+    ],
+    "limitations": "Focuses primarily on news articles and currently only includes English texts. Future expansions are planned to include additional discourse domains and multilingual models.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "News Category dataset from HuffPost spanning between 2012 and 2022, with additional generated text from various OLLMs.",
+    "size": "543,091 texts",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Contrastive learning",
+      "Evaluation on defined tasks"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Metrics computed using confusion matrices based on predicted versus actual labels.",
+    "interpretation": "Higher scores in precision, recall, and F1 indicate better performance of the detection systems.",
+    "baseline_results": "OTBDetector achieved F1 Score results exceeding 0.9 across multiple tasks.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential misuse of generated texts, impacting individual and societal levels."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "VLM-in-the-Wild (ViLD)",
+    "abbreviation": "ViLD",
+    "overview": "ViLD is a comprehensive framework for evaluating Vision-Language Models on operational enterprise requirements, introducing ten business-critical tasks and a novel BlockWeaver Algorithm for enhanced assessment.",
+    "data_type": "multimodal",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English",
+      "Japanese",
+      "Spanish",
+      "Arabic",
+      "Portuguese",
+      "Thai",
+      "French",
+      "Korean",
+      "Hindi",
+      "Indonesian",
+      "Turkish",
+      "Chinese",
+      "Vietnamese"
+    ],
+    "similar_benchmarks": [
+      "MME",
+      "MMBench",
+      "POPE"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To bridge the gap between academic evaluation and enterprise deployment requirements for Vision-Language Models.",
+    "audience": [
+      "Enterprise AI Practitioners",
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Logo Detection",
+      "OCR",
+      "Object Detection",
+      "Human Presence and Demographic Analysis",
+      "Human Activity and Appearance Analysis",
+      "Scene Detection",
+      "Camera Perspective and Media Quality Assessment",
+      "Dominant Color Extraction",
+      "Comprehensive Description",
+      "NSFW Detection"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Stratified sampling from a corpus of one million real-world images and videos.",
+    "size": "7,500 samples (5,509 images and 1,889 videos)",
+    "format": "JSON",
+    "annotation": "Ground truth annotations generated using a proprietary VLM guided by structured prompts."
+  },
+  "methodology": {
+    "methods": [
+      "Entity Matching",
+      "Human Analysis",
+      "Logo Detection Evaluation",
+      "OCR Evaluation",
+      "Media Description Evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "Character Error Rate (CER)",
+      "Word Error Rate (WER)"
+    ],
+    "calculation": "Metrics calculated based on the correspondence between predicted and ground truth outputs, employing novel semantic matching techniques.",
+    "interpretation": "Results interpreted through precision, recall, contextual accuracy, and compliance with detailed annotations.",
+    "baseline_results": null,
+    "validation": "Internal evaluation against benchmarks provided by leading Vision-Language Models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

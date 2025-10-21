@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Emotion Reasoning as a Theory of Mind Benchmark for Large Language Models",
+    "abbreviation": "N/A",
+    "overview": "This study advances beyond surface-level perceptual features to investigate how large language models (LLMs) reason about others’ emotional states using contextual information, within a Theory-of-Mind (ToM) framework, by curating a specialized ToM evaluation dataset to assess both forward reasoning—from context to emotion—and backward reasoning—from emotion to inferred context.",
+    "data_type": "vignettes for emotion reasoning tasks",
+    "domains": [
+      "Psychology",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Fantom"
+    ],
+    "resources": [
+      "https://github.com/GerardYeo/ToMEmoReason.git"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate how well LLMs can engage in both forward and backward emotion reasoning.",
+    "audience": [
+      "ML Researchers",
+      "Psychologists",
+      "Cognitive Scientists"
+    ],
+    "tasks": [
+      "Emotion Reasoning",
+      "Cognitive Appraisal Evaluation"
+    ],
+    "limitations": "This study investigates emotion reasoning within a constrained context —the Prisoner’s Dilemma game.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated vignettes derived from psychological decision-making frameworks.",
+    "size": "582 vignettes total (432 for forward reasoning, 150 for backward reasoning)",
+    "format": "Text",
+    "annotation": "Manual annotation with theoretical grounding in cognitive appraisal theory."
+  },
+  "methodology": {
+    "methods": [
+      "Evaluation against Theory of Mind tasks",
+      "Statistical analysis of reasoning patterns"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy calculated based on how well LLMs predict the correct emotional states or appraisals.",
+    "interpretation": "Higher accuracy reflects better reasoned emotional inference by LLMs.",
+    "baseline_results": "Gemma 7B achieved an accuracy score of 57.9% on the forward reasoning task.",
+    "validation": "Training validations were based on systematic manipulation of emotional appraisals in provided vignettes."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Bias"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential misinference of emotional states leading to misunderstandings in applications."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

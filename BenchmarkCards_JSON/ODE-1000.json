@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ODE-1000",
+    "abbreviation": "N/A",
+    "overview": "The ODE-1000 benchmark comprises 1,000 diverse ODE problems designed to evaluate the ability of language models to generate executable code that accurately solves ordinary differential equations.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/SqueezeAILab/sciml-agent"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate scientific code generation capability of LLMs for solving ordinary differential equations.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Code Generation",
+      "Numerical Problem Solving"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Synthesized problems using GPT-4.1 derived from natural language descriptions.",
+    "size": "1,000 examples",
+    "format": "JSON",
+    "annotation": "Automatically generated"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Code execution rate",
+      "Accuracy",
+      "Mean relative L2 error"
+    ],
+    "calculation": "Accuracy is defined as the fraction of instances where the relative error L2 is less than 0.01.",
+    "interpretation": "High accuracy indicates a model's ability to correctly generate numerically valid code for solving ODEs.",
+    "baseline_results": "Models show significant improvements in accuracy and code execution rates post fine-tuning.",
+    "validation": "Results validated through comparisons with reference solutions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

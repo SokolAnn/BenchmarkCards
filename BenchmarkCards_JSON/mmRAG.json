@@ -1,0 +1,74 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "mmRAG (Modular Benchmark for Retrieval-Augmented Generation)",
+    "abbreviation": "mmRAG",
+    "overview": "mmRAG is a modular benchmark designed for evaluating multi-modal Retrieval-Augmented Generation (RAG) systems. It integrates queries from six diverse question-answering datasets covering text, tables, and knowledge graphs, enabling granular evaluation of RAG components such as retrieval accuracy and query routing.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://doi.org/10.57967/hf/5475",
+      "https://huggingface.co/datasets/Askio/mmrag_benchmark",
+      "https://github.com/nju-websoft/mmRAG"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation framework for multi-modal RAG systems that supports the direct evaluation of retrieval, query routing, and generation.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "mmRAG currently supports only three data modalities: text, tables, and knowledge graphs.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Integrated from six diverse question-answering datasets covering text, tables, and knowledge graphs.",
+    "size": "5,124 queries, 90,998 documents, 3,201,548 chunks",
+    "format": "N/A",
+    "annotation": "Annotations are based on standard information retrieval protocols, involving manual and automated relevance assessments."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Normalized Discounted Cumulative Gain (NDCG)",
+      "Mean Average Precision (MAP)",
+      "Hits"
+    ],
+    "calculation": "Metrics are calculated based on the relevance labels provided for each query and document chunk.",
+    "interpretation": "Higher scores in NDCG and MAP indicate better retrieval accuracy, while Hits measures the proportion of queries for which relevant results are found.",
+    "baseline_results": "Achieved NDCG@1 of 0.617 and Hits@1 of 0.703 for the best-performing retriever (BGE).",
+    "validation": "mmRAG's modular and multi-modal features are validated through comprehensive evaluation of various RAG implementations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Accuracy",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Open under the Apache License 2.0.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

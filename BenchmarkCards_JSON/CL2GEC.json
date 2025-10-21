@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CL2GEC (Continual Learning for Chinese Literature Grammatical Error Correction)",
+    "abbreviation": "CL2GEC",
+    "overview": "CL2GEC is the first Continual Learning benchmark for Chinese Literature Grammatical Error Correction, designed to evaluate adaptive CGEC across multiple academic fields. It includes 10,000 human-annotated sentences spanning 10 disciplines, each exhibiting distinct linguistic styles and error patterns.",
+    "data_type": "grammatical correction sentences",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "GECToR",
+      "ScholarGEC"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a benchmark for evaluating grammatical error correction systems under continual learning settings in the context of academic writing.",
+    "audience": [
+      "ML Researchers",
+      "Academic Writers",
+      "Natural Language Processing Practitioners"
+    ],
+    "tasks": [
+      "Grammatical Error Correction"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "China National Knowledge Infrastructure (CNKI)",
+    "size": "10,000 examples",
+    "format": "JSON",
+    "annotation": "Human annotation with the assistance of automatic grammatical error detection and language model pre-correction."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "Sequential tuning",
+      "Parameter-efficient adaptation"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F0.5 Score",
+      "Backward Transfer (BWT)",
+      "Average Task Performance (AvgPerf)"
+    ],
+    "calculation": "Metrics are calculated using standard grammatical error correction scoring alongside continual learning metrics.",
+    "interpretation": "Average Task Performance shows overall competence, while backward transfer assesses retention of knowledge from previous tasks.",
+    "baseline_results": "Results benchmarked against naive sequential finetuning and various continual learning strategies like EWC, GEM, LwF, and OGD.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All personal, institutional, and document identifiers are redacted to comply with privacy regulations.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

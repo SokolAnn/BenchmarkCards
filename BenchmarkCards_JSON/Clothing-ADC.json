@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Clothing-ADC",
+    "abbreviation": "N/A",
+    "overview": "The Clothing-ADC dataset comprises a substantial collection of clothing images created using the Automatic Dataset Construction (ADC) pipeline, designed for automated image dataset generation with a focus on mitigating label noise and class imbalance.",
+    "data_type": "image",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "N/A"
+    ],
+    "similar_benchmarks": [
+      "Clothing1M",
+      "iNaturalist",
+      "WebVision"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a large-scale, high-quality image dataset specifically focused on label noise detection, label noise learning, and class-imbalanced learning in a structured manner.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts",
+      "Data Scientists"
+    ],
+    "tasks": [
+      "Image Classification",
+      "Label Noise Detection",
+      "Class Imbalanced Learning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collecting image samples via search engines using the ADC pipeline.",
+    "size": "1,076,738 images",
+    "format": "N/A",
+    "annotation": "Automatically generated with human verification for cleanliness."
+  },
+  "methodology": {
+    "methods": [
+      "Automated querying and sample collection from Google Images or Bing Images",
+      "Human evaluation for label correction",
+      "Automated data curation",
+      "Use of existing methods for label error detection"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "F1 Score calculated as the harmonic mean of precision and recall.",
+    "interpretation": "An F1 Score closer to 1 indicates better performance with fewer misclassified instances.",
+    "baseline_results": "Results compared against existing methods like CORES, deep k-NN, and others for label noise detection tasks.",
+    "validation": "Empirical evaluations conducted using a subset of 20,000 samples"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination",
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

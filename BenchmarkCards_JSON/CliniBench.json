@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CliniBench",
+    "abbreviation": "N/A",
+    "overview": "CliniBench is the first benchmark that enables comparability of well-studied encoder-based classifiers and generative LLMs for discharge diagnosis prediction from admission notes in the MIMIC-IV dataset.",
+    "data_type": "text",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To comprehensively evaluate and compare generative LLMs and encoder-based classifiers for diagnosis prediction.",
+    "audience": [
+      "ML Researchers",
+      "Medical Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Diagnosis Prediction"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "MIMIC-IV dataset, specifically focused on admission notes and discharge codes.",
+    "size": "87,687 notes",
+    "format": "JSON",
+    "annotation": "Annotated by clinical experts within the healthcare domain."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "Mean Average Precision (MAP)",
+      "Recall",
+      "Precision"
+    ],
+    "calculation": "Metrics calculated based on the model predictions compared to the ground truth codes in the dataset.",
+    "interpretation": "Higher scores indicate better performance in predicting accurate discharge diagnoses.",
+    "baseline_results": "Encoder-based classifiers outperformed generative LLMs in diagnosis prediction tasks.",
+    "validation": "Validated through extensive comparison experiments across various models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Potential patient care risks from inaccurate predictions."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data used is de-identified from the MIMIC-IV dataset to protect patient privacy.",
+    "data_licensing": "Subject to PhysioNet license restrictions; clinical notes are not shared to comply with data protection laws.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "Conforms to HIPAA regulations."
+  }
+}

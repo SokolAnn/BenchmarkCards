@@ -1,0 +1,77 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "VISTA: A Visual and Textual Attention Dataset for Interpreting Multimodal Models",
+    "abbreviation": "VISTA",
+    "overview": "VISTA is a human-annotated visual and textual attention dataset designed to enhance the interpretability of Vision-Language Models (VLMs) by aligning eye-tracking data with textual descriptions to understand how humans associate visual regions with corresponding text segments.",
+    "data_type": "image-text saliency maps",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To explore and enhance the interpretability of Vision-Language Models through human-annotated visual and textual attention data.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Image-Text Alignment",
+      "Image Segmentation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Data collected through eye-tracking with participants describing images while their attention was recorded.",
+    "size": "508 image-text saliency maps",
+    "format": "N/A",
+    "annotation": "Manual annotation with eye-tracking data collection."
+  },
+  "methodology": {
+    "methods": [
+      "Evaluation of image-text alignment models",
+      "Use of NCC (Normalized Cross-Correlation) and AUC (Area Under Curve) metrics"
+    ],
+    "metrics": [
+      "Normalized Cross-Correlation (NCC)",
+      "Area Under Curve (AUC)"
+    ],
+    "calculation": "NCC calculates correlation between the eye-tracking map and generated saliency map; AUC measures how well the saliency map distinguishes between human fixations and other areas.",
+    "interpretation": "Higher NCC and AUC scores indicate better alignment with human visual attention.",
+    "baseline_results": "N/A",
+    "validation": "Bootstrapping technique to estimate stability across iterations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Interpretability",
+      "Transparency"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Lack of training data transparency"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Participants' audio recordings were deleted to ensure de-identification.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Informed consent was obtained from participants before data collection.",
+    "compliance_with_regulations": "N/A"
+  }
+}

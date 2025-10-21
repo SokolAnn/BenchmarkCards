@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CODE-VISION",
+    "abbreviation": "N/A",
+    "overview": "CODE-VISION is a benchmark designed to evaluate the logical understanding and code generation capabilities of Multimodal Large Language Models (MLLMs) by challenging them to generate correct programs based on given flowcharts.",
+    "data_type": "code generation problems",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMCode",
+      "MathVista"
+    ],
+    "resources": [
+      "https://github.com/wanghanbinpanda/CodeVision"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate multimodal large language models' logical understanding and code generation capabilities.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Code Generation",
+      "Algorithmic Problem Solving",
+      "Mathematical Problem Solving"
+    ],
+    "limitations": "The dataset size of CODE-VISION is relatively limited, especially in the Hard category of the Algorithm and MATH subsets.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from LeetCode and HumanEval.",
+    "size": "438 total problems",
+    "format": "N/A",
+    "annotation": "Manually curated from various programming sources."
+  },
+  "methodology": {
+    "methods": [
+      "Automated evaluation",
+      "Error analysis"
+    ],
+    "metrics": [
+      "Pass@1"
+    ],
+    "calculation": "Pass@1 represents the probability that at least one correct solution appears among the top k generated solutions for each problem.",
+    "interpretation": "Higher Pass@1 implies better model performance in generating correct code from flowcharts.",
+    "baseline_results": "Proprietary models like GPT-4o achieved a top score of 79.3% on hard problems.",
+    "validation": "No explicit detailed validation procedures mentioned."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MINERVA (Multimodal INterpretablE Reasoning Video Annotations)",
+    "abbreviation": "MINERVA",
+    "overview": "MINERVA is a challenging videoQA dataset consisting of 1,515 hand-crafted questions and detailed, manually-annotated reasoning traces to assess multimodal models' ability to perform complex video reasoning.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "VideoMME",
+      "LVBench",
+      "Neptune"
+    ],
+    "resources": [
+      "https://github.com/google-deepmind/neptune?tab=readme-ov-file#minerva"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a benchmark for evaluating multimodal models on complex video reasoning tasks and to enable insights into how these models reason about video content.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Multimodal videos selected from platforms like YouTube, specifically chosen for their complexity and suitability for reasoning questions.",
+    "size": "1,515 questions",
+    "format": "JSON",
+    "annotation": "Manually created by expert annotators with guidelines providing complex questions, answers, decoys, and reasoning traces."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Multiple Choice Accuracy (MCQ-Accuracy)"
+    ],
+    "calculation": "Metrics are calculated based on the ratio of correctly answered questions to the total number of questions.",
+    "interpretation": "High accuracy indicates effective reasoning performance by the models evaluated on the dataset.",
+    "baseline_results": "The best model, Gemini 2.5 Pro Thinking, achieved 66.2% accuracy, while human performance was at 92.5%.",
+    "validation": "The dataset was validated through expert review and peer scoring."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Potential misuse in assessment of video reasoning failing to capture diverse reasoning styles."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

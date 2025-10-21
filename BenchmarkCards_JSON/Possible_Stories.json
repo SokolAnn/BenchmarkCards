@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Possible Stories",
+    "abbreviation": "N/A",
+    "overview": "A new multiple-choice question answering dataset for situated commonsense reasoning. Possible Stories consists of 4,533 multiple-choice questions over 1,313 short story passages in English, where each question asks which of four possible story endings is most plausible under a specified condition; the benchmark is designed to evaluate commonsense reasoning over multiple possible alternatives and to minimize annotation artifacts by collecting alternative endings and multiple questions per set of endings.",
+    "data_type": "question-answering pairs (story passages with multiple-choice endings)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "RACE",
+      "CosmosQA",
+      "QuAIL",
+      "Story Cloze Test",
+      "ROCStories"
+    ],
+    "resources": [
+      "https://github.com/nii-cl/possible-stories",
+      "https://arxiv.org/abs/2209.07760"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate commonsense reasoning over multiple possible alternatives for single passages by asking multiple questions that select the most plausible ending among four candidate endings under specified conditions.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Reading Comprehension",
+      "Commonsense Reasoning"
+    ],
+    "limitations": "Limited diversity: some systemic biases during data collection; dataset limited to English.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "ROCStories (source passages); crowdsourced alternative endings and questions collected via Amazon Mechanical Turk (MTurk).",
+    "size": "4,533 multiple-choice questions over 1,313 passages; 8,885 alternative endings. Split: Train 3,404 questions (984 passages), Dev 458 questions (133 passages), Test 671 questions (196 passages).",
+    "format": "N/A",
+    "annotation": "Crowdsourced via Amazon Mechanical Turk: workers produced alternative endings and questions; six to eight alternative endings collected per passage then three alternatives + original ending selected; each question validated by three workers and retained when majority vote matched writer's answer; content validation to flag biased or objectionable content; reasoning-type annotations performed on sampled questions by authors."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation (crowdworker labels used to compute human accuracy and consistency)",
+      "Model-based evaluation with pretrained language models (fine-tuned on RACE for unsupervised setting and fine-tuned on the Possible Stories training set for supervised setting)",
+      "Heuristic baselines (perplexity-based using GPT-2 and GPT-Neo, semantic similarity using sentence transformers, entailment scores using RoBERTa-large fine-tuned on MNLI)"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Consistency (passage-wise accuracy: percentage of passages for which all questions are answered correctly)"
+    ],
+    "calculation": "Accuracy: percentage of questions for which the model's prediction matches the validated gold answer (human accuracy computed from majority of three additional crowdworker labels). Consistency: percentage of passages for which the majority-vote answers are correct for all questions referring to the passage.",
+    "interpretation": "Higher Accuracy and Consistency indicate better performance on situated commonsense reasoning. The paper reports human accuracy (92.5%) and human consistency (76.5%) as references; large gaps between model and human scores indicate dataset difficulty.",
+    "baseline_results": "Unsupervised (models fine-tuned on RACE): DeBERTa-large (v3) 60.2% accuracy, 19.9% consistency; DeBERTa-base 45.3% accuracy, 8.2% consistency; RoBERTa-large 50.5% accuracy, 13.8% consistency. Heuristics: Perplexity GPT-2 large 30.4% accuracy; Perplexity GPT-Neo 29.5% accuracy; Semantic Similarity 37.3% accuracy; Entailment 23.1% accuracy. Supervised (fine-tuned on Possible Stories training set): DeBERTa-large 92.1% accuracy, 74.7% consistency; Human 92.5% accuracy, 76.5% consistency.",
+    "validation": "Passages do not overlap across train/dev/test. Dev and test sets exclude questions produced by workers who received negative comments. Question-answer validation: each question annotated by three workers and retained if majority vote matched the writer's answer. Content validation: workers flagged biased or objectionable content; flagged items discarded. Quality control included multiple collection batches, worker qualification tasks, and manual checks of worker comments."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Societal Impact"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Human exploitation",
+            "Impact on affected communities"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": [
+      "Perpetuation of unethical opinions or unfair descriptions of social groups (mitigated via content validation and discarding flagged questions)",
+      "Worker exploitation (addressed by paying above U.S. federal minimum wage and a worker recruitment process intended to be fairer)"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "Study approved by internal review board; no explicit mention of GDPR or CCPA compliance in the paper."
+  }
+}

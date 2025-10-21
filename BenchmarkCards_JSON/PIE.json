@@ -1,0 +1,70 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Potential Idiomatic Expression (PIE)-English",
+    "abbreviation": "PIE",
+    "overview": "We present a fairly large, Potential Idiomatic Expression (PIE) dataset for Natural Language Processing (NLP) in English, containing over 20,100 samples with almost 1,200 cases of idioms classified into 10 different classes.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/tosingithub/idesk"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of this work is to create a high-quality corpus of potential idiomatic expressions in the English language and make it publicly available for NLP researchers.",
+    "audience": [
+      "ML Researchers",
+      "NLP Practitioners"
+    ],
+    "tasks": [
+      "Machine Translation",
+      "Word Sense Disambiguation",
+      "Information Retrieval"
+    ],
+    "limitations": "A limitation of the PIE-English dataset, which seems inevitable, is the dominance of metaphors, since metaphors are the most common figures of speech.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "British National Corpus (BNC) and UK Web Pages (UKWaC)",
+    "size": "20,174 samples",
+    "format": "CSV",
+    "annotation": "Annotated by two independent annotators with an overall inter-annotator agreement (IAA) score of 88.89%."
+  },
+  "methodology": {
+    "methods": [
+      "Multinomial Naive Bayes Classifier",
+      "Linear SVM",
+      "BERT"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Accuracy and F1 Score were calculated for each class and overall across the dataset.",
+    "interpretation": "Good results are obtained when classifying idioms, especially using BERT which outperformed other classifiers.",
+    "baseline_results": "BERT: Accuracy 0.934, F1 Score 0.948; SVM: Accuracy 0.766, F1 Score 0.67; mNB: Accuracy 0.747, F1 Score 0.66.",
+    "validation": "Stratified data-split for training and validation sets was done to address the class imbalance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "Contributors are predominantly L2 English speakers, but detailed demographic analysis beyond this is not specified.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC BY 4.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

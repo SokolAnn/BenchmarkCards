@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "AfriMed-QA: A Pan-African, Multi-Specialty, Medical Question-Answering Benchmark Dataset",
+    "abbreviation": "AfriMed-QA",
+    "overview": "AfriMed-QA is the first large-scale Pan-African English multi-specialty medical Question-Answering dataset, consisting of 15,000 questions across various medical specialties sourced from over 60 medical schools across 16 African countries. It is designed to evaluate and develop equitable and effective large language models for healthcare in Africa.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MedQA",
+      "BioASQ"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/intronhealth/afrimedqa_v2"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a diverse and representative benchmark dataset for evaluating the performance of large language models in the context of African healthcare.",
+    "audience": [
+      "ML Researchers",
+      "Healthcare Professionals",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "While this dataset is comprehensive, it primarily represents questions from West Africa and may not cover the full spectrum of African medical knowledge.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Sourced from over 60 medical schools across 16 countries in Africa.",
+    "size": "15,275 questions",
+    "format": "JSON",
+    "annotation": "Expert and crowdsourced annotations, including human ratings and evaluations."
+  },
+  "methodology": {
+    "methods": [
+      "Quantitative evaluation",
+      "Qualitative human evaluations"
+    ],
+    "metrics": [
+      "Accuracy",
+      "ROUGE-L",
+      "BERTScore"
+    ],
+    "calculation": "Accuracy is measured by comparing model answers to reference answers, while qualitative evaluations assess relevance and correctness.",
+    "interpretation": "Higher accuracy indicates better model performance, and human evaluations provide insights into the quality and local relevance of responses.",
+    "baseline_results": "Comparison against existing benchmarks such as MedQA.",
+    "validation": "The dataset was validated through expert review and human evaluations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Dataset includes demographics of contributors to ensure diverse representation.",
+    "harm": "Potential for harmful misinformation due to inaccuracies in model outputs."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset does not contain personally identifiable information and requires no deidentification.",
+    "data_licensing": "Released under a CC-BY-NC-SA 4.0 license.",
+    "consent_procedures": "All contributors signed informed consent forms and privacy agreements.",
+    "compliance_with_regulations": "Aligned with ethical standards for data handling and participant consent."
+  }
+}

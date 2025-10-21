@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "hdl2v (HDL-to-Verilog)",
+    "abbreviation": "hdl2v",
+    "overview": "hdl2v is a dataset which seeks to increase the amount of available human-written Verilog data by translating or compiling three other hardware description languages—VHDL, Chisel, and PyMTL3—to Verilog. It consists of 46,549 pairs of translated hardware description languages to enhance LLM Verilog generation.",
+    "data_type": "code translation pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "VerilogEval",
+      "RTLLM"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/hdl2v/vhdl-dataset",
+      "https://huggingface.co/datasets/hdl2v/chisel-dataset",
+      "https://huggingface.co/datasets/hdl2v/pymtl3-dataset"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enhance LLMs' ability to generate correct Verilog code through the use of HDL-to-Verilog translation datasets.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Code Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset comprises translations of VHDL, Chisel, and PyMTL3 into Verilog collected from public repositories and through code generation techniques.",
+    "size": "46,549 pairs",
+    "format": "N/A",
+    "annotation": "Translation pairs created through automated compilation tools."
+  },
+  "methodology": {
+    "methods": [
+      "Supervised Fine-Tuning",
+      "Automated Metrics",
+      "Evaluation using VerilogEvalV2"
+    ],
+    "metrics": [
+      "Accuracy",
+      "pass@1",
+      "pass@10"
+    ],
+    "calculation": "Accuracy is measured using the pass@1 and pass@10 metrics to determine the percentage of functional correctness.",
+    "interpretation": "Higher pass rates indicate better model performance in generating correct Verilog outputs.",
+    "baseline_results": "The model improves by up to 23% for pass@10 after fine-tuning with hdl2v.",
+    "validation": "Model performance is validated using VerilogEvalV2 which tests the correctness of generated Verilog."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

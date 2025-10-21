@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "V ACT (Visual Amodal Completion with Texts)",
+    "abbreviation": "V ACT",
+    "overview": "V ACT is a benchmark designed to evaluate the inference capabilities of large vision-language models on text-based tasks related to amodal completion. It uses a two-choice question–answer format, classifying amodal completion scenarios based on Basic Formal Ontology.",
+    "data_type": "image-text pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "Japanese",
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://www.biorxiv.org/content/early/2024/07/10/2024.07.07.602347"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The goal of the V ACT benchmark is to identify strengths and weaknesses in LVLMs' understanding of amodal completion through a systematic classification of perceptual descriptions.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Image Classification",
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Image data were sourced from Pixabay, with additional modifications and extensions of a previous dataset from Nishida et al. (2024).",
+    "size": "122 questions",
+    "format": "N/A",
+    "annotation": "The dataset was annotated based on Basic Formal Ontology categories corresponding to the entities being amodally completed."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Zero-shot evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy is calculated based on the number of correctly answered questions divided by the total number of questions.",
+    "interpretation": "Higher accuracy reflects better understanding and interpretation of amodal completions.",
+    "baseline_results": "Baseline results were compared against human accuracy rates.",
+    "validation": "The benchmark was validated through human responses, ensuring that correct answers were easily identifiable."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

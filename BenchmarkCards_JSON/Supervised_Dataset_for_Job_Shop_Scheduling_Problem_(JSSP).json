@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Supervised Dataset for Job Shop Scheduling Problem (JSSP)",
+    "abbreviation": "N/A",
+    "overview": "This paper introduces the very first supervised 120k dataset specifically designed to train Large Language Models (LLMs) for the Job Shop Scheduling Problem (JSSP), enabling effective LLM training through natural language descriptions of the scheduling problem and solutions.",
+    "data_type": "natural language descriptions and solutions of job scheduling problems",
+    "domains": [
+      "Artificial Intelligence",
+      "Operations Research"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/starjob42/datasetjsp"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a specialized dataset for training and evaluating large language models in solving the Job Shop Scheduling Problem (JSSP).",
+    "audience": [
+      "ML Researchers",
+      "AI Practitioners",
+      "Operations Researchers"
+    ],
+    "tasks": [
+      "Job Shop Scheduling"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated using Google's OR-Tools for random JSSP problems.",
+    "size": "120,000 examples",
+    "format": "Natural Language format",
+    "annotation": "Automatically generated using OR-Tools to solve scheduling problems."
+  },
+  "methodology": {
+    "methods": [
+      "Model-based evaluation",
+      "Comparative analysis with existing neural approaches"
+    ],
+    "metrics": [
+      "Makespan gap from optimal solutions"
+    ],
+    "calculation": "Calculated by comparing the makespan of the generated schedules with the optimal makespan identified by the OR-Tools solver.",
+    "interpretation": "Lower gaps indicate better performance in scheduling; a gap closer to 0% is desirable.",
+    "baseline_results": "Average gap of 8.92% for the proposed model compared to 13.01% for existing methods.",
+    "validation": "Used a separate evaluation dataset of random problems distinct from the training data."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Decision bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

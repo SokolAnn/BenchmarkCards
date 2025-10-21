@@ -1,0 +1,80 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "VENUS (VidEo with Nonverbal cues and Utterance Set)",
+    "abbreviation": "VENUS",
+    "overview": "VENUS is a large-scale multimodal dataset designed for multimodal conversations with nonverbal annotations. It comprises 10-minute clips from dialogue-rich podcasts featuring two-person interactions, along with time-aligned text, facial expressions, and body language.",
+    "data_type": "video with nonverbal annotations",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/winston1214/nonverbal-conversation"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To advance research in understanding and generating both text and nonverbal expressions in conversations.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text Generation",
+      "Nonverbal Cue Generation"
+    ],
+    "limitations": "The VENUS dataset is primarily curated from one source, which may limit the diversity of nonverbal expression patterns.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "YouTube podcast videos",
+    "size": "89,459 dialogues, 1,114,328 turns",
+    "format": "JSON",
+    "annotation": "Annotations include time-aligned text, 3D facial expression features, and body language features."
+  },
+  "methodology": {
+    "methods": [
+      "Quantitative evaluation",
+      "Qualitative analysis"
+    ],
+    "metrics": [
+      "Perplexity",
+      "BERT Score",
+      "METEOR",
+      "Negative Log-Likelihood (NLL)"
+    ],
+    "calculation": "Metrics are calculated based on the model performance during evaluation.",
+    "interpretation": "Lower perplexity and higher BERT Score indicate better performance in generating natural language and nonverbal expressions.",
+    "baseline_results": null,
+    "validation": "The dataset and model were validated through extensive evaluation metrics and user studies."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Bias"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset does not detail demographic factors.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Privacy measures include releasing only video IDs instead of raw video frames and anonymizing 3D facial and body motions.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

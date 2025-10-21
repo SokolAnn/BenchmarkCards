@@ -1,0 +1,82 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MME VALPRO",
+    "abbreviation": "N/A",
+    "overview": "MME VALPRO is a multimodal benchmark designed to avoid Type-I errors in evaluating Large Multimodal Models (LMMs) through a trilogy evaluation pipeline, consisting of an original question, a perception question, and a knowledge anchor question. It demonstrates a more accurate reflection of LMM capabilities and fosters trustworthiness in evaluations.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMMU",
+      "ScienceQA",
+      "MathVista"
+    ],
+    "resources": [
+      "https://mmevalpro.github.io"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To address issues in existing multimodal evaluation benchmarks and provide a more rigorous and trustworthy assessment of large multimodal models.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Multimodal Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "MMMU (validation set), ScienceQA (image subset), MathVista (test mini set)",
+    "size": "2,138 question triplets, 6,414 unique questions",
+    "format": "N/A",
+    "annotation": "Questions were manually labeled by human experts and sourced from existing benchmarks."
+  },
+  "methodology": {
+    "methods": [
+      "Evaluation against existing benchmarks",
+      "Human evaluation for validation"
+    ],
+    "metrics": [
+      "Genuine Accuracy",
+      "Average Accuracy",
+      "Perception Accuracy",
+      "Knowledge Accuracy",
+      "Consistency Gap"
+    ],
+    "calculation": "Genuine Accuracy is determined by whether the model answers the original question and both corresponding perception and knowledge questions correctly.",
+    "interpretation": "Higher Genuine Accuracy indicates better true understanding of multimodal capabilities.",
+    "baseline_results": null,
+    "validation": "The dataset was evaluated by graduate students, and a double-checking process was performed by independent reviewers."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

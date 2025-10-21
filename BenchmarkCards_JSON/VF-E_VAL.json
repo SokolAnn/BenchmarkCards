@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "VF-E VAL (Video Feedback Evaluation for AI-Generated Content)",
+    "abbreviation": "VF-E VAL",
+    "overview": "VF-E VAL is designed to evaluate the capabilities of multimodal large language models (MLLMs) on generating reliable feedback for AI-generated content (AIGC) videos. It introduces four tasks: coherence validation, error awareness, error type detection, and reasoning evaluation.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/songtingyu/VF-Eval",
+      "https://huggingface.co/datasets/songtingyu/VF-Eval"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To advance AIGC video generation processes by evaluating MLLM's feedback on AIGC videos.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Coherence Validation",
+      "Error Awareness",
+      "Error Type Detection",
+      "Reasoning Evaluation"
+    ],
+    "limitations": "Only text-to-video models are considered, while videos generated from images may exhibit other types of error cases not addressed in this study.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "A large-scale dataset of AIGC videos generated from diverse prompts across different contexts.",
+    "size": "9,740 question-answer pairs",
+    "format": "N/A",
+    "annotation": "Annotated by human experts and using MLLMs for quality assurance."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Each task's score is calculated based on models' responses compared to expert annotations.",
+    "interpretation": "Scores reflect the MLLM's ability to accurately interpret and assess video quality, error types, and reasoning depth.",
+    "baseline_results": "GPT-4.1 was the best-performing model but still struggled with performance across all tasks.",
+    "validation": "Human validation process included reviewing and correcting annotations to ensure quality."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

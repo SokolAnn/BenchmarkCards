@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "METAKP (On-Demand Keyphrase Generation)",
+    "abbreviation": "METAKP",
+    "overview": "METAKP is a large-scale benchmark comprising four datasets, 7500 documents, and 3760 goals across news and biomedical domains with human-annotated keyphrases, aimed at evaluating on-demand keyphrase generation which is conditioned on specific high-level goals or intents.",
+    "data_type": "keyphrase-document pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Biomedical"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/uclanlp/MetaKP"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of METAKP is to provide a benchmark for evaluating models designed for on-demand keyphrase generation, assessing their ability to generate keyphrases that conform to specific user-defined goals.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "On-Demand Keyphrase Generation",
+      "Goal Relevance Assessment"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The datasets are curated from existing keyphrase prediction datasets including KPTimes, DUC2001, KPBiomed, and PubMed.",
+    "size": "7500 documents",
+    "format": "JSON",
+    "annotation": "Human-annotated keyphrases and goals, with a labeling pipeline that combines GPT-4 and human annotators."
+  },
+  "methodology": {
+    "methods": [
+      "Supervised fine-tuning",
+      "Unsupervised self-consistency prompting"
+    ],
+    "metrics": [
+      "Satisfaction Rate",
+      "SemF1",
+      "Abstain F1"
+    ],
+    "calculation": "Metrics are calculated based on the model's generated keyphrases in relation to human-annotated references for goal-conformance.",
+    "interpretation": "Higher scores indicate better performance in generating relevant keyphrases according to specified goals.",
+    "baseline_results": "Results show the best performance of Flan-T5-XL with 0.609 SemF1, and GPT-4o with 0.548 SemF1 under the self-consistency prompting.",
+    "validation": "Evaluated with both in-distribution and out-of-distribution test sets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on affected communities"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "The framework may inadvertently generate misleading keyphrases that conform to incorrect goals, leading to misinformation."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "The datasets used are either in the public domain or come with licenses; however, specific licensing information for some datasets is not specified.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

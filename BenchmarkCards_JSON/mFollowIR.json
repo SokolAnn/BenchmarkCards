@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "mFollowIR (Multilingual Benchmark for Instruction Following in Retrieval)",
+    "abbreviation": "mFollowIR",
+    "overview": "mFollowIR is a multilingual benchmark for measuring instruction-following ability in retrieval models, built on the TREC NeuCLIR narratives in Russian, Chinese, and Persian. It allows for evaluation of cross-lingual and multilingual retrieval model capabilities.",
+    "data_type": "reranking tasks",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Russian",
+      "Chinese",
+      "Persian"
+    ],
+    "similar_benchmarks": [
+      "FollowIR"
+    ],
+    "resources": [
+      "https://github.com/orionw/FollowIR"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a test bed for instruction-following retrieval models across multiple languages.",
+    "audience": [
+      "ML Researchers",
+      "Natural Language Processing Practitioners",
+      "Information Retrieval Researchers"
+    ],
+    "tasks": [
+      "Instruction Following",
+      "Information Retrieval"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from the TREC NeuCLIR narratives with human-annotated edits.",
+    "size": "123 queries",
+    "format": "N/A",
+    "annotation": "Annotated by native and fluent speakers to ensure quality translations and narrative alterations."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "nDCG@20",
+      "p-MRR"
+    ],
+    "calculation": "p-MRR is calculated by checking the position of newly non-relevant documents and comparing their ranks with the original rankings.",
+    "interpretation": "A higher p-MRR indicates better instruction-following ability, with scores that can range from -1.0 (incorrect) to 1.0 (correct).",
+    "baseline_results": null,
+    "validation": "Evaluation was performed on both cross-lingual and multilingual settings using a variety of retrieval models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

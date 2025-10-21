@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Software Heritage License Dataset (2022 Edition)",
+    "abbreviation": "N/A",
+    "overview": "The dataset consists of a collection of 6.9 million unique license documents obtained from public code repositories, aiming to characterize software licenses and facilitate further research and analysis related to license terms.",
+    "data_type": "text",
+    "domains": [
+      "Software Engineering",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SPDX",
+      "ScanCode LicenseDB"
+    ],
+    "resources": [
+      "https://doi.org/10.5281/zenodo.8200352"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective is to produce a comprehensive dataset that aids in understanding software licenses used in publicly available source code and to assist in the development of tools and methods for license detection and analysis.",
+    "audience": [
+      "Researchers",
+      "Industry Practitioners",
+      "Legal Analysts"
+    ],
+    "tasks": [
+      "License Detection",
+      "NLP Analysis of Legal Texts",
+      "Automated License Classifier Training"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Software Heritage archive",
+    "size": "6.9 million documents",
+    "format": "CSV, JSON, TAR",
+    "annotation": "Manual annotation combined with automated ScanCode analysis."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Manual annotation"
+    ],
+    "metrics": [
+      "Document Count",
+      "License Presence Rate"
+    ],
+    "calculation": "Metrics are calculated through a combination of automated analysis using ScanCode and manual review of a random sample of the dataset.",
+    "interpretation": "Results are used to evaluate the completeness and usefulness of the dataset for licensing information analysis.",
+    "baseline_results": "Accuracy of ScanCode was high, with 70% of licenses detected scoring 100 on the confidence scale.",
+    "validation": "Sample validated through manual annotations and comparisons with existing license databases."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Open data",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

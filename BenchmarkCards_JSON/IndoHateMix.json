@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "IndoHateMix",
+    "abbreviation": "N/A",
+    "overview": "IndoHateMix is a diverse, high-quality dataset capturing Hindi–English code-mixing and transliteration in the Indian context, providing a realistic benchmark to evaluate model robustness in complex multilingual scenarios where existing NLP methods often struggle.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Hindi",
+      "English"
+    ],
+    "similar_benchmarks": [
+      "HateXplain",
+      "ImplicitHate"
+    ],
+    "resources": [
+      "https://huggingface.co/meta-llama/Llama-3.1-8B",
+      "https://huggingface.co/mistralai/Mistral-7B-v0.3",
+      "https://huggingface.co/internlm/internlm2_5-7b",
+      "https://huggingface.co/Qwen/Qwen2.5-7B"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a realistic benchmark for hate speech detection in code-mixed Hindi-English contexts.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Hate Speech Detection"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated from the Koo microblogging platform, targeted at accounts likely to generate hate speech.",
+    "size": "11,725 samples",
+    "format": "N/A",
+    "annotation": "Manual annotation by three expert annotators."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on standard performance analysis comparing model outputs against annotated dataset labels.",
+    "interpretation": "Higher accuracy, precision, recall, and F1 scores reflect better performance in detecting hate speech.",
+    "baseline_results": "LLMs such as LLaMA3.1-8B achieved accuracies of 83% on IndoHateMix.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

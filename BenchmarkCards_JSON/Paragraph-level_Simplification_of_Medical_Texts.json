@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Paragraph-level Simplification of Medical Texts",
+    "abbreviation": "N/A",
+    "overview": "This work introduces a new corpus of parallel texts in English comprising technical and lay summaries of all published evidence pertaining to different clinical topics. It aims to improve accessibility to medical information by developing automated approaches to text simplification.",
+    "data_type": "paired texts",
+    "domains": [
+      "Natural Language Processing",
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/AshOlogn/Paragraph-level-Simplification-of-Medical-Texts"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To facilitate research into the automated simplification of medical texts and to improve accessibility for lay audiences.",
+    "audience": [
+      "ML Researchers",
+      "Healthcare Professionals",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text Simplification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Cochrane Database of Systematic Reviews",
+    "size": "4,459 pairs",
+    "format": "Plain text",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Human Evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Flesch-Kincaid",
+      "Automated Readability Index (ARI)",
+      "SARI",
+      "BLEU",
+      "ROUGE"
+    ],
+    "calculation": "Metrics were calculated according to standard definitions used in readability assessments and text simplification tasks.",
+    "interpretation": "Lower Flesch-Kincaid and ARI scores indicate higher readability, while higher SARI and BLEU scores indicate better simplification quality.",
+    "baseline_results": "N/A",
+    "validation": "Cross-validation was employed in training the models, with results reported on test splits."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

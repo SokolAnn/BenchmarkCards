@@ -1,0 +1,69 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PALRACE (Pruned And Labeled RACE)",
+    "abbreviation": "PALRACE",
+    "overview": "PALRACE is a new Machine Reading Comprehension (MRC) dataset with human labeled rationales for 800 passages selected from the RACE dataset. It aims to support supervised learning of rationales to improve the interpretability and robustness of models.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "RACE"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To investigate whether human rationales can improve current models and facilitate supervised learning of human rationales.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Machine Reading Comprehension"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The reading comprehension passages and questions were selected from the test set of the large-scale RACE dataset.",
+    "size": "800 passages",
+    "format": "N/A",
+    "annotation": "Each passage was read by at least 26 human readers, who labeled their rationales to answer the question."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "The models were fine-tuned on the RACE dataset to maximize the log-score of the correct option.",
+    "interpretation": "Models with access to human rationales are more robust and less sensitive to how they are fine-tuned.",
+    "baseline_results": "RoBERTa-large outperforms human readers in all 6 types of questions.",
+    "validation": "10-fold cross validation was used to generate training, development, and test sets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

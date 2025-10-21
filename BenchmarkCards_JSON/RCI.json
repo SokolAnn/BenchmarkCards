@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Region Comprehension Index (RCI)",
+    "abbreviation": "RCI",
+    "overview": "RCI is the first model-based score to explicitly quantify a dataset's reliance on global versus local visual information in multimodal benchmarks, aiding researchers and practitioners in auditing and aligning benchmarks with real-world reasoning needs.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MS COCO",
+      "GQA",
+      "TextVQA",
+      "VizWiz"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a systematic evaluation framework for quantifying reasoning requirements in multimodal datasets and benchmarks.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Dataset Designers"
+    ],
+    "tasks": [
+      "Visual Question Answering",
+      "Multiple-Choice Question Answering",
+      "Yes/No Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Evaluated across 13 widely used multimodal benchmarks including AI2D, BLINK, and CHARTQA.",
+    "size": "N/A",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Model-based evaluation",
+      "Patch-based assessment"
+    ],
+    "metrics": [
+      "Region Comprehension Index (RCI)"
+    ],
+    "calculation": "RCI is calculated as RCI_n = 1 - (Maximum Patch Performance (MPP_n) / Full Image Performance (FIP)).",
+    "interpretation": "RCI values indicate the type of reasoning required: RCI > 0 indicates strong global reasoning needed; RCI < 0 indicates reliance on localized cues.",
+    "baseline_results": "N/A",
+    "validation": "RCI is validated when the Full Image Performance exceeds chance thresholds."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

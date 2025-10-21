@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Factuality-Weighted Score (FWS) for Watermarking Evaluation",
+    "abbreviation": "FWS",
+    "overview": "We propose a medical-focused evaluation workflow that jointly assesses factual accuracy and coherence using FWS, a composite metric prioritizing factual accuracy in watermarking methods for medical texts.",
+    "data_type": "text",
+    "domains": [
+      "Healthcare",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/rochanaph/fact-eval-wllm"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a reliable framework for evaluating watermarking methods in medical domains by emphasizing factual integrity in generated texts.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Medical Professionals"
+    ],
+    "tasks": [
+      "Text Completion",
+      "Question Answering",
+      "Summarization"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "HealthQA dataset, MeQSum dataset",
+    "size": "200 question-answer pairs from HealthQA, various texts from MeQSum",
+    "format": "JSON",
+    "annotation": "Annotated using human evaluation and automatic metrics"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "GPT-Judger assessments"
+    ],
+    "metrics": [
+      "Factuality-Weighted Score (FWS)",
+      "ROUGE-2",
+      "F1 Score",
+      "AlignScore"
+    ],
+    "calculation": "FWS is calculated by emphasizing factual accuracy over coherence based on a weighted formula.",
+    "interpretation": "Higher FWS indicates better factual integrity in the generated text.",
+    "baseline_results": "Current watermarking methods face notable factuality degradation despite high detection capabilities.",
+    "validation": "Validated through correlation analysis with human evaluations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

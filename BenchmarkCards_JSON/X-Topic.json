@@ -1,0 +1,101 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "X-Topic",
+    "abbreviation": "N/A",
+    "overview": "X-Topic is a multilingual dataset featuring content in four distinct languages (English, Spanish, Japanese, and Greek), crafted for the purpose of tweet topic classification. It addresses the lack of labelled multilingual social media data and encourages the development of new methods for multilingual topic classification.",
+    "data_type": "tweet topic classification data",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Spanish",
+      "Japanese",
+      "Greek"
+    ],
+    "similar_benchmarks": [
+      "TweetTopic"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/cardiffnlp/tweet_topic_multilingual",
+      "https://huggingface.co/cardiffnlp/twitter-xlm-roberta-base-topic-multilingual",
+      "https://huggingface.co/cardiffnlp/twitter-xlm-roberta-large-topic-multilingual"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To expand the resources available for the task of tweet classification, particularly in a multi-label setting and across multiple languages.",
+    "audience": [
+      "Researchers",
+      "Industry Practitioners",
+      "Data Scientists"
+    ],
+    "tasks": [
+      "Topic Classification"
+    ],
+    "limitations": "While our paper provides a comprehensive analysis, the number of languages included in X-Topic selected is relatively small given budget constraints.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Data collected using Twitter API from social media platform X (Twitter).",
+    "size": "Approximately 220,000 tweets for each of the four languages, totaling around 880,000 tweets.",
+    "format": "N/A",
+    "annotation": "Annotated by five coders, where each coder selects one or more labels from a selection of 19 topics, using an agreement of at least two annotators for topic assignment."
+  },
+  "methodology": {
+    "methods": [
+      "Machine Learning",
+      "Zero-shot Evaluation",
+      "Few-shot Evaluation",
+      "Monolingual Evaluation",
+      "Cross-lingual Evaluation",
+      "Multilingual Evaluation"
+    ],
+    "metrics": [
+      "Macro-F1 Score",
+      "Micro-F1 Score"
+    ],
+    "calculation": "Scores computed based on precision and recall across multiple language settings and models.",
+    "interpretation": "Macro-F1 measures are used for assessing overall performance, with higher scores indicating better classification quality.",
+    "baseline_results": null,
+    "validation": "Evaluated through 5-fold cross-validation across various settings."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Accuracy",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset includes diverse linguistic representation but does not specifically analyze demographic factors beyond language.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "User mentions are masked to ensure privacy, and guidelines were followed to protect privacy during data collection.",
+    "data_licensing": "X-Topic will be shared under the CC BY-NC 4.0 Deed (Attribution-NonCommercial 4.0 International).",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

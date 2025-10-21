@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MAQA (Multi-Answer Question Answering)",
+    "abbreviation": "MAQA",
+    "overview": "MAQA is a new dataset that introduces data uncertainty by constructing questions requiring multiple answers across world knowledge, mathematical reasoning, and commonsense reasoning tasks, aimed at evaluating uncertainty quantification methods.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Natural Questions",
+      "AmbigQA"
+    ],
+    "resources": [
+      "https://github.com/YangYongJin/MAQA-Official-Repo"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate uncertainty quantification methods in the context of data uncertainty by using a new dataset.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "Although we conducted quality checks, there may remain some ambiguous questions or unclear answers; also, the data primarily consists of short-form answers making the analysis of long-form answers challenging.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed dataset using both modified existing datasets and newly created questions with the help of LLMs (GPT-4-turbo).",
+    "size": "2,042 question-answer pairs",
+    "format": "N/A",
+    "annotation": "Quality checked by human review and validated with multiple iterations of questions to ensure clarity and factual accuracy."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "Precision",
+      "Recall",
+      "Area Under ROC Curve (AUROC)",
+      "Area Under the Precision-Recall Curve (AUPRC)"
+    ],
+    "calculation": "Metrics are calculated based on the correctness of single answers, using precision, recall, and F1 score for multiple answers.",
+    "interpretation": "High AUROC and AUPRC scores indicate effective uncertainty quantification methods that can distinguish correct from incorrect predictions.",
+    "baseline_results": null,
+    "validation": "Validated through consensus among multiple authors for quality checks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "The MAQA dataset is distributed under the Apache 2.0 license.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

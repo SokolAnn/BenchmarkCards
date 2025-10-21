@@ -1,0 +1,75 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "NNE: A Dataset for Nested Named Entity Recognition in English",
+    "abbreviation": "NNE",
+    "overview": "We describe NNE—a fine-grained, nested named entity dataset over the full Wall Street Journal portion of the Penn Treebank (PTB). Our annotation comprises 279,795 mentions of 114 entity types with up to 6 layers of nesting. We publicly release the standoff annotations along with detailed annotation guidelines and scripts for knitting annotations onto the underlying PTB corpus. We hope the public release of this large dataset for English newswire will encourage development of new techniques for nested NER.",
+    "data_type": "text (standoff annotations of nested named entity mentions over Wall Street Journal portion of the Penn Treebank)",
+    "domains": [
+      "Natural Language Processing",
+      "Newswire"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ACE2005",
+      "GENIA",
+      "BBN"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/1906.01359"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To introduce a large-scale, manually-annotated, fine-grained nested named entity dataset over the Wall Street Journal portion of the Penn Treebank to facilitate research and development of nested NER techniques.",
+    "audience": [
+      "Researchers in Natural Language Processing",
+      "Model developers working on Named Entity Recognition"
+    ],
+    "tasks": [
+      "Named Entity Recognition",
+      "Nested Named Entity Recognition"
+    ],
+    "limitations": "Complexity and run time are open challenges (decoding speed is slow for some models due to large number of entity categories). Dataset is limited to the Wall Street Journal portion of the Penn Treebank (English newswire).",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Standoff annotations over the full Wall Street Journal portion of the Penn Treebank (PTB).",
+    "size": "279,795 mentions; 1.1M tokens; 2,312 documents; 49,208 sentences.",
+    "format": "Standoff annotations (scripts provided to knit annotations onto the PTB); exact file format not specified in text.",
+    "annotation": "Manual annotation by four annotators with detailed annotation guidelines and use of a custom annotation tool; sections 00 and 23 doubly annotated; section 02 annotated by all four annotators; adjudication performed (additional 17 hours); total annotation time 270 hours."
+  },
+  "methodology": {
+    "methods": [
+      "Automated evaluation using CoNLL exact-match evaluation",
+      "Model-based evaluation: evaluated existing NER models (BiLSTM-CRF flat models, hypergraph-based model, transition-based model)"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score",
+      "Fleiss' kappa (inter-annotator agreement)"
+    ],
+    "calculation": "Follow CoNLL evaluation schema requiring an exact match of mention start, end and entity type (Sang and Meulder, 2003). The model that performs best on the development set is evaluated on the test set for final results.",
+    "interpretation": "Flat NER models achieve high precision but suffer from low recall when applied to nested structures. Hypergraph-based model attains the best F1 on this dataset but has slow decoding speed (9 words/second). Transition-based method has higher decode speed (57 words/second) but lower precision than flat models.",
+    "baseline_results": "BiLSTM-CRF-TOP: Precision 89.9, Recall 38.0, F1 53.5; BiLSTM-CRF-BOTTOM: Precision 93.8, Recall 62.0, F1 74.7; BiLSTM-CRF-BOTH: Precision 92.2, Recall 85.8, F1 88.9; Hypergraph: Precision 91.8, Recall 91.0, F1 91.4; Transition: Precision 77.4, Recall 70.1, F1 73.6.",
+    "validation": "Inter-annotator agreement measured on Section 02 (annotated by all four annotators). Fleiss' kappa over all tokens: 0.907; Fleiss' kappa for tokens part of at least one mention: 0.832. Average precision, recall and F1 across four annotators w.r.t. adjudicated gold: 94.3, 91.8, 93.0."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": null
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CReSt (A Comprehensive Benchmark for Retrieval-Augmented Generation with Complex Reasoning over Structured Documents)",
+    "abbreviation": "CReSt",
+    "overview": "CReSt is a benchmark designed to evaluate Retrieval-Augmented Generation (RAG) systems in complex reasoning scenarios over structured documents, incorporating multiple dimensions such as reasoning capabilities, refusal to answer appropriately, citation accuracy, and understanding of document structure.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Korean"
+    ],
+    "similar_benchmarks": [
+      "HotpotQA",
+      "FEVER",
+      "KILT"
+    ],
+    "resources": [
+      "https://github.com/UpstageAI/CReSt"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive framework for evaluating the capabilities necessary for practical RAG applications.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Documents sourced from Common Crawl and National Assembly Library of Korea.",
+    "size": "2,245 examples",
+    "format": "JSON",
+    "annotation": "Manual annotation by human annotators."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Unified Score",
+      "Citation Precision",
+      "Citation Recall"
+    ],
+    "calculation": "Metrics are derived from the evaluation of answers against a gold standard using external LLMs for semantic equivalence.",
+    "interpretation": "Scores reflect both correctness and the ability to identify citations accurately.",
+    "baseline_results": "Performance evaluated using multiple state-of-the-art models including GPT-4o and Qwen2.5 series.",
+    "validation": "Each QA pair is verified through human assessment of correctness and evidence alignment."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Privacy",
+      "Robustness",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "GUS-Net",
+    "abbreviation": "N/A",
+    "overview": "The GUS-Net framework addresses social-bias detection in NLP by introducing a multi-label, token-level dataset that categorizes biases into three pathways: Generalizations, Unfairness, and Stereotypes, using a hybrid LLM-human annotation pipeline.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "BABE",
+      "NBIAS"
+    ],
+    "resources": [
+      "https://github.com/username/repository"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a systematic method for detecting and addressing biases in natural language, facilitating auditing and mitigation in real-world NLP applications.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Bias Detection",
+      "Token Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Hybrid LLM-human pipeline for dataset generation and annotation.",
+    "size": "3,739 sentences with over 69,000 token-level annotations",
+    "format": "JSON",
+    "annotation": "Hybrid method using LLM-generated candidate spans and human verification."
+  },
+  "methodology": {
+    "methods": [
+      "Multi-label BIO tagging",
+      "Encoder-based models evaluation",
+      "Decoder-based models evaluation"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score",
+      "Hamming Loss"
+    ],
+    "calculation": "Focal loss for multi-label classification, monitoring per-channel thresholds for label prediction.",
+    "interpretation": "Higher Precision, Recall, and F1 indicate better model performance on bias detection.",
+    "baseline_results": "Best results achieved with encoder-only models against decoder-only models in precise token-level prediction.",
+    "validation": "Out-of-distribution generalization evaluated using the BABE dataset."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

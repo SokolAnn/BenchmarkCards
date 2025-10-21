@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PALLM (Palliative Care Language Model)",
+    "abbreviation": "PALLM",
+    "overview": "This study explores the use of large language models (LLMs) to evaluate palliative care communication quality, leveraging simulated scripts created and labeled by healthcare professionals to assess metrics such as understanding, empathy, and emotion.",
+    "data_type": "simulated clinical conversation scripts",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "CommSense"
+    ],
+    "resources": [
+      "https://github.com/BarnesLab/PALLM/tree/main/scripts"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To advance the evaluation and understanding of palliative care communication through the application of large language models.",
+    "audience": [
+      "Healthcare Professionals",
+      "ML Researchers",
+      "Clinicians"
+    ],
+    "tasks": [
+      "Communication Quality Assessment"
+    ],
+    "limitations": "While this foundational study explores the capability of LLMs in evaluating clinical communication, it acknowledges that the created scripts may not provide a comprehensive assessment for real-world clinical interactions.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Eight simulated clinical communication scripts created and labeled by healthcare professionals to simulate real-world interactions.",
+    "size": "8 scripts",
+    "format": "JSON",
+    "annotation": "Annotated by clinical team members based on operational rules for understanding, empathy, emotion, presence, and clarity."
+  },
+  "methodology": {
+    "methods": [
+      "Evaluation using Large Language Models",
+      "Prompt Engineering"
+    ],
+    "metrics": [
+      "Balanced Accuracy",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "Balanced accuracy calculated to account for class imbalances in evaluation of communication metrics.",
+    "interpretation": "Models accurately classify communication segments as 'Good' or 'Bad' based on established operational rules.",
+    "baseline_results": "GPT-4 achieved over 90% accuracy in evaluating understanding and empathy metrics.",
+    "validation": "Results were compared with human expert annotations across evaluated scripts."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Privacy",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data usage is in compliance with ethical standards to ensure patient privacy and informed consent.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Participants in the study were informed and consented to use of simulated scripts for evaluation.",
+    "compliance_with_regulations": "The study adheres to HIPAA standards for the handling of clinical data."
+  }
+}

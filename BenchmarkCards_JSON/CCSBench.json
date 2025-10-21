@@ -1,0 +1,79 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CCSBench (Compositional Controllable Scientific Summarization)",
+    "abbreviation": "CCSBench",
+    "overview": "CCSBench is the first evaluation benchmark for compositional controllable summarization in the scientific domain, enabling fine-grained control over multiple attributes such as length and empirical focus.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "CocoSciSum"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/dyxohjl666/CCSBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate compositional controllability in scientific document summarization by systematically assessing the ability of LLMs to generate controlled, contextually appropriate scientific summaries.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Text Summarization"
+    ],
+    "limitations": "The benchmark presently does not support multilingual scientific summarization.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from the arXiv dataset focusing on Computer Science and Artificial Intelligence papers.",
+    "size": "7,800 examples",
+    "format": "CSV",
+    "annotation": "Generated using GPT-4 for readability and focus components."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "ROUGE evaluation",
+      "Parameter-efficient fine-tuning"
+    ],
+    "metrics": [
+      "ROUGE-L",
+      "Mean Absolute Deviation (MAD)",
+      "Pearson Correlation Coefficient (PCC)"
+    ],
+    "calculation": "Metrics such as ROUGE scores are computed to assess fluency and content accuracy.",
+    "interpretation": "Higher ROUGE scores indicate better summary quality, while lower MAD indicates closer adherence to target lengths.",
+    "baseline_results": "Evaluated various LLMs against the CCSBench benchmark.",
+    "validation": "Involves both automated metrics and human evaluations for assessing summary quality."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

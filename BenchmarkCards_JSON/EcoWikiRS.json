@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "EcoWikiRS",
+    "abbreviation": "N/A",
+    "overview": "EcoWikiRS is a dataset that connects high-resolution aerial images with species observations and the textual descriptions of their habitats in Wikipedia. It provides a scalable way of supervision for remote sensing vision language models (RS-VLMs) for ecology through weak and noisy supervision.",
+    "data_type": "triplets (image, GBIF observations, Wikipedia texts)",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ZEST"
+    ],
+    "resources": [
+      "https://github.com/eceo-epfl/EcoWikiRS"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To learn an ecologically rich embedding space between remote sensing images and texts that describe the local environmental conditions.",
+    "audience": [
+      "ML Researchers",
+      "Ecologists",
+      "Remote Sensing Practitioners"
+    ],
+    "tasks": [
+      "Ecosystem Mapping",
+      "Zero-Shot Classification"
+    ],
+    "limitations": "While fine-tuning pretrained RS-VLMs on the EcoWikiRS dataset leads to performance gains for EUNIS ecosystem recognition, systematic biases are present in species observations and Wikipedia contributions.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Global Biodiversity Information Facility (GBIF) for species observations, SwissIMAGE for aerial images, Wikipedia for textual descriptions.",
+    "size": "91,801 aerial images associated with 2,745 different species",
+    "format": "N/A",
+    "annotation": "Data is annotated based on geolocation and text description relevance."
+  },
+  "methodology": {
+    "methods": [
+      "Fine-tuning VLMs with WINCEL loss",
+      "Zero-shot classification for EUNIS ecosystem recognition"
+    ],
+    "metrics": [
+      "Overall Accuracy (OA)",
+      "Macro F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on the model's prediction performance on the validation and test splits of the EcoWikiRS dataset.",
+    "interpretation": "Higher values of OA and F1 Score indicate better model performance in predicting ecosystem labels.",
+    "baseline_results": "Fine-tuning results in improved performance over pre-trained models, showcasing the effectiveness of the EcoWikiRS dataset.",
+    "validation": "Validation is conducted following a spatial block split to avoid spatial autocorrelation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

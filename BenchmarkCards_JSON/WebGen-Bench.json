@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "WebGen-Bench",
+    "abbreviation": "N/A",
+    "overview": "WebGen-Bench is a novel benchmark designed to measure an LLM-based agent’s ability to create multi-file website codebases from scratch. It includes diverse instructions for website generation and corresponding test cases to evaluate the functionalities of the generated websites.",
+    "data_type": "website-generation instructions and test cases",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SWE-Bench",
+      "SWE-Lancer"
+    ],
+    "resources": [
+      "https://github.com/mnluzimu/WebGen-Bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To systematically evaluate LLM-based agents’ ability to construct websites from scratch based on natural language instructions.",
+    "audience": [
+      "ML Researchers",
+      "Software Developers",
+      "Web Developers"
+    ],
+    "tasks": [
+      "Website Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected web development project descriptions from platforms like Upwork, Freelancer, and Proginn.",
+    "size": "10,152 project descriptions, 6,667 website-generation instructions, 647 test cases",
+    "format": "N/A",
+    "annotation": "Created through the efforts of human annotators and GPT-4o."
+  },
+  "methodology": {
+    "methods": [
+      "Automated testing using WebVoyager",
+      "Human evaluation for accuracy checks"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Appearance Score"
+    ],
+    "calculation": "Accuracy was calculated using the formula Accuracy = (NYes + 0.5 × NPartial) / NTotal × 100%.",
+    "interpretation": "Higher accuracy indicates better website functionality as per generation instructions.",
+    "baseline_results": "Best accuracy achieved was 38.2% by WebGen-LM-32B.",
+    "validation": "Systematic validation of instruction and test case alignment through manual review."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "MIT License",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

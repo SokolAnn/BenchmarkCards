@@ -1,0 +1,77 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Jailbreak Distillation (JBDISTILL)",
+    "abbreviation": "JBDISTILL",
+    "overview": "Jailbreak Distillation (JBDISTILL) is a novel benchmark construction framework that distills jailbreak attacks into high-quality and easily-updatable safety benchmarks, addressing challenges in existing safety evaluations by ensuring fair comparisons and reproducibility.",
+    "data_type": "safety benchmarks",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "HarmBench"
+    ],
+    "resources": [
+      "https://aka.ms/jailbreak-distillation"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Provide a renewable safety evaluation framework for large language models.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Safety Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Derived prompts from existing jailbreak attack algorithms and development models.",
+    "size": "500 prompts",
+    "format": "N/A",
+    "annotation": "Minimal human effort required for running the JBDISTILL pipeline to produce updated benchmarks."
+  },
+  "methodology": {
+    "methods": [
+      "Prompt selection algorithms (RANK BYSUCCESS, BESTPERGOAL, COMBINED SELECTION)"
+    ],
+    "metrics": [
+      "Effectiveness",
+      "Separability",
+      "Diversity"
+    ],
+    "calculation": "Average Attack Success Rate (ASR) across evaluation models to measure effectiveness; confidence intervals for separability.",
+    "interpretation": "Effective benchmarks are those that provide high ASR and clear separability between model performances.",
+    "baseline_results": "Baseline benchmarks include HarmBench, DAN prompts, WildJailbreaks, showing lower effectiveness compared to JBDISTILL.",
+    "validation": "Empirical validation of benchmark performance across diverse LLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Bias"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Adversarial prompts intended for safety evaluation, with a focus on preventing harmful applications."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "HarmBench dataset is under MIT license; WildJailbreaks dataset is under ODC-BY license.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

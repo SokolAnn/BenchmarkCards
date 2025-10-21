@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "NbQA",
+    "abbreviation": "N/A",
+    "overview": "NbQA is a large-scale dataset of standardized task-solution pairs extracted from Jupyter notebooks, designed to enhance multi-step reasoning capabilities in data analysis workflows.",
+    "data_type": "task-solution pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "InfiAgent-DABench",
+      "DSBench",
+      "AIME"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/opencompass/NbQA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To improve large language models' capabilities in performing multi-step data analysis tasks through a dataset of standardized task-solution pairs.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Data Scientists"
+    ],
+    "tasks": [
+      "Data Analysis",
+      "Multi-Step Reasoning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "1.6 million Jupyter notebooks collected from GitHub",
+    "size": "38,635 task-solution pairs",
+    "format": "CSV",
+    "annotation": "Automatically extracted and annotated through a pipeline utilizing GPT-4o."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Overall accuracy is calculated based on the number of tasks correctly solved by models on evaluation benchmarks.",
+    "interpretation": "Higher accuracy indicates better performance in data analysis and reasoning tasks.",
+    "baseline_results": "Comparison with Qwen2.5-7B and Qwen2.5-14B Instruct models, showing significant accuracy improvements after fine-tuning on NbQA.",
+    "validation": "Validation is performed through rigorous testing on InfiAgent-DABench to ensure the effectiveness of the dataset."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

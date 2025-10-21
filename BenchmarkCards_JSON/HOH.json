@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "HOH (How Outdated information Harms Retrieval-Augmented Generation)",
+    "abbreviation": "HOH",
+    "overview": "HOH is the first benchmark designed to evaluate the impact of outdated information on Retrieval-Augmented Generation (RAG). It features a dynamic QA dataset and a mock search engine that maintains both current and historical documents, addressing the challenges presented by outdated knowledge in language models.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "RealtimeQA",
+      "FreshQA",
+      "TemporalWiki",
+      "EvolvingQA",
+      "GrowOVER"
+    ],
+    "resources": [
+      "https://github.com/0russwest0/HoH"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate Retrieval-Augmented Generation systems' robustness against outdated information and enhance understanding of temporal challenges in RAG.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "The benchmark mainly relies on changes in Wikipedia snapshots, which may not reflect rapid real-world changes.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated from Wikipedia snapshots for capturing evolving real-world knowledge.",
+    "size": "96,124 question-answer pairs and 219,463 documents",
+    "format": "JSON",
+    "annotation": "Annotated for current and outdated answers, including evidence and last modified timestamps."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated by evaluating LLM responses as 'perfect', 'missing', or 'harmful'.",
+    "interpretation": "A response is considered 'perfect' if it accurately answers the question without errors.",
+    "baseline_results": "Llama-70B achieved only a modest score of 51.7% on the benchmark.",
+    "validation": "Extensive experiments reveal the significant impact of outdated information on RAG performance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on affected communities"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The benchmark allows for assessments across various demographics but lacks explicit demographic categorizations.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

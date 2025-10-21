@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Named Entity Swapping for Metadata Anonymization",
+    "abbreviation": "N/A",
+    "overview": "This work introduces an anonymization scheme for a corpus of texts to safeguard metadata from disclosure, specifically preventing large language models from identifying metadata associated with texts by using named entity swapping.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "N/A"
+    ],
+    "resources": [
+      "https://github.com/lsablica/spheroids"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective is to provide an effective anonymization technique that can prevent metadata disclosure from correlated documents.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Data Privacy Professionals"
+    ],
+    "tasks": [
+      "Text Anonymization"
+    ],
+    "limitations": "The method can only be applied to a fraction of text chunks in the corpus.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Earnings call transcripts from various companies.",
+    "size": "1,819 chunks",
+    "format": "Plain text",
+    "annotation": "Automated identification of named entities using spaCy."
+  },
+  "methodology": {
+    "methods": [
+      "Named Entity Swapping",
+      "Clustering-based weighting scheme",
+      "Decision-theoretic framework"
+    ],
+    "metrics": [
+      "Data utility",
+      "Disclosure risk"
+    ],
+    "calculation": "Metrics calculated by evaluating swaps against pre-swap contingency tables.",
+    "interpretation": "The balancing act between maintaining data utility and minimizing disclosure risk.",
+    "baseline_results": null,
+    "validation": "Empirical analysis through predictive checks using state-of-the-art LLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Reduction in metadata discovery rate by LLMs."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The method aims to anonymize data by preventing identification of named entities related to metadata.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

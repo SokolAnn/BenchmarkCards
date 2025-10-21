@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "QAEdit",
+    "abbreviation": "N/A",
+    "overview": "QAEdit is a benchmark tailored for real-world QA tasks, designed to assess model editing in large language models (LLMs) and to expose limitations in synthetic evaluation practices.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ZsRE",
+      "COUNTER FACT"
+    ],
+    "resources": [
+      "https://github.com/WanliYoung/Revisit-Editing-Evaluation"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To rigorously assess model editing methods in real-world question answering scenarios and to expose pitfalls of synthetic evaluation methods.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from three widely-used QA datasets: Natural Questions, TriviaQA, and SimpleQA.",
+    "size": "19,249 samples",
+    "format": "N/A",
+    "annotation": "Extracted subjects from the questions using GPT-4, paraphrased prompts, and selected unrelated QA pairs for locality evaluation."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Calculated based on the success rate of edited LLMs on previously failed questions in QA tasks.",
+    "interpretation": "Higher accuracy indicates better performance of the editing methods in real-world QA settings.",
+    "baseline_results": "Average accuracy of existing editing methods was found to be significantly lower than previously reported results under synthetic evaluations.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All data used in the research is publicly available and does not raise any privacy concerns.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

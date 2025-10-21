@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "NYU CTF Bench",
+    "abbreviation": "N/A",
+    "overview": "The NYU CTF Bench is a scalable, open-source benchmark dataset specifically designed for evaluating large language models (LLMs) in solving Capture the Flag (CTF) challenges in cybersecurity. It comprises 200 diverse CTF challenges from various competitions, offering a comprehensive framework for LLM evaluation and tool integration.",
+    "data_type": "CTF challenges",
+    "domains": [
+      "Cybersecurity"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMLU",
+      "GPQA"
+    ],
+    "resources": [
+      "https://github.com/NYU-LLM-CTF/NYU_CTF_Bench",
+      "https://github.com/NYU-LLM-CTF/llm_ctf_automation"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a benchmark dataset for evaluating the performance of large language models in solving cybersecurity CTF challenges.",
+    "audience": [
+      "ML Researchers",
+      "Cybersecurity Professionals",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Vulnerability Detection",
+      "Automated Task Solving"
+    ],
+    "limitations": "Some categories are underrepresented in the current dataset, and future improvements aim to enhance tool/platform support.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "200 CTF challenges sourced from the annual NYU Cybersecurity Awareness Week (CSAW) competitions.",
+    "size": "200 challenges",
+    "format": "JSON",
+    "annotation": "Challenges are manually validated for setup and solvability."
+  },
+  "methodology": {
+    "methods": [
+      "Automated evaluation using LLMs",
+      "Manual validation of challenges"
+    ],
+    "metrics": [
+      "Accuracy of flag retrieval",
+      "Number of solved challenges"
+    ],
+    "calculation": "Metrics calculated based on the number of challenges solved by each LLM during evaluations.",
+    "interpretation": "A higher percentage of solved challenges indicates better performance of the LLMs.",
+    "baseline_results": "GPT-4 and Claude 3 showed the highest performance among evaluated models.",
+    "validation": "Challenges validated to ensure proper functioning and manual verification for solvability."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Ethical Use",
+      "Security"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A - Not discussed in context.",
+    "data_licensing": "Open-source availability, specific licenses not detailed.",
+    "consent_procedures": "N/A - Not discussed.",
+    "compliance_with_regulations": "N/A - Not discussed."
+  }
+}

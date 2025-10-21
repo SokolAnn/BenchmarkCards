@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ORT (Benchmark for Out-of-Distribution Robustness Testing)",
+    "abbreviation": "ORT",
+    "overview": "ORT is designed to evaluate the robustness of unlearning methods against variations in knowledge expression, systematically investigating Form-Dependent Bias across various downstream tasks.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://arxiv.org/abs/2506.07795"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To systematically evaluate unlearning effectiveness and understand the Form-Dependent Bias in unlearning methods.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Ethical AI Practitioners"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Knowledge Retrieval"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "200 real-world prominent individuals as unlearning targets, with multi-format evaluation tasks for each target.",
+    "size": "12,294 evaluation entries on Forget Set, 22,758 evaluation entries on Retain Set",
+    "format": "JSON",
+    "annotation": "Annotation conducted through natural language prompts and LLM outputs."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Probability Reduction"
+    ],
+    "calculation": "Evaluation of knowledge retention and forgetting through probability-based metrics for different task formats.",
+    "interpretation": "Lower probability indicates successful unlearning of the target knowledge.",
+    "baseline_results": null,
+    "validation": "Comprehensive tests across different unlearning methods."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

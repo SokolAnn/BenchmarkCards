@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Mind the Gap: Benchmarking LLM Uncertainty, Discrimination, and Calibration in Specialty-Aware Clinical QA",
+    "abbreviation": "N/A",
+    "overview": "This paper evaluates uncertainty estimation methods for clinical question answering focusing on eleven clinical specialties and six question types across ten open-source LLMs. It benchmarks uncertainty across multiple models and introduces a new annotation scheme mapping QA pairs onto different question types.",
+    "data_type": "multiple-choice question answering pairs",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "S-MedQA",
+      "MedExQA"
+    ],
+    "resources": [
+      "https://huggingface.co/ContactDoctor/Bio-Medical-Llama-3-8B",
+      "https://huggingface.co/meta-llama/Llama-3.1-70B-Instruct"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To benchmark uncertainty quantification methods in clinical question answering using large language models.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Two English multiple-choice question answering datasets: S-MedQA and MedExQA.",
+    "size": "1,810 questions",
+    "format": "N/A",
+    "annotation": "Manually gathered and annotated with a validated pipeline mapping to clinical specialties."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "AUROC",
+      "Expected Calibration Error (ECE)",
+      "Brier Score"
+    ],
+    "calculation": "Metrics computed based on model outputs comparing predictions to ground-truth labels.",
+    "interpretation": "Higher AUROC indicates better discrimination; lower ECE indicates better calibration.",
+    "baseline_results": "N/A",
+    "validation": "Model outputs validated against human annotations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

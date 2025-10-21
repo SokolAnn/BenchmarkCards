@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Object Recognition in Incongruous Context Benchmark (ORIC)",
+    "abbreviation": "ORIC",
+    "overview": "ORIC evaluates Large Vision-Language Models (LVLMs) on their performance in recognizing objects under contextual incongruity, where deviations from expected object-context relationships lead to misidentification and hallucinations.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Computer Vision",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "POPE",
+      "Hallu-PI",
+      "HallusionBench"
+    ],
+    "resources": [
+      "https://github.com/ZhaoyangLi-1/ORIC"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To systematically analyze the impact of contextual incongruity on the performance of Large Vision-Language Models (LVLMs) in recognizing objects.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "AI Practitioners"
+    ],
+    "tasks": [
+      "Object Recognition"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "MSCOCO validation set",
+    "size": "1,000 images",
+    "format": "N/A",
+    "annotation": "Human annotation with a low error rate of 2%"
+  },
+  "methodology": {
+    "methods": [
+      "LLM-guided sampling",
+      "CLIP-guided sampling"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated as standard binary classification performance metrics.",
+    "interpretation": "Higher values of precision, recall, and F1 Score indicate better performance in recognizing objects under contextual incongruity.",
+    "baseline_results": null,
+    "validation": "Evaluation of LVLMs across a range of prompts and testing conditions to ensure robustness."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Bias"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

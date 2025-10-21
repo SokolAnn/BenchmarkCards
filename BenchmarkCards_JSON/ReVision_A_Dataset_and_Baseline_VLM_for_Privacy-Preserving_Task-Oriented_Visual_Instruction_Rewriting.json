@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ReVision: A Dataset and Baseline VLM for Privacy-Preserving Task-Oriented Visual Instruction Rewriting",
+    "abbreviation": "N/A",
+    "overview": "This paper introduces a dataset for Visual Instruction Rewriting, encompassing over 39,000 examples across 14 diverse domains, aimed at enabling privacy-preserving interactions in multimodal environments.",
+    "data_type": "image-original instruction-rewritten instruction triplets",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/abhijitmishra/visual_instruction_rewriting",
+      "https://huggingface.co/datasets/hsiangfu/multimodal_query_rewrites",
+      "https://huggingface.co/hsiangfu/ReVision-250M-256-16-baseline"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective is to develop a lightweight and privacy-preserving multimodal interaction framework by rewriting visual instructions into text commands.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Semantic Parsing"
+    ],
+    "limitations": "The dataset is monolingual, limiting its applicability to multilingual and culturally varied settings.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Dataset consists of image-original instruction-rewritten instruction triplets, derived from real-world scenarios including images sourced from publicly available datasets.",
+    "size": "39,023 examples",
+    "format": "N/A",
+    "annotation": "Generated and validated using OpenAI's GPT-4 model and human annotators via Amazon Mechanical Turk."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "BLEU",
+      "METEOR",
+      "ROUGE"
+    ],
+    "calculation": "Metrics are calculated to assess the linguistic similarity and effectiveness of instruction rewriting.",
+    "interpretation": "Higher scores in BLEU, ROUGE, and METEOR indicate better alignment with original intents and improved instruction clarity.",
+    "baseline_results": null,
+    "validation": "Human evaluations through Amazon Mechanical Turk to validate the accuracy of rewritten instructions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The framework eliminates the need to transmit personal visual data, ensuring a privacy-centric model.",
+    "data_licensing": "Dataset is sourced from publicly available datasets ensuring compliance with fair use policies.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

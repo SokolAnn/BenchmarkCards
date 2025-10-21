@@ -1,0 +1,82 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TYPYBENCH",
+    "abbreviation": "N/A",
+    "overview": "TYPYBENCH is a benchmark designed to evaluate LLMs’ type inference across entire Python repositories. It introduces two novel metrics: TYPESIM, which captures nuanced semantic relationships between predicted and ground truth types, and TYPECHECK, which assesses type consistency across codebases.",
+    "data_type": "source code",
+    "domains": [
+      "Software Engineering"
+    ],
+    "languages": [
+      "Python"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/typybench/typybench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a standardized evaluation framework for assessing the type inference capabilities of LLMs in Python repositories.",
+    "audience": [
+      "ML Researchers",
+      "Software Developers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Type Inference"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated dataset of 50 high-quality Python repositories from GitHub and PyPI.",
+    "size": "50 repositories",
+    "format": "N/A",
+    "annotation": "Manual cleaning and preparation of repositories with type information removed."
+  },
+  "methodology": {
+    "methods": [
+      "Evaluation of LLMs",
+      "Benchmarking with TYPESIM and TYPECHECK metrics"
+    ],
+    "metrics": [
+      "TYPESIM",
+      "TYPECHECK"
+    ],
+    "calculation": "TYPESIM measures functional similarity between predicted and human-annotated types using structural relationships. TYPECHECK uses mypy to assess type consistency across codebases.",
+    "interpretation": "Higher TYPESIM indicates better semantic similarity, while lower TYPECHECK errors suggest better consistency.",
+    "baseline_results": null,
+    "validation": "Empirical studies comparing performance across state-of-the-art LLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

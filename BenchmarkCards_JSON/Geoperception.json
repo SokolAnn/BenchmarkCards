@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Geoperception",
+    "abbreviation": "N/A",
+    "overview": "Geoperception is a benchmark designed to evaluate an MLLM’s ability to accurately transcribe 2D geometric information from an image. It reveals shortcomings in precise geometric perception across leading vision-language MLLMs, both closed and open-source.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://euclid-multimodal.github.io",
+      "https://huggingface.co/euclid-multimodal",
+      "https://github.com/euclid-multimodal/Euclid"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To construct a benchmark focusing solely on the geometric perception ability of MLLMs.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Geometric Perception Understanding"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Derived from the Geometry-3K corpus, which compiles problems from high school textbooks.",
+    "size": "1,584 images with multiple questions across 7 tasks",
+    "format": "JSON",
+    "annotation": "Questions and answers generated directly from logical forms validated by GPT-4."
+  },
+  "methodology": {
+    "methods": [
+      "Model-based evaluation",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "The evaluation score is defined as |P| / |G| if P is a subset of G, otherwise 0.",
+    "interpretation": "Higher scores indicate better geometric perception capabilities.",
+    "baseline_results": "Closed-source models, such as Gemini-1.5-Pro, achieved an average score of 56.98%.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

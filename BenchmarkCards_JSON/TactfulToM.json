@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TactfulToM",
+    "abbreviation": "N/A",
+    "overview": "TactfulToM is a novel English benchmark designed to evaluate LLMs’ ability to understand white lies within real-life conversations and reason about prosocial motivations behind them.",
+    "data_type": "conversation sets with question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ToMBench"
+    ],
+    "resources": [
+      "https://github.com/nii-cl/tactful-tom"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate LLMs' understanding of white lies in social contexts, filling a research gap in Theory of Mind evaluation.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Theory of Mind Evaluation",
+      "Natural Language Understanding"
+    ],
+    "limitations": "Limited to White Lies; lacks extensive exploration of other second-order ToM abilities.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated through a multi-stage human-in-the-loop process, maintaining information asymmetry necessary for white lies.",
+    "size": "100 conversations with 6,700 questions",
+    "format": "JSON",
+    "annotation": "Reviewed by graduate students and independent annotators for coherence and white lie authenticity."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Comprehension accuracy",
+      "Justification accuracy"
+    ],
+    "calculation": "Metrics calculated based on comparison of responses from LLMs and human participants.",
+    "interpretation": "Performance reflects understanding of complex social reasoning regarding white lies.",
+    "baseline_results": "Human performance achieved 85% accuracy, while state-of-the-art LLMs significantly underperformed.",
+    "validation": "Consisted of multiple iterated reviews and evaluations by trained annotators."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Decision bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Misrepresenting human social behaviors",
+      "Potential unethical applications in sensitive contexts"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All annotator data was anonymized and secured.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Informed consent obtained from all annotators.",
+    "compliance_with_regulations": "N/A"
+  }
+}

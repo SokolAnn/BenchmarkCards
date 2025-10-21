@@ -1,0 +1,106 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ExAnte (A Benchmark for Ex-Ante Inference in Large Language Models)",
+    "abbreviation": "ExAnte",
+    "overview": "ExAnte introduces a benchmark designed to evaluate the ability of large language models (LLMs) to reason while adhering to temporal constraints, specifically assessing their capabilities in making predictions or inferences without access to future events.",
+    "data_type": "question-answering pairs, event predictions, atomic facts generation",
+    "domains": [
+      "Natural Language Processing",
+      "Finance"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "TRAM",
+      "TimeBench"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/yachuanliu/ExAnte",
+      "https://github.com/yachuan/ExAnte"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of ExAnte is to evaluate the temporal reasoning capabilities of large language models when responding to time-sensitive queries, enforcing strict temporal cutoffs for model outputs.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Event Prediction",
+      "Text Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Diverse datasets including stock market data, Wikipedia events, and scientific publications curated for ex-ante inference tasks.",
+    "size": "1757 examples for Stock dataset, 304 for QA dataset, 630 for Wikipedia dataset, 98 for Publication dataset.",
+    "format": "CSV",
+    "annotation": "Annotated by human reviewers and automated checks for temporal adherence."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Leakage rate",
+      "Mean Absolute Error (MAE)"
+    ],
+    "calculation": "Leakage rate is calculated as the proportion of queries with temporal leakage across datasets, while MAE is computed comparing model predictions to actual values.",
+    "interpretation": "A lower leakage rate indicates better adherence to temporal constraints, while MAE provides insight into prediction accuracy.",
+    "baseline_results": "Baseline coverage across different models (GPT-4o, Gemini 1.5 Pro, Claude 3.5) shows significant variations in leakage rates under various prompting strategies.",
+    "validation": "The benchmark is validated using a mixture of quantitative leakage assessments and qualitative evaluations by domain experts."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in prompt"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Potential misuse in time-sensitive decision-making or predictions without adequately addressing temporal adherence."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data is anonymized and aggregated where applicable.",
+    "data_licensing": "N/A - Dataset licensing details are not specified in the paper.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

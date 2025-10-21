@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "EyePCR (Eye Perception, Comprehension and Reasoning)",
+    "abbreviation": "EyePCR",
+    "overview": "EyePCR is a large-scale benchmark for ophthalmic surgery analysis, assessing cognition across Perception, Comprehension, and Reasoning with over 210k visual question-answering samples, structured clinical knowledge, and fine-grained annotations.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://arxiv.org/abs/2509.15596"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the cognitive abilities of multimodal large language models in the context of clinical reasoning and decision-making within ophthalmic surgery.",
+    "audience": [
+      "ML Researchers",
+      "Medical Professionals",
+      "AI Practitioners in Healthcare"
+    ],
+    "tasks": [
+      "Perception",
+      "Comprehension",
+      "Reasoning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "2,968 surgical videos from public datasets, curated clinical repositories, and institutional archives.",
+    "size": "210,000 VQAs",
+    "format": "VQA",
+    "annotation": "Annotated by three senior ophthalmic surgeons for clinical authenticity and reliability."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "BLEU Score",
+      "ROUGE-L"
+    ],
+    "calculation": "Simple accuracy for MCQs; BLEU and ROUGE for OEQs.",
+    "interpretation": "Higher accuracy indicates better model performance in surgical cognition tasks.",
+    "baseline_results": "EyePCR-MLLM achieves substantial accuracy improvements over Qwen2.5-VL-7B.",
+    "validation": "Dataset split at the patient level to prevent overlap."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Turkish Educational Crossword Puzzle Generator",
+    "abbreviation": "N/A",
+    "overview": "This paper introduces the first Turkish crossword puzzle generator designed to leverage the capabilities of large language models (LLMs) for educational purposes, providing two new datasets for generating clues and enhancing learning.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Education"
+    ],
+    "languages": [
+      "Turkish"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/Kamyar-zeinalipour/TAC",
+      "https://huggingface.co/datasets/Kamyar-zeinalipour/T4TAC",
+      "https://github.com/KamyarZeinalipour/CW_Clue_Gen_tr",
+      "https://huggingface.co/Kamyar-zeinalipour/llama7B_turkish_crossword_clue_gen",
+      "https://huggingface.co/Kamyar-zeinalipour/llama13B_turkish_crossword_clue_gen"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To create dynamic crosswords in Turkish for educational purposes, providing educators with tools to easily generate subject-specific puzzles.",
+    "audience": [
+      "Educators",
+      "Language Learners"
+    ],
+    "tasks": [
+      "Crossword Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "A dataset of Turkish crossword clues and answers compiled from online sources, and another dataset containing categorized Turkish texts.",
+    "size": "252,576 Turkish answer-clue pairs and over 35,000 samples in the second dataset",
+    "format": "N/A",
+    "annotation": "Crafted by crossword experts and generated using fine-tuned language models."
+  },
+  "methodology": {
+    "methods": [
+      "Fine-tuning of large language models",
+      "Human evaluation of generated clues"
+    ],
+    "metrics": [
+      "ROUGE-1",
+      "ROUGE-2",
+      "ROUGE-L"
+    ],
+    "calculation": "Metrics were calculated based on comparison of generated clues with established benchmarks.",
+    "interpretation": "Good performance is indicated by higher ROUGE scores.",
+    "baseline_results": "GPT3.5 Turbo achieved ROUGE-1: 39.96, ROUGE-2: 18.08, ROUGE-L: 23.48 after fine-tuning.",
+    "validation": "Evaluated by native Turkish speakers for relevance and linguistic accuracy."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

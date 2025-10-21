@@ -1,0 +1,70 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MTOB (Machine Translation from One Book)",
+    "abbreviation": "MTOB",
+    "overview": "MTOB is a benchmark for learning to translate between English and Kalamang, a low-resource language with less than 200 speakers, using several hundred pages of field linguistics reference materials.",
+    "data_type": "sentence-level translation pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Kalamang"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/dictionaria/kalamang"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To serve as a testbed for language model capabilities and to expand access to language technology for underserved communities.",
+    "audience": [
+      "ML Researchers",
+      "Language Technologists"
+    ],
+    "tasks": [
+      "Machine Translation"
+    ],
+    "limitations": "The task only tests sentence-level translation and may not be socially useful as it addresses translation between Kalamang and English, where all Kalamang speakers also speak Papuan Malay.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Documentation of the Kalamang language collected during fieldwork.",
+    "size": "around 250,000 tokens in English and 25,000 tokens in Kalamang",
+    "format": "Plaintext and LaTeX",
+    "annotation": "Manual annotation based on linguistic fieldwork."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "chrF",
+      "BLEU Score"
+    ],
+    "calculation": "chrF measures character-level n-gram similarity between model outputs and reference translations.",
+    "interpretation": "Scores indicate the quality of translation, with higher scores being better.",
+    "baseline_results": "Human performance achieved chrF scores of 51.6 for Kalamang to English and 57.0 for English to Kalamang.",
+    "validation": "Test set was created from randomly sampled parallel sentences."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Privacy",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset was constructed with community consent, and ethical considerations were taken into account.",
+    "data_licensing": "CC BY 4.0",
+    "consent_procedures": "Informed consent was obtained from Kalamang community members for data use.",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "V ACT (Video Automatic Causal Testing)",
+    "abbreviation": "V ACT",
+    "overview": "V ACT is an automated framework for modeling, evaluating, and measuring the causal understanding of video generation models (VGMs) in real-world scenarios. It combines causal analysis techniques with language model assistance to assess model behaviors without human intervention.",
+    "data_type": "causal testing scenarios and video data",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "VideoPhy",
+      "PhyGenBench"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2503.06163"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the benchmark is to systematically evaluate the causal learning capabilities of video generation models.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Causal Reasoning Evaluation",
+      "Video Generation Assessment"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "60 causal systems generated through automatic means, validated through crowd experiments.",
+    "size": "60 causal systems",
+    "format": "JSON",
+    "annotation": "Automatically generated using a language model and validated through crowd-sourced human annotations."
+  },
+  "methodology": {
+    "methods": [
+      "Automatic evaluation using language models",
+      "Intervention experiments for causal testing"
+    ],
+    "metrics": [
+      "Text Consistency",
+      "Generation Consistency",
+      "Rule Consistency"
+    ],
+    "calculation": "Metrics are computed based on the ratio of correct outcomes produced by video generation models against the expected causal outcomes.",
+    "interpretation": "Higher scores indicate better causal understanding and alignment with real-world expectations.",
+    "baseline_results": "N/A",
+    "validation": "Validation through human comparison against automatically generated causal systems."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Privacy measures ensured by not using identifiable personal data in the generated scenarios.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

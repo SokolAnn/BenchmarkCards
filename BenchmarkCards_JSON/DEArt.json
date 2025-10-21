@@ -1,0 +1,104 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DEArt: Dataset of European Art",
+    "abbreviation": "DEArt",
+    "overview": "We propose DEArt, at this point primarily an object detection and pose classification dataset meant to be a reference for paintings between the XIIth and the XVIIIth centuries. It contains more than 15,000 images, about 80% non-iconic, aligned with manual annotations for the bounding boxes identifying all instances of 69 classes as well as 12 possible poses for boxes identifying human-like objects. Of these, more than 50 classes are cultural heritage-specific and thus do not appear in other datasets; additionally, existing datasets do not include pose annotations.",
+    "data_type": "image (object detection bounding boxes and pose classification labels)",
+    "domains": [
+      "Computer Vision",
+      "Cultural Heritage"
+    ],
+    "languages": [],
+    "similar_benchmarks": [
+      "MS COCO",
+      "Pascal VOC",
+      "Open Images",
+      "PeopleArt",
+      "IconArt",
+      "PrintArt",
+      "SemArt",
+      "OmniArt",
+      "ArtDL",
+      "The Met Dataset"
+    ],
+    "resources": [
+      "https://doi.org/10.5281/zenodo.6984525",
+      "https://github.com/SaberD/annotated-images",
+      "https://arxiv.org/abs/2211.01226v2"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Provide a large and comprehensive object detection dataset for cultural heritage (European paintings XIIth-XVIIIth centuries) with pose annotations to enable development and evaluation of object detection and pose classification models for artworks.",
+    "audience": [
+      "Research community",
+      "GLAM institutions",
+      "Cultural heritage specialists",
+      "Computer Vision researchers"
+    ],
+    "tasks": [
+      "Object Detection",
+      "Pose Classification"
+    ],
+    "limitations": "The dataset targets European cultural heritage imagery, focusing on the period between the XIIth and the XVIIIth centuries and may not generalize well to visual arts of other cultures. The dataset is unbalanced with minority classes under-represented; some pose classes are minority and hard to classify. More annotations than only poses would be useful to fully inter-relate detected objects. The class set is representative but not complete.",
+    "out_of_scope_uses": [
+      "Recognition of complex iconographic events (e.g., Annunciation, Adoration of the Magi, the Passion of Jesus Christ) is not included; classes that refer to such complex concepts were explicitly not included."
+    ]
+  },
+  "data": {
+    "source": "Europeana Collections; Wikimedia Commons; British Museum; Rijksmuseum; Wikipedia; The Clark Museum; The Cleveland Museum of Art; Harvard Art Museum; Los Angeles County Museum of Art; The Leiden Collection; Paul Mellon Centre; Philadelphia Museum of Art; National Gallery of Scotland; Museo Nacional Thyssen-Bornemisza; Victoria and Albert Museum; National Museum in Warsaw; Yale University Art Gallery; The Metropolitan Museum of Art; National Gallery of Denmark; The National Gallery of Art; The Art Institute of Chicago; WikiArt; PHAROS: The International Consortium of Photo Archives.",
+    "size": "15,000 images; 105,799 bounding boxes; 56,230 human-like creature pose annotations",
+    "format": "Pascal VOC format",
+    "annotation": "Manual annotation by project team members using LabelMe for 10,000 images; 5,000 images annotated semi-supervisedly using the current model with manual correction in three ingestion phases; annotations include bounding boxes and class labels for 69 classes, plus pose labels (12 categories) for human-like objects. Annotation objectives included consistency, accuracy, and exhaustiveness with periodic manual quality checks."
+  },
+  "methodology": {
+    "methods": [
+      "Model-based evaluation using deep learning object detectors",
+      "Transfer learning (Faster R-CNN with ResNet-152 backbone pretrained on MS COCO)",
+      "Training a pose classifier (custom Xception network trained from scratch)",
+      "Semi-supervised annotation ingestion with manual correction and retraining",
+      "Automated metric evaluation (mAP, AP, F1 scores)"
+    ],
+    "metrics": [
+      "Average Precision at IoU=0.5 (AP@0.5)",
+      "mean Average Precision at IoU=0.5 (mAP@0.5)",
+      "F1 Score",
+      "Weighted F1 Score"
+    ],
+    "calculation": "Object detection evaluated using AP@0.5 per class and mAP@0.5 following PASCAL VOC evaluation. Pose classification evaluated using F1 score; weighted F1 reported due to class imbalance.",
+    "interpretation": "mAP@0.5 measures object detection precision at IoU threshold 0.5; the paper reports an mAP@0.5 = 31.2% for the Faster R-CNN model trained on DEArt, which the authors state is within 87% of state-of-the-art models for photographs. F1 and weighted F1 are used to interpret pose classification performance given class imbalance.",
+    "baseline_results": "Object detection: Faster R-CNN (ResNet-152 backbone pretrained on MS COCO, then trained on DEArt) yields mAP@0.5 = 31.2. Pose classification: F1 = 0.471, weighted F1 = 0.89. Pretrained photograph-based models show performance drops when tested on DEArt (example: MS COCO model person AP from 0.36 on its data to 0.25 on DEArt; PASCAL VOC model person AP from 0.22 to 0.05 as reported in the paper).",
+    "validation": "Dataset split randomly per class into 70% training (10,500 images), 15% validation (2,250 images), and 15% test (2,250 images). Periodic dataset quality checks approximately every 2,000 new images evaluating the 10 classes with the most instances by extracting 100 images per category. Semi-supervised ingestion involved training the model on current data, detecting objects on new images, manually correcting detections, and retraining."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Data Laws",
+          "subcategory": [
+            "Data usage restrictions"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination",
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "When possible, images were filtered by license type and only images open for reuse were selected.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

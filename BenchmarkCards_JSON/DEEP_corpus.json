@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DEEP corpus",
+    "abbreviation": "N/A",
+    "overview": "The DEEP corpus is designed for modeling the social display of the emotion shame, with annotations for different emotion regulation strategies classified during shame-inducing situations.",
+    "data_type": "video frames with behavior annotations",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://git.opendfki.de/philipp.mueller/acii24_emotionregulationllm"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To investigate how instruction-tuned large language models can classify emotion regulation strategies during shame-eliciting interactions.",
+    "audience": [
+      "Researchers in Affective Computing",
+      "Psychology students",
+      "Developers of emotion recognition systems"
+    ],
+    "tasks": [
+      "Emotion Regulation Classification"
+    ],
+    "limitations": "Due to the complexity of annotations, the corpus is limited in size and variability, focusing specifically on shame regulation.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The DEEP corpus consisting of recordings from shame-eliciting job interviews.",
+    "size": "11535 video frames from 20 expert-annotated videos",
+    "format": "Video",
+    "annotation": "Annotations conducted by three trained raters based on participant behavior, verbalized introspection, and context."
+  },
+  "methodology": {
+    "methods": [
+      "Fine-tuning instruction-tuned Large Language Models",
+      "A/B testing"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics calculated based on model predictions compared to ground truth labels from the DEEP corpus.",
+    "interpretation": "Accuracy rates indicate the percentage of correctly classified emotion regulation strategies among all predictions.",
+    "baseline_results": "The compared models include Bayesian Networks and instruction-tuned Llama2-7B with reported accuracy of 0.84.",
+    "validation": "Leave-one-subject-out evaluation for assessing generalizability."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Limited to a small, culturally homogeneous group of participants.",
+    "harm": [
+      "Potential exposure of participants to negative emotional states during data collection."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Informed consent obtained from participants with measures in place to protect sensitive data.",
+    "data_licensing": "Received corpus upon request from the authors, ethical review board approved data collection.",
+    "consent_procedures": "Informed consent acquired prior to participation in the study.",
+    "compliance_with_regulations": "Ethical approval for data processing outlined in the study."
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CODEME NV (Code Migration Across Environment)",
+    "abbreviation": "CODEME NV",
+    "overview": "A benchmark designed to assess LLMs’ abilities in code migration scenarios, encompassing 922 examples spanning 19 Python and Java packages, structured around three tasks: identifying version-incompatible functions, detecting changes in function definitions, and adapting code to target environments.",
+    "data_type": "code migration examples",
+    "domains": [
+      "Software Engineering"
+    ],
+    "languages": [
+      "Python",
+      "Java"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/xdshen-ai/Benchmark-of-Code-Migration"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To systematically assess the code migration capabilities of LLMs across different environments.",
+    "audience": [
+      "ML Researchers",
+      "Software Engineers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Identifying Version-Incompatible Functions",
+      "Answering Function Changes",
+      "Code Migration"
+    ],
+    "limitations": "CODEME NV is relatively small, particularly the Java dataset.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Official documentation and release notes of Python and Java packages containing function changes.",
+    "size": "922 examples",
+    "format": "N/A",
+    "annotation": "Manually curated from official sources."
+  },
+  "methodology": {
+    "methods": [
+      "Agent-based Evaluation",
+      "Unit Test-based Evaluation"
+    ],
+    "metrics": [
+      "Pass@1",
+      "Pass@5",
+      "Accuracy"
+    ],
+    "calculation": "Metrics are calculated based on the ability of LLMs to accurately identify incompatible functions and migration correctness.",
+    "interpretation": "Higher scores indicate better LLM performance in locating incompatible functions and performing successful migrations.",
+    "baseline_results": "Average accuracy across seven models shows a pass@1 rate of 26.50%, with GPT-4 O achieving a highest score of 43.84%.",
+    "validation": "Experimental evaluation with nine different LLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

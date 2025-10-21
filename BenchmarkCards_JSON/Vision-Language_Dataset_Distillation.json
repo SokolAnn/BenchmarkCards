@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Vision-Language Dataset Distillation",
+    "abbreviation": "N/A",
+    "overview": "This work introduces the first vision-language dataset distillation method, which distills image-text pairs into a smaller dataset while preserving critical information for training vision-language models.",
+    "data_type": "image-text pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://princetonvisualai.github.io/multimodal_dataset_distillation/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To efficiently distill vision-language datasets to simplify complex interactions and improve model training.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Image-Text Retrieval"
+    ],
+    "limitations": "Dataset distillation is influenced by learning algorithms which could lead to poor transferability; computationally intensive processes are still a challenge.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Flickr30K and COCO datasets",
+    "size": "1000 image-text pairs (for training)",
+    "format": "N/A",
+    "annotation": "Automatically generated through the proposed distillation methods."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Image-to-text Retrieval Accuracy (R@1)"
+    ],
+    "calculation": "Metrics are calculated by evaluating the fraction of times the correct result appears among the top K items in image-text retrieval tasks.",
+    "interpretation": "Higher retrieval scores (e.g., R@1, R@5, R@10) indicate effectiveness in matching images and their corresponding text descriptions.",
+    "baseline_results": "Best performance noted as 9.9% retrieval accuracy (R@1) using 100 distilled pairs.",
+    "validation": "Performance metrics validated against original datasets (Flickr30K and COCO)."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

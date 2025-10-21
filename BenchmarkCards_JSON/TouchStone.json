@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TouchStone",
+    "abbreviation": "N/A",
+    "overview": "TouchStone is a comprehensive visual dialogue dataset that evaluates large vision-language models (LVLMs) across five major categories of abilities and 27 subtasks, focusing on both fundamental recognition and comprehension as well as literary creation.",
+    "data_type": "visual dialogue pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "VisIT-Bench",
+      "MMBench"
+    ],
+    "resources": [
+      "https://github.com/OFA-Sys/TouchStone"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation method for LVLMs by utilizing detailed image annotations and advanced LLMs as evaluators.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "AI Practitioners"
+    ],
+    "tasks": [
+      "Visual Question Answering",
+      "Image Captioning",
+      "Visual Storytelling"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated from open-world images and manually annotated with questions covering various dialogue abilities.",
+    "size": "908 questions",
+    "format": "JSON",
+    "annotation": "Manual annotation and verification by experts"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics using LLMs",
+      "Human evaluation for consistency"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Scores are based on pairwise comparisons of generated dialogues against reference answers from a strong LLM.",
+    "interpretation": "Scores reflect the correctness, relevance, and usefulness of LVLM outputs compared to human preferences.",
+    "baseline_results": null,
+    "validation": "Results are validated through comparisons with human judgments and automated assessments."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

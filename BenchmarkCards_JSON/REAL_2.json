@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "REAL (RealEstate Agent Large Language Model Evaluation)",
+    "abbreviation": "REAL",
+    "overview": "REAL is the first evaluation suite designed to assess the abilities of large language models in the field of housing transactions and services. It includes 5,316 high-quality evaluation entries organized across 4 topics: memory, comprehension, reasoning, and hallucination.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "C-Eval",
+      "CMMLU",
+      "OpenbookQA"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the performance of large language models in the context of housing transactions and services.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Memory Evaluation",
+      "Comprehension Evaluation",
+      "Reasoning Evaluation",
+      "Hallucination Evaluation"
+    ],
+    "limitations": "The current scope of REAL is limited to Beijing and does not involve other cities.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Real estate-related data collected from Beike corporation and client queries about residential issues from the Internet.",
+    "size": "5,316 questions",
+    "format": "JSON",
+    "annotation": "All questions and corresponding answers were verified and checked by annotators."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy is calculated based on the percentage of correct answers across the evaluation categories.",
+    "interpretation": "Higher accuracy indicates better performance of LLMs in residential field tasks.",
+    "baseline_results": "All models evaluated and their performance metrics are documented in the paper.",
+    "validation": "All entries are verified manually before being included in the benchmark."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data manipulation was performed to filter out personal information.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

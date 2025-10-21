@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Benchmarking Clinical Decision Support Search",
+    "abbreviation": "N/A",
+    "overview": "A platform to compare document and query processing techniques on the TREC Clinical Decision Support 2016 corpus. The system benchmarks indexing and search techniques (e.g., negation detection, normalization, query expansion, use of knowledge bases, learning-to-rank) and reproduces leading teams' runs to enable statistical testing of hypotheses and provide a common baseline for future research.",
+    "data_type": "text (full-text biomedical articles and clinical note queries)",
+    "domains": [
+      "Natural Language Processing",
+      "Healthcare"
+    ],
+    "languages": [],
+    "similar_benchmarks": [
+      "EvaluatIR",
+      "EvALL"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/1801.09322",
+      "http://lucene.apache.org/solr/",
+      "https://www.ncbi.nlm.nih.gov/pubmed/",
+      "https://www.evaluatIR.org"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a stable platform to formally specify methods, re-run past TREC CDS experiments, compare document and query processing techniques on the CDS'16 corpus, and produce benchmark results to evaluate and rank retrieval methods.",
+    "audience": [
+      "Biomedical Information Retrieval Researchers",
+      "Information Retrieval Researchers",
+      "TREC participants"
+    ],
+    "tasks": [
+      "Document Retrieval",
+      "Information Retrieval",
+      "Ranking"
+    ],
+    "limitations": "Results could not be reproduced exactly due to lack of sufficient details on preprocessing steps, implementation details, and unavailability of older versions of public search engines.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "CDS'2016 corpus: a snapshot of PubMed Central taken on 28 March 2016 (provided by TREC CDS 2016). Topics were nursing admission notes with three fields: Note, Description, and Summary.",
+    "size": "1.25 million full-text journal articles",
+    "format": "NXML (re-encoded to ASCII text) indexed using Solr",
+    "annotation": "MeSH keywords appended from corresponding Medline abstracts; Metamap concepts (UMLS) automatically generated for each article"
+  },
+  "methodology": {
+    "methods": [
+      "Baseline BM25 retrieval (Solr)",
+      "Query expansion using Pseudo-Relevance Feedback (PRF)",
+      "Query expansion using word embeddings",
+      "Concept extraction via MetaMap/UMLS",
+      "Negation detection/removal using MetaMap Lite's NegEx",
+      "Faceted search with hill-climbing weighting",
+      "Learning to Rank (LambdaRank)",
+      "Automated evaluation using retrieval metrics",
+      "Paired two-sample t-test for significance testing"
+    ],
+    "metrics": [
+      "inferred NDCG (infNDCG)",
+      "inferred average precision (infAP)",
+      "R-Precision (R-Prec)",
+      "Precision at 10 (P@10)"
+    ],
+    "calculation": "Evaluations use the four CDS track metrics (infNDCG as the main metric, infAP, R-Prec, P@10). Statistical significance of improvements over baseline is tested using a paired two-sample t-test reported at 95% and 98% confidence levels.",
+    "interpretation": "infNDCG is treated as the primary effectiveness measure; statistically significant increases in these metrics (per paired t-test at 95%/98% confidence) indicate improvement over baseline methods.",
+    "baseline_results": "Baseline BM25 (no query expansion or preprocessing): Note infNDCG 0.1074, Desc infNDCG 0.1067, Sum infNDCG 0.1721; P@10 Note 0.1400, Desc 0.1200, Sum 0.2067 (see Table 2).",
+    "validation": "Evaluated against TREC CDS relevance judgments (qrels). Learning-to-rank used topics and relevance judgments from TREC CDS 2014 and 2015 as training data. Significance testing via paired two-sample t-test."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Governance",
+      "Transparency"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Governance",
+          "subcategory": [
+            "Lack of system transparency",
+            "Lack of data transparency"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

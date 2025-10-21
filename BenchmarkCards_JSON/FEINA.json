@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Financial Education Corpus IN SpAnish (FEINA)",
+    "abbreviation": "FEINA",
+    "overview": "A novel dataset for text simplification in Spanish financial education, consisting of 5,314 complex and simplified sentence pairs aimed at enhancing understanding for visually impaired audiences.",
+    "data_type": "sentence pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Finance"
+    ],
+    "languages": [
+      "Spanish"
+    ],
+    "similar_benchmarks": [
+      "SIMPLEXT",
+      "Aligned Newsela corpus (Spanish)"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/saul1917/FEINA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To create an accessible text simplification dataset for individuals with visual impairments, aiding comprehension of financial education materials.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts",
+      "Non-profit organizations focused on accessibility"
+    ],
+    "tasks": [
+      "Text Simplification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Extracted from selected financial education books designed to release a dataset to the scientific community.",
+    "size": "5,314 pairs",
+    "format": "N/A",
+    "annotation": "Manually simplified by six advanced philology students using defined simplification rules."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "SARI",
+      "BLEU Score",
+      "Fernandez-Huerta",
+      "Gutierrez-Polini",
+      "Szigriszt-Pazos"
+    ],
+    "calculation": "Metrics are computed using automated methods and human evaluators to determine simplification quality.",
+    "interpretation": "Lower scores in simplicity metrics indicate better simplification. Higher scores in BLEU and SARI indicate better performance.",
+    "baseline_results": null,
+    "validation": "Evaluation of manually generated dataset against outputs from GPT-3, MT5, and Tuner for quality assessment."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Dataset designed to cater specifically to visually impaired individuals.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "Informed consent obtained from human evaluators in the study.",
+    "compliance_with_regulations": "N/A"
+  }
+}

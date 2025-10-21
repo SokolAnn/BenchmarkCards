@@ -1,0 +1,100 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MDG ENDER",
+    "abbreviation": "MDG ENDER",
+    "overview": "A novel, crowdsourced evaluation benchmark of utterance-level gender rewrites for evaluating multi-dimensional (ABOUT, TO, AS) gender bias classification in text.",
+    "data_type": "utterance-level gender rewrites (text)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "PASTEL",
+      "Social Bias Frames"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Provide a gold-labeled evaluation dataset for performing gender identification along three conversational dimensions (ABOUT, TO, AS) and enable training and evaluation of finer-grained gender bias classifiers.",
+    "audience": [
+      "Machine Learning Researchers",
+      "Model Developers",
+      "Natural Language Processing Practitioners"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Bias Detection",
+      "Controllable Generation",
+      "Offensive Language Detection"
+    ],
+    "limitations": "Intersectionality with other identity characteristics (e.g., race, dialect, class) is acknowledged but set aside for follow-up work. Training data used for classifier training is weakly supervised and noisy, particularly for the masculine and feminine classes. Crowdworkers may perform genders in a non-authentic or idiosyncratic way when persona gender does not match their own.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Crowdsourced rewrites of conversational utterances: annotators were shown an utterance with a persona (including gender) and asked to rewrite the utterance so it clearly indicates ABOUT/TO/AS a man or a woman; original conversations were drawn from dialogue sources and framed with small biography excerpts to encourage gender mentions.",
+    "size": "Per-dimension counts as reported in Table 2: ABOUT: 384 masculine + 401 feminine = 785 examples; AS: 396 masculine + 371 feminine = 767 examples; TO: 411 masculine + 382 feminine = 793 examples.",
+    "format": "N/A",
+    "annotation": "Crowdsourced manual rewrites with subsequent confidence labels: annotators rewrote utterances to make the target dimension (ABOUT/TO/AS) indicate a man or a woman, then reported confidence that the rewritten utterance would be perceived as such."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics (model accuracy evaluation)",
+      "Crowdsourced human annotation (gold evaluation set creation)",
+      "Model-based evaluation using pretrained Transformer classifiers (single-task and multitask)"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Percentage accuracy measured separately for masculine, feminine, and neutral classes; unknown class is not evaluated. Averages reported include M-F averages and averages across dimensions as described in the paper.",
+    "interpretation": "Higher accuracy indicates better detection of genderedness per dimension. The paper reports that the multitask classifier yields the best average performance across the three dimensions.",
+    "baseline_results": "Reported baselines include single-task and multitask Transformer-based classifiers. On the MDG ENDER evaluation (Table 3), Multitask All Avg. = 67.13. Example single-task results: ABOUT All Avg. = 60.87; TO All Avg. = 49.97; AS All Avg. = 60.82. Ablation on Wikipedia (Table 5) shows Multi-Task on Wikipedia: Avg. = 77.22; Wikipedia Only: Avg. = 81.82; masking gender words reduces but does not eliminate performance.",
+    "validation": "MDG ENDER is presented as a gold-labeled evaluation dataset collected via crowdsourcing for reliable evaluation. Models are validated by evaluating accuracy on MDG ENDER and on held-out test sets from the annotated training datasets; early stopping used on average accuracy during training."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Accuracy",
+      "Societal Impact"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on affected communities"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Includes analysis across gender groups (masculine, feminine, neutral) — e.g., masculine genderedness scores reported for Wikipedia biographies split by biographies of men and women (Table 8).",
+    "harm": [
+      "Gender bias in text",
+      "Offensive and disparaging language tied to gender",
+      "Reinforcement of negative societal stereotypes"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

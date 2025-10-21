@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Drug–Disease Relations dataset",
+    "abbreviation": "N/A",
+    "overview": "A labeled dataset for identifying treatment relations between drugs and diseases, constructed from FDA Drug Labels; contains a large crowdsourced training set and a smaller expert-annotated test set and is intended to support learning facts about drug–disease relationships that have medical significance.",
+    "data_type": "text (sentences from FDA Drug Labels with annotated drug–disease relation spans)",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": null,
+    "similar_benchmarks": [
+      "Chemical–Disease Relations (CDR)",
+      "Penn Adverse Drug Reactions (ADR)"
+    ],
+    "resources": [
+      "https://github.com/roamanalytics/roamresearch/tree/master/Papers/Feature4Healthcarelexicons",
+      "https://github.com/roamanalytics/roamresearch/tree/master/BlogPosts/Features_for_healthcareguide",
+      "https://arxiv.org/abs/1811.00070v2"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a dataset that can be used to learn facts about drug–disease relationships that have medical significance.",
+    "audience": [],
+    "tasks": [
+      "Named Entity Recognition",
+      "Relation Extraction"
+    ],
+    "limitations": "We expect the crowdsourced labels to be used only for training; the authors use a smaller expert-annotated test set for evaluation.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "FDA Drug Labels corpus (official drug labels); annotations collected via crowdsourcing on the Figure Eight platform and expert annotation for the test set.",
+    "size": "9,500 crowdsourced training examples and 500 expert-annotated test examples (initially launched as 10,000 sentences)",
+    "format": "N/A",
+    "annotation": "Crowdsourced via Figure Eight with labels inferred using Expectation Maximization (Dawid and Skene, 1979) for training data; expert annotation for the test set (500 examples)."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics (per-token and chunk-level F1)",
+      "5-fold cross-validation for hyperparameter tuning",
+      "Train/test evaluation on held-out test sets",
+      "Repeated experiments (three runs) to report mean and standard deviation"
+    ],
+    "metrics": [
+      "Macro-F1 (per-token)",
+      "F1 Score (chunk-level, approximate matching for ADR)"
+    ],
+    "calculation": "Per-token macro-F1 is computed for most datasets; for ADR chunk-level F1 is computed via approximate matching. Mean values and standard deviations are calculated over three runs of repeated experiments. Hyperparameters are tuned using 5-fold cross-validation on training data.",
+    "interpretation": "Higher F1 indicates better token/chunk labeling performance. The authors interpret superior macro-F1 and chunk-F1 scores as evidence that the combined ELMo-LSTM-CRF-HB model outperforms base models; no numeric thresholds for good vs. poor performance are provided.",
+    "baseline_results": "For Drug–Disease Relations (per-token macro-F1): rand-LSTM-CRF: 48.2 ± 1.12; HB-CRF: 42.3 ± 0.30; ELMo-LSTM-CRF: 50.6 ± 0.64; ELMo-LSTM-CRF-HB: 51.9 ± 0.52 (Table 2).",
+    "validation": "For datasets with predefined splits, hyperparameters were tuned with 5-fold cross-validation on the training set and evaluated on the test set. For datasets without predefined splits, the data were divided into five equal parts and evaluated with cross-validation; experiments were repeated three times to smooth random initialization variation. For the Drug–Disease Relations dataset, crowdsourced training labels were inferred via Expectation Maximization and evaluated against an expert-annotated test set (inter-annotator agreement between crowd-inferred labels and expert labels reported as 0.82)."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Accuracy",
+      "Data Laws"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Reidentification"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Data Laws",
+          "subcategory": [
+            "Data usage restrictions"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The paper notes that clinical transcription data used in other experiments were de-identified and explicitly discusses that de-identification is hard or impossible for language data, raising privacy concerns.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

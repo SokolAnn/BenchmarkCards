@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Sarc7: Evaluating Sarcasm Detection and Generation with Seven Types and Emotion-Informed Techniques",
+    "abbreviation": "Sarc7",
+    "overview": "Sarc7 is a benchmark for fine-grained sarcasm evaluation that operationalizes seven pragmatically defined sarcasm types: self-deprecating, brooding, deadpan, polite, obnoxious, raging, and manic, enabling nuanced understanding of sarcasm in large language models.",
+    "data_type": "sarcasm classification and generation",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SarcasmBench"
+    ],
+    "resources": [
+      "https://github.com/langlglang/sarc7"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Provide a foundation for evaluating nuanced sarcasm understanding and controllable generation in language models.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Sarcasm Classification",
+      "Sarcasm Generation"
+    ],
+    "limitations": "The benchmark is limited by its reliance on textual data, lacking multimodal context essential for understanding sarcasm.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "MUStARD dataset with manual annotations",
+    "size": "690 utterances",
+    "format": "CSV",
+    "annotation": "Manually annotated by four trained annotators using defined sarcasm types."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Macro-averaged F1 Score"
+    ],
+    "calculation": "Metrics calculated based on model predictions compared to human-annotated labels.",
+    "interpretation": "Higher F1 scores indicate better model performance in distinguishing sarcasm types.",
+    "baseline_results": null,
+    "validation": "Cohen’s kappa calculated for inter-annotator agreement."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Apache 2.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

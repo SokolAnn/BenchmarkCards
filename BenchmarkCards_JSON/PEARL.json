@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PEARL (Persona and knowledgE Augmented Recommendation diaLogues)",
+    "abbreviation": "PEARL",
+    "overview": "PEARL is a large-scale conversational recommendation dataset synthesized with persona- and knowledge-augmented LLM simulators, containing over 57,000 dialogues to address limitations of existing datasets in expressing user preferences and providing explanations for recommendations.",
+    "data_type": "dialogue pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ReDial",
+      "INSPIRED"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/DLI-Lab/pearl",
+      "https://github.com/kkmjkim/PEARL"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive dataset for developing conversational recommender systems that emphasize personalized recommendations and user preferences.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Conversational Recommendation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Real-world movie reviews collected from IMDB.",
+    "size": "57,277 dialogues",
+    "format": "JSON",
+    "annotation": "Synthesized using persona and knowledge from LLM-based simulators."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Precision",
+      "Recall",
+      "Expertise",
+      "Specificity"
+    ],
+    "calculation": "Metrics calculated through comparisons between dialogues from PEARL and existing datasets, as well as performance of downstream models trained on PEARL.",
+    "interpretation": "Higher scores indicate better performance in conversational recommendation tasks.",
+    "baseline_results": "Compared performance of models trained on PEARL versus models trained on ReDial and INSPIRED.",
+    "validation": "Evaluation through human assessments and automatic metrics."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Filtering mechanisms are applied to avoid personal information and maintain user privacy.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

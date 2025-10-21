@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Dynamic Adversarial Question Generation Dataset",
+    "abbreviation": "N/A",
+    "overview": "The paper introduces a new dataset of adversarially authored questions aimed at improving the performance of question answering models by utilizing dynamic adversarial question generation techniques.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://arxiv.org/abs/2401.11185"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To create a dataset that facilitates the generation of challenging questions for question answering models, leveraging dynamic adversarial techniques.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Adversarially authored questions created using an interactive interface with guidance from LLMs and retrieval models.",
+    "size": "399 adversarial questions collected",
+    "format": "N/A",
+    "annotation": "Manual annotation by authors to improve question quality and adversarial nature."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Model-based evaluation via competition"
+    ],
+    "metrics": [
+      "Discriminability",
+      "Difficulty margin"
+    ],
+    "calculation": "Metrics based on Item Response Theory (IRT) used to derive parameters that assess question quality.",
+    "interpretation": "Questions with higher discriminability and suitable difficulty levels are considered better adversarial examples.",
+    "baseline_results": null,
+    "validation": "Validation through competitions between human authors and AI models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The study was pre-monitored by an official IRB review board to protect the participants’ privacy rights.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Consent forms displayed before task completion to ensure participants agree to data usage for academic purposes.",
+    "compliance_with_regulations": "N/A"
+  }
+}

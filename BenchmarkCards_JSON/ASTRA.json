@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "HackerRank-ASTRA (Assessment of Software Tasks in Real-world Applications)",
+    "abbreviation": "ASTRA",
+    "overview": "The HackerRank-ASTRA Benchmark introduces project-based coding problems that mirror real-world scenarios, specifically evaluating model consistency through multiple runs and incorporating a taxonomy-level analysis to assess sub-skill capabilities.",
+    "data_type": "project-based coding problems",
+    "domains": [
+      "Software Development"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "HumanEval",
+      "SWE-bench",
+      "DevEval"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/hackerrank/astra-benchmark"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation framework for multi-file, project-based software development problems.",
+    "audience": [
+      "ML Researchers",
+      "Software Developers"
+    ],
+    "tasks": [
+      "Code Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "HackerRank's proprietary library of multi-file, project-based software development problems.",
+    "size": "65 project-based coding problems",
+    "format": "CSV",
+    "annotation": "Manual preparation by HackerRank’s Content Creation team."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Consistency evaluation using multiple runs"
+    ],
+    "metrics": [
+      "Mean Score",
+      "Mean Pass@1",
+      "Median standard deviation"
+    ],
+    "calculation": "Aggregated scores across 32 runs for each problem to compute overall metrics.",
+    "interpretation": "Higher scores indicate better performance, while lower median standard deviation indicates higher consistency.",
+    "baseline_results": "Initial evaluations of models using ASTRA showed mean scores around 75%.",
+    "validation": "Performance evaluated through Docker container against pre-defined test cases."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

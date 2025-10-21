@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "AMBENCH",
+    "abbreviation": "N/A",
+    "overview": "A benchmark dataset of seemingly ambiguous human names, leveraging the name regularity bias phenomenon, embedded within concise text snippets and benign prompt injections. AMBENCH systematically evaluates various LLMs on their ability to detect and classify ambiguous human names.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/dzungvpham/llm-name-detection"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the performance of large language models on the identification and classification of ambiguous human names in text.",
+    "audience": [
+      "ML Researchers",
+      "Privacy Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Named Entity Recognition",
+      "Privacy Leakage Detection"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated via a prompt-based pipeline using real human names that resemble non-human entities, from publicly available name datasets.",
+    "size": "60,000 test points",
+    "format": "N/A",
+    "annotation": "Generated using an LLM and validated for ambiguity and soundness."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Recall",
+      "False Discovery Rate (FDR)",
+      "Privacy audit score"
+    ],
+    "calculation": "Metrics calculated based on the percentage of ambiguous human names detected as a person’s name and measuring the accuracy of names categorized correctly.",
+    "interpretation": "Higher recall and lower FDR indicate better performance in detecting ambiguous names.",
+    "baseline_results": null,
+    "validation": "Involves systematic testing across various LLMs and human evaluation against a set of templates."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Misclassification of named entities leading to privacy risks."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

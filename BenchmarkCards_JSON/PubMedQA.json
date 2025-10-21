@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PubMedQA: A Dataset for Biomedical Research Question Answering",
+    "abbreviation": "PubMedQA",
+    "overview": "We introduce PubMedQA, a novel biomedical question answering (QA) dataset collected from PubMed abstracts. The task of PubMedQA is to answer research questions with yes/no/maybe using the corresponding abstracts. PubMedQA has 1k expert-annotated, 61.2k unlabeled and 211.3k artificially generated QA instances. Each instance is composed of (1) a question (original research article title or derived from one), (2) a context (the corresponding abstract without its conclusion), (3) a long answer (the conclusion of the abstract), and (4) a yes/no/maybe answer which summarizes the conclusion. PubMedQA is intended to require reasoning over biomedical research texts, especially their quantitative contents.",
+    "data_type": "question-answering pairs (text)",
+    "domains": [
+      "Natural Language Processing",
+      "Healthcare"
+    ],
+    "languages": [
+      "N/A"
+    ],
+    "similar_benchmarks": [
+      "BioASQ",
+      "emrQA",
+      "BioRead",
+      "BMKC",
+      "HotpotQA",
+      "Natural Questions",
+      "ShARC",
+      "BoolQ"
+    ],
+    "resources": [
+      "https://pubmedqa.github.io",
+      "https://arxiv.org/abs/1909.06146"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To build a biomedical QA dataset for answering research questions using yes/no/maybe where reasoning over biomedical research texts, especially quantitative contents, is required; and to serve as a benchmark for testing scientific reasoning abilities of machine reading comprehension models.",
+    "audience": [
+      "Researchers developing machine reading comprehension models"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Machine Reading Comprehension",
+      "Yes/No/Maybe Classification"
+    ],
+    "limitations": "Articles of PubMedQA are biased towards clinical study-related topics (Appendix B). Approximately 21% of PubMedQA contexts contain no natural language descriptions of numbers. PQA-A (automatically generated subset) is imbalanced (92.8% yes vs 7.2% no). The labeled subset (PQA-L) contains 1,000 expert-annotated instances.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from PubMed articles: question titles and structured abstracts (abstracts with conclusive parts). PQA-L: 1k instances manually labeled by two annotators (qualified M.D. candidates) following Algorithm 1. PQA-U: 61.2k unlabeled instances filtered by rule-based method. PQA-A: 211.3k automatically generated instances from statement titles using a heuristic.",
+    "size": "PQA-L: 1,000 labeled examples; PQA-U: 61,200 unlabeled examples; PQA-A: 211,300 automatically generated examples (total ~273,500 instances).",
+    "format": "N/A",
+    "annotation": "PQA-L: Manual annotation by two annotators (qualified M.D. candidates) following Algorithm 1 (one annotator had access to long answer, the other did not; disagreements discussed to reach ground truth). PQA-U: filtered with a rule-based method. PQA-A: automatically generated via heuristic converting statement titles to questions and labeling using negation status."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation",
+      "Model-based baseline evaluation (fine-tuning BioBERT and other models)"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Macro-F1"
+    ],
+    "calculation": "Main metrics are Accuracy and Macro-F1 on the PQA-L test set using question and context as input. Human performance measured via annotator agreement against discussed ground truth labels (reasoning-free and reasoning-required settings).",
+    "interpretation": "Higher Accuracy and Macro-F1 indicate better performance on PQA-L under the reasoning-required setting (question+context input). Single-human performance (single annotator) under reasoning-required setting is reported as 78.0% Accuracy and 72.19% Macro-F1; majority baseline is 55.2% Accuracy. Model performance is compared against these baselines.",
+    "baseline_results": "Multi-phase fine-tuning of BioBERT with long answer bag-of-word supervision achieves 68.1% Accuracy (reported in abstract). Single-human performance (single annotator) is 78.0% Accuracy. Majority-baseline is 55.2% Accuracy. (See Table 5 for detailed model/tabled results under different training schedules.)",
+    "validation": "500 randomly sampled PQA-L instances are used for 10-fold cross validation and the remaining 500 instances constitute the PubMedQA test set."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

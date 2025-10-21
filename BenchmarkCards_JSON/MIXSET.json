@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MIXSET",
+    "abbreviation": "N/A",
+    "overview": "MIXSET is the first dataset dedicated to studying mixed text scenarios, which involve both AI-generated and human-written content, addressing gaps in existing research on the detection of mixed scenarios.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/Dongping-Chen/MixSet"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To analyze and evaluate the performance of mainstream MGT detectors on mixed text scenarios.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Machine Generated Text Detection"
+    ],
+    "limitations": "The dataset's overall scale is relatively small which could limit the comprehensiveness of model training and evaluation.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated from a combination of existing datasets featuring Human Written Text (HWT) and Machine Generated Text (MGT).",
+    "size": "3,600 mixtext instances",
+    "format": "JSON",
+    "annotation": "Annotated by human experts for quality and consistency."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score",
+      "AUC"
+    ],
+    "calculation": "Metrics calculated based on the classification performance of detectors on the MIXSET dataset.",
+    "interpretation": "F1 Score and AUC are used to assess the efficacy of the detection methods.",
+    "baseline_results": "Radar performed best, achieving high F1 Scores and AUC metrics across different detector models.",
+    "validation": "Tested with zero-shot and retraining scenarios on various MGT detectors."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "The dataset may introduce biases from human annotation and its limited size."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data derived from publicly available sources.",
+    "data_licensing": "Adheres to the licensing terms of original datasets.",
+    "consent_procedures": "Not applicable, as the data is publicly available.",
+    "compliance_with_regulations": "N/A"
+  }
+}

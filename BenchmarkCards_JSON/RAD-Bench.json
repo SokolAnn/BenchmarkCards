@@ -1,0 +1,82 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "RAD-Bench (Retrieval Augmented Dialogue Benchmark)",
+    "abbreviation": "RAD-Bench",
+    "overview": "RAD-Bench is a comprehensive benchmark designed to evaluate Large Language Models' capabilities in multi-turn dialogues following retrievals, focusing on Retrieval Synthesis and Retrieval Reasoning across various practical scenarios.",
+    "data_type": "multi-turn dialogue samples",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/mtkresearch/RAD-Bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the retrieval capabilities of large language models in multi-turn dialogue scenarios.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Knowledge Query Answering",
+      "Knowledge Summarization",
+      "Chain of Reasoning",
+      "Planning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated from real-world dialogue data for multi-turn interaction scenarios.",
+    "size": "89 multi-turn question samples, 267 turns total",
+    "format": "JSON",
+    "annotation": "Manual inspection and scoring through the LLM-as-a-Judge framework."
+  },
+  "methodology": {
+    "methods": [
+      "LLM-as-a-Judge framework",
+      "Automated scoring",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Consistency",
+      "Coherence",
+      "Informativeness"
+    ],
+    "calculation": "Metrics are derived from evaluating responses based on scenario-specific criteria.",
+    "interpretation": "Higher scores indicate stronger performance in effectively utilizing retrieved context for dialogue.",
+    "baseline_results": "Comparison of evaluated models across scenarios using Elo ratings.",
+    "validation": "Evaluated against multiple prevalent language models to assess benchmark effectiveness."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential for model bias if scenarios are not representative of diverse dialogue contexts."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

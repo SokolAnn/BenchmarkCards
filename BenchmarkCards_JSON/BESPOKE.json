@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "BESPOKE (Benchmark for Search-Augmented Large Language Model Personalization via Diagnostic Feedback)",
+    "abbreviation": "BESPOKE",
+    "overview": "BESPOKE is a realistic benchmark designed for evaluating personalization in search-augmented LLMs, constructed from authentic user history sessions and human-annotated preference scores and feedback.",
+    "data_type": "chat and search history pairs with preference annotations",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "LaMP-QA"
+    ],
+    "resources": [
+      "https://augustinlib.github.io/BESPOKE/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate personalization in search-augmented LLMs and provide a clear framework for benchmarking their effectiveness in understanding and adapting to user preferences.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Information Retrieval",
+      "Personalization Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Created through long-term human annotation involving active daily use of chat and search systems by diverse user profiles.",
+    "size": "2,870 user history sessions",
+    "format": "JSON",
+    "annotation": "Manual annotation by human annotators who provided feedback on the responses generated."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "Response-Judgment pair annotations"
+    ],
+    "metrics": [
+      "Need Alignment",
+      "Content Depth",
+      "Tone",
+      "Explanation Style"
+    ],
+    "calculation": "Calculated using a 5-point Likert scale based on human annotator ratings.",
+    "interpretation": "Higher scores indicate better alignment of model responses with user needs and preferences.",
+    "baseline_results": "N/A",
+    "validation": "Validated through comparisons with existing benchmarks and qualitative assessments by human evaluators."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "User histories were de-identified and handled to ensure no personally identifiable information is disclosed.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Informed consent was obtained from all human annotators prior to participation.",
+    "compliance_with_regulations": "The study follows ethical standards for data protection and privacy."
+  }
+}

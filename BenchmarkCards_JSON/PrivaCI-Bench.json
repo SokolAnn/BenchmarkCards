@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PrivaCI-Bench",
+    "abbreviation": "N/A",
+    "overview": "PrivaCI-Bench is a comprehensive contextual privacy evaluation benchmark targeted at legal compliance to cover well-annotated privacy and safety regulations, real court cases, privacy policies, and synthetic data built from the official toolkit to study LLMs’ privacy and safety compliance.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Ci-bench"
+    ],
+    "resources": [
+      "https://hkust-knowcomp.github.io/privacy/",
+      "https://github.com/HKUST-KnowComp/PrivaCI-Bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate LLMs' privacy and safety awareness in relation to various legal compliance regulations.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Legal Experts"
+    ],
+    "tasks": [
+      "Legal Compliance Evaluation",
+      "Context Understanding Probing"
+    ],
+    "limitations": "The benchmark primarily focuses on legal regulations and may not fully capture individual privacy expectations or cultural norms.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Real court cases, privacy policies, and synthetic data from official toolkits.",
+    "size": "154,191 examples",
+    "format": "JSON",
+    "annotation": "Annotated by LLMs with humans in the loop."
+  },
+  "methodology": {
+    "methods": [
+      "Direct Prompt",
+      "Chain-of-Thought Reasoning",
+      "Retrieval Augmented Generation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on the classification results of responses to legal compliance tasks and context understanding.",
+    "interpretation": "Higher accuracy indicates better compliance with privacy regulations and greater understanding of context.",
+    "baseline_results": null,
+    "validation": "Validation includes human evaluation of annotated data and regular checks for compliance assessments."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data",
+            "Data privacy rights alignment"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Includes consideration of legal compliance across diverse segments but not aggregated demographic data.",
+    "harm": "Potential risks of LLMs failing to accurately interpret legal contexts leading to incorrect compliance judgments."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Real cases collected are anonymized with no identifiable private information.",
+    "data_licensing": "Data is used under fair use provisions and relevant licenses for research purposes.",
+    "consent_procedures": "All collected data is sourced from publicly accessible legal documents and cases.",
+    "compliance_with_regulations": "Developed in adherence to GDPR, HIPAA, and relevant local privacy laws."
+  }
+}

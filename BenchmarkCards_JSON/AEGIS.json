@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "AEGIS 2.0 (A Diverse AI Safety Dataset and Risks Taxonomy for Alignment of LLM Guardrails)",
+    "abbreviation": "AEGIS",
+    "overview": "AEGIS 2.0 is a dataset designed to address diverse safety risks in large language models (LLMs) using a taxonomy of 12 core and 9 fine-grained risk categories.",
+    "data_type": "dialogue samples with human-LLM interactions",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/NVIDIA/AEGIS-2.0"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive and adaptable dataset for understanding and moderating safety risks associated with LLMs.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Content Moderation",
+      "Safety Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Human annotations and LLM-generated responses to prompts from diverse sources.",
+    "size": "34,248 samples",
+    "format": "JSON",
+    "annotation": "Manual annotation by trained experts and automated labeling via a jury of LLMs."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on majority voting from human and automated annotations.",
+    "interpretation": "High scores indicate robust performance in safety classification tasks.",
+    "baseline_results": "Models fine-tuned on AEGIS 2.0 outperform existing safety models.",
+    "validation": "Model performance was validated through comparison with established benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "The dataset will be released under a commercial-permissive license.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

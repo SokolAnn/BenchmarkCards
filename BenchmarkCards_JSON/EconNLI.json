@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "EconNLI (Economic Natural Language Inference)",
+    "abbreviation": "EconNLI",
+    "overview": "EconNLI is a dataset designed to evaluate Large Language Models’ knowledge and reasoning abilities in the economic domain, specifically focusing on natural language inference about economic events.",
+    "data_type": "sentence pairs of premise and hypothesis",
+    "domains": [
+      "Economics"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "N/A"
+    ],
+    "resources": [
+      "https://github.com/Irenehere/EconNLI"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To systematically evaluate the economic reasoning abilities of Large Language Models using natural language inference.",
+    "audience": [
+      "ML Researchers",
+      "Economists",
+      "Financial Analysts"
+    ],
+    "tasks": [
+      "Causal Inference Classification",
+      "Event Generation"
+    ],
+    "limitations": "The study does not address the reasoning ability of LLMs in non-economic domains.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Wikipedia corpus on economics and finance",
+    "size": "11,836 examples",
+    "format": "N/A",
+    "annotation": "Annotated by human experts and assisted by language models."
+  },
+  "methodology": {
+    "methods": [
+      "Supervised fine-tuning",
+      "Zero-shot prompting",
+      "In-context learning (ICL) prompting",
+      "Chain of thought (CoT) prompting"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "Metrics are calculated based on model predictions compared to ground truth labels.",
+    "interpretation": "Higher scores in accuracy and F1 indicate better performance in reasoning tasks.",
+    "baseline_results": "LLAMA2 models achieved F1 scores around 0.87, while BERT and FinBERT struggled with scores below 0.8.",
+    "validation": "A validation set was created by randomly sampling 10% of the training data."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

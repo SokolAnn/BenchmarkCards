@@ -1,0 +1,75 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ROBUST ALPACA EVAL",
+    "abbreviation": "N/A",
+    "overview": "ROBUST ALPACA EVAL is a new benchmark that consists of semantically equivalent case-level queries, designed to evaluate the worst prompt performance of large language models (LLMs) in real-world scenarios. It emphasizes the importance of understanding model variability and robustness across diverse prompts by focusing on their worst-case performance.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "TinyAlpacaEval",
+      "AlpacaEval"
+    ],
+    "resources": [
+      "https://github.com/bwcao/RobustAlpacaEval"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the variability and robustness of large language models (LLMs) in response to diverse prompts, focusing particularly on the worst-case performance.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from TinyAlpacaEval, which itself is derived from existing prompts.",
+    "size": "N/A",
+    "format": "N/A",
+    "annotation": "Prompts were generated automatically and then manually reviewed to ensure semantic integrity and fluency."
+  },
+  "methodology": {
+    "methods": [
+      "Evaluation on various LLMs"
+    ],
+    "metrics": [
+      "Weighted win-rate"
+    ],
+    "calculation": "Evaluators compare the outputs of the target model against a reference model to estimate winning probabilities.",
+    "interpretation": "The winning rate indicates the performance of models across prompts.",
+    "baseline_results": "Original performance serves as a benchmark for comparison but shows variable performance across tasks.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

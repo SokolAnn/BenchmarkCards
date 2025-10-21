@@ -1,0 +1,79 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ArxEval",
+    "abbreviation": "N/A",
+    "overview": "ArxEval is an evaluation pipeline designed for assessing the frequency with which language models hallucinate when generating responses in scientific literature. It includes two main tasks: Jumbled Titles and Mixed Titles, aimed at evaluating the reliability of language models in handling academic content accurately.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://arxiv.org/abs/2501.10483"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the benchmark is to evaluate the extent of hallucination in large language models when generating responses related to scientific literature.",
+    "audience": [
+      "Researchers",
+      "Developers",
+      "Practitioners"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "ArXiv dataset",
+    "size": "528 titles",
+    "format": "CSV",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Cosine Similarity",
+      "BERTScore",
+      "STS"
+    ],
+    "calculation": "Metrics are calculated based on the cosine similarity between the generated response and the original abstract using various scoring models.",
+    "interpretation": "Higher similarity scores indicate better adherence to factual accuracy and ability to generate coherent responses under prompt constraints.",
+    "baseline_results": "Mistral v0.3 achieved the highest similarity scores, while Orca-2 was the lowest performing model.",
+    "validation": "The evaluation was conducted using a comparative analysis of multiple language models against defined tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Impact on factual accuracy in academic contexts"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

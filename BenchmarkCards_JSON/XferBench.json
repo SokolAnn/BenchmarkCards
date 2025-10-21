@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "XferBench",
+    "abbreviation": "N/A",
+    "overview": "XferBench is a data-driven benchmark for evaluating the overall quality of emergent languages using transfer learning with deep neural models.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "French",
+      "Spanish",
+      "Russian",
+      "Chinese",
+      "Korean",
+      "Arabic",
+      "Hindi",
+      "Danish",
+      "Basque",
+      "Persian",
+      "Finnish",
+      "Hebrew",
+      "Indonesian",
+      "Japanese",
+      "Kazakh",
+      "Romanian",
+      "Urdu"
+    ],
+    "similar_benchmarks": [
+      "GLUE",
+      "SQuAD"
+    ],
+    "resources": [
+      "https://github.com/brendon-boldt/xferbench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the quality of emergent language corpora based on their transfer learning performance on human languages.",
+    "audience": [
+      "ML Researchers",
+      "Practitioners",
+      "Academics"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Language Modeling"
+    ],
+    "limitations": "The model and data size are limited, potentially affecting applicability to larger contemporary problems.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Wikipedia dumps from Wikimedia Foundation",
+    "size": "15 million tokens for pretraining and 2 million tokens for fine-tuning",
+    "format": "JSON Lines",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Transfer Learning",
+      "Causal Language Modeling"
+    ],
+    "metrics": [
+      "Cross-Entropy"
+    ],
+    "calculation": "The benchmark score is derived from the arithmetic mean of cross-entropy across multiple downstream human languages.",
+    "interpretation": "Lower cross-entropy indicates better performance.",
+    "baseline_results": "N/A",
+    "validation": "Validation is based on cross-entropy performance on test sets of human languages."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Data is used under GFDL and CC-BY-SA 3.0 License.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

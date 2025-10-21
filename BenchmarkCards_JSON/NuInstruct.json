@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "NuInstruct",
+    "abbreviation": "N/A",
+    "overview": "NuInstruct is a novel dataset with 91K multi-view video-QA pairs across 17 subtasks, designed to provide holistic information for autonomous driving by aligning language and driving logic.",
+    "data_type": "multi-view video question-answer pairs",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Nuscenes-QA"
+    ],
+    "resources": [
+      "https://github.com/xmed-lab/NuInstruct"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive language-driving dataset that captures temporal, multi-view, and spatial interactions in autonomous driving scenarios.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Perception",
+      "Prediction",
+      "Risk",
+      "Planning with Reasoning"
+    ],
+    "limitations": "The current dataset lacks traffic light information and tasks related to 3D object detection.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from the NuScenes dataset, consisting of 850 videos.",
+    "size": "91,355 pairs",
+    "format": "JSON",
+    "annotation": "Generated using a novel SQL-based method for automated instruction-response pair generation."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Mean Absolute Error (MAE)",
+      "Accuracy",
+      "Mean Average Precision (MAP)",
+      "BLEU Score"
+    ],
+    "calculation": "Metrics are calculated based on the evaluation of different autonomous driving tasks as specified.",
+    "interpretation": "Higher scores indicate better task performance, with specific metrics tailored for various task types.",
+    "baseline_results": "Multiple models were evaluated on the NuInstruct test set, showcasing significant improvements with BEV-InMLLM.",
+    "validation": "Models were validated against held-out dataset splits for performance assessment."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

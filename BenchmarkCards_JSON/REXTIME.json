@@ -1,0 +1,74 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "REXTIME: A Benchmark Suite for Reasoning-Across-Time in Videos",
+    "abbreviation": "REXTIME",
+    "overview": "REXTIME is a benchmark designed to rigorously test AI models’ ability to perform temporal reasoning within video events, focusing on human-like understanding when the question and its corresponding answer occur in different video segments.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://rextime.github.io/",
+      "https://huggingface.co/datasets/ReXTime/ReXTime",
+      "https://github.com/ReXTime/ReXTime"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To quantitatively assess the reasoning-across-time capabilities of multimodal AI models.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Visual Question Answering",
+      "Temporal Reasoning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "ActivityNet and QVHighlights datasets",
+    "size": "9,695 training samples, 921 validation samples, 2,143 test samples",
+    "format": "JSON",
+    "annotation": "Manually curated for accuracy and relevance"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "mIoU",
+      "Recall@1"
+    ],
+    "calculation": "Accuracy for multiple-choice VQA and moment retrieval metrics",
+    "interpretation": "Models are evaluated on their accuracy in answering questions and localizing answer events.",
+    "baseline_results": "Human accuracy: 87.98%; GPT-4o accuracy: 73.67%",
+    "validation": "Rigorous human curation and automated question-answer generation"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "No personally identifiable information in curated data.",
+    "data_licensing": "Released under CC BY-NC-SA 4.0 license for data; MIT license for code.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

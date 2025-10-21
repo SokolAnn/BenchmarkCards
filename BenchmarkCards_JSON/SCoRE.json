@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SCoRE (Scenario-based Commonsense Reasoning Evaluation)",
+    "abbreviation": "SCoRE",
+    "overview": "SCoRE is a benchmark designed to evaluate complex logical reasoning in commonsense scenarios through multi-step inference chains, synthesizing 100,000 bilingual (Chinese–English) questions of varying difficulty levels and explicit reasoning chains.",
+    "data_type": "multiple-choice questions",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Chinese",
+      "English"
+    ],
+    "similar_benchmarks": [
+      "CommonsenseQA",
+      "ProtoQA",
+      "bAbI"
+    ],
+    "resources": [
+      "https://github.com/pokerwf/KnowLogic"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess the long-chain commonsense reasoning abilities of large language models (LLMs) and diagnose their reasoning capabilities.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Complex Logical Reasoning",
+      "Multi-step Inference"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The data is generated from a knowledge-based approach combining manual construction of a reliable knowledge base and automatic question generation.",
+    "size": "100,000 questions",
+    "format": "N/A",
+    "annotation": "Manually constructed knowledge base integrated with automated question generation."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy is calculated based on the proportion of correct answers among the total presented questions.",
+    "interpretation": "Higher accuracy indicates better commonsense reasoning performance.",
+    "baseline_results": "The highest-performing model achieved 69.78% accuracy on SCoRE.",
+    "validation": "Evaluated against 13 state-of-the-art reasoning LLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination",
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

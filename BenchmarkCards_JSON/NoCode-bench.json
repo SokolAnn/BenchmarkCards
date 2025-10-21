@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "NoCode-bench",
+    "abbreviation": "N/A",
+    "overview": "NoCode-bench is a benchmark designed to evaluate LLMs on real-world NL-driven feature addition tasks. It consists of 634 tasks across 10 projects involving about 114k code changes in total, each of which pairs a user-facing documentation change and the corresponding code implementation that can be validated against developer-written test cases.",
+    "data_type": "feature addition tasks",
+    "domains": [
+      "Natural Language Processing",
+      "Software Engineering"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SWE-bench"
+    ],
+    "resources": [
+      "https://github.com/NoCode-bench/NoCode-bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess the capabilities of LLMs in no-code feature addition, simulating real-world development scenarios.",
+    "audience": [
+      "ML Researchers",
+      "Software Engineers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Feature Addition"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from developer-maintained release notes of high-quality open-source projects on GitHub.",
+    "size": "634 tasks",
+    "format": "N/A",
+    "annotation": "Manually validated by experts to ensure clarity and evaluation accuracy."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Success Rate",
+      "Patch Application Rate",
+      "File Matched Rate",
+      "Regression Tests Pass Rate",
+      "Feature Validation"
+    ],
+    "calculation": "Metrics calculated based on task success comparison against ground truth patches and test outcomes.",
+    "interpretation": "Higher success rates indicate better model performance in generating correct feature additions.",
+    "baseline_results": "The best performing model achieved a success rate of 28.07% on the verified subset.",
+    "validation": "Manual verification of task quality and evaluating clarity and accuracy."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

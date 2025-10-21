@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SSR-COT (Spatial Sense and Reasoning)",
+    "abbreviation": "SSR-COT",
+    "overview": "SSR-COT is a million-scale visual-language reasoning dataset enriched with intermediate spatial reasoning annotations, aimed at enhancing spatial reasoning capabilities in Vision-Language Models.",
+    "data_type": "image-depth-question-rationale-answer pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "GQA",
+      "VisualQA",
+      "CLEVR"
+    ],
+    "resources": [
+      "https://yliu-cs.github.io/SSR"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To improve depth perception and spatial reasoning capabilities in Vision-Language Models by introducing a new dataset and benchmark.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Spatial Reasoning",
+      "Visual Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated from existing VQA datasets including LLaVA-CoT, Visual-CoT, VoCoT, SpatialQA.",
+    "size": "1,000,000 pairs",
+    "format": "JSONL",
+    "annotation": "Annotated with spatial reasoning rationales"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics calculated using standard evaluation methods based on predicted answers compared to ground truth.",
+    "interpretation": "Higher accuracy indicates better spatial reasoning capability.",
+    "baseline_results": null,
+    "validation": "Extensive experiments conducted on multiple benchmarks to validate the effectiveness."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "The dataset is derived from publicly available datasets.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

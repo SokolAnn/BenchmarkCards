@@ -1,0 +1,101 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "xDial-Eval: A Multilingual Open-Domain Dialogue Evaluation Benchmark",
+    "abbreviation": "xDial-Eval",
+    "overview": "xDial-Eval is a multilingual dialogue evaluation benchmark featuring 14,930 annotated turns and 8,691 dialogues in 10 languages, enabling comprehensive analyses of automatic metrics across languages.",
+    "data_type": "turn-level and dialogue-level annotated data",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Chinese",
+      "Spanish",
+      "German",
+      "French",
+      "Japanese",
+      "Korean",
+      "Hindi",
+      "Arabic",
+      "Russian"
+    ],
+    "similar_benchmarks": [
+      "DailyDialog",
+      "Persona"
+    ],
+    "resources": [
+      "https://github.com/e0397123/xDial-Eval"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the performance of automatic dialogue evaluation metrics across multiple languages and improve multilingual dialogue evaluation methods.",
+    "audience": [
+      "ML Researchers",
+      "Dialogue System Developers"
+    ],
+    "tasks": [
+      "Dialogue Evaluation",
+      "Metrics Comparison"
+    ],
+    "limitations": "The research primarily focuses on context relevance and dialogue coherence; further multidimensional evaluation aspects are suggested for future studies.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "12 turn-level and 6 dialogue-level open-source English evaluation datasets translated into 9 languages.",
+    "size": "14,930 annotated turns and 8,691 annotated dialogues",
+    "format": "CSV",
+    "annotation": "Annotated by human evaluators."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Pearson correlation",
+      "Spearman correlation"
+    ],
+    "calculation": "Metrics calculated based on the correlation between automatic scores and human judgments.",
+    "interpretation": "High correlation scores indicate better performance of models in dialogue evaluation.",
+    "baseline_results": "Comparison to state-of-the-art BERT-based metrics and various LLMs.",
+    "validation": "Comprehensive analyses conducted are cross-validated against multiple datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Exposing personal information"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Evaluation across multiple languages provides insights into biases affecting different linguistic groups.",
+    "harm": "Potential misuse in evaluation settings without adequate context for culturally sensitive dialogue."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All data is sourced from publicly accessible datasets with no personally identifiable information.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

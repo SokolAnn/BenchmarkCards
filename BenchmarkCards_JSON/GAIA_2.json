@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "GAIA: A Global, Multi-modal, Multi-scale Vision-Language Dataset for Remote Sensing Image Analysis",
+    "abbreviation": "GAIA",
+    "overview": "GAIA is a novel dataset designed for multi-scale, multi-sensor, and multi-modal remote sensing image analysis. It includes 205,150 meticulously curated RS image-text pairs, covering various remote sensing applications and ensuring scientific accuracy in textual descriptions.",
+    "data_type": "image-text pairs",
+    "domains": [
+      "Remote Sensing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "RS5M",
+      "RSTeller",
+      "SkyScript"
+    ],
+    "resources": [
+      "https://github.com/Orion-AI-Lab/GAIA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the GAIA dataset is to advance remote sensing image analysis and improve the performance of vision-language models by providing a high-quality, diverse dataset specifically tailored for this domain.",
+    "audience": [
+      "Researchers in Remote Sensing",
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Image Captioning",
+      "Cross-modal Retrieval",
+      "Image Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Web-scraped images and text from reputable remote sensing sources, with synthetic captions generated using GPT-4o.",
+    "size": "205,150 pairs",
+    "format": "N/A",
+    "annotation": "Automatically generated captions and metadata."
+  },
+  "methodology": {
+    "methods": [
+      "Fine-tuning of CLIP models",
+      "Fine-tuning of BLIP2",
+      "Cross-modal retrieval evaluations"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Recall",
+      "BLEU Score",
+      "ROUGE-1",
+      "ROUGE-2",
+      "ROUGE-L",
+      "METEOR"
+    ],
+    "calculation": "Metrics calculated to assess model performance on image classification and captioning tasks, comparing baseline results with fine-tuned models.",
+    "interpretation": "Higher metrics indicate better performance in classifying and retrieving remote sensing images and generating contextually relevant captions.",
+    "baseline_results": "Baseline results indicated poor performance of zero-shot CLIP models on remote sensing tasks without fine-tuning, with significant improvements observed post fine-tuning.",
+    "validation": "Validation involved assessments against standard RS benchmarks to measure improvements and effectiveness."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Inaccurate geographic grounding of captions",
+      "Over-reliance on specific automated captioning methods"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

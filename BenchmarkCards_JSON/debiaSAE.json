@@ -1,0 +1,76 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "debiaSAE: Benchmarking and Mitigating Vision-Language Model Bias",
+    "abbreviation": "debiaSAE",
+    "overview": "This paper introduces a rigorous evaluation dataset and a debiasing method based on Sparse Autoencoders to assess and reduce bias in Vision Language Models (VLMs). It identifies weaknesses in existing bias evaluation datasets and presents improvements in both measurement and model fairness.",
+    "data_type": "image-text pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/KuleenS/VLMBiasEval",
+      "https://arxiv.org/abs/2410.13146v2"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a more effective dataset for measuring bias in Vision-Language Models and introduce a novel method for debiasing these models.",
+    "audience": [
+      "ML Researchers",
+      "Ethics Researchers",
+      "AI Practitioners"
+    ],
+    "tasks": [
+      "Bias Evaluation",
+      "Debiasing"
+    ],
+    "limitations": "The models evaluated may not fully represent all existing VLMs due to the impracticality of evaluating every available model.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Multiple datasets including UTKFace, CelebA, VisoGender, PATA, and VLStereoSet.",
+    "size": "Approximately 700 images for VisoGender, 200k images for CelebA, and over 20k images for UTKFace.",
+    "format": "N/A",
+    "annotation": "Annotation based on protected attributes such as sex, race, and religion."
+  },
+  "methodology": {
+    "methods": [
+      "Evaluating bias through comparative analysis of model performance on various datasets.",
+      "Using Sparse Autoencoders for debiasing methods."
+    ],
+    "metrics": [
+      "Macro-F1 Score",
+      "Demographic Parity Ratio (DPR)",
+      "Resolution Bias (RB)"
+    ],
+    "calculation": "Metrics calculated based on model performance on evaluated datasets, using established fairness evaluation methods.",
+    "interpretation": "High Macro-F1 scores indicate better model performance, whereas lower RB values suggest less bias.",
+    "baseline_results": null,
+    "validation": "Validation of the proposed method involves comparison against baseline models and previously established benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "Comprehensive analysis of biases across gender and race in VLMs.",
+    "harm": [
+      "Perpetuation of societal biases through biased model outputs."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

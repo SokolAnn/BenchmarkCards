@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DIVERSE SUMM",
+    "abbreviation": "N/A",
+    "overview": "DIVERSE SUMM is a dataset for multi-document summarization focusing on capturing diverse information across multiple news articles about the same event, consisting of question-answer pairs validated by human annotators.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MULTI NEWS",
+      "DUC",
+      "TAC"
+    ],
+    "resources": [
+      "https://github.com/salesforce/DiverseSumm"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To advance the evaluation of models on diverse multi-document summarization tasks through a richly structured dataset.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Multi-document Summarization"
+    ],
+    "limitations": "Despite efforts to curate a large dataset, it remains a small fraction of all available news content.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "News stories collected from Google News, comprising multiple articles per story.",
+    "size": "245 news stories with 10 articles each",
+    "format": "JSON",
+    "annotation": "Validated by human annotators through a structured question-answering method."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Coverage"
+    ],
+    "calculation": "Metrics are calculated based on human judgment in terms of faithfulness and coverage of generated summaries.",
+    "interpretation": "High scores indicate better alignment with diverse information from all involved articles.",
+    "baseline_results": null,
+    "validation": "Human evaluations conducted to ensure high-quality annotations and accurate evaluations of generated summaries."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset aims to capture a variety of perspectives, but demographic breakdowns are not explicitly defined.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Measures are taken to ensure the anonymity of data annotation.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Participants allowed to withdraw from the project at any time without repercussions.",
+    "compliance_with_regulations": "Complies with ethical standards for data annotation."
+  }
+}

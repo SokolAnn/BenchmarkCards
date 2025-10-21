@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "IPEval (Intellectual Property Evaluation Benchmark)",
+    "abbreviation": "IPEval",
+    "overview": "IPEval is the first bilingual capability evaluation benchmark designed for assessing the understanding, application, and reasoning abilities of Large Language Models (LLMs) in the field of intellectual property (IP) agency and consulting tasks. It consists of 2657 multiple-choice questions divided into four major capability dimensions: creation, application, protection, and management.",
+    "data_type": "multiple-choice questions",
+    "domains": [
+      "Legal"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "MedQA",
+      "LawBench",
+      "E-EVAL",
+      "HUPD",
+      "MoZIP"
+    ],
+    "resources": [
+      "https://ipeval.github.io/",
+      "https://github.com/Mathsion2/IPEval"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the benchmark is to provide an accurate assessment of LLM capabilities in the IP domain and encourage researchers to develop LLMs with richer IP knowledge.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Annual Chinese patent bar exams from 2012 to 2019 and biannual US patent bar exams from 1997 to 2003.",
+    "size": "2,657 questions",
+    "format": "JSON",
+    "annotation": "Manual annotation conducted by experts from relevant fields."
+  },
+  "methodology": {
+    "methods": [
+      "Zero-shot",
+      "5-few-shot",
+      "Chain of Thought (CoT)"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "The models' capabilities are evaluated across four dimensions with questions graded on a scale from A to 5A.",
+    "interpretation": "Scores of A, 2A, 3A, 4A, and 5A correspond to levels of model performance in IP agency consulting tasks.",
+    "baseline_results": "The best-performing models achieved scores of 2A.",
+    "validation": "Evaluated using multiple LLMs across different parameter sizes and types."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

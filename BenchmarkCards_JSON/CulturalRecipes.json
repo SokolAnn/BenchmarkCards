@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CulturalRecipes",
+    "abbreviation": "N/A",
+    "overview": "CulturalRecipes is a unique dataset comprised of automatically paired recipes written in Mandarin Chinese and English, introduced to support the task of cultural adaptation of recipes between these two languages.",
+    "data_type": "recipe pairs",
+    "domains": [
+      "Culinary Arts"
+    ],
+    "languages": [
+      "Chinese",
+      "English"
+    ],
+    "similar_benchmarks": null,
+    "resources": [
+      "https://arxiv.org/abs/2310.17353"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To facilitate cross-cultural recipe adaptation through a dataset that pairs recipes in Chinese and English, enabling the training and evaluation of language models for this task.",
+    "audience": [
+      "ML Researchers",
+      "Culinary Experts",
+      "Language Scientists"
+    ],
+    "tasks": [
+      "Recipe Adaptation",
+      "Machine Translation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "RecipeNLG and XiaChuFang datasets, paired recipes matched from these sources.",
+    "size": "44,500 training examples and 82 silver test examples",
+    "format": "N/A",
+    "annotation": "Automatically paired with a human-curated test set."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "BLEU",
+      "ROUGE-L",
+      "ChrF",
+      "BERTScore"
+    ],
+    "calculation": "Metrics are calculated based on overlap and representation between generated and reference recipes.",
+    "interpretation": "Higher scores on metrics indicate better adaptation quality.",
+    "baseline_results": "N/A",
+    "validation": "The dataset is evaluated on both automatic metrics and through human judgment."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Quality"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination",
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

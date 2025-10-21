@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DIF (Demographic Implicit Fairness)",
+    "abbreviation": "DIF",
+    "overview": "DIF is a framework developed for benchmarking and verifying implicit bias in Large Language Models (LLMs) by evaluating their performance on math problems across varied sociodemographic personas.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "BBQ (Bias Benchmark for QA)"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a method for calculating and benchmarking implicit bias in LLMs using sociodemographic personas on preexisting datasets.",
+    "audience": [
+      "ML Researchers",
+      "AI Developers"
+    ],
+    "tasks": [
+      "Bias Evaluation"
+    ],
+    "limitations": "The study is limited to specific representative LLMs and uses a narrow subset of implicit bias.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "GSM-MC math problems dataset",
+    "size": "1,000 questions",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Statistical validation",
+      "Mean Absolute Percentage Deviation (MAPD)"
+    ],
+    "metrics": [
+      "Implicit bias score",
+      "Accuracy"
+    ],
+    "calculation": "Bias is calculated using the MAPD between demographic persona accuracies and baseline persona accuracy.",
+    "interpretation": "Higher DIF scores indicate less implicit bias with a scale from 0 (most biased) to 100 (least biased).",
+    "baseline_results": "Evaluation across major LLMs including Meta-Llama-3, Mistral, and Phi.",
+    "validation": "Statistical significance testing (e.g., t-tests) to validate observed biases across models and personas."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The benchmark integrates analysis across 22 sociodemographic groups considered protected in the U.S.",
+    "harm": "Potential for reinforcing stereotypes and generating biased outputs in LLM interactions."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

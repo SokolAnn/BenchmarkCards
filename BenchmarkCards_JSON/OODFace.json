@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "OODFace",
+    "abbreviation": "N/A",
+    "overview": "OIDFace explores the OOD challenges faced by facial recognition models from two perspectives: common corruptions and appearance variations, systematically designed with 30 OOD scenarios across 9 categories. This results in three robustness benchmarks: LFW-C/V, CFP-C/V, and YTF-C/V, aimed at evaluating the robustness of face recognition systems against various OOD factors.",
+    "data_type": "image",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "LFW",
+      "CFP",
+      "YTF"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation benchmark for assessing the robustness of facial recognition models against common corruptions and appearance variations in out-of-distribution scenarios.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Facial Recognition"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Public datasets used to test benchmarks: LFW, CFP-FP, YTF.",
+    "size": "3 benchmarks (LFW-C/V, CFP-C/V, YTF-C/V), 150 unique corruptions and variations",
+    "format": "N/A",
+    "annotation": "Augmented existing public datasets to create challenging conditions."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Performance calculated as the average accuracy across all models on each corruption or variation type.",
+    "interpretation": "Higher accuracy indicates better robustness against OOD challenges.",
+    "baseline_results": "N/A",
+    "validation": "Validated through extensive experiments on 19 facial recognition models and 3 commercial APIs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack",
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Facial recognition technology may lead to privacy concerns and ethical implications regarding surveillance."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Explicit consent obtained from participants for data collection and usage in research.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Participants provided consent before data collection.",
+    "compliance_with_regulations": "Study adheres to ethical guidelines and privacy regulations."
+  }
+}

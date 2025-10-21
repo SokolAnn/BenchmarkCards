@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LongBench: A Bilingual, Multitask Benchmark for Long Context Understanding",
+    "abbreviation": "LongBench",
+    "overview": "LongBench, the first bilingual, multi-task benchmark for long context understanding, enables rigorous evaluation of long context capabilities of large language models. It comprises 21 datasets across 6 task categories in English and Chinese, focusing on key long-text application areas such as QA, summarization, and code completion.",
+    "data_type": "question-answering pairs, summaries, code completion tasks",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "ZeroSCROLLS",
+      "L-Eval",
+      "AgentBench"
+    ],
+    "resources": [
+      "https://github.com/THUDM/LongBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a benchmark that evaluates long context understanding of large language models across different languages and task types.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Single-Document Question Answering",
+      "Multi-Document Question Answering",
+      "Summarization",
+      "Few-shot Learning",
+      "Synthetic Tasks",
+      "Code Completion"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Composed of 21 datasets from various sources including NarrativeQA, HotpotQA, GovReport, DuReader, and more, specifically adapted for long context evaluation.",
+    "size": "4,750 test instances",
+    "format": "N/A",
+    "annotation": "Datasets captured from original studies, with some datasets manually annotated by experts."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation through LLMs"
+    ],
+    "metrics": [
+      "F1 Score",
+      "ROUGE-L"
+    ],
+    "calculation": "Metrics were calculated based on the similarity of model outputs to groundtruth.",
+    "interpretation": "Higher scores indicate better long context understanding capability of the models.",
+    "baseline_results": null,
+    "validation": "The benchmark was validated through comprehensive evaluation across different LLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Augmented Ranking Dataset",
+    "abbreviation": "N/A",
+    "overview": "The paper presents a method for augmenting preference datasets for preference optimization in large language models and introduces a multi-response-based training method.",
+    "data_type": "ranking data",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/Intel/orca_dpo_pairs"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To produce a large-scale preference dataset for training large language models and improve their response quality based on human preferences.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Preference Optimization"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Seed dataset consisting of human-labeled preference pairs and generated data from language models.",
+    "size": "50,000 preference pairs",
+    "format": "JSON",
+    "annotation": "Automatically generated and labeled by language models."
+  },
+  "methodology": {
+    "methods": [
+      "Data augmentation",
+      "Multi-response training"
+    ],
+    "metrics": [
+      "Win rate in instruction-following tasks"
+    ],
+    "calculation": "The performance is calculated based on win rates against baseline models in instruction tasks.",
+    "interpretation": "Higher win rates indicate better performance in following human instructions.",
+    "baseline_results": null,
+    "validation": "Results validated through the AlpacaEval and MT-bench benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

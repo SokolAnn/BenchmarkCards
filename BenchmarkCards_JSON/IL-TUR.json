@@ -1,0 +1,103 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "IL-TUR (Indian Legal Text Understanding and Reasoning)",
+    "abbreviation": "IL-TUR",
+    "overview": "IL-TUR is a benchmark for Indian Legal Text Understanding and Reasoning, containing monolingual (English, Hindi) and multilingual (9 Indian languages) domain-specific tasks focused on understanding and reasoning over Indian legal documents.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Hindi"
+    ],
+    "similar_benchmarks": [
+      "LexGLUE",
+      "LEXTREME",
+      "LEGALBENCH"
+    ],
+    "resources": [
+      "https://exploration-lab.github.io/IL-TUR/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To foster research in the Legal-NLP domain and provide a comprehensive benchmark for evaluating NLP models on legal tasks.",
+    "audience": [
+      "ML Researchers",
+      "Legal Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Legal Named Entity Recognition",
+      "Rhetorical Role Prediction",
+      "Court Judgment Prediction with Explanation",
+      "Bail Prediction",
+      "Legal Statute Identification",
+      "Prior Case Retrieval",
+      "Summarization",
+      "Legal Machine Translation"
+    ],
+    "limitations": "IL-TUR is the first step towards creating a comprehensive benchmark for the Indian legal domain and does not cover all legal subdomains.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Legal documents scrapped from IndianKanoon and other open legal datasets.",
+    "size": "105 documents for L-NER, 21,184 sentences for RR, 34,000 legal judgment documents for CJPE, 176,000 documents for BAIL, 65,000 case documents for LSI, 7,070 documents for PCR, 7,130 summaries for SUMM, 17,853 document pairs for L-MT.",
+    "format": "JSON",
+    "annotation": "Annotated by legal experts and students following defined legal terminologies and criteria."
+  },
+  "methodology": {
+    "methods": [
+      "BERT-based models",
+      "Multi-Task Learning methods",
+      "Hierarchical models"
+    ],
+    "metrics": [
+      "Macro F1 Score",
+      "ROUGE-L",
+      "BLEU Score"
+    ],
+    "calculation": "Metrics such as macro-averaged precision, recall, and F1 scores are calculated for task evaluations.",
+    "interpretation": "Higher scores indicate better model performance in legal document understanding and task execution.",
+    "baseline_results": null,
+    "validation": "Cross-validation across multiple tasks with publicly available datasets and continuous updates planned for future tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Legal Compliance",
+      "Explainability"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Legal Compliance",
+          "subcategory": [
+            "Model usage rights restrictions"
+          ]
+        },
+        {
+          "category": "Explainability",
+          "subcategory": [
+            "Unexplainable output"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Future versions of IL-TUR will aim to include demographic analysis to ensure fair representation in legal NLP.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Named entities in datasets have been anonymized to mitigate potential biases.",
+    "data_licensing": "Released under Creative Common Attribution-NonCommercial-ShareAlike (CC BY-NC-SA) license.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LifelongAgentBench",
+    "abbreviation": "N/A",
+    "overview": "LifelongAgentBench is the first unified benchmark designed to systemically assess the lifelong learning ability of LLM agents across diverse interactive environments. The benchmark evaluates agents' abilities to acquire atomic skills, transfer them across tasks, and maintain performance over long sequences of tasks with interdependencies.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "AgentBench",
+      "WebArena",
+      "VisualWebArena"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of LifelongAgentBench is to evaluate the lifelong learning capabilities of LLM-based agents, facilitating understanding of their ability to adapt over time in complex environments.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Task Execution",
+      "Skill Transfer Evaluation",
+      "Knowledge Retention Assessment"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The benchmark dataset consists of dynamically created tasks in three environments—Database (DB), Operating System (OS), and Knowledge Graph (KG)—designed to simulate complex, evolving scenarios requiring continuous learning.",
+    "size": "1,396 tasks",
+    "format": "CSV",
+    "annotation": "Automatically verified using SQL query validation, OS state hashing, and SPARQL output verification."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Task Success Rate"
+    ],
+    "calculation": "Measures performance based on the percentage of correctly completed tasks across different environments and configurations.",
+    "interpretation": "Higher task success rates indicate superior lifelong learning abilities and operational adaptability of LLM agents.",
+    "baseline_results": "Evaluated across various model backbones including Llama, Qwen, and DeepSeek.",
+    "validation": "Cross-verified results through extensive experimental trials under controlled conditions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Safety",
+      "Privacy",
+      "Robustness",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Diminished model performance due to experience replay complexities and context limitations."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

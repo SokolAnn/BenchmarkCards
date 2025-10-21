@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Alama Health QA",
+    "abbreviation": "N/A",
+    "overview": "Alama Health QA is a benchmark designed to assess medical language models with a focus on African disease burdens and is anchored on the Kenyan Clinical Practice Guidelines. It aims to provide contextually relevant medical question-answering data.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "AfriMed-QA",
+      "MMLU-Medical",
+      "PubMedQA",
+      "MedMCQA",
+      "MedQA-USMLE"
+    ],
+    "resources": [
+      "https://doi.org/10.48550/arXiv.2411.15640"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a regionally relevant benchmark for evaluating medical language models, ensuring they are applicable within the context of African healthcare and aligned with local guidelines.",
+    "audience": [
+      "ML Researchers",
+      "Healthcare Professionals",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "The dataset currently focuses only on English language questions; future versions plan to incorporate other African languages.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from the Kenyan Clinical Practice Guidelines using a retrieval-augmented generation framework.",
+    "size": "40,607 questions",
+    "format": "JSON",
+    "annotation": "Leveraged expert input for question generation and alignment with clinical guidelines."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Flesch-Kincaid Grade Level",
+      "Type-Token Ratio (TTR)"
+    ],
+    "calculation": "Evaluation metrics calculated based on reviewer assessments and semantic analysis of medical question-answering pairs.",
+    "interpretation": "Scores on metrics reflect the clinical relevance, guideline alignment, and complexity of the questions in the context of healthcare.",
+    "baseline_results": null,
+    "validation": "Validated through expert ratings across key medical areas."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data collection and handling processes conform to privacy best practices outlined by the Kenyan health regulations.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "Complies with local health data regulations as per Kenyan standards."
+  }
+}

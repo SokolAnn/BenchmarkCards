@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ESNLIR (Reasoning-Spanish-Natural-Language-Inference)",
+    "abbreviation": "ESNLIR",
+    "overview": "The paper introduces a novel Spanish multi-genre dataset for Natural Language Inference (NLI) that incorporates causal relationships between sentences, aiming to enhance model generalization capabilities.",
+    "data_type": "premise-hypothesis pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Spanish"
+    ],
+    "similar_benchmarks": [
+      "XNLI",
+      "SPARTE",
+      "INFERES",
+      "sciNLI",
+      "msciNLI"
+    ],
+    "resources": [
+      "https://zenodo.org/records/15002575",
+      "https://zenodo.org/records/15002371"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide an extensive dataset for Spanish multi-genre NLI that incorporates causal relationships, enabling better evaluation and development of NLI models in Spanish.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Linguists"
+    ],
+    "tasks": [
+      "Natural Language Inference"
+    ],
+    "limitations": "The dataset is primarily evaluated with BERT-based models and may require human annotation of more examples to improve quality.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "34 Spanish corpora across multiple genres including articles, books, comments, legal, clinical, news, talks, and theses.",
+    "size": "7,325,356 training examples, 127,404 validation examples, 128,412 test examples",
+    "format": "N/A",
+    "annotation": "Automated extraction using linking phrases for premise-hypothesis pairs."
+  },
+  "methodology": {
+    "methods": [
+      "BERT-based evaluation",
+      "XGBoost baseline comparison",
+      "Human validation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Accuracy and F1 Score metrics are calculated for model performance evaluation.",
+    "interpretation": "Higher accuracy and F1 scores indicate better model performance in understanding semantic relationships.",
+    "baseline_results": "XGBoost accuracy: 0.35, BERTIN accuracy: 0.663, XLMRoBERTa accuracy: 0.676.",
+    "validation": "Double stratification strategy used to maintain class balance across training, validation, and testing splits."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis of genre representation shows potential bias in non-formal writing categories.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "EHRCon",
+    "abbreviation": "N/A",
+    "overview": "EHRCon is a new dataset and task designed to ensure data consistency between structured tables and unstructured notes in Electronic Health Records, featuring manual annotations of 4,101 entities across 105 clinical notes.",
+    "data_type": "entities with labels",
+    "domains": [
+      "Healthcare",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "TabFact",
+      "INFOTABS"
+    ],
+    "resources": [
+      "https://github.com/dustn1259/EHRCon",
+      "https://physionet.org/content/mimiciii/1.4/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To improve the accuracy and reliability of Electronic Health Records by verifying the consistency between clinical notes and structured databases.",
+    "audience": [
+      "Healthcare Professionals",
+      "Medical Researchers",
+      "AI Researchers"
+    ],
+    "tasks": [
+      "Data Consistency Checking",
+      "Named Entity Recognition",
+      "Fact Verification"
+    ],
+    "limitations": "The inconsistencies identified may not be present in real hospital data due to preprocessing.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "MIMIC-III EHR dataset",
+    "size": "4,101 entities from 105 clinical notes",
+    "format": "JSON",
+    "annotation": "Manual annotation by trained healthcare professionals"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Recall",
+      "Precision",
+      "Intersection"
+    ],
+    "calculation": "Metrics are calculated based on the comparison between predicted and gold-standard entity annotations.",
+    "interpretation": "High recall indicates successful identification of actually consistent/inconsistent entities, while precision indicates the correctness of the identified entities.",
+    "baseline_results": "Recall performance achieved was 61.06% in few-shot scenarios with the framework CheckEHR.",
+    "validation": "Validation was performed collaboratively with practitioners to define labeling instructions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All datasets are de-identified to protect patient privacy.",
+    "data_licensing": "Released under MIT License.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

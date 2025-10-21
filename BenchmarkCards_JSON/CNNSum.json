@@ -1,0 +1,77 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CNNSum",
+    "abbreviation": "N/A",
+    "overview": "CNNSum is a multi-scale long-context summarization benchmark based on Chinese novels, featuring human-driven annotations across four subsets totaling 695 samples, with lengths ranging from 16k to 128k tokens. It is designed to facilitate the evaluation of long-context summarization abilities of large language models (LLMs).",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "CLongEval-LStSum"
+    ],
+    "resources": [
+      "https://github.com/CxsGhost/CNNSum"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To advance research in long-context summarization by providing a reliable evaluation benchmark for large language models.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Text Summarization"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "A newly collected corpus of 103 books from Chinese Internet open-source data, featuring 695 samples in total.",
+    "size": "695 samples",
+    "format": "N/A",
+    "annotation": "Annotations were completed by human experts with assistance from LLMs."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "ROUGE-L"
+    ],
+    "calculation": "ROUGE-L is calculated based on the output of the models against reference summaries, measuring the overlap of tokens between them.",
+    "interpretation": "Higher ROUGE-L scores indicate better summarization performance and alignment with human preferences.",
+    "baseline_results": "Performance gaps were noted across different model versions, highlighting challenges in long-context summarization.",
+    "validation": "Tested for reliability with diverse prompts and human assessments."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

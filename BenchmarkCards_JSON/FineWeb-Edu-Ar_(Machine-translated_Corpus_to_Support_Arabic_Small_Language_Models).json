@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FineWeb-Edu-Ar (Machine-translated Corpus to Support Arabic Small Language Models)",
+    "abbreviation": "N/A",
+    "overview": "FineWeb-Edu-Ar is the largest publicly available machine-translated Arabic dataset created from the English FineWeb-Edu dataset to support the training of small language models.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Arabic",
+      "English"
+    ],
+    "similar_benchmarks": [
+      "FineWeb-Edu"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/kaust-generative-ai/fineweb-edu-ar"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To support the development of small language models for the Arabic language by providing a quality dataset through machine translation.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Machine Translation"
+    ],
+    "limitations": "The dataset may contain inaccuracies due to translation errors and may not sufficiently cover culturally specific knowledge for Arabic-speaking countries.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Machine-translated from the deduplicated English FineWeb-Edu dataset.",
+    "size": "202B tokens",
+    "format": "JSONL",
+    "annotation": "Automatically generated through machine translation."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Translation Accuracy",
+      "Fluency",
+      "Grammar and Syntax"
+    ],
+    "calculation": "Utilizing the LLM-as-a-Judge approach for automatic assessment, with scores averaged from multiple evaluation passes.",
+    "interpretation": "Scores range from 0 to 24 based on accuracy, grammar, syntax, and fluency.",
+    "baseline_results": "N/A",
+    "validation": "Validation performed using a micro-benchmark with repeated evaluations across multiple models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC-BY-NC-4.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

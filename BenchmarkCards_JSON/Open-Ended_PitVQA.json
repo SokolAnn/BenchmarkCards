@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Open-Ended PitVQA",
+    "abbreviation": "N/A",
+    "overview": "A specialized open-ended VQA dataset for endonasal pituitary surgery, capturing intraoperative decisions, procedural steps, and instrument interactions, comprising 101,803 frames and 745,972 question-answer pairs.",
+    "data_type": "question-answer pairs",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "EndoVis18-VQA"
+    ],
+    "resources": [
+      "https://github.com/HRL-Mike/PitVQA-Plus"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To advance visual question answering capabilities in endonasal pituitary surgery by providing a comprehensive dataset and innovative adaptation methodology.",
+    "audience": [
+      "ML Researchers",
+      "Medical Professionals"
+    ],
+    "tasks": [
+      "Visual Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "25 procedural videos of endoscopic pituitary surgery recorded at the National Hospital of Neurology and Neurosurgery in London, UK.",
+    "size": "101,803 frames, 745,972 question-answer pairs",
+    "format": "MP4",
+    "annotation": "Annotated by experienced neurosurgery residents with validation by an attending neurosurgeon."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "BLEU Score",
+      "ROUGE-L",
+      "METEOR"
+    ],
+    "calculation": "Metrics are calculated as the average scores on generated responses compared to reference answers.",
+    "interpretation": "Higher scores indicate better performance in generating contextually relevant and precise answers.",
+    "baseline_results": "Compared against state-of-the-art VQA models like VisualBert and MoRA.",
+    "validation": "Performance validated on both Open-Ended PitVQA and EndoVis18-VQA datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Bias",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "Patient informed consent obtained and local governance committee approval received.",
+    "compliance_with_regulations": "N/A"
+  }
+}

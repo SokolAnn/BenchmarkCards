@@ -1,0 +1,70 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LEXTIME: A Benchmark for Temporal Ordering of Legal Events",
+    "abbreviation": "LEXTIME",
+    "overview": "LEXTIME is a dataset designed to evaluate LLMs’ event ordering capabilities in legal language, consisting of 512 instances from U.S. Federal Complaints with annotated event pairs and their temporal relations.",
+    "data_type": "event pairs with temporal relations",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "TRACIE"
+    ],
+    "resources": [
+      "https://github.com/clairebarale/LexTime"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the temporal reasoning capabilities of large language models (LLMs) specifically in the legal domain.",
+    "audience": [
+      "Researchers in Legal NLP",
+      "Model Developers",
+      "Practitioners in Legal Technology"
+    ],
+    "tasks": [
+      "Temporal Event Ordering"
+    ],
+    "limitations": "The dataset primarily focuses on event ordering which may not capture other temporal reasoning tasks.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "U.S. Federal Complaints",
+    "size": "512 examples",
+    "format": "structured data",
+    "annotation": "Manually reviewed instances with event pairs and temporal relations labeled."
+  },
+  "methodology": {
+    "methods": [
+      "Standard prompting",
+      "Chain-of-thought prompting"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Metrics are calculated as the proportion of correctly identified temporal relations between event pairs.",
+    "interpretation": "Higher accuracy indicates better model understanding of temporal relationships in legal contexts.",
+    "baseline_results": "Accuracy varying across models with GPT-4 Turbo achieving up to 80.8% for explicit-implicit pairs.",
+    "validation": "Evaluated on split datasets similar to the task design of TRACIE."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "No specific demographic analysis provided.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

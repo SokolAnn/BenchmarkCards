@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ArchBERT",
+    "abbreviation": "N/A",
+    "overview": "ArchBERT is a bi-modal model designed for joint learning and understanding of neural architectures and natural languages. This work introduces two new bi-modal datasets (TVHF and AutoNet) for enhancing the training and evaluation of multi-modal systems in architecture-language learning, supported by a novel pre-training strategy called Masked Architecture Modeling (MAM).",
+    "data_type": "bi-modal pairs of architectural graphs and textual descriptions",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/user/repo",
+      "https://huggingface.co/datasets/ArchBERT"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To facilitate joint understanding and learning of neural architectures and natural languages through the ArchBERT framework and to provide datasets that support this goal.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Architectural Reasoning",
+      "Architecture Clone Detection",
+      "Architectural Question Answering",
+      "Architecture Captioning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Two new datasets TVHF and AutoNet were created by collecting and generating neural architectures and their textual descriptions.",
+    "size": "Total of 3,636,000 samples across both datasets (TVHF and AutoNet combined).",
+    "format": "JSON",
+    "annotation": "Manually annotated for accuracy; automatic generation for negative samples."
+  },
+  "methodology": {
+    "methods": [
+      "Cross-modal learning using a bi-modal model",
+      "Cosine similarity for embedding matching",
+      "Architecture-oriented reasoning tasks"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics were calculated based on similarity scores and ground truth labels.",
+    "interpretation": "An accuracy above 70% and F1 scores reflecting the model's effectiveness on architecture and text pairs.",
+    "baseline_results": null,
+    "validation": "Model performance was validated through comparative tests against multiple baselines."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

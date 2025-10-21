@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Hijacking JARVIS: Benchmarking Mobile GUI Agents against Unprivileged Third Parties",
+    "abbreviation": "N/A",
+    "overview": "This paper presents a systematic investigation into the vulnerabilities of mobile GUI agents through a benchmark suite that evaluates their robustness against misleading content injected by unprivileged third parties. It introduces AgentHazard, a framework for simulating attack scenarios, and develops a comprehensive suite comprising a dynamic task execution environment and a static dataset.",
+    "data_type": "vision-language-action tuples",
+    "domains": [
+      "Computer Science"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://arxiv.org/abs/2507.04227"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To systematically study the vulnerabilities of mobile GUI agents against misleading content attacks and to improve their robustness.",
+    "audience": [
+      "Researchers",
+      "AI Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Task Automation",
+      "User Interface Interaction"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from 210 screenshots of 14 popular commercial applications.",
+    "size": "840 unique tasks and over 3,000 attack scenarios",
+    "format": "N/A",
+    "annotation": "Manual crafting by human annotators based on selected screenshots."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Behavioral analysis"
+    ],
+    "metrics": [
+      "Success Rate (SR)",
+      "Misleading Rate (MR)"
+    ],
+    "calculation": "Metrics calculated based on the percentage of successful task completion versus misleading agent behavior.",
+    "interpretation": "A lower SR indicates greater vulnerability to misleading content.",
+    "baseline_results": "Varied across agents; UGround exhibited strongest performance with 48.3% baseline SR.",
+    "validation": "Tests conducted on 7 mobile GUI agents and various backbone LLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "User data loss due to misleading instructions"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

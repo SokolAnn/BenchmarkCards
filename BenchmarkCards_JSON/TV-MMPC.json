@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TV-MMPC (Multi-modal Multi-Party Conversation)",
+    "abbreviation": "TV-MMPC",
+    "overview": "TV-MMPC is a human-annotated dataset focused on multimodal conversation structure understanding, featuring annotations for speakers, addressees, and side-participants across various video clips, enabling evaluation of conversational role attribution and conversation disentanglement tasks.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "TVQA"
+    ],
+    "resources": [
+      "https://doi.org/10.7910/DVN/4KUKUL"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate and facilitate understanding of multimodal conversation structure in multi-party settings through task-based benchmarks, specifically in conversational role attribution and conversation disentanglement.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Conversational Role Attribution",
+      "Conversation Disentanglement"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The TV-MMPC dataset is constructed from clips of popular TV shows annotated for conversational dynamics, derived from the TVQA dataset.",
+    "size": "4,378 annotations for speakers and reply-to relationships, 5,599 addressees, 3,412 side-participants",
+    "format": "N/A",
+    "annotation": "Human-annotated, based on defined guidelines for role attribution and conversation threading."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Set-Based F1"
+    ],
+    "calculation": "Metrics are calculated by comparing predicted annotations against the true labels for speakers, addressees, and side-participants using standard classification metrics.",
+    "interpretation": "High scores indicate better model performance in correctly identifying conversational roles and relationships among utterances.",
+    "baseline_results": "N/A",
+    "validation": "The performance of models was validated through comparison against established baselines using precision and recall within the context of conversation structure."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Privacy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Annotated data is based on publicly available TV shows and does not contain personal information from identifiable individuals.",
+    "data_licensing": "Data licensing information is not specified beyond its availability via DOIs and open-access repositories.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "RoD-TAL (Romanian Driving Tests and Laws)",
+    "abbreviation": "RoD-TAL",
+    "overview": "RoD-TAL is a novel multimodal dataset comprising Romanian driving test questions, text-based and image-based, alongside annotated legal references and human explanations. It aims to evaluate the capabilities of Large Language Models (LLMs) and Vision-Language Models (VLMs) in understanding and reasoning about Romanian driving law through various tasks.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "Romanian"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://www.scoalarutiera.ro/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate LLMs and VLMs in the context of Romanian driving law and various question-answering tasks.",
+    "audience": [
+      "Researchers in AI",
+      "Educators in Law",
+      "Developers of Legal AI Systems"
+    ],
+    "tasks": [
+      "Information Retrieval",
+      "Question Answering",
+      "Visual Information Retrieval",
+      "Visual Question Answering"
+    ],
+    "limitations": "The dataset does not fully address issues of visual reasoning, which remains challenging.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated legal texts from Romanian legislation encompassing traffic regulations and associated driving tests.",
+    "size": "1,156 samples (1,200 questions including images)",
+    "format": "N/A",
+    "annotation": "Annotated references to applicable legal statutes and explanations."
+  },
+  "methodology": {
+    "methods": [
+      "Retrieval-augmented generation (RAG)",
+      "Dense retrievers",
+      "Reasoning-optimized models"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score",
+      "Exact Match"
+    ],
+    "calculation": "Metrics calculated based on specific matching with correct answers provided in the dataset.",
+    "interpretation": "Exact Match requires the answer to precisely match the expected correct response.",
+    "baseline_results": "Exact Match scores achieve high performance rates employing RAG and fine-tuned models.",
+    "validation": "Experimentally validated through real-word scenarios and benchmarking against similar datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential misinformation in educational settings if models hallucinate incorrect information."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "Discussed risks predicated on use cases in educational contexts."
+  }
+}

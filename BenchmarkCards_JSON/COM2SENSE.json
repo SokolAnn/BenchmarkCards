@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "COM2SENSE (Complementary Commonsense)",
+    "abbreviation": "COM2SENSE",
+    "overview": "A new commonsense reasoning benchmark dataset comprising 4,000 natural language true/false statements, with each sample paired with its complementary counterpart. It aims to assess AI's commonsense reasoning ability with a pairwise accuracy metric.",
+    "data_type": "true/false statement pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/PlusLabNLP/Com2Sense"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a challenging evaluation benchmark for commonsense reasoning abilities in NLP models.",
+    "audience": [
+      "ML Researchers",
+      "NLP Practitioners"
+    ],
+    "tasks": [
+      "Commonsense Reasoning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected via Amazon Mechanical Turk (MTurk) with an adversarial model-in-the-loop approach.",
+    "size": "4,000 statement pairs",
+    "format": "CSV",
+    "annotation": "Crowdsourced, with quality checks by experts."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Standard Accuracy",
+      "Pairwise Accuracy"
+    ],
+    "calculation": "Pairwise accuracy requires both statements in a pair to be correct.",
+    "interpretation": "Higher accuracy indicates better commonsense reasoning ability.",
+    "baseline_results": "UniﬁedQA-3B achieves ~71% standard accuracy and ~51% pairwise accuracy.",
+    "validation": "Dataset validation was conducted by internal members for consistency and quality."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Personal information of workers was discarded during dataset creation.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "This work has been reviewed by the IRB and granted exempt status."
+  }
+}

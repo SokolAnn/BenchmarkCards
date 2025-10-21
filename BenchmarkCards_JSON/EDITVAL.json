@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "EDITVAL",
+    "abbreviation": "N/A",
+    "overview": "EDITVAL is a standardized benchmark for quantitatively evaluating text-guided image editing methods, consisting of a curated dataset of images, editable attributes, and an automated evaluation pipeline using pre-trained vision-language models.",
+    "data_type": "images",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "TedBench",
+      "EditBench"
+    ],
+    "resources": [
+      "https://deep-ml-research.github.io/editval/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive benchmark for evaluating text-guided image editing methods across various edit types.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Image Editing"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated dataset from MS-COCO",
+    "size": "92 images with 648 unique edit operations",
+    "format": "JSON",
+    "annotation": "Manual annotation and validation by human raters"
+  },
+  "methodology": {
+    "methods": [
+      "Automated evaluation using vision-language models",
+      "Human evaluation study"
+    ],
+    "metrics": [
+      "Correlation with human preferences",
+      "Editing quality scores"
+    ],
+    "calculation": "Automated metrics evaluate image fidelity using vision-language models and human evaluation assesses the quality of edits based on predefined criteria.",
+    "interpretation": "Higher scores indicate better fidelity of image edits to original properties and successful application of edits.",
+    "baseline_results": "Instruct-Pix2Pix, Null-Text, and SINE are top-performing methods.",
+    "validation": "Convergence between automated evaluations and human assessments confirmed through correlation studies."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack",
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Failures in spatial edits leading to inconsistent edited images."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LongCodeBench (LCB)",
+    "abbreviation": "LCB",
+    "overview": "LongCodeBench (LCB) is a benchmark to test coding LLMs in long-context scenarios, evaluating their comprehension and repair capabilities using tasks derived from real-world GitHub issues.",
+    "data_type": "question-answering pairs and code repair tasks",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Science"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "HumanEval",
+      "SWE-Bench",
+      "HELMET"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/Steefano/LCB"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a benchmark for evaluating long-context language models on realistic coding tasks.",
+    "audience": [
+      "ML Researchers",
+      "Software Engineers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Code Comprehension",
+      "Bug Fixing"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from public GitHub repositories.",
+    "size": "1,043 instances",
+    "format": "N/A",
+    "annotation": "Curated with human supervision"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Metrics calculated based on correctness of answers for LongCodeQA and execution results for LongSWE-Bench.",
+    "interpretation": "Scores indicate how well models comprehend and repair code issues based on a passing rate of unit tests and accuracy of answer selection.",
+    "baseline_results": null,
+    "validation": "Results validated against established performance standards for coding tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

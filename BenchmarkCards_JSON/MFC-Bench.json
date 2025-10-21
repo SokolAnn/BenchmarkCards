@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MFC-Bench (Multimodal Fact-Checking Benchmark)",
+    "abbreviation": "MFC-Bench",
+    "overview": "MFC-Bench is a rigorous benchmark designed to evaluate the factual accuracy of large vision-language models (LVLMs) across three stages of verdict prediction for multimodal fact-checking: Manipulation Classification, Out-of-Context Classification, and Veracity Classification.",
+    "data_type": "multimodal",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMFakeBench",
+      "COSMOS",
+      "NewsCLIPpings"
+    ],
+    "resources": [
+      "https://github.com/wskbest/MFC-Bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation platform for the factual accuracy of LVLMs in multimodal fact-checking tasks.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Manipulation Classification",
+      "Out-of-Context Classification",
+      "Veracity Classification"
+    ],
+    "limitations": "The current benchmark may not fully capture the complexity of real-world multimodal fact-checking due to the dynamic and context-specific nature of misinformation.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "A mix of diverse datasets specifically designed for multimodal fact-checking.",
+    "size": "35,000 examples",
+    "format": "N/A",
+    "annotation": "Human evaluation and automated methods for verifying manipulation techniques."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are computed based on the performance of the LVLMs across different tasks in the benchmark.",
+    "interpretation": "A higher F1 Score indicates better performance in correctly identifying facts vs. non-facts.",
+    "baseline_results": "Human performance serves as a baseline, significantly outperforming the LVLMs in detection tasks.",
+    "validation": "Multiple levels of quality assurance checks and evaluations were performed on the collected data."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "The benchmark aims to prevent the spread of misinformation and enhance the trustworthiness of AI systems."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All data utilized in this research does not contain any user information from social media and adheres to the terms of datasets used.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Informed consent was obtained from all human evaluators involved.",
+    "compliance_with_regulations": "N/A"
+  }
+}

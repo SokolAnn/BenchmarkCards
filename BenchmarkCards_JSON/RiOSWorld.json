@@ -1,0 +1,75 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "RiOSWorld",
+    "abbreviation": "N/A",
+    "overview": "RiOSWorld is a benchmark designed to evaluate the potential risks of multimodal large language model-based agents during real-world computer manipulations, covering 492 risky tasks across various computer applications.",
+    "data_type": "risky tasks",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "OSWorld",
+      "WebArena",
+      "AndroidWorld"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2506.00618"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the safety risks of multimodal large language model-based agents in realistic computer-use scenarios and highlight their vulnerabilities.",
+    "audience": [
+      "ML Researchers",
+      "AI Practitioners",
+      "Developers"
+    ],
+    "tasks": [
+      "Safety Risk Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "492 risky tasks designed by authors, inspired by other benchmarks and verified through execution.",
+    "size": "492 tasks",
+    "format": "JSON",
+    "annotation": "Manual verification by authors, ensuring executable environment and high probability of risk triggering."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Rule-based risk evaluation",
+      "LLM-as-a-judge evaluation"
+    ],
+    "metrics": [
+      "Risk Goal Intention Rate",
+      "Risk Goal Completion Rate"
+    ],
+    "calculation": "Metrics are derived from risk goal evaluations based on whether MLLM agents intend to trigger risks and complete risky tasks.",
+    "interpretation": "Higher rates indicate greater safety risk awareness deficiencies in MLLM agents.",
+    "baseline_results": "MLLMs exhibit an unsafe rate of over 75% on risk goal intention and 45% on risk goal completion.",
+    "validation": "Extensive evaluations conducted on 10 representative MLLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Privacy",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

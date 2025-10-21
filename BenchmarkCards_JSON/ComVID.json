@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ComVID (Complaint Video Dataset)",
+    "abbreviation": "ComVID",
+    "overview": "ComVID is a video complaint dataset containing 1,175 complaint videos and the corresponding descriptions, annotated with the emotional state of the complainer, aimed at generating expressive complaints from videos.",
+    "data_type": "video-text pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/sarmistha-D/CoD-V"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a platform for users to articulate complaints through video, improving engagement with e-commerce platforms.",
+    "audience": [
+      "Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Complaint Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from Amazon review videos focusing on electronic and non-electronic products.",
+    "size": "1,175 videos",
+    "format": "mp4",
+    "annotation": "Manual annotation by a team of linguists for complaint descriptions and emotional states."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Vader Score",
+      "Complaint Retention Score (CR)",
+      "BLEU Score",
+      "ROUGE"
+    ],
+    "calculation": "CR score is calculated as the average of sentiment score, emotion detection, and aspect identification.",
+    "interpretation": "A higher CR score indicates better retention of complaint nature in the generated complaints.",
+    "baseline_results": null,
+    "validation": "Validated through multiple phases of expert annotation and human evaluation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

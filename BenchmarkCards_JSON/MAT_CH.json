@@ -1,0 +1,79 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MAT CH dataset",
+    "abbreviation": "MAT CH",
+    "overview": "A task consisting in matching a proof to a given mathematical statement. The paper presents a dataset for the task (the MAT CH dataset) consisting of over 180k statement-proof pairs extracted from modern mathematical research articles, intended to support Mathematical Information Retrieval and modelling of mathematical reasoning.",
+    "data_type": "statement-proof pairs (text with mathematical formulae)",
+    "domains": [
+      "Natural Language Processing",
+      "Mathematics",
+      "Information Retrieval"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "LEANSTEP",
+      "NaturalProofs",
+      "synthetic dataset of Polu and Sutskever (2020)"
+    ],
+    "resources": [
+      "https://github.com/waylonli/MATcH",
+      "https://arxiv.org/abs/2302.09350",
+      "https://mir.fi.muni.cz/MREC/",
+      "https://www.w3.org/Math/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Given a collection of mathematical statements and a separate equal-size collection of mathematical proofs, the task consists in finding and assigning a proof to each mathematical statement.",
+    "audience": [
+      "Mathematicians",
+      "Researchers in Mathematical Information Retrieval",
+      "Theorem proving researchers"
+    ],
+    "tasks": [
+      "Information Retrieval",
+      "Text Matching",
+      "Premise Selection"
+    ],
+    "limitations": "1) The symbol replacement procedure simulates different authors but cannot alter broader mathematical 'dialects' and writing-style differences; 2) Computational limitations prevented exploring the full potential of global training for large models (batch size limits on available GPUs); 3) The symbol replacement method is coarse and can be imprecise because symbol meaning is context-dependent.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "MREC corpus (Líska et al., 2011) containing articles from ArxMLiV (an arXiv to XML conversion project). Statement-proof pairs are identified via XML meta tags ('theorem' and 'proof') and filtered by heuristics.",
+    "size": "184,094 statement-proof pairs; 27,841 extracted articles with statement-proof pairs; MREC corpus ~439,423 articles. Train/dev/test split: 147,278 training pairs; 18,408 development pairs; 18,408 test pairs.",
+    "format": "N/A",
+    "annotation": "Automatically extracted using XML meta tags and filtering heuristics (no manual annotation)."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics evaluation (ranking and top-1)",
+      "Local greedy decoding (per-statement ranking)",
+      "Global bipartite matching decoding (maximum weighted bipartite matching / Linear Assignment Problem)",
+      "Symbol replacement evaluation procedure (several replacement levels)"
+    ],
+    "metrics": [
+      "Mean Reciprocal Rank (MRR)",
+      "Accuracy"
+    ],
+    "calculation": "MRR: MRR = (1/N) * sum_{i=1..N} (1 / r_hat_i) where r_hat_i is the rank of the gold proof for statement i. Accuracy: proportion of statements whose first-ranked proof is correct.",
+    "interpretation": "MRR measures ranking quality (higher is better); Accuracy measures top-1 correctness (higher is better).",
+    "baseline_results": "Best reported MRR: 73.73 (SCRATCH BERT - Local - Local on Conservation symbol replacement). Best reported Accuracy: 74.68 (SCRATCH BERT - Local - Global on Conservation symbol replacement).",
+    "validation": "Dataset shuffled and split 80%/10%/10% for train/development/test. Models are evaluated on the validation set periodically during training and the best model is selected based on validation performance."
+  },
+  "targeted_risks": {
+    "risk_categories": [],
+    "atlas_risks": {
+      "risks": null
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

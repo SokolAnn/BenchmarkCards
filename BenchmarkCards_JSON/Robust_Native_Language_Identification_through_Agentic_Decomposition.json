@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Robust Native Language Identification through Agentic Decomposition",
+    "abbreviation": "N/A",
+    "overview": "This work investigates the tendency of large language models (LLMs) to rely on superficial clues and take shortcuts in the native language identification (NLI) task. It introduces an agentic NLI pipeline to enhance robustness against misleading contextual clues. The approach enhances NLI robustness by using a structured methodology where specialized agents analyze distinct linguistic features, culminating in a final predictive assessment.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ETS Corpus of Non-Native Written English (TOEFL11)",
+      "Write & Improve Corpus 2024"
+    ],
+    "resources": [
+      "https://github.com/projectauch/agents-nli"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To develop a robust method for native language identification (NLI) that mitigates biases from superficial contextual clues in language models.",
+    "audience": [
+      "ML Researchers",
+      "Forensic Linguists",
+      "Language Identification Practitioners"
+    ],
+    "tasks": [
+      "Native Language Identification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Two benchmark datasets: ETS Corpus of Non-Native Written English (TOEFL11) and Write & Improve Corpus 2024.",
+    "size": "400 essays from Write & Improve corpus and 440 essays from the TOEFL4 subset.",
+    "format": "JSON",
+    "annotation": "The essays are labeled with native language (L1) metadata."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Macro-averaged F1 Score",
+      "Accuracy"
+    ],
+    "calculation": "Computed based on classifications across various experimental conditions.",
+    "interpretation": "Higher values indicate better performance consistency and robustness in NLI tasks.",
+    "baseline_results": "The agentic approach exhibited greater consistency but slightly lower peak accuracy than baseline direct prompting methods.",
+    "validation": "Evaluated using adversarial experiments with misleading contextual hints."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning",
+            "Hallucination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The datasets utilized contain no personally identifiable information.",
+    "data_licensing": "The use of L2 English learner corpora strictly adhered to their respective licensing terms.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

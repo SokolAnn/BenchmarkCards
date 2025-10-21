@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ZeroG : Investigating Cross-dataset Zero-shot Transferability in Graphs",
+    "abbreviation": "ZeroG",
+    "overview": "ZeroG is a new framework designed to enable cross-dataset generalization in graph learning, addressing challenges such as feature misalignment, mismatched label spaces, and negative transfer with a focus on zero-shot transfer capabilities.",
+    "data_type": "graph",
+    "domains": [
+      "Computer Science"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/NineAbyss/ZeroG"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To investigate zero-shot transferability in graphs and develop a framework for cross-dataset generalization.",
+    "audience": [
+      "ML Researchers",
+      "Data Scientists"
+    ],
+    "tasks": [
+      "Node Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Multiple public graph datasets including Cora, Citeseer, Pubmed, and custom co-purchase datasets P-Home and P-Tech derived from the ogbn-products dataset.",
+    "size": "Not explicitly stated",
+    "format": "Graph",
+    "annotation": "Manual labeling based on class categories."
+  },
+  "methodology": {
+    "methods": [
+      "Graph self-supervised learning",
+      "Semantic similarity-based classification",
+      "Prompt-based subgraph sampling"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy calculated by comparing the predicted labels with the actual labels of nodes in different datasets.",
+    "interpretation": "Higher accuracy indicates better zero-shot transferability performance across datasets.",
+    "baseline_results": "ZeroG achieved test accuracies of 68.72% on Cora and 78.02% on Pubmed.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DiversityMedQA",
+    "abbreviation": "N/A",
+    "overview": "DiversityMedQA is a novel benchmark designed to assess LLM responses to medical queries across diverse patient demographics, such as gender and ethnicity, by perturbing questions from the MedQA dataset.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MedQA"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/Rajat1212/DiversityMedQA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To measure bias in large language models used for medical diagnoses by assessing their performance across different demographics.",
+    "audience": [
+      "ML Researchers",
+      "Healthcare Professionals"
+    ],
+    "tasks": [
+      "Medical Diagnosis"
+    ],
+    "limitations": "Due to the scope of the MedQA dataset, only a subset of questions was fully prompted for gender and ethnicity perturbation, which might limit the generalizability of findings.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "MedQA dataset, modified through demographic perturbations.",
+    "size": "1,108 questions (540 for gender and 568 for ethnicity)",
+    "format": "JSON",
+    "annotation": "Automated annotation and filtering were performed to remove questions clinically dependent on demographics."
+  },
+  "methodology": {
+    "methods": [
+      "LLM prompting",
+      "Z-tests for bias assessment"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy calculated as the proportion of correct responses from the models across original and perturbed datasets.",
+    "interpretation": "Higher accuracy indicates better understanding and less bias in LLM responses across demographic variations.",
+    "baseline_results": "Models tested include GPT-3.5, GPT-4, GPT-4o, Gemini 1.5 Flash, and Llama3-8B, with varying accuracies reported.",
+    "validation": "Model responses were validated through systematic bias testing using statistical significance assessments (Z-tests)."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The performance was analyzed across different demographics, specifically focusing on gender and ethnicity.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

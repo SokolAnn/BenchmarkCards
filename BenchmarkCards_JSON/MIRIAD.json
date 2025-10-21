@@ -1,0 +1,75 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MIRIAD (Medical Instruction and Retrieval Dataset)",
+    "abbreviation": "MIRIAD",
+    "overview": "MIRIAD is a large-scale, curated corpus of 5,821,948 medical instruction-response pairs, each rephrased from and grounded in a passage from peer-reviewed medical literature using a semi-automated pipeline combining LLM generation, filtering, grounding, and human annotation.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/miriad",
+      "https://github.com/eth-medical-ai-lab/MIRIAD"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "MIRIAD aims to provide a comprehensive knowledge base for down-stream medical AI applications, enabling improved retrieval-augmented generation (RAG) performance in clinical tasks.",
+    "audience": [
+      "Researchers",
+      "Clinicians",
+      "Patients"
+    ],
+    "tasks": [
+      "Medical Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Semantic Scholar Open Research Corpus (S2ORC)",
+    "size": "5,821,948 examples",
+    "format": "N/A",
+    "annotation": "Semi-automated pipeline with human annotation"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on the performance of models trained with and without MIRIAD on various medical question-answering tasks.",
+    "interpretation": "Improved metrics indicate enhanced performance when using MIRIAD compared to unstructured sources.",
+    "baseline_results": "Existing medical QA datasets like PubMedQA consist of fewer than 300,000 questions.",
+    "validation": "The dataset undergoes multi-tier quality control including automated filtering and human expert annotation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Bias"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "ODC-By v1.0, allows reuse and modification with proper attribution.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

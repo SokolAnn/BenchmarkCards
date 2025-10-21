@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DiaCBT (Dialogue Corpus Guided by Cognitive Conceptualization Diagram for CBT-based Psychological Counseling)",
+    "abbreviation": "DiaCBT",
+    "overview": "DiaCBT is a long-periodic dialogue corpus designed for counseling based on cognitive behavioral therapy (CBT). It incorporates structured cognitive conceptualization diagrams to guide client simulations in diverse counseling scenarios and evaluates the performance of psychotherapy-guided conversational agents.",
+    "data_type": "dialogue transcripts",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive dataset for training and evaluating psychological counseling models based on CBT techniques.",
+    "audience": [
+      "ML Researchers",
+      "Psychological Researchers",
+      "Mental Health Practitioners"
+    ],
+    "tasks": [
+      "Dialogue Generation",
+      "Psychological Counseling"
+    ],
+    "limitations": "The dataset may not capture the full duration of typical therapy sessions, which last approximately 45 minutes each. Further iterations are needed to include longer dialogues.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Public transcripts from cognitive behavioral therapy sessions sourced from the American Psychological Association and related resources.",
+    "size": "108 cases with a total of 540 sessions",
+    "format": "JSON",
+    "annotation": "Annotated by trained volunteers and domain experts focusing on the application of 14 different CBT strategies."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Average Turns",
+      "Success Rate (SR)",
+      "Cognitive Therapy Rating Scale (CTRS)",
+      "Positive and Negative Affect Scale (PANAS)"
+    ],
+    "calculation": "Metrics are calculated based on user interactions and evaluations of dialogue performance.",
+    "interpretation": "Higher scores in metrics indicate better performance in simulating counseling sessions and achieving counseling goals.",
+    "baseline_results": null,
+    "validation": "The quality of data was validated through manual screening and expert evaluation, ensuring alignment with CBT principles."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Ethical Considerations"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Misuse",
+          "subcategory": [
+            "Nonconsensual use"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on cultural diversity"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "The potential harm includes the risk of generating misleading advice or emotional distress if users over-rely on the chatbot instead of seeking professional help."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Ensured through strict adherence to data protocols, using publicly available data to simulate client interactions.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Informed consent was obtained from annotators for their contributions.",
+    "compliance_with_regulations": "N/A"
+  }
+}

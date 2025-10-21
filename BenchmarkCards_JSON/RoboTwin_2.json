@@ -1,0 +1,74 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "RoboTwin: Dual-Arm Robot Benchmark with Generative Digital Twins",
+    "abbreviation": "RoboTwin",
+    "overview": "RoboTwin introduces a generative digital twin framework to produce diverse expert datasets and provides a real-world-aligned evaluation platform for dual-arm robotic tasks, enabling standardized evaluation and better alignment between simulated training and real-world performance.",
+    "data_type": "dual-arm robotic manipulation tasks",
+    "domains": [
+      "Robotics"
+    ],
+    "languages": [
+      "N/A"
+    ],
+    "similar_benchmarks": [
+      "MimicGen",
+      "HumanoidBench",
+      "BiGym"
+    ],
+    "resources": [
+      "https://robotwin-benchmark.github.io"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of RoboTwin is to assess dual-arm robots' performance using synthetic data generated through a generative digital twin framework.",
+    "audience": [
+      "ML Researchers",
+      "Robotics Engineers",
+      "Model Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Dual-Arm Manipulation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "300 RoboTwin-generated samples and 20 real-world samples for each task.",
+    "size": "100 sets of simulation data and 20 sets of real-world data per task",
+    "format": "N/A",
+    "annotation": "Expert demonstrations are generated via a large language model combined with object annotations."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Success Rate"
+    ],
+    "calculation": "Success rate determined by meeting target pose constraints and ensuring collision-free execution.",
+    "interpretation": "Higher success rates indicate better performance in task execution.",
+    "baseline_results": "Policies trained on 300 RoboTwin-generated data improve success rates significantly over those trained solely on real-world data.",
+    "validation": "Validated using the open-source COBOT Magic Robot platform with simulated task execution."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Robustness",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

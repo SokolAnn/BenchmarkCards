@@ -1,0 +1,74 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MULTI CONIR",
+    "abbreviation": "N/A",
+    "overview": "MULTI CONIR is a benchmark specifically designed to evaluate retrieval and reranking models under nuanced multi-condition query scenarios across five diverse domains.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Healthcare",
+      "Legal",
+      "Entertainment",
+      "Education"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/EIT-NLP/MultiConIR"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To rigorously evaluate information retrieval models in realistic multi-condition scenarios.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Information Retrieval"
+    ],
+    "limitations": "The dataset relies on automated query generation, which may introduce biases in condition representation.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from publicly available sources across five domains.",
+    "size": "Approximately 2,500 multi-condition queries with corresponding documents.",
+    "format": "N/A",
+    "annotation": "Queries and hard negatives were created using structured prompts with LLM-assisted modifications."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Win Rate",
+      "Precision@1",
+      "NDCG@k"
+    ],
+    "calculation": "Win Rate is calculated as the proportion of pairwise comparisons where a candidate that fulfills more conditions ranks above one that fulfills fewer.",
+    "interpretation": "Higher Win Rate indicates better performance in distinguishing documents based on the number of satisfied conditions.",
+    "baseline_results": null,
+    "validation": "Models were evaluated against both LLM-generated and human-annotated queries."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Bias"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential biases in automated query generation affecting retrieval effectiveness."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset does not contain sensitive or personally identifiable information.",
+    "data_licensing": "Publicly available datasets, no specific restrictions stated.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

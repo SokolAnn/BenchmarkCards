@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "HapticCap",
+    "abbreviation": "N/A",
+    "overview": "HapticCap is the first fully human-annotated haptic-captioned dataset, containing 92,070 haptic-text pairs for user descriptions of sensory, emotional, and associative attributes of vibrations.",
+    "data_type": "haptic-text pairs",
+    "domains": [
+      "Haptics"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://arxiv.org/abs/2507.13318"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To create a large multimodal dataset and task for understanding user experiences with vibration haptic signals.",
+    "audience": [
+      "ML Researchers",
+      "Haptics Designers"
+    ],
+    "tasks": [
+      "Haptic-Caption Retrieval"
+    ],
+    "limitations": "HapticCap may not encompass the full range of possible signals and user experiences, and user descriptions are only in English and geographically limited.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from user studies with diverse participants in controlled lab settings.",
+    "size": "92,070 pairs",
+    "format": "N/A",
+    "annotation": "Human-annotated with users providing descriptions based on sensory, emotional, and associative perspectives."
+  },
+  "methodology": {
+    "methods": [
+      "Supervised Learning",
+      "Contrastive Learning"
+    ],
+    "metrics": [
+      "Precision@10",
+      "Recall@10",
+      "Mean Average Precision at 10 (mAP@10)",
+      "Normalized Discounted Cumulative Gain at 10 (nDCG@10)"
+    ],
+    "calculation": "Metrics are calculated based on retrieved descriptions' relevance to given haptic signals.",
+    "interpretation": "Higher values in metrics indicate better retrieval performance.",
+    "baseline_results": "Comparison of various models trained on combined and individual description categories.",
+    "validation": "Dataset validated through user agreement scores and diversity checks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis includes a breakdown of user demographics and description variety.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "User data was anonymized and consent obtained from participants.",
+    "data_licensing": "Dataset expected to be released under Creative Commons Attribution-NonCommercial 4.0 International License.",
+    "consent_procedures": "User consent obtained prior to participation in the study.",
+    "compliance_with_regulations": "IRB approval was obtained for the collection and management of personal data."
+  }
+}

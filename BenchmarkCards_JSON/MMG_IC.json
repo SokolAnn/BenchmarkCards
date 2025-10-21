@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MMG IC (Multimodal Multi-Grained Concept Annotations)",
+    "abbreviation": "MMG IC",
+    "overview": "MMG IC is a new dataset featuring multimodal multi-grained concept annotations for Multimodal Large Language Models (MLLMs). It aims to improve performance in vision-language tasks by integrating fine-grained and coarse-grained concept annotations.",
+    "data_type": "multimodal annotations (image, text)",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/LooperXX/MMGiC"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To explore the potential of multi-grained concept annotations for MLLMs and improve vision-language alignment through a comprehensive dataset.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Image Captioning",
+      "Visual Question Answering",
+      "Text-to-Image Generation",
+      "Image Editing"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Open Images, Objects365, V3Det, Visual Genome",
+    "size": "3.5M unique images, 23.9M unique object regions, 61.8M category label-description pairs",
+    "format": "N/A",
+    "annotation": "Manual annotations from public object detection datasets"
+  },
+  "methodology": {
+    "methods": [
+      "Evaluation on multimodal comprehension and generation benchmarks",
+      "Supervised fine-tuning with MMG IC and other datasets"
+    ],
+    "metrics": [
+      "CIDEr",
+      "FID",
+      "CLIP-I",
+      "CLIP-T",
+      "Accuracy"
+    ],
+    "calculation": "Metrics calculated based on model predictions compared to ground truth.",
+    "interpretation": "Higher scores indicate better performance on the respective benchmarks.",
+    "baseline_results": "N/A",
+    "validation": "Evaluation against multiple vision-language benchmarks in zero-shot settings."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

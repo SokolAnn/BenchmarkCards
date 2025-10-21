@@ -1,0 +1,99 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "BenCoref: A Multi-Domain Dataset of Nominal Phrases and Pronominal Reference Annotations",
+    "abbreviation": "BenCoref",
+    "overview": "We introduce a new dataset, BenCoref, comprising coreference annotations for Bengali texts gathered from four distinct domains. This relatively small dataset contains 5,200 mention annotations forming 502 mention clusters within 48,569 tokens. We describe the process of creating this dataset and report performance of multiple models trained using BenCoref.",
+    "data_type": "text (coreference-annotated nominal and pronominal mentions; mention clusters)",
+    "domains": [
+      "Biography",
+      "Descriptive (Wikipedia-like articles)",
+      "Story",
+      "Novel"
+    ],
+    "languages": [
+      "Bengali"
+    ],
+    "similar_benchmarks": [
+      "ACE",
+      "OntoNotes",
+      "WikiCoref",
+      "LitBank"
+    ],
+    "resources": [
+      "https://github.com/ShadmanRohan/BenCoref"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Introduce BenCoref, the first publicly available dataset of coreference annotations in Bengali collected from four diverse domains, describe the creation and annotation process, and evaluate end-to-end coreference resolution models trained on it.",
+    "audience": [],
+    "tasks": [
+      "Coreference Resolution"
+    ],
+    "limitations": "Relatively small dataset (48,569 tokens); annotation guideline described is incomplete and limited in scope; coreference link types have not been annotated and remain pending; the process of resolving annotator disagreements was not adequately documented.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "BnWikiSource and Banglapedia; story and novel texts sourced from copyright-free books of the 19th and 20th centuries; biographies and descriptive texts primarily from Banglapedia.",
+    "size": "48,569 tokens; 5,200 mention annotations; 502 mention clusters; 122 train+dev documents and 37 test documents (total 159 documents).",
+    "format": "An index.csv file is included; annotations were created in WebAnno and exported and converted from character-level to token-level annotations.",
+    "annotation": "Manual annotation using WebAnno; annotators initially instructed to annotate noun phrases and their coreferences (primary noun phrases tagged as 'entity' and corresponding coreferences as 'ref'); guidelines adapted from OntoNotes; annotators focused on nominal and pronominal mentions; singletons were removed during post-annotation processing; two annotators annotated independently with a third annotator consulted to adjudicate disagreements to create the gold standard."
+  },
+  "methodology": {
+    "methods": [
+      "Model training and evaluation with end-to-end neural coreference resolution systems (Bi-directional LSTM with span-ranking head; BERT-base; multilingual BERT for cross-lingual experiments)",
+      "Automated evaluation using CONLL-2012 official evaluation scripts"
+    ],
+    "metrics": [
+      "Identification of Mentions",
+      "MUC",
+      "B3",
+      "CEAF (phi4)",
+      "Precision",
+      "Recall",
+      "F1 Score",
+      "Average F1 (MUC, B3, CEAF phi4)"
+    ],
+    "calculation": "Metrics computed using the CONLL-2012 official evaluation scripts which calculate Identification of Mentions, MUC, B3 and CEAF. The main evaluation metric is the average F1 score of MUC, B3, and CEAF phi4.",
+    "interpretation": "Authors report that higher average F1 of MUC, B3 and CEAF phi4 indicates better coreference clustering. They state the model performance is reasonable given the dataset size; identification of mentions achieved relatively high scores while clustering performance decreased; zero-shot cross-lingual performance from English was poor, demonstrating need for language-specific resources.",
+    "baseline_results": "Reported test-average F1 (Avg column, Table 5) for BERT-base by domain: Biography 74.03; Story 45.38; Novel 44.10; Descriptive 43.35. Identification of Mentions F1 (Table 4) for BERT-base by domain: Biography 90.00; Story 73.79; Novel 73.43; Descriptive 62.66. Multilingual BERT (zero-shot) average F1 scores on test were very low (e.g., Biography 0.88; Story 1.19; Novel 1.40; Descriptive 1.47). Additional model variants (c2f + Glove, c2f + Fasttext) and parameter settings and their precision/recall/F1 are reported in Tables 4 and 5.",
+    "validation": "Two annotators independently annotated documents; disagreements were resolved by consulting a third annotator to produce adjudicated gold annotations. Based on the adjudicated gold, individual annotations achieved an average MUC score of 78.3 on the combined dataset while the combined inter-annotator MUC score was 67.6. The authors note that the disagreement resolution process was not adequately documented."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Governance"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Governance",
+          "subcategory": [
+            "Lack of data transparency"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

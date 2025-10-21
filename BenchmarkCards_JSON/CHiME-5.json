@@ -1,0 +1,107 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CHiME-5 Challenge",
+    "abbreviation": "CHiME-5",
+    "overview": "The CHiME-5 Challenge considers the task of distant multi-microphone conversational automatic speech recognition (ASR) in real home environments. Speech material was elicited using a 4-people dinner party scenario recorded by 6 Kinect microphone arrays and 4 binaural microphone pairs in 20 homes. The challenge features a single-array track and a multiple-array track and provides detailed baseline systems for array synchronization, speech enhancement, conventional ASR and end-to-end ASR.",
+    "data_type": "multimodal (multi-microphone audio: Kinect microphone arrays and binaural recordings; video; reference transcriptions)",
+    "domains": [
+      "Natural Language Processing",
+      "Speech and Audio Processing"
+    ],
+    "languages": [],
+    "similar_benchmarks": [
+      "CHiME-1",
+      "CHiME-2",
+      "CHiME-4",
+      "DICIT",
+      "Sweet-Home",
+      "DIRHA",
+      "voiceHome",
+      "ICSI",
+      "CHIL",
+      "AMI",
+      "LLSEC",
+      "COSINE",
+      "Sheffield Wargames corpus",
+      "Santa Barbara Corpus of Spoken American English"
+    ],
+    "resources": [
+      "https://github.com/kaldi-asr/kaldi/tree/master/egs/chime5/s5",
+      "http://www.speech.cs.cmu.edu/cgi-bin/cmudict",
+      "https://github.com/AdolfVonKleist/Phonetisaurus",
+      "http://www.speech.sri.com/projects/srilm/",
+      "https://github.com/espnet/espnet"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Advance robust ASR by providing a large-scale corpus of real multi-speaker conversational speech recorded via commercially available multi-microphone hardware in multiple homes, and to evaluate systems on distant multi-microphone conversational ASR with standardized tasks, tracks, and baselines.",
+    "audience": [
+      "ML Researchers",
+      "Speech and Audio Processing Researchers",
+      "ASR System Developers",
+      "Challenge Participants"
+    ],
+    "tasks": [
+      "Automatic Speech Recognition",
+      "Speech Enhancement",
+      "Array Synchronization"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Recordings of twenty separate dinner parties in 20 real homes. Each party has four participants and was recorded with six Microsoft Kinect devices (each with a 4-microphone linear array and a camera) and four binaural Soundman OKM II Classic Studio microphones worn by participants. Raw microphone signals and video were recorded; binaural audio was recorded on Tascam DR-05 recorders. Reference transcriptions were produced per speaker using the binaural recordings.",
+    "size": "Train: 16 parties, 32 speakers, 40:33 hours, 79,980 utterances; Dev: 2 parties, 8 speakers, 4:27 hours, 7,440 utterances; Eval: 2 parties, 8 speakers, 5:12 hours, 11,028 utterances.",
+    "format": "Raw microphone signals and video; JSON transcription files containing utterance start/end times and metadata.",
+    "annotation": "Fully manually produced reference transcriptions per speaker using binaural recordings with utterance start and end times; transcriptions may include tags: [noise], [inaudible], [laughs], [redacted]."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics (Word Error Rate) reported by participants",
+      "Baseline system evaluations (conventional HMM/GMM and LF-MMI TDNN ASR via Kaldi; end-to-end ASR via ESPnet)",
+      "Submission of Kaldi-format lattices and technical system descriptions for validation and ranking"
+    ],
+    "metrics": [
+      "Word Error Rate (WER)",
+      "WER broken down by session and location"
+    ],
+    "calculation": "Word Error Rate (WER) computed on submitted system outputs compared to the provided reference transcriptions. Participants submit Kaldi-format lattices to allow validation of scores.",
+    "interpretation": "Systems are ranked based on performance (WER) on the evaluation data. Ranking A focuses on systems constrained to conventional acoustic modeling with the supplied official language model; Ranking B includes all other systems (e.g., end-to-end or systems with modified lexicon/language model).",
+    "baseline_results": "Development set (binaural/oracle): conventional (GMM) WER 72.8; conventional (LF-MMI TDNN) WER 47.9; end-to-end WER 67.2. Development set (reference Kinect array with beamforming): conventional (GMM) WER 91.7; conventional (LF-MMI TDNN) WER 81.3; end-to-end WER 94.7.",
+    "validation": "Participants must submit Kaldi-format lattices for validation. Dataset is split into disjoint training, development and evaluation sets with no speaker overlap. Development and evaluation transcriptions contain speaker location and reference array for each utterance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Intellectual Property",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Intellectual Property",
+          "subcategory": [
+            "Copyright infringement"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": [
+      "Risk of exposing personally identifying information (some personally identifying material was redacted post-recording as part of the consent process)"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Some personally identifying material was redacted post-recording as part of the consent process.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Some personally identifying material was redacted post-recording as part of the consent process.",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DevEval",
+    "abbreviation": "N/A",
+    "overview": "DevEval is a new code generation benchmark that aligns with real-world code repositories. It contains 1,874 testing samples from 117 repositories, covering 10 popular domains, and is designed to facilitate the evaluation of Large Language Models' coding abilities.",
+    "data_type": "function code samples with requirements and dependencies",
+    "domains": [
+      "Software Development"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "HumanEval",
+      "CoNaLA",
+      "CoderEval"
+    ],
+    "resources": [
+      "https://github.com/seketeam/DevEval"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of DevEval is to evaluate the coding abilities of Large Language Models in the context of repository-level code generation.",
+    "audience": [
+      "ML Researchers",
+      "AI Practitioners",
+      "Software Developers"
+    ],
+    "tasks": [
+      "Code Generation"
+    ],
+    "limitations": "DevEval is a monolingual benchmark and ignores other programming languages.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Derived from 117 real-world code repositories collected from PyPI.",
+    "size": "1,874 samples",
+    "format": "JSON",
+    "annotation": "Annotated by 13 developers with natural language descriptions, original code requirements, and reference dependencies."
+  },
+  "methodology": {
+    "methods": [
+      "Repository-level code generation evaluation"
+    ],
+    "metrics": [
+      "Pass@k",
+      "Recall@k"
+    ],
+    "calculation": "Pass@k is calculated based on the number of programs that pass predefined test cases out of the total generated programs.",
+    "interpretation": "Higher Pass@k and Recall@k values indicate better coding performance of the model.",
+    "baseline_results": null,
+    "validation": "Evaluated against 8 popular LLMs to determine performance in real-world coding scenarios."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

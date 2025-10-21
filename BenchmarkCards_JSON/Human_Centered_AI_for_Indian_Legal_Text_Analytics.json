@@ -1,0 +1,75 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Human Centered AI for Indian Legal Text Analytics",
+    "abbreviation": "N/A",
+    "overview": "This paper introduces a novel dataset for Human Centered AI (HCAI) in Legal Text Analytics (LTA), focusing on integrating human expertise to enhance the performance of Large Language Models (LLMs) in legal tasks.",
+    "data_type": "question-answering pairs, text",
+    "domains": [
+      "Natural Language Processing",
+      "Legal"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "LegalBench"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enhance the performance of legal text analytics by leveraging human inputs alongside Large Language Models.",
+    "audience": [
+      "Legal Professionals",
+      "Law Students",
+      "Researchers"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Judgment Summarization",
+      "Petition Drafting",
+      "Case Similarity"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Created from scraping the web for court cases, judgements, and other legal documents. Includes human annotations.",
+    "size": "2,286 documents, 895,398 sentences, 801,604 triples",
+    "format": "JSON",
+    "annotation": "Manually annotated using curated dictionaries."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "ROC-AUC"
+    ],
+    "calculation": "Calculating the ROC-AUC score to evaluate model performance on tasks.",
+    "interpretation": "Higher ROC-AUC scores indicate better predictive performance.",
+    "baseline_results": "LLaMA-2-70B-Chat yielded a ROC-AUC score of 0.566 on the Case Similarity task.",
+    "validation": "The performance of models is compared against existing baselines on standard legal tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "JaPOC (Japanese Post-OCR Correction)",
+    "abbreviation": "JaPOC",
+    "overview": "We proposed JaPOC, a post-OCR correction benchmark based on Japanese vouchers, which contains real-world errors from two different OCR services, providing various characteristics to assist future research.",
+    "data_type": "image-text pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Japanese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/FastAccounting/ocr_correction_benchmark"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To create a benchmark for post-OCR correction methods for Japanese vouchers.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Text Correction"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Real-world document images and annotations based on OCR results from various services.",
+    "size": "11,000 voucher images",
+    "format": "N/A",
+    "annotation": "Annotated by a human specializing in text recognition."
+  },
+  "methodology": {
+    "methods": [
+      "Language Model Evaluation",
+      "Rule-based Evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Measured based on word-level character matching between OCR results and ground truth.",
+    "interpretation": "Results are interpreted in terms of improvement in recognition accuracy due to post-OCR correction.",
+    "baseline_results": "Baseline models using T5 and a rule-based method were evaluated with accuracy metrics showing improvements.",
+    "validation": "Validation was performed using separate train, validation, and test datasets based on the image samples."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Removed personal information such as company representative names from the dataset.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Used images with permission from invoice documents.",
+    "compliance_with_regulations": "N/A"
+  }
+}

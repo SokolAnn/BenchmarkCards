@@ -1,0 +1,78 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "WILDIFE VAL",
+    "abbreviation": "N/A",
+    "overview": "WILDIFE VAL is a large-scale dataset of 12K real user instructions with diverse, multi-constraint conditions, aimed at benchmarking the instruction-following capabilities of leading LLMs in complex, realistic scenarios.",
+    "data_type": "constrained generation tasks",
+    "domains": [
+      "Natural Language Processing",
+      "Education",
+      "Entertainment",
+      "Creative Writing",
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "IFEval",
+      "FollowBench",
+      "InfoBench"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/gililior/wild-if-eval",
+      "https://github.com/gililior/wild-if-eval-code"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the ability of LLMs to follow realistic multi-constrained instructions.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Constrained Text Generation",
+      "Instruction Following"
+    ],
+    "limitations": "The dataset reflects only the types of tasks that interest the platform users, potentially leading to demographic bias.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Real user instructions collected from Chatbot Arena.",
+    "size": "12,000 instructions",
+    "format": "N/A",
+    "annotation": "User-generated instructions were decomposed into constraints for evaluation."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "LLM-based evaluation"
+    ],
+    "metrics": [
+      "Fraction of constraints fulfilled"
+    ],
+    "calculation": "Score is calculated as the relative fraction of fulfilled constraints per task.",
+    "interpretation": "Higher scores indicate better performance in following constraints.",
+    "baseline_results": null,
+    "validation": "High agreement with human annotations (75%) and significant correlations with existing benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "The dataset's user instructions may not represent diverse demographic groups due to its sourcing.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

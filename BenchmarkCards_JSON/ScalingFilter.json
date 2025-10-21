@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ScalingFilter",
+    "abbreviation": "N/A",
+    "overview": "ScalingFilter is a novel approach that evaluates text quality based on the perplexity difference between two language models trained on the same data, eliminating the influence of reference datasets.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To propose a quality filtering method that assesses text quality without the biases introduced by reference datasets, thereby enhancing diversity and performance of language models.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Data Curators"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Question Answering"
+    ],
+    "limitations": "ScalingFilter relies on perplexity difference which may miss nuanced aspects of text quality like factual accuracy or bias. It requires significant computational resources for large datasets.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Five CommonCrawl dumps processed through the CCNet pipeline, yielding 500 GB of text data for quality filtering experiments.",
+    "size": "500 GB",
+    "format": "Raw text files",
+    "annotation": "Calculated quality factors based on perplexity differences using trained language models."
+  },
+  "methodology": {
+    "methods": [
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Zero-shot accuracy"
+    ],
+    "calculation": "Metrics calculated by training a 1.3B model on filtered data and evaluating performance on several downstream tasks.",
+    "interpretation": "Higher zero-shot performance and semantic diversity indicate better data quality and diversity.",
+    "baseline_results": "Compared with existing quality filtering methods and achieved improvements in accuracy and semantic diversity.",
+    "validation": "Results compared against baseline, random selection, and existing methods for performance verification."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Potential for biased model outputs due to inherent biases in filtered data."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

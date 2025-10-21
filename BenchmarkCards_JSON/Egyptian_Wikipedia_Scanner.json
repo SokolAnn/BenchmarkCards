@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Egyptian Wikipedia Scanner",
+    "abbreviation": "N/A",
+    "overview": "The Egyptian Wikipedia Scanner is an online application developed to identify template-translated articles in the Egyptian Arabic Wikipedia using metadata and machine learning classifiers.",
+    "data_type": "filtered and labeled datasets",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Arabic"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/SaiedAlshahrani/Egyptian-Wikipedia-Scanner",
+      "https://egyptian-wikipedia-scanner.streamlit.app"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To mitigate the problem of low-quality content produced by template-based translations in the Egyptian Arabic Wikipedia by providing a detection system for researchers and practitioners.",
+    "audience": [
+      "ML Researchers",
+      "NLP Practitioners",
+      "Wikipedia Contributors"
+    ],
+    "tasks": [
+      "Text Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Articles from the Egyptian Arabic Wikipedia, filtered for quality and metadata-based classification.",
+    "size": "736,107 articles",
+    "format": "N/A",
+    "annotation": "Data labeled manually based on the analysis of articles' metadata."
+  },
+  "methodology": {
+    "methods": [
+      "Multivariate Classification",
+      "Machine Learning"
+    ],
+    "metrics": [
+      "Accuracy",
+      "ROC-AUC"
+    ],
+    "calculation": "Metrics calculated using stratified K-Folds cross-validation on training and testing splits.",
+    "interpretation": "High accuracy rates indicate effective identification of template-translated articles.",
+    "baseline_results": "Classifiers achieve performance accuracy ranging from 90% to 100%.",
+    "validation": "Performance evaluated through cross-validation techniques."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "The model might misrepresent Egyptian culture by relying heavily on template-translated content."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "MIT License",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

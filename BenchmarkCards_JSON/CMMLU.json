@@ -1,0 +1,99 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CMMLU (Measuring Massive Multitask Language Understanding in Chinese)",
+    "abbreviation": "CMMLU",
+    "overview": "CMMLU is a comprehensive Chinese benchmark designed to evaluate the advanced knowledge and reasoning abilities of large language models in a Chinese linguistic and cultural context. It covers a wide range of subjects (67 topics) from elementary to advanced professional levels, including China-specific and general world knowledge. The benchmark fills the gap in evaluating the knowledge and reasoning capabilities of large language models in the Chinese context.",
+    "data_type": "text (multiple-choice question-answer pairs; 4 choices per question)",
+    "domains": [
+      "Natural Sciences",
+      "Social Sciences",
+      "Engineering",
+      "Humanities",
+      "Education"
+    ],
+    "languages": [
+      "Mandarin Chinese"
+    ],
+    "similar_benchmarks": [
+      "MMLU",
+      "C-Eval",
+      "M3KE",
+      "ACLUE",
+      "MMCU",
+      "AGIEval",
+      "CLUE",
+      "SuperCLUE"
+    ],
+    "resources": [
+      "https://github.com/haonan-li/CMMLU",
+      "https://arxiv.org/abs/2306.09212v2"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive multitask test suite for Mandarin Chinese that evaluates the knowledge and reasoning capabilities of large language models across diverse subjects and Chinese linguistic/cultural contexts.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering (Multiple-choice)",
+      "Knowledge and Reasoning Evaluation"
+    ],
+    "limitations": "The authors estimate around 2% noise in the data (correct answer not present or incorrectly labeled). Many tasks are China-specific and their answers may not be universally applicable in other regions. Some tasks cannot be easily translated from other languages due to contextual nuances.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Questions and answers were manually collected by four annotators (undergraduate or higher) from freely available resources, mock exam questions, quiz shows, and non-publicly available materials; more than 80% of data was crawled from PDFs (after OCR) to reduce occurrence in LLM training data.",
+    "size": "11,528 questions across 67 subjects",
+    "format": "N/A",
+    "annotation": "Manual collection by four annotators (undergraduate or higher education), paid 50 CNY per hour."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Zero-shot and few-shot evaluation",
+      "Next-token prediction (logit comparison over tokens 'A','B','C','D')",
+      "Free generation with regex extraction",
+      "Perplexity comparison (discussed)"
+    ],
+    "metrics": [
+      "Accuracy (macro average over subjects)",
+      "Proportion of unmatchable outputs when using regex extraction (% E)"
+    ],
+    "calculation": "For open-source models: obtain logits for next token and compare probabilities among tokens 'A','B','C','D' and select the highest-probability token. For commercial models (GPT-4, ChatGPT): use free generation and extract choices via regular expressions. Report macro average accuracy over subjects and per-subject accuracies.",
+    "interpretation": "Results are interpreted relative to random accuracy of 25% and the Chinese exam pass mark of 60% (authors note most models struggle to reach 60%; GPT4 achieves ~71% average). Higher accuracy indicates better Chinese knowledge and reasoning as measured by CMMLU.",
+    "baseline_results": "Key reported five-shot overall accuracies: GPT4: 70.95%; ChatGPT: 55.51%; Baichuan2-13B: 61.92%; Random baseline: 25.00%. (Numerical results for many models reported in paper tables.)",
+    "validation": "Quality check: randomly sampled 5% of questions with answers per subject and performed detailed verification through online resources; authors estimate ~2% noise. Each subject has at least 105 questions; split into a few-shot development set with 5 questions and a test set with >100 questions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Building for Tomorrow: Assessing the Temporal Persistence of Text Classifiers",
+    "abbreviation": "N/A",
+    "overview": "This paper establishes an evaluation setup for assessing the temporal persistence of text classification models, performs longitudinal classification experiments on three datasets spanning between 6 and 19 years, and proposes methods to predict how model performance decays over time based on model behaviour in restricted timeframes and dataset linguistic characteristics.",
+    "data_type": "text (longitudinal labeled text for classification: tweets and book reviews)",
+    "domains": [
+      "Natural Language Processing",
+      "Social Media",
+      "E-commerce"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ACM-DL",
+      "MedLine",
+      "NYTimes",
+      "RCV1",
+      "ARR",
+      "Haspeede",
+      "TWITA",
+      "MultiFC",
+      "Reddit Time Corpus (RTC)",
+      "WMT",
+      "ARXIV",
+      "CUSTOMNEWS"
+    ],
+    "resources": [
+      "http://jmcauley.ucsd.edu/data/amazon/",
+      "https://huggingface.co/bert-base-uncased",
+      "https://huggingface.co/roberta-base",
+      "https://huggingface.co/gpt2",
+      "https://nlp.stanford.edu/projects/glove/",
+      "https://fasttext.cc/docs/en/pretrained-vectors.html",
+      "https://code.google.com/archive/p/word2vec",
+      "https://aclanthology.org/D19-1018",
+      "http://www.zubiaga.org/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Assessing how different factors (representation models, classification algorithms, dataset characteristics) affect text classification performance over time, and determining whether temporal performance can be predicted when annotated data covers only a small timeframe.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Stance Detection",
+      "Sentiment Analysis",
+      "Review Rating Prediction"
+    ],
+    "limitations": "The study focuses on binary classification setups, does not perform extensive hyperparameter tuning, and aggregated results for larger temporal gaps can be less stable due to fewer experiments for large gaps.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Three longitudinal datasets: Gender Equality Stance Detection (GESD) — tweets retrieved via Twitter API using hashtags; Temporal Multilingual Sentiment Analysis (TESA) — tweets labeled via emojis/emoticons; Amazon Books Rating Reviews (ABRR) — Amazon book reviews (Ni et al., 2019).",
+    "size": "GESD total 288,000 (48,000 per year, time range 2014-2019); TESA total 798,400 (99,800 per year, time range 2013-2020); ABRR total 497,800 (26,200 per year, time range 2000-2018).",
+    "format": "N/A",
+    "annotation": "GESD: Aggregated hashtags (distant supervision) indicating stance (support/oppose); TESA: Aggregated emojis/emoticons (distant supervision) indicating sentiment (positive/negative); ABRR: User-provided review ratings (originally 1-5; sampled to binary 1 or 5 for this study)."
+  },
+  "methodology": {
+    "methods": [
+      "Longitudinal temporal-split evaluation across yearly slices",
+      "Temporal Gap aggregation (grouping train-test year pairs by year difference)",
+      "Use of multiple pretrained language representations (static and contextual) and a range of classification algorithms (traditional and deep learning)",
+      "Lexical analyses (familiarity score, Jaccard index, TF-IDF similarity, information rate)",
+      "Temporal contextual analysis via time-specific masked language model fine-tuning and cosine similarity of aspect embeddings"
+    ],
+    "metrics": [
+      "Macro-averaged F1-score (F-macro)",
+      "Performance Change Metric P(G) (average F-macro over all train-test pairs with temporal gap G)",
+      "Pearson correlation coefficient (used to correlate lexical measures with model performance)"
+    ],
+    "calculation": "Model Evaluation Metric: For each training year i and test year j, compute macro-averaged F1-score (F-macro). Performance Change Metric P(G) is computed as the average of F-macro over all pairs (i,j) such that j - i = G.",
+    "interpretation": "Higher F-macro indicates better model performance on a given train-test pair. Smaller decreases in P(G) as |G| increases indicate better temporal persistence. In TP/FP analysis, optimal results minimize false positive rates and maximize true positive rates (points in top-left of the plotted grids are ideal). Familiarity score and other lexical measures positively correlate with preserved performance over time.",
+    "baseline_results": "The best-performing combination reported is contextual word representations with a Hierarchical Attention Network (CWRs-HAN). Example explicit result: BERT representation drops by more than 15% for GESD when testing on data 5 years in the past and by more than 10% for data 5 years in the future. (Results aggregated and averaged across runs; reported experiment averages are over three runs.)",
+    "validation": "Early stopping using a held-out development set from the same training year; stratified per-year splits (75% train, 10% dev, 15% test); reported results are averages of three runs. Temporal validation is performed by aggregating performance across all train-test year pairs grouped by temporal gap."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy",
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

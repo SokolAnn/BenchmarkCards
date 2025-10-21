@@ -1,0 +1,100 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Long Code Arena",
+    "abbreviation": "N/A",
+    "overview": "Long Code Arena is a suite of six benchmarks for code processing tasks that require project-wide context, including library-based code generation, CI builds repair, project-level code completion, commit message generation, bug localization, and module summarization.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "HumanEval",
+      "MBPP",
+      "RepoEval",
+      "RepoBench"
+    ],
+    "resources": [
+      "https://huggingface.co/spaces/JetBrains-Research/long-code-arena",
+      "https://github.com/JetBrains-Research/lca-baselines"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To stimulate research in ML-based solutions for realistic software engineering tasks.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Library-based Code Generation",
+      "CI Builds Repair",
+      "Project-Level Code Completion",
+      "Commit Message Generation",
+      "Bug Localization",
+      "Module Summarization"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Open-source repositories from GitHub.",
+    "size": "7,479 examples",
+    "format": "JSON",
+    "annotation": "Manual verification and filtering."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "ChrF",
+      "BLEU Score",
+      "ROUGE-L",
+      "API Recall"
+    ],
+    "calculation": "Metrics are calculated based on comparisons of generated outputs against the ground truth.",
+    "interpretation": "Higher scores indicate better performance in generating accurate and context-aware code or documentation.",
+    "baseline_results": "GPT-4 shows the best performance in multiple tasks, whereas models like CodeLlama-70B show poorer results.",
+    "validation": "Metrics are validated using manually curated datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "The datasets are re-distributed under the licenses they were originally distributed with on GitHub (permissive licenses).",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

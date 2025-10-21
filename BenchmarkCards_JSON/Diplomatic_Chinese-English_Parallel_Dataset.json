@@ -1,0 +1,98 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Diplomatic Chinese-English Parallel Dataset",
+    "abbreviation": "N/A",
+    "overview": "A high-quality diplomatic Chinese-English parallel dataset consisting of 5,528 parallel sentences to evaluate the effectiveness of the Adaptive Few-Shot Prompting framework in machine translation.",
+    "data_type": "parallel sentences",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Chinese",
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To automatically select suitable translation demonstrations for various source input sentences to elicit the translation capability of an LLM for better machine translation.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Machine Translation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from speeches made by spokespersons during routine press conferences regarding diplomatic issues, and publicly accessible data.",
+    "size": "5,528 parallel sentences",
+    "format": "N/A",
+    "annotation": "Translated by professional translators from specialized institutions."
+  },
+  "methodology": {
+    "methods": [
+      "Hybrid Retrieval Module",
+      "Reranking"
+    ],
+    "metrics": [
+      "BLEU",
+      "METEOR",
+      "ROUGE-1",
+      "ROUGE-2",
+      "ROUGE-L",
+      "CHRF",
+      "COMET-Kiwi"
+    ],
+    "calculation": "Suboptimal examples or instructions can degenerate translation outcomes.",
+    "interpretation": "Higher scores indicate better translation quality.",
+    "baseline_results": null,
+    "validation": "Extensive experiments evaluated both our proposed dataset and the United Nations Parallel Corpus."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Privacy",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": []
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

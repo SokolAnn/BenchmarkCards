@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MalwareBench",
+    "abbreviation": "N/A",
+    "overview": "MalwareBench is a benchmark dataset containing 3,520 jailbreaking prompts for malicious code generation, designed to evaluate LLM robustness against such threats. It encompasses 320 manually crafted malicious code generation requirements across 6 domains and 29 categories.",
+    "data_type": "jailbreaking prompts",
+    "domains": [
+      "Software Security"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "RMCBench"
+    ],
+    "resources": [
+      "https://github.com/MAIL-Tele-AI/MalwareBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the security capabilities of large language models in generating malicious code and their vulnerability to jailbreak attacks.",
+    "audience": [
+      "ML Researchers",
+      "Security Practitioners"
+    ],
+    "tasks": [
+      "Malicious Code Generation"
+    ],
+    "limitations": "Only Qwen - Turbo used for generating jailbreaking questions; limited scope of 320 requirements.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "320 manually crafted malicious requirements covering multiple programming languages and operating systems.",
+    "size": "3,520 prompts",
+    "format": "N/A",
+    "annotation": "Manually crafted by experts in the field."
+  },
+  "methodology": {
+    "methods": [
+      "Direct input evaluation",
+      "Jailbreak prompt mutation"
+    ],
+    "metrics": [
+      "Refusal rate",
+      "Quality metric score ranging from 1 to 4"
+    ],
+    "calculation": "Evaluation involves scoring based on whether models refuse to answer and the quality of their responses.",
+    "interpretation": "Scores indicate the models' ability to reject malicious inputs and quality of responses from irrelevant to well-developed harmful code.",
+    "baseline_results": "Average rejection rate of malicious content is 60.93%, dropping to 39.92% under jailbreak methods.",
+    "validation": "Evaluated against 29 models using LLMs, including mainstream and open-source."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Robustness",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Aims to understand the vulnerabilities of LLMs in generating harmful content."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "Conducted in compliance with ethical standards and relevant regulations."
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Human Oversight in Classifying Climate Misinformation",
+    "abbreviation": "N/A",
+    "overview": "This paper benchmarks the performance of LLMs, both open-source and proprietary, in the classification of false or misleading claims about climate change using expert-annotated datasets.",
+    "data_type": "paragraphs of text with expert annotations",
+    "domains": [
+      "Natural Language Processing",
+      "Climate Science"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "CARDS (Computer Assisted Recognition of Denial and Skepticism)"
+    ],
+    "resources": [
+      "https://github.com/nwccpp/climatechange"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate LLMs for the classification of climate misinformation and to highlight the necessity of human oversight in such governance tasks.",
+    "audience": [
+      "AI Researchers",
+      "Climate Scientists",
+      "Policymakers"
+    ],
+    "tasks": [
+      "False Claims Classification",
+      "Misinformation Detection"
+    ],
+    "limitations": "The dataset is in English and potentially biased towards claims from climate skeptic sources.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Public expert-annotated dataset of climate misinformation claims and curated social media content.",
+    "size": "23,436 training examples, 2,605 validation examples, 2,904 test examples",
+    "format": "JSONL",
+    "annotation": "Annotated by climate communication experts"
+  },
+  "methodology": {
+    "methods": [
+      "Zero-shot classification",
+      "Fine-tuning on expert-annotated data"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "Metrics were calculated based on the performance of LLMs in classifying claims compared to expert annotations.",
+    "interpretation": "Higher F1, precision, and recall indicate better accuracy in classifying false or misleading claims.",
+    "baseline_results": "Fine-tuned GPT-3.5-turbo achieved F1 score of 0.84, outperforming other models.",
+    "validation": "Results validated against expert annotations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Potential misuse in the spread of disinformation"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC BY 4.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

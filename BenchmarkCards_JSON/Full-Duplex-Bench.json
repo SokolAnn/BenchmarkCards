@@ -1,0 +1,74 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Full-Duplex-Bench",
+    "abbreviation": "N/A",
+    "overview": "Full-Duplex-Bench is a benchmark designed to evaluate critical aspects of full-duplex spoken dialogue models, focusing on interaction dimensions such as pause handling, backchanneling, smooth turn-taking, and user interruption management.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/DanielLin94144/Full-Duplex-Bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a systematic and reproducible evaluation framework for full-duplex spoken dialogue models.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Turn-Taking",
+      "Backchanneling",
+      "Pause Handling",
+      "User Interruption"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Candor and ICC datasets, along with synthetic data generated using GPT-4o.",
+    "size": "1,000 examples",
+    "format": "JSON",
+    "annotation": "Manually reviewed with dual-channel evidence."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics for evaluation",
+      "Human evaluation for backchanneling dynamics"
+    ],
+    "metrics": [
+      "Takeover Rate (TOR)",
+      "Backchannel Frequency (Freq)",
+      "Jensen-Shannon Divergence (JSD)",
+      "Average Response Latency"
+    ],
+    "calculation": "Metrics are computed based on the analysis of time-aligned transcriptions and recorded interactions.",
+    "interpretation": "Lower TOR indicates better management of user turns, and higher frequencies of backchanneling suggest more engaged dialogue.",
+    "baseline_results": null,
+    "validation": "The benchmark has been systematically tested against various full-duplex models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Dataset, Evaluation, and Benchmark for Deception Reasoning",
+    "abbreviation": "N/A",
+    "overview": "We extend deception detection to deception reasoning, further providing objective evidence to support subjective judgment. Specifically, we provide potential lies and basic facts and then analyze why this sentence may be a lie by combining factual inconsistencies and intent behind them. To facilitate subsequent research, we construct a dataset and define evaluation metrics. This task can serve as a benchmark for evaluating the complex reasoning capability of large language models (LLMs).",
+    "data_type": "text (multi-turn interrogation dialogues with annotated potential lies and reasoning explanations)",
+    "domains": [
+      "Natural Language Processing",
+      "Legal"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "CAIL2018",
+      "IEMOCAP"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Extend deception detection to deception reasoning by providing potential lies and basic facts and analyzing why a sentence may be a lie (considering factual inconsistencies and intent); provide a dataset and evaluation metrics to serve as a benchmark for evaluating complex reasoning capability of LLMs.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Legal practitioners"
+    ],
+    "tasks": [
+      "Deception Reasoning",
+      "Open-ended Question Answering",
+      "Reasoning (commonsense/logical)"
+    ],
+    "limitations": "The dataset relies on GPT-4 for synthesis so only a subset of legal instruments from CAIL2018 was used; evaluation covers many but not all LLMs; the work focuses on the reasonableness of reasoning rather than the authenticity of deceptive behaviors and primarily uses synthetic dialogues; future work will consider real interrogation dialogues and multimodal data.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Legal instruments sampled from CAIL2018; dialogues synthesized using GPT-4 and GPT-3.5 based on selected legal instruments; potential lies manually selected and analyzed.",
+    "size": "191 dialogues",
+    "format": "N/A",
+    "annotation": "Manual selection of potential lies and manual reasoning annotations by authors/annotators; post-filtering to remove unnatural dialogues; automatic generation steps (GPT-4/GPT-3.5) used in synthesis."
+  },
+  "methodology": {
+    "methods": [
+      "Automatic evaluation (GPT-4 as evaluator)",
+      "Manual evaluation by human annotators (8 annotators)",
+      "Automatic generation of dialogues using GPT-4 and GPT-3.5",
+      "Two-stage target content and action extraction (GPT-4/GPT-3.5)"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Completeness",
+      "Logic",
+      "Depth"
+    ],
+    "calculation": "Each metric is scored on a 0-10 scale with detailed scoring rubrics provided in Tables 6–9 of the paper. Automatic evaluation uses GPT-4 as the evaluator with the provided prompts; manual evaluation is performed by human annotators. Scores are reported per metric and can be summed.",
+    "interpretation": "Higher scores indicate better alignment with facts (Accuracy), more comprehensive coverage (Completeness), stronger logical coherence (Logic), and deeper analysis (Depth). Detailed meanings for score ranges are provided in Tables 6–9.",
+    "baseline_results": "Table 3 reports automatic and manual evaluation results for multiple LLMs (ChatGLM2-6B, WizardLM-13B, Baichuan2-13B, ERINE3.5, Qwen-14B, Claude3-Haiku, GPT-3.5, ERINE4.0, GLM-4-9B, Gemini-1.5-Pro, Qwen2-7B). Example manual results: GLM-4-9B manual Acc.7.56 Com.7.54 Log.7.59 Dep.7.55 Sum 30.24; Qwen2-7B manual Acc.7.41 Com.7.49 Log.7.48 Dep.7.41 Sum 29.79. (Full per-model scores are listed in Table 3.)",
+    "validation": "Validation includes manual evaluation by 8 annotators and comparison with the automatic GPT-4 evaluator via Pearson correlation coefficients (PCCs). Reported PCC scores between automatic and manual evaluations are: 0.81, 0.87, 0.80, 0.89, 0.86 (for Accuracy, Completeness, Logic, Depth, Sum respectively). Dialogue naturalness was evaluated by comparing 10 real dialogues from IEMOCAP and 10 synthetic dialogues: automatic average scores: real 4.00, synthetic 3.88; manual average synthetic score 3.70. Ablation study shows two-stage + GPT-4 achieves target accuracy 98 and action complexity 0 on a sampled evaluation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Societal Impact"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on affected communities"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Legal instruments used for dataset construction may provide guidance to criminals."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

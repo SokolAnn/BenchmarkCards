@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ForensicsData",
+    "abbreviation": "N/A",
+    "overview": "ForensicsData is an extensive Question-Context-Answer (Q-C-A) dataset sourced from actual malware analysis reports, consisting of more than 5,000 Q-C-A triplets aimed at advancing digital forensics by enabling reproducible experiments and fostering collaboration.",
+    "data_type": "question-context-answer pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Cybersecurity",
+      "Digital Forensics"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "N/A"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2509.05331"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a structured and comprehensive Q-C-A dataset for the digital forensics community to support research and tool development.",
+    "audience": [
+      "Digital Forensics Researchers",
+      "Cybersecurity Professionals"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Data Annotation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "1,500 execution reports sourced from the ANY.RUN malware analysis platform, which provides detailed logs of process execution, file system activity, and behavioral indicators.",
+    "size": "5,000 Q-C-A triplets",
+    "format": "JSON",
+    "annotation": "Automatically generated via a multi-layered LLM annotation pipeline."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Logical Validity",
+      "Relevance",
+      "Completeness"
+    ],
+    "calculation": "Metrics assessed through a structured evaluation that measures the logical soundness, relevance to questions, and completeness of answers.",
+    "interpretation": "Results are interpreted based on logical correctness, relevance of answers to their questions, and the completeness of the information provided.",
+    "baseline_results": "N/A",
+    "validation": "Multi-layered validation involving format validation, deduplication, similarity filtering, and LLM-as-Judge review."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset was generated synthetically to avoid issues related to the privacy of actual data.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "The dataset generation complies with privacy regulations by not using real sensitive data."
+  }
+}

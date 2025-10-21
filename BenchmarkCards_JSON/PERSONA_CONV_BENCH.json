@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PERSONA CONV BENCH (Personalized Conversational Benchmark)",
+    "abbreviation": "PERSONA CONV BENCH",
+    "overview": "PERSONA CONV BENCH is a large-scale benchmark for evaluating personalized reasoning and generation in multi-turn conversations with large language models (LLMs). It provides three core tasks: sentence classification, impact regression, and user-centric text generation across 10 diverse Reddit-based domains.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "LaMP",
+      "LongLaMP",
+      "PGraphRAG"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/PERSONABench/PERSONA-Bench",
+      "https://github.com/PERSONA-bench/PERSONA/tree/Latest"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To facilitate research on LLMs that can adapt to individuals' conversational styles, track long-term context, and generate more contextually rich and engaging responses.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Sentiment Classification",
+      "Impact Forecasting",
+      "Next-Text Generation"
+    ],
+    "limitations": "Our benchmark draws from a specific set of online discussion domains, and some tasks may not generalize to highly specialized or low-resource settings.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Crawled from Reddit using a multithreaded scraper focused on high-engagement discussion domains.",
+    "size": "19,215 posts with over 111,239 conversations",
+    "format": "JSON",
+    "annotation": "Automatically collected based on user interactions and engagement metrics."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "Matthews Correlation Coefficient (MCC)",
+      "Root Mean Squared Error (RMSE)",
+      "Mean Absolute Error (MAE)",
+      "ROUGE-1",
+      "ROUGE-L",
+      "BLEU",
+      "METEOR",
+      "SBERT"
+    ],
+    "calculation": "Metrics are calculated based on model predictions against ground-truth targets, focusing on how well the model predicts sentiment, scores, or text generation.",
+    "interpretation": "Higher scores indicate better performance in estimating sentiment, predicting scores, and generating contextually relevant responses.",
+    "baseline_results": "Various LLMs were benchmarked, showing significant performance gains when incorporating personalized conversational context.",
+    "validation": "Performance evaluated under a zero-shot setting without task-specific fine-tuning."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Privacy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "The benchmark includes demographic considerations in the dataset, focusing on user preferences and historical context.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data was collected in compliance with platform terms and is intended strictly for non-commercial research use.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CE-Bench (Contrastive Evaluation Benchmark)",
+    "abbreviation": "CE-Bench",
+    "overview": "CE-Bench is a novel, lightweight contrastive evaluation benchmark for sparse autoencoders, designed to measure interpretability by analyzing neuron activation patterns across semantically contrastive contexts.",
+    "data_type": "contrastive story pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SAEBench"
+    ],
+    "resources": [
+      "https://github.com/jbloomAus/SAELens",
+      "https://huggingface.co/datasets/CE-Bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of CE-Bench is to provide a reliable and reproducible evaluation framework for sparse autoencoders without reliance on external language models.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Interpretability Evaluation"
+    ],
+    "limitations": "The dataset may bias the evaluation toward models that better capture GPT-4's stylistic and semantic regularities, and its generalizability to varied contexts remains uncertain.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed using curated contrastive story pairs generated with GPT-4 and human validation.",
+    "size": "5,000 pairs",
+    "format": "JSON",
+    "annotation": "Semi-automated with human validation."
+  },
+  "methodology": {
+    "methods": [
+      "Correlation analysis with existing benchmarks",
+      "Contrastive scoring",
+      "Sparsity-aware scoring"
+    ],
+    "metrics": [
+      "Spearman Correlation",
+      "Pearson Correlation",
+      "Correct Ranking Pair Ratio (CRPR)"
+    ],
+    "calculation": "Metrics are calculated based on neuron activation comparisons between contrastive story pairs.",
+    "interpretation": "Higher scores indicate greater interpretability of the sparse autoencoders.",
+    "baseline_results": null,
+    "validation": "Results align with existing benchmarks, showing strong correlation under multiple alignment metrics."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The evaluation may reflect certain demographic biases originating from the dataset population.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

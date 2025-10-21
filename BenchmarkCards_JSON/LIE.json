@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LIE (Layout-aware document-level Information Extraction)",
+    "abbreviation": "LIE",
+    "overview": "A layout-aware document-level information extraction dataset (LIE) to facilitate extracting both structural and semantic knowledge from visually rich documents (VRDs) to generate accurate responses in document-grounded dialogue systems. LIE contains 62k annotations of three extraction tasks from 4,061 pages in product and official documents.",
+    "data_type": "multimodal (text tokens with 2D layout bounding boxes and PDF documents)",
+    "domains": [
+      "Natural Language Processing",
+      "Finance",
+      "Government"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "CORD",
+      "SROIE",
+      "FUNSD",
+      "EPHOIE",
+      "DocRED",
+      "doc2dial"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2207.06717",
+      "https://github.com/jsvine/pdfplumber"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enable extraction of structural (hierarchy and section) and relational fact knowledge from multi-page visually rich documents to support downstream document-grounded dialogue systems.",
+    "audience": [],
+    "tasks": [
+      "Hierarchy Extraction",
+      "Section Extraction",
+      "Relation Extraction"
+    ],
+    "limitations": "About 2% of annotation instances could not be aligned to parsed tokens and were discarded due to parsing errors.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Chinese product documents in PDF format downloaded from portal websites of the insurance sector and official documents issued by government departments collected via web search engines.",
+    "size": "4,061 pages from 400 documents (200 product documents and 200 official documents); 62,000 annotations across three IE tasks.",
+    "format": "PDF files and token-level annotations with bounding box coordinates (x0,y0,x1,y1) per token (provided after parsing).",
+    "annotation": "Crowdsourced annotation by 20 annotators with linguistic knowledge; each instance labeled by at least two annotators, disagreements resolved by a third annotator; annotators passed trial annotation; random checks performed and annotator results reviewed if document-level accuracy < 95%; approximately 2% of annotation instances discarded due to parsing alignment errors. Pre-defined relation schemes: 18 relations for product documents and 15 relations for official documents."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics-based evaluation",
+      "Model-based evaluation (comparisons between BERT, LayoutBERT variants, LayoutLMv2)",
+      "Sequence labeling evaluation (task-specific tagging schemes and decoding)"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "Precision and recall defined as P = S_m / |P| and R = S_m / |G| where S_m is the matching score. For hierarchy extraction and relation extraction, S_m is the count of strictly matching predicted results. For section extraction, S_m is computed by computing pairwise similarities between predicted and ground-truth facts using a gestalt pattern matching measure and finding the optimal matching via a linear assignment to maximize matched similarities; similarity between two facts is the average of the gestalt matching scores of their elements.",
+    "interpretation": "Evaluation uses F1 (the harmonic mean of precision and recall). Results are interpreted comparatively across models (higher F1 indicates better performance); the paper reports relative improvements of layout-aware models and pre-training over baselines. No absolute performance thresholds are provided.",
+    "baseline_results": "BERT (baseline) average results — Hierarchy Extraction F1: 73.6 (Product 75.9, Official 71.2); Section Extraction F1: 75.4 (Product 80.2, Official 70.5); Relation Extraction F1: 62.1 (Product 52.3, Official 71.9). LayoutBERT (w/ MLLM, PHS) average results — Hierarchy Extraction F1: 77.4 (Product 78.3, Official 76.5); Section Extraction F1: 79.2 (Product 85.1, Official 73.2); Relation Extraction F1: 65.5 (Product 54.2, Official 76.7). LayoutLMv2 reported comparable or lower results on these tasks.",
+    "validation": "Official dataset partition provided with train/dev/test split ratio 6:2:2 (statistics reported in Table 2). Annotation quality control: dual annotation with third-annotator adjudication for disagreements, random checks, and reviewer re-checks if annotator document-level accuracy < 95%. Pre-training corpus: 100k additional pages from 10k in-domain documents used for in-domain pre-training."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

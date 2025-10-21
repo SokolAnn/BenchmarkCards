@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CoPESD (Co-Pilot of Endoscopic Submucosal Dissection)",
+    "abbreviation": "CoPESD",
+    "overview": "CoPESD is a multi-level surgical motion dataset designed for training large vision-language models as the co-pilot for Endoscopic Submucosal Dissection (ESD). This dataset contains detailed annotations across various levels of surgical motion granularity.",
+    "data_type": "images with motion annotations",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/gkw0010/CoPESD"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the benchmark is to provide a comprehensive dataset for training LVLMs to support surgical automation and instruction-following during ESD.",
+    "audience": [
+      "ML Researchers",
+      "Medical Practitioners",
+      "Robotic Surgeons"
+    ],
+    "tasks": [
+      "Motion Prediction",
+      "Instruction Following"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset is constructed from over 35 hours of ESD videos collected using in-vivo porcine models utilizing both robot-assisted and conventional ESD techniques.",
+    "size": "17,679 images with 32,699 bounding boxes and 88,395 multi-level motions",
+    "format": "N/A",
+    "annotation": "Annotated by trained medical professionals with a focus on multi-level surgical motion granularity."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "Mean Intersection over Union (mIoU)"
+    ],
+    "calculation": "Metrics are calculated based on the performance of LVLMs in predicting surgical motions and their corresponding bounding boxes against ground truth.",
+    "interpretation": "Higher scores represent better performance in predicting the robotic motions required during surgical procedures.",
+    "baseline_results": null,
+    "validation": "The benchmark includes thorough evaluations using state-of-the-art LVLMs on a set of diverse surgical tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "No confidential or sensitive data is included in the dataset.",
+    "data_licensing": "CC BY 4.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

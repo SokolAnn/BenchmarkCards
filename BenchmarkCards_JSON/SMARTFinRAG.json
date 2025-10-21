@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SMARTFinRAG",
+    "abbreviation": "N/A",
+    "overview": "SMARTFinRAG is an interactive evaluation platform specifically engineered for financial Retrieval-Augmented Generation (RAG) systems that dynamically accommodates various retrieval mechanisms, language models, and prompt strategies. It features a document-centric evaluation paradigm generating domain-specific question-answer pairs and provides an intuitive interface for visualizing performance metrics.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Finance"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "FinQA",
+      "FiQA",
+      "FinBen",
+      "PIXIU"
+    ],
+    "resources": [
+      "https://github.com/JonathanZha47/SMARTFinRAG"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive framework for evaluating financial RAG systems, enabling continuous assessment with current information and facilitating research and practical applications in the finance sector.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "Due to time and compute constraints, only a small subset (10 out of 317 QA pairs) was used for response evaluation.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Financial documents, specifically 10-K filings from major companies.",
+    "size": "317 question-answer pairs",
+    "format": "JSON",
+    "annotation": "Generated using an LLM to analyze document nodes and create diverse question types."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Hit Rate",
+      "Mean Reciprocal Rank (MRR)",
+      "Precision",
+      "Recall",
+      "Normalized Discounted Cumulative Gain (NDCG)",
+      "Faithfulness",
+      "Relevancy"
+    ],
+    "calculation": "Metrics are calculated based on the ranking and relevance of retrieved documents and the alignment of generated responses with user queries.",
+    "interpretation": "Scores are compared against configurable thresholds to flag low-quality responses.",
+    "baseline_results": null,
+    "validation": "Evaluation conducted through automated generation of question-answer pairs from financial documents to ensure currency and domain relevance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

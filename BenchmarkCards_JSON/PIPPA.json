@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PIPPA (Personal Interaction Pairs between People and AI)",
+    "abbreviation": "PIPPA",
+    "overview": "PIPPA is a large-scale dataset comprising approximately 1 million messages exchanged between humans and dialogue agents across nearly 26,000 unique conversations. It aims to support future research and development in the fine-tuning of models to generate persona-driven, contextually rich conversations.",
+    "data_type": "dialogue sessions",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "LIGHT",
+      "MultiLIGHT",
+      "FIREBALL",
+      "DailyDialog",
+      "Cornell Movie Dialogs Corpus"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/PygmalionAI/PIPPA",
+      "https://github.com/0x000011b/characterai-dumper"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a rich resource for researchers and AI developers to explore and refine conversational AI systems in the context of role-play scenarios.",
+    "audience": [
+      "AI Researchers",
+      "AI Developers",
+      "Natural Language Processing Specialists"
+    ],
+    "tasks": [
+      "Role-Play Simulation",
+      "Conversational Model Fine-Tuning"
+    ],
+    "limitations": "The dataset is primarily tailored for supervised fine-tuning applications. Any endeavor to apply the PIPPA dataset to unsupervised fine-tuning objectives may necessitate a comprehensive overhaul of the dataset’s structure and content presentation.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Community-driven crowdsourcing effort through Character.AI interactions.",
+    "size": "1,049,015 dialogue sessions",
+    "format": "JSONL",
+    "annotation": "Crowdsourced with user submission process to ensure only data from users who explicitly consented is included."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Statistical analysis"
+    ],
+    "metrics": [
+      "Conversation length",
+      "Message verbosity"
+    ],
+    "calculation": "Examined the number of turns in conversations and message lengths to gauge dataset characteristics.",
+    "interpretation": "Conversations exhibit diverse lengths with a median of 10 turns and a mean of 40.41 turns, reflecting varied user engagement.",
+    "baseline_results": null,
+    "validation": "The dataset has not undergone exhaustive validation, which implies potential variations in quality."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Ethics"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "The dataset may contain instances of unsuitable or inappropriate material due to the community-driven curation process."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Sensitive personal information has been redacted to the best of our ability, however, residual instances might persist due to human oversight.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Users were allowed to opt out of including their conversations in the public release.",
+    "compliance_with_regulations": "N/A"
+  }
+}

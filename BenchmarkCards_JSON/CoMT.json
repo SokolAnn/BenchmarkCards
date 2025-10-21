@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CoMT (Chain of Multi-modal Thought)",
+    "abbreviation": "CoMT",
+    "overview": "CoMT is a novel benchmark for evaluating Chain of Multi-modal Thought (CoMT) reasoning which requires both multi-modal input and output, incorporating visual operations for enhanced reasoning.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MCoT (Multimodal Chain-of-Thought)",
+      "ScienceQA"
+    ],
+    "resources": [
+      "https://github.com/czhhzc/CoMT"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess the multi-modal reasoning capabilities of Large Vision-Language Models through the Chain of Multi-modal Thought tasks.",
+    "audience": [
+      "ML Researchers",
+      "AI Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Multi-modal Reasoning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Developed from GeoQA+, JHU-CROWD++, KILOGRAM datasets, and online data sources.",
+    "size": "3,853 samples, 14,801 images",
+    "format": "N/A",
+    "annotation": "Annotated by multiple experts, following a template-based approach."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Macro-F1"
+    ],
+    "calculation": "Metrics calculated based on the standard question-answering performance metrics.",
+    "interpretation": "Higher accuracy and Macro-F1 indicate better performance.",
+    "baseline_results": "Models often perform at random chance levels in zero-shot configurations.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack",
+            "Hallucination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data collected from publicly available datasets with permission for academic use.",
+    "data_licensing": "N/A",
+    "consent_procedures": "All annotators signed informed consent documents.",
+    "compliance_with_regulations": "N/A"
+  }
+}

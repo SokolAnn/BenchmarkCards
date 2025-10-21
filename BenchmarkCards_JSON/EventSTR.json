@@ -1,0 +1,75 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "EventSTR",
+    "abbreviation": "N/A",
+    "overview": "EventSTR is a large-scale benchmark dataset for event stream based scene text recognition, containing 9,928 high-definition event samples involving both Chinese and English characters. It was constructed to address challenging factors such as low illumination, motion blur, and cluttered backgrounds.",
+    "data_type": "event samples",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "Chinese",
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MJ",
+      "ST",
+      "WordArt",
+      "IC15"
+    ],
+    "resources": [
+      "https://github.com/Event-AHU/EventSTR"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To introduce a novel event-based scene text recognition task and to provide a benchmark dataset for evaluating various scene text recognition algorithms.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Scene Text Recognition"
+    ],
+    "limitations": "The model heavily relies on a large-scale pre-trained LLM, which demands significant computational resources, making it less suitable for real-time applications.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Event samples collected using the Prophesee HD event camera.",
+    "size": "9,928 event samples",
+    "format": "N/A",
+    "annotation": "Annotated to identify all characters occurring in the scene, matching the text as it appears."
+  },
+  "methodology": {
+    "methods": [
+      "Baseline comparisons with multiple state-of-the-art scene text recognition algorithms."
+    ],
+    "metrics": [
+      "BLEU-1",
+      "BLEU-2",
+      "BLEU-3",
+      "BLEU-4"
+    ],
+    "calculation": "BLEU scores are calculated by segmenting characters for Chinese text and by words (case-insensitive) for English text.",
+    "interpretation": "Higher BLEU scores indicate better performance in accurately recognizing text.",
+    "baseline_results": "SimC-ESTR achieved BLEU scores of 0.638, 0.583, 0.500, and 0.430 for BLEU-1, BLEU-2, BLEU-3, and BLEU-4 respectively.",
+    "validation": "Extensive experiments conducted on the EventSTR dataset and comparisons with other benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

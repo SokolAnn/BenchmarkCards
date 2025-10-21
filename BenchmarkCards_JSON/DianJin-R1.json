@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DianJin-R1 (DianJin-R1: Evaluating and Enhancing Financial Reasoning in Large Language Models)",
+    "abbreviation": "DianJin-R1",
+    "overview": "DianJin-R1 introduces a reasoning-enhanced framework and a high-quality dataset, DianJin-R1-Data, constructed from CFLUE, FinQA, and a proprietary compliance corpus to enhance financial reasoning in large language models (LLMs).",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Finance"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "CFLUE",
+      "FinQA",
+      "CCC"
+    ],
+    "resources": [
+      "https://huggingface.co/DianJin",
+      "https://modelscope.cn/organization/tongyi_dianjin",
+      "https://github.com/aliyun/qwen-dianjin",
+      "https://tongyi.aliyun.com/dianjin"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enhance financial reasoning capabilities in LLMs through structured supervision and reinforcement learning.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from CFLUE, FinQA, and a proprietary compliance corpus (CCC).",
+    "size": "38,638 multiple-choice questions from CFLUE, 8,281 financial question-answer pairs from FinQA, and 1,800 dialogues from CCC.",
+    "format": "Structured text format with <think> and <answer> tags.",
+    "annotation": "Manual verification using GPT-4o to ensure alignment between generated answers and reasoning steps."
+  },
+  "methodology": {
+    "methods": [
+      "Supervised Fine-Tuning (SFT)",
+      "Reinforcement Learning (RL)"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy is defined as the proportion of correctly answered questions.",
+    "interpretation": "Higher accuracy implies better reasoning capability in models.",
+    "baseline_results": "N/A",
+    "validation": "Evaluated on benchmarks including CFLUE, FinQA, and CCC."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Open-sourced except for sensitive CCC scenario data.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

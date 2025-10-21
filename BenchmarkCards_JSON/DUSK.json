@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DUSK (Do Not Unlearn Shared Knowledge)",
+    "abbreviation": "DUSK",
+    "overview": "DUSK is a benchmark designed to evaluate unlearning methods under realistic data overlap by constructing document sets that describe the same factual content in different styles, enabling controlled attribution.",
+    "data_type": "document sets with unique and shared knowledge",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MUSE"
+    ],
+    "resources": [
+      "https://ai-isl.github.io/dusk"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Evaluate machine unlearning in realistic multi-source scenarios where forget data overlaps with retain data.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Unlearning Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Synthetic dataset constructed from 120 fictional professor profiles with styles for factual content representation.",
+    "size": "600 profiles distributed across five documents",
+    "format": "JSONL",
+    "annotation": "Automated generation with prompt designs ensuring diversity in attribute representation."
+  },
+  "methodology": {
+    "methods": [
+      "Verbatim Memorization",
+      "Unique Forget Knowledge",
+      "Shared Knowledge",
+      "Unique Retain Knowledge",
+      "Downstream Capability",
+      "Privacy Leakage",
+      "Retain Deviation"
+    ],
+    "metrics": [
+      "ROUGE-1",
+      "ROUGE-L",
+      "Levenshtein distance",
+      "Cosine similarity"
+    ],
+    "calculation": "Metrics are calculated based on the performance of models on designated QA tasks assessing unlearning effectiveness.",
+    "interpretation": "Lower scores on metrics such as ROUGE indicate effective unlearning of verbatim content.",
+    "baseline_results": "Retrain model serves as the baseline for comparison in evaluating unlearning methods.",
+    "validation": "Evaluation conducted through systematic assessment of unlearning performance on synthetic professor data."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Data privacy rights alignment"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Unintentional knowledge loss affecting reliability and fairness."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

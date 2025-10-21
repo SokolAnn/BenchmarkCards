@@ -1,0 +1,78 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Image2Struct",
+    "abbreviation": "N/A",
+    "overview": "Image2Struct is a benchmark to evaluate vision-language models (VLMs) on extracting structure from images, such as webpages, LaTeX, and music sheets. It uses a round-trip evaluation process comparing the rendered structure against the input image to provide a similarity score.",
+    "data_type": "image and structure pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/stanford-crfm/image2struct-webpage-v1",
+      "https://huggingface.co/datasets/stanford-crfm/image2struct-latex-v1",
+      "https://huggingface.co/datasets/stanford-crfm/image2struct-musicsheet-v1"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the performance of vision-language models in generating structured data (e.g., code) from images.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Structure Extraction",
+      "Image-to-Code Translation"
+    ],
+    "limitations": "The benchmark focuses on structure extraction and does not evaluate abstract reasoning.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Data was collected from GitHub, arXiv, and IMSLP.",
+    "size": "2400 instances total (900 webpages, 1200 LaTeX, 300 music scores)",
+    "format": "PNG images and associated structures.",
+    "annotation": "No manual annotation; uses automated metrics for evaluation."
+  },
+  "methodology": {
+    "methods": [
+      "Round-trip evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Earth Mover Similarity",
+      "Cosine Similarity",
+      "Pixel Similarity"
+    ],
+    "calculation": "Metrics are calculated based on the similarity between the rendered image and the original input image.",
+    "interpretation": "Scores range from 0 (no similarity) to 1 (identical images).",
+    "baseline_results": null,
+    "validation": "Data was filtered for relevance and diversity, and various automated metrics were employed to evaluate model performance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential negative impact on jobs due to automation in data extraction tasks."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "We apply automated filters to remove any potentially offensive content.",
+    "data_licensing": "The data is collected under Fair Use doctrine for non-commercial research purposes.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

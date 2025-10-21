@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Quality Matters: Evaluating Synthetic Data for Tool-Using LLMs",
+    "abbreviation": "N/A",
+    "overview": "This paper proposes two approaches for assessing the reliability of data for training LLMs to use external tools, including intrinsic quality evaluation criteria and in-context evaluation metrics (ICE). The findings indicate that models trained on high-quality data significantly outperform those trained on unvalidated data, highlighting the importance of data quality in model performance for tool-using LLMs.",
+    "data_type": "instruction and API call sequences",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ToolBench",
+      "ToolAlpaca"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2409.16341"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the quality of synthetic data for tool-using LLMs and demonstrate its impact on model performance.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Tool Usage Evaluation",
+      "Data Quality Assessment"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Datasets synthesized for training tool-using LLMs, specifically ToolBench and ToolAlpaca.",
+    "size": "125,000 examples for ToolBench, 4,200 examples for ToolAlpaca",
+    "format": "JSON",
+    "annotation": "Manually annotated by researchers according to intrinsic quality criteria."
+  },
+  "methodology": {
+    "methods": [
+      "Intrinsically Evaluated Data Quality",
+      "In-Context Evaluation"
+    ],
+    "metrics": [
+      "Pass Rate",
+      "ICE Score"
+    ],
+    "calculation": "Metrics are calculated based on the proportion of instances that the model successfully addressed according to the intrinsic evaluation criteria.",
+    "interpretation": "A higher pass rate and ICE score indicate better data quality and improved model performance.",
+    "baseline_results": "Models trained on high-quality subsets consistently performed better than those trained on full datasets with low-quality data.",
+    "validation": "Evaluation results validate the effectiveness of the proposed data quality metrics against human annotations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Data Quality",
+      "Model Performance"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

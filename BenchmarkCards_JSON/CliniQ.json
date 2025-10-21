@@ -1,0 +1,71 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CliniQ: A Multi-faceted Benchmark for Electronic Health Record Retrieval with Semantic Match Assessment",
+    "abbreviation": "CliniQ",
+    "overview": "The paper introduces CliniQ, a novel public benchmark for Electronic Health Record (EHR) retrieval aimed at addressing the scarcity of available benchmarks. It includes two retrieval settings (Single-Patient and Multi-Patient Retrieval), utilizes a dataset of 1,000 discharge summaries from MIMIC-III, and features 1,246 unique queries with 77,206 relevance judgments.",
+    "data_type": "chunk-level relevance judgments",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/zhao-zy15/CliniQ",
+      "https://huggingface.co/datasets/THUMedInfo/CliniQ"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a robust evaluation benchmark for EHR retrieval systems.",
+    "audience": [
+      "Research community",
+      "Medical informatics professionals"
+    ],
+    "tasks": [
+      "Information Retrieval"
+    ],
+    "limitations": "The benchmark currently focuses exclusively on discharge summaries, omitting other types of clinical notes and entities such as symptoms and anatomical structures.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "MIMIC-III Discharge Summaries",
+    "size": "1,000 discharge summaries; 16,550 chunks; 1,246 unique queries; 77,206 relevance judgments",
+    "format": "N/A",
+    "annotation": "Relevance judgments were generated using GPT-4 annotations and categorized into string match and four types of semantic matches."
+  },
+  "methodology": {
+    "methods": [
+      "Evaluation of various retrieval methods including BM25 and dense retrievers"
+    ],
+    "metrics": [
+      "Mean Reciprocal Rank (MRR)",
+      "Normalized Discounted Cumulative Gain (NDCG)",
+      "Mean Average Precision (MAP)",
+      "Recall"
+    ],
+    "calculation": "Metrics are calculated based on the relevance judgments from Single-Patient and Multi-Patient settings.",
+    "interpretation": "Higher scores reflect better retrieval performance with relevance integrity maintained through various match types.",
+    "baseline_results": "BM25 provides a strong baseline in both retrieval settings.",
+    "validation": "Extensive evaluations through human judgments and comparisons against established models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

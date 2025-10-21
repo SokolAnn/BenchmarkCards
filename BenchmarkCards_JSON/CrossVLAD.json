@@ -1,0 +1,70 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CrossVLAD",
+    "abbreviation": "N/A",
+    "overview": "CrossVLAD is a new benchmark dataset carefully curated from MSCOCO with GPT-4-assisted annotations for systematically evaluating cross-task adversarial attacks on unified vision-language models (VLMs).",
+    "data_type": "image",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/Gwill-Z/CRAFT"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a systematic evaluation of cross-task adversarial attacks on unified vision-language models (VLMs).",
+    "audience": [
+      "ML Researchers",
+      "Security Analysts"
+    ],
+    "tasks": [
+      "Image Captioning",
+      "Object Detection",
+      "Region Categorization",
+      "Object Localization"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from the MSCOCO train2017 dataset.",
+    "size": "3,000 images",
+    "format": "N/A",
+    "annotation": "GPT-4-assisted annotations for generating ground-truth captions."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "CTSR-4 (Cross-Task Success Rate-4)",
+      "CTSR-3 (Cross-Task Success Rate-3)"
+    ],
+    "calculation": "CTSR-4 is the percentage of examples that fool all four tasks, while CTSR-3 measures samples that fool at least three tasks.",
+    "interpretation": "Higher CTSR values indicate better cross-task attack performance.",
+    "baseline_results": null,
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential for adversarial attacks to deceive vision-language models."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

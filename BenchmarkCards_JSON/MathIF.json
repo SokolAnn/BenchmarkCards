@@ -1,0 +1,78 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MathIF",
+    "abbreviation": "N/A",
+    "overview": "MathIF is a dedicated benchmark for evaluating instruction-following in mathematical reasoning tasks, focusing on the ability of large reasoning models to adhere to user directives.",
+    "data_type": "math problem prompts with constraints",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "IFEval",
+      "FollowBench"
+    ],
+    "resources": [
+      "https://github.com/TingchenFu/MathIF"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To systematically measure instruction-following performance in large reasoning models within math domains.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Instruction Following"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Math problems collected from public datasets, including GSM8K, MATH500, Minerva, Olympiad, AIME.",
+    "size": "420 examples",
+    "format": "N/A",
+    "annotation": "Programmatically verified against Python constraints"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Hard accuracy (HAcc)",
+      "Soft accuracy (SAcc)"
+    ],
+    "calculation": "Hard accuracy reflects full compliance with constraints, while soft accuracy measures the proportion of satisfied constraints.",
+    "interpretation": "Higher accuracy indicates better instruction adherence.",
+    "baseline_results": "Models evaluated include Qwen3-14B, Qwen3-32B, DeepSeek-R1-Distill-Qwen series among others.",
+    "validation": "Empirical evaluations through direct model performance assessment on the MathIF benchmark."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

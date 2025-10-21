@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CERD (Chinese Essay Rhetoric Dataset)",
+    "abbreviation": "CERD",
+    "overview": "CERD is a manual annotated comprehensive Chinese rhetoric dataset that consists of 4 coarse-grained and 23 fine-grained categories across both form and content levels, aimed at rhetorical understanding and generation in essays.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/cubenlp/cerd"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To improve the understanding and generation of various rhetorical devices in essays, and to provide a benchmark for future research on rhetoric.",
+    "audience": [
+      "Researcher",
+      "Educators"
+    ],
+    "tasks": [
+      "Rhetoric Classification",
+      "Form Classification",
+      "Content Classification",
+      "Component Extraction",
+      "Rhetoric Generation"
+    ],
+    "limitations": "The dataset collected from students may include typographical errors due to limited language proficiency.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from essays written by primary and middle school students in real educational settings.",
+    "size": "10,349 sentences",
+    "format": "JSON",
+    "annotation": "Manual annotation by annotators with backgrounds in Education or Chinese Language and Literature."
+  },
+  "methodology": {
+    "methods": [
+      "Multi-label classification",
+      "Named Entity Recognition",
+      "Controllable Text Generation"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Precision",
+      "Recall",
+      "Exact Match",
+      "BLEU Score",
+      "ROUGE-L"
+    ],
+    "calculation": "Metrics are calculated based on the predictions of the model compared to the ground truth.",
+    "interpretation": "Higher scores in metrics indicate better performance of the models.",
+    "baseline_results": null,
+    "validation": "The dataset is validated through inter-annotator agreement and assessments of task performance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data anonymization procedures were adopted to remove personal information of the authors.",
+    "data_licensing": "N/A",
+    "consent_procedures": "All essays in CERD have been authorized for use.",
+    "compliance_with_regulations": "N/A"
+  }
+}

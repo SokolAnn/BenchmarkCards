@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "EvoWiki",
+    "abbreviation": "N/A",
+    "overview": "EvoWiki is a continually auto-updated evaluation dataset that captures the evolving nature of knowledge for evaluating LLMs’ ability to utilize external knowledge in dynamic, real-world scenarios.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "LiveBench",
+      "Realtime QA",
+      "TemporalWiki"
+    ],
+    "resources": [
+      "https://github.com/wtangdev/EvoWiki"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the knowledge evolution capabilities of large language models (LLMs) and how effectively they adapt to evolving knowledge.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "Despite being recognized as high-quality corpora, Wikidata and Wikipedia inevitably contain noise.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed using continually updated knowledge graphs and sources, such as Wikidata and Wikipedia.",
+    "size": "10,264 questions",
+    "format": "JSON",
+    "annotation": "Generated questions are verified based on context and correctness through human evaluation."
+  },
+  "methodology": {
+    "methods": [
+      "Retrieval-Augmented Generation",
+      "Continual Learning"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Fluency",
+      "Answerability"
+    ],
+    "calculation": "Metrics are calculated based on the percentage of correct answers as well as human evaluations.",
+    "interpretation": "Higher scores indicate better performance in accurately answering questions based on the evolving knowledge.",
+    "baseline_results": null,
+    "validation": "Evaluated through experiments comparing models' performances on different knowledge evolution levels."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

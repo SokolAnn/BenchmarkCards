@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Heartcare Suite",
+    "abbreviation": "N/A",
+    "overview": "Heartcare Suite is a multimodal comprehensive framework for fine-grained electrocardiogram (ECG) understanding, comprising the Heartcare-220K dataset and Heartcare-Bench evaluation framework to optimize and evaluate Medical Multimodal Large Language Models (Med-MLLMs) in ECG scenarios.",
+    "data_type": "multimodal",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "PTB-XL"
+    ],
+    "resources": [
+      "https://github.com/DCDmllm/Heartcare-Suite"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To establish a unified and scalable framework for evaluating and improving ECG understanding in medical applications using multimodal instruction datasets and benchmarks.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Medical Professionals"
+    ],
+    "tasks": [
+      "Closed Question Answering",
+      "Open Question Answering",
+      "Report Generation",
+      "Signal Prediction"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Heartcare-220K dataset, including ECG signals and clinical report images collected from public hospitals and existing ECG datasets.",
+    "size": "220,000 ECG examples",
+    "format": "JSON",
+    "annotation": "Automated annotation using a multi-agent data engine and expert review for clinical relevance."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "ROUGE-L"
+    ],
+    "calculation": "Metrics are calculated based on performance against predefined clinical tasks like diagnosis classification and waveform analysis.",
+    "interpretation": "Higher accuracy and F1 scores indicate better model performance across ECG related tasks, with clinical correctness as a primary concern.",
+    "baseline_results": "HeartcareGPT shows superior performance compared to existing models like MedVLM and Claude-3.5 on various ECG tasks.",
+    "validation": "Evaluation is conducted using a multi-dimensional framework tailored for specific ECG tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis of patient demographics in the dataset shows diverse representation across age and sex.",
+    "harm": [
+      "Potential biases in diagnosis due to underrepresentation of rare conditions."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Patient data is anonymized, and all personal identifiers are removed during data collection and annotation.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

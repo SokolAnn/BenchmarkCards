@@ -1,0 +1,100 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "StrucText-Eval",
+    "abbreviation": "N/A",
+    "overview": "StrucText-Eval is a benchmark containing 5,800 pre-generated and annotated samples designed to evaluate how well LLMs understand and reason through structured text. It aims to assess LLMs’ ability to interpret structured data presented in unstructured formats across 29 tasks and 8 structured languages.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "JSON",
+      "YAML",
+      "XML",
+      "Markdown",
+      "LaTeX",
+      "ORG",
+      "CSV",
+      "Tree"
+    ],
+    "similar_benchmarks": [
+      "GraphQA",
+      "Struc-Bench",
+      "TEMPTABQA",
+      "TableLLM"
+    ],
+    "resources": [
+      "https://github.com/MikeGu721/StrucText-Eval"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the reasoning capabilities of large language models (LLMs) on structure-rich text.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Structured Data Reasoning",
+      "Text Retrieval",
+      "Data Extraction",
+      "Statistical Queries",
+      "Data Combining",
+      "Tree Structure Analysis"
+    ],
+    "limitations": "StrucText-Eval includes only eight types of structured languages and encompasses a total of 29 different tasks.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Pre-generated data based on structured languages designed for evaluating LLMs.",
+    "size": "5,800 samples",
+    "format": "JSON",
+    "annotation": "Automated generation with manual validation."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "RougeL",
+      "BLEU Score"
+    ],
+    "calculation": "Metrics such as RougeL are calculated based on the degree of character-level similarity between model outputs.",
+    "interpretation": "Higher scores indicate better reasoning abilities by LLMs on structure-rich text.",
+    "baseline_results": "Open-source LLMs achieved a maximum accuracy of 74.9% on the standard dataset.",
+    "validation": "Tested performance using both prompt-based and finetuning methods."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

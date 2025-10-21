@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SEGSUB",
+    "abbreviation": "N/A",
+    "overview": "SEGSUB is a framework for applying targeted image perturbations to investigate vision-language model resilience against knowledge conflicts, generating a benchmark dataset with over 35,000 systematically perturbed samples to measure susceptibility to hallucination.",
+    "data_type": "image-question-answer pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/CASOS-IDeaS-CMU/SebSub",
+      "https://www.doi.org/10.1184/R1/28297076"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To improve robustness in vision-language models against knowledge conflicts and hallucinations.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Visual Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Augmented from WebQA, VQAv2, and OK-VQA datasets with knowledge conflicts.",
+    "size": "35,225 samples",
+    "format": "N/A",
+    "annotation": "Quality-checked through visual inspection."
+  },
+  "methodology": {
+    "methods": [
+      "Model fine-tuning",
+      "Image perturbation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy measured as the percentage of correct responses acknowledging knowledge conflicts.",
+    "interpretation": "Lower accuracy indicates higher susceptibility to hallucinations.",
+    "baseline_results": null,
+    "validation": "Models validated on both original and perturbed datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on education: plagiarism"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

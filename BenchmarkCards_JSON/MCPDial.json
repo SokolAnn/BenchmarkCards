@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MCPDial (Minecraft Persona-driven Dialogue dataset)",
+    "abbreviation": "MCPDial",
+    "overview": "MCPDial is a persona-driven dialogue dataset for Minecraft that includes complex human-written player and NPC personas and conversations, incorporating natural language utterances as well as canonical function calls representing game APIs.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Gaming"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "PersonaChat",
+      "LIGHT"
+    ],
+    "resources": [
+      "https://github.com/salavi/MCPDial-A-Minecraft-Persona-driven-Dialogue-Dataset"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To serve as a valuable resource for training and evaluating conversational agents within the Minecraft domain.",
+    "audience": [
+      "ML Researchers",
+      "Game Developers",
+      "Dialogue System Researchers"
+    ],
+    "tasks": [
+      "Dialogue Generation",
+      "Conversational Agent Training"
+    ],
+    "limitations": "One limitation of our dataset is the relatively small number (49) of human-written conversations, which may impact the diversity and coverage of various conversation topics.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Expert-written conversations and LLM augmentation.",
+    "size": "250 NPC personas, 750 player personas, 49 human-written conversations and 220 automatically-generated conversations.",
+    "format": "JSON",
+    "annotation": "Expert-generated and LLM-generated with a review process."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "LLM-based conversation generation"
+    ],
+    "metrics": [
+      "Fluency",
+      "Persona consistency",
+      "Function call accuracy"
+    ],
+    "calculation": "Average ratings from expert annotators on a scale of 1 to 5.",
+    "interpretation": "Higher scores indicate better quality that aligns with the characteristics of the provided personas and appropriate function calls.",
+    "baseline_results": null,
+    "validation": "Human evaluation confirmed high-quality conversations in terms of various criteria."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Misuse",
+          "subcategory": [
+            "Spreading disinformation"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": [
+      "Potential generation of biased or offensive content."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The authors ensured the absence of sensitive information and offensive content.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

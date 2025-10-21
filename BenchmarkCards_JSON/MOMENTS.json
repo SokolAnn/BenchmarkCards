@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MOMENTS (Multimodal Mental States)",
+    "abbreviation": "MOMENTS",
+    "overview": "MOMENTS is a comprehensive benchmark designed to assess the Theory of Mind capabilities of multimodal large language models through realistic, narrative-rich scenarios presented in short films. The benchmark includes over 2,300 multiple-choice questions spanning seven distinct Theory of Mind categories.",
+    "data_type": "multiple-choice questions",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Russian",
+      "Spanish",
+      "French",
+      "Persian",
+      "Italian",
+      "Arabic",
+      "Swedish",
+      "Korean",
+      "Danish",
+      "Hindi",
+      "Japanese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/villacu/MoMentS",
+      "https://arxiv.org/abs/2507.04415"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To support the development of socially intelligent multimodal agents and assess current models’ Theory of Mind in realistic, socially grounded scenarios.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Social Scientists"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "The benchmark uses a multiple-choice QA format, limiting analysis of lower-level behavioral cues. Additionally, it relies on static video data which does not account for dynamic interactions.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Short films sourced from the SF20K dataset (YouTube channel Omeleto).",
+    "size": "2,335 questions across 168 short films",
+    "format": "JSON",
+    "annotation": "Human-annotated with multiple-choice questions."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Metrics are calculated based on the percentage of correctly answered questions out of the total questions.",
+    "interpretation": "Higher accuracy indicates better performance in understanding Theory of Mind through context.",
+    "baseline_results": null,
+    "validation": "Piloted with multiple rounds of quality checks and peer reviews."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on affected communities"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": "Ensuring the dataset is used ethically to mitigate risks related to manipulation and deception."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Questions do not contain personally identifying information.",
+    "data_licensing": "CC BY-NC-SA 4.0 license for academic research purposes only.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

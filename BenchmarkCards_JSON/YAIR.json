@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "YAIR (Youth AI Risk)",
+    "abbreviation": "YAIR",
+    "overview": "YAIR is the first benchmark dataset designed to evaluate and improve the safety of youth–LLM (Large Language Model) interactions, consisting of 12,449 annotated conversation snippets spanning 78 fine-grained risk types relevant to youth-specific harms.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "WildGuard",
+      "SafetyBench",
+      "SALAD-Bench"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2509.08997"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the benchmark is to assess and enhance the safety of youth interactions with generative AI systems, improving risk detection frameworks in this domain.",
+    "audience": [
+      "ML Researchers",
+      "AI Safety Developers",
+      "Youth-support Organizations"
+    ],
+    "tasks": [
+      "Risk Detection",
+      "Risk Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The data comes from real-world chat logs collected from teenagers and synthetic data generated to reflect realistic youth-GenAI interaction scenarios.",
+    "size": "12,449 snippets",
+    "format": "JSON",
+    "annotation": "Annotation was done through manual coding and machine-assisted methods involving experts in youth digital safety and AI ethics."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Area Under the Precision-Recall Curve (AUPRC)",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "Metrics are calculated using standard classification metrics evaluating model performance on detection and classification tasks.",
+    "interpretation": "Higher metrics indicate better performance in risk detection and classification tasks tailored for youth-specific interactions.",
+    "baseline_results": "YouthSafe achieved an AUPRC of 0.9432, an F1 score of 0.8832, precision of 0.8799, and recall of 0.8865.",
+    "validation": "A combination of real-world data and carefully generated synthetic examples was used to ensure robust validation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data was anonymized to protect participant identities, using natural language processing techniques to ensure compliance.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Informed consent was obtained from parents and teens participating in the study.",
+    "compliance_with_regulations": "The study adhered to IRB guidelines and ethical standards for research involving minors."
+  }
+}

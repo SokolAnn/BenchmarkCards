@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CUAD (Contract Understanding Atticus Dataset)",
+    "abbreviation": "CUAD",
+    "overview": "CUAD is a new dataset for legal contract review, created with experts from The Atticus Project, consisting of over 13,000 annotations across 41 label categories, aiming to help models learn to automatically extract and identify key clauses from contracts.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Legal"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SQuAD",
+      "SuperGLUE"
+    ],
+    "resources": [
+      "https://atticusprojectai.org/cuad",
+      "https://github.com/TheAtticusProject/cuad"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To facilitate research on contract review and understand the performance of NLP models in specialized legal domains.",
+    "audience": [
+      "ML Researchers",
+      "Legal Experts",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Contract Analysis",
+      "Named Entity Recognition"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Contracts collected from the Electronic Data Gathering, Analysis, and Retrieval (EDGAR) system maintained by the U.S. Securities and Exchange Commission (SEC).",
+    "size": "510 contracts and 13,101 labeled clauses",
+    "format": "CSV",
+    "annotation": "Manual annotation by legal experts, with detailed instructions and training provided."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Precision @ 80% Recall",
+      "Area Under the Precision-Recall Curve (AUPR)"
+    ],
+    "calculation": "Metrics are calculated based on true positives, false positives, and false negatives in extraction tasks.",
+    "interpretation": "Performance measured by how well models identify relevant clauses, with precision balancing the importance of false positives and false negatives.",
+    "baseline_results": "DeBERTa-xlarge achieves an AUPR of 47.8%, Precision @ 80% Recall of 44.0%.",
+    "validation": "80% of contracts used for training and 20% for testing with empirical evaluation across various models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

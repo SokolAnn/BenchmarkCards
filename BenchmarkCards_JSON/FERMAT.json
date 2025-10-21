@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FERMAT (Finding and correcting Errors in handwritten MAThematical content)",
+    "abbreviation": "FERMAT",
+    "overview": "FERMAT is a benchmark designed to assess Vision-Language Models' ability to detect, localize, and correct errors in handwritten mathematical content. It spans four key error dimensions: computational, conceptual, notational, and presentation.",
+    "data_type": "handwritten math solutions",
+    "domains": [
+      "Education"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/ai4bharat/FERMAT",
+      "https://github.com/AI4Bharat/FERMAT"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the capability of Vision-Language Models in assessing and correcting handwritten mathematical solutions.",
+    "audience": [
+      "ML Researchers",
+      "Educators",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Error Detection",
+      "Error Localization",
+      "Error Correction"
+    ],
+    "limitations": "While the benchmark includes a comprehensive list of perturbation categories, it may not be exhaustive. It primarily focuses on school-level mathematics questions.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "609 manually curated math problems from grades 7-12, targeted perturbations were introduced to create erroneous handwritten solutions.",
+    "size": "2,244 instances",
+    "format": "images and LaTeX",
+    "annotation": "Manually transcribed by over 40 human annotators."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Balanced Accuracy"
+    ],
+    "calculation": "Metrics are calculated based on the performance of Vision-Language Models in detecting, localizing, and correcting errors.",
+    "interpretation": "Higher values indicate better performance in identifying and correcting errors.",
+    "baseline_results": "GEMINI-1.5-PRO achieved the highest error correction rate of 77%.",
+    "validation": "Validated through comparative analysis against human evaluations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The annotated datasets have no personally identifying information.",
+    "data_licensing": "The datasets will be made publicly available under permissible licenses.",
+    "consent_procedures": "Annotators were made aware that the datasets would be publicly released.",
+    "compliance_with_regulations": "Adhering to licensing requirements."
+  }
+}

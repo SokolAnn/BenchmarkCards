@@ -1,0 +1,76 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CLongEval (Chinese Benchmark for Evaluating Long-Context Large Language Models)",
+    "abbreviation": "CLongEval",
+    "overview": "CLongEval is a comprehensive Chinese benchmark for evaluating long-context LLMs, consisting of 7 tasks and 7,267 examples, designed to assess key capabilities such as information acquisition and reasoning.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/zexuanqiu/CLongEval"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a robust evaluation framework for long-context large language models in the Chinese language.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Long Story QA",
+      "Long Conversation Memory",
+      "Long Story Summarization",
+      "Stacked News Labeling",
+      "Stacked Typo Detection",
+      "Key-Passage Retrieval",
+      "Table Querying"
+    ],
+    "limitations": "CLongEval is specifically crafted for the evaluation of Chinese long-context LLMs, making it inapplicable to LLMs primarily focused on other languages.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The data is constructed from various public datasets and annotations, including human annotations and GPT-4 annotations.",
+    "size": "7,267 examples",
+    "format": "JSON",
+    "annotation": "Human annotation by experts, GPT-4 annotation, and reconstruction from public datasets."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score",
+      "ROUGE-L",
+      "Average Accuracy",
+      "Edit Score",
+      "Exact Match"
+    ],
+    "calculation": "Metrics are calculated based on the comparison between model outputs and reference outputs for each task.",
+    "interpretation": "Higher scores indicate better model performance in understanding and generating outputs based on long-context inputs.",
+    "baseline_results": null,
+    "validation": "The benchmark is validated through evaluations of multiple long-context LLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Bias"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "The benchmark aims to address performance across different demographic representations in Chinese LLMs.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

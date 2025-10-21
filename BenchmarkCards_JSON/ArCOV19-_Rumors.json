@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ArCOV19- Rumors",
+    "abbreviation": "N/A",
+    "overview": "ArCOV19- Rumors is an Arabic COVID-19 Twitter dataset for misinformation detection comprising tweets from January 27th to April 2020, including 138 verified claims and 9.4K annotated tweets for both claim-level and tweet-level verification tasks.",
+    "data_type": "tweets",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Arabic"
+    ],
+    "similar_benchmarks": [
+      "ArCOV-19"
+    ],
+    "resources": [
+      "https://gitlab.com/bigirqu/ArCOV-19/-/tree/master/ArCOV19-Rumorstweets"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To facilitate research on misinformation detection on social media during the COVID-19 pandemic through a manually-annotated Arabic dataset.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Claim Verification",
+      "Tweet Verification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Tweets collected from Twitter containing claims related to COVID-19.",
+    "size": "9,414 tweets",
+    "format": "N/A",
+    "annotation": "Manual annotation for tweets to determine veracity."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "Metrics are calculated according to standard practices in classification tasks.",
+    "interpretation": "Accuracy measures the correctness of predictions; F1 Score balances precision and recall.",
+    "baseline_results": "Bi-GCN model achieved 0.669 accuracy, MARBERT achieved 0.757 accuracy.",
+    "validation": "Data was split into folds for cross-validation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

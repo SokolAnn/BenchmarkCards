@@ -1,0 +1,79 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ThinkFake",
+    "abbreviation": "N/A",
+    "overview": "ThinkFake is a reasoning-based framework for AI-generated image detection leveraging Multimodal Large Language Models (MLLMs) with a focus on providing interpretable reasoning and generalization capabilities. It outperforms existing state-of-the-art methods and demonstrates robust performance across various benchmarks.",
+    "data_type": "image",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "GenImage",
+      "LOKI"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enhance the detection of AI-generated images using a reasoning framework that provides interpretable outputs.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Image Detection"
+    ],
+    "limitations": "The model requires significant computational resources during training, and real-time detection during inference remains challenging.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Real images from ImageNet and fake images generated using SD v1.4 based on ImageNet labels.",
+    "size": "6,000 examples",
+    "format": "N/A",
+    "annotation": "Automated generated reasoning paths and attribute-level answers based on prompts."
+  },
+  "methodology": {
+    "methods": [
+      "Reinforcement Learning",
+      "Supervised Fine-tuning",
+      "Ablation Studies"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy is calculated based on the model's predictions compared to ground-truth labels.",
+    "interpretation": "Higher accuracy indicates better performance in distinguishing between real and AI-generated images.",
+    "baseline_results": "Strong generalization on the LOKI benchmark and superior performance on the GenImage benchmark.",
+    "validation": "Extensive experiments, including ablation studies, to validate reasoning capabilities."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

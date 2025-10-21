@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "VSCBench",
+    "abbreviation": "N/A",
+    "overview": "VSCBench is a novel dataset of 3,600 image-text pairs designed to evaluate safety calibration across image-centric and text-centric scenarios, addressing both undersafety and oversafety in vision-language models (VLMs).",
+    "data_type": "image-text pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/jiahuigeng/VSCBench.git"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a fine-grained evaluation of model safety calibration and explore strategies to enhance the safety alignment of VLMs.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Safety Calibration"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed using a human-LLM collaborative framework, combining visually and textually similar image-text pairs categorized by safety.",
+    "size": "3,600 image-text pairs",
+    "format": "N/A",
+    "annotation": "Manual verification and curation by human evaluators to ensure safety and relevance."
+  },
+  "methodology": {
+    "methods": [
+      "Evaluation of safety responses of VLMs",
+      "Supervised fine-tuning methods"
+    ],
+    "metrics": [
+      "Safety response accuracy (SRA)"
+    ],
+    "calculation": "SRA scores are calculated based on the proportion of correct responses for safe and unsafe queries.",
+    "interpretation": "Higher SRA values indicate better safety calibration, with diminishing utility indicating a trade-off in safety measures.",
+    "baseline_results": "Evaluated across eleven VLMs showing various calibration challenges, including proprietary models like GPT-4.",
+    "validation": "Extensive evaluation across proprietary and open-weight VLMs to assess safety calibration."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "The dataset includes potentially harmful content to study responses, with precautions in place for ethical considerations."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "All annotators provided informed consent and were aware of the study's objectives.",
+    "compliance_with_regulations": "N/A"
+  }
+}

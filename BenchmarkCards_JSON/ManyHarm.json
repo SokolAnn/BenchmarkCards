@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ManyHarm",
+    "abbreviation": "N/A",
+    "overview": "ManyHarm is a dataset of 2,400 malicious demonstrations spanning 12 types of harmful behaviors, designed to facilitate research on adversarial techniques in language models.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "AdvBench",
+      "HarmBench"
+    ],
+    "resources": [
+      "https://github.com/averyma/pandas"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To improve the understanding and method of jailbreaking language models and to develop a dataset that aids in this process.",
+    "audience": [
+      "ML Researchers",
+      "Ethicists",
+      "AI Safety Researchers"
+    ],
+    "tasks": [
+      "Adversarial Attacks",
+      "Safety Research"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The ManyHarm dataset was created through automated generation and manual curation, designed to encompass unsafe prompts and harmful question-answer pairs.",
+    "size": "2,400 examples",
+    "format": "N/A",
+    "annotation": "Automated generation followed by manual curation to ensure malicious content."
+  },
+  "methodology": {
+    "methods": [
+      "Evaluation of attack success rate (ASR) using LLM-based and rule-based methods."
+    ],
+    "metrics": [
+      "Attack Success Rate (ASR-L)",
+      "Rule-based Attack Success Rate (ASR-R)"
+    ],
+    "calculation": "The attack is successful if the response does not include any phrases from a predefined list of refusal phrases.",
+    "interpretation": "Higher ASR indicates better performance in bypassing model defenses.",
+    "baseline_results": null,
+    "validation": "Evaluations across various models and datasets to determine robustness."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Misuse",
+          "subcategory": [
+            "Spreading disinformation",
+            "Improper usage"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Data will be released upon request, subject to eligibility review for research purposes.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

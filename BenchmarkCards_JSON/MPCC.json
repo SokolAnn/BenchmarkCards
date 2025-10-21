@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Multimodal Planning with Complex Constraints (MPCC)",
+    "abbreviation": "MPCC",
+    "overview": "MPCC is designed to systematically evaluate the planning capabilities of multimodal large language models (MLLMs) under complex multimodal constraints, focusing on real-world tasks and varying difficulty levels.",
+    "data_type": "planning tasks",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "PlanBench",
+      "ALFRED",
+      "Behavior-1K"
+    ],
+    "resources": [
+      "https://github.com/j-yyyyy/MPCC"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the ability of MLLMs in multimodal planning tasks with complex constraints.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Multimodal Planning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Real-world scenarios generated using a code generator and filtered for constraint specifications.",
+    "size": "2,700 planning tasks",
+    "format": "N/A",
+    "annotation": "Manually filtered to ensure accurate constraints and diversity."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Feasible Plan Rate",
+      "Optimal Plan Rate"
+    ],
+    "calculation": "Feasible plans are determined by meeting budget ceilings, temporal coordination requirements, and spatial proximity limits.",
+    "interpretation": "Higher rates of feasible and optimal plans indicate better performance under complex constraints.",
+    "baseline_results": "N/A",
+    "validation": "Dataset validated through two-stage human checks involving experts."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": []
+        },
+        {
+          "category": "Robustness",
+          "subcategory": []
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

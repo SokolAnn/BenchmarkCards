@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ReMUD (Reasoning Multimodal Ultrasound Dataset)",
+    "abbreviation": "ReMUD",
+    "overview": "ReMUD is established as the first open-source medical reasoning QA supervised fine-tuning dataset specifically tailored for ultrasound, containing over 45,000 reasoning and non-reasoning Question Answering (QA) and Visual Question Answering (VQA) data.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "Chinese",
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/ShiDaizi/ReMUD"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To facilitate research in the specific domain of medical ultrasound through a large-scale, multimodal dataset for reasoning models.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts",
+      "Medical Professionals"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Visual Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Publicly available ultrasound materials, including textbooks, clinical guidelines, and datasets sourced from the internet.",
+    "size": "45,000+ examples",
+    "format": "JSON",
+    "annotation": "Automatically generated VQA triplets using multimodal language models."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "pass@1"
+    ],
+    "calculation": "pass@1 is calculated as the average proportion of correct responses among generated answers.",
+    "interpretation": "Higher pass@1 values indicate better model performance in selecting correct answers.",
+    "baseline_results": null,
+    "validation": "The validation procedures include quality checks using scoring systems to assess the accuracy of generated data."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Bias"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

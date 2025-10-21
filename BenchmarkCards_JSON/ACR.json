@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ACR (Automatic Cohort Retrieval)",
+    "abbreviation": "ACR",
+    "overview": "This paper presents a new benchmark task for Automatic Cohort Retrieval (ACR), emphasizing the need for high-quality cohort retrieval systems capable of handling longitudinal patient data across extensive healthcare databases.",
+    "data_type": "query-patient pairs, electronic medical records",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "HotpotQA"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2406.14780"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To advance the efficiency and quality of cohort retrieval systems in healthcare, utilizing methods that integrate both large language models and neuro-symbolic architectures for processing electronic medical records.",
+    "audience": [
+      "Healthcare Researchers",
+      "Data Scientists",
+      "Clinical Researchers"
+    ],
+    "tasks": [
+      "Cohort Retrieval"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "EMR dataset from four healthcare sites comprising longitudinal patient records.",
+    "size": "1,436 patients, 115,865 records",
+    "format": "N/A",
+    "annotation": "Structured and human-labeled query-patient pairs created through clinical abstractions."
+  },
+  "methodology": {
+    "methods": [
+      "Recruitment of patient cohorts via querying",
+      "Evaluation based on precision, recall, and F1-score"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Calculated based on true positives, false negatives, and false positives derived from the cohort retrieval results.",
+    "interpretation": "Higher precision indicates fewer false positives, while high recall indicates capturing more true positive patients.",
+    "baseline_results": null,
+    "validation": "Evaluated against gold standard datasets generated from clinical abstractions and reasoning processes."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Patient data anonymized from EMRs for research purposes.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

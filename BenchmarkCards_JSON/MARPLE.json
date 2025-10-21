@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MARPLE (Multimodal Agent Reasoning for Long-Horizon Evaluation)",
+    "abbreviation": "MARPLE",
+    "overview": "MARPLE is a benchmark for evaluating long-horizon inference capabilities using multi-modal evidence. It features agents interacting with simulated households, supporting visual, language, and auditory stimuli to infer causal relationships in household scenarios, primarily focused on 'whodunit' style questions.",
+    "data_type": "multimodal",
+    "domains": [
+      "Natural Language Processing",
+      "Cognitive Science"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://marple-benchmark.github.io/",
+      "https://github.com/marple-benchmark/marple"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess models' abilities to perform long-horizon multimodal inference in complex household scenarios.",
+    "audience": [
+      "ML Researchers",
+      "Cognitive Scientists",
+      "AI Practitioners"
+    ],
+    "tasks": [
+      "Inference",
+      "Causal Reasoning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Procedurally generated multimodal data from the MARPLE Household Simulator.",
+    "size": "5000 trajectories for training datasets, 500 trajectories for test datasets.",
+    "format": "ZIP files containing JSON representations",
+    "annotation": "Automatically generated through the MARPLE Household Simulator."
+  },
+  "methodology": {
+    "methods": [
+      "Monte Carlo Tree Search",
+      "Large Language Model evaluation",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Inference accuracy at various time steps"
+    ],
+    "calculation": "Inference accuracy is calculated based on the probability of correctly identifying the agent responsible for a query state.",
+    "interpretation": "Higher inference accuracy indicates a better understanding and prediction of agent behaviors and state changes.",
+    "baseline_results": "Human participants achieved an average accuracy of 0.8 with 48% of evidence.",
+    "validation": "Benchmarks were validated through comparisons with human performance and established baselines."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC BY 4.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

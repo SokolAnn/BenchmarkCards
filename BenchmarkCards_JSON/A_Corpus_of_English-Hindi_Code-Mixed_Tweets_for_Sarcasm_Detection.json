@@ -1,0 +1,71 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "A Corpus of English-Hindi Code-Mixed Tweets for Sarcasm Detection",
+    "abbreviation": "N/A",
+    "overview": "We present the first English-Hindi code-mixed dataset of tweets marked for presence of sarcasm and irony where each token is also annotated with a language tag. We present a baseline supervised classification system developed using the same dataset which achieves an average F-score of 78.4 after using random forest classifier and performing 10-fold cross validation.",
+    "data_type": "text (English-Hindi code-mixed tweets with token-level language annotations)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Hindi"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Provide a resource of English-Hindi code-mixed tweets containing sarcastic and non-sarcastic tweets with tweet-level sarcasm annotation and token-level language annotation to train, develop and evaluate sarcasm detection and language identification techniques on code-mixed text.",
+    "audience": [
+      "Researchers developing and evaluating sarcasm detection and language identification systems"
+    ],
+    "tasks": [
+      "Sarcasm Detection",
+      "Language Identification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from Twitter using the Twitter Scraper API by extracting tweets containing hashtags #sarcasm and #irony and keywords such as 'bollywood', 'cricket' and 'politics'; English-Hindi code-mixed tweets were manually selected and annotated.",
+    "size": "5,250 tweets (504 sarcastic, 4,746 non-sarcastic)",
+    "format": "Tweets originally collected in JSON (Twitter Scraper API); released dataset structured into three plain text files: 1) tweet id + tweet text, 2) tweet id + token-level language annotations, 3) tweet id + sarcasm label.",
+    "annotation": "Tweet-level sarcasm annotation (YES/NO) by annotators fluent in both English and Hindi; token-level language annotation with tags 'en', 'hi' and 'rest' manually verified; inter-annotator agreement Cohen's Kappa = 0.79."
+  },
+  "methodology": {
+    "methods": [
+      "Supervised classification using Support Vector Machine (RBF kernel)",
+      "Supervised classification using Linear Support Vector Machine",
+      "Supervised classification using Random Forest",
+      "10-fold cross validation",
+      "Chi-square feature selection (to reduce feature vector size to 500)"
+    ],
+    "metrics": [
+      "F-score",
+      "Precision",
+      "Recall",
+      "Cohen's Kappa (for inter-annotator agreement)"
+    ],
+    "calculation": "F-score is defined as the harmonic mean of precision and recall: F-score = 2 * precision * recall / (precision + recall). Precision = tp / (tp + fp). Recall = tp / (tp + fn).",
+    "interpretation": "F-score is used because the number of sarcastic tweets is less than the number of non-sarcastic tweets and thus accuracy may not be a good metric; higher F-score indicates a better balance of precision and recall.",
+    "baseline_results": "Best average F-score 78.4 (Random Forest, all features, 10-fold cross validation). Feature-wise F-scores (RBF SVM / Random Forest / Linear SVM): Character n-grams 73.1 / 75.0 / 66.4; Word n-grams 71.4 / 76.7 / 68.0; Sarcasm indicative tokens 66.1 / 72.0 / 70.2; Emoticons 62.8 / 68.5 / 65.7; All features 76.5 / 78.4 / 71.7.",
+    "validation": "10-fold cross validation for model evaluation; inter-annotator agreement measured using Cohen's Kappa = 0.79."
+  },
+  "targeted_risks": {
+    "risk_categories": [],
+    "atlas_risks": {
+      "risks": null
+    },
+    "demographic_analysis": "N/A",
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

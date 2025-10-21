@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Chat2Scenario: Scenario Extraction From Dataset Through Utilization of Large Language Model",
+    "abbreviation": "N/A",
+    "overview": "Chat2Scenario is a framework leveraging large language models to extract scenarios from naturalistic driving datasets, facilitating scenario validation for automated driving systems.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Automated Driving Systems"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/ftgTUGraz/Chat2Scenario"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enhance the efficiency of scenario extraction for validating automated driving systems using large language models.",
+    "audience": [
+      "Traffic Engineers",
+      "Automated Driving System Developers",
+      "Researchers"
+    ],
+    "tasks": [
+      "Scenario Extraction",
+      "Scenario Validation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "highD dataset comprising vehicle trajectories on German highways collected via drones.",
+    "size": "60 CSV files",
+    "format": "CSV",
+    "annotation": "Manually generated semantic labels through analysis."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on the comparison of extracted scenarios against ground truth labels.",
+    "interpretation": "Higher precision indicates fewer false positives, while recall reflects the model's ability to identify true scenarios.",
+    "baseline_results": "N/A",
+    "validation": "Validated through simulations in Esmini and CarMaker."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data anonymization procedures are not specified.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

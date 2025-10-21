@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Finance Agent Benchmark",
+    "abbreviation": "N/A",
+    "overview": "The Finance Agent Benchmark presents challenging and diverse real-world finance research problems that require LLMs to perform complex analysis using recent SEC filings. It provides a comprehensive testbed for measuring the progress of LLM-driven finance agents, featuring 537 expert-authored questions across nine financial task categories.",
+    "data_type": "text",
+    "domains": [
+      "Finance"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "FinQA",
+      "TAT-QA"
+    ],
+    "resources": [
+      "https://doi.org/10.57967/hf/5514",
+      "https://doi.org/10.5281/zenodo.15428823",
+      "https://github.com/vals-ai/finance-agent"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To rigorously evaluate AI agents on real-world financial analysis tasks.",
+    "audience": [
+      "ML Researchers",
+      "Finance Professionals",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Information Retrieval",
+      "Complex Financial Modeling",
+      "Market Analysis"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Expert-generated dataset using real-world SEC filings and financial documents.",
+    "size": "537 questions",
+    "format": "CSV",
+    "annotation": "Expert-reviewed for accuracy and relevance."
+  },
+  "methodology": {
+    "methods": [
+      "LLM-as-judge evaluation",
+      "Rubric-based assessment",
+      "Contradiction detection"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Class-balanced accuracy calculated for each category of questions, along with naive accuracy.",
+    "interpretation": "Higher accuracy indicates better performance of LLMs in responding to financial queries accurately.",
+    "baseline_results": "The best-performing model achieved 46.8% accuracy.",
+    "validation": "Dataset split into public, private validation, and test sets for reliability."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC BY 4.0 for the dataset and MIT License for the code.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

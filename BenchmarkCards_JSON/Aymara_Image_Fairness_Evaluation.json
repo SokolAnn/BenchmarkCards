@@ -1,0 +1,77 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Aymara Image Fairness Evaluation",
+    "abbreviation": "N/A",
+    "overview": "A benchmark for assessing social bias in AI-generated images, evaluating 13 commercial LMMs on their depiction of gender in professional roles using gender-neutral prompts to expose bias.",
+    "data_type": "image",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/aymara-ai-sdk"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess gender bias in AI-generated images across multiple large multimodal models.",
+    "audience": [
+      "Researchers",
+      "AI Developers"
+    ],
+    "tasks": [],
+    "limitations": "Only evaluates binary gender representation, leaving out non-binary and transgender representations.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated images from 13 LMMs using programmatically created prompts.",
+    "size": "965 images",
+    "format": "N/A",
+    "annotation": "Automated scoring determined the gender representation in generated images."
+  },
+  "methodology": {
+    "methods": [
+      "Automated evaluation"
+    ],
+    "metrics": [
+      "Gender Bias Score",
+      "Fairness Score"
+    ],
+    "calculation": "Gender Bias Score measures deviation from gender parity for male and female predicted outputs; Fairness Score averages adherence to parity across all tasks.",
+    "interpretation": "Higher scores (closer to 1) indicate better performance toward gender equality in generated images.",
+    "baseline_results": "A comparison of model outputs indicates varying levels of gender bias across models, with some amplifying bias and others demonstrating significant gender parity.",
+    "validation": "Validated against human annotations showing a high agreement rate."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

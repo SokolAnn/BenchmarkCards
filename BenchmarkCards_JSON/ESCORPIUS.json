@@ -1,0 +1,127 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ESCORPIUS",
+    "abbreviation": "ESCORPIUS",
+    "overview": "ESCORPIUS is a Spanish crawling corpus obtained from near 1 PB of Common Crawl data. It is presented as the most extensive corpus in Spanish with a high-quality extraction, purification and deduplication pipeline, preserving document and paragraph boundaries and maintaining source web page URL and WARC shard origin for traceability and GDPR compliance.",
+    "data_type": "text (paragraph-level web crawl documents, JSONL)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Spanish"
+    ],
+    "similar_benchmarks": [
+      "OSCAR",
+      "mC4",
+      "CC-100",
+      "ParaCrawl",
+      "The Pile"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/LHF/escorpius",
+      "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+      "https://arxiv.org/abs/2206.15147"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Provide a massive cleaned and deduplicated Spanish web crawl corpus that preserves document and paragraph boundaries, maintains traceability to original web sources, and offers high-quality data for training language models.",
+    "audience": [
+      "Natural Language Processing researchers",
+      "Model developers",
+      "NLP community / practitioners"
+    ],
+    "tasks": [
+      "Language Modeling",
+      "Pre-training of Language Models",
+      "Natural Language Generation",
+      "Embedding Training"
+    ],
+    "limitations": "The authors prioritized quality over quantity, sacrificing corpus length and processing time for more certain Spanish language identification and cleaner data. The corpus is crawling-based only and the authors propose future work to extend it (e.g., create a The Pile-like Spanish corpus).",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Processed WARC files from Common Crawl (39,502 compressed WARC segments selected from Common Crawl for the period 2015-2022).",
+    "size": "Compressed information occupied about 180 TB; processed decompressed information estimated to be more than 0.8 PB; deduplicated and cleaned corpus size 346,262,072,705 bytes (322.5 GB). Corpus statistics: 104,073,706 total number of lines; 50,040,055,322 tokens; 1,125,798,968 paragraphs; 2,421,598,201 sentences. Uploaded to HuggingFace in 33 chunk files of 10 GB each.",
+    "format": "JSONL (one JSON document per line with fields: id (UUIDv4), text, url_warc, url)",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Parallel automated cleaning pipeline (PySpark / Apache Spark on EMR)",
+      "Language detection: two-step process using Compact Language Detector 2 (CLD2) for quick filtering and fastText for verification",
+      "Deduplication: dLHF pipeline with exact matching at document level, paragraph-level normalization deduplication, and Locality Sensitive Hashing adapted for parallel processing",
+      "Parsing and UTF-8 encoding fixing from WARC files; preservation of document and paragraph boundaries"
+    ],
+    "metrics": [
+      "Corpus size (bytes)",
+      "Number of documents",
+      "Number of words / tokens",
+      "Number of lines",
+      "Number of paragraphs",
+      "Number of sentences",
+      "Parsing quality",
+      "Cleaning quality",
+      "Deduplication"
+    ],
+    "calculation": "Metrics reported as raw counts and sizes computed from the processed data after cleaning and deduplication. Deduplication performed via the dLHF pipeline (document exact matching, paragraph normalization, and Locality Sensitive Hashing). Language identification validated by CLD2 followed by fastText.",
+    "interpretation": "As argued by the authors, corpora for language modelling should be compared not only by size but also by quality and traceability; higher quality and traceability improve confidence in model proficiency and GDPR compliance.",
+    "baseline_results": "Comparison to state-of-the-art Spanish or Spanish-excerpt corpora (from Table 1): OSCAR (Spanish size 381.9 GB, 51M docs, 42,829M words), mC4 (Spanish size 1,600 GB, 416M docs, 433,000M words), CC-100 (Spanish size 53.3 GB, 9,374M words), ParaCrawl v9 (Spanish size 24.0 GB, 4,374M words), ESCORPIUS (deduplicated size 322.5 GB, 104M docs, 50,773M words).",
+    "validation": "Validation via a two-step language identification (CLD2 then fastText) to ensure Spanish language selection; deduplication validation discussed via dLHF process and comparison of resulting statistics; no human annotation validation reported."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Fairness",
+      "Accuracy",
+      "Legal Compliance",
+      "Transparency"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Data privacy rights alignment",
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination",
+            "Poor model accuracy",
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Legal Compliance",
+          "subcategory": [
+            "Model usage rights restrictions"
+          ]
+        },
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Lack of training data transparency",
+            "Uncertain data provenance"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": "The paper states that low-quality data can have pernicious effects, reducing result quality and creating false impressions of language representation; preserving traceability enables exercising GDPR rights (e.g., right of withdrawal) for individuals whose data appear on websites."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The corpus maintains source web page URL and WARC shard origin to ensure traceability and to permit application of the right of withdrawal under GDPR. The authors state they do not perform URL-based content filtering and expect users to apply filtering if desired.",
+    "data_licensing": "Released under CC BY-NC-ND 4.0 license (Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International).",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "The authors state the dataset maintains traceability (source URL and WARC shard origin) to comply with EU regulations such as GDPR and to allow the right to be forgotten."
+  }
+}

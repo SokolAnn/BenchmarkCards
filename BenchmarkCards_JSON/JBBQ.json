@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "JBBQ (Japanese Bias Benchmark for Analyzing Social Biases in Large Language Models)",
+    "abbreviation": "JBBQ",
+    "overview": "The JBBQ dataset evaluates social biases in Japanese large language models (LLMs) using question-answering tasks, constructed from an existing English bias benchmark while adjusting for Japanese cultural contexts.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Japanese"
+    ],
+    "similar_benchmarks": [
+      "BBQ",
+      "CBBQ",
+      "KoBBQ"
+    ],
+    "resources": [
+      "https://github.com/ynklab/JBBQ_data"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a benchmark for assessing biases in Japanese large language models using a dataset that reflects Japan's unique social context.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "The range of social categories in JBBQ is limited compared to the original BBQ, excluding nationality, race, religion, and socioeconomic status.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from the BBQ dataset, translated, and modified for Japanese cultural contexts.",
+    "size": "245 templates",
+    "format": "JSON",
+    "annotation": "Semi-automatically created, with translations and modifications made by native Japanese speakers."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Bias score"
+    ],
+    "calculation": "Bias scores are calculated based on the model's predictions in ambiguous and disambiguated contexts.",
+    "interpretation": "Higher accuracy indicates better performance in correctly answering questions; bias scores reflect the tendency of models to produce biased answers.",
+    "baseline_results": null,
+    "validation": "Results were validated through experiments with various open Japanese LLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt leaking"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset does not include personal identifiable information.",
+    "data_licensing": "Explicitly states that the dataset should not be used to generate biased language targeting specific groups.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

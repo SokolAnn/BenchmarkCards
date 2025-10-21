@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TEA (Temporal Entailment Assessment)",
+    "abbreviation": "TEA",
+    "overview": "We propose a novel entailment dataset that requires models to correctly determine the internal and external temporal structure of predications when performing natural language inference.",
+    "data_type": "text (sentence pairs)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SNLI",
+      "MNLI",
+      "DNC",
+      "TimeBank",
+      "VerbOcean",
+      "WordNet"
+    ],
+    "resources": [
+      "https://github.com/tttthomasssss/iwcs2019"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Provide a novel entailment dataset (TEA) that casts the problem of determining when a consequent state is licensed by an event as a natural language inference task, focused on temporally and aspectually modified predications.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Natural Language Inference",
+      "Entailment Detection",
+      "Binary Classification"
+    ],
+    "limitations": "TEA focuses on perfect and progressive aspect only and does not cover other aspect types such as Aktionsart. TEA was annotated by two annotators (the first and second authors) with an initial disagreement rate of just under 20%; the authors identify a possible annotation artefact due to sequential (non-random) annotation which they attempted to mitigate. The dataset intentionally uses short sentences and does not include temporal adverbials (authors note adding adverbials as future work).",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Candidate verb pairs were sampled from the before-after category of VerbOcean, the WordNet verb entailment graph, the entailment datasets of Weisman et al. (2012) and Vulić et al. (2017), and the relation inference dataset of Levy and Dagan (2016). Candidate pairs were manually filtered to retain only pairs with a temporal relation; nouns were chosen as arguments to form full sentences.",
+    "size": "11,138 sentence pairs (class distribution: 22% entailment, 78% non-entailment)",
+    "format": "N/A",
+    "annotation": "Manually annotated by two annotators (the first and second authors). Entailment interpreted as common-sense inference. Initial annotation disagreement was just under 20%; disagreements were resolved case-by-case through discussion and chosen strongest readings. The dataset was not crowdsourced."
+  },
+  "methodology": {
+    "methods": [
+      "Diagnostic classification (auxiliary-verb agreement) using logistic regression with stratified J-K-fold cross-validation",
+      "Translation operation evaluation (averaged vector offset and feedforward neural network projection)",
+      "Embedding similarity evaluation using cosine similarity and average precision (area under precision-recall curve)",
+      "Binary classification evaluation for pre-trained biLSTMs (softmax prediction scores)",
+      "Cross-validation (10-fold for translation neural network experiments; stratified J-K-fold for agreement task)",
+      "Automated metrics (precision/recall curves, MRR, accuracy, macro-averaged F1)"
+    ],
+    "metrics": [
+      "Average Precision (Area under Precision-Recall curve)",
+      "Accuracy",
+      "Macro-averaged F1 Score",
+      "Mean Reciprocal Rank (MRR)",
+      "Precision",
+      "Recall",
+      "Cosine Similarity"
+    ],
+    "calculation": "Average Precision: precision and recall measured over varying thresholds and reported as average precision (area under the precision-recall curve). MRR: averaged over 10 randomly sampled seed sets (for averaged offset) and 10 cross-validation folds (for neural network). Auxiliary-verb agreement: averaged accuracy using stratified J-K-fold cross-validation with a scikit-learn logistic regression classifier. BiLSTM classification: accuracy and macro-averaged F1 from softmax prediction scores.",
+    "interpretation": "Higher average precision indicates better entailment detection ability; MRR indicates success in generating correct inﬂected verb forms. Authors interpret that embedding models and pre-trained biLSTMs fail to outperform a majority-class / tense-pair baseline on TEA, attributing this to models' reliance on distributional/contextual similarity which yields many false positives and prevents reliable inference governed by tense and aspect.",
+    "baseline_results": "TEA results (reported): Avg. Precision -- word2vec: 0.31, APT: 0.28, fastText: 0.30, ELMo: 0.21, BERT: 0.27. biLSTM-DNC: Avg. Precision 0.22; Accuracy 0.58; F1-Score 0.49. biLSTM-SNLI: Avg. Precision 0.21; Accuracy 0.51; F1-Score 0.47. Majority class baseline Avg. Precision 0.22; Majority class / tense pair baseline Avg. Precision 0.35. (Auxiliary-verb agreement results: averaged accuracies reported in Table 2; translation operation evaluated with MRR as shown in figures.)",
+    "validation": "Annotation validation: dataset annotated by two annotators with disagreements (~20%) resolved through discussion; authors report resolving all initial disagreements and assert annotations are robust. Experimental validation: cross-validation used (10-fold and stratified J-K-fold) for respective experiments; pre-trained biLSTMs achieved 83% and 88% accuracy on SNLI and DNC development sets respectively prior to evaluation on TEA."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

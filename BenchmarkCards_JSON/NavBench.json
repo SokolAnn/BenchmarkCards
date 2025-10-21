@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "NavBench",
+    "abbreviation": "N/A",
+    "overview": "NavBench is a benchmark designed to systematically evaluate Multimodal Large Language Models (MLLMs) in embodied navigation under zero-shot settings, decomposing the evaluation into Navigation Comprehension and Navigation Execution, covering various reasoning capabilities and execution tasks.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "R2R",
+      "ObjectNav"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2506.01031"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the embodied navigation capabilities of MLLMs and provide insights into their reasoning and execution performance.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Embodied Navigation",
+      "Multi-modal Reasoning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Matterport3D simulator and existing embodied navigation datasets such as R2R, RxR, GEL-R2R.",
+    "size": "3,200 question-answer pairs and 432 navigation episodes across 72 scenes",
+    "format": "N/A",
+    "annotation": "Constructed using human evaluation and automatic scoring mechanisms."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Success Rate (SR)",
+      "Success weighted by Path Length (SPL)"
+    ],
+    "calculation": "Metrics are calculated based on the model's correct predictions in multiple-choice tasks and evaluation of navigation success.",
+    "interpretation": "A higher score indicates better performance in navigation comprehension and execution.",
+    "baseline_results": null,
+    "validation": "Evaluated using both simulation and real-world deployment experiments."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

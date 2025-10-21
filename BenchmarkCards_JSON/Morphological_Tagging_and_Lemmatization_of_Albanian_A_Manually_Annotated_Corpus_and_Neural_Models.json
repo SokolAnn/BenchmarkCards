@@ -1,0 +1,75 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Morphological Tagging and Lemmatization of Albanian: A Manually Annotated Corpus and Neural Models",
+    "abbreviation": "N/A",
+    "overview": "The paper presents the first publicly available part-of-speech and morphologically tagged corpus for the Albanian language, and a neural morphological tagger and lemmatizer trained on it. The corpus contains about 118,000 tokens of naturally occurring text collected from different text sources, with an addition of 67,000 tokens of artificially created simple sentences used only in training. The annotated corpus and trained models are made publicly available under an open license.",
+    "data_type": "text (token-level annotated text: POS tags, morphological features, lemmas)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Albanian"
+    ],
+    "similar_benchmarks": [
+      "UniMorph",
+      "Albanian National Corpus",
+      "Kabashi and Proisl (2018) Albanian gold corpus"
+    ],
+    "resources": [
+      "https://github.com/NeldaKote/Albanian-POS2",
+      "https://universaldependencies.org/conll18/conll18_ud_eval.py"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To create an openly available corpus of manually annotated part-of-speech tags, morphological features and lemmas for Albanian, and to train and evaluate neural models for segmentation, morphological tagging and lemmatization on this corpus.",
+    "audience": [],
+    "tasks": [
+      "Text Segmentation",
+      "Tokenization",
+      "Part-of-Speech Tagging",
+      "Morphological Tagging",
+      "Lemmatization"
+    ],
+    "limitations": "Syntactic annotation is not included; extension with syntactic annotation and inclusion into the Universal Dependencies treebank collection is left as future work.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Naturally occurring text collected from two fiction books, an Albanian grammar book, sentences sampled from the Albanian section of the Leipzig Corpora Collection (web-crawled text and Wikipedia), and artificially created simple sentences based on a list of Albanian verbs from the UniMorph project.",
+    "size": "117,686 tokens (6,644 sentences) of naturally occurring text; 66,911 tokens (17,042 sentences) of artificially created simple sentences (used only in training); total 184,597 tokens (22,366 sentences). Dataset split: Training: 160,532 tokens (includes 66,911 artificial tokens), Development: 11,375 tokens, Test: 12,690 tokens.",
+    "format": "CoNLL-U formatted corpus (Universal Dependencies annotation)",
+    "annotation": "Manual annotation according to the Universal Dependencies (UD) tagset; initial annotations converted from previous work and manually corrected; pre-tagged data reviewed by two native speakers; lemmas provided for each token."
+  },
+  "methodology": {
+    "methods": [
+      "Model training and evaluation using the Turku Neural Parser Pipeline",
+      "Automated evaluation using the official CoNLL-2018 evaluation script (conll18_ud_eval.py)",
+      "Manual annotation and manual review by native speakers (for corpus creation)"
+    ],
+    "metrics": [
+      "Accuracy (Token segmentation)",
+      "Accuracy (Sentence segmentation)",
+      "Accuracy (Part-of-Speech tagging)",
+      "Accuracy (Morphological features)",
+      "Accuracy (Lemmatization)"
+    ],
+    "calculation": "Performance measured using the official CoNLL-2018 shared task evaluation script (conll18_ud_eval.py) for multilingual parsing from raw text to Universal Dependencies.",
+    "interpretation": "The authors state that the performance of each step of the pipeline is at a sufficiently high level to support many downstream NLP applications in practice.",
+    "baseline_results": "Token segmentation: 99.88% Accuracy; Sentence segmentation: 99.51% Accuracy; POS tagging: 92.74% Accuracy; Morphological features: 85.31% Accuracy; Lemmatization: 89.95% Accuracy.",
+    "validation": "Sentences from the same document are grouped into the same split to avoid lexical overlap. All artificially created UniMorph sentences are placed into the training section to avoid optimistic evaluation. Development set used for early stopping; held-out test set preserved for final evaluation."
+  },
+  "targeted_risks": {
+    "risk_categories": [],
+    "atlas_risks": {
+      "risks": null
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Available under an open license (unspecified in the paper).",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

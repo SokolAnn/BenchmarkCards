@@ -1,0 +1,72 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FinGen: A Dataset for Argument Generation in Finance",
+    "abbreviation": "FinGen",
+    "overview": "FinGen introduces three tasks centered on forward-looking argument generation in finance: Evidence2Claim, Chart2Argument, and News2Argument.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Finance"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://arxiv.org/abs/2405.20708"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To facilitate the generation of forward-looking arguments in the financial sector.",
+    "audience": [
+      "ML Researchers",
+      "Financial Analysts"
+    ],
+    "tasks": [
+      "Evidence2Claim",
+      "Chart2Argument",
+      "News2Argument"
+    ],
+    "limitations": "The dataset sizes for Chart2Argument and News2Argument are small and do not cover multilingual data from the same source.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected earnings conference calls, trading blogs, and professional analyst reports.",
+    "size": "44,924 instances",
+    "format": "CSV",
+    "annotation": "Manually annotated with forward-looking claims and arguments."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "ROUGE",
+      "BERT Score"
+    ],
+    "calculation": "Metrics are calculated comparing model outputs to human-generated references.",
+    "interpretation": "Higher scores indicate better alignment with human-like forward-looking claims.",
+    "baseline_results": null,
+    "validation": "Used a training-evaluation split of 80-20 for instance selection."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "The dataset includes both English and Chinese texts.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

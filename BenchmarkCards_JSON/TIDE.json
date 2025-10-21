@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TIDE (Trauma-Informed Dialogue for Empathy)",
+    "abbreviation": "TIDE",
+    "overview": "TIDE is a novel dataset comprising 10,000 two-turn conversations across 500 diverse, clinically-grounded PTSD personas. It is designed to assess and improve the empathetic capabilities of small language models in trauma-informed contexts.",
+    "data_type": "dialogue pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/yenopoya/TIDE"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate whether small language models can generate emotionally attuned, trauma-sensitive responses in therapeutic contexts.",
+    "audience": [
+      "ML Researchers",
+      "Mental Health Professionals"
+    ],
+    "tasks": [
+      "Empathetic Response Generation"
+    ],
+    "limitations": "The synthetic TIDE dataset, while clinically validated, is derived from a single frontier model (Claude Sonnet 3.5) and may not capture the full complexity of real-world interactions.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "10,000 two-turn dialogues derived from 500 diverse client personas, each grounded in characteristics associated with PTSD, created and clinically reviewed by psychologists.",
+    "size": "10,000 dialogues",
+    "format": "CSV",
+    "annotation": "Clinically reviewed by co-author psychologists specializing in PTSD to ensure emotional plausibility and trauma sensitivity."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Cosine Similarity",
+      "BERTScore",
+      "ROUGE-L",
+      "Meteor"
+    ],
+    "calculation": "Metrics are calculated based on the similarity between generated responses and ground-truth reference responses.",
+    "interpretation": "Higher scores indicate better alignment with expected empathetic responses.",
+    "baseline_results": "Claude Sonnet 3.5 serves as the gold standard reference, consistently outperformed all other small models.",
+    "validation": "Empathy ratings were collected through a controlled human evaluation study."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Data privacy rights alignment"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Participants varied in age, sex, race, and education, affecting perceptions of empathy.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The data is designed with ethical guidelines in mind, focusing on trauma-informed practices.",
+    "data_licensing": "CC BY-NC 4.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

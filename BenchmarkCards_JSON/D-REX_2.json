@@ -1,0 +1,98 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "D-REX (Deceptive Reasoning Exposure Suite)",
+    "abbreviation": "D-REX",
+    "overview": "D-REX is a benchmark designed to evaluate the discrepancy between a model's internal reasoning process and its final output, addressing the problem of deceptive reasoning in large language models.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "AILuminate",
+      "StrongReject",
+      "TruthfulQA",
+      "OpenDeception"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the safety and alignment of large language models by detecting deceptive reasoning that results in benign outputs with hidden malicious intent.",
+    "audience": [
+      "ML Researchers",
+      "Safety Engineers",
+      "AI Alignment Researchers"
+    ],
+    "tasks": [
+      "Safety Evaluation",
+      "Deception Detection"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Data constructed through a competitive red-teaming exercise where adversarial system prompts were crafted to induce deceptive behaviors.",
+    "size": "8,162 samples",
+    "format": "N/A",
+    "annotation": "Crowdsourced via competitive exercises."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Detection Evasion",
+      "Output Camouflage",
+      "Malicious Internal Reasoning"
+    ],
+    "calculation": "Models are evaluated based on their responses to adversarial prompts by comparing their internal reasoning to expected patterns of deceptive behavior.",
+    "interpretation": "High scores indicate a model's strong deceptive behavior, where benign outputs mask malicious internal reasoning.",
+    "baseline_results": null,
+    "validation": "Evaluation against a range of criteria using multiple judge LLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": [
+      "Promotion of harmful conspiratorial thinking",
+      "Erosion of trust in factual historical accounts"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

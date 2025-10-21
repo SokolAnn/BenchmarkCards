@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "scDrugMap",
+    "abbreviation": "N/A",
+    "overview": "scDrugMap is an integrated framework for drug response prediction that evaluates a wide range of foundation models using large-scale single-cell datasets across diverse tissue types, cancer types, and treatment regimens. This study presents the first comprehensive benchmarking of large-scale foundation models for drug response prediction in single-cell data.",
+    "data_type": "cell-level drug response data",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://scdrugmap.com",
+      "https://github.com/QSong-github/scDrugMap"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a user-friendly and flexible platform for drug response prediction and to benchmark large-scale foundation models for drug discovery.",
+    "audience": [
+      "ML Researchers",
+      "Drug Discovery Practitioners"
+    ],
+    "tasks": [
+      "Drug Response Prediction"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated datasets from 36 studies comprising drug response information from single-cell RNA sequencing.",
+    "size": "345,607 single cells",
+    "format": "N/A",
+    "annotation": "Cell-level annotations indicating drug sensitivity/resistance."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "F1 Score",
+      "AUROC",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "Metrics are computed based on predictions versus ground truth labels for drug sensitivity and resistance.",
+    "interpretation": "Higher scores in F1, AUROC, precision, and recall indicate better model performance in predicting drug responses.",
+    "baseline_results": "N/A",
+    "validation": "Cross-validation performed using pooled and cross-data evaluation strategies."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

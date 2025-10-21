@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CRITIC EVAL",
+    "abbreviation": "N/A",
+    "overview": "CRITIC EVAL is a novel benchmark designed to comprehensively and reliably evaluate the critique ability of Large Language Models (LLMs) across four dimensions and nine diverse task scenarios, involving both scalar-valued and textual critiques.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "CRITIC BENCH",
+      "MetaCritique",
+      "UltraFeedback",
+      "Auto-J"
+    ],
+    "resources": [
+      "https://github.com/open-compass/CriticEval"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive and reliable benchmark for evaluating the critique abilities of LLMs, ensuring effective analysis and correction of flaws in their responses.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Critique Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Annotated critiques generated through a human-in-the-loop process, utilizing metrics from various LLMs across different tasks and scenarios.",
+    "size": "3,608 critiques",
+    "format": "text",
+    "annotation": "Generated critiques are annotated and reviewed by human experts using a rigorous human-in-the-loop data construction pipeline."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Spearman correlation"
+    ],
+    "calculation": "Spearman correlation coefficients are computed for critiques based on the consistency with human judgments, ranging from -1 to 1, and normalized to a scale of 0 to 100 for reporting.",
+    "interpretation": "Higher Spearman correlation scores indicate greater consistency with human judgments, reflecting better performance in critique evaluation.",
+    "baseline_results": "Baseline results include evaluations from 35 widely used open-source and closed-source LLMs mentioned in the paper.",
+    "validation": "The benchmark is validated through extensive evaluations of multiple LLMs, demonstrating its reliability in evaluating critique ability."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Privacy",
+      "Robustness",
+      "Societal Impact"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Privacy measures include securing privacy and confidentiality of participants, with no personal identification information involved.",
+    "data_licensing": "Apache 2.0 License for the CRITIC EVAL dataset; specific licenses for datasets used are discussed in Appendix D.",
+    "consent_procedures": "Human annotators are compensated adequately, ensuring ethical compliance in data collection.",
+    "compliance_with_regulations": "N/A"
+  }
+}

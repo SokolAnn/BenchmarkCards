@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SummExecEdit",
+    "abbreviation": "N/A",
+    "overview": "SummExecEdit is a novel pipeline and benchmark that leverages executable edits to assess models' abilities to detect factual errors in summarization and provide accurate explanations.",
+    "data_type": "factual inconsistency summaries",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SummEdits"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/Salesforce/summexecedit"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate large language models on their ability to detect factual inconsistencies and provide explanations for them.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Factual Consistency Detection",
+      "Explanation Generation"
+    ],
+    "limitations": "Generating benchmarks with executable edits require availability of ground truth pairs which might not always be the case.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated from large language models using executable prompts.",
+    "size": "4,241 samples",
+    "format": "JSON",
+    "annotation": "Manually annotated by researchers based on multiple evaluative criteria."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Detection Accuracy",
+      "Explanation Score"
+    ],
+    "calculation": "Detection Score is calculated based on the proportion of correct predictions among factually inconsistent summaries.",
+    "interpretation": "A higher detection accuracy indicates a model's better ability to identify factual inconsistencies.",
+    "baseline_results": "The best model achieves a Detection Accuracy of 73% on the benchmark.",
+    "validation": "Manual annotation and error analysis for the generated inconsistencies."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Transparency"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Lack of training data transparency"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Apache-2.0 license",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

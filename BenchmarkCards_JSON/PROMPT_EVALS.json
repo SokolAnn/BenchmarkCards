@@ -1,0 +1,102 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PROMPT EVALS",
+    "abbreviation": "N/A",
+    "overview": "PROMPT EVALS is a dataset of 2087 human-contributed prompt templates and 12623 assertion criteria, designed to improve the reliability of large language model (LLM) outputs in production environments.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Finance",
+      "Marketing",
+      "E-commerce",
+      "Education",
+      "Healthcare",
+      "IT and Programming"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "N/A"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/reyavir/PromptEvals",
+      "https://huggingface.co/reyavir/promptevals_mistral",
+      "https://huggingface.co/reyavir/promptevals_llama"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive benchmark for evaluating LLM-generated assertion criteria in various application contexts.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Assertion Generation",
+      "Prompt Engineering",
+      "Evaluation of LLM Outputs"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Human-contributed LLM prompt templates and their assertion criteria derived from an open-source LLM pipeline.",
+    "size": "2,087 prompt templates, 12,623 assertion criteria",
+    "format": "JSON",
+    "annotation": "Generated through a three-step process involving initial criteria generation using LLMs, manual review for missed criteria, and final refinement."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Semantic F1",
+      "Number of criteria"
+    ],
+    "calculation": "Calculating Semantic F1 involves comparing the semantic similarity between predicted and ground truth criteria using cosine similarity over vector representations.",
+    "interpretation": "A higher Semantic F1 indicates better performance in generating relevant assertion criteria.",
+    "baseline_results": "GTP-4o scores considered as baseline; fine-tuned models outperform it by significant percentages.",
+    "validation": "Validating generated assertion criteria against ground truth using metrics defined in the evaluation section."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Developers contributing prompts were not required to provide personally identifiable information (PII).",
+    "data_licensing": "Open-source; licensed under terms as specified in Hugging Face model card.",
+    "consent_procedures": "Developers consented to share their prompts and can request deletion.",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ChartInsights",
+    "abbreviation": "N/A",
+    "overview": "ChartInsights is a newly curated dataset specifically designed for evaluating low-level Chart Question Answering (ChartQA) tasks, consisting of 22,347 samples covering 10 data analysis tasks across 7 chart types.",
+    "data_type": "chart-query-answer pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ChartQA",
+      "DVQA",
+      "MixFigureQA",
+      "ChartBench"
+    ],
+    "resources": [
+      "https://chartinsight.github.io/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the effectiveness of Multimodal Large Language Models (MLLMs) on low-level chart question answering tasks.",
+    "audience": [
+      "ML Researchers",
+      "Data Scientists",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Data Retrieval",
+      "Reasoning",
+      "Filter",
+      "Determine Range",
+      "Cluster",
+      "Find Extreme",
+      "Correlation",
+      "Find Anomaly",
+      "Order",
+      "Distribution"
+    ],
+    "limitations": "Limited to specific chart types and low-level tasks.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated from existing datasets like nvBench and ChartQA.",
+    "size": "22,347 samples",
+    "format": "N/A",
+    "annotation": "Automated generation and manual review of task-query pairs."
+  },
+  "methodology": {
+    "methods": [
+      "Systematic evaluation of MLLMs",
+      "Textual and visual prompts",
+      "Quantitative analysis of model performance"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy calculated as the ratio of correct answers to total questions.",
+    "interpretation": "Accuracy rates indicate the strength of MLLMs in processing low-level ChartQA tasks.",
+    "baseline_results": "Average accuracy of tested models ranges from 39.8% to 84.32%.",
+    "validation": "Validation conducted through testing a random 20% of the dataset."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Potential misunderstanding of chart data due to hallucinations in MLLMs."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

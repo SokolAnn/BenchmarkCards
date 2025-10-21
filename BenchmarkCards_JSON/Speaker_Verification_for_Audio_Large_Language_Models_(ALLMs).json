@@ -1,0 +1,77 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Speaker Verification for Audio Large Language Models (ALLMs)",
+    "abbreviation": "N/A",
+    "overview": "This paper introduces a benchmark for evaluating the performance of Audio Large Language Models (ALLMs) in speaker verification tasks, showcasing both zero-shot performance and improvements through fine-tuning strategies.",
+    "data_type": "audio",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "VoxCeleb",
+      "CN-Celeb",
+      "3D-Speaker"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2509.19755"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To investigate the capabilities of Audio Large Language Models in speaker verification and to introduce methodologies for evaluation and fine-tuning.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Speaker Verification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Public benchmarks including VoxCeleb, CN-Celeb, and 3D-Speaker.",
+    "size": "9 million training pairs for fine-tuning, 5,560 evaluation pairs for text-dependent SV.",
+    "format": "audio",
+    "annotation": "Constructed using hard pair sampling strategy based on speaker attributes."
+  },
+  "methodology": {
+    "methods": [
+      "Zero-shot evaluation",
+      "Supervised fine-tuning"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy is calculated based on the model's ability to distinguish between speaker pairs.",
+    "interpretation": "High accuracy indicates robust performance in distinguishing between speakers based on audio input.",
+    "baseline_results": "ECAPA-TDNN conventional model for comparison.",
+    "validation": "Fine-tuning performance is compared with zero-shot results to validate improvements."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

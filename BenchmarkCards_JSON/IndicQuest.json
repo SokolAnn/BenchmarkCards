@@ -1,0 +1,103 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "L3Cube-IndicQuest: A Benchmark Question Answering Dataset for Evaluating Knowledge of LLMs in Indic Context",
+    "abbreviation": "IndicQuest",
+    "overview": "L3Cube-IndicQuest is a gold-standard factual question-answering benchmark dataset designed to evaluate how well multilingual LLMs capture regional knowledge across various Indic languages. The dataset contains 4000 question-answer pairs, each for English and 19 Indic languages, covering five domains specific to the Indic region.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Assamese",
+      "Bengali",
+      "Dogri",
+      "Gujarati",
+      "Hindi",
+      "Kannada",
+      "Konkani",
+      "Maithili",
+      "Malayalam",
+      "Marathi",
+      "Meitei (Manipuri)",
+      "Nepali",
+      "Odia",
+      "Punjabi",
+      "Sanskrit",
+      "Sindhi",
+      "Tamil",
+      "Telugu",
+      "Urdu"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/l3cube-pune/indic-nlp"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a benchmark for evaluating the performance of LLMs in understanding and representing knowledge relevant to the Indian context.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset comprises factual question-and-answer pairs sourced from reputable platforms like Wikipedia and well-known educational websites.",
+    "size": "4,000 question-answer pairs",
+    "format": "N/A",
+    "annotation": "Manual verification and translation processes were conducted to ensure accuracy."
+  },
+  "methodology": {
+    "methods": [
+      "Automated evaluation with Llama-3.1-405B-Instruct",
+      "F1 Score",
+      "ROUGE Score"
+    ],
+    "metrics": [
+      "F1 Score",
+      "ROUGE Score",
+      "Overall Evaluation Score"
+    ],
+    "calculation": "Metrics are calculated based on alignment between model-generated responses and ground truth answers.",
+    "interpretation": "Scores are interpreted based on factual accuracy, relevance, clarity, language consistency, and conciseness.",
+    "baseline_results": "N/A",
+    "validation": "Evaluation covered various multilingual models including GPT-4o, Llama-3.1-405B-Instruct, Gemma-2-2B-it, and Gemma-2-9B-it."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

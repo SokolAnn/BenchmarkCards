@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "GRAPE (Grouped Ranking-Aware Policy Optimization Enhancement)",
+    "abbreviation": "GRAPE",
+    "overview": "GRAPE is a plug-and-play enhancement approach that incorporates ranking signals into retrieval-guided query rewriting with LLMs to improve retrieval performance under distributional shifts including multilingual, length, and modality differences.",
+    "data_type": "text",
+    "domains": [
+      "Computer Vision",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "Flickr30k-CN",
+      "CVLUE",
+      "XM3600",
+      "Wikipedia",
+      "CIRR"
+    ],
+    "resources": [
+      "https://github.com/Chinese0123456/GRAPE.git"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enhance CLIP-based retrieval systems under distributional shifts without costly re-embedding or redeployment.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Image Retrieval"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Five representative benchmarks including Flickr30k-CN, CVLUE, XM3600, Wikipedia, and CIRR.",
+    "size": "148,915 training queries, 29,783 training images for Flickr30k-CN; similar sizes for others.",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Ranking-based reward optimization",
+      "Retrieval-guided query rewriting with LLMs"
+    ],
+    "metrics": [
+      "Recall@1",
+      "Recall@10"
+    ],
+    "calculation": "Ranking rewards are computed based on the relative ranking of the target image against generated queries.",
+    "interpretation": "Higher Recall@1 and Recall@10 indicate better retrieval performance.",
+    "baseline_results": "Improvements of 4.9% in Recall@10 over CLIP with LLM rewriting.",
+    "validation": "Conducted on training and validation splits of each benchmark dataset."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

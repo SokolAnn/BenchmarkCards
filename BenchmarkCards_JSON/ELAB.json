@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ELAB (Extensive LLM Alignment Benchmark in Persian Language)",
+    "abbreviation": "ELAB",
+    "overview": "This paper presents a comprehensive evaluation framework for aligning Persian Large Language Models (LLMs) with critical ethical dimensions, including safety, fairness, and social norms by creating three types of Persian-language benchmarks: translated data, new synthetically generated data, and new naturally collected data.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Persian"
+    ],
+    "similar_benchmarks": [
+      "Ganguli et al. (2022)",
+      "AdvBench",
+      "HarmBench",
+      "DecodingTrust"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To develop a comprehensive framework for evaluating Persian LLMs, focusing on safety, fairness, and social norms.",
+    "audience": [
+      "ML Researchers",
+      "Ethics Researchers",
+      "AI Practitioners"
+    ],
+    "tasks": [
+      "Safety Evaluation",
+      "Fairness Evaluation",
+      "Social Norms Evaluation"
+    ],
+    "limitations": "Evaluations are constrained to open-source models with fewer than 10 billion parameters.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Translated and generated datasets from existing alignment benchmarks, along with explicitly collected data from social media.",
+    "size": "30,000 examples (approx. across various datasets)",
+    "format": "N/A",
+    "annotation": "Manual annotation by experts and evaluation using a GPT-based model."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "LLM-as-a-Judge evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Fairness Scores",
+      "Safety Scores"
+    ],
+    "calculation": "Scores are derived from human evaluators rating LLM outputs on a scale based on safety, fairness, and social norms.",
+    "interpretation": "Higher scores indicate better alignment with safety, fairness, and social norms.",
+    "baseline_results": "Performance across various alignment benchmarks as referenced in the paper.",
+    "validation": "Uses a systematic evaluation approach involving multiple models and scoring systems."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Exposing personal information"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Data includes demographic considerations specific to the Persian language context.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data collection was conducted with respect to user privacy and anonymity where feasible.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "Attempts to align with local data protection regulations relevant to the Persian context."
+  }
+}

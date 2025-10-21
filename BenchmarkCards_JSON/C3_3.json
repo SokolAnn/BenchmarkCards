@@ -1,0 +1,102 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "The Combined Corpus",
+    "abbreviation": "C3",
+    "overview": "An evaluation corpus created by merging two publicly available scholarly-abstract relation corpora (SemEval18 and SciERC) to provide a larger, more diverse and realistic evaluation scenario of large and heterogeneous data for scientific relation classification.",
+    "data_type": "text (manually annotated scholarly abstracts with scientific term pairs and relation labels)",
+    "domains": [
+      "Artificial Intelligence",
+      "Natural Language Processing",
+      "Speech",
+      "Machine Learning",
+      "Computer Vision"
+    ],
+    "languages": [
+      "N/A"
+    ],
+    "similar_benchmarks": [
+      "The SemEval18 Corpus",
+      "The SciERC Corpus"
+    ],
+    "resources": [
+      "https://www.orkg.org/orkg/comparison/R38012",
+      "https://github.com/google-research/bert",
+      "https://github.com/allenai/scibert"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Help stakeholders of digital libraries select appropriate techniques (BERT-based variants and classification strategies) to implement knowledge-graph-based systems for enhanced scholarly information organization by empirically evaluating scientific relation classification models.",
+    "audience": [
+      "Stakeholders of digital libraries"
+    ],
+    "tasks": [
+      "Relation Classification",
+      "Information Extraction",
+      "Knowledge Graph Construction"
+    ],
+    "limitations": "Evaluations are performed on corpora that cover the Artificial Intelligence research area (AI) only; labeled data exhibit label biases and unbalanced distributions across relation types; evaluation covers seven predefined relation types (limited relation set).",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "C1: SemEval18 Corpus (SemEval-2018 shared task dataset of scholarly abstracts from the ACL Anthology); C2: SciERC Corpus (500 manually annotated abstracts from 12 AI conference/workshop proceedings); C3: The Combined Corpus created by merging C1 and C2 with unified relation labels.",
+    "size": "SemEval18: 500 abstracts; SemEval18 relation instances: 1,562 examples. SciERC: 500 abstracts; SciERC relation instances: 4,648 examples. Combined: 1,000 abstracts; Combined relation instances: 6,210 examples.",
+    "format": "N/A",
+    "annotation": "Manually annotated scholarly abstracts for scientific terms and the semantic relations between pairs of terms (human annotations from the original corpus creators)."
+  },
+  "methodology": {
+    "methods": [
+      "Fine-tuning of pre-trained BERT variants (BERT BASE cased/uncased; SciBERT cased/uncased)",
+      "Single-relation-at-a-time classification (SRC)",
+      "Multiple-relations-at-a-time classification (MRC)",
+      "Automated evaluation on pre-partitioned train/dev/test splits"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1-score (macro F1)",
+      "Accuracy"
+    ],
+    "calculation": "Standard classification metrics (Precision, Recall, F1, Accuracy) computed on the pre-partitioned test sets provided by the original corpora. F1 reported is macro F1. Class probabilities from SRC are normalized with softmax and label assigned by maximum probability. Models trained with tuned learning rates (values searched: 2e-5, 3e-5, 5e-5); other training parameters used default values from the pretrained models.",
+    "interpretation": "Higher Accuracy and F1 indicate better relation classification. SRC generally achieves higher classification accuracy than MRC, while MRC demonstrates more consistent (robust) performance on smaller or sparser-annotation corpora. Domain-specific pre-training (SciBERT) and uncased variants tend to yield better and more stable performance on scholarly data.",
+    "baseline_results": "Table 2 reports per-model Accuracy and macro-F1 across three corpora. Example aggregated result: SciBERT uncased averaged Accuracy 82.91 (±2.04) and averaged F1 78.99 (±1.54) across corpora. Detailed per-corpus and per-model numbers are provided in Table 2 of the paper.",
+    "validation": "Used original train/dev/test splits from the source corpora (SemEval18: 350 training / 150 testing; SciERC: 350/50/100 train/dev/test). Models were evaluated on the provided test splits; learning rate was tuned over specified values; other training parameters used defaults from BERT/SciBERT."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Governance"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Governance",
+          "subcategory": [
+            "Lack of testing diversity"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

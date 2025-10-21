@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PETA (Protein Evaluation Through Amino-acid Tokenization Analysis)",
+    "abbreviation": "PETA",
+    "overview": "PETA introduces a benchmark consisting of 33 datasets categorized into 15 distinct protein-related tasks, providing a standardized evaluation framework for protein language models and exploring the influence of vocabulary sizes on performance.",
+    "data_type": "text",
+    "domains": [
+      "Biotechnology",
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "TAPE",
+      "ProteinGLUE",
+      "PEER"
+    ],
+    "resources": [
+      "https://github.com/ginnm/ProteinPretraining"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive analysis and benchmark for evaluating protein language models leveraging sub-word tokenization and their performance across various downstream tasks.",
+    "audience": [
+      "ML Researchers",
+      "Biotechnologists",
+      "Protein Engineers"
+    ],
+    "tasks": [
+      "Protein Fitness Prediction",
+      "Protein-Protein Interaction Prediction",
+      "Subcellular Localization Prediction",
+      "Protein Solubility Prediction",
+      "Protein Structure Prediction"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "University of Information Science and Engineering database",
+    "size": "138 billion sequences",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Spearman Correlation",
+      "Mean Squared Error (MSE)"
+    ],
+    "calculation": "Metrics were calculated based on the performance of models trained on protein sequences from benchmark datasets.",
+    "interpretation": "Higher scores indicate better model performance on downstream tasks.",
+    "baseline_results": "Per-amino-acid model acts as baseline for vocabulary size testing.",
+    "validation": "Models were validated using a subset of 100,000 sequences from the UniRef90 database."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

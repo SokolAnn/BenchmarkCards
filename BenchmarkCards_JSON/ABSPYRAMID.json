@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ABSPYRAMID",
+    "abbreviation": "N/A",
+    "overview": "ABSPYRAMID is a unified entailment graph to comprehensively evaluate language models’ abstraction ability, consisting of 221K textual descriptions of abstraction knowledge across diverse events.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "AbstractATOMIC"
+    ],
+    "resources": [
+      "https://github.com/HKUST-KnowComp/AbsPyramid"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the abstraction ability of language models using a comprehensive graph of abstraction knowledge.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Abstraction Detection",
+      "Abstraction Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from ASER and crowdsourced validation of abstract concepts.",
+    "size": "221,000 examples",
+    "format": "JSON",
+    "annotation": "Crowdsourced and manually verified for validity."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Macro F1 Score",
+      "AUC"
+    ],
+    "calculation": "Metrics are calculated based on predicted vs ground-truth labels with standard classification metrics.",
+    "interpretation": "Higher scores in Accuracy and Macro F1 indicate better performance in abstract concept identification and generation.",
+    "baseline_results": "Comparative results against previous benchmarks like AbstractATOMIC show improvement in LLM performance.",
+    "validation": "Split datasets for training, validation, and testing with maintained sample integrity."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Misinterpretation of abstract knowledge leading to incorrect applications."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Collects data from open-source corpora with proper anonymization.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

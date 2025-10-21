@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Visual Network Analysis (VNA) Benchmark",
+    "abbreviation": "VNA",
+    "overview": "We introduce a new benchmark for the evaluation of Vision Language Models (VLMs) on foundational Visual Network Analysis (VNA) tasks, including five tasks related to three core network science concepts: maximum degree, structural balance, and identifying components.",
+    "data_type": "image",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "VisionGraph Benchmark",
+      "GITQA (Graph-Image-Text Question Answering) Dataset"
+    ],
+    "resources": [
+      "https://figshare.com/articles/dataset/Multimodal_LLMs_Struggle_with_Basic_Visual_Network_Analysis_a_Visual_Network_Analysis_Benchmark/25938448",
+      "https://github.com/EvanUp/VNA_Benchmark/blob/main/prompts/prompts.csv"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective is to evaluate the zero-shot ability of multimodal LLMs to perform Visual Network Analysis tasks on small-scale graphs.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Maximum Degree Identification",
+      "Structural Balance Assessment",
+      "Component Counting"
+    ],
+    "limitations": "The tasks designed are not representative of all possible graphs and evaluate mastery of select network science concepts.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Synthetic graphs generated programmatically using Python libraries NetworkX and netgraph.",
+    "size": "200 graph visualizations",
+    "format": "PNG",
+    "annotation": "Automatically generated visualizations with corresponding task instructions."
+  },
+  "methodology": {
+    "methods": [
+      "Zero-shot evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Mean Squared Error (MSE)",
+      "Mean Jaccard Similarity"
+    ],
+    "calculation": "Accuracy calculated based on correct identification of graph attributes; MSE computed as the average of squared differences between actual and predicted values.",
+    "interpretation": "A higher accuracy indicates better performance in identifying graph-related attributes; MSE indicates prediction errors.",
+    "baseline_results": null,
+    "validation": "Performance was validated by comparing predicted results against ground truth labels."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "GlossLM (A Massively Multilingual Corpus and Pretrained Model for Interlinear Glossed Text)",
+    "abbreviation": "GlossLM",
+    "overview": "We compile the largest existing corpus of Interlinear Glossed Text (IGT) data from a variety of sources, covering over 450k examples across 1.8k languages, to enable research on crosslingual transfer and IGT generation.",
+    "data_type": "interlinear glossed text instances",
+    "domains": [
+      "Natural Language Processing",
+      "Linguistics"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/collections/lecslab/glosslm-66da150854209e910113dd87"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To aid in language documentation, preservation, and research by providing a large corpus of normalized IGT data and a pretrained model for automatic IGT generation.",
+    "audience": [
+      "Linguists",
+      "NLP Researchers",
+      "Language Documenters"
+    ],
+    "tasks": [
+      "Automatic Gloss Generation",
+      "Crosslingual Transfer"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Compiled from six different IGT corpora including ODIN, SIGMORPHON, IMTVault, APICS, UraTyp, and Guarani Corpus.",
+    "size": "450,000 instances",
+    "format": "Raw text files",
+    "annotation": "Data is normalized to follow a standard set of labels across languages."
+  },
+  "methodology": {
+    "methods": [
+      "Pretraining on a large multilingual corpus",
+      "Fine-tuning on monolingual corpora"
+    ],
+    "metrics": [
+      "Morpheme Accuracy",
+      "Word Accuracy",
+      "chrF++ Score"
+    ],
+    "calculation": "Metrics are calculated as the number of correct glosses in the correct position compared to the gold standard.",
+    "interpretation": "Higher scores indicate better performance with respect to generating accurate glosses.",
+    "baseline_results": "Comparisons made against various state-of-the-art models including TOP-CHOICE, TOKEN-CLASS, and TÜ-CL models.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC BY 4.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

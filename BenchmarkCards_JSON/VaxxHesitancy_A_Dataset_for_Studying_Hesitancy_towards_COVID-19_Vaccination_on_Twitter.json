@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "VaxxHesitancy: A Dataset for Studying Hesitancy towards COVID-19 Vaccination on Twitter",
+    "abbreviation": "N/A",
+    "overview": "A publicly available dataset of over 3,101 English tweets annotated with users' attitudes towards COVID-19 vaccination (stance). The dataset reframes vaccine stance classification as a four-way task (pro-vaxx, anti-vaxx, vaxx-hesitant, irrelevant) and is intended to enable analysis and detection of vaccine hesitancy distinct from pro- and anti-vaccine stance.",
+    "data_type": "text (tweets)",
+    "domains": [
+      "Natural Language Processing",
+      "Healthcare",
+      "Computational Social Science"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Cotfas et al. (2021)",
+      "Poddar et al. (2022a)",
+      "Chen, Chen, and Pang (2022)",
+      "Di Giovanni et al. (2022)",
+      "Delcea et al. (2022)"
+    ],
+    "resources": [
+      "https://github.com/GateNLP/VaxxHesitancy",
+      "https://doi.org/10.5281/zenodo.7601328",
+      "https://huggingface.co/GateNLP/covid-vaccine-twitter-bert",
+      "https://github.com/GateNLP/gate-teamware"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Re-frame vaccine stance classification as a four-way classification that includes a separate vaccine hesitancy category; provide a publicly available annotated dataset (3,101 tweets) and a domain-specific pre-trained language model (VaxxBERT) to support research and analysis of COVID-19 vaccine hesitancy.",
+    "audience": [
+      "ML Researchers",
+      "Social Scientists",
+      "Psychologists",
+      "Policy Makers",
+      "Public Health Researchers"
+    ],
+    "tasks": [
+      "Stance Classification",
+      "Text Classification",
+      "Linguistic Analysis"
+    ],
+    "limitations": "Annotated dataset size is limited to 3,101 tweets; dataset is monolingual (English); training set contains single-annotated tweets that may be noisier; multimodal information (images, video) is not included (noted as future work).",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected via the Twitter streaming COVID-19 API using a manually curated list of COVID-19 vaccine-related hashtags. Initial unlabelled collection D contains over 175 million tweets (October 2020 to May 2022). A temporally and topically stratified sample T was created and filtered; final annotated subset contains 3,101 English tweets.",
+    "size": "175 million tweets (unlabelled collection D); 3,101 annotated tweets (final dataset T)",
+    "format": "CSV (11 columns) containing tweet IDs and annotation metadata; original tweets retrievable via Twitter API using tweet IDs",
+    "annotation": "Manual annotation by 18 volunteer annotators using GATE Teamware with annotator training and test sessions. Annotation protocol included single and double annotations, confidence scores (1-5) recorded per annotation, and quality control via inter-annotator agreement (Cohen's kappa). Test set comprises double-agreed tweets with confidence > 3."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics evaluation on held-out test set",
+      "Model fine-tuning (BERT, COVID-BERT, VaxxBERT)",
+      "Domain-adaptive pretraining for VaxxBERT",
+      "Statistical significance testing (t-test)"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Precision",
+      "Recall",
+      "F1-score"
+    ],
+    "calculation": "Metrics are reported as the mean (and standard deviation) over five training runs with different random seeds. CrossEntropyLoss was used for training; models use early stopping. Test set defined as tweets where both annotators agree with confidence > 3.",
+    "interpretation": "Higher Accuracy and F1-score indicate better performance on the four-way vaccine stance classification task. The authors report that using higher-confidence annotations improves model performance and that domain-adaptive pretraining (VaxxBERT) yields better predictive performance than baselines.",
+    "baseline_results": "Set 3 (higher confidence selection): VaxxBERT: 73.04 ± 0.94% Accuracy, 69.29 ± 1.31 F1-score; COVID-BERT: 71.14 ± 0.94% Accuracy, 65.05 ± 1.17 F1-score; BERT (bert-large): 59.07 ± 0.74% Accuracy, 54.95 ± 1.32 F1-score.",
+    "validation": "Validation of annotations via inter-annotator agreement measured by Cohen's kappa across annotator pairs. Test set composed of double-annotated tweets where both annotators agree with confidence > 3. Experiments conducted across subsets with different annotation confidence thresholds to assess label quality effects on model performance."
+  },
+  "targeted_risks": {
+    "risk_categories": [],
+    "atlas_risks": {
+      "risks": null
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Annotator names replaced with identifiers; only tweet IDs are shared in compliance with Twitter API policy; ethical approval obtained (University Research Ethics Committee #037567).",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "Data collection and sharing comply with the Twitter data policies for research; ethical approval #037567."
+  }
+}

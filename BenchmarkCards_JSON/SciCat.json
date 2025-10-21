@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SciCat: A Curated Dataset of Scientific Software Repositories",
+    "abbreviation": "SciCat",
+    "overview": "The SciCat dataset is a comprehensive collection of Free-Libre Open Source Software (FLOSS) projects, designed to address the need for a curated repository of scientific and research software.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Software Engineering"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://worldofcode.org/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enable studies that focus on trends, common practices, challenges, and evolution in scientific software development.",
+    "audience": [
+      "ML Researchers",
+      "Software Engineers",
+      "Data Scientists"
+    ],
+    "tasks": [
+      "Software Classification",
+      "Software Trends Analysis"
+    ],
+    "limitations": "The accuracy and completeness of the dataset depend on the information extracted from README.md files.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "World of Code dataset, consisting of FLOSS repositories.",
+    "size": "350,308 README.md files",
+    "format": "Pickle file in a tar.gz archive",
+    "annotation": "Classified by OpenAI’s language models based on README.md files."
+  },
+  "methodology": {
+    "methods": [
+      "Automated classification using OpenAI's language models",
+      "Manual validation of selected projects"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "Metrics were calculated based on Cohen’s Kappa and F1 score metrics from evaluations.",
+    "interpretation": "Higher F1 scores indicate better identification of scientific application software.",
+    "baseline_results": null,
+    "validation": "Validation conducted using human raters and comparison with existing datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis of the gender distribution of project authors included.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

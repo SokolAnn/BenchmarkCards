@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ANCHOLIK-NER: A Benchmark Dataset for Bangla Regional Named Entity Recognition",
+    "abbreviation": "ANCHOLIK-NER",
+    "overview": "We introduce ANCHOLIK-NER, the first benchmark dataset for Named Entity Recognition (NER) in Bangla regional dialects, comprising 17,405 sentences distributed across five regions. The dataset was sourced from publicly available resources and supplemented with manual translations, ensuring alignment of named entities across dialects.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Bangla"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://doi.org/10.17632/8yy9whnn56.1"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To bridge the gap in NER resources for Bangla dialects, which have been underrepresented in computational linguistics.",
+    "audience": [
+      "ML Researchers",
+      "NLP Practitioners",
+      "Data Scientists"
+    ],
+    "tasks": [
+      "Named Entity Recognition"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Publicly available resources and manual translations.",
+    "size": "17,405 sentences",
+    "format": "CSV",
+    "annotation": "Annotated using the BIO tagging scheme by native speakers of the respective dialects."
+  },
+  "methodology": {
+    "methods": [
+      "Evaluation of transformer models: Bangla BERT, Bangla BERT Base, and BERT Base Multilingual Cased"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Precision calculates the proportion of true positive named entities identified out of all entities classified as positive; Recall measures the proportion of true positive identified out of all actual positive entities; F1-Score is the harmonic mean of precision and recall.",
+    "interpretation": "F1-Score provides a balance between precision and recall. A higher score indicates better performance.",
+    "baseline_results": "F1-score of 82.611% in Mymensingh with BERT Base Multilingual Cased model.",
+    "validation": "The dataset was validated by native speakers for consistency and annotation quality."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset includes translations and annotations with respect to privacy, ensuring no personal identifiers are included.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

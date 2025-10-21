@@ -1,0 +1,110 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TCM-SD: A Benchmark for Probing Syndrome Differentiation via Natural Language Processing",
+    "abbreviation": "TCM-SD",
+    "overview": "We introduce the first public large-scale benchmark for syndrome differentiation (SD), called TCM-SD. Our benchmark contains 54,152 real-world clinical records covering 148 syndromes to support data-driven AI development in Traditional Chinese Medicine.",
+    "data_type": "text (clinical notes / electronic medical records)",
+    "domains": [
+      "Natural Language Processing",
+      "Healthcare",
+      "Traditional Chinese Medicine",
+      "Medical Diagnosis"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "MIMIC-III",
+      "emrQA",
+      "ChiMed"
+    ],
+    "resources": [
+      "https://github.com/Borororo/ZY-BERT",
+      "https://arxiv.org/abs/2203.10839"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To construct the first high-quality, public large-scale benchmark for syndrome differentiation (SD) in Traditional Chinese Medicine to enable NLP research and development in this domain, and to establish strong baselines.",
+    "audience": [
+      "Researchers in Natural Language Processing",
+      "Medical and Healthcare researchers",
+      "Researchers interested in Traditional Chinese Medicine and clinical NLP"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Machine Reading Comprehension"
+    ],
+    "limitations": "The dataset exhibits an imbalanced (long-tail) distribution of syndromes; some syndrome categories are infrequent and were filtered out (syndromes with fewer than 10 samples). TCM standardization is incomplete, causing inconsistent syndrome naming and requiring normalization (merging and pruning).",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Real-world Chinese clinical records (routine diagnosis and treatment data) collected from clinical sources and additionally a crawled external TCM knowledge corpus.",
+    "size": "54,152 examples (processed; originally over 65,000 raw clinical notes)",
+    "format": "N/A",
+    "annotation": "Syndrome labels were normalized via a two-stage process (merging and pruning); experts were recruited to conduct syndrome differentiation and validate/merge non-standard names."
+  },
+  "methodology": {
+    "methods": [
+      "Automated evaluation (model-based)",
+      "Baseline model comparisons (statistical methods, classical NN-based methods, pre-trained language models, domain-specific pre-trained language models)",
+      "Ablation study",
+      "Error analysis"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Macro-F1",
+      "Macro-Precision",
+      "Macro-Recall",
+      "Exact Match (EM) for MRC"
+    ],
+    "calculation": "The paper reports Accuracy and Macro-F1 for classification, and Exact Match (EM) and Macro-F1 for MRC. Specific formulaic calculation details are not provided in the text.",
+    "interpretation": "The authors state that Macro-F1 is a more accurate metric for this imbalanced dataset. The much lower Macro-F1 compared to Accuracy demonstrates challenges from the imbalanced (long-tail) syndrome distribution.",
+    "baseline_results": "Key results (classification, Dev / Test): ZY-BERT: Accuracy 81.43% / 82.19%, Macro-F1 49.47% / 51.01%. RoBERTa (best general LM): Accuracy 80.81% / 82.26%, Macro-F1 43.18% / 47.55%. (Full table of baseline results provided in the paper, Table 4.)",
+    "validation": "The processed dataset (148 syndrome categories, 54,152 samples) was split into training, development, and test sets with an 8:1:1 ratio. Syndromes with fewer than 10 samples were filtered out during partitioning."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Transparency",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Governance",
+          "subcategory": [
+            "Lack of data transparency"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The data used were routine diagnosis and treatment data excluding personal information (such as name, age, and telephone number). All the data have been desensitized.",
+    "data_licensing": "N/A",
+    "consent_procedures": "The study did not interfere with medical procedures and did not conduct experiments on patients; the paper states it waives the requirement of individual patient consent.",
+    "compliance_with_regulations": "N/A"
+  }
+}

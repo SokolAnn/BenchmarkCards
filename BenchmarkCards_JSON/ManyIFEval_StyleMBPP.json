@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ManyIFEval (Many Instruction-Following Eval) and StyleMBPP (Style-aware Mostly Basic Programming Problems)",
+    "abbreviation": "ManyIFEval / StyleMBPP",
+    "overview": "This paper introduces two specialized benchmarks designed to evaluate the capability of large language models (LLMs) to follow multiple instructions simultaneously, specifically in text generation and code generation tasks.",
+    "data_type": "text and code generation tasks with multiple instructions",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Programming"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "IFEval",
+      "MBPP",
+      "ComplexBench"
+    ],
+    "resources": [
+      "https://github.com/kenoharada/Multiple-Instructions-Following"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To systematically evaluate multiple instructions-following capabilities of LLMs and understand how performance degrades as instruction counts increase.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Text Generation",
+      "Code Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The ManyIFEval and StyleMBPP benchmarks are constructed using task descriptions and instructions curated from existing datasets.",
+    "size": "2,160 samples for ManyIFEval and 3,000 samples for StyleMBPP",
+    "format": "N/A",
+    "annotation": "Rule-based verification for instruction adherence"
+  },
+  "methodology": {
+    "methods": [
+      "Logistic Regression",
+      "Beta-Binomial Modeling",
+      "Naive Estimators"
+    ],
+    "metrics": [
+      "Prompt-level Accuracy",
+      "Instruction-level Accuracy"
+    ],
+    "calculation": "Prompt-level Accuracy measures the rate of satisfying all provided instructions; Instruction-level Accuracy assesses success on individual instructions.",
+    "interpretation": "Performance degrades as the number of instructions increases across models, indicating complexity in satisfying multiple instructions.",
+    "baseline_results": "N/A",
+    "validation": "Benchmarks tested across various state-of-the-art LLMs"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC BY 4.0 International",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

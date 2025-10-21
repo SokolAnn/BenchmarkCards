@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "UTQA (Undergraduate Thermodynamics Question Answering)",
+    "abbreviation": "UTQA",
+    "overview": "UTQA is a 50-item undergraduate thermodynamics question answering benchmark, covering ideal-gas processes, reversibility, and diagram interpretation, aimed at evaluating LLM competence in thermodynamics.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "GPQA",
+      "SciBench"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/herteltm/UTQA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate large language models' capabilities in reasoning and tutoring in undergraduate thermodynamics.",
+    "audience": [
+      "ML Researchers",
+      "Educators",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Developed by experts based on thermodynamics curriculum.",
+    "size": "50 items",
+    "format": "Multiple choice (single-choice)",
+    "annotation": "Expert-reviewed and tested for clarity and correctness."
+  },
+  "methodology": {
+    "methods": [
+      "Cross-model benchmark comparison",
+      "Prompting and linguistic degradation experiments"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Mean accuracy calculated across multiple runs.",
+    "interpretation": "Scores indicate the fraction of correctly answered items.",
+    "baseline_results": "Top-performing LLMs achieved up to 82% accuracy.",
+    "validation": "Peer-reviewed methodology and testing across various models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

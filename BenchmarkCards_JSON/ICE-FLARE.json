@@ -1,0 +1,101 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ICE-FLARE (Integrated Chinese-English Financial Language Assessment and Recognition Evaluation)",
+    "abbreviation": "ICE-FLARE",
+    "overview": "ICE-FLARE is the first comprehensive bilingual evaluation benchmark for financial LLMs, designed to assess the cross-lingual capabilities of language models in the financial sector, featuring diverse metrics and multilingual tasks.",
+    "data_type": "evaluation benchmark with dataset spanning multiple NLP tasks",
+    "domains": [
+      "Natural Language Processing",
+      "Finance"
+    ],
+    "languages": [
+      "Chinese",
+      "English"
+    ],
+    "similar_benchmarks": [
+      "FinCUGE",
+      "CFBenchmark",
+      "FinanceBench"
+    ],
+    "resources": [
+      "https://github.com/YY0649/ICE-PIXIU"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation benchmark for assessing bilingual financial models' performance across various tasks and contexts.",
+    "audience": [
+      "ML Researchers",
+      "Financial Analysts",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Named Entity Recognition",
+      "Question Answering",
+      "Sentiment Analysis",
+      "Event Detection",
+      "Relationship Extraction",
+      "Text Summarization",
+      "Stock Prediction"
+    ],
+    "limitations": "Limited to financial NLP tasks and may not generalize well outside of this domain.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Bilingual financial instruction datasets derived from various open-source financial corpora.",
+    "size": "1,185,076 data points including 603,940 fine-tuning instruction data and 95,091 evaluation data",
+    "format": "N/A",
+    "annotation": "Expert-annotated prompts and generated instruction datasets."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Fine-tuned language model evaluation"
+    ],
+    "metrics": [
+      "Weighted F1 Score",
+      "Accuracy",
+      "Entity-level F1 Score",
+      "Exact Match Accuracy",
+      "Matthews Correlation Coefficient"
+    ],
+    "calculation": "Metrics are computed across various bilingual financial tasks based on model outputs against ground truth answers.",
+    "interpretation": "Higher scores in metrics indicate better performance in bilingual financial tasks.",
+    "baseline_results": "ICE-INTERN models outperform many existing state-of-the-art models including GPT-4 in various Chinese financial tasks.",
+    "validation": "Results are validated through comparison with numerous baseline models and extensive task diversity."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Privacy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Decision bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis of model performance across different Chinese and English demographics in financial contexts.",
+    "harm": "Potential for misuse in financial contexts if models are deployed without appropriate oversight."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Open-source licensed as per the project's specifications.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

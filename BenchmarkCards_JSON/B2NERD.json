@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "B2NERD (Beyond-Boundary Named Entity Recognition Dataset)",
+    "abbreviation": "B2NERD",
+    "overview": "B2NERD is a compact dataset designed to guide large language models' generalization in Open Named Entity Recognition under a universal entity taxonomy, refined from 54 existing datasets.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/UmeanNever/B2NER"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enhance LLMs for Open NER by directly addressing inconsistencies and redundancies in existing training datasets.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Open Named Entity Recognition"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Refined from 54 existing English and Chinese datasets.",
+    "size": "51,907 examples",
+    "format": "N/A",
+    "annotation": "Manual annotation by experts including conflict detection and standardization."
+  },
+  "methodology": {
+    "methods": [
+      "Model-based evaluation",
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on strict span-based micro-F1.",
+    "interpretation": "Higher F1 scores indicate better performance at recognizing entities.",
+    "baseline_results": "Compared against GPT-4, B2NER models showed an improvement of 6.8-12.0 points in F1 on various benchmarks.",
+    "validation": "Validation procedures include cross-dataset entity validation experiments to identify inconsistencies."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

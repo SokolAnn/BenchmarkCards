@@ -1,0 +1,69 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "InsiderFilingDelay (IFD)",
+    "abbreviation": "IFD",
+    "overview": "The InsiderFilingDelay (IFD) dataset is the first large-scale, behavior-rich dataset specifically curated for detecting delayed insider filings in violation of SEC rules, containing over 4,051,143 labeled SEC Form 4 transactions from 2002 to 2025, enriched with structured attributes.",
+    "data_type": "transaction records",
+    "domains": [
+      "Finance"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/CH-YellowOrange/MaBoost-and-IFD"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive dataset and framework for studying insider filing violations and regulatory compliance in financial markets.",
+    "audience": [
+      "Researchers",
+      "Regulators",
+      "Finance professionals"
+    ],
+    "tasks": [
+      "Binary Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Extracted from WRDS and processed in SAS, focusing on valid trades and excluding amended filings.",
+    "size": "4,051,143 transactions",
+    "format": "N/A",
+    "annotation": "Annotated with binary labels indicating compliance or violation, and enriched with over 50 features."
+  },
+  "methodology": {
+    "methods": [
+      "Hybrid framework combining Mamba-based sequence modeling with XGBoost classification"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on the binary classification outcomes of the insider filing delays.",
+    "interpretation": "High values of Precision, Recall, and F1 Score indicate strong models in detecting violations.",
+    "baseline_results": "Compared against classical statistical models, deep learning baselines, and large language models with MaBoost outperforming them.",
+    "validation": "Cross-validation and hold-out sets for performance evaluation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MigrationBench",
+    "abbreviation": "N/A",
+    "overview": "MigrationBench is a comprehensive benchmark for migration from Java 8 to Java 17 and 21, including a full dataset of 5,102 repositories and a selected subset of 300 repositories curated for complexity and difficulty in code migration tasks.",
+    "data_type": "code migration from Java repositories",
+    "domains": [
+      "Software Engineering"
+    ],
+    "languages": [
+      "Java"
+    ],
+    "similar_benchmarks": [
+      "SWE-Bench",
+      "HumanEval"
+    ],
+    "resources": [
+      "https://huggingface.co/collections/AmazonScience",
+      "https://github.com/amazon-science/MigrationBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To serve as a comprehensive benchmark for evaluating large language models' capabilities in code migration.",
+    "audience": [
+      "ML Researchers",
+      "Software Engineers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Code Migration"
+    ],
+    "limitations": "The benchmark does not enforce test coverage and relies on existing test cases, which may be insufficient for high-quality migration.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from open-source Java repositories on GitHub filtered by licenses and quality metrics.",
+    "size": "5,102 repositories (full), 300 repositories (selected)",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Automated evaluation",
+      "SD-Feedback for code migration"
+    ],
+    "metrics": [
+      "success rate (pass@1)"
+    ],
+    "calculation": "Success rates are calculated based on passing requirements outlined for minimal and maximal migration.",
+    "interpretation": "A higher success rate indicates better performance of models in executing repository-level code migrations.",
+    "baseline_results": "For minimal migration with Claude-3.5-Sonnet-v2, 62.33% success rate; for maximal migration, 27.33% success rate.",
+    "validation": "Validated through maven clean verify command and checks for compiled class major versions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": []
+        },
+        {
+          "category": "Fairness",
+          "subcategory": []
+        },
+        {
+          "category": "Privacy",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

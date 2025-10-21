@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PG-CE (Progressive Generation Dataset with Constraint Enhancement)",
+    "abbreviation": "PG-CE",
+    "overview": "This paper proposes the PG-CE approach, designed for Controllable Text Generation (CTG), which decomposes CTG tasks into three steps: type prediction, constraint construction, and guided generation. The paper presents a dataset containing 90,000 constraint-text pairs tailored to real-world applications.",
+    "data_type": "constraint-text pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Chinese",
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enhance controllability and practicality in text generation tasks through a structured approach using constraints.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Controllable Text Generation",
+      "Text Summarization"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from various publicly available datasets including Alpaca-GPT4, ShareGPT, ChatCounselor, MedDialog, DISC-Law-SFT, and others.",
+    "size": "90,000 constraint-text pairs",
+    "format": "N/A",
+    "annotation": "Data was screened for quality, removing duplicates and ensuring relevancy and clarity."
+  },
+  "methodology": {
+    "methods": [
+      "Fine-tuning on LLaMA3-8B and GPT-2",
+      "Multi-head attention",
+      "Hierarchical design strategy for constraint generation"
+    ],
+    "metrics": [
+      "Toxicity Probability",
+      "Perplexity"
+    ],
+    "calculation": "Metrics calculated based on the effectiveness of control strategies and overall generation output.",
+    "interpretation": "Lower toxicity scores indicate better performance in generating safe and relevant content.",
+    "baseline_results": null,
+    "validation": "Validated through experimental setups using toxic prompts and various comparison benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "BioProBench (Biological Protocol Benchmark)",
+    "abbreviation": "BioProBench",
+    "overview": "BioProBench is the first large-scale, integrated multi-task benchmark for biological protocol understanding and reasoning, featuring over 556K high-quality structured instances derived from 27K high-quality protocols.",
+    "data_type": "structured instances",
+    "domains": [
+      "Natural Language Processing",
+      "Biomedical Sciences"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "BioASQ",
+      "PubMedQA",
+      "LAB-Bench",
+      "BixBench"
+    ],
+    "resources": [
+      "https://github.com/YuyangSunshine/bioprotocolbench",
+      "https://huggingface.co/datasets/BioProBench/BioProBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive framework for evaluating the capabilities of large language models in understanding, reasoning about, and generating biological protocols.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Protocol Question Answering",
+      "Step Ordering",
+      "Error Correction",
+      "Protocol Generation",
+      "Protocol Reasoning"
+    ],
+    "limitations": "The benchmark may introduce subtle inaccuracies due to reliance on LLMs for task generation and focuses only on textual inputs, lacking real-world multimodal context.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from authoritative resources including Bio-protocol, Protocol Exchange, JOVE, Nature Protocols, Morimoto Lab, and Protocols.io.",
+    "size": "556,171 structured task instances",
+    "format": "N/A",
+    "annotation": "Structured annotation based on key elements extraction and hierarchical relationships in biological protocols."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Precision",
+      "Recall",
+      "BLEU",
+      "ROUGE-L"
+    ],
+    "calculation": "Metrics are calculated based on standard NLP measures alongside novel domain-specific metrics such as keyword-based content and embedding-based structural metrics.",
+    "interpretation": "Higher scores indicate better understanding and generation capabilities in procedural biological contexts.",
+    "baseline_results": "Evaluation of 12 mainstream LLMs shows varied performance on benchmark tasks.",
+    "validation": "Multi-stage quality control including automated filtering and manual reviews by domain experts."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

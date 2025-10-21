@@ -1,0 +1,82 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "NCEN-QA",
+    "abbreviation": "N/A",
+    "overview": "NCEN-QA is a new dataset in finance for benchmarking question-answering tasks derived from N-CEN reports on funds. It serves as a robust platform for evaluating automatic workflow generation systems in handling question-answering tasks related to funds.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Finance"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://www.sec.gov/files/formn-cen.pdf"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of NCEN-QA is to evaluate workflow generation systems in finance, particularly for question-answering tasks using data from N-CEN reports.",
+    "audience": [
+      "ML Researchers",
+      "Finance Professionals",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Data is sourced from N-CEN reports filed by registered investment companies available on the public database Edgar from the U.S. Securities and Exchange Commission (SEC).",
+    "size": "600 question-answer pairs",
+    "format": "N/A",
+    "annotation": "Manually created question-answer pairs based on information extracted from N-CEN reports."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Metrics are calculated by comparing generated answers to ground truth, with specific criteria for entity names and numerical values.",
+    "interpretation": "Higher accuracy indicates better performance in generating correct answers to the posed questions.",
+    "baseline_results": "The proposed methods significantly outperformed baseline methods like GPT-Context-Retrieval.",
+    "validation": "Performance is validated through thorough experiments against standard methodologies and ablation studies on the dataset."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "FlowMind ensures that LLMs do not directly interact with proprietary data, thus protecting data integrity.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

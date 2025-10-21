@@ -1,0 +1,100 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "StackOverﬂow design-related dataset",
+    "abbreviation": "N/A",
+    "overview": "A StackOverflow-based dataset of questions and answers (tagged 'design' and non-design) used to evaluate classifiers that detect software design discussions and to study cross-dataset transfer (conclusion stability) of design-mining approaches.",
+    "data_type": "question-answering pairs (StackOverflow questions and answers)",
+    "domains": [
+      "Software Engineering",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Brunet 2014 dataset",
+      "Shakiba 2016 dataset",
+      "Viviani 2018 dataset",
+      "SATD dataset"
+    ],
+    "resources": [
+      "https://doi.org/10.5281/zenodo.3590126",
+      "https://arxiv.org/abs/2001.01424"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "RO1: Assess, by replication, whether it is possible to accurately label a natural language discussion as pertaining to software design (strict and operational replication of Brunet et al.). RO2: Evaluate to what extent classifiers trained on one dataset transfer to other datasets and whether transfer-learning approaches (e.g., ULMFiT) improve conclusion stability for design mining.",
+    "audience": [
+      "Researchers in Software Engineering",
+      "Researchers working on mining software repositories and NLP for software engineering",
+      "Developers of design-mining or automated documentation tools"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Document Classification",
+      "Transfer Learning Evaluation (cross-dataset classification)"
+    ],
+    "limitations": "Explicitly stated limitations include limited labeled data (low power), dataset imbalance, overfitting to particular datasets leading to poor conclusion stability, and the improbability of expecting classifiers trained on one dataset to transfer well to totally different datasets without retraining.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "26,969 StackOverflow questions and answers tagged 'design' (extracted from the SOTorrent dataset) combined with 25,000 random StackOverflow questions not tagged 'design'; other datasets used in experiments include Brunet 2014 (pull requests), Shakiba 2016 (commit messages), Viviani 2018 (pull request paragraphs), and SATD (code comments).",
+    "size": "51,969 documents",
+    "format": "N/A",
+    "annotation": "Positive examples: posts tagged with 'design' (extracted from SOTorrent). Negative examples: randomly selected StackOverflow questions not tagged 'design'. (Other datasets include manual labeling as reported in their original sources, e.g., Brunet's 1,000 manually labeled discussions.)"
+  },
+  "methodology": {
+    "methods": [
+      "10-fold cross-validation",
+      "Train-validate-test split (60%/20%/20%) for ULMFiT",
+      "Stratified sampling",
+      "SMOTE oversampling for class imbalance",
+      "Within-dataset and cross-dataset evaluation (cross-dataset transfer tests)"
+    ],
+    "metrics": [
+      "Area Under ROC Curve (AUC)",
+      "Accuracy",
+      "Precision",
+      "Recall",
+      "F1 Score",
+      "Train and validation loss (for ULMFiT model selection)"
+    ],
+    "calculation": "Classical learners evaluated using 10-fold cross-validation (means reported). AUC used as a balanced metric for imbalanced datasets. ULMFiT evaluated with a 60/20/20 train/validation/test split and model selection via monitoring train and validation loss; reported AUC and other metrics on held-out test sets.",
+    "interpretation": "AUC is used as a preferred metric for the minority 'design' class on imbalanced datasets. Higher AUC indicates better balanced classification of design discussions. Within-dataset performance is substantially better than cross-dataset performance; ULMFiT yielded strong within-sample results but did not materially improve cross-dataset conclusion stability compared to classical approaches.",
+    "baseline_results": "ZeroR baseline (majority-class) is ~0.86 accuracy given average 14% prevalence. Replication of Brunet: Naive Bayes accuracy 0.862 and Decision Tree accuracy 0.931 (original reported values reproduced). Doc2Vec on the StackOverflow corpus: training accuracy 0.934 and held-out test accuracy 0.932 (balanced dataset). NewBest (word embeddings + SVM / or TF-IDF + Logistic Regression variants) achieved AUC up to 0.84. ULMFiT within-sample AUC approximately 0.93 during training, but cross-dataset transfer performance remained poor (transfer AUCs often near or below reasonable baselines).",
+    "validation": "Validation included stratified folds, SMOTE for imbalance correction, 10-fold cross-validation for classical models, and held-out validation sets for ULMFiT (60/20/20 split) with monitoring of train and validation loss to select models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Governance"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Governance",
+          "subcategory": [
+            "Lack of data transparency",
+            "Lack of testing diversity"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

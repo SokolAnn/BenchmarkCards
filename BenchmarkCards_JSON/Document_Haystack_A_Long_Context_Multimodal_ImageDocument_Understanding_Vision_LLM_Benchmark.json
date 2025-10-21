@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Document Haystack: A Long Context Multimodal Image/Document Understanding Vision LLM Benchmark",
+    "abbreviation": "N/A",
+    "overview": "Document Haystack is a comprehensive benchmark designed to evaluate the performance of Vision Language Models (VLMs) on long, visually complex documents, featuring 400 document variants and a total of 8,250 questions.",
+    "data_type": "text and image retrieval tasks",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Needle in a Haystack",
+      "LongBench",
+      "VQA",
+      "NLVR",
+      "MileBench",
+      "DUDE",
+      "Loong",
+      "SlideVQA",
+      "MMLongBench-Doc"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/AmazonScience/document-haystack",
+      "https://github.com/amazon-science/document-haystack"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive and challenging benchmark for evaluating the long context capabilities of multimodal Language Models, focusing on VLMs' ability to accurately retrieve key multimodal information from lengthy documents.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text Retrieval",
+      "Image Retrieval",
+      "Multimodal Retrieval"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Comprises 400 document variants sourced from publicly available financial 10-K reports.",
+    "size": "8250 questions",
+    "format": "PDF, Image, Text",
+    "annotation": "Automated evaluation framework"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Responses are lowercased and searched for the VALUE associated with the KEY to determine success.",
+    "interpretation": "Accuracy in retrieving the correct value in response to the provided key.",
+    "baseline_results": "Results from prominent VLMs such as Nova Lite, Gemini Flash-2.0, and GPT-4o-mini.",
+    "validation": "Evaluation against automated, objective standards."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

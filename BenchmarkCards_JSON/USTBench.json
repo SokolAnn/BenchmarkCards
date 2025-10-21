@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "USTBench",
+    "abbreviation": "N/A",
+    "overview": "USTBench is the first benchmark designed to evaluate the spatiotemporal reasoning abilities of LLMs as urban agents, supporting various decision-making and prediction tasks in urban environments through structured questions and answers.",
+    "data_type": "structured question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "STBench",
+      "CityBench",
+      "UrbanPlanBench"
+    ],
+    "resources": [
+      "https://github.com/usail-hkust/USTBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To systematically evaluate the spatiotemporal reasoning abilities of LLMs as intelligent urban agents for diverse urban applications.",
+    "audience": [
+      "ML Researchers",
+      "Urban Planners",
+      "Data Scientists",
+      "AI Practitioners"
+    ],
+    "tasks": [
+      "Spatiotemporal Understanding",
+      "Forecasting",
+      "Planning",
+      "Reflection with Feedback"
+    ],
+    "limitations": "Intended primarily for evaluation; systematic enhancement methods for LLMs' spatiotemporal reasoning capabilities are underexplored.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed through diverse urban tasks in UAgentEnv and public datasets across geospatial and traffic data.",
+    "size": "62,466 structured QA pairs",
+    "format": "json",
+    "annotation": "Automated and manually verified through urban scenario simulations."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Fine-grained evaluation",
+      "Structured question-answering"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "Mean Absolute Percentage Error (MAPE)",
+      "Categorical Accuracy"
+    ],
+    "calculation": "Metrics are calculated based on the responses of LLMs to structured QA pairs across the established tasks in a standardized urban environment.",
+    "interpretation": "Higher accuracy indicates better reasoning abilities in spatiotemporal tasks; specific thresholds may indicate effective adaptation to urban contexts.",
+    "baseline_results": "Evaluation includes comparison against 13 leading LLMs across various reasoning tasks.",
+    "validation": "Extensive evaluations conducted through simulations of diverse urban tasks with controlled scenarios."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Safety",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analyzes urban scenario impacts across different socioeconomic and demographic backgrounds where applicable.",
+    "harm": "Potential for biases in spatiotemporal reasoning affecting decision outcomes in urban planning and management."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All datasets used are publicly available and do not contain personally identifiable information.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

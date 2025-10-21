@@ -1,0 +1,76 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DeHate (A Stable Diffusion-based Multimodal Approach to Mitigate Hate Speech in Images)",
+    "abbreviation": "DeHate",
+    "overview": "The paper introduces a multimodal dataset for identifying hate in digital content, leveraging stable diffusion techniques to generate hate attention maps and blurring hateful regions from images.",
+    "data_type": "image-caption pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To create a dataset focused on dehating digital content and encourage research in hate speech mitigation.",
+    "audience": [
+      "ML Researchers",
+      "AI Ethics Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Image Dehate"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Hatenorm dataset and generated through the stable-diffusion model.",
+    "size": "2,411 instances",
+    "format": "N/A",
+    "annotation": "Using Diffusion Attentive Attribution Maps (DAAM) for generating heatmaps to identify hateful content."
+  },
+  "methodology": {
+    "methods": [
+      "Image Generation",
+      "Image Blurring"
+    ],
+    "metrics": [
+      "Intersection over Union (IoU)"
+    ],
+    "calculation": "IoU was computed between the predicted blurred component and the ground truth blurred component in the test dataset.",
+    "interpretation": "A higher IoU indicates better performance of the dehate model.",
+    "baseline_results": "Baseline performance is an IoU score of 0.49.",
+    "validation": "Evaluated through shared task submissions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Ethics in AI"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Mitigation of harmful and hateful content in digital images."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

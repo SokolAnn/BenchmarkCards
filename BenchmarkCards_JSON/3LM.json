@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "3LM",
+    "abbreviation": "N/A",
+    "overview": "3LM is a suite of three benchmarks designed specifically for Arabic, focusing on STEM domains including mathematics, physics, chemistry, biology, and code generation.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Arabic"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/tiiuae/3LM-benchmark",
+      "https://huggingface.co/datasets/tiiuae/evalplus-arabic",
+      "https://huggingface.co/datasets/tiiuae/SyntheticQA",
+      "https://huggingface.co/datasets/tiiuae/NativeQA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To advance Arabic LLM research in STEM and programming domains.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "The benchmark primarily targets middle and high school-level content.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "3LM benchmark consists of native and synthetic questions from Arabic educational materials and machine-translated code benchmarks.",
+    "size": "3,130 question-answer pairs",
+    "format": "JSON",
+    "annotation": "Manual and automatic generation processes, with human verification."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Calculated using model predictions against the correct answers from the benchmark.",
+    "interpretation": "Accuracy on benchmark tasks indicates model proficiency in STEM and code generation for the Arabic language.",
+    "baseline_results": null,
+    "validation": "Benched against over 40 state-of-the-art Arabic and multilingual LLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Privacy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset includes diverse Arabic educational materials.",
+    "harm": "Potential biases in synthetic question generation reflecting model limitations."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "All datasets are publicly available under open-source licenses.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

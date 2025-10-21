@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ConMeC (Common Nouns Metonymy Corpus)",
+    "abbreviation": "ConMeC",
+    "overview": "The dataset consists of 6,000 sentences with human annotations indicating whether the target common noun is used metonymically or not.",
+    "data_type": "sentence pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "RelocaR",
+      "SemEval2007-Task8",
+      "Pedinotti-Lenci"
+    ],
+    "resources": [
+      "https://github.com/SaptGhosh/ConMeC"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a dataset for training and evaluating metonymy resolution systems focusing on common nouns.",
+    "audience": [
+      "ML Researchers",
+      "NLP Practitioners"
+    ],
+    "tasks": [
+      "Metonymy Resolution"
+    ],
+    "limitations": "The dataset focuses only on six types of common noun metonymy and may not cover all possible variations.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Sentences extracted from Wikipedia and annotated by human annotators.",
+    "size": "6,000 sentences",
+    "format": "JSON",
+    "annotation": "Human annotation indicating metonymic vs non-metonymic usage."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "LLM-based prompting",
+      "Fine-tuning BERT"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score",
+      "Accuracy"
+    ],
+    "calculation": "Precision, Recall and F1 Score are calculated based on the model predictions compared to the gold annotations.",
+    "interpretation": "Higher F1 scores indicate better performance in correctly identifying metonymic usage.",
+    "baseline_results": "BERT achieved an accuracy of 86.6 and macro-F1 of 82.9 on this dataset.",
+    "validation": "Evaluation against human-annotated gold standards."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset was sampled to avoid dominant noun usage, aiming for diversity.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A - Data is freely available.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

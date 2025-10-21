@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CrossEval",
+    "abbreviation": "N/A",
+    "overview": "CrossEval is a benchmark comprising 1,400 human-annotated prompts, with each prompt designed to evaluate both individual and cross capabilities of large language models (LLMs). It systematically explores the intersection of multiple abilities that are often required for real-world tasks.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Spanish"
+    ],
+    "similar_benchmarks": [
+      "GLUE",
+      "SuperGLUE",
+      "MMLU (Massive Multitask Language Understanding)"
+    ],
+    "resources": [
+      "https://www.llm-cross-capabilities.org"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To systematically evaluate large language models on both individual and cross-capabilities, revealing insights on their strengths and weaknesses in handling complex, real-world tasks.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "AI Practitioners"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Question Answering",
+      "Mathematical Reasoning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Human-annotated prompts following a detailed taxonomy covering individual and cross capabilities of LLMs.",
+    "size": "1,400 prompts",
+    "format": "JSONL",
+    "annotation": "Manual annotation by expert human annotators."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "LLM-based evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on the performance of LLMs in responding to the benchmark prompts, aggregated over various models.",
+    "interpretation": "Score interpretation defines performance thresholds based on agreement with expert human ratings.",
+    "baseline_results": "N/A",
+    "validation": "Ensured through rigorous human annotation and subsequent evaluation rounds to achieve high inter-rater agreement."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy",
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

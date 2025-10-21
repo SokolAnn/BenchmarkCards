@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PLAT",
+    "abbreviation": "N/A",
+    "overview": "PLAT is a new benchmark designed to assess the ability of LLMs to predict the legitimacy of additional tax penalties, constructed to evaluate LLMs’ understanding of tax law, particularly in complex cases requiring more than just statute application.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Legal"
+    ],
+    "languages": [
+      "Korean",
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://elaw.klri.re.kr/kor_service/lawTwoView.do?hseq=28738"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate LLMs’ capability in understanding tax law concerning the legitimacy of additional tax penalties.",
+    "audience": [
+      "Researchers in Tax Law",
+      "AI/ML Researchers",
+      "Legal Practitioners"
+    ],
+    "tasks": [
+      "Legal Reasoning",
+      "Tax Law Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Derived from 50 questions based on Korean precedents related to additional tax penalties.",
+    "size": "50 examples",
+    "format": "N/A",
+    "annotation": "Manually evaluated by tax professionals."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "F1 Score is computed as 2*(Precision*Recall)/(Precision + Recall).",
+    "interpretation": "High F1 Score indicates better performance of LLMs in predicting tax penalty legitimacy.",
+    "baseline_results": "The strongest commercial model achieved an F1 score of 75%.",
+    "validation": "Evaluated using six LLMs across various cases."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Societal Impact"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on affected communities"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC BY-NC license will be used for the dataset release.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

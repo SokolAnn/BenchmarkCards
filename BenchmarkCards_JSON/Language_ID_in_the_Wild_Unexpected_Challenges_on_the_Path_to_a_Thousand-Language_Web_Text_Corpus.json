@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Language ID in the Wild: Unexpected Challenges on the Path to a Thousand-Language Web Text Corpus",
+    "abbreviation": "N/A",
+    "overview": "This paper demonstrates the challenges of language identification (LangID) when generating web text corpora across numerous languages. It highlights the inaccuracies of current LangID methods when applied to real-world data and proposes new evaluation techniques to generate a more robust and cleaner web text corpus in over 600 languages.",
+    "data_type": "sentence corpus",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "OSCAR",
+      "CCNet"
+    ],
+    "resources": [
+      "https://github.com/google-research-datasets/TF-IDF-IIF-top100-wordlists"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To create accurate and robust multilingual web text corpora for enhancing language technology applications in low-resource languages.",
+    "audience": [
+      "ML Researchers",
+      "Language Technologists",
+      "Data Scientists"
+    ],
+    "tasks": [
+      "Language Identification",
+      "Text Corpus Generation"
+    ],
+    "limitations": "The effectiveness of the generated dataset may vary based on the specific characteristics of individual languages.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Comprehensive web crawl across various languages using automated language identification models and data filtering techniques.",
+    "size": "600 languages, >100 billion documents",
+    "format": "Text corpus",
+    "annotation": "Human-judged evaluations for precision and recall, automated filtering using curated wordlists."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "Document-consistency filtering"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are derived from the proportion of in-language sentences to total sentences evaluated.",
+    "interpretation": "Higher precision indicates a cleaner dataset, while recall measures the coverage of the original languages in the crawl.",
+    "baseline_results": "Initial precision of generated corpora at 5%, improved to 71.2% using proposed filtering techniques.",
+    "validation": "Validation through human evaluation and comparison against other public datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis of lower-resource language representation in dataset.",
+    "harm": [
+      "Including disallowed data from misclassified languages in corpus."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "The work is licensed under a Creative Commons Attribution 4.0 International License.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

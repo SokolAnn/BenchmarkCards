@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TwinPrompt",
+    "abbreviation": "N/A",
+    "overview": "TwinPrompt is a newly created dataset consisting of 100 pairs of harmful and harmless twin prompts, designed to analyze the safety alignment parameters in Large Language Models (LLMs). It is utilized to identify and prune parameters responsible for safety features in LLMs.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "HarmBench"
+    ],
+    "resources": [
+      "https://huggingface.co/Qwen/Qwen2.5-14B-Instruct"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a dataset for effectively pruning safety alignment mechanisms in LLMs while preserving model utility.",
+    "audience": [
+      "ML Researchers",
+      "Safety Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Jailbreaking Detection"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Created from HarmBench Dataset and manual crafting of harmless twin prompts.",
+    "size": "100 twin prompt pairs",
+    "format": "N/A",
+    "annotation": "Manually crafted and validated using LLaMA 2"
+  },
+  "methodology": {
+    "methods": [
+      "Targeted Pruning",
+      "Activation Analysis"
+    ],
+    "metrics": [
+      "Attack Success Rate (ASR)"
+    ],
+    "calculation": "The percentage of harmful prompts successfully answered after pruning.",
+    "interpretation": "Higher ASR indicates successful bypassing of LLM safety alignments.",
+    "baseline_results": "Unpruned models show low ASR; TwinBreak successfully increases ASRs across models.",
+    "validation": "ASR measured across various models after applying iterative pruning."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack",
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": [
+      "Exploitative responses to harmful prompts"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

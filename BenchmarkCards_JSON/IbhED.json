@@ -1,0 +1,79 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "I/n.sc/d.sc/i.sc/a.sc/n.sc/hyphen.scB/h.scED (Indian Bias Evaluation Dataset)",
+    "abbreviation": "I/bhED",
+    "overview": "This paper introduces a dataset to quantify stereotypical bias in large language models within the Indian context, focusing on caste and religious biases, and compares them to biases prevalent in Western contexts.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/khyatikhandelwal/Indian-LLMs-Bias"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To measure LLM bias in application contexts beyond Western countries, specifically in India, and provide insights into caste and religious biases in language models.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts",
+      "AI Practitioners"
+    ],
+    "tasks": [
+      "Bias Measurement",
+      "Fairness Evaluation"
+    ],
+    "limitations": "The dataset size and nature should be expanded in future work to include more languages and stereotypes.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed using literature on caste-based and religious stereotypes, as well as qualitative feedback from Indian experts in related fields.",
+    "size": "229 examples",
+    "format": "CSV",
+    "annotation": "Expert-reviewed and qualitatively validated by scholars on caste and religious studies."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Log-Likelihood",
+      "Conditional Log-Likelihood"
+    ],
+    "calculation": "Log-likelihoods of models for stereotypical and anti-stereotypical examples are computed to measure bias propensity.",
+    "interpretation": "Scores close to 50% indicate balanced perspectives between stereotypical and anti-stereotypical outputs; higher scores reflect stronger bias towards stereotypes.",
+    "baseline_results": "N/A",
+    "validation": "Peer-reviewed and validated by experts in the field."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis based on caste and religious associations among different Indian demographics is included.",
+    "harm": [
+      "Representation of harmful stereotypes",
+      "Potential for reinforcing negative biases"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

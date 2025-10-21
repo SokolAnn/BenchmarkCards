@@ -1,0 +1,71 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Human-related Anomaly Localization",
+    "abbreviation": "HAL",
+    "overview": "The Human-related Anomaly Localization benchmark includes 12 types of human-related anomalous behaviors, including fighting, people falling, and robbery, with a total of 1,159 videos and 26.3 hours of footage.",
+    "data_type": "video with frame-level annotations and text descriptions",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ActivityNet1.3",
+      "THUMOS14"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2504.13460"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a dataset for few-shot temporal action localization focused on human-anomalous events.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Temporal Action Localization"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Videos manually selected from MSAD, XD-Violence, and CUV A datasets.",
+    "size": "1,159 videos totaling 26.3 hours",
+    "format": "video with annotations",
+    "annotation": "Frame-level annotations of anomaly intervals, along with corresponding frame captions and logical chain text."
+  },
+  "methodology": {
+    "methods": [
+      "Feature extraction from videos",
+      "Semantic-aware text-visual alignment",
+      "Chain-of-Thought reasoning method"
+    ],
+    "metrics": [
+      "mean Average Precision (mAP)"
+    ],
+    "calculation": "mAP calculated at an IoU threshold of 0.5 for evaluation.",
+    "interpretation": "Higher mAP indicates better performance in accurately localizing actions within untrimmed videos.",
+    "baseline_results": "Achieved state-of-the-art performance on public benchmarks with an improvement of 4% on ActivityNet1.3 and 12% on THUMOS14.",
+    "validation": "The method was validated through extensive experiments on public benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

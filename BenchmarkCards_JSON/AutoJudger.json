@@ -1,0 +1,73 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "AutoJudger",
+    "abbreviation": "N/A",
+    "overview": "AutoJudger is an agent-driven framework for efficient benchmarking of multimodal large language models (MLLMs), leveraging Item Response Theory (IRT) for question difficulty estimation and adaptive question selection to reduce evaluation costs while maintaining high accuracy.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMT-Bench",
+      "SEED-Bench",
+      "MMMU"
+    ],
+    "resources": [
+      "https://github.com/IMNearth/AutoJudger"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide an efficient and reliable method for evaluating multimodal large language models using only a fraction of the full evaluation data.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Model Evaluation",
+      "Benchmarking"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Experimentally evaluated using various multimodal benchmarks including MMT-Bench, SEEDBench, and MMMU.",
+    "size": "4 benchmarks",
+    "format": "N/A",
+    "annotation": "Question difficulties estimated using Item Response Theory (IRT) based on offline evaluation of models."
+  },
+  "methodology": {
+    "methods": [
+      "Dynamic Question Selection",
+      "Item Response Theory"
+    ],
+    "metrics": [
+      "Ranking Accuracy"
+    ],
+    "calculation": "Ranking accuracy calculated by comparing the predicted model rankings to the ground-truth rankings derived from full benchmark evaluations.",
+    "interpretation": "Higher ranking accuracy indicates better consistency with full benchmark evaluations.",
+    "baseline_results": "Tests show AutoJudger achieves 92% ranking consistency using only 4% of benchmark data on MMT-Bench.",
+    "validation": "Results validated against full benchmark evaluations across multiple experiments."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Efficiency",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

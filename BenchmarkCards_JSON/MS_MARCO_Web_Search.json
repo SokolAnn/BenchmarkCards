@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MS MARCO Web Search",
+    "abbreviation": "N/A",
+    "overview": "MS MARCO Web Search is the first large-scale information-rich web dataset, featuring millions of real clicked query-document labels, aimed at facilitating research in various areas of information retrieval and machine learning.",
+    "data_type": "query-document pairs",
+    "domains": [
+      "Information Retrieval"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MS MARCO",
+      "Natural Questions"
+    ],
+    "resources": [
+      "https://github.com/microsoft/MS-MARCO-Web-Search"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a large-scale dataset for research on web information retrieval and facilitate innovations in both machine learning and information retrieval system research.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Information Retrieval Researchers"
+    ],
+    "tasks": [
+      "Benchmarking retrieval systems",
+      "Testing embedding models"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "ClueWeb22 corpus and Bing search engine logs",
+    "size": "10 billion web pages and 10 million unique queries",
+    "format": "N/A",
+    "annotation": "Labeled based on user clicks from search engine logs"
+  },
+  "methodology": {
+    "methods": [
+      "Evaluation of embedding models",
+      "Quality assessment of retrieval systems"
+    ],
+    "metrics": [
+      "Mean Reciprocal Rank (MRR)",
+      "Recall"
+    ],
+    "calculation": "Metrics calculated based on the quality of retrieval results and the number of relevant documents returned.",
+    "interpretation": "Higher MRR and recall indicate better model performance.",
+    "baseline_results": "Initial benchmark results provided for various embedding models.",
+    "validation": "Benchmark validated using comparison with existing state-of-the-art models and systems."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": []
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Queries containing personally identifiable information and offensive content were removed.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

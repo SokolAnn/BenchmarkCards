@@ -1,0 +1,82 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FABLE (Novel Data-Flow Analysis Benchmark on Procedural Text for Large Language Model Evaluation)",
+    "abbreviation": "FABLE",
+    "overview": "FABLE is an extensible benchmark designed to assess LLMs’ understanding of data flow using structured, procedural text. It adapts eight classical data-flow analyses from software engineering across domains like cooking recipes, travel routes, and automated plans.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Science"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "WIQA",
+      "TORQUE",
+      "CREPE"
+    ],
+    "resources": [
+      "https://github.com/VishalPallagani/FABLE",
+      "https://huggingface.co/datasets/g-nitin/FABLE"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To systematically evaluate data-flow reasoning in large language models through procedural texts.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Data-Flow Reasoning",
+      "Procedural Understanding"
+    ],
+    "limitations": "The dataset's construction over three curated domains introduces specific biases. The approaches and definitions used for data-flow analyses are limited to current interpretations.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from three distinct procedural domains: recipes, travel routes, and automated plans.",
+    "size": "2,400 question-answer pairs",
+    "format": "JSON",
+    "annotation": "Automatically generated via templates based on classical data-flow analyses."
+  },
+  "methodology": {
+    "methods": [
+      "Majority voting over multiple completions",
+      "Template-based question generation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy is calculated as the proportion of correct predictions compared to ground-truth annotations from the dataset.",
+    "interpretation": "Higher accuracy indicates better data-flow reasoning capabilities of the models.",
+    "baseline_results": null,
+    "validation": "Validation is based on empirical tests across the benchmark, comparing different types of LLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The benchmark analysis does not include demographic breakdowns.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "The data is based on publicly available content and complies with open access principles.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

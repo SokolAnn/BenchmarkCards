@@ -1,0 +1,103 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LegalViz",
+    "abbreviation": "N/A",
+    "overview": "LegalViz is a novel dataset for visualizing legal texts through diagram generation, providing 7,010 pairs of legal documents and visualizations across 23 languages, utilizing the DOT graph description language of Graphviz.",
+    "data_type": "legal document and visualization pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "German",
+      "Bulgarian",
+      "Czech",
+      "Danish",
+      "Estonian",
+      "French",
+      "Hungarian",
+      "Italian",
+      "Latvian",
+      "Lithuanian",
+      "Maltese",
+      "Dutch",
+      "Polish",
+      "Portuguese",
+      "Romanian",
+      "Slovak",
+      "Slovenian",
+      "Spanish",
+      "Swedish"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/mizuumi/LegalViz"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a dataset for legal text visualization, facilitating the understanding of complex legal documents for non-experts through diagrams.",
+    "audience": [
+      "ML Researchers",
+      "Legal Professionals",
+      "Natural Language Processing Practitioners"
+    ],
+    "tasks": [
+      "Text Visualization",
+      "Legal Entity Extraction",
+      "Legal Relationship Representation"
+    ],
+    "limitations": "The dataset may not perform equally across all 23 languages due to varying resource availability.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Legal documents sourced from the EUR-LEX website, including judgments, orders, and rules of EU countries.",
+    "size": "7,010 pairs",
+    "format": "DOT language code",
+    "annotation": "Manually annotated by legal domain experts using the DOT language of Graphviz."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Accuracy"
+    ],
+    "calculation": "Metrics are calculated by comparing generated diagrams to reference diagrams using alignment and textual similarity measures.",
+    "interpretation": "Higher scores indicate better alignment between generated visualizations and reference diagrams, reflecting the quality of both graph structure and legal content representation.",
+    "baseline_results": null,
+    "validation": "Dataset was validated through empirical studies comparing few-shot and fine-tuned models on legal diagram generation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset is based on publicly available EU legal materials, excluding personal or sensitive information.",
+    "data_licensing": "Licensed under the Creative Commons Attribution 4.0 International License.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

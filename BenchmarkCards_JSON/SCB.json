@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Seeing Culture Benchmark (SCB)",
+    "abbreviation": "SCB",
+    "overview": "The Seeing Culture Benchmark (SCB) focuses on cultural reasoning with a novel approach requiring VLMs to reason on culturally rich images through multiple-choice VQA and segmentation tasks. It comprises 1,065 images and 3,178 questions highlighting cultural artifacts across seven Southeast Asian countries.",
+    "data_type": "multiple-choice visual question answering and segmentation",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://seeingculture-benchmark.github.io",
+      "https://huggingface.co/datasets/Multimedia-SMU/seeingculture-benchmark",
+      "https://github.com/buraksatar/SeeingCulture"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess the cultural reasoning of Vision-Language Models (VLMs) on culturally rich images from Southeast Asia.",
+    "audience": [
+      "ML Researchers",
+      "Cultural Studies Experts",
+      "Data Scientists"
+    ],
+    "tasks": [
+      "Visual Question Answering",
+      "Image Segmentation"
+    ],
+    "limitations": "Challenges in sourcing sufficient cultural concepts from specific nations.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Images crawled from Google Images based on curated cultural concepts.",
+    "size": "1,065 images and 3,178 questions",
+    "format": "JSON",
+    "annotation": "Questions and segmentation masks created by human annotators."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Mean Intersection over Union (mIoU)"
+    ],
+    "calculation": "Metrics calculated using standard methodologies for multiple-choice VQA and segmentation.",
+    "interpretation": "Accuracy indicates the effectiveness of answering questions, while mIoU measures the quality of segmentation.",
+    "baseline_results": null,
+    "validation": "Evaluated on selected state-of-the-art Vision-Language Models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Focused on cultural representation across seven Southeast Asian countries.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Ensured that collected data respects intellectual property and privacy rights of images.",
+    "data_licensing": "CC BY-NC-SA 4.0 license for non-commercial research use.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

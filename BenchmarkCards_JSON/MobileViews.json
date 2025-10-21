@@ -1,0 +1,99 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MobileViews: A Large-Scale Mobile GUI Dataset",
+    "abbreviation": "MobileViews",
+    "overview": "MobileViews is the largest mobile screen dataset, including over 600K screenshot-view hierarchy pairs from more than 20K modern Android apps. It aims to help enhance mobile screen assistants by providing a comprehensive and diverse dataset for training.",
+    "data_type": "screenshot-view hierarchy pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Rico"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/mllmTeam/MobileViews"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a large-scale, high-quality mobile screen dataset to enhance the capabilities of mobile screen assistants by training multimodal LLMs.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Screen Question Answering",
+      "Tappability Prediction",
+      "Element Relationship Prediction",
+      "UI Component Identification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Mobile screen data collected using a highly parallelized, LLM-enhanced automatic app interaction approach.",
+    "size": "1,103,481 screenshots and view hierarchies",
+    "format": "N/A",
+    "annotation": "LLM-enhanced automatic annotation with minimal human intervention."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation",
+      "LoRA fine-tuning"
+    ],
+    "metrics": [
+      "Binary F1 Score",
+      "Multi-class F1 Score",
+      "SQuAD F1 Score"
+    ],
+    "calculation": "Metrics calculated based on model performance across various tasks, including element-level assessments.",
+    "interpretation": "Higher scores indicate better performance in tasks such as tappability prediction and screen question answering.",
+    "baseline_results": null,
+    "validation": "Models validated using standard train/test splits."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Privacy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Dataset does not contain subjective individual personal data.",
+    "data_licensing": "Open-sourced dataset under appropriate usage policies.",
+    "consent_procedures": "Manual accounts created to ensure compliance with app usage policies.",
+    "compliance_with_regulations": "N/A"
+  }
+}

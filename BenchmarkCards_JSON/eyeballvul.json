@@ -1,0 +1,76 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "eyeballvul: a future-proof benchmark for vulnerability detection in the wild",
+    "abbreviation": "eyeballvul",
+    "overview": "eyeballvul is a benchmark designed to test the vulnerability detection capabilities of language models at scale, sourced and updated weekly from published vulnerabilities in open-source repositories.",
+    "data_type": "list of revisions with associated vulnerabilities",
+    "domains": [
+      "Computer Security"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/eyeballvul"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a benchmark for evaluating the vulnerability detection capabilities of language models in real-world scenarios.",
+    "audience": [
+      "ML Researchers",
+      "Cybersecurity Practitioners"
+    ],
+    "tasks": [
+      "Vulnerability Detection"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Sourced from the stream of published vulnerabilities in open-source repositories including CVEs.",
+    "size": "55GB",
+    "format": "N/A",
+    "annotation": "Automatically generated from the known vulnerabilities present at each revision."
+  },
+  "methodology": {
+    "methods": [
+      "LLM-based scoring"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Scores are computed based on the comparison of possible leads returned by the model to the known vulnerabilities for each revision.",
+    "interpretation": "Higher precision and recall indicate better performance in detecting vulnerabilities that match the ground truth.",
+    "baseline_results": "Best precision achieved was 19.6% and best recall was 14.1%.",
+    "validation": "The benchmark is updated weekly to remain current with published vulnerabilities."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

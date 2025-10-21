@@ -1,0 +1,71 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Text-to-OverpassQL",
+    "abbreviation": "OverpassNL",
+    "overview": "OverpassNL is a dataset of 8,352 queries with corresponding natural language inputs designed to facilitate a natural language interface for querying geodata from OpenStreetMap (OSM) using the Overpass Query Language (OverpassQL).",
+    "data_type": "natural language input and Overpass queries",
+    "domains": [
+      "Natural Language Processing",
+      "Geospatial Data Analysis"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/raphael-sch/OverpassNL"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a dataset for the Text-to-OverpassQL task and establish a systematic evaluation protocol for natural language interfaces to query OpenStreetMap data.",
+    "audience": [
+      "ML Researchers",
+      "Geospatial Analysts",
+      "Developers of Natural Language Processing Systems"
+    ],
+    "tasks": [
+      "Semantic Parsing"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Natural language inputs collected from users on Overpass Turbo and corresponding OverpassQL queries authored by the OpenStreetMap community.",
+    "size": "8,352 instances",
+    "format": "JSON",
+    "annotation": "Natural language descriptions were written by trained annotators after providing tutorials on OverpassQL."
+  },
+  "methodology": {
+    "methods": [
+      "Baseline evaluation using finetuning of sequence-to-sequence models and large language models.",
+      "In-context learning strategies for black-box LLMs."
+    ],
+    "metrics": [
+      "Overpass Query Similarity (OQS)",
+      "Execution Accuracy (EX)",
+      "Soft Execution Accuracy (EX SOFT)"
+    ],
+    "calculation": "OQS includes character F-score (chrF), key-value similarity (KVS), and tree similarity (TreeS) computed from the generated and reference queries.",
+    "interpretation": "Values close to 1 for execution metrics indicate high accuracy of the generated queries compared to the reference.",
+    "baseline_results": "The best model for our task is ByT5-base, achieving notable execution accuracy compared to other models.",
+    "validation": "The quantitative performance is validated by executing queries against the OpenStreetMap database and comparing the outputs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

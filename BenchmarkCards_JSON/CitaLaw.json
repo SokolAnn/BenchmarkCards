@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CitaLaw",
+    "abbreviation": "N/A",
+    "overview": "CitaLaw is the first benchmark designed to evaluate LLMs' ability to produce legally sound responses with appropriate citations. It features a diverse set of legal questions for both laypersons and practitioners, paired with a comprehensive corpus of law articles and precedent cases.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Legal"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "ALCE",
+      "WebCiteS",
+      "LawBench",
+      "LAiW",
+      "LexEval"
+    ],
+    "resources": [
+      "https://github.com/CSHaitao/LexiLaw",
+      "https://github.com/FudanDISC/DISC-LawLLM",
+      "https://github.com/irlab-sdu/fuzi.mingcha",
+      "https://github.com/LiuHC0428/LAW-GPT",
+      "https://github.com/siat-nlp/HanFei",
+      "https://github.com/DUTIR-LegalIntelligence/Tailing"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the capability of LLMs to generate legally grounded responses with accurate and context-aware citations.",
+    "audience": [
+      "Legal Practitioners",
+      "ML Researchers"
+    ],
+    "tasks": [
+      "Legal Question Answering"
+    ],
+    "limitations": "The benchmark is primarily sourced from the Chinese legal system, which may limit its applicability to other jurisdictions.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Data includes approximately 50,000 law articles and multiple precedent cases collected from various legal databases.",
+    "size": "500,000 documents",
+    "format": "JSON",
+    "annotation": "Manually annotated by legal experts."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "MAUVE",
+      "ROUGE",
+      "BERTScore",
+      "Syllogism-based evaluation"
+    ],
+    "calculation": "Metrics are calculated using a combination of established evaluation criteria for fluency, correctness, and citation quality.",
+    "interpretation": "Results are interpreted based on alignment of generated responses with expected logical structures in legal reasoning.",
+    "baseline_results": "Comparisons made against multiple LLMs including both open-domain and legal-specific models.",
+    "validation": "Validated through comparison with human judgments in legal context."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The datasets used include publicly available documents, ensuring compliance with data privacy standards.",
+    "data_licensing": "Various licenses including Apache-2.0 and MIT for different components.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "Ensured compliance with data privacy and legal standards."
+  }
+}

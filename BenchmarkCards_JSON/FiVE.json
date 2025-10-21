@@ -1,0 +1,79 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FiVE (Fine-grained Video Editing Benchmark)",
+    "abbreviation": "FiVE",
+    "overview": "FiVE is a comprehensive benchmark designed to evaluate emerging diffusion and rectified flow models for fine-grained video editing, featuring 74 real-world videos, 26 generated videos, 6 fine-grained editing types, and 420 object-level editing prompt pairs with corresponding masks.",
+    "data_type": "video",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "TGVE",
+      "TGVE+"
+    ],
+    "resources": [
+      "https://sites.google.com/view/five-benchmark"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To advance the field of fine-grained video editing by providing a standardized benchmark and metrics for evaluating video editing models.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Fine-grained video editing"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "74 real-world videos curated from the DA VIS dataset and 26 generated videos with 420 editing prompt pairs.",
+    "size": "74 real-world videos and 26 generated videos",
+    "format": "video files",
+    "annotation": "Manual annotation with the aid of GPT-4o to generate captions and object masks."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "VLM-based evaluation"
+    ],
+    "metrics": [
+      "FiVE-YN (Yes/No Accuracy)",
+      "FiVE-MC (Multi-choice Accuracy)",
+      "FiVE-∪ (Union Accuracy)",
+      "FiVE-∩ (Intersection Accuracy)",
+      "CLIP Score",
+      "PSNR",
+      "SSIM"
+    ],
+    "calculation": "Metrics are calculated based on the evaluation of object-level editing success using generated prompts and VLMs.",
+    "interpretation": "Higher scores indicate successful fine-grained video editing, with specific metrics assessing various aspects such as background preservation and text-video similarity.",
+    "baseline_results": "Wan-Edit and DMT achieved the highest FiVE-Acc scores among methods tested.",
+    "validation": "The benchmark was validated through comparisons with baseline models and human evaluations to ensure quality and reliability."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

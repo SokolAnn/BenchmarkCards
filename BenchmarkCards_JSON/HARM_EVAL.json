@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "HARM EVAL",
+    "abbreviation": "N/A",
+    "overview": "HARM EVAL is a novel benchmark for comprehensive safety evaluations, designed to address potential misuse scenarios in line with the policies of leading AI technology companies.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/NeuralSentinel/SafeInfer"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the safety and ethical compliance of language models by assessing their responses to harmful queries.",
+    "audience": [
+      "AI Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from policy violations identified by Meta and OpenAI.",
+    "size": "550 questions",
+    "format": "JSON",
+    "annotation": "Manually crafted and verified by experts using GPT-4 for ethical implications."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Attack Success Rate (ASR)"
+    ],
+    "calculation": "ASR is calculated as the percentage of responses not aligned with safety.",
+    "interpretation": "Lower ASR values indicate better safety alignment.",
+    "baseline_results": null,
+    "validation": "Validated using multiple prompting techniques and against various baselines."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Exposing personal information"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data is anonymized and sensitive information is not included.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

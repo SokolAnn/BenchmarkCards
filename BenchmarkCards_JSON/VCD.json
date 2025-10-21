@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "VCD (Visual Commonsense Dataset)",
+    "abbreviation": "VCD",
+    "overview": "VCD is a large-scale dataset containing over 100,000 images and 14 million object-commonsense pairs that bridges the gap between linguistic and visual commonsense by integrating structured relations from ConceptNet with object-level annotations from Visual Genome.",
+    "data_type": "image-commonsense pairs",
+    "domains": [
+      "Computer Vision",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ConceptNet",
+      "Visual Genome"
+    ],
+    "resources": [
+      "https://github.com/NUSTM/VCD"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a foundational resource for discovering and leveraging visual commonsense knowledge in AI systems.",
+    "audience": [
+      "ML Researchers",
+      "AI Developers",
+      "Vision-Language Researchers"
+    ],
+    "tasks": [
+      "Visual Commonsense Reasoning",
+      "Image Captioning",
+      "Vision-Language tasks"
+    ],
+    "limitations": "Due to space constraints, the evaluation of the significance of discovered visual commonsense is relatively simple.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Combination of Visual Genome and ConceptNet",
+    "size": "106,277 images, 14 million object-commonsense pairs",
+    "format": "JSON",
+    "annotation": "Manual annotation and alignment of existing triples from Visual Genome and ConceptNet"
+  },
+  "methodology": {
+    "methods": [
+      "Automatic evaluation with CLIP",
+      "Human evaluation with Likert scale"
+    ],
+    "metrics": [
+      "Accuracy",
+      "BLEU Score",
+      "ROUGE-L"
+    ],
+    "calculation": "Metrics calculated using automatic matching scores for seen and unseen commonsense.",
+    "interpretation": "Higher scores indicate better alignment of generated commonsense with human evaluations.",
+    "baseline_results": "Compared against GPT-4o and other vision-language models.",
+    "validation": "Human evaluations confirm the quality and relevance of commonsense triples."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

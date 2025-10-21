@@ -1,0 +1,75 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "COUNTER FACT+",
+    "abbreviation": "COUNTER FACT+",
+    "overview": "COUNTER FACT+ is a dynamic specificity benchmark that adapts to the model edit under test by modifying neighborhood prompts (prepending the model edit) to better surface unwanted side effects of model edits. It extends the existing COUNTER FACT benchmark and is more sensitive to unintended associations introduced by model editing.",
+    "data_type": "text (neighborhood prompts / prompt-completion pairs)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [],
+    "similar_benchmarks": [
+      "COUNTER FACT",
+      "ParaRel",
+      "zsRE"
+    ],
+    "resources": [
+      "https://github.com/apartresearch/specificityplus",
+      "https://specificityplus.apartresearch.com/",
+      "https://github.com/kmeng01/memit"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a more challenging, dynamic specificity benchmark (COUNTER FACT+) and an additional metric (Neighborhood KL divergence, NKL) to detect and quantify unwanted side effects of model editing techniques that are not detected by the original COUNTER FACT benchmark.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Model Editing Evaluation",
+      "Specificity Evaluation",
+      "Question Answering"
+    ],
+    "limitations": "The approach is based on manual inspection of test cases (not scalable). More research is needed to assess effectiveness in complex scenarios such as dialogue and multi-turn conversations. The benchmark has not been evaluated for multiple simultaneous edits, parameter pruning, or transfer learning. N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Derived from the COUNTER FACT dataset (Meng et al., 2022a). COUNTER FACT is a collection of 21,919 non-factual statements of the form (subject, relation, object). COUNTER FACT+ is obtained by modifying the COUNTER FACT neighborhood prompts by prepending the model edit to each neighborhood prompt.",
+    "size": "21,919 non-factual statements",
+    "format": "JSON (dataset samples shown in appendix in JSON format)",
+    "annotation": "Automatically constructed: neighborhood prompts and paraphrases are sampled as in COUNTER FACT (paraphrase prompts and neighborhood prompts sampled automatically); COUNTER FACT+ modifies neighborhood prompts by prepending the model edit."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Neighborhood Score (NS)",
+      "Neighborhood Magnitude (NM)",
+      "Neighborhood KL Divergence (NKL) (Kullback–Leibler divergence of next-token distributions)"
+    ],
+    "calculation": "NS is the fraction of neighborhood prompts for which the post-edit probability of the correct token P*(oc) > P*(o*). NM is P*(oc) - P*(o*). NKL is the KL divergence between the next-token probability distribution of the unedited model P(w) and the edited model P*(w): NKL = sum_{w in W} P(w) log(P(w) / P*(w)).",
+    "interpretation": "High NS and high NM indicate higher specificity (fewer unwanted side effects). A lower NKL indicates higher specificity (the edited model's next-token distribution is more similar to the unedited model).",
+    "baseline_results": "Example results (means from paper, 99% CI in tables): On GPT-J (6B) unedited model NS = 0.83 (COUNTER FACT) and 0.63 (COUNTER FACT+). For ROME on GPT-J: NS 0.79 (COUNTER FACT) -> 0.33 (COUNTER FACT+). For MEMIT on GPT-J: NS 0.82 -> 0.40. For FT-L on GPT-J: NS 0.79 -> 0.54. NKL and NM results are reported in Tables 2 and 3 of the paper.",
+    "validation": "Confidence intervals obtained via bootstrap resampling (N=1,000) to compute 99% confidence intervals for reported metrics."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": null
+    },
+    "demographic_analysis": null,
+    "harm": "Detecting and preventing unwanted side effects of model edits (unintended associations introduced by edits)."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

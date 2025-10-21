@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "AstroCaptions",
+    "abbreviation": "N/A",
+    "overview": "AstroCaptions is a novel domain-specific image captioning dataset with a high number of recognizable public figures. It contains 44,115 publicly available NASA archive images, including both very recent photos and old archive pictures from the first Apollo missions, accompanied by captions for image captioning tasks.",
+    "data_type": "image-caption pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/momentslab/AstroCaptions"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the AstroCaptions dataset is to improve image captioning by inserting identified people's names into captions to enhance their factual accuracy and contextual relevance.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Image Captioning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "NASA archive images and descriptions scraped from public NASA website.",
+    "size": "44,115 images",
+    "format": "N/A",
+    "annotation": "Captions were derived from public descriptions and enhanced using GPT-4 model."
+  },
+  "methodology": {
+    "methods": [
+      "Image Captioning",
+      "Face Detection",
+      "Attention Guided Fusion"
+    ],
+    "metrics": [
+      "BLEU",
+      "ROUGE",
+      "CIDEr",
+      "METEOR"
+    ],
+    "calculation": "Metrics are calculated based on the degree of semantic overlap between generated captions and reference captions.",
+    "interpretation": "Higher scores indicate better quality and relevancy of generated image captions.",
+    "baseline_results": "BLIP2-FlanT5-XXL achieved BLEU score of 0.63 after merging.",
+    "validation": "Results were validated by comparing model outputs with ground truth and GPT-4 generated captions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "The method may introduce new types of biases based on face detection and identification systems."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The paper emphasizes the need for consent and caution when using biometric identification technologies.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

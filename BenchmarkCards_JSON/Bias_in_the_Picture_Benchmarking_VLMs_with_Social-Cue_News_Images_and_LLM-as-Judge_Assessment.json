@@ -1,0 +1,73 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Bias in the Picture: Benchmarking VLMs with Social-Cue News Images and LLM-as-Judge Assessment",
+    "abbreviation": "N/A",
+    "overview": "We introduce a benchmark constructed from real-world news images paired with open-ended questions, annotated for age, gender, race, occupation, and sport, enabling joint evaluation of both bias and faithfulness in multimodal reasoning.",
+    "data_type": "image-question pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To systematically audit how visible social cues modulate stereotypes in multimodal LLMs.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Visual Question Answering",
+      "Bias Evaluation"
+    ],
+    "limitations": "Our dataset is constrained in scale and domain, focusing on news images from a one-year period.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Images collected from Google News RSS feeds across various topics.",
+    "size": "1,343 image-question pairs",
+    "format": "N/A",
+    "annotation": "Annotated with demographic and social attributes by trained annotators."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "LLM as judge"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Bias",
+      "Faithfulness"
+    ],
+    "calculation": "The rubric scores the models based on Bias (lower is better), Answer Relevance (higher is better), Faithfulness to the image (higher is better).",
+    "interpretation": "Higher scores indicate better performance.",
+    "baseline_results": "Various vision-language models were evaluated with scores on accuracy, bias and faithfulness.",
+    "validation": "Results were validated through human verification."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "Annotated across multiple demographic categories.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Removed personally identifiable elements and obtained informed consent from annotators.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Annotated with voluntary, informed consent.",
+    "compliance_with_regulations": "Compliant with institutional privacy policies and relevant data regulations."
+  }
+}

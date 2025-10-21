@@ -1,0 +1,82 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "NYK-MS (NewYorKer for Metaphor and Sarcasm)",
+    "abbreviation": "NYK-MS",
+    "overview": "A new benchmark for multi-modal metaphor and sarcasm understanding, containing 1,583 samples for metaphor tasks and 1,578 samples for sarcasm tasks, with 7 well-annotated tasks.",
+    "data_type": "cartoon-caption pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MVSA",
+      "HFM",
+      "MultiMET",
+      "MetaCLUE"
+    ],
+    "resources": [
+      "https://github.com/jmhessel/caption_contest_corpus"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a well-annotated dataset for training and evaluating models on metaphor and sarcasm understanding tasks.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Metaphor Classification",
+      "Metaphor Word Detection",
+      "Metaphor Explanation",
+      "Sarcasm Classification",
+      "Sarcasm Word Detection",
+      "Sarcasm Explanation",
+      "Sarcasm Target Detection"
+    ],
+    "limitations": "The dataset only contains image and text modalities; it is not very large and may have some annotation inconsistencies.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "newyorker_caption_contest dataset",
+    "size": "3,161 samples",
+    "format": "JSON",
+    "annotation": "Multi-round manual annotation by human annotators and post-processing with GPT-4V."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "Exact Match (EM)",
+      "BLEU-4"
+    ],
+    "calculation": "Calculated using standard evaluation metrics for classification tasks.",
+    "interpretation": "Higher F1 and accuracy indicate better model performance on metaphor and sarcasm tasks.",
+    "baseline_results": "Baseline model using BERT and ViT with performance metrics shown in the paper.",
+    "validation": "Validated through human evaluations and experiments comparing various model performance on the dataset."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "Demographic data of annotators included gender distribution.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Informed consent was obtained from annotators.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Annotators were paid and informed about the study.",
+    "compliance_with_regulations": "N/A"
+  }
+}

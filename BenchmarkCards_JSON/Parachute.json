@@ -1,0 +1,108 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Parachute",
+    "abbreviation": "N/A",
+    "overview": "We propose a human-centered evaluation framework, Parachute, for interactive co-writing systems. Parachute showcases an integrative view of interaction evaluation, where each evaluation aspect consists of categorized practical metrics. We present Parachute with a use case to demonstrate how to evaluate and compare co-writing systems using Parachute.",
+    "data_type": "text (writing artifacts and interaction logs)",
+    "domains": [
+      "Human-Computer Interaction",
+      "Natural Language Processing"
+    ],
+    "languages": [],
+    "similar_benchmarks": [
+      "Wordcraft",
+      "Integrative Leaps",
+      "Beyond Text Generation",
+      "Dramatron",
+      "STORIUM"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2303.06333"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Provide a human-centered evaluation framework to evaluate and analyze interactive human-LM co-writing systems more comprehensively and fairly.",
+    "audience": [
+      "Researchers"
+    ],
+    "tasks": [
+      "Human-Language Model Interaction Evaluation",
+      "Interaction Trace Analysis (dynamic interaction trace)",
+      "Writing Artifact Evaluation"
+    ],
+    "limitations": "We do not aim to build enumerated lists of evaluation metrics; instead, we focus on introducing the motivation and process of creating evaluation aspects and subgroups.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "N/A",
+    "size": "N/A",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Coding users' think-aloud transcripts",
+      "Coding researchers' observation notes",
+      "Coding (semi-)structured interview transcripts",
+      "Questionnaires or Surveys (e.g., five-point Likert ratings, single/multiple choice)",
+      "Interaction data logs analysis",
+      "Assessment on the written artifacts (automatic metrics comparing with ground truth, artifact properties, external expert evaluation)"
+    ],
+    "metrics": [
+      "enjoyment",
+      "preference",
+      "cognitive load",
+      "usability",
+      "repetition",
+      "helpful",
+      "variety",
+      "uniqueness",
+      "novelty",
+      "coherence",
+      "latency",
+      "incorporation rate",
+      "request count",
+      "accepted suggestions",
+      "time to complete",
+      "word edit distance",
+      "lemma-based Jaccard similarity",
+      "document length difference",
+      "external expert evaluation",
+      "word count",
+      "satisfaction",
+      "ownership",
+      "learning curve",
+      "consistency"
+    ],
+    "calculation": "Iterative interaction change measured by comparing metric_state(i) vs. metric_state(j) (diff from prior knowledge / diff from previous interaction states); latency measured as elapsed time from human request to AI response; incorporation rate measured as rate of incorporating AI suggestions; word edit distance measured between prior- and post- articles; lemma-based Jaccard similarity measured between ground truth and outcome article; subjective metrics collected via surveys/interviews.",
+    "interpretation": "Assess users' dynamic interaction improvements (relative quality change between iterated articles from the same user) to indicate system capability, rather than relying solely on final article quality. Compare systems using the same group of users and consistent metrics for fair evaluation.",
+    "baseline_results": null,
+    "validation": "Authors recommend applying all measurements to both the evaluated system and baselines, ideally with the same group of users. Validation approaches include user studies, expert review, and interaction log analysis as summarized in Appendix A.2. No formal quantitative validation of Parachute as a benchmark is reported."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "stereotypical suggestions"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

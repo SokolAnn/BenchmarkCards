@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PeaTMOSS (Pre-Trained Models in Open-Source Software)",
+    "abbreviation": "PeaTMOSS",
+    "overview": "PeaTMOSS dataset comprises metadata for 281,638 pre-trained models, snapshots for 14,296 models with over 50 monthly downloads, and 28,575 open-source software repositories from GitHub that utilize these models, providing a foundational dataset for exploring the PTM supply chain.",
+    "data_type": "metadata and repository information",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision",
+      "Audio",
+      "Multimodal"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "PTMTorrent",
+      "HF-Community"
+    ],
+    "resources": [
+      "https://github.com/PurdueDualityLab/PeaTMOSS-Artifact",
+      "https://transfer.rcac.purdue.edu/file-manager?origin_id=ff978999-16c2-4b50-ac7a-947ffdc3eb1d&origin_path=%2F"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enable the mining of pre-trained models (PTMs) and open-source software that utilizes these models, along with relationships between them.",
+    "audience": [
+      "Researchers",
+      "Software Engineers",
+      "Data Scientists"
+    ],
+    "tasks": [
+      "Mining Software Repositories",
+      "Model Evaluation",
+      "Software License Analysis"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from Hugging Face and PyTorch Hub APIs, along with linked GitHub repositories.",
+    "size": "7.12 GB (metadata version) and 48.2 TB (full version)",
+    "format": "SQLite Database",
+    "annotation": "Automatically extracted metadata using large language models."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Data collection via APIs",
+      "Static code analysis"
+    ],
+    "metrics": [
+      "Data completeness",
+      "Metadata accuracy"
+    ],
+    "calculation": "Calculated accuracy of metadata extraction based on manual checks.",
+    "interpretation": "Higher accuracy indicates better quality of metadata extraction.",
+    "baseline_results": "GPT-3.5-turbo achieved 67.46% accuracy on a sample, improved to 94.39% with GPT-4-turbo.",
+    "validation": "Employing stratified sampling to evaluate and enhance data quality."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Legal Compliance"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Legal Compliance",
+          "subcategory": [
+            "Model usage rights restrictions"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

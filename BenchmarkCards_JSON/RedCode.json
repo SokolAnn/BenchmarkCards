@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "RedCode",
+    "abbreviation": "N/A",
+    "overview": "RedCode is a benchmark for evaluating the safety of code agents in risky code execution and generation, focusing on comprehensive assessments of handling unsafe code.",
+    "data_type": "code execution prompts, malicious code generation prompts",
+    "domains": [
+      "Computer Security"
+    ],
+    "languages": [
+      "Python",
+      "Bash"
+    ],
+    "similar_benchmarks": [
+      "AgentMonitor",
+      "R-judge",
+      "ToolEmu"
+    ],
+    "resources": [
+      "https://github.com/AI-secure/RedCode"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a systematic evaluation platform for the safety of code agents, revealing their vulnerabilities in unsafe code execution and generation.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Security Experts"
+    ],
+    "tasks": [
+      "Malware Generation Evaluation",
+      "Code Execution Safety Evaluation"
+    ],
+    "limitations": "Limited to Python and Bash programming languages.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from risky scenarios derived from Common Weakness Enumeration (CWE) and previous safety benchmarks.",
+    "size": "4,050 testing instances for RedCode-Exec, 160 for RedCode-Gen",
+    "format": "Python scripts, Bash scripts, natural language text",
+    "annotation": "Manually curated and semi-automatically generated using LLMs"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Custom evaluation scripts"
+    ],
+    "metrics": [
+      "Attack Success Rate",
+      "Rejection Rate",
+      "Execution Failure Rate"
+    ],
+    "calculation": "Metrics calculated based on agent responses and the outcomes of executed code.",
+    "interpretation": "A high rejection rate suggests strong safety awareness, while a high attack success rate indicates vulnerabilities.",
+    "baseline_results": "Existing code agents evaluated against a set of designed risky scenarios.",
+    "validation": "Utilized Docker container environments for controlled execution and result analysis."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Security"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": []
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

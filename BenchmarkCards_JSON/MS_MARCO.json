@@ -1,0 +1,100 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MS MARCO (Microsoft MAchine Reading Comprehension)",
+    "abbreviation": "MS MARCO",
+    "overview": "A large scale Machine Reading Comprehension dataset comprising 1,010,916 anonymized questions sampled from Bing’s search query logs, each with human generated answers (and 182,669 well-formed rewritten answers), and 8,841,823 passages extracted from 3,563,535 web documents; proposed to support three tasks: answerability/extraction & synthesis, well-formed answer generation, and passage ranking.",
+    "data_type": "question-answering pairs and passages (text)",
+    "domains": [
+      "Natural Language Processing",
+      "Information Retrieval"
+    ],
+    "languages": [],
+    "similar_benchmarks": [
+      "SQuAD",
+      "NewsQA",
+      "DuReader",
+      "NarrativeQA",
+      "SearchQA",
+      "RACE",
+      "ARC",
+      "ReCoRD"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/1611.09268"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "With the goal of addressing many of the above mentioned shortcomings of existing MRC and QA datasets (scale, real-world queries, multi-passage answers) and to provide a large-scale benchmark for machine reading comprehension and neural information retrieval.",
+    "audience": [
+      "Machine Learning Researchers",
+      "Machine Reading Comprehension and Question Answering researchers",
+      "Neural Information Retrieval community"
+    ],
+    "tasks": [
+      "Question Answering (answerability detection and answer extraction/synthesis)",
+      "Answer Generation (well-formed answer generation)",
+      "Passage Ranking (passage re-ranking)"
+    ],
+    "limitations": "Roughly 300,000 source documents could not be retrieved after initial extraction; content of retrieved documents may have changed since passages were extracted; is_selected annotations are incomplete because editors were not required to mark every passage.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Questions sampled from Bing’s search query logs; passages extracted from web documents retrieved from Bing's index; human editors annotated passages (is_selected) and composed natural language answers; documents (URL, body text, title) were post-processed from Bing's index.",
+    "size": "1,010,916 questions; 1,026,758 unique answers (reported); 182,669 well-formed rewritten answers; 8,841,823 passages; 3,563,535 web documents.",
+    "format": "N/A",
+    "annotation": "Human editors annotated passages used to compose answers with is_selected and composed natural language answers; a subset of answers were post-hoc reviewed and rewritten to produce well-formed answers; questions additionally annotated by a machine-learned classifier into segments (NUMERIC, ENTITY, LOCATION, PERSON, DESCRIPTION)."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation (editor-curated reference answers and human ensemble baseline)"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Precision",
+      "Recall",
+      "ROUGE-L",
+      "BLEU",
+      "pa-BLEU",
+      "BLEU-1",
+      "BLEU-2",
+      "BLEU-3",
+      "BLEU-4"
+    ],
+    "calculation": "ROUGE-L used for long textual answers; accuracy and precision-recall used for numeric and yes/no categories; BLEU and pa-BLEU (pairwise similarity-based modification to BLEU using multiple human reference answers) used on multi-answer subsets; phrasing-aware evaluation framework involves multiple reference answers curated by different editors and pairwise similarity-based metrics (modifications to BLEU/METEOR).",
+    "interpretation": "Higher ROUGE-L, BLEU/pa-BLEU, and Accuracy indicate better agreement with human reference answers; pa-BLEU is intended to account for diversity of human phrasing by using pairwise similarity between multiple references.",
+    "baseline_results": "Tabled results include: ROUGE-L - Best Passage 0.351, Passage Ranking (DSSM-alike) 0.177, Sequence-to-Sequence 0.089, Memory Network 0.119. BLEU/pa-BLEU on multi-answer subset: Best Passage BLEU 0.359 / pa-BLEU 0.453; Memory Network BLEU 0.340 / pa-BLEU 0.341. Human ensemble (v1.1/v2) and model baselines: Human Ensemble on Novice ROUGE-L 0.73703; Human Ensemble on Intermediate ROUGE-L 0.63044; BiDaF on V2 Novice ROUGE-L 0.150; BiDaF on V2 Intermediate ROUGE-L 0.170.",
+    "validation": "Continuous auditing during the editorial annotation and answer generation process to ensure accuracy and quality; for v2.1 human baseline, top-performing editors were selected via auditing and used to create a human ensemble baseline; subset with multiple references used to validate phrasing-aware evaluation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Transparency"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Uncertain data provenance"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Questions are anonymized as stated in the dataset description.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

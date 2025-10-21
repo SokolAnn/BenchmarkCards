@@ -1,0 +1,80 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MET-Bench (Multimodal Entity Tracking Benchmark)",
+    "abbreviation": "MET-Bench",
+    "overview": "MET-Bench is a multimodal entity tracking benchmark designed to evaluate the ability of vision-language models to track entity states across modalities using structured domains like Chess and the Shell Game.",
+    "data_type": "multimodal",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://arxiv.org/abs/2502.10886"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the limitations of current models in multimodal entity tracking, particularly focusing on how well they integrate textual and image-based state updates.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Entity Tracking"
+    ],
+    "limitations": "The benchmark is restricted to two synthetic domains—Chess and the Shell Game, which may not fully capture the complexity of real-world multimodal reasoning tasks.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Chess and Shell Game domains, using structured datasets and real game actions for evaluation.",
+    "size": "Varies based on game configurations and actions.",
+    "format": "N/A",
+    "annotation": "Generated sequences of states and actions based on established game rules and state representations."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy is calculated based on the correct tracking of entity states and actions as they are represented textually and visually.",
+    "interpretation": "Higher accuracy indicates better integration of visual and textual updates; poor performance implies limitations in reasoning across modalities.",
+    "baseline_results": "Initial performance based on game start configurations for Chess and shell position for Shell Game.",
+    "validation": "Results are validated through multiple experiments evaluating different models across structured test cases."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Biases in model performance across different training scenarios and modalities."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Released under the MIT License.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

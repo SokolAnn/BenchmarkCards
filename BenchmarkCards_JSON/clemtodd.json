@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "clem:todd (chat-optimized LLMs for task-oriented dialogue systems development)",
+    "abbreviation": "clem:todd",
+    "overview": "clem:todd is a framework for systematically evaluating dialogue systems under consistent conditions, enabling benchmarking across user simulators and dialogue systems.",
+    "data_type": "conversation logs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MultiWOZ"
+    ],
+    "resources": [
+      "https://github.com/clp-research/clem-todd"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Systematic evaluation of LLM-based task-oriented dialogue systems.",
+    "audience": [
+      "ML Researchers",
+      "Dialogue System Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Task-Oriented Dialogue Evaluation"
+    ],
+    "limitations": "The user simulator may not always accurately reflect human behavior.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "MultiWOZ 2.2 dataset and synthetic datasets for unseen goals.",
+    "size": "1,000 dialogues for the evaluation set (117 tasks filtered for booking actions)",
+    "format": "JSON",
+    "annotation": "Automatically extracted from dialogue interactions."
+  },
+  "methodology": {
+    "methods": [
+      "Dialogue Evaluation",
+      "Task Success Measurement",
+      "User Simulator Assessment"
+    ],
+    "metrics": [
+      "Inform",
+      "Booking Accuracy",
+      "Naturalness",
+      "Coherence",
+      "Dialogue Diversity"
+    ],
+    "calculation": "Metrics are calculated by comparing outputs with ground-truth data in the MultiWOZ test set.",
+    "interpretation": "Higher scores indicate better performance on metrics like task completion and dialogue quality.",
+    "baseline_results": null,
+    "validation": "The framework was validated by re-evaluating existing dialogue systems."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "User simulator effectiveness varies across user models.",
+    "harm": "Potential for low task completion rates with underperforming user simulators."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

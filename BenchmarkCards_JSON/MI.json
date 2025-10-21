@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MusicInstruct (MI)",
+    "abbreviation": "MI",
+    "overview": "The MusicInstruct dataset comprises 60,493 Q&A pairs covering general questions related to music summarisation, as well as specific questions about music genres, moods, and instruments.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Music Information Retrieval"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/m-a-p/Music-Instruct/tree/main"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive dataset for training models capable of answering open-ended questions about music compositions.",
+    "audience": [
+      "ML Researchers",
+      "Music Information Retrieval Researchers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated from music captions in the MusicCaps datasets using prompt engineering with ChatGPT.",
+    "size": "60,493 Q&A pairs",
+    "format": "JSON",
+    "annotation": "Automatically generated using few-shot learning techniques."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics evaluation",
+      "Human evaluation of answer quality"
+    ],
+    "metrics": [
+      "BLEU",
+      "METEOR",
+      "ROUGE",
+      "BERT-Score"
+    ],
+    "calculation": "Metrics are calculated by comparing generated Q&A pairs to reference ones.",
+    "interpretation": "Higher scores indicate better alignment of generated responses to expected answers.",
+    "baseline_results": null,
+    "validation": "Quality assessment conducted on a random 1% sample with metrics for clarity, feasibility, and practicality."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "cc-by-nc-4.0 license",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

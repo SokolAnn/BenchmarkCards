@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Kitchen-R",
+    "abbreviation": "N/A",
+    "overview": "Kitchen-R is a benchmark that unifies the evaluation of task planning and low-level control within a simulated kitchen environment, featuring more than 500 complex language instructions and enabling holistic benchmarking of language-guided robotic agents.",
+    "data_type": "text",
+    "domains": [
+      "Robotics"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ALFRED",
+      "VirtualHome",
+      "EAI"
+    ],
+    "resources": [
+      "https://github.com/isaac-sim/IsaacSim"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the Kitchen-R benchmark is to provide a unified testbed and baselines for robust agents that can execute complex language commands in realistic environments.",
+    "audience": [
+      "ML Researchers",
+      "Robotics Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Task Planning",
+      "Mobile Manipulation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "A digital twin simulated kitchen environment generated using Isaac Sim.",
+    "size": "2700 mobile manipulation trajectories, 563 language instructions",
+    "format": "N/A",
+    "annotation": "Automatically generated from templates based on kitchen scenes."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Exact Match (EM)",
+      "Mean Squared Error (MSE)",
+      "Success Rate (SR)"
+    ],
+    "calculation": "EM is calculated as the average of correctly predicted steps of plans, MSE is the average distance between predicted and expert trajectories.",
+    "interpretation": "A high EM score indicates good performance in planning, while low MSE reflects high accuracy in trajectory prediction.",
+    "baseline_results": "N/A",
+    "validation": "The benchmark was validated through data collection and evaluation during the Embodied AI track of the AIJ Contest."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

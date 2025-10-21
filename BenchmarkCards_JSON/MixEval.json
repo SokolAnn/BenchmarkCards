@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MixEval",
+    "abbreviation": "N/A",
+    "overview": "MixEval is a new paradigm for establishing efficient, gold-standard large language model (LLM) evaluation by strategically mixing off-the-shelf benchmarks. It bridges comprehensive real-world user queries with efficient and fairly-graded ground-truth-based benchmarks.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMLU (Massive Multitask Language Understanding)",
+      "MT-Bench",
+      "Chatbot Arena"
+    ],
+    "resources": [
+      "https://mixeval.github.io/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide an efficient and effective benchmark for evaluating large language models (LLMs) that aligns closely with real-world user queries and preferences.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Web queries mined from Common Crawl and matched with existing benchmarks.",
+    "size": "4,000 queries",
+    "format": "N/A",
+    "annotation": "Automatically filtered and categorized using open-source LLMs."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Correlation with human preferences"
+    ],
+    "calculation": "Correlation is calculated between model scores and Chatbot Arena Elo scores.",
+    "interpretation": "Higher correlation indicates better agreement with human preferences.",
+    "baseline_results": "N/A",
+    "validation": "Stability tests show low standard deviation in model scores across versions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination",
+            "Prompt leaking"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

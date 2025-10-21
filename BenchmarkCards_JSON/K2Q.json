@@ -1,0 +1,71 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "K2Q",
+    "abbreviation": "N/A",
+    "overview": "K2Q is a diverse collection of five datasets converted from Key Information Extraction (KIE) tasks to a prompt-response format using various bespoke templates, enhancing the performance and robustness of visually rich document understanding models.",
+    "data_type": "prompt-response pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/JPMorgan/K2Q"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a large and diverse set of prompt-response questions that better capture the intricacies of KIE and the variety of questions that users can ask in real-world applications.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Key Information Extraction",
+      "Visual Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Transformed datasets from existing Key Information Extraction (KIE) datasets, including Ad-Buy, CORD, Docile, Kleister Charity, and Registration Form.",
+    "size": "300,000 questions over 12,000 documents",
+    "format": "N/A",
+    "annotation": "Templates were manually created by researchers familiar with the datasets."
+  },
+  "methodology": {
+    "methods": [
+      "Zero-shot prompting",
+      "Fine-tuning"
+    ],
+    "metrics": [
+      "Average Normalized Levenshtein Similarity (ANLS)"
+    ],
+    "calculation": "ANLS measures the edit distance to account for how similar the generated and true answers are, normalized against string length.",
+    "interpretation": "Higher ANLS scores indicate better performance in generating accurate responses.",
+    "baseline_results": "Models trained on K2Q demonstrate improved performance over those trained on simpler template datasets.",
+    "validation": "K2Q has undergone human validation to ensure quality and correctness of generated questions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

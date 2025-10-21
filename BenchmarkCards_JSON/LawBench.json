@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LawBench",
+    "abbreviation": "N/A",
+    "overview": "LawBench is a comprehensive evaluation benchmark designed to assess the legal capabilities of large language models (LLMs) on legal-related tasks based on the Chinese civil law system, covering memorization, understanding, and application of legal knowledge through 20 diverse tasks.",
+    "data_type": "text",
+    "domains": [
+      "Legal"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "LEGELBENCH",
+      "lexglue"
+    ],
+    "resources": [
+      "https://github.com/open-compass/LawBench/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a structured evaluation of LLMs' capabilities in the legal domain, emphasizing their ability to memorize, understand, and apply legal knowledge in realistic scenarios.",
+    "audience": [
+      "ML Researchers",
+      "Legal Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Legal Knowledge Memorization",
+      "Legal Knowledge Understanding",
+      "Legal Knowledge Applying"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Publicly available legal texts and datasets, including CAIL2022 and CAIL2019, and self-constructed datasets.",
+    "size": "20 tasks",
+    "format": "JSON",
+    "annotation": "Curated from existing legal datasets and tasks with manual validation."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "ROUGE-L",
+      "rc-F1"
+    ],
+    "calculation": "Metrics are computed based on extracted answers compared to ground truth.",
+    "interpretation": "Scores indicate how well models perform in various legal tasks, with specific metrics applied based on task type.",
+    "baseline_results": "N/A",
+    "validation": " Extensive evaluations conducted across 51 LLMs to ensure robustness of results."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

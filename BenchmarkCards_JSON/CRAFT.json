@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CRAFT (Corpus Retrieval and Augmentation for Fine-Tuning)",
+    "abbreviation": "CRAFT",
+    "overview": "CRAFT is a framework for generating task-specific synthetic datasets grounded in text corpora, requiring only a small set of human-curated few-shot examples to initiate. It retrieves relevant documents and uses instruction-tuned large language models to augment them into task-specific samples for fine-tuning models across various domains.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Healthcare",
+      "Education"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Self-Instruct",
+      "Evol-Instruct"
+    ],
+    "resources": [
+      "https://github.com/ziegler-ingo/CRAFT"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To efficiently generate high-quality task-specific training datasets for various applications, enabling effective fine-tuning of language models.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Summarization",
+      "Recipe Generation"
+    ],
+    "limitations": "Scaling performance for recipe generation noted to be suboptimal.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Synthetic datasets generated from large-scale web-crawled corpora through corpus retrieval and similarity-based augmentation.",
+    "size": "383 million documents",
+    "format": "JSON",
+    "annotation": "No manual annotation; relies on few-shot examples for task definition."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation",
+      "In-context learning"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Win Rate"
+    ],
+    "calculation": "Metrics calculated based on performance evaluations against human-annotated baselines for various tasks.",
+    "interpretation": "Higher metrics indicate better model performance on specific tasks; win rates represent preference scores for generative outputs.",
+    "baseline_results": "CRAFT models consistently match or exceed the performance of instruction-tuned baselines in most tasks except for recipe generation.",
+    "validation": "CRAFT demonstrates robustness to variations in initial few-shot quality during synthetic dataset generation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Transparency"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Uncertain data provenance"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "CRAFT utilizes web-crawled corpora with no personally identifiable information; human involvement is minimal.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

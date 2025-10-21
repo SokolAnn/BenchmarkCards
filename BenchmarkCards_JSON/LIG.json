@@ -1,0 +1,121 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Labeling Instruction Generation (LIG)",
+    "abbreviation": "LIG",
+    "overview": "We introduce a new task, Labeling Instruction Generation, to address missing publicly available labeling instructions. In Labeling Instruction Generation, we take a reasonably annotated dataset and: 1) generate a set of examples that are visually representative of each category in the dataset; 2) provide a text label that corresponds to each of the examples. We introduce a framework that requires no model training ... This framework acts as a proxy to human annotators that can help to both generate a final labeling instruction set and evaluate its quality.",
+    "data_type": "image-text pairs (visual examples plus text descriptions / instruction pairs)",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "COCO",
+      "NuImages",
+      "ADE20K",
+      "OpenImages",
+      "ImageNet"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2306.14035",
+      "https://github.com/openimages"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Generate multi-modal labeling instructions (visual examples plus text) for existing datasets that lack labeling instructions in order to increase dataset transparency, reproducibility, and utility.",
+    "audience": [
+      "Dataset curators",
+      "Annotators",
+      "Machine Learning Researchers",
+      "Dataset Developers",
+      "Policy makers"
+    ],
+    "tasks": [
+      "Labeling Instruction Generation",
+      "Image Retrieval",
+      "Dataset Annotation (annotation guidance)"
+    ],
+    "limitations": "Framework focuses on generating text and image pairs only; generated text instructions may sometimes be less nuanced and/or detailed compared to human generated text; current implementation does not include negative examples.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Existing annotated datasets (NuImages and COCO): images with categorical labels and bounding boxes as provided by the original datasets.",
+    "size": "NuImages: 83,724 images and 25 classes; NuImages database index built with approximately 14 million visual embeddings. COCO: evaluated across 80 classes (per-paper reporting).",
+    "format": "FAISS on-disk index of visual embeddings produced by a pre-trained vision-language model; image patches (grid patches) extracted from images; original dataset bounding box annotations retained.",
+    "annotation": "Annotated with class bounding boxes (as provided by the original datasets)."
+  },
+  "methodology": {
+    "methods": [
+      "Automated evaluation via image-retrieval (held-out test set)",
+      "Human evaluation (forced-choice between instruction sets)",
+      "5-fold training/testing (cross-validation) for evaluation stability"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "Average Precision (AP)",
+      "mean Average Precision (mAP)",
+      "Area Under Precision-Recall Curve (AUC)"
+    ],
+    "calculation": "For retrieval evaluation, the system returns the top 1000 unique retrievals per category; APs and mAPs are calculated from exactly 1,000 returns and averaged across 5 folds. During greedy search, candidate pairs are scored by AUC of precision-recall curves computed on top-k retrieved images.",
+    "interpretation": "Higher AUC/AP/mAP indicates better retrieval performance and thus better labeling instructions. Precision at lower k values is emphasized as more important because the most immediate retrieved images are accessed first.",
+    "baseline_results": "NuImages: PDC mAP = 15.44 versus Original Texts mAP = 8.77 (PDC outperforms strongest baseline by 7.06 mAP). COCO subset: PDC mAP = 54.9 versus Original Texts mAP = 42.0 (PDC outperforms strongest baseline by 12.9 mAP). Human study: across 23 NuImages categories and N=9 participants, participants preferred PDC generated instructions over original instructions 44% of the time.",
+    "validation": "5-fold splits with non-overlapping train/test sets used for quantitative evaluation; human behavioral forced-choice experiment with 9 participants across 23 NuImages categories for qualitative validation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Transparency",
+      "Fairness",
+      "Data Laws",
+      "Governance",
+      "Societal Impact"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Lack of training data transparency"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Data Laws",
+          "subcategory": [
+            "Data usage restrictions"
+          ]
+        },
+        {
+          "category": "Governance",
+          "subcategory": [
+            "Lack of data transparency"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on affected communities"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Bias in medical imaging and framing biases that can have real-world consequences (explicitly discussed as an application area where instructions influence labels)",
+      "Reduced dataset transparency and reproducibility when labeling instructions are not available"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "Paper explicitly mentions EU privacy laws such as GDPR and notes policy concerns around data bias and transparency; no specific compliance procedures are described."
+  }
+}

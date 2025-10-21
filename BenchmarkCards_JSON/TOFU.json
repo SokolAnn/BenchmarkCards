@@ -1,0 +1,68 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TOFU (Task of Fictitious Unlearning)",
+    "abbreviation": "TOFU",
+    "overview": "TOFU is a benchmark aimed at helping deepen our understanding of unlearning in large language models by providing a dataset of 200 diverse synthetic author profiles, each consisting of 20 question-answer pairs, and a suite of metrics for evaluating unlearning efficacy.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/locuslab/TOFU"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the benchmark is to evaluate the efficacy of unlearning algorithms in large language models.",
+    "audience": [
+      "ML Researchers",
+      "AI Practitioners"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Dataset of 200 diverse synthetic author profiles generated using GPT-4, each with 20 question-answer pairs focused on fictitious authors.",
+    "size": "200 profiles with 4,000 question-answer pairs",
+    "format": "JSON",
+    "annotation": "Automatically generated"
+  },
+  "methodology": {
+    "methods": [
+      "Evaluation against baseline unlearning algorithms",
+      "Statistical tests for forget quality"
+    ],
+    "metrics": [
+      "Truth Ratio",
+      "ROUGE-L"
+    ],
+    "calculation": "Metrics are computed for both the forget set and the retain set to compare the performance of unlearned models to models that have never been trained on the forget set.",
+    "interpretation": "A high p-value in statistical tests indicates strong forgetting; ROUGE and Truth Ratio capture the performance on respective datasets.",
+    "baseline_results": "Existing unlearning algorithms do not show effective unlearning, suggesting a need for improved methods.",
+    "validation": "Ordered evaluation across metrics measuring both forget quality and model utility."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data is synthetic, minimizing risks of privacy violations.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

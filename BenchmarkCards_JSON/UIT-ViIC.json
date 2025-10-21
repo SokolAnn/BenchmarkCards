@@ -1,0 +1,99 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "UIT-ViIC",
+    "abbreviation": "UIT-ViIC",
+    "overview": "We first build a dataset which contains manually written captions for images from Microsoft COCO dataset relating to sports played with balls, we called this dataset UIT-ViIC. UIT-ViIC consists of 19,250 Vietnamese captions for 3,850 images.",
+    "data_type": "image-caption pairs",
+    "domains": [
+      "Computer Vision",
+      "Natural Language Processing",
+      "Machine Learning"
+    ],
+    "languages": [
+      "Vietnamese"
+    ],
+    "similar_benchmarks": [
+      "Microsoft COCO (MS-COCO)",
+      "Flickr30k",
+      "Flickr8k",
+      "COCO-CN",
+      "STAIR Captions",
+      "Flickr30k-CN",
+      "Flickr8k-CN",
+      "Multi30k",
+      "YJ Captions",
+      "AIC-ICC",
+      "IAPR TC-12",
+      "Pascal sentences",
+      "Bilingual caption",
+      "COCO 4K"
+    ],
+    "resources": [
+      "https://sites.google.com/uit.edu.vn/uit-nlp/",
+      "https://arxiv.org/abs/2002.00175",
+      "https://github.com/oarriaga/neural_image_captioning",
+      "https://github.com/trungtv/pyvi",
+      "https://github.com/pytorch/pytorch"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Introduce UIT-ViIC, the first Vietnamese image captioning dataset (extending MS-COCO) and evaluate state-of-the-art image captioning models on it.",
+    "audience": [
+      "Image Captioning research community",
+      "Researchers in Computer Vision",
+      "Researchers in Natural Language Processing",
+      "Researchers in Machine Learning"
+    ],
+    "tasks": [
+      "Image Captioning"
+    ],
+    "limitations": "Dataset restricted to sportball category (3,850 images) and constructed by five annotators; category and dataset size are limited as stated by the authors.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Images from Microsoft COCO (MS-COCO) (sportball category, 2017 edition); captions manually written by Vietnamese annotators.",
+    "size": "3,850 images; 19,250 captions",
+    "format": "N/A",
+    "annotation": "Manual annotation by five native Vietnamese annotators (five captions per image) using a web-based annotation tool with content suggestions and annotation guidelines."
+  },
+  "methodology": {
+    "methods": [
+      "Model-based evaluation (training and evaluating neural image captioning models: NIC - Show and Tell; PyTorch-tutorial model)",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "BLEU (BLEU-1 to BLEU-4)",
+      "ROUGE-L",
+      "CIDEr-D"
+    ],
+    "calculation": "BLEU computed for n-grams 1 to 4; ROUGE-L and CIDEr-D computed as defined in the cited metric papers (BLEU [15], ROUGE [11], CIDEr [20]).",
+    "interpretation": "Higher metric scores indicate better match to reference captions; authors report that English-sportball outperforms Vietnamese sets on BLEU-1, whereas UIT-ViIC outperforms on BLEU-2 to BLEU-4 and CIDEr-D.",
+    "baseline_results": "Pytorch-tutorial model on UIT-ViIC: BLEU-1 0.710, BLEU-2 0.575, BLEU-3 0.476, BLEU-4 0.394, ROUGE-L 0.626, CIDEr-D 1.005. NIC - Show and Tell on UIT-ViIC: BLEU-1 0.682, BLEU-2 0.561, BLEU-3 0.411, BLEU-4 0.327, ROUGE-L 0.599, CIDEr-D 0.818. (Additional results for English-sportball and GT-sportball are reported in Tables 3 and 4 of the paper.)",
+    "validation": "Dataset split: 2,695 images for training, 924 images for validation, 231 images for test. Models validated using the 924-image validation set."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

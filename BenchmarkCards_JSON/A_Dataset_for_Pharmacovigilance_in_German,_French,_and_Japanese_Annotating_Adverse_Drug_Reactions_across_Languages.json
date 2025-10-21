@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "A Dataset for Pharmacovigilance in German, French, and Japanese: Annotating Adverse Drug Reactions across Languages",
+    "abbreviation": "N/A",
+    "overview": "This paper presents a multilingual corpus of texts concerning Adverse Drug Reactions (ADRs) in German, French, and Japanese. The corpus includes annotations covering 12 entity types, four attribute types, and 13 relation types to aid in the extraction and analysis of ADRs from user-generated content.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Healthcare"
+    ],
+    "languages": [
+      "German",
+      "French",
+      "Japanese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/Dotkat-dotcome/KEEPHA-ADR",
+      "https://github.com/DFKI-NLP/keepha_annotation_guidelines/blob/main/KEEPHA_annotation_guidelines.pdf"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To support pharmacovigilance across languages by extracting information on ADRs from user-generated content.",
+    "audience": [
+      "ML Researchers",
+      "Healthcare Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Named Entity Recognition",
+      "Attribute Classification",
+      "Relation Extraction"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Multilingual corpus collected from social media, patient forums, and clinical reports.",
+    "size": "837 documents",
+    "format": "N/A",
+    "annotation": "Annotated by native speakers with expertise in healthcare."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score"
+    ],
+    "calculation": "Evaluated using brat format for span boundaries and converted evaluations to appropriate formats.",
+    "interpretation": "Micro and macro average F1 scores are reported for task evaluations.",
+    "baseline_results": "Micro F1 scores for Named Entity Recognition range from 48.8% to 82.5% across different language models.",
+    "validation": "Initial annotations were done in English and guided by established annotation standards."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data is de-identified, but potential identification risks remain due to the public nature of social media.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Data collected from publicly accessible forums.",
+    "compliance_with_regulations": "N/A"
+  }
+}

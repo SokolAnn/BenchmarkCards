@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SWE-Bench+ (Enhanced Coding Benchmark for LLMs)",
+    "abbreviation": "SWE-Bench+",
+    "overview": "SWE-Bench+ is created to offer a more rigorous evaluation dataset for Large Language Models in the context of software engineering, particularly focusing on GitHub issues that ensure no solution leakage and are collected after model training cut-off dates.",
+    "data_type": "GitHub issue-patch pairs",
+    "domains": [
+      "Software Engineering"
+    ],
+    "languages": [],
+    "similar_benchmarks": [
+      "SWE-bench",
+      "SWE-bench Lite",
+      "SWE-bench Verified"
+    ],
+    "resources": [
+      "https://zenodo.org/records/13879453"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To systematically evaluate the capabilities of LLMs in resolving software issues without solution leakage and data exposure from training.",
+    "audience": [
+      "ML Researchers",
+      "Software Engineers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Bug Fixing",
+      "Code Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "GitHub issues collected from various repositories following a systematic selection process.",
+    "size": "548 issues",
+    "format": "JSON",
+    "annotation": "Issues were manually screened to ensure that they do not contain solutions or comments with solutions."
+  },
+  "methodology": {
+    "methods": [
+      "Patch validation study",
+      "Manual validation of model outputs"
+    ],
+    "metrics": [
+      "Resolution Rate"
+    ],
+    "calculation": "Resolution rates were calculated based on the number of issues successfully resolved by the model relative to the total number of issues in the dataset.",
+    "interpretation": "A higher resolution rate indicates a model's better capability in generating valid patches for software issues.",
+    "baseline_results": null,
+    "validation": "Involves comparing model-generated patches with validated gold patches from GitHub."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

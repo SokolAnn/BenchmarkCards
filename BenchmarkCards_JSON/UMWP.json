@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Unanswerable Math Word Problem (UMWP)",
+    "abbreviation": "UMWP",
+    "overview": "The UMWP dataset includes both answerable and unanswerable math word problems to investigate how GPT models respond to unanswerable scenarios and improve their abstention capabilities.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://arxiv.org/abs/2410.13029"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the performance of GPT models in handling unanswerable math word problems using various prompting strategies.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "The dataset includes a limited range of math word problems and does not explore the performance of models across different mathematical categories.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The UMWP dataset, containing both answerable and unanswerable math word problems, was utilized for evaluation.",
+    "size": "2,000 questions",
+    "format": "N/A",
+    "annotation": "The dataset consists of pairs of answerable and unanswerable questions where unanswerable variants were created by perturbing the original questions."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Confidence Balance",
+      "Cautious Response Indicator",
+      "False Resistance"
+    ],
+    "calculation": "Accuracy is calculated as the proportion of correct predictions made by the model out of the total number of predictions.",
+    "interpretation": "A high score in confidence balance indicates better performance in accurately predicting answers while maintaining confidence.",
+    "baseline_results": null,
+    "validation": "The evaluation metrics assess the ability of models to abstain from answering unanswerable questions and correct the answerable ones."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

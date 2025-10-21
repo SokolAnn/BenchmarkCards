@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MORABLES: A Benchmark for Assessing Abstract Moral Reasoning in LLMs with Fables",
+    "abbreviation": "MORABLES",
+    "overview": "MORABLES is a human-verified benchmark built from fables and short stories drawn from literature, structured as multiple-choice questions targeting moral inference, including adversarial variants to test model robustness.",
+    "data_type": "multiple-choice questions",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMLU (Massive Multitask Language Understanding)",
+      "SQuAD"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/cardiffnlp/Morables"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate moral reasoning capabilities of Large Language Models using literature-based benchmarks.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Moral Reasoning",
+      "Multiple Choice Question Answering"
+    ],
+    "limitations": "Models may encounter memorization issues due to the pre-training data overlap.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Public web resources under licenses that allow use and redistribution for research purposes.",
+    "size": "709 pairs of fables and morals",
+    "format": "CSV",
+    "annotation": "Manual verification by human annotators"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics calculated based on predictions against ground truth.",
+    "interpretation": "Models are assessed on their ability to accurately infer morals from provided fables.",
+    "baseline_results": null,
+    "validation": "Human validation included for multiple-choice answers."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All fables were screened for offensive content.",
+    "data_licensing": "Public resource usage with permissions as specified.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

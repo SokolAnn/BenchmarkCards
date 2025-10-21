@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Densely Captioned Images (DCI)",
+    "abbreviation": "DCI",
+    "overview": "We release the Densely Captioned Images (DCI) dataset, which contains dense and mask-aligned captions, alongside an LLM-summarized version (sDCI) containing captions under 77 tokens for use with current VLMs.",
+    "data_type": "image-caption pairs",
+    "domains": [
+      "Computer Vision",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Visual Genome",
+      "COCO",
+      "Localized Narratives",
+      "ARO",
+      "VL-Checklist"
+    ],
+    "resources": [
+      "https://github.com/facebookresearch/DCI"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To collect a dataset of highly aligned text and image pairs primarily for evaluating how well existing models can make use of all of the data.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Subcrop-Caption Matching",
+      "Image-Text Alignment"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Images sampled from a random privacy-mitigated subset of SA-1B.",
+    "size": "7,805 images",
+    "format": "N/A",
+    "annotation": "Manual annotation by crowdworkers."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics calculated based on the performance of vision-language models on tasks using DCI.",
+    "interpretation": "Performance evaluated by how well models perform on subtasks using the dense captions.",
+    "baseline_results": "N/A",
+    "validation": "Models validated against existing benchmarks such as VL-Checklist and ARO."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All known instances of people in the dataset have been face-blurred as per the SA-1B release.",
+    "data_licensing": "CC-BY-NC license.",
+    "consent_procedures": "Crowdworkers compensated and qualified.",
+    "compliance_with_regulations": "N/A"
+  }
+}

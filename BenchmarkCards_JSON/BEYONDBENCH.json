@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "BEYONDBENCH",
+    "abbreviation": "N/A",
+    "overview": "BEYONDBENCH is an evaluation framework that avoids the problem of data contamination by using algorithmic problem generation to create mathematically grounded problems on the fly, ensuring fresh and uncontaminated test instances for evaluating reasoning capabilities in language models.",
+    "data_type": "algorithmic problems",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://ctrl-gaurav.github.io/BeyondBench/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a contamination-free evaluation framework for reasoning capabilities in language models, ensuring fair and meaningful assessment through dynamic problem generation.",
+    "audience": [
+      "Researchers",
+      "AI Practitioners"
+    ],
+    "tasks": [
+      "Algorithmic Reasoning",
+      "Logical Deduction"
+    ],
+    "limitations": "Due to the dynamic nature of the problems generated, specific benchmarks targeting areas like commonsense reasoning are not covered.",
+    "out_of_scope_uses": [
+      "Models that exhibit no reasoning capabilities.",
+      "Models that solely memorize patterns without generalization."
+    ]
+  },
+  "data": {
+    "source": "Mathematically generated problems through dynamic algorithms, ensuring a unique and verifiable solution for each instance.",
+    "size": "117 problem variations across 44 algorithmic tasks",
+    "format": "Dynamic generation using algorithmic problem generation",
+    "annotation": "Automatically verified via mathematical proofs."
+  },
+  "methodology": {
+    "methods": [
+      "Dynamic problem generation",
+      "Algorithmic evaluation",
+      "Verification of solution uniqueness"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Instruction Following",
+      "Token Efficiency"
+    ],
+    "calculation": "Accuracy is measured based on the percentage of problems solved correctly validated against ground truth or complete solution sets. Instruction Following assesses the percentage of responses conforming to required output formats.",
+    "interpretation": "Higher accuracy denotes better reasoning performance, while lower token efficiency suggests potential overthinking by the models, with lower instruction-following accuracy indicating format mismatches.",
+    "baseline_results": null,
+    "validation": "The model evaluations are tested using a number of randomly generated problem instances to ensure robustness in results."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Data privacy rights alignment"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The framework generates abstract mathematical problems that do not encode real-world biases, providing a safe evaluation methodology.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

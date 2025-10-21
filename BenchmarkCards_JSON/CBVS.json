@@ -1,0 +1,75 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CBVS (Chinese Video Search Benchmark)",
+    "abbreviation": "CBVS",
+    "overview": "CBVS is a large-scale benchmark designed for Chinese short video search scenarios, providing a manual fine-labeling dataset and two large-scale datasets to support cover-based video retrieval tasks.",
+    "data_type": "video cover-image pairs and user query-video cover pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "V ATEX",
+      "Wukong",
+      "Product1M"
+    ],
+    "resources": [
+      "https://github.com/QQBrowserVideoSearch/CBVS-UniCLIP"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a benchmark for evaluating vision-language models in the context of Chinese short video search.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Image-Text Matching",
+      "Video Search"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "User query logs from the QQ Browser and videos from Chinese video platforms such as BiliBili and Tencent Video.",
+    "size": "20,001 image-text pairs for CBVS-20K; 5M and 10M video cover-title pairs for CBVS-5M/10M.",
+    "format": "N/A",
+    "annotation": "Manually annotated by trained human experts with cross-validation."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Recall",
+      "Mean Average Precision (MAP)",
+      "Normalized Discounted Cumulative Gain (NDCG)"
+    ],
+    "calculation": "Based on similarity scores of matched image and text embeddings using ITC loss.",
+    "interpretation": "Higher recall and MAP indicate better performance of the model in retrieving relevant video images for user queries.",
+    "baseline_results": "UniCLIP achieves state-of-the-art performance compared to other models evaluated on CBVS-20K.",
+    "validation": "Cross-validation for relevance scoring of user queries."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

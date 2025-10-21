@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "VarBench (Variable Benchmarking for Language Models)",
+    "abbreviation": "VarBench",
+    "overview": "VarBench is a dynamic benchmark designed to mitigate data contamination issues in language model evaluations by variabilizing existing datasets. It uses a variable perturbation technique to create new test cases, thus providing a more accurate assessment of language models.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "GSM8K",
+      "CommonsenseQA",
+      "TruthfulQA",
+      "ARC"
+    ],
+    "resources": [
+      "https://github.com/qbetterk/VarBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a more robust evaluation framework for language models by addressing issues of data contamination in existing benchmarks through dynamic variable perturbation.",
+    "audience": [
+      "ML Researchers",
+      "Language Model Developers",
+      "AI Practitioners"
+    ],
+    "tasks": [
+      "Mathematical Reasoning",
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "GSM8K, Commonsense QA, Truthful QA, ARC",
+    "size": "Variable based on the number of test cases generated for each benchmark",
+    "format": "N/A",
+    "annotation": "Automatic generation with human verification"
+  },
+  "methodology": {
+    "methods": [
+      "Dynamic variable perturbation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Performance is assessed based on the accuracy of language models on newly generated test cases compared to original benchmarks.",
+    "interpretation": "Lower accuracy on VarBench than on original benchmarks indicates potential data contamination effects.",
+    "baseline_results": "Comparative accuracy results on original versus perturbed benchmarks.",
+    "validation": "Validated through human verification of generated test cases."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt leaking"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

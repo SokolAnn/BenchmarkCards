@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "BouncerBench",
+    "abbreviation": "N/A",
+    "overview": "BouncerBench is a benchmark that evaluates whether LLM-based software agents can refuse to act when inputs are ill-defined or when their own outputs are likely to be incorrect.",
+    "data_type": "text",
+    "domains": [
+      "Software Engineering"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://bouncerbench.com"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of BouncerBench is to evaluate the capability of LLM-based agents to abstain from acting on underspecified inputs or incorrect outputs while promoting research in improving their reliability.",
+    "audience": [
+      "ML Researchers",
+      "Software Engineers",
+      "AI Developers"
+    ],
+    "tasks": [
+      "Input Bouncing",
+      "Output Bouncing"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "SWE-Bench Verified dataset, human-annotated for vagueness and correctness.",
+    "size": "46,238 LLM-generated patches evaluated across 1,699 input tasks and 642 output tasks.",
+    "format": "N/A",
+    "annotation": "Annotated by 93 software developers experienced in Python."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Macro-averaged F-Measure",
+      "I-Score",
+      "O-Score"
+    ],
+    "calculation": "Metrics are calculated based on binary classifications of actions as bounce or process, with adjustments for ambiguity and correctness.",
+    "interpretation": "Higher scores indicate better performance in correctly identifying when to abstain or reject incorrect outputs.",
+    "baseline_results": "O4-mini achieved a macro-F measure of 0.592 for input bouncing; Codex achieved a macro-F measure of 0.690 for output bouncing.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

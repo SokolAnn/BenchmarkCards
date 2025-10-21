@@ -1,0 +1,78 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LLMLingua-2 (Data Distillation for Efficient and Faithful Task-Agnostic Prompt Compression)",
+    "abbreviation": "LLMLingua-2",
+    "overview": "This paper presents LLMLingua-2, a task-agnostic prompt compression method that utilizes a data distillation approach to derive knowledge from an LLM (GPT-4) for better performance in prompt compression. The method produces an extractive text compression dataset and evaluates the effectiveness of the approach across multiple benchmarks.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "LLMLingua"
+    ],
+    "resources": [
+      "https://aka.ms/LLMLingua-2"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To improve generalizability and efficiency in task-agnostic prompt compression for LLMs.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Summarization"
+    ],
+    "limitations": "The dataset was constructed using only training examples from MeetingBank, raising concerns about its generalization capability.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Dataset constructed from MeetingBank and compressed using GPT-4.",
+    "size": "5,169 examples",
+    "format": "CSV",
+    "annotation": "Tokens labeled as to be preserved or discarded based on compression."
+  },
+  "methodology": {
+    "methods": [
+      "Token Classification",
+      "Data Distillation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "ROUGE-L"
+    ],
+    "calculation": "Metrics calculated from predictions of tokens being preserved or discarded.",
+    "interpretation": "Higher scores indicate better performance in retaining crucial information during compression.",
+    "baseline_results": "Compared against existing methods like Selective-Context and LLMLingua, with significant performance gains shown.",
+    "validation": "Evaluation against in-domain and out-of-domain tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Not analyzed.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

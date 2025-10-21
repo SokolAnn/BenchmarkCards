@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Moderating Harm: Benchmarking Large Language Models for Cyberbullying Detection in YouTube",
+    "abbreviation": "N/A",
+    "overview": "This study benchmarks three state-of-the-art large language models on a corpus of 5,080 YouTube comments drawn from high-abuse videos in various domains, to detect cyberbullying and harassment.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Arabic",
+      "Indonesian"
+    ],
+    "similar_benchmarks": [
+      "OLID",
+      "HateCheck"
+    ],
+    "resources": [
+      "https://github.com/Ammce/papers/tree/main/llm-cyberbullying-moderation"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To compare the performance of advanced large language models in detecting cyberbullying within real YouTube comments.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Content Moderation Developers"
+    ],
+    "tasks": [
+      "Cyberbullying Detection"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "YouTube Data API",
+    "size": "5,080 comments",
+    "format": "N/A",
+    "annotation": "Manually annotated by reviewers using a binary rubric for harmful and non-harmful comments."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Metrics calculated based on true positives, true negatives, false positives, and false negatives of model predictions compared to ground truth.",
+    "interpretation": "Precision and recall provide insights into the model's effectiveness in detecting harmful comments, with an F1 Score balancing the two.",
+    "baseline_results": "Benchmarks include macro-F1 scores from previous models like BERT-base fine-tuned on HateXplain.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Cyberbullying",
+      "Hate speech"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All user identifiers and personally identifiable details were removed or replaced with placeholders to mitigate re-identification risk.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

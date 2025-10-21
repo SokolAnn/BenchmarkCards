@@ -1,0 +1,70 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "COMPARISON QA",
+    "abbreviation": "N/A",
+    "overview": "COMPARISON QA benchmark contains 283K abstract questions, each instantiated by a pair of high-frequency and low-frequency entities, enabling controllable comparison to study the role of knowledge frequency in LLM performance.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SimpleQA"
+    ],
+    "resources": [
+      "https://github.com/HKUST-KnowComp/ComparisonQA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate LLMs' factual knowledge and measure their robustness regarding high-frequency and low-frequency knowledge.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated through an automatic pipeline based on raw knowledge bases, specifically DBpedia.",
+    "size": "283,455 abstract questions",
+    "format": "N/A",
+    "annotation": "Validated through expert verification with majority voting."
+  },
+  "methodology": {
+    "methods": [
+      "Multiple-choice evaluation",
+      "Two-round method utilizing correctness and uncertainty"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Macro F1-score",
+      "Uncertainty"
+    ],
+    "calculation": "Metrics are calculated based on model predictions against ground truth labels.",
+    "interpretation": "Higher accuracy and lower uncertainty indicate better factual knowledge understanding.",
+    "baseline_results": "N/A",
+    "validation": "Expert verification of question quality showed 95.5% correctness."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "The dataset will be released under a CC license, the DBpedia dataset used is shared under the CC BY-SA license.",
+    "consent_procedures": "Expert verifications obtained IRB approval and were voluntary.",
+    "compliance_with_regulations": "N/A"
+  }
+}

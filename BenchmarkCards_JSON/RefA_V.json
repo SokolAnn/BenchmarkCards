@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "RefA V",
+    "abbreviation": "N/A",
+    "overview": "RefA V is a large-scale dataset of 10,000 diverse natural language queries that describe complex multi-agent interactions relevant to motion planning derived from 1000 driving logs in the Argoverse 2 Sensor dataset. It evaluates a model’s ability to find a visual 'needle in a haystack'.",
+    "data_type": "natural language queries",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "nuScenes",
+      "KITTI"
+    ],
+    "resources": [
+      "https://github.com/cainand/RefAV"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate scenario mining methods using vision-language models on 3D scene understanding and spatio-temporal localization.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Scenario Mining",
+      "Referential Multi-Object Tracking"
+    ],
+    "limitations": "The quality of the scenario mining dataset is limited by the quality of the ground truth perception labels in AV2.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Argoverse 2 (AV2) Sensor dataset",
+    "size": "10,000 queries",
+    "format": "N/A",
+    "annotation": "Combination of manual annotations and procedural generation using large language models (LLMs)."
+  },
+  "methodology": {
+    "methods": [
+      "Referential Tracking by Program Synthesis (RefProg)",
+      "Track Filtering by Referred Class",
+      "Referential Track Inflation",
+      "Referential Track Classification"
+    ],
+    "metrics": [
+      "HOTA",
+      "HOTA-Temporal",
+      "HOTA-Track",
+      "Log Balanced Accuracy",
+      "Timestamp Balanced Accuracy"
+    ],
+    "calculation": "Metrics are calculated by evaluating the accuracy of object detection, association, and localization against ground truth.",
+    "interpretation": "Higher HOTA values indicate better tracking performance.",
+    "baseline_results": "RefProg achieved significant improvements over traditional methods, indicating effectiveness in scenario mining.",
+    "validation": "Validation conducted through manual inspection of true positive log-prompt matches."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

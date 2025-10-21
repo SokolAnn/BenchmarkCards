@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MovieSum",
+    "abbreviation": "N/A",
+    "overview": "MovieSum is a new dataset for abstractive summarization of movie screenplays, consisting of 2200 movie screenplay-summary pairs. It aims to stimulate research in the area of movie screenplay understanding and summarization.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ScriptBase-j",
+      "NarrativeQA",
+      "SummScreenFD"
+    ],
+    "resources": [
+      "https://github.com/saxenarohit/MovieSum"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive dataset to advance research in movie screenplay summarization.",
+    "audience": [
+      "ML Researchers",
+      "Natural Language Processing Practitioners"
+    ],
+    "tasks": [
+      "Summarization"
+    ],
+    "limitations": "The dataset consists of movie screenplays and their corresponding summaries only in English.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from various movie screenplay websites and paired with Wikipedia plot summaries.",
+    "size": "2200 examples",
+    "format": "Formatted text",
+    "annotation": "Manually formatted by experts"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "ROUGE Score",
+      "BERTScore"
+    ],
+    "calculation": "Metrics are calculated following the standard protocols for summarization evaluation.",
+    "interpretation": "Higher ROUGE scores indicate better summarization performance.",
+    "baseline_results": "Lead-512: ROUGE-1: 10.35, ROUGE-2: 1.27, ROUGE-L: 9.84; Longformer: ROUGE-1: 44.85, ROUGE-2: 9.83, ROUGE-L: 43.12.",
+    "validation": "The dataset was split into train/validation/test sets for evaluating model performance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on cultural diversity"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset aims to include a range of movies but may not fully represent all cinematic styles or cultural contexts.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

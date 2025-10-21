@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Raccoon: Prompt Extraction Benchmark of LLM-Integrated Applications",
+    "abbreviation": "Raccoon",
+    "overview": "We introduce the Raccoon benchmark which comprehensively evaluates a model’s susceptibility to prompt extraction attacks. The benchmark encompasses 14 categories of prompt extraction attacks and assesses models under both defenseless and defended scenarios.",
+    "data_type": "prompt extraction attack data",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/M0gician/RaccoonBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To establish a systematic benchmark for assessing LLM robustness against prompt extraction attacks.",
+    "audience": [
+      "ML Researchers",
+      "AI Practitioners"
+    ],
+    "tasks": [
+      "Model Evaluation",
+      "Security Assessment"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated and sampled from various LLM-integrated applications.",
+    "size": "197 distinct instruction prompts from GPT-integrated applications",
+    "format": "N/A",
+    "annotation": "Crowdsourced prompt attacks and defenses."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Attack Success Rate (ASR)"
+    ],
+    "calculation": "ASR is calculated by the success rate of attacks over the instruction prompts based on Rouge-L scores.",
+    "interpretation": "A lower ASR indicates a model has better defenses against prompt extraction attacks.",
+    "baseline_results": null,
+    "validation": "The benchmark tested multiple models across various scenarios."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Privacy",
+      "Security"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "PII was removed from the data prior to publishing.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

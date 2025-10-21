@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LLM-GLOBE",
+    "abbreviation": "N/A",
+    "overview": "The LLM-GLOBE benchmark evaluates the cultural value systems of large language models (LLMs) by utilizing cultural psychology theory and the empirically-validated GLOBE framework, comparing the values of Chinese and US LLMs using a novel evaluation methodology.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "CulturalBench"
+    ],
+    "resources": [
+      "https://github.com/raovish6/LLM-GLOBE"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation of the cultural values embedded in LLM outputs and to enhance the understanding of cultural alignment in AI systems.",
+    "audience": [
+      "ML Researchers",
+      "AI Developers"
+    ],
+    "tasks": [
+      "Cultural Competency Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Evaluated outputs from Chinese and US LLMs using the GLOBE framework.",
+    "size": "36,675 closed-ended prompts and 900 open-ended prompts",
+    "format": "JSON",
+    "annotation": "Responses scored based on cultural dimensions via a panel of LLM jurors."
+  },
+  "methodology": {
+    "methods": [
+      "Automated scoring",
+      "Survey methodology"
+    ],
+    "metrics": [
+      "Cultural dimension scores based on GLOBE framework"
+    ],
+    "calculation": "Scores calculated using least squares regression for juror assessments.",
+    "interpretation": "Scores reflect the cultural values embedded in model outputs as analyzed through two distinct prompt types (closed-ended and open-ended).",
+    "baseline_results": "Cultural dimension scores from the 2004 GLOBE survey serve as baseline comparisons.",
+    "validation": "The scores were validated against human ratings for consistency."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Cultural Sensitivity"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "The benchmark compares cultural values between models trained in the US and China, with potential demographic implications for cultural representation.",
+    "harm": "Potential cultural misrepresentation and bias in AI outputs."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

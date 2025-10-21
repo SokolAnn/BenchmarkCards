@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MS CINLI: A Diverse Benchmark for Scientific Natural Language Inference",
+    "abbreviation": "MS CINLI",
+    "overview": "MS CINLI is a dataset containing 132,320 sentence pairs extracted from research articles in five domains: 'Hardware', 'Networks', 'Software & its Engineering', 'Security & Privacy', and 'NeurIPS', aimed at evaluating scientific Natural Language Inference (NLI) tasks.",
+    "data_type": "sentence pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SCINLI"
+    ],
+    "resources": [
+      "https://github.com/msadat3/MSciNLI"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To introduce diversity in the scientific NLI task and provide a challenging benchmark for evaluating models' reasoning and inference capabilities on scientific texts.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Natural Language Inference"
+    ],
+    "limitations": "MS CINLI presents challenges for both traditional PLMs and state-of-the-art LLMs, indicating there is room for improvement in model performance.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Sentence pairs extracted from scientific articles published in various domains.",
+    "size": "132,320 sentence pairs",
+    "format": "text",
+    "annotation": "Automatic labeling using distant supervision and manual annotation by experts."
+  },
+  "methodology": {
+    "methods": [
+      "Fine-tuning Pre-trained Language Models (PLMs)",
+      "Prompting Large Language Models (LLMs)"
+    ],
+    "metrics": [
+      "Macro F1 Score",
+      "Accuracy"
+    ],
+    "calculation": "Metrics are calculated based on model predictions against human-annotated labels.",
+    "interpretation": "Higher Macro F1 and accuracy scores indicate better model understanding and agreement with human judgments.",
+    "baseline_results": "The best performing PLM baseline, ROBERTA, achieves a Macro F1 of 77.21%. The best LLM baseline, LLAMA-2, reaches a Macro F1 of 51.77%.",
+    "validation": "Models were validated using development sets and cross-validated against test sets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset involves diverse domains which contribute to the potential for demographic analysis.",
+    "harm": "The performance gap between human annotators and models indicates potential harm in misclassification."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

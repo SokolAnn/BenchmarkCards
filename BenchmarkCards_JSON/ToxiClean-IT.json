@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ToxiClean-IT",
+    "abbreviation": "N/A",
+    "overview": "The ToxiClean-IT dataset is constructed for evaluating prompt-image safety in text-to-image generation and enables supervised fine-tuning of Vision-Language Models (VLMs) by providing both textual and visual safety signals.",
+    "data_type": "image-text pairs",
+    "domains": [
+      "Computer Vision",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/KEVIN04087/ToxiClean-IT"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To construct a dataset that allows for the training of prompt refinement methods that improve safety in text-to-image (T2I) models while preserving user intent.",
+    "audience": [
+      "ML Researchers",
+      "AI Developers",
+      "Dataset Curators"
+    ],
+    "tasks": [
+      "Text-to-Image Generation",
+      "Prompt Optimization"
+    ],
+    "limitations": "The iterative refinement process increases the computational cost of image generation.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The ToxiClean-IT dataset is built using a multi-modal LLM to produce high-quality image-text pairs with safety evaluations.",
+    "size": "3,390 pairs",
+    "format": "JSON",
+    "annotation": "Annotated using off-the-shelf multi-modal LLM."
+  },
+  "methodology": {
+    "methods": [
+      "Supervised Fine-Tuning",
+      "Reinforcement Learning"
+    ],
+    "metrics": [
+      "Inappropriate Probability (IP)",
+      "Confidence Score (CS)"
+    ],
+    "calculation": "Metrics are computed based on the probability of generated images being classified as inappropriate and the confidence scores from classifiers like Q16.",
+    "interpretation": "Lower inappropriate probability and higher confidence scores indicate better performance in terms of safety.",
+    "baseline_results": "Methods leveraging the ToxiClean-IT dataset show significant reductions in inappropriate generation compared to traditional methods.",
+    "validation": "Performance evaluated across multiple T2I models to ensure generalizability."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Generation of inappropriate or harmful content"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "The ToxiClean-IT dataset is released under the Creative Commons Attribution 4.0 (CC BY 4.0) license.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

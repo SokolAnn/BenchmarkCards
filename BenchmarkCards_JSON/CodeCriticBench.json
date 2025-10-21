@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CodeCriticBench",
+    "abbreviation": "N/A",
+    "overview": "CodeCriticBench is a holistic benchmark for evaluating the code critique capabilities of Large Language Models (LLMs) on two core tasks: code generation and code-based question answering, each incorporating multiple levels of difficulty and advanced evaluation metrics.",
+    "data_type": "code critique pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Software Engineering"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "CriticBench",
+      "CriticEval",
+      "JudgeBench",
+      "RealCritic"
+    ],
+    "resources": [
+      "https://github.com/multimodal-art-projection/CodeCriticBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the critique abilities of LLMs on the code domain, providing a comprehensive analysis of their performance in code generation and code QA tasks.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Code Generation",
+      "Code Question Answering"
+    ],
+    "limitations": "The evaluation is confined to single-file scenarios and currently focuses only on code.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from various coding datasets including CodeForces, MBPP, and LiveCodeBench, with modifications for error generation and real-world applicability.",
+    "size": "4,300 problems",
+    "format": "JSON",
+    "annotation": "Manually annotated by experts and through majority voting for correctness."
+  },
+  "methodology": {
+    "methods": [
+      "Systematic Analysis of Models",
+      "Fine-Grained Evaluation Metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Mean Squared Error (MSE)"
+    ],
+    "calculation": "Metrics are calculated based on predictions matching true labels for the accuracy and measuring the discrepancy for MSE.",
+    "interpretation": "Higher accuracy and lower MSE scores indicate better performance in model evaluations.",
+    "baseline_results": null,
+    "validation": "Evaluated against a variety of LLMs using predefined benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Data integrity issues due to the potential for unannounced ethical biases in the benchmarks."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

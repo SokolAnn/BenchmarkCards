@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Uni-NLX",
+    "abbreviation": "N/A",
+    "overview": "Uni-NLX is a unified framework that consolidates all Natural Language Explanations (NLE) tasks into a single and compact multi-task model using a unified training objective of text generation. It introduces two new NLE datasets: ImageNetX for explaining ImageNet categories and VQA-ParaX for explaining the Visual Question Answering task.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "NLX-GPT"
+    ],
+    "resources": [
+      "https://github.com/fawazsammani/uni-nlx"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a unified model that performs multiple NLE tasks simultaneously and reduces the need for separate models.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Visual Question Answering",
+      "Visual Recognition",
+      "Visual Reasoning"
+    ],
+    "limitations": "The model may exhibit shortcut learning in certain tasks, leading to explanations that repeat elements of the questions.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Datasets created using Large Language Models and existing NLE sample collections.",
+    "size": "1,000,000 samples",
+    "format": "JSON",
+    "annotation": "Automatically generated using prompts for LLMs."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "BLEU Score",
+      "METEOR",
+      "ROUGE-L",
+      "CIDER",
+      "SPICE"
+    ],
+    "calculation": "Metrics are calculated based on the generated outputs when evaluated against a set of reference answers.",
+    "interpretation": "Higher scores indicate better generation quality compared to benchmarks.",
+    "baseline_results": "Performance compared to existing models like NLX-GPT.",
+    "validation": "Evaluated using both filtered and unfiltered scores."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

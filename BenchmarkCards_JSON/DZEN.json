@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DZEN (Dzongkha-English Benchmark)",
+    "abbreviation": "DZEN",
+    "overview": "DZEN is a dataset of parallel Dzongkha and English test questions covering over 5K scientific questions from Bhutan's national curriculum for middle and high school exams. It allows for direct LLM performance comparison and exposes structural weaknesses in low-resource language proficiency.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Education"
+    ],
+    "languages": [
+      "Dzongkha",
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMLU",
+      "IndoMMLU"
+    ],
+    "resources": [
+      "https://github.com/kraritt/llm_dzongkha_evaluation"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess the performance of large language models (LLMs) in Dzongkha and enhance their proficiency through a benchmarking dataset.",
+    "audience": [
+      "ML Researchers",
+      "Educators",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "The dataset primarily consists of text-based questions, omitting figure-based questions which may require more complex reasoning.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Dataset of parallel questions was created from Bhutan's national curriculum and national board examinations, ensuring bilingual availability in Dzongkha and English.",
+    "size": "5,161 questions",
+    "format": "JSON",
+    "annotation": "Digitized and verified by proficient typists in Dzongkha and English, with parallelism checks conducted by native speakers."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Model outputs were compared against ground truth answers from the dataset to determine correctness based on accuracy of final answers.",
+    "interpretation": "An answer is deemed correct if it matches the ground truth, regardless of the correctness of intermediate reasoning steps.",
+    "baseline_results": null,
+    "validation": "Results were validated through manual examination and statistical analysis of model performance across various subjects."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The benchmark allows for cross-linguistic analysis, exposing performance gaps across different demographics, particularly in low-resource settings.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

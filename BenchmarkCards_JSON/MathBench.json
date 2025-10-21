@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MathBench: Evaluating the Theory and Application Proficiency of LLMs with a Hierarchical Mathematics Benchmark",
+    "abbreviation": "MathBench",
+    "overview": "MathBench is a new benchmark that rigorously assesses the mathematical capabilities of large language models across various mathematical disciplines, providing a detailed evaluation of both theoretical understanding and practical problem-solving skills.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "GSM8k",
+      "MathQA",
+      "MATH"
+    ],
+    "resources": [
+      "https://github.com/open-compass/MathBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation of LLMs’ mathematical proficiency, covering a wide range of subject areas and topics across educational stages.",
+    "audience": [
+      "ML Researchers",
+      "Educators",
+      "AI Developers"
+    ],
+    "tasks": [
+      "Mathematical Reasoning",
+      "Problem Solving",
+      "Question Answering"
+    ],
+    "limitations": "The current benchmark may be subject to data contamination and lacks detailed reasoning paths for each question.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Self-collected from a variety of educational materials and open-source datasets.",
+    "size": "3,709 questions",
+    "format": "JSON",
+    "annotation": "Semi-automated vetting process with manual reviews to ensure quality."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on the performance of models across different stages and types of questions in the benchmark.",
+    "interpretation": "Higher scores indicate better mathematical understanding and problem-solving capabilities in language models.",
+    "baseline_results": null,
+    "validation": "Validation of model performance conducted through Circular Evaluation (CE) and Perplexity (PPL) metrics."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Assessment of performance across different languages (Chinese and English) and educational stages.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Privacy measures included the avoidance of personally identifiable information during data collection and processing.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

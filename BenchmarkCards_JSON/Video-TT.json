@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Video Thinking Test (Video-TT)",
+    "abbreviation": "Video-TT",
+    "overview": "Video-TT assesses the correctness and robustness of video large language models in understanding complex real-world videos, specifically addressing the ability to interpret visual narratives and handle adversarial conditions.",
+    "data_type": "video-question-answer pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MVBench",
+      "VideoMME"
+    ],
+    "resources": [
+      "https://zhangyuanhan-ai.github.io/video-tt/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation framework for video language models regarding their understanding of complex narratives and their robustness in adversarial settings.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Visual Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "1,000 YouTube Shorts videos, each with one main question and four related adversarial questions.",
+    "size": "1,000 videos with 5,000 questions",
+    "format": "Video",
+    "annotation": "Structured by human annotators focusing on visual and narrative complexity."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "calculation": "Accuracy is based on the percentage of correct answers across various question types.",
+    "interpretation": "Higher accuracy indicates better performance of models in understanding video content compared to human benchmarks.",
+    "baseline_results": "Human performance at 84.3% accuracy; models significantly lag behind.",
+    "validation": "The benchmark was tested against several leading video LLMs to validate its efficacy."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

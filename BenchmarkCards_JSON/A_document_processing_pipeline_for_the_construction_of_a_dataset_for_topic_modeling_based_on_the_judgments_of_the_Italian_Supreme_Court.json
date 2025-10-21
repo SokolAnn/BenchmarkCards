@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "A document processing pipeline for the construction of a dataset for topic modeling based on the judgments of the Italian Supreme Court",
+    "abbreviation": "N/A",
+    "overview": "We developed a document processing pipeline that generates an anonymized dataset of legal judgments optimized for topic modeling, addressing challenges such as limited datasets in the Italian legal domain.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Legal"
+    ],
+    "languages": [
+      "Italian"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://www.italgiure.giustizia.it/sncass/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To create a novel dataset from Italian Supreme Court judgments for the purpose of applying topic modeling and ensuring compliance with privacy regulations.",
+    "audience": [
+      "Researchers in legal NLP",
+      "Legal professionals",
+      "Data scientists"
+    ],
+    "tasks": [
+      "Topic Modeling"
+    ],
+    "limitations": "The anonymization module lacks systematic quantitative validation due to time constraints.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Italian Supreme Court published judgments, ordinances, and decrees available on the Italgiure website.",
+    "size": "307 judgments",
+    "format": "JSON",
+    "annotation": "Manual annotation using Label Studio, following DocLayNet annotation scheme."
+  },
+  "methodology": {
+    "methods": [
+      "Document Layout Analysis",
+      "Optical Character Recognition (OCR)",
+      "Named Entity Recognition (NER)",
+      "Topic Modeling"
+    ],
+    "metrics": [
+      "mean Average Precision (mAP)",
+      "Character Error Rate (CER)",
+      "Word Error Rate (WER)",
+      "topic coherence (Cv)",
+      "topic diversity"
+    ],
+    "calculation": "Metrics were calculated based on the performance of various models used in the pipeline and topic modeling quality.",
+    "interpretation": "Higher values indicate better performance in detection, recognition, and topic quality.",
+    "baseline_results": "mAP@50 of 0.964 and mAP@50-95 of 0.800 for DLA; CER of 0.0047 and WER of 0.0248 for OCR; topic diversity of 0.6198 and coherence score of 0.663.",
+    "validation": "The benchmark was validated through a detailed evaluation against expert interpretations and comparisons with previous methods."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Anonymization procedures were integrated to ensure compliance with GDPR guidelines.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "The pipeline aims to meet GDPR requirements for data anonymization."
+  }
+}

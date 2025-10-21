@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SlangDIT (Interpretative Slang Translation)",
+    "abbreviation": "SlangDIT",
+    "overview": "SlangDIT introduces a new task that consists of three subtasks: slang detection, cross-lingual slang explanation, and slang translation, leveraging context to produce more accurate translations of slang terms.",
+    "data_type": "English-Chinese sentence pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "Urban Dictionary",
+      "OSD",
+      "GDoS",
+      "OpenSubtitles-Slang",
+      "CLIX"
+    ],
+    "resources": [
+      "https://github.com/XL2248/SlangDIT"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To produce more accurate translations by taking detected slang and corresponding cross-lingual explanations into account.",
+    "audience": [
+      "ML Researchers",
+      "Language Translators",
+      "AI Developers"
+    ],
+    "tasks": [
+      "Slang Detection",
+      "Cross-lingual Slang Explanation",
+      "Slang Translation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Large-scale movie subtitles",
+    "size": "25,000 examples",
+    "format": "CSV",
+    "annotation": "Automatically generated using advanced LLMs for slang detection, explanation, and polysemy annotation."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "BLEU",
+      "ROUGE-1",
+      "ROUGE-2",
+      "ROUGE-L",
+      "Comet",
+      "F1 Score"
+    ],
+    "calculation": "Standard metrics for evaluating slang detection, explanation, and translation accuracy as described in the paper.",
+    "interpretation": "Higher scores indicate better alignment with correct slang understanding.",
+    "baseline_results": "Compared to various LLM models and fine-tuned baselines, SlangOWL shows superior performance in all tasks.",
+    "validation": "Cross-validation across training and testing datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset includes a diverse set of slang terms from various cultural contexts.",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset is sourced from publicly available movie subtitles and does not involve sensitive data.",
+    "data_licensing": "Permitted under the Creative Commons Attribution-ShareAlike 3.0 Unported License and Creative Commons CC0 License for slang explanations.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

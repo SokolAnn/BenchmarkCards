@@ -1,0 +1,72 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CompCodeVet",
+    "abbreviation": "N/A",
+    "overview": "CompCodeVet is a compiler-guided approach that enhances the quality of code datasets for training Large Language Models (LLMs) by rectifying non-compilable C and C++ code, improving their training dataset for better performance in code-related tasks.",
+    "data_type": "code snippets",
+    "domains": [
+      "Computer Science"
+    ],
+    "languages": [
+      "C",
+      "C++"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://arxiv.org/abs/2311.06505"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To improve the quality of code datasets used for training LLMs and enhance the model's ability to generate compilable code.",
+    "audience": [
+      "ML Researchers",
+      "Software Developers"
+    ],
+    "tasks": [
+      "Code Generation",
+      "Code Completion"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Datasets used include Stack and HPCorpus, which contain source code from open-source repositories.",
+    "size": "6.4 TB",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Fine-tuning of LLMs using a compiler-guided approach",
+      "Error rectification using a chain-of-thought strategy"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated by comparing the model's output against ground truth labels.",
+    "interpretation": "Higher values in precision, recall, and F1 scores indicate better model performance in code generation and classification tasks.",
+    "baseline_results": "CompCodeVet's Llama2-7b model achieved an F1 Score of 0.95 in programming language classification.",
+    "validation": "Models were validated through performance tests against other established LLMs like GPT-4."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Quality",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

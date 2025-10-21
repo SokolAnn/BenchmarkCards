@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Cognitive Linguistic Identity Fusion Score (CLIFS)",
+    "abbreviation": "CLIFS",
+    "overview": "The CLIFS is a metric that quantifies identity fusion—the psychological merging of an individual's identity with another entity—from natural language text. It utilizes large language models for automated, scalable assessments and has been validated against established measures.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Cognitive Science"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/DevinW-sudo/CLIFS"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a scalable, quantitative measure of identity fusion for research and applications in understanding group dynamics and behaviors.",
+    "audience": [
+      "ML Researchers",
+      "Cognitive Scientists",
+      "Social Psychologists"
+    ],
+    "tasks": [
+      "Identity Fusion Prediction",
+      "Violence Risk Prediction"
+    ],
+    "limitations": "Limited to texts in English and the specific contexts of identity fusion explored; may not generalize across diverse cultural settings.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Combination of datasets repurposed for identity fusion and violence risk prediction tasks.",
+    "size": "1,971 samples",
+    "format": "JSON",
+    "annotation": "Annotated based on Verbal Identity Fusion Scale (VIFS) scores and additional metrics derived from prior studies."
+  },
+  "methodology": {
+    "methods": [
+      "Random Forest",
+      "Support Vector Machine",
+      "XGBoost",
+      "Fine-Tuning Language Models"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Mean Absolute Error (MAE)",
+      "Spearman Correlation (rs)"
+    ],
+    "calculation": "Calculated using specified models with hyperparameter tuning and evaluation metrics such as F1 scores and MAE.",
+    "interpretation": "Higher F1 scores and lower MAE indicate better model performance in predicting identity fusion and associated risks.",
+    "baseline_results": "CLIFS models exhibited a 6-154% improvement over existing methods in classification tasks.",
+    "validation": "Validated against human annotations and established scoring scales."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Future work will explore demographic factors in identity fusion among various groups.",
+    "harm": [
+      "There are potential risks if the metric is misused in high-stakes contexts."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data anonymization techniques were applied to comply with ethical guidelines.",
+    "data_licensing": "The data is shared under a CC BY 4.0 license.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

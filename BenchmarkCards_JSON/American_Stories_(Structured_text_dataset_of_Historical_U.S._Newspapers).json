@@ -1,0 +1,100 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "American Stories (Structured text dataset of Historical U.S. Newspapers)",
+    "abbreviation": "N/A",
+    "overview": "The American Stories dataset provides high-quality structured article texts extracted from nearly 20 million newspaper scans in the Library of Congress’s Chronicling America project, addressing limitations of existing datasets.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Social Science",
+      "Digital Humanities"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Newspaper Navigator"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/dell-research-harvard/AmericanStories",
+      "https://github.com/dell-research-harvard/AmericanStories"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide researchers with a high-quality corpus of structured and transcribed newspaper article texts from historical U.S. newspapers.",
+    "audience": [
+      "Researchers",
+      "Historians",
+      "Social Scientists",
+      "NLP Practitioners"
+    ],
+    "tasks": [
+      "Topic Classification",
+      "Content Analysis",
+      "Language Modeling"
+    ],
+    "limitations": "The dataset contains historical language reflecting the cultural biases of the time.",
+    "out_of_scope_uses": [
+      "Training generative models without filtering due to potential toxicity."
+    ]
+  },
+  "data": {
+    "source": "Library of Congress’s Chronicling America project.",
+    "size": "1.14 billion content regions",
+    "format": "JSON",
+    "annotation": "Automated via a deep learning pipeline with layout detection and OCR techniques."
+  },
+  "methodology": {
+    "methods": [
+      "Layout Detection",
+      "Optical Character Recognition (OCR)",
+      "Article Association"
+    ],
+    "metrics": [
+      "Character Error Rate (CER)",
+      "Mean Average Precision (mAP)"
+    ],
+    "calculation": "Metrics are evaluated based on comparison to ground truth annotations in dedicated validation datasets.",
+    "interpretation": "A lower CER indicates higher OCR accuracy.",
+    "baseline_results": "CER of 0.051 (0.044 after spellchecking) and mAP for article bounding boxes at 91.31.",
+    "validation": "Evaluated using labeled datasets and inter-annotator reliability."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Data privacy rights alignment"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Potential to analyze societal biases reflected in historical texts.",
+    "harm": "Historical biases may reinforce stereotypes or cultural misconceptions."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data is derived from publicly available historical newspapers.",
+    "data_licensing": "Creative Commons CC-BY license.",
+    "consent_procedures": "N/A - Data is in the public domain.",
+    "compliance_with_regulations": "N/A - Data is drawn from public domain sources."
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "AMQA (Adversarial Medical Question-Answering)",
+    "abbreviation": "AMQA",
+    "overview": "AMQA is an Adversarial Medical Question-Answering dataset built for automated, large-scale bias evaluation of LLMs in medical QA. It includes 4,806 medical QA pairs designed to systematically control sensitive attributes like race, gender, and socioeconomic status while maintaining clinical integrity.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "EquityMedQA",
+      "CPV"
+    ],
+    "resources": [
+      "https://github.com/XY-Showing/AMQA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To facilitate automated and reproducible assessment of biases in large language models within medical contexts.",
+    "audience": [
+      "ML Researchers",
+      "Healthcare Professionals",
+      "Model Developers",
+      "Ethics Researchers"
+    ],
+    "tasks": [
+      "Bias Evaluation",
+      "Medical Question Answering"
+    ],
+    "limitations": "AMQA models sensitive attributes as binary variables, which may overlook important demographic subgroups.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Derived from the United States Medical Licensing Examination (USMLE) dataset.",
+    "size": "4,806 question-answering pairs",
+    "format": "N/A",
+    "annotation": "Generated through a multi-agent framework with manual review of clinical validity."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Bias-triggering assessment"
+    ],
+    "metrics": [
+      "Counterfactual fairness",
+      "Statistical Parity Difference (SPD)"
+    ],
+    "calculation": "Counterfactual fairness measured by comparing a model's responses to neutral and adversarial variants.",
+    "interpretation": "Good performance constitutes consistent model responses regardless of sensitive attribute changes.",
+    "baseline_results": "Evaluated against existing benchmarks such as CPV.",
+    "validation": "Validity tested through a comprehensive human review process."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Evaluates biases across sensitive attributes like race, gender, and socioeconomic status.",
+    "harm": [
+      "Potential reinforcement of healthcare disparities."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

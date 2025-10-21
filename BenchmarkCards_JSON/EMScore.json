@@ -1,0 +1,69 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "EMScore (Embedding Matching-based score)",
+    "abbreviation": "EMScore",
+    "overview": "EMScore is a novel reference-free metric for video captioning, which directly measures similarity between video and candidate captions. It combines matching scores of both coarse-grained (video and caption) and fine-grained (frames and words) levels.",
+    "data_type": "text",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/shiyaya/emscore"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To develop a reference-free metric for evaluating video captions that better aligns with human judgment.",
+    "audience": [
+      "ML Researchers",
+      "Video Captioning Practitioners"
+    ],
+    "tasks": [
+      "Video Captioning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Datasets collected include VATEX-EVAL and ActivityNet-FOIL.",
+    "size": "54,000 human ratings",
+    "format": "N/A",
+    "annotation": "Human ratings by annotators on a scale of 1 to 5."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Human correlation",
+      "Kendall's tau",
+      "Spearman's rank correlation"
+    ],
+    "calculation": "EMScore is calculated as the average of coarse-grained and fine-grained embedding matches.",
+    "interpretation": "Higher EMScore indicates a better quality caption, reflecting its consistency with the video.",
+    "baseline_results": "EMScore shows higher human correlation than existing metrics like BLEU, ROUGE, and CIDEr.",
+    "validation": "V ATEX-EVAL and ActivityNet-FOIL datasets were used for validation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

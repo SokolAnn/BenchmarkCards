@@ -1,0 +1,108 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "INTERS (INstruction Tuning datas Et foR Search)",
+    "abbreviation": "INTERS",
+    "overview": "INTERS is a novel instruction tuning dataset designed to enhance the search capabilities of large language models (LLMs) across 20 tasks in information retrieval (IR), encompassing query understanding, document understanding, and query-document relationship understanding.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Information Retrieval"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "FLAN"
+    ],
+    "resources": [
+      "https://github.com/DaoD/INTERS"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To improve the performance of LLMs on search-related tasks through instruction tuning.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Query Understanding",
+      "Document Understanding",
+      "Query-document Relationship Understanding",
+      "Fact Verification",
+      "Summarization",
+      "Reading Comprehension",
+      "Conversational Question Answering",
+      "Query Intent Classification",
+      "Query Expansion",
+      "Query Reformulation",
+      "Query Suggestion",
+      "Query Matching",
+      "Query Clarification",
+      "Citation Prediction",
+      "Subtopic Generation",
+      "Duplicate Question Retrieval",
+      "Argument Retrieval"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Data collected from 43 distinct datasets tailored for 20 different tasks in information retrieval.",
+    "size": "200,000 examples",
+    "format": "JSONL",
+    "annotation": "Manual crafting of templates and task descriptions, along with zero-shot and few-shot examples."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "BLEU Score",
+      "ROUGE-L",
+      "Mean Reciprocal Rank (MRR)",
+      "Normalized Discounted Cumulative Gain (NDCG)"
+    ],
+    "calculation": "Metrics are calculated based on model outputs compared to reference answers.",
+    "interpretation": "Higher scores indicate better understanding and performance in retrieval tasks.",
+    "baseline_results": "State-of-the-art models such as LLaMA, Mistral, and Falcon are fine-tuned with INTERS to evaluate their performance.",
+    "validation": "Model performance is validated through extensive experiments on various IR tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": []
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC BY-SA 4.0 for released datasets.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

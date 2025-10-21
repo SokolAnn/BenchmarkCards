@@ -1,0 +1,67 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "POLITI SKY24: U.S. Political Bluesky Dataset with User Stance Labels",
+    "abbreviation": "POLITI SKY24",
+    "overview": "The dataset comprises 16,044 user-target stance pairs enriched with engagement metadata, interaction graphs, and user posting histories, intended for the stance detection task focused on the 2024 U.S. presidential candidates Kamala Harris and Donald Trump.",
+    "data_type": "user-target stance pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://doi.org/10.5281/zenodo.15616911"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive stance dataset focused on the 2024 U.S. presidential candidates, facilitating analysis of user viewpoints on a decentralized social network.",
+    "audience": [
+      "ML Researchers",
+      "Social Scientists"
+    ],
+    "tasks": [
+      "Stance Detection"
+    ],
+    "limitations": "Sampling biases may exist due to the methodology of selecting users based on hashtag usage.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Bluesky social network",
+    "size": "16,044 user-target stance pairs",
+    "format": "Custom",
+    "annotation": "Labeled using a pipeline that combines text embedding and LLMs to determine user stances."
+  },
+  "methodology": {
+    "methods": [
+      "Document retrieval using embedding models",
+      "Stance labeling with Large Language Models (LLMs)"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy calculated based on the proportion of correct stance labels assigned to users.",
+    "interpretation": "Higher accuracy indicates better identification of user stances toward the political candidates.",
+    "baseline_results": "Average accuracy of 81% achieved by the selected LLM.",
+    "validation": "Utilized a validation set of users to configure and fine-tune the stance labeling pipeline."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data collected following Bluesky's terms of service with privacy considerations for user-generated content.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "V ALSE (Vision And Language Structured Evaluation)",
+    "abbreviation": "V ALSE",
+    "overview": "V ALSE is a novel benchmark designed for testing general-purpose pretrained vision and language (V&L) models for their visio-linguistic grounding capabilities on specific linguistic phenomena. It offers a suite of six tests covering various linguistic constructs.",
+    "data_type": "image-caption-foil triples",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/Heidelberg-NLP/VALSE"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess the extent to which models learn to ground specific linguistic phenomena as a consequence of their pretraining (or fine-tuning).",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Visual Question Answering",
+      "Image Understanding"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Built using existing high-quality image captioning and VQA data.",
+    "size": "8782 instances",
+    "format": "N/A",
+    "annotation": "Manual validation by crowdsourcing for all generated foils."
+  },
+  "methodology": {
+    "methods": [
+      "Binary classification",
+      "Image-sentence alignment score"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Precision",
+      "Foil Precision",
+      "Pairwise Ranking Accuracy",
+      "Area Under ROC Curve (AUC-ROC)"
+    ],
+    "calculation": "Metrics calculated based on distinguishing correct and foiled examples.",
+    "interpretation": "High scores indicate better grounding capabilities of V&L models.",
+    "baseline_results": "N/A",
+    "validation": "Manual validation through a survey of human annotators on 5 categories."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

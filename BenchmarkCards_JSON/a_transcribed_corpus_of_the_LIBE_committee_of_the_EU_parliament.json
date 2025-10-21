@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "a transcribed corpus of the LIBE committee of the EU parliament",
+    "abbreviation": "N/A",
+    "overview": "We present a transcribed corpus of the LIBE committee of the EU parliament, totalling 3.6 Million running words. We investigated the most appropriate Automatic Speech Recognition (ASR) model to create an accurate text transcription of the audio recordings of the meetings in order to make their content available for research and analysis. We focused on the unsupervised domain adaptation of the ASR pipeline. Building on the transformer-based Wav2vec2.0 model, we experimented with multiple acoustic models, language models and the addition of domain-specific terms. We release the resulting corpus and our analysis pipeline for future research.",
+    "data_type": "text (transcribed parliamentary speech / speech-to-text segments)",
+    "domains": [
+      "Natural Language Processing",
+      "Political Science"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Europarl corpus",
+      "ParlaMint",
+      "VoxPopuli"
+    ],
+    "resources": [
+      "https://github.com/hdvos/EUParliamentASRDataAndCode",
+      "https://arxiv.org/abs/2304.08137v1",
+      "https://www.europarl.europa.eu/committees/en/meetings/webstreaming"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To create an accurate text transcription of the audio recordings of the LIBE committee meetings in order to make their content available for research and analysis.",
+    "audience": [
+      "Political Scientists",
+      "Linguists",
+      "Researchers"
+    ],
+    "tasks": [
+      "Automatic Speech Recognition (speech-to-text)",
+      "Named Entity Recognition / hotword/entity recognition",
+      "Topic Modeling",
+      "Downstream political text analysis / information retrieval for political entities"
+    ],
+    "limitations": "Audio is not always aligned with metadata; manual transcribed data for training was small (100 segments, 4,893 words) and therefore insufficient for substantial fine-tuning; diarization was not performed (pilot was inaccurate and outside scope); use of hotwords improved named entity recall but increased overall Word Error Rate and was not used for the released corpus.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Audio recordings of the LIBE committee meetings (EU Parliament webstreaming service) and meeting agendas/minutes downloaded from the EU Parliament website; transcriptions produced via ASR (Wav2Vec2.0 experiments) and a manually transcribed evaluation set.",
+    "size": "Resulting corpus: 3,584,150 words. Audio downloaded: 332 files (mean length 152.63 minutes, sd 60.50; shortest 9.18 minutes, longest 289.43 minutes). After splitting: 128,918 segments (average length 21.64 seconds, sd 5.72). Manually transcribed evaluation set: 100 segments (4,893 words; total 36 minutes 18 seconds).",
+    "format": "Audio: 16 kHz 16-bit PCM WAV (converted from mp4). Transcriptions: text segmented into ~10-30 second segments.",
+    "annotation": "Automatic ASR-generated transcriptions (Wav2Vec2.0 based pipelines). A manually transcribed evaluation set of 100 segments (4,893 words) was created and used only for evaluation and cross-validation (not for training/fine-tuning)."
+  },
+  "methodology": {
+    "methods": [
+      "Automatic Speech Recognition evaluation using Wav2Vec2.0",
+      "Domain adaptation / replacement of acoustic model (wav2vec2-base-960h vs wav2vec2-base-10k-voxpopuli-ft-en)",
+      "Language model decoding using pyctcdecode with KenLM (3-gram and 5-gram)",
+      "Hotwords boosting (meeting-specific hotword lists extracted from agendas/minutes with SpaCy)",
+      "Custom audio splitting algorithm to create 10-30s segments",
+      "5-fold cross validation on the manually transcribed evaluation set",
+      "Topic modeling (LDA) for corpus exploration"
+    ],
+    "metrics": [
+      "Word Error Rate (WER)",
+      "Precision (hotwords)",
+      "Recall (hotwords)",
+      "F1 Score (hotwords)",
+      "Topic coherence (word2vec based coherence metric)"
+    ],
+    "calculation": "WER computed as (S + D + I) / N, where S=substitutions, D=deletions, I=insertions, N=number of words in reference. WER computed per sentence using the jiwer package and averaged over all sentences. Hotwords metrics (precision, recall, F1) computed at token level per meeting: True Positives = entities correctly transcribed and present in hotword list and reference; False Positives = entities in hotword list and ASR output but not in reference; False Negatives = entities in hotword list and reference but not in ASR output. Topic coherence computed using a word2vec-based coherence metric.",
+    "interpretation": "Lower WER indicates better ASR quality (\"lower is better\" as reported). Domain-specific acoustic model (VoxPopuli) and using a language model improved WER; hotwords boosting increased named-entity recall but could increase overall WER due to false positives. The authors chose voxpopuli + 3-gram language model (without hotwords) as the settings to create the released corpus.",
+    "baseline_results": "Baseline 1 (Google Cloud API): WER 73.46. Baseline 2 (wav2vec2.0 base zero-shot): WER 28.22. Experiment 1 (wav2vec2.0 voxpopuli): WER 21.42. Experiment 2 (wav2vec2.0 voxpopuli + language model): WER 17.95. Experiment 3 (wav2vec2.0 voxpopuli + language model + hotwords): WER 25.53.",
+    "validation": "Hyperparameters (e.g., alpha and beta for CTC decoding, hotword weight) tuned with 5-fold cross validation on the manually transcribed evaluation set (100 segments split into 5 folds of 20 segments each)."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

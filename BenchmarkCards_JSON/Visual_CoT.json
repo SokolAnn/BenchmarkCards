@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Visual CoT (Visual Chain-of-Thought)",
+    "abbreviation": "Visual CoT",
+    "overview": "The Visual CoT dataset comprises 438k question-answer pairs, annotated with intermediate bounding boxes highlighting key regions essential for answering the questions, including about 98k pairs with detailed reasoning steps. The benchmark is designed to evaluate Multi-Modal Large Language Models (MLLMs) in scenarios requiring specific local region identification in visual data.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "GQA (Grounded Question Answering)",
+      "TextVQA",
+      "DocVQA"
+    ],
+    "resources": [
+      "https://github.com/deepcs233/Visual-CoT",
+      "https://huggingface.co/datasets/deepcs233/Visual-CoT",
+      "https://huggingface.co/collections/deepcs233/viscot-65fe883e2a0cdd3c59fc5d63"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective is to enhance the reasoning capabilities of Multi-Modal Large Language Models (MLLMs) and improve interpretability and processing of visual inputs in response to questions.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Visual Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "A large-scale collection of visual question-answering data utilizing 12 source datasets across five distinct domains, including annotations with bounding boxes that highlight critical regions in images.",
+    "size": "438,000 question-answer pairs",
+    "format": "JSON",
+    "annotation": "Annotated with intermediate reasoning steps and bounding boxes highlighting key regions essential for answering the questions."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Top-1 Accuracy@0.5"
+    ],
+    "calculation": "Metrics are calculated based on the accuracy of predictions in identifying relevant visual regions corresponding to the questions asked.",
+    "interpretation": "Higher scores indicate better performance in accurately identifying key regions in images for visual question answering tasks and generating correct answers.",
+    "baseline_results": "N/A",
+    "validation": "Evaluation is performed against multiple established benchmarks in visual question answering."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC BY 4.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

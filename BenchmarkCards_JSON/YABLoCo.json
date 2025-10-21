@@ -1,0 +1,82 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "YABLoCo (Yet Another Benchmark for Long Context Code Generation)",
+    "abbreviation": "YABLoCo",
+    "overview": "The benchmark contributes a test set of 215 functions selected from four large repositories, focusing on function body generation in large C and C++ repositories, capturing relevant context in large repositories and generating runnable code.",
+    "data_type": "function examples with metadata, docstrings, and function bodies",
+    "domains": [
+      "Software Engineering"
+    ],
+    "languages": [
+      "C",
+      "C++"
+    ],
+    "similar_benchmarks": [
+      "HumanEval",
+      "MBPP",
+      "CoderEval"
+    ],
+    "resources": [
+      "https://github.com/yabloco-codegen/yabloco-benchmark"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a benchmark for evaluating code generation models in large C/C++ repositories, addressing the challenges posed by long contexts in code generation.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Software Engineers"
+    ],
+    "tasks": [
+      "Code Generation"
+    ],
+    "limitations": "The benchmark is limited to C/C++ languages and is based on only four selected repositories.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Data is collected from four large open-source repositories: llvm-project, bullet3, openssl, and redis.",
+    "size": "215 function examples",
+    "format": "N/A",
+    "annotation": "Function context and other metadata analyzed and extracted using a clang-based tool."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Qualitative evaluation"
+    ],
+    "metrics": [
+      "Pass@k",
+      "Exact Match (EM)",
+      "Edit Similarity (ES)"
+    ],
+    "calculation": "Metrics are calculated by evaluating generated functions against tests from the original repositories.",
+    "interpretation": "Higher scores indicate better performance for code generation models, with pass@k measuring the functional correctness of the generated code.",
+    "baseline_results": "Results from baseline models CodeLlama, DeepSeekCoder, and GPT-4 were evaluated on the benchmark.",
+    "validation": "The pipeline includes a rigorous environment setup including building Docker images for each repository and running test suites."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

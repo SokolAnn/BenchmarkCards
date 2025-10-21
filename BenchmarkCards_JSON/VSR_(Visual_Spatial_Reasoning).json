@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "VSR (Visual Spatial Reasoning)",
+    "abbreviation": "N/A",
+    "overview": "The benchmark evaluates the capabilities of Vision Large Language Models (VLLMs) in recognizing visual positional information and following instructions related to spatial reasoning. It addresses issues of inconsistent performance and answer bias in existing models by proposing a unified instruction test set and expanding existing datasets.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MME",
+      "MMBench",
+      "SEED"
+    ],
+    "resources": [
+      "https://github.com/peijin360/vsre"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enhance the evaluation and optimization of VLLMs in visual spatial reasoning tasks by providing a unified instruction test set and expanded datasets.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Visual Spatial Reasoning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The original VSR dataset and augmented data generated through diffusion models and instruction templates.",
+    "size": "500,000 examples",
+    "format": "N/A",
+    "annotation": "Data was expanded through manual and GPT-4 generated templates."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy was calculated based on the model's responses to spatial reasoning questions.",
+    "interpretation": "Higher accuracy indicates better understanding and differentiation of visual positional relationships.",
+    "baseline_results": "LLaV A1.5 achieved scores of 54.3 / 65.3 before optimization.",
+    "validation": "The benchmark was validated through experiments with multiple VLLM architectures."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

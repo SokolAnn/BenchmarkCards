@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DB-GPT-Hub",
+    "abbreviation": "N/A",
+    "overview": "DB-GPT-Hub is an open benchmark suite for LLM-empowered text-to-SQL, focusing on tuning LLMs at large scales and providing a standardized evaluation of text-to-SQL tasks.",
+    "data_type": "question-SQL pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Database"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Spider",
+      "BIRD",
+      "WikiSQL",
+      "CoSQL"
+    ],
+    "resources": [
+      "https://github.com/eosphoros-ai/DB-GPT-Hub"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive open benchmark framework for the evaluation of text-to-SQL models utilizing large language models.",
+    "audience": [
+      "ML Researchers",
+      "Database Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text-to-SQL"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Spider and BIRD datasets, among other publicly available datasets.",
+    "size": "10,181 examples (Spider), 12,751 examples (BIRD)",
+    "format": "JSON",
+    "annotation": "The datasets contain question-SQL pairs, manually annotated."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Execution Accuracy (EX)",
+      "Exact-set match accuracy (EM)"
+    ],
+    "calculation": "Metrics are calculated by comparing predicted SQL queries with ground truth SQL queries.",
+    "interpretation": "Higher EX and EM values indicate better performance, with EX providing a precise estimate of model performance through execution outputs.",
+    "baseline_results": null,
+    "validation": "The benchmark was validated using standardized protocols and extensive testing across different LLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Apache License 2.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

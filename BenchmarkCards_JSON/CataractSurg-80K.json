@@ -1,0 +1,100 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CataractSurg-80K: Knowledge-Driven Benchmarking for Structured Reasoning in Ophthalmic Surgery Planning",
+    "abbreviation": "CataractSurg-80K",
+    "overview": "CataractSurg-80K is the first large-scale benchmark for cataract surgery planning that incorporates structured clinical reasoning. Each case is annotated with diagnostic questions, expert reasoning chains, and structured surgical recommendations to support fine-grained supervision and evaluation.",
+    "data_type": "structured clinical reasoning data",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "MedQA",
+      "CMB",
+      "CliMedBench"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/my2000cup/CataractSurg-80K",
+      "https://huggingface.co/my2000cup/Qwen-CSP",
+      "https://anonymous.4open.science/r/CataractCareMAS-A363"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive AI-driven preoperative decision support framework for cataract surgery that integrates structured reasoning.",
+    "audience": [
+      "ML Researchers",
+      "Medical Practitioners",
+      "AI Developers in Healthcare"
+    ],
+    "tasks": [
+      "Clinical Decision Support",
+      "Reasoning in Cataract Surgery"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated from ophthalmology electronic medical records at Peking University Third Hospital.",
+    "size": "80,000 cases",
+    "format": "structured format",
+    "annotation": "Expert-annotated with diagnostic questions, reasoning chains, and structured surgical recommendations."
+  },
+  "methodology": {
+    "methods": [
+      "Experiment evaluation using multiple LLMs",
+      "Quantitative evaluations on general LLMs and customized fine-tuned models"
+    ],
+    "metrics": [
+      "BLEU Score",
+      "ROUGE-L",
+      "BERTScore",
+      "Keypoint-level F1/Precision/Recall"
+    ],
+    "calculation": "Metrics calculated based on output quality comparisons with human-annotated references.",
+    "interpretation": "Higher scores on metrics indicate better model performance in generating clinical decision support outputs.",
+    "baseline_results": "Comparison against general-purpose LLMs like GPT-4 and Claude-3.7.",
+    "validation": "Cross-validation with the benchmark subset of 777 cases."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Privacy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis of the dataset shows an average patient age of 69.4 years.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All data was de-identified with ethical approval.",
+    "data_licensing": "Released under CC BY-NC-SA 4.0 license.",
+    "consent_procedures": "Ethical compliance ensured during patient data processing.",
+    "compliance_with_regulations": "N/A"
+  }
+}

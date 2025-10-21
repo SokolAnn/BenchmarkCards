@@ -1,0 +1,70 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "S2SBench",
+    "abbreviation": "N/A",
+    "overview": "S2SBench is a benchmark designed to quantify performance degradation in speech large language models (LLMs) by evaluating model performance under audio and text input conditions. It includes diagnostic datasets focusing on sentence continuation and commonsense reasoning.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/undobug/S2SBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of S2SBench is to systematically evaluate the gap in reasoning and generation performance of speech models compared to text-based models.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Sentence Continuation",
+      "Commonsense Reasoning"
+    ],
+    "limitations": "This work primarily evaluates the intelligence capability of speech large language models through the speech-to-text (S → T) setting.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed evaluation datasets focused on sentence continuation and commonsense reasoning.",
+    "size": "4,743 questions for commonsense reasoning in sCMMLU; datasets for sentence continuation.",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Pairwise evaluation based on perplexity differences"
+    ],
+    "metrics": [
+      "Perplexity",
+      "Accuracy"
+    ],
+    "calculation": "Perplexity is calculated for positive and negative samples, indicating model confidence in given samples.",
+    "interpretation": "Lower perplexity indicates higher model confidence. The model makes a correct judgment when the positive example has lower perplexity than the negative example.",
+    "baseline_results": "N/A",
+    "validation": "Evaluation conducted under controlled settings to assess model behavior across text-token and audio-token conditions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Transparency"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

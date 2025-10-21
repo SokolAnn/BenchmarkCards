@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DepreSym (A Depression Symptom Annotated Corpus)",
+    "abbreviation": "DepreSym",
+    "overview": "DepreSym is a dataset consisting of 21,580 sentences annotated for their relevance to the 21 symptoms of the Beck Depression Inventory-II (BDI-II), aimed at fostering research on new depression screening models that rely on symptom markers at the sentence level.",
+    "data_type": "annotated sentences",
+    "domains": [
+      "Healthcare",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "PsySym",
+      "eRisk2019"
+    ],
+    "resources": [
+      "https://erisk.irlab.org/depresym_dataset.html"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To encourage the development of models that rely on symptom-level screening of depression.",
+    "audience": [
+      "ML Researchers",
+      "Healthcare Professionals",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Text Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Sentences extracted from a pool of user posts on Reddit, selected through a top-k pooling approach from participant rankings.",
+    "size": "21,580 sentences",
+    "format": "text",
+    "annotation": "Annotated by three expert assessors, including an expert psychologist."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "LLM-based evaluation"
+    ],
+    "metrics": [
+      "Cohen’s Kappa",
+      "Krippendorff’s Alpha"
+    ],
+    "calculation": "Inter-rater agreement calculated using Cohen’s Kappa and Krippendorff’s Alpha for assessing the agreement between human annotators and LLMs.",
+    "interpretation": "Higher Kappa values indicate better agreement among annotators; Cohen's Kappa below 0.67 suggests unreliable annotations.",
+    "baseline_results": "N/A",
+    "validation": "Inter-rater agreement analysis and comparison between human and LLM annotations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Misrepresentation of mental health states."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Annotated sentences came from publicly available user posts on Reddit; users provided consent for their data to be used.",
+    "data_licensing": "Creative Commons License Attribution 4.0 International (CC BY 4.0).",
+    "consent_procedures": "Users consented to access their publication histories on Reddit.",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "GLGE (General Language Generation Evaluation)",
+    "abbreviation": "GLGE",
+    "overview": "GLGE is a new multi-task benchmark for evaluating the generalization capabilities of NLG models across eight language generation tasks, designed to encourage research on pretraining and transfer learning in natural language generation.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "GLUE",
+      "SuperGLUE"
+    ],
+    "resources": [
+      "https://github.com/microsoft/glge",
+      "https://microsoft.github.io/glge/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To facilitate the development, evaluation, and comparison of new NLG models across diverse tasks and difficulty levels.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text Summarization",
+      "Question Generation",
+      "Generative Question Answering",
+      "Dialogue"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Combination of six existing popular NLG datasets and two new datasets selected from real-world scenarios.",
+    "size": "N/A",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "ROUGE-1",
+      "ROUGE-2",
+      "ROUGE-L",
+      "BLEU-4",
+      "METEOR",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are aggregated based on performance across all tasks.",
+    "interpretation": "The scores represent the level of success in generating coherent and contextually relevant outputs for each task.",
+    "baseline_results": "Comparative results with models such as MASS, BART, and ProphetNet on the GLGE benchmarks.",
+    "validation": "Performance on different levels of task difficulty (Easy, Medium, Hard) is evaluated to determine model generalization capabilities."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

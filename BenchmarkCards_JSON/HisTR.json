@@ -1,0 +1,77 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "HisTR (Historical Turkish Named Entity Recognition Dataset)",
+    "abbreviation": "HisTR",
+    "overview": "The first named entity recognition (NER) dataset for historical Turkish, consisting of 812 sentences annotated to identify PERSON and LOCATION entities from historical Turkish texts.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Turkish"
+    ],
+    "similar_benchmarks": [
+      "OTA-BOUN (Universal Dependencies Treebank for Historical Turkish)"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/bucolin/HisTR"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a foundational resource for named entity recognition in historical Turkish texts.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Named Entity Recognition"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset is created from historical sentences sampled from the Servet-i Funun journal and additional historical documents.",
+    "size": "812 sentences",
+    "format": "CoNLL-2003 format",
+    "annotation": "Manual annotation by experts"
+  },
+  "methodology": {
+    "methods": [
+      "Fine-tuning of transformer-based models"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on the identified entities in the test datasets compared to manual annotations.",
+    "interpretation": "Higher precision indicates fewer false positives; higher recall indicates fewer false negatives.",
+    "baseline_results": null,
+    "validation": "Evaluated on development and test sets with cross-validation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

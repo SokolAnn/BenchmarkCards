@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "JailBreakV-28K",
+    "abbreviation": "N/A",
+    "overview": "JailBreakV-28K is a comprehensive benchmark designed to evaluate the transferability of LLM jailbreak attacks to MLLMs and assess the robustness and safety of MLLMs against diverse jailbreak attacks.",
+    "data_type": "text-image pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SafeBench",
+      "MM-SafetyBench"
+    ],
+    "resources": [
+      "https://eddyluo1232.github.io/JailBreakV28K/",
+      "https://huggingface.co/datasets/JailbreakV-28K/JailBreakV-28k"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To investigate whether techniques that successfully jailbreak Large Language Models (LLMs) can effectively jailbreak Multimodal Large Language Models (MLLMs) and evaluate their robustness against various jailbreak attacks.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Robustness Assessment",
+      "Vulnerability Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated from a combination of pre-existing datasets and newly curated malicious queries.",
+    "size": "28,000 examples",
+    "format": "N/A",
+    "annotation": "Manual annotation and synthesis of malicious queries."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Attack Success Rate (ASR)"
+    ],
+    "calculation": "ASR is defined as the number of successful jailbreak attempts divided by the total number of attempts.",
+    "interpretation": "Higher ASR indicates a greater vulnerability of the MLLMs to jailbreak attacks.",
+    "baseline_results": "The average ASR of jailbreak prompts across various models revealed significant vulnerabilities.",
+    "validation": "Evaluation of the ASR across 10 different MLLMs against the JailBreakV-28K dataset."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

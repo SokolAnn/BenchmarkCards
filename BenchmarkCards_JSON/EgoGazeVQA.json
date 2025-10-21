@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "EgoGazeVQA (Egocentric Gaze-Guided Video Question Answering)",
+    "abbreviation": "EgoGazeVQA",
+    "overview": "EgoGazeVQA is an egocentric gaze-guided video question answering benchmark designed to evaluate the ability of existing MLLMs to interpret user intentions from first-person videos by leveraging gaze information.",
+    "data_type": "gaze-based question-answering pairs",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "QaEgo4D",
+      "EgoThink",
+      "EgoSchema"
+    ],
+    "resources": [
+      "https://github.com/anonyupload/EgoGazeVQA",
+      "https://huggingface.co/datasets/anonupload/EgoGazeVQA-91-nips25"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess whether MLLMs can utilize egocentric gaze signals for analyzing daily-routine videos.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from egocentric video clips sourced from Ego4D, EgoExo4D, and EGTEA Gaze+ with gaze tracking data.",
+    "size": "913 videos with 1757 QA pairs",
+    "format": "JSON",
+    "annotation": "Generated using MLLMs and refined by human annotators for relevance, answerability, fluency, accuracy, conciseness, and difficulty."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "The performance is assessed by comparing model predictions to ground truth labels.",
+    "interpretation": "A higher accuracy percentage indicates better performance in understanding user intentions.",
+    "baseline_results": "Baseline performance of various MLLMs on EgoGazeVQA includes a maximum accuracy of 60.5% for Qwen2.5-VL-72B.",
+    "validation": "Models were evaluated on their ability to leverage gaze information in question-answering tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC BY 4.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

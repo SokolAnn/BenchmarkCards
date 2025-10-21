@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "AgentCoMa (Agent Compositional Benchmark Mixing Commonsense and Mathematical Reasoning)",
+    "abbreviation": "AgentCoMa",
+    "overview": "AgentCoMa is a compositional benchmark that requires both commonsense and mathematical reasoning to solve real-world tasks, aimed at evaluating large language models (LLMs) in mixed reasoning scenarios.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Bamboogle",
+      "MultiArith"
+    ],
+    "resources": [
+      "https://agentcoma.github.io"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To systematically evaluate the ability of LLMs to combine different types of reasoning (commonsense and mathematical) in agentic settings.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "The benchmark is constrained to questions requiring exactly two reasoning steps, with a fixed order of commonsense preceding mathematical reasoning.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Expert-created questions and validations by postgraduate-level annotators.",
+    "size": "260 samples",
+    "format": "JSON",
+    "annotation": "Manually annotated by experts without using LLMs or automated processes."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Metrics are calculated based on the correctness of answers to compositional tasks versus individual reasoning steps.",
+    "interpretation": "Performance gap is observed between individual reasoning steps and overall compositional accuracy.",
+    "baseline_results": null,
+    "validation": "Data samples undergo a multi-step validation process including binary yes/no questionnaire and expert review."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

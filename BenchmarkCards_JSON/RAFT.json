@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "RAFT (Real-world Annotated Few-shot Tasks)",
+    "abbreviation": "RAFT",
+    "overview": "RAFT is a real-world few-shot text classification benchmark designed to measure how much recent and upcoming NLP advances benefit applications. It includes naturally occurring tasks and uses an evaluation setup that mirrors deployment, with the aim of tracking model improvements that translate into real-world benefits.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "FLEX",
+      "FewGLUE",
+      "CrossFit",
+      "NaturalInstructions"
+    ],
+    "resources": [
+      "https://raft.elicit.org",
+      "https://raft.elicit.org/datasets",
+      "https://raft.elicit.org/baselines"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To measure and track few-shot performance on tasks representative of real-world text classification scenarios.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "RAFT dataset includes tasks like hate-speech detection, medical case report parsing, and literature review automation.",
+    "size": "11 datasets with varying sizes",
+    "format": "N/A",
+    "annotation": "Collected through human crowdsourcing with task-specific instructions."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score"
+    ],
+    "calculation": "F1 scores are macro-averaged across multiple datasets.",
+    "interpretation": "Higher F1 scores indicate better model performance in classifying the provided examples.",
+    "baseline_results": "Human crowdsourced average F1 score is 0.735; GPT-3 average F1 score is 0.627.",
+    "validation": "Evaluation is run weekly to minimize information gained from frequent submissions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Offensive content may be present due to the inclusion of a hate-speech detection dataset."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Datasets under various licenses such as Creative Commons Attribution 4.0 International.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

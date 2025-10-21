@@ -1,0 +1,76 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Action-Based Conversations Dataset (ABCD)",
+    "abbreviation": "ABCD",
+    "overview": "ABCD is a fully-labeled dataset with over 10K human-to-human dialogues containing 55 distinct user intents requiring unique sequences of actions constrained by policies to achieve task success. It aims to enhance the realism of task-oriented dialogue systems by incorporating procedural, dual-constrained actions.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MultiWOZ"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2104.00783"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To study customer service dialogue systems in more realistic settings incorporating procedural requirements and agent guidelines.",
+    "audience": [
+      "ML Researchers",
+      "Dialogue System Developers"
+    ],
+    "tasks": [
+      "Action State Tracking",
+      "Cascading Dialogue Success"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Human-to-human dialogues collected through Expert Live Chat.",
+    "size": "10,042 conversations",
+    "format": "N/A",
+    "annotation": "Automated annotation based on the provenance of each intent during data generation."
+  },
+  "methodology": {
+    "methods": [
+      "Baseline models involving large-scale, pre-trained language models",
+      "Expert Live Chat for real-time dialogue collection"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Overall accuracy for Action State Tracking based on correct action reconciliation with agent guidelines.",
+    "interpretation": "Higher accuracy indicates better model performance in adhering to action sequences and understanding user intents under constraints.",
+    "baseline_results": "Human evaluation reaches 82.7% accuracy.",
+    "validation": "Comparison with existing dialogue datasets and progressively evaluating model performance through baseline results."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All agent workers were compensated a fair wage, and their location was determined during the vetting process.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

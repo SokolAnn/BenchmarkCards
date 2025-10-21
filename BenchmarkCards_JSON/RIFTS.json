@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "RIFTS",
+    "abbreviation": "N/A",
+    "overview": "RIFTS is a benchmark designed to systematically measure human-LLM grounding, consisting of approximately 1,740 tasks that require selective use of clarification and follow-up requests for interactive grounding.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/microsoft/rifts"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate and improve the grounding capabilities of language models in human-LLM interactions.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Clarification",
+      "Follow-Up Requests"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Derived from publicly available LLM interaction data including WildChat, Bing Chat, and MultiWOZ.",
+    "size": "1,740 tasks",
+    "format": "N/A",
+    "annotation": "Automatically annotated using a model based on human-LLM interaction logs."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Rooted in predicting and analyzing the expected grounding acts based on past interactions.",
+    "interpretation": "The evaluation focuses on how well models initiate clarifications and follow-up requests during interactions.",
+    "baseline_results": "All evaluated models perform worse than random on RIFTS, with the best model achieving 25.26% accuracy.",
+    "validation": "Tasks validated through user interaction logs and predicted grounding acts."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": []
+        },
+        {
+          "category": "Fairness",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential for users to disclose sensitive information during grounding interactions."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data collected was done so with user consent.",
+    "data_licensing": "RIFTS is released under the ODC-By license.",
+    "consent_procedures": "Users were informed of data usage for research in exchange for model access.",
+    "compliance_with_regulations": "N/A"
+  }
+}

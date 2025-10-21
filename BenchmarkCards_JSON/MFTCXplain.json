@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MFTCXplain (Moral Foundations Twitter Corpus with Explanations)",
+    "abbreviation": "MFTCXplain",
+    "overview": "MFTCXplain is a multilingual benchmark dataset for evaluating the moral reasoning of LLMs via hate speech multi-hop explanations using Moral Foundation Theory (MFT). It comprises 3,000 tweets across Portuguese, Italian, Persian, and English, annotated with hate speech labels, moral categories, and text span-level rationales.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Portuguese",
+      "Italian",
+      "Persian",
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/franciellevargas/MFTCXplain"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the moral reasoning of large language models through structured hate speech explanations based on expert annotations.",
+    "audience": [
+      "ML Researchers",
+      "Ethics Researchers",
+      "Sociologists",
+      "NLP Practitioners"
+    ],
+    "tasks": [
+      "Hate Speech Detection",
+      "Moral Sentiment Prediction"
+    ],
+    "limitations": "The annotations were produced by a small group of graduate-level annotators, which may limit generalizability.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected tweets from various sources including OLID, datasets on political hate speech, and PHATE for Persian.",
+    "size": "3,000 tweets",
+    "format": "CSV",
+    "annotation": "Annotated by native speakers with diverse cultural backgrounds regarding hate speech and moral categories."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Jaccard Similarity",
+      "BERTScore"
+    ],
+    "calculation": "F1 Score is calculated for hate speech classification and moral sentiment prediction, while Jaccard metrics evaluate rationale alignment.",
+    "interpretation": "F1 score above 0.70 indicates good model performance for hate speech classification, while moral sentiment prediction success is generally considered above 0.35.",
+    "baseline_results": "GPT-4o and LLaMA-70B were utilized as baseline models for evaluating moral reasoning and hate speech detection.",
+    "validation": "Empirical evaluation through inter-annotator agreement using Cohen's Kappa and qualitative evaluations during annotation discussions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset reflects socio-political and cultural factors affecting moral judgments, analyzed through annotator profiles.",
+    "harm": [
+      "Marginalization of underrepresented languages, potential biases introduced by annotators."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The study involved publicly available social media content and was conducted in accordance with platform policies. Detailed annotator metadata was collected for bias analysis.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Annotators provided informed consent and underwent training in best practices for handling sensitive content.",
+    "compliance_with_regulations": "N/A"
+  }
+}

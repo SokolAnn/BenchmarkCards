@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "UAQFact",
+    "abbreviation": "N/A",
+    "overview": "UAQFact is a bilingual dataset designed to evaluate LLMs’ ability to handle unanswerable questions (UAQs) by providing auxiliary factual knowledge. It supports two new tasks measuring the utilization of internal and external factual knowledge.",
+    "data_type": "unanswerable question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/cytan17726/UAQ_Fact"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate LLMs' ability to utilize factual knowledge when handling unanswerable questions.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Discriminating between Unanswerable Questions and Answerable Questions",
+      "Evaluating LLMs’ ability to utilize internal factual knowledge in handling UAQ",
+      "Evaluating LLMs’ ability to utilize external factual knowledge in handling UAQ"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated from a Knowledge Graph, specifically sampled factual triples from Wikidata.",
+    "size": "13,970 questions",
+    "format": "N/A",
+    "annotation": "Questions generated using templates that incorporate factual knowledge."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Refusal Rate",
+      "Accuracy",
+      "Knowledge Pass Rate (KPR)",
+      "Knowledge-aware Refusal Rate (KRR)"
+    ],
+    "calculation": "Refusal rates are calculated using lexical matching based on key indicators of denial, while accuracy is measured via exact match against the provided answer list.",
+    "interpretation": "Higher refusal rates and lower accuracy indicate challenges in handling UAQs effectively. Improved KRR indicates better utilization of factual knowledge.",
+    "baseline_results": "N/A",
+    "validation": "Manual inspection confirmed 99.2% of questions meet quality standards."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

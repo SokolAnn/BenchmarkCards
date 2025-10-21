@@ -1,0 +1,73 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SUV (Selective Unlearning for Verbatim data)",
+    "abbreviation": "SUV",
+    "overview": "SUV is a selective unlearning framework designed to prevent large language models from memorizing copyrighted content while preserving overall model utility. It constructs a dataset of copyrighted infringement cases to apply Direct Preference Optimization for unlearning, ensuring the model's performance on unrelated tasks remains intact.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "CBP-500",
+      "CBP-50"
+    ],
+    "resources": [
+      "https://github.com/xz-liu/SUV/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a scalable and practical solution for mitigating copyright infringement risks in large language models.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "A dataset constructed from 500 predominantly copyrighted books.",
+    "size": "3.46 million sentences",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Direct Preference Optimization (DPO)",
+      "Gradient Projection",
+      "Fisher Regularization"
+    ],
+    "metrics": [
+      "ROUGE-L",
+      "Longest Common Subsequence (LCS)"
+    ],
+    "calculation": "Metrics like ROUGE-L and LCS are used to evaluate the similarity between original and generated content.",
+    "interpretation": "Lower ROUGE-L scores indicate better unlearning performance metrics.",
+    "baseline_results": "Compared against baselines such as Vanilla model, Stable Sequential Unlearning (SSU), Gradient Ascent (GA), and Negative Preference Optimization (NPO).",
+    "validation": "Validated using experiments that measure unlearning performance and downstream task efficiency."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Copyright Risk",
+      "Utility Performance"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

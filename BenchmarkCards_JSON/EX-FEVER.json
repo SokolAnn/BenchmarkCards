@@ -1,0 +1,74 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "EX-FEVER: A Dataset for Multi-hop Explainable Fact Verification",
+    "abbreviation": "EX-FEVER",
+    "overview": "EX-FEVER is a pioneering dataset for multi-hop explainable fact verification, comprising over 60,000 claims requiring 2-hop and 3-hop reasoning, each with a veracity label and an accompanying explanation.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "FEVER",
+      "HOVER"
+    ],
+    "resources": [
+      "https://github.com/dependentsign/EX-FEVER"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a high-quality dataset for improving explainability in multi-hop fact verification.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Fact Verification"
+    ],
+    "limitations": "Evaluating the effectiveness of the system remains challenging, as the Rouge score may inadequately assess explanation quality.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Created from hyperlinked Wikipedia documents.",
+    "size": "60,000 claims",
+    "format": "CSV",
+    "annotation": "Manual annotation by crowd workers."
+  },
+  "methodology": {
+    "methods": [
+      "Document retrieval",
+      "Explanation generation",
+      "Verdict prediction"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "Rouge Score"
+    ],
+    "calculation": "Metrics are calculated based on the comparison between predicted labels and ground truth.",
+    "interpretation": "A higher F1 Score indicates better model performance in generating correct predictions.",
+    "baseline_results": "Accuracy benchmark results show a significant performance gap between BERT and GEAR models.",
+    "validation": "Dataset is split into training, validation, and test sets with a 70%-20%-10% split."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "Demographic factors are not explicitly analyzed in the dataset.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

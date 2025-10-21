@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "-LongBench",
+    "abbreviation": "N/A",
+    "overview": " -LongBench introduces a length-controllable long-context benchmark and a novel metric, LongScore, to evaluate long-context capabilities of LLMs by disentangling baseline ability from long-context performance. It aims to provide a more accurate assessment of LLMs' true ability to handle extended contexts.",
+    "data_type": "length-controllable long-context tasks",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "LongBench",
+      "L-Eval",
+      "NIAH",
+      "RULER",
+      "Ada-LEval",
+      "Helmet"
+    ],
+    "resources": [
+      "https://github.com/uservan/100-LongBench.git"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a robust platform for evaluating and comparing LLMs across varying context lengths, minimizing the influence of prior knowledge or base abilities.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Key Retrieval",
+      "Information Retrieval",
+      "Single-doc QA",
+      "Multi-doc QA",
+      "Information Comprehension",
+      "Information Summarization"
+    ],
+    "limitations": "The proposed metric requires models to demonstrate relatively strong base ability on the task, which can cause performance evaluation fluctuations if the base ability is insufficient.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from a combination of real and synthetic tasks to evaluate long-context capabilities.",
+    "size": "N/A",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Experimental evaluation across various models",
+      "LongScore evaluation metric"
+    ],
+    "metrics": [
+      "Accuracy",
+      "LongScore"
+    ],
+    "calculation": "LongScore separates Base Ability from long-context capability, allowing for a more accurate evaluation.",
+    "interpretation": "Higher LongScore indicates better long-context capability regardless of base ability.",
+    "baseline_results": "N/A",
+    "validation": "Reliability and effectiveness of the benchmark validated through comprehensive experiments comparing various open-source models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

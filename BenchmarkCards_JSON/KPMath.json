@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "KPMath (Key-Point-Driven Mathematics Dataset)",
+    "abbreviation": "KPMath",
+    "overview": "KPMath is a synthetic dataset tailored for mathematical reasoning, comprising over 800K question-answer pairs. It utilizes a novel Key-Point-Driven Data Synthesis framework to enhance the quality and diversity of mathematical questions.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MATH",
+      "GSM8K"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2403.02333"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a large-scale, high-quality dataset for training language models on mathematical reasoning tasks.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Mathematical Reasoning",
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated through a data synthesis framework (Key-Point-Driven Data Synthesis) leveraging existing mathematical datasets including MATH and GSM8K.",
+    "size": "1,576,000 examples",
+    "format": "JSON",
+    "annotation": "Automatically generated with quality assessments through consensus scoring."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Quality assessment using GPT-4",
+      "Consensus scoring"
+    ],
+    "metrics": [
+      "PASS@1 accuracy"
+    ],
+    "calculation": "Metrics are calculated by evaluating model predictions on test sets like GSM8K and MATH.",
+    "interpretation": "High PASS@1 accuracy indicates effective performance in mathematical reasoning.",
+    "baseline_results": "The fine-tuned Qwen1.5-72B model achieved 87.0% PASS@1 accuracy on GSM8K and 58.3% on MATH.",
+    "validation": "Validation performed by testing on multiple established math reasoning datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Chinese Named Entity Recognition in Financial News",
+    "abbreviation": "N/A",
+    "overview": "This paper presents a strategy for improving named entity recognition (NER) in the financial domain, particularly focusing on company names found in Chinese financial news. It introduces a multi-stage learning strategy and knowledge distillation techniques to enhance the performance of lightweight models on sparse datasets.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Finance"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/Hanlard/Electra-CRF-NER"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To improve the performance of named entity recognition in financial news with minimal annotation costs by leveraging machine-annotated data and pre-training methods.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Named Entity Recognition"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Built from financial news corpus and annotated datasets.",
+    "size": "1.62 million financial news, 350,000 machine-annotated sentences, 65,000 manually annotated sentences, 200 financial news for testing",
+    "format": "N/A",
+    "annotation": "Combination of machine annotation and manual verification."
+  },
+  "methodology": {
+    "methods": [
+      "Multi-stage learning strategy",
+      "Knowledge distillation"
+    ],
+    "metrics": [
+      "Recall",
+      "Precision"
+    ],
+    "calculation": "Metrics are calculated based on the predictions made on the test dataset compared to manually annotated references.",
+    "interpretation": "Higher recall and precision indicate better performance in identifying relevant named entities in financial news.",
+    "baseline_results": "Comparison is made against BERT-CRF model for speed and accuracy improvements.",
+    "validation": "The model's effectiveness was validated by cross-validation on a manually annotated test set."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

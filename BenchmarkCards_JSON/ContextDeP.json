@@ -1,0 +1,74 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ContextDeP (Context-Dependent Paraphrases in news interviews)",
+    "abbreviation": "ContextDeP",
+    "overview": "We operationalize context-dependent paraphrases in dialog with a definition and a hands-on training for annotators. We release ContextDeP, a dataset with 5,581 annotations on 600 utterance pairs from NPR and CNN news interviews.",
+    "data_type": "paraphrase pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "GLUE",
+      "PAWS"
+    ],
+    "resources": [
+      "https://github.com/nlpsoc/Paraphrases-in-News-Interviews",
+      "https://huggingface.co/datasets/AnnaWegmann/Paraphrases-in-Interviews",
+      "https://huggingface.co/AnnaWegmann/Highlight-Paraphrases-in-Dialog"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To advance dialog based evaluations of LLMs and automate the detection of context-dependent paraphrases in dialogs.",
+    "audience": [
+      "ML Researchers",
+      "Social Science Researchers"
+    ],
+    "tasks": [
+      "Paraphrase Detection"
+    ],
+    "limitations": "Dataset size is relatively small.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Adapted utterance pairs from NPR and CNN news interview transcripts.",
+    "size": "5,581 annotations on 600 utterance pairs",
+    "format": "JSON",
+    "annotation": "Annotation was performed by crowd-workers trained to identify context-dependent paraphrases."
+  },
+  "methodology": {
+    "methods": [
+      "Token classification",
+      "In-context learning"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "F1 scores were calculated based on majority vote classification by annotators.",
+    "interpretation": "F1 scores above thresholds indicate better agreement and classification quality.",
+    "baseline_results": "Achieved F1 scores between 0.73 and 0.81 using generative models and a DeBERTa token classifier.",
+    "validation": "Quality assurance through multiple annotations per item and training for annotators."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "Potential biases exist as the dataset is from U.S. news interviews.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Participant data was anonymized; identifiers of crowd-workers were replaced with non-identifiable IDs.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Participants consented to the use of their data for research purposes.",
+    "compliance_with_regulations": "Study complied with ACL Code of Ethics."
+  }
+}

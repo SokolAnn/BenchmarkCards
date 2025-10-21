@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Nunchi-Bench",
+    "abbreviation": "N/A",
+    "overview": "Nunchi-Bench is a benchmark designed to evaluate LLMs’ cultural understanding, focusing on Korean superstitions through 247 questions across 31 topics that assess factual knowledge, culturally appropriate advice, and situational interpretation.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Korean",
+      "English"
+    ],
+    "similar_benchmarks": [
+      "CLIcK",
+      "KorNAT"
+    ],
+    "resources": [
+      "https://github.com/koreankiwi99/Nunchi-Bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the cultural sensitivity and reasoning capabilities of large language models with a focus on Korean cultural contexts.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Cultural Reasoning",
+      "Question Answering"
+    ],
+    "limitations": "The dataset focuses specifically on Korean superstitions, which may limit broader applicability.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Selected cultural superstitions gathered from books and news articles related to Korean culture.",
+    "size": "247 questions",
+    "format": "JSON",
+    "annotation": "Questions assessed for relevance and accuracy by Korean experts."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Scores are calculated based on the model’s alignment with culturally appropriate responses and factual accuracy.",
+    "interpretation": "Scores reflect both the factual correctness of answers and the cultural appropriateness of responses.",
+    "baseline_results": null,
+    "validation": "Multi-phase alignment study comparing LLM outputs to human ratings shows alignment improved to 90% for cultural sensitivity evaluations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis of responses reveals performance variances based on cultural background specification in questions.",
+    "harm": "Risk of reinforcing stereotypes or cultural misunderstandings if models fail to interpret nuances correctly."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "JuDGE (Judgment Document Generation Evaluation)",
+    "abbreviation": "JuDGE",
+    "overview": "JuDGE is a novel benchmark for evaluating the performance of judgment document generation in the Chinese legal system, designed to reflect real-world judicial reasoning and provide a comprehensive dataset of legal cases paired with their corresponding judgment documents.",
+    "data_type": "fact-judgment pairs",
+    "domains": [
+      "Legal"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/oneal2000/JuDGE"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the benchmark is to provide a standardized evaluation framework for judgment document generation that mirrors real-world legal reasoning.",
+    "audience": [
+      "Legal researchers",
+      "AI developers",
+      "NLP researchers"
+    ],
+    "tasks": [
+      "Judgment Document Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Judgment documents collected from the China Judgments Online platform, supplemented with statutes and past judgments from legal corpora.",
+    "size": "2,505 fact-judgment pairs",
+    "format": "Structured JSON",
+    "annotation": "Expertly annotated by law students based on document quality and correctness."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Penalty Accuracy",
+      "Convicting Accuracy",
+      "Referencing Accuracy",
+      "Document Similarity"
+    ],
+    "calculation": "Metrics are calculated by comparing the quality of generated judgment documents against the ground truth across multiple dimensions.",
+    "interpretation": "Higher scores indicate better alignment with legal standards and accuracy in generated documents.",
+    "baseline_results": "N/A",
+    "validation": "Evaluated by comparing generated documents against a set of ground truth judgment documents."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Accuracy",
+      "Transparency"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Lack of training data transparency"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All entries have undergone anonymization to eliminate sensitive information.",
+    "data_licensing": "Distributed under the MIT license.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

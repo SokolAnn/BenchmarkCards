@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "WorldView-Bench",
+    "abbreviation": "N/A",
+    "overview": "WorldView-Bench is a benchmark designed to evaluate Global Cultural Inclusivity (GCI) in Large Language Models (LLMs) by analyzing their ability to accommodate diverse worldviews through free-form generative evaluation.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMLU (Massive Multitask Language Understanding)",
+      "HELM",
+      "MT-Bench",
+      "BLEND",
+      "NORMAD"
+    ],
+    "resources": [
+      "https://github.com/user/repo",
+      "https://arxiv.org/abs/2505.09595"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the benchmark is to assess cultural inclusivity biases in Large Language Models (LLMs) through open-ended questions that require generators to produce culturally diverse responses.",
+    "audience": [
+      "ML Researchers",
+      "AI Developers",
+      "Cultural Anthropologists"
+    ],
+    "tasks": [
+      "Cultural Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "OpenAI's o1 model generated and human-validated questions.",
+    "size": "175 questions",
+    "format": "N/A",
+    "annotation": "Questions were validated through a multi-stage pipeline involving automated and human validation."
+  },
+  "methodology": {
+    "methods": [
+      "Zero-shot classification",
+      "Sentiment analysis"
+    ],
+    "metrics": [
+      "Perspective Distribution Score (PDS)",
+      "PDS Entropy"
+    ],
+    "calculation": "PDS measures the representational share of cultural perspectives extracted from LLM responses.",
+    "interpretation": "Higher PDS and entropy values indicate greater cultural inclusivity in LLM outputs.",
+    "baseline_results": null,
+    "validation": "Three-stage validation process involving automated generation, LLM-assisted evaluation, and final human validation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

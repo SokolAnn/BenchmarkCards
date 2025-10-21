@@ -1,0 +1,82 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MQ UAKE (Multi-hop Question Answering for Knowledge Editing)",
+    "abbreviation": "MQ UAKE",
+    "overview": "MQ UAKE comprises multi-hop questions that assess whether edited models correctly answer questions where the answer should change as an entailed consequence of edited facts.",
+    "data_type": "multi-hop question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/princeton-nlp/MQuAKE"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate knowledge editing methods for language models via multi-hop questions.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from Wikidata and includes user-generated questions via prompts to ChatGPT.",
+    "size": "9,218 multi-hop questions for MQ UAKE-CF; 1,868 instances for MQ UAKE-T",
+    "format": "N/A",
+    "annotation": "Manually selected fact chains and generated questions via ChatGPT."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Edit-wise success rate",
+      "Instance-wise accuracy",
+      "Multi-hop accuracy"
+    ],
+    "calculation": "Calculates the success of knowledge edits based on how many facts can be recalled and how many multi-hop questions can be answered correctly.",
+    "interpretation": "The ability of the edited model to use newly injected knowledge correctly in answers to multi-hop questions.",
+    "baseline_results": null,
+    "validation": "Tested against various state-of-the-art knowledge editing approaches."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "HonestCyberEval: an AI Cyber Risk Benchmark for Automated Software Exploitation",
+    "abbreviation": "HonestCyberEval",
+    "overview": "HonestCyberEval is a new benchmark for assessing AI models’ capabilities and risks in automated software exploitation, focusing on their ability to detect and exploit vulnerabilities in real-world software systems.",
+    "data_type": "code with synthetic vulnerabilities",
+    "domains": [
+      "Cybersecurity"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "CyberSecEval 2",
+      "Project Naptime"
+    ],
+    "resources": [
+      "https://github.com/alan-turing-institute/HonestCyberEval",
+      "https://github.com/aixcc-public/challenge-004-nginx-cp",
+      "https://github.com/aixcc-public/challenge-004-nginx-source"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the capabilities of state-of-the-art LLMs in automated software exploitation tasks and assess their associated risks.",
+    "audience": [
+      "Cybersecurity Researchers",
+      "AI Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Automated Vulnerability Detection",
+      "Automated Program Repair"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Nginx web server GitHub repository augmented with synthetic vulnerabilities.",
+    "size": "14 Challenge Project Vulnerabilities (CPVs)",
+    "format": "N/A",
+    "annotation": "The vulnerabilities were synthetically introduced into the Nginx project."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Success rate",
+      "Cost per vulnerability",
+      "Adaptability"
+    ],
+    "calculation": "Success rate is calculated as the percentage of vulnerabilities successfully triggered. Cost per vulnerability is based on model usage fees.",
+    "interpretation": "Higher success rates and lower costs indicate better model performance.",
+    "baseline_results": "o1-preview achieved a success rate of 92.85%.",
+    "validation": "Models were tested using a structured environment to ensure fair comparisons."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Risk associated with the dual-use capabilities of LLMs in cybersecurity."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

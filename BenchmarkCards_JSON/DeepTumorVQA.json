@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DeepTumorVQA (Deep Tumor Visual Question Answering)",
+    "abbreviation": "DeepTumorVQA",
+    "overview": "DeepTumorVQA is a diagnostic visual question answering (VQA) benchmark targeting abdominal tumors in CT scans, comprising 9,262 CT volumes and 395K expert-level questions spanning four diagnostic categories.",
+    "data_type": "question-answer pairs",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/Schuture/DeepTumorVQA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a high-quality and diagnostically meaningful benchmark for evaluating state-of-the-art models in realistic clinical contexts.",
+    "audience": [
+      "ML Researchers",
+      "Healthcare Practitioners"
+    ],
+    "tasks": [
+      "Visual Question Answering"
+    ],
+    "limitations": "The dataset construction may introduce noise from segmentation variability and is intended for research, not clinical deployment.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "9,262 CT volumes gathered from 17 public datasets and 88 centers, annotated by 23 board-certified radiologists.",
+    "size": "9,262 CT volumes, 3.7M slices, 395K question-answer pairs",
+    "format": "N/A",
+    "annotation": "Manual annotation by board-certified radiologists."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Mean Relative Accuracy (MRA)"
+    ],
+    "calculation": "Metrics are calculated using task-specific evaluations.",
+    "interpretation": "Higher accuracy indicates better model performance at answering clinical questions.",
+    "baseline_results": "N/A",
+    "validation": "Extensive benchmarking was conducted using four state-of-the-art vision-language models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Societal Impact"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on affected communities"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

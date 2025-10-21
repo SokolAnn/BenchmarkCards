@@ -1,0 +1,79 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "API-B LEND",
+    "abbreviation": "N/A",
+    "overview": "API-B LEND is a large corpora for training and systematic testing of tool-augmented LLMs, curated from real-world datasets focusing on tasks such as API detection, slot filling, and sequencing.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ToolLLM",
+      "API Bank",
+      "ToolBench",
+      "SeqToolQA",
+      "ToolAlpaca"
+    ],
+    "resources": [
+      "https://github.com/IBM/API-BLEND"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a diverse dataset for training and evaluating tool-augmented Language Learning Models (LLMs).",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "API Detection",
+      "Slot Filling",
+      "API Sequencing"
+    ],
+    "limitations": "API-B LEND does not address environment interactions for an API agent and is currently focused on English API commands.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated from five human-annotated datasets and LLM-assisted generation.",
+    "size": "159,476 examples",
+    "format": "N/A",
+    "annotation": "Hybrid approach including human annotation and LLM-assisted generation."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Precision",
+      "Recall",
+      "Longest Common Subsequence (LCS)"
+    ],
+    "calculation": "F1 scores are calculated by comparing the predicted APIs with the gold ones and the predicted parameters of each API with its gold counterparts.",
+    "interpretation": "High F1 scores indicate better performance in detecting and parameterizing API calls.",
+    "baseline_results": "Models fine-tuned with API-B LEND dataset achieve better generalization performance compared to other tool-augmented LLMs.",
+    "validation": "Experiments include both in-distribution and out-of-distribution evaluations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

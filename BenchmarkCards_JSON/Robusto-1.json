@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Robusto-1 Dataset: Comparing Humans and VLMs on real out-of-distribution Autonomous Driving VQA from Peru",
+    "abbreviation": "Robusto-1",
+    "overview": "The Robusto-1 dataset is designed to evaluate the cognitive alignment between humans and Vision-Language Models (VLMs) in autonomous driving scenarios through Visual Question Answering (VQA). It uses dashcam video data from Peru to explore how well these models generalize to out-of-distribution situations.",
+    "data_type": "video and question-answering pairs",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/Robusto-1"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To compare the cognitive alignment of humans and VLMs in driving contexts through a new dataset that features real-world traffic scenarios in Peru.",
+    "audience": [
+      "Researchers",
+      "Industry practitioners"
+    ],
+    "tasks": [
+      "Visual Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Dashcam video data collected from two vehicles in Peru, annotated with questions for VQA.",
+    "size": "200 five-second video segments sampled from 285 videos",
+    "format": "N/A",
+    "annotation": "Manual annotation and question formulation by the authors based on metadata derived from video content."
+  },
+  "methodology": {
+    "methods": [
+      "Quantitative analysis of responses through Representational Similarity Analysis (RSA)",
+      "Visual Question Answering tasks administered to both humans and VLMs."
+    ],
+    "metrics": [
+      "Cognitive alignment score based on similarity of responses"
+    ],
+    "calculation": "Measured the similarity of responses between humans and VLMs using Pearson correlation.",
+    "interpretation": "Higher similarity scores indicate better cognitive alignment between humans and VLMs.",
+    "baseline_results": null,
+    "validation": "Performance compared to responses from both human participants and multiple VLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis of participant demographics for understanding variability in responses across different backgrounds.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Participants provided digital consent, and data was anonymized.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Digital consent was obtained from participant volunteers for their data usage.",
+    "compliance_with_regulations": "N/A"
+  }
+}

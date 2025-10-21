@@ -1,0 +1,77 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "STRIDE-QA (Spatio-Temporal Reasoning In Driving Scenarios for Ego-centric Visual Question Answering)",
+    "abbreviation": "STRIDE-QA",
+    "overview": "STRIDE-QA is a large-scale visual question answering (VQA) dataset designed for spatiotemporal reasoning in urban driving, consisting of 285 K frames and 16 million QA pairs.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "nuScenes-QA",
+      "ToD3Cap",
+      "Refer-KITTI"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2508.10427"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of STRIDE-QA is to enable fine-grained spatial reasoning and temporal prediction in visual question answering for autonomous driving.",
+    "audience": [
+      "ML Researchers",
+      "Autonomous Driving Practitioners"
+    ],
+    "tasks": [
+      "Object-centric Spatial QA",
+      "Ego-centric Spatial QA",
+      "Ego-centric Spatiotemporal QA"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Self-collected multi-sensor driving data from urban areas in Tokyo.",
+    "size": "100 hours of driving data, 285 K frames, 16 million QA pairs",
+    "format": "N/A",
+    "annotation": "Automatically generated through a modular pipeline combining LiDAR and multi-camera data."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Localization Success Rate (LSR)",
+      "Mean Localization Success Rate (MLSR)",
+      "Temporal Localization Consistency (TLC)"
+    ],
+    "calculation": "Metrics are calculated based on spatial and temporal predictions compared to ground truth.",
+    "interpretation": "Higher LSR, MLSR, and TLC scores indicate better spatiotemporal reasoning capabilities.",
+    "baseline_results": "Baseline models included GPT-4o and InternVL2.5-8B, showing significantly lower performance compared to STRIDE-QA fine-tuned models.",
+    "validation": "Validation procedures were carried out using manually verified annotations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset includes automatic blurring of identifiable faces and license plates.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

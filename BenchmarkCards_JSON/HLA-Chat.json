@@ -1,0 +1,73 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "HLA-Chat (Human Level Attributes Chat)",
+    "abbreviation": "HLA-Chat",
+    "overview": "HLA-Chat is a dataset that combines dialogue lines for characters with Human Level Attributes (HLAs) derived from TV Tropes to model character profiles and enable dialogue agents to learn and recover characters' language styles based on these HLAs.",
+    "data_type": "text (dialogue lines paired with character HLA attribute labels)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [],
+    "similar_benchmarks": [
+      "Persona-Chat",
+      "Cornell Movie-Dialogs Corpus"
+    ],
+    "resources": [
+      "https://github.com/newpro/aloha-chatbot",
+      "https://tvtropes.org",
+      "https://arxiv.org/abs/1910.08293"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Provide a dataset (HLA-Chat) traceable to character context and Human Level Attributes (HLAs) and a method (ALOHA) to recover character-specific language styles so dialogue agents can imitate fictional characters' personalities.",
+    "audience": [],
+    "tasks": [
+      "Dialogue Response Retrieval"
+    ],
+    "limitations": "Limited human evaluation participant pool (12 participants); limited HLA guidance during testing due to model memory constraints; evaluation confounded by multiple context-correct candidate responses.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "HLA data collected from TV Tropes (tvtropes.org); dialogue data scraped from various existing internet sources of clean dialogue for TV shows; dialogues collected for 327 major characters (subset) across 38 TV shows combined with HLA data drawn from a larger set of characters.",
+    "size": "1,042,647 dialogue lines; 45,821 characters with HLA data; 12,815 unique HLAs; 945,519 total character-HLA pairs; average 20.64 HLAs per collected character",
+    "format": "N/A",
+    "annotation": "HLA attributes are community-contributed tropes collected from TV Tropes (viewer-determined). Characters were filtered to keep those with at least five HLAs. Dialogue lines were collected from existing online sources; no additional manual annotation procedure is described."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation",
+      "Five-Fold Cross Validation",
+      "Model-based evaluation using BERT bi-ranker and Poly-encoder",
+      "Collaborative filtering-based Character Space Module (CSM), Character Community Module (CCM), and Language Style Recovery Module (LSRM)"
+    ],
+    "metrics": [
+      "Hits@1/20",
+      "Hits@5/20",
+      "Hits@10/20",
+      "Mean Rank",
+      "Mean Reciprocal Rank (MRR)",
+      "F1 Score",
+      "BLEU (average of 1-4 grams)"
+    ],
+    "calculation": "Hits@n/N: accuracy of the correct ground truth response being within the top n ranked candidate responses out of N total candidates. MRR: mean of the multiplicative inverses of the rank of each correct answer (MRR = (1/|Q|) * sum_i 1/rank_i). F1: 2 * (precision * recall) / (precision + recall), where precision is fraction of words in chosen response contained in the ground truth and recall is fraction of words in the ground truth contained in the chosen response. BLEU: reported as average BLEU scores of 1- to 4-grams.",
+    "interpretation": "Higher Hits@n, MRR, F1, and BLEU indicate better retrieval and similarity. The paper reports human Hits@1/20 mean ~40.67% as a reference; ALOHA variations achieve Hits@1/20 comparable to or exceeding human performance on some evaluation characters. BLEU higher values indicate greater textual similarity.",
+    "baseline_results": "Baseline Hits@1/20 (average, from Table 4): Kvmemnn 0.1232, Feed yourself 0.0482, BERT bi-ranker 0.1759, Poly-encoder 0.2579, Uniform Model 0.3077. ALOHA results (average): ALOHA-BERT Hits@1/20 = 0.4063, ALOHA-Poly Hits@1/20 = 0.4117. Human average Hits@1/20 = 0.4067.",
+    "validation": "Five-Fold Cross Validation split by TV shows (training on 80% of shows, testing on 20%). For CSM, 30% of character-HLA pairs were masked during training and used as validation. Five evaluation characters (one per test fold) and human evaluation with prescreened participants were used for further validation."
+  },
+  "targeted_risks": {
+    "risk_categories": [],
+    "atlas_risks": {
+      "risks": null
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

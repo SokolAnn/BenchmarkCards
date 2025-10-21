@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PRIMATE",
+    "abbreviation": "N/A",
+    "overview": "This study introduces refinements to the PRIMATE dataset annotations for detecting anhedonia in social media posts, specifically by addressing the validity of annotations and providing more nuanced labeling by a mental health professional.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/501Good/primate-anhedonia"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To improve the quality of annotations in the PRIMATE dataset for better depression estimation, focusing on the symptom of anhedonia.",
+    "audience": [
+      "ML Researchers",
+      "Mental Health Professionals"
+    ],
+    "tasks": [
+      "Text Classification"
+    ],
+    "limitations": "The reannotation was performed by only one mental health professional, which limits inter-annotator agreement analysis.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "PRIMATE dataset based on Reddit posts from the r/depression_help subreddit",
+    "size": "2003 posts",
+    "format": "N/A",
+    "annotation": "Reannotated by a mental health professional with additional evidence-based labeling."
+  },
+  "methodology": {
+    "methods": [
+      "Baseline testing with pre-trained language models such as DistilBERT, BERT-Base, RoBERTa-Base, RoBERTa-Large, DeBERTa-Base, and DeBERTa-Large."
+    ],
+    "metrics": [
+      "F1 Score",
+      "Accuracy",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "Metrics calculated based on predictions against the refined annotations.",
+    "interpretation": "Interpretation of results focuses on model predictions' accuracy in detecting anhedonia symptoms.",
+    "baseline_results": "DistilBERT shows competitive performance compared to larger models.",
+    "validation": "Random sampling of posts for validation and testing."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Concerns regarding false positives in symptom detection due to annotation validity issues."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data used from public social media posts, no identifiable user information.",
+    "data_licensing": "Annotations released under a Data Use Agreement.",
+    "consent_procedures": "Data collected in accordance with user-generated content guidelines.",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CROSS (Cultural Reasoning Over Multimodal Scenes for Safety Evaluation)",
+    "abbreviation": "CROSS",
+    "overview": "CROSS is designed to assess the cultural safety reasoning capabilities of large vision-language models (LVLMs) with 1,284 multilingual visually grounded queries sourced from 16 countries, focusing on culturally relevant everyday domains and contexts.",
+    "data_type": "image-query pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English",
+      "Mandarin Chinese",
+      "Spanish",
+      "Arabic",
+      "Persian",
+      "Hindi",
+      "Japanese",
+      "Thai",
+      "Indonesian",
+      "Portuguese",
+      "Russian",
+      "Amharic",
+      "French"
+    ],
+    "similar_benchmarks": [
+      "MSSBench",
+      "SafeBench",
+      "MM-SafetyBench"
+    ],
+    "resources": [
+      "https://github.com/haoyiq114/CROSS"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate and improve the cultural safety of vision-language systems across diverse global contexts.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Cultural Sensitivity Evaluation",
+      "Image-Query Reasoning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from visual and cultural norms curated in text-only datasets SafeWorld and CASA, paired with real-world images.",
+    "size": "1,284 image-query pairs",
+    "format": "JSON",
+    "annotation": "Manually validated by human annotators with diverse backgrounds to ensure cultural relevance and appropriateness."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Cultural Awareness",
+      "Cultural Education",
+      "Cultural Compliance",
+      "Helpfulness"
+    ],
+    "calculation": "Metrics are evaluated based on a scoring system from 0 to 1 across four cultural safety dimensions.",
+    "interpretation": "Scores reflect levels of awareness, educational value, compliance with cultural norms, and helpfulness in guiding safe decision-making.",
+    "baseline_results": "Performance evaluated against 21 leading LVLMs, revealing significant gaps in cultural safety adherence.",
+    "validation": "Human evaluations alongside automated scoring by pretrained models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on affected communities"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

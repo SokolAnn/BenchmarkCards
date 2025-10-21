@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "EvoCodeBench",
+    "abbreviation": "N/A",
+    "overview": "EvoCodeBench is designed to evaluate Large Language Models (LLMs) in code generation, addressing limitations such as data leakage and lack of domain-specific evaluations. It includes evolving data updated regularly and domain-specific evaluations to help practitioners select superior LLMs.",
+    "data_type": "code generation tasks with requirements and code samples",
+    "domains": [
+      "Software Development"
+    ],
+    "languages": [
+      "Python"
+    ],
+    "similar_benchmarks": [
+      "HumanEval",
+      "ClassEval",
+      "DevEval"
+    ],
+    "resources": [
+      "https://github.com/seketeam/EvoCodeBench",
+      "https://huggingface.co/datasets/LJ0815/EvoCodeBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of EvoCodeBench is to evaluate LLMs in code generation across different domains, providing insights for practitioners and researchers.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Code Generation"
+    ],
+    "limitations": "EvoCodeBench is currently monolingual (Python) and smaller in size compared to some existing benchmarks.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from high-quality open-source Python repositories through an automatic pipeline.",
+    "size": "275 samples",
+    "format": "JSON",
+    "annotation": "Automatically generated with human evaluation for quality assurance."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Pass@k",
+      "Recall@k"
+    ],
+    "calculation": "Pass@k is calculated based on the number of correct programs out of generated programs that pass test cases; Recall@k measures the recall of reference dependencies in generated programs.",
+    "interpretation": "Higher Pass@k and Recall@k scores indicate better performance in generating accurate solutions.",
+    "baseline_results": "For example, the highest Pass@1 of gpt-4 on EvoCodeBench-2403 is 20.74%.",
+    "validation": "The benchmarks' integrity and performance were validated through extensive experiments with various LLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data is collected from public open-source repositories; no personal data is included.",
+    "data_licensing": "EvoCodeBench is available under a CC-4.0 license.",
+    "consent_procedures": "Only high-quality open-source repositories are used, ensuring compliance with legal standards.",
+    "compliance_with_regulations": "The dataset adheres to open-source licensing guidelines."
+  }
+}

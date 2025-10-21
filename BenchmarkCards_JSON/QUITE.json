@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "QUITE (Quantifying Uncertainty in Natural Language Text)",
+    "abbreviation": "QUITE",
+    "overview": "QUITE is a question answering dataset of real-world Bayesian reasoning scenarios with categorical random variables and complex relationships, providing verbalizations of premises and evidence statements, expecting numeric probability estimates as answers.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "CLADDER",
+      "BLInD"
+    ],
+    "resources": [
+      "https://github.com/boschresearch/quite-emnlp24"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess uncertainty-based reasoning capabilities in natural language processing through Bayesian reasoning scenarios.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "The assumptions involve that the entire probability distribution is known, which may not hold in real-world scenarios where distributions are often underspecified.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Publicly available Bayesian networks compiled from literature.",
+    "size": "2,384 instances of premises and questions",
+    "format": "JSON",
+    "annotation": "Semi-automatically generated with LLM assistance and manual verification."
+  },
+  "methodology": {
+    "methods": [
+      "LLM-based evaluation",
+      "Neuro-symbolic approach"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Root Mean Square Error (RMSE)"
+    ],
+    "calculation": "Metrics calculated based on numeric estimates and comparing model outputs to ground truth probabilities.",
+    "interpretation": "An accuracy percentage indicating how many instances were correctly solved by the models.",
+    "baseline_results": null,
+    "validation": "Instances manually validated for correctness and linguistic quality."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": []
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": []
+        },
+        {
+          "category": "Robustness",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

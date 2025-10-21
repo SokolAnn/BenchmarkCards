@@ -1,0 +1,74 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "BiblioPage",
+    "abbreviation": "N/A",
+    "overview": "BiblioPage is a dataset of scanned title pages annotated with structured bibliographic metadata, aimed at supporting automated extraction of bibliographic information and serving as a benchmark for document understanding, document question answering, and document information extraction.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Czech"
+    ],
+    "similar_benchmarks": [
+      "FUNSD",
+      "DocVQA"
+    ],
+    "resources": [
+      "https://github.com/DCGM/biblio-dataset"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To automate the extraction of bibliographic information from scanned title pages and provide a benchmark for evaluating various extraction methods.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Document Information Extraction",
+      "Document Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Title pages sourced from 14 Czech libraries, comprising monographs primarily.",
+    "size": "2,118 pages",
+    "format": "JSON",
+    "annotation": "Semi-automatic annotation using OCR and manual verification."
+  },
+  "methodology": {
+    "methods": [
+      "Object Detection",
+      "OCR",
+      "Vision-Language Large Models"
+    ],
+    "metrics": [
+      "mAP",
+      "F1 Score"
+    ],
+    "calculation": "Matched values are counted as true positives; unmatched proposed values as false positives; unmatched ground truth values as false negatives. Valid if Character Error Rate does not exceed 10%.",
+    "interpretation": "Higher scores indicate better performance in extracting bibliographic metadata.",
+    "baseline_results": "YOLOv11 medium achieved a mean F1 Score of 59; the best results from GPT-4o reached a mean F1 Score of 70 when supplemented with OCR.",
+    "validation": "Test set adequately covers all 16 attributes to ensure proper evaluation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

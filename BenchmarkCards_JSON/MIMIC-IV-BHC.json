@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MIMIC-IV-BHC (MIMIC-IV Brief Hospital Course)",
+    "abbreviation": "MIMIC-IV-BHC",
+    "overview": "We introduce a novel pre-processed dataset, the MIMIC-IV-BHC, encapsulating clinical note and brief hospital course (BHC) pairs to adapt LLMs for BHC synthesis. Furthermore, we introduce a benchmark of the summarization performance of two general-purpose LLMs and three healthcare-adapted LLMs.",
+    "data_type": "clinical note and brief hospital course pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://doi.org/10.13026/fh2q-4148",
+      "https://www.physionet.org/content/mimic-iv-note/2.2/",
+      "https://physionet.org/content/clinical-t5/1.0.0/",
+      "https://github.com/StanfordMIMI/clin-bhc-summ"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To facilitate the development of more efficient and accurate models for brief hospital course summarization.",
+    "audience": [
+      "ML Researchers",
+      "Healthcare practitioners"
+    ],
+    "tasks": [
+      "Text Summarization"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "MIMIC-IV-Note dataset, a compilation of 331,794 de-identified discharge summaries.",
+    "size": "270,033 pairs",
+    "format": "N/A",
+    "annotation": "Pre-processed using whitespace removal, section identification, tokenization, and manual review."
+  },
+  "methodology": {
+    "methods": [
+      "Prompting-based adaptation",
+      "Fine-tuning-based adaptation"
+    ],
+    "metrics": [
+      "BLEU Score",
+      "BERT-Score",
+      "ROUGE-L"
+    ],
+    "calculation": "Evaluated across multiple context-length inputs using natural language similarity metrics.",
+    "interpretation": "Quantitative metrics used to evaluate the performance of summarization.",
+    "baseline_results": "N/A",
+    "validation": "Conducted a clinical study with five clinicians comparing clinician-written and LLM-generated BHCs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Privacy",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

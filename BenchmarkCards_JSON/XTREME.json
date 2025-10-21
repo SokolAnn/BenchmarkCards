@@ -1,0 +1,158 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Cross-lingual TRansfer Evaluation of Multilingual Encoders (XTREME)",
+    "abbreviation": "XTREME",
+    "overview": "A multi-task benchmark for evaluating the cross-lingual generalization capabilities of multilingual representations across 40 languages and 9 tasks. XTREME focuses on zero-shot cross-lingual transfer where annotated training data is provided in English but none is provided in the target language, and includes pseudo test sets obtained by automatically translating English test sets to cover all 40 languages.",
+    "data_type": "text (question-answering pairs, sentence pairs, sentence-aligned pairs, token-level annotations for POS/NER)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Afrikaans",
+      "Arabic",
+      "Basque",
+      "Bengali",
+      "Bulgarian",
+      "Burmese",
+      "Dutch",
+      "English",
+      "Estonian",
+      "Finnish",
+      "French",
+      "Georgian",
+      "German",
+      "Greek",
+      "Hebrew",
+      "Hindi",
+      "Hungarian",
+      "Indonesian",
+      "Italian",
+      "Japanese",
+      "Javanese",
+      "Kazakh",
+      "Korean",
+      "Malay",
+      "Malayalam",
+      "Mandarin",
+      "Marathi",
+      "Persian",
+      "Portuguese",
+      "Russian",
+      "Spanish",
+      "Swahili",
+      "Tagalog",
+      "Tamil",
+      "Telugu",
+      "Thai",
+      "Turkish",
+      "Urdu",
+      "Vietnamese",
+      "Yoruba"
+    ],
+    "similar_benchmarks": [
+      "GLUE",
+      "SuperGLUE"
+    ],
+    "resources": [
+      "https://sites.research.google/xtreme",
+      "https://github.com/google-research/xtreme",
+      "https://arxiv.org/abs/2003.11080"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide an accessible benchmark for evaluating cross-lingual transfer learning on a diverse and representative set of languages and tasks, and to encourage research on cross-lingual learning methods that transfer linguistic knowledge across diverse languages and tasks.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Natural Language Inference",
+      "Paraphrase Identification",
+      "Part-of-Speech Tagging",
+      "Named Entity Recognition",
+      "Question Answering (Span Extraction)",
+      "Parallel Sentence Extraction",
+      "Sentence Retrieval"
+    ],
+    "limitations": "XTREME is limited by the data coverage of its constituent tasks for many low-resource languages; pseudo test sets (automatically translated) can under- or over-estimate true performance; translationese and differences in test-set construction may bias results; XTREME covers gold-standard data in at least one task per language but does not cover all aspects or registers of each language.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "XTREME is composed of existing datasets: XNLI (Cross-lingual Natural Language Inference), PAWS-X (paraphrase), Universal Dependencies v2.5 (POS), Wikiann (NER), XQuAD (cross-lingual QA), MLQA (multilingual QA), TyDiQA-GoldP (typologically diverse QA), BUCC (parallel sentence extraction), and Tatoeba (sentence-aligned pairs).",
+    "size": "Varies by task (see Table 1). Examples reported in the paper: XNLI: 392,702 train, 2,490 dev, 5,010 test (translations); PAWS-X: 49,401 train, 2,000 dev, 2,000 test; POS (UD v2.5): 21,253 train, 3,974 dev, test sizes 47–20,436 (per language); NER (Wikiann): 20,000 train, 10,000 dev, 1,000–10,000 test (per language); XQuAD: 87,599 train, 34,726 dev, 1,190 test (translations); TyDiQA-GoldP: 3,696 train, 634 dev, 323–2,719 test (per language); BUCC: test sizes 1,896–14,330 (per language); Tatoeba: up to 1,000 test examples per language.",
+    "format": "N/A",
+    "annotation": "Annotations vary by constituent dataset and are described in the paper: XNLI and XQuAD test sets include professional translator-produced translations; PAWS-X translations by professional translators; POS uses Universal Dependencies treebanks (annotated treebanks); NER uses Wikiann automatic annotation via knowledge-base properties, cross-lingual and anchor links, self-training, and data selection; MLQA uses mined parallel sentences, crowd-sourced English annotations, and translated questions with answer alignment; TyDiQA-GoldP uses human-authored questions (gold passages); BUCC provides parallel sentence train/test splits; Tatoeba provides English-aligned sentence pairs."
+  },
+  "methodology": {
+    "methods": [
+      "Zero-shot cross-lingual transfer (fine-tune on English, evaluate on target languages)",
+      "Translate-train (translate English training data to target languages, then fine-tune)",
+      "Translate-train multi-task (joint fine-tuning on translated data across languages)",
+      "Translate-test (translate target language test data to English at inference)",
+      "In-language training (fine-tune on target language labeled data)",
+      "In-language few-shot (fine-tune on a small number of target-language examples)",
+      "In-language multi-task (joint fine-tuning on combined target language data)",
+      "Human performance estimates (used as reference)",
+      "Cosine similarity-based retrieval for BUCC and Tatoeba"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "Exact Match (EM)",
+      "BLEU Score",
+      "chrF Score",
+      "Pearson correlation coefficient"
+    ],
+    "calculation": "Pretrained multilingual representations are fine-tuned on English labelled data of an XTREME task and then evaluated on test data of target languages. Classification tasks use Accuracy; structured prediction tasks (POS/NER) use F1 (or Accuracy for POS where reported); question answering (span extraction) uses F1 and Exact Match (EM); sentence/parallel retrieval uses cosine similarity and F1 or Accuracy as appropriate. Translation quality of pseudo test sets is measured with BLEU and chrF; correlations with model performance are computed using Pearson's correlation coefficient.",
+    "interpretation": "Lower cross-lingual transfer gap (difference between English test performance and average performance on other languages) indicates better cross-lingual generalization. Human performance estimates are used as reference points for task difficulty. Pseudo test sets may under- or over-estimate true performance and should be interpreted accordingly.",
+    "baseline_results": "The paper reports a range of baselines. Qualitatively, XLM-R Large is the best-performing zero-shot transfer model and generally improves upon mBERT significantly, though improvements are smaller on structured prediction tasks. Translation-based approaches (translate-train or translate-test) reduce the cross-lingual transfer gap and can outperform zero-shot transfer when a strong MT system is available. Detailed per-task and per-language numbers are provided in the paper's tables (e.g., Table 2, Table 17–21).",
+    "validation": "Hyper-parameters are tuned on English validation data. Pseudo test sets (automatically translated) are validated by comparing to professional translations using BLEU and chrF scores and correlation with mBERT performance; reported that auto-translated XQuAD underestimates mBERT by ~3.0 F1 / 0.2 EM points and XNLI auto sets overestimate accuracy by 2.4 points. Human performance estimates from source English datasets are used as references."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Transparency",
+      "Governance",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Lack of training data transparency",
+            "Uncertain data provenance"
+          ]
+        },
+        {
+          "category": "Governance",
+          "subcategory": [
+            "Lack of testing diversity"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The paper analyzes performance across language families and writing scripts and reports Pearson correlation coefficients between model performance and number of Wikipedia articles per language; it provides per-family and per-script breakdowns and language-level analyses.",
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Each task should be available under a permissive license that allows use and redistribution for research purposes (specific licenses not listed in paper).",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

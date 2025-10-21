@@ -1,0 +1,76 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SCINLI: A Corpus for Natural Language Inference on Scientific Text",
+    "abbreviation": "SCINLI",
+    "overview": "We introduce SCINLI, a large dataset for Natural Language Inference (NLI) that captures the formality in scientific text and contains 107,412 sentence pairs extracted from scholarly papers on NLP and computational linguistics; intended to serve as a benchmark for the evaluation of scientific Natural Language Understanding models.",
+    "data_type": "text (sentence pairs: premise-hypothesis)",
+    "domains": [
+      "Natural Language Processing",
+      "Computational Linguistics"
+    ],
+    "languages": [],
+    "similar_benchmarks": [
+      "SNLI",
+      "MNLI",
+      "SICK",
+      "SCITAIL",
+      "ANLI",
+      "SWAG",
+      "GLUE",
+      "SUPER GLUE"
+    ],
+    "resources": [
+      "https://github.com/msadat3/SciNLI",
+      "https://www.nltk.org/api/nltk.tokenize.html",
+      "https://www.nltk.org/howto/stem.html",
+      "https://huggingface.co/docs/transformers/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Enable deep learning for natural language inference over scientific text by introducing SCINLI and presenting a comprehensive investigation into inference types that occur frequently in scientific text.",
+    "audience": [],
+    "tasks": [
+      "Natural Language Inference"
+    ],
+    "limitations": "Training set is created using distant supervision based on linking phrases and may be noisy; total size is smaller than SNLI and MNLI (noted by the authors).",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Scientific papers on Natural Language Processing and Computational Linguistics available in the ACL Anthology, published between 2000 and 2019.",
+    "size": "107,412 sentence pairs",
+    "format": "N/A",
+    "annotation": "Training set labeled via distant supervision using linking phrases; development and test sets manually annotated by three expert annotators with majority vote; examples without majority vote (~5%) receive no gold label; Fleiss-k among annotators reported as 0.62."
+  },
+  "methodology": {
+    "methods": [
+      "Distant supervision labeling (linking phrases)",
+      "Manual annotation by expert annotators (development and test sets)",
+      "Model-based evaluation (fine-tuning pre-trained language models)",
+      "Baseline experiments with traditional machine learning and neural network models"
+    ],
+    "metrics": [
+      "Macro F1",
+      "Accuracy",
+      "F1 Score (per-class)"
+    ],
+    "calculation": "Macro F1 is computed over the four classes (CONTRASTING, REASONING, ENTAILMENT, NEUTRAL). Reported results are averages and standard deviations over three runs with different random seeds. Early stopping during training is based on development Macro F1.",
+    "interpretation": "Higher Macro F1 and Accuracy indicate better NLI performance. The authors interpret relatively low scores (best Macro F1 78.18% and Accuracy 78.23% with XLNet) as evidence that SCINLI is a challenging benchmark requiring deep semantic understanding.",
+    "baseline_results": "Lexicalized: Macro F1 47.01%, Accuracy 47.78%. CBOW: Macro F1 51.68%, Accuracy 51.78%. CNN: Macro F1 60.41%, Accuracy 60.53%. BiLSTM: Macro F1 61.12%, Accuracy 61.32%. BERT: Macro F1 75.19%, Accuracy 75.17%. SciBERT: Macro F1 77.53%, Accuracy 77.52%. RoBERTa: Macro F1 78.06%, Accuracy 78.12%. XLNet: Macro F1 78.18%, Accuracy 78.23%.",
+    "validation": "Development and test sets were manually annotated and cleaned; only examples where the gold label agreed with the distant-supervision label were selected for the benchmark evaluation set (6,904 examples). Splits are done at the paper level to prevent information leakage. Fleiss-k among annotators is 0.62."
+  },
+  "targeted_risks": {
+    "risk_categories": [],
+    "atlas_risks": {
+      "risks": null
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "IPBench",
+    "abbreviation": "N/A",
+    "overview": "IPBench provides a comprehensive IP task taxonomy and a large-scale bilingual benchmark with 10,374 data points across 20 distinct tasks designed to evaluate large language models in real-world intellectual property scenarios.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Legal"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "PatentEval",
+      "MoZIP",
+      "IPEval"
+    ],
+    "resources": [
+      "https://ipbench.wangqiyao.me/",
+      "https://github.com/IPBench/IPBench",
+      "https://huggingface.co/datasets/IPBench/IPBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a robust evaluation framework for large language models in the complex and nuanced field of intellectual property, facilitating advancements in NLP applications.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Legal Practitioners"
+    ],
+    "tasks": [
+      "Legal Concept Memory",
+      "Legal Clause Memory",
+      "Legal Evolution",
+      "Typical Case Memory",
+      "Patent IPC Classification",
+      "Patent CPC Classification",
+      "IP Element Identification",
+      "Process Guidance",
+      "Patent Technology Forecasting",
+      "Infringement Behavior Determination",
+      "Compensation Calculation",
+      "Patent Valuation",
+      "Trade Secret Requirements",
+      "Patent Document Proofreading",
+      "Patent Validity Identification",
+      "Patent Match",
+      "Rights Attribution Analysis",
+      "Patent Application Examination",
+      "Abstract Generation",
+      "Dependent Claim Generation",
+      "Design-Around Solution Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Data constructed from expert-curated annotations, databases from national IP offices, and publicly available datasets.",
+    "size": "10,374 examples",
+    "format": "JSON",
+    "annotation": "Annotated by a team of trained experts under supervised protocols."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "BLEU Score",
+      "ROUGE-L",
+      "BERTScore"
+    ],
+    "calculation": "Metrics were calculated based on performance across various tasks, including precision in classification and generation tasks.",
+    "interpretation": "High scores generally indicate superior performance in handling IP-related tasks, according to established benchmarks.",
+    "baseline_results": null,
+    "validation": "IPBench was validated through comprehensive evaluations of 17 leading language models across IP tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack",
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Data used in the development of IPBench was sourced from publicly available, non-commercial datasets.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

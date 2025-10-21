@@ -1,0 +1,75 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "AmbGIMT (Gender-Inclusive Machine Translation with Ambiguous attitude words)",
+    "abbreviation": "AmbGIMT",
+    "overview": "AmbGIMT is a gender-inclusive machine translation benchmark that assesses gender bias beyond binary gender by utilizing ambiguous emotional attitude words and an Emotional Attitude Score (EAS) metric.",
+    "data_type": "English-Chinese parallel translation pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "WinoBias",
+      "BUG"
+    ],
+    "resources": [
+      "https://github.com/pppa2019/ambGIMT"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate gender-inclusive translations with ambiguous attitude words and assess gender bias in machine translation.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Machine Translation"
+    ],
+    "limitations": "Limited to a single translation language pair (English-Chinese) and does not include all possible non-binary pronoun usages.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Authentic and synthesized English sentences with ambiguous attitude words and expert Chinese translations.",
+    "size": "3,116 examples",
+    "format": "JSON",
+    "annotation": "Manual annotation by experts"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "COMET",
+      "BLEU Score"
+    ],
+    "calculation": "Metrics calculated by comparing the translation outputs against reference translations using COMET and BLEU scores.",
+    "interpretation": "Higher scores indicate better translation quality, while lower scores reflect poorer performance, specifically assessing gender bias.",
+    "baseline_results": "The experimental results show up to 10 COMET points lower for non-binary identities compared to binary gender contexts.",
+    "validation": "Evaluated through human judgment and consistency checks (Kappa coefficient > 0.8)."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "The benchmark covers 14 types of non-binary gender identities.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

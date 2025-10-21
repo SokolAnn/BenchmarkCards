@@ -1,0 +1,80 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ERBench: An Entity-Relationship based Automatically Verifiable Hallucination Benchmark for Large Language Models",
+    "abbreviation": "ERBench",
+    "overview": "ERBench is a benchmark that utilizes relational databases based on the entity-relationship model to create complex, automatically verifiable evaluations for large language models. It measures the capability of LLMs to reason correctly while minimizing hallucinations.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/DILAB-KAIST/ERBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide an automated and scalable framework for evaluating the reasoning capabilities of large language models while addressing the issue of factual hallucination.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "The benchmark primarily checks for critical keywords to verify LLM rationales, which may not cover the correctness of the entire rationale.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Public relational databases from various domains including movie, soccer, airport, music, and book datasets, sourced from reputable platforms like Kaggle and GitHub.",
+    "size": "varied based on the chosen database; typically includes thousands of entities and relationships",
+    "format": "Relational database format",
+    "annotation": "Automatically generated using integrity constraints such as functional dependencies and foreign key constraints."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Answer Accuracy",
+      "Rationale Accuracy",
+      "Answer-Rationale Accuracy",
+      "Hallucination Rate"
+    ],
+    "calculation": "Metrics are calculated based on the correctness of answers and rationales derived from integrity constraints present in the relational databases.",
+    "interpretation": "Higher accuracy values indicate better performance of LLMs in generating both correct answers and rationales, while lower hallucination rates suggest fewer incorrect responses.",
+    "baseline_results": "N/A",
+    "validation": "Experimental validation conducted across multiple datasets using various contemporary large language models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CRaQAn (Coreference Resolution in Question-Answering)",
+    "abbreviation": "CRaQAn",
+    "overview": "CRaQAn is an open-source dataset that provides over 250 question-answer pairs containing coreferences, specifically designed for evaluating coreference resolution in question-answering tasks.",
+    "data_type": "question-answer pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Quoref",
+      "HotpotQA"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/Edge-Pyxos/CRaQAn_v1"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a dataset for evaluating coreference resolution in question-answering tasks and to establish a methodology for automated dataset creation.",
+    "audience": [
+      "ML Researchers",
+      "NLP Practitioners"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "The initial CRaQAn release contains 261 question-answer pairs; while it demonstrates the potential for automated dataset generation, the dataset's size may limit its utility in extensive evaluations.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Crafted from 70 Wikipedia articles on modern U.S. laws, selected to contain complex coreference relationships.",
+    "size": "261 question-answer pairs",
+    "format": "Markdown",
+    "annotation": "Automated with GPT-4 and human reviews."
+  },
+  "methodology": {
+    "methods": [
+      "Automated dataset generation",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Quality of question-answer pairs",
+      "Human reviewer acceptance rate"
+    ],
+    "calculation": "Metrics are derived from the proportion of QA pairs accepted by human reviewers out of those generated.",
+    "interpretation": "Higher acceptance rates indicate better quality and more successful coreference resolution.",
+    "baseline_results": "348 out of 578 generated QA pairs were reviewed, with a 60.2% acceptance rate.",
+    "validation": "Human reviewers assessed candidate entries for quality, ensuring adherence to established guidelines."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "The dataset may inherit biases from the underlying Wikipedia content, potentially affecting the fairness of its application."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0).",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

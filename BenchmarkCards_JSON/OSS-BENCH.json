@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "OSS-BENCH",
+    "abbreviation": "N/A",
+    "overview": "OSS-BENCH is an automatic benchmark generator that constructs live, large-scale evaluation tasks from real-world open-source software by reusing natural ground truth signals—compilation results, functional test outcomes, and sanitizer checks.",
+    "data_type": "function-level code",
+    "domains": [
+      "Computer Science"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "BigCodeBench",
+      "LiveCodeBench",
+      "HumanEval-X"
+    ],
+    "resources": [
+      "https://oss-bench.github.io/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide rigorous and robust evaluation of the quality of LLM-generated code for various coding tasks.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Code Generation",
+      "Code Optimization"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Real-world open-source software (OSS) projects",
+    "size": "10,534 functions for PHP, 7,321 functions for SQLite3",
+    "format": "N/A",
+    "annotation": "Automated evaluation using compilation results and test outcomes"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics evaluation",
+      "Memory safety evaluation through sanitizers"
+    ],
+    "metrics": [
+      "Compilability",
+      "Functional Test",
+      "Memory Safety"
+    ],
+    "calculation": "Scores are aggregated from compilation success rates, test pass rates, and memory safety alerts.",
+    "interpretation": "Higher scores indicate better performance, with careful attention to overfitting and innovative code changes.",
+    "baseline_results": null,
+    "validation": "Benchmarks are continuously updated based on evolving OSS projects."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

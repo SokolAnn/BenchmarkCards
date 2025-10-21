@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DiffuSyn Bench: Evaluating Vision-Language Models on Real-World Complexities with Diffusion-Generated Synthetic Benchmarks",
+    "abbreviation": "DiffuSyn Bench",
+    "overview": "This study assesses the ability of Large Vision-Language Models (LVLMs) to differentiate between AI-generated and human-generated images, introducing a new automated benchmark construction method for this evaluation.",
+    "data_type": "text-image pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MM-Vet",
+      "HallusionBench",
+      "humor understanding benchmarks",
+      "MMMU",
+      "VisIT-Bench",
+      "VASR"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2406.04470"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate Large Vision-Language Models' ability to understand and interpret images through a novel automated benchmark system.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Image Classification",
+      "Error Recognition"
+    ],
+    "limitations": "Inherent limitations exist in both text-to-image models and large language models, particularly in producing erroneous images accurately.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "2000 images from a mix of AI-generated and human-created visuals, standardized to a resolution of 512x512 pixels.",
+    "size": "2000 images",
+    "format": "image files (with accompanying text descriptions)",
+    "annotation": "Manually curated and automatically generated prompts with errors embedded."
+  },
+  "methodology": {
+    "methods": [
+      "Automated benchmark generation",
+      "Statistical analysis",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Accuracy measures the proportion of correctly predicted instances relative to total predictions; F1 Score is calculated as 2 * (Precision * Recall) / (Precision + Recall).",
+    "interpretation": "An accuracy of 88.1% signifies good performance, while lower scores for LVLMs indicate limitations in distinguishing image authenticity.",
+    "baseline_results": "Humans achieved 88.45% accuracy; LVLMs' highest accuracy was 66.1% from the Fuyu-8B model.",
+    "validation": "Validation through comparison with human scores and consistency checks against other benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

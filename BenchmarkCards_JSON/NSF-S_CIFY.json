@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "NSF-S CIFY",
+    "abbreviation": "N/A",
+    "overview": "NSF-S CIFY is a large-scale dataset for scientific claim extraction derived from the National Science Foundation awards database, comprising over 400K grant abstracts and establishing grant proposals as a novel source for scientific claim extraction.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Science",
+      "Mathematics"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SciFACT",
+      "PubHEALTH",
+      "CLIMATE-FEVER",
+      "HealthVer",
+      "COVID-Fact"
+    ],
+    "resources": [
+      "https://huggingface.co/darpa-scify"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To facilitate large-scale scientific claim verification, discovery tracking, and meta-scientific research.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Scientific Claim Extraction",
+      "Investigation Proposal Extraction",
+      "Abstract Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "NSF awards database",
+    "size": "412,155 abstracts with an estimated 2.8 million claims",
+    "format": "JSON",
+    "annotation": "Automatically generated through zero-shot prompting with large language models."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "BERTScore",
+      "ROUGE",
+      "Precision",
+      "Recall",
+      "F1"
+    ],
+    "calculation": "Metrics such as precision and recall are calculated based on comparisons between extracted claims and a gold standard using boolean functions with LLMs.",
+    "interpretation": "High scores on metrics indicate successful extraction and generation quality.",
+    "baseline_results": "Performance metrics significantly improve with fine-tuning, showing over 100% relative improvement for tasks.",
+    "validation": "The dataset is processed and filtered to ensure quality and consistency."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

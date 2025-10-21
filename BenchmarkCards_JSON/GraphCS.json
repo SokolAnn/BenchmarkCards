@@ -1,0 +1,82 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "GraphCS",
+    "abbreviation": "N/A",
+    "overview": "GraphCS is a comprehensive benchmark designed to evaluate the performance of large language models (LLMs) in community search tasks, addressing the challenges of output bias and the limitations of LLMs in discerning community structures within graphs.",
+    "data_type": "graph",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MAGMA"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2508.09549"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the GraphCS benchmark is to evaluate the capabilities of LLMs in community search problems in graph analysis.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Community Search"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The benchmark includes two algorithmically generated datasets (PSG and LFR) for community search tasks.",
+    "size": "12,400 graphs",
+    "format": "N/A",
+    "annotation": "Automated generation via graph generating algorithms."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score"
+    ],
+    "calculation": "F1 Score calculated by comparing the predicted community vertices against ground-truth labels.",
+    "interpretation": "An F1 Score close to 1 indicates better performance in identifying true community members while avoiding irrelevant vertices.",
+    "baseline_results": "N/A",
+    "validation": "The framework employs a dual-agent collaborative model, CS-Agent, which refines outputs through dialogues."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

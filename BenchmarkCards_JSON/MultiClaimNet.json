@@ -1,0 +1,114 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MultiClaimNet",
+    "abbreviation": "N/A",
+    "overview": "MultiClaimNet is a collection of three multilingual claim clustering datasets constructed from claim-matching pairs, automatically formed to improve fact-checking processes by grouping verified and unverified claims discussing the same underlying facts.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Spanish",
+      "Chinese",
+      "French",
+      "German",
+      "Italian",
+      "Portuguese",
+      "Russian",
+      "Arabic",
+      "Turkish",
+      "Korean",
+      "Japanese",
+      "Hindi",
+      "Urdu",
+      "Bengali",
+      "Vietnamese",
+      "Thai",
+      "Swahili",
+      "Filipino",
+      "Malay"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://zenodo.org/uploads/15100352"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To create datasets for claim clustering that enhance the efficiency and scalability of automated fact-checking processes across multiple languages.",
+    "audience": [
+      "ML Researchers",
+      "Fact-Checkers",
+      "Data Scientists"
+    ],
+    "tasks": [
+      "Clustering",
+      "Fact-Checking"
+    ],
+    "limitations": "Data curation bias; reliance solely on textual content for annotation; potential mismerging of claims due to multiple factual statements.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from existing claim-matching datasets (ClaimCheck and ClaimMatch) and the MultiClaim fact-checked claims dataset.",
+    "size": "85,300 claims",
+    "format": "JSON",
+    "annotation": "Claims are annotated for similarity using large language models."
+  },
+  "methodology": {
+    "methods": [
+      "Automated clustering",
+      "Nearest neighbor search",
+      "Manual validation"
+    ],
+    "metrics": [
+      "Adjusted Rand Index (ARI)",
+      "Adjusted Mutual Index (AMI)",
+      "Homogeneity (HMG)",
+      "Completeness (CMP)",
+      "V-Measure (VM)",
+      "Purity"
+    ],
+    "calculation": "Metrics are computed by assessing the generated clusters against ground-truth labels.",
+    "interpretation": "Higher ARI and AMI scores indicate better clustering performance.",
+    "baseline_results": null,
+    "validation": "Clusters were validated using both automated processes and manual inspection for large clusters."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Yes, the datasets include claims in 86 languages, aiming for multilingual representation.",
+    "harm": "Potential for misrepresentation and bias in automated labeling leading to misinformation."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The method of annotation does not explicitly discuss privacy measures; assumes claims do not contain sensitive personal information.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

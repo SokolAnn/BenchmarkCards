@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "HVSBench (Human Visual System Benchmark)",
+    "abbreviation": "HVSBench",
+    "overview": "HVSBench is a large-scale benchmark designed to assess the alignment between Multimodal Large Language Models (MLLMs) and human visual system (HVS) on fundamental vision tasks that mirror human vision. It consists of over 85K multimodal samples spanning 13 categories and 5 fields related to HVS.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMBench",
+      "SEED-Bench"
+    ],
+    "resources": [
+      "https://jiaying.link/HVSBench/plainable"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the extent to which MLLMs align with the human visual system in tasks that mirror human perception.",
+    "audience": [
+      "ML Researchers",
+      "Models Developers"
+    ],
+    "tasks": [
+      "Visual Question Answering",
+      "Object Detection",
+      "Saliency Ranking"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "HVSBench is curated from human visual studies and datasets designed specifically to evaluate various aspects of human visual perception.",
+    "size": "85,147 question-answer pairs",
+    "format": "JSON",
+    "annotation": "Questions were generated and verified by humans to ensure alignment with human attention and perceptions."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation",
+      "Field-adaptive evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Mean Absolute Error (MAE)",
+      "Root Mean Square Error (RMSE)",
+      "MultiMatch"
+    ],
+    "calculation": "Metrics are calculated based on the predictions of MLLMs against human responses in various tasks defined in the benchmark.",
+    "interpretation": "Higher accuracy indicates better alignment of MLLMs with human visual processing behaviors.",
+    "baseline_results": "Model performance is compared against human results across multiple vision tasks, showing significant gaps.",
+    "validation": "The benchmark was validated through extensive evaluations of multiple MLLMs and comparisons with human performance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

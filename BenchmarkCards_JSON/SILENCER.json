@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SILENCER",
+    "abbreviation": "N/A",
+    "overview": "SILENCER is a framework that neutralizes self-bias in LLM-as-Benchmark-Generator methods, allowing for the construction of high-quality benchmarks for evaluation through bias suppression techniques.",
+    "data_type": "multimodal",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MATH",
+      "MMLU-Pro",
+      "HellaSwag"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2505.20738"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To mitigate self-bias in LLM-generated benchmarks and enhance evaluation accuracy.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Benchmark Generation"
+    ],
+    "limitations": "SILENCER incurs approximately 30% additional token costs.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "BenchMaker method for benchmark generation, detailed in experiments.",
+    "size": "Assumed size in experiments is 50 samples per benchmark.",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Attribute Integration",
+      "Cross Paraphrase",
+      "Label Calibration",
+      "Bias-Neutralizing Ensemble"
+    ],
+    "metrics": [
+      "Pearson correlation"
+    ],
+    "calculation": "Pearson correlation calculated between model performance on generated benchmarks and human-annotated benchmarks.",
+    "interpretation": "Higher Pearson correlation indicates better performance and evaluation consistency.",
+    "baseline_results": "Average Pearson correlation improved from 0.655 to 0.833.",
+    "validation": "Extensive testing across various LLMs and benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Mitigates potential risks of bias in generated benchmarks."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

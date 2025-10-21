@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "HumanEval Pro and MBPP Pro",
+    "abbreviation": "N/A",
+    "overview": "HumanEval Pro and MBPP Pro are new benchmarks for evaluating LLMs on self-invoking code generation tasks, where models must solve base problems and leverage their solutions to tackle more complex problems.",
+    "data_type": "self-invoking programming problems",
+    "domains": [
+      "Computer Science"
+    ],
+    "languages": [
+      "Python"
+    ],
+    "similar_benchmarks": [
+      "HumanEval",
+      "MBPP",
+      "BigCodeBench"
+    ],
+    "resources": [
+      "https://github.com/CodeEval-Pro/CodeEval-Pro"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the capabilities of large language models on the self-invoking code generation task, highlighting the differences in performance between traditional and self-invoking generation.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Code Generation"
+    ],
+    "limitations": "The programming languages of our benchmarks only include Python; the diversity of self-invoking problems is limited by the original problems.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Derived from existing datasets: HumanEval, MBPP, and BigCodeBench",
+    "size": "57 self-invoking programming problems",
+    "format": "Problem-solution pairs in Python",
+    "annotation": "Problems generated using Deepseek-V2.5 with manual review for test cases"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "pass@k"
+    ],
+    "calculation": "Metrics are calculated based on the pass@k score for the benchmarks, evaluating model abilities to generate correct solutions.",
+    "interpretation": "Higher pass rates indicate better model performance in self-invoking code generation tasks.",
+    "baseline_results": "Frontier LLMs display a significant drop in performance on self-invoking tasks, with many models showing a 10% to 15% drop compared to traditional benchmarks.",
+    "validation": "Models are validated through repetitive testing and manual review of generated test cases."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Bias",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential misuse of generated code and reinforcement of existing biases in training data."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

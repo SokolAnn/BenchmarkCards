@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Dolma (Data for Open Language Models' Appetite)",
+    "abbreviation": "Dolma",
+    "overview": "Dolma is a three-trillion-token English corpus built from a diverse mixture of web content, scientific papers, code, public-domain books, social media, and encyclopedic materials, aimed at facilitating scientific research on language model pretraining through improved data transparency and reproducibility.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/allenai/dolma",
+      "https://github.com/allenai/dolma"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To promote transparency, reproducibility, and further research in language modeling by providing a comprehensive and well-documented dataset.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Language Modeling"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Dolma corpus collected from a diverse set of sources including web pages, scientific papers, code from GitHub, public domain books, social media content, and encyclopedic materials.",
+    "size": "11TB",
+    "format": "Plain text files",
+    "annotation": "Automated filtering, language identification, quality filtering, and deduplication."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Training evaluation on downstream tasks"
+    ],
+    "metrics": [
+      "Perplexity",
+      "Accuracy"
+    ],
+    "calculation": "Metrics calculated using perplexity evaluations on various downstream tasks.",
+    "interpretation": "Lower perplexity indicates better model performance on language tasks; higher accuracy indicates better performance on specific benchmarks used for evaluation.",
+    "baseline_results": null,
+    "validation": "The Dolma corpus was validated against known benchmarks in language modeling tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis of the demographic factors is recommended for assessing the diversity of the provided content.",
+    "harm": [
+      "Potential for perpetuating bias in language models due to the sourcing of data from the web and other repositories."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Efforts were made to remove personally identifiable information (PII) through filtering and regex identification.",
+    "data_licensing": "Released under ODC-By license, with terms for usage outlined on the Hugging Face page.",
+    "consent_procedures": "No direct informed consent was collected from data contributors; however, a mechanism for data removal is available.",
+    "compliance_with_regulations": "The dataset aims for compliance with GDPR principles and provides avenues for individuals to request data removal."
+  }
+}

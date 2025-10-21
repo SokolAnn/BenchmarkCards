@@ -1,0 +1,78 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ParlaSent Multilingual Training Dataset for Sentiment Identification in Parliamentary Proceedings",
+    "abbreviation": "ParlaSent",
+    "overview": "The paper presents a new training dataset of sentences in 7 languages, manually annotated for sentiment, which are used in a series of experiments focused on training a robust sentiment identifier for parliamentary proceedings.",
+    "data_type": "sentence-level sentiment data",
+    "domains": [
+      "Natural Language Processing",
+      "Political Science"
+    ],
+    "languages": [
+      "Bosnian",
+      "Croatian",
+      "Czech",
+      "English",
+      "Serbian",
+      "Slovak",
+      "Slovenian"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "http://hdl.handle.net/11356/1585",
+      "https://huggingface.co/classla/xlm-r-parlasent"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To facilitate the process of collecting, cleaning, and processing textual data for political science research and to develop sentiment analysis tools for parliamentary discourse.",
+    "audience": [
+      "Social Scientists",
+      "Political Analysts",
+      "Machine Learning Researchers"
+    ],
+    "tasks": [
+      "Sentiment Analysis"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Sentences sampled from parliamentary proceedings of seven European countries.",
+    "size": "2,600 sentences per language group",
+    "format": "JSONL",
+    "annotation": "Manually annotated by native speakers using a six-item scale for sentiment polarity."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "R2 Score",
+      "Mean Average Error (MAE)"
+    ],
+    "calculation": "Metrics are calculated based on the predictions made by models on annotated data.",
+    "interpretation": "Higher R2 values signify better performance in predicting sentiment, while MAE indicates average error per instance.",
+    "baseline_results": "Dummy model and comparisons to XLM-R base and large models for reference.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC-BY-SA 4.0 license",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

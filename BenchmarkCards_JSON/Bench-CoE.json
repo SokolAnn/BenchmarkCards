@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Bench-CoE",
+    "abbreviation": "N/A",
+    "overview": "Bench-CoE is a framework that enables collaboration of experts by leveraging benchmark evaluations to achieve optimal performance across various tasks through a set of expert models, routers for assigning tasks, and a benchmark dataset for router training.",
+    "data_type": "text and multimodal",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [],
+    "similar_benchmarks": [
+      "MMLU (Massive Multitask Language Understanding)",
+      "MMMU"
+    ],
+    "resources": [
+      "https://github.com/ZhangXJ199/Bench-CoE"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide an effective framework for multi-task routing using large language models driven by benchmark evaluations.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Multi-task Learning",
+      "Model Integration"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Benchmark datasets like MMLU-Pro and MMMU.",
+    "size": "Varies per dataset",
+    "format": "N/A",
+    "annotation": "Benchmark evaluations used for training without extensive data labeling."
+  },
+  "methodology": {
+    "methods": [
+      "Routing based on benchmark evaluations",
+      "Query-Level and Subject-Level assessments"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Performance assessed using evaluations from benchmarks like MMLU and MMMU.",
+    "interpretation": "Higher accuracy indicates better expert model routing and task performance.",
+    "baseline_results": "Performance compared against individual large language models.",
+    "validation": "Challenges addressed via experimental scenarios: Naive, In-Distribution, and Out-of-Distribution evaluations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

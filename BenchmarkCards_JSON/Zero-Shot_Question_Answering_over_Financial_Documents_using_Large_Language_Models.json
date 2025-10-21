@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Zero-Shot Question Answering over Financial Documents using Large Language Models",
+    "abbreviation": "N/A",
+    "overview": "This paper proposes a zero-shot prompting technique for financial question answering that mitigates arithmetic errors by guiding large language models (LLMs) to generate executable programs for complex questions requiring multi-hop numerical reasoning over financial reports.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Finance"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "FinQA",
+      "ConvFinQA",
+      "TATQA"
+    ],
+    "resources": [
+      "https://github.com/czyssrs/FinQA",
+      "https://github.com/wenhuchen/Program-of-Thoughts"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To optimize zero-shot prompts for financial question answering that leverage large language models for numerical reasoning.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "The proposed methods are specifically tailored for the GPT-x series and may require adjustment for other LLMs.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "FinQA, ConvFinQA, TATQA datasets",
+    "size": "N/A",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Program generation via zero-shot prompts",
+      "Evaluation against baseline zero-shot techniques"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "The accuracy is determined based on the correctness of the program output compared to the expected results.",
+    "interpretation": "A higher accuracy indicates more effective program generation and reasoning extraction by the LLM.",
+    "baseline_results": "ZS-FinPYT significantly improved accuracy over ZS-STD and ZS-CoT methods by up to 47%.",
+    "validation": "Experimental validation using test splits of FinQA, ConvFinQA, and TATQA datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

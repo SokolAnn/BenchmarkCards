@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CORAA (Corpus of Annotated Audios)",
+    "abbreviation": "CORAA",
+    "overview": "CORAA is a publicly available dataset for Automatic Speech Recognition (ASR) in Brazilian Portuguese, containing 290.77 hours of validated audio-transcription pairs and addressing the lack of spontaneous speech in existing resources.",
+    "data_type": "audio-transcription pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Portuguese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/nilc-nlp/CORAA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To improve ASR models in Brazilian Portuguese by providing a large corpus of spontaneous and prepared speech.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Automatic Speech Recognition"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The corpus is assembled from five corpora: ALIP, C-ORAL Brasil I, NURC-Recife, SP2010, and TEDx Portuguese talks.",
+    "size": "290.77 hours",
+    "format": "WAV",
+    "annotation": "Manually validated for audio-transcription pairs."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Word Error Rate (WER)",
+      "Character Error Rate (CER)"
+    ],
+    "calculation": "Metrics are calculated based on the counts of errors in the ASR output compared to ground truth transcriptions.",
+    "interpretation": "Lower WER and CER values indicate better ASR model performance.",
+    "baseline_results": "Model achieved a WER of 24.18% on CORAA test set.",
+    "validation": "Validation of audio-transcription pairs was performed through a web interface by multiple annotators."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Bias"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC BY-NC-ND 4.0 license.",
+    "consent_procedures": "Informed consent was obtained from participants wherever applicable.",
+    "compliance_with_regulations": "N/A"
+  }
+}

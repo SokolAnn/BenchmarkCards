@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ToxSyn-PT",
+    "abbreviation": "N/A",
+    "overview": "ToxSyn-PT is the first large-scale Portuguese corpus that enables fine-grained hate-speech classification across nine legally protected minority groups. The dataset contains 53,274 synthetic sentences annotated for toxicity, discourse type, and target group, created through a novel four-stage generation pipeline.",
+    "data_type": "synthetic sentences",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Portuguese"
+    ],
+    "similar_benchmarks": [
+      "HateBR",
+      "OFFCOMBR-3",
+      "OLID-BR",
+      "TuPy-E"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/ToxSyn-PT"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To advance research on synthetic data and hate-speech detection in low-resource settings.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Binary Classification",
+      "Multi-label Classification"
+    ],
+    "limitations": "Each sentence is annotated with a single toxicity label and one target group, precluding intersectional or multi-target cases; overlapping abuses remain unmodeled.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated through a four-stage pipeline: seed dataset, expansion using LLM, paraphrase augmentation, and implicit-hate enrichment.",
+    "size": "53,274 sentences",
+    "format": "N/A",
+    "annotation": "LLM-generated with controlled annotations for toxicity and demographic targets."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Macro-Recall",
+      "ROC AUC"
+    ],
+    "calculation": "Metrics are calculated based on the model's performance on the dataset across multiple tasks.",
+    "interpretation": "Higher scores indicate stronger model performance in detecting hate speech.",
+    "baseline_results": "Models fine-tuned on ToxSyn-PT achieved macro-recall of 0.64 and ROC AUC of 0.73.",
+    "validation": "Model evaluation conducted against existing benchmarks and synthesized versions of benchmark datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset includes nine legally protected minority groups.",
+    "harm": [
+      "Toxicity towards defined minority groups"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Synthetic dataset does not include personal information.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

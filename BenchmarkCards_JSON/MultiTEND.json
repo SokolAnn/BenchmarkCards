@@ -1,0 +1,102 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MultiTEND",
+    "abbreviation": "N/A",
+    "overview": "MultiTEND is the first and largest multilingual benchmark for natural language to NoSQL query generation, covering six languages: English, German, French, Russian, Japanese, and Mandarin Chinese. It analyzes challenges in translating natural language to NoSQL queries across diverse linguistic structures.",
+    "data_type": "natural language queries to NoSQL queries",
+    "domains": [
+      "Natural Language Processing",
+      "Database Management"
+    ],
+    "languages": [
+      "English",
+      "German",
+      "French",
+      "Russian",
+      "Japanese",
+      "Mandarin Chinese"
+    ],
+    "similar_benchmarks": [
+      "TEND",
+      "Spider",
+      "nvBench"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2502.11022"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive benchmark for assessing multilingual natural language to NoSQL query translation systems, facilitating research and development in this area.",
+    "audience": [
+      "ML Researchers",
+      "Database Developers",
+      "AI Practitioners"
+    ],
+    "tasks": [
+      "Query Generation",
+      "Machine Translation"
+    ],
+    "limitations": "The dataset is limited to six languages, which only cover a portion of the mainstream languages within the Indo-European and Sino-Tibetan language families.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "MultiTEND dataset derived from a semi-automated construction process combining machine-generated data and manual verification.",
+    "size": "101,789 NLQ to NoSQL query pairs",
+    "format": "N/A",
+    "annotation": "Combination of machine-generated and human-verified translations."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Exact Match (EM)",
+      "Execution Accuracy (EX)"
+    ],
+    "calculation": "Metrics were calculated based on the percentage of generated queries that matched the ground truth queries exactly and those that executed correctly against the NoSQL database.",
+    "interpretation": "Higher values in EM and EX indicate better performance; a successful query generation results in queries that conform to the expected structure and produce accurate execution results.",
+    "baseline_results": "Comparison with other models like SMART and Zero-shot LLMs showed MultiLink's performance improvements of approximately 5% to 20%.",
+    "validation": "Extensive experiments demonstrated its challenging nature and the effectiveness of the proposed model."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The benchmark includes demographic factors, as it covers linguistic diversity across six languages.",
+    "harm": [
+      "Inequity in access for speakers of underrepresented languages."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

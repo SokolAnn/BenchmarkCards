@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Benchmarking Web API Integration Code Generation",
+    "abbreviation": "N/A",
+    "overview": "This paper presents a dataset and evaluation pipeline designed to assess the ability of large language models (LLMs) to generate web API invocation code. The study reveals that generating API invocations poses significant challenges, resulting in frequent errors.",
+    "data_type": "API invocation tasks and expected outcomes",
+    "domains": [
+      "Software Engineering"
+    ],
+    "languages": [
+      "JavaScript"
+    ],
+    "similar_benchmarks": [
+      "N/A"
+    ],
+    "resources": [
+      "https://zenodo.org/doi/10.5281/zenodo.13758414"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the performance of large language models in generating web API invocation code.",
+    "audience": [
+      "Researchers in AI and Software Engineering",
+      "Developers using APIs"
+    ],
+    "tasks": [
+      "Code Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Synthetic data generated using an LLM and manually reviewed for correctness.",
+    "size": "395 samples",
+    "format": "JSON",
+    "annotation": "Manually checked and corrected"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human review"
+    ],
+    "metrics": [
+      "Correct implementations",
+      "Illegal implementations",
+      "Correct URLs",
+      "Illegal URLs",
+      "Correct methods",
+      "Illegal methods",
+      "Mean argument precision",
+      "Mean argument recall",
+      "Mean argument value conditional accuracy"
+    ],
+    "calculation": "Metrics are calculated based on functional correctness by executing the generated API invocation code and comparing the results.",
+    "interpretation": "Higher scores in metrics indicate better performance in generating valid and compliant API invocations.",
+    "baseline_results": "N/A",
+    "validation": "The generated code was executed in a controlled environment for correctness evaluation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

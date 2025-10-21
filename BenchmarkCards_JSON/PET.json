@@ -1,0 +1,72 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PET: An Annotated Dataset for Process Extraction from Natural Language Text Tasks",
+    "abbreviation": "PET",
+    "overview": "The paper presents the PET dataset, a corpus of business process descriptions annotated with activities, gateways, actors, and flow information, together with an annotation schema, guidelines, and baselines to benchmark the difficulty and challenges of business process extraction from text.",
+    "data_type": "text (annotated business process descriptions)",
+    "domains": [
+      "Natural Language Processing",
+      "Business Process Management"
+    ],
+    "languages": [],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://pdi.fbk.eu/pet-dataset",
+      "https://huggingface.co/datasets/patriziobellan/PET"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Provide a new reference corpus, annotation schema, and guidelines for annotating business process models in running text; and quantify the difficulty of fundamental information extraction tasks for process model extraction by deploying a variety of baselines on the annotated data.",
+    "audience": [
+      "Research community",
+      "Natural Language Processing researchers",
+      "Business Process Management researchers"
+    ],
+    "tasks": [
+      "Information Extraction",
+      "Named Entity Recognition",
+      "Relation Extraction",
+      "Process Model Extraction from Text"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collection of textual process descriptions initially used by Friedrich et al. [3]; annotated with process elements and relations according to the authors' annotation schema.",
+    "size": "45 documents (413 sentences; average 9.27 sentences per document; average 18.15 words per sentence)",
+    "format": "N/A",
+    "annotation": "Manual annotation by three experts using the Inception tool, followed by an automatic rule-based annotation fixing step and a reconciliation phase to obtain a gold-standard annotation set."
+  },
+  "methodology": {
+    "methods": [
+      "Conditional Random Fields (CRF) models",
+      "Rule-Based (RB) approaches",
+      "5-fold cross-validation",
+      "Inter-annotator agreement computation and reconciliation"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Metrics (Precision, Recall, F1) computed per entity and relation. CRF baseline results obtained via 5-fold cross-validation and averaged. Inter-annotator agreement measured using the F1 measure following the methodology in [4].",
+    "interpretation": "High Precision indicates correct detections while lower Recall indicates missed elements; F1 is used as an overall performance measure. Authors note that detection of all elements (recall) is more challenging than detecting elements correctly (precision).",
+    "baseline_results": "Inter-annotator agreement (entities) Overall F1 = 0.85; inter-annotator agreement (relations) Overall F1 = 0.81. Baseline 1 (CRF, entities) Overall F1 = 0.74. Baseline 2 (Rule-Based with gold entities, relations) Overall F1 = 0.90. Baseline 3 (CRF entities + Rule-Based relations) Overall F1 = 0.61.",
+    "validation": "Gold standard produced via inter-annotator agreement computation and reconciliation; baselines evaluated using 5-fold cross-validation with averaged results."
+  },
+  "targeted_risks": {
+    "risk_categories": [],
+    "atlas_risks": {
+      "risks": null
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

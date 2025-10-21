@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "RobustMath",
+    "abbreviation": "N/A",
+    "overview": "RobustMath is a dataset consisting of 300 high-quality adversarial samples for Math Word Problems (MWP), proposed to evaluate the robustness of large language models in their math solving ability.",
+    "data_type": "adversarial math word problem samples",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "GSM8K",
+      "MultiAirth"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To measure the robustness of large language models' math solving ability through adversarial samples.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Math Word Problem Solving"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated adversarial samples from existing math word problem datasets GSM8K and MultiAirth.",
+    "size": "300 examples",
+    "format": "N/A",
+    "annotation": "Manual check to ensure high quality and preservation of mathematical logic."
+  },
+  "methodology": {
+    "methods": [
+      "Adversarial attack"
+    ],
+    "metrics": [
+      "Attack Success Rate (ASR)",
+      "Clean Accuracy",
+      "Attack Accuracy",
+      "Similarity"
+    ],
+    "calculation": "Metrics calculated based on the predictions of victim models before and after the attack, along with semantic similarity evaluations.",
+    "interpretation": "Higher Attack Success Rate (ASR) indicates more effective adversarial samples, while higher Clean Accuracy represents better performance on original problems.",
+    "baseline_results": "N/A",
+    "validation": "Extensive experimentation with existing math benchmarks and manual validation of adversarial samples."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack",
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

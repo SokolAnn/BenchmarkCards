@@ -1,0 +1,73 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "GRAPH GPT-O (Synergistic Multimodal Comprehension and Generation on Graphs)",
+    "abbreviation": "GRAPH GPT-O",
+    "overview": "This paper addresses the task of multimodal content generation on multimodal attributed graphs (MMAGs), formally defines the task, and introduces three real-world benchmark datasets across domains such as art and e-commerce to support this task.",
+    "data_type": "text-image pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://arxiv.org/abs/2502.11925"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective is to define the task of multimodal content generation from multimodal attributed graphs (MMAGs) and provide datasets for evaluation.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Multimodal Content Generation"
+    ],
+    "limitations": "In our current approach, we treat the graph as homogeneous, simplifying all nodes and edges into a single type.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Datasets include ART500K, Amazon-Baby, and Amazon-Beauty, which consist of multimodal attributed graphs.",
+    "size": "40,000 nodes sampled for training; 50 nodes for testing.",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "CLIP-I2 Score",
+      "Perplexity",
+      "CLIP-IT Score",
+      "KL Divergence"
+    ],
+    "calculation": "Metrics calculate the alignment and quality of synthesized images and texts through various models.",
+    "interpretation": "Higher scores in CLIP-I2 and lower perplexity indicate better performance.",
+    "baseline_results": "Performance compared against models like DreamLLM, showing significant improvements.",
+    "validation": "Evaluations conducted on three datasets from distinct domains."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Privacy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "The model still depends on the MLLM foundation, making it subject to inherent limitations and ethical concerns."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

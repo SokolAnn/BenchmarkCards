@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "BBQ (Bias Benchmark for QA)",
+    "abbreviation": "BBQ",
+    "overview": "BBQ is designed to test bias in large language models (LLMs) on social domains, featuring polarized questions and demographic targets.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "StereoSet",
+      "CrowS-pairs"
+    ],
+    "resources": [
+      "https://github.com/nyu-mll/BBQ"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate bias in large language models by measuring responses to polarized questions across various demographic identities.",
+    "audience": [
+      "ML Researchers",
+      "Ethics Researchers",
+      "AI Developers"
+    ],
+    "tasks": [
+      "Bias Measurement",
+      "Question Answering"
+    ],
+    "limitations": "The demographic groups considered are not exhaustive and the study is limited to the BBQ dataset.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "BBQ dataset (Parrish et al., 2022)",
+    "size": "3,432 questions",
+    "format": "CSV",
+    "annotation": "Manually crafted by researchers"
+  },
+  "methodology": {
+    "methods": [
+      "Question Answering"
+    ],
+    "metrics": [
+      "TARGET BIAS (TB)",
+      "BIAS AMOUNT (BAMT)",
+      "PERSONA BIAS (PB)"
+    ],
+    "calculation": "Metrics are calculated based on the responses of LLMs to questions framed with assigned personas, evaluating bias by summing perception scores.",
+    "interpretation": "Higher absolute values in bias metrics indicate stronger biases displayed by the model towards specific demographic identities.",
+    "baseline_results": "None provided",
+    "validation": "Metrics validated through experiments on multiple LLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis includes various demographic identities across age, race, religion, socioeconomic status, and sexual orientation.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

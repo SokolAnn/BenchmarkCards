@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SciEvent",
+    "abbreviation": "N/A",
+    "overview": "SciEvent is a novel multi-domain benchmark of scientific abstracts annotated via a unified event extraction schema designed to enable structured and context-aware understanding of scientific content. It includes 500 abstracts across five research domains.",
+    "data_type": "annotated scientific abstracts",
+    "domains": [
+      "Natural Language Processing",
+      "Social Computing",
+      "Computational Biology",
+      "Medical Informatics",
+      "Digital Humanities"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SCIREX",
+      "SCIERC"
+    ],
+    "resources": [
+      "https://github.com/desdai/SciEvent"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a challenging benchmark for multi-domain scientific event extraction and facilitate structured understanding of scientific content.",
+    "audience": [
+      "NLP Researchers",
+      "Interdisciplinary Scholars"
+    ],
+    "tasks": [
+      "Event Segmentation",
+      "Trigger Identification",
+      "Argument Extraction"
+    ],
+    "limitations": "The dataset may suffer from potential data contamination as it is constructed from recent publications that could overlap with LLM pretraining corpora.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "500 scientific abstracts from diverse peer-reviewed journals",
+    "size": "500 abstracts",
+    "format": "N/A",
+    "annotation": "Manually annotated by graduate students specializing in NLP and scientific fields"
+  },
+  "methodology": {
+    "methods": [
+      "Fine-tuned EE models",
+      "Large language models (LLMs)",
+      "Human annotators"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "Metrics are calculated based on the overlap between predicted and actual event segments, triggers, and arguments.",
+    "interpretation": "Higher scores indicate better performance, with significant gap observed between human and model performances.",
+    "baseline_results": "Human annotators show significantly better performance compared to models, with a gap of approximately 20% in argument classification tasks.",
+    "validation": "Cohen's Kappa for event segmentation annotations = 0.83"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Privacy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Exposing personal information"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Assessment of argument types across different domains shows varying performance results indicating potential biases.",
+    "harm": "Data contamination concerns due to overlap with LLM training datasets."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset is anonymized, and measures for privacy protection are in place.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

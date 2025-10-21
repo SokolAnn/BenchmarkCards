@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "AstroMLab 2: AstroLLaMA-2-70B Model and Benchmarking Specialised LLMs for Astronomy",
+    "abbreviation": "N/A",
+    "overview": "This study aims to quantitatively assess specialized LLMs in astronomy through a new MCQ benchmark dataset designed to evaluate LLMs in the context of astronomical research, providing the first objective metric for evaluating specialized LLMs quantitatively.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Science",
+      "Astronomy"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "AstroLLaMA 1"
+    ],
+    "resources": [
+      "https://huggingface.co/AstroMLab",
+      "https://arxiv.org/abs/2409.19750"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To establish a robust benchmark that accurately assesses the capabilities of LLMs in astronomical research through the use of a new MCQ dataset.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts",
+      "Astronomy Researchers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "The benchmark primarily tests knowledge recall and may not capture nuanced reasoning skills.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset is derived from the Annual Review of Astronomy and Astrophysics, featuring high-quality MCQs generated from comprehensive reviews.",
+    "size": "4,425 questions",
+    "format": "JSON",
+    "annotation": "Questions were extracted and processed using LLMs with human input to ensure quality."
+  },
+  "methodology": {
+    "methods": [
+      "Full Instruct Benchmarking Method",
+      "Base Model Token Benchmarking Method",
+      "Instruct Model Token Benchmarking Method"
+    ],
+    "metrics": [
+      "Fraction of Correctly Answered MCQs"
+    ],
+    "calculation": "Scores are calculated based on the fraction of correct answers provided by the specialized LLMs across different benchmarking methodologies.",
+    "interpretation": "Higher scores indicate better capability in answering astronomy-related multiple-choice questions accurately, with a clear distinction between model performances depending on the dataset used in continual pretraining and supervised fine-tuning.",
+    "baseline_results": "The AstroLLaMA-2-70B achieved a score of 76.0% in next-token prediction, while the baseline LLaMA-2-70B scored 73.9%.",
+    "validation": "Reproducibility of results was emphasized through consistent token evaluation and corrections for output variations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "The benchmark raises concerns about potential biases in MCQ generation affecting various demographic groups."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

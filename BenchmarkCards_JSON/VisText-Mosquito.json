@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "VisText-Mosquito",
+    "abbreviation": "N/A",
+    "overview": "VisText-Mosquito is a multimodal dataset integrating visual and textual data to support automated detection, segmentation, and reasoning for mosquito breeding site analysis.",
+    "data_type": "image-text pairs",
+    "domains": [
+      "Public Health",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MosquitoFusion"
+    ],
+    "resources": [
+      "https://github.com/adnanul-islam-jisun/VisText-Mosquito"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive benchmark for automated detection, segmentation, and reasoning on mosquito breeding sites.",
+    "audience": [
+      "ML Researchers",
+      "Public Health Professionals"
+    ],
+    "tasks": [
+      "Object Detection",
+      "Image Segmentation",
+      "Text Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected images from various mosquito breeding habitats across Bangladesh, annotated for object detection and segmentation.",
+    "size": "1,828 images for object detection, 142 images for water surface segmentation",
+    "format": "N/A",
+    "annotation": "Manual annotation using the Roboflow platform, includes bounding boxes and segmentation masks."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "mAP@50",
+      "BLEU Score",
+      "ROUGE-L",
+      "BERTScore",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "Metrics calculated based on standard evaluation protocols for detection and generation tasks.",
+    "interpretation": "High values in metrics indicate better performance in detecting mosquito breeding sites and generating coherent reasoning.",
+    "baseline_results": "YOLOv9s: mAP@50 of 0.92891 for object detection; YOLOv11n-Seg: mAP@50 of 0.79795 for segmentation; Mosquito-LLaMA3-8B: BLEU score of 54.7.",
+    "validation": "The models were validated using a split of the dataset into training, validation, and testing sets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Anonymization techniques applied to protect sensitive location details.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Permission obtained from local authorities and property owners.",
+    "compliance_with_regulations": "N/A"
+  }
+}

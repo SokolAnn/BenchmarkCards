@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Safety-aware Contrastive Decoding (SafeCoDe)",
+    "abbreviation": "SafeCoDe",
+    "overview": "SafeCoDe is a lightweight and model-agnostic decoding framework that dynamically adjusts token generation based on multimodal context to improve safety alignment in Multimodal Large Language Models (MLLMs).",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MSSBench",
+      "MOSSBench",
+      "MM-SafetyBench",
+      "Hades",
+      "FigStep"
+    ],
+    "resources": [
+      "https://github.com/franciscoliu/SafeCoDe"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of SafeCoDe is to enhance context-sensitive safety decisions in MLLMs to avoid undersensitivity and oversensitivity in responses.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Safety alignment",
+      "Contextual decision making"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "MSSBench, MOSSBench, MM-SafetyBench, and others",
+    "size": "5,040 image-text pairs",
+    "format": "N/A",
+    "annotation": "Crowdsourced via Amazon Mechanical Turk"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Rejection Rate"
+    ],
+    "calculation": "Metrics are calculated based on performance against human annotations in safety evaluations.",
+    "interpretation": "Higher accuracy indicates better safety alignment by correctly refusing unsafe queries and complying with benign ones.",
+    "baseline_results": null,
+    "validation": "Extensive experiments conducted across diverse MLLM architectures and safety benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Decision bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

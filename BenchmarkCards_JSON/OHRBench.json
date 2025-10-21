@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "OHRBench",
+    "abbreviation": "N/A",
+    "overview": "OHRBench is a benchmark designed for evaluating the cascading impact of OCR on Retrieval-Augmented Generation (RAG) systems, including various unstructured PDF documents and Q&A pairs derived from multimodal elements in these documents.",
+    "data_type": "document images and question-answer pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/opendatalab/OHR-Bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Evaluate the impact of OCR on RAG systems and assess current OCR solutions' capabilities in constructing knowledge bases for RAG.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "OCR Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Unstructured PDF documents from seven real-world RAG applications: Textbook, Law, Finance, Newspaper, Manual, Academic, and Administration.",
+    "size": "8,561 images, 8,498 Q&A pairs",
+    "format": "PDF, JSON",
+    "annotation": "Manually annotated and generated Q&A pairs with expert-level review."
+  },
+  "methodology": {
+    "methods": [
+      "Performance evaluation of OCR solutions"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Edit Distance",
+      "Longest Common Subsequence (LCS)"
+    ],
+    "calculation": "Measured the differences between OCR and ground truth data and evaluated retrieval and generation metrics based on the perturbed datasets introduced with OCR noise.",
+    "interpretation": "Lower values in metrics indicate worse performance in OCR results and their cascading impact on RAG systems.",
+    "baseline_results": "N/A",
+    "validation": "Comparative analysis of different OCR solutions using the introduced OHRBench."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Decreased performance in RAG due to OCR errors and noise types."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

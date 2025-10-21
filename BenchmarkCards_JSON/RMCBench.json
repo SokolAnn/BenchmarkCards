@@ -1,0 +1,71 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "RMCBench (Resistance to Malicious Code Benchmark)",
+    "abbreviation": "RMCBench",
+    "overview": "RMCBench is the first benchmark specifically developed to evaluate the ability of large language models (LLMs) to resist malicious code generation. It comprises 473 prompts designed for two scenarios: a text-to-code scenario where LLMs generate code based on descriptions, and a code-to-code scenario where LLMs complete or translate existing malicious code.",
+    "data_type": "prompts for text-to-code and code-to-code scenarios",
+    "domains": [
+      "Computer Security"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/qing-yuan233/RMCBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation of LLMs' ability to resist the generation of malicious code.",
+    "audience": [
+      "Researchers in A.I. Safety",
+      "Developers of Large Language Models",
+      "Cybersecurity Professionals"
+    ],
+    "tasks": [
+      "Text-to-Code Generation",
+      "Code Completion",
+      "Code Translation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed prompts based on examples of malicious code and descriptions of their functionality from GitHub repositories.",
+    "size": "473 prompts",
+    "format": "text",
+    "annotation": "Manually constructed and reviewed based on guidelines for malicious aspect recognition."
+  },
+  "methodology": {
+    "methods": [
+      "Empirical Analysis",
+      "Automated Labeling via ChatGPT-4"
+    ],
+    "metrics": [
+      "Refusal Rate"
+    ],
+    "calculation": "Refusal rate is calculated as the percentage of responses classified as non-malicious (GOOD) over all responses.",
+    "interpretation": "Higher refusal rates indicate better abilities of LLMs to resist generating malicious content.",
+    "baseline_results": "N/A",
+    "validation": "Responses were manually reviewed for classification accuracy."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Malicious Code Generation"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Potential for generating malicious code"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "VIR-Bench",
+    "abbreviation": "N/A",
+    "overview": "VIR-Bench is a novel benchmark consisting of 200 travel videos that frames itinerary reconstruction as a challenging task designed to evaluate and push forward MLLMs’ geospatial-temporal intelligence.",
+    "data_type": "video",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Japanese"
+    ],
+    "similar_benchmarks": [
+      "Ego4D",
+      "HourVideo",
+      "CityGuessr"
+    ],
+    "resources": [
+      "https://github.com/nlp-waseda/VIR-Bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the benchmark is to evaluate long-range geospatial-temporal understanding via itinerary reconstruction from travel vlog videos.",
+    "audience": [
+      "Research Community",
+      "Machine Learning Practitioners"
+    ],
+    "tasks": [
+      "Node Prediction",
+      "Edge Prediction"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "200 travel videos filmed across Japan, each paired with a corresponding visiting order graph.",
+    "size": "200 videos",
+    "format": "JSON",
+    "annotation": "Manually annotated and double-reviewed visiting order graphs."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "Macro-averaged precision, recall, and F1 across both node and edge prediction.",
+    "interpretation": "Performance is assessed based on the exact matching of predicted locations and edges to the ground truth.",
+    "baseline_results": "N/A",
+    "validation": "Evaluated on state-of-the-art open-weight and proprietary MLLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "N/A"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "The dataset is released strictly for research purposes and commercial use is prohibited.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

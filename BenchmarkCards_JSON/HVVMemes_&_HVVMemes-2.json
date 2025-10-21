@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "HVVMemes (Hero, Villain, Victim, and Other) & HVVMemes-2 (Hero, Villain, Victim, and Other)",
+    "abbreviation": "HVVMemes & HVVMemes-2",
+    "overview": "This benchmark evaluates narrative role classification in Internet memes across multilingual and multimodal models, addressing categories such as Hero, Villain, Victim, and Other.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Hindi"
+    ],
+    "similar_benchmarks": [
+      "Hateful Memes"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2506.23122"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To benchmark the task of identifying narrative roles in memes across diverse cultural and linguistic contexts.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Narrative Role Classification"
+    ],
+    "limitations": "The persistent challenge of accurately identifying the 'Victim' class and generalization across cultural and code-mixed contexts.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Originally from the HVVMemes dataset, extended and diversified for CLEF 2024 shared task.",
+    "size": "5,000 examples",
+    "format": "CSV",
+    "annotation": "Manual annotation for narrative roles by researchers."
+  },
+  "methodology": {
+    "methods": [
+      "Zero-shot model evaluation",
+      "Prompt engineering tests",
+      "Performance benchmarking across 25+ models"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Metrics calculated across four narrative classes (Hero, Villain, Victim, Other).",
+    "interpretation": "F1 Scores indicate the effectiveness of models in classifying narrative roles, with higher scores reflecting better model performance.",
+    "baseline_results": "DeBERTa-v3 achieved the highest macro F1 score of 0.54.",
+    "validation": "Comparative performance across multiple model architectures and framework settings."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Bias"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt leaking"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis of performance across narrative roles identifies challenges in cultural representation.",
+    "harm": "Potential misclassification of narrative roles that may perpetuate cultural stereotypes."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

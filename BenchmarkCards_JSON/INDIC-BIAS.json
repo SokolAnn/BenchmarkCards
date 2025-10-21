@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "INDIC-BIAS",
+    "abbreviation": "N/A",
+    "overview": "INDIC-BIAS is a comprehensive India-centric benchmark designed to evaluate fairness of LLMs across 85 identity groups encompassing diverse castes, religions, regions, and tribes. It consists of 20,000 real-world scenario templates generated to probe biases and stereotypes in language models.",
+    "data_type": "scenario templates",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "N/A"
+    ],
+    "resources": [
+      "https://github.com/AI4Bharat/indic-bias"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the INDIC-BIAS benchmark is to evaluate the fairness of large language models (LLMs) in the Indian context by examining biases and stereotypes associated with different identity groups.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Bias Evaluation",
+      "Fairness Assessment"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated from curations and expert consultations focusing on socio-cultural topics relevant to Indian identity groups.",
+    "size": "20,000 scenario templates",
+    "format": "JSON",
+    "annotation": "Manually validated by a team of experts based on socio-cultural relevance."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Stereotype Association Rate (SAR)",
+      "ELO Ratings"
+    ],
+    "calculation": "Using a logistic regression-based Maximum Likelihood Estimate (MLE) method for computing ELO ratings to quantify bias based on the model's choices.",
+    "interpretation": "ELO ratings provide a ranking of identities based on which are selected more frequently in positive versus negative scenarios.",
+    "baseline_results": "N/A",
+    "validation": "Manual validation of 20,000 scenarios ensuring quality through a human-in-the-loop approach."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis throughout various identity groups across caste, religion, region, and tribe.",
+    "harm": [
+      "Reinforcement of stereotypes in outputs"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All annotators provided consent and were informed about the nature of the tasks. No sensitive personal information was included.",
+    "data_licensing": "Resources are released under permissible licenses for open access to support further research.",
+    "consent_procedures": "Explicit consent was obtained from all participants involved in the data collection and annotation process.",
+    "compliance_with_regulations": "N/A"
+  }
+}

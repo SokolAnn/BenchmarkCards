@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CovidQA",
+    "abbreviation": "CovidQA",
+    "overview": "We present CovidQA, the beginnings of a question answering dataset specifically designed for COVID-19, built by hand from knowledge gathered from Kaggle’s COVID-19 Open Research Dataset Challenge. To our knowledge, this is the first publicly available resource of its type, and intended as a stopgap measure for guiding research until more substantial evaluation resources become available.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Biomedical"
+    ],
+    "languages": [],
+    "similar_benchmarks": [
+      "BioASQ",
+      "SQuAD",
+      "MS MARCO",
+      "TREC-COVID"
+    ],
+    "resources": [
+      "http://covidqa.ai/",
+      "https://arxiv.org/abs/2004.11339"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Provide an in-domain test set for questions related to COVID-19 to evaluate zero-shot or transfer capabilities of existing models and to serve as a stopgap evaluation resource until larger efforts are available.",
+    "audience": [
+      "Natural Language Processing researchers",
+      "Machine Learning researchers",
+      "Model developers"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Passage Retrieval / Sentence Ranking"
+    ],
+    "limitations": "The dataset (version 0.1) comprises 124 question–answer pairs and is too small for supervised training of models; the dataset lacks 'no answer' documents; annotators are not domain experts (authors built on Kaggle-curated content).",
+    "out_of_scope_uses": [
+      "Supervised training of QA models"
+    ]
+  },
+  "data": {
+    "source": "Manually created from Kaggle’s COVID-19 Open Research Dataset Challenge literature review and aligned to the COVID-19 Open Research Dataset (CORD-19) (used the version of the corpus from April 10).",
+    "size": "124 question–answer pairs (version 0.1 release); 27 questions (topics); 85 unique articles; on average 1.6 annotated answer spans per question–answer pair; annotation took approximately 23 hours.",
+    "format": "Article full text from CORD-19 in JSON format; answer spans annotated as substrings of the raw JSON article text (constrained to not cross sentence boundaries).",
+    "annotation": "Manual annotation by five co-authors with a lead annotator responsible for approvals; exact answer spans manually identified as proper substrings of the article text (from CORD-19 raw JSON) and not crossing sentence boundaries; some answers required human judgment when Kaggle entries did not match text verbatim."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics evaluation on ranked sentence outputs",
+      "Unsupervised baselines (Okapi BM25, unsupervised BERT variants, SciBERT, BioBERT)",
+      "Out-of-domain supervised transfer evaluation (BioBERT fine-tuned on SQuAD, BERT and T5 fine-tuned on MS MARCO)",
+      "Baseline comparisons across ranking models"
+    ],
+    "metrics": [
+      "Mean Reciprocal Rank (MRR)",
+      "Precision at rank one (P@1)",
+      "Recall at rank three (R@3)"
+    ],
+    "calculation": "Models produce a ranked list of sentences for each (question, article) pair; a sentence is deemed correct if it contains the exact answer via substring matching. Reported metrics are micro-averages across question–answer pairs.",
+    "interpretation": "Higher MRR, P@1, and R@3 indicate better effectiveness at identifying the sentence that contains the answer; evaluation is sentence-level (correct if sentence contains the annotated answer span).",
+    "baseline_results": "Selected results from Table 1 (natural language question input): Random P@1 0.012 R@3 0.034; BM25 P@1 0.150 R@3 0.216 MRR 0.243; BioBERT (unsupervised) P@1 0.097 R@3 0.142 MRR 0.170; BERT (fine-tuned on MS MARCO) P@1 0.194 R@3 0.315 MRR 0.329; T5 (fine-tuned on MS MARCO) P@1 0.282 R@3 0.404 MRR 0.415.",
+    "validation": "Evaluation conducted on CovidQA v0.1 using sentence-level substring matching against the ground-truth article full text in JSON; metrics are micro-averaged across question–answer pairs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Transparency"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Uncertain data provenance"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

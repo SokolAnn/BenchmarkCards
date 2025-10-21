@@ -1,0 +1,80 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "THOS: A Benchmark Dataset for Targeted Hate and Offensive Speech",
+    "abbreviation": "THOS",
+    "overview": "THOS is a dataset of 8.3k tweets manually labeled with fine-grained annotations about the target of the message, aimed at improving hate and offensive speech detection.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/mohaimeed/THOS"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To support research for creating and evaluating accurate and detailed classifiers of harmful speech on the internet.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Text Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected through the Twitter API using keyword search.",
+    "size": "8,282 tweets",
+    "format": "N/A",
+    "annotation": "Manually labeled by domain experts."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation"
+    ],
+    "metrics": [
+      "F1 Score",
+      "AUROC"
+    ],
+    "calculation": "Metrics were evaluated independently for each TPC and STPC and averaged.",
+    "interpretation": "Higher accuracy indicates better classification capabilities for hate/offensive speech.",
+    "baseline_results": "Preliminary results indicate F1 scores above 0.78.",
+    "validation": "The dataset was used to train LLM-based classifiers."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "VILBENCH",
+    "abbreviation": "N/A",
+    "overview": "VILBENCH is a vision-language benchmark designed to require intensive step-wise reward signals, addressing the need for fine-grained feedback in vision-language tasks.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "VLRewardBench",
+      "URSA",
+      "VisualPRM"
+    ],
+    "resources": [
+      "https://ucsc-vlaa.github.io/ViLBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a deeper understanding of the effectiveness of current vision-language reward models and to pave the way for future improvements in multimodal step-wise evaluation techniques.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Vision-Language Reward Modeling"
+    ],
+    "limitations": "Tasks requiring purely visual understanding may not perform well within VILBENCH.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Multiple vision-language datasets curated for fine-grained step-wise reward evaluation.",
+    "size": "600 examples",
+    "format": "N/A",
+    "annotation": "Manually filtered using six open-weight vision language models to ensure examples require fine-grained rewards."
+  },
+  "methodology": {
+    "methods": [
+      "Evaluation on multiple vision-language tasks",
+      "Benchmarking using feedback from vision-language large language models"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy calculations are based on predicted answers aligned with ground truth.",
+    "interpretation": "A higher accuracy score indicates better performance of models on tasks requiring fine-grained feedback.",
+    "baseline_results": "Current VLLMs struggle to achieve above 27.3% accuracy on the benchmark.",
+    "validation": "Comparison across various models and approaches in terms of accuracy on the benchmark."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

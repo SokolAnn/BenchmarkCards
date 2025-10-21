@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "VLKEB (Large Vision-Language Model Knowledge Editing Benchmark)",
+    "abbreviation": "VLKEB",
+    "overview": "A benchmark designed to assess and improve the capabilities of knowledge editing methods in the field of LVLMs, featuring more reliable data collection methods and an extended Portability metric.",
+    "data_type": "editing cases with image and text inputs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMEdit"
+    ],
+    "resources": [
+      "https://github.com/VLKEB/VLKEB"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate and improve knowledge editing methods for LVLMs.",
+    "audience": [
+      "ML Researchers",
+      "Practitioners"
+    ],
+    "tasks": [
+      "Knowledge Editing",
+      "Question Answering",
+      "Image Recognition"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "MMKG (Multi-modal Knowledge Graph)",
+    "size": "8174 editing cases with 18434 images",
+    "format": "JSON along with images sorted by entity IDs",
+    "annotation": "Manually constructed using GPT for question generation."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Reliability",
+      "Generality",
+      "Locality",
+      "Portability"
+    ],
+    "calculation": "Evaluation metrics are calculated based on the proportion of correct answers produced by edited models across different inputs.",
+    "interpretation": "High scores indicate effective editing and retention of knowledge integrity, while low scores highlight performance deficiencies.",
+    "baseline_results": "N/A",
+    "validation": "Evaluation conducted on five different LVLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

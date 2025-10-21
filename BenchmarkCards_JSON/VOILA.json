@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "VOILA",
+    "abbreviation": "N/A",
+    "overview": "VOILA is a large-scale, open-ended benchmark designed to evaluate MLLMs’ perceptual understanding and abstract relational reasoning through an analogical mapping approach in the visual domain.",
+    "data_type": "visual analogy questions",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "VISALOGY",
+      "V ASR"
+    ],
+    "resources": [
+      "https://github.com/nlylmz/Voila"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the visual understanding and analogical reasoning capabilities of state-of-the-art MLLMs.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Visual Reasoning",
+      "Analogy Completion"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated using SDXL text-to-image model with various prompts.",
+    "size": "Over 6.4M distinct visual analogy scenarios",
+    "format": "JSON",
+    "annotation": "Images generated manually filtered to ensure alignment with text prompts."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "Least-to-Most prompting"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy is calculated based on correct property prediction across four reasoning steps.",
+    "interpretation": "Higher accuracy indicates better performance in understanding visual relationships.",
+    "baseline_results": "Human performance averages 70% accuracy as opposed to the best MLLM performance of 29%.",
+    "validation": "Evaluated through extensive testing on multiple MLLMs and comparison with human performance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

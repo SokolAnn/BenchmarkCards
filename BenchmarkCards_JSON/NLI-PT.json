@@ -1,0 +1,120 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "NLI-PT (Portuguese Native Language Identification Dataset)",
+    "abbreviation": "NLI-PT",
+    "overview": "NLI-PT, the first Portuguese dataset compiled for Native Language Identification (NLI), includes 1,868 student essays written by learners of European Portuguese (L2) whose native languages (L1s) include Chinese, English, Spanish, German, Russian, French, Japanese, Italian, Dutch, Tetum, Arabic, Polish, Korean, Romanian, and Swedish. NLI-PT includes the original student text and four different types of annotation: POS, fine-grained POS, constituency parses, and dependency parses. The dataset was created by unifying data from existing Portuguese learner corpora and uniformly annotating them for research in NLI, Second Language Acquisition, and educational Natural Language Processing.",
+    "data_type": "text (learner essays with linguistic annotations: POS, fine-grained POS, constituency parses, dependency parses)",
+    "domains": [
+      "Natural Language Processing",
+      "Education",
+      "Second Language Acquisition"
+    ],
+    "languages": [
+      "Portuguese",
+      "Chinese",
+      "English",
+      "Spanish",
+      "German",
+      "Russian",
+      "French",
+      "Japanese",
+      "Italian",
+      "Dutch",
+      "Tetum",
+      "Arabic",
+      "Polish",
+      "Korean",
+      "Romanian",
+      "Swedish"
+    ],
+    "similar_benchmarks": [
+      "COPLE2",
+      "Leiria corpus",
+      "PEAPL2",
+      "CAL2",
+      "International Corpus of Learner English"
+    ],
+    "resources": [
+      "http://www.clul.ulisboa.pt/en/resources-en/11-resources/894-nli-pt-a-portuguese-native-language-identification-dataset",
+      "http://alfclul.clul.ul.pt/teitok/learnercorpus",
+      "http://teitok.iltec.pt/peapl2/",
+      "http://www.clul.ulisboa.pt/pt/24-recursos/350-recolha-de-dados-de-ple",
+      "http://cal2.clunl.edu.pt/",
+      "https://arxiv.org/abs/1804.11346"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide the first Portuguese dataset specifically compiled and uniformly annotated for Native Language Identification (NLI), enabling research on NLI, Second Language Acquisition, and educational Natural Language Processing.",
+    "audience": [
+      "Researchers in Native Language Identification",
+      "Researchers in Second Language Acquisition",
+      "Researchers in Educational Natural Language Processing"
+    ],
+    "tasks": [
+      "Native Language Identification",
+      "Grammatical Error Detection and Correction",
+      "Computer-aided Language Learning",
+      "Spellchecking",
+      "L1 interference analysis"
+    ],
+    "limitations": "The dataset combines data from different source corpora with varying L1 distributions and topic distributions; the dataset is not balanced by topic which can lead to topic bias in NLI experiments. Only some source corpora were linguistically annotated originally and annotations had to be unified. Text length and topic representation are highly variable.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Compiled from three existing Portuguese learner corpora: COPLE2, Leiria corpus, and PEAPL2.",
+    "size": "1,868 texts; 380,417 tokens; 20,685 types",
+    "format": "Unified text format (cleaned text files with accompanying linguistic annotation layers); source formats included XML and TXT and were converted to a unified format.",
+    "annotation": "Annotated with simple POS, fine-grained POS (using Freeling Portuguese morphological module), constituency parses (LX Parser), and dependency parses (DepPattern)."
+  },
+  "methodology": {
+    "methods": [
+      "Automated evaluation using machine learning (linear Support Vector Machine)",
+      "Stratified 10-fold cross-validation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "A linear SVM (LIBLINEAR) using a bag-of-words model was trained and evaluated with stratified 10-fold cross-validation on a subset of five L1s.",
+    "interpretation": "Reported accuracy (70%) represents baseline lexical performance on the selected subset; authors note this result may be affected by topic bias because the dataset is not balanced by topic.",
+    "baseline_results": "70% Accuracy using a linear SVM (bag-of-words) on a subset of five L1s: Chinese (355 texts), English (236 texts), German (214 texts), Italian (216 texts), Spanish (271 texts).",
+    "validation": "Stratified 10-fold cross-validation was used to evaluate the baseline classifier."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Transparency"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Governance",
+          "subcategory": [
+            "Lack of data transparency"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Distribution by L1 and by CEFR proficiency levels is provided in Tables 2 and 4; counts per L1 and per proficiency level are reported.",
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

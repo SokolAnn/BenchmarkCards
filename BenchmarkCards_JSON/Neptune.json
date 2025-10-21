@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Neptune",
+    "abbreviation": "N/A",
+    "overview": "Neptune is a benchmark for long video understanding requiring reasoning over long time horizons and across different modalities. It covers a broad range of long video reasoning abilities, including dense, time-aligned video captions and challenging question-answer-decoy sets for video segments.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "EgoSchema",
+      "1H-VideoQA",
+      "ActivityNet-QA"
+    ],
+    "resources": [
+      "https://github.com/google-deepmind/neptune"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To spur the development of more advanced models capable of understanding long videos and to provide a comprehensive evaluation framework for video question answering tasks.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Video Summarization",
+      "Visual Reasoning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Automated YouTube video selection and processing pipeline",
+    "size": "3,268 questions across 2,405 videos",
+    "format": "JSON",
+    "annotation": "Semi-automated with manual rater verification"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Gemma Equivalence Metric (GEM)"
+    ],
+    "calculation": "Metrics are calculated based on matching candidate answers to reference answers, with evaluations derived from human-annotated equivalence.",
+    "interpretation": "Good performance is indicated by the ability to closely match human judgment on answer equivalence; underperformance shows a significant gap in understanding long videos.",
+    "baseline_results": "Performance comparisons made against state-of-the-art models such as Gemini-1.5-pro and Video-LLaMA2",
+    "validation": "Tested against a variety of state-of-the-art video understanding models including both open-source and proprietary systems."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Lack of training data transparency"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on cultural diversity"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset leverages publicly available videos under the assumption of consent for academic use.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

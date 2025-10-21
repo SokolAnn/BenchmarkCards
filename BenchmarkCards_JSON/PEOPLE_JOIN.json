@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PEOPLE JOIN",
+    "abbreviation": "N/A",
+    "overview": "PEOPLE JOIN is a benchmark for evaluating LM-mediated collaborative problem solving. It comprises two evaluation domains: PEOPLE JOIN-QA, which focuses on questions about tabular data, and PEOPLE JOIN-DOCCREATION, which addresses document creation tasks.",
+    "data_type": "question-answering pairs, document creation tasks",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SPIDER",
+      "MULTI NEWS"
+    ],
+    "resources": [
+      "https://github.com/microsoft/peoplejoin"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of PEOPLE JOIN is to evaluate the effectiveness of LLM-powered agents in facilitating collaborative information gathering tasks.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Document Creation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The PEOPLE JOIN benchmark consists of synthetic organizations with users, where each user has distinct access to documents crucial for solving collaborative tasks.",
+    "size": "500 test tasks for PEOPLE JOIN-QA, 200 test instances for PEOPLE JOIN-DOCCREATION",
+    "format": "JSON",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "ROUGE-L",
+      "G-Eval"
+    ],
+    "calculation": "Metrics are computed based on the comparison of agent responses to ground-truth answers and reference summaries.",
+    "interpretation": "Metrics indicate the effectiveness of agents in coordinating information gathering and producing accurate responses.",
+    "baseline_results": "The max accuracy score achievable is 54.8 in PEOPLE JOIN-QA with gpt-4-turbo.",
+    "validation": "Evaluations are conducted using LM agent implementations and include metrics for both correctness and efficiency."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Privacy",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data",
+            "Data privacy rights alignment"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Privacy risks emerge when agents access personal documents.",
+    "data_licensing": "SPIDER dataset is available under CC BY-SA 4.0 license.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

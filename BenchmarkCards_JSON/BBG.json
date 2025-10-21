@@ -1,0 +1,80 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Bias Benchmark for Generation (BBG)",
+    "abbreviation": "BBG",
+    "overview": "The Bias Benchmark for Generation (BBG) is designed to evaluate social bias in long-form generation by having large language models generate continuations of story prompts.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Korean"
+    ],
+    "similar_benchmarks": [
+      "Bias Benchmark for Question Answering (BBQ)"
+    ],
+    "resources": [
+      "https://jinjh0123.github.io/BBG"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the social bias of large language models in generating story continuations.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Text Generation"
+    ],
+    "limitations": "BBG captures only the stereotypes addressed in the BBQ and KoBBQ datasets.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from BBQ (Parrish et al., 2022) and KoBBQ (Jin et al., 2024) datasets.",
+    "size": "82,136 pairs of seed stories and QA for English, 38,316 pairs for Korean",
+    "format": "N/A",
+    "annotation": "Adjusted from existing datasets to ensure neutral and unbiased story generation."
+  },
+  "methodology": {
+    "methods": [
+      "Machine reading comprehension evaluations",
+      "Comparison with multiple-choice question answering"
+    ],
+    "metrics": [
+      "Neutral generation score (ntr_gen)",
+      "Bias score (bias_gen)"
+    ],
+    "calculation": "Neutrality and bias scores calculated based on the associations made by language models in generated narratives.",
+    "interpretation": "A higher neutrality score indicates more neutral story outputs, while a lower bias score indicates fewer bias-aligned outputs.",
+    "baseline_results": null,
+    "validation": "Reliability tested using human annotators' assessments against model outputs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Evaluates social bias across various categories including age, gender, and socioeconomic status.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Dataset does not contain personally identifying information.",
+    "data_licensing": "MIT License for BBG dataset.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

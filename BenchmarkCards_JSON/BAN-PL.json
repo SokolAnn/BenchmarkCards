@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "BAN-PL: a Polish Dataset of Banned Harmful and Offensive Content from Wykop.pl web service",
+    "abbreviation": "BAN-PL",
+    "overview": "The paper presents a new open dataset of offensive social media content for the Polish language, titled BAN-PL, which consists of content from Wykop.pl that was reported by users and banned in the internal moderation process. The dataset includes a total of 691,662 posts and comments, evenly divided into harmful and neutral categories.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Polish"
+    ],
+    "similar_benchmarks": [
+      "KLEJ"
+    ],
+    "resources": [
+      "https://github.com/ZILiAT-NASK/BAN-PL"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a publicly available dataset for training models in automated online content moderation for offensive language detection in the Polish language.",
+    "audience": [
+      "NLP Researchers",
+      "Content Moderation Practitioners"
+    ],
+    "tasks": [
+      "Offensive Language Detection",
+      "Hate Speech Detection"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Wykop.pl web service",
+    "size": "691,662 posts and comments",
+    "format": "N/A",
+    "annotation": "Content labeled and moderated by professional moderators based on community reports."
+  },
+  "methodology": {
+    "methods": [
+      "Moderation review",
+      "Annotation by professionals"
+    ],
+    "metrics": [
+      "F1 Score"
+    ],
+    "calculation": "The F1 Score is calculated to evaluate the performance of models trained on the dataset.",
+    "interpretation": "A higher F1 Score indicates better performance in detecting harmful content.",
+    "baseline_results": "F1 score = 0.92 achieved in preliminary experiments applying models on the dataset.",
+    "validation": "Dataset undergoes continuous moderation and review by trained moderators."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Comprehensive anonymization procedures applied to protect personal data in accordance with ethical guidelines.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

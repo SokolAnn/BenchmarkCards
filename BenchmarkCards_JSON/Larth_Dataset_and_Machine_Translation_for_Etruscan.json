@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Larth: Dataset and Machine Translation for Etruscan",
+    "abbreviation": "N/A",
+    "overview": "We propose a dataset for machine translation from Etruscan to English, which contains 2891 translated examples from existing academic sources. This dataset can help enable future research on this language and similar low-resource languages.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Etruscan",
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/GianlucaVico/Larth-Etruscan-NLP.git"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To create a usable corpus from Etruscan inscriptions for natural language processing and evaluate neural models for translation from Etruscan to English.",
+    "audience": [
+      "ML Researchers",
+      "Linguists",
+      "NLP Practitioners"
+    ],
+    "tasks": [
+      "Machine Translation"
+    ],
+    "limitations": "The dataset is limited in size and may not contain comprehensive coverage of all Etruscan texts.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset includes Etruscan texts extracted from academic resources such as ETP, CIEP, and Zikh Rasna.",
+    "size": "2,891 examples",
+    "format": "CSV",
+    "annotation": "Data is manually and automatically annotated, with translations provided for each example."
+  },
+  "methodology": {
+    "methods": [
+      "Neural machine translation",
+      "Statistical models",
+      "Data augmentation"
+    ],
+    "metrics": [
+      "BLEU",
+      "chr-F",
+      "TER"
+    ],
+    "calculation": "Metrics are computed based on n-grams matching between the machine-translated and reference translations.",
+    "interpretation": "Higher BLEU and chr-F scores indicate better translation quality, while lower TER scores indicate fewer edits needed.",
+    "baseline_results": "A small transformer model achieved a BLEU score of 10.1 on the dataset.",
+    "validation": "The training and validation splits are created from the available examples, typically using an 80/20 split."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

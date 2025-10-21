@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "OpenLLM-RTL: Open Dataset and Benchmark for LLM-Aided Design RTL Generation",
+    "abbreviation": "N/A",
+    "overview": "This paper presents open-source benchmarks and datasets for developing LLMs to assist in design RTL generation and verification. It includes RTLLM 2.0 for evaluating RTL generation, AssertEval for assertion generation verification, and RTLCoder-Data, a dataset for training LLMs with 80K and 7K verified samples.",
+    "data_type": "RTL code generation samples and assertion generation samples",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "RTLLM",
+      "VerilogEval"
+    ],
+    "resources": [
+      "https://github.com/hkust-zhiyao/RTLLM",
+      "https://github.com/hkust-zhiyao/AssertLLM",
+      "https://github.com/hkust-zhiyao/RTL-Coder"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide benchmarks and datasets for LLMs in RTL code generation and verification.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "RTL Code Generation",
+      "Assertion Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Various open-source circuit designs and specifications.",
+    "size": "80,000 samples for RTLCoder-Data, 7,000 verified samples.",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Evaluation based on performance benchmarks",
+      "Formal Property Verification (FPV)"
+    ],
+    "metrics": [
+      "pass@1",
+      "syntax correctness",
+      "functionality correctness"
+    ],
+    "calculation": "Metrics are calculated by comparing generated RTL to expected outputs across several trials.",
+    "interpretation": "Higher pass rates indicate better model performance in generating correct RTL code.",
+    "baseline_results": "N/A",
+    "validation": "Extensive validations included for generated and verified samples using formal verification methods."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "M-QALM",
+    "abbreviation": "N/A",
+    "overview": "M-QALM is a comprehensive collection of clinical datasets comprising 16 multiple-choice question answering (MCQA) and 6 abstractive question answering (AQA) datasets designed to assess recall and comprehension of medical knowledge in large language models (LLMs).",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMLU",
+      "MEDMCQA",
+      "USMLE"
+    ],
+    "resources": [
+      "https://github.com/anand-subu/m-qalm"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a standardized benchmark for evaluating the medical knowledge recall and comprehension capabilities of large language models.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Multiple Choice Question Answering",
+      "Abstractive Question Answering"
+    ],
+    "limitations": "While the benchmark evaluates the capability of LLMs in answering medical questions, it doesn't assess their potential application in real-world scenarios.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Combination of various medical examination datasets and question-answering tasks gathered from literature.",
+    "size": "197,420 question-answering pairs",
+    "format": "JSON",
+    "annotation": "Annotated by domain experts where applicable."
+  },
+  "methodology": {
+    "methods": [
+      "Accuracy",
+      "ROUGE-L",
+      "BERTScore",
+      "METEOR"
+    ],
+    "metrics": [
+      "Accuracy",
+      "ROUGE-L",
+      "BERTScore",
+      "METEOR"
+    ],
+    "calculation": "Metrics are calculated as per the standard evaluation procedures defined for each task, emphasizing their relevance in scoring model performance.",
+    "interpretation": "Higher scores indicate better recall and comprehension abilities of the LLMs on the evaluation datasets.",
+    "baseline_results": "No explicit baseline results provided.",
+    "validation": "Models are tested using zero-shot and fine-tuned scenarios across various datasets, assessing both untrained and specialized handling."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Privacy",
+      "Robustness",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Entropy-Memorization Law",
+    "abbreviation": "N/A",
+    "overview": "This paper presents the Entropy-Memorization Law, which characterizes the relationship between data entropy and memorization difficulty in LLMs, offering a method to distinguish between training and testing datasets, enabling dataset inference.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "LiveBench",
+      "MIMIR"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2507.06056"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To explore how to characterize memorization difficulty of training data in LLMs and to develop a method for distinguishing training from testing data.",
+    "audience": [
+      "ML Researchers",
+      "AI Practitioners",
+      "Data Scientists"
+    ],
+    "tasks": [
+      "Dataset Inference"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "OLMo family of open models and their associated datasets.",
+    "size": "240,000 examples and 300,000 examples",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Linear regression analysis",
+      "Entropy estimation",
+      "Dataset Inference (DI)"
+    ],
+    "metrics": [
+      "Pearson correlation",
+      "Levenshtein Distance (edit distance)"
+    ],
+    "calculation": "Levenshtein distance measures the differences between responses and answers at the token level.",
+    "interpretation": "Higher memorization scores indicate lower similarity between generated responses and reference answers.",
+    "baseline_results": "Pearson r values reached up to 0.972 in testing.",
+    "validation": "Algorithm validated through regression on experimental data from the OLMo models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data",
+            "Data privacy rights alignment"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential privacy leakage and risks of proprietary data exposure."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "All datasets used are licensed under Open Data Commons Attribution License (ODC-By).",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

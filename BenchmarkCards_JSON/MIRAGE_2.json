@@ -1,0 +1,82 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MIRAGE (Multimodal Information-seeking and Reasoning in Agricultural Expert-Guided Conversations)",
+    "abbreviation": "MIRAGE",
+    "overview": "MIRAGE is a new benchmark for multimodal expert-level reasoning and decision-making in consultative interaction settings, specifically designed for the agriculture domain. It combines natural user queries, expert-authored responses, and image-based context to evaluate models on grounded reasoning, clarification strategies, and long-form generation.",
+    "data_type": "multimodal",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision",
+      "Agriculture"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/MIRAGE-Benchmark",
+      "https://github.com/MIRAGE-Benchmark/MIRAGE-Benchmark",
+      "https://mirage-benchmark.github.io/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate vision-language models on expert-level reasoning and decision-making in agricultural consultations.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Named Entity Recognition",
+      "Question Answering",
+      "Conversational Decision-Making"
+    ],
+    "limitations": "MIRAGE does not yet simulate interactive dialogue with real users or user simulators, limiting evaluation of adaptation and dialogue flow over time.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Real user-expert interactions sourced from Ask Extension, reflecting actual agricultural consultation scenarios.",
+    "size": "35,000 interactions",
+    "format": "Dialogues with images",
+    "annotation": "Curated through a multi-step pipeline involving data cleaning, categorization, and expert validation."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Identification Accuracy",
+      "Reasoning Score",
+      "Accuracy",
+      "Relevance",
+      "Completeness",
+      "Parsimony"
+    ],
+    "calculation": "Metrics are calculated based on comparisons between model outputs and expert responses across multiple dimensions.",
+    "interpretation": "High scores correspond to better identification accuracy and reasoning quality aligned with expert benchmarks.",
+    "baseline_results": null,
+    "validation": "Evaluated against an ensemble of reasoning-capable language models to ensure robust and interpretable assessments."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "Analysis of performance across different agricultural tasks reveals disparities in model effectiveness for various user needs.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "User anonymity was preserved during dataset curation, with personal information sanitized.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Divergent Token Metrics",
+    "abbreviation": "DTM",
+    "overview": "This study introduces Divergent Token Metrics (DTMs), a novel approach to assessing compressed LLMs, aiming to evaluate performance degradation during model compression processes, specifically targeting the first divergent token in generated text. DTMs provide a more nuanced evaluation compared to traditional metrics like perplexity, allowing for individual component assessment and effective compression strategies.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "PPL (Perplexity)"
+    ],
+    "resources": [
+      "https://github.com/Aleph-Alpha/Divergent_Tokens"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a new metric for evaluating the performance degradation of compressed large language models during model compression processes, emphasizing the importance of component-level analyses.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Model Compression Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The data source includes the Llama2 models and the C4 dataset for training evaluations.",
+    "size": "20,000 examples",
+    "format": "JSON",
+    "annotation": "Automated annotation through model outputs and evaluations."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Component-wise evaluation",
+      "Model performance analysis"
+    ],
+    "metrics": [
+      "Divergent Token Metrics (DTM)",
+      "First Divergent Token Metric (FDTM)",
+      "Share of Divergent Tokens Metric (SDTM)",
+      "Perplexity (PPL)"
+    ],
+    "calculation": "Metrics calculated to assess model divergence during compression based on token outputs comparing original and compressed models.",
+    "interpretation": "Higher DTM scores indicate better retention of model performance during compression.",
+    "baseline_results": null,
+    "validation": "Validation performed on various compression scenarios across Llama2 models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

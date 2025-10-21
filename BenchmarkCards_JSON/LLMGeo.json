@@ -1,0 +1,66 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LLMGeo: Benchmarking Large Language Models on Image Geolocation In-the-wild",
+    "abbreviation": "LLMGeo",
+    "overview": "We present a new dataset, exclusively sourced from Google Street View, designed to challenge Large Multimodal Models (LMMs) through real-world, in-the-wild random images. This dataset is intended to serve as a robust benchmark for assessing these models’ ability to identify image locations accurately.",
+    "data_type": "image",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "N/A"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/yeyimilk/LLMGeo"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To systematically evaluate the geolocation capabilities of multimodal language models using a novel image dataset.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Image Geolocation"
+    ],
+    "limitations": "Evaluations were confined to country-level geolocation without extending it to more granular levels, such as state and city identifications.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Images collected from Google Street View API.",
+    "size": "10,826 images",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Training-free evaluation",
+      "Training-based evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Metrics evaluated at the country level based on model predictions.",
+    "interpretation": "Higher accuracy indicates better performance in correctly identifying image geolocations.",
+    "baseline_results": "Gemini model achieved an accuracy of up to 0.746 using few-shot prompting.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

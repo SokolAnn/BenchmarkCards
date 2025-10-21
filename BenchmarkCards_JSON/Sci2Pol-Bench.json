@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Sci2Pol-Bench",
+    "abbreviation": "N/A",
+    "overview": "The first benchmark and training dataset for evaluating and fine-tuning large language models (LLMs) on policy brief generation from scientific papers, featuring 18 tasks across multiple-choice and open-ended formats.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SciRIFF",
+      "MMLU-Pro"
+    ],
+    "resources": [
+      "https://github.com/WeiminWu2000/Sci2Pol",
+      "https://huggingface.co/datasets/Weimin2000/Sci2Pol-Bench",
+      "https://huggingface.co/datasets/Weimin2000/Sci2Pol-Corpus"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a systematic evaluation framework tailored to scientific-to-policy communication, enhancing the performance of LLMs in generating actionable policy briefs from scientific literature.",
+    "audience": [
+      "ML Researchers",
+      "Policy Makers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Policy Problem Generation",
+      "Research Findings Generation",
+      "Scientific Research Study Methods Generation",
+      "Policy Implications Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated from 85 expert-written paper-brief pairs sourced from top journals like Nature and the Journal of Health and Social Behavior, and 5.6 million policy records from Overton.io.",
+    "size": "639 pairs",
+    "format": "JSON",
+    "annotation": "Expert-reviewed for quality and relevance."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "LLM-based evaluation metrics"
+    ],
+    "metrics": [
+      "Micro F1",
+      "Reference-free Score",
+      "Reference-based Score"
+    ],
+    "calculation": "Metrics are computed based on model outputs compared to expert-written policy briefs and ground-truth comparisons of scientific papers.",
+    "interpretation": "Higher scores indicate better alignment with expert standards for clarity, accuracy, and comprehensive coverage of the scientific material in policy briefs.",
+    "baseline_results": "Baseline performance was established using 13 models evaluated across the benchmark tasks.",
+    "validation": "Validated through evaluation of both open-source and commercial LLMs, ensuring reliability of the benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

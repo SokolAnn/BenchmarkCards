@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "WikiFactDiff",
+    "abbreviation": "N/A",
+    "overview": "WikiFactDiff is a large dataset for factual knowledge updates of language models, depicting the evolution of knowledge between two dates via new, obsolete, and static facts.",
+    "data_type": "subject-relation-object triples",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "CounterFact",
+      "zsRE"
+    ],
+    "resources": [
+      "https://github.com/Orange-OpenSource/WikiFactDiff",
+      "https://huggingface.co/datasets/OrangeInnov/WikiFactDiff"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive dataset for evaluating factual knowledge update algorithms in language models.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Knowledge Update"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from raw snapshots of the Wikidata knowledge base.",
+    "size": "327,688 updates",
+    "format": "N/A",
+    "annotation": "Automatically generated updates based on changes in Wikidata."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Efficacy",
+      "Generalization",
+      "Specificity",
+      "Fluency"
+    ],
+    "calculation": "Metrics are calculated based on the updated model's ability to correctly predict facts from cloze tests.",
+    "interpretation": "Good performance is indicated by high efficacy and low bleedover.",
+    "baseline_results": "ROME outperforms other algorithms with high efficacy and minimal impact on specificity.",
+    "validation": "Evaluation of existing update algorithms on the WikiFactDiff dataset."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CodeARC (Code Abstraction and Reasoning Challenge)",
+    "abbreviation": "CodeARC",
+    "overview": "CodeARC provides a more realistic and challenging testbed for evaluating LLM-based inductive program synthesis through interactive input generation and self-correction. It features 1114 diverse functions in a general-purpose Python context to assess inductive reasoning capabilities.",
+    "data_type": "function synthesis tasks",
+    "domains": [
+      "Computer Science"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/Anjiang-Wei/CodeARC"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate reasoning capabilities of LLMs in the context of inductive program synthesis and to provide a challenging interactive evaluation protocol.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Inductive Program Synthesis"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from initial input-output examples and synthesized functions, curated from existing program synthesis tasks.",
+    "size": "1114 functions",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Interactive evaluation with function calls and oracle feedback"
+    ],
+    "metrics": [
+      "Success rate"
+    ],
+    "calculation": "Success rate is determined by the proportion of synthesized functions that pass correctness tests from the differential testing oracle within allocated budgets.",
+    "interpretation": "Higher success rates indicate better inductive reasoning capabilities and function synthesis performance.",
+    "baseline_results": "OpenAI o3-mini achieved a success rate of 52.7% in evaluations.",
+    "validation": "Evaluated through differential testing tools to ensure reliability of synthesized functions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

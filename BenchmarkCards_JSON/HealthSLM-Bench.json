@@ -1,0 +1,80 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "HealthSLM-Bench",
+    "abbreviation": "N/A",
+    "overview": "HealthSLM-Bench is a comprehensive benchmark that systematically evaluates nine state-of-the-art Small Language Models (SLMs) on eight health prediction tasks across three real-world mobile and wearable datasets, employing zero-shot, few-shot, and instruction fine-tuning approaches.",
+    "data_type": "health prediction tasks",
+    "domains": [
+      "Natural Language Processing",
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MobileAIBench"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2509.07260"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To systematically evaluate Small Language Models for healthcare monitoring tasks across various datasets and deployment scenarios.",
+    "audience": [
+      "ML Researchers",
+      "Healthcare Professionals",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Stress Prediction",
+      "Readiness Prediction",
+      "Fatigue Monitoring",
+      "Sleep Quality Estimation",
+      "Depression Detection",
+      "Anxiety Estimation",
+      "Physical Activity Classification",
+      "Calorie Estimation"
+    ],
+    "limitations": "Challenges remain, particularly in handling class imbalance and few-shot scenarios.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "PMData, GLOBEM, AW-FB datasets, which provide health wearable sensor data.",
+    "size": "Three datasets with various examples and features for different health tasks.",
+    "format": "N/A",
+    "annotation": "Self-reported data and physiological data annotations for health statuses."
+  },
+  "methodology": {
+    "methods": [
+      "Zero-shot learning",
+      "Few-shot learning",
+      "Instruction tuning"
+    ],
+    "metrics": [
+      "Mean Absolute Error (MAE)",
+      "Accuracy"
+    ],
+    "calculation": "Mean Absolute Error (MAE) is calculated by the average magnitude of prediction errors. Accuracy is the proportion of correctly predicted instances.",
+    "interpretation": "Lower MAE values indicate better performance, while accuracy reflects general correctness.",
+    "baseline_results": "SLMs generally perform comparably or better than LLMs across health tasks.",
+    "validation": "Top-performing models were deployed on an iPhone 15 Pro Max for real-world efficiency evaluation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "Analysis of demographic factors is performed based on the datasets used.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The study enhances protection of sensitive personal data through on-device inference.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

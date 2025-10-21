@@ -1,0 +1,101 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SAFEARENA",
+    "abbreviation": "N/A",
+    "overview": "SAFEARENA is the first benchmark to focus on the deliberate misuse of web agents, comprising 250 safe and 250 harmful tasks across four websites. It assesses realistic misuses of web agents in five harm categories: misinformation, illegal activity, harassment, cybercrime, and social bias.",
+    "data_type": "task pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "VisualWebArena-Adversarial",
+      "ST-WebAgentBench"
+    ],
+    "resources": [
+      "https://safearena.github.io"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of SAFEARENA is to evaluate the safety of autonomous web agents against misuse in real-world web environments.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Task Completion",
+      "Task Refusal"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Tasks designed as safe and harmful pairs by human curators and through human-in-the-loop methods.",
+    "size": "500 tasks",
+    "format": "JSON",
+    "annotation": "Manually verified by experts in LLM agents and safety research."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Task Completion Rate",
+      "Refusal Rate",
+      "Normalized Safety Score (NSS)"
+    ],
+    "calculation": "Metrics are calculated based on task completion outcomes against predefined performance criteria.",
+    "interpretation": "Higher task completion rates indicate better performance; lower refusal rates indicate worse safety adherence.",
+    "baseline_results": "N/A",
+    "validation": "Validation performed through extensive human review and cross-evaluation between automated and human assessments."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Privacy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Data privacy rights alignment"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Misinformation",
+      "Illegal Activity",
+      "Harassment",
+      "Cybercrime",
+      "Social Bias"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

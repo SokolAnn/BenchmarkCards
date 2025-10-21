@@ -1,0 +1,77 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "VulDetectBench",
+    "abbreviation": "N/A",
+    "overview": "VulDetectBench is a new benchmark specifically designed to assess the vulnerability detection capabilities of Large Language Models (LLMs). It evaluates LLMs' ability to identify, classify, and locate vulnerabilities through five tasks of increasing difficulty.",
+    "data_type": "vulnerability detection tasks",
+    "domains": [
+      "Computer Security"
+    ],
+    "languages": [
+      "C",
+      "C++"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/Sweetaroo/VulDetectBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive benchmark that evaluates the vulnerability detection capabilities of various LLMs through a structured set of tasks.",
+    "audience": [
+      "ML Researchers",
+      "Security Analysts",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Vulnerability Existence Detection",
+      "CWE Type Inference",
+      "Key Objects and Functions Identification",
+      "Root Cause Location",
+      "Trigger Point Location"
+    ],
+    "limitations": "Although VulDetectBench provides a comprehensive evaluation, it currently focuses on C/C++ programming languages and can be expanded to include other languages in the future.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The benchmark dataset is constructed from high-quality datasets of code vulnerabilities, including real-world datasets collected from open-source projects and the National Institute of Standards and Technology (NIST) Software Assurance Reference Dataset (SARD).",
+    "size": "1,000 vulnerability samples for Task 1, 500 for Task 2, and 100 for Tasks 3, 4, and 5.",
+    "format": "JSON",
+    "annotation": "Annotated with detailed classification, descriptions, and key information about associated vulnerabilities."
+  },
+  "methodology": {
+    "methods": [
+      "Automated evaluation",
+      "Performance comparison"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "Macro Recall (MAR)",
+      "Micro Recall (MIR)",
+      "Unified Recall Score (URS)"
+    ],
+    "calculation": "Metrics are calculated based on model outputs against correct answers.",
+    "interpretation": "Higher scores indicate better performance in identifying and analyzing vulnerabilities.",
+    "baseline_results": "Various LLMs were evaluated, with GPT-4 achieving the highest reported accuracy and F1 Score.",
+    "validation": "The benchmark is validated through comprehensive model evaluations across the established tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "Limited demographic analysis since the benchmark primarily focuses on code vulnerability types.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Qbias - A Dataset on Media Bias in Search Queries and Query Suggestions",
+    "abbreviation": "Qbias",
+    "overview": "Qbias is a large dataset of Google and Bing search queries, a scraping tool and dataset for biased news articles, as well as language models for the investigation of bias in online search.",
+    "data_type": "search query suggestions",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/irgroup/Qbias",
+      "https://doi.org/10.5281/zenodo.7682914"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide datasets and language models for bias research in online information search.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Bias Detection",
+      "Text Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Search queries and articles from Google, Bing, and AllSides",
+    "size": "671,669 search query suggestions; 21,747 news articles",
+    "format": "CSV",
+    "annotation": "Manual annotation by experts for bias labeling"
+  },
+  "methodology": {
+    "methods": [
+      "Data Scraping",
+      "Manual Evaluation",
+      "Fine-tuning Transformer models"
+    ],
+    "metrics": [
+      "Rank Biased Overlap (RBO)",
+      "Cohen’s Kappa for inter-annotator agreement"
+    ],
+    "calculation": "Performance evaluated on the difference in predictions between left and right biased models.",
+    "interpretation": "Lower RBO scores indicate better model differentiation between political stances.",
+    "baseline_results": null,
+    "validation": "Models validated through manual assessment and quantitative measures."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Misuse",
+          "subcategory": [
+            "Non-disclosure",
+            "Improper usage"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Risk of reproducing biased and harmful language outputs"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

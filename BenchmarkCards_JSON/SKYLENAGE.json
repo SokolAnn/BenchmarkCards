@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SKYLENAGE",
+    "abbreviation": "N/A",
+    "overview": "SKYLENAGE provides a hard, reasoning-centered and broadly covering math benchmark with calibrated difficulty and rich metadata, serving as a reference benchmark for future evaluations of mathematical reasoning.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "GSM8K",
+      "MATH",
+      "AIME",
+      "GPQA",
+      "MMLU-Pro"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2510.01241"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To introduce benchmarks that restore headroom and enable fine-grained analysis of mathematical reasoning in language models.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Mathematical Reasoning",
+      "Contest-Style Problem Solving"
+    ],
+    "limitations": "Some subjects are less represented in the 150-item track.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Human authored and rule-based generation",
+    "size": "100 reasoning problems, 150 contest-style problems",
+    "format": "N/A",
+    "annotation": "Dual label annotation with checks for uniqueness and consistency."
+  },
+  "methodology": {
+    "methods": [
+      "Chain-of-Thought prompting",
+      "Auto-grading",
+      "Standardized answer extraction"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Final answers are normalized via regex templates for grading.",
+    "interpretation": "Accuracy indicates robustness to structural difficulty in reasoning.",
+    "baseline_results": null,
+    "validation": "Analyzed using comparative performance across 15 contemporary LLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

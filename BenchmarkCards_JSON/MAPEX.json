@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MAPEX: A Multi-Agent Pipeline for Keyphrase Extraction",
+    "abbreviation": "MAPEX",
+    "overview": "MAPEX introduces a multi-agent pipeline for keyphrase extraction that coordinates LLM-based agents through multiple modules to enhance the extraction quality, adapting dynamically to document lengths.",
+    "data_type": "keyphrase extraction data",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Inspec",
+      "SemEval2010",
+      "SemEval2017",
+      "DUC2001",
+      "NUS",
+      "Krapivin"
+    ],
+    "resources": [
+      "https://github.com/NKU-LITI/MAPEX"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To improve the performance of keyphrase extraction through multi-agent collaboration and a dual-path strategy based on document length.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Keyphrase Extraction"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Inspec, SemEval-2010, SemEval-2017, DUC2001, NUS, Krapivin datasets.",
+    "size": "1,971 documents",
+    "format": "N/A",
+    "annotation": "Manual annotation by domain experts"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score"
+    ],
+    "calculation": "F1 score calculated using precision and recall metrics based on the predicted and actual keyphrases.",
+    "interpretation": "Higher F1 score indicates better performance in capturing relevant keyphrases.",
+    "baseline_results": "State-of-the-art unsupervised method was 22.81% F1@5.",
+    "validation": "Validated through extensive experiments on benchmark datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

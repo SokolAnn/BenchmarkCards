@@ -1,0 +1,82 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MVTamperBench",
+    "abbreviation": "N/A",
+    "overview": "MVTamperBench is a benchmark that systematically evaluates MLLM robustness against five prevalent tampering techniques: rotation, masking, substitution, repetition, and dropping; based on real-world visual tampering scenarios. It comprises 3.4K original videos, expanded into over 17K tampered clips covering 19 distinct video manipulation tasks.",
+    "data_type": "video",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "N/A"
+    ],
+    "similar_benchmarks": [
+      "MMBench-Video",
+      "BLINK",
+      "Video-MME"
+    ],
+    "resources": [
+      "https://amitbcp.github.io/MVTamperBench/",
+      "https://hf.co/datasets/Srikant86/MVTamperBench",
+      "https://github.com/open-compass/VLMEvalKit"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To systematically evaluate the robustness of MLLMs against video tampering techniques.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Video Manipulation Detection"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "3.4K original videos from MVBench, augmented to create tampered clips through systematic manipulation.",
+    "size": "17,435 tampered clips",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score"
+    ],
+    "calculation": "F1 Score is calculated based on the model's performance on video manipulation detection.",
+    "interpretation": "Higher F1 Scores indicate better model robustness against tampering.",
+    "baseline_results": "N/A",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack",
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

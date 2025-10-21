@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MedBench",
+    "abbreviation": "N/A",
+    "overview": "MedBench is a comprehensive, standardized, and reliable benchmarking system for evaluating Chinese Medical Large Language Models (LLMs). It includes the largest evaluation dataset with 300,901 questions covering 43 clinical specialties and implements a cloud-based evaluation infrastructure with dynamic mechanisms to prevent shortcut learning and answer leakage.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "CMeEE",
+      "CMeIE",
+      "CHIP-CDEE",
+      "CMB"
+    ],
+    "resources": [
+      "https://medbench.opencompass.org.cn"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of MedBench is to provide a standardized evaluation framework for assessing the efficacy of Medical Large Language Models in the Chinese context.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Medical Language Understanding",
+      "Medical Language Generation",
+      "Medical Knowledge Question Answering",
+      "Complex Medical Reasoning",
+      "Healthcare Safety and Ethics"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset comprises 8 public datasets and 12 self-constructed datasets featuring 300,901 Chinese-language medical questions across various medical contexts.",
+    "size": "300,901 questions",
+    "format": "N/A",
+    "annotation": "The data was collected, screened, and verified by medical professionals to ensure accuracy and reliability."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "BLEU Score",
+      "ROUGE-L",
+      "Micro-F1"
+    ],
+    "calculation": "Metrics are computed based on the performance of models on various tasks, averaging scores across different dimensions.",
+    "interpretation": "High scores correspond to better performance in correctly answering medical questions.",
+    "baseline_results": "N/A",
+    "validation": "MedBench's automation and cloud-based infrastructure are regularly updated to enhance reliability."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": []
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": []
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack",
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The construction process includes rewriting medical records to ensure no identifiable personal information is disclosed.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PRECOG (Performance forecasting from text descriptions)",
+    "abbreviation": "PRECOG",
+    "overview": "PRECOG is a corpus of redacted description–performance pairs spanning diverse tasks, domains, and metrics. It aims to estimate a model's score from a redacted task description and intended configuration, supporting systematic evaluation of LLM performance before running experiments.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/JJumSSu/PRECOG"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a systematic method for performance forecasting in LLM tasks, enabling researchers to prioritize configurations and determine dataset sizes before running full evaluations.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Performance Forecasting"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "arXiv experimental records curated through semi-automated methods.",
+    "size": "767 instances",
+    "format": "N/A",
+    "annotation": "Redacted descriptions created with the help of LLMs and human validation."
+  },
+  "methodology": {
+    "methods": [
+      "Zero-shot prediction",
+      "Regression analysis",
+      "Literature retrieval"
+    ],
+    "metrics": [
+      "Mean Absolute Error (MAE)",
+      "Pearson correlation"
+    ],
+    "calculation": "Predictions are normalized to a 0–100 scale based on reports from scientific literature.",
+    "interpretation": "MAE measures absolute accuracy across heterogeneous metrics, while Pearson correlation assesses whether predictions preserve the relative ordering of tasks/configurations.",
+    "baseline_results": "MAE of 14.0 achieved with GPT-5 with search retrieval.",
+    "validation": "The method is validated through calibration tests and comparison with human predictions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

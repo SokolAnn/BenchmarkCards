@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MedQA-CS (Medical Question Answering Clinical Skills)",
+    "abbreviation": "MedQA-CS",
+    "overview": "MedQA-CS is an AI-SCE (AI-Structured Clinical Examination) framework designed to assess large language models' clinical skills through realistic medical scenarios, focusing on instruction-following abilities that reflect actual clinical situations.",
+    "data_type": "instruction-following tasks",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MedQA",
+      "MMLU (Massive Multitask Language Understanding)"
+    ],
+    "resources": [
+      "https://github.com/bio-nlp/MedQA-CS",
+      "https://huggingface.co/datasets/bio-nlp-umass/MedQA-CS-Student",
+      "https://huggingface.co/datasets/bio-nlp-umass/MedQA-CS-Exam"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate large language models' clinical skills using a structured examination framework akin to OSCE (Objective Structured Clinical Examinations).",
+    "audience": [
+      "ML Researchers",
+      "Healthcare Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Information Gathering",
+      "Physical Examination",
+      "Closure",
+      "Differential Diagnosis"
+    ],
+    "limitations": "The benchmark relies on data derived from the USMLE Step 2 CS, which may not cover all clinical areas comprehensively; furthermore, the dataset is available only in English and based solely on text inputs.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Publicly available resources from the USMLE guidelines",
+    "size": "1,667 (instruction, input, output) data points",
+    "format": "JSON",
+    "annotation": "Expert annotations and evaluations were performed in collaboration with medical professionals."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "UMLS-F1"
+    ],
+    "calculation": "Metrics are calculated based on comparing LLM outputs against expert-assigned scores and ground truth definitions.",
+    "interpretation": "Higher LLM scores indicate better alignment with expert evaluations and better performance in clinical skills assessments, while lower scores point to areas needing improvement.",
+    "baseline_results": "The average scores reported for various LLMs using MedQA-CS based on expert evaluations range from 62.35 (Claude-3.5-Sonnet) to 48.44 (GPT-3.5).",
+    "validation": "The reliability of MedQA-CS was validated by experts to ensure high correlation between human assessments and model evaluations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis may highlight disparities in clinical skills assessments across different demographic groups, though specific breakdowns are not provided.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Creative Commons BY-NC 4.0 License for dataset usage",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

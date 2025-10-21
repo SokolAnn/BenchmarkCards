@@ -1,0 +1,103 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Event Dependency Relation dataset (EDeR)",
+    "abbreviation": "EDeR",
+    "overview": "A human-annotated dataset that labels when an event is an argument (required or optional) of another event. Constructed from a sample of documents from the OntoNotes dataset and provides refined semantic role-labelled event representations; intended to support automatic classification of event dependency relations and to improve downstream tasks such as semantic role labelling and coreference resolution.",
+    "data_type": "text (event pairs with event dependency relation labels)",
+    "domains": [
+      "Natural Language Processing",
+      "Information Retrieval"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "OntoNotes",
+      "TimeBank",
+      "TB-Dense",
+      "MATRES",
+      "CausalTimeBank",
+      "CiRA",
+      "CNC",
+      "HiEve",
+      "CoNLL-2005",
+      "CoNLL-2009",
+      "CoNLL-2012"
+    ],
+    "resources": [
+      "https://github.com/RichieLee93/EDeR",
+      "https://arxiv.org/abs/2304.01612"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a high-quality human-annotated dataset of event dependency relations (whether one event is a required/optional argument or non-argument/condition of another) and refined event representations, to enable training and evaluation of models for extracting these relations and to improve downstream tasks such as semantic role labelling and coreference resolution.",
+    "audience": [
+      "Natural Language Processing researchers",
+      "Information Retrieval researchers"
+    ],
+    "tasks": [
+      "Relation Extraction",
+      "Semantic Role Labeling",
+      "Coreference Resolution"
+    ],
+    "limitations": "Dataset size is constrained by the annotation method; label distribution is biased with a majority (just over 75%) of event pairs labelled as 'argument'.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Subset of the OntoNotes dataset: 275 sampled documents from seven genres (broadcast news, magazine, newswire, pivot corpus, telephone conversation, broadcast conversation, web data). Candidate event pairs extracted where the predicate of one event is contained in the span of another.",
+    "size": "11,852 annotated event pairs from 275 documents",
+    "format": "N/A",
+    "annotation": "Manual human annotation by trained annotators (English linguistic-major graduate students) using a multi-level qualification-based inspection procedure with quality inspectors and a linguistic expert; annotators selected via screening test (16 annotators selected), iterative inspection and expert review; annotation labels: required argument, optional argument, condition, independent; containing-event refinement performed for non-argument cases."
+  },
+  "methodology": {
+    "methods": [
+      "Heuristic rules-based method",
+      "Fine-tuning pre-trained Transformer models (BERT, RoBERTa, DistilBERT, XLNet, GPT-2)",
+      "Marked-predicate sentence, Event-Event span, Event-Event-SRL, Event-Event-SRL-DEP input styles",
+      "Use of CRFSRL and modified ED-CRFSRL for semantic role labelling experiments",
+      "Use of coref-HGAT for coreference resolution experiments"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "Accuracy",
+      "F1 Score",
+      "ROC_AUC (Area Under ROC Curve)"
+    ],
+    "calculation": "Standard classification evaluation metrics (Precision, Recall, Accuracy) applied for relation extraction; ROC_AUC reported for binary task. Semantic role labelling and coreference resolution evaluated using the official CoNLL-2012 evaluation scripts as stated in the paper.",
+    "interpretation": "Higher ROC_AUC indicates better ranking of positive over negative samples; authors report baseline accuracy up to 82.61% for binary classification and interpret this as the dataset being sufficient to train good predictors. The three-way (required/optional/non-argument) classification is explicitly noted as more challenging, with lower accuracies.",
+    "baseline_results": "Binary argument/non-argument: best accuracy 82.61% (BERT with marked-predicate sentence input). Three-way (required/optional/non-argument): best accuracy 70.79% (RoBERTa with Event-Event-SRL-DEP input). SRL experiment: CRFSRL-O: Precision 77.07 / Recall 81.03 / F1-score 79.00; ED-CRFSRL (G, using EDeR annotations): Precision 76.09 / Recall 78.81 / F1-score 77.43. For refined events only: ED-CRFSRL (G): Precision 88.11 / Recall 69.51 / F1-score 77.71. Coreference resolution (coref-HGAT): OntoNotes Event Reps. (G): Precision 67.73 / Recall 65.41 / F1-score 66.50; EDeR Event Reps. (G): Precision 69.14 / Recall 65.69 / F1-score 67.40.",
+    "validation": "Annotation quality controlled via multi-level qualification-based inspection: quality inspectors (QIs) sampled and re-annotated 40% each stage, linguistic expert sampled 15-25% of QI-inspected cases and provided corrections; annotators required to meet accuracy thresholds (screening >=85%, ongoing agreement >=95%); a random sample of 5% of final annotations was verified with at least 95% found correct. Train/dev/test splits follow initial OntoNotes distributions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

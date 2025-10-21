@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MDD-5k: A New Diagnostic Conversation Dataset for Mental Disorders",
+    "abbreviation": "MDD-5k",
+    "overview": "MDD-5k is the largest Chinese mental disorders diagnosis dataset, consisting of 5000 high-quality long conversations generated through a neuro-symbolic multi-agent framework based on 1000 anonymized patient cases.",
+    "data_type": "dialogue conversations",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "D4",
+      "CPsyCounD"
+    ],
+    "resources": [
+      "https://github.com/lemonsis/MDD-5k"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the benchmark is to facilitate AI applications in mental healthcare through the simulation of diagnostic conversations.",
+    "audience": [
+      "ML Researchers",
+      "Mental Health Professionals"
+    ],
+    "tasks": [
+      "Dialog Generation",
+      "Mental Disorder Diagnosis"
+    ],
+    "limitations": "The dataset primarily addresses a limited range of mental health conditions and may not fully represent the diversity of patient symptoms.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "1000 anonymized patient cases from Shanghai Mental Health Center",
+    "size": "5000 conversations",
+    "format": "N/A",
+    "annotation": "Conversations are labeled with diagnosis results and treatment opinions from professional psychiatrists."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Professionalism",
+      "Communication",
+      "Fluency",
+      "Similarity",
+      "Safety"
+    ],
+    "calculation": "Metrics are calculated based on scores provided by human evaluators.",
+    "interpretation": "Higher scores in evaluation metrics indicate better performance and closer simulation of real diagnostic processes.",
+    "baseline_results": null,
+    "validation": "The dataset quality was validated through comprehensive human evaluation against related datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Privacy",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Exposing personal information"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "65% of patients are female, with a majority aged between 20-40 years.",
+    "harm": "The dataset aims to mitigate risks associated with poor diagnostic conversations in clinical settings."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All patient cases underwent data masking to ensure the privacy of individuals.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Patients were informed their data would be used for research purposes.",
+    "compliance_with_regulations": "The data masking procedures adhere to the Chinese information security guidelines (GB/T 39725-2020)."
+  }
+}

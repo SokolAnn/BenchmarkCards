@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Dialectal Toxicity Dataset",
+    "abbreviation": "N/A",
+    "overview": "We create a multi-dialect dataset through synthetic transformations and human-assisted translations, covering 10 language clusters and 60 varieties, to evaluate LLMs on their ability to assess toxicity across multilingual, dialectal, and LLM-human consistency.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Arabic",
+      "Bengali",
+      "Chinese",
+      "Finnish",
+      "Kurdish",
+      "Norwegian",
+      "Latvian",
+      "Sotho-Tswana",
+      "Common Turkic",
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ToxiGen"
+    ],
+    "resources": [
+      "https://github.com/ffaisal93/dialect_toxicity_llm_judge"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive toxicity evaluation framework for LLMs across dialectal variations.",
+    "audience": [
+      "ML Researchers",
+      "Toxicity detection specialists",
+      "Language model developers"
+    ],
+    "tasks": [
+      "Toxicity Detection"
+    ],
+    "limitations": "Primarily consists of synthetic and machine-translated dialectal varieties, with limited real-world dialectal examples.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Synthetic transformations and human-assisted translations from various dialects and languages.",
+    "size": "Approximately 60 varieties with diverse example counts.",
+    "format": "N/A",
+    "annotation": "Human annotations for toxicity intent combined with synthetic transformations."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "LLM-based evaluation"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Accuracy"
+    ],
+    "calculation": "F1 scores were calculated for model performance across language clusters, while consistency metrics were assessed based on LLM-human agreement.",
+    "interpretation": "Higher accuracy and F1 scores indicate better performance in toxicity detection across dialects.",
+    "baseline_results": "Models evaluated include NeMo, Phi-3, and Aya-23 with comparative F1 scores.",
+    "validation": "Evaluation across diverse dialectal forms with thorough metrics of consistency."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

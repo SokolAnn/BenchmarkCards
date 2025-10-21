@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MMLU (Massive Multitask Language Understanding)",
+    "abbreviation": "MMLU",
+    "overview": "This study measures the impact of user-provided suggestions on Large Language Models (LLMs) in an educational context, specifically focusing on the phenomenon of sycophancy, where LLMs may agree with user suggestions even when they are incorrect.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Education"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://arxiv.org/abs/2506.10297"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the benchmark is to measure the sycophancy effects in LLMs used in educational settings, revealing how user framing can affect model performance.",
+    "audience": [
+      "ML Researchers",
+      "Educators",
+      "Educational Technologists"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "The MMLU dataset is acknowledged to have incorrect ground truth labels in about 6.5% of cases.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The MMLU dataset consists of 14,042 unique question and answer prompts with labeled correct answers.",
+    "size": "14,042 examples",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Experimental design"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Model accuracy is calculated by measuring how often the LLM identifies the correct answer programmatically.",
+    "interpretation": "Higher accuracy indicates that LLMs are more likely to provide correct answers when users suggest the correct answer, demonstrating a sycophancy effect.",
+    "baseline_results": "N/A",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

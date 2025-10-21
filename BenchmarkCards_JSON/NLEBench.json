@@ -1,0 +1,98 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "NLEBench (Norwegian Language Evaluation Benchmark)",
+    "abbreviation": "NLEBench",
+    "overview": "NLEBench is a comprehensive benchmark for evaluating natural language generation capabilities in Norwegian, encompassing various real-world NLP tasks such as translation and human annotation. It serves to assess the capabilities of generative language models (GLMs) in Norwegian, aiming to fill the existing gap in benchmarks for low-resource languages.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Norwegian"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/Smartmedia-AI/NorGLM"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of NLEBench is to evaluate the generative language modeling capabilities specific to the Norwegian language, including tasks designed to probe the system's understanding of Norwegian culture and language nuances.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Text Generation",
+      "Question Answering",
+      "Summarization",
+      "Natural Language Inference"
+    ],
+    "limitations": "While NLEBench is the most comprehensive benchmark for Norwegian, its coverage of applications and downstream tasks remains limited. The scarcity of human-annotated samples and quality control challenges also pose constraints.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset for NLEBench includes existing datasets, machine translations, and manually annotated datasets specifically designed for Norwegian generative language tasks.",
+    "size": "196GB texts",
+    "format": "N/A",
+    "annotation": "Data was manually annotated by native Norwegian speakers, with a focus on maintaining quality through a cross-validation process."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "BLEU",
+      "ROUGE-1",
+      "ROUGE-L",
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics like BLEU and ROUGE are computed based on generated and reference texts to evaluate performance across different tasks.",
+    "interpretation": "Higher scores in BLEU and ROUGE indicate better performance in text generation tasks. Accuracy and F1 Score are interpreted as the measure of correct predictions in classification tasks.",
+    "baseline_results": "NorGPT-3B model achieves the best results across multiple evaluation metrics in conversation tasks; NB-GPT-J-6B outperforms on summarization metrics.",
+    "validation": "Validation procedures included evaluation against human-annotated standards and pre-defined quantitative metrics."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack",
+            "Data poisoning"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The benchmark includes evaluations to assess biases across different demographic categories.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "The resources and code are shared under a CC BY-NC 4.0 license.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "RedRFT",
+    "abbreviation": "N/A",
+    "overview": "RedRFT is a lightweight benchmark designed to simplify and standardize the implementation and evaluation of Reinforcement Fine-Tuning (RFT)-based red teaming methods for Large Language Models (LLMs).",
+    "data_type": "adversarial prompt generation",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "TRL (Transformer Reinforcement Learning)",
+      "OpenRLHF",
+      "RL4LMs"
+    ],
+    "resources": [
+      "https://github.com/x-zheng16/RedRFT.git"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To standardize and advance RFT-based red teaming methodologies for LLMs by providing a unified framework and implementations.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Adversarial Prompt Generation"
+    ],
+    "limitations": "A primary limitation of this work is the lack of experiments on larger target LLMs, such as those with billions of parameters.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Various datasets for initial prompts, including IMDB for text continuation and Alpaca for instruction following.",
+    "size": "50,000 samples for initial prompts",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Reinforcement Learning",
+      "Proximal Policy Optimization"
+    ],
+    "metrics": [
+      "Cumulative Toxicity-Diversity Score",
+      "Toxicity Score",
+      "Diversity Score"
+    ],
+    "calculation": "Metrics are calculated based on the performance of adversarial prompts generated through the red teaming process.",
+    "interpretation": "Lower scores indicate better performance in terms of balanced toxicity and diversity in generated prompts.",
+    "baseline_results": "Compared with five state-of-the-art RFT-based red teaming methods, using the same unified PPO backbone.",
+    "validation": "Performance evaluated through extensive experiments on toxicity and diversity metrics."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on education: plagiarism",
+            "Impact on affected communities"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "The process generates adversarial prompts that could elicit toxic or unsafe responses from target LLMs."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

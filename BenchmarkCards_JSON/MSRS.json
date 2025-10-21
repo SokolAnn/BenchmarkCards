@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MSRS (Multi-Source Retrieval-Augmented Generation)",
+    "abbreviation": "MSRS",
+    "overview": "MSRS introduces two new benchmarks, MSRS-S TORY for narrative synthesis and MSRS-M EET for summarization tasks, designed to evaluate retrieval-augmented generation systems by necessitating the integration of information from multiple sources.",
+    "data_type": "query-summary pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SQuALITY",
+      "QMSum"
+    ],
+    "resources": [
+      "https://github.com/yale-nlp/MSRS"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate retrieval-augmented generation systems by requiring the synthesis of information from multiple complementary documents.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Multi-Document Summarization"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from existing long-context, query-focused summarization datasets including SQuALITY and QMSum.",
+    "size": "1,071 examples for MSRS-S TORY and 436 examples for MSRS-M EET",
+    "format": "JSON",
+    "annotation": "Manual annotation by experts"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "ROUGE",
+      "BERTScore",
+      "G-E VAL"
+    ],
+    "calculation": "Metrics are computed based on the generated summaries compared to ground truth summaries.",
+    "interpretation": "Higher scores indicate better retrieval and generation quality.",
+    "baseline_results": "MSRS-S TORY shows significant improvements with dense retrieval models over sparse models like BM25.",
+    "validation": "Human evaluations found high quality and utility across the datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

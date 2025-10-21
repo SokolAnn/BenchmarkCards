@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ConQRet (Controversial Questions for Argumentation and Retrieval)",
+    "abbreviation": "ConQRet",
+    "overview": "ConQRet is a new benchmark featuring long and complex human-authored arguments on debated topics, grounded in real-world websites, allowing an exhaustive evaluation across retrieval effectiveness, argument quality, and groundedness.",
+    "data_type": "argument pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/emory-irlab/conqret-rag"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enable research on complex, evidence-based argumentation and improve automated evaluation methods for retrieval-augmented argumentation systems.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Argument Quality Evaluation",
+      "Automated Metric Assessment"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "ProCon.org, a debate portal featuring controversial questions with expert-generated pro and con arguments.",
+    "size": "6,500 documents and 98 topics",
+    "format": "JSON",
+    "annotation": "Human annotation for argument quality across multiple dimensions."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "LLM-based evaluation",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Argument Quality",
+      "Context Relevance",
+      "Groundedness"
+    ],
+    "calculation": "Metrics are computed based on correlations with human evaluators and inter-annotator agreement.",
+    "interpretation": "Metrics indicate the effectiveness of retrieval and argument quality across various dimensions.",
+    "baseline_results": "Comparison with previous argumentation frameworks shows improved performance using LLM Judges.",
+    "validation": "Validated using both a prior dataset and the newly introduced ConQRet benchmark."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Potential biases in argument generation",
+      "Misinformation from retrieval sources"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "IMPersona",
+    "abbreviation": "N/A",
+    "overview": "IMPersona is a framework introduced to evaluate language models' capabilities to impersonate specific individuals’ writing styles and personal knowledge. It involves a modified Turing test where participants interact with different IMPersona configurations.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://impersona-website.vercel.app/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate language models’ capabilities in individual-level impersonation based on personal data.",
+    "audience": [
+      "ML Researchers",
+      "AI Safety Researchers"
+    ],
+    "tasks": [
+      "Natural Language Understanding",
+      "Dialogue Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Messaging data from volunteers who provided consent.",
+    "size": "13,000 examples",
+    "format": "N/A",
+    "annotation": "Manual annotation based on conversational exchanges and evaluations."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Blind conversation tests",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Pass Rate",
+      "Humanness Score"
+    ],
+    "calculation": "Calculated as the percentage of conversations where the AI is identified as human and rated on a scale of 1-7.",
+    "interpretation": "A higher pass rate and humanness score indicate better impersonation capabilities.",
+    "baseline_results": "Best configuration achieved a 44.44% pass rate compared to 25.00% for the best prompting-based approach.",
+    "validation": "Tested through interactions with human participants familiar with the impersonated individuals."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Fairness",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data",
+            "Data privacy rights alignment"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential for misuse in social engineering and identity theft through realistic impersonation."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Maintained through explicit consent from all participants, with control over their data.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Data collection proceeded with explicit permission from all parties involved.",
+    "compliance_with_regulations": "Conducted under full Institutional Review Board (IRB) approval."
+  }
+}

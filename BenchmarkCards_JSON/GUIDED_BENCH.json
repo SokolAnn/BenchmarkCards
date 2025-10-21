@@ -1,0 +1,80 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "GUIDED BENCH",
+    "abbreviation": "N/A",
+    "overview": "GUIDED BENCH is a benchmark comprising a curated harmful question dataset and a case-by-case evaluation framework (GUIDED EVAL) for accurately measuring the effectiveness of jailbreak methods in large language models (LLMs). It aims to address discrepancies in existing evaluation paradigms.",
+    "data_type": "harmful question dataset",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://sproutnan.github.io/AI-Safety_Benchmark/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a more accurate and nuanced evaluation system for jailbreak methods targeting LLMs, helping researchers uncover vulnerabilities and improve safety protocols.",
+    "audience": [
+      "ML Researchers",
+      "AI Safety Practitioners"
+    ],
+    "tasks": [
+      "Jailbreak Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated from multiple existing datasets including StrongREJECT, HarmBench, and ForbiddenQuestionSet, along with new cases created specifically for this benchmark.",
+    "size": "200 harmful question instances",
+    "format": "JSON",
+    "annotation": "Manual annotation by experts"
+  },
+  "methodology": {
+    "methods": [
+      "Guideline-based evaluation",
+      "LLM-as-a-judge evaluations"
+    ],
+    "metrics": [
+      "Attack Success Rate (ASR)"
+    ],
+    "calculation": "The percentage of scoring points fulfilled in guideline-defined evaluations is calculated as the ASR.",
+    "interpretation": "Higher ASR indicates better effectiveness of the jailbreak methods evaluated against the established guidelines.",
+    "baseline_results": "N/A",
+    "validation": "Evaluation of jailbreak methods based on comparative ASR across different victim LLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

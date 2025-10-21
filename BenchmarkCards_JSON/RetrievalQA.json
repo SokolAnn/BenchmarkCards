@@ -1,0 +1,68 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "RetrievalQA",
+    "abbreviation": "N/A",
+    "overview": "RetrievalQA is a benchmark comprising 1,271 short-form questions designed to assess adaptive retrieval-augmented generation (ARAG) methods for open-domain question answering, focusing on new world and long-tail knowledge.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/hyintell/RetrievalQA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess the effectiveness of ARAG methods in open-domain question answering by ensuring questions cannot be answered using LLMs' parametric knowledge.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "The dataset primarily focuses on short-form QA and does not assess long-form generation tasks.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from RealTimeQA, FreshQA, ToolQA, PopQA, and TriviaQA datasets.",
+    "size": "1,271 questions",
+    "format": "N/A",
+    "annotation": "Questions filtered to ensure they cannot be answered without retrieval."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Retrieval accuracy",
+      "Match accuracy"
+    ],
+    "calculation": "Match accuracy measures if gold answers are included in the model predictions.",
+    "interpretation": "Higher retrieval accuracy indicates more effective methods.",
+    "baseline_results": null,
+    "validation": "Evaluated using various sizes of language models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All data is obtained from publicly available sources with no personally identifiable information.",
+    "data_licensing": "Data constructed using datasets that comply with licensing agreements.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "Aligned with institutional, national, and global ethical standards."
+  }
+}

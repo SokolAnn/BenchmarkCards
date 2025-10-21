@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CounselBench",
+    "abbreviation": "N/A",
+    "overview": "CounselBench is a large-scale benchmark developed to evaluate and stress-test large language models in realistic help-seeking mental health scenarios, consisting of two main components: COUNSEL-BENCH-EVAL with expert evaluations of answers and COUNSEL-BENCH-ADV for adversarial testing.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Healthcare",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MedQA",
+      "MedMCQA"
+    ],
+    "resources": [
+      "https://github.com/llm-eval-mental-health/CounselBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a clinically grounded framework for benchmarking large language models in the context of mental health question answering.",
+    "audience": [
+      "ML Researchers",
+      "Mental Health Professionals",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Open-ended Question Answering",
+      "Expert Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Questions sourced from the public forum CounselChat and evaluated by licensed mental health professionals.",
+    "size": "2,000 evaluations",
+    "format": "N/A",
+    "annotation": "100 licensed mental health professionals provided evaluations, span-level annotations, and written rationales."
+  },
+  "methodology": {
+    "methods": [
+      "Expert evaluation",
+      "Adversarial testing"
+    ],
+    "metrics": [
+      "Overall Quality",
+      "Empathy",
+      "Specificity",
+      "Medical Advice",
+      "Factual Consistency",
+      "Toxicity"
+    ],
+    "calculation": "Metrics were calculated based on expert ratings on a 5-point or 4-point Likert scale, with specific categorizations for Medical Advice.",
+    "interpretation": "Higher scores indicate better performance in providing appropriate, empathetic, and informative responses to mental health queries.",
+    "baseline_results": "N/A",
+    "validation": "Expert evaluations were conducted by 100 licensed professionals across diverse mental health disciplines to ensure reliability."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential harm from unauthorized medical advice, overgeneralization, and lack of empathy in responses."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data collected from CounselChat was anonymized, and identifiers were removed prior to analysis.",
+    "data_licensing": "All data is sourced from MIT-licensed CounselChat dataset.",
+    "consent_procedures": "Human annotators provided informed consent for participation and data release.",
+    "compliance_with_regulations": "The study was approved as exempt by the Institutional Review Board of the University of Southern California."
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PANDA – Paired Anti-hate Narratives Dataset from Asia: Using an LLM-as-a-Judge to Create the First Chinese Counterspeech Dataset",
+    "abbreviation": "PANDA",
+    "overview": "This paper introduces a corpus of Modern Standard Mandarin counterspeech that targets hate speech in Mainland China, providing the first Chinese counterspeech dataset designed for combating hate speech online.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "COLD",
+      "SWSR",
+      "CHSD"
+    ],
+    "resources": [
+      "https://github.com/michaelbennieUFL/PANDA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To create a paired hate-speech–counterspeech corpus in Mandarin Chinese and assess the effectiveness of generated counterspeech in responding to hate speech.",
+    "audience": [
+      "ML Researchers",
+      "NLP Practitioners",
+      "Social Media Analysts"
+    ],
+    "tasks": [
+      "Counterspeech Generation",
+      "Hate Speech Detection"
+    ],
+    "limitations": "The dataset is limited in scale and further data collection is needed to validate the pipeline.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The data is sourced from open-source hate speech datasets, including COLD, SWSR, and CHSD.",
+    "size": "12,000 HS–CS pairs",
+    "format": "JSON",
+    "annotation": "Manual annotation by trained annotators to identify hate speech and counterspeech."
+  },
+  "methodology": {
+    "methods": [
+      "LLM-based evaluation",
+      "Simulated annealing for response generation",
+      "Human annotation"
+    ],
+    "metrics": [
+      "JudgeLM",
+      "BLEU",
+      "ROUGE-L",
+      "BERTScore"
+    ],
+    "calculation": "Metrics are calculated based on token similarities, sentence structure, and human feedback.",
+    "interpretation": "Higher scoring indicates better relevance and effectiveness of counterspeech responses.",
+    "baseline_results": null,
+    "validation": "Validation through human annotation and LLM-based ranking processes."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All data sourced from publicly available datasets; no personal or sensitive information was collected.",
+    "data_licensing": "The dataset is released under a GPL license, allowing for free usage.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

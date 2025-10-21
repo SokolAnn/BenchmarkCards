@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Sycophancy under Pressure: Evaluating and Mitigating Sycophantic Bias via Adversarial Dialogues in Scientific QA",
+    "abbreviation": "N/A",
+    "overview": "This paper introduces a unified evaluation framework to quantify the impact of sycophantic context on model behavior in scientific question answering, measuring how much user-imposed social pressure distorts model outputs.",
+    "data_type": "multiple-choice question answering",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ARC-Challenge",
+      "GPQA-Diamond"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2508.13743"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To systematically investigate sycophantic behavior in large language models within the context of scientific question answering and to propose an evaluation framework and method for mitigation.",
+    "audience": [
+      "ML Researchers",
+      "AI Practitioners"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The training data was constructed from the ARC-Challenge training set, augmented with synthetic dialogues demonstrating user-induced pressure.",
+    "size": "11,190 dialogue instances",
+    "format": "N/A",
+    "annotation": "Synthetic adversarial dialogues prompted for factual reasoning"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Misleading Resistance Rate",
+      "Sycophancy Resistance Rate"
+    ],
+    "calculation": "Metrics are calculated based on model's accuracy under direct misleading conditions and the proportion of correct rejections of misleading cues.",
+    "interpretation": "A higher Sycophancy Resistance Rate indicates a stronger ability to resist user-imposed distortion.",
+    "baseline_results": "Not specified.",
+    "validation": "Evaluation conducted on ARC-Challenge and GPQA-Diamond datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy",
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Reinforcing misinformation",
+      "Misleading users"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "GSR-B ENCH (Grounded Spatial Reasoning Benchmark)",
+    "abbreviation": "GSR-B ENCH",
+    "overview": "A novel comprehensive evaluation for spatial relationship understanding that highlights the strengths and weaknesses of Multimodal LLMs, extending the What’sUp dataset with additional annotations.",
+    "data_type": "image-text pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "What’sUp",
+      "MMBench"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2406.13246"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a carefully curated benchmark for spatial relationship understanding evaluation in a controlled setting.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Spatial Relationship Understanding",
+      "Image-Text Matching"
+    ],
+    "limitations": "The dataset is smaller than existing benchmarks related to spatial reasoning and confined to basic spatial clauses.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Extended What’sUp dataset with additional annotations.",
+    "size": "4,958 images",
+    "format": "N/A",
+    "annotation": "Annotated with bounding box coordinates, segmentation masks, and depth maps."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "Template-based generation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Intersection over Union (IoU)"
+    ],
+    "calculation": "Metrics calculated using CircularEval and IoU thresholds for localization accuracy.",
+    "interpretation": "A prediction is considered correct if it meets the accuracy or IoU criteria specified.",
+    "baseline_results": null,
+    "validation": "The benchmark was validated through comparisons with existing VLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "WOMD-Reasoning (Waymo OpenMotion Dataset-Reasoning)",
+    "abbreviation": "WOMD-Reasoning",
+    "overview": "WOMD-Reasoning is a comprehensive large-scale Q&As dataset built on WOMD focusing on describing and reasoning traffic rule-induced interactions in driving scenarios. It presents the largest multi-modal Q&A dataset, with 3 million Q&As on real-world driving scenarios.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "BDD-X",
+      "DriveLM",
+      "nuScenes-QA"
+    ],
+    "resources": [
+      "https://waymo.com/open/download/",
+      "https://github.com/yhli123/WOMD-Reasoning"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of WOMD-Reasoning is to provide a detailed dataset for interaction reasoning in driving, focusing on traffic rule-induced interactions and human intentions.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Interaction Reasoning",
+      "Scene Description",
+      "Motion Prediction",
+      "Traffic Rule Compliance Planning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "WOMD (Waymo Open Motion Dataset)",
+    "size": "3,000,000 Q&As",
+    "format": "JSON",
+    "annotation": "Automated data curation using GPT-4 and rule-based translations."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "ROUGE",
+      "BLEU",
+      "METEOR",
+      "CIDEr",
+      "SPICE",
+      "GPT Score"
+    ],
+    "calculation": "Metrics are calculated based on the generated answers to the questions in the WOMD-Reasoning dataset.",
+    "interpretation": "High scores in metrics indicate good performance in answering driving-related questions accurately.",
+    "baseline_results": "Fine-tuned Multi-modal models showed improvement over baseline models in performance across various metrics.",
+    "validation": "Human evaluation confirmed an accuracy of approximately 91.99% across interaction analysis."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Privacy",
+      "Robustness",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

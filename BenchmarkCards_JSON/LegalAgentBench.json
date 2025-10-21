@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LegalAgentBench",
+    "abbreviation": "N/A",
+    "overview": "LegalAgentBench is a comprehensive benchmark specifically designed to evaluate LLM agents in the Chinese legal domain, including 17 corpora from real-world legal scenarios and providing 37 tools for interaction with external knowledge. It evaluates complex legal tasks through a scalable task construction framework and fine-grained metrics.",
+    "data_type": "text",
+    "domains": [
+      "Legal"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "AgentBench",
+      "ToolBench"
+    ],
+    "resources": [
+      "https://github.com/CSHaitao/LegalAgentBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the performance of LLM agents in the legal domain.",
+    "audience": [
+      "Legal Professionals",
+      "ML Researchers"
+    ],
+    "tasks": [
+      "Multi-hop Reasoning",
+      "Legal Research",
+      "Contract Drafting"
+    ],
+    "limitations": "The current dataset is primarily constructed in Chinese, which limits its applicability in broader multilingual contexts.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Real-world legal scenarios including court information, law firms, and legal documents.",
+    "size": "300 tasks",
+    "format": "N/A",
+    "annotation": "Human-verified for accuracy and relevance."
+  },
+  "methodology": {
+    "methods": [
+      "Plan-and-Solve",
+      "Plan-and-Execute",
+      "ReAct"
+    ],
+    "metrics": [
+      "Success Rate",
+      "Process Rate",
+      "BERT-Score"
+    ],
+    "calculation": "Success Rate is calculated based on keyword matching between generated answers and reference answers. Process Rate incorporates intermediate keywords.",
+    "interpretation": "Higher success and process rates indicate better performance of LLM agents in handling legal tasks.",
+    "baseline_results": "Various LLMs including GLM-4, GPT-4o achieved varying success rates across tasks.",
+    "validation": "Tasks are validated through human verification of correctness and appropriateness."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All data has undergone privacy screening and anonymization processes.",
+    "data_licensing": "MIT License.",
+    "consent_procedures": "All data used complies with legal and ethical standards.",
+    "compliance_with_regulations": "N/A"
+  }
+}

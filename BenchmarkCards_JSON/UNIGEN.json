@@ -1,0 +1,76 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "UNIGEN (Universal Domain Generalization)",
+    "abbreviation": "UNIGEN",
+    "overview": "UNIGEN proposes a method for universal domain generalization using zero-shot dataset generation to create a domain-invariant training dataset, allowing small task-specific models to generalize across various domains.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/c-juhwan/unigen"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To achieve universal domain generalization for sentiment classification without the need for labeled data from multiple domains.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Sentiment Analysis",
+      "Text Classification"
+    ],
+    "limitations": "The primary limitation of UNIGEN is its relatively weaker in-domain performance than those of baselines trained with domain-specific datasets.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated using a pre-trained language model and a universal prompt.",
+    "size": "1,000,000 examples",
+    "format": "CSV",
+    "annotation": "Automatically generated with pseudo-labels."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on the average performance results across different random seeds.",
+    "interpretation": "Higher scores indicate better performance of the Task-specific models trained using UNIGEN compared to baseline models.",
+    "baseline_results": "UNIGEN's TAM significantly outperformed baseline models that use domain-specific training.",
+    "validation": "Results were validated through extensive experiments on multiple sentiment classification datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The generated data may contain biased sentences, reflecting the potential biases of the pre-trained language models.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

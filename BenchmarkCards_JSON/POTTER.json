@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TemplateCSR (Template Filling for Controllable Commonsense Reasoning)",
+    "abbreviation": "POTTER",
+    "overview": "We propose a dataset of commonsense reasoning template-expansion pairs and introduce POTTER, a pretrained sequence-to-sequence model to perform commonsense reasoning across concepts via template filling.",
+    "data_type": "template-expansion pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "commonsenseqa"
+    ],
+    "resources": [
+      "https://www.mturk.com",
+      "https://www.cdc.gov",
+      "https://www.webmd.com",
+      "https://www.healthline.com",
+      "https://www.mayoclinic.org"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enhance commonsense reasoning capabilities of NLP systems through controllable reasoning via templates.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Commonsense Reasoning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Crowdsourced via Amazon Mechanical Turk, based on commonsense reasoning related to lifestyle and health.",
+    "size": "3,600 unique template-expansion pairs",
+    "format": "N/A",
+    "annotation": "Collected with a filtering step for quality and correctness, ensuring factual information and no identifying details."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "ROUGE",
+      "BERTSCORE",
+      "FACTCC"
+    ],
+    "calculation": "Standard evaluation metrics were computed comparing generated expansions against gold annotations.",
+    "interpretation": "Higher ROUGE and BERTSCORE indicate better generation quality, while FACTCC measures factual consistency.",
+    "baseline_results": "BART-LARGE POTTER achieved a ROUGE-1 score of 20.58.",
+    "validation": "70/10/20 train/val/test split was used for model evaluation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

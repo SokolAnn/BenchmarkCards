@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ZOGRASCOPE",
+    "abbreviation": "N/A",
+    "overview": "ZOGRASCOPE is a benchmark designed specifically for property graphs and queries written in Cypher, including a diverse set of manually annotated queries of varying complexity, organized into three partitions: iid, compositional, and length.",
+    "data_type": "question-Cypher query pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "N/A"
+    ],
+    "resources": [
+      "https://github.com/interact-erc/ZOGRASCOPE"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a resource for advancing research in semantic parsing over property graphs and to evaluate the performance of semantic parsers.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Semantic Parsing"
+    ],
+    "limitations": "The dataset does not currently include complex query patterns such as nested sub-queries.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Built from an open-access crime investigation graph using Cypher queries.",
+    "size": "5,000 samples",
+    "format": "N/A",
+    "annotation": "Each example is manually annotated by experts."
+  },
+  "methodology": {
+    "methods": [
+      "Fine-tuning",
+      "In-context learning (dynamic and fixed)",
+      "Zero-shot evaluation"
+    ],
+    "metrics": [
+      "Execution accuracy"
+    ],
+    "calculation": "A prediction is deemed correct if it yields identical results to the reference query when executed on the knowledge graph.",
+    "interpretation": "Performance improves as more supervision is provided; zero-shot setting performs poorly but accuracy improves with added examples.",
+    "baseline_results": "Fine-tuning achieved the best performance for each of the models tested.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Sensitive information has been removed and replaced with fictitious content.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

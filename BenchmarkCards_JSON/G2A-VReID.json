@@ -1,0 +1,80 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "G2A-VReID (Ground-to-Aerial Video Re-Identification)",
+    "abbreviation": "G2A-VReID",
+    "overview": "The G2A-VReID dataset consists of 185,907 images and 5,576 tracklets capturing 2,788 distinct identities for the task of cross-platform video-based person re-identification.",
+    "data_type": "image",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "N/A"
+    ],
+    "similar_benchmarks": [
+      "MARS",
+      "iLIDS",
+      "PRID-2011"
+    ],
+    "resources": [
+      "https://github.com/FHR-L/G2A-VReID"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To construct a large-scale benchmark dataset for cross-platform video person ReID and propose methods for solving visual alignment problems.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Video-based Person Re-Identification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Captured using UAVs and ground surveillance cameras at different heights and modes.",
+    "size": "185,907 images, 5,576 tracklets",
+    "format": "N/A",
+    "annotation": "Annotated with boundary boxes and unique IDs for each person."
+  },
+  "methodology": {
+    "methods": [
+      "Evaluated using Cumulative Matching Characteristic (CMC) and mean Average Precision (mAP)"
+    ],
+    "metrics": [
+      "mAP",
+      "Rank-1"
+    ],
+    "calculation": "Metrics calculated based on query and gallery video sequences.",
+    "interpretation": "Higher mAP and Rank-1 values indicate better performance in video person re-identification.",
+    "baseline_results": "N/A",
+    "validation": "Extensive experiments conducted on existing video ReID datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Privacy risks due to the visibility of individuals in captured videos."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Facial information is masked with mosaic to protect privacy.",
+    "data_licensing": "Licensed for non-profit academic research only.",
+    "consent_procedures": "Notification placed near data collection areas.",
+    "compliance_with_regulations": "N/A"
+  }
+}

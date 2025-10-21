@@ -1,0 +1,72 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "VISCO (Visual Self-Critique and Correction)",
+    "abbreviation": "VISCO",
+    "overview": "VISCO is the first benchmark that evaluates the fine-grained critique and correction capabilities of large vision-language models (LVLMs), focusing on their ability to self-improve through critique.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://visco-benchmark.github.io/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To analyze and improve the self-improvement capabilities of LVLMs through critique and correction.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Critique Generation",
+      "Answer Correction"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated from 18 datasets across 8 tasks involving reasoning and perception.",
+    "size": "1,645 question-answering pairs with 5,604 annotations",
+    "format": "JSON",
+    "annotation": "Dense annotations performed by expert human annotators."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "VISCore",
+      "F1 Score"
+    ],
+    "calculation": "VISCore is calculated as the geometric mean of F1 scores for answer, step, and explanation critiques.",
+    "interpretation": "Higher VISCore indicates better performance in critique and correction capabilities.",
+    "baseline_results": "N/A",
+    "validation": "Models evaluated on a variety of tasks with metric correlation against human evaluations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

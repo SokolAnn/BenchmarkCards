@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DELUCION QA",
+    "abbreviation": "N/A",
+    "overview": "DELUCION QA is a large dataset for facilitating research on hallucination detection in retrieval-augmented question-answering (QA) systems, specifically targeting domain-specific scenarios requiring high reliability.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/boschresearch/DelucionQA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To facilitate research on hallucination detection in retrieval-augmented question-answering systems.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated from the Jeep 2023 Gladiator car manual using automated question generation and human annotation.",
+    "size": "2,038 examples",
+    "format": "N/A",
+    "annotation": "Annotated by human annotators through a process involving majority voting and expert review."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Macro F1 Score",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "Macro F1 is calculated based on agreement between annotations and expert reviews.",
+    "interpretation": "A higher F1 score indicates better performance in detecting hallucinations.",
+    "baseline_results": "The best-performing baseline achieves a Macro F1 of 71.09% on the test set.",
+    "validation": "Data is split into training, development, and test sets based on unique questions to avoid leakage."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FNSPID (Financial News and Stock Price Integration Dataset)",
+    "abbreviation": "FNSPID",
+    "overview": "FNSPID is a comprehensive financial dataset that consists of 29.7 million stock prices and 15.7 million time-aligned financial news records for 4,775 S&P500 companies from the period 1999 to 2023. It uniquely integrates sentiment information with numerical stock price data to enhance market prediction capabilities.",
+    "data_type": "time-series",
+    "domains": [
+      "Finance"
+    ],
+    "languages": [
+      "English",
+      "Russian"
+    ],
+    "similar_benchmarks": [
+      "Benzinga financial news dataset",
+      "Bloomberg financial news dataset",
+      "Reuters financial news dataset"
+    ],
+    "resources": [
+      "https://github.com/Zdong104/FNSPID"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive resource for financial market prediction models by integrating sentiment and numerical data.",
+    "audience": [
+      "Financial Researchers",
+      "Data Scientists",
+      "Machine Learning Practitioners"
+    ],
+    "tasks": [
+      "Stock Price Prediction",
+      "Sentiment Analysis"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from four different stock market news websites and Yahoo Finance's API.",
+    "size": "30GB",
+    "format": "CSV",
+    "annotation": "Sentiment scores generated using ChatGPT and traditional sentiment analysis methods."
+  },
+  "methodology": {
+    "methods": [
+      "Machine Learning",
+      "Sentiment Analysis",
+      "Data Integration"
+    ],
+    "metrics": [
+      "Accuracy",
+      "R2 Score"
+    ],
+    "calculation": "Metrics are calculated based on model performance against stock price predictions.",
+    "interpretation": "Higher R2 values indicate better model performance in predicting stock prices.",
+    "baseline_results": "Transformer model achieved an R2 score of 0.988.",
+    "validation": "Dataset was validated through experiments comparing various ML models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Maintained compliance with GDPR and CCPA regulations; implemented anonymization techniques.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Data collected from publicly available news content.",
+    "compliance_with_regulations": "The data collection adhered to ethical standards and website policies."
+  }
+}

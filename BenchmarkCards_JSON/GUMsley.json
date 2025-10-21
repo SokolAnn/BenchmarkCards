@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "GUMsley",
+    "abbreviation": "N/A",
+    "overview": "GUMsley is the first entity salience dataset covering all named and non-named salient entities for 12 genres of English text, aligned with entity types, Wikification links, and full coreference resolution annotations.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "UD English GUM corpus"
+    ],
+    "resources": [
+      "https://github.com/user/repo"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate entity salience in summarization across various English genres and assist in improving entity-aware summarization methods.",
+    "audience": [
+      "ML Researchers",
+      "NLP Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Entity Salience Extraction",
+      "Text Summarization"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "GUM (Georgetown University Multilayer corpus)",
+    "size": "57,359 mentions across 213 documents",
+    "format": "N/A",
+    "annotation": "Manually annotated by trained experts with entity salience labels."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score",
+      "ROUGE-1",
+      "ROUGE-2",
+      "ROUGE-L",
+      "BERTScore"
+    ],
+    "calculation": "Metrics were calculated based on overlap between generated summaries and reference summaries.",
+    "interpretation": "Higher scores in metrics indicate better performance in capturing salient entities and summarization quality.",
+    "baseline_results": "BRIO, CTRLSum, and GPT-4 models were evaluated against the GUMsley dataset.",
+    "validation": "Evaluation combines qualitative and quantitative analyses of summary quality and entity capture."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

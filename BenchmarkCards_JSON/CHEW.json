@@ -1,0 +1,79 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CHEW (CHanging Events in Wikipedia)",
+    "abbreviation": "CHEW",
+    "overview": "CHEW is a dataset of changing events in Wikipedia, designed to probe language models' timeline understanding of Wikipedia entities and events and assess their capabilities in generating accurate timelines and identifying meaning shifts.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "TemporalWiki"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To contribute to research in continual learning, temporal alignment, and LLMs' ability to understand temporal information.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Change Detection",
+      "Timeline Generation"
+    ],
+    "limitations": "Our work does not extensively evaluate a wider range of LLMs.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Wikipedia articles with temporal question-answer pairs.",
+    "size": "4,281 examples",
+    "format": "CSV",
+    "annotation": "Pairs are derived from manual curation of Wikipedia changes."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metric scores calculated by comparing model outputs with ground truth using SBERT cosine similarity.",
+    "interpretation": "Higher similarity scores indicate better model performance in understanding timelines.",
+    "baseline_results": null,
+    "validation": "Models were trained on specific splits of the dataset including Random, No overlap, Time-forward, and Time-reversed."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Transparency"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

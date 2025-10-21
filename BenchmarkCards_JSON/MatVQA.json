@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MatVQA (Multimodal Visual Question Answering for Materials Science)",
+    "abbreviation": "MatVQA",
+    "overview": "MatVQA is a benchmark designed to evaluate research-level multimodal reasoning in materials science. It includes 1325 multiple-choice questions across four critical structure-property-performance reasoning tasks, leveraging visual and textual evidence.",
+    "data_type": "visual question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Materials Science"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MaScQA",
+      "SciQA",
+      "MSE-MCQs",
+      "MicroVQA"
+    ],
+    "resources": [
+      "https://anonymous.4open.science/r/matvqa-1E01/README.md"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a challenging and relevant evaluation standard for measuring MLLM capabilities in performing structured scientific reasoning and visual interpretation.",
+    "audience": [
+      "ML Researchers",
+      "Materials Scientists",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Causal SPP",
+      "Comparative SPP",
+      "Quantitative SPP",
+      "Hypothetical Variation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated from recent materials literature using MArxivAgent, an automated pipeline that extracts reasoning paths from arXiv materials-science articles.",
+    "size": "1,325 examples",
+    "format": "Multiple-choice questions",
+    "annotation": "Random 20% of questions vetted by domain experts to ensure accuracy."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Expert evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Metrics are calculated based on the proportion of correctly answered questions by models tested against the benchmark.",
+    "interpretation": "Higher accuracy indicates better performance in multimodal reasoning and visual question answering.",
+    "baseline_results": "N/A",
+    "validation": "20% of the generated MCQs are randomly reviewed by domain experts for reliability."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

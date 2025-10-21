@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Self-Execution Benchmark",
+    "abbreviation": "N/A",
+    "overview": "The Self-Execution Benchmark measures a model’s ability to anticipate properties of its output, such as whether a question will be difficult for it, whether it will refuse to answer, or what kinds of associations it is likely to produce.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMLU (Massive Multitask Language Understanding)",
+      "SAD (Situational Awareness Dataset)"
+    ],
+    "resources": [
+      "https://github.com/anon-researcher-2025/Self-Execution-Benchmark"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate large language models (LLMs) on their ability to reason about their own outputs.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Self-Execution Prediction",
+      "Associative Awareness",
+      "Restriction Recognition",
+      "Difficulty Assessment"
+    ],
+    "limitations": "The evaluation is confined to a fixed set of tasks, which may not fully capture the breadth of self-executive reasoning across all potential use cases or domains.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Self-Execution Benchmark dataset",
+    "size": "10,000 examples",
+    "format": "JSON",
+    "annotation": "Manually generated examples"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "Accuracy is defined as the percentage of correct model predictions out of the total number of samples.",
+    "interpretation": "A correct response occurs when a model accurately predicts properties about its responses; a baseline of 50% guessing is used for comparison.",
+    "baseline_results": null,
+    "validation": "Experiments evaluated the performance of LLMs across multiple associated tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Decision bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis of demographic factors was not conducted.",
+    "harm": "The benchmark aims to avoid unintended modeling outcomes by focusing on introspective reasoning capabilities."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All experiments were conducted using publicly available data, with no sensitive or personally identifying information.",
+    "data_licensing": "Apache 2.0 License",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

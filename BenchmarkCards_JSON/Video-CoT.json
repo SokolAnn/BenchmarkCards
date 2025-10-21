@@ -1,0 +1,77 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Video-CoT (Video Chain-of-Thought)",
+    "abbreviation": "Video-CoT",
+    "overview": "Video-CoT is a comprehensive dataset designed to enhance spatiotemporal understanding using Chain-of-Thought methodologies, containing 192,000 fine-grained spatiotemporal question-answer pairs and 23,000 high-quality CoT-annotated samples.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://video-cot.github.io/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the Video-CoT benchmark is to support research and advancements in understanding complex spatiotemporal relationships in videos using Chain-of-Thought methodologies.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Temporal Video Localization",
+      "Video Captioning",
+      "Spatial Video Grounding",
+      "Spatio-Temporal Video Grounding",
+      "Spatial Relationship Reference",
+      "Temporal Video Reference"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The Video-CoT dataset is constructed from publicly available datasets such as VTimeLLM, MSR-VTT, MSVD, and WebVid, with additional annotations from HCSTVG-V1 and VidSTG.",
+    "size": "192,000 question-answering pairs",
+    "format": "N/A",
+    "annotation": "Annotated using Chain-of-Thought methodologies, ensuring high-quality reasoning chains."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "temporal Intersection over Union (tIoU)",
+      "MENTOR",
+      "Exact Match (EM)",
+      "spatial Intersection over Union (sIoU)"
+    ],
+    "calculation": "Metrics are calculated based on the accuracy of localization, relevance of generated captions, and alignment of predicted spatial relationships with ground truth labels.",
+    "interpretation": "Higher tIoU and sIoU values indicate better temporal and spatial localization performance.",
+    "baseline_results": "The baseline model tested is Qwen2.5-VL, with improvements shown in both Answer-Supervised Fine-Tuning and Chain-of-Thought-Supervised Fine-Tuning methods compared to the baseline.",
+    "validation": "The benchmark includes distinct evaluation datasets that ensure unbiased performance assessment across various spatiotemporal reasoning tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

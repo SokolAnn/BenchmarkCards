@@ -1,0 +1,100 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "HalluDetect: Detecting, Mitigating, and Benchmarking Hallucinations in Conversational Systems",
+    "abbreviation": "N/A",
+    "overview": "HalluDetect is an LLM-based hallucination detection system that optimizes the performance of consumer grievance chatbots by benchmarking various architectures to mitigate hallucinations in their outputs, helping enhance the trustworthiness of AI assistants in high-risk domains.",
+    "data_type": "dialogue instances",
+    "domains": [
+      "Natural Language Processing",
+      "Legal"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "HHEM v2",
+      "LettuceDetect"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2509.11619"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of HalluDetect is to provide a scalable framework for hallucination detection and mitigation in consumer grievance chatbots, improving the reliability of AI-driven legal assistance tools.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Legal Experts",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Hallucination Detection",
+      "Text Generation",
+      "Dialogue Management"
+    ],
+    "limitations": "The effectiveness of HalluDetect has not been empirically validated across all potential domains; current evaluations are focused on legal and consumer grievance contexts.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "DetectorEval dataset consisting of 115 dialogue instances between chatbots and legal experts.",
+    "size": "115 chat instances",
+    "format": "JSON",
+    "annotation": "Annotated for hallucination detection by human annotators."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "Metrics are calculated based on detected hallucinations in multi-turn conversations across various chatbot architectures evaluated in the study.",
+    "interpretation": "A higher F1 Score indicates better performance in identifying hallucinations, with precision reflecting the correctness of identified hallucinated instances and recall indicating the thoroughness of detection.",
+    "baseline_results": "HalluDetect outperforms baseline detectors including LettuceDetect and HHEM v2, achieving significant improvements in both precision and recall rates.",
+    "validation": "HalluDetect was validated through extensive human evaluations of detected hallucinations in chatbot conversations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The benchmark includes demographic factors by addressing consumer grievance scenarios relevant in diverse consumer sectors.",
+    "harm": [
+      "Misleading hallucinations affecting user trust in legal guidance."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The datasets used contain synthetic or anonymized dialogues, ensuring no personally identifiable information is present.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

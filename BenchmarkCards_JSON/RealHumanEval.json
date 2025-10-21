@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "RealHumanEval (Evaluating Large Language Models’ Abilities to Support Programmers)",
+    "abbreviation": "RealHumanEval",
+    "overview": "RealHumanEval is a human-centric evaluation platform for large language models (LLMs) designed to assess their effectiveness in assisting programmers through autocomplete suggestions and chat support. It was developed to facilitate user studies evaluating coding performance with LLM assistance, logging user interactions to analyze the impact on productivity.",
+    "data_type": "programming tasks and interactions",
+    "domains": [
+      "Computer Science"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "HumanEval",
+      "MBPP"
+    ],
+    "resources": [
+      "https://github.com/clinicalml/realhumaneval",
+      "https://huggingface.co/datasets/hsseinmz/realhumaneval"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a platform for human-centric evaluations of code-generating large language models (LLMs) and to study their impact on programmer productivity.",
+    "audience": [
+      "ML Researchers",
+      "Software Developers",
+      "Educators"
+    ],
+    "tasks": [
+      "Coding Skills Assessment",
+      "User Productivity Analysis"
+    ],
+    "limitations": "The study's task set does not cover the full range of problems faced by professional programmers, which may limit generalizability.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "User interactions with the RealHumanEval platform during studies involving various code LLMs.",
+    "size": "243 participants, 888 coding tasks",
+    "format": "structured datasets with logs of interactions",
+    "annotation": "User interactions are logged automatically during study participation."
+  },
+  "methodology": {
+    "methods": [
+      "User study"
+    ],
+    "metrics": [
+      "Time to Complete Task",
+      "Number of Tasks Completed",
+      "Acceptance Rate of Suggestions"
+    ],
+    "calculation": "Metrics are calculated using logged interaction data from participants interacting with LLMs during coding tasks.",
+    "interpretation": "A lower time to complete a task indicates higher productivity, while a higher acceptance rate reflects better LLM suggestion quality.",
+    "baseline_results": null,
+    "validation": "Participant performance was analyzed across seven conditions with comparisons made against a control group without LLM support."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": []
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": []
+        },
+        {
+          "category": "Privacy",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The study was approved by institutional IRB review, and participants provided consent to collect interaction data.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Participants provided informed consent and had the option to opt-out.",
+    "compliance_with_regulations": "The study adhered to ethical guidelines for human subjects research."
+  }
+}

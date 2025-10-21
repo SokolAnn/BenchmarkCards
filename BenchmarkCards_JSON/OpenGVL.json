@@ -1,0 +1,73 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "OpenGVL - Benchmarking Visual Temporal Progress for Data Curation",
+    "abbreviation": "OpenGVL",
+    "overview": "OpenGVL is a comprehensive benchmark for estimating task progress across diverse challenging manipulation tasks involving both robotic and human embodiments, aimed at improving data curation in robotics through reliable temporal task completion predictions.",
+    "data_type": "temporal task progress prediction",
+    "domains": [
+      "Robotics"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Agibot-World",
+      "OXE",
+      "Droid"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/OpenGVL"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a standardized framework for benchmarking temporal progress prediction systems in robotics and serve as a tool for data curation.",
+    "audience": [
+      "ML Researchers",
+      "Robotics Practitioners",
+      "Data Scientists"
+    ],
+    "tasks": [
+      "Temporal Task Progress Prediction",
+      "Data Curation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Various robotics datasets including nyu door, berkeley mvp, cmu stretch, and nyu franka",
+    "size": "50 episodes sampled from each dataset",
+    "format": "N/A",
+    "annotation": "Automatically generated using the Value-Order Correlation (VOC) metric"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Value-Order Correlation (VOC)"
+    ],
+    "calculation": "VOC measures the rank correlation between predicted task completion percentages and the ground truth.",
+    "interpretation": "A higher VOC score indicates better alignment between predictions and actual task completion.",
+    "baseline_results": "Comparison to proprietary models shows open-source models achieve approximately 60-70% of the performance.",
+    "validation": "Benchmark validation through hidden datasets to prevent contamination."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

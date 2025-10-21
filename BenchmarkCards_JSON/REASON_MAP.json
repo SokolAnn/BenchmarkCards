@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "REASON MAP",
+    "abbreviation": "N/A",
+    "overview": "REASON MAP is a benchmark designed to evaluate the fine-grained visual understanding and spatial reasoning capabilities of MLLMs using high-resolution transit maps. It encompasses 1,008 human-verified question-answer pairs constructed over transit maps from 30 cities across 13 countries.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English",
+      "Hungarian",
+      "Chinese",
+      "Italian"
+    ],
+    "similar_benchmarks": [
+      "MathVQA",
+      "MathVerse",
+      "VisuLogic"
+    ],
+    "resources": [
+      "https://fscdc.github.io/Reason-Map"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a rigorous evaluation framework for assessing multimodal large language models on fine-grained visual reasoning tasks using transit maps.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Visual Reasoning",
+      "Question Answering"
+    ],
+    "limitations": "The benchmark primarily focuses on high-resolution transit maps and may not generalize to other types of visual reasoning tasks.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "High-resolution transit maps from publicly available online sources covering 30 cities across 13 countries.",
+    "size": "1,008 question-answer pairs",
+    "format": "JSON",
+    "annotation": "Manual annotation with human verification for correctness and quality."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Map Score"
+    ],
+    "calculation": "Accuracy is evaluated based on correct route identification, while Map Score assesses the quality of the answer according to predefined criteria.",
+    "interpretation": "Higher accuracy scores indicate better model performance; Map Score reflects the overall quality of the response.",
+    "baseline_results": null,
+    "validation": "The benchmark validation involves manual route verification and evaluation against a structured two-level framework."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset includes question-answer pairs in multiple languages, enabling some analysis of multimodal fairness across demographics.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All data is publicly sourced, ensuring compliance with relevant licenses without containing personal data.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "Complies with relevant licenses and usage terms for public data."
+  }
+}

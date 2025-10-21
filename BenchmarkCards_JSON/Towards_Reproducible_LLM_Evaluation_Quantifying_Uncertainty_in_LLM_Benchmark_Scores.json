@@ -1,0 +1,68 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Towards Reproducible LLM Evaluation: Quantifying Uncertainty in LLM Benchmark Scores",
+    "abbreviation": "N/A",
+    "overview": "This paper explores benchmarking methods for Large Language Models (LLMs) focusing on quantifying uncertainty in benchmark scores. It provides methodologies for effective experimental repetition to measure and reduce variability in the mean scores of LLMs' performance.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://arxiv.org/abs/2410.03492"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective is to assess the stochastic behavior of LLMs and improve the reproducibility of LLM evaluations by quantifying uncertainty in benchmark results.",
+    "audience": [
+      "ML Researchers",
+      "Model Evaluators"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Developed benchmarks on spatial reasoning questions about cardinal directions.",
+    "size": "100 questions for Small benchmark, 5760 questions for Large benchmark",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Experimental repeats",
+      "Statistical significance testing"
+    ],
+    "metrics": [
+      "Mean score",
+      "Prediction intervals"
+    ],
+    "calculation": "Mean score is calculated over experimental repeats and prediction intervals are calculated to quantify uncertainty.",
+    "interpretation": "A lower prediction interval width indicates greater confidence in the benchmark scores.",
+    "baseline_results": "Results from the Large and Small benchmarks vary by model and settings used.",
+    "validation": "Statistical tests, including two-sample t-tests, are used to determine significant differences between model scores."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

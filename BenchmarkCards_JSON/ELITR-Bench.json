@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ELITR-Bench (Evaluation of Long-context LLMs in Meeting Assistant Scenarios)",
+    "abbreviation": "ELITR-Bench",
+    "overview": "ELITR-Bench is a benchmark designed to evaluate long-context language models in real-world meeting assistant scenarios, incorporating transcripts obtained by automatic speech recognition and assessing the models' robustness to various noise levels.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Long Range Arena",
+      "L-Eval",
+      "LongEval",
+      "LongBench",
+      "MeeQA",
+      "MeetingQA"
+    ],
+    "resources": [
+      "https://github.com/utter-project/ELITR-Bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To create a benchmark that evaluates the performance of long-context LLMs in scenarios relevant to meeting assistants, challenging LLMs with real-world noise and context-based questioning.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Meeting transcripts from the ELITR project supplemented with manually crafted questions and ground-truth answers.",
+    "size": "10 meetings in dev set, 8 meetings in test set",
+    "format": "JSON",
+    "annotation": "Questions and answers are manually created and validated."
+  },
+  "methodology": {
+    "methods": [
+      "LLM-based evaluation",
+      "Human evaluation",
+      "Crowdsourcing study"
+    ],
+    "metrics": [
+      "Average score",
+      "Correlation with human judges"
+    ],
+    "calculation": "Scores are calculated based on the closeness of model predictions to the ground-truth answers.",
+    "interpretation": "Scores reflect the model's ability to accurately respond to questions based on the provided meeting transcripts.",
+    "baseline_results": "GPT-4 and GPT-4o achieved average scores above 8 on ELITR-Bench.",
+    "validation": "Validation of the evaluation method was performed through comparison with human judges."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data collection complied with ethical regulations and guidelines including anonymization of personally identifiable information.",
+    "data_licensing": "The data is made publicly available under appropriate licenses.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

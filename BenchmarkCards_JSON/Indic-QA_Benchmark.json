@@ -1,0 +1,101 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Indic-QA Benchmark",
+    "abbreviation": "N/A",
+    "overview": "Indic-QA Benchmark is a large dataset for context-grounded question answering in 11 major Indian languages, covering both extractive and abstractive tasks. This benchmark aims to evaluate the question-answering capabilities of multilingual large language models (LLMs) in low-resource languages.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Hindi",
+      "Bengali",
+      "Gujarati",
+      "Kannada",
+      "Malayalam",
+      "Marathi",
+      "Odia",
+      "Punjabi",
+      "Tamil",
+      "Telugu",
+      "Assamese"
+    ],
+    "similar_benchmarks": [
+      "SQuAD",
+      "XQuAD",
+      "MLQA"
+    ],
+    "resources": [
+      "https://github.com/ayushayush591/IndicQA-Benchmark"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive benchmark for evaluating LLMs' question-answering capabilities in Indic languages, particularly for low-resource contexts.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "The benchmark may not capture true performance across completely unseen domains, and potential cascading translation errors are acknowledged.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset compiles existing and translated datasets along with synthetic data generated using the Gemini model, focusing on cultural nuances from various Indian contexts.",
+    "size": "55,000 instances",
+    "format": "JSON",
+    "annotation": "Manual verification for quality assurance and translation."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score",
+      "ROUGE-L"
+    ],
+    "calculation": "F1 Score is calculated as the harmonic mean of precision and recall based on the predicted answer comparing the sets of words in the predicted and actual answers. ROUGE-L measures the recall of the generated response related to the gold response.",
+    "interpretation": "Higher F1 scores indicate better overall quality and correctness of generated answers. ROUGE-L evaluates how closely the generated text matches a reference answer.",
+    "baseline_results": "N/A",
+    "validation": "The benchmark was validated through extensive evaluation on multiple language models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

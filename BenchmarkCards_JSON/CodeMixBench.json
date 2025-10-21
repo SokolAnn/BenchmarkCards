@@ -1,0 +1,77 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CodeMixBench",
+    "abbreviation": "N/A",
+    "overview": "CodeMixBench is a novel benchmark designed to evaluate the robustness of large language models on code generation from code-mixed prompts, supporting Hinglish, Spanish-English, and Chinese Pinyin-English.",
+    "data_type": "code generation tasks with code-mixed prompts",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Hindi",
+      "Spanish",
+      "Chinese",
+      "English"
+    ],
+    "similar_benchmarks": [
+      "BigCodeBench",
+      "HumanEval",
+      "MBPP"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/codemixbench",
+      "https://github.com/user/codemixbench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a systematic evaluation framework for studying multilingual code generation and evaluate model robustness in code-mixed scenarios.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Code Generation",
+      "Code Completion"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Augmentation of BigCodeBench with controlled code-mixing for multilingual prompts.",
+    "size": "6,840 total prompts",
+    "format": "N/A",
+    "annotation": "Automatically generated using LLM-driven augmentation pipeline."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Pass@1",
+      "GAME score"
+    ],
+    "calculation": "Pass@1 checks if the top-1 generated solution passes all associated test cases.",
+    "interpretation": "Higher Pass@1 indicates better performance in generating valid code under varying code-mixing conditions.",
+    "baseline_results": "Performance comparisons between code-mixed prompts and English-only prompts.",
+    "validation": "Results validated by executing generated code within isolated environments."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "The benchmark focuses on code-mixing in multilingual communities but lacks demographic breakdowns.",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC-BY 4.0 license",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

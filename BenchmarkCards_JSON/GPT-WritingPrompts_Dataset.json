@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "GPT-WritingPrompts Dataset",
+    "abbreviation": "N/A",
+    "overview": "The GPT-WritingPrompts dataset pairs short stories written by Reddit users in response to 97,219 prompts with comparable generations from GPT-3.5, analyzing differences in emotional and descriptive features along six dimensions.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/KristinHuangg/gpt-writing-prompts"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To compare generative and human models of language production in response to the same prompts, and to analyze biases in storytelling.",
+    "audience": [
+      "ML Researchers",
+      "Social Scientists",
+      "Writers"
+    ],
+    "tasks": [
+      "Text Generation",
+      "Bias Analysis"
+    ],
+    "limitations": "The dataset has a gap in the number of stories per prompt between GPT-generated and human-written subsets, limiting comparability.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Reddit WritingPrompts dataset.",
+    "size": "97,219 prompts with corresponding human and machine-generated responses.",
+    "format": "N/A",
+    "annotation": "Stories are generated using GPT-3.5 and paired with human-written responses to the same prompts."
+  },
+  "methodology": {
+    "methods": [
+      "Lexical Analysis",
+      "Statistical Comparison"
+    ],
+    "metrics": [
+      "Valence",
+      "Arousal",
+      "Dominance",
+      "Appearance Bias",
+      "Intellect Bias",
+      "Power Bias"
+    ],
+    "calculation": "Scores calculated using methods such as average lexical score and average embedding similarity.",
+    "interpretation": "Higher scores indicate more positive, powerful portrayals; biases are quantified based on character portrayal dimensions.",
+    "baseline_results": "N/A",
+    "validation": "Comparison of human-written and GPT-generated stories to establish differences."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis conducted on biases in character portrayal across gender lines.",
+    "harm": [
+      "Reinforcing stereotypes"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

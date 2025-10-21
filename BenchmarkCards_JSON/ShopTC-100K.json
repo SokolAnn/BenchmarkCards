@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ShopTC-100K",
+    "abbreviation": "N/A",
+    "overview": "ShopTC-100K is a dataset of terms and conditions from shopping websites in the Tranco top 100K list, comprising 1.8 million terms from 8,251 websites. It helps systematically identify and categorize unfavorable financial terms.",
+    "data_type": "text",
+    "domains": [
+      "Consumer Protection"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/eltsai/ShopTC-100K"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective is to provide a comprehensive dataset for identifying unfavorable financial terms on shopping websites to enhance consumer protection.",
+    "audience": [
+      "Researchers",
+      "Consumer Protection Advocates",
+      "Legal Analysts"
+    ],
+    "tasks": [
+      "Text Classification"
+    ],
+    "limitations": "The dataset focuses on unfavorable financial terms but does not exhaustively cover all potential deceptive practices.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Terms and conditions collected from 8,251 shopping websites in the Tranco top 100K list.",
+    "size": "1.8 million terms",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Automated data collection",
+      "Topic modeling",
+      "Large Language Model classification"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "F1 score was calculated based on the identification of unfavorable financial terms using a fine-tuned GPT-4o model.",
+    "interpretation": "An F1 score of 94.6% indicates high performance in detecting unfavorable terms.",
+    "baseline_results": "Fine-tuned GPT-4o achieved 94.6% F1 score and 2.3% false positive rate.",
+    "validation": "The dataset underwent validation through manual annotation and testing of the detection system accuracy."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Creative Commons Attribution 4.0 International License",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

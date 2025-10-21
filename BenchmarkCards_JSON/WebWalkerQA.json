@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "WebWalkerQA",
+    "abbreviation": "N/A",
+    "overview": "WebWalkerQA is designed to assess the ability of Large Language Models (LLMs) to perform web traversal by evaluating their capacity to systematically extract high-quality data from a website’s subpages.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Education",
+      "Conference",
+      "Organization",
+      "Game"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "Mind2Web",
+      "WebArena",
+      "AssistantBench"
+    ],
+    "resources": [
+      "https://github.com/Alibaba-NLP/WebAgent"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate LLMs' web traversal abilities in complex, multi-step information-seeking tasks.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "The current dataset comprises 680 high-quality QA pairs, which is limited compared to some existing benchmarks.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "680 question-answer pairs collected from various official websites across different domains.",
+    "size": "680 examples",
+    "format": "JSON",
+    "annotation": "Combines initial LLM-based annotations followed by human verification."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Metrics are calculated based on the evaluation of the correctness of answers against the ground truth.",
+    "interpretation": "A higher accuracy indicates a better ability of LLMs to perform web traversal and extract information.",
+    "baseline_results": "The best-performing LLMs achieved accuracies below 40% in web traversal tasks.",
+    "validation": "Performance is validated through both quantitative and qualitative metrics."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

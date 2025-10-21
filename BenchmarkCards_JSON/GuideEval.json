@@ -1,0 +1,100 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "GuideEval (Instructional Guidance Evaluation Benchmark)",
+    "abbreviation": "GuideEval",
+    "overview": "GuideEval is a benchmark designed to evaluate the instructional guidance capabilities of large language models (LLMs) in educational contexts, employing a three-phase behavioral framework: Perception, Orchestration, and Elicitation.",
+    "data_type": "multi-turn dialogues",
+    "domains": [
+      "Natural Language Processing",
+      "Education"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "TutorChat",
+      "MathDial",
+      "SocraticMath",
+      "SocraTeach"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2508.06583"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To systematically evaluate the instructional guidance capabilities of educational LLMs through a tailored framework and empirical analysis.",
+    "audience": [
+      "Educational Researchers",
+      "AI Developers",
+      "Instructional Designers"
+    ],
+    "tasks": [
+      "Instructional Guidance Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Authentic learner-model dialogues collected from a Socratic tutoring platform.",
+    "size": "5,177 samples",
+    "format": "Multi-turn dialogue interactions",
+    "annotation": "Human annotation with cognitive state labeling and error checking."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "P-Affirm",
+      "P-Redirect",
+      "O-Advance",
+      "O-Reconfigure",
+      "E-Strategic",
+      "E-Heuristic"
+    ],
+    "calculation": "Metrics are scored based on explicit and implicit recognition of student responses, advancement of instruction, and elicitation quality.",
+    "interpretation": "Higher scores indicate better instructional guidance capabilities in terms of adaptability to learner states.",
+    "baseline_results": "N/A",
+    "validation": "Evaluation against established benchmarks and human scoring for accuracy."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy",
+            "Data contamination"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Exposing personal information"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data collection involved removing personally identifiable information to protect user privacy.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

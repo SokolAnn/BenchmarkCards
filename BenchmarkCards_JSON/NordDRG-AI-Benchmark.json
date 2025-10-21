@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "NordDRG-AI-Benchmark",
+    "abbreviation": "N/A",
+    "overview": "We release NordDRG-AI-Benchmark , the first public, rule-complete test-bed for DRG reasoning. It bundles (i) machine-readable ∼20-sheet NordDRG definition tables and (ii) expert manuals and change-log templates that capture governance workflows, and exposes two suites: a 13-task Logic benchmark and a 13-task Grouper benchmark.",
+    "data_type": "multimodal",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "Finnish",
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMLU",
+      "GLUE"
+    ],
+    "resources": [
+      "https://github.com/longshoreforrest/norddrg-ai-benchmark"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Provide a durable, governance-grade yardstick for future work on trustworthy automation in hospital funding.",
+    "audience": [
+      "Healthcare Researchers",
+      "Machine Learning Practitioners",
+      "Clinical Coders"
+    ],
+    "tasks": [
+      "Logic Reasoning",
+      "DRG Grouper Emulation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Definition tables and expert manuals provided by the Nordic Casemix Centre.",
+    "size": "∼20 interlinked sheets",
+    "format": "Excel, JSON",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Exact Match"
+    ],
+    "calculation": "Accuracy is measured through strict exact-match scoring on both DRG and drg_logic.id.",
+    "interpretation": "A model's ability to reproduce the same grouping decision as the specification is essential for evaluation.",
+    "baseline_results": "GPT-5 Thinking solves 7/13 tasks in the Grouper benchmark.",
+    "validation": "The benchmark was validated through empirical tests with different LLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

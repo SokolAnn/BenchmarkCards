@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "EngiBench",
+    "abbreviation": "N/A",
+    "overview": "EngiBench is a hierarchical benchmark designed to evaluate large language models (LLMs) on solving engineering problems, spanning three levels of increasing difficulty and covering diverse engineering subfields. It facilitates fine-grained analysis of model performance through controlled problem variants.",
+    "data_type": "engineering problem-solving tasks",
+    "domains": [
+      "Engineering"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "GSM8K",
+      "MATH",
+      "Omni-MATH"
+    ],
+    "resources": [
+      "https://github.com/EngiBench/EngiBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of EngiBench is to systematically evaluate LLMs on real-world engineering problems across different levels of complexity.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Engineering Problem Solving"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Data sourced from existing public benchmarks, university educational materials, and modeling competitions.",
+    "size": "1740 problems across three levels and multiple variants.",
+    "format": "JSON",
+    "annotation": "Annotated by PhD students and engineering professionals with expert review."
+  },
+  "methodology": {
+    "methods": [
+      "Binary scoring for closed-form problems",
+      "Rubric-based evaluation for open-ended tasks"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Score on a 10-point rubric"
+    ],
+    "calculation": "Performance is calculated as accuracy for Levels 1 and 2, using binary comparison against reference answers.",
+    "interpretation": "Model performance is interpreted based on accuracy and adherence to rubric criteria for open-ended tasks.",
+    "baseline_results": null,
+    "validation": "Experimentally validated through scoring against human expert performance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC BY-NC-4.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

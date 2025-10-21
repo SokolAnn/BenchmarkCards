@@ -1,0 +1,75 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CALM (Comprehensive Assessment of Language Models)",
+    "abbreviation": "CALM",
+    "overview": "CALM is introduced for robust measurement of social biases in language models by utilizing a diverse set of templates generated from existing datasets, covering three NLP tasks: Question Answering, Sentiment Analysis, and Natural Language Inference.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/vipulgupta1011/CALM"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To quantify language model bias in a consistent and rigorous manner, focusing on gender and race biases.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Sentiment Analysis",
+      "Natural Language Inference"
+    ],
+    "limitations": "The dataset’s target word list is limited to seven social groups in the US and the templates are in English, which may restrict broader bias assessment.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Derived from sixteen datasets for question-answering, sentiment analysis, and natural language inference.",
+    "size": "78,400 prompts",
+    "format": "N/A",
+    "annotation": "Templates manually verified and created by replacing names with corresponding tags."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Bias score"
+    ],
+    "calculation": "The bias score is calculated as the percentage difference from the baseline performance for each social group.",
+    "interpretation": "Lower scores indicate less bias; a model with a bias score of 0% is considered unbiased.",
+    "baseline_results": null,
+    "validation": "Sensitivity analysis conducted to assess the reliability and robustness of the CALM dataset through various perturbations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

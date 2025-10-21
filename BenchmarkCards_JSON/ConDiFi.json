@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ConDiFi (Convergent-Divergent for Financial Reasoning Benchmark)",
+    "abbreviation": "ConDiFi",
+    "overview": "ConDiFi is a benchmark that jointly evaluates divergent and convergent thinking in LLMs for financial tasks, featuring 607 macro-financial prompts for divergent reasoning and 990 multi-hop MCQs for convergent reasoning.",
+    "data_type": "text",
+    "domains": [
+      "Finance"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMLU"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a more holistic and domain-relevant standard for measuring the cognitive capabilities of LLMs in finance by evaluating both divergent and convergent thinking.",
+    "audience": [
+      "ML Researchers",
+      "Financial Analysts",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Divergent Thinking Evaluation",
+      "Convergent Thinking Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from post-LLM training financial scenarios and macroeconomic data.",
+    "size": "1,597 financial prompts",
+    "format": "JSON",
+    "annotation": "Automated scoring using a model as a judge, with adjusted metrics based on domain knowledge."
+  },
+  "methodology": {
+    "methods": [
+      "LLM-As-A-Judge Evaluation",
+      "Direct Comparison of Multiple Models"
+    ],
+    "metrics": [
+      "Plausibility",
+      "Novelty",
+      "Elaboration",
+      "Actionable",
+      "Richness"
+    ],
+    "calculation": "Scores are calculated based on a defined rubric for financial scenario reasoning.",
+    "interpretation": "Higher scores indicate better reasoning capabilities for financial decision-making complexities.",
+    "baseline_results": "Results showed a performance spectrum among various models, with notable differences in divergent and convergent metrics.",
+    "validation": "Evaluated across 14 models to ensure robustness and variability in cognitive capabilities."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data sourced from public financial reports, avoiding private or sensitive data.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DiverseVul : A New Vulnerable Source Code Dataset for Deep Learning Based Vulnerability Detection",
+    "abbreviation": "DiverseVul",
+    "overview": "We propose and release a new vulnerable source code dataset. We curate the dataset by crawling security issue websites, extracting vulnerability-fixing commits and source codes from the corresponding projects. Our new dataset contains 18,945 vulnerable functions spanning 150 CWEs and 330,492 non-vulnerable functions extracted from 7,514 commits. We publicly release the DiverseVul dataset to the community at https://github.com/wagner-group/diversevul.",
+    "data_type": "text — C/C++ function source code (vulnerable and non-vulnerable functions)",
+    "domains": [
+      "Computer Security",
+      "Software Engineering"
+    ],
+    "languages": null,
+    "similar_benchmarks": [
+      "Devign",
+      "ReVeal",
+      "BigVul",
+      "CrossVul",
+      "CVEFixes",
+      "VulDeePecker",
+      "SARD",
+      "Juliet"
+    ],
+    "resources": [
+      "https://github.com/wagner-group/diversevul",
+      "https://arxiv.org/abs/2304.00409",
+      "https://doi.org/10.1145/3607199.3607242"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Release DiverseVul, a new C/C++ vulnerable source code dataset, and study the effectiveness and challenges of deep learning models for vulnerability detection.",
+    "audience": [
+      "ML Researchers",
+      "Security Researchers",
+      "Software Engineers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Vulnerability Detection",
+      "Binary Classification"
+    ],
+    "limitations": "Label noise in the dataset (manually measured label accuracy for DiverseVul is 60%); de-duplication and whitespace-normalization issues (4% of DiverseVul labels and 6% of prior-dataset labels were erroneous due to whitespace-only changes); risk of test-set contamination from pretraining data; poor generalization to unseen projects (F1 on seen projects much higher than on unseen projects).",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Crawled security issue websites, extracted vulnerability-fixing commit URLs, cloned corresponding projects, extracted changed (before-commit) functions as vulnerable and after-commit/unchanged functions as non-vulnerable, deduplicated functions by MD5, and mapped CWEs using the NVD API or manual mapping.",
+    "size": "18,945 vulnerable functions; 330,492 non-vulnerable functions; extracted from 7,514 commits; collected from 797 projects; covering 150 CWEs.",
+    "format": "N/A",
+    "annotation": "Functions changed by identified vulnerability-fixing commits are labeled vulnerable (before-commit version); after-commit versions and unchanged functions in the related files are labeled non-vulnerable. Deduplicated by MD5 hashes. CWE mapping obtained via NVD API when CVE present and manual mapping for developer-annotated categories."
+  },
+  "methodology": {
+    "methods": [
+      "Automated evaluation with metrics (Accuracy, Precision, Recall, F1, False Positive Rate)",
+      "Manual label verification (random sampling and manual analysis of vulnerable functions)",
+      "Model-based evaluation: training ReVeal (GNN) from scratch and fine-tuning various pretrained LLMs (RoBERTa, GPT-2, T5 families) across different dataset splits"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Accuracy",
+      "Precision",
+      "Recall",
+      "True Positive Rate (TPR)",
+      "False Positive Rate (FPR)"
+    ],
+    "calculation": "Not explicitly described in the paper (standard definitions for Accuracy, Precision, Recall, F1, and FPR are used but formulas are not provided).",
+    "interpretation": "The paper emphasizes that current models have low practical utility due to high false positive rates and low F1 scores (example: best model achieves 47.15% F1 and 3.47% FPR, which the authors state is still too high for practical use because it corresponds to hundreds of false positives in a typical project).",
+    "baseline_results": "ReVeal (GNN) on Previous + DiverseVul: 29.76 F1. Best LLM (NatGen) on Previous + DiverseVul: 47.15 F1, 43.25% TPR, 3.47% FPR. On CVEFixes only, ReVeal achieved 12.81 F1 while LLM F1 scores ranged 8.50–16.29.",
+    "validation": "Random dataset splits (80% train / 10% validation / 10% test) for Previous + DiverseVul; held-out 'unseen projects' evaluation by selecting 95 projects as unseen and training on remaining projects; manual label-noise analysis via random samples (50 vulnerable functions from DiverseVul and 50 from union of prior datasets) with manual inspection."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination",
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": "Detecting software vulnerabilities to help prevent cybercrimes and economic losses."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

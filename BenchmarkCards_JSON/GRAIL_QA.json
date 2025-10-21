@@ -1,0 +1,80 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "GRAIL QA (Strongly Generalizable Question Answering)",
+    "abbreviation": "GRAIL QA",
+    "overview": "The paper introduces GRAIL QA, a large-scale, high-quality dataset with 64,331 questions that supports evaluation of i.i.d., compositional, and zero-shot generalization in knowledge base question answering (KBQA).",
+    "data_type": "question-logical form pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "WEBQ",
+      "COMPLEX WEBQ",
+      "SIMPLE Q",
+      "QALD",
+      "GRAPH Q"
+    ],
+    "resources": [
+      "http://dki-lab.github.io/GrailQA/",
+      "https://github.com/dki-lab/GrailQA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To facilitate the development of KBQA models with stronger generalization through a comprehensive dataset that evaluates three levels of generalization.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Crowdsourced questions based on the FREEBASE knowledge base and logical forms generated from it.",
+    "size": "64,331 questions",
+    "format": "JSON",
+    "annotation": "Crowdsourced via Amazon Mechanical Turk with various quality control mechanisms."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Exact Match (EM)",
+      "F1 Score"
+    ],
+    "calculation": "Exact match is determined by comparing predicted and gold logical forms based on graph isomorphism.",
+    "interpretation": "Higher F1 scores and EM indicate better generalization performance of KBQA models across different question types.",
+    "baseline_results": "RANKING model achieves competitive performance on GRAIL QA and sets new state-of-the-art on GRAPH Q.",
+    "validation": "The dataset is split into training/validation/test sets with specific questions designated for i.i.d., compositional, and zero-shot evaluation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Privacy",
+      "Robustness",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "Analysis of crowd worker demographics for quality and diversity in question generation.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Creative Commons Attribution 4.0 International (CC-BY 4.0)",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

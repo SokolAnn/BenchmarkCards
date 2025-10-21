@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CLIP (Clinical Action Items from Hospital Discharge Notes)",
+    "abbreviation": "CLIP",
+    "overview": "CLIP is a dataset of clinical action items annotated from hospital discharge notes to assist primary care physicians in identifying actionable information.",
+    "data_type": "text",
+    "domains": [
+      "Healthcare",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/asappresearch/clip",
+      "https://physionet.org/static/published-projects/mullenbach21/CLIP dataset version 1.0.0"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assist primary care physicians in extracting and identifying action items from clinical discharge notes.",
+    "audience": [
+      "Healthcare Providers",
+      "Clinical Researchers",
+      "Natural Language Processing Researchers"
+    ],
+    "tasks": [
+      "Information Extraction",
+      "Text Summarization"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Annotated clinical notes from the MIMIC-III database.",
+    "size": "718 documents, 107,494 sentences",
+    "format": "N/A",
+    "annotation": "Annotated by physicians"
+  },
+  "methodology": {
+    "methods": [
+      "Multi-label classification",
+      "Sentence-level classification",
+      "BERT-based models"
+    ],
+    "metrics": [
+      "F1 Score",
+      "AUC"
+    ],
+    "calculation": "Metrics are computed using micro and macro averages.",
+    "interpretation": "Higher F1 and AUC scores indicate better model performance in extracting action items.",
+    "baseline_results": "Highest binary F1 score from models approaches 0.86, compared to human agreement of 0.93.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset uses de-identified clinical notes from the MIMIC-III database.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "Access to dataset requires completion of an ethics course and a Data Use Agreement."
+  }
+}

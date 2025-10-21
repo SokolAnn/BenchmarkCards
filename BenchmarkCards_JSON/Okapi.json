@@ -1,0 +1,132 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Okapi",
+    "abbreviation": "N/A",
+    "overview": "Okapi is the first system with instruction-tuned LLMs based on reinforcement learning from human feedback (RLHF) for multiple languages. Okapi introduces instruction and response-ranked data in 26 diverse languages and presents benchmark datasets (translated ARC, HellaSwag, and MMLU) to enable evaluation of generative LLMs in multiple languages.",
+    "data_type": "instruction-input-output triples (text); question-answering pairs (multiple-choice); ranked response outputs (text)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Russian",
+      "German",
+      "Chinese",
+      "French",
+      "Spanish",
+      "Italian",
+      "Dutch",
+      "Vietnamese",
+      "Indonesian",
+      "Arabic",
+      "Hungarian",
+      "Romanian",
+      "Danish",
+      "Slovak",
+      "Ukrainian",
+      "Catalan",
+      "Serbian",
+      "Croatian",
+      "Hindi",
+      "Bengali",
+      "Tamil",
+      "Nepali",
+      "Malayalam",
+      "Marathi",
+      "Telugu",
+      "Kannada"
+    ],
+    "similar_benchmarks": [
+      "ARC",
+      "HellaSwag",
+      "MMLU",
+      "TruthfulQA"
+    ],
+    "resources": [
+      "https://github.com/nlp-uoregon/Okapi"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Develop an open-source RLHF-based instruction-tuned LLM framework for multiple languages, create instruction and response-ranked data in 26 languages, and provide translated benchmark datasets to evaluate generative LLMs across multiple languages.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Instruction Following",
+      "Text Generation",
+      "Question Answering"
+    ],
+    "limitations": "Coverage limited to 26 languages (not exhaustive); experiments use BLOOM and LLaMA 7B base models only; instruction and evaluation data are automatically generated and translated via ChatGPT which may introduce noise and may not reflect human-provided data; evaluations do not explicitly measure hallucination, toxicity, or biases.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Instruction data generated from Alpaca (52K) plus 106K additional English instructions produced via a Self-Instruct procedure; instructions, inputs, and outputs translated into target languages using ChatGPT; ranked response outputs produced by prompting ChatGPT to rank model-generated responses; evaluation datasets created by translating ARC, HellaSwag, and MMLU into target languages using ChatGPT.",
+    "size": "158,000 instruction examples (52,000 from Alpaca + 106,000 generated); 42,000 ranked instruction examples; translated evaluation datasets: ARC: 1,170 examples; HellaSwag: 9,162 examples; MMLU: 13,062 examples.",
+    "format": "JSON (instruction examples and translations organized as JSON objects; ranking outputs provided as integer ranks)",
+    "annotation": "Translations and response rankings produced via ChatGPT prompts. Ranking annotations use integer overall ranks (1 to 4) per response; instruction generation used Self-Instruct with ROUGE-based filtering."
+  },
+  "methodology": {
+    "methods": [
+      "Supervised Fine-tuning (SFT)",
+      "Reward model training (contrastive ranking loss)",
+      "Reinforcement Learning from Human Feedback (RLHF) using Proximal Policy Optimization (PPO)",
+      "Machine translation and ranking via ChatGPT",
+      "Self-Instruct generation for English instructions"
+    ],
+    "metrics": [
+      "Accuracy",
+      "ROUGE"
+    ],
+    "calculation": "Model performance computed using the Eleuther AI Language Model Evaluation Harness as adopted by the HuggingFace Open LLM Leaderboard; accuracy is computed on the multiple-choice datasets (ARC, HellaSwag, MMLU). ROUGE is used during instruction generation filtering.",
+    "interpretation": "Higher Accuracy indicates better performance on the translated multiple-choice evaluation datasets. The paper reports that RLHF generally outperforms SFT across base models and datasets; performance is higher for high-resource languages than medium- or low-resource languages.",
+    "baseline_results": "Reported averages for BLOOM (base), BLOOMZ, SFT, and RLHF on translated datasets: ARC averages (BLOOM / BLOOMZ / SFT / RLHF): 28.2 / 27.4 / 28.4 / 30.0. HellaSwag averages: 36.8 / 34.7 / 37.7 / 39.5. MMLU averages: 27.1 / 26.0 / 26.6 / 26.9. LLaMA reported averages (base / SFT / RLHF): ARC 33.3 / 35.2 / 37.3; HellaSwag 46.4 / 47.1 / 49.6; MMLU 29.8 / 30.1 / 30.8.",
+    "validation": "Evaluation on translated ARC, HellaSwag, and MMLU using the Eleuther AI evaluation harness; comparisons include base models (BLOOM, LLaMA), BLOOMZ, SFT-tuned models, and RLHF-tuned models; performance reported overall and by high-/medium-/low-resource language groups."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Fairness",
+      "Value Alignment",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Value Alignment",
+          "subcategory": [
+            "Toxic output"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Performance is reported broken down by language-resource groups (High-Resource, Medium-Resource, Low-Resource); the paper observes that high-resource languages achieve higher performance and that RLHF gains are smaller for low-resource languages.",
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

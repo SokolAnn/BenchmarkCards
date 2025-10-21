@@ -1,0 +1,101 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SciEval",
+    "abbreviation": "N/A",
+    "overview": "SciEval is a comprehensive and multi-disciplinary evaluation benchmark designed to systematically evaluate the scientific research ability of Large Language Models (LLMs). It consists of about 18,000 challenging scientific questions across biology, chemistry, and physics, including both objective and subjective questions, while employing dynamic data generation to mitigate data leakage.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMLU",
+      "AGIEval",
+      "C-Eval",
+      "MultiMedQA",
+      "ChemLLMBench",
+      "MATH"
+    ],
+    "resources": [
+      "https://github.com/OpenDFM/SciEval"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a robust benchmark for assessing scientific capabilities of Large Language Models (LLMs).",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Socratic Q&A, PubMedQA, MedQA, and custom scripts for generating physics data.",
+    "size": "18,000 questions",
+    "format": "N/A",
+    "annotation": "The questions are preprocessed using rule-based methods, GPT-4 is utilized for generating and simplifying responses."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "BLEU Score",
+      "Mean Squared Error (MSE)"
+    ],
+    "calculation": "Accuracy is calculated for objective questions while MSE is used for numerical answers and BLEU score for string answers.",
+    "interpretation": "The performance of the models is compared based on the accuracy achieved on static and dynamic data subsets.",
+    "baseline_results": "Performance of several LLMs was tested; specific accuracy levels, such as GPT-4 achieving 84.49% on Static Data, are noted.",
+    "validation": "The benchmark is validated through comprehensive experiments on advanced LLMs, comparing their abilities on SciEval."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Privacy",
+      "Robustness",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "NLPBench (Natural Language Processing Benchmark)",
+    "abbreviation": "NLPBench",
+    "overview": "NLPBench is a novel benchmarking dataset consisting of 378 college-level NLP questions from Yale University’s final exams, aimed at evaluating the ability of large language models (LLMs) to solve NLP-related problems through various question formats.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/LinxinS97/NLPBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the problem-solving capabilities of large language models (LLMs) on college-level NLP questions, focusing on their performance in multi-turn interactions.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "378 college-level NLP questions sourced from Yale University's final exams.",
+    "size": "378 questions",
+    "format": "JSON",
+    "annotation": "Manually curated and reviewed by experts to ensure accuracy."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "BLEU Score",
+      "ROUGE-L"
+    ],
+    "calculation": "Metrics are calculated based on the models' final answers disregarding intermediary steps.",
+    "interpretation": "Higher scores indicate better alignment of the generated answers with ground truth.",
+    "baseline_results": null,
+    "validation": "Evaluated using multiple models including GPT-3.5, GPT-4, and LLAMA-2."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

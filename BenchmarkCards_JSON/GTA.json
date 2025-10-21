@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "GTA (General Tool Agents)",
+    "abbreviation": "GTA",
+    "overview": "GTA is a benchmark for evaluating the tool-use capabilities of LLMs through human-designed queries with real-world objectives, requiring implicit tool use, supported by an evaluation platform with executable tools and multimodal inputs.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "GAIA"
+    ],
+    "resources": [
+      "https://github.com/open-compass/GTA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the general tool-use ability of LLMs in real-world scenarios.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Tool Use Evaluation"
+    ],
+    "limitations": "Human-designed queries limit language diversity, as all queries are in English.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Human-designed queries and images sourced from various platforms and personal annotations.",
+    "size": "229 queries, 252 images",
+    "format": "JSON",
+    "annotation": "Manual verification and annotation by experts."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Instruction-following accuracy (InstAcc)",
+      "Tool selection accuracy (ToolAcc)",
+      "Argument accuracy (ArgAcc)",
+      "Summary accuracy (SummAcc)",
+      "Answer accuracy (AnsAcc)"
+    ],
+    "calculation": "Metrics are calculated based on the evaluation of the LLMs' outputs against a ground truth tool chain.",
+    "interpretation": "High scores in metrics indicate better tool-use capabilities and reasoning abilities of the LLMs.",
+    "baseline_results": null,
+    "validation": "The benchmark was validated through systematic testing of LLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": [
+      "Potential copyright concerns related to image data collection.",
+      "Privacy concerns involving the presence of individuals in images.",
+      "Risk of generating harmful information due to LLM hallucinations."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Released under the Apache License.",
+    "consent_procedures": "Images used are from approved sources, ensuring proper documentation.",
+    "compliance_with_regulations": "N/A"
+  }
+}

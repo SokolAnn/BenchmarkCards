@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PRISM Alignment Dataset",
+    "abbreviation": "PRISM",
+    "overview": "The PRISM Alignment Dataset maps the sociodemographics and stated preferences of 1,500 diverse participants from 75 countries to their contextual preferences and fine-grained feedback in 8,011 live conversations with 21 large language models (LLMs). It aims to enable analyses of subjective and multicultural perspectives on controversial issues, targeting the diversity of human feedback for model alignment.",
+    "data_type": "dialogue interactions and feedback",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "HuggingFace H4 Stack Exchange Preference Dataset",
+      "Stanford Human Preferences Dataset"
+    ],
+    "resources": [
+      "https://github.com/HannahKirk/prism-alignment",
+      "https://huggingface.co/datasets/HannahRoseKirk/prism-alignment"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To understand the role and impact of diverse human feedback in aligning large language models (LLMs).",
+    "audience": [
+      "ML Researchers",
+      "Social Scientists",
+      "Policy Makers"
+    ],
+    "tasks": [
+      "Dialogue Generation",
+      "Human Feedback Alignment"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Participant surveys and live conversations with LLMs",
+    "size": "8,011 conversations with feedback",
+    "format": "JSONL",
+    "annotation": "Pseudonymized participant profiles with sociodemographic data and feedback ratings."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Mean Rating",
+      "Mean Choice"
+    ],
+    "calculation": "Mean ratings are calculated across individual participant's ratings and conversations.",
+    "interpretation": "Higher mean scores indicate better perceived model responses based on participant preferences.",
+    "baseline_results": null,
+    "validation": "Validation was through ethical approval and participant consent."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset includes a diverse range of participant demographics, allowing for analyses across different ethnic, gender, and geographic groups.",
+    "harm": [
+      "Reinforcing biases from dominant cultural perspectives",
+      "Revealing personal and sensitive topics within AI interactions"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset includes pseudonymization of participant data and informed consent was obtained. However, some privacy risks remain due to the sensitive nature of conversations.",
+    "data_licensing": "Creative Commons Attribution 4.0 International License (CC-BY-4.0) for human-written texts; Creative Commons Attribution-NonCommercial 4.0 International License (CC-BY-NC-4.0) for model responses.",
+    "consent_procedures": "Informed consent was gathered from all participants, detailing their rights and how their data would be used.",
+    "compliance_with_regulations": "The dataset follows GDPR compliance guidelines."
+  }
+}

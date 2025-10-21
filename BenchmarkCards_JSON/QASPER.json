@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "QASPER (Question Answering over Scientific Research Papers)",
+    "abbreviation": "QASPER",
+    "overview": "QASPER is an information-seeking QA dataset over academic research papers, containing 5,049 questions over 1,585 NLP papers. Each question is written by practitioners after reading only the title and abstract, and seeks information found in the full text, requiring complex reasoning.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://allenai.org/project/qasper"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a challenging dataset that evaluates question answering systems on document-grounded tasks with real-world information-seeking questions.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "NLP Practitioners"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Evidence Selection"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "S2ORC dataset containing open-access NLP research papers.",
+    "size": "5,049 questions",
+    "format": "JSON",
+    "annotation": "Questions are written and answered by NLP practitioners."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Answer-F1",
+      "Evidence-F1"
+    ],
+    "calculation": "Metrics are calculated based on the correctness of the predicted answers and the selected evidence paragraphs.",
+    "interpretation": "Higher metrics indicate better performance in answering questions and selecting appropriate evidence.",
+    "baseline_results": "LED-base model achieved an overall Answer-F1 score of 44.96 on the test set.",
+    "validation": "Split the dataset into train, validation, and test sets, with paper overlap ensured."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Misleading information retrieval from papers"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "All papers used are under the CC-BY-* license.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

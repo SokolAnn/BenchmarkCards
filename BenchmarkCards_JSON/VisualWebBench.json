@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "VisualWebBench",
+    "abbreviation": "N/A",
+    "overview": "VisualWebBench is a comprehensive multimodal benchmark designed to evaluate the capabilities of Multimodal Large Language Models (MLLMs) in web-related tasks, consisting of seven tasks and 1.5K human-curated instances from 139 real websites across 87 sub-domains.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://visualwebbench.github.io/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a standardized benchmark for evaluating MLLMs in web understanding, enabling the development of more capable and efficient models specific to web-related applications.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Webpage Captioning",
+      "Webpage Question Answering",
+      "Heading OCR",
+      "Element OCR",
+      "Element Grounding",
+      "Action Prediction",
+      "Action Grounding"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "1.5K human-curated instances from 139 real websites, covering 87 sub-domains.",
+    "size": "1,500 examples",
+    "format": "N/A",
+    "annotation": "Manually curated and verified by human annotators."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score",
+      "ROUGE-L",
+      "Accuracy"
+    ],
+    "calculation": "Specific tasks use F1 Score for the WebQA task, ROUGE-L for captioning, and Accuracy for multiple-choice tasks.",
+    "interpretation": "Performance is interpreted based on scores relative to the best-performing models, with an average of scores signaling capabilities.",
+    "baseline_results": "Average scores for GPT-4V(ision) is 64.6, Claude Sonnet 65.8, and the leading open-source model LLaVA-1.6-34B 50.5.",
+    "validation": "Comprehensive validation through human curation and ensuring clarity of instruction tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

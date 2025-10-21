@@ -1,0 +1,99 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SAGE-Eval (SAfety-fact systematic GEneralization evaluation)",
+    "abbreviation": "SAGE-Eval",
+    "overview": "SAGE-Eval is the first benchmark designed to assess whether LLMs correctly apply well-established safety facts to naive user queries. It targets implicit safety risks and aims to evaluate LLMs' generalization abilities regarding safety.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "AgentHarm",
+      "HELM",
+      "WMDP",
+      "GPQA",
+      "AdvBench",
+      "HarmBench",
+      "SALAD-Bench"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the generalization capability of LLMs regarding safety facts and improve their reliability in addressing safety risks.",
+    "audience": [
+      "ML Researchers",
+      "AI Developers",
+      "Safety Evaluators"
+    ],
+    "tasks": [
+      "Safety Evaluation",
+      "Generalization Testing"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Human-validated prompts formed from safety facts sourced from reputable organizations like the CDC and FDA.",
+    "size": "10,428 test scenarios",
+    "format": "JSON",
+    "annotation": "Manually verified by 144 human annotators"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "LLM-as-a-judge"
+    ],
+    "metrics": [
+      "Model-level Safety Score",
+      "Area under Safety Curve",
+      "Fact-level Safety Score"
+    ],
+    "calculation": "Metrics are calculated based on the proportion of safety facts that models responded to correctly under varying conditions.",
+    "interpretation": "A higher safety score indicates better performance in addressing safety concerns in naive queries.",
+    "baseline_results": null,
+    "validation": "Validated by human annotators with an average reliability rate."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": [
+      "Potential risk of safety oversights causing harm to vulnerable populations such as children."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PUGG",
+    "abbreviation": "N/A",
+    "overview": "We introduce the PUGG dataset, which encompasses three tasks — KBQA, MRC, and IR. This dataset features natural factoid questions in Polish and stands out as the first Polish KBQA resource.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Polish"
+    ],
+    "similar_benchmarks": [
+      "N/A"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/clarin-pl/PUGG",
+      "https://github.com/CLARIN-PL/PUGG"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To address the significant resource gap for low-resource languages by creating a KBQA dataset for Polish, alongside datasets for MRC and IR.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Knowledge Base Question Answering",
+      "Machine Reading Comprehension",
+      "Information Retrieval"
+    ],
+    "limitations": "The natural questions are open domain, focused on location and time, and are created and answered from the Polish cultural, political, and historical perspective.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed through a semi-automated pipeline utilizing Wikidata as the knowledge graph.",
+    "size": "5,593 examples",
+    "format": "N/A",
+    "annotation": "Involves human verification alongside semi-automated processes."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Accuracy is calculated as the proportion of answers included in the model’s response for each question.",
+    "interpretation": "Higher accuracy indicates better performance in answering the questions correctly.",
+    "baseline_results": "Base accuracy for natural KBQA questions is 0.275 and improves with the use of knowledge graphs.",
+    "validation": "The datasets were validated using human verification."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset includes questions that reflect Polish culture and society.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC BY-SA 4.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

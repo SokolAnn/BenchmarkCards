@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Perturbation Framework for Evaluating and Enhancing the Robustness of Embedding Models Against Misinformation Edits",
+    "abbreviation": "N/A",
+    "overview": "This paper introduces a perturbation framework that generates valid and natural claim variations to assess the robustness of sentence embedding models in a multi-stage retrieval pipeline and evaluate the effectiveness of various mitigation approaches.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://arxiv.org/abs/2503.03417"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To improve claim matching systems and provide reliable fact-checking of evolving misinformation.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Claim Matching"
+    ],
+    "limitations": "The dataset coverage is limited to claims encountered by fact-checkers, which may not represent the broader misinformation landscape.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "CheckThat22, FactCheckTweet, OOD Dataset from Meedan",
+    "size": "3 datasets (CheckThat22: 2,592 claims, FactCheckTweet: 3,578 claims, OOD Dataset: 721 claims)",
+    "format": "CSV",
+    "annotation": "Manually verified for validity and naturalness."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Mean Average Precision (MAP)"
+    ],
+    "calculation": "Calculated using the similarity between claims and their corresponding fact-checks based on embedding models.",
+    "interpretation": "Higher MAP indicates better retrieval performance of fact-checks relevant to the claims.",
+    "baseline_results": null,
+    "validation": "Evaluated across various perturbation types to ensure robustness."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning",
+            "Prompt injection attack"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Claims used are publicly available and verified. No private data included.",
+    "data_licensing": "Datasets used are accessible for research purposes.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

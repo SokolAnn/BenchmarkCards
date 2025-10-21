@@ -1,0 +1,79 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LLMDetect",
+    "abbreviation": "N/A",
+    "overview": "LLMDetect is a benchmark designed to evaluate detectors’ performance on new tasks for detecting LLM-generated content, including LLM Role Recognition and LLM Involvement Measurement.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/ZihaoCheng123/LLMDetect"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a new detection paradigm that moves beyond binary classification for detecting LLM-generated content.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "LLM Role Recognition",
+      "LLM Involvement Measurement"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Hybrid News Detection Corpus (HNDC) consisting of human-written articles curated from reputable sources.",
+    "size": "64,304 articles",
+    "format": "N/A",
+    "annotation": "Annotated with LLM role and involvement ratio."
+  },
+  "methodology": {
+    "methods": [
+      "Zero-shot detection",
+      "Supervised fine-tuning",
+      "Feature-based classifiers",
+      "PLM-based classifiers"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Mean Squared Error (MSE)",
+      "Mean Absolute Error (MAE)"
+    ],
+    "calculation": "Metrics are calculated based on model predictions and ground truth in various tasks.",
+    "interpretation": "High F1 scores indicate better performance in identifying LLM-generated content.",
+    "baseline_results": "Fine-tuned PLM-based models consistently outperform other baseline models across both tasks.",
+    "validation": "Evaluated through training and testing on the HNDC and DetectEval components."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

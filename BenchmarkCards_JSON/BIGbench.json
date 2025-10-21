@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "BIGbench",
+    "abbreviation": "BIGbench",
+    "overview": "BIGbench is a unified benchmark for evaluating multi-dimensional social biases in Text-to-Image (T2I) models, featuring a carefully designed dataset of 47,040 prompts categorized across four dimensions of bias.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "DALL-EV AL",
+      "HRS-Bench",
+      "ENTIGEN",
+      "TIBET"
+    ],
+    "resources": [
+      "https://github.com/username/bigbench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation framework for identifying and analyzing social biases in T2I models.",
+    "audience": [
+      "ML Researchers",
+      "AI Ethics Scholars",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Bias Evaluation"
+    ],
+    "limitations": "The benchmark's algorithm utilizes only implicit prompts for calculating the manifestation factor, which may lead to incomplete bias analysis.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed dataset consisting of 47,040 prompts, covering occupations, characteristics, and social relations.",
+    "size": "47,040 prompts",
+    "format": "N/A",
+    "annotation": "Data mainly evaluated using automated alignment via a multi-modal LLM and verified through human evaluation."
+  },
+  "methodology": {
+    "methods": [
+      "Automated evaluation",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Implicit bias score",
+      "Explicit bias score",
+      "Manifestation factor"
+    ],
+    "calculation": "Scores are calculated based on the proportions of demographic attributes generated versus expected demographic distributions.",
+    "interpretation": "A higher implicit or explicit bias score indicates a lower level of bias in the model's outputs.",
+    "baseline_results": "The benchmark evaluated eight mainstream T2I models and three debiasing methods.",
+    "validation": "Human evaluations were conducted to ensure reliability, with trained evaluators assessing the generated images."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The benchmark includes demographic breakdowns across various bias dimensions in T2I models.",
+    "harm": "The benchmark aims to detect and mitigate harms related to entrenched social stereotypes and biases in AI-generated content."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Openly accessible under GPL v3.0.",
+    "consent_procedures": "All evaluators provided informed consent prior to the study.",
+    "compliance_with_regulations": "N/A"
+  }
+}

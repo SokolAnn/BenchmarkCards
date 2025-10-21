@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MiLiC-Eval",
+    "abbreviation": "N/A",
+    "overview": "MiLiC-Eval is a benchmark designed for minority languages in China, featuring 24K instances across 9 tasks to systematically track the progress of large language models on these underrepresented languages.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Tibetan",
+      "Uyghur",
+      "Kazakh",
+      "Mongolian"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/luciusssss/MiLiC-Eval"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive framework for benchmarking the performance of LLMs on low-resource languages, focusing on multilingual LLMs for minority languages in China.",
+    "audience": [
+      "NLP Researchers",
+      "Language Model Developers",
+      "Benchmark Developers"
+    ],
+    "tasks": [
+      "Vocabulary Understanding",
+      "Topic Classification",
+      "Reading Comprehension",
+      "Response Selection",
+      "Title Generation",
+      "Machine Translation",
+      "Math Reasoning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from translations of data in high-resource languages and original texts in minority languages.",
+    "size": "24,000 instances",
+    "format": "N/A",
+    "annotation": "Translated by native speakers and verified by other annotators."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "ROUGE-L",
+      "chrF++"
+    ],
+    "calculation": "Metrics are computed based on the model's output compared to the ground truth in each task.",
+    "interpretation": "Scores indicate the model's performance relative to best practices in LRL adaptation and evaluation tasks.",
+    "baseline_results": null,
+    "validation": "The benchmark uses a systematic task setup for evaluating LLM performance across a range of abilities."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The benchmark includes evaluations across different scripts and minority populations.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

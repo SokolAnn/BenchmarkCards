@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TEXT2WORLD",
+    "abbreviation": "N/A",
+    "overview": "TEXT2WORLD is a novel benchmark based on Planning Domain Definition Language (PDDL), featuring hundreds of diverse domains for evaluating the symbolic world modeling capabilities of large language models (LLMs). It employs multi-criteria, execution-based metrics for robust evaluation.",
+    "data_type": "PDDL domain specifications",
+    "domains": [
+      "Artificial Intelligence"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://text-to-world.github.io"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation framework for symbolic world modeling capabilities of LLMs.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "World Modeling"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "A collection of 1,801 raw PDDL files from public repositories and planning competitions, filtered to 264 high-quality PDDL domain specifications.",
+    "size": "103 domains",
+    "format": "PDDL (Planning Domain Definition Language)",
+    "annotation": "Manually annotated natural language descriptions by recruited computer science graduates."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Executability",
+      "Structural Similarity",
+      "Component-wise F1 Scores"
+    ],
+    "calculation": "Based on parsing generated PDDL and comparing it to ground truth PDDL.",
+    "interpretation": "Higher values in metrics indicate better performance in world modeling.",
+    "baseline_results": "The best-performing LLM, DeepSeek-R1, achieves F1 scores below 60% for both preconditions and effects without error correction.",
+    "validation": "Multiple validation stages to ensure accuracy and quality of annotations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "All annotators provided informed consent.",
+    "compliance_with_regulations": "Adheres to ethical guidelines for data collection."
+  }
+}

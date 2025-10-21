@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "RealDet (Reliable Machine-Generated Text Detection Dataset)",
+    "abbreviation": "RealDet",
+    "overview": "RealDet is a high-quality benchmark dataset designed for machine-generated text detection, covering 15 diverse domains and constructed using 22 powerful language models. It provides extensive data for calibrating detection systems and evaluating their robustness against adversarial attacks.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "TuringBench",
+      "HC3",
+      "RAID",
+      "M4",
+      "MAGE"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2505.05084"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive dataset for machine-generated text detection research that ensures realistic calibration and enhances the performance of detection frameworks.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Text Classification"
+    ],
+    "limitations": "RealDet dataset may still exhibit some inherent biases due to the nature of the sources it encompasses.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from 15 representative data sources across various writing tasks including question answering, news writing, and academic writing.",
+    "size": "847,909 texts",
+    "format": "Raw text files",
+    "annotation": "Generated from a mix of human-written and machine-generated sources, ensuring diversity and domain coverage."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "False Positive Rate (FPR)",
+      "True Positive Rate (TPR)",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated by comparing the predictions of detectors on the test datasets against the known labels of the texts.",
+    "interpretation": "High TPR and low FPR are desired to indicate effective detection performance.",
+    "baseline_results": null,
+    "validation": "Extensive empirical evaluations demonstrate that the MCP framework effectively constrains FPRs and improves detection performance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Data includes diverse age groups, but specifics depend on sampling methods.",
+    "harm": [
+      "Potential risks of misclassification leading to societal harm."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

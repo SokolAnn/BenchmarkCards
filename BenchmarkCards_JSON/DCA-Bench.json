@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DCA-Bench (Dataset Curation Agents Benchmark)",
+    "abbreviation": "DCA-Bench",
+    "overview": "DCA-Bench aims to provide a comprehensive benchmark for evaluating LLM agents’ capability to discover data quality issues across online dataset platforms, highlighting the need for further exploration and research in autonomous dataset curation.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "BIG-Bench"
+    ],
+    "resources": [
+      "https://github.com/TRAIS-Lab/dca-bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the capability of LLM agents in discovering hidden data quality issues in datasets.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Dataset Curation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from real issues reported by users or maintainers of popular dataset platforms, including Hugging Face, Kaggle, and BIG-Bench.",
+    "size": "221 test cases",
+    "format": "N/A",
+    "annotation": "Manually verified issues collected during the dataset curation process."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics using LLMs"
+    ],
+    "metrics": [
+      "Success Rate",
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on the outputs of the Curator agents compared to ground truth annotations.",
+    "interpretation": "The Curator's performance is classified into three levels: fail, success, and success+ based on the correctness of identified issues and provided contextual evidence.",
+    "baseline_results": "Top-performing models achieved about 29.86% success rate without hints and 78.28% with the most specific hints.",
+    "validation": "The reliability of the automatic evaluation scheme was validated through extensive comparisons with human annotations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Data is collected from platforms like Hugging Face, Kaggle, and GitHub, compliant with their respective terms.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

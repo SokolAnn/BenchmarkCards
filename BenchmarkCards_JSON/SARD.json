@@ -1,0 +1,69 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SARD (Large-Scale Synthetic Arabic OCR Dataset)",
+    "abbreviation": "SARD",
+    "overview": "SARD is a massive, synthetically generated dataset specifically designed to simulate book-style documents, comprising 843,622 document images containing 690 million words, rendered across ten distinct Arabic fonts to ensure broad typographic coverage. It serves as a valuable resource for developing and evaluating robust OCR and vision-language models capable of processing diverse Arabic book-style texts.",
+    "data_type": "document images",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "Arabic"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/collections/riotu-lab/sard-large-scale-synthetic-arabic-ocr-dataset-68204eae3ccd1e0216fb68ca",
+      "https://github.com/riotu-lab/text2image"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a large-scale, high-quality dataset for advancing Arabic OCR research and to enable more effective digitization of Arabic literary heritage.",
+    "audience": [
+      "ML Researchers",
+      "OCR Engineers",
+      "Data Scientists"
+    ],
+    "tasks": [
+      "Optical Character Recognition"
+    ],
+    "limitations": "As a purely synthetic dataset, SARD does not incorporate real-world document degradations such as uneven lighting, paper texture, ink bleed-through, or page skew.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Synthetic generation from diverse Arabic text sources covering various domains.",
+    "size": "843,622 document images containing 690 million words",
+    "format": "PNG",
+    "annotation": "Each image is paired with ground truth text generated during the synthesis process."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Character Error Rate (CER)",
+      "Word Error Rate (WER)",
+      "Bilingual Evaluation Understudy (BLEU)"
+    ],
+    "calculation": "Performance metrics are calculated by comparing the recognized text from OCR models to the ground truth text.",
+    "interpretation": "Lower CER and WER values signify better accuracy at the character and word levels, respectively. A higher BLEU score indicates greater similarity between predicted and ground truth text.",
+    "baseline_results": "Initial benchmark results include various models tested on the dataset, showing a range of performance metrics.",
+    "validation": "Validation is achieved through performance evaluations against multiple OCR models using the dataset."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

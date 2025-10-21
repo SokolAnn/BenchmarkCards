@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PRISM (Privacy-aware Evaluation of Responses in Sensitive Modalities)",
+    "abbreviation": "PRISM",
+    "overview": "PRISM is a comprehensive benchmark designed to assess Multimodal Large Language Models (MLLMs) on their ability to refuse biometric-related queries and mitigate implicit biometric leakage in open-ended responses while maintaining semantic faithfulness.",
+    "data_type": "image-question-answer pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "PrivBench",
+      "PrivQA"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/kyh9191/Safe-LLaVA",
+      "https://github.com/Kimyounggun99/Safe-LLaVA.git"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate MLLMs' ability to handle biometric privacy concerns effectively.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Privacy Advocates"
+    ],
+    "tasks": [
+      "Explicit Refusal Assessment",
+      "Implicit Leakage Detection"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Images and questions/answers curated specifically for evaluating biometric privacy.",
+    "size": "2,000 images with 26,000 QA pairs",
+    "format": "JSON",
+    "annotation": "Manually annotated for explicit and implicit biometric attributes."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Manual evaluation"
+    ],
+    "metrics": [
+      "Refusal Accuracy",
+      "Leakage Protection Score"
+    ],
+    "calculation": "Refusal Accuracy is calculated based on the percentage of correctly refused biometric-related queries; Leakage Protection Score reflects the extent of hidden biometric implications in model-generated responses.",
+    "interpretation": "Higher scores indicate more effective refusal behavior and better protection against implicit biometric disclosure.",
+    "baseline_results": "Safe-LLaV A models consistently achieve high refusal accuracy and low implicit leakage compared to baseline models.",
+    "validation": "Evaluated using multiple Judges and metrics for robustness."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data",
+            "Data privacy rights alignment"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis of biometric trait distribution across varied demographics in the benchmark datasets.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Measures are implemented to avoid revealing personal biometric information through model responses.",
+    "data_licensing": "The Safe-LLaVA dataset is licensed under Apache License 2.0.",
+    "consent_procedures": "Not applicable as dataset is derived from publicly available images.",
+    "compliance_with_regulations": "The benchmark aligns with GDPR principles regarding the handling of sensitive biometric data."
+  }
+}

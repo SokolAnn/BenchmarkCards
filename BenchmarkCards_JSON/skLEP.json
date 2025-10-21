@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "skLEP (Slovak General Language Understanding Benchmark)",
+    "abbreviation": "skLEP",
+    "overview": "skLEP is the first comprehensive benchmark specifically designed for evaluating Slovak natural language understanding (NLU) models, encompassing nine diverse tasks for thorough assessment of model capabilities.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Slovak"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/slovak-nlp/sklep"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To foster the evaluation and development of language models specifically for the Slovak language through a standardized benchmark.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Token Classification",
+      "Named Entity Recognition",
+      "Textual Entailment",
+      "Natural Language Inference",
+      "Semantic Textual Similarity",
+      "Hate Speech Classification",
+      "Sentiment Analysis",
+      "Question Answering"
+    ],
+    "limitations": "Some tasks within each category are relatively similar, and additional NLP tasks for Slovak are constrained by dataset availability.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated from original datasets and established English resources translated and annotated for Slovak with native speaker post-editing.",
+    "size": "9 tasks",
+    "format": "Various (Task-specific)",
+    "annotation": "Manual annotation with native speaker post-editing for translated datasets."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Macro F1",
+      "Accuracy",
+      "Pearson Correlation"
+    ],
+    "calculation": "Relative Error Reduction (RER) comparisons against a baseline model for scoring across tasks.",
+    "interpretation": "Performance is interpreted in relation to task-specific metrics, emphasizing a rigorous hyperparameter grid search for each model.",
+    "baseline_results": "SlovakBERT serves as a baseline for comparison, with detailed performance metrics across tasks.",
+    "validation": "Extensive hyperparameter search from training across models to validate robustness."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The benchmark includes Slovak-specific considerations but does not provide extensive demographic breakdowns.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All benchmark datasets are sourced from public repositories and are licensed for academic research.",
+    "data_licensing": "Predominantly released under Creative Commons licenses and managed for public access upon acceptance.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

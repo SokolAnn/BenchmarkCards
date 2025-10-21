@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Spider 2.0",
+    "abbreviation": "N/A",
+    "overview": "Spider 2.0 is an evaluation framework comprising 632 real-world text-to-SQL workflow problems derived from enterprise-level database use cases, addressing complex SQL environments and multiple SQL dialects.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Spider 1.0",
+      "BIRD"
+    ],
+    "resources": [
+      "https://github.com/sparrell/spider2-sql",
+      "https://spider2-sql.github.io"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a benchmark that reflects real-world data workflows for evaluating text-to-SQL models in enterprise applications.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Text-to-SQL"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Derived from enterprise-level database use cases including Google Analytics and Salesforce, incorporating complex data transformations and SQL workflows.",
+    "size": "632 problems",
+    "format": "JSON",
+    "annotation": "Tasks are annotated by experts proficient in SQL, with a focus on ensuring complex SQL queries are executed correctly."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Execution Accuracy (EX)",
+      "Success Rate (SR)"
+    ],
+    "calculation": "Metrics calculated through evaluation scripts determining the success of SQL queries based on execution results.",
+    "interpretation": "Higher metrics indicate better model performance; EX measures correctness of SQL query execution, while SR measures the overall task success rate.",
+    "baseline_results": "The best performance on Spider 2.0 by existing LLMs achieves only 21.3% success rate.",
+    "validation": "Evaluation procedures ensure rigorous testing through human validation and automated checks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Increased model complexity may lead to reduced performance in certain demographics or SQL dialects."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "STORY SUMM",
+    "abbreviation": "N/A",
+    "overview": "A benchmark for evaluating methods of faithfulness in summarization, using LLM summaries of narrative stories with localized faithfulness labels and error explanations.",
+    "data_type": "story-summary pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/melaniesubbiah/storysumm"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To improve evaluation methods for faithfulness in narrative summarization.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Summarization"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Short stories collected from Reddit subreddits: r/shortstories and r/shortscarystories.",
+    "size": "96 story-summary pairs",
+    "format": "N/A",
+    "annotation": "Annotations were provided by human annotators who labeled summaries as faithful/unfaithful."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Balanced accuracy"
+    ],
+    "calculation": "Metrics are calculated by comparing human labels to model-generated labels across various protocols.",
+    "interpretation": "Good performance indicates high fidelity in the automatic evaluation of narrative summarization.",
+    "baseline_results": "No metric achieves more than 70% balanced accuracy.",
+    "validation": "Different annotation protocols were tested to find effective methods for evaluating faithfulness."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Misrepresentation of narrative content"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

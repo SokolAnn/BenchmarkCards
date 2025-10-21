@@ -1,0 +1,100 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "UCFE (User-Centric Financial Expertise)",
+    "abbreviation": "UCFE",
+    "overview": "The UCFE benchmark is designed to evaluate the ability of large language models (LLMs) to handle complex real-world financial tasks through user-centric interactions and expert evaluations.",
+    "data_type": "multi-round dialogue interactions involving financial tasks",
+    "domains": [
+      "Finance"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "FLARE",
+      "MMMU",
+      "MMMU-PRO"
+    ],
+    "resources": [
+      "https://github.com/TobyYang7/UCFE-Benchmark"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a rigorous framework for assessing LLM performance in complex financial scenarios based on user interactions.",
+    "audience": [
+      "Financial Analysts",
+      "Financial Professionals",
+      "Regulatory Professionals",
+      "General Public"
+    ],
+    "tasks": [
+      "Financial Knowledge Consulting",
+      "Asset Valuation Reporting",
+      "Investment Strategy Evaluation",
+      "Credit Risk Evaluation",
+      "Market Information Summarization"
+    ],
+    "limitations": "The benchmark may not fully capture all real-world financial applications due to task coverage limitations.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected user interaction data and financial task scenarios based on user surveys.",
+    "size": "330 data points encompassing various user intents and financial tasks.",
+    "format": "N/A",
+    "annotation": "Data collected through user surveys and expert evaluations."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Model-based evaluation",
+      "LLM-as-Judge methodology"
+    ],
+    "metrics": [
+      "Pearson correlation",
+      "Elo scores"
+    ],
+    "calculation": "Metrics are calculated using user preferences alignment and performance comparisons via Elo rating system.",
+    "interpretation": "A higher Pearson correlation indicates alignment with human preferences; Elo scores rank model performance.",
+    "baseline_results": "Model benchmarks exhibited a Pearson correlation of 0.78 in alignment with human evaluations.",
+    "validation": "Validated using multiple LLM evaluators to assess the robustness of results."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis included diverse user groups reflecting different financial expertise levels.",
+    "harm": "The framework aims to minimize biases and ensure equitable model performance across user demographics."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "User data collected followed ethical guidelines with no harmful outcomes expected.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Informed consent obtained from all survey participants.",
+    "compliance_with_regulations": "N/A"
+  }
+}

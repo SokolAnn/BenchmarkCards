@@ -1,0 +1,76 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "AMSNet",
+    "abbreviation": "N/A",
+    "overview": "AMSNet is a dataset designed to facilitate the exploration of multimodal large language models (MLLMs) applications in Analog/Mixed-Signal (AMS) circuit generation by providing a comprehensive dataset delineating the schematic-netlist relationship.",
+    "data_type": "transistor-level schematics and SPICE format netlists",
+    "domains": [
+      "Electrical Engineering"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://ams-net.github.io/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of AMSNet is to support automatic design generation of AMS circuits by providing a comprehensive dataset of schematics and their corresponding netlists.",
+    "audience": [
+      "ML Researchers",
+      "Circuit Designers",
+      "EDA Practitioners"
+    ],
+    "tasks": [
+      "Circuit Generation",
+      "Netlist Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Transistor-level schematics and corresponding SPICE format netlists created through an automatic technique for converting schematics into netlists",
+    "size": "N/A",
+    "format": "SPICE",
+    "annotation": "The data was collected through a combination of manual labeling and automatic detection processes."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Component detection",
+      "Net detection"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy of component detection was measured by the proportion of correctly identified components against the total components labeled.",
+    "interpretation": "Accuracy is interpreted as the proportion of correct detections in both the component and netlist generation process.",
+    "baseline_results": "Component detection accuracy of 97.1% and net labeling accuracy of 96.7% were achieved during the dataset creation",
+    "validation": "The methodology has been tested by manually evaluating the accuracy of the trained models on labeled data."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "EH-Benchmark",
+    "abbreviation": "N/A",
+    "overview": "EH-Benchmark is a novel ophthalmology benchmark designed to evaluate hallucinations in Medical Large Language Models (MLLMs), categorizing hallucinations based on specific tasks and error types into two primary classifications: Visual Understanding and Logical Composition, across three levels of clinical reasoning.",
+    "data_type": "text",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MedHEval",
+      "MedHallBench"
+    ],
+    "resources": [
+      "https://github.com/ppxy1/EH-Benchmark",
+      "https://drive.google.com/file/d/1S4-RyfSjgZUodghn70c7TqXNI4WDeUJG/view?usp=sharing",
+      "https://drive.google.com/file/d/1HNkkPoYmIRRrPRombB___SdMEH3Auzpr/view?usp=sharing"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate hallucinations in Medical Large Language Models (MLLMs) specific to ophthalmology and propose a framework for hallucination mitigation.",
+    "audience": [
+      "ML Researchers",
+      "Healthcare Practitioners",
+      "Ophthalmology Experts"
+    ],
+    "tasks": [
+      "Visual Question Answering",
+      "Diagnostic Reasoning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Includes data collected from 13 ophthalmic datasets that capture a variety of clinical scenarios and hallucination behaviors.",
+    "size": "27,000 questions",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Precision",
+      "Recall",
+      "Accuracy"
+    ],
+    "calculation": "Metrics are calculated based on the performance of MLLMs over specified tasks within the benchmark.",
+    "interpretation": "Higher scores indicate better performance in mitigating hallucination while maintaining accuracy.",
+    "baseline_results": "State-of-the-art performance surpassing existing models.",
+    "validation": "The benchmark validation includes automatic assessment of tool outputs against ground truth using a multi-agent evaluation framework."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Privacy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

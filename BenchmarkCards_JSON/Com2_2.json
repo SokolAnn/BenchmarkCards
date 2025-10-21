@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Com2 (A Causal-Guided Benchmark for Exploring Complex Commonsense Reasoning in Large Language Models)",
+    "abbreviation": "Com2",
+    "overview": "Com2 focuses on complex commonsense reasoning by utilizing causal event graphs to create structured reasoning tasks that mimic real-world concerns.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://arxiv.org/abs/2506.07064"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess the complex commonsense reasoning abilities of large language models.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Complex Commonsense Reasoning",
+      "Counterfactual Reasoning",
+      "Intervention Reasoning",
+      "Decision Making",
+      "Transition Reasoning"
+    ],
+    "limitations": "The dataset synthesis process could benefit from finer-grained guidance of causal event graphs and could be refined with deeper analyses of causal relationships.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Causal event graphs incorporated with various task types generated through automated synthesis.",
+    "size": "2,500 examples for Com2-main; 1,254 examples for Com2-hard",
+    "format": "JSONL",
+    "annotation": "Generated with guidance from causal event graphs and human evaluation."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Metrics calculated based on the correctness of the model's responses to the generated common sense reasoning tasks.",
+    "interpretation": "Higher scores reflect better performance in commonsense reasoning tasks.",
+    "baseline_results": null,
+    "validation": "Human evaluators assessed the quality of generated tasks for Com2."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

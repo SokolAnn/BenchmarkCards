@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FlowVQA",
+    "abbreviation": "N/A",
+    "overview": "FlowVQA is a novel benchmark aimed at assessing the capabilities of visual question-answering multimodal language models in reasoning with flowcharts as visual contexts. It consists of 2,272 generated and human-verified flowchart images and 22,413 diverse question-answer pairs.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "TextVQA",
+      "DocVQA",
+      "MathVista",
+      "ChartQA",
+      "InfoGraphicVQA"
+    ],
+    "resources": [
+      "https://flowvqa.github.io/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the effectiveness of modern Vision Language Models in reasoning through complex visual and logical tasks using flowcharts.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Visual Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Flowcharts generated from WikiHow articles, Instructables DIY blogs, and FloCo code snippets.",
+    "size": "2,272 flowchart images, 22,413 question-answer pairs",
+    "format": "N/A",
+    "annotation": "Generated with human input and verified by experts to ensure quality."
+  },
+  "methodology": {
+    "methods": [
+      "Zero-Shot",
+      "Few-Shot",
+      "Fine-Tuning"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy calculated based on majority voting across multiple evaluator models.",
+    "interpretation": "Higher accuracy indicates better performance of models in visual reasoning tasks.",
+    "baseline_results": "The best-performing model achieved 68.42% Majority accuracy across all evaluators.",
+    "validation": "Extensive evaluation was conducted using both open-source and proprietary VLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential for biased model evaluations based on visual logic and reasoning capabilities."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

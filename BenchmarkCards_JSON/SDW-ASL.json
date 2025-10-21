@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SDW -ASL: A Dynamic System to Generate Large Scale Dataset for Continuous American Sign Language",
+    "abbreviation": "SDW-ASL",
+    "overview": "We proposed a system that can generate large scale ASL datasets for continuous ASL. ... We are releasing the first version of our ASL dataset, which contains 30k sentences, 416k words, a vocabulary of 18k words, in a total of 104 hours. This is the largest continuous sign language dataset published to date in terms of video duration.",
+    "data_type": "Condensed body pose sequences (3D pose, hand and face landmarks) paired with time-stamped English sentence text (sentence-video pairs)",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "American Sign Language",
+      "English"
+    ],
+    "similar_benchmarks": [
+      "PHOENIX14T",
+      "MS-ASL",
+      "How2Sign"
+    ],
+    "resources": [
+      "https://adeddb94ac1d.ngrok.io"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Create a publicly available ASL dataset serving as a standard for the ASL research community and design a system that allows the dataset to be evolved, expanded, and improved, particularly to support ASL production research.",
+    "audience": [
+      "ASL research community",
+      "Researchers in Natural Language Processing",
+      "Researchers in Computer Vision"
+    ],
+    "tasks": [
+      "Sign Language Production",
+      "Sign Language Comprehension"
+    ],
+    "limitations": "Dataset focuses on uniformity for ASL production and excludes diverse dialects; created from a small number of consistent news-anchor sources which limits signer diversity.",
+    "out_of_scope_uses": [
+      "Interviews",
+      "Event reports",
+      "Holiday celebrations",
+      "Video content without WebVTT or embedded closed captions"
+    ]
+  },
+  "data": {
+    "source": "Collected from two ASL News channels (news anchor videos with WebVTT or embedded closed captions); video clips segmented using closed captions and OCR.",
+    "size": "30,000 sentences; 416,000 words; vocabulary of 18,000 words; 104 hours of video.",
+    "format": "Condensed body pose data sequences (MediaPipe landmarks: first 24 BlazePose landmarks, 21 hand landmarks, 468 face mesh landmarks) paired with time-stamped English sentence text (WebVTT).",
+    "annotation": "Automatically generated from closed captions and OCR (Python-tesseract) with post-processing to combine fragments; human review and minor corrections supported via a web-based interface."
+  },
+  "methodology": {
+    "methods": [
+      "Automated segmentation using WebVTT timestamps and OCR (Python-tesseract)",
+      "Pose extraction using MediaPipe (BlazePose, hand and face landmarks) with bounding box and outlier filtering",
+      "Post-processing to combine caption fragments and timestamps",
+      "Human review and manual correction via a web-based interface"
+    ],
+    "metrics": [],
+    "calculation": "N/A",
+    "interpretation": "N/A",
+    "baseline_results": null,
+    "validation": "Human review and manual correction via a web-based interface; outlier filtering and bounding-box filtering applied to improve pose detection robustness."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Exposing personal information"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "By only releasing the pose data sequence (post data sequence), the privacy of the signers is protected.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

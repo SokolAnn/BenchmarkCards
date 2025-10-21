@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ObjexMT (Objective EXtraction in Multi-Turn jailbreaks)",
+    "abbreviation": "ObjexMT",
+    "overview": "ObjexMT is a benchmark that isolates and measures an LLM’s ability to recover the base objective of a multi-turn jailbreak conversation and calibrate its confidence in that recovery.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/hyunjun1121/ObjexMT_dataset"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a test for LLM judges on their ability to extract objectives from multi-turn dialogues and evaluate their self-reported confidence.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Objective Extraction"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "SafeMTData_Attack600, SafeMTData_1K, MHJ, CoSafe",
+    "size": "4,345 examples",
+    "format": "JSON",
+    "annotation": "Automatically generated"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Expected Calibration Error (ECE)",
+      "Brier Score",
+      "Wrong@High-Conf"
+    ],
+    "calculation": "Accuracy computed via LLM-judge semantic similarity to gold objectives, calibrated via a threshold derived from human-aligned data.",
+    "interpretation": "Higher accuracy and lower ECE indicate better performance in objective extraction and confidence calibration.",
+    "baseline_results": "claude-sonnet-4 achieves the highest accuracy (0.515) and calibration (ECE 0.296), while gpt-4.1 and Qwen3-235B-A22B-FP8 tie at 0.441 accuracy.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

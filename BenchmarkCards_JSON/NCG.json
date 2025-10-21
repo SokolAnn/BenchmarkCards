@@ -1,0 +1,75 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "NLPCONTRIBUTION GRAPH (NCG)",
+    "abbreviation": "NCG",
+    "overview": "NLPCONTRIBUTION GRAPH is a novel scheme to annotate research contributions from NLP articles and integrate them in a knowledge graph, facilitating fine-grained semantic knowledge capture over precise information targets modeled as nodes and links.",
+    "data_type": "sentence, phrase, and triple annotations",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/ncg-task/trial-data",
+      "https://doi.org/10.2478/jdis-2021-0023"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To create a structured knowledge graph of contributions in Natural Language Processing scholarly articles.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Knowledge Graph Construction"
+    ],
+    "limitations": "NLPCONTRIBUTION GRAPH has limited scope for structuring scholarly contributions compared to STEM scholarly knowledge at large.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "50 NLP scholarly articles randomly selected across five different NLP subfields.",
+    "size": "900 contribution sentences, 4,702 phrases, 2,980 triples",
+    "format": "JSON",
+    "annotation": "Manual annotation by a single annotator."
+  },
+  "methodology": {
+    "methods": [
+      "Manual annotation",
+      "Evaluation of intra-annotation agreement"
+    ],
+    "metrics": [
+      "F1 Score"
+    ],
+    "calculation": "Intra-annotation agreement metrics calculated between pilot and adjudicated annotations.",
+    "interpretation": "F1-scores of 67.92% for sentences, 41.82% for phrases, and 22.31% for triples indicating varying degrees of annotation agreement.",
+    "baseline_results": "N/A",
+    "validation": "Data validated through pilot and adjudication stages with specific annotation guidelines."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

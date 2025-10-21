@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "HypoGen",
+    "abbreviation": "N/A",
+    "overview": "HypoGen is a dataset of approximately 5,500 structured problem-hypothesis pairs extracted from top-tier computer science conference papers, aimed at framing scientific hypothesis generation as a conditional language modeling task.",
+    "data_type": "problem-hypothesis pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "KG-CoI"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/UniverseTBD/hypogen-dr1"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a structured dataset that facilitates the generation of scientific hypotheses and evaluates large language models in the context of scientific discovery.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Hypothesis Generation",
+      "Natural Language Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Papers accepted at NeurIPS 2023 and ICLR 2024.",
+    "size": "5,500 examples",
+    "format": "JSON",
+    "annotation": "Structured extraction using OpenAI's o1 model."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Perplexity",
+      "IAScore",
+      "Idea Distinctness Index"
+    ],
+    "calculation": "Automated metrics based on generated hypotheses compared with expert-generated ideas.",
+    "interpretation": "Lower perplexity indicates better fluency and coherence, while higher IAScore suggests better alignment with expert proposals.",
+    "baseline_results": "N/A",
+    "validation": "Evaluation using a test set of 50 hypotheses extracted from recent literature."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "MIT license",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

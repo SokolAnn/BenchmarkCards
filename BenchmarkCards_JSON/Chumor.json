@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Chumor (Chinese Humor Understanding)",
+    "abbreviation": "Chumor",
+    "overview": "Chumor is the first Chinese humor explanation dataset that poses significant challenges to existing LLMs and aims to improve humor understanding in non-English contexts.",
+    "data_type": "humor explanation pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "Global-MMLU"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/dnaihao/Chumor",
+      "https://dnaihao.github.io/Chumor-dataset/",
+      "https://huggingface.co/spaces/dnaihao/Chumor",
+      "https://github.com/dnaihao/Chumor-dataset"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To advance the understanding of humor in Chinese and evaluate the performance of LLMs in humor reasoning.",
+    "audience": [
+      "ML Researchers",
+      "Natural Language Processing Practitioners"
+    ],
+    "tasks": [
+      "Humor Explanation"
+    ],
+    "limitations": "The dataset primarily showcases the challenges LLMs face in understanding humor, particularly in non-English contexts.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Ruo Zhi Ba (RZB), a Chinese platform sharing culturally specific jokes.",
+    "size": "3,339 instances",
+    "format": "JSON",
+    "annotation": "Manually annotated by five native Chinese speakers"
+  },
+  "methodology": {
+    "methods": [
+      "Direct prompting",
+      "Chain-of-thought prompting"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Matthew's Correlation Coefficient (MCC)"
+    ],
+    "calculation": "Accuracy is calculated based on correct prediction labels compared to human-annotated labels.",
+    "interpretation": "A higher accuracy indicates better humor understanding by the model.",
+    "baseline_results": null,
+    "validation": "The performance of ten LLMs was evaluated on the dataset."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Efforts were made to filter out excessively offensive content.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Nine Probing Datasets for Multilingual Sensitivity to Syntactic Perturbations",
+    "abbreviation": "N/A",
+    "overview": "This paper proposes nine probing datasets organized by the type of controllable text perturbation for three Indo-European languages: English, Swedish, and Russian, aiming to analyze syntactic sensitivity of multilingual Transformer LMs.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Swedish",
+      "Russian"
+    ],
+    "similar_benchmarks": [
+      "CoLA (Corpus of Linguistic Acceptability)",
+      "BLiMP (Benchmark of Linguistic Minimal Pairs)",
+      "SyntaxGym"
+    ],
+    "resources": [
+      "https://github.com/evtaktasheva/dependency_extraction"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To explore the syntactic sensitivity of multilingual LMs through controllable syntactic perturbations in structured datasets.",
+    "audience": [
+      "ML Researchers",
+      "NLP Practitioners"
+    ],
+    "tasks": [
+      "Syntactic Sensitivity Probing",
+      "Text Perturbation Analysis"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Datasets constructed from CoNLL 2017 Shared Task on Multilingual Parsing from Raw Texts to Universal Dependencies.",
+    "size": "10,000 pairs for each perturbation type per language",
+    "format": "CSV",
+    "annotation": "Manually curated with linguistic expertise."
+  },
+  "methodology": {
+    "methods": [
+      "Parameter-free Probing",
+      "Self-Attention Probing",
+      "Token Perturbed Masking"
+    ],
+    "metrics": [
+      "Undirected Unlabeled Attachment Score (UUAS)",
+      "Token Identifiability (TI)"
+    ],
+    "calculation": "Metrics calculated based on the differences between syntactic trees induced from original and perturbed sentences.",
+    "interpretation": "Lower UUAS scores indicate better reconstruction of syntactic structures from perturbed sentences.",
+    "baseline_results": null,
+    "validation": "Probing performances cross-validated using metrics against original sentence embeddings and syntactic trees."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Sensitivity across different Indo-European languages.",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

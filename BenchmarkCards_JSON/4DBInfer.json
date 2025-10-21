@@ -1,0 +1,102 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "4DBInfer (4D Benchmarking Toolbox for Graph-Centric Predictive Modeling on Relational DBs)",
+    "abbreviation": "4DBInfer",
+    "overview": "4DBInfer is a toolbox that introduces a diverse collection of large-scale relational database benchmarks and a framework for evaluating predictive models on relational database data. It addresses the lack of suitable public benchmarks for training and evaluation purposes in predictive machine learning tasks applied to relational databases.",
+    "data_type": "tabular",
+    "domains": [
+      "Database Management",
+      "Machine Learning"
+    ],
+    "languages": [
+      "N/A"
+    ],
+    "similar_benchmarks": [
+      "RDBench",
+      "RelBench",
+      "CRLR"
+    ],
+    "resources": [
+      "https://github.com/awslabs/multi-table-benchmark"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a benchmarking toolbox that allows for systematic evaluation and comparison of predictive models on relational databases.",
+    "audience": [
+      "ML Researchers",
+      "Database Engineers",
+      "Data Scientists"
+    ],
+    "tasks": [
+      "Customer Retention Prediction",
+      "Click-through-rate Prediction",
+      "Product Purchase Prediction",
+      "Conversion Rate Prediction",
+      "User Churn Prediction",
+      "Rating Prediction"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Various relational database datasets created for benchmarking purposes.",
+    "size": "Up to billions of rows across different RDB datasets.",
+    "format": "Tabular data across multiple inter-connected tables.",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Tabular model training",
+      "Graph-based model training"
+    ],
+    "metrics": [
+      "Accuracy",
+      "AUC",
+      "RMSE",
+      "Mean Reciprocal Rank (MRR)"
+    ],
+    "calculation": "Metrics are calculated based on standard machine learning evaluation methods applied to prediction results.",
+    "interpretation": "Higher AUC indicates better model performance in binary classification tasks, while lower RMSE indicates better performance in regression tasks.",
+    "baseline_results": "Results vary by dataset and task; specific baseline performances are detailed in experimental sections.",
+    "validation": "Cross-validation methods applied to ensure model robustness."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

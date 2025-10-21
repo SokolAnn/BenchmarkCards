@@ -1,0 +1,100 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ER-T EST",
+    "abbreviation": "ER-T EST",
+    "overview": "ER-T EST is a framework for evaluating explanation regularization (ER) models' out-of-distribution (OOD) generalization along three dimensions: unseen dataset tests, contrast set tests, and functional tests. It is designed to analyze how ER design choices (rationale extractor, alignment criterion, human rationale type, instance selection, annotation time) affect ID and OOD performance.",
+    "data_type": "text (text classification instances with extractive token-level rationales; contrast set perturbations of real-world text; synthetic functional test instances created from templates)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [],
+    "similar_benchmarks": [
+      "Contrast Set Tests (Gardner et al., 2020)",
+      "Functional Tests / CheckList (Ribeiro et al., 2020)",
+      "ERASER"
+    ],
+    "resources": [
+      "https://github.com/INK-USC/ER-Test",
+      "https://arxiv.org/abs/2205.12542"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a unified evaluation framework (ER-T EST) for measuring how explanation regularization methods affect language models' out-of-distribution generalization via: (A) unseen dataset tests, (B) contrast set tests, and (C) functional tests.",
+    "audience": [],
+    "tasks": [
+      "Text Classification",
+      "Sentiment Analysis",
+      "Natural Language Inference",
+      "Named Entity Recognition",
+      "Hate Speech Detection"
+    ],
+    "limitations": "Contrast set tests and functional tests are generally expensive to create and not many tasks have pre-constructed tests available. Certain tests in ER-T EST may not be applicable to all NLP tasks (e.g., constructing contrast sets for token classification is not straightforward). ER-T EST covers a limited region in the space of OOD evaluation.",
+    "out_of_scope_uses": [
+      "Token classification tasks (e.g., Named Entity Recognition) — constructing contrast set tests for token classification is not straightforward, which limits applicability to sequence classification tasks."
+    ]
+  },
+  "data": {
+    "source": "Datasets used (as stated in the paper): SST (Short movie reviews), Yelp, Amazon, Movies (long movie reviews), e-SNLI, MNLI, IMDb (contrast sets), Flights (functional tests), Linguistically-Informed Transformations (LIT) (contrast sets for NLI), ANLP-NLI (functional tests for NLI), CoNLL-2003, OntoNotes v5.0, Stormfront (Stf), HatEval, Gab Hate Corpus (GHC). Task-level lexicons used: AFINN and SenticNet. User study data: Amazon Mechanical Turk annotations (time study).",
+    "size": "N/A",
+    "format": "N/A",
+    "annotation": "Instance-level human rationales: manual extractive token-level annotations by humans (instance-level). Task-level human rationales: distantly-supervised rationales generated via task lexicons (AFINN, SenticNet) applied across instances. User study annotations collected via Amazon Mechanical Turk (three Turkers per instance for time estimates; an initial training set D_init of 1000 instances used in time-budget experiments)."
+  },
+  "methodology": {
+    "methods": [
+      "Unseen dataset tests (evaluate model on datasets beyond training distribution)",
+      "Contrast set tests (evaluate model on manually perturbed counterfactual instances; use contrast consistency metric)",
+      "Functional tests (evaluate model on synthetic template-based tests covering Vocabulary, Robustness, Logic, Entity)",
+      "Human annotation study (Amazon Mechanical Turk) for annotation time budgets",
+      "Statistical significance testing (unpaired Welch's t-test, p < 0.05)"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Macro F1",
+      "Contrast consistency",
+      "Failure rate",
+      "Normalized failure rate (min-max scaled per functional test)",
+      "False Positive Rate Difference (FPRD) for fairness",
+      "Mean and standard deviation over seeds"
+    ],
+    "calculation": "Unseen dataset tests: use each dataset's standard metric (sentiment analysis: Accuracy; NLI: Macro F1). Contrast set tests: contrast consistency = percentage of instances for which both the original instance and all of its contrast instances are predicted correctly. Functional tests: failure rate = percentage of instances predicted incorrectly; normalized failure rate = min-max scaling per functional test, aggregate = mean normalized failure rate across functional tests. Statistical significance: unpaired Welch's t-test between each ER model and No-ER baseline (alternative hypothesis: ER model mean > No-ER mean), p < 0.05.",
+    "interpretation": "Higher Accuracy and Macro F1 indicate better task performance on unseen datasets. Higher contrast consistency is better. Lower failure rate / lower normalized failure rate indicates better performance on functional tests. Significance is assessed via Welch's t-test (p < 0.05). In this work, ER is interpreted as having little impact on in-distribution (ID) performance but can yield large OOD performance gains under certain design choices.",
+    "baseline_results": "No-ER baseline results are reported in the paper's tables. Examples from Table 1 (No-ER): SST (seen Acc) = 94.22 (±0.77), Amazon (unseen Acc) = 90.72 (±1.36), Yelp = 92.07 (±2.66), Movies = 89.83 (±6.79); e-SNLI (seen F1) = 76.18 (±1.28), MNLI (unseen F1) = 46.15 (±4.38). The paper compares these No-ER baselines to multiple ER variants across tables.",
+    "validation": "Hyperparameters tuned on development sets (seen dataset dev). Report mean over three random seeds and standard deviation. Early stopping based on total development set loss (task loss + ER loss) with patience of 10 epochs. Use unpaired Welch's t-test (p < 0.05) to measure statistical significance of ER improvements over No-ER."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Fairness",
+      "Explainability",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Governance",
+          "subcategory": [
+            "Lack of testing diversity",
+            "Incomplete usage definition"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Evaluates group fairness in hate speech detection via False Positive Rate Difference (FPRD) across group identifiers in lexicons (measures model bias against group identifiers).",
+    "harm": [
+      "Bias against protected or identified groups in hate speech detection (measured as increased false positives for group identifiers)"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

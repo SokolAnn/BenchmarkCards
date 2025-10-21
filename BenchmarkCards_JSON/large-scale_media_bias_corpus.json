@@ -1,0 +1,113 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "large-scale media bias corpus",
+    "abbreviation": "N/A",
+    "overview": "A large-scale corpus of US online news articles (2010–2021) introduced to study the interaction of social bias and political bias and to evaluate which word embedding algorithms best quantify social bias in text corpora. The corpus covers more than 500,000 articles from 47 English-language US online news outlets and is annotated for political bias using allsides.com media bias ratings.",
+    "data_type": "text (news articles)",
+    "domains": [
+      "Natural Language Processing",
+      "Media/Journalism"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/webis-de/EMNLP-22",
+      "https://commoncrawl.org"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a large-scale news corpus annotated for political bias and to evaluate how different word embedding algorithms represent social bias (gender, ethnicity, religion) in news texts using WEAT and word-similarity evaluations.",
+    "audience": [
+      "Computational researchers",
+      "Natural Language Processing researchers"
+    ],
+    "tasks": [
+      "Bias Evaluation",
+      "Intrinsic Word Similarity Evaluation",
+      "Temporal Analysis"
+    ],
+    "limitations": "Distantly supervised labeling by outlet (articles labeled by outlet bias) may not reflect article-level bias; outlet bias may have changed over time; word lists used in WEAT are not complete and may suffer from selection bias; only a limited number of embedding algorithms were evaluated; chosen fine-tuning settings (four epochs) may affect results.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from Common Crawl and mapped to media bias ratings from allsides.com; articles from 47 English-language US online news outlets (liberal, neutral/center, conservative) covering 2010–2021. Text extracted from WARC files using news-please; publication dates extracted automatically where possible.",
+    "size": "520,798 news articles",
+    "format": "WARC (Common Crawl) raw files extracted to plain text; tokenized with HuggingFace tokenizer (vocabulary of around 39k tokens) for some models",
+    "annotation": "Distant supervision: articles labeled by outlet political bias using allsides.com ratings (left, lean-left, center, lean-right, right aggregated into liberal/neutral/conservative subsets). Publication dates extracted automatically for most articles (about 80%); no article-level manual political-bias annotation reported."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics (WEAT via WEFE framework)",
+      "Intrinsic word similarity evaluation (Spearman's rho on MEN and WordSim353)",
+      "Temporal evaluation (yearly models and WEAT over time)"
+    ],
+    "metrics": [
+      "Word Embedding Association Test (WEAT effect size, range -2 to 2)",
+      "Spearman's rho (correlation between cosine similarities and human similarity annotations)"
+    ],
+    "calculation": "WEAT effect size computed as the mean difference of association between target group vectors and attribute vectors divided by the pooled standard deviation (resulting in values from -2 to 2). Word-similarity evaluation: compute cosine similarity between word vectors for annotated word pairs and report Spearman's rho between these similarities and human annotations (MEN and WordSim353). WEAT calculations performed using the WEFE implementation and word lists from Spliethöver and Wachsmuth (2021).",
+    "interpretation": "WEAT value 0 represents the least possible bias; positive/negative values indicate direction and magnitude of association. The paper emphasizes that absolute WEAT values may be less meaningful across embedding algorithms and recommends relative comparisons (e.g., differences between models trained on conservative vs. liberal subsets) to assess alignment with psychology literature expectations.",
+    "baseline_results": "Baseline models include Static (word2vec) and pre-trained BERT. Reported results: Decontextualized embeddings achieved the highest word-similarity scores (Spearman's rho ranging approximately 0.62–0.77). WEAT results (Table 3) show no single algorithm consistently best: Fine-Tuned had the highest conservative-vs-liberal delta for gender; FrecAgn performed closest to expectation for ethnicity; Decontext had the highest delta for religion. Static models often performed worse on word similarity.",
+    "validation": "Validation via intrinsic word-similarity tests (MEN and WordSim353) to assess embedding quality, comparison of model WEAT results to expectations from psychology literature, and temporal evaluation (training per-year models and measuring WEAT trends)."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Robustness",
+      "Accuracy",
+      "Societal Impact"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Uncertain data provenance"
+          ]
+        },
+        {
+          "category": "Governance",
+          "subcategory": [
+            "Lack of data transparency",
+            "Incomplete usage definition"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on affected communities"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The benchmark evaluation includes WEAT analyses for Gender, Ethnicity, and Religion to assess group-specific social bias.",
+    "harm": [
+      "Prejudices and discrimination that cause lasting harm",
+      "Harmful consequences in practical applications and impact on audiences"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

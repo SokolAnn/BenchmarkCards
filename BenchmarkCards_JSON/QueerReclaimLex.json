@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "QueerReclaimLex",
+    "abbreviation": "N/A",
+    "overview": "QueerReclaimLex is a curated dataset of statements containing reclaimed LGBTQ+ slurs, created to facilitate analyses related to gender-queer dialect biases in language models, particularly for harmful speech detection.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/rebedorn/QueerReclaimLex"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To investigate bias in harmful speech classification of gender-queer dialect online and inform the development of equitable content moderation practices.",
+    "audience": [
+      "ML Researchers",
+      "Content Moderation Practitioners",
+      "LGBTQ+ Advocates"
+    ],
+    "tasks": [
+      "Harmful Speech Detection"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated templates based on real-world uses of reclaimed slurs in tweets sourced from the NB-TwitCorpus3M dataset.",
+    "size": "109 templates",
+    "format": "Text",
+    "annotation": "Annotated by gender-queer individuals for subjective harm assessments and pragmatic use types."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on model performance when identifying harmful speech in relation to the author’s identity.",
+    "interpretation": "High F1 scores indicate better model performance in accurately detecting harmful slur usage.",
+    "baseline_results": null,
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Annotations were provided by a diverse group of gender-queer individuals, reflecting a range of identities and perspectives.",
+    "harm": [
+      "Perpetuation of bias against gender-queer populations through automated content moderation."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "Consent was obtained from gender-queer annotators for their participation in the study.",
+    "compliance_with_regulations": "N/A"
+  }
+}

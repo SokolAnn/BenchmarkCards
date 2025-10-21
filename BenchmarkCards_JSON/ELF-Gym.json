@@ -1,0 +1,68 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ELF-Gym (Evaluating Large Language Models Generated Features for Tabular Prediction)",
+    "abbreviation": "ELF-Gym",
+    "overview": "ELF-Gym is a framework for evaluating LLM-generated features by curating a dataset that includes 251 expert-crafted features from top-performing teams in Kaggle competitions. It quantifies LLM-generated features' impact on model performance and compares semantic and functional similarities with human-engineered features.",
+    "data_type": "feature descriptions",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/Lilyzhangyanlin/ELF-Gym",
+      "https://doi.org/10.1145/3627673.3679153"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation of the disparities between LLM-generated features and expert-crafted features in feature engineering tasks.",
+    "audience": [
+      "ML Researchers",
+      "Data Scientists"
+    ],
+    "tasks": [
+      "Feature Engineering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated from historical Kaggle competitions datasets",
+    "size": "251 golden features",
+    "format": "N/A",
+    "annotation": "Manual extraction and validation of features using GPT-4o"
+  },
+  "methodology": {
+    "methods": [
+      "Quantitative evaluation",
+      "Feature comparison metrics"
+    ],
+    "metrics": [
+      "Recall"
+    ],
+    "calculation": "Recall is calculated based on the proportion of golden features found in LLM-generated feature sets.",
+    "interpretation": "Higher recall indicates better alignment with expert-crafted features.",
+    "baseline_results": null,
+    "validation": "Initial experiments conducted with GPT-4o, Claude 3, LLaMA 3, and Mixtral"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

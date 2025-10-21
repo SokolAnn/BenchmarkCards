@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "C-VQA (Counterfactual Visual Question Answering)",
+    "abbreviation": "C-VQA",
+    "overview": "C-VQA is a novel dataset designed to examine the counterfactual reasoning capabilities of multi-modal large language models. It consists of original questions infused with counterfactual presuppositions to evaluate the reasoning abilities of models.",
+    "data_type": "image-question pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "VQAv2",
+      "CF-VQA",
+      "VQA-CP"
+    ],
+    "resources": [
+      "https://bzhao.me/C-VQA/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate counterfactual reasoning abilities in multi-modal language models.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Visual Question Answering"
+    ],
+    "limitations": "The dataset currently includes a limited number of images, affecting the comprehensiveness of evaluation.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed using original questions from VQAv2 and generating new counterfactual questions.",
+    "size": "6,144 image-question pairs (3,144 real and 3,000 synthetic)",
+    "format": "JSON",
+    "annotation": "Manually annotated by experts and verified for correctness."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Metrics calculated based on model performance on original vs. counterfactual questions.",
+    "interpretation": "High performance indicates better reasoning capabilities in counterfactual scenarios.",
+    "baseline_results": "Performance metrics varied, showing drops of up to 40% for counterfactual questions.",
+    "validation": "Comparative evaluation with existing state-of-the-art models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Yes, the dataset includes an analysis of biases in answering based on gender-related questions.",
+    "harm": [
+      "Bias in handling gender-related counterfactual questions"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

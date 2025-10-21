@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MELT (Multimodal Emotion-Lines Dataset Labeled with LLM ContexTKnowledge)",
+    "abbreviation": "MELT",
+    "overview": "MELT is a multimodal emotion dataset fully annotated by GPT-4o using a context-aware automatic annotation method, showcasing the application of LLMs in generating reliable, scalable annotations for speech emotion recognition.",
+    "data_type": "multimodal",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MELD"
+    ],
+    "resources": [
+      "https://github.com/KeiKinn/meltdataset.git"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To develop a context-aware annotation method using GPT-4o for multimodal emotion data and demonstrate its effectiveness compared to traditional methods.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Speech Emotion Recognition"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Derived from the Multimodal EmotionLines Dataset (MELD), utilizing audio data from the sitcom 'Friends'.",
+    "size": "7,024 training examples, 1,797 test examples",
+    "format": "JSON",
+    "annotation": "Automated annotation using GPT-4o; leveraging structured prompts for consistency."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Unweighted Accuracy Recall (UAR)",
+      "Accuracy (ACC)",
+      "F1 Score"
+    ],
+    "calculation": "Metrics calculated as the average of predictions across multiple emotion recognition datasets.",
+    "interpretation": "Higher scores indicate better model performance in recognizing emotions across the datasets.",
+    "baseline_results": "MELT consistently outperformed MELD in SER tasks.",
+    "validation": "Validation through subjective experiments and objective evaluations across various emotion recognition datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SimpleQA",
+    "abbreviation": "N/A",
+    "overview": "SimpleQA is a benchmark that evaluates the ability of language models to answer short, fact-seeking questions. It contains 4,326 short, fact-seeking questions that are adversarially collected against GPT-4 responses, with each answer graded as correct, incorrect, or not attempted.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "TriviaQA",
+      "Natural Questions"
+    ],
+    "resources": [
+      "https://github.com/openai/simple-evals"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To measure the factuality of frontier language models through a targeted evaluation of their ability to answer short, fact-seeking questions.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "SimpleQA only measures factuality under the constrained setting of short, fact-seeking queries with a single, verifiable answer.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Data was created by AI trainers who generated question and answer pairs, with answers verified by another AI trainer.",
+    "size": "4,326 questions",
+    "format": "N/A",
+    "annotation": "Questions were created by AI trainers and answers verified by independent AI trainers."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation"
+    ],
+    "metrics": [
+      "F-score",
+      "overall correct",
+      "correct given attempted"
+    ],
+    "calculation": "The F-score is computed as the harmonic mean of overall correct and correct given attempted.",
+    "interpretation": "A model that gets many questions correct while attempting those it is confident about would indicate ideal behavior.",
+    "baseline_results": "Various OpenAI and Anthropic models were evaluated on SimpleQA, with GPT-4 showing different scores based on its configurations.",
+    "validation": "Performance metrics were manually validated against a set of test answers."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Hallucinations",
+      "Inaccurate information"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

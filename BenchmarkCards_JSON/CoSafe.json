@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CoSafe",
+    "abbreviation": "N/A",
+    "overview": "CoSafe is a dataset comprising 1,400 multi-turn dialogue coreference questions across 14 categories, designed to evaluate the safety of large language models (LLMs) in dialogue coreference contexts.",
+    "data_type": "multi-turn dialogue coreference questions",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "TruthfulQA",
+      "SaFeRDialogues",
+      "HarmfulQ"
+    ],
+    "resources": [
+      "https://github.com/ErxinYu/CoSafe-Dataset"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate and enhance the safety of large language models in multi-turn dialogue scenarios by identifying vulnerabilities related to coreference.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Safety Analysts"
+    ],
+    "tasks": [
+      "Safety Evaluation",
+      "Dialogue Coreference Analysis"
+    ],
+    "limitations": "Semantic drift in multi-turn questions; high cost of generating multi-turn dialogue coreferences.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Dataset created using prompts derived from BeaverTails (Ji et al. 2023) and expanded using GPT-4.",
+    "size": "1,400 examples",
+    "format": "JSON",
+    "annotation": "Automated expansion of prompts into multi-turn dialogues using GPT-4 with manual refinement."
+  },
+  "methodology": {
+    "methods": [
+      "QA Moderation",
+      "Human Evaluation",
+      "LLM Evaluation"
+    ],
+    "metrics": [
+      "Attack Successful Rate",
+      "Harmful Rate"
+    ],
+    "calculation": "Metrics calculated through comparisons between responses generated for single prompts and multi-turn dialogues.",
+    "interpretation": "Higher attack successful rates indicate increased vulnerabilities in dialogue coreference scenarios.",
+    "baseline_results": null,
+    "validation": "Validation was conducted using multiple evaluation methods and cross-comparisons of harmful rates."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Robustness",
+      "Bias"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt leaking",
+            "Data poisoning"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis of model responses indicated varying harmfulness across demographic categories.",
+    "harm": [
+      "Potential to generate harmful or unsafe responses due to coreference manipulation."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

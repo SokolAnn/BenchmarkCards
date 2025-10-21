@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Value Portrait",
+    "abbreviation": "N/A",
+    "overview": "Value Portrait is a psychometrically validated benchmark for evaluating LLMs' value orientations, constructed from real-world user interactions, which includes query-response pairs annotated with value correlations.",
+    "data_type": "query-response pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ValueNet",
+      "ValueBench"
+    ],
+    "resources": [
+      "https://github.com/holi-lab/ValuePortrait"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess the value orientations of language models using a benchmark that reflects actual user interactions and evaluates alignment with human values.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Value Assessment"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from datasets of human-LLM interactions (ShareGPT, LMSYS) and human-human advisory contexts (Reddit, Dear Abby).",
+    "size": "520 query-response pairs",
+    "format": "JSON",
+    "annotation": "Annotated by human subjects using a psychometric approach to correlate responses with psychological dimensions."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Correlation with Schwartz values",
+      "Spearman correlation"
+    ],
+    "calculation": "Using Spearman correlations between participant ratings and their assessed values.",
+    "interpretation": "Higher correlations indicate stronger alignment with corresponding value dimensions.",
+    "baseline_results": "N/A",
+    "validation": "Validated through internal consistency measures (Cronbach's alpha) showing high reliability across value dimensions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Demographic biases in LLMs' value perceptions were analyzed across different groups.",
+    "harm": "Identifies potential biases in how LLMs represent various demographic groups."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Participants' data was anonymized, and all personal identifiers were replaced with unique IDs.",
+    "data_licensing": "Licensed under Apache 2.0 for ShareGPT and MIT for other datasets.",
+    "consent_procedures": "Participants granted explicit consent for their demographic information and responses to be used in research.",
+    "compliance_with_regulations": "Compliant with human subject research ethical standards and has received Institutional Review Board (IRB) approval."
+  }
+}

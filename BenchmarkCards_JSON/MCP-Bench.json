@@ -1,0 +1,104 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MCP-Bench",
+    "abbreviation": "N/A",
+    "overview": "MCP-Bench is a benchmark for evaluating large language models on realistic, multi-step tasks that require tool use, cross-tool coordination, and planning/reasoning for solving tasks, built on the Model Context Protocol (MCP) connecting LLMs to 28 MCP servers spanning 250 tools across multiple domains.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Finance",
+      "Travel",
+      "Scientific Computing",
+      "Academic Search"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ToolBench",
+      "BFCL v3",
+      "MCP-RADER",
+      "MCPEval"
+    ],
+    "resources": [
+      "https://github.com/Accenture/mcp-bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a rigorous, standardized platform for evaluating the capabilities of large language models in handling complex, realistic tool-using scenarios across diverse domains.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Task Planning",
+      "Tool Coordination",
+      "Multi-Step Reasoning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "MCP servers exposing 250 tools across 28 domains.",
+    "size": "104 tasks",
+    "format": "N/A",
+    "annotation": "Automated task synthesis with human quality checks."
+  },
+  "methodology": {
+    "methods": [
+      "Rule-based evaluation",
+      "LLM judge scoring"
+    ],
+    "metrics": [
+      "Task Completion Quality",
+      "Tool Usage Quality",
+      "Planning Effectiveness"
+    ],
+    "calculation": "Metrics derived from direct evaluation of task outcomes and agent performances through rule-based checks and LLM judgments.",
+    "interpretation": "Scores normalized on a scale to determine performance across various dimensions, comparing expected results with actual outputs.",
+    "baseline_results": "N/A",
+    "validation": "Evaluation is based on systematic comparison of LLM performances across multiple tasks and setups."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Inaccurate task execution leads to incorrect conclusions."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

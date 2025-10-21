@@ -1,0 +1,82 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Wild2MaxDiacs (Multi-genre Wild Diacritization to Maximal Diacritization)",
+    "abbreviation": "Wild2MaxDiacs",
+    "overview": "Wild2MaxDiacs is a new annotated dataset designed for evaluating models to exploit naturally occurring diacritics in Arabic text and improve the quality of Arabic diacritization tools.",
+    "data_type": "word-level diacritization pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Arabic"
+    ],
+    "similar_benchmarks": [
+      "WikiNews",
+      "Penn Arabic Treebank"
+    ],
+    "resources": [
+      "https://github.com/CAMeL-Lab/wild_diacritics"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enhance Arabic diacritization models by utilizing patterns from partially diacritized words and to provide an open-source resource for researchers.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Diacritization"
+    ],
+    "limitations": "The observations are limited by the selection of genres and sample sizes studied.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Annotated dataset created from six diverse genres including news articles, novels, children’s books, poetry, political documents, and ChatGPT outputs.",
+    "size": "6,000 words",
+    "format": "N/A",
+    "annotation": "Annotated by two Arabic native speakers following a definition of in-context full diacritization."
+  },
+  "methodology": {
+    "methods": [
+      "Hybrid (neuro-symbolic) analyze-and-disambiguate approach"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Metrics calculated by matching outputs against human-annotated maximal diacritizations.",
+    "interpretation": "Higher accuracy indicates better performance of diacritization models utilizing the dataset.",
+    "baseline_results": "The baseline model accuracy increased from 47.1% to 84.5% with enhancements.",
+    "validation": "Evaluated using a well-formedness check and comparison against Oracle performance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

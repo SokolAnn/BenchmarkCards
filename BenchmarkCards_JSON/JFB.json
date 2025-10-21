@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "January Food Benchmark (JFB)",
+    "abbreviation": "JFB",
+    "overview": "The January Food Benchmark (JFB) is a publicly available dataset consisting of 1,000 food images with human-validated annotations for meal names, ingredients, and macronutrients, designed to facilitate automated nutritional analysis and improve evaluation methodologies in AI.",
+    "data_type": "image",
+    "domains": [
+      "Computer Vision",
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/January-ai/food-scan-benchmarks"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a high-quality, publicly available dataset for benchmarking and evaluating models in automated food analysis.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Meal Identification",
+      "Ingredient Recognition",
+      "Nutritional Estimation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Sourced from users of a mobile health application who consented to data use for research, featuring real-world images logged by users.",
+    "size": "1,000 images",
+    "format": "JSON with image annotations",
+    "annotation": "Human validation and correction for all annotations including meal name, ingredients, quantities, and macronutrients."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Overall Score",
+      "Precision",
+      "Recall",
+      "F1 Score",
+      "Weighted Mean Absolute Percentage Error (WMAPE)"
+    ],
+    "calculation": "Overall Score is calculated using a weighted geometric mean of performance metrics reflecting the application-oriented needs.",
+    "interpretation": "Higher scores indicate better model performance across the assessed metrics.",
+    "baseline_results": "january/food-vision-v1 achieved an Overall Score of 86.2.",
+    "validation": "Rigorous, multi-stage validation process ensures high-quality annotations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All images were collected with informed consent, and identifying information was removed.",
+    "data_licensing": "Released under a CC-BY-4.0 license to encourage reproducibility and downstream research.",
+    "consent_procedures": "Users consented to data use for research as part of the mobile app's Terms of Service.",
+    "compliance_with_regulations": "N/A"
+  }
+}

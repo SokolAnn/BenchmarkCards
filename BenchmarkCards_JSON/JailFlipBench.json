@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "JailFlipBench",
+    "abbreviation": "N/A",
+    "overview": "JailFlipBench is a benchmark specifically designed to capture implicitly harmful scenarios where harmless-looking prompts can lead to dangerous incorrect responses, addressing LLM vulnerabilities related to implicit harm.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Chinese",
+      "German"
+    ],
+    "similar_benchmarks": [
+      "MMLU",
+      "TruthfulQA",
+      "SorryBench"
+    ],
+    "resources": [
+      "https://jailflip.github.io/arXiv:2506.07402v1"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To systematically assess the overlooked risk of implicit harm in LLMs by evaluating their performance on benign queries that may yield harmful outputs.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset is constructed through a multi-stage curation process involving topic filtering, question generation, and fine-grained validation.",
+    "size": "6,608 instances",
+    "format": "N/A",
+    "annotation": "Manual verification and LLM-assisted filtering"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Factual Accuracy",
+      "Attack Success Rate (ASR)"
+    ],
+    "calculation": "Factual Accuracy is calculated based on the correctness of model responses to the yes/no questions.",
+    "interpretation": "Higher accuracy rates indicate less vulnerability to implicitly harmful prompts.",
+    "baseline_results": "N/A",
+    "validation": "Comprehensive evaluation of various LLMs including GPT-4 and Claude models to establish baseline performance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on affected communities"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Potential real-world harm from factually incorrect responses"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

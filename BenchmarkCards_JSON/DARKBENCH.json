@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DARKBENCH",
+    "abbreviation": "N/A",
+    "overview": "We introduce DarkBench, a comprehensive benchmark for detecting dark design patterns—manipulative techniques that influence user behavior—in interactions with large language models (LLMs). Our benchmark comprises 660 prompts across six categories: brand bias, user retention, sycophancy, anthropomorphism, harmful generation, and sneaking.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMLU",
+      "TruthfulQA"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/anonymous152311/darkbench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To empirically measure the presence of dark patterns in LLMs and provide a standardized framework for evaluation.",
+    "audience": [
+      "Researchers",
+      "Ethics Analysts",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Detection of Dark Patterns"
+    ],
+    "limitations": "The dark patterns in DarkBench are derived primarily from an analysis of the incentives arising from the chatbot subscription-based business model. We do not claim full coverage of all the motivations facing an LLM developer.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated prompts specific to the six categories of dark patterns.",
+    "size": "660 prompts",
+    "format": "N/A",
+    "annotation": "Annotated using a combination of human annotators and LLM models."
+  },
+  "methodology": {
+    "methods": [
+      "LLM-augmented generation",
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy of dark pattern detection"
+    ],
+    "calculation": "Results are calculated based on the incidence of dark patterns in the responses of the evaluated models to the prompts.",
+    "interpretation": "Responses indicating the presence of defined dark patterns are evaluated against the benchmark for accuracy.",
+    "baseline_results": "Average occurrence of dark pattern instances varies across models, with specific detection rates outlined for each of the six categories.",
+    "validation": "Evaluated against a set of 14 models with results cross-validated by multiple annotators."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Ethics",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on Jobs",
+            "Impact on affected communities"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Manipulative behavior influencing user decisions"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

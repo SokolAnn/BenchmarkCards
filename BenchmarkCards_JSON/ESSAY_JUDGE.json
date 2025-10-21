@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ESSAY JUDGE",
+    "abbreviation": "N/A",
+    "overview": "ESSAY JUDGE is the first multimodal benchmark for assessing the automated essay scoring (AES) capabilities of multimodal large language models (MLLMs) across lexical-, sentence-, and discourse-level traits.",
+    "data_type": "multimodal essays",
+    "domains": [
+      "Education"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/path/to/repository"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the AES capabilities of multimodal large language models (MLLMs) across lexical, sentence, and discourse-level traits.",
+    "audience": [
+      "ML Researchers",
+      "Educators",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Automated Essay Scoring"
+    ],
+    "limitations": "The dataset primarily consists of essays written by non-native speakers of English, which may not fully represent native speakers' essays.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "K-12 Education Organization providing a repository of graded essays by experienced educators.",
+    "size": "1,054 multimodal essays",
+    "format": "N/A",
+    "annotation": "Multi-round human annotation and verification by educators and linguistic experts."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Quadratic Weighted Kappa (QWK)"
+    ],
+    "calculation": "QWK measures the agreement between model scores and the ground truth.",
+    "interpretation": "Scores closer to 1 indicate better agreement with human evaluations.",
+    "baseline_results": "QWK scores reveal gaps in AES performance compared to human evaluators.",
+    "validation": "Comparative evaluation involving multiple MLLMs and human evaluators."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset includes work from non-native English speakers, which may introduce bias in scoring.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

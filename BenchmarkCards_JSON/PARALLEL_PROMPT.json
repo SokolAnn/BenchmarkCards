@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PARALLEL PROMPT",
+    "abbreviation": "N/A",
+    "overview": "PARALLEL PROMPT is the first benchmark for measuring intra-query parallelism in natural user prompts, comprising over 37,000 real-world prompts from public LLM chat logs, each annotated with a structured schema capturing task templates, shared context, and iteration inputs.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Chinese",
+      "Russian",
+      "Japanese",
+      "Spanish",
+      "French"
+    ],
+    "similar_benchmarks": [
+      "BIG-Bench",
+      "GSM8K"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2506.18728"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To study structure-aware execution in LLM serving pipelines and measure latency improvements.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Named Entity Recognition",
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Public LLM usage logs from WildChat-1M and LMSYS-chat-1M.",
+    "size": "37,000 prompts",
+    "format": "JSON",
+    "annotation": "Annotated with structured schemas extracted using LLM-assisted prompting and rule-based multilingual validation."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Latency",
+      "Semantic Fidelity",
+      "Normalized Speedup"
+    ],
+    "calculation": "Metrics are calculated based on execution time for both serial and parallel execution strategies.",
+    "interpretation": "Higher speedups indicate effective parallelization without significant quality loss.",
+    "baseline_results": "PARALLEL PROMPT: 3.91× speedup, 92% quality preservation; SoT: 2.04× speedup, 81% quality preservation; ToP: 1.73× speedup, 85% quality preservation.",
+    "validation": "A tiered validation framework ensures the quality and structural integrity of prompts."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "WildChat-1M is under the Open Data Commons Attribution License, LMSYS-Chat-1M requires explicit permissions.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

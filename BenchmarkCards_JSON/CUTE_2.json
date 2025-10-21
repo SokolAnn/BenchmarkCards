@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CUTE (Chinese, Uyghur, Tibetan, English)",
+    "abbreviation": "CUTE",
+    "overview": "CUTE is a multilingual dataset constructed to enhance cross-lingual knowledge transfer in low-resource languages, consisting of parallel and non-parallel corpora for Mandarin Chinese, Uyghur, Tibetan, and English.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Chinese",
+      "Uyghur",
+      "Tibetan",
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/CMLI-NLP/CUTE"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To advance research and development for Uyghur and Tibetan languages in large language models and validate the effectiveness of machine-translated low-resource data.",
+    "audience": [
+      "ML Researchers",
+      "NLP Practitioners",
+      "Language Model Developers"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Question Answering",
+      "Machine Translation",
+      "Relation Extraction"
+    ],
+    "limitations": "The dataset may contain errors due to machine translation, particularly in grammatically complex sentences.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The CUTE dataset was constructed using machine translation from existing corpora, including data from the SkyPile-150B dataset.",
+    "size": "50GB",
+    "format": "CSV",
+    "annotation": "Data is translated through machine translation models and assessed for quality by bilingual native speakers."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Zero-shot evaluation",
+      "Cross-lingual transfer evaluation"
+    ],
+    "metrics": [
+      "F1 Score",
+      "BLEU Score",
+      "Accuracy"
+    ],
+    "calculation": "Metrics were calculated based on classification tasks and reading comprehension evaluations comparing models trained on parallel and non-parallel datasets.",
+    "interpretation": "Higher scores indicate better performance in zero-shot transfer tasks across languages.",
+    "baseline_results": null,
+    "validation": "Validated through human assessments and zero-shot transfer capabilities across tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Exposing personal information"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset includes speakers of Uyghur and Tibetan, aiming to enhance NLP capabilities for these communities.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Measures were taken to filter sensitive information in the source data used for translation.",
+    "data_licensing": "Open-sourced for research purposes; specific licensing details are not provided.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "The dataset ensures compliance with data privacy regulations applicable in its context."
+  }
+}

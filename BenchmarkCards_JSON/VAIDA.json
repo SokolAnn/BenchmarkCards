@@ -1,0 +1,119 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "VAIDA (Visual Analytics for Interactively Discouraging Artifacts)",
+    "abbreviation": "VAIDA",
+    "overview": "VAIDA is a novel benchmark-creation paradigm for Natural Language Processing that provides continuous, real-time visual feedback and recommendations to crowdworkers and analysts (human-and-metric-in-the-loop) to identify and reduce dataset artifacts and improve sample quality. It is domain-, model-, task-, and metric-agnostic and includes modules such as DQI (Data Quality Index), AutoFix, and TextFooler to support interactive sample correction, analyst review, and adversarial transformations.",
+    "data_type": "text (premise-hypothesis pairs for Natural Language Inference)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [],
+    "similar_benchmarks": [
+      "SNLI",
+      "SQuAD",
+      "ImageNet",
+      "Quizbowl",
+      "Dynabench",
+      "ANLI",
+      "AFLite",
+      "StoryCLOZE"
+    ],
+    "resources": [
+      "https://github.com/aarunku5/VAIDA-EACL-2023.git",
+      "https://arxiv.org/abs/2302.04434"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a human-and-metric-in-the-loop workflow for creating higher-quality benchmarks by (i) identifying artifacts during sample creation, (ii) giving real-time visual feedback and recommendations to crowdworkers, and (iii) enabling analysts to review and reconcile samples to reduce spurious bias and improve generalization.",
+    "audience": [
+      "Crowdworkers",
+      "Analysts",
+      "ML Researchers",
+      "Benchmark/data creators"
+    ],
+    "tasks": [
+      "Natural Language Inference",
+      "StoryCloze"
+    ],
+    "limitations": "Current work is a prototype and design/usability evaluation; it does not integrate with a full-scale crowdsourcing infrastructure or perform full-scale dataset creation. The paper does not explicitly address computational quality control or fairness in depth (though metrics can be added). Real-time deployment at scale requires additional back-end engineering, analyst availability, and budget.",
+    "out_of_scope_uses": [
+      "Full-scale dataset creation integrated with external crowdsourcing infrastructure (stated as out of scope for this paper)"
+    ]
+  },
+  "data": {
+    "source": "Demonstrated by mimicking SNLI dataset creation with premises from the Flickr30k corpus; samples were generated during the user study (NLI) and additional StoryCLOZE samples were created in a separate experiment. Dataset samples generated during the ablation user study are included in the supplemental GitHub.",
+    "size": "345 examples created during the user study (69 samples per ablation round across 5 rounds); 100 high-quality SNLI samples present in the system during the study (DQI>0.7).",
+    "format": "N/A",
+    "annotation": "Samples were authored by crowdworkers (study participants) and reviewed by analysts; automated modules (AutoFix, TextFooler) were used to propose or perform sample modifications; expert review and analyst decisions were part of the workflow."
+  },
+  "methodology": {
+    "methods": [
+      "Expert review (Pair-Analytics sessions)",
+      "User study with ablation rounds (NASA Task Load Index evaluation)",
+      "Automated model evaluation (BERT, RoBERTa, GPT-3 fewshot)",
+      "Metric-in-the-loop sample scoring using Data Quality Index (DQI)",
+      "Adversarial transformation (TextFooler)"
+    ],
+    "metrics": [
+      "Data Quality Index (DQI)",
+      "NASA Task Load Index (NASA-TLX)",
+      "Model performance (reported as percent change in performance)"
+    ],
+    "calculation": "Overall sample quality is calculated by averaging the artifact percentiles of the seven DQI components for the sample. NASA-TLX scores are collected per standard (0-100 scale, 5-point steps). Model performance differences are reported as percent changes relative to model performance on baseline/standard conditions; models (BERT, RoBERTa) were trained on full SNLI, GPT-3 evaluated in few-shot setting.",
+    "interpretation": "Higher DQI corresponds to higher sample quality (lower artifact presence / greater expected generalization). DQI components map to traffic-signal color flags (red/yellow/green) based on tuned thresholds; NASA-TLX higher scores indicate higher perceived workload; decreases in model performance on created samples indicate increased robustness/adversarial difficulty of samples.",
+    "baseline_results": "User study and expert evaluation report a 45.8% decrease in artifact levels across created samples. User-study reported improvements: crowdworkers experienced decreases in mental/temporal demand, effort, and frustration and a +34.6% increase in performance; analysts saw a -14.3% average decrease in difficulty and +30.8% performance. Model performance drops on samples created with VAIDA (TextFooler round) were reported as: BERT -31.3%, RoBERTa -22.5%, GPT-3 (fewshot) -14.98%. In other full-system conditions, model performance decreases and artifact reductions are also reported (see paper for detailed per-condition numbers).",
+    "validation": "Validated through expert review (3 NLP/visualization researchers), a user study with 23 crowdworkers and 8 analysts using ablation rounds and NASA-TLX (results reported with p ≤ 0.02), and automated evaluation of created samples against pretrained models (BERT, RoBERTa) and GPT-3 (fewshot). Supplementary experiments include StoryCLOZE sample creation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness",
+      "Accuracy",
+      "Data Quality"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Lack of training data transparency",
+            "Uncertain data provenance"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination",
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Spurious bias/artifacts in benchmarks that inflate reported model performance",
+      "Poor model generalization due to artifact-laden datasets",
+      "Overstated model robustness/accuracy because of dataset artifacts"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "IRB approval obtained for the user study (stated in paper).",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

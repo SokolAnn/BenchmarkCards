@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PARROT (Practical And Realistic BenchmaRk for CrOss-System SQL Translation)",
+    "abbreviation": "PARROT",
+    "overview": "PARROT is the first large-scale dataset and evaluation suite dedicated to cross-system SQL translation, providing a diverse translation corpus and multiple benchmark variants.",
+    "data_type": "SQL translation pairs",
+    "domains": [
+      "Database Management"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Spider",
+      "WikiSQL",
+      "BIRD"
+    ],
+    "resources": [
+      "https://code4db.github.io/parrot-bench/",
+      "https://github.com/weAIDB/PARROT"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate large language models' capabilities in cross-system SQL translation effectively.",
+    "audience": [
+      "ML Researchers",
+      "Data Engineers",
+      "Database Administrators"
+    ],
+    "tasks": [
+      "Cross-System SQL Translation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Real-world SQL queries collected from multiple sources, including open-source benchmarks and proprietary workloads.",
+    "size": "33,952 translation pairs",
+    "format": "JSON",
+    "annotation": "Manually verified and automated annotations of SQL translation pairs."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated evaluation metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Execution success rate",
+      "Semantic consistency"
+    ],
+    "calculation": "Metrics calculated based on the accuracy of translated queries and their ability to execute correctly in the target database.",
+    "interpretation": "High accuracy denotes effective translation capability, while low accuracy indicates model limitations in dialect-specific understanding.",
+    "baseline_results": "N/A",
+    "validation": "Benchmark validated through empirical testing against state-of-the-art LLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data anonymization processes applied to protect sensitive information.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

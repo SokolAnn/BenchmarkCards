@@ -1,0 +1,70 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PerHalluEval (Persian Hallucination Evaluation)",
+    "abbreviation": "PerHalluEval",
+    "overview": "PerHalluEval is the first dynamic hallucination evaluation benchmark for the Persian language, aimed at detecting extrinsic and intrinsic hallucinations in large language models through a three-stage LLM-driven pipeline with human validation. It evaluates performance on QA and summarization tasks specific to Persian culture.",
+    "data_type": "question-answering and summarization pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Persian"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate LLMs’ hallucinations in Persian regarding extrinsic and intrinsic categories of hallucination and to create a comprehensive resource for future NLP research in Persian.",
+    "audience": [
+      "NLP Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Summarization"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The benchmark is constructed using existing Persian datasets: PN-Summary (for summarization) and PQuAD (for QA), with new hallucinated instances generated through a model-driven pipeline.",
+    "size": "8,000 instances (4,000 for QA and 4,000 for summarization)",
+    "format": "N/A",
+    "annotation": "Annotated by three human annotators based on majority vote."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Factual Recall",
+      "Hallucination Recall",
+      "Hamming Score"
+    ],
+    "calculation": "Metrics are calculated by evaluating model predictions against the ground truth using definitions of True Positives, False Positives, True Negatives, and False Negatives.",
+    "interpretation": "High Factual Recall indicates accuracy in identifying factual content; high Hallucination Recall shows robustness in detecting hallucinations.",
+    "baseline_results": null,
+    "validation": "Inter-annotator agreement assessed using Gwet’s AC1 with high indices of 0.89 for QA and 0.91 for summarization."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All annotators were instructed to maintain confidentiality, and participant inputs were processed without personal identification.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Participation was informed and voluntary.",
+    "compliance_with_regulations": "N/A"
+  }
+}

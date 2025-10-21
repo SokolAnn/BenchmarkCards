@@ -1,0 +1,102 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "NLU-Evaluation-Data",
+    "abbreviation": "N/A",
+    "overview": "A large, multi-domain (21 domains) dataset of 25K user utterances collected and annotated with Intent and Entity Type specifications; released alongside a systematic, wide-coverage evaluation and comparison of popular NLU services (Rasa, Watson, LUIS, Dialogflow).",
+    "data_type": "text (user utterances annotated with Intent and Entity Type labels)",
+    "domains": [
+      "alarm",
+      "audio",
+      "audiobook",
+      "calendar",
+      "cooking",
+      "datetime",
+      "email",
+      "game",
+      "general",
+      "IoT",
+      "lists",
+      "music",
+      "news",
+      "podcasts",
+      "general Q&A",
+      "radio",
+      "recommendations",
+      "social",
+      "food takeaway",
+      "transport",
+      "weather"
+    ],
+    "languages": [],
+    "similar_benchmarks": [
+      "Evaluating Natural Language Understanding Services for Conversational Question Answering Systems",
+      "Benchmarking Natural Language Understanding Systems"
+    ],
+    "resources": [
+      "https://github.com/xliuhw/NLU-Evaluation-Data",
+      "https://arxiv.org/abs/1903.05566"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Provide a systematic, wide-coverage evaluation of commonly used NLU services and release a large, multi-domain dataset annotated with Intents and Entity Types to support unbiased comparison.",
+    "audience": [
+      "Conversational AI companies",
+      "Industry practitioners",
+      "Academic researchers"
+    ],
+    "tasks": [
+      "Intent Classification",
+      "Named Entity Recognition"
+    ],
+    "limitations": "Dataset is unbalanced across Intents and Entities; contains noisy Entity annotations and annotation ambiguities; evaluation did not consider multiple intents per utterance or use of dialogue context; Watson's recent 'Contextual Entity' feature was not evaluated.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected via Amazon Mechanical Turk (AMT) using scenario-driven prompts for a home assistant robot covering 21 domains (alarm, audio, audiobook, calendar, cooking, datetime, email, game, general, IoT, lists, music, news, podcasts, general Q&A, radio, recommendations, social, food takeaway, transport, weather).",
+    "size": "25,716 utterances",
+    "format": "CSV (original); converted to platform-specific JSON formats for Rasa, Dialogflow, LUIS and Watson",
+    "annotation": "Annotated for Intent (predetermined set of 64 Intents) and Entity Tokens & Entity Types by three student annotators; inter-annotator agreement measured with Fleiss's Kappa (κ = 0.69). Partial token matching counted as match when entity tokens overlapped and entity types matched exactly."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics (Precision, Recall, F1)",
+      "10-fold cross-validation",
+      "Statistical significance testing (pairwise t-tests, Cohen's D)"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score",
+      "Micro-average"
+    ],
+    "calculation": "Micro-average: sums up the individual True Positives, False Positives, and False Negatives of all Intent/Entity classes to compute the average metric (as used in the paper).",
+    "interpretation": "Higher Precision/Recall/F1 indicate better performance; Intent and Entity Type recognition were evaluated separately and combined. Statistical tests (pairwise t-tests) used to assess significance of differences; Cohen's D reported for effect size.",
+    "baseline_results": "Intent F1 scores (micro-average): Rasa 0.863, Dialogflow 0.864, LUIS 0.855, Watson 0.882. Entity F1 scores (micro-average): Rasa 0.768, Dialogflow 0.743, LUIS 0.777, Watson 0.488. Combined overall (Intent+Entity) F1: Rasa 0.822, Dialogflow 0.811, LUIS 0.821, Watson 0.657.",
+    "validation": "10-fold cross-validation on a sub-corpus of 11,036 utterances (190 instances per intent where possible); detailed confusion matrices provided; annotation reliability measured with Fleiss's Kappa (κ = 0.69)."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Data contamination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

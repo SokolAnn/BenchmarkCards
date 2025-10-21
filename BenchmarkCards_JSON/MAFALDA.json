@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MAFALDA (Multi-level Annotated Fallacy Dataset)",
+    "abbreviation": "MAFALDA",
+    "overview": "MAFALDA is a benchmark for fallacy classification that merges and unites previous fallacy datasets, providing a taxonomy that aligns, refines, and unifies existing classifications of fallacies, along with a new annotation scheme allowing for subjective annotations.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/ChadiHelwe/MAFALDA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive benchmark for detecting and classifying fallacies in text, enabling evaluation of language models and human performances.",
+    "audience": [
+      "ML Researchers",
+      "Language Model Developers",
+      "NLP Practitioners"
+    ],
+    "tasks": [
+      "Fallacy Detection",
+      "Fallacy Classification"
+    ],
+    "limitations": "The dataset may contain sensitive content such as racism and misogyny, and it is relatively small due to the time-intensive nature of the annotation process.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The benchmark merges multiple existing fallacy datasets, including those from Sahai et al. (2021), Martino et al. (2019), Jin et al. (2022), and Goffredo et al. (2022).",
+    "size": "9,745 texts (200 annotated texts)",
+    "format": "N/A",
+    "annotation": "Manual annotation by authors with explanations for each annotation, including the introduction of a new disjunctive annotation scheme."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Model performance assessment"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "Precision and recall are calculated based on the matches between annotations and predictions.",
+    "interpretation": "Higher F1 scores indicate better performance in detecting and classifying fallacies.",
+    "baseline_results": "Performance results across several models with human baseline comparisons provided in the study.",
+    "validation": "All annotations were discussed among authors to reach consensus or provide alternative annotations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Transparency",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Lack of training data transparency"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC-BY-SA",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

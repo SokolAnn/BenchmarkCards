@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TaskEval: Assessing Difficulty of Code Generation Tasks for Large Language Models",
+    "abbreviation": "TaskEval",
+    "overview": "This paper introduces TaskEval, a framework for evaluating the characteristics of code generation tasks for large language models (LLMs) using diverse prompts and Item Response Theory (IRT). It highlights the limitations of traditional single-prompt evaluations and provides a more granular assessment of task difficulty and discriminant across multiple benchmarks.",
+    "data_type": "code generation tasks",
+    "domains": [
+      "Software Engineering"
+    ],
+    "languages": [
+      "Python"
+    ],
+    "similar_benchmarks": [
+      "HumanEval",
+      "ClassEval"
+    ],
+    "resources": [
+      "https://github.com/FlowSs/TaskEval",
+      "https://sdk-codex.github.io/human-eval/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enhance the assessment of large language models in code generation tasks by introducing a framework that evaluates task characteristics based on difficulty and discriminant metrics.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Software Engineers"
+    ],
+    "tasks": [
+      "Code Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "HumanEval+ and ClassEval benchmarks",
+    "size": "200 tasks across benchmarks",
+    "format": "N/A",
+    "annotation": "Collected human difficulty ratings"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "IRT modeling"
+    ],
+    "metrics": [
+      "Difficulty",
+      "Discriminant"
+    ],
+    "calculation": "IRT models are used to evaluate the difficulty of tasks and the discriminant power of those tasks with respect to model capabilities.",
+    "interpretation": "Tasks with higher difficulty scores are expected to yield lower success rates among LLMs, while tasks with higher discriminants are better at differentiating between LLM performances.",
+    "baseline_results": "N/A",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

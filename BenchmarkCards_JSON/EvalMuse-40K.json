@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "EvalMuse-40K",
+    "abbreviation": "N/A",
+    "overview": "EvalMuse-40K collects 40K image-text pairs with comprehensive fine-grained human annotations for evaluating image-text alignment metrics for Text-to-Image generation models.",
+    "data_type": "image-text pairs",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "DrawBench",
+      "GenAI-Bench",
+      "T2I-CompBench"
+    ],
+    "resources": [
+      "https://shh-han.github.io/EvalMuse-project/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a reliable and fine-grained benchmark for evaluating image-text alignment in Text-to-Image generation models.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Image-Text Alignment"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Image-text pairs generated using various diffusion-based T2I models and real user prompts from DiffusionDB.",
+    "size": "40,000 image-text pairs",
+    "format": "N/A",
+    "annotation": "Manual annotations by human evaluators for image-text alignment and structural problems in generated images."
+  },
+  "methodology": {
+    "methods": [
+      "End-to-end fine-tuning",
+      "Positive-Negative Visual Question Answering (VQA)"
+    ],
+    "metrics": [
+      "Alignment Scores"
+    ],
+    "calculation": "Alignment scores are calculated by evaluating the match between generated images and the corresponding text prompts based on human annotations.",
+    "interpretation": "Higher alignment scores indicate better correspondence between generated images and input prompts.",
+    "baseline_results": null,
+    "validation": "Evaluations performed used split datasets with no overlaps between training and test sets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

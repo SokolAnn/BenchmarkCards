@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DI-B ENCH (Dependency Benchmark)",
+    "abbreviation": "DI-B ENCH",
+    "overview": "DI-B ENCH is a large-scale benchmark and evaluation framework specifically designed to assess LLMs’ capability on dependency inference, featuring 581 repositories across multiple programming languages.",
+    "data_type": "repositories and configuration files",
+    "domains": [
+      "Software Development"
+    ],
+    "languages": [
+      "Python",
+      "C#",
+      "Rust",
+      "JavaScript"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/Microsoft/DI-Bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the benchmark is to evaluate LLMs’ capabilities in accurately inferring dependencies across large-scale software repositories.",
+    "audience": [
+      "Researchers",
+      "Software Developers",
+      "Machine Learning Practitioners"
+    ],
+    "tasks": [
+      "Dependency Inference"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset is sourced from real-world GitHub repositories and includes various configurations for testing dependency inference.",
+    "size": "581 repositories",
+    "format": "CSV and structured text files",
+    "annotation": "Automated curation of datasets with dependency masking"
+  },
+  "methodology": {
+    "methods": [
+      "Textual Matching",
+      "Execution-based Evaluation"
+    ],
+    "metrics": [
+      "Executability Rate",
+      "Textual Accuracy (Precision, Recall, F1 Score)",
+      "Fake Rate"
+    ],
+    "calculation": "Metrics are calculated based on matching generated dependencies against ground truth dependencies and through automated test runs.",
+    "interpretation": "Higher executability rates indicate better model performance in correctly identifying required dependencies.",
+    "baseline_results": "The best-performing model achieved a 42.9% executability rate.",
+    "validation": "Validation is performed through Continuous Integration (CI) pipelines executing tests on the generated code."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

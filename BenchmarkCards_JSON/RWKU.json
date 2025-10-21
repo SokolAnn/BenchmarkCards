@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "RWKU (Real-World Knowledge Unlearning)",
+    "abbreviation": "RWKU",
+    "overview": "RWKU is designed for LLM unlearning, utilizing real-world knowledge to evaluate model capabilities in unlearning sensitive information.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "WHP (Who is Harry Potter)",
+      "WMDP (Weapons of Mass Destruction Proxy Benchmark)",
+      "TOFU (Task of Fictitious Unlearning)"
+    ],
+    "resources": [
+      "http://rwku-bench.github.io",
+      "https://huggingface.co/datasets/jinzhuoran/RWKU",
+      "https://github.com/jinzhuoran/RWKU"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To establish a comprehensive evaluation framework for unlearning knowledge in large language models.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Knowledge Unlearning"
+    ],
+    "limitations": "N/A - Not explicitly discussed",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "200 real-world famous people sourced from Wikipedia.",
+    "size": "200 targets, 13,131 forget probes, 11,379 neighbor probes",
+    "format": "JSON",
+    "annotation": "Probes generated using GPT-4 and validated by human check for format."
+  },
+  "methodology": {
+    "methods": [
+      "Membership Inference Attack (MIA)",
+      "Adversarial Attack Probes"
+    ],
+    "metrics": [
+      "ROUGE-L recall"
+    ],
+    "calculation": "Precision and recall scores for measuring efficacy of knowledge unlearning.",
+    "interpretation": "Lower ROUGE-L scores indicate improved unlearning effectiveness.",
+    "baseline_results": "N/A",
+    "validation": "Extensive experiments conducted across multiple models and scenarios."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Robustness",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All data is sourced from public domains (e.g., Wikipedia).",
+    "data_licensing": "CC BY 4.0",
+    "consent_procedures": "N/A - Data is publicly available.",
+    "compliance_with_regulations": "N/A"
+  }
+}

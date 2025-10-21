@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PclGPT",
+    "abbreviation": "N/A",
+    "overview": "PclGPT is a comprehensive LLM benchmark designed specifically for detecting patronizing and condescending language (PCL) targeting vulnerable groups. It integrates a dataset collection and annotation process to enhance the performance of language models in identifying implicit toxic language.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/dut-laowang/emnlp24-PclGPT"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Enhance detection of patronizing and condescending language directed at vulnerable communities using a specialized benchmark and model.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Text Classification"
+    ],
+    "limitations": "The study lacks examination of false positive cases and requires further linguistic foundation to refine the definition of PCL.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Community data collected from mainstream internet platforms like Reddit and Sina Weibo, structured into specific datasets for training and testing.",
+    "size": "1,409,945 entries (Pre-training), 31,969 entries (Fine-tuning)",
+    "format": "N/A",
+    "annotation": "Data was manually annotated by a team of experts, leveraging hierarchical structured annotations to ensure quality."
+  },
+  "methodology": {
+    "methods": [
+      "Supervised Fine-Tuning",
+      "Pre-training"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "The metrics are calculated using macro-average methods based on the performance of the model across the test datasets.",
+    "interpretation": "Higher scores in precision, recall, and F1 indicate better detection capabilities of the model.",
+    "baseline_results": "PclGPT-EN achieved an F1 score of 81.1 on DPM dataset and 88.9 on TD dataset, demonstrating significant improvements over baseline models.",
+    "validation": "The benchmark was validated using a series of tests on English and Chinese datasets comparing it with traditional PLMs and advanced LLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The benchmark includes analysis across various demographic groups, highlighting the varying biases in PCL detection.",
+    "harm": "The benchmark aims to minimize the harm caused by implicit toxicity against vulnerable groups through improved detection methods."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data collection procedures followed community privacy agreements, and user-sensitive information was replaced to comply with ethical standards.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

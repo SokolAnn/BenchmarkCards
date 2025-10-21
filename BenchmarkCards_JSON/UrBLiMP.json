@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "UrBLiMP (Urdu Benchmark of Linguistic Minimal Pairs)",
+    "abbreviation": "UrBLiMP",
+    "overview": "UrBLiMP is a syntactically informed benchmark for evaluating the linguistic competence of multilingual language models in Urdu, comprising 5,696 minimal pairs targeting ten core syntactic phenomena.",
+    "data_type": "minimal pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Urdu"
+    ],
+    "similar_benchmarks": [
+      "BLiMP",
+      "CLiMP",
+      "SLING",
+      "TurBLiMP",
+      "RuBLiMP",
+      "JBLiMP",
+      "BLiMP-NL"
+    ],
+    "resources": [
+      "https://huggingface.co/large-traversaal/Alif-1.0-8B-Instruct"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a linguistically grounded tool for identifying systematic weaknesses in LLMs' understanding of Urdu grammar.",
+    "audience": [
+      "ML Researchers",
+      "Linguists",
+      "NLP Practitioners"
+    ],
+    "tasks": [
+      "Linguistic Evaluation"
+    ],
+    "limitations": "The evaluation of linguistic phenomena in Urdu was limited primarily by the availability of annotated data.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Urdu Treebank and in-house Urdu Corpus",
+    "size": "5,696 pairs",
+    "format": "XML",
+    "annotation": "Manual verification by native Urdu speakers with inter-annotator agreement of 96.10%."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy is defined as the proportion of minimal pairs in which the model assigns a lower (pseudo-)perplexity to the grammatically acceptable sentence.",
+    "interpretation": "Higher accuracy indicates better understanding of the Urdu linguistic phenomena.",
+    "baseline_results": null,
+    "validation": "Inter-annotator agreement was assessed, yielding a 96.10% agreement rate."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The benchmark includes evaluation of models on various demographic factors.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Open-source under a permissive license.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

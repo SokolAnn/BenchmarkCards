@@ -1,0 +1,72 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PeruMedQA",
+    "abbreviation": "N/A",
+    "overview": "PeruMedQA is a multiple-choice question-answering (MCQA) dataset of medical examination questions for Peruvian physicians seeking specialty training, containing 8,380 questions across 12 medical domains.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "Spanish"
+    ],
+    "similar_benchmarks": [
+      "MMLU"
+    ],
+    "resources": [
+      "https://github.com/google-health/medgemma/blob/main/notebooks/fine_tune_with_hugging_face.ipynb",
+      "https://www.conareme.org.pe/web/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the performance of large language models (LLMs) on medical examination questions in Spanish from Peru and to provide a benchmark dataset for future research.",
+    "audience": [
+      "ML Researchers",
+      "Healthcare Professionals",
+      "Medical Educators"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Questions from medical examinations published by the Consejo Nacional de Residentado Médico (CONAREME) in Peru.",
+    "size": "8,380 questions",
+    "format": "CSV",
+    "annotation": "Manual verification of extracted answers from original PDFs."
+  },
+  "methodology": {
+    "methods": [
+      "Zero-shot task-specific prompting",
+      "Fine-tuning with PEFT and LoRA"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy is calculated as the number of correct answers divided by the total number of valid answers.",
+    "interpretation": "Higher accuracy indicates better performance of LLMs in answering medical exam questions.",
+    "baseline_results": "medgemma-27b-text-it achieved scores >90% in several instances.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "The dataset covers questions relevant to the Peruvian medical context.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset was sourced from publicly available exam questions, ensuring no private data is involved.",
+    "data_licensing": "Apache 2.0 license for the dataset allowing commercial and non-commercial use.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

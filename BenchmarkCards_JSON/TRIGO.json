@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TRIGO",
+    "abbreviation": "N/A",
+    "overview": "TRIGO is an ATP benchmark that evaluates the reasoning ability of generative language models on trigonometric expression reduction with manual annotations and generated datasets.",
+    "data_type": "trigonometric expression reduction problems",
+    "domains": [
+      "Natural Language Processing",
+      "Mathematics"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "LeanStep",
+      "IsarStep",
+      "MiniF2F",
+      "FIMO",
+      "Geometry3K"
+    ],
+    "resources": [
+      "https://github.com/menik1126/TRIGO"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Evaluate the generative language models' reasoning capabilities in formal mathematical theorem proving involving trigonometric expressions.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Mathematicians"
+    ],
+    "tasks": [
+      "Automated Theorem Proving"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from high school exercises and exams, other educational websites, and supplemented by automatic generation methods.",
+    "size": "427 problems in TRIGO-real, 459 problems in TRIGO-web, 27,000 generated samples in TRIGO-gen.",
+    "format": "N/A",
+    "annotation": "Manual annotation of the simplification process using an interactive software tool."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Pass rate"
+    ],
+    "calculation": "Metrics calculated based on the number of proofs that correctly output a valid solution within given constraints.",
+    "interpretation": "Higher pass rates indicate better model performance on understanding and manipulating mathematical expressions.",
+    "baseline_results": null,
+    "validation": "The TRIGO dataset was validated through manual proof verification using the Lean system."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential spread of misinformation if models learn incorrect proofs."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data collected from open educational resources; no private personal data was used.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MM-EVAL (Multilingual Meta-Evaluation Benchmark)",
+    "abbreviation": "MM-EVAL",
+    "overview": "MM-EVAL is a multilingual meta-evaluation benchmark comprising five core subsets covering 18 languages and a Language Consistency subset spanning 122 languages, designed to assess evaluator LLMs' capabilities across multiple languages with a focus on multilingual-specific challenges.",
+    "data_type": "evaluation pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Spanish",
+      "French",
+      "German",
+      "Italian",
+      "Chinese",
+      "Japanese",
+      "Korean",
+      "Arabic",
+      "Russian",
+      "Swahili",
+      "Bengali",
+      "Catalan",
+      "Galician",
+      "Thai",
+      "Telugu"
+    ],
+    "similar_benchmarks": [
+      "M-RewardBench",
+      "RewardBench",
+      "LLMBar"
+    ],
+    "resources": [
+      "https://github.com/guijinSON/MM-Eval"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a robust evaluation framework for assessing the performance of evaluator LLMs across a wide range of languages and ensuring fairness and consistency in evaluations.",
+    "audience": [
+      "ML Researchers",
+      "Evaluation Methodologists",
+      "Language Technology Developers"
+    ],
+    "tasks": [
+      "Evaluation of Language Models"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset was constructed from various multilingual data sources, curated specifically for MM-EVAL, ensuring that each entry undergoes thorough validation to maintain quality.",
+    "size": "4,981 instances",
+    "format": "N/A",
+    "annotation": "Data was annotated through a combination of manual and automated processes, ensuring reliability and validity."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Language Consistency Index (LCI)"
+    ],
+    "calculation": "Metrics are calculated based on the evaluators' ability to distinguish between chosen and rejected responses across different languages.",
+    "interpretation": "Higher scores indicate better performance in correctly assessing multilingual outputs.",
+    "baseline_results": "Existing evaluators showed an average accuracy of 68.9%, highlighting the need for improvements in multilingual contexts.",
+    "validation": "The benchmark was validated by measuring its correlation with Best-of-N rankings, indicating its effectiveness in real-world evaluations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "The data used for constructing MM-EVAL is licensed under various open licenses, including CC-BY-SA.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

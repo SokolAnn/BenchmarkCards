@@ -1,0 +1,73 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PaCoST (Paired Confidence Significance Testing for Benchmark Contamination Detection)",
+    "abbreviation": "PaCoST",
+    "overview": "PaCoST is a method for detecting benchmark contamination in large language models (LLMs) by using paired confidence significance testing to assess whether models are significantly more confident when responding to original benchmarks compared to rephrased questions.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/lleozhang/PaCoST"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To effectively detect benchmark contamination in large language models (LLMs) and ensure the integrity of model evaluations.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Benchmark Contamination Detection"
+    ],
+    "limitations": "The method focuses on detecting benchmark-level contamination and is not suitable for instance-level contamination.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Various popular LLMs and benchmarks including MMLU, HellaSwag, and TruthfulQA.",
+    "size": "Results presented as p-values analyzed from various models across sampled benchmarks.",
+    "format": "N/A",
+    "annotation": "Statistical analysis based on confidence scores obtained from rephrased instances and original questions."
+  },
+  "methodology": {
+    "methods": [
+      "Statistical analysis",
+      "Paired samples t-test"
+    ],
+    "metrics": [
+      "Statistical significance (p-value)"
+    ],
+    "calculation": "The method calculates the probability of the model being more confident using a t-test to compare original and rephrased confidence scores.",
+    "interpretation": "A p-value less than 0.05 indicates suspected contamination of the benchmark.",
+    "baseline_results": "N/A",
+    "validation": "Validated through experiments on popular open-source models and various benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "The method aims to reduce the potential harm associated with misleading evaluation results due to contamination."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

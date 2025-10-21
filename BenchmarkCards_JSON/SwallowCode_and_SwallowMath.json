@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SwallowCode and SwallowMath",
+    "abbreviation": "N/A",
+    "overview": "SwallowCode and SwallowMath are openly licensed datasets designed to enhance large language model (LLM) capabilities in program synthesis and mathematical reasoning. SwallowCode refines Python code from The-Stack-v2 through a four-stage pipeline, while SwallowMath transforms the Finemath-4+ dataset, improving quality and performance.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/tokyotech-llm/swallow-code",
+      "https://huggingface.co/datasets/tokyotech-llm/swallow-math"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To significantly enhance LLM performance in code generation and mathematical reasoning through refined pre-training datasets.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Code Generation",
+      "Mathematical Reasoning"
+    ],
+    "limitations": "The rewriting process may preserve biases from source data.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The datasets are constructed by rewriting public datasets, including The-Stack-v2 and Finemath-4+, enhancing quality through systematic filtering and rewriting processes.",
+    "size": "16.1 billion tokens for SwallowCode, 2.3 billion tokens for SwallowMath",
+    "format": "N/A",
+    "annotation": "Data was enriched without traditional filtering, focusing on transformation and utility maximization."
+  },
+  "methodology": {
+    "methods": [
+      "Data Rewriting",
+      "Data Filtering"
+    ],
+    "metrics": [
+      "pass@1"
+    ],
+    "calculation": "Metrics are calculated by evaluating model performance on benchmarks like HumanEval and GSM8K.",
+    "interpretation": "Higher metrics indicate better LLM performance in generating code snippets and mathematical solutions.",
+    "baseline_results": "Continuous pre-training with benchmarks led to significant improvements, with +17.0 on HumanEval for SwallowCode.",
+    "validation": "Model performance was validated against multiple benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Llama 3.3 Community License",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

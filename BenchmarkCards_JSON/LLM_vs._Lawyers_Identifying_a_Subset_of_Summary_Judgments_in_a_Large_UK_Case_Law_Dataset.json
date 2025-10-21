@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LLM vs. Lawyers: Identifying a Subset of Summary Judgments in a Large UK Case Law Dataset",
+    "abbreviation": "N/A",
+    "overview": "This study introduces a methodology for identifying summary judgment cases from the Cambridge Law Corpus using two computational methods: a traditional NLP approach and a large language model (LLM), effectively demonstrating the utility of NLP technologies in legal research.",
+    "data_type": "text",
+    "domains": [
+      "Legal"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Cambridge Law Corpus"
+    ],
+    "resources": [
+      "https://github.com/Anaffinis/LLM-vs-Lawyers",
+      "https://doi.org/10.17863/CAM.100221"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To accurately identify summary judgment cases within a large corpus of UK court decisions to support legal research.",
+    "audience": [
+      "Legal Researchers",
+      "Lawyers",
+      "AI Practitioners"
+    ],
+    "tasks": [
+      "Case Identification",
+      "Legal Text Classification"
+    ],
+    "limitations": "This study may not encompass all summary judgments delivered by the courts.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Cambridge Law Corpus (CLC)",
+    "size": "356,011 cases",
+    "format": "XML",
+    "annotation": "Manually reviewed and identified by legal experts and analyzed using computational methods."
+  },
+  "methodology": {
+    "methods": [
+      "Traditional NLP methods",
+      "Large Language Model analysis"
+    ],
+    "metrics": [
+      "F1 Score"
+    ],
+    "calculation": "F1 Score calculated for each method based on precision and recall.",
+    "interpretation": "An F1 Score closer to 1 indicates better classification performance.",
+    "baseline_results": "Traditional NLP based approach achieved an F1 score of 0.78; LLM approach achieved an F1 score of 0.94.",
+    "validation": "Manual review of sampled data to ensure accurate identification of summary judgment cases."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Decision bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Potential misclassification of non-summary judgment cases"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

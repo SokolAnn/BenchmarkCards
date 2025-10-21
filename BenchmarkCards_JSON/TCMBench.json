@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TCMBench",
+    "abbreviation": "N/A",
+    "overview": "TCMBench is a comprehensive benchmark for evaluating large language models (LLMs) in the Traditional Chinese Medicine (TCM) domain, featuring the TCM-ED dataset that includes 5,473 questions sourced from the TCM Licensing Exam and introducing TCMScore as a tailored evaluation metric.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/michael-wzhu/ChatMed"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a standardized benchmark for objectively evaluating the performance of large language models in the domain of Traditional Chinese Medicine.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts",
+      "Healthcare Professionals"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset was constructed from the TCM Licensing Exam, including practice questions that represent the essential knowledge and skills for TCM practitioners.",
+    "size": "5,473 question-answering pairs",
+    "format": "JSON",
+    "annotation": "Manually selected and reviewed by experts to ensure reliability and comprehensive coverage of TCM branches."
+  },
+  "methodology": {
+    "methods": [
+      "Accuracy evaluation",
+      "TCMScore evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "TCMScore",
+      "ROUGE",
+      "BertScore",
+      "BartScore"
+    ],
+    "calculation": "TCMScore is calculated based on term matching and semantic consistency using a fine-tuned NLI model.",
+    "interpretation": "Higher scores indicate better performance in understanding and applying TCM knowledge.",
+    "baseline_results": null,
+    "validation": "Extensive experimental evaluations involving various LLMs in TCM-related question answering tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

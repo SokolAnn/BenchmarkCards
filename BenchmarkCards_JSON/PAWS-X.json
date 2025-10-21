@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PAWS-X (Cross-lingual PAWS)",
+    "abbreviation": "PAWS-X",
+    "overview": "PAWS-X is a new dataset of human translated adversarial paraphrase identification evaluation pairs in six typologically distinct languages (French, Spanish, German, Chinese, Japanese, and Korean). It extends the Wikipedia portion of the original PAWS corpus with 23,659 (reported in abstract) human-translated evaluation pairs and is intended to measure multilingual models' sensitivity to word order, sentence structure, and context.",
+    "data_type": "text (sentence pairs with paraphrase labels)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "French",
+      "Spanish",
+      "German",
+      "Chinese",
+      "Japanese",
+      "Korean"
+    ],
+    "similar_benchmarks": [
+      "PAWS",
+      "Multi30k",
+      "Opusparcus"
+    ],
+    "resources": [
+      "https://github.com/google-research-datasets/paws",
+      "https://cloud.google.com/translate/",
+      "http://goo.gl/language/bert",
+      "https://fasttext.cc/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a challenging cross-lingual paraphrase identification benchmark that probes models' ability to capture structure and context in multiple languages and to drive multilingual research on paraphrase identification.",
+    "audience": [
+      "Multilingual Natural Language Processing researchers",
+      "Machine Learning researchers",
+      "Model developers"
+    ],
+    "tasks": [
+      "Paraphrase Identification"
+    ],
+    "limitations": "Human translation was only applied to a random sample of 4,000 development pairs per language (2,000 dev + 2,000 test) due to time and cost constraints; the training set is machine-translated. The paper reports translation noise and inconsistent entity translations; the authors note some incorrect gold labels inherited from the original PAWS data. (Paper states <2% of pairs were not translated and final delivery guaranteed to have less than 5% word-level error rate.)",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Human translations of the Wikipedia portion of the original PAWS development and test sets for six languages (French, Spanish, German, Chinese, Japanese, Korean); neural machine translation used to translate the original PAWS English training set into the target languages. Original PAWS paraphrase labels are mapped to the translations.",
+    "size": "23,659 human translated evaluation pairs (abstract) / PAWS-X includes 23,459 human-translated pairs (body); training set: original PAWS English training set of 49,401 pairs machine-translated (as stated in paper).",
+    "format": "N/A",
+    "annotation": "Paraphrase labels inherited from original PAWS (paraphrase / not paraphrase) and mapped to translated pairs. Human translations performed by in-house native speakers; a randomly sampled subset was validated by a second worker; authors verified translation quality on random samples."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics (model evaluation via fine-tuning and evaluation)",
+      "Cross-lingual evaluation strategies (Translate Train, Translate Test, Zero Shot, Merged)"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Area Under Curve - Precision-Recall (AUC-PR)"
+    ],
+    "calculation": "For BERT, probability scores for the positive class are used to compute AUC-PR. For BOW and ESIM, a cosine threshold of 0.5 is used to compute accuracy. Best model checkpoints chosen based on accuracy on development sets; reported results are on test sets.",
+    "interpretation": "Higher Accuracy and AUC-PR indicate better model performance on paraphrase identification. PAWS-X is intended to measure sensitivity to word order and syntactic structure; strong gains for multilingual BERT (especially in merged training) indicate effectiveness of deep multilingual pre-training and cross-lingual training strategies.",
+    "baseline_results": "Average results over six non-English languages (Table 5): BOW Translate Train: Accuracy 52.7%, AUC-PR 48.4%; BOW Translate Test: Accuracy 55.2%, AUC-PR 47.3%. ESIM Translate Train: Accuracy 61.7%, AUC-PR 59.2%; ESIM Translate Test: Accuracy 63.9%, AUC-PR 65.1%. BERT Translate Train: Accuracy 84.2%, AUC-PR 88.2%; BERT Translate Test: Accuracy 82.3%, AUC-PR 87.6%. BERT Zero Shot: Accuracy 78.6%, AUC-PR 83.1%. BERT Merged: Accuracy 87.2%, AUC-PR 90.2%. (Detailed per-language numbers reported in Table 4.)",
+    "validation": "Human translations: 10-20 in-house native speakers per language performed translations; a randomly sampled subset was validated by a second worker; final delivery guaranteed <5% word-level error rate; authors further verified translation quality for a random sample of ten pairs in each language. Untranslatable or ambiguous sentences (<2%) were excluded. Best checkpoints selected based on development set accuracy."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

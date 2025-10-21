@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MPICodeCorpus",
+    "abbreviation": "N/A",
+    "overview": "MPICodeCorpus, the first publicly-available corpus of MPI-based parallel programs, created by mining more than 15,000 open-source repositories on GitHub to support training and evaluation of MPI-focused code models.",
+    "data_type": "text (MPI-based C/C++ source code)",
+    "domains": [
+      "High-Performance Computing",
+      "Software Engineering"
+    ],
+    "languages": [],
+    "similar_benchmarks": [
+      "Standard Performance Evaluation Corporation (SPEC)",
+      "NAS Parallel Benchmarks (NPB)",
+      "CodeSearchNet"
+    ],
+    "resources": [
+      "https://github.com/Scientific-Computing-Lab-NRCN/MPI-rical",
+      "https://github.com/Scientific-Computing-Lab-NRCN/MPI-rical/tree/main/BENCHMARKCode"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Develop a programming-assistance tool (MPI-RICAL) that assists programmers in writing domain decomposition based distributed memory parallelization code using MPI by suggesting MPI functions and their proper locations in code.",
+    "audience": [
+      "MPI programmers",
+      "Developers working on distributed memory / High-Performance Computing applications",
+      "Tool developers integrating code-assistants into IDEs"
+    ],
+    "tasks": [
+      "Code Translation",
+      "Code Completion",
+      "Program analysis for function insertion (location prediction)"
+    ],
+    "limitations": "Training and evaluation examples were limited to files with 320 tokens (approximately 50 lines) due to hardware limitations, resulting in dropping almost 50% of raw examples. The current work measures generated MPI function names and their locations only — function arguments and structural code changes are not evaluated.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Created by mining GitHub repositories: extracted 59,446 C programs from approximately 16,500 repositories and filtered to produce the MPICodeCorpus dataset used for training and evaluation.",
+    "size": "Approximately 25,000 examples in the final dataset (59,446 C programs extracted from ~16,500 repositories; 24,125 examples used for training as reported).",
+    "format": "Three files per example: (1) MPI-based parallel C code (label), (2) MPI-based parallel C code with MPI functions excluded (input), and (3) X-SBT linearized AST representation (used as input).",
+    "annotation": "Automatically generated: MPI function calls were programmatically removed from original MPI-based programs to create inputs; original programs serve as labels."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics evaluation (classification metrics)",
+      "Train/validation/test split (80:10:10)",
+      "Compilation and execution testing of generated programs on a benchmark of 11 numerical computation examples"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Precision",
+      "Recall",
+      "BLEU Score",
+      "Meteor",
+      "ROUGE-L",
+      "Accuracy",
+      "M-F1",
+      "M-Precision",
+      "M-Recall",
+      "MCC-F1",
+      "MCC-Precision",
+      "MCC-Recall",
+      "ACC"
+    ],
+    "calculation": "Task framed as classification: RQ1 (MPI function name prediction) as multi-class classification over 456 possible MPI functions; RQ2 (location prediction) as binary classification for each code location. True Positive (TP), False Positive (FP), True Negative (TN), False Negative (FN) defined in paper. Matching uses one-line tolerance: a predicted MPI function matches ground truth if the function name is identical and the predicted location is within one line of the ground-truth location.",
+    "interpretation": "Higher F1, precision, and recall indicate more accurate suggestions of MPI functions and their insertion locations. Reported M-F1 values (e.g., 0.87–0.91 on datasets and benchmarks) are used to claim effectiveness in suggesting correct MPI functions at appropriate code locations; one-line tolerance applies.",
+    "baseline_results": null,
+    "validation": "Validated via an 80:10:10 train/validation/test split on the MPICodeCorpus dataset; additionally evaluated on a compiled benchmark of 11 MPI-based numerical computation programs where generated programs were compiled and executed to assess validity."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

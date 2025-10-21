@@ -1,0 +1,104 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PhishOracle",
+    "abbreviation": "N/A",
+    "overview": "PhishOracle is a tool that generates adversarial phishing webpages by embedding diverse content-based and visual-based phishing features into legitimate webpages. It evaluates the robustness of existing phishing webpage detection models against these adversarial phishing webpages.",
+    "data_type": "webpage samples",
+    "domains": [
+      "Natural Language Processing",
+      "Cyber Security"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/LetsBeSecure/PhishOracle-Project",
+      "https://github.com/LetsBeSecure/PhishOracle-Webapp"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To develop a tool that generates adversarial phishing webpages for evaluating the robustness of existing phishing detection models.",
+    "audience": [
+      "Cybersecurity Researchers",
+      "Phishing Detection Model Developers"
+    ],
+    "tasks": [
+      "Phishing Detection",
+      "Adversarial Attack Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset includes 9,067 legitimate webpage screenshots which are manually labeled, as well as adversarial phishing webpages generated using PhishOracle.",
+    "size": "9,067 legitimate webpage screenshots, multiple adversarial phishing webpage samples generated.",
+    "format": "N/A",
+    "annotation": "Manual labeling of identity logos on legitimate webpage screenshots."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "User study"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score",
+      "Accuracy",
+      "Mean Average Precision (MAP)"
+    ],
+    "calculation": "Metrics calculated based on true positives, true negatives, false positives, and false negatives as outlined in the confusion matrix.",
+    "interpretation": "High precision indicates the model's ability to correctly identify legitimate webpages, while high recall signifies identifying most phishing webpages.",
+    "baseline_results": "Stack model achieves a precision of 98.61% and recall of 70.86% on adversarial phishing webpages.",
+    "validation": "The generated phishing webpages were validated by evaluating their performance against existing phishing detection models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Privacy",
+      "Robustness",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Exposing personal information"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Potential misuse in phishing activities"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Conversational implicatures in English dialogue: Annotated dataset",
+    "abbreviation": "N/A",
+    "overview": "In this paper, we introduce a dataset of dialogue snippets with three constituents, which are the context, the utterance, and the implicated meanings. These implicated meanings are the conversational implicatures.",
+    "data_type": "text (dialogue triplets: context, utterance, implicated meaning)",
+    "domains": [
+      "Natural Language Processing",
+      "Linguistics"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Potts experimental dataset (215 indirect polar questions)",
+      "SQUINKY!",
+      "CoQA",
+      "Movie-DiC"
+    ],
+    "resources": [
+      "https://doi.org/10.6084/m9.figshare.10315505.v3",
+      "https://figshare.com/articles/Implicature_dataset/10315505",
+      "http://www.imsdb.com/",
+      "https://www.microworkers.com/",
+      "https://www.ets.org/toefl",
+      "https://englishteststore.net/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To create and provide a dataset of dialogues annotated with conversational implicatures to aid research on computing implicated meanings of utterances and for identifying and synthesising conversational implicatures in dialogues.",
+    "audience": [
+      "Researchers in Natural Language Processing",
+      "Researchers in Computational Pragmatics and Linguistics",
+      "Dialogue system developers"
+    ],
+    "tasks": [
+      "Conversational Implicature Identification",
+      "Dialogue Generation / Synthesis"
+    ],
+    "limitations": "Primarily focused on polar questions where an indirect answer without an explicit 'Yes' or 'No' generates implicatures; only the single immediate context of an utterance is considered; the dataset collection is ongoing and not yet at a considerable scale with negative samples.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Dialogues collected from listening comprehension transcripts of TOEFL practice sections (transcribed from English Test Store), movie scripts from IMSDb for 45 animation movies, other dialogues with metaphors/idioms/hyperboles/indirect criticism from the internet, and synthesized dialogues.",
+    "size": "500 dialogue narrations transcribed from TOEFL listening comprehension; around 500 dialogue snippets from IMSDb movie scripts (exact total dataset size not stated)",
+    "format": "N/A",
+    "annotation": "Manual annotation of implicated meanings. Some data collected via crowdsourcing using MicroWorkers from native English speakers (US, UK, Australia, New Zealand, Canada). An utterance may have one or more implicated meanings. Annotation quality can be verified by computing cosine similarity of annotations by different annotators."
+  },
+  "methodology": {
+    "methods": [
+      "Transcription of TOEFL listening comprehension narrations",
+      "Scraping movie scripts from IMSDb (animation genre)",
+      "Manual annotation of dialogue triplets <context, utterance, implicature>",
+      "Crowdsourcing via MicroWorkers for generation and annotation of some dialogues",
+      "Preprocessing (removal/replacement of character names with A/B)",
+      "Annotation verification using cosine similarity of annotator annotations",
+      "Manual cleaning to remove explicit yes/no responses and irrelevant entries"
+    ],
+    "metrics": [
+      "Cosine similarity of annotator annotations (used for verification/prioritization of annotations)"
+    ],
+    "calculation": "The accuracy of annotated implicatures can be verified by computing the cosine similarity of annotations by different annotators for the same response utterance.",
+    "interpretation": "Annotations with high cosine similarity scores are prioritized for entry into the dataset; high similarity indicates higher annotator agreement/confidence.",
+    "baseline_results": null,
+    "validation": "Manual scrutiny and cleaning of scraped snippets; removal of responses containing explicit 'yes'/'no'; annotation verification and prioritization using cosine similarity across annotators."
+  },
+  "targeted_risks": {
+    "risk_categories": [],
+    "atlas_risks": {
+      "risks": null
+    },
+    "demographic_analysis": "Crowdsourced contributors (for generation/annotation) were native English speakers from the US, UK, Australia, New Zealand and Canada.",
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Character names from movie scripts were removed and replaced with 'A' and 'B' in preprocessing. No other privacy or anonymization procedures are explicitly discussed.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

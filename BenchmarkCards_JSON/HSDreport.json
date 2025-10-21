@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "HSDreport: Heart Sound Diagnosis with Echocardiography Reports",
+    "abbreviation": "HSDreport",
+    "overview": "HSDreport is a new benchmark for heart sound diagnosis (HSD) that mandates the direct utilization of heart sounds obtained from auscultation to predict echocardiography reports. It aims to merge the convenience of auscultation with the comprehensive nature of echocardiography reports.",
+    "data_type": "heart sound samples and echocardiography reports",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://arxiv.org/abs/2408.08669"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a benchmark that utilizes both heart sounds and echocardiography for more accurate diagnosis of congenital heart diseases.",
+    "audience": [
+      "Medical Researchers",
+      "Healthcare Practitioners"
+    ],
+    "tasks": [
+      "Multi-label Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from 2,275 participants who underwent echocardiography, comprising audio recordings of heart sounds and their corresponding echocardiography reports.",
+    "size": "2,275 heart sound samples",
+    "format": "N/A",
+    "annotation": "Manually annotated with corresponding echocardiography reports."
+  },
+  "methodology": {
+    "methods": [
+      "Knowledge-aware query-based transformer"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "Metrics are calculated based on the performance comparison with state-of-the-art models.",
+    "interpretation": "Higher scores indicate better performance in diagnosing congenital heart diseases.",
+    "baseline_results": "Compared against traditional heart sound diagnosis models (STFT-HSC, DS-CNN, CTENN) with significant improvements in F1 scores.",
+    "validation": "The benchmark was validated through comparative analysis with existing models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Focuses on pediatric subjects, potentially not representative of the broader population.",
+    "harm": [
+      "Potential misdiagnosis due to the variability of heart sound interpretation."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Informed consent was obtained from all participants and personal identifiers were removed from datasets.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Informed consent was obtained from all participants or their legal guardians.",
+    "compliance_with_regulations": "The study adhered to national regulations and was approved by an independent ethics committee."
+  }
+}

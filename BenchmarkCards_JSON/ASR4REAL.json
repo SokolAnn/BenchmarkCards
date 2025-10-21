@@ -1,0 +1,82 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ASR4REAL: An Extended Benchmark for Speech Models",
+    "abbreviation": "ASR4REAL",
+    "overview": "This paper introduces a set of benchmarks matching real-life conditions in Automatic Speech Recognition (ASR) to identify biases and weaknesses in models, particularly focusing on performance discrepancies by accent and socio-economic status.",
+    "data_type": "audio",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Librispeech"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a benchmark that allows researchers to identify strengths and weaknesses of their ASR models in real-world settings.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Speech Recognition"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The benchmark utilizes various datasets such as Librispeech, ALLSSTAR, NISP, VoxPopuli, Buckeye, and CORAAL for testing ASR models in different conditions.",
+    "size": "960 hours of labeled audio data",
+    "format": "Audio recordings",
+    "annotation": "Manually transcribed audio files"
+  },
+  "methodology": {
+    "methods": [
+      "Model evaluation on varied datasets",
+      "Word Error Rate (WER) analysis"
+    ],
+    "metrics": [
+      "Word Error Rate (WER)"
+    ],
+    "calculation": "The WER was normalized by speaker to account for the distribution of speaker characteristics.",
+    "interpretation": "Lower WER indicates better model performance, with a focus on robustness across diverse conditions.",
+    "baseline_results": "N/A",
+    "validation": "Cross-comparison of several ASR models and systems under varied testing conditions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis shows performance discrepancies based on accent and socio-economic status of speakers.",
+    "harm": "The benchmark addresses harm related to biases in ASR systems, particularly highlighting disparities in performance based on speaker characteristics."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

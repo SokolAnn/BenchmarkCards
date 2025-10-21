@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MEDINST (Meta Dataset of Biomedical Instructions)",
+    "abbreviation": "MEDINST",
+    "overview": "MEDINST is a novel multi-domain, multi-task instructional meta-dataset comprising 133 biomedical NLP tasks and over 7 million training samples. It aims to address the scarcity of diverse and well-annotated datasets in biomedical analysis by facilitating the training of large language models.",
+    "data_type": "instruction-following samples",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "BLUE (Biomedical Language Understanding Evaluation)",
+      "BLURB (Biomedical Language Understanding and Reasoning Benchmark)",
+      "SUPER-NATURAL INSTRUCTIONS"
+    ],
+    "resources": [
+      "https://github.com/aialt/MedINST"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of MEDINST is to provide a comprehensive instructional dataset to enhance the generalization abilities of large language models in biomedical tasks.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Healthcare Practitioners"
+    ],
+    "tasks": [
+      "Named Entity Recognition",
+      "Question Answering",
+      "Relation Extraction",
+      "Text Classification",
+      "Coreference Resolution",
+      "Textual Entailment",
+      "Event Extraction",
+      "Summarization",
+      "Translation"
+    ],
+    "limitations": "Due to computational resource constraints, earlier experiments were conducted with limited data and model sizes.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "MEDINST collects data from 98 biomedical datasets formatted into 133 tasks.",
+    "size": "7 million training samples",
+    "format": "N/A",
+    "annotation": "Instructions are human-annotated and tailored for each dataset/task."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Label F1",
+      "Entity F1",
+      "Exact Match",
+      "Rouge-L"
+    ],
+    "calculation": "Metrics are calculated based on model predictions against ground truth for each task assessed.",
+    "interpretation": "Higher scores on metrics like F1 and Exact Match indicate better model performance.",
+    "baseline_results": "The paper showcases results from multiple fine-tuned LLMs evaluated on tasks.",
+    "validation": "Validation was performed using a curated test set from the MEDINST dataset."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Privacy",
+      "Robustness",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

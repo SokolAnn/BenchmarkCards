@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MatTools",
+    "abbreviation": "N/A",
+    "overview": "MatTools is a benchmark designed to evaluate the proficiency of large language models (LLMs) in answering materials science questions and generating functional Python code for materials property calculations.",
+    "data_type": "question-answer pairs and Python code generation tasks",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MaScQA",
+      "SciEval",
+      "SciAssess",
+      "LLM4Mat-Bench"
+    ],
+    "resources": [
+      "https://github.com/Grenzlinie/MatTools",
+      "https://www.kaggle.com/datasets/calvinlyu/mattools/data"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a standardized framework for assessing and improving LLM capabilities for materials science tool applications.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Code Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Derive from pymatgen codebase and documentation; include generated examples and real-world tool usage datasets.",
+    "size": "69,225 QA pairs and 49 tasks (138 subtasks)",
+    "format": "JSON",
+    "annotation": "Generated through automated synthesis and LLM interactions."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Task Success Rate"
+    ],
+    "calculation": "Metrics are calculated based on the proportion of correct responses and executable code rate.",
+    "interpretation": "Higher metrics indicate better performance and understanding of materials science tools by LLMs.",
+    "baseline_results": "General-purpose LLMs outperform domain-specific models by achieving accuracies above 80%.",
+    "validation": "Results validated through multiple evaluation runs and usage of Docker sandbox for code execution."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Lack of training data transparency"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

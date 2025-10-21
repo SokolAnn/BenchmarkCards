@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LLMs for Law: Evaluating Legal-Specific LLMs on Contract Understanding",
+    "abbreviation": "N/A",
+    "overview": "This paper presents a comprehensive evaluation of 10 legal-specific LLMs on three English-language contract understanding tasks, comparing them with 7 general-purpose LLMs. It identifies model strengths, weaknesses, and challenges, serving as a resource for legal LLM evaluation.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Legal"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "LEXGLUE",
+      "LexT5"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2508.07849"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To benchmark legal-specific LLMs against general-purpose LLMs across contract understanding tasks.",
+    "audience": [
+      "ML Researchers",
+      "Legal Professionals",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Unfair Contractual Terms Identification",
+      "Contract Provision Topic Classification",
+      "Agent-Specific Deontic Modality Detection"
+    ],
+    "limitations": "The limited availability of contract benchmark datasets in languages other than English poses a challenge for multilingual extension.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Publicly available datasets including UNFAIR-ToS, LEDGAR, and LEXDEMOD.",
+    "size": "70,000 examples",
+    "format": "CSV",
+    "annotation": "Manual annotation by legal experts."
+  },
+  "methodology": {
+    "methods": [
+      "Supervised Fine-Tuning",
+      "Zero-shot testing",
+      "Few-shot testing"
+    ],
+    "metrics": [
+      "Micro-F1",
+      "Macro-F1"
+    ],
+    "calculation": "Metrics are calculated based on performance across benchmark datasets.",
+    "interpretation": "Higher F1 scores indicate better performance on contract understanding tasks.",
+    "baseline_results": "Legal-BERT and Contracts-BERT establish new SOTAs on two tasks, outperforming general-purpose LLMs.",
+    "validation": "Models were evaluated based on their accuracy on held-out test datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Demographic factors were not explicitly assessed across the evaluated models.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All datasets used are publicly available and contain no personal data.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

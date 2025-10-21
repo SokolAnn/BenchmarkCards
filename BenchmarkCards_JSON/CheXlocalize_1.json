@@ -1,0 +1,67 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CheXlocalize",
+    "abbreviation": "N/A",
+    "overview": "The CheXlocalize dataset evaluates the ability of models to localize pathologies on chest radiographs, providing expert radiologist annotations for the localization of distinct findings.",
+    "data_type": "image",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://arxiv.org/abs/2509.18015"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To systematically evaluate the ability of multimodal large language models to localize pathological findings in chest radiographs.",
+    "audience": [
+      "ML Researchers",
+      "Healthcare Practitioners",
+      "Radiologists"
+    ],
+    "tasks": [
+      "Image Localization"
+    ],
+    "limitations": "The analysis focused on one dataset, potentially leading to variability in results across different pathologies and limits generalizability.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "CheXlocalize dataset, consisting of chest radiograph images with expert radiologist annotations.",
+    "size": "200 validation radiographs, 500 test radiographs",
+    "format": "N/A",
+    "annotation": "Expert radiologist annotations for localization provided in the form of pixel-wise segmentation maps."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Hit Rate"
+    ],
+    "calculation": "A prediction is a hit if at least 50% of the grid cell overlaps with the ground truth segmentation.",
+    "interpretation": "Performance is compared to a human benchmark and a CNN baseline, where hit rates indicate accuracy in localizing pathologies.",
+    "baseline_results": "CNN baseline achieved an average hit rate of 59.9%, human benchmark showed 80.1%.",
+    "validation": "Validation was performed using the validation split of the CheXlocalize dataset."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CAMMT (Culturally-Aware Multimodal Machine Translation)",
+    "abbreviation": "CAMMT",
+    "overview": "CAMMT is a human-curated benchmark of over 5,800 triples of images along with parallel captions in English and regional languages, designed to evaluate multimodal machine translation systems on culturally relevant translation tasks.",
+    "data_type": "image-caption pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Amharic",
+      "Arabic",
+      "Bengali",
+      "Bulgarian",
+      "Chinese",
+      "Filipino",
+      "Igbo",
+      "Indonesian",
+      "Japanese",
+      "Korean",
+      "Malay",
+      "Marathi",
+      "Oromo",
+      "Portuguese",
+      "Russian",
+      "Spanish",
+      "Swahili",
+      "Tamil",
+      "Urdu"
+    ],
+    "similar_benchmarks": [
+      "CoMMuTe"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/villacu/cammt"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To support broader efforts to build and evaluate multimodal translation systems that are better aligned with cultural nuance and regional variations.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Multimodal Machine Translation"
+    ],
+    "limitations": "Dataset size is constrained by the original CVQA dataset; relies on single annotators which may introduce subjectivity.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Human-curated triples from CVQA transformed into declarative caption pairs.",
+    "size": "5,817 triples",
+    "format": "JSON",
+    "annotation": "Manual annotation by native speakers."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "BLEU Score",
+      "chrF++"
+    ],
+    "calculation": "Metrics are calculated using SacreBLEU and include evaluations of multimodal translation quality through human preferences.",
+    "interpretation": "Higher scores in human preference evaluations suggest improvements in cultural and semantic alignment of translations.",
+    "baseline_results": "Compared performance of VLMs against strong baselines like NLLB-600M and NLLB-3.3B.",
+    "validation": "Validation included assessing translation performance across multiple languages and models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Future work should focus on expanding annotator diversity to improve coverage and objectivity of cultural relevance judgments.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Creative Commons Attribution-NonCommercialShareAlike 4.0 International (CC BY-NC-SA 4.0)",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

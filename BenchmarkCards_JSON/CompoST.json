@@ -1,0 +1,75 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CompoST (Compositional Systematicity Test)",
+    "abbreviation": "CompoST",
+    "overview": "A benchmark for investigating the abilities of LLMs to interpret questions in a compositional manner, generating datasets of varying difficulty based on graph patterns in DBpedia.",
+    "data_type": "question-query pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://doi.org/10.5281/zenodo.16312287"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To test the compositional systematicity of language models in the context of question answering over linked data.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated from graph patterns in DBpedia with controlled lexicalization.",
+    "size": "2803 question-query pairs per dataset (total of 3 datasets giving 8409 question-query pairs)",
+    "format": "N/A",
+    "annotation": "Hand-crafted using Lemon lexical entries for verbalization."
+  },
+  "methodology": {
+    "methods": [
+      "Zero-Shot Prompting",
+      "Few-Shot Prompting",
+      "Fine-Tuning"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Macro F1 Score"
+    ],
+    "calculation": "F1 scores calculated based on true positives, false positives, and false negatives from the confusion matrix.",
+    "interpretation": "Higher F1 scores indicate better ability to interpret questions compositionally.",
+    "baseline_results": "Best macro F1 score was 0.94 for fine-tuned models on easier datasets.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Text-Scene Graph (TSG) Bench",
+    "abbreviation": "TSG Bench",
+    "overview": "TSG Bench is a benchmark designed to systematically assess large language models' ability to understand and generate scene graphs from textual narratives, evaluating their interpretation and reasoning capabilities.",
+    "data_type": "text, scene graphs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Ego-centric Action Scene Graphs (EASG)"
+    ],
+    "resources": [
+      "https://tsg-bench.netlify.app",
+      "https://github.com/docworlds/tsg-bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate and improve large language models' abilities in understanding and generating scene graphs from narratives.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Scene Graph Understanding",
+      "Scene Graph Generation"
+    ],
+    "limitations": "Current TSG Bench does not include object attributes or multiple actors in the scene graphs, limiting its complexity.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Derived from the Ego-centric Action Scene Graphs (EASG) dataset using LLMs and human annotation.",
+    "size": "4,289 scene graphs",
+    "format": "Custom format for scene graphs and narratives",
+    "annotation": "Generated using a combination of LLM prompts and human validation."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Exact Match (EM) for SGQA",
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on model performance against ground truth answers or scene graphs.",
+    "interpretation": "Higher values in metrics indicate better performance in understanding and generating scene graphs.",
+    "baseline_results": "Human performance serves as a baseline, showing significant gaps in model outputs for scene generation tasks.",
+    "validation": "The benchmark's tasks were validated through a review process involving human annotators."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Misrepresentation of scene contexts in generated graphs.",
+      "Potential biases inherent in scene graph representations."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC BY 4.0 license for datasets used and generated.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

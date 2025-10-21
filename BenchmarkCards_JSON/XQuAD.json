@@ -1,0 +1,77 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Cross-lingual Question Answering Dataset (XQuAD)",
+    "abbreviation": "XQuAD",
+    "overview": "A cross-lingual extractive question answering benchmark released by the authors, consisting of translated subsets of SQuAD v1.1 to evaluate cross-lingual generalization. The paper describes XQuAD as a more comprehensive cross-lingual benchmark, which comprises 240 paragraphs and 1,190 question-answer pairs from SQuAD v1.1 translated into ten languages by professional translators.",
+    "data_type": "question-answering pairs (extractive question answering)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Spanish",
+      "German",
+      "Greek",
+      "Russian",
+      "Turkish",
+      "Arabic",
+      "Vietnamese",
+      "Thai",
+      "Chinese",
+      "Hindi"
+    ],
+    "similar_benchmarks": [
+      "SQuAD v1.1",
+      "MLQA"
+    ],
+    "resources": [
+      "https://github.com/deepmind/xquad",
+      "https://arxiv.org/abs/1910.11856"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a more comprehensive cross-lingual benchmark for evaluating cross-lingual models on extractive question answering and to better understand cross-lingual generalization.",
+    "audience": [],
+    "tasks": [
+      "Question Answering",
+      "Extractive Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "A subset of the development set of SQuAD v1.1 (240 context paragraphs and their corresponding questions/answers) together with professional human translations into ten languages (Spanish, German, Greek, Russian, Turkish, Arabic, Vietnamese, Thai, Chinese, Hindi). Translations were done by professional translators via Gengo, with placeholders marking answer spans and translators instructed to keep these placeholders.",
+    "size": "240 paragraphs and 1,190 question-answer pairs",
+    "format": "N/A",
+    "annotation": "Professional human translation (via Gengo) of context paragraphs and questions; the most frequent answer for each question was marked in the context with placeholder symbols and translators were instructed to keep the placeholders in the translations. Translators had access to an online validator to verify format; paragraphs/questions from the same document were submitted in the same batch to ensure consistency."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Zero-shot cross-lingual evaluation"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Exact Match"
+    ],
+    "calculation": "F1 and Exact Match scores are reported for XQuAD (Exact Match scores reported in Appendix C). The paper does not provide further detailed metric calculation procedures beyond reporting these metrics.",
+    "interpretation": "N/A",
+    "baseline_results": "Baseline results reported in the paper include (XQuAD, F1): mBERT average 65.0; JOINT MULTI (200k vocabulary) average 65.7; MONO_TRANS + adapters average 66.8.",
+    "validation": "Translations performed by professional translators via Gengo; translators instructed to keep placeholder symbols marking answer spans. Translators had access to an online validator to automatically verify output format. Paragraphs and questions from the same SQuAD document were submitted in the same batch to ensure translation consistency."
+  },
+  "targeted_risks": {
+    "risk_categories": [],
+    "atlas_risks": {
+      "risks": null
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "NitiBench",
+    "abbreviation": "N/A",
+    "overview": "NitiBench is a benchmark dataset specifically designed for evaluating Thai legal question answering systems, consisting of two datasets: NitiBench-CCL covering general Thai financial law and NitiBench-Tax focusing on real-world tax law cases. The benchmark measures retrieval and end-to-end performance with customized metrics suited for legal queries.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Legal"
+    ],
+    "languages": [
+      "Thai"
+    ],
+    "similar_benchmarks": [
+      "LexGLUE",
+      "LegalBench"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/VISAI-AI/nitibench",
+      "https://github.com/vistec-ai/nitibench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a standardized evaluation framework for Thai legal question answering systems, addressing the lack of benchmarks in this domain.",
+    "audience": [
+      "Legal AI Researchers",
+      "Legal Practitioners",
+      "NLP Researchers"
+    ],
+    "tasks": [
+      "Legal Question Answering"
+    ],
+    "limitations": "The dataset may exhibit ambiguous queries due to its construction process, impacting model evaluation.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from Thai financial law codes and real-world tax law cases, with annotations by legal experts.",
+    "size": "3,730 entries (NitiBench-CCL); 50 cases (NitiBench-Tax)",
+    "format": "JSON",
+    "annotation": "Curated by legal experts with a combination of manual and semi-automated methods."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Multi-Hit Rate",
+      "Mean Reciprocal Rank (MRR)",
+      "E2E Recall",
+      "Coverage",
+      "Contradiction"
+    ],
+    "calculation": "Metrics are computed based on the performance of the QA systems in retrieving and generating correct legal responses.",
+    "interpretation": "High scores indicate better retrieval performance and greater alignment between generated answers and ground truth.",
+    "baseline_results": "Human-Finetuned BGE-M3 shows the best performance compared to other models evaluated.",
+    "validation": "Results validated against benchmarks and peer-reviewed metrics for legal question answering."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Decision bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Future evaluations may consider demographic factors in query construction and performance metrics.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Ensure that personally identifiable information from tax cases is anonymized.",
+    "data_licensing": "Open-sourced under a standard dataset license.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

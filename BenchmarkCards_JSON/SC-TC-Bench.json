@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SC-TC-Bench (Simplified Chinese - Traditional Chinese Benchmark)",
+    "abbreviation": "SC-TC-Bench",
+    "overview": "We provide an open-sourced benchmark dataset to foster reproducible evaluations of future LLM behavior across Chinese language variants.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "ACLUE",
+      "SuperCLUE",
+      "AlignBench"
+    ],
+    "resources": [
+      "https://github.com/brucelyu17/SC-TC-Bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To investigate potential LLM performance disparities when prompted in Simplified versus Traditional Chinese and to audit the performance and biases of LLMs in these language variants.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Regional Term Choice",
+      "Regional Name Choice"
+    ],
+    "limitations": "The benchmark covers several important real-world contexts but does not comprehensively cover all differences in Simplified and Traditional Chinese.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Dataset includes question-answer pairs reflecting regional term choice and regional name choice tasks, collected with the help of native speakers and manual reviews.",
+    "size": "110 regional terms",
+    "format": "JSON",
+    "annotation": "Manually verified by native speakers."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Calculated based on the percentage of correct responses in relation to regional term identification and name selection tasks.",
+    "interpretation": "Higher accuracy indicates better performance in recognizing regional terms and names specific to Simplified and Traditional Chinese prompts.",
+    "baseline_results": "Comparative performance of 11 leading commercial and open-source LLMs in regional term choice and name selection tasks.",
+    "validation": "Results were verified through multiple prompting trials and statistical analyses."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The benchmark considers the implications of different regional biases, reflecting the cultural significance of language usage in Mainland China and Taiwan.",
+    "harm": "Potential representational harms in LLMs' outputs when prompted in varying Chinese language scripts."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Creative Commons Attribution 4.0 International License (CC BY 4.0)",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

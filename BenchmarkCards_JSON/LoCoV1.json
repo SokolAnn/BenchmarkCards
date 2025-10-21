@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LoCoV1 (Long-Context Retrieval Benchmark)",
+    "abbreviation": "LoCoV1",
+    "overview": "LoCoV1 is a novel benchmark consisting of 12 tasks drawn from law, medicine, science, finance, corporate governance, government reports, and more, designed to measure long-context retrieval performance. It evaluates systems that need to process documents of up to 32K tokens, emphasizing reasoning across long spans of text.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Healthcare",
+      "Legal",
+      "Finance",
+      "Government"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "BEIR"
+    ],
+    "resources": [
+      "https://github.com/username/repository"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the benchmark is to establish a reliable evaluation framework for long-context retrieval tasks in machine learning.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Long-context Retrieval",
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The benchmark draws tasks from real-world datasets spanning diverse domains including Tau Scrolls, QASPER, LongBench, and the Legal Case Reports corpus.",
+    "size": "12 tasks with varying numbers of queries and documents",
+    "format": "JSON",
+    "annotation": "Tasks are expert-annotated."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Normalized Discounted Cumulative Gain at 10 (nDCG@10)"
+    ],
+    "calculation": "nDCG@10 is calculated based on the ranking quality of the retrieval systems.",
+    "interpretation": "Higher nDCG@10 scores indicate better performance in returning relevant documents for given queries.",
+    "baseline_results": "M2-BERT achieves significantly higher scores compared to existing retrieval models, validating its effectiveness on the LoCoV1 benchmark.",
+    "validation": "Performance validation through comparative analysis with existing state-of-the-art models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Potential for models to reinforce existing biases present in training data."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

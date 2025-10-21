@@ -1,0 +1,99 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ChartGalaxy: A Dataset for Infographic Chart Understanding and Generation",
+    "abbreviation": "ChartGalaxy",
+    "overview": "ChartGalaxy is a million-scale dataset designed for advancing the understanding and generation of infographic charts. It includes 1,701,356 synthetic and 61,833 real infographic charts paired with their respective data tables, facilitating applications in infographic chart understanding, code generation, and chart generation.",
+    "data_type": "synthetic and real infographic charts with data tables",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "InfographicVQA",
+      "ChartQAPro"
+    ],
+    "resources": [
+      "https://github.com/ChartGalaxy/ChartGalaxy",
+      "https://huggingface.co/datasets/ChartGalaxy/ChartGalaxy"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive dataset for training models on the understanding and generation of infographic charts.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Data Visualization Specialists"
+    ],
+    "tasks": [
+      "Infographic Chart Understanding",
+      "Infographic Chart Code Generation",
+      "Example-based Infographic Chart Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset comprises both collected real infographic charts from reputable websites and programmatically created synthetic charts based on identified chart types and layouts.",
+    "size": "1,701,356 synthetic infographic charts and 61,833 real infographic charts",
+    "format": "JSON, tabular data",
+    "annotation": "The data was annotated using a multi-step human-in-the-loop verification pipeline."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Visual similarity scoring"
+    ],
+    "calculation": "Metrics are calculated based on visual alignment and fidelity to the original infographic designs.",
+    "interpretation": "A higher score indicates better visual reproduction and fidelity to the original chart elements and structure.",
+    "baseline_results": "N/A",
+    "validation": "Models were validated on independent benchmarks and through experiments measuring performance across various qualitative and quantitative tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Privacy",
+      "Safety",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All real charts collected from public and reputable sources that permit research use and are filtered to avoid sensitive content.",
+    "data_licensing": "Real charts are collected under licenses that allow research use, including Creative Commons.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

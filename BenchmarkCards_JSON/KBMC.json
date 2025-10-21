@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "KBMC (Korean Bio-Medical Corpus)",
+    "abbreviation": "KBMC",
+    "overview": "KBMC is the first open-source medical NER dataset for Korean, aimed at improving named entity recognition in the medical domain.",
+    "data_type": "sentence-entity pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Healthcare"
+    ],
+    "languages": [
+      "Korean"
+    ],
+    "similar_benchmarks": [
+      "NCBI-disease",
+      "BC5CDR"
+    ],
+    "resources": [
+      "https://github.com/naver/nlp-challenge",
+      "https://chat.openai.com"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To address data scarcity in medical NER for the Korean language and enhance the performance of models in recognizing medical entities.",
+    "audience": [
+      "ML Researchers",
+      "Healthcare Practitioners",
+      "NLP Developers"
+    ],
+    "tasks": [
+      "Named Entity Recognition"
+    ],
+    "limitations": "The primary challenge arises from the limited availability of Korean medical data, restricting the development of a comprehensive corpus.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset consists of sentences constructed with assistance from ChatGPT, annotated by human reviewers according to the BIO format.",
+    "size": "6,150 sentences, 153,971 tokens",
+    "format": "N/A",
+    "annotation": "Manual annotation by experts with initial pre-annotations supported by an algorithm."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "Metrics calculated based on the performance of models trained using the KBMC dataset in comparison to those trained on general datasets.",
+    "interpretation": "An increase in F1 score signifies improved performance in recognizing medical entities.",
+    "baseline_results": "F1 scores for models trained on general datasets averaged below 80%, while models using KBMC achieved scores over 98% for specific categories.",
+    "validation": "Validated through comparisons of performance metrics on various language models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Privacy",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Data privacy rights alignment"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Includes demographic breakdowns for medical entities but lacks comprehensive analysis across distinct population groups.",
+    "harm": "Aims to prevent misclassification of medical terms and promote accurate recognition to enhance patient data privacy."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Dataset annotations focus on medical terms, aiding in the anonymization of sensitive patient information.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

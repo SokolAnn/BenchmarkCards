@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MemHunter",
+    "abbreviation": "N/A",
+    "overview": "MemHunter is an automated, verifiable technique for detecting memorization in large language models (LLMs) at both sample and dataset scales. It employs a memory-inducing LLM to automatically generate prompts for efficient detection of memorized content, significantly improving performance and reducing computational costs compared to existing methods.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://arxiv.org/abs/2412.07261"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective is to provide an effective tool for assessing privacy risks in large language models by detecting memorized content from datasets.",
+    "audience": [
+      "Researchers",
+      "Data Owners",
+      "ML Practitioners"
+    ],
+    "tasks": [
+      "Memorization Detection"
+    ],
+    "limitations": "Training on specific datasets may yield different memorization detection results, and the method may not outperform sample-wise optimization in cases where time constraints are relaxed.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Subsets from Common Crawl, news articles from AP News, code snippets from StackOverflow, and user discussions from Reddit were used for training and testing.",
+    "size": "N/A",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Hypothesis Testing",
+      "Automated extraction"
+    ],
+    "metrics": [
+      "ROUGE-L"
+    ],
+    "calculation": "Memorization score based on ROUGE-L precision, measuring the ratio of the longest common subsequence to the length of generated text.",
+    "interpretation": "Higher memorization scores indicate better performance in identifying memorized content from training datasets.",
+    "baseline_results": "MemHunter extracts up to 40% more memorized training data than existing methods under constrained time resources.",
+    "validation": "Validation procedures involve comparing memorization behavior between trained and untrained LLMs via hypothesis testing."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data",
+            "Data privacy rights alignment"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination",
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "MemHunter implements hypothesis testing to ensure the verifiable detection of memorized content, addressing privacy concerns.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

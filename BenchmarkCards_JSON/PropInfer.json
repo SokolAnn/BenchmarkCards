@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PropInfer",
+    "abbreviation": "N/A",
+    "overview": "PropInfer is a benchmark task for evaluating property inference in large language models (LLMs) under question-answering and chat-completion paradigms, focusing on the confidentiality of fine-tuning datasets.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Healthcare",
+      "Finance",
+      "Legal"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ChatDoctor"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/Pengrun/PropInfer_dataset"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To investigate property inference attacks on LLMs and provide a standardized framework for future research and evaluation.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Data Scientists"
+    ],
+    "tasks": [
+      "Property Inference"
+    ],
+    "limitations": "Specialized attacks may not apply to all LLMs and task configurations.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "ChatDoctor dataset",
+    "size": "29,791 conversations for gender labeling, 50,000 for medical diagnosis",
+    "format": "JSON",
+    "annotation": "Labeling using ChatGPT-4o and manual inspection"
+  },
+  "methodology": {
+    "methods": [
+      "Black-box generation attack",
+      "Shadow-model attack with word frequency"
+    ],
+    "metrics": [
+      "Mean Absolute Error (MAE)"
+    ],
+    "calculation": "MAE calculated as the absolute error between predicted and actual property ratios.",
+    "interpretation": "Lower MAE indicates better performance in inferring property ratios.",
+    "baseline_results": null,
+    "validation": "Empirical evaluations across multiple pretrained LLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Exposing personal information"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Yes, includes demographic breakdowns.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

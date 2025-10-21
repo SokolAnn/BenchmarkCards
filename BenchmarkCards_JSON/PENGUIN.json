@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PENGUIN (Personalized Evaluation of Nuanced Generation Under Individual Needs)",
+    "abbreviation": "PENGUIN",
+    "overview": "PENGUIN is a benchmark that includes 14,000 scenarios across seven sensitive domains, designed to evaluate personalized safety in large language models (LLMs) by taking into account individual user contexts and emotional states.",
+    "data_type": "user scenarios with structured attributes",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMLU",
+      "HellaSwag",
+      "TruthfulQA"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/wick1d/Personalized_Safety_Data"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To benchmark personalized safety in LLMs by evaluating how well these models handle user-specific contexts that may affect response safety.",
+    "audience": [
+      "ML Researchers",
+      "Safety Researchers",
+      "AI Model Developers"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Sentiment Analysis"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Combination of real-world Reddit posts and synthetic examples generated to ensure realism and data variety.",
+    "size": "14,000 scenarios",
+    "format": "N/A",
+    "annotation": "Structured user profile attributes extracted through a combination of real user submissions and model-guided generation."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Risk Sensitivity",
+      "Emotional Empathy",
+      "User-specific Alignment"
+    ],
+    "calculation": "The final Personalized Safety Score is computed as the unweighted average of the three evaluation dimensions.",
+    "interpretation": "Scores range from 1 (highly unsafe) to 5 (strongly safe) across three dimensions.",
+    "baseline_results": "N/A",
+    "validation": "Details regarding validation were drawn from a large-scale reliability analysis indicating strong alignment with human evaluations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Potential for emotional distress among users if safety is not properly addressed."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

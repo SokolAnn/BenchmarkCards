@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CAT-B ENCH",
+    "abbreviation": "N/A",
+    "overview": "CAT-B ENCH is a benchmark of Step Order Prediction questions, designed to evaluate how well large language models (LLMs) understand causal and temporal dependencies in cooking recipe plans.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/vanyacohen/CaT-Bench",
+      "https://github.com/StonyBrookNLP/CaT-Bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the causal and temporal reasoning abilities of large language models (LLMs) over instructional plans.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Step Order Prediction",
+      "Step Order Explanation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Modified Recipe Flow Graph Corpus containing cooking recipes annotated with substep procedure dependencies.",
+    "size": "4,260 questions",
+    "format": "N/A",
+    "annotation": "Manually annotated by the authors."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "Metrics calculated as per standard definitions in model evaluation.",
+    "interpretation": "Higher scores indicate better understanding of causal and temporal dependencies.",
+    "baseline_results": "Best zero-shot F1 of 0.59, with improvements using explanation-based generation yielding up to 0.73 F1.",
+    "validation": "Model performance validated through human evaluation and automated metrics."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

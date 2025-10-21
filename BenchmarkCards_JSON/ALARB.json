@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ALARB (Arabic Legal Argument Reasoning Benchmark)",
+    "abbreviation": "ALARB",
+    "overview": "ALARB is a dataset and suite of tasks designed to evaluate the reasoning capabilities of large language models (LLMs) within the Arabic legal domain, comprising over 13K commercial court cases from Saudi Arabia, with a focus on legal reasoning tasks.",
+    "data_type": "structured legal cases",
+    "domains": [
+      "Legal"
+    ],
+    "languages": [
+      "Arabic"
+    ],
+    "similar_benchmarks": [
+      "LegalBench",
+      "ArabicMMLU"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/name"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To benchmark legal reasoning capabilities in Arabic LLMs while addressing the gap in datasets focusing on multistep reasoning for Arabic legal contexts.",
+    "audience": [
+      "ML Researchers",
+      "Legal Professionals"
+    ],
+    "tasks": [
+      "Verdict Prediction",
+      "Legal Argument Completion",
+      "Article Identification"
+    ],
+    "limitations": "The dataset is limited to a particular area of law, obtained from a single country, and is relatively limited in size.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Commercial court cases from Saudi Arabia as scraped from the KSA Ministry of Justice website.",
+    "size": "13,344 legal cases",
+    "format": "Structured text",
+    "annotation": "Manually curated and cleaned, with facts and reasoning steps structured for clarity."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Metrics are calculated based on the alignment of predicted verdicts with actual court rulings.",
+    "interpretation": "Correct verdicts indicate a complete match with actual court rulings.",
+    "baseline_results": null,
+    "validation": "Performance was validated using a subset of 1,329 legal cases."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Future work will focus on expanding demographic diversity in the dataset.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset has been anonymized to remove identifying information.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

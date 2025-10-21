@@ -1,0 +1,73 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FED (Fast and Efficient Dataset Deduplication Framework)",
+    "abbreviation": "FED",
+    "overview": "FED is a GPU-accelerated deduplication framework optimized for MinHash LSH, significantly enhancing data quality and training performance of large language models by efficiently removing duplicate entries in large datasets.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/mcrl/FED"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide an efficient and scalable solution for dataset deduplication that enhances data quality for training large language models.",
+    "audience": [
+      "ML Researchers",
+      "Data Scientists",
+      "AI Practitioners"
+    ],
+    "tasks": [
+      "Dataset Deduplication"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated from large-scale document datasets, including RealNews and C4.",
+    "size": "1.2 trillion tokens",
+    "format": "JSONL",
+    "annotation": "Identifying and removing duplicate entries based on Jaccard similarity thresholds."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Jaccard Similarity"
+    ],
+    "calculation": "Calculated using pairwise comparisons of document signatures based on Jaccard similarity.",
+    "interpretation": "A higher Jaccard similarity score indicates better performance in identifying and removing duplicates.",
+    "baseline_results": "Comparison against CPU and GPU baseline methods shows significant speedup and accuracy in deduplication.",
+    "validation": "Evaluated using large-scale experiments on benchmark datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FingerTip",
+    "abbreviation": "N/A",
+    "overview": "The FingerTip benchmark evaluates the proactive and personalized capabilities of mobile GUI agents through two tracks: proactive task suggestions based on environmental observations and user intents, and personalized task execution according to user action preferences.",
+    "data_type": "user interaction episodes",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "AndroidLab",
+      "AMEX",
+      "AitW"
+    ],
+    "resources": [
+      "https://anonymous.4open.science/r/FingerTip-57B8",
+      "https://www.kaggle.com/datasets/qinglongyang/fingertip-20k"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To advance mobile GUI agents towards proactive task suggestion and personalized task execution.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Task Suggestion",
+      "Task Execution"
+    ],
+    "limitations": "The data collected is primarily from users in mainland China, which may not generalize to other regions. The study also highlights challenges related to data privacy and potential re-identification of users.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "User data collected through the FingerTip application",
+    "size": "21,437 episodes",
+    "format": "JSON, XML, JPG",
+    "annotation": "Users provided demonstrations of interactions with Android apps based on real scenarios."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Success Rate (SR)",
+      "Similarity Score (Sim)"
+    ],
+    "calculation": "Success rates are calculated based on whether the predicted user intents match the actual intents. Similarity scores are computed using cosine similarity for text and Levenshtein distance for action sequences.",
+    "interpretation": "Higher success rates and similarity scores indicate better predictive accuracy of user intents and personalization of task execution.",
+    "baseline_results": null,
+    "validation": "The benchmark was validated using a train-validation-test split of the collected data."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data",
+            "Data privacy rights alignment"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The benchmark includes demographic information from users, which is analyzed to understand differences in action sequences among different groups.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "User data is anonymized, but there is a risk of re-identification due to unique patterns in interaction.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Participants signed a data usage agreement and were informed about data usage expectations.",
+    "compliance_with_regulations": "N/A"
+  }
+}

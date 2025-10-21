@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "IllusionVQA",
+    "abbreviation": "N/A",
+    "overview": "IllusionVQA is a diverse dataset of challenging optical illusions and hard-to-interpret scenes designed to test the capability of Vision Language Models (VLMs) in two distinct multiple-choice VQA tasks - comprehension and soft localization.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "GVIL",
+      "HallusionBench"
+    ],
+    "resources": [
+      "https://github.com/csebuetnlp/IllusionVQA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To rigorously test the ability of Vision Language Models (VLMs) to locate and comprehend challenging optical illusions.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Visual Question Answering"
+    ],
+    "limitations": "The number of examples in the IllusionVQA-Comprehension dataset is relatively modest due to the rigorous filtering process applied to the initial candidate set of over 3500 images scraped from the Internet.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Datasets of optical illusions collected from multiple online repositories, with over 3500 images scraped and filtered for quality.",
+    "size": "374 images",
+    "format": "N/A",
+    "annotation": "Manually crafted question-answer pairs with multiple choice options."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Metrics are calculated based on the percentage of correct answers provided by VLMs and human evaluators.",
+    "interpretation": "Higher accuracy indicates better comprehension and localization abilities of VLMs compared to human performance.",
+    "baseline_results": "GPT4V achieves 62.99% accuracy (4-shot) on the comprehension task and 49.7% on the localization task.",
+    "validation": "Internal filtering checks using GPT4V to ensure the optical illusions meet dataset criteria."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

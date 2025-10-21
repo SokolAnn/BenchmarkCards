@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MAVEN -ARG",
+    "abbreviation": "N/A",
+    "overview": "MAVEN -ARG is an event argument extraction dataset that augments MAVEN datasets with event argument annotations, making it the first all-in-one dataset supporting event detection, event argument extraction (EAE), and event relation extraction.",
+    "data_type": "document-level event argument extraction",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MAVEN",
+      "MAVEN -ERE"
+    ],
+    "resources": [
+      "https://github.com/THU-KEG/MAVEN-Argument"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To complete the all-in-one event understanding dataset, supporting event detection, argument extraction, and event relation extraction.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Event Detection",
+      "Event Argument Extraction"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Annotated from MAVEN datasets using a comprehensive event argument annotation schema.",
+    "size": "98,591 events, 290,613 arguments",
+    "format": "JSON",
+    "annotation": "Human annotation by a team of experts"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Exact Match (EM)"
+    ],
+    "calculation": "Evaluation is based on traditional metrics adapted for multi-answer question answering tasks.",
+    "interpretation": "Higher scores indicate better performance in correctly identifying event arguments.",
+    "baseline_results": "State-of-the-art EAE models achieve moderate performance, with F1 scores around 40%.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "The MAVEN dataset is released under the CC BY-SA 4.0 license.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Key-step Skill Generation (KS-Gen)",
+    "abbreviation": "KS-Gen",
+    "overview": "The Key-step Skill Generation (KS-Gen) task aims to generate video clips of key steps needed to complete a human skill from an initial state and skill description. It tackles the complexities of generating human skills through a novel framework and a curated dataset for evaluation.",
+    "data_type": "video clips",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "COIN",
+      "CrossTask",
+      "HT-Step",
+      "Kinetics-400"
+    ],
+    "resources": [
+      "https://github.com/MCG-NJU/KS-Gen"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To learn and generate human skills at key-step levels, facilitating human skill learning and providing experience for embodied intelligence.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Video Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The raw data for the dataset comes from COIN, CrossTask, HT-Step, and Kinetics-400 instructional video datasets, with a data curation pipeline developed to enhance clip quality.",
+    "size": "110,000 subclips",
+    "format": "various video formats",
+    "annotation": "Annotations include step categories and corresponding segments."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "User study"
+    ],
+    "metrics": [
+      "Action score",
+      "CLIP",
+      "DINO",
+      "Motion distance",
+      "Fréchet Inception Distance (FID)",
+      "Fréchet Video Distance (FVD)"
+    ],
+    "calculation": "Metrics are calculated based on cosine similarities and feature distributions compared between generated and real video clips.",
+    "interpretation": "Higher scores in automatic metrics indicate better alignment with human evaluations.",
+    "baseline_results": "Various baseline methods including GenHowTo and CogVideoX were evaluated, with detailed results presented in tabular form.",
+    "validation": "Results validated through comparison with real videos and user studies to ensure human-like video generation effectiveness."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Unintended propagation of biases present in training data that could lead to inadequate or skewed video outputs."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

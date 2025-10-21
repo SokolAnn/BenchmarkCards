@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LIBRA (Long Input Benchmark for Russian Analysis)",
+    "abbreviation": "LIBRA",
+    "overview": "LIBRA is a new benchmark for the evaluation of LLM long context understanding abilities in the Russian language, comprising 21 adapted datasets to study the LLM’s abilities to understand long texts thoroughly.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Russian"
+    ],
+    "similar_benchmarks": [
+      "LongBench",
+      "L-Eval"
+    ],
+    "resources": [
+      "https://github.com/ai-forever/LIBRA",
+      "https://huggingface.co/spaces/ai-forever/LIBRA-Leaderboard"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To create a reliable instrument for long context understanding evaluation, enabling the study of LLMs' abilities to solve tasks of different complexities.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Dialog Context Understanding"
+    ],
+    "limitations": "The benchmark may not cover the full range of Russian language usage, potentially leading to biased performance metrics.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Various adapted datasets and translations, including tasks from previous benchmarks.",
+    "size": "21 datasets with variable sizes ranging from 4k to 128k tokens",
+    "format": "N/A",
+    "annotation": "Annotated by human annotators."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Exact Match (EM)",
+      "F1 Score"
+    ],
+    "calculation": "Metrics calculated based on the correct answers against provided correct responses in each dataset.",
+    "interpretation": "The score indicates the accuracy of the models on the given tasks with respect to context length.",
+    "baseline_results": "Evaluated models include GPT-4o, GLM4-9B-Chat, among others, with varying performance across tasks.",
+    "validation": "The benchmark has been validated against multiple LLMs with long context capabilities."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The benchmark may demonstrate performance variations across different Russian dialects and contexts.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All data collection processes included measures for confidentiality and obtained necessary permissions.",
+    "data_licensing": "Datasets are published under the MIT license.",
+    "consent_procedures": "All users contributed with transparent permission.",
+    "compliance_with_regulations": "N/A"
+  }
+}

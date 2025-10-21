@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "UQ (Unsolved Questions)",
+    "abbreviation": "UQ",
+    "overview": "We introduce UQ, a testbed of 500 challenging, diverse questions sourced from Stack Exchange, probing capabilities including reasoning, factuality, and browsing.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Education",
+      "Mathematics",
+      "Science",
+      "Engineering"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMLU (Massive Multitask Language Understanding)",
+      "Humanity’s Last Exam"
+    ],
+    "resources": [
+      "https://uq.stanford.edu"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess the capabilities of AI models on unsolved questions that reflect real-world challenges and have not been definitively answered by human experts.",
+    "audience": [
+      "AI Researchers",
+      "Machine Learning Practitioners",
+      "Educators",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Reasoning"
+    ],
+    "limitations": "The evaluation may not encompass all unsolved questions in a variety of domains as it primarily utilizes sources from Stack Exchange.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated from Stack Exchange using a multi-stage filtering pipeline involving rule-based, LLM-based, and human review filtering stages.",
+    "size": "500 questions",
+    "format": "JSON",
+    "annotation": "Filtered and verified through rule-based methods, LLM evaluations, and human reviews."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Model-based evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on the performance of AI models on the UQ dataset, including evaluation metrics established by LLM validators and subsequent human reviews.",
+    "interpretation": "High scores indicate strong performance on difficult unsolved questions reflective of real-world tasks; low scores indicate challenges remaining in modeling such questions.",
+    "baseline_results": "Initial human evaluations identified that top-performing models passed validation on only 15% of questions.",
+    "validation": "The benchmark allows continuous updates and validations through community engagement and feedback."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis of demographic factors is not explicitly provided but is a consideration during question selection.",
+    "harm": [
+      "Potential reinforcement of existing biases in AI responses through unsolved, sensitive questions"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Data is sourced from Stack Exchange, subject to CC BY-SA licensing requirements.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

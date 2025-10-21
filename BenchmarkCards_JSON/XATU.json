@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "XATU (Explainable Text Updates)",
+    "abbreviation": "XATU",
+    "overview": "XATU is the first benchmark specifically designed for fine-grained instruction-based explainable text editing, which includes fine-grained instructions and gold-standard edit explanations for evaluating the text editing capabilities of large language models (LLMs).",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "EditEval"
+    ],
+    "resources": [
+      "https://github.com/megagonlabs/xatu"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive benchmark for evaluating instruction-based text editing capabilities and improve the interpretability and effectiveness of text editing systems.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Text Editing",
+      "Information Update",
+      "Grammar Error Correction",
+      "Style Transfer"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Data is collected from various high-quality sources and includes fine-grained instructions and explanations through both LLM-based and human annotations.",
+    "size": "1,000 examples",
+    "format": "N/A",
+    "annotation": "Combination of LLM-based annotation and manual validation by human annotators."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "LLM-based evaluation"
+    ],
+    "metrics": [
+      "SARI Score"
+    ],
+    "calculation": "SARI Score is calculated as the average of F1 scores for add, keep, and delete operations.",
+    "interpretation": "Higher SARI scores indicate better performance in adhering to the editing instructions.",
+    "baseline_results": "N/A",
+    "validation": "The benchmark was validated through inter-annotator agreement achieving a rate of 80.27%."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Explainability"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Explainability",
+          "subcategory": [
+            "Unexplainable output"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

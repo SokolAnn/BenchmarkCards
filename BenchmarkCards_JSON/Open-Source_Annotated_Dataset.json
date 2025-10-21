@@ -1,0 +1,71 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Open-Source Annotated Dataset",
+    "abbreviation": "N/A",
+    "overview": "We collect a human-annotated dataset of thousands of captions and processed video frames from multiple person-centric sources.",
+    "data_type": "captioned image pairs",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Enable non-rigid edits of human subject scenes, controllable by text, on in-the-wild data and public datasets.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Image Editing"
+    ],
+    "limitations": "The model often fails to preserve the identity of the person being edited.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from Kinetics, NTU-RGBD, Charades, and Fit3D datasets.",
+    "size": "13,487 captioned pairs",
+    "format": "video frames with captions",
+    "annotation": "Human annotated captions and processed video frames."
+  },
+  "methodology": {
+    "methods": [
+      "User study",
+      "Quantitative performance evaluation using FID and PCKh"
+    ],
+    "metrics": [
+      "FID",
+      "PCKh"
+    ],
+    "calculation": "Measured due to constraints in evaluating pose preservation and controllability.",
+    "interpretation": "Higher scores indicate better identity preservation and controllability.",
+    "baseline_results": "Image-only model results achieve the best FID but lowest identity preservation.",
+    "validation": "Validated through a user study with machine learning raters assessing multiple images."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Potential for creating misleading content such as deepfakes."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

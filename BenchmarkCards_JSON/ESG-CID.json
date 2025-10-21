@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ESG-CID (Disclosure Content Index Finetuning Dataset for Mapping GRI and ESRS)",
+    "abbreviation": "ESG-CID",
+    "overview": "We create the ESG-Content Index Dataset (ESG-CID), a dataset leveraging disclosure content indices from ESG reports to facilitate research in the ESG domain and support the development of retrieval models for standardized ESG reporting.",
+    "data_type": "query-document pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMLU"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/airefinery/esg_cid_retrieval"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enhance ESG-specific retrieval systems.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Text Retrieval",
+      "Information Extraction"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Disclosures from sustainability and annual reports collected from various companies.",
+    "size": "2,500 unique reports",
+    "format": "JSON",
+    "annotation": "Weakly supervised using disclosure content indices and refined with LLM assessments."
+  },
+  "methodology": {
+    "methods": [
+      "Contrastive Learning",
+      "Fine-tuning"
+    ],
+    "metrics": [
+      "Recall@10",
+      "Mean Reciprocal Rank at 50 (MRR@50)",
+      "Mean Average Precision at 50 (MAP@50)"
+    ],
+    "calculation": "Metrics are calculated based on the ranking of document pages rather than individual chunks due to the structure of the dataset.",
+    "interpretation": "Higher values in MRR@50 and MAP@50 indicate better retrieval of relevant document pages.",
+    "baseline_results": "Fine-tuned models outperform commercial embeddings and leading public models.",
+    "validation": "Tested under temporal data splits and cross-report style transfer."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

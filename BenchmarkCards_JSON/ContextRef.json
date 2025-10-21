@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ContextRef",
+    "abbreviation": "N/A",
+    "overview": "ContextRef is a benchmark for assessing referenceless metrics for image description generation against human preferences. It includes human ratings across various quality dimensions and robust checks to evaluate metric reliability.",
+    "data_type": "image-description pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/elisakreiss/contextref"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess referenceless metrics for image description generation vis-a-vis human preference judgments and provide insights into their reliability and weaknesses.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Image Captioning",
+      "Text Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The English language subset of the WIT dataset from Wikipedia, featuring various image and description pairs.",
+    "size": "204 samples",
+    "format": "N/A",
+    "annotation": "Human ratings based on a variety of quality dimensions through a human-subjects experiment."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Correlation with human preferences"
+    ],
+    "calculation": "Metrics are based on how well the model-assigned scores align with human quality judgments across various dimensions.",
+    "interpretation": "Higher correlations with human ratings indicate better alignment between model predictions and human preferences.",
+    "baseline_results": null,
+    "validation": "Assessments based on robustness checks against various manipulations of input data."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

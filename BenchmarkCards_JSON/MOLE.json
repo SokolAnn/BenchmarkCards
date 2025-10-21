@@ -1,0 +1,98 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MOLE (Metadata Extraction and Validation in Scientific Papers Using LLMs)",
+    "abbreviation": "MOLE",
+    "overview": "MOLE is a framework using Large Language Models (LLMs) to automatically extract and validate metadata attributes from scientific papers covering datasets of multiple languages, including Arabic, English, Russian, French, and Japanese.",
+    "data_type": "structured metadata",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Arabic",
+      "English",
+      "Russian",
+      "French",
+      "Japanese"
+    ],
+    "similar_benchmarks": [
+      "Masader"
+    ],
+    "resources": [
+      "https://github.com/IVUL-KAUST/MOLE",
+      "https://huggingface.co/datasets/IVUL-KAUST/MOLE"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To automate the extraction and validation of metadata from scientific papers, enhancing research discovery and reproducibility.",
+    "audience": [
+      " Researchers",
+      "Data Scientists",
+      "Natural Language Processing Practitioners"
+    ],
+    "tasks": [
+      "Metadata Extraction",
+      "Validation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "126 annotated scientific papers covering datasets in multiple languages.",
+    "size": "1,000 tokens",
+    "format": "JSON",
+    "annotation": "Manual annotation by experts."
+  },
+  "methodology": {
+    "methods": [
+      "Automated evaluation",
+      "Human annotation"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "Metrics are calculated based on matching extracted metadata with ground truth in the annotated papers.",
+    "interpretation": "High precision indicates fewer hallucinated values, while high recall shows accurate prediction of existing metadata.",
+    "baseline_results": "N/A",
+    "validation": "The annotations were verified by two authors to ensure consistency."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

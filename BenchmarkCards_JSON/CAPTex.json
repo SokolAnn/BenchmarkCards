@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CAPTex (Culturally-Aware Procedural Texts)",
+    "abbreviation": "CAPTex",
+    "overview": "CAPTex is a benchmark designed to evaluate mLLMs’ ability to process and reason about culturally diverse procedural texts across multiple languages.",
+    "data_type": "procedural text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Chinese",
+      "Japanese",
+      "Persian",
+      "Hindi",
+      "Indonesian",
+      "Urdu",
+      "Hausa"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/AmirHossein2002/CAPTex"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate multilingual language models’ (mLLMs) ability to reason across culturally specific procedural texts.",
+    "audience": [
+      "ML Researchers",
+      "Developers of multilingual models"
+    ],
+    "tasks": [
+      "Step Reordering",
+      "Procedure-Based Multiple-Choice Questions",
+      "Conversation-Based Multiple-Choice Questions",
+      "Conversation-Based Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Human-written procedures by native speakers from culturally distinct regions.",
+    "size": "1,400 textual procedures",
+    "format": "text",
+    "annotation": "Manual creation and translation by native speakers."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Spearman's Rank Correlation",
+      "Levenshtein distance",
+      "Kendall's Tau Rank Correlation",
+      "ROUGE-L",
+      "BERTScore"
+    ],
+    "calculation": "Metrics are calculated based on model predictions against the correct answers provided in the dataset.",
+    "interpretation": "Higher values indicate better performance across all tasks except for Levenshtein distance, where lower values are better.",
+    "baseline_results": "CAPTex has been evaluated on 31 multilingual language models.",
+    "validation": "Tasks have been validated through automated checks and human evaluations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "The dataset includes diverse language representations but is limited to seven cultures due to resource constraints.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Creative Commons license",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

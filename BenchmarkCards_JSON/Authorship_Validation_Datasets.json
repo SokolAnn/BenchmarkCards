@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Authorship Validation Datasets",
+    "abbreviation": "N/A",
+    "overview": "This paper presents a collection of new datasets for authorship validation tasks based on the Enron email corpus. These datasets simulate inauthentic messages using both human-written and large language model-generated emails.",
+    "data_type": "email pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Cybersecurity"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/r-dube/bec"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enable real-time detection of impersonation in employment emails by verifying the authorship of email messages.",
+    "audience": [
+      "ML Researchers",
+      "Cybersecurity Practitioners",
+      "Email Security System Developers"
+    ],
+    "tasks": [
+      "Authorship Validation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Enron email corpus",
+    "size": "2,200 emails",
+    "format": "CSV",
+    "annotation": "Manually labeled as authentic or inauthentic based on writing style."
+  },
+  "methodology": {
+    "methods": [
+      "Naive Bayes",
+      "Char-CNN"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Performance metrics calculated based on true positives, false positives, true negatives, and false negatives across different datasets.",
+    "interpretation": "Accuracy measures the total number of correct predictions while the F1 Score represents the balance between precision and recall.",
+    "baseline_results": "Naive Bayes achieved a maximum accuracy of 94.59% and an F1 score of 95.13%. Char-CNN achieved a maximum accuracy of 98.92% and an F1 score of 98.59%.",
+    "validation": "Classifiers were validated using a split of 80:20 for training and testing across the constructed datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

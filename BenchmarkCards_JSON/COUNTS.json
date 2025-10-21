@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "COUNTS (Common Objects UNder disTribution Shifts)",
+    "abbreviation": "COUNTS",
+    "overview": "COUNTS is a large-scale dataset designed for out-of-distribution (OOD) generalization research in object detection and grounding tasks, encompassing 14 natural distributional shifts, over 222K samples, and more than 1,196K annotated bounding boxes.",
+    "data_type": "image",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "N/A"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/jiansheng-li/COUNTS_benchmark",
+      "https://huggingface.co/datasets/jianshengli/COUNTS"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To facilitate the training and evaluation of traditional object detectors and to assess the OOD grounding capabilities of multimodal large language models (MLLMs).",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Object Detection",
+      "Grounding"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Real-world images sourced and annotated through a combination of automated pipelines and human annotation.",
+    "size": "222,234 images",
+    "format": "N/A",
+    "annotation": "Annotated through human verification for bounding boxes and domain information."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "mAP (Mean Average Precision)"
+    ],
+    "calculation": "Metrics calculated based on object detection tasks using various domain shifts.",
+    "interpretation": "Higher mean average precision (mAP) indicates better generalization capabilities across diverse domains.",
+    "baseline_results": "Various object detectors including Faster R-CNN, YOLOv9, and DINO were evaluated.",
+    "validation": "Cross-validation using distinct training and testing domains to assess model performance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack",
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

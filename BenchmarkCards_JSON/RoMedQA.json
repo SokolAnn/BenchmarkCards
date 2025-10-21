@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "RoMedQA (Romanian Medical Question Answering Dataset)",
+    "abbreviation": "RoMedQA",
+    "overview": "RoMedQA is the first dataset comprising medical exam questions in the Romanian language, containing 4,127 single-choice questions used in entrance examinations for medical schools in Romania.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Healthcare",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Romanian"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/craciuncg/RoMedQA_v1"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a dataset that aids in training and testing large language models in medical knowledge and language comprehension for Romanian.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "The dataset may inherit biases present in the source texts from which it was derived.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Data was collected from medical universities' websites, including HTML format, PDF documents, and OCR scans.",
+    "size": "4,127 examples",
+    "format": "JSON",
+    "annotation": "Manual annotation and extraction, including verification of incorrect OCR outputs."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Accuracy and F1 Score are calculated based on the effective answers compared to the correct ones in the dataset.",
+    "interpretation": "Higher scores indicate better model performance in answering medical questions correctly.",
+    "baseline_results": null,
+    "validation": "The dataset was manually inspected to ensure quality and reduce noise."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset aims to ensure diversity by collecting data from varied sources.",
+    "harm": [
+      "Potential perpetuation of biases present in the training data."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All data was sourced and processed to maintain confidentiality.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

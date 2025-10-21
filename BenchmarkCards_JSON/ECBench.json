@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ECBench (Embodied Cognition Benchmark)",
+    "abbreviation": "ECBench",
+    "overview": "ECBench is a high-quality benchmark designed to systematically evaluate the embodied cognitive abilities of large vision-language models (LVLMs) using egocentric videos. It features diverse scene video sources, varied question formats, and 30 dimensions of embodied cognition.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Computer Vision",
+      "Robotics"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ScanQA",
+      "SQA3D",
+      "OpenEQA"
+    ],
+    "resources": [
+      "https://github.com/Rh-Dang/ECBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation framework for the embodied cognitive abilities of large vision-language models in egocentric contexts.",
+    "audience": [
+      "ML Researchers",
+      "Robotics Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "Due to budget constraints, not all proprietary models were tested. The evaluation is limited to under five minutes of video inputs.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "386 RGB-D videos from ScanNet, MultiScan, HM3D, and self-collected scenes.",
+    "size": "4,324 question-answering pairs",
+    "format": "N/A",
+    "annotation": "Class-independent meticulous human annotation with multi-round question screening."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Scores are generated based on a multi-level evaluation framework integrating binary scoring for closed questions and continuous scoring for open-ended responses.",
+    "interpretation": "Scores provide insights into the performance of LVLMs in both static and dynamic scenarios, as well as hallucination issues.",
+    "baseline_results": "Scores from various LVLMs, including GPT-4o.",
+    "validation": "Cross-validation on all questions to ensure QA pair accuracy."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

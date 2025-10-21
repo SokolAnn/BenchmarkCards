@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "D-HUMOR: Dark Humor Understanding via Multimodal Open-ended Reasoning",
+    "abbreviation": "D-HUMOR",
+    "overview": "We introduce a novel dataset of 4,379 Reddit memes annotated for dark humor, target category (gender, mental health, violence, race, disability, and other), and a three-level intensity rating (mild, moderate, severe).",
+    "data_type": "multimodal",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/Sai-Kartheek-Reddy/D-Humor-Dark-Humor-Understanding-via-Multimodal-Open-ended-Reasoning"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a resource for studying dark humor in memes and develop models for accurate detection, target identification, and intensity prediction.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Dark Humor Detection",
+      "Target Identification",
+      "Intensity Prediction"
+    ],
+    "limitations": "Skewed toward the Gender/Sex-Related Topics label, reflecting the greater availability of such content online.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Memes collected from Reddit using the Reddit API, combined with OCR for text extraction.",
+    "size": "4,379 memes",
+    "format": "JSON",
+    "annotation": "Annotated for dark humor presence, target categories, and intensity levels."
+  },
+  "methodology": {
+    "methods": [
+      "Multimodal training with reasoning-augmented framework",
+      "Feature extraction from text and images using BERT and ViT",
+      "Tri-stream Cross-Reasoning Network (TCRNet)"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Macro-F1",
+      "Weighted-F1",
+      "Pearson correlation"
+    ],
+    "calculation": "Metrics calculated based on classification results of the proposed model and various baselines.",
+    "interpretation": "Higher accuracy indicates better detection and classification of dark humor, target identification, and intensity prediction.",
+    "baseline_results": "TCRNet achieved 75.00% accuracy on dark humor detection and 62.72% accuracy on intensity prediction.",
+    "validation": "Ablation studies confirmed the importance of structured explanations for model performance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on affected communities"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Dataset annotated to identify if humor targets sensitive topics affecting various demographic groups.",
+    "harm": [
+      "Potential offense due to dark humor content"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Respect user privacy as per Reddit's policies; no personally identifiable information was collected.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Data collection adhered to ethical guidelines.",
+    "compliance_with_regulations": "N/A"
+  }
+}

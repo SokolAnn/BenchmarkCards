@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CReST (Cooperative Remote Search Task) Corpus",
+    "abbreviation": "CReST",
+    "overview": "This paper introduces a novel two-step framework leveraging large language models (LLMs) for generating annotations of team dialogues to track shared mental models (SMMs) and detect discrepancies in team member mental states. It presents a dataset of human and LLM annotations and a reproducible evaluation framework for SMM coherence.",
+    "data_type": "dialogue annotations",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/user/repo"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the Theory of Mind (ToM) capabilities of large language models by assessing their ability to annotate and detect discrepancies in team dialogues.",
+    "audience": [
+      "ML Researchers",
+      "AI Developers"
+    ],
+    "tasks": [
+      "Annotation of Mental States",
+      "Discrepancy Detection"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "CReST corpus consisting of task-based dialogues from human teams engaged in search tasks.",
+    "size": "30 annotated dialogues with 1,142 utterances",
+    "format": "JSON",
+    "annotation": "Annotated by naive LLMs and humans; includes belief, goal, and commitment updates."
+  },
+  "methodology": {
+    "methods": [
+      "LLM-based Annotation",
+      "Discrepancy Analysis"
+    ],
+    "metrics": [
+      "Weighted Discrepancy Score"
+    ],
+    "calculation": "Discrepancies are categorized and counted based on types (belief contradictions, omissions, unsupported beliefs, false beliefs) for each model and dialogue.",
+    "interpretation": "Higher scores indicate better alignment with ground truth annotations, meaning fewer discrepancies.",
+    "baseline_results": "N/A",
+    "validation": "Discrepancy validation analyses revealed LLMs' performances in identifying discrepancies."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ADVQA",
+    "abbreviation": "N/A",
+    "overview": "ADVQA is a newly created human-grounded adversarial question answering dataset that utilizes the ADVSCORE metric for evaluating adversarialness, aiming to provide realistic and high-quality adversarial samples to test model robustness.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "TRICKME",
+      "FM2",
+      "BAMBOOGLE"
+    ],
+    "resources": [
+      "https://github.com/yysung/Advscore"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The main objective of ADVQA is to provide a robust evaluation framework for assessing the adversarialness of datasets by incorporating human performance into adversarial question answering tasks.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "ADVQA may become less effective over time as models improve and may require periodic updates.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected through human responses from trivia competitions and crowd-sourced writings.",
+    "size": "182 questions",
+    "format": "N/A",
+    "annotation": "Questions were curated and edited by expert writers based on human feedback in a competitive setting."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "ADVSCORE"
+    ],
+    "calculation": "ADVSCORE is calculated using item response theory (IRT), evaluating the margin of human vs. model performance and question discriminability.",
+    "interpretation": "Higher ADVSCORE values indicate more adversarial and discriminative questions.",
+    "baseline_results": "N/A",
+    "validation": "ADVQA's effectiveness is validated against existing adversarial benchmarks like TRICKME and FM2."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Participant privacy was protected under an official IRB review, and consent was obtained for using their responses.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Consent forms were collected to allow the use of responses for academic purposes.",
+    "compliance_with_regulations": "The study complied with ethical standards for human subjects research."
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FD-Bench: A Full-Duplex Benchmarking Pipeline Designed for Full Duplex Spoken Dialogue Systems",
+    "abbreviation": "FD-Bench",
+    "overview": "We present a comprehensive FD benchmarking pipeline utilizing LLMs, TTS, and ASR to address the gap in evaluating Full-Duplex Spoken Dialogue Systems (FDSDS) during user interruptions.",
+    "data_type": "simulated conversations with interruptions",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/pengyizhou/FD-Bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective is to provide a comprehensive evaluation method for FDSDS focusing on their capabilities to handle user interruptions and maintain robustness.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Dialogue Management",
+      "Robustness Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Simulated speech conversations generated using LLMs and TTS systems.",
+    "size": "40 hours of generated speech",
+    "format": "Raw audio (24KHz pcm)",
+    "annotation": "Automatically generated based on simulated dialogues."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Word-Error-Rate (WER)",
+      "Success Replies Rate (SRR)",
+      "Success Interrupts Rate (SIR)",
+      "Early Interrupt Rate (EIR)",
+      "Conditioned Perplexity (C-PPL)"
+    ],
+    "calculation": "Metrics are calculated using outputs from the ASR systems and evaluation from LLM scoring.",
+    "interpretation": "High scores in SRR and SIR indicate better handling of interruptions by the systems.",
+    "baseline_results": "Results reported for three models: Moshi, Freeze-omni, and VITA-1.5 under various interruption types.",
+    "validation": "Evaluated in a server-client architecture simulating real-time interactions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack",
+            "Data poisoning"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

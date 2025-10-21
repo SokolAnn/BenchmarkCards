@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Chronoberg",
+    "abbreviation": "N/A",
+    "overview": "Chronoberg is a temporally structured corpus of English book texts spanning 250 years, curated from Project Gutenberg. It includes a variety of temporal annotations which enable analysis and training of LLMs to better contextualize the evolution of language and capture diachronic variation.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "COCA",
+      "COHA",
+      "CCOHA"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/spaul25/Chronoberg",
+      "https://github.com/paulsubarna/Chronoberg"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To support the analysis and training of large language models on diachronic shifts and temporal generalization in language, enabling research on contextualized sentiment and discrimination detection across various time periods.",
+    "audience": [
+      "ML Researchers",
+      "Linguists",
+      "Data Scientists"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Sentiment Analysis",
+      "Linguistic Analysis"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Project Gutenberg",
+    "size": "25,061 books yielding 2.7 billion tokens",
+    "format": "Plain text",
+    "annotation": "Temporal annotations and sentence-level VAD (Valence-Arousal-Dominance) scores."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "Lexical semantic analysis"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on the VAD scores annotated throughout the corpus, used to assess sentiment trends and diachronic shifts.",
+    "interpretation": "Affect scores indicate the emotional valence of words over time, and model performance is interpreted via perplexity on test sets drawn from Chronoberg.",
+    "baseline_results": null,
+    "validation": "Data validation through cross-referencing publication dates and consistency checks with external bibliographic sources."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on cultural diversity"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "BSD 2-Clause License",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

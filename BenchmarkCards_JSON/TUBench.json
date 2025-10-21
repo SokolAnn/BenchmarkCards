@@ -1,0 +1,98 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TUBench (Trustworthiness Benchmark for Unanswerable Questions)",
+    "abbreviation": "TUBench",
+    "overview": "TUBench is a benchmark specifically designed to evaluate the reliability of Large Vision-Language Models (LVLMs) using unanswerable questions. It contains high-quality, unanswerable questions crafted using ten distinct strategies across four visual domains: code snippets, natural images, geometry diagrams, and statistical tables.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision",
+      "Mathematics"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "MME",
+      "POPE"
+    ],
+    "resources": [
+      "https://github.com/NLPCode/TUBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a new perspective for assessing the trustworthiness and hallucination of LVLMs through the lens of unanswerable questions.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Visual Question Answering",
+      "Code Reasoning",
+      "Geometry Question Answering",
+      "Mathematical Word Problems"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Images from MSCOCO dataset and custom code screenshots",
+    "size": "2,354 questions",
+    "format": "JSON",
+    "annotation": "Manually crafted by experts using various strategies"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on the models' ability to identify whether questions are answerable or unanswerable and the corresponding correctness of the answers provided.",
+    "interpretation": "Higher scores indicate better performance in distinguishing between answerable and unanswerable questions.",
+    "baseline_results": "Gemini-1.5-Pro achieves an average accuracy of 69.2% in determining question answerability.",
+    "validation": "Comprehensive quantitative evaluation of 28 leading LVLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

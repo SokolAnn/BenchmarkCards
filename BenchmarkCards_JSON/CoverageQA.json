@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CoverageQA",
+    "abbreviation": "N/A",
+    "overview": "CoverageQA is a benchmark of underspecified questions with multiple equally plausible answers, designed to assess generation diversity in language models.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://arxiv.org/abs/2410.09038"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate generation diversity from large language models by measuring their ability to recall valid solutions to underspecified questions.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text Generation"
+    ],
+    "limitations": "CoverageQA is sensitive to the model selecting meaningful axes in auto-stratification and correct joint probabilities in heuristic estimation.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Automatically generated from WikiData, ensuring a diverse and extensive benchmark.",
+    "size": "105 questions",
+    "format": "N/A",
+    "annotation": "Automatically transformed into natural language questions using GPT-4."
+  },
+  "methodology": {
+    "methods": [
+      "KL Divergence Measurement",
+      "Recall Measurement"
+    ],
+    "metrics": [
+      "Recall",
+      "KL Divergence"
+    ],
+    "calculation": "KL Divergence is calculated between the model's output distribution and a uniform distribution over valid answers.",
+    "interpretation": "Lower KL Divergence indicates a closer alignment with the desired uniform distribution; higher recall represents better diversity.",
+    "baseline_results": "On CoverageQA, SimpleStrat achieves a 0.36 reduction in KL Divergence and a 0.05 increase in recall compared to baseline methods.",
+    "validation": "Evaluated using both proprietary and open-source models on diverse underspecified questions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

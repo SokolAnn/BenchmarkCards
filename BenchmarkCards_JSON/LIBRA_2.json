@@ -1,0 +1,70 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LIBRA (Local Integrated Bias Recognition and Assessment Framework)",
+    "abbreviation": "LIBRA",
+    "overview": "The LIBRA framework measures bias in large language models (LLMs) specifically within local contexts, tackling the challenges of inherent biases in LLMs when deployed in diverse cultural settings. It emphasizes the use of datasets sourced from local corpora, avoiding crowdsourcing, to evaluate and improve the sensitivity of LLMs to cultural diversity.",
+    "data_type": "test cases",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Māori"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/ipangbo/LIBRA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To measure bias of large language models in local contexts by leveraging local datasets and providing a robust evaluation framework.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Bias Measurement"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "New Zealand local media articles comprising over 360,000 articles collected for bias evaluation.",
+    "size": "360,000 articles",
+    "format": "not specified",
+    "annotation": "Manually annotated by local cultural experts."
+  },
+  "methodology": {
+    "methods": [
+      "Dataset creation using local corpora",
+      "Bias evaluation using Enhanced Idealized CAT Score (EiCAT)"
+    ],
+    "metrics": [
+      "Enhanced Idealized CAT Score (EiCAT)",
+      "Jensen-Shannon Divergence (JSD)"
+    ],
+    "calculation": "The EiCAT score is computed using the distribution of logits associated with stereotypical and anti-stereotypical predicted outcomes normalized by knowledge boundary scoring.",
+    "interpretation": "Higher EiCAT scores indicate reduced bias and better handling of local vocabulary by the model.",
+    "baseline_results": "N/A",
+    "validation": "The pipeline utilizes both qualitative and quantitative measures through expert reviews and statistical comparisons."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "The dataset includes demographic groups relevant to New Zealand's cultural context.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

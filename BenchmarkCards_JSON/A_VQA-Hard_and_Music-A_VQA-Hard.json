@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "A VQA-Hard and Music-A VQA-Hard",
+    "abbreviation": "N/A",
+    "overview": "We curate and release A VQA-Hard and Music-A VQA-Hard by filtering out items solvable from a single frame to enable faithful evaluation of audio-visual reasoning.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "A VQA",
+      "Music-A VQA"
+    ],
+    "resources": [
+      "https://github.com/naver-ai/LLaVA-AV-SSM"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enable faithful evaluation of how audio contributes to video understanding in Video-LLMs.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Audio-Visual Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed by filtering existing datasets to remove items solvable from a single frame.",
+    "size": "N/A",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Evaluation on curated hard splits",
+      "Comparison of model variants with and without audio"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Accuracy is calculated based on the percentage of correct answers for the question-answering tasks.",
+    "interpretation": "Higher accuracy indicates better performance in utilizing audio and visual information in Video-LLMs.",
+    "baseline_results": "N/A",
+    "validation": "Performance validated across multiple benchmarks and model configurations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

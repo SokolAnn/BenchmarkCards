@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ePiC (Employing Proverbs in Context)",
+    "abbreviation": "ePiC",
+    "overview": "ePiC is a high-quality crowdsourced dataset of narratives paired with proverbs, designed to evaluate abstract language understanding and complex analogical reasoning in language models through three main tasks: proverb recommendation and alignment prediction, narrative generation for a proverb, and identification of narratives with similar motifs.",
+    "data_type": "narrative-proverb pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "GLUE",
+      "SuperGLUE"
+    ],
+    "resources": [
+      "https://epic-benchmark.github.io"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate and enhance the abstract reasoning and analogical abilities of large language models through the use of proverbs in narrative contexts.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Proverb Recommendation",
+      "Alignment Prediction",
+      "Narrative Generation",
+      "Identifying Similar Narratives"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Crowdsourced via Amazon Mechanical Turk, with manual curation and annotation for alignment spans.",
+    "size": "2500 proverb-narrative pairs",
+    "format": "JSON",
+    "annotation": "Fine-grained annotation of aligned spans between proverbs and narratives."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Mean Reciprocal Rank (MRR)",
+      "BLEU Score",
+      "ROUGE-L"
+    ],
+    "calculation": "Metrics are calculated based on the predictions made for the proverb-narrative tasks and the generated narratives.",
+    "interpretation": "Metrics indicate the ability of models to understand and generate appropriate narratives related to the proverbs.",
+    "baseline_results": "RoBERTa achieved the highest accuracy of 28.2% for predicting unseen proverbs.",
+    "validation": "The dataset was validated through human evaluations and various NLP tasks' results."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset shows a significant imbalance in gender distribution among narrative mentions (61% male, 39% female).",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "No personal information was collected from turkers, who were fairly compensated.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "The dataset adheres to ethical standards concerning data sourcing and participant rights."
+  }
+}

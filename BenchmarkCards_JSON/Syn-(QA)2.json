@@ -1,0 +1,82 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Syn-(QA)2",
+    "abbreviation": "N/A",
+    "overview": "Syn-(QA)2 is a collection of two synthetic English QA datasets generated using entity perturbation on Wikidata and HotpotQA, designed to evaluate the effect of false assumptions in both single-hop and multi-hop question-answering tasks.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "(QA)2"
+    ],
+    "resources": [
+      "https://github.com/ashwindaswanibu/QAQA-Synthetic-Dataset"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the effect of false assumptions in question-answering systems and to provide a dataset for testing model robustness against misleading assumptions.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "The annotation of false assumptions may lead to dissemination of false claims as part of the dataset’s public release.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Synthetic questions generated using perturbed relations from Wikidata and HotpotQA.",
+    "size": "1,812 question pairs",
+    "format": "JSON",
+    "annotation": "Manually verified question pairs"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Manual evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy is calculated based on the binary classification of whether the input question contains a false assumption or not.",
+    "interpretation": "Higher accuracy indicates better performance in detecting false assumptions.",
+    "baseline_results": null,
+    "validation": "The dataset underwent manual verification to ensure question quality."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential dissemination of false claims due to annotation errors"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Apache-2.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

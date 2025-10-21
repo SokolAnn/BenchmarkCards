@@ -1,0 +1,101 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SMolInstruct",
+    "abbreviation": "N/A",
+    "overview": "SMolInstruct is a large-scale instruction tuning dataset centering around small molecules. It contains 14 chemistry tasks and over 3 million rigorously curated samples, aiming to advance the performance of large language models (LLMs) in chemistry tasks.",
+    "data_type": "query-response pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Chemistry"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Mol-Instructions"
+    ],
+    "resources": [
+      "https://osu-nlp-group.github.io/LLM4Chem/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To facilitate research and applications in chemistry by providing a comprehensive dataset for instruction tuning of large language models.",
+    "audience": [
+      "ML Researchers",
+      "Chemistry Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Name Conversion",
+      "Property Prediction",
+      "Molecule Captioning",
+      "Molecule Generation",
+      "Forward Synthesis",
+      "Retrosynthesis"
+    ],
+    "limitations": "Despite high-quality curation, the dataset may still contain inaccuracies or be limited in assessing correctly generated descriptions or molecules.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Various sources including PubChem, MoleculeNet, and USPTO-full.",
+    "size": "3,288,855 samples",
+    "format": "JSON",
+    "annotation": "Curated and quality-controlled by experts and checks for molecular validity."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Exact Match (EM)",
+      "Fingerprint Tanimoto Similarity (FTS)",
+      "METEOR score",
+      "Root Mean Square Error (RMSE)",
+      "Accuracy"
+    ],
+    "calculation": "Metrics calculated based on the proportion of correct predictions and structural similarities.",
+    "interpretation": "Higher values for metrics like EM, Accuracy indicate better performance, while lower RMSE signifies improved predictions.",
+    "baseline_results": "SoTA task-specific models outperform LlaSMol models on most tasks, but LlaSMol demonstrates notable improvements.",
+    "validation": "Rigorous quality control applied during data collection and before model training."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

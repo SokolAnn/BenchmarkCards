@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ECG-Expert-QA",
+    "abbreviation": "N/A",
+    "overview": "ECG-Expert-QA is a comprehensive multimodal dataset for evaluating diagnostic capabilities in electrocardiogram (ECG) interpretation. It combines real-world clinical ECG data with systematically generated synthetic cases, covering 12 essential diagnostic tasks and totaling 47,211 expert-validated QA pairs.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MIMIC-IV"
+    ],
+    "resources": [
+      "https://github.com/Zaozzz/ECG-Expert-QA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the diagnostic reasoning, ethical judgment, and language understanding capabilities of medical large language models in the context of ECG interpretation.",
+    "audience": [
+      "Medical Researchers",
+      "AI Researchers",
+      "Healthcare Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "ECG Interpretation",
+      "Diagnostic Reasoning",
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Real-world clinical ECG data combined with systematically generated synthetic cases.",
+    "size": "47,211 QA pairs",
+    "format": "N/A",
+    "annotation": "Expert validation and generated under strict quality control."
+  },
+  "methodology": {
+    "methods": [
+      "Evaluation through natural language generation metrics"
+    ],
+    "metrics": [
+      "BLEU-1",
+      "ROUGE-L",
+      "METEOR",
+      "Model-to-Model Scoring (MMS)"
+    ],
+    "calculation": "Metrics calculated based on the similarity between the model-generated answers and expert-annotated references.",
+    "interpretation": "High scores in BLEU, ROUGE, and METEOR indicate better performance in generating precise and contextually appropriate responses.",
+    "baseline_results": "Evaluation compared with models such as GPT-4o, DeepSeek-V3, Qwen2.5.",
+    "validation": "Comprehensive evaluation across multiple tasks and standardized metrics."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

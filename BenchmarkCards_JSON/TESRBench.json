@@ -1,0 +1,98 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TESRBench (Temporal Event Sequence Retrieval Benchmark)",
+    "abbreviation": "TESRBench",
+    "overview": "TESRBench is a comprehensive benchmark designed for evaluating temporal event sequence retrieval (TESR) from textual descriptions, comprising diverse real-world datasets with synthesized and reviewed textual descriptions.",
+    "data_type": "event sequences and textual descriptions",
+    "domains": [
+      "Natural Language Processing",
+      "Social Networks",
+      "Urban Dynamics",
+      "E-Commerce",
+      "Natural Disasters",
+      "Transportation"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": null,
+    "resources": [
+      "https://huggingface.co/tppllm",
+      "https://github.com/zefang-liu/TPP-Embedding"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of TESRBench is to provide a standardized platform for evaluating retrieval models on temporal event sequence retrieval tasks, highlighting the complexities of aligning event sequences with textual descriptions.",
+    "audience": [
+      "ML Researchers",
+      "Academic Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Temporal Event Sequence Retrieval"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Five real-world datasets: Stack Overflow, Chicago Crime, NYC Taxi Trip, U.S. Earthquake, Amazon Review",
+    "size": "10,000 sequences (total across all datasets)",
+    "format": "Real-world datasets with synthesized textual descriptions",
+    "annotation": "Descriptions generated using GPT-4o-mini."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Mean Reciprocal Rank (MRR)",
+      "Recall@K"
+    ],
+    "calculation": "Metrics calculated based on ranking position of the correct sequence and proportion in top K results for retrieval.",
+    "interpretation": "Higher MRR indicates better ranking of relevant event sequences for given descriptions; Recall@K shows the effectiveness of retrieval in locating correct sequences among top K results.",
+    "baseline_results": "Numerous embedding models were evaluated against TESRBench for comparative performance analysis in retrieval tasks.",
+    "validation": "Benchmark validated against baselines through multi-domain experiments."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Robustness",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in prompt"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Potential for misuse in tracking personal activities"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Sourced textual descriptions may reflect biases, and retrieval could be misused for tracking activities.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

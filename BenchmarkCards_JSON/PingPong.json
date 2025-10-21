@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PingPong: A Benchmark for Role-Playing Language Models with User Emulation and Multi-Model Evaluation",
+    "abbreviation": "PingPong",
+    "overview": "We introduce a benchmark for evaluating the role-playing capabilities of language models by leveraging different language models to simulate users in dynamic, multi-turn conversations and assess the resulting dialogues.",
+    "data_type": "dialogue exchanges",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Russian"
+    ],
+    "similar_benchmarks": [
+      "EQ-bench",
+      "RPBench-Auto"
+    ],
+    "resources": [
+      "https://github.com/ilyagusev/ping_pong_bench",
+      "https://ilyagusev.github.io/ping_pong_bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a robust and dynamic evaluation framework for language models' role-playing capabilities.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Role-Playing Evaluation"
+    ],
+    "limitations": "Sample size of 64 conversations per model may limit statistical robustness.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Conversations evaluated include character scenarios drawn from various media, designed for role-playing interactions.",
+    "size": "64 conversations per model evaluated",
+    "format": "JSON",
+    "annotation": "Manual annotation by human evaluators with assessments on multiple criteria."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Character consistency",
+      "Entertainment value",
+      "Language fluency"
+    ],
+    "calculation": "Spearman correlation used to compare model annotations with human evaluations.",
+    "interpretation": "Scores reflect model performance in role-playing contexts based on conversational quality.",
+    "baseline_results": null,
+    "validation": "Correlation with human annotations validated through manual evaluations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on education: bypassing learning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Efforts made to include diverse character and situation designs.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Only artificially generated conversations used, avoiding privacy concerns.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

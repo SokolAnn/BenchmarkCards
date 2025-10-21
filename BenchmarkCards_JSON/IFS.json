@@ -1,0 +1,79 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Incremental Few-shot Text Classification with Multi-round New Classes",
+    "abbreviation": "IFS",
+    "overview": "This work defines a new task in the NLP domain, incremental few-shot text classification, where the system incrementally handles multiple rounds of new classes with a limited number of labeled examples.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "BANKING77",
+      "FewRel"
+    ],
+    "resources": [
+      "https://github.com/congyingxia/IncrementalFSTC"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To propose a new challenge in incremental few-shot text classification and to evaluate performance of models on this task.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Intent Detection",
+      "Relation Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Created from the BANKING77 dataset for intent detection and FewRel for relation classification.",
+    "size": "20 base classes, 50 new classes across 5 rounds, several thousand examples",
+    "format": "N/A",
+    "annotation": "Hand-annotated based on existing datasets."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Model performance is evaluated based on accuracy and F1 score across different rounds and classes.",
+    "interpretation": "Higher scores indicate better classification performance across seen and unseen classes.",
+    "baseline_results": "Comparison with models like DNNC, Prototypical Network, DyFewShot.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

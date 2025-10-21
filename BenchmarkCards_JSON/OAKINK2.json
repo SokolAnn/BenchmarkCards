@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "OAKINK2",
+    "abbreviation": "N/A",
+    "overview": "OAKINK2 is a dataset of bimanual object manipulation tasks for complex daily activities. It introduces a structured representation for complex tasks, organizing them into three levels of abstraction: Affordance, Primitive Task, and Complex Task. The dataset provides multi-view image streams, 3D-pose annotations for human manipulation processes, and task specifications.",
+    "data_type": "video with annotations, pose data",
+    "domains": [
+      "Robotics"
+    ],
+    "languages": [
+      "N/A"
+    ],
+    "similar_benchmarks": [
+      "OakInk"
+    ],
+    "resources": [
+      "https://oakink.net/v2"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a dataset for studying bimanual object manipulation in complex task completion using structured task representations and multimodal observation.",
+    "audience": [
+      "ML Researchers",
+      "Robotics Engineers",
+      "Computer Vision Researchers"
+    ],
+    "tasks": [
+      "Object Manipulation",
+      "Motion Synthesis",
+      "Task Planning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from real-world human interventions in various manipulation scenarios.",
+    "size": "4.01M frames across 627 sequences, including 264 complex task sequences.",
+    "format": "videos and pose data with annotations",
+    "annotation": "3D motion, including pose and shape for the human upper-body, hands, and interacting objects."
+  },
+  "methodology": {
+    "methods": [
+      "Multi-view video capture",
+      "MoCap for 3D pose estimation",
+      "Expert annotation review"
+    ],
+    "metrics": [
+      "Contact Ratio (CR)",
+      "Solid Intersection Volume (SIV)",
+      "Mean Per Joint Position Error (MPJPE)",
+      "Frechet Inception Distance (FID)"
+    ],
+    "calculation": "Metrics are computed based on the comparison between predicted and ground truth motions with respect to trajectory accuracy and contact quality.",
+    "interpretation": "High values of CR and low values of SIV are desirable, indicating effective hand-object interaction without penetration during manipulation.",
+    "baseline_results": "N/A",
+    "validation": "Cross-dataset validation with existing hand-object interaction datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Robustness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Ensured through careful annotation processes and compliance with ethical data collection practices.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

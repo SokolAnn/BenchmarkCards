@@ -1,0 +1,74 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "EnviroExam",
+    "abbreviation": "N/A",
+    "overview": "EnviroExam is a comprehensive evaluation method designed to assess the knowledge of large language models in the field of environmental science, covering undergraduate, master’s, and doctoral courses with 936 questions across 42 core courses.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMLU",
+      "Ceval",
+      "Lawbench",
+      "Medbench"
+    ],
+    "resources": [
+      "https://enviroexam.enviroscientist.cn"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate and rank the performance of large language models in environmental science.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "The evaluation method is susceptible to test data leakage due to reliance on existing large language models for question generation.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Questions derived from the curricula of top international universities.",
+    "size": "936 questions",
+    "format": "N/A",
+    "annotation": "Manually refined and proofread by researchers."
+  },
+  "methodology": {
+    "methods": [
+      "0-shot testing",
+      "5-shot testing",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "The total score is calculated as the arithmetic mean of model scores, adjusted by the coefficient of variation.",
+    "interpretation": "A score above 60 is considered passing; models are evaluated based on their ability to answer questions correctly.",
+    "baseline_results": "In the 5-shot tests, 61.3% of models passed; 48.39% passed the 0-shot tests.",
+    "validation": "Evaluated against 31 open-source large language models, providing comparative results."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "fMoW-mm (multimodal dataset)",
+    "abbreviation": "fMoW-mm",
+    "overview": "We introduce fMoW-mm, a multimodal dataset incorporating satellite imagery, maps, metadata, and text annotations, aimed at enhancing vision-language datasets for remote sensing.",
+    "data_type": "multimodal",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "fMoW (Functional Map of the World)"
+    ],
+    "resources": [
+      "https://bit.ly/fMoW-mm"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enhance the generation of detailed and context-rich captions for remote sensing images using external data sources.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Remote Sensing Experts"
+    ],
+    "tasks": [
+      "Text Generation",
+      "Automatic Target Recognition"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Combination of satellite images from fMoW-rgb, maps from OpenStreetMap, and associated metadata.",
+    "size": "83,412 samples",
+    "format": "N/A",
+    "annotation": "Generated captions using GPT-4o integrated with metadata and maps."
+  },
+  "methodology": {
+    "methods": [
+      "Data augmentation using external maps",
+      "Caption generation with LLM (GPT-4o)"
+    ],
+    "metrics": [
+      "FDR (False Discovery Rate) to evaluate hallucinations",
+      "BLEU for caption quality"
+    ],
+    "calculation": "FDR calculated using precision over proper nouns based on reference lists of correct landmarks.",
+    "interpretation": "Lower FDR indicates fewer hallucinations in the generated captions.",
+    "baseline_results": "Comparison with vision-language models like CLIP and RemoteCLIP demonstrated higher performance with the fMoW-mm dataset.",
+    "validation": "Performance evaluated through ablation studies on map resolutions and types, and the effectiveness in few-shot object detection."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

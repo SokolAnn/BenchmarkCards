@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Seal-Tools: Self-Instruct Tool Learning Dataset for Agent Tuning and Detailed Benchmark",
+    "abbreviation": "Seal-Tools",
+    "overview": "Seal-Tools is a new tool learning dataset for evaluating the tool-calling ability of LLMs, featuring a variety of tools and instances, including hard instances with nested tool callings. It utilizes a self-instruct method for data generation.",
+    "data_type": "API tool instances",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ToolBench",
+      "API-Bank",
+      "ToolAlpaca"
+    ],
+    "resources": [
+      "https://github.com/fairyshine/Seal-Tools"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive tool learning dataset that enables the evaluation and finetuning of LLMs for tool-calling tasks.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Tool Calling",
+      "Task Completion"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Self-instruct method using LLMs to generate tools and instances.",
+    "size": "14,076 instances, 4,076 tools",
+    "format": "JSON",
+    "annotation": "Automatically generated with quality control measures"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Format Accuracy",
+      "Tool Selection Precision/Recall/F1",
+      "Parameter Filling Precision/Recall/F1"
+    ],
+    "calculation": "Metrics are calculated based on comparing model outputs with gold standards.",
+    "interpretation": "Higher scores indicate better performance in tool selection and parameter filling tasks.",
+    "baseline_results": "Results show significant performance improvements compared to existing models.",
+    "validation": "Evaluated with multiple LLMs, comparing performance on single-tool and multiple-tool instances."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Methods to reduce errors caused by LLMs are employed, but potential privacy leaks exist.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

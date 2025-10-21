@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MMBench-Video",
+    "abbreviation": "N/A",
+    "overview": "MMBench-Video introduces a quantitative benchmark designed to rigorously evaluate large vision-language models' proficiency in video understanding, incorporating lengthy videos from YouTube with free-form questions to assess temporal reasoning skills.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MSVD-QA",
+      "MSRVTT-QA",
+      "ActivityNet-QA"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/opencompass/MMBench-Video",
+      "https://github.com/open-compass/VLMEvalKit"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the effectiveness of large vision-language models in video understanding using long-form, diverse video content.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Videos collected from YouTube, with questions and answers annotated by volunteers.",
+    "size": "609 video clips, 1,998 question-answer pairs",
+    "format": "JSON",
+    "annotation": "Human-annotated by volunteers"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Scores range from 0 to 3 based on semantic similarity between model outputs and ground-truth answers.",
+    "interpretation": "A higher score indicates better alignment with human judgments for correctness.",
+    "baseline_results": "N/A",
+    "validation": "Evaluation includes a robust assessment of various LVLMs using the MMBench-Video dataset."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC BY-NC 4.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

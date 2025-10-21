@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Think-Bench",
+    "abbreviation": "N/A",
+    "overview": "Think-Bench is a benchmark designed to evaluate the reasoning efficiency of large reasoning models (LRMs) and their chain-of-thought quality across mathematics, physics, and chemistry tasks.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMLU",
+      "GPQA"
+    ],
+    "resources": [
+      "https://think-bench.github.io/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To systematically evaluate the reasoning efficiency and quality of chain-of-thought in large reasoning models.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Reasoning Efficiency Evaluation",
+      "Chain-of-Thought Quality Evaluation"
+    ],
+    "limitations": "The Think-Bench benchmark currently covers only three disciplines: mathematics, physics, and chemistry, which limits its effectiveness in evaluating models’ reasoning abilities across a broader range of subjects.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated from various academic datasets including MMLU, Math500, AGIEval, AIME, GPQA, SciKnowEval, and UGPhysics.",
+    "size": "1,375 samples",
+    "format": "JSON",
+    "annotation": "Meticulously annotated key reasoning steps for each problem instance."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Efficiency",
+      "Recall",
+      "Precision",
+      "Reflection Quality",
+      "Accuracy"
+    ],
+    "calculation": "Metrics calculated include the total tokens used, the number of tokens until the first correct answer, and various quality measures comparing generated reasoning steps against a reference.",
+    "interpretation": "Higher efficiency and quality scores indicate better reasoning capabilities and resource usage.",
+    "baseline_results": "Various LRMs are evaluated, including Claude 3.7 Sonnet and models from the DeepSeek family.",
+    "validation": "Benchmarks are validated through comprehensive evaluation across multiple representative LRMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Efficiency",
+      "Quality of Reasoning"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

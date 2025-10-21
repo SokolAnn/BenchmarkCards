@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Defeasible Video Entailment (DVidE)",
+    "abbreviation": "DVidE",
+    "overview": "The DVidE benchmark introduces a new task that challenges models to dynamically revise inferences about video content based on textual updates, with annotations for strengthener and weakener relationships.",
+    "data_type": "video and text",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "VIOLIN"
+    ],
+    "resources": [
+      "https://doi.org/10.48550/arXiv.2412.16232"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the ability of models to perform defeasible inference in video understanding tasks.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Defeasible Video Entailment Classification",
+      "Defeasible Video Entailment Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset is derived from the VIOLIN dataset, which consists of video-and-language inference pairs.",
+    "size": "986 examples",
+    "format": "N/A",
+    "annotation": "Annotations were done by multiple annotators to classify updates as strengtheners or weakeners."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Generated update evaluation with LLM"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "Precision",
+      "Recall",
+      "ROUGE-L",
+      "BLEU-4"
+    ],
+    "calculation": "Metrics are calculated based on the standard evaluation frameworks for classification and generation tasks.",
+    "interpretation": "Higher metrics signify better model performance in classifying and generating accurate updates.",
+    "baseline_results": null,
+    "validation": "Seen through experimental results demonstrating significant improvements in classification and generation tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

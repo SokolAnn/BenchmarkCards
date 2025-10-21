@@ -1,0 +1,73 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MoreHopQA",
+    "abbreviation": "N/A",
+    "overview": "MoreHopQA is a multi-hop dataset designed to evaluate reasoning capabilities of models through generative answers, avoiding shortcuts commonly taken by models in traditional extractive datasets. It includes enhanced questions requiring commonsense, arithmetic, and symbolic reasoning, thereby shifting the focus from basic extraction to complex reasoning.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "HotpotQA",
+      "2WikiMultihopQA",
+      "MuSiQue"
+    ],
+    "resources": [
+      "https://github.com/Alab-NII/morehopqa"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To create a more challenging dataset that emphasizes multi-hop reasoning capabilities in large language models, helps to benchmark reasoning skills, and prevents reliance on heuristics.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Multi-hop Question Answering"
+    ],
+    "limitations": "Some generated answers may not be thoroughly verified, potentially leading to incorrect answers.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Derived from HotpotQA, 2WikiMultihopQA, and MuSiQue, enhanced through manual curation and semi-automated processes.",
+    "size": "1,118 samples",
+    "format": "JSON",
+    "annotation": "Human verification performed on the dataset to ensure quality and answerability."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Exact Match",
+      "F1 Score"
+    ],
+    "calculation": "Metrics calculated based on the comparison of model-generated answers to ground-truth answers.",
+    "interpretation": "Higher Exact Match scores indicate better model performance in understanding and reasoning.",
+    "baseline_results": "Baseline performance handled using an artifact-based baseline with Llama-8B.",
+    "validation": "Multiple prompting strategies evaluated, such as zero-shot, few-shot, and Chain-of-Thought prompting validation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset builds upon publicly available datasets, ensuring that no personal information was used.",
+    "data_licensing": "The dataset is intended to be published under the CC BY-SA 4.0 license.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

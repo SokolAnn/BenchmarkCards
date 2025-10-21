@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "EngiBench (Engineering Benchmark)",
+    "abbreviation": "EngiBench",
+    "overview": "EngiBench is a hierarchical benchmark designed to evaluate large language models on solving engineering problems, spanning three levels of increasing difficulty and covering diverse engineering subfields.",
+    "data_type": "engineering problem-solving tasks",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "GSM8K",
+      "MATH",
+      "Omni-MATH"
+    ],
+    "resources": [
+      "https://github.com/EngiBench/EngiBench",
+      "https://huggingface.co/datasets/EngiBench/EngiBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To systematically evaluate large language models on real-world engineering problem-solving capabilities.",
+    "audience": [
+      "ML Researchers",
+      "Engineering Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Engineering Problem Solving",
+      "Mathematical Reasoning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Problems were sourced from existing public benchmarks, educational materials, and modeling competitions.",
+    "size": "1,000 engineering problems",
+    "format": "JSON",
+    "annotation": "Annotated by a mix of PhD students and engineering professionals with assistance from LLMs."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Rubric-based evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on comparisons to ground truth answers and expert rubrics.",
+    "interpretation": "Higher scores reflect better performance in reasoning and problem-solving capabilities.",
+    "baseline_results": "Human experts achieved an average score of 8.58 on open-ended tasks.",
+    "validation": "Inter-annotator agreement ensured the consistency of evaluation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC-BY-NC-4.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

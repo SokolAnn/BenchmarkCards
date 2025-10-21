@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Profit: Benchmarking Personalization and Robustness Trade-off in Federated Prompt Tuning",
+    "abbreviation": "PBPRT-FPT",
+    "overview": "This paper benchmarks fundamental federated learning algorithms applied to prompt tuning large language models to understand the trade-off between personalization and robustness under varying levels of data heterogeneity.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://arxiv.org/abs/2310.04627"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To study the trade-off between personalization and robustness in federated learning scenarios using large language models.",
+    "audience": [
+      "ML Researchers",
+      "Federated Learning Practitioners",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Text Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Super-NaturalInstructions (SNI), a collection of diverse NLP tasks.",
+    "size": "10,000 instances per partition",
+    "format": "JSON",
+    "annotation": "Mined from multi-type instruction datasets."
+  },
+  "methodology": {
+    "methods": [
+      "Federated Averaging (FedAvg)",
+      "Federated Stochastic Gradient Descent (FedSGD)",
+      "Parameter-efficient fine-tuning methods"
+    ],
+    "metrics": [
+      "ROUGE-L"
+    ],
+    "calculation": "Reported scores are computed through the evaluation of local and global test datasets after personalization.",
+    "interpretation": "Higher ROUGE-L scores indicate better alignment between predicted and actual outputs.",
+    "baseline_results": "FedAvg(Adam) outperformed other methods in most cases.",
+    "validation": "Hyperparameters tuned via global validation sets constructed from all validation clients."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

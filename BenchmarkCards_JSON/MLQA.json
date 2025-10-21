@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MLQA",
+    "abbreviation": "MLQA",
+    "overview": "MLQA is a multi-way aligned extractive QA evaluation benchmark in seven languages intended to spur research in cross-lingual extractive question answering. MLQA contains QA instances in 7 languages (English, Arabic, German, Spanish, Hindi, Vietnamese and Simplified Chinese), has over 12K instances in English and 5K in each other language, with each instance parallel between 4 languages on average.",
+    "data_type": "text (question-answering pairs / extractive QA span annotations)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Arabic",
+      "German",
+      "Spanish",
+      "Hindi",
+      "Vietnamese",
+      "Simplified Chinese"
+    ],
+    "similar_benchmarks": [
+      "SQuAD",
+      "XQuAD",
+      "XGLUE",
+      "XTREME",
+      "BiPar",
+      "XQA",
+      "XCMRC"
+    ],
+    "resources": [
+      "https://github.com/facebookresearch/mlqa",
+      "https://github.com/facebookresearch/LASER",
+      "https://arxiv.org/abs/1910.07475"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Provide a large, highly-parallel multilingual extractive QA evaluation dataset and define cross-lingual evaluation tasks (cross-lingual transfer and generalized cross-lingual transfer) to measure and spur progress in cross-lingual QA.",
+    "audience": [
+      "Machine Learning Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Extractive Question Answering",
+      "Cross-lingual evaluation (cross-lingual transfer and generalized cross-lingual transfer)"
+    ],
+    "limitations": "Automatically aligned sentences occasionally differ in named entity or information content. Some questions may not be answerable in all target languages (\"No Answer\" occurred for 6.6%–21.9% of instances depending on language). 7-way parallel sentences lacked linguistic diversity and were often first-sentence artifacts; dataset subsamples 4-way parallel sentences as a compromise. Contexts may include human translations of English articles (i.e., not always independently-authored content).",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Contexts and parallel sentences mined from Wikipedia (N-way parallel sentence mining using LASER). English questions and answer spans annotated via Amazon Mechanical Turk. Questions translated and target-language answer spans annotated by professional translators (One Hour Translation).",
+    "size": "MLQA consists of 12,738 extractive QA instances in English and between 5,029 and 6,006 instances in each target language. 9,019 instances are 4-way parallel, 2,930 are 3-way parallel and 789 are 2-way parallel. Combined, there are over 46,000 QA annotations. Table counts: #Articles: en 5530, de 2806, es 2762, ar 2627, zh 2673, vi 2682, hi 2255; #Contexts: en 10,894; per-language instance counts shown in paper.",
+    "format": "N/A",
+    "annotation": "English QA annotation via Amazon Mechanical Turk: workers formulate questions on English paragraphs and highlight shortest answer span within the aligned sentence; three English answer annotations collected to compute inter-annotator agreement (mean token F1 IAA = 82%). Translations and target-language answer-span annotations performed by professional translators (One Hour Translation). Quality checks: first 15 MTurk questions manually checked per worker; re-annotation and IAA thresholds used to reject low-quality items; 2% of translated questions sampled for expert review; translators failing quality standards removed and translations reallocated; instances marked \"No Answer\" in target languages are discarded from experimental set (released separately)."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics (Exact Match and mean token F1)",
+      "Translate-Train baseline (machine-translate SQuAD into target language)",
+      "Translate-Test baseline (translate target language context+question to English, map answer spans back via translation attention/alignment)",
+      "Cross-lingual representation zero-shot evaluation (multilingual BERT, XLM)",
+      "Zero-shot evaluation using SQuAD v1.1 as training data and MLQA-en as development data"
+    ],
+    "metrics": [
+      "Exact Match (EM)",
+      "Mean token F1 score"
+    ],
+    "calculation": "EM and mean token F1 computed with multilingual preprocessing modifications: strip all Unicode punctuation characters (General Category), strip articles for languages with stand-alone articles (English, Spanish, German, Vietnamese), whitespace tokenization for all languages except Chinese (mixed segmentation method from Cui et al. (2019b)). For Translate-Test answer mapping, select span in original context maximizing F1 with English span using attention-derived alignment scores as described in equation (1) in the paper.",
+    "interpretation": "Higher Exact Match and F1 indicate better extractive QA performance. Performance on cross-lingual transfer tasks is compared to training-language (English) performance to quantify transfer gap. Zero-shot transfer that achieves lower EM/F1 than training-language indicates room for improvement.",
+    "baseline_results": "On MLQA test set (XLT): English BERT-Large: 80.2 F1 / 67.4 EM (on MLQA-en). Multilingual-BERT: en 77.7 F1 / 65.2 EM; XLM: en 74.9 F1 / 62.4 EM. Per-language results (F1 / EM) for XLM: es 68.0 / 49.8, de 62.2 / 47.6, ar 54.8 / 36.3, hi 48.8 / 27.3, vi 61.4 / 41.8, zh 61.1 / 39.6. Translate-test and translate-train baselines and multilingual-BERT results are provided in Table 5 of the paper.",
+    "validation": "Inter-annotator agreement for English annotations: mean token F1 = 82% (comparable to SQuAD dev 84%). Translator quality: 2% of translated questions sampled for expert review; poor translators removed and translations reallocated. Questions with low IAA (<0.3) discarded. Manual analysis performed on discarded questions. Development and test splits created to reduce risk of test set overfitting."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Governance",
+          "subcategory": [
+            "Unrepresentative risk testing"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

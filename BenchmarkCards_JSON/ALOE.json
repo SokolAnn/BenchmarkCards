@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ALOE (Alignment of Empathy)",
+    "abbreviation": "ALOE",
+    "overview": "ALOE is a new dataset introduced for studying empathetic alignment in therapeutic conversations, featuring 9,284 appraisals and 3,262 alignments from Reddit conversations.",
+    "data_type": "span-level annotations",
+    "domains": [
+      "Natural Language Processing",
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/jessicayjm/modeling_empathy_alignment",
+      "https://github.com/jessicayjm/span_alignment_annotation_tool"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To facilitate research on cognitive and emotional empathy through appraisals and their alignment in text-based conversations.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Mental Health Professionals"
+    ],
+    "tasks": [
+      "Empathetic Alignment Recognition",
+      "Appraisal Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Reddit conversations across various subreddits focusing on mental health and emotional support.",
+    "size": "29,385 Target-Observer pairs",
+    "format": "N/A",
+    "annotation": "Manual annotation by trained annotators"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "Metrics are calculated based on model predictions compared to annotated spans.",
+    "interpretation": "Higher F1 scores indicate better accuracy in identifying appraisals and their alignments.",
+    "baseline_results": "Random predictions were used as a baseline for comparison.",
+    "validation": "Models were validated through annotation review and adjudication processes."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data is sourced from public posts on Reddit; measures were taken to mitigate risks of re-exposure to distressing events.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

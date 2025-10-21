@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "GUIDING Q",
+    "abbreviation": "N/A",
+    "overview": "GUIDING Q is a dataset of 10,577 guiding questions extracted from research articles and textbooks to study their roles and effects on human reading comprehension.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Education"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "N/A"
+    ],
+    "resources": [
+      "https://github.com/eth-lre/engage-your-readers"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To analyze the use, distribution, and roles of guiding questions in academic writing, and to explore automated question generation techniques.",
+    "audience": [
+      "ML Researchers",
+      "Educators",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Question Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Extracted from textbooks and scientific articles, particularly from OpenStax, arXiv, and PubMed datasets.",
+    "size": "10,577 questions",
+    "format": "CSV",
+    "annotation": "Questions were extracted and annotated using both human and large language model (LLM) methods."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "BERTScore",
+      "ROUGE-L"
+    ],
+    "calculation": "Metrics were calculated based on the generated questions' alignment with expert-generated questions.",
+    "interpretation": "Higher scores in metrics indicate better quality and relevance of generated questions.",
+    "baseline_results": "N/A",
+    "validation": "The dataset and models were validated through human studies and comparisons with existing datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Creating unequal social relationships through question framing."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "Participants consented to the human studies conducted.",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MedLFQA",
+    "abbreviation": "N/A",
+    "overview": "MedLFQA is a benchmark dataset reconstructed using long-form question-answering datasets related to the biomedical domain, facilitating automatic evaluation of factuality for LLM responses.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/dmis-lab/MedLFQA",
+      "https://github.com/dmis-lab/OLAPH"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the long-form generation ability of large language models (LLMs) in the medical domain and improve their factuality.",
+    "audience": [
+      "ML Researchers",
+      "Healthcare Professionals"
+    ],
+    "tasks": [
+      "Long-form Question Answering"
+    ],
+    "limitations": "The dataset consists only of test datasets, making it difficult to assess the efficacy of the O LAPH framework on training datasets.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Reconstructed from current biomedical LFQA datasets including LiveQA, MedicationQA, HealthSearchQA, and K-QA.",
+    "size": "4,000 QA pairs",
+    "format": "JSON",
+    "annotation": "Curated by medical experts with additional statements evaluated through automated methods."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Factuality",
+      "Semantic Similarity",
+      "Word Composition"
+    ],
+    "calculation": "Metrics were calculated based on automatic evaluations comparing model-generated responses to expert-curated content.",
+    "interpretation": "An increase in scores indicates improved factuality and coherence of the generated text.",
+    "baseline_results": null,
+    "validation": "Models were validated through pairwise evaluations by medical experts."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Bias",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": []
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Lack of training data transparency"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential for misinformation could affect patient health decisions."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Anonymization procedures were followed in the creation of the dataset.",
+    "data_licensing": "Data usage rights depend on the licenses of the original datasets used for reconstruction.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "McMarket",
+    "abbreviation": "N/A",
+    "overview": "McMarket is a large-scale dataset for the task of Multilingual Cross-market Product-based Question Answering (MCPQA), comprising over 7 million questions from 17 marketplaces across 11 languages, designed to enhance question answering in resource-scarce marketplaces by leveraging information from resource-rich auxiliary marketplaces.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "E-commerce"
+    ],
+    "languages": [
+      "English",
+      "Portuguese",
+      "Chinese",
+      "French",
+      "Japanese",
+      "Spanish",
+      "German",
+      "Italian",
+      "Russian",
+      "Arabic",
+      "Hindi"
+    ],
+    "similar_benchmarks": [
+      "xPQA",
+      "AmazonQA",
+      "ReviewRC"
+    ],
+    "resources": [
+      "https://github.com/yfyuan01/MCPQA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To facilitate research in Multilingual Cross-market Product-based Question Answering by providing a diverse and extensive dataset that supports the exploration of answer generation and question ranking across different marketplaces.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Review-Based Answer Generation",
+      "Product-Related Question Ranking"
+    ],
+    "limitations": "The dataset may contain biased or inaccurate information due to user-generated content.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Amazon product dataset (XMarket) and user-generated reviews from various marketplaces.",
+    "size": "7,268,393 questions and 52,469,322 reviews",
+    "format": "JSON",
+    "annotation": "Initial labeling is enhanced with auto-labeling using GPT-4, followed by human assessment."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "BLEU Score",
+      "ROUGE-L",
+      "Mean Reciprocal Rank (MRR)",
+      "Precision@3"
+    ],
+    "calculation": "Metrics are calculated by comparing model-generated answers with ground truth answers using standard evaluation practices.",
+    "interpretation": "Higher scores in these metrics indicate better performance of the models on the task.",
+    "baseline_results": "Models ranging from BM25 to LLaMA-2, showing cross-market methods outperform single-market counterparts.",
+    "validation": "Benchmarked through experiments comparing performance across different models and settings."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Privacy",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset includes diverse demographic factors due to its multilingual and multi-market nature.",
+    "harm": "The dataset aims to prevent harm related to misinformation in product-related question answering."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "No personally identifiable information is included in the dataset as it is derived from publicly available data.",
+    "data_licensing": "Data licensed under CC0 1.0 DEED.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

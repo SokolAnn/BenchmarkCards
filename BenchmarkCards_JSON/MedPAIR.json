@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MedPAIR (Medical Dataset Comparing Physicians and AI Relevance Estimation and Question Answering)",
+    "abbreviation": "MedPAIR",
+    "overview": "MedPAIR is a dataset designed to evaluate how physician trainees and large language models prioritize relevant information when answering medical question-answering (QA) questions. It includes 1,300 QA pairs with sentence-level relevance annotations from 36 physician trainees, allowing comparison between human and model relevance assessments.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMLU (Massive Multitask Language Understanding)",
+      "MedQ (Medical Question Answering)"
+    ],
+    "resources": [
+      "http://medpair.csail.mit.edu/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To establish a rigorous pre-reasoning evaluation by quantifying sentence-level relevance alignment between LLMs and physician trainees in medical QA tasks.",
+    "audience": [
+      "Medical Researchers",
+      "AI/ML Researchers",
+      "Healthcare Practitioners"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "The dataset is limited to the medical domain and requires expert labels for relevance, which may not be feasible for all clinical scenarios.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The data is sourced from four existing QA benchmark datasets: MMLU (Precision Medicine), JAMA Clinical Challenge, MedBullets, and MedXpertQA, with additional annotations from physician trainees.",
+    "size": "2,000 question-answer pairs",
+    "format": "JSON",
+    "annotation": "Annotations were performed by 36 physician trainees who labeled each sentence as 'High Relevance', 'Low Relevance', or 'Irrelevant'."
+  },
+  "methodology": {
+    "methods": [
+      "Manual evaluation by experts",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Calculating sentence relevance labels through majority voting among annotators and assessing model performance before and after pruning contexts based on relevance.",
+    "interpretation": "Performance is measured by the degree of accuracy improvements when irrelevant and low-relevance context is removed based on human annotations.",
+    "baseline_results": "The baseline accuracy for LLMs before filtering contextual information ranged from 30% to 95.6%, with significant improvements observed after applying relevance filtering.",
+    "validation": "Validation was conducted through comparison of annotated relevance with model-assigned relevance labels."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Societal Impact"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on affected communities"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis includes the breakdown of participants by demographics, providing insights into the expertise level of the annotators.",
+    "harm": [
+      "Potential disparities in model performance across different demographic groups."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "The dataset is publicly available under an open access license, details of which are provided alongside resource links.",
+    "consent_procedures": "Consent was obtained from all human annotators involved in the study.",
+    "compliance_with_regulations": "The study received IRB approval (IRB2411001474) exempting it from further review based on specified criteria."
+  }
+}

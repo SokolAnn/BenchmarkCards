@@ -1,0 +1,76 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PPNdataset (Propagandist Pseudo-News dataset)",
+    "abbreviation": "PPN",
+    "overview": "The PPNdataset is a multisource, multilingual, multimodal dataset composed of news articles extracted from websites identified as propaganda sources. It is created to investigate the stylistic features of propaganda and to compare human annotations with machine classification.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Arabic",
+      "Chinese",
+      "English",
+      "French",
+      "German",
+      "Italian",
+      "Russian",
+      "Spanish",
+      "Ukrainian"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/hybrinfox/ppn"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a dataset for analyzing the language of propaganda and to facilitate the training of machine learning models for propaganda detection.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Text Classification"
+    ],
+    "limitations": "Annotation experiments were only run on a subset of the French data. There may be parsing errors for some languages, and further analysis from native speakers of other languages may be required before using these parts of the dataset.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "News articles extracted from propaganda sources identified by expert agencies.",
+    "size": "27,079 articles",
+    "format": "N/A",
+    "annotation": "Multilabel annotation by humans using 11 distinct labels."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Metrics were calculated based on the performance of models on the test set after training.",
+    "interpretation": "A model is considered good if it achieves high accuracy in detecting propaganda articles compared to regular articles.",
+    "baseline_results": "Test accuracies for models ranged from 0.921 (XGBoost) to 0.997 (RoBERTa) for propaganda detection.",
+    "validation": "Validation was performed by splitting the datasets into training, validation, and test sets, ensuring no overlap."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": null
+    },
+    "demographic_analysis": "The dataset includes articles in multiple languages, allowing for demographic analysis across different language groups.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Participants in the annotation task were given content warnings and the option to withdraw at any time.",
+    "data_licensing": "N/A",
+    "consent_procedures": "All annotators performed the task voluntarily.",
+    "compliance_with_regulations": "N/A"
+  }
+}

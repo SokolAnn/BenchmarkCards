@@ -1,0 +1,72 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ShIOEnv (Shell Input-Output Environment)",
+    "abbreviation": "ShIOEnv",
+    "overview": "ShIOEnv is a Linux shell input-output environment that allows for the efficient exploration and evaluation of command sequences, focusing on argument-level redundancy and execution feedback to improve the sample efficiency of command synthesis.",
+    "data_type": "shell input-output behavior pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "NL2Bash",
+      "NL2CMD"
+    ],
+    "resources": [
+      "https://github.com/synlab-jragsdale/ShIOEnv",
+      "https://doi.org/10.7910/DVN/BWUIOS"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of ShIOEnv is to provide a flexible environment for generating and evaluating shell command sequences for better command synthesis and behavioral modeling.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Command Synthesis"
+    ],
+    "limitations": "Excludes interactive commands and faces challenges regarding automation; redundancy analysis is computationally intensive.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated from interactions with the ShIOEnv environment.",
+    "size": "71,794 samples",
+    "format": "JSON",
+    "annotation": "Behavioral logging during command execution."
+  },
+  "methodology": {
+    "methods": [
+      "Reinforcement Learning",
+      "Proximal Policy Optimization"
+    ],
+    "metrics": [
+      "BLEU Score",
+      "chrF Score"
+    ],
+    "calculation": "Metrics are calculated based on the output of the generated commands compared to expected outputs for evaluating command behavior.",
+    "interpretation": "Higher scores on BLEU and chrF indicate better performance in command synthesis.",
+    "baseline_results": "CodeT5 fine-tuned on ShIOEnv datasets achieved a BLEU4 score of up to 0.618.",
+    "validation": "Dataset is validated via execution feedback and performance metrics from downstream modeling."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

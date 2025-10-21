@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ChatBench",
+    "abbreviation": "N/A",
+    "overview": "ChatBench is a new dataset comprising AI-alone, user-alone, and user-AI data for 396 questions, including 144K answers and 7,336 user-AI conversations, converted from the MMLU benchmark to facilitate human-AI evaluation.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMLU (Massive Multitask Language Understanding)"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/microsoft/ChatBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate how humans interact with LLMs and how these interactions change evaluation conclusions compared to traditional AI-alone benchmarks.",
+    "audience": [
+      "ML Researchers",
+      "AI Practitioners"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "ChatBench is compiled from a user study involving human interactions with AI and data from MMLU.",
+    "size": "144,029 total answers",
+    "format": "JSON",
+    "annotation": "Manually verified user interactions and AI responses."
+  },
+  "methodology": {
+    "methods": [
+      "User study",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy is computed as the fraction of correct answers over total answers.",
+    "interpretation": "A higher accuracy indicates better model performance in user-AI interactions compared to individual performances.",
+    "baseline_results": "N/A",
+    "validation": "User data was validated through attention checks and filtering criteria for quality assurance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Exposing personal information"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Data includes various user demographics for a representative sampling.",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data was anonymized to protect participant privacy, with personal information checked and removed.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Informed consent was obtained from all participants.",
+    "compliance_with_regulations": "The study complies with GDPR regulations regarding participant data."
+  }
+}

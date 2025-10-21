@@ -1,0 +1,73 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Bench To the Future (BTF)",
+    "abbreviation": "BTF",
+    "overview": "BTF is a 'pastcasting' benchmark for evaluating the forecasting capabilities of Large Language Models (LLMs). It consists of 299 high-quality questions for which resolutions are known, allowing LLMs to provide forecasts on past events using a hermetic environment based on tens of thousands of web pages.",
+    "data_type": "forecasting questions",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Metaculus AI Forecasting Benchmark Series",
+      "ForecastBench"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2506.21558"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate LLM forecasting capabilities based on their ability to make accurate forecasts in a controlled environment.",
+    "audience": [
+      "ML Researchers",
+      "AI Practitioners"
+    ],
+    "tasks": [
+      "Forecasting"
+    ],
+    "limitations": "The initial question set is relatively small and is expected to evolve over time with more recent questions.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Questions sourced from reputable prediction platforms, primarily Metaculus.",
+    "size": "299 questions (effective size after correlation weighting is 178.8)",
+    "format": "N/A",
+    "annotation": "Questions expanded and processed into binary format, with weights assigned to manage inter-question correlations."
+  },
+  "methodology": {
+    "methods": [
+      "ReAct Forecaster",
+      "Fixed Evidence Forecaster",
+      "Variable Evidence Forecaster",
+      "No Evidence Forecaster"
+    ],
+    "metrics": [
+      "Brier Score"
+    ],
+    "calculation": "Brier score calculated as the squared difference between the forecast and the actual outcome.",
+    "interpretation": "Lower Brier scores indicate better forecasting accuracy.",
+    "baseline_results": "The baseline is a Brier score of 0.25, achieved by predicting 50% across all questions.",
+    "validation": "Inter-run variation assessed through repeated forecasts and comparisons to live forecasts."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

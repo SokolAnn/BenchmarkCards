@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "StreamingBench",
+    "abbreviation": "N/A",
+    "overview": "StreamingBench is the first comprehensive benchmark designed to evaluate the streaming video understanding capabilities of Multimodal Large Language Models (MLLMs). It consists of 900 videos and 4,500 human-curated QA pairs divided into 18 tasks, assessing real-time visual understanding, omni-source understanding, and contextual understanding.",
+    "data_type": "video-question-answer pairs",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "VStream-QA"
+    ],
+    "resources": [
+      "https://github.com/THUNLP-MT/StreamingBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective is to evaluate and facilitate advancements for MLLMs in achieving human-level streaming video comprehension and interaction.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Real-Time Visual Understanding",
+      "Omni-Source Understanding",
+      "Contextual Understanding"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "900 YouTube videos across eight categories, covering diverse scenarios for streaming video understanding tasks.",
+    "size": "900 videos and 4,500 question-answer pairs",
+    "format": "N/A",
+    "annotation": "Hybrid annotation pipeline; QA pairs are generated using GPT-4o and manually annotated by human annotators."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Each question's accuracy is calculated based on the model's performance on the provided multiple-choice answers.",
+    "interpretation": "Results are interpreted as the percentage of questions answered correctly.",
+    "baseline_results": "Human performance average is reported at 91.66% across all tasks.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

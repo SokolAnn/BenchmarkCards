@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "The Impact of Visual Information in Chinese Characters: Evaluating Large Models’ Ability to Recognize and Utilize Radicals",
+    "abbreviation": "N/A",
+    "overview": "This study establishes a benchmark to evaluate LLMs’ and VLMs’ understanding of visual elements in Chinese characters, including radicals, composition structures, strokes, and stroke counts.",
+    "data_type": "Chinese character data with radicals, strokes, and structural compositions",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/xwu414/Chinese-Character-Benchmark"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate how contemporary LLMs and VLMs can recognize and utilize visual information present in Chinese characters.",
+    "audience": [
+      "ML Researchers",
+      "NLP Practitioners"
+    ],
+    "tasks": [
+      "Structure Recognition",
+      "Radical Recognition",
+      "Stroke Count Identification",
+      "Stroke Decomposition"
+    ],
+    "limitations": "The dataset does not represent the full range of Chinese characters, primarily focusing on simplified characters.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from the CJK Unified Ideographs with visual features sourced from authoritative Chinese dictionaries.",
+    "size": "14,648 Chinese characters",
+    "format": "N/A",
+    "annotation": "Manual review and annotation of radicals and strokes by native Chinese speakers"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "F1 Score evaluation"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Mean Absolute Error (MAE)",
+      "Mean Squared Error (MSE)"
+    ],
+    "calculation": "Metrics are calculated based on model predictions against a ground truth derived from the benchmark dataset.",
+    "interpretation": "Higher F1 Scores indicate a better understanding of visual components in Chinese characters.",
+    "baseline_results": "PIXEL achieved an F1 score of 84.57 on the structure recognition task.",
+    "validation": "Models were evaluated using a variety of tasks assessing their understanding of visual aspects in the characters."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

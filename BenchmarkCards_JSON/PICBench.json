@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PICBench",
+    "abbreviation": "N/A",
+    "overview": "PICBench is the first benchmarking and evaluation framework specifically designed to automate the design generation of Photonic Integrated Circuits (PICs) using LLMs. It includes 24 meticulously crafted PIC design problems, spanning from fundamental device designs to complex circuit-level designs.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "RTLLM",
+      "VerilogEval",
+      "SPICEPilot",
+      "ChatEDA"
+    ],
+    "resources": [
+      "https://github.com/PICDA/PICBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of PICBench is to provide a comprehensive benchmark and evaluation methodology for automating the generation of PIC designs using LLMs.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Design Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated design problems and expert-written solutions for PIC design.",
+    "size": "24 problems",
+    "format": "JSON",
+    "annotation": "Each problem is crafted by human experts and includes a ground-truth design for evaluation."
+  },
+  "methodology": {
+    "methods": [
+      "Automated Evaluation",
+      "Error Feedback Loop",
+      "Simulation-based Testing"
+    ],
+    "metrics": [
+      "Pass@k"
+    ],
+    "calculation": "The Pass@k metric is calculated on the generated samples based on their correctness against unit tests.",
+    "interpretation": "A problem is considered solved if any of the k-generated samples passes the corresponding unit tests.",
+    "baseline_results": "Various existing LLMs were evaluated including GPT-4, GPT-o1-mini, Gemini 1.5 Pro, and Claude 3.5 Sonnet.",
+    "validation": "The benchmark uses an open-source simulator (SAX) to validate functionality and syntax of designs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

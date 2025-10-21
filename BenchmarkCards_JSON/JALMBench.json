@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "JALMBench (Jailbreak Audio Language Model Benchmark)",
+    "abbreviation": "JALMBench",
+    "overview": "JALMBench is the first comprehensive benchmark to assess the safety of Audio Language Models (ALMs) against jailbreak attacks, including a dataset of 2,200 text samples and 51,381 audio samples totaling over 268 hours, along with support for multiple attack and defense methods.",
+    "data_type": "text and audio samples",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "AdvBench"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/AnonymousUser000/JALMBench",
+      "https://github.com/sfofgalaxy/JALMBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a standardized evaluation framework for assessing the safety of Audio Language Models (ALMs) against jailbreak attacks.",
+    "audience": [
+      "Researchers",
+      "Developers",
+      "Safety Evaluators"
+    ],
+    "tasks": [
+      "Jailbreak Attack Assessment",
+      "Safety Evaluation of ALMs"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from various harmful query methods and generated audio samples.",
+    "size": "51,381 audio samples and 2,200 text samples, totaling over 268 hours",
+    "format": "N/A",
+    "annotation": "Generated through automated processes and manual selections."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Attack Success Rate (ASR)"
+    ],
+    "calculation": "The ASR is calculated based on the model's response to harmful queries evaluated on a 5-point safety scale.",
+    "interpretation": "A higher ASR indicates greater vulnerability to jailbreak attacks.",
+    "baseline_results": "N/A",
+    "validation": "Evaluated across 12 mainstream ALMs with detailed attack and defense analyses."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack",
+            "Extraction attack",
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on education: bypassing learning",
+            "Impact on the environment"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

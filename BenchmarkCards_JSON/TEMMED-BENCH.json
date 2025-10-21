@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TEMMED-BENCH",
+    "abbreviation": "N/A",
+    "overview": "TEMMED-BENCH is the first benchmark designed for analyzing changes in patients’ conditions between different clinical visits, challenging large vision-language models to reason over temporal medical images.",
+    "data_type": "visual question-answering pairs, report generation, image-pair selection",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://TemMedBench.github.io"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the ability of large vision-language models in reasoning over temporal medical images and to provide a comprehensive assessment that simulates real-world clinical practices.",
+    "audience": [
+      "ML Researchers",
+      "Healthcare Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Visual Question Answering",
+      "Report Generation",
+      "Image-Pair Selection"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "CheXpert Plus dataset",
+    "size": "18,144 instances",
+    "format": "N/A",
+    "annotation": "Reviews and generation using expert input and automatic methods."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "BLEU",
+      "ROUGE-L",
+      "METEOR"
+    ],
+    "calculation": "Metrics are calculated using standard evaluation methods defined for each task.",
+    "interpretation": "Higher scores indicate better performance in reasoning tasks pertaining to temporal medical images.",
+    "baseline_results": "Highest VQA accuracy achieved by GPT o4-mini at 79.15%.",
+    "validation": "Extensive evaluation conducted on twelve large vision-language models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Privacy",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Anonymization procedures were implemented; no personally identifiable information was retained.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DexBench",
+    "abbreviation": "N/A",
+    "overview": "DexBench is a benchmark designed to evaluate large language model (LLM) performance across real-world decision-making tasks faced by individuals managing diabetes. It introduces a comprehensive evaluation framework tailored to the challenges of diabetes management, compiling data from 15,000 individuals to generate 360,600 personalized questions across 7 task categories.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "HealthBench",
+      "MedHELM",
+      "MedCalc-Bench",
+      "MedGPTEval"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2510.00038"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Evaluate LLMs on patient-facing diabetes management tasks.",
+    "audience": [
+      "ML Researchers",
+      "Healthcare Practitioners",
+      "AI Developers"
+    ],
+    "tasks": [
+      "Decision Making",
+      "Planning",
+      "Education",
+      "Simple Reasoning",
+      "Advanced Reasoning",
+      "Alert/Triage",
+      "Glucose Math"
+    ],
+    "limitations": "The curated dataset lacks detailed cohort demographics and relies on wearable and self-logged data, which can be sparse and noisy.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Data compiled from continuous glucose monitors and behavioral logs from 15,000 individuals across three diabetes populations.",
+    "size": "360,600 questions from 15,000 individuals",
+    "format": "CSV, JSON",
+    "annotation": "Data collected through self-logging and continuous monitoring."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Groundedness",
+      "Safety",
+      "Clarity",
+      "Actionability"
+    ],
+    "calculation": "Metrics are calculated based on model outputs compared to ground truths and predefined criteria for each task.",
+    "interpretation": "Higher scores reflect better performance in providing accurate, grounded, safe, clear, and actionable responses.",
+    "baseline_results": "N/A",
+    "validation": "Cross-validated using human reviewers for quality assurance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Accuracy",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": []
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "Limited demographic data was collected.",
+    "harm": "Focus on preventing misinformation and ensuring safe usage of AI in healthcare contexts."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data used in DexBench was de-identified and obtained with appropriate consent, ensuring compliance with relevant regulations.",
+    "data_licensing": "N/A",
+    "consent_procedures": "All data collected met ethical standards and received necessary approvals.",
+    "compliance_with_regulations": "The work conforms to HIPAA regulations."
+  }
+}

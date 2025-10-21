@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PDF-MVQA (PDF-based Visual Question Answering)",
+    "abbreviation": "PDF-MVQA",
+    "overview": "PDF-MVQA is a new multi-page, multimodal document entity retrieval dataset designed to facilitate visual question answering in text-dense documents. It addresses challenges in understanding hierarchically structured semantic relationships across multiple pages.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "DocVQA",
+      "DocCVQA",
+      "RDVQA",
+      "VisualMRC"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2404.12720"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enhance the effectiveness of vision-and-language models in handling multi-page document understanding and information retrieval.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Multimodal Document Information Retrieval"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from PubMed Central, encompassing research articles, review articles, and systematic reviews.",
+    "size": "3,146 documents, 30,239 pages",
+    "format": "CSV",
+    "annotation": "Automatically generated questions and answers based on the contents of the documents, using ChatGPT for question generation."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Exact Matching (EM)",
+      "Partial Matching (PM)",
+      "Multi-Label Recall (MR)"
+    ],
+    "calculation": "Metrics are calculated based on the proportion of correctly identified document entities against ground truth in the context of given questions across multiple pages.",
+    "interpretation": "Higher scores indicate better performance in retrieving relevant document entities as support for answering questions. EM is strict about exact matches, while PM allows for partial correctness.",
+    "baseline_results": "Various models including RoI-based and Patch-based frameworks, achieving different performance levels across metrics.",
+    "validation": "Experimentally validated through quantitative and qualitative analysis."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Misleading or incorrect answers affecting decision-making processes."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Appropriate measures taken to anonymize patient-related data where applicable.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

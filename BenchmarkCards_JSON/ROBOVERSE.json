@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ROBOVERSE",
+    "abbreviation": "N/A",
+    "overview": "ROBOVERSE is a comprehensive framework comprising a simulation platform, a synthetic dataset, and unified benchmarks for scalable and generalizable robot learning. It aims to enhance the performance of imitation learning, reinforcement learning, and world model learning, improving sim-to-real transfer through a standardized dataset and benchmark methodology.",
+    "data_type": "robot trajectories, tasks, assets",
+    "domains": [
+      "Robotics"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Meta-World",
+      "RLBench",
+      "CALVIN",
+      "HumanoidBench"
+    ],
+    "resources": [
+      "https://roboverseorg.github.io/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a unified platform for robot learning, enabling systematic training and evaluation protocols while integrating datasets from various sources.",
+    "audience": [
+      "ML Researchers",
+      "Robotics Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Imitation Learning",
+      "Reinforcement Learning",
+      "Robot Manipulation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Various existing simulation environments and benchmarks; tasks and assets migrated from RLBench, Meta-World, and others.",
+    "size": "510,500 trajectories, 5,500 assets",
+    "format": "USD, URDF",
+    "annotation": "Utilizes pre-existing annotations and constructs new tasks and demonstrations through migration and simulation."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Success Rate",
+      "Generalization Capability"
+    ],
+    "calculation": "Metrics are calculated based on the percentage of successful task completions and the ability to generalize to unseen scenarios.",
+    "interpretation": "Performance is interpreted based on the degree to which policies can adapt to varied conditions as defined in the benchmark protocol.",
+    "baseline_results": "Baseline results include comparisons with existing benchmarks such as Meta-World and RLBench.",
+    "validation": "Robust testing within the ROBOVERSE environment across tasks, utilizing a 90/10 training/testing split for generalization evaluation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PowerPoint Task Completion (PPTC)",
+    "abbreviation": "PPTC",
+    "overview": "The PowerPoint Task Completion (PPTC) benchmark assesses LLMs' ability to create and edit PPT files based on user instructions. It contains 279 multi-turn sessions covering diverse topics and involves hundreds of instructions requiring multi-modal operations.",
+    "data_type": "multi-turn dialogue sessions",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/gydpku/PPTC"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To measure LLMs’ task completion performance within the PowerPoint software.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Multi-turn Dialogue",
+      "Task Completion"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Crowdsourced instructions crafted by professional data science engineers familiar with PowerPoint.",
+    "size": "279 multi-turn sessions",
+    "format": "N/A",
+    "annotation": "Crafted by crowd workers based on established principles and reviewed for clarity and relevance."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Turn-based accuracy",
+      "Session-based accuracy"
+    ],
+    "calculation": "Metrics are calculated based on the ratio of correctly completed turns to total turns and correctly completed sessions to overall sessions.",
+    "interpretation": "Higher accuracy indicates better performance in completing user tasks within PowerPoint.",
+    "baseline_results": null,
+    "validation": "The benchmark was validated by assessing instruction clarity and relevance, executing provided API sequences, and verifying goal achievement."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

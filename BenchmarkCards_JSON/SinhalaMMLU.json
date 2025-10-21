@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SinhalaMMLU",
+    "abbreviation": "N/A",
+    "overview": "SinhalaMMLU is the first multiple-choice question answering benchmark designed specifically for Sinhala, a low-resource language. The dataset includes over 7,000 questions spanning secondary to collegiate education levels and is aligned with the Sri Lankan national curriculum. It covers six domains and 30 subjects, including both general academic topics and culturally grounded knowledge.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Sinhala"
+    ],
+    "similar_benchmarks": [
+      "MMLU"
+    ],
+    "resources": [
+      "https://github.com/naist-nlp/SinhalaMMLU",
+      "https://huggingface.co/datasets/naist-nlp/SinhalaMMLU"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate language models in the Sinhala language across educational levels, ensuring culturally relevant and educationally aligned benchmarks.",
+    "audience": [
+      "ML Researchers",
+      "NLP Practitioners",
+      "Education Researchers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "SinhalaMMLU is limited to text-based multiple-choice questions and excludes multi-modal and open-ended tasks.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from various national and provincial exams without relying on translations.",
+    "size": "7,044 questions",
+    "format": "JSON",
+    "annotation": "Manual annotation by experts."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy calculated based on the percentage of correct answers across evaluated models.",
+    "interpretation": "Higher accuracy indicates better performance in understanding the Sinhala language and context.",
+    "baseline_results": null,
+    "validation": "Evaluated 26 LLMs in zero-shot and few-shot settings."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Collected data consists of publicly available educational resources.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "Compliant with the Sri Lankan Copyright Act for fair use."
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Killkan",
+    "abbreviation": "N/A",
+    "overview": "This paper presents Killkan, the first dataset for automatic speech recognition (ASR) in the Kichwa language, an indigenous language of Ecuador. The dataset contains approximately 4 hours of audio with transcription, translation into Spanish, and morphosyntactic annotation in the format of Universal Dependencies.",
+    "data_type": "audio-transcription pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Kichwa",
+      "Spanish"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/ctaguchi/killkan",
+      "https://huggingface.co/ctaguchi/killkan_asr"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To build resources for automatic speech recognition and language technologies for the endangered Kichwa language.",
+    "audience": [
+      "ML Researchers",
+      "Linguists",
+      "Language Revitalization Practitioners"
+    ],
+    "tasks": [
+      "Automatic Speech Recognition"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The audio data was retrieved from a publicly available radio program",
+    "size": "4 hours of audio",
+    "format": "WAV",
+    "annotation": "Time-aligned sentence-level transcriptions, Spanish translations, and morphosyntactic annotations compatible with Universal Dependencies."
+  },
+  "methodology": {
+    "methods": [
+      "Fine-tuning a pretrained model (Wav2Vec2) for ASR"
+    ],
+    "metrics": [
+      "Character Error Rate (CER)",
+      "Word Error Rate (WER)",
+      "Word Information Lost (WIL)"
+    ],
+    "calculation": "CER, WER, and WIL are calculated based on the discrepancies between predicted and actual transcriptions.",
+    "interpretation": "A lower CER and WER indicate better performance in transcribing the ASR output.",
+    "baseline_results": "Latest model achieved 2.04% CER on the test set.",
+    "validation": "The dataset was fine-tuned against different sample sizes to test its performance across various levels of resource availability."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Creative Commons BY-SA license",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

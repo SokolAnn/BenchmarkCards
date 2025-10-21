@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ArithmAttack",
+    "abbreviation": "N/A",
+    "overview": "ArithmAttack is proposed to examine how robust Large Language Models (LLMs) are when encountering noisy prompts that contain extra noise in the form of punctuation marks. It assesses robustness in math problem-solving tasks.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "GSM8K",
+      "MultiArith"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2501.08203"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the robustness of various Large Language Models to noisy inputs in math problem-solving.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Mathematical Problem Solving"
+    ],
+    "limitations": "The study focuses only on one type of noise (punctuation marks) and uses a limited number of datasets and models.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "GSM8K and MultiArith datasets.",
+    "size": "8,500 examples (GSM8K) and 180 examples (MultiArith)",
+    "format": "Text",
+    "annotation": "Not explicitly stated in the paper."
+  },
+  "methodology": {
+    "methods": [
+      "Zero-Shot Prompting",
+      "Adversarial Noise Insertion"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Attack Success Rate (ASR)"
+    ],
+    "calculation": "ASR is calculated as the ratio of incorrect predictions made after the noise attack to previously correct predictions.",
+    "interpretation": "Lower ASR values imply better robustness against noise.",
+    "baseline_results": "Llama3.1 achieved the highest accuracies across both datasets with robustness against noise.",
+    "validation": "Evaluated performance across different levels of noise (10%, 30%, 50%) on the input data."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack",
+            "Data poisoning"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

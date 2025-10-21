@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TRACE",
+    "abbreviation": "N/A",
+    "overview": "TRACE is a novel benchmark designed to evaluate continual learning in large language models (LLMs), consisting of 8 distinct datasets spanning challenging tasks including domain-specific tasks, multilingual capabilities, code generation, and mathematical reasoning.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Chinese",
+      "German"
+    ],
+    "similar_benchmarks": [
+      "MMLU (Massive Multitask Language Understanding)",
+      "Big-Bench"
+    ],
+    "resources": [
+      "https://github.com/BeyonderXX/TRACE"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation of continual learning for LLMs, assessing their capabilities in various domains after sequential training.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Continual Learning Evaluation",
+      "Mathematical Reasoning",
+      "Code Generation",
+      "Multilingual Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Eight standardized datasets covering various tasks including ScienceQA, FOMC, MeetingBank, C-STANCE, 20Minuten, Py150, NumGLUE, and more.",
+    "size": "40,000 training examples and 16,000 testing examples",
+    "format": "Standardized format for unified evaluation",
+    "annotation": "Curated for specific knowledge and reasoning capabilities, ensuring diversity and challenge."
+  },
+  "methodology": {
+    "methods": [
+      "Sequential Full-Parameter Fine-Tuning",
+      "LoRA-based Sequential Fine-Tuning",
+      "Replay-based Sequential Fine-Tuning",
+      "In-Context Learning"
+    ],
+    "metrics": [
+      "General Ability Delta",
+      "Instruction Following Delta",
+      "Safety Delta"
+    ],
+    "calculation": "Metrics are calculated based on performance shifts in task-specific evaluations and general tasks pre- and post-training.",
+    "interpretation": "Higher scores indicate better retention of general abilities and instruction-following capabilities.",
+    "baseline_results": "Compared against multiple LLMs including LLaMA-2 and Vicuna models across various tasks.",
+    "validation": "Evaluated based on rigorous testing against the outlined metrics using multiple LLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": []
+        },
+        {
+          "category": "Fairness",
+          "subcategory": []
+        },
+        {
+          "category": "Robustness",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

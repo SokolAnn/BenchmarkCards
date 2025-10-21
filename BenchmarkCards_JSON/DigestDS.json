@@ -1,0 +1,77 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DigestDS",
+    "abbreviation": "N/A",
+    "overview": "DigestDS is a novel dataset comprised of practical medical records from experienced experts in digestive system diseases, created to address the scarcity of high-quality clinical datasets for predicting Traditional Chinese Medicine (TCM) prescriptions.",
+    "data_type": "text",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To develop a high-quality prescription dataset for predicting herbal prescriptions in Traditional Chinese Medicine using large language models.",
+    "audience": [
+      "Researchers",
+      "Healthcare Professionals"
+    ],
+    "tasks": [
+      "Prescription Prediction",
+      "Dosage Prediction"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Clinical medical records collected from TCM specialists in digestive system disorders.",
+    "size": "16,896 samples for training, 2,057 samples for testing",
+    "format": "N/A",
+    "annotation": "Data was cleaned and filtered for essential information by experts."
+  },
+  "methodology": {
+    "methods": [
+      "Supervised fine-tuning",
+      "Low-rank adaptation (LoRA)"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score",
+      "Normalized Mean Square Error (NMSE)"
+    ],
+    "calculation": "Metrics are calculated based on herbal prediction and dosage accuracy compared to actual prescriptions.",
+    "interpretation": "Higher precision, recall, and F1 scores indicate better model performance in predicting herbs and dosages.",
+    "baseline_results": "TCM-FTP achieved an F1-score of 0.8031 and a NMSE of 0.0604.",
+    "validation": "Evaluated using expert assessments and quantitative comparison against baseline models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Patient data was anonymized and irrelevant information was removed.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

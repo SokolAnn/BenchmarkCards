@@ -1,0 +1,80 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Multi-Grain Stereotype (MGS) Dataset",
+    "abbreviation": "MGS",
+    "overview": "The Multi-Grain Stereotype (MGS) dataset consists of 51,867 instances across gender, race, profession, religion, and other stereotypes, designed to benchmark stereotype detection in Large Language Models (LLMs).",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "StereoSet",
+      "CrowS-Pairs"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive dataset for evaluating and understanding stereotypes in LLMs, enabling effective bias detection and monitoring.",
+    "audience": [
+      "ML Researchers",
+      "Bias Auditors",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Stereotype Detection"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated from multiple existing datasets including StereoSet and CrowS-Pairs.",
+    "size": "51,867 instances",
+    "format": "N/A",
+    "annotation": "Crowdsourced labeling into categories such as stereotype, neutral, and unrelated."
+  },
+  "methodology": {
+    "methods": [
+      "Fine-tuning of ALBERT-V2 models",
+      "Use of explainable AI (XAI) techniques including SHAP, LIME, and BERTViz"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Accuracy"
+    ],
+    "calculation": "Metrics are calculated based on model evaluation on training and testing datasets.",
+    "interpretation": "Higher F1 Scores indicate better classifier performance in detecting stereotypes.",
+    "baseline_results": "BERT, ALBERT-V2, and other PLM models fine-tuned on the MGS dataset show improved performance over traditional methods.",
+    "validation": "Models were validated using explainability techniques to ensure alignment with human interpretations of stereotypes."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "The dataset aims to detect and address harmful stereotypes in AI, promoting fairness."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

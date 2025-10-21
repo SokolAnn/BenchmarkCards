@@ -1,0 +1,68 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ViSP (Vietnamese Sentence Paraphrase Dataset)",
+    "abbreviation": "ViSP",
+    "overview": "This paper presents ViSP, a high-quality Vietnamese dataset for sentence paraphrasing, consisting of 1.2M original–paraphrase pairs collected from various domains. The dataset was constructed using a hybrid approach that combines automatic paraphrase generation with manual evaluation to ensure high quality.",
+    "data_type": "sentence-paraphrase pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Vietnamese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/ngwgsang/ViSP"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a valuable foundation for future research and applications in Vietnamese paraphrase tasks.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Paraphrase Generation"
+    ],
+    "limitations": "While our models were fine-tuned on the ViSP dataset, they were trained under low-resource conditions, which means the overall performance may not be fully optimized. Additionally, the current dataset lacks representation from certain specialized domains such as metaphor, mathematics, and programming.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset is compiled from several publicly available sources, including UIT-ViQuAD, UIT-ViNewsQA, ALQAC, and ViNLI.",
+    "size": "1,200,000 pairs",
+    "format": "JSON",
+    "annotation": "Manually verified by a team of annotators."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "BLEU-4",
+      "ROUGE-2",
+      "BERTScore"
+    ],
+    "calculation": "Metrics are calculated to measure the quality of paraphrase generation.",
+    "interpretation": "Higher scores indicate better paraphrase quality in terms of similarity and fluency.",
+    "baseline_results": "The best models achieved BLEU-4 scores of 72.06 on the validation set.",
+    "validation": "A review process involving several annotators to ensure the quality of the paraphrased sentences."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

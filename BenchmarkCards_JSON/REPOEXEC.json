@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "REPOEXEC",
+    "abbreviation": "N/A",
+    "overview": "REPOEXEC is a benchmark for evaluating repository-level code generation, focusing on executability, functional correctness, and dependency utilization.",
+    "data_type": "code snippets with dependencies",
+    "domains": [
+      "Software Engineering"
+    ],
+    "languages": [
+      "Python"
+    ],
+    "similar_benchmarks": [
+      "RepoBench",
+      "RepoCoder",
+      "CrossCodeEval",
+      "CoCoMIC",
+      "DevEval"
+    ],
+    "resources": [
+      "https://github.com/FSoft-AI4Code/RepoExec"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the benchmark is to ensure both functional correctness and effective dependency utilization in code generation.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Code Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Auto-generated test cases from large language models and existing repository data.",
+    "size": "355 samples",
+    "format": "CSV",
+    "annotation": "Automatically generated"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Execution-based evaluation"
+    ],
+    "metrics": [
+      "Pass@1",
+      "Dependency Invocation Rate (DIR)"
+    ],
+    "calculation": "DIR is calculated as the number of dependencies invoked in the solution relative to the total number of provided dependencies.",
+    "interpretation": "Higher Pass@1 indicates correct code generation. Higher DIR indicates better utilization of provided dependencies.",
+    "baseline_results": null,
+    "validation": "Code functionality is validated through automated test case execution."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

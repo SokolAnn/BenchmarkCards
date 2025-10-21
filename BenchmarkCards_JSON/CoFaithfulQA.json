@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CoFaithfulQA (Consistency-filtered Contextual Faithfulness QA)",
+    "abbreviation": "CoFaithfulQA",
+    "overview": "CoFaithfulQA is a benchmark specifically designed to evaluate faithfulness in scenarios where internal knowledge conflicts with accurate external evidence. It focuses on realistic scenarios rather than synthetic conflicts.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ConFiQA"
+    ],
+    "resources": [
+      "https://github.com/OpenBMB/ParamMute"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enhance contextual faithfulness of large language models through suppression of unfaithfulness-associated feed-forward networks (FFNs) and promote reliance on external evidence.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from six widely-used open-domain QA datasets: Natural Questions, SQuAD, NewsQA, TriviaQA, SearchQA, and HotpotQA.",
+    "size": "32,580 instances",
+    "format": "JSON",
+    "annotation": "Manual annotation based on model-generated responses with binary faithfulness labels."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Context Recall (ConR)",
+      "Memory Recall (MemR)",
+      "Memorization Ratio (MR)"
+    ],
+    "calculation": "ConR measures model alignment with external context, while MemR indicates reliance on internal parametric knowledge; MR quantifies the tendency to favor memorized content.",
+    "interpretation": "Higher ConR with lower MemR indicates better contextual faithfulness and reduced reliance on internal memory.",
+    "baseline_results": "ParamMute consistently outperformed strong baselines on both CoFaithfulQA and the established ConFiQA benchmark.",
+    "validation": "Extensive experiments conducted on CoFaithfulQA and ConFiQA demonstrate the framework's effectiveness."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Generating factually incorrect responses",
+      "Undermining model trustworthiness"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Varies by source dataset; details provided in the appendix.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

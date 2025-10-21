@@ -1,0 +1,82 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "HalluRAG",
+    "abbreviation": "N/A",
+    "overview": "HalluRAG is a dataset designed to detect closed-domain hallucinations in RAG applications by employing recency, focusing on novel information added after a specified cut-off date that could not have been used for training.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/F4biian/HalluRAG",
+      "https://miami.uni-muenster.de/Record/10.17879%2F84958668505/Details"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To create a heterogeneous dataset that allows training MLP-based classifiers to detect closed-domain hallucinations in RAG systems.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Hallucination Detection"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Wikipedia articles, focusing on recent sentences and their corresponding questions and answers.",
+    "size": "19,731 validly annotated sentences",
+    "format": "JSON",
+    "annotation": "Auto-labeling using GPT-4o based on a detailed Chain-of-Thought prompt."
+  },
+  "methodology": {
+    "methods": [
+      "Neural network training using internal states of LLMs"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Classifier outputs are based on the internal states of LLMs to predict hallucination labels.",
+    "interpretation": "The accuracy of the classifiers indicates the likelihood of hallucination detection based on LLM internal states.",
+    "baseline_results": "Test accuracies range up to 75%, with Mistral-7B-Instruct-v0.1 achieving the highest test accuracies.",
+    "validation": "Oversampling techniques were used to balance the dataset across hallucinated and non-hallucinated examples."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "No reliance on personal data, using publicly available sources.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

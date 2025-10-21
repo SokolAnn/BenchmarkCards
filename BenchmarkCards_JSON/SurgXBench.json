@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SurgXBench",
+    "abbreviation": "N/A",
+    "overview": "SurgXBench is the first VLM benchmarking framework for surgical tasks that integrates explainability, analyzing model attention and causal reasoning in surgical applications.",
+    "data_type": "image",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Rau et al. 2025"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2505.10764"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To systematically assess the performance of vision-language models (VLMs) in surgical tasks, and to improve these models through explainability analysis.",
+    "audience": [
+      "ML Researchers",
+      "Healthcare Practitioners"
+    ],
+    "tasks": [
+      "Instrument Classification",
+      "Triplet Recognition"
+    ],
+    "limitations": "The benchmark is initially focused on instrument and action classification, while other important tasks in the surgical domain should be explored in the future.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Cholec80BBox and CholecT45 datasets",
+    "size": "51,700 frames for Cholec80BBox, 90,500 frames for CholecT45",
+    "format": "N/A",
+    "annotation": "Manually annotated with ground truth for instrument classification and triplet recognition."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "Explainability analysis"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score",
+      "Attention Alignment (AA)",
+      "Attention Coverage (AC)",
+      "RAFT Attention Score (RAS)"
+    ],
+    "calculation": "Metrics are calculated based on true positives, false positives, and annotated regions using predicted attention heatmaps and standard evaluation metrics.",
+    "interpretation": "Performance is interpreted based on how well models align their attention with clinically relevant cues in surgical images.",
+    "baseline_results": null,
+    "validation": "Models are validated through attentional analysis and classification accuracy, comparing performance across general and surgical VLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "The benchmark aims to prevent misclassification that may arise from misunderstanding the contextual cues in surgical images."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

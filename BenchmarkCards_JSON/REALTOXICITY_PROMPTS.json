@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "REALTOXICITY PROMPTS",
+    "abbreviation": "N/A",
+    "overview": "REALTOXICITY PROMPTS is a dataset of 100K naturally occurring, sentence-level prompts derived from a large corpus of English web text, paired with toxicity scores from a widely-used toxicity classifier. It provides a testbed for evaluating toxic generations by language models and highlights the need for better data curation processes.",
+    "data_type": "sentence-level prompts with toxicity scores",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://toxicdegeneration.allenai.org/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the toxic degeneration in pretrained language models and assess various methods for detoxifying their outputs.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Text Generation",
+      "Toxicity Detection"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Derived from the OPENWEBTEXT CORPUS, a large corpus of English web text scraped from outbound URLs from Reddit.",
+    "size": "100,000 prompts",
+    "format": "N/A",
+    "annotation": "Scored for toxicity using the PERSPECTIVE API"
+  },
+  "methodology": {
+    "methods": [
+      "Toxicity Detection using PERSPECTIVE API",
+      "Empirical Evaluation of Language Model Generations"
+    ],
+    "metrics": [
+      "Expected Maximum Toxicity",
+      "Empirical Probability of Toxic Generation"
+    ],
+    "calculation": "Toxicity is calculated based on the scores provided by the PERSPECTIVE API, with a threshold of 0.5 marking prompts as toxic.",
+    "interpretation": "Higher expected maximum toxicity indicates a greater risk of generating toxic outputs from language models.",
+    "baseline_results": null,
+    "validation": "Systematic evaluations performed by prompting various pretrained language models with the dataset."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Bias"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Propagation of toxic language in language model outputs"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

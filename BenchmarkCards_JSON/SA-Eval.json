@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SA-Eval",
+    "abbreviation": "N/A",
+    "overview": "SA-Eval is a comprehensive benchmark designed to evaluate models on three tasks: audio event classification, audio captioning, and audio question answering, across two levels of difficulty (easy and hard), utilizing speech instructions and acoustic context.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "VGGSound",
+      "AudioSet",
+      "FSD50K",
+      "AudioCaps",
+      "Clotho V2",
+      "Clotho-AQA"
+    ],
+    "resources": [
+      "https://github.com/amphionspace/SA-Eval"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of SA-Eval is to rigorously evaluate models' abilities to understand and respond to audio-related tasks and speech instructions under various acoustic conditions.",
+    "audience": [
+      "ML Researchers",
+      "Audio Processing Specialists",
+      "AI Developers"
+    ],
+    "tasks": [
+      "Audio Classification",
+      "Audio Captioning",
+      "Question Answering"
+    ],
+    "limitations": "SA-Eval currently focuses only on single-turn dialogues, limiting its ability to assess multi-turn complex dialogues.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Derived from test sets of widely used datasets such as VGGSound, AudioSet, FSD50K, AudioCaps, Clotho V2, and Clotho-AQA.",
+    "size": "4,915,318 pairs",
+    "format": "N/A",
+    "annotation": "Annotated through a combination of automated generation and human judgment."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "CIDEr",
+      "SPICE"
+    ],
+    "calculation": "Metrics are calculated based on model predictions compared to ground truth, with detailed scoring for accuracy and relevance.",
+    "interpretation": "Higher metric scores signify better performance of models in understanding and responding to audio tasks effectively.",
+    "baseline_results": "SOLLA serves as a baseline, with performance compared to other models evaluated on the SA-Eval dataset.",
+    "validation": "Validation is performed by employing both automated scoring metrics and human raters for the generated outputs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Incorrect audio comprehension can lead to misunderstandings in real-world applications."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

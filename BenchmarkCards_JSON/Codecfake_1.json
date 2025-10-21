@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Codecfake",
+    "abbreviation": "N/A",
+    "overview": "Codecfake is a large-scale dataset for detecting ALM-based deepfake audio, comprising over 1 million audio samples in both English and Chinese, designed to tackle challenges in audio deepfake detection and improve generalization capabilities across diverse test conditions.",
+    "data_type": "audio",
+    "domains": [
+      "Audio Deepfake Detection"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://zenodo.org/records/13838106",
+      "https://github.com/xieyuankun/Codecfake"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive dataset for the detection of ALM-based deepfake audio and advance research in audio deepfake detection methods.",
+    "audience": [
+      "ML Researchers",
+      "Audio Signal Processing Engineers",
+      "AI Practitioners"
+    ],
+    "tasks": [
+      "Audio Deepfake Detection"
+    ],
+    "limitations": "The current dataset only includes clean audio conditions, lacking robustness in complex real-world noise environments.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Comprises audio samples generated from a variety of neural audio codec models.",
+    "size": "1,058,216 audio samples",
+    "format": "Audio files",
+    "annotation": "Generated algorithmically using codecs."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Equal Error Rate (EER)"
+    ],
+    "calculation": "EER calculated during evaluation on different test conditions including codings and unseen audio types.",
+    "interpretation": "Lower average EER indicates better performance in distinguishing between real and fake audio samples.",
+    "baseline_results": null,
+    "validation": "The validation of the dataset was done through its application in training and testing audio deepfake detection models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

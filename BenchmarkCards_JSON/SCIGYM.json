@@ -1,0 +1,79 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SCIGYM",
+    "abbreviation": "N/A",
+    "overview": "SCIGYM is a benchmark that assesses LLMs’ iterative experiment design and analysis abilities in open-ended scientific discovery tasks using a dry lab setup.",
+    "data_type": "SBML models for biological systems",
+    "domains": [
+      "Natural Language Processing",
+      "Biology"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "BioDiscoveryAgent",
+      "DiscoveryWorld"
+    ],
+    "resources": [
+      "https://h4duan.github.io/scigym-benchmark/",
+      "https://github.com/h4duan/SciGym",
+      "https://huggingface.co/datasets/h4duan/scigym-sbml",
+      "https://huggingface.co/datasets/h4duan/scigym-eval"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate large language models' capabilities in conducting scientific experiments and analysis in a simulated biological context.",
+    "audience": [
+      "ML Researchers",
+      "Biologists",
+      "AI Practitioners"
+    ],
+    "tasks": [
+      "Experiment Design",
+      "Data Analysis"
+    ],
+    "limitations": "Performance of models declines significantly with increasing system complexity.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "350 SBML models curated from BioModels database",
+    "size": "350 models",
+    "format": "SBML",
+    "annotation": "Curated and filtered to remove unusable models"
+  },
+  "methodology": {
+    "methods": [
+      "Evaluation of LLMs through simulated experiments",
+      "Performance comparison among models"
+    ],
+    "metrics": [
+      "Simulation Trajectory Error (STE)",
+      "Reaction Matching Score (RMS)",
+      "Network Topology Score (NTS)"
+    ],
+    "calculation": "Metrics are calculated based on the similarity between predicted and actual biological models.",
+    "interpretation": "Lower STE and higher RMS/NTS indicate better performance in recovering the underlying biological mechanisms.",
+    "baseline_results": "Performance comparisons were made against zero-shot prompting results of the models.",
+    "validation": "Validated through experimental simulations and comprehensive performance metrics."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Scientific Misconduct",
+      "Overfitting",
+      "Methodological Limitations"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

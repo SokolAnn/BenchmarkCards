@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "VMBench (Video Motion Benchmark)",
+    "abbreviation": "VMBench",
+    "overview": "VMBench is the first benchmark focused on comprehensive video motion assessment, featuring perception-aligned motion metrics to systematically evaluate the motion generation quality of video generation models. It includes diverse motion types covering 969 categories and integrates human preference annotations to validate the metrics.",
+    "data_type": "video",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "N/A"
+    ],
+    "similar_benchmarks": [
+      "VBench",
+      "Evalcrafter"
+    ],
+    "resources": [
+      "https://github.com/GD-AIGC/VMBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To establish a standardized evaluation framework for assessing the authenticity of motion in generated videos aligned with human perception.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Video Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated videos from various text-to-video models using the MMPG framework.",
+    "size": "6,300 videos",
+    "format": "N/A",
+    "annotation": "Human preference annotations validated the metrics, resulting in systematic evaluations."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Commonsense Adherence Score (CAS)",
+      "Motion Smoothness Score (MSS)",
+      "Object Integrity Score (OIS)",
+      "Perceptible Amplitude Score (PAS)",
+      "Temporal Coherence Score (TCS)"
+    ],
+    "calculation": "Each metric is calculated based on specific algorithms designed to align with human perception.",
+    "interpretation": "Scores closer to 1 indicate better alignment with human perception of motion quality.",
+    "baseline_results": "Metrics were validated with a 35.3% improvement in Spearman’s correlation over baseline methods.",
+    "validation": "Human-aligned validation was conducted with three domain experts annotating video samples."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": []
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

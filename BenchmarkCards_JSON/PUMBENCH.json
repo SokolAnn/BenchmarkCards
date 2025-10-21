@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PUMBENCH",
+    "abbreviation": "N/A",
+    "overview": "PUMBENCH is a benchmark covering product understanding tasks designed to evaluate the performance of Large Vision Language Models (LVLMs) specifically focused on e-commerce product understanding.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://www.aliexpress.com/PUMBENCH"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess the capabilities of product understanding across different large vision-language models in the context of e-commerce.",
+    "audience": [
+      "ML Researchers",
+      "E-commerce platform developers",
+      "Product data analysts"
+    ],
+    "tasks": [
+      "Caption Generation",
+      "Product Category Multiple-Choice Question",
+      "Attribute Inference",
+      "Caption Completion",
+      "Attribute Correction"
+    ],
+    "limitations": "While PUMGPT demonstrated superior performance, it still has limitations in improving relevance in the CMC task and generalization due to a limited number of tasks.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Dataset compiled from AliExpress containing product images, captions, categories, and attributes.",
+    "size": "663,000 examples",
+    "format": "N/A",
+    "annotation": "A universal hallucination detection framework using multi-expert collaboration to clean the dataset."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "ROUGE-L",
+      "CIDEr",
+      "BLEU Score",
+      "Accuracy",
+      "F1 Score",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "Metrics are calculated based on the performance of PUMGPT and compared with other models across defined tasks.",
+    "interpretation": "Higher scores in ROUGE and CIDEr indicate better performance in generating captions that align with product attributes.",
+    "baseline_results": "PUMGPT outperforms five open-source LVLMs and GPT-4V.",
+    "validation": "Experiments conducted to validate PUMGPT's performance across multiple tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

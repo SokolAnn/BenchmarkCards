@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "HDAV (High-definition Audio-Visual dataset)",
+    "abbreviation": "HDAV",
+    "overview": "HDAV is a novel large-scale human video dataset containing 2,203 identities, featuring diverse body gestures and detailed annotations, aimed at facilitating broad generalization for audio-driven human video synthesis.",
+    "data_type": "audio-video pairs",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "N/A"
+    ],
+    "similar_benchmarks": [
+      "CCV2",
+      "MVHumanNet"
+    ],
+    "resources": [
+      "https://github.com/Breakthrough/PySceneDetect",
+      "https://github.com/Zulko/moviepy"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The goal of the HDAV dataset is to provide a comprehensive resource for the training and evaluation of models in 3D human generation and audio-driven video synthesis.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "3D Video Synthesis",
+      "Gesture Recognition"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset consists of 3,425 online videos collected from the internet and 1,325 videos from existing datasets, which are manually annotated with detailed properties.",
+    "size": "15 hours of video",
+    "format": "N/A",
+    "annotation": "Manual annotation with detailed properties such as gender and clothing type."
+  },
+  "methodology": {
+    "methods": [
+      "Video synthesis using audio inputs",
+      "Motion generation leveraging large language models",
+      "Diffusion-based video generation with MoE"
+    ],
+    "metrics": [
+      "Fréchet Inception Distance (FID)",
+      "Learned Perceptual Image Patch Similarity (LPIPS)",
+      "t-LPIPS"
+    ],
+    "calculation": "Metrics are calculated comparing generated video quality against ground truth and established benchmarks.",
+    "interpretation": "Lower values in FID and LPIPS indicate better quality, with subjective measures assessing user impressions of motion and visual fidelity.",
+    "baseline_results": null,
+    "validation": "The dataset is validated through comparative analysis against existing benchmarks and user studies."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Potential misuse for generating deceptive content."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

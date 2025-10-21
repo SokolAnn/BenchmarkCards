@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CASE-Bench (Context-Aware Safety Benchmark)",
+    "abbreviation": "CASE-Bench",
+    "overview": "CASE-Bench introduces a Context-Aware Safety Benchmark for evaluating large language models (LLMs) by integrating context into safety assessments, focusing on the responses to categorized queries. It aims to improve model safety alignments by considering various contexts in which queries are presented.",
+    "data_type": "query-context pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SORRY-Bench"
+    ],
+    "resources": [
+      "https://github.com/BriansIDP/CASEBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the context-aware safety judgment ability of large language models and to highlight the importance of context in LLM safety evaluations.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Safety Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Derived from SORRY-Bench queries and supplemented with context generated and annotated by over 2000 participants.",
+    "size": "900 query-context pairs with 47,000+ human annotations",
+    "format": "N/A",
+    "annotation": "Annotations were conducted by a diverse group of at least 21 annotators per task, employing statistical power analysis for sample size determination."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Statistical analysis"
+    ],
+    "metrics": [
+      "Significance testing using z-test and Kruskal-Wallis test"
+    ],
+    "calculation": "Determined based on the differences in human judgments across various context scenarios using statistical methods as mentioned.",
+    "interpretation": "Results indicate the substantial influence that context has on safety judgments made by LLMs.",
+    "baseline_results": "N/A",
+    "validation": "Power analysis was used to determine the required number of annotators in ensuring reliable safety judgment assessments."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Privacy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Decision bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Over-refusal leading to poor user experience in LLM interactions."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data collected from human annotators were anonymized, and privacy measures were in place.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Informed consent was obtained from all annotators prior to participation in the study.",
+    "compliance_with_regulations": "N/A"
+  }
+}

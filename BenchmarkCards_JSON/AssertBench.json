@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "AssertBench",
+    "abbreviation": "N/A",
+    "overview": "AssertBench evaluates the self-assertion capabilities of Large Language Models (LLMs) by measuring their ability to maintain consistent truth evaluations across contradictory user assertions about facts.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "FACTOR",
+      "SycEval",
+      "Persuasive-Pairs",
+      "Belief-R",
+      "OpenFactCheck"
+    ],
+    "resources": [
+      "https://github.com/achowd32/assert-bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the epistemic robustness of Large Language Models in the context of user assertions and how effectively they can maintain factual consistency under misleading inputs.",
+    "audience": [
+      "ML Researchers",
+      "AI Developers"
+    ],
+    "tasks": [
+      "Factual Consistency Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "FEVEROUS dataset",
+    "size": "2000 facts",
+    "format": "CSV",
+    "annotation": "Facts are verified against evidence and labeled as 'SUPPORTS', 'REFUTES', or 'NOT ENOUGH INFO'."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Assertion Rate",
+      "Calibration Error"
+    ],
+    "calculation": "The assertion rate is calculated based on the percentage of facts for which the model maintains consistent evaluations across user framing. Calibration error is measured by the RMS error of confidence scores against factual accuracy.",
+    "interpretation": "Higher assertion rates indicate greater model robustness in maintaining factual truth under user claims. Lower calibration error suggests better alignment of confidence levels with actual performance.",
+    "baseline_results": "N/A",
+    "validation": "Results are stratified by whether the model knew the facts under neutral prompting conditions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

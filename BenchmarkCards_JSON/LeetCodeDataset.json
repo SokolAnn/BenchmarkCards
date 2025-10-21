@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LeetCodeDataset",
+    "abbreviation": "N/A",
+    "overview": "We introduce LeetCodeDataset, a high-quality benchmark for evaluating and training code-generation models, addressing two key challenges in LLM research: the lack of reasoning-focused coding benchmarks and self-contained training testbeds.",
+    "data_type": "programming problems",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "HumanEval",
+      "MBPP",
+      "LiveCodeBench",
+      "APPS",
+      "CodeContests",
+      "TACO"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/newfacade/LeetCodeDataset",
+      "https://github.com/newfacade/LeetCodeDataset"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a reliable, contamination-free model evaluation and highly efficient training dataset for code-generation models.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Code Generation"
+    ],
+    "limitations": "The dataset lacks extremely complex input patterns and suffers from an imbalanced test case distribution.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated from the LeetCode platform, covering over 90% of Python problems.",
+    "size": "2,869 problems",
+    "format": "N/A",
+    "annotation": "Annotated with rich metadata including difficulty levels, release dates, and topic tags."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Pass Rate"
+    ],
+    "calculation": "Metrics are calculated based on the model's performance on the LeetCodeDataset test set.",
+    "interpretation": "Higher pass rates indicate better performance of the model on the coding tasks.",
+    "baseline_results": "Comparative results of models like GPT-4o, Claude-3.7 Sonnet, and DeepSeek-R1 are provided.",
+    "validation": "Evaluations are done on models leveraging temporal splits of the dataset."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

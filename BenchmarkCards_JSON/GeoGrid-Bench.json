@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "GeoGrid-Bench",
+    "abbreviation": "N/A",
+    "overview": "GeoGrid-Bench is designed to evaluate the ability of foundation models to understand geo-spatial data in a grid structure, featuring large-scale, real-world data covering 16 climate variables across 150 locations and extended time frames with approximately 3,200 question-answer pairs.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "GeoGPT",
+      "GeoBench",
+      "EarthVQA"
+    ],
+    "resources": [
+      "https://github.com/bowen-upenn/GeoGrid_Bench",
+      "https://huggingface.co/datasets/bowen-upenn/GeoGrid_Bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate foundation models on their ability to analyze multimodal geo-spatial data and assist scientific research in climate science.",
+    "audience": [
+      "ML Researchers",
+      "Domain Scientists"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "Limited to the United States due to data availability and focuses on geo-spatial data in gridded formats, intentionally excluding Earth observation data.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "ClimRR dataset from Argonne National Laboratory, sampled to cover 150 unique locations across North America.",
+    "size": "3,200 question-answer pairs",
+    "format": "Tabular and image formats",
+    "annotation": "Expert-curated templates for generating questions based on domain expertise."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Models' answers are evaluated against ground-truth generated using oracle code.",
+    "interpretation": "Performance is interpreted based on models' ability to answer questions across different modalities and formats.",
+    "baseline_results": "Evaluation compares 5 OpenAI models and 6 open-source models across various tasks, with performance metrics detailed in comparing models.",
+    "validation": "Validation is based on the consistent generation of question instances from curated templates and their evaluation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

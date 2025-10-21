@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Forbidden Science: Dual-Use AI Challenge Benchmark and Scientific Refusal Tests",
+    "abbreviation": "N/A",
+    "overview": "This paper presents an open-source dataset and testing framework for evaluating large language model (LLM) safety mechanisms across controlled substance queries, analyzing four major models' responses to systematically varied prompts.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Science"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "OR-Bench"
+    ],
+    "resources": [
+      "https://github.com/reveondivad/forbidden"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a dataset that allows for systematic evaluation of the balance between safety restrictions and potential over-censorship in scientific inquiry by LLMs.",
+    "audience": [
+      "AI Safety Researchers",
+      "Model Developers",
+      "Policy Makers"
+    ],
+    "tasks": [
+      "Safety Evaluation",
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Publicly available datasets from US government agencies (OSHA, FDA, EPA) and novel curated prompts.",
+    "size": "512 prompts",
+    "format": "JSON",
+    "annotation": "Manually curated by researchers with a focus on dual-use scientific queries."
+  },
+  "methodology": {
+    "methods": [
+      "Red Team Testing",
+      "Quantitative Analysis",
+      "Chain-of-Thought Analysis"
+    ],
+    "metrics": [
+      "Refusal Rate",
+      "Response Consistency"
+    ],
+    "calculation": "Measured response refusal rates and analyzed the variability in responses across different prompt engineering strategies.",
+    "interpretation": "The analysis aims to detect the effectiveness of model responses in handling sensitive scientific queries without unnecessary censorship.",
+    "baseline_results": null,
+    "validation": "Results were validated by comparing responses across major LLMs against established literature."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Robustness",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": [
+      "Potential misuse of scientific information"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

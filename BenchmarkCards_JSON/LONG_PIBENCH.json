@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LONG PIBENCH",
+    "abbreviation": "N/A",
+    "overview": "LONG PIBENCH is a benchmark designed to evaluate positional bias with multiple relevant information pieces in long-context large language models (LLMs). It assesses positional bias in both absolute and relative positions, including diverse tasks across different complexities and input lengths.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Long Range Arena",
+      "Scrolls",
+      "ZeroScrolls",
+      "Longbench",
+      "L-Eval",
+      "LV-Eval",
+      "Counting-Stars",
+      "∞Bench"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2410.14641"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate positional bias in long-context large language models (LLMs) involving multiple relevant pieces of information.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Table SQL",
+      "Code Completion",
+      "Wiki Retrieval"
+    ],
+    "limitations": "The findings are limited to the nine popular models evaluated and do not account for the performance of other emerging or less popular models.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Manually annotated seed data and augmented by varying the positions of relevant information.",
+    "size": "7,040 instances",
+    "format": "N/A",
+    "annotation": "Manual annotation by experts"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Recall rate",
+      "Pass rate"
+    ],
+    "calculation": "The recall rate is measured as the proportion of relevant items included in the output. The pass rate is computed based on successful completion of coding tasks across multiple test cases.",
+    "interpretation": "Performance ranges from 0.0 (complete failure) to 1.0 (perfect performance).",
+    "baseline_results": "Comparison to nine popular LLMs including Gemini-1.5-Flash, Claude-3.5-Haiku, and multiple variants from the Qwen family.",
+    "validation": "Performance evaluated using standardized inference parameters across all models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data collection protocol was approved, and human annotation was carried out by authors with substantial knowledge in LLM evaluation.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Consent was obtained from individuals whose data is being used or curated.",
+    "compliance_with_regulations": "N/A"
+  }
+}

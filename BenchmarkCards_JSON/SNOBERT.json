@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SNOBERT: A Benchmark for Clinical Notes Entity Linking in the SNOMED CT Clinical Terminology",
+    "abbreviation": "SNOBERT",
+    "overview": "This work presents a 'SNOBERT' method for linking text spans in clinical notes with specific topics in the SNOMED CT clinical terminology using a two-stage approach. The method was applied to the 'SNOMED CT Entity Linking Challenge'.",
+    "data_type": "annotated clinical notes",
+    "domains": [
+      "Healthcare",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/MikhailKulyabin/SNOBERT"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To automate the process of linking clinical notes to specific concepts in SNOMED CT terminology.",
+    "audience": [
+      "Healthcare Researchers",
+      "NLP Practitioners"
+    ],
+    "tasks": [
+      "Entity Linking",
+      "Named Entity Recognition"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "MIMIC-IV-Note dataset containing hospital discharge summaries.",
+    "size": "331,794 de-identified notes",
+    "format": "N/A",
+    "annotation": "Annotated data comprising up to 300 annotated discharge summaries."
+  },
+  "methodology": {
+    "methods": [
+      "Candidate Selection",
+      "Candidate Matching",
+      "NER classification"
+    ],
+    "metrics": [
+      "Macro-F1 score",
+      "mIoU (mean Intersection over Union)",
+      "cosine similarity"
+    ],
+    "calculation": "Metrics are calculated as follows: Macro-F1 is computed across all labels; mIoU measures the overlap between predicted and ground truth spans.",
+    "interpretation": "Higher scores indicate better performance in linking clinical notes to SNOMED CT concepts.",
+    "baseline_results": null,
+    "validation": "4-Fold Cross-Validation was used for model training and evaluation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

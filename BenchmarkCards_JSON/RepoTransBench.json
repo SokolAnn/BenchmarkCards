@@ -1,0 +1,79 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "RepoTransBench",
+    "abbreviation": "N/A",
+    "overview": "RepoTransBench is a real-world repository-level code translation benchmark designed to evaluate the performance of code translation tools using entire code repositories rather than just snippets or files. It includes 100 repository samples and an automatically executable test suite to ensure functionality.",
+    "data_type": "repository code samples",
+    "domains": [
+      "Software Engineering"
+    ],
+    "languages": [
+      "Python",
+      "Java"
+    ],
+    "similar_benchmarks": [
+      "CoST",
+      "CodeNet",
+      "HumanEval-X",
+      "TransCoder-test"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/bigcode/the-stack",
+      "https://huggingface.co/datasets/bigcode/the-stack-v2"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of RepoTransBench is to provide a comprehensive evaluation framework for repository-level code translation, highlighting the performance of existing LLMs and addressing the common challenges faced in this area.",
+    "audience": [
+      "Machine Learning Researchers",
+      "Software Engineers",
+      "Developers"
+    ],
+    "tasks": [
+      "Code Translation",
+      "Model Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Real-world repositories collected from The Stack and The Stack v2.",
+    "size": "100 repository samples",
+    "format": "N/A",
+    "annotation": "Test cases generated through a combination of automated translation and manual verification."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Execution-based evaluation",
+      "Iterative debugging"
+    ],
+    "metrics": [
+      "Success@k",
+      "Build@k",
+      "Average Pass Rate (APR)"
+    ],
+    "calculation": "Metrics are calculated based on the success of repositories passing test cases across multiple attempts.",
+    "interpretation": "A higher Success@k indicates better performance of the translation model in achieving functional equivalence.",
+    "baseline_results": "The best-performing LLM, Claude-3.5-Sonnet, achieved 7.33% on Success@1.",
+    "validation": "Repositories were validated through execution in a controlled environment."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

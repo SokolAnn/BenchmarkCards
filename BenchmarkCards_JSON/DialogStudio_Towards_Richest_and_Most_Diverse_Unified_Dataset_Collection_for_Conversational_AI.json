@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DialogStudio: Towards Richest and Most Diverse Unified Dataset Collection for Conversational AI",
+    "abbreviation": "N/A",
+    "overview": "A comprehensive collection aggregating more than 80 publicly available dialogue datasets unified under a consistent JSON format while preserving original information. DialogStudio covers Open-Domain Dialogues, Task-Oriented Dialogues, Natural Language Understanding, Conversational Recommendation, Dialogue Summarization, and Knowledge-Grounded Dialogues; it identifies dataset licenses, constructs external knowledge and domain-aware prompts for selected dialogues, and is made publicly accessible to support dataset- and task-based research and language model pre-training.",
+    "data_type": "text (multi-turn dialogue examples, dialogue context-response pairs, question-answering pairs, dialogue schemas, and external knowledge strings)",
+    "domains": [
+      "Natural Language Processing",
+      "Conversational AI",
+      "Task-Oriented Dialogue",
+      "Knowledge-Grounded Dialogue",
+      "Dialogue Summarization",
+      "Recommendation Systems"
+    ],
+    "languages": [],
+    "similar_benchmarks": [
+      "Flan collection",
+      "InstructDial",
+      "ParlAI",
+      "OPT"
+    ],
+    "resources": [
+      "https://github.com/salesforce/DialogStudio",
+      "https://arxiv.org/abs/2307.10172"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Provide the largest and most diverse unified collection of dialogue datasets to enable comprehensive and standardized training and evaluations of dialogue models, support dataset- and task-based research, and facilitate language model pre-training.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Conversational AI Researchers"
+    ],
+    "tasks": [
+      "Response Generation",
+      "Dialogue State Tracking",
+      "Intent Classification",
+      "Question Answering (conversational)",
+      "Dialogue Summarization",
+      "Conversational Recommendation"
+    ],
+    "limitations": "Optimizing user experience for the substantial volume of datasets is a challenge; the collection is built upon public research datasets and the authors did not hire external annotators; while dataset licenses are provided, there remains a possibility that some works might not fully comply with the licenses.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Aggregated from more than 80 publicly available dialogue datasets (see Appendix Table 4 and Table 5 for dataset lists; examples include MultiWOZ, CoQA, SODA, ShareGPT, SGD, KVRET, AirDialogue, FRAMES, SParC, FeTaQA, MultiModalQA, etc.).",
+    "size": "At most 11,000 dialogues sampled per dialogue dataset; additionally ~11,000 dialogue turns were extracted from question-answering datasets (exact total aggregate size not specified).",
+    "format": "Unified JSON dictionary format (per-dialogue JSON with fields such as dialogue ID, split label, domain, task, utterances, dst, dst knowledge, intent, intent knowledge, external knowledge, prompt).",
+    "annotation": "Preserves original dataset annotations when available; manual fixes applied for faulty/missing utterances (<0.5% dialogues); manual construction of prompt templates, schema extraction/creation for dialogue states and intents; no external annotators hired."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation (expert researchers)",
+      "Model-based evaluation (ChatGPT/GPT-3.5-turbo for dialogue quality scoring)",
+      "Zero-shot and few-shot model evaluation"
+    ],
+    "metrics": [
+      "ROUGE-L",
+      "F1 Score (Unigram F1 overlap)"
+    ],
+    "calculation": "ROUGE-L measures longest common subsequence between prediction and reference; F1 measures Unigram F1 overlap between the prediction and ground-truth response. Scores for quality evaluation (Understanding, Relevance, Correctness, Coherence, Completeness, Overall) are on a 1-5 scale (higher is better) when using ChatGPT for quality rating.",
+    "interpretation": "Higher ROUGE-L and F1 indicate better response generation performance. For ChatGPT quality ratings, scores >3 are considered high quality after alignment with human expert ratings. Model comparisons are made in zero-shot and few-shot scenarios against listed baselines.",
+    "baseline_results": "Zero-shot results on CoQA and MultiWOZ (ROUGE-L / F1): Flan-T5-3B: CoQA 37.1 / 37.2, MultiWOZ 7.0 / 7.4; Flan-T5-Large: CoQA 22.5 / 22.3, MultiWOZ 15.9 / 17.6; GODEL-Large: CoQA 43.2 / 43.3, MultiWOZ 18.5 / 19.3; DialogStudio-T5-Large: CoQA 61.2 / 61.5, MultiWOZ 32.4 / 34.5; DialogStudio-Flan-T5-Large: CoQA 63.3 / 63.5, MultiWOZ 33.7 / 35.9. (Results taken from Table 1 in the paper.)",
+    "validation": "To harmonize ChatGPT and human ratings, 50 training dialogues per selected dataset were rated by three expert researchers and used to align ChatGPT; CoQA and MultiWOZ 2.2 were excluded from pre-training to prevent data leakage; evaluation includes zero-shot and few-shot tests on held-out datasets and unseen tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Data licensing / usage",
+      "Dataset quality / annotation issues"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Data Laws",
+          "subcategory": [
+            "Data usage restrictions"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "DialogStudio is built upon public research datasets without individual or private information; the authors state they did not hire external annotators.",
+    "data_licensing": "Original licenses for all datasets are identified and included; the authors state that all datasets support academic research and some permit commercial usage. The code is released under the Apache 2.0 license.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

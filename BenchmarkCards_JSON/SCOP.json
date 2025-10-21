@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SCOP (Systematic Comprehension Operations for Language Models)",
+    "abbreviation": "SCOP",
+    "overview": "SCOP is proposed to explore the comprehension process of large language models (LLMs) from a cognitive view. It includes a systematic definition of five requisite comprehension skills, a strict data construction framework, and a detailed analysis of various LLMs.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SQuAD v2.0",
+      "HotpotQA",
+      "MCTest",
+      "NewsQA"
+    ],
+    "resources": [
+      "https://github.com/SCUNLP/SCOP"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of SCOP is to evaluate and improve the comprehension process of large language models by examining their alignment with expert comprehension skills.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Reading Comprehension",
+      "Text Understanding",
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Various existing datasets and new data crawled based on skill definitions.",
+    "size": "4,682 samples",
+    "format": "N/A",
+    "annotation": "Data annotated based on systematic definitions of comprehension skills."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "The accuracy is defined as the number of times LLM’s predictions exactly match the golden results, divided by the total sample size.",
+    "interpretation": "Higher accuracy indicates better alignment of LLM comprehension process with expert-level comprehension.",
+    "baseline_results": "N/A",
+    "validation": "The methodology involves rigorous filtering of data to ensure valid evaluation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All datasets are reviewed to ensure they comply with respective licenses and do not contain personally identifiable information.",
+    "data_licensing": "Data used in SCOP complies with the licensing terms of the original datasets.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

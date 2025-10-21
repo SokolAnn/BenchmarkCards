@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PreprintToPaper dataset",
+    "abbreviation": "N/A",
+    "overview": "The PreprintToPaper dataset connects bioRxiv preprints with their corresponding journal publications, enabling large-scale analysis of the preprint-to-publication process, with metadata for 145,517 preprints across two periods.",
+    "data_type": "metadata records",
+    "domains": [
+      "Natural Language Processing",
+      "Bibliometrics"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "covid19_preprints",
+      "Rxivist"
+    ],
+    "resources": [
+      "https://doi.org/10.5281/ZENODO.17185408"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive resource for studying how preprints evolve into published journal articles or remain unpublished.",
+    "audience": [
+      "ML Researchers",
+      "Policy Makers",
+      "Scholarly Communication Researchers",
+      "Data Scientists"
+    ],
+    "tasks": [
+      "Data Linking",
+      "Text Analysis",
+      "Bibliometric Analysis"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "bioRxiv and Crossref APIs",
+    "size": "145,517 records",
+    "format": "CSV",
+    "annotation": "Human-annotated subset for Gray Zone cases"
+  },
+  "methodology": {
+    "methods": [
+      "Automated linking procedures",
+      "Human annotation",
+      "Statistical verification"
+    ],
+    "metrics": [
+      "Accuracy of match scores",
+      "Inter-annotator agreement"
+    ],
+    "calculation": "Metrics calculated based on title similarity using SequenceMatcher algorithm.",
+    "interpretation": "Higher similarity scores indicate a stronger likelihood of a corresponding publication.",
+    "baseline_results": "High inter-annotator agreement (κ=0.86) for evaluation of Gray Zone matches.",
+    "validation": "Validated using a human-annotated subset of 299 records."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Data Integrity"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Misclassification of publication status"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

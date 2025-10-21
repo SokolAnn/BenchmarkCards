@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Multimodal dataset for bias detection",
+    "abbreviation": "N/A",
+    "overview": "This research introduces a new, manually-annotated multi-modal dataset compiled from Reddit, X (formerly Twitter), news articles, and city council meeting minutes across 10 U.S. cities to identify and track social biases against people experiencing homelessness.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "OATH-Frames"
+    ],
+    "resources": [
+      "https://github.com/Homelessness-Project/Multimodal-PEH-Classification",
+      "https://zenodo.org/records/16877412"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To alleviate homelessness by acting on public opinion, raising awareness about the pervasive bias against people experiencing homelessness, and developing new indicators to inform policy.",
+    "audience": [
+      "ML Researchers",
+      "Policy Makers",
+      "Social Scientists"
+    ],
+    "tasks": [
+      "Bias Detection"
+    ],
+    "limitations": "The geographic scope is confined to 10 U.S. cities and may not encompass all available dialogue on homelessness.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Data collected from Reddit, X (formerly Twitter), news articles, and city council meeting minutes.",
+    "size": "over 40,000 entities",
+    "format": "N/A",
+    "annotation": "Manually annotated by three human annotators using defined categories, with a high agreement rate averaging 78.38%."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score"
+    ],
+    "calculation": "Macro- and micro-average F1 scores calculated for various categories.",
+    "interpretation": "Findings indicate differences in bias prevalence across cities and media types.",
+    "baseline_results": "Humans achieved an agreement rate averaging 78.38% per category.",
+    "validation": "Models were validated against a gold standard dataset created through manual annotation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Societal Impact"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on affected communities"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset does not specifically include demographic breakdowns.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data anonymized using spaCy to remove personally identifiable information.",
+    "data_licensing": "N/A",
+    "consent_procedures": "IRB approval was obtained for scraping public data.",
+    "compliance_with_regulations": "N/A"
+  }
+}

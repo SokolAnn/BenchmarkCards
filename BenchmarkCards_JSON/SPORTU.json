@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SPORTU (SPORT Understanding Benchmark)",
+    "abbreviation": "SPORTU",
+    "overview": "SPORTU is a comprehensive benchmark designed to assess Multimodal Large Language Models (MLLMs) across multi-level sports reasoning tasks, comprising two components: SPORTU-text for text-based question answering and SPORTU-video for video-based question answering.",
+    "data_type": "question-answering pairs, video clips",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SportsQA",
+      "SoccerNet-XFoul"
+    ],
+    "resources": [
+      "https://github.com/chili-lab/SPORTU"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the sports understanding capabilities of MLLMs across text and video-based tasks, focusing on deep reasoning and rule-based understanding in sports.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "The models showed significant challenges in handling complex reasoning and rule comprehension, particularly in tasks requiring deep sports knowledge.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "SPORTU-text and SPORTU-video datasets generated and annotated by sports experts.",
+    "size": "900 multiple-choice questions, 1,701 slow-motion video clips, 12,048 QA pairs",
+    "format": "JSON",
+    "annotation": "Human-annotated explanations by sports experts."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "ROUGE-L",
+      "BERTScore",
+      "BLEURT",
+      "G-Eval Score"
+    ],
+    "calculation": "Accuracy metrics are based on the comparison of model predictions against ground truth labels.",
+    "interpretation": "The evaluation metrics help assess model performance in terms of accuracy and reasoning quality for sports understanding.",
+    "baseline_results": "GPT-4o achieved the highest accuracy at 71% on SPORTU-text.",
+    "validation": "A rigorous quality verification process ensured accuracy and consistency of annotations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Concept-Reversed Winograd Schema Challenge (CR-WSC)",
+    "abbreviation": "CR-WSC",
+    "overview": "We propose a new evaluation dataset, the Concept-Reversed Winograd Schema Challenge (CR-WSC), designed to evaluate and improve the reasoning capabilities of Large Language Models (LLMs) by utilizing adversarial examples that confuse standard semantic associations.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/HKUST-KnowComp/Adv-WSC"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the robustness of reasoning in language models using a dataset that presents challenging adversarial examples.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Coreference Resolution"
+    ],
+    "limitations": "One limitation of the work is the reliance on human labour for the dataset construction. Annotators need to examine the entities and ensure they are reasonable to be included in the CR-WSC dataset.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Data constructed using annotated pairs and generated adversarial examples, manually verified by experts.",
+    "size": "410 examples",
+    "format": "JSON",
+    "annotation": "Manual annotation by experts in natural language processing."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Single Accuracy",
+      "Pair Accuracy"
+    ],
+    "calculation": "Metrics are calculated based on the ability of the QA system to provide correct answers to the challenges posed in the dataset.",
+    "interpretation": "Higher accuracy rates indicate better reasoning capabilities in LLMs when faced with adversarial inputs.",
+    "baseline_results": null,
+    "validation": "The dataset was validated by employing different models and comparing their performance on CR-WSC and WSC."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "The dataset construction process avoided perpetuating stereotypes, although some traits might be perceived as stereotypical.",
+    "harm": [
+      "Potential reinforcement of stereotypes and biases in language processing tasks."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "IFEvalCode",
+    "abbreviation": "N/A",
+    "overview": "IFEvalCode is a multilingual benchmark designed to evaluate both code correctness and code controllability in LLM-generated code, comprising 1.6K samples across 8 programming languages.",
+    "data_type": "code generation instructions",
+    "domains": [
+      "Computer Science"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "HumanEval",
+      "BigCodeBench",
+      "MBPP",
+      "MultiPL-E"
+    ],
+    "resources": [
+      "https://ifevalcode.github.io/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the capability of generating controlled code that adheres to human requirements and instructions across multiple programming languages.",
+    "audience": [
+      "ML Researchers",
+      "Software Developers",
+      "Academia"
+    ],
+    "tasks": [
+      "Code Generation"
+    ],
+    "limitations": "The current coverage of eight programming languages may not fully represent the diversity and specialized use cases in real-world software development.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed using human annotators and based on code-related documents and queries.",
+    "size": "1,620 samples",
+    "format": "N/A",
+    "annotation": "Manual annotation by experts"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Correctness (Corr.)",
+      "Instruction compliance (Instr.)"
+    ],
+    "calculation": "Correctness is calculated by executing generated code against provided test cases, while instruction compliance is checked against specified requirements.",
+    "interpretation": "Results are interpreted based on the pass rates for correctness and adherence to instructional constraints.",
+    "baseline_results": "Results are tracked and compared across 40+ Language Models in terms of correctness and instruction compliance.",
+    "validation": "Extensive experimental results show performance across various models"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The benchmark includes multilingual evaluation across different programming languages and their effectiveness in meeting specific constraints.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

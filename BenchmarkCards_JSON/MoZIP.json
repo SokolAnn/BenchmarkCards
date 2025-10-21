@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MoZIP (Multilingual Benchmark to Evaluate Large Language Models in Intellectual Property)",
+    "abbreviation": "MoZIP",
+    "overview": "MoZIP is the first multilingual benchmark for the evaluation of large language models in the intellectual property (IP) domain. It includes three distinct tasks: IP multiple-choice quiz (IPQuiz), IP question answering (IPQA), and patent matching (PatentMatch).",
+    "data_type": "multimodal",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Chinese",
+      "German",
+      "French",
+      "Russian",
+      "Japanese",
+      "Spanish",
+      "Korean",
+      "Portuguese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/AI-for-Science/MoZi",
+      "https://huggingface.co/datasets/BNNT/IPQuizDataset",
+      "https://huggingface.co/datasets/BNNT/IPQA",
+      "https://huggingface.co/datasets/BNNT/PatentMatch"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To serve as a standardized benchmark for evaluating large language models in the intellectual property (IP) domain.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Multiple Choice Question Answering",
+      "Question Answering",
+      "Patent Matching"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Datasets were constructed from various sources, including patents, IP acts, and frequently asked questions related to IP.",
+    "size": "2,000 multiple-choice questions, 100 IPQA questions, 1,000 PatentMatch questions",
+    "format": "JSON",
+    "annotation": "The data was manually verified and curated from reliable sources."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Metrics are calculated based on the performance of models on the MoZIP benchmark tasks.",
+    "interpretation": "Higher accuracy indicates better understanding and completion of IP-related tasks.",
+    "baseline_results": "ChatGPT performs best overall, followed by MoZi-7b, BLOOMZ-7b, BELLE-7b, and ChatGLM-6b.",
+    "validation": "Models were evaluated and compared on performance metrics against baseline models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The data used is publicly available and does not involve personal privacy.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "Data collection complies with relevant regulations."
+  }
+}

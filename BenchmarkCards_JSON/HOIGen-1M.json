@@ -1,0 +1,82 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "HOIGen-1M",
+    "abbreviation": "N/A",
+    "overview": "HOIGen-1M is the first large-scale dataset for human-object interaction (HOI) video generation, consisting of over one million high-quality videos collected from diverse sources with accurate captions.",
+    "data_type": "video",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://liuqi-creat.github.io/HOIGen.github.io"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a large-scale, high-quality dataset for improving the accuracy of human-object interaction video generation.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Video Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset was curated from 80 million raw videos sourced from various online platforms and refined through human verification.",
+    "size": "1,000,000 videos",
+    "format": "video",
+    "annotation": "Videos are manually checked for human-object interactions to ensure quality and accuracy."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "CoarseHOIScore",
+      "FineHOIScore"
+    ],
+    "calculation": "The CoarseHOIScore measures basic interaction accuracy by detecting HOI triplets in generated videos. The FineHOIScore assesses the details of interactions at the pixel level for more precise evaluation.",
+    "interpretation": "Higher scores indicate better generation of accurate human-object interactions in videos.",
+    "baseline_results": null,
+    "validation": "Extensive experiments were conducted comparing current T2V models applied to the dataset."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

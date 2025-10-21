@@ -1,0 +1,102 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "EMBODIED AGENT INTERFACE",
+    "abbreviation": "EAI",
+    "overview": "The EMBODIED AGENT INTERFACE benchmarks Large Language Models (LLMs) for embodied decision making, addressing limitations in existing evaluations through standardized goal specifications, modular ability interfaces, and comprehensive fine-grained evaluation metrics that break down performance into various error types.",
+    "data_type": "task trajectories and action sequences",
+    "domains": [
+      "Natural Language Processing",
+      "Robotics"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "BEHA VIOR",
+      "VirtualHome"
+    ],
+    "resources": [
+      "https://embodied-agent-interface.github.io",
+      "https://github.com/embodied-agent-interface/embodied-agent-interface"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the performance of LLMs in achieving embodied decision-making tasks through systematic benchmarking.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Robotics Developers"
+    ],
+    "tasks": [
+      "Goal Interpretation",
+      "Action Sequencing",
+      "Subgoal Decomposition",
+      "Transition Modeling"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Annotated tasks and trajectories collected from BEHA VIOR and VirtualHome environments.",
+    "size": "438 tasks across environments with varying action lengths, including human demonstration videos.",
+    "format": "JSON",
+    "annotation": "Annotations were manually curated and verified using simulator evaluations."
+  },
+  "methodology": {
+    "methods": [
+      "Goal Interpretation",
+      "Action Sequencing",
+      "Subgoal Decomposition",
+      "Transition Modeling"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score",
+      "Task Success Rate",
+      "Execution Success Rate"
+    ],
+    "calculation": "Metrics are calculated based on the accuracy of LLM outputs against ground truth task definitions using supervised learning methods.",
+    "interpretation": "Higher precision and recall indicate better performance in interpreting and executing tasks.",
+    "baseline_results": "The highest task success rates observed for EAI on BEHA VIOR tasks using various LLMs.",
+    "validation": "Comparative evaluation against human performance to validate effectiveness."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Bias",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Data privacy rights alignment"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "No personally identifiable information is included; data is sourced from open-access environments.",
+    "data_licensing": "CC BY 4.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

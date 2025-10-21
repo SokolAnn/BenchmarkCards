@@ -1,0 +1,80 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SOCRATIC-PRMB ENCH",
+    "abbreviation": "N/A",
+    "overview": "SOCRATIC-PRMB ENCH is designed to systematically evaluate Process Reward Models (PRMs) under six reasoning patterns: Transformation, Decomposition, Regather, Deduction, Verification, and Integration, comprising a total of 2995 reasoning paths with flaws categorized accordingly.",
+    "data_type": "reasoning paths",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/Xiang-Li-oss/Socratic-PRMBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive and fine-grained evaluation framework for Process Reward Models based on systematic reasoning patterns.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Error Detection"
+    ],
+    "limitations": "Focus is primarily on reasoning tasks with objectively verifiable answers, such as mathematical problems.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from various curated datasets including MATH-Hard and Open-o1, using a specialized Socratic reasoning model for generation.",
+    "size": "2995 instances",
+    "format": "JSON",
+    "annotation": "Automated generation using LLMs with quality verification by human experts."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "PRM-Score (combination of F1 scores)"
+    ],
+    "calculation": "PRM-Score is defined as a weighted combination of F1 and negative F1 scores.",
+    "interpretation": "A higher PRM-Score indicates better performance in correctly identifying and correcting reasoning errors.",
+    "baseline_results": null,
+    "validation": "Extensive experiments conducted on a range of state-of-the-art PRMs and LLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

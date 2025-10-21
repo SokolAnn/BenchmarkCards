@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MolExp",
+    "abbreviation": "N/A",
+    "overview": "MolExp is a novel benchmark emphasizing the discovery of structurally diverse molecules with similar bioactivity, simulating real-world drug design challenges.",
+    "data_type": "molecule similarity scores",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "GuacaMol"
+    ],
+    "resources": [
+      "https://github.com/MorganCThomas/MolScore"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To measure the rediscovery of structurally diverse molecules with comparable bioactivity in drug design.",
+    "audience": [
+      "ML Researchers",
+      "Drug Designers"
+    ],
+    "tasks": [
+      "Molecule Exploration"
+    ],
+    "limitations": "The benchmark relies on similarity functions that may not be used in real-world drug design.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "ChEMBL34 database",
+    "size": "1,711,022 unique molecules",
+    "format": "SMILES",
+    "annotation": "Manual curation and filtering for drug-like properties."
+  },
+  "methodology": {
+    "methods": [
+      "Reinforcement Learning",
+      "Multi-Agent Learning"
+    ],
+    "metrics": [
+      "Molecular Similarity",
+      "Sphere Exclusion Diversity"
+    ],
+    "calculation": "Molecular similarity is calculated using a modified scoring function based on Levenshtein distance.",
+    "interpretation": "A higher score indicates better performance in rediscovering target molecules.",
+    "baseline_results": "Baseline performance varies based on algorithm; ACEGEN MolOpt configuration performs best on tasks.",
+    "validation": "Benchmark performance validated with multiple runs and comparisons to existing benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "MIT License.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TripCraft",
+    "abbreviation": "N/A",
+    "overview": "TripCraft is a spatio-temporally coherent travel planning dataset that integrates real-world constraints, including public transit schedules, event availability, diverse attraction categories, and user personas for enhanced personalization.",
+    "data_type": "travel planning queries",
+    "domains": [
+      "Natural Language Processing",
+      "Travel"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "TravelPlanner",
+      "TravelPlanner+"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2502.20508"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To establish a new benchmark for LLM-driven personalized travel planning, offering a realistic, constraint-aware framework for itinerary generation.",
+    "audience": [
+      "ML Researchers",
+      "Travel Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Travel Planning",
+      "Personalized Itinerary Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from real-world data sources through web scraping and open-source tools.",
+    "size": "1000 travel queries",
+    "format": "Structured data in JSON format",
+    "annotation": "Annotated by 25 human annotators through multiple refinement rounds."
+  },
+  "methodology": {
+    "methods": [
+      "Human annotation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Temporal Meal Score",
+      "Temporal Attraction Score",
+      "Spatial Score",
+      "Ordering Score",
+      "Persona Score"
+    ],
+    "calculation": "Metrics are calculated based on the alignment of itinerary details with user preferences and constraints.",
+    "interpretation": "Higher scores indicate better alignment with temporal, spatial, and persona consistency.",
+    "baseline_results": null,
+    "validation": "Validated through human annotation and expert review of the generated itineraries."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Fully anonymized sensitive personal details; aggregate demographic statistics provided with consent.",
+    "data_licensing": "Dataset and codebase will be made publicly available upon acceptance.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

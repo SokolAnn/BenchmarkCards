@@ -1,0 +1,107 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Multi-Task Spatial Evaluation Dataset",
+    "abbreviation": "N/A",
+    "overview": "This study introduces a novel multi-task spatial evaluation dataset, designed to systematically explore and compare the performance of several advanced models on spatial tasks, encompassing twelve distinct task types including spatial understanding and simple route planning.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Geographic Information Systems"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "C-Eval",
+      "AGIEval",
+      "SuperCLUE",
+      "MMLU",
+      "GRASP",
+      "STBench",
+      "CityBench"
+    ],
+    "resources": [
+      "https://figshare.com/s/be55522f22bf761cfcab"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To address the gap in evaluating large language models on spatial tasks by proposing a comprehensive dataset and evaluation framework for performance comparison.",
+    "audience": [
+      "ML Researchers",
+      "GIS Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Spatial Understanding",
+      "Simple Route Planning",
+      "Geographic Literacy",
+      "GIS Concepts",
+      "NL2API Mapping",
+      "Numerical Trajectory Recognition",
+      "Toponymic Identification",
+      "Code Explanation",
+      "Code Generation",
+      "Code Translation"
+    ],
+    "limitations": "The spatial task categories used are not comprehensive and primarily focus on text-based spatial tasks, not including multimodal elements.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset integrates data from publicly available datasets, GIS textbooks, and Wikipedia knowledge snippets, with expert validation.",
+    "size": "900 questions",
+    "format": "N/A",
+    "annotation": "Expert validation and question design, involving six GIS experts."
+  },
+  "methodology": {
+    "methods": [
+      "Zero-shot testing",
+      "Prompt tuning tests",
+      "Human review of answers"
+    ],
+    "metrics": [
+      "Weighted Accuracy (WA)"
+    ],
+    "calculation": "Weighted Accuracy (WA) is calculated using the formula: WA = 2·n(s2) + 1·n(s1) / 2·(n(s0) + n(s1) + n(s2))",
+    "interpretation": "Higher WA indicates better performance in handling spatial tasks.",
+    "baseline_results": "gpt-4o achieved 71.3% WA, while gpt-3.5-turbo had a WA of 43.8%.",
+    "validation": "Applied comprehensive evaluation strategies with detailed scoring mechanisms."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

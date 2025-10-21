@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LessonLink",
+    "abbreviation": "N/A",
+    "overview": "LessonLink is the first dataset of real-world tutoring lessons, featuring 3,500 segments linked to 116 SAT math problems and spanning 24,300 minutes of instruction.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Education"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/rosewang2008/posr"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To study conversation structure in educational contexts by linking tutoring conversations with reference materials.",
+    "audience": [
+      "ML Researchers",
+      "Educators",
+      "Curriculum Developers"
+    ],
+    "tasks": [
+      "Segmentation",
+      "Information Retrieval"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Real-world tutoring transcripts from Schoolhouse.world linked to SAT math problem worksheets.",
+    "size": "3,500 segments, 24,300 minutes of instruction",
+    "format": "JSON",
+    "annotation": "Annotated by 3 experts using a structured approach to ensure high-quality segments based on conversation structure."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Segmentation and Retrieval Score (SRS)",
+      "WindowDiff",
+      "Pk"
+    ],
+    "calculation": "Metrics are calculated based on segment accuracy and retrieval performance, adapted with time-awareness.",
+    "interpretation": "Higher SRS or Accuracy indicates better segmentation and retrieval performance.",
+    "baseline_results": "POSR methods outperform independent segmentation and retrieval pipelines significantly.",
+    "validation": "Evaluation based on a large test set of 270 transcripts."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Explores the potential for improving educational practices but must ensure student data privacy."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data shared with de-identified transcripts to protect student privacy.",
+    "data_licensing": "CC Noncommercial 4.0 License.",
+    "consent_procedures": "Consent obtained from parents and students for research use of de-identified data.",
+    "compliance_with_regulations": "N/A"
+  }
+}

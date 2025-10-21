@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "IFIR (Instruction-Following Information Retrieval)",
+    "abbreviation": "IFIR",
+    "overview": "IFIR is a comprehensive benchmark designed to evaluate instruction-following information retrieval capabilities in expert domains like finance, law, healthcare, and scientific literature, encompassing 2,426 high-quality instruction-following examples with varying complexity.",
+    "data_type": "instruction-following queries",
+    "domains": [
+      "Finance",
+      "Law",
+      "Healthcare",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "FOLLOW IR",
+      "INSTRUCT IR"
+    ],
+    "resources": [
+      "https://github.com/SighingSnow/IFIR"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate instruction-following capabilities of information retrievers across specialized domains and provide insights for model development.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts",
+      "Information Retrieval Practitioners"
+    ],
+    "tasks": [
+      "Information Retrieval",
+      "Instruction Following"
+    ],
+    "limitations": "The dataset has a limited number of queries accompanied by instructions and does not provide a training dataset for future works.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Adapted from established traditional information retrieval benchmarks in expert domains (Finance, Law, Healthcare, Scientific Literature).",
+    "size": "2,426 queries",
+    "format": "JSON",
+    "annotation": "Human-validated instruction-following queries."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "LLM-based evaluation metrics"
+    ],
+    "metrics": [
+      "nDCG",
+      "INSTFOL"
+    ],
+    "calculation": "Both metrics evaluate the performance of the instruction-following retrieval systems, with INSTFOL specifically assessing the improvement gained by incorporating instructions.",
+    "interpretation": "Higher nDCG and INSTFOL scores indicate better instruction-following capabilities and effective retrieval.",
+    "baseline_results": "Baseline performance was assessed against traditional retrieval models and instruction-tuned models.",
+    "validation": "Extensive human expert validation during dataset construction."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

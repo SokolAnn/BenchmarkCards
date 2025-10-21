@@ -1,0 +1,103 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "BitAbuse",
+    "abbreviation": "N/A",
+    "overview": "The BitAbuse dataset includes real-world phishing cases of visually perturbed texts to aid in the defense against phishing attacks. It consists of a total of 325,580 visually perturbed texts designed to help restore original sentences for defense against social engineering attacks.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Cybersecurity"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "BitCore",
+      "BitViper"
+    ],
+    "resources": [
+      "https://github.com/CAU-AutoML/Bitabuse",
+      "https://huggingface.co/datasets/AutoML/bitaubse"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a dataset that aids in the research and development of defenses against phishing attacks by restoring visually perturbed texts.",
+    "audience": [
+      "ML Researchers",
+      "Cybersecurity Experts",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Text Restoration",
+      "Adversarial Attack Defense"
+    ],
+    "limitations": "The BitAbuse dataset only includes data related to Bitcoin scams, limiting its ability to reflect a variety of phishing attack scenarios.",
+    "out_of_scope_uses": [
+      "Using the dataset for malicious purposes to execute phishing attacks"
+    ]
+  },
+  "data": {
+    "source": "Collected from bitcoinabuse.com, providing real-world phishing emails.",
+    "size": "325,580 sentences",
+    "format": "N/A",
+    "annotation": "Manually annotated with ground truth for the restoration process."
+  },
+  "methodology": {
+    "methods": [
+      "Character BERT-based",
+      "SimChar DB",
+      "OCR",
+      "Spell Checker",
+      "GPT-4o mini"
+    ],
+    "metrics": [
+      "Word Level Accuracy",
+      "Word Level Jaccard",
+      "BLEU Score"
+    ],
+    "calculation": "Metrics are calculated based on the restoration accuracy of the methods applied to the dataset.",
+    "interpretation": "Higher scores indicate better performance in accurately restoring the original texts.",
+    "baseline_results": null,
+    "validation": "Performance validated using training, validation, and test splits."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Need for careful consideration on dataset misuse leading to more sophisticated phishing attacks."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data collected from users while ensuring personal information remains masked.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

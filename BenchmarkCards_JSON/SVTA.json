@@ -1,0 +1,77 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SVTA (Synthetic Video-Text Anomaly benchmark)",
+    "abbreviation": "SVTA",
+    "overview": "We introduce SVTA, the first large-scale dataset for cross-modal anomaly retrieval, leveraging generative models to produce a dataset with 41,315 video-text pairs, covering 68 anomaly types and 30 normal activities to address data scarcity and privacy concerns.",
+    "data_type": "video-text pairs",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "UCF-Crime",
+      "UCFCrime-AR",
+      "UBnormal",
+      "OOPS!"
+    ],
+    "resources": [
+      "https://svta-mm.github.io/SVTA.github.io/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a large-scale synthetic benchmark for video anomaly retrieval using natural language queries.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Video Anomaly Retrieval",
+      "Cross-Modal Retrieval"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Synthetic video generation from Large Language Models and video generative models.",
+    "size": "41,315 videos (1.36M frames)",
+    "format": "N/A",
+    "annotation": "Generated cybernetically, with category labels assigned by LLMs and human validation."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Recall@K (R@1, R@5, R@10)",
+      "Median Rank (MdR)",
+      "Mean Rank (MnR)"
+    ],
+    "calculation": "Metrics are calculated based on retrieval performance comparing text queries and video outputs.",
+    "interpretation": "Higher Recall@K indicates better retrieval performance while lower Median and Mean Rank indicates better relevance in ranking.",
+    "baseline_results": "CLIP4Clip achieved R@1 of 55.4% for T2V retrieval.",
+    "validation": "The dataset is divided into training, validation, and test sets with a ratio of 7:1:2."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "Videos are generated with age, gender, and environmental diversity considerations.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Synthetic data generation bypasses privacy concerns associated with real-world data collection.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

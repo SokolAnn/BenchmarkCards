@@ -1,0 +1,102 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LiveRepoReflection",
+    "abbreviation": "N/A",
+    "overview": "LiveRepoReflection is a challenging benchmark for evaluating code understanding and generation in repository-style multi-file contexts, featuring 1,888 rigorously filtered test cases across 6 programming languages.",
+    "data_type": "code problems",
+    "domains": [
+      "Computer Programming"
+    ],
+    "languages": [
+      "Python",
+      "Java",
+      "Go",
+      "Rust",
+      "C++",
+      "JavaScript"
+    ],
+    "similar_benchmarks": [
+      "Aider-polyglot",
+      "HumanEval",
+      "LiveCodeBench",
+      "BigCodeBench"
+    ],
+    "resources": [
+      "https://LiveRepoReflection.github.io"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the capabilities of large language models in repository-based code understanding and generation tasks.",
+    "audience": [
+      "ML Researchers",
+      "Software Developers",
+      "Benchmark Developers"
+    ],
+    "tasks": [
+      "Code Generation",
+      "Code Debugging"
+    ],
+    "limitations": "Evaluation in repository-level multilingual scenarios are not fully explored.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Diverse programming source code from repositories such as GitHub, Hugging Face, and Exercism.",
+    "size": "1,888 test cases",
+    "format": "Custom multi-file repository structure",
+    "annotation": "Manual annotation by graduate students with assistance from large language models."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Pass@1",
+      "Pass@2",
+      "Fix Weight (FW)",
+      "Well Formed (WF)"
+    ],
+    "calculation": "Metrics are calculated based on the proportion of tasks completed correctly and adherence to specified formatting.",
+    "interpretation": "Higher scores indicate better performance and adherence to task requirements.",
+    "baseline_results": "Various language models including GPT-4, Claude, and Qwen were evaluated on the benchmark.",
+    "validation": "Evaluation conducted on over 40 LLMs with a dynamic leaderboard to track performances."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data anonymization strategies were not explicitly discussed.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "The research adheres to ethical guidelines for AI development."
+  }
+}

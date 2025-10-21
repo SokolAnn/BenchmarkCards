@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "WebQuest: A Benchmark for Multimodal QA on Web Page Sequences",
+    "abbreviation": "WebQuest",
+    "overview": "WebQuest is a multi-page question-answering dataset that requires reasoning across multiple related web pages, evaluating information extraction, multimodal retrieval, and composition of information from many web pages.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://arxiv.org/abs/2409.13711"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess information retrieval, reasoning, and navigation capabilities of multimodal models in a more realistic web usage scenario.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from various popular websites focused on different functionalities.",
+    "size": "1,146 examples",
+    "format": "N/A",
+    "annotation": "Questions created based on screenshots and reviewed for quality by human raters."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Relaxed Accuracy"
+    ],
+    "calculation": "Allows a margin of ±0.05 for numerical answers and uses SQuAD pre-processing for string match.",
+    "interpretation": "Higher scores indicate better model performance, particularly in multi-screen reasoning.",
+    "baseline_results": "Various state-of-the-art multimodal models evaluated with Relaxed Accuracy, with GPT-4V achieving the highest score.",
+    "validation": "Data validation performed to ensure quality and to remove personally identifiable information."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Privacy",
+      "Robustness",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Screens containing personally identifiable information were removed during data validation.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

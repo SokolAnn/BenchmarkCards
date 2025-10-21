@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ProSA (Prompt Sensitivity Assessment)",
+    "abbreviation": "ProSA",
+    "overview": "ProSA is a framework designed to evaluate and comprehend prompt sensitivity in large language models (LLMs), incorporating a novel sensitivity metric called PromptSensiScore (PSS) that quantifies the variability in model responses to different prompts.",
+    "data_type": "prompt-response pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "LC AlpacaEval 2.0",
+      "Arena Hard Auto"
+    ],
+    "resources": [
+      "https://github.com/open-compass/ProSA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation of prompt sensitivity in LLMs, allowing for improved model robustness and better alignment with user expectations.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Prompt Sensitivity Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Multiple evaluation datasets including CommonsenseQA, ARC-Challenge, MATH, and HumanEval.",
+    "size": "N/A",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Objective evaluation",
+      "Subjective evaluation"
+    ],
+    "metrics": [
+      "Prompt Sensitivity Score (PSS)"
+    ],
+    "calculation": "PSS is calculated as the average discrepancy in the model's responses when faced with different prompt variants for the same instruction.",
+    "interpretation": "A lower PSS indicates higher robustness of the model to prompt changes.",
+    "baseline_results": "N/A",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

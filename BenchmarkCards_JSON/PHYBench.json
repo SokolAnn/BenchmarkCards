@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PHYBench",
+    "abbreviation": "N/A",
+    "overview": "PHYBench is a benchmark of 500 original physics problems ranging from high school to Physics Olympiad difficulty. It addresses limitations in current evaluation frameworks by providing original content and a systematic curation pipeline for high-quality assessments.",
+    "data_type": "physics problems",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MathArena",
+      "AIME 2024",
+      "OlympiadBench",
+      "GPQA"
+    ],
+    "resources": [
+      "https://www.phybench.cn/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To rigorously evaluate models' reasoning capabilities using physics problems and to provide a platform for examining models' reasoning robustness.",
+    "audience": [
+      "ML Researchers",
+      "Physics Educators",
+      "AI Practitioners"
+    ],
+    "tasks": [
+      "Reasoning Evaluation"
+    ],
+    "limitations": "Focus primarily on Olympiad-level difficulty and uneven distribution across diverse physics topics.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated from original physics exercises designed for human learners, with contributions from students and reviewers.",
+    "size": "500 problems",
+    "format": "JSON",
+    "annotation": "Manual review and curation by expert physics educators."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Expression Edit Distance (EED) Score"
+    ],
+    "calculation": "EED Score is calculated based on the tree edit distance between model-generated and ground truth expressions.",
+    "interpretation": "The score reflects the correctness and similarity of model-generated expressions to reference answers, with higher scores indicating better performance.",
+    "baseline_results": "Gemini 2.5 Pro achieved 36.9% accuracy and an EED Score of 49.5.",
+    "validation": "The benchmark's performance was validated through evaluations against a human baseline consisting of undergraduate physics students."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": []
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination",
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

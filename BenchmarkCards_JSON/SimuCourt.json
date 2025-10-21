@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SimuCourt",
+    "abbreviation": "N/A",
+    "overview": "SimuCourt is a judicial benchmark that encompasses 420 Chinese judgment documents across criminal, civil, and administrative cases. It is designed to evaluate the judicial analysis and decision-making capability of AI agents simulating judges.",
+    "data_type": "judgment documents",
+    "domains": [
+      "Legal"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "CAIL",
+      "SLJA-SYN"
+    ],
+    "resources": [
+      "https://wenshu.court.gov.cn/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To reliably assess the judicial analysis and decision-making power of intelligent agents in a court-like setting.",
+    "audience": [
+      "ML Researchers",
+      "Legal Practitioners",
+      "AI Developers"
+    ],
+    "tasks": [
+      "Judicial Decision-Making"
+    ],
+    "limitations": "Our data only includes Chinese documents from 'China Judgments Online'. Testing the agent system with real data from different legal systems is important.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "420 judgment documents collected from the China Judgements Online, covering a range of judicial cases.",
+    "size": "420 examples",
+    "format": "N/A",
+    "annotation": "Documents were rigorously inspected for accuracy and completeness in legal texts and information."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "Metrics are calculated based on matching generated legal articles against reference legal articles.",
+    "interpretation": "Higher scores correlate to better alignment of AI-generated outputs with standard legal judgments.",
+    "baseline_results": "AgentsCourt framework demonstrated improvements of 8.6% and 9.1% in F1 scores for legal article generation.",
+    "validation": "Validation was performed through extensive experiments and ablation studies."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Privacy",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "We have meticulously anonymized sensitive information in the judgement documents.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

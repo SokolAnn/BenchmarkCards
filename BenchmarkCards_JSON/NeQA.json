@@ -1,0 +1,104 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "NeQA",
+    "abbreviation": "NeQA",
+    "overview": "NeQA: a question answering dataset consisting of questions with negation, designed to evaluate the ability of language models to process negation and which yields different scaling trends (inverse, U-shaped, or positive) depending on prompting methods and model families.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "NegatedLAMA",
+      "OBQA",
+      "TruthfulQA"
+    ],
+    "resources": [
+      "https://github.com/yuhui-zh15/NeQA",
+      "https://arxiv.org/abs/2305.17311"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the ability of language models to process negation in natural language by providing a multiple-choice question answering dataset containing negated questions.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Negation Understanding"
+    ],
+    "limitations": "The dataset may miss some types of negation or domains of text; NeQA is an English-only dataset; evaluation results may be sensitive to specific prompts (prompt sensitivity).",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed by transforming questions from NegatedLAMA (including ConceptNet, GoogleRE, SQuAD, TREx) and OBQA, plus additional rule-based negation transformations on OBQA to create diverse negation types.",
+    "size": "1,718 questions (ConceptNet: 150 questions; GoogleRE: 374 questions; SQuAD: 100 questions; TREx: 594 questions; OBQA: 500 questions)",
+    "format": "N/A",
+    "annotation": "Created via rule-based transformations with manual examination and editing; labels redistributed/balanced between options A and B; wrong answer sampled from original incorrect choices for some transformations; validity checked manually and via crowdsourced validation (see paper)."
+  },
+  "methodology": {
+    "methods": [
+      "Zero-shot prompting",
+      "Zero-shot with hint prompting",
+      "Few-shot chain-of-thought prompting",
+      "Automated metric evaluation (probability ranking of choices)",
+      "Model evaluation across multiple language model families"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "For zero-shot and zero-shot with hint: generate one token and rank the probability of selecting option A or B; for few-shot with chain-of-thought: generate full reasoning and parse final answer using regular expressions. Report accuracy of model predictions (dataset is balanced, chance = 50%).",
+    "interpretation": "Higher accuracy indicates better ability to answer negated questions. Scaling trends are interpreted as: positive scaling = performance improves with model scale; inverse scaling = performance degrades with model scale; U-shaped = performance degrades then improves with scale. Chance accuracy is 50% for the balanced two-choice dataset.",
+    "baseline_results": "Example results from paper (NeQA accuracy): GPT-3 zero-shot: ada 0.54, babbage 0.54, curie 0.36, davinci 0.33. GPT-3 Text Series few-shot w/ CoT: davinci-v2 0.98, davinci-v3 0.98. Full tables of model-by-prompt results are provided in the paper (Table 1 and Table 2).",
+    "validation": "Dataset validity ensured through manual examination and editing. As part of the inverse scaling prize submission, organizers crowdsourced validation on 50 random NeQA examples and reported average agreement between workers and gold labels of 100%."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Safety",
+      "Societal Impact",
+      "Governance"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Value Alignment",
+          "subcategory": [
+            "Harmful output"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on affected communities"
+          ]
+        },
+        {
+          "category": "Governance",
+          "subcategory": [
+            "Lack of testing diversity"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Incorrect handling of negation leading to wrong outputs that could cause harmful decisions in high-stakes domains (e.g., finance, healthcare, law) as stated in the Ethics Statement."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

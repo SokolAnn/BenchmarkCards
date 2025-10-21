@@ -1,0 +1,79 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "KT-Speech-Crawler: Automatic Dataset Construction for Speech Recognition from YouTube Videos",
+    "abbreviation": "KT-Speech-Crawler",
+    "overview": "KT-Speech-Crawler: an approach for automatic dataset construction for speech recognition by crawling YouTube videos. The paper outlines several filtering and post-processing steps which extract samples that can be used for training end-to-end neural speech recognition systems.",
+    "data_type": "audio-transcription pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Wall Street Journal (WSJ)",
+      "TED-LIUM v2",
+      "LibriSpeech",
+      "VoxForge",
+      "Mozilla's Common Voice",
+      "Speech Commands",
+      "YouTube-8M"
+    ],
+    "resources": [
+      "http://emnlp-demo.lakomkin.me/",
+      "https://github.com/EgorLakomkin/KTSpeechCrawler"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Provide a crawler that automatically extracts speech samples with transcriptions from YouTube, filter high-quality samples with heuristic measures, and validate usefulness by augmenting training data of benchmark ASR datasets and measuring test performance differences.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Speech Recognition Researchers"
+    ],
+    "tasks": [
+      "Automatic Speech Recognition",
+      "Dataset construction for Speech Recognition"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "YouTube videos with user-provided closed captions (English closed captions).",
+    "size": "Around 150 hours of transcribed speech can be obtained within a day (paper reports using 200 hours (108,617 utterances) and 300 hours in experiments; script to construct a dataset of 500 hours is provided).",
+    "format": "N/A",
+    "annotation": "Transcriptions are taken from user-provided YouTube closed captions (automatically used as ground truth); manual verification was performed on a random subset (600 samples) to estimate transcription quality; a web-based demo allows human confirmation/correction of extracted samples."
+  },
+  "methodology": {
+    "methods": [
+      "Heuristic filtering and post-processing of YouTube closed captions",
+      "Forced alignment using Kaldi",
+      "Automated metrics evaluation (Word Error Rate, Character Error Rate)",
+      "Manual human evaluation of a random subset (600 samples)"
+    ],
+    "metrics": [
+      "Word Error Rate (WER)",
+      "Character Error Rate (CER)",
+      "Levenshtein similarity (used for filtering)"
+    ],
+    "calculation": "Word Error Rate (WER) computed as WER = (S + D + I) / (S + D + C), where S = substitutions, D = deletions, I = insertions, C = correct words.",
+    "interpretation": "Lower WER and CER indicate better ASR performance. The authors report reductions in WER and CER when augmenting benchmark training sets with the collected YouTube samples (see Table 1 for examples).",
+    "baseline_results": "Table 1 results reported in paper: \n- Train: WSJ, Test: WSJ -> WER 27.4%, CER 7.2%\n- Train: WSJ + YouTube (200h), Test: WSJ -> WER 15.8%, CER 4.2%\n- Train: YouTube (200h), Test: WSJ -> WER 31.5%, CER 8.3%\n- Train: TED, Test: TED -> WER 32.6%, CER 10.4%\n- Train: TED + YouTube (300h), Test: TED -> WER 28.1%, CER 8.2%\n- Train: YouTube (300h), Test: TED -> WER 36.6%, CER 10.6%",
+    "validation": "Validation steps include: manual inspection of a random subset of 600 samples estimating a 3.5% word error rate in transcriptions; excluding TED videos from YouTube set by removing videos containing a 'TED' token in title or description; using forced alignment with Kaldi to adjust caption boundaries; applying a Levenshtein similarity threshold of 70% against Google ASR output on three random phrases per video to filter out misaligned or language-mismatched videos."
+  },
+  "targeted_risks": {
+    "risk_categories": [],
+    "atlas_risks": {
+      "risks": null
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

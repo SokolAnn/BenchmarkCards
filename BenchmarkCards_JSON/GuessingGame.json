@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "GuessingGame",
+    "abbreviation": "N/A",
+    "overview": "GuessingGame is a protocol for evaluating large language models (LLMs) as strategic question-askers in open-ended, open-domain settings. It involves a Guesser LLM identifying a hidden object by posing free-form questions to an Oracle LLM, measuring the performance based on the success rate and average number of questions.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/cincynlp/GuessingGameLLMs"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate how effectively models gather information through questioning in an open-ended guessing game.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "Limited to evaluating question-asking behavior in the context of an object guessing game.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "An object corpus consisting of 858 distinct everyday objects.",
+    "size": "858 objects",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Success Rate (SR)",
+      "Average Number of Questions (ANQ)",
+      "Information Gain (IG)"
+    ],
+    "calculation": "Success Rate is calculated as the proportion of games in which the Guesser successfully identifies the target object. Average Number of Questions is calculated as the mean number of questions asked in successful games. Information Gain is estimated via a Bayesian belief-tracking method and an entropy-based method.",
+    "interpretation": "Higher success rates and lower average number of questions indicate more effective question-asking. Information Gain predicts task efficiency.",
+    "baseline_results": "LLaMA-3.3 70B achieved a success rate of 39.4% under open-ended questioning.",
+    "validation": "Validated via empirical evaluation across 858 games."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Enumeration leading to ineffective questioning."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "IDN Tagged Corpus",
+    "abbreviation": "N/A",
+    "overview": "A publicly released 5-fold dataset split of the IDN Tagged Corpus intended to serve as a standardized benchmark for Indonesian part-of-speech tagging; the authors release their cross-validation splits to provide a common evaluation standard for future work.",
+    "data_type": "Token sequences with POS tags (text)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Indonesian"
+    ],
+    "similar_benchmarks": [
+      "PANL10N dataset",
+      "Penn Treebank"
+    ],
+    "resources": [
+      "http://www.panl10n.net",
+      "https://github.com/famrashel/idn-tagged-corpus",
+      "https://github.com/kmkurn/id-pos-tagging/blob/master/data/dataset.tar.gz",
+      "https://github.com/andryluthfi/indonesian-postag",
+      "https://github.com/scrapinghub/python-crfsuite",
+      "https://github.com/kmkurn/id-pos-tagging"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Provide a standardized dataset split of the IDN Tagged Corpus as a common benchmark for Indonesian part-of-speech tagging and to evaluate and compare POS tagging methods (rule-based, CRF, neural).",
+    "audience": [
+      "Natural Language Processing Researchers",
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Part-of-Speech Tagging"
+    ],
+    "limitations": "Dataset is relatively small (10,000 sentences, 250,000 tokens); contains some annotation inconsistencies (e.g., WH vs SC); multi-word expressions are treated as single tokens in the split.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "IDN Tagged Corpus (manually annotated POS tagging corpus) — original corpus described in Dinakaramani et al. [12]; authors release their 5-fold splits.",
+    "size": "10,000 sentences and 250,000 tokens",
+    "format": "N/A",
+    "annotation": "Manually annotated POS tags"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics (weighted macro-average F1 Score)",
+      "5-fold cross-validation",
+      "Baseline and model comparisons (rule-based, CRF, neural network architectures)"
+    ],
+    "metrics": [
+      "Weighted macro-average F1 Score",
+      "F1 Score"
+    ],
+    "calculation": "Weighted macro-average F1 Score: weighted average of per-tag F1 scores where each weight is the corresponding tag's proportion in the dataset; implemented using scikit-learn.",
+    "interpretation": "Accuracy and micro-average F1 are inappropriate due to class imbalance (micro-average equals accuracy); weighted macro-average F1 balances per-tag contributions by tag frequency so higher scores indicate better balanced performance across tags.",
+    "baseline_results": "MAJOR: 9.39 (0.21); MEMO: 90.62 (0.82); Rashel et al. [15]: 85.77 (0.22); CRF: 96.22 (0.22); biLSTM + CRF: 97.47 (0.11) — test F1 scores averaged over 5 folds.",
+    "validation": "5-fold cross-validation with scores averaged over folds; development set used for hyperparameter tuning; early stopping and learning rate decay applied during training."
+  },
+  "targeted_risks": {
+    "risk_categories": [],
+    "atlas_risks": {
+      "risks": null
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

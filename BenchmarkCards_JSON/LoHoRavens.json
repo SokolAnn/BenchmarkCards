@@ -1,0 +1,79 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LoHoRavens (Long-Horizon Language-Conditioned Benchmark for Robotic Tabletop Manipulation)",
+    "abbreviation": "LoHoRavens",
+    "overview": "LoHoRavens is a long-horizon language-conditioned simulated benchmark for robotic tabletop manipulation tasks, covering various long-horizon reasoning aspects spanning color, size, space, arithmetics, and reference.",
+    "data_type": "demonstration instances",
+    "domains": [
+      "Robotics"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://cisnlp.github.io/lohoravens-webpage/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a public benchmark for testing the long-horizon reasoning capabilities of language-conditioned robots.",
+    "audience": [
+      "Robotics Researchers",
+      "ML Researchers"
+    ],
+    "tasks": [
+      "Robotic Manipulation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Automatically generated demonstrations from a simulator using an oracle agent.",
+    "size": "1,000 demonstrations for training, 200 for validation, 200 for testing per task.",
+    "format": "N/A",
+    "annotation": "Automatically generated"
+  },
+  "methodology": {
+    "methods": [
+      "Evaluating average task performance based on task completion score."
+    ],
+    "metrics": [
+      "Success rate (%)"
+    ],
+    "calculation": "Scores range from 0 (fail) to 100 (success) based on the number of completed steps vs. total required.",
+    "interpretation": "Higher scores indicate better performance in completing long-horizon tasks.",
+    "baseline_results": "Initial performance on unseen tasks is notably reduced compared to seen tasks.",
+    "validation": "The benchmark evaluates long-horizon reasoning in various conditions with perturbations to simulate real-world complexities."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

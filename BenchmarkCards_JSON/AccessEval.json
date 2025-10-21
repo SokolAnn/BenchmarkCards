@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "AccessEval (Accessibility Evaluation)",
+    "abbreviation": "AccessEval",
+    "overview": "AccessEval is a benchmark evaluating 21 closed- and open-source LLMs across 6 real-world domains and 9 disability types using paired Neutral and Disability-Aware Queries to systematically investigate disability bias in large language models.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Education",
+      "Finance",
+      "Healthcare",
+      "Hospitality",
+      "Media",
+      "Technology"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "AUTALIC",
+      "BITS"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/Srikant86/AccessEval"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate and mitigate disability bias in large language models and promote more inclusive AI applications.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Bias Assessment",
+      "Quality Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated dataset of paired queries comprising Neutral Queries and Disability-Aware Queries.",
+    "size": "2,340 queries",
+    "format": "CSV",
+    "annotation": "Manual validation combined with automated generation processes."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "VADER Score",
+      "Regard Score",
+      "LLM Judge"
+    ],
+    "calculation": "Performance degradation is calculated by comparing scores of responses to Neutral Queries versus Disability-Aware Queries.",
+    "interpretation": "Lower scores on Disability-Aware Queries indicate potential bias in model responses.",
+    "baseline_results": "N/A",
+    "validation": "Statistical correlation with human annotations was performed to validate automated metric scores."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Misinformation leading to inadequate support for disabled users"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

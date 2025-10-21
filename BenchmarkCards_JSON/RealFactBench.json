@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "RealFactBench",
+    "abbreviation": "N/A",
+    "overview": "RealFactBench is a comprehensive benchmark designed to assess the fact-checking capabilities of Large Language Models (LLMs) and Multimodal Large Language Models (MLLMs) across diverse real-world tasks, including Knowledge Validation, Rumor Detection, and Event Verification.",
+    "data_type": "text and image claims",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "TruthfulQA",
+      "HaluEval",
+      "FEVER"
+    ],
+    "resources": [
+      "https://github.com/kalendsyang/RealFactBench.git"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the fact-checking capabilities of LLMs and MLLMs in real-world scenarios.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Knowledge Validation",
+      "Rumor Detection",
+      "Event Verification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Claims collected from authoritative sources and public fact-checking datasets.",
+    "size": "6,000 samples",
+    "format": "N/A",
+    "annotation": "Claims labeled with TRUE/FALSE by human annotators, with supporting evidence sourced from credible materials."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Matthews Correlation Coefficient (MCC)",
+      "Unknown Rate (UnR)"
+    ],
+    "calculation": "Factual Accuracy is assessed via Macro F1-Score; Prediction Reliability is evaluated using MCC; Uncertainty Handling is measured with the Unknown Rate.",
+    "interpretation": "Higher scores in F1 and MCC indicate better performance in fact-checking capabilities.",
+    "baseline_results": null,
+    "validation": "Extensive experiments on existing LLMs and MLLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

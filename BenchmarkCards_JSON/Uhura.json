@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Uhura",
+    "abbreviation": "N/A",
+    "overview": "Uhura is a new benchmark designed to evaluate LMs’ scientific knowledge and truthfulness in six low-resource African languages, consisting of two tasks: Uhura-ARC-Easy (multiple-choice science questions) and Uhura-TruthfulQA (evaluating truthfulness on various topics).",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Amharic",
+      "Hausa",
+      "Northern Sotho",
+      "Swahili",
+      "Yoruba",
+      "Zulu"
+    ],
+    "similar_benchmarks": [
+      "ARC (AI2 Reasoning Challenge)",
+      "TruthfulQA"
+    ],
+    "resources": [
+      "https://www.huggingface.co/masakhane",
+      "https://www.uhura.dev/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the performance of language models on scientific knowledge and truthfulness in low-resource African languages.",
+    "audience": [
+      "ML Researchers",
+      "Language Model Developers",
+      "NLP Practitioners"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset was created via human translation of established benchmarks (ARC-Easy and TruthfulQA).",
+    "size": "Approximately 1,200 questions per language for ARC-Easy and up to 817 questions for TruthfulQA.",
+    "format": "N/A",
+    "annotation": "Translations were conducted by professional translators, with quality control by language coordinators."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Zero-shot prompting",
+      "Five-shot prompting"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy is calculated based on the proportion of correctly answered questions.",
+    "interpretation": "Higher accuracy indicates better performance of language models in understanding and responding to questions in low-resource African languages.",
+    "baseline_results": "Closed models consistently outperformed open models, with specific accuracies reported in the evaluation results.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "No personal identifying information is included in the datasets.",
+    "data_licensing": "The Uhura benchmark datasets are released under the Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) license.",
+    "consent_procedures": "All translators provided informed consent for their involvement.",
+    "compliance_with_regulations": "N/A"
+  }
+}

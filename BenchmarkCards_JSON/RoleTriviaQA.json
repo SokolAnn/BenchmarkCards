@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "RoleTriviaQA",
+    "abbreviation": "N/A",
+    "overview": "RoleTriviaQA is a large-scale role-playing knowledge QA benchmark with diverse speaker identities, aimed to evaluate the understanding and generation capabilities of speech-language models.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/cnxupupup/SLM-Decoupled-MTP",
+      "https://cnxupupup.github.io/SLM-Decoupled-MTP-Demo"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To benchmark speech-language models on role embodiment and knowledge-intensive spoken responses across various tasks.",
+    "audience": [
+      "ML Researchers",
+      "Speech Generation Practitioners"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from TriviaQA and synthesised using CosyVoice2 for diverse speaker roles.",
+    "size": "138,384 examples",
+    "format": "JSON",
+    "annotation": "Data generated through pretrained text-to-speech synthesis systems."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Exact Match (EM)",
+      "F1 Score",
+      "Speaker Similarity (SIM)"
+    ],
+    "calculation": "Metrics calculated as described in the experiments section based on model responses compared to ground truth.",
+    "interpretation": "Higher EM and F1 scores indicate better model's ability to generate correct and contextually appropriate responses.",
+    "baseline_results": "Best baseline models showed significant performance improvements, with an EM of 12.0 and F1 of 23.8 on RoleTriviaQA.",
+    "validation": "Models validated by comparing their predictions against a benchmark set, tracking performance on both in-domain and out-of-domain queries."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ImageCLEFmedical 2023",
+    "abbreviation": "N/A",
+    "overview": "ImageCLEFmedical 2023 is a dataset designed for Diagnostic Captioning (DC), containing 71,355 medical images with gold tags and diagnostic captions, aimed at providing automated diagnostic reports from medical images.",
+    "data_type": "image-caption pairs",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/nlpaueb/dmmcs"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a dataset for developing and evaluating Diagnostic Captioning systems that generate medical reports from images.",
+    "audience": [
+      "ML Researchers",
+      "Medical Professionals",
+      "Data Scientists"
+    ],
+    "tasks": [
+      "Image Captioning"
+    ],
+    "limitations": "The dataset is limited to specific conditions, regions, and language (English).",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset consists of medical images, gold tags, and gold diagnostic captions sourced from the ImageCLEF and MIMIC-CXR projects.",
+    "size": "71,355 images",
+    "format": "N/A",
+    "annotation": "Gold tags and captions provided with the images."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "BLEU",
+      "BLEURT"
+    ],
+    "calculation": "Performance metrics are calculated based on comparisons between generated captions and gold captions.",
+    "interpretation": "Higher BLEU and BLEURT scores indicate better alignment with gold captions.",
+    "baseline_results": "Standard beam search decoding performance serves as baseline comparisons.",
+    "validation": "The dataset was split into training, validation, and test sets (75%-10%-15% split)."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Concerns regarding biomedical data privacy due to the sensitive nature of medical data.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

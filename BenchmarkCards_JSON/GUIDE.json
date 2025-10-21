@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "GUIDE (Graphical User Interface Data for Execution)",
+    "abbreviation": "GUIDE",
+    "overview": "GUIDE is a novel dataset tailored for the advancement of Multimodal Large Language Model (MLLM) applications, particularly focusing on Robotic Process Automation (RPA) use cases. It includes diverse data from various websites, each data entry containing an image, a task description, the last action taken, CoT, and the next action to be performed.",
+    "data_type": "multimodal",
+    "domains": [
+      "Natural Language Processing",
+      "Robotics"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/SuperAGI/GUIDE",
+      "https://github.com/superagi/GUIDE"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To facilitate research and development in the realm of LLMs for graphical user interfaces, particularly in tasks related to RPA.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Next Action Prediction",
+      "Action Grounding"
+    ],
+    "limitations": "LIMITED DOMAIN SCOPE; ANNOTATION BIAS; INTERFACE DYNAMICS AND UPDATES; SIMULATED ENVIRONMENT LIMITATIONS; REAL-WORLD INTERACTION COMPLEXITY; EXCEPTION AND ERROR HANDLING; SCALABILITY OF DATA COLLECTION.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Data collected from various websites including Apollo, Gmail, Calendar, and Canva using the NEXTAG tool.",
+    "size": "N/A",
+    "format": "N/A",
+    "annotation": "Annotated by multiple annotators using an in-house tool to ensure diverse design representation and accurate action grounding."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Grounding accuracy"
+    ],
+    "calculation": "Metrics are calculated based on the model's performance in task prediction and grounding tasks compared to baseline models.",
+    "interpretation": "A higher accuracy indicates better predictive and grounding capabilities of the RPA models.",
+    "baseline_results": "V-Zen achieved an accuracy of 93.2% in next action prediction and 89.7% in grounding tasks.",
+    "validation": "Validated through rigorous quality checks and comparisons against baseline models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Privacy",
+      "Robustness",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

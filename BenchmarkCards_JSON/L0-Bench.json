@@ -1,0 +1,80 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "L0-Bench",
+    "abbreviation": "L0-Bench",
+    "overview": "L0-Bench is a synthetic benchmark for evaluating procedural correctness in neural language models via program execution, grading models on their ability to generate step-by-step execution traces from given synthetic Python functions.",
+    "data_type": "program execution traces",
+    "domains": [
+      "Computer Science"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/SimengSun/L0-reasoning-bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To systematically evaluate the procedural correctness of language models in generating accurate execution traces for synthetic Python functions.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Program Execution"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Synthetic generation using generative grammar to construct simplified Python programs.",
+    "size": "2,000 examples (500 examples per trace length category: short, medium, long, extra long)",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Whole-trace accuracy",
+      "Steps to the first error"
+    ],
+    "calculation": "Model outputs are aligned with the expected execution traces and evaluated based on exact matches and the number of steps before the first error occurs.",
+    "interpretation": "High accuracy indicates better procedural correctness and ability to execute rules step-by-step without deviation.",
+    "baseline_results": "Results from evaluating 20 recent models reveal varying levels of procedural correctness, with larger and reasoning-enhanced models generally performing better.",
+    "validation": "The benchmark was validated through systematic evaluation of multiple models across different configurations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

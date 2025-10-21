@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "UNIDETOX (Universal Detoxification of Large Language Models via Dataset Distillation)",
+    "abbreviation": "UNIDETOX",
+    "overview": "UNIDETOX is a universally applicable method for mitigating toxicity across various large language models (LLMs) using a novel and efficient dataset distillation technique. It generates detoxifying text that can be used to universally fine-tune any LLM without model-specific hyperparameter tuning.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/EminLU/UniDetox",
+      "https://huggingface.co/openai-community/gpt2-xl",
+      "https://huggingface.co/facebook/opt-6.7b",
+      "https://huggingface.co/tiiuae/falcon-7b",
+      "https://huggingface.co/meta-llama/Llama-2-7b-hf",
+      "https://huggingface.co/unitary/toxic-bert",
+      "https://huggingface.co/datasets/LennardZuendorf/Dynamically-Generated-Hate-Speech-Dataset",
+      "https://huggingface.co/datasets/toxigen/toxigen-data",
+      "https://huggingface.co/datasets/cais/mmlu"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a universal method for detoxifying large language models using distilled detoxifying text, improving toxicity mitigation while maintaining fluency and performance.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Text Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Dynamically Generated Hate Speech (DGHS) dataset and ToxiGen dataset for evaluation.",
+    "size": "25,150 examples for training, 896 validation examples, and 940 test examples.",
+    "format": "N/A",
+    "annotation": "Detoxifying text is distilled from existing toxic data using contrastive decoding."
+  },
+  "methodology": {
+    "methods": [
+      "Dataset Distillation",
+      "Fine-tuning"
+    ],
+    "metrics": [
+      "Toxicity Probability (TP)",
+      "Expected Maximum Toxicity (EMT)",
+      "Perplexity (PPL)",
+      "Accuracy"
+    ],
+    "calculation": "Metrics are calculated using generated text continuations evaluated for toxicity and fluency.",
+    "interpretation": "Lower TP and EMT scores indicate better detoxification performance.",
+    "baseline_results": "UNIDETOX outperforms previous detoxification methods.",
+    "validation": "Technique validated through experiments across multiple LLMs including GPT-2, OPT, Falcon, and LLaMA2."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

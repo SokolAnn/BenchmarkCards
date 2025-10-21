@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LLM4Mat-Bench (Large Language Models for Materials Property Prediction Benchmark)",
+    "abbreviation": "LLM4Mat-Bench",
+    "overview": "LLM4Mat-Bench is a benchmark dataset designed to evaluate large language models in predicting the properties of crystalline materials, containing approximately 1.9M crystal structures and 45 distinct properties sourced from 10 publicly available materials data sources.",
+    "data_type": "crystal structure-property pairs",
+    "domains": [
+      "Materials Science"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MatBench",
+      "TextEdge"
+    ],
+    "resources": [
+      "https://github.com/vertaix/LLM4Mat-Bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive benchmark for evaluating the performance of large language models in predicting properties of crystalline materials.",
+    "audience": [
+      "Materials Scientists",
+      "ML Researchers",
+      "Data Scientists"
+    ],
+    "tasks": [
+      "Property Prediction"
+    ],
+    "limitations": "The study did not perform thorough hyperparameter searches due to computational constraints.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "10 publicly available materials databases, including Materials Project and OQMD.",
+    "size": "1,978,985 pairs",
+    "format": "CIF, Textual Descriptions",
+    "annotation": "Automatically generated text descriptions from crystal structures using Robocrystallographer, combined with properties sourced from databases."
+  },
+  "methodology": {
+    "methods": [
+      "Regression tasks using MAD:MAE ratio",
+      "Classification tasks using ROC AUC"
+    ],
+    "metrics": [
+      "Mean Absolute Error (MAE)",
+      "Area Under ROC Curve (AUC)"
+    ],
+    "calculation": "MAD:MAE ratio is calculated for regression tasks, with a target ratio of at least 5.0 for a good model.",
+    "interpretation": "Higher MAD:MAE ratios indicate better performance, while AUC measures the model's ability to discriminate between classes in classification tasks.",
+    "baseline_results": "Baseline model CGCNN outperformed LLMs in several tasks, particularly in datasets with longer descriptions.",
+    "validation": "Results averaged over multiple runs for predictive models; evaluated separately for each dataset."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "BESSTIE (Benchmark for Sentiment and Sarcasm classification for Varieties of English)",
+    "abbreviation": "BESSTIE",
+    "overview": "BESSTIE introduces a benchmark for sentiment and sarcasm classification for three varieties of English: Australian (en-AU), Indian (en-IN), and British (en-UK).",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "DialectBench"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/unswnlporg/BESSTIE"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide an evaluative benchmark for future research in equitable LLMs, specifically in terms of language varieties.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Sentiment Classification",
+      "Sarcasm Classification"
+    ],
+    "limitations": "Our assumption of national varieties as representative forms of dialect is a simplification.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected datasets from Google Places reviews and Reddit comments using location-based and topic-based filtering.",
+    "size": "12,000 comments and reviews per variety",
+    "format": "N/A",
+    "annotation": "Manual annotation by native speakers for sentiment and sarcasm labeling."
+  },
+  "methodology": {
+    "methods": [
+      "Fine-tuning of large language models",
+      "Evaluation on annotated datasets"
+    ],
+    "metrics": [
+      "F-S CORE"
+    ],
+    "calculation": "Calculated as macro-averaged metrics across different varieties.",
+    "interpretation": "Higher F-S CORE indicates better performance on sentiment and sarcasm tasks.",
+    "baseline_results": "Average F-S CORE of 0.81 for sentiment classification, and 0.59 for sarcasm classification.",
+    "validation": "Manual annotation and automated validation processes."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis included consideration of different English language varieties.",
+    "harm": "BESSTIE aims to address biases in language models towards non-standard English varieties."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Dataset shared in a manner that preserves user privacy.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Data gathered from publicly available posts through official APIs.",
+    "compliance_with_regulations": "Received ethics approval from the Human Research Ethics Committee at UNSW, Sydney."
+  }
+}

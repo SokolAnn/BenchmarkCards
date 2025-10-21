@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DecompileBench",
+    "abbreviation": "N/A",
+    "overview": "DecompileBench is the first comprehensive framework for evaluating decompilers in reverse engineering workflows, integrating real-world function extraction, runtime-aware validation, and automated human-centric assessments using LLM-as-Judge.",
+    "data_type": "function extraction",
+    "domains": [
+      "Computer Security"
+    ],
+    "languages": [
+      "N/A"
+    ],
+    "similar_benchmarks": [
+      "N/A"
+    ],
+    "resources": [
+      "https://github.com/Jennieett/DecompileBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a systematic framework for evaluating decompilers and assist security experts in choosing appropriate tools based on specific requirements.",
+    "audience": [
+      "Security Analysts",
+      "Research Community"
+    ],
+    "tasks": [
+      "Decompilation Evaluation"
+    ],
+    "limitations": "Evaluation is limited to x86-64 architectures; limited human validation with a small sample size.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Extracted from OSS-Fuzz projects capturing 23,400 real-world functions from 130 programs.",
+    "size": "23,400 functions",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "LLM-based evaluation"
+    ],
+    "metrics": [
+      "Recompile Success Rate (RSR)",
+      "Coverage Equivalence Rate (CER)"
+    ],
+    "calculation": "Metrics calculated via runtime consistency checks and side effect analysis during program execution.",
+    "interpretation": "Higher metrics indicate better functionality preservation and understandability in decompilation.",
+    "baseline_results": "Evaluated against performance of existing industrial-strength decompilers.",
+    "validation": "Validated by comparing outputs with expert ratings using Cohen's kappa."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Decision bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

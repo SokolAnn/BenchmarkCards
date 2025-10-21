@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Factcheck-Bench: Fine-Grained Evaluation Benchmark for Automatic Fact-checkers",
+    "abbreviation": "Factcheck-Bench",
+    "overview": "Factcheck-Bench constructs an open-domain document-level factuality benchmark in three-level granularity: claim, sentence, and document, enabling evaluation of automatic fact-checking systems.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "FEVER",
+      "HaluEval",
+      "FELM"
+    ],
+    "resources": [
+      "https://github.com/yuxiaw/Factcheck-GPT"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the effectiveness of automatic fact-checking systems in detecting and correcting factual errors in LLM outputs.",
+    "audience": [
+      "ML Researchers",
+      "NLP Practitioners",
+      "Fact-checking Systems Developers"
+    ],
+    "tasks": [
+      "Fact-Checking",
+      "Claim Correction",
+      "Evidence Retrieval"
+    ],
+    "limitations": "The dataset consists of only 94 instances and is focused on high-stakes factual errors.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Annotated examples collected from hallucinations posted by ChatGPT users on Twitter and in-house brainstorming.",
+    "size": "94 instances",
+    "format": "JSON",
+    "annotation": "In-house manual annotation by experts."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Accuracy"
+    ],
+    "calculation": "Metrics are calculated based on the accuracy of the factuality of claims detected and corrected.",
+    "interpretation": "High F1 and accuracy scores indicate effective detection and correction of factual errors.",
+    "baseline_results": "The best F1 score for existing fact-checkers in preliminary experiments was F1=0.63.",
+    "validation": "Validated through in-house annotations ensuring high-quality factual verification."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

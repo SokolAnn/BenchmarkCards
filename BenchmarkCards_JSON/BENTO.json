@@ -1,0 +1,77 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "BENTO (Benchmark Task Reduction)",
+    "abbreviation": "BENTO",
+    "overview": "BENTO proposes a method for efficiently reducing the number of tasks in large language model benchmarks without compromising evaluation quality, utilizing in-context learning to estimate task transferability.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMLU"
+    ],
+    "resources": [
+      "https://github.com/tianyi-lab/bento"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate large language models efficiently by reducing the number of tasks in benchmarks while maintaining evaluation accuracy.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "A smaller benchmark may be less diverse and potentially more vulnerable to adversarial attacks.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "MMLU and FLAN benchmarks, consisting of multiple choice questions across diverse topics.",
+    "size": "57 tasks (MMLU)",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Task transferability estimation",
+      "Facility location optimization"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Normalized Root Mean Square Error (NRMSE)"
+    ],
+    "calculation": "Transferability is estimated using in-context learning; performance on the reduced set is correlated with full benchmark performance.",
+    "interpretation": "Lower NRMSE indicates better performance of the reduced benchmark compared to the full benchmark.",
+    "baseline_results": "Reduction achieved from 57 to 3 tasks while maintaining 96% performance accuracy on MMLU.",
+    "validation": "Performance is evaluated by comparing results on reduced benchmarks against full benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

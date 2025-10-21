@@ -1,0 +1,74 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CoIN (Continual Instruction tuning)",
+    "abbreviation": "CoIN",
+    "overview": "CoIN is a comprehensive benchmark tailored for assessing the behavior of existing Multimodal Large Language Models (MLLMs) under continual instruction tuning. It comprises 10 meticulously crafted datasets spanning 8 tasks, ensuring diversity and serving as a robust evaluation framework to assess crucial aspects of continual instruction tuning.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/zackschen/CoIN",
+      "https://huggingface.co/datasets/Zacks-Chen/CoIN"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To comprehensively investigate the behavior of MLLMs in continual instruction tuning.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Image Classification",
+      "Grounding"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Diverse publicly available vision-language datasets like VQAv2, ScienceQA, and ImageNet.",
+    "size": "10 datasets spanning 8 tasks",
+    "format": "JSON",
+    "annotation": "Automatically generated using scripts for instruction tuning."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "LLM-based evaluation"
+    ],
+    "metrics": [
+      "Mean Average Accuracy (MAA)",
+      "Backward Transfer (BWT)"
+    ],
+    "calculation": "Metrics are calculated based on the outputs of MLLMs in comparison to ground truths and also evaluated for reasoning capabilities.",
+    "interpretation": "High MAA indicates consistent performance, while lower BWT reflects catastrophic forgetting.",
+    "baseline_results": null,
+    "validation": "Continual evaluation of MLLMs through diverse tasks and structured instructions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC-4.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

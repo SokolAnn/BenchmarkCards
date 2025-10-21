@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "L2M3 (Large Language Model based Material Miner)",
+    "abbreviation": "L2M3",
+    "overview": "This research presents L2M3, a novel data mining system that automates the extraction and organization of Metal-Organic Framework (MOF) data from over 40,000 research articles into a structured format, enabling improved machine learning predictions in materials science.",
+    "data_type": "structured dataset of properties",
+    "domains": [
+      "Materials Science"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/ccdc-opensource/csd-python-api-scripts",
+      "https://github.com/langchain-ai/langchain",
+      "https://github.com/openai/tiktoken"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To develop a systematic approach for extracting and organizing Metal-Organic Framework data to enhance accuracy in machine learning studies.",
+    "audience": [
+      "Materials Scientists",
+      "Researchers in Machine Learning",
+      "Data Scientists"
+    ],
+    "tasks": [
+      "Data Extraction",
+      "Data Organization"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Data collected from 41,681 journals on Metal-Organic Frameworks, integrating with the Cambridge Structural Database.",
+    "size": "39,476 research articles",
+    "format": "JSON",
+    "annotation": "Data extraction conducted using advanced Large Language Models with human review."
+  },
+  "methodology": {
+    "methods": [
+      "Automated data extraction using Large Language Models",
+      "Data integration with Cambridge Structural Database"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Metrics calculated based on evaluation of extracted information from sampled papers.",
+    "interpretation": "Higher F1 scores indicate better performance in accurate data extraction and organization.",
+    "baseline_results": "Outperformed previous studies with F1 scores higher than 0.95 across multiple categories.",
+    "validation": "Validation performed by randomly selecting 150 papers to assess extraction accuracy."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Data obtained with explicit approval from publishers to comply with their usage policies.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Active Code Learning: Benchmarking Sample-Efficient Training of Code Models",
+    "abbreviation": "N/A",
+    "overview": "We build the first benchmark to study this critical problem - active code learning. Specifically, we collect 11 acquisition functions (which are used for data selection in active learning) from existing works and adapt them for code-related tasks. Then, we conduct an empirical study to check whether these acquisition functions maintain performance for code data.",
+    "data_type": "text (source code snippets; code-summary pairs; code-pair classification pairs)",
+    "domains": [
+      "Software Engineering",
+      "Machine Learning"
+    ],
+    "languages": [],
+    "similar_benchmarks": [
+      "CodeXGLUE",
+      "CodeNet"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2306.01250"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To build a benchmark to study how active learning can help us efficiently build code models – active code learning.",
+    "audience": [
+      "Developers",
+      "Researchers"
+    ],
+    "tasks": [
+      "Multi-class Classification",
+      "Binary Classification",
+      "Code Summarization"
+    ],
+    "limitations": "The external threat lies in our considered acquisition functions used for active learning, code tasks and datasets, and code models. The internal threat can be the implementation of acquisition functions and code models. The construct threat can be the configuration of active learning. It is almost impossible to use the BLEU score here (the time cost is monthly) for some experiments.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Datasets used: JAVA250 (IBM) for problem classification; BigCloneBench (subset) for clone detection; CodeSearchNet (Microsoft) datasets for JavaScript and Ruby for code summarization. Pre-trained code models: CodeBERT and GraphCodeBERT.",
+    "size": "JAVA250: 62,500 train / - / 12,500 test; BigCloneBench (subset): 90,102 train / 4,000 dev / 4,000 test; CodeSearchNet JavaScript: 58,025 train / 3,885 dev / 3,291 test; CodeSearchNet Ruby: 24,927 train / 1,400 dev / 1,261 test.",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Empirical evaluation of acquisition functions via controlled active learning experiments",
+      "Automated metrics for evaluation",
+      "Repeated experiments (5 runs) and averaging",
+      "Spearman's rank correlation analysis for exploratory study"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "Perplexity (PPL)",
+      "BLEU Score",
+      "CodeBERTScore"
+    ],
+    "calculation": "Accuracy: percentage of correctly classified examples. F1 Score: harmonic mean of precision and recall (formula provided in paper). Perplexity (PPL): exp of negative average log-likelihood over tokens (formula provided). BLEU: computed with brevity penalty and 4-gram precision as described in paper. CodeBERTScore: described as using pretrained contextual embeddings and pairwise cosine similarities.",
+    "interpretation": "Higher Accuracy, F1 Score, and BLEU indicate better performance. Lower Perplexity indicates better performance. The paper reports that active learning for non-classification tasks produces models with at least a 29.64% performance gap compared to models trained on the entire dataset, indicating ineffectiveness in that setting.",
+    "baseline_results": "Baseline (models trained on entire training data) reported in Table 2: Problem classification Accuracy — CodeBERT 98.10%, GraphCodeBERT 98.49%. Clone detection F1 — CodeBERT 97.15%, GraphCodeBERT 97.05%. Code summarization JavaScript PPL/BLEU — CodeBERT 3.85 / 14.34, GraphCodeBERT 3.79 / 14.89. Code summarization Ruby PPL/BLEU — CodeBERT 4.04 / 12.80, GraphCodeBERT 3.99 / 13.54.",
+    "validation": "Experiments repeated five times and averaged. Models initialized by training on randomly selected 500 samples. Labeling budgets set as percentages of training data (e.g., 1% with 10 iterative AL iterations). Total of 5,200 models trained across experiments; training consumed over 3,200 GPU hours. Exploratory correlation analyses use Spearman's rank correlation with reported p-values."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Governance"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Governance",
+          "subcategory": [
+            "Unrepresentative risk testing",
+            "Lack of testing diversity",
+            "Incorrect risk testing"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

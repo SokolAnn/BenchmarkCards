@@ -1,0 +1,75 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "HiNER: A Large Hindi Named Entity Recognition Dataset",
+    "abbreviation": "HiNER",
+    "overview": "Releases a significantly sized standard-abiding Hindi NER dataset containing 109,146 sentences and 2,220,856 tokens, annotated with 11 tags. The paper describes dataset creation (following CoNLL-2003 guidelines with I-O-B encoding), an annotation tool and baseline NER engine, and evaluates various pre-trained language models on the dataset. The authors release the dataset, code, and models for further research.",
+    "data_type": "text (sentence-level token annotations; I-O-B encoded Named Entity Recognition labels)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Hindi"
+    ],
+    "similar_benchmarks": [
+      "FIRE 2014 NER Corpus",
+      "IJCNLP 2008 NER Dataset",
+      "WikiANN"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Collect a large manually annotated NER dataset for Hindi (HiNER) and release it publicly; evaluate the efficacy of various deep learning-based NER approaches on this dataset and compare with other publicly available datasets.",
+    "audience": [
+      "NLP community"
+    ],
+    "tasks": [
+      "Named Entity Recognition",
+      "Sequence Labeling"
+    ],
+    "limitations": "The dataset was annotated by a single annotator; the authors state that they cannot provide any inter-annotator agreement details.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Annotated from the ILCI Tourism domain (Jha, 2010) and a subset of the news domain corpus from Goldhahn et al. (2012).",
+    "size": "108,608 sentences; 2,137,199 words. Splits: Training 76,025 sentences (70%), Development 10,861 sentences (10%), Testing 21,722 sentences (20%).",
+    "format": "I-O-B encoding (CoNLL-2003 guidelines)",
+    "annotation": "Manual annotation by a single annotator; 11 entity tags (Person, Location, Organization, NUMEX, TIMEX, MISC, Language, Game, Literature, Religion, Festival)."
+  },
+  "methodology": {
+    "methods": [
+      "Model-based evaluation: fine-tuning pre-trained multilingual and Indic-focused language models (mBERT, XLM-R base, XLM-R large, IndicBERT, MuRIL)",
+      "Cross-dataset evaluation (training on HiNER and testing on FIRE 2014)",
+      "Zero-shot evaluation (transfer to FIRE 2014)",
+      "Automated metrics evaluation using seqeval and nervaluate"
+    ],
+    "metrics": [
+      "F1 Score (Micro, Macro, Weighted)",
+      "Precision",
+      "Recall",
+      "Strict / Exact match F1 (Exact vs Strict evaluation schemas)"
+    ],
+    "calculation": "Evaluation statistics computed using Seqeval and nervaluate. Models fine-tuned with hyper-parameter tuning on the development set; reported results are the mean and standard deviation over 5 runs. I-O-B encoding used as input format for training.",
+    "interpretation": "Higher F1 indicates better NER performance. Authors report that XLM-R large performs best across experiments; weighted F1 reported for all-tags and collapsed-tag settings as primary performance indicators.",
+    "baseline_results": "XLM-R large reported Weighted F1 = 88.78 (all 11 tags, test set, mean over 5 runs, std 0.57). On collapsed tagset (Person, Location, Organization) XLM-R large reported Weighted F1 = 92.22 (test set, mean over 5 runs, std 0.22).",
+    "validation": "Data split into 70% train / 10% dev / 20% test with stratification across tags. Hyper-parameter tuning performed on the development set; best hyper-parameters retrained and each experiment run 5 times to report mean and standard deviation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": null
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The annotation tool screenshot in the paper shows a redacted user name to preserve anonymity. No further privacy or anonymization procedures are discussed.",
+    "data_licensing": "CC-BY-SA 4.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

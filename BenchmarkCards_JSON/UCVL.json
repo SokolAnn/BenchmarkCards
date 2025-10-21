@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "UCVL (A Benchmark for Crime Surveillance Video Analysis with Large Models)",
+    "abbreviation": "UCVL",
+    "overview": "UCVL is the first benchmark designed to evaluate the capabilities of Multimodal Large Language Models in video anomaly analysis, offering a diverse range of tasks and question types.",
+    "data_type": "video",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "UCF-Crime",
+      "UCF-Crime Annotation"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2502.09325"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a rigorous evaluation framework for Multimodal Large Language Models in the context of analyzing crime surveillance videos.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Anomaly Detection",
+      "Classification",
+      "Event Description",
+      "Temporal Grounding",
+      "Multiple-Choice Questioning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "UCF-Crime and UCF-Crime Annotation datasets, reorganized annotations, and new QA pairs generated.",
+    "size": "1,829 videos",
+    "format": "video",
+    "annotation": "Automatically generated QA pairs from human annotations using large language models."
+  },
+  "methodology": {
+    "methods": [
+      "Evaluation of Multimodal Large Language Models with diverse question types",
+      "Pattern matching for objective questions",
+      "Human evaluation for open-ended responses using GPT-4o"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Intersection over Union (IoU)"
+    ],
+    "calculation": "Metrics are calculated based on the model's responses compared to ground truth annotations.",
+    "interpretation": "Scores are normalized to a scale of 0-100, reflecting the model's predictive capabilities and understanding of video anomalies.",
+    "baseline_results": "Results benchmarked against eight prevalent models with varying parameter sizes.",
+    "validation": "Evaluated across test sets to ensure reliability and performance consistency."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

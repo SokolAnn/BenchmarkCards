@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "WORLDREP (WORLD Relationship and Event Prediction)",
+    "abbreviation": "WORLDREP",
+    "overview": "WORLDREP is a novel dataset designed to predict future international events from textual information, leveraging large-language models for accurate annotation of complex multilateral relationships.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "GDELT"
+    ],
+    "resources": [
+      "https://github.com/eogns282/WORLDREP"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a reliable dataset that captures complex multilateral relationships and supports research in text-based event prediction.",
+    "audience": [
+      "ML Researchers",
+      "Political Analysts",
+      "Data Scientists"
+    ],
+    "tasks": [
+      "Event Prediction",
+      "Relationship Labeling"
+    ],
+    "limitations": "Despite covering various international events, WORLDREP may miss less-reported incidents.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from diverse global news articles using GDELT project links.",
+    "size": "44,706 articles",
+    "format": "JSON",
+    "annotation": "Annotated by domain experts in political science and international relations."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Expert labeling",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics calculated based on expert-provided labels against predictions from the models.",
+    "interpretation": "Higher scores represent better alignment with expert annotations, indicating more reliable predictions.",
+    "baseline_results": "Models trained on WORLDREP labels achieved higher performance than those trained on GDELT.",
+    "validation": "Extensively validated through comparisons with domain expert labels."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Transparency"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Lack of training data transparency"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data comprises publicly available news articles, no personal data included.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

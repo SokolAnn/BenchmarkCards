@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "COLD (Chinese Offensive Language Detection)",
+    "abbreviation": "COLD",
+    "overview": "COLD provides a benchmark and dataset for Chinese offensive language detection, assisting in maintaining a civilized environment on social media. It includes the COLD ATASET, which contains 37,480 comments categorized with offensive labels.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/thu-coai/COLDatasettask"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To accelerate research in Chinese offensive language detection through a reliable and versatile benchmark.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Offensive Language Detection"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from social platforms including Zhihu and Weibo.",
+    "size": "37,480 examples",
+    "format": "CSV",
+    "annotation": "Semi-automatically labeled with human verification in a model-in-the-loop setup."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Cross-entropy loss function used for training the offensive language detector.",
+    "interpretation": "Higher accuracy indicates better performance in detecting offensive language.",
+    "baseline_results": "COLD ETECTOR achieved 81% accuracy on the test set.",
+    "validation": "Validated through model-in-the-loop collection and inter-annotator agreement metrics."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset is annotated with gender and regional backgrounds of annotators.",
+    "harm": [
+      "Mislabeled data",
+      "Offensiveness induced by non-offensive prompts"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All data collected is publicly available and does not represent the authors' views.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

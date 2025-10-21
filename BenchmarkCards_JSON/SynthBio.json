@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SynthBio",
+    "abbreviation": "N/A",
+    "overview": "SynthBio is a new evaluation set for the WikiBio dataset, composed of structured attribute lists describing fictional individuals, mapped to natural language biographies. This dataset addresses noise and bias issues found in WikiBio by ensuring better balance with respect to gender and nationality.",
+    "data_type": "structured attribute lists and natural language biographies",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "WikiBio"
+    ],
+    "resources": [
+      "https://storage.googleapis.com/gem-benchmark/SynthBio.json"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a high-quality labeled text dataset for evaluating models trained on the WikiBio dataset without the issues of memorization and noise present in real-world data.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Structure-to-Text Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset consists of synthesized infoboxes and corresponding biographies generated with the aid of large language models and refined by human raters.",
+    "size": "2,249 infoboxes and 4,692 biographies",
+    "format": "JSON",
+    "annotation": "Human raters modified the generated attribute lists and biographies for factual plausibility, fluency, and formatting."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Coverage",
+      "Faithfulness",
+      "Fluency"
+    ],
+    "calculation": "Metrics were calculated based on human evaluations comparing synthesized biographies to their corresponding infoboxes.",
+    "interpretation": "Higher coverage indicates more attributes from the infobox are mentioned in the biography; higher faithfulness indicates the biography contains only information from the infobox.",
+    "baseline_results": "N/A",
+    "validation": "Human raters conducted an evaluation of selected samples from the SynthBio dataset against WikiBio."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset is designed to offer equal representation among male, female, and non-binary individuals.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Apache 2.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

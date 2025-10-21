@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Multi-Source Knowledge Pruning Benchmark",
+    "abbreviation": "N/A",
+    "overview": "This benchmark standardizes a dataset that integrates structured and unstructured knowledge across diverse domains for retrieval-augmented generation (RAG). It provides a foundation for future research in mitigating hallucinations and improving reasoning capabilities in LLMs.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "RGB",
+      "CRUD-RAG",
+      "RAG-Bench",
+      "RAGEval"
+    ],
+    "resources": [
+      "https://github.com/USTCAGI/PruningRAG"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To standardize a dataset that incorporates multiple knowledge sources and to introduce the PruningRAG framework for optimizing retrieval-augmented generation.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "KDD Cup 2024 CRAG competition dataset which comprises both structured API data and unstructured web content.",
+    "size": "4,409 QA pairs",
+    "format": "Markdown",
+    "annotation": "The external knowledge in the dataset is not annotated."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Hallucination Rate",
+      "Missing Rate"
+    ],
+    "calculation": "Accuracy is calculated based on matching predicted answers with ground truth; hallucination is gauged through semantic alignment comparisons.",
+    "interpretation": "Higher accuracy signifies better information retrieval while lower hallucination rates signify fewer misleading outputs.",
+    "baseline_results": "Performance comparison with several RAG frameworks was conducted, demonstrating improved accuracy and reduced hallucination with the PruningRAG framework.",
+    "validation": "Evaluation involved metrics comparing RAG performance under various knowledge sources."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

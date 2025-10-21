@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MultiChallenge",
+    "abbreviation": "N/A",
+    "overview": "MultiChallenge is a pioneering benchmark evaluating large language models (LLMs) on conducting multi-turn conversations with human users, focusing on realistic challenges in human-LLM interactions.",
+    "data_type": "multi-turn conversation history with user instructions",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MT-Bench",
+      "MT-Eval"
+    ],
+    "resources": [
+      "https://github.com/ekwinox117/multi-challenge"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the multi-turn conversational capabilities of large language models and to identify their challenges in engaging with human users.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Multi-turn Conversation Evaluation",
+      "Question Answering",
+      "Instruction Following"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Synthetic data generated through a multi-agent system and human-reviewed.",
+    "size": "273 test examples",
+    "format": "CSV",
+    "annotation": "Manual annotation by human experts."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "LLM as judge with instance-level rubrics"
+    ],
+    "metrics": [
+      "Average Accuracy"
+    ],
+    "calculation": "Metrics are calculated based on the responses of LLMs to user prompts across various challenge categories within the benchmark.",
+    "interpretation": "Higher accuracy indicates better performance in respect to multi-turn conversation challenges.",
+    "baseline_results": "Claude 3.5 Sonnet achieved an average accuracy of 41.4% on MultiChallenge.",
+    "validation": "Evaluation methods are validated through comparison with human-rated outcomes."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Robustness",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Difficulty in accurately following user instructions across multiple turns."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

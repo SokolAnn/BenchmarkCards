@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LongDocURL",
+    "abbreviation": "N/A",
+    "overview": "LongDocURL is a comprehensive benchmark integrating three primary tasks: Long Document Understanding, Numerical Reasoning, and Cross-Element Locating, comprising 20 sub-tasks and utilizing a dataset of 2,325 question-answering pairs covering more than 33,000 pages of documents.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "DocVQA",
+      "MP-DocVQA",
+      "DUDE"
+    ],
+    "resources": [
+      "https://github.com/dengc2023/LongDocURL"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a benchmark for evaluating the document understanding capabilities of large vision language models (LVLMs) and to address the limitations of existing benchmarks in handling long documents and complex elements.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Document Understanding",
+      "Numerical Reasoning",
+      "Cross-Element Locating"
+    ],
+    "limitations": "The types of documents in this benchmark are limited, and a broader range of data sources could enhance evaluation.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collection of over 396 documents crawled from CommonCrawl and other sources.",
+    "size": "33,000 pages",
+    "format": "JSON",
+    "annotation": "Semi-automated pipeline with both automated and human verification phases."
+  },
+  "methodology": {
+    "methods": [
+      "QA Generation",
+      "Automated Verification",
+      "Human Verification"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on the correct answers extracted from the predicted responses.",
+    "interpretation": "A higher score indicates better performance in understanding and reasoning over document elements.",
+    "baseline_results": null,
+    "validation": "Comprehensive evaluation experiments conducted with 26 different configurations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Proper measures have been taken for data anonymity and user privacy.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

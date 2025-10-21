@@ -1,0 +1,98 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "RepoBench: Benchmarking Repository-Level Code Auto-Completion Systems",
+    "abbreviation": "RepoBench",
+    "overview": "RepoBench is a new benchmark specifically designed for evaluating repository-level code auto-completion systems. RepoBench supports both Python and Java and consists of three interconnected evaluation tasks: RepoBench-R (Retrieval), RepoBench-C (Code Completion), and RepoBench-P (Pipeline). Each task respectively measures the system’s ability to retrieve the most relevant code snippets from other files as cross-file context, predict the next line of code with cross-file and in-file context, and handle complex tasks that require a combination of both retrieval and next-line prediction.",
+    "data_type": "text (source code files, code snippets, in-file and cross-file context)",
+    "domains": [
+      "Software Engineering"
+    ],
+    "languages": [],
+    "similar_benchmarks": [
+      "CoCoMIC",
+      "RepoEval",
+      "CodeXGLUE",
+      "PY150",
+      "Github Java Corpus"
+    ],
+    "resources": [
+      "https://github.com/features/copilot",
+      "https://huggingface.co/datasets/codeparrot/github-code",
+      "https://tree-sitter.github.io/tree-sitter/",
+      "https://platform.openai.com/docs/guides/code"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a benchmark tailored for evaluating repository-level code auto-completion systems via three interconnected tasks (RepoBench-R, RepoBench-C, RepoBench-P) spanning Python and Java, enabling more complete comparison of performance in multi-file, real-world programming scenarios.",
+    "audience": [],
+    "tasks": [
+      "Code Retrieval",
+      "Code Completion (next-line prediction)",
+      "End-to-End Pipeline Evaluation (retrieval + code completion)"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Two sources: (1) github-code dataset (aggregated from file-level code files) used primarily for constructing optional training data; (2) newly crawled non-forked GitHub repositories (Python and Java) created after February 9, 2023 and before August 3, 2023 used exclusively as the test set. Tree-sitter is used to parse files and identify import statements and cross-file lines.",
+    "size": "Training: 10,345 Python repositories and 14,956 Java repositories. Test: 1,075 Python repositories and 594 Java repositories.",
+    "format": "N/A",
+    "annotation": "Automatically parsed and processed: import statements and cross-file lines are parsed using tree-sitter; candidate snippets and 'gold snippet' labels are derived programmatically from parsed import usages."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Model-based evaluation",
+      "Baseline comparisons (Random, Lexical, Semantic retrievers; Codex/CodeGen/StarCoder for completion)",
+      "Ablation studies (prompt construction, kept lines for retrieval)",
+      "Fine-tuning experiments"
+    ],
+    "metrics": [
+      "Accuracy@k (acc@1, acc@3, acc@5)",
+      "Exact Match (EM)",
+      "Edit Similarity (ES)"
+    ],
+    "calculation": "RepoBench-R uses Accuracy@k to assess retrieval performance (easy subset: acc@1 and acc@3; hard subset: acc@1, acc@3, acc@5). RepoBench-C and RepoBench-P use Exact Match (EM) and Edit Similarity (ES) following prior work.",
+    "interpretation": "Higher metric values indicate better retrieval or completion performance (e.g., higher acc@k, EM, ES correspond to better performance).",
+    "baseline_results": "Baseline retrieval (RepoBench-R) shows UniXcoder outperforming other retrievers (e.g., Python UniXcoder Easy XF-F acc@1=25.94, acc@3=59.69 in Table 2). RepoBench-C baseline results compare Codex, CodeGen variants, and StarCoder (see Table 3 for EM/ES values across models and sizes). RepoBench-P baseline shows inclusion of cross-file contexts improves performance and UniXcoder-based retrieval methods outperform random retrieval (see Table 4).",
+    "validation": "Random retrieval averaged over 100 repeats for stability; fine-tuning validation used a sampled validation set of 200 examples; multiple ablation studies and experiments reported (prompt construction, kept lines for retrieval)."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Intellectual Property",
+      "Data Laws"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination"
+          ]
+        },
+        {
+          "category": "Intellectual Property",
+          "subcategory": [
+            "Data usage rights restrictions"
+          ]
+        },
+        {
+          "category": "Data Laws",
+          "subcategory": [
+            "Data usage restrictions"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Data is sourced from GitHub repositories under open-source licenses; newly-crawled repositories are restricted to those 'permitted under their respective licenses' as stated in the paper.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

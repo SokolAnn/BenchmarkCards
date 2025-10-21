@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Semantic Captioning: Benchmark Dataset and Graph-Aware Few-Shot In-Context Learning for SQL2Text",
+    "abbreviation": "N/A",
+    "overview": "This paper introduces semantic captioning as a new task that focuses on translating SQL queries into natural language utterances. It develops the first dataset for semantic captioning using iterative in-context learning (ICL) techniques, contributing to the understanding of code comprehension by large language models (LLMs) and generating meaningful descriptions of SQL queries.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "CoSQL",
+      "Spider",
+      "SParC"
+    ],
+    "resources": [
+      "https://github.com/aliwister/ast-icl"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To investigate the capacity of LLMs to understand SQL queries by generating natural language descriptions, thereby facilitating better integration into coding and educational platforms.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Semantic Captioning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Repurposed from Three Benchmark Text2SQL Datasets: CoSQL, Spider, and SParC",
+    "size": "853 SQL queries and 2559 generated utterances",
+    "format": "N/A",
+    "annotation": "Generated using an iterative process with human expert evaluations for quality assurance."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "BLEU-4",
+      "BERTScore",
+      "AlignScore"
+    ],
+    "calculation": "Metrics were calculated based on both semantic and logical consistency comparisons with original SQL utterances and generated captions.",
+    "interpretation": "Higher scores indicate better alignment, semantic accuracy, and logical consistency between the generated captions and the SQL queries they represent.",
+    "baseline_results": "Evaluation revealed strong inter-rater reliability with Fleiss’ Kappa κ= 0.802, demonstrating high-quality caption generation.",
+    "validation": "The dataset and model performance were assessed through a structured evaluation framework involving human experts."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

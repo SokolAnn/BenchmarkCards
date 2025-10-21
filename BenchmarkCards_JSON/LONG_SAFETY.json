@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LONG SAFETY",
+    "abbreviation": "N/A",
+    "overview": "LONG SAFETY is the first comprehensive benchmark specifically designed to evaluate LLM safety in open-ended long-context tasks, encompassing 7 categories of safety issues and 6 user-oriented long-context tasks.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "LongSafetyBench"
+    ],
+    "resources": [
+      "https://github.com/thu-coai/LongSafety"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a systematic evaluation of safety vulnerabilities in long-context tasks for large language models.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Generation",
+      "Brainstorming",
+      "Summarization",
+      "Rewrite",
+      "Role-playing"
+    ],
+    "limitations": "While LONG SAFETY provides a comprehensive evaluation, some attack-oriented tasks, such as many-shot jailbreaking, are not included.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Documents sourced from the Internet related to various safety topics.",
+    "size": "1,543 instances",
+    "format": "N/A",
+    "annotation": "Annotation by crowd-workers to curate safety instructions relevant to each context."
+  },
+  "methodology": {
+    "methods": [
+      "Multi-agent evaluation framework"
+    ],
+    "metrics": [
+      "Safety rate"
+    ],
+    "calculation": "Safety rate is calculated as the proportion of instances for which both responses to the two concatenation formats are assessed as safe.",
+    "interpretation": "Higher safety rates indicate better safety performance in long-context scenarios.",
+    "baseline_results": null,
+    "validation": "Evaluated on 16 representative long-context LLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "Participation of crowd workers was voluntary and they were informed about potential harmful content they may encounter.",
+    "compliance_with_regulations": "N/A"
+  }
+}

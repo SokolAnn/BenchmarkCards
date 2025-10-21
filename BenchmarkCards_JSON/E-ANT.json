@@ -1,0 +1,72 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "E-ANT (Efficient Automatic GUI NavigaTion)",
+    "abbreviation": "E-ANT",
+    "overview": "The E-ANT dataset is the first large-scale Chinese dataset for GUI navigation that contains real human behavior and high-quality screenshots with annotations, including over 40,000 user operation trajectories across more than 20,000 distinct tiny apps and URLs.",
+    "data_type": "user operation trajectories",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "Android in the Wild (AitW)"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive benchmark for evaluating GUI navigation and LLM/MLLM decision-making capabilities, specifically in the context of Chinese mobile applications.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "UI Navigation"
+    ],
+    "limitations": "The data is annotated in an environment that may not fully represent real mobile device interactions.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from diverse tiny-apps, which are lightweight and simple to develop mobile applications.",
+    "size": "over 40,000 trajectories",
+    "format": "JSON",
+    "annotation": "Annotated through interactions of human annotators with the GUI."
+  },
+  "methodology": {
+    "methods": [
+      "Zero-shot inference",
+      "Fine-tuning",
+      "Fine-tuning with data augmentation"
+    ],
+    "metrics": [
+      "Picture-level Accuracy",
+      "Trajectory-level Accuracy"
+    ],
+    "calculation": "Metrics are calculated based on the congruence between model decisions and observed actions in the dataset.",
+    "interpretation": "Higher accuracy indicates better performance in navigating GUI tasks.",
+    "baseline_results": "Baseline results are reported for various models tested on the dataset.",
+    "validation": "The dataset was validated through extensive testing of mainstream models under different strategies."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "The dataset includes a diverse array of tiny apps from different developers, indicating variety in design logic and styles.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

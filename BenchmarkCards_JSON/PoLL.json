@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Panel of LLm Evaluators (PoLL)",
+    "abbreviation": "PoLL",
+    "overview": "The benchmark proposes to evaluate LLM generations using a Panel of LLM evaluators (PoLL) instead of relying on single large judges, demonstrating better correlation with human judgements and cost-effectiveness.",
+    "data_type": "evaluation scores",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMLU"
+    ],
+    "resources": [
+      "https://github.com/lm-sys/arena-hard"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a more effective method for evaluating LLM performance while reducing costs and biases associated with single large model evaluations.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "The current work only addresses three evaluator settings and a limited number of judges, indicating the need for broader applicability investigations.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Evaluations conducted using diverse datasets including KILT.",
+    "size": "N/A",
+    "format": "N/A",
+    "annotation": "Human annotations were performed, comprising diverse professional backgrounds."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Cohen’s κ",
+      "Pearson Correlation",
+      "Kendall Tau"
+    ],
+    "calculation": "Cohen’s kappa measures inter-rater reliability across different evaluators.",
+    "interpretation": "A Cohen’s kappa value over 0.6 indicates a moderate correlation, and over 0.8 indicates strong agreement.",
+    "baseline_results": "PoLL achieved the highest correlation scores with human judgments across various tasks.",
+    "validation": "Validation processes were based on correlation with human judgments and other established datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Annotations included diverse backgrounds to minimize bias.",
+    "harm": "Reducing intra-model bias in evaluations to improve fairness."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LLM-PBE (LLM Privacy BEnchmark)",
+    "abbreviation": "LLM-PBE",
+    "overview": "LLM-PBE is a toolkit designed for the systematic evaluation of data privacy risks in Large Language Models (LLMs), analyzing privacy across the entire lifecycle of LLMs, incorporating diverse attack and defense strategies, and handling various data types and metrics.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://llm-pbe.github.io/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide an in-depth systematization of privacy risks associated with LLMs and enable systematic evaluation of privacy vulnerabilities.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Data Privacy Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Data used in experiments includes datasets like Enron emails, ECHR legal cases, and Python code from GitHub repositories.",
+    "size": "500,000 emails for Enron, 11,500 cases for ECHR, 10.5GB of text from 22,133 GitHub repositories",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Data extraction accuracy",
+      "Membership Inference Attack AUC",
+      "Jailbreaking success rate"
+    ],
+    "calculation": "Metrics are calculated based on the successful extraction of training data and other evaluation approaches.",
+    "interpretation": "Higher accuracy indicates greater privacy risk and vulnerability in the models.",
+    "baseline_results": "N/A",
+    "validation": "Extensive experimentation with multiple LLMs to assess the privacy of training data and prompt leakage."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The toolkit evaluates privacy risks without exposing sensitive information.",
+    "data_licensing": "This work is licensed under the Creative Commons BY-NC-ND 4.0 International License.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

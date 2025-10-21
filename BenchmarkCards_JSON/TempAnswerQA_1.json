@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TempAnswerQA",
+    "abbreviation": "N/A",
+    "overview": "TempAnswerQA is a benchmark distilled from Test of Time and TempTabQA, focusing on numerical temporal question answering to evaluate models beyond exact match (EM) metrics.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Test of Time",
+      "TempTabQA"
+    ],
+    "resources": [
+      "https://github.com/aauss/temporal-answer-qa"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a specialized evaluation procedure for temporal QA tasks that captures continuous error metrics.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from existing temporal QA benchmarks including Test of Time and TempTabQA.",
+    "size": "3,434 QA pairs",
+    "format": "JSON",
+    "annotation": "Questions classified as requiring temporal answers and annotated for expected answer formats."
+  },
+  "methodology": {
+    "methods": [
+      "Regression-based evaluation metrics",
+      "Empirical model evaluation"
+    ],
+    "metrics": [
+      "symmetric mean absolute percentage error (sMAPE)",
+      "mean absolute scaled error (MASE)"
+    ],
+    "calculation": "Metrics calculated based on the absolute differences between expected and predicted temporal answers.",
+    "interpretation": "Smaller values in sMAPE and MASE indicate better model performance, emphasizing the importance of error magnitude.",
+    "baseline_results": "N/A",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC BY 4.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MathComp",
+    "abbreviation": "N/A",
+    "overview": "MathComp is a controlled benchmark of 300 comparison scenarios designed to isolate framing effects on reasoning in large language models (LLMs). It evaluates how different prompt framings induce biases in model predictions through comparative math problems.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://anonymous.4open.science/r/more_or_less_wrong-33B2"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To diagnose reasoning robustness and fairness in LLMs by analyzing how linguistic framing affects model responses to comparative tasks.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Comparative Reasoning"
+    ],
+    "limitations": "The dataset size is limited to 300 comparative samples, which may affect the robustness of findings.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed through a semi-automated process using LLMs and expert filtering.",
+    "size": "300 scenarios",
+    "format": "JSON",
+    "annotation": "Annotated through expert verification and symbolic validation."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Directional Error Rate"
+    ],
+    "calculation": "The proportion of cases in which the model incorrectly selects an answer among all cases where that answer would be erroneous.",
+    "interpretation": "A high Directional Error Rate indicates strong bias toward a certain comparative term due to its framing in the prompt.",
+    "baseline_results": null,
+    "validation": "Validated through expert review and symbolic verification of generated scenarios."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias",
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Identifies how demographic cues, such as gender and race, affect model predictions under linguistic framing.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

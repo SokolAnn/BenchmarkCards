@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CONFLICT BANK",
+    "abbreviation": "N/A",
+    "overview": "CONFLICT BANK is the first comprehensive benchmark developed to systematically evaluate knowledge conflicts in Large Language Models (LLMs) from three aspects: (i) conflicts encountered in retrieved knowledge, (ii) conflicts within the models’ encoded knowledge, and (iii) the interplay between these conflict forms. It includes 7,453,853 claim-evidence pairs and 553,117 QA pairs.",
+    "data_type": "claim-evidence pairs, question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "N/A"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/Warrieryes/CB_claim_evidence",
+      "https://huggingface.co/datasets/Warrieryes/CB_qa",
+      "https://github.com/zhaochen0110/conflictbank"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a large-scale, diverse, and realistic benchmark to study knowledge conflicts in LLMs and how they affect model behavior and reliability.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Wikidata and generated evidence through LLMs.",
+    "size": "7,453,853 claim-evidence pairs and 553,117 QA pairs",
+    "format": "JSON, CSV",
+    "annotation": "Data was generated and curated through a systematic pipeline including fact-evidence entailment checking."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Memorization Ratio (MR)",
+      "Original Answer Ratio (OAR)",
+      "Counter Answer Ratio (CAR)"
+    ],
+    "calculation": "Metrics are calculated based on model performance evaluations comparing default answers to those impacted by conflicting information.",
+    "interpretation": "Higher memorization ratios indicate greater reliance on internal parametric memory, while lower ratios suggest adoption of conflicting knowledge.",
+    "baseline_results": "N/A",
+    "validation": "Pilot experiments conducted on twelve LLMs across four model families."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Misuse",
+          "subcategory": [
+            "Spreading disinformation"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "This benchmark aims to analyze how knowledge conflicts might lead to disinformation and affect model outputs."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Public domain license.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "QualBench",
+    "abbreviation": "N/A",
+    "overview": "QualBench is the first multi-domain Chinese QA benchmark dedicated to localized assessment of Chinese LLMs, incorporating over 17,000 questions across six vertical domains derived from 24 Chinese qualifications.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "GAOKAO-Bench",
+      "LexEval",
+      "MedBench",
+      "CFLUE"
+    ],
+    "resources": [
+      "https://github.com/mengze-hong/QualBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive vertical domain evaluation for Chinese LLMs based on localized qualification exams.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "The dataset is imbalanced with an over-representation of certain domains and focuses exclusively on multiple-choice and true/false questions.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Derived from 24 Chinese qualification examinations across six vertical domains.",
+    "size": "17,316 questions",
+    "format": "N/A",
+    "annotation": "Validated by domain experts for relevance and completeness."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Accuracy calculated based on the number of correct answers over total questions.",
+    "interpretation": "Higher accuracy indicates better model performance on specialized knowledge in localized settings.",
+    "baseline_results": "Qwen2.5 model achieved an accuracy of 75.26% on QualBench.",
+    "validation": "Dataset validation was conducted by industry professionals and via comparison to existing benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All questions are sourced from publicly accessible qualifications.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "Complies with relevant regulations regarding data use and distribution."
+  }
+}

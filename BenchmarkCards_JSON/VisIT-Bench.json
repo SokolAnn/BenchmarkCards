@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "VisIT-Bench (VisualInsTruction Bench mark)",
+    "abbreviation": "VisIT-Bench",
+    "overview": "VisIT-Bench is a benchmark for evaluation of instruction-following vision-language models, consisting of 592 diverse tasks designed for multimodal interactions based on human-authored instruction-conditioned captions. The tasks facilitate a quantitative evaluation of how well models can follow instructions across various scenarios, ranging from recognition to complex reasoning.",
+    "data_type": "instruction-conditioned caption pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "VQAv2",
+      "COCO"
+    ],
+    "resources": [
+      "https://visit-bench.github.io/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a dynamic evaluation benchmark for instruction-following vision-language models, with a focus on real-world applications and human-verified reference outputs.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Vision-Language Instruction Following",
+      "Text Generation",
+      "Visual Question Answering",
+      "Image Captioning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Human-generated instruction-conditioned captions and reference outputs, curated from various instruction families and image datasets.",
+    "size": "592 instances and 1,159 public images",
+    "format": "N/A",
+    "annotation": "Crowdsourced annotation by human workers and reference generation from GPT-4."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "Comparison against references"
+    ],
+    "metrics": [
+      "Win rate vs. human-verified reference",
+      "Elo ratings"
+    ],
+    "calculation": "Metrics are calculated based on human judgments in pairwise comparisons and automated evaluation using GPT-4.",
+    "interpretation": "Higher win rates against human-verified outputs indicate better model performance in following instructions.",
+    "baseline_results": "Top-performing model achieved a win rate of 27.4% against GPT-4 references.",
+    "validation": "Participation is dynamic; models submit predictions for evaluation against held-out test sets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Inaccurate output generation leading to misinterpretation of instructions."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Images sourced are licensed under Creative Commons guidelines, ensuring respect for original licensing terms.",
+    "data_licensing": "CC BY 4.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

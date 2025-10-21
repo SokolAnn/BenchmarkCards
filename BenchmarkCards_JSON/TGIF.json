@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Tumblr GIF (TGIF)",
+    "abbreviation": "TGIF",
+    "overview": "We collected a new dataset, Tumblr GIF (TGIF), with 100K animated GIFs from Tumblr and 120K natural language descriptions obtained via crowdsourcing. The dataset is intended as a testbed for image sequence description systems, where the task is to generate natural language descriptions for animated GIFs or video clips. The paper presents dataset collection, quality control and validation methods, comparisons to existing image and video description datasets, and baseline results using nearest neighbor, statistical machine translation, and recurrent neural networks.",
+    "data_type": "image sequence (animated GIFs) and text (natural language descriptions)",
+    "domains": [
+      "Computer Vision",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MS-COCO",
+      "M-VAD",
+      "MPII-MD",
+      "LSMDC",
+      "YouTube2Text",
+      "TACoS",
+      "YouCook",
+      "SBU",
+      "VQA",
+      "Visual Madlibs"
+    ],
+    "resources": [
+      "https://github.com/raingo/TGIF-Release",
+      "https://www.tumblr.com/docs/en/api/v2",
+      "https://goo.gl/xcYjjE",
+      "https://goo.gl/ZGYIYh"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To develop a testbed for image sequence description systems by providing a large-scale dataset of animated GIFs paired with natural language descriptions and to provide baseline results for the animated GIF / video description task.",
+    "audience": [
+      "Researchers in video description and animated GIF understanding",
+      "Model developers"
+    ],
+    "tasks": [
+      "Image Sequence Description",
+      "Video Description",
+      "Image/Video Captioning",
+      "Visual Content Captioning"
+    ],
+    "limitations": "Animated GIFs are short, without audio and without surrounding contextual information. The language in the dataset (crowdsourced descriptions) tends to be more general and less complex than professionally produced movie descriptions.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "100K animated GIFs collected from Tumblr via the public Tumblr API; natural language descriptions collected via crowdsourcing (CrowdFlower).",
+    "size": "100,000 animated GIFs; 120,000 natural language descriptions (1 sentence per GIF in training, 3 sentences per GIF in test on the reported split). Average GIF duration 3.10 seconds.",
+    "format": "N/A",
+    "annotation": "Crowdsourced via CrowdFlower with 931 workers (workers restricted to Australia, Canada, New Zealand, United Kingdom, and United States). Quality control included syntactic validation (sentence length 8-25 words, ASCII only, no profanity, typed input, must contain a main verb, no named entities via DBpedia Spotlight, grammatical checks via LanguageTool) and semantic validation using a 100-GIF validation set: comparing submitted sentence to 10 reference sentences with METEOR and accepting sentences above a 20% METEOR threshold; qualification tasks and blacklisting were used; workers paid $0.02 per sentence."
+  },
+  "methodology": {
+    "methods": [
+      "Nearest Neighbor (visual nearest neighbor retrieval)",
+      "Statistical Machine Translation (SMT) using semantic roles from WordNet or FrameNet",
+      "Long Short-Term Memory (LSTM) sequence-to-sequence models (S2VT) and variants",
+      "Automated evaluation metrics (BLEU, METEOR, ROUGE, CIDEr)"
+    ],
+    "metrics": [
+      "BLEU (BLEU-1, BLEU-2, BLEU-3, BLEU-4)",
+      "METEOR",
+      "ROUGE",
+      "CIDEr"
+    ],
+    "calculation": "BLEU, ROUGE and CIDEr use exact n-gram matches; METEOR uses synonyms and paraphrases in addition to exact n-gram matches and uses an F1score to combine different matching scores. BLEU is precision-based, ROUGE is recall-based. CIDEr uses TF-IDF weighted n-gram matching with weights optimized using human judgments.",
+    "interpretation": "For all four metrics, a larger score indicates better performance.",
+    "baseline_results": "Reported test results (BLEU-1 BLEU-2 BLEU-3 BLEU-4 METEOR ROUGE-L CIDEr): Nearest Neighbor: 25.3 7.6 2.2 0.7 7.0 21.0 1.5. SMT-WordNet: 27.8 13.6 6.3 3.0 9.6 26.0 8.9. SMT-FrameNet: 34.3 18.1 9.2 4.6 14.1 28.3 10.3. LSTM (S2VT): 51.1 31.3 19.1 11.2 16.1 38.7 27.6. LSTM (Finetune): 52.1 33.0 20.9 12.7 16.7 39.8 31.6.",
+    "validation": "Dataset validated via multi-stage process: automatic syntactic checks, semantic validation using a 100-GIF validation set with 10 reference sentences per GIF and METEOR threshold (20%), worker qualification tasks (qualification required passing 4/5 validation GIFs), random insertion of validation questions into main tasks with blacklisting if validation approval rate falls below 80%, and manual review of failed sentences with updates to reference pool when false alarms occurred."
+  },
+  "targeted_risks": {
+    "risk_categories": [],
+    "atlas_risks": {
+      "risks": null
+    },
+    "demographic_analysis": "Annotators were restricted to Australia, Canada, New Zealand, United Kingdom, and United States to collect fluent English descriptions; 931 workers participated; each worker could rate no more than 800 images.",
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CodeReasoner",
+    "abbreviation": "N/A",
+    "overview": "CodeReasoner is a novel framework that improves the code reasoning ability of large language models (LLMs) by constructing a specialized dataset and utilizing a two-phase training approach combining instruction tuning and reinforcement learning.",
+    "data_type": "python code examples",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Python"
+    ],
+    "similar_benchmarks": [
+      "CRUXEval",
+      "LiveCodeBench",
+      "REval"
+    ],
+    "resources": [
+      "https://github.com/lingxiaotang/CodeReasoner"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enhance the code reasoning capabilities of large language models through improved dataset construction and training methodologies.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Software Engineers"
+    ],
+    "tasks": [
+      "Input/Output Prediction",
+      "Coverage Prediction",
+      "State Tracking",
+      "Path Prediction"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed dataset focusing on succinct test cases to enhance reasoning about code execution, generated via a novel method.",
+    "size": "17,332 test cases for supervised fine-tuning, 18,796 test cases for reinforcement learning",
+    "format": "N/A",
+    "annotation": "Validation through execution of generated test cases and removal of any failing cases."
+  },
+  "methodology": {
+    "methods": [
+      "Instruction tuning",
+      "Reinforcement learning"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Pass@1"
+    ],
+    "calculation": "Metrics calculated based on the model's performance across various benchmarks including comparing outputs against expected results.",
+    "interpretation": "Higher accuracy indicates better performance in predicting outputs and understanding code execution.",
+    "baseline_results": "CodeReasoner -7B outperforms existing models like GPT-4o; detailed performance metrics provided in the paper.",
+    "validation": "Evaluated through extensive tests against established benchmarks like CRUXEval, LiveCodeBench, and REval."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": []
+        },
+        {
+          "category": "Fairness",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

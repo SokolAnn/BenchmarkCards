@@ -1,0 +1,66 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Multimodal ECG Classification Benchmark",
+    "abbreviation": "N/A",
+    "overview": "This benchmark assesses the performance of multimodal models to classify electrocardiograms (ECGs) with 98 Japanese labels, utilizing contrastive learning approaches.",
+    "data_type": "ECG sequence data",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "Japanese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/EQUES/MedLLama3-JP-v2"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assist physicians in interpreting ECG data effectively using a multimodal machine learning model.",
+    "audience": [
+      "Healthcare Practitioners",
+      "Machine Learning Researchers"
+    ],
+    "tasks": [
+      "Multimodal Classification"
+    ],
+    "limitations": "Further improvement in ECG interpretation capabilities is essential for labels with low accuracy.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "ECG records obtained from the University of Tokyo Hospital and Mitsui Hospital.",
+    "size": "37,285 ECG records",
+    "format": "N/A",
+    "annotation": "Labels selected by cardiology specialists from ECG reports."
+  },
+  "methodology": {
+    "methods": [
+      "Contrastive Learning",
+      "Evaluation using Top-1 and Top-5 Accuracy"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy is calculated for both top-1 and top-5 predictions based on the model's classification output.",
+    "interpretation": "Top-1 accuracy indicates the model's primary guess, while top-5 accuracy shows the model's ability to identify the correct answer within its top five predictions.",
+    "baseline_results": "Comparative accuracy with previous research shows slight improvements in specific classification tasks.",
+    "validation": "Evaluated through performance on test datasets with both existing and new labels."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

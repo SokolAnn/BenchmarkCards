@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DATATALES",
+    "abbreviation": "N/A",
+    "overview": "DATATALES is designed to assess the proficiency of language models in data narration, providing 4.9k financial reports paired with corresponding market data to evaluate models’ ability to create clear narratives and analyze complex datasets in finance.",
+    "data_type": "text",
+    "domains": [
+      "Finance"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "RotoWire",
+      "WikiBio",
+      "ToTTo"
+    ],
+    "resources": [
+      "https://github.com/yajingyang/DataTales/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the benchmark is to evaluate language models' capabilities in generating insightful narrations from complex financial data, emphasizing precision and analytical depth.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Data-to-Text Generation"
+    ],
+    "limitations": "The method and dataset are primarily designed for languages with limited morphology, such as English. The dataset currently focuses on market data and textual narratives without visual components.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Financial reports from diverse outlets paired with comprehensive financial ticker data.",
+    "size": "4,900 examples",
+    "format": "CSV",
+    "annotation": "The dataset was annotated through sentence categorization using in-context learning with ChatGPT."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Factual Accuracy",
+      "Insightfulness",
+      "Language Style"
+    ],
+    "calculation": "Evaluated based on numerical predictions accuracy, human assessment of impact and significance of insights, and BLEU scores comparing generated text to human-written reports.",
+    "interpretation": "Good performance is indicated by high factual accuracy, insightful analysis leading to high impact and significance scores, and fluent language style as measured by BLEU scores.",
+    "baseline_results": "Baseline performance of models like GPT-3.5-Turbo, GPT-4, and LLaMa2 models was established in zero-shot and fine-tuned settings.",
+    "validation": "Results were validated through comprehensive human evaluations and automated assessments."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Transparency"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Lack of training data transparency"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "No personal data is included; all data sources respect copyright laws for non-commercial use.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "The dataset complies with relevant copyright regulations and ethical standards for data use."
+  }
+}

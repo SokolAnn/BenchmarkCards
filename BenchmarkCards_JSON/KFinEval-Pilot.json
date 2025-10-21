@@ -1,0 +1,103 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "KFinEval-Pilot: A Comprehensive Benchmark Suite for Korean Financial Language Understanding",
+    "abbreviation": "KFinEval-Pilot",
+    "overview": "KFinEval-Pilot is designed to evaluate large language models in the Korean financial domain. It includes over 1,000 questions curated across three areas: financial knowledge, legal reasoning, and financial toxicity, constructed through a semi-automated pipeline.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Finance"
+    ],
+    "languages": [
+      "Korean"
+    ],
+    "similar_benchmarks": [
+      "PIXIU",
+      "FinBen"
+    ],
+    "resources": [
+      "https://www.datop.or.kr/cmm/mainView.do"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the capabilities of large language models in the Korean financial domain and provide a standard framework for assessing financial AI applications.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Legal Reasoning",
+      "Toxicity Detection"
+    ],
+    "limitations": "The current version of KFinEval-Pilot does not comprehensively cover all sub-domains of finance and remains relatively modest in scope.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from curated questions derived from financial knowledge resources, legal materials, and toxicity scenarios applicable to the Korean financial context.",
+    "size": "1,145 questions",
+    "format": "JSON",
+    "annotation": "Semi-automated generation using GPT-4 prompts with human expert validation."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Scores calculated based on the correctness of model responses against expert-validated answers and the coherence of reasoning processes.",
+    "interpretation": "Higher scores indicate better reasoning and knowledge performance, with specific thresholds defined for accuracy and response quality.",
+    "baseline_results": null,
+    "validation": "Utilized a multi-step validation involving both initial checks and expert reviews to enhance reliability."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Privacy",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Included demographic considerations for fair evaluation across different user groups.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data privacy measures and anonymization procedures include the careful curation of financial scenarios to avoid personal identification.",
+    "data_licensing": "Data is collected from publicly available sources under permissive licenses. All uses are compliant with Korean financial regulations.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "The benchmark has been designed to adhere to the regulatory frameworks of the Korean financial environment."
+  }
+}

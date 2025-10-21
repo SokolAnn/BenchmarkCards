@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FollowBench (Multi-level Fine-grained Constraints Following Benchmark)",
+    "abbreviation": "FollowBench",
+    "overview": "FollowBench is a benchmark designed to comprehensively assess the instruction-following capabilities of Large Language Models (LLMs) by incorporating five different types of fine-grained constraints. It employs a novel multi-level mechanism that adds constraints incrementally to evaluate models on various difficulties.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "MMLU",
+      "BIG-Bench"
+    ],
+    "resources": [
+      "https://github.com/YJiangcm/FollowBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a precise and comprehensive evaluation of instruction-following capabilities in LLMs.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text Generation",
+      "Open-ended Question Answering",
+      "Content Constraints Evaluation",
+      "Situation Constraints Evaluation",
+      "Style Constraints Evaluation",
+      "Format Constraints Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated dataset with instructions based on various NLP tasks.",
+    "size": "820 instructions",
+    "format": "Text",
+    "annotation": "Manual and automated verification by experts."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Hard Satisfaction Rate (HSR)",
+      "Soft Satisfaction Rate (SSR)",
+      "Consistent Satisfaction Levels (CSL)"
+    ],
+    "calculation": "Metrics are calculated based on the proportion of constraints satisfied in the instructions evaluated.",
+    "interpretation": "Higher scores indicate better adherence to constraints by LLMs.",
+    "baseline_results": null,
+    "validation": "Dual-layer human verification on instructions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": [
+      "Potential for biased outputs based on the instructions provided."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

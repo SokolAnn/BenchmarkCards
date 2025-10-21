@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CIBench",
+    "abbreviation": "N/A",
+    "overview": "CIBench is an interactive evaluation framework designed to assess LLMs' ability to utilize code interpreters for data science tasks through consecutive and interactive IPython sessions.",
+    "data_type": "data science tasks with code interpreter usage",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "GSM8K",
+      "MathBench",
+      "HumanEval",
+      "MINT",
+      "QwenAgent",
+      "CodeGen",
+      "DS-1000"
+    ],
+    "resources": [
+      "https://github.com/open-compass/CIBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of CIBench is to provide a comprehensive evaluation of LLMs' proficiency in leveraging code interpreters for solving complex data science problems.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Data Analysis",
+      "Data Visualization",
+      "Machine Learning"
+    ],
+    "limitations": "CIBench is currently limited to Python, and the evaluation metrics may not effectively measure certain data science tasks involving randomness.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Evaluative tasks generated through an LLM-human cooperative approach based on Python libraries relevant to data science.",
+    "size": "234 tasks, 1900+ questions",
+    "format": "Jupyter Notebook",
+    "annotation": "Tasks are refined and verified by human experts to ensure quality and clarity."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Tool Call Rate",
+      "Executable Rate",
+      "Numeric Accuracy",
+      "Text Score",
+      "Visualization Score"
+    ],
+    "calculation": "Metrics are calculated based on both process-oriented and output-oriented evaluations of model performance.",
+    "interpretation": "Higher scores signify better model performance in correctly following instructions and executing code.",
+    "baseline_results": "Comparison against previous benchmarks indicates the relative performance of LLMs on task completion.",
+    "validation": "Comprehensive tests were conducted using multiple models to validate the framework's effectiveness."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Care was taken to exclude personal information in data collection processes.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

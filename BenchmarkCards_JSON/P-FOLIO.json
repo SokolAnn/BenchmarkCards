@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "P-FOLIO",
+    "abbreviation": "N/A",
+    "overview": "P-FOLIO is a human-annotated dataset consisting of diverse and complex reasoning chains for a set of realistic logical reasoning stories, written by humans, collected using a structured annotation protocol.",
+    "data_type": "natural language proofs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "FOLIO"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2410.09207"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate and improve large-language-model (LLM) reasoning capabilities using expert-written proof chains.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Single-step Inference Rule Classification",
+      "Single-step Derivation Reasoning",
+      "Proof Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Expert-written logical reasoning for an existing dataset of logical reasoning, FOLIO.",
+    "size": "1,430 proofs",
+    "format": "JSON",
+    "annotation": "Manual annotation by experts"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Pass@k"
+    ],
+    "calculation": "Metrics calculated using various evaluations including overlap and quality of model-generated reasoning chains compared to human-annotated chains.",
+    "interpretation": "Higher pass@k values indicate better alignment with human reasoning chains.",
+    "baseline_results": "N/A",
+    "validation": "Cross-checking of annotated proofs by multiple annotators."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

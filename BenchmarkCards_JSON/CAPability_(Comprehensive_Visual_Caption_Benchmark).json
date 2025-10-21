@@ -1,0 +1,98 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CAPability (Comprehensive Visual Caption Benchmark)",
+    "abbreviation": "N/A",
+    "overview": "CAPability is a comprehensive multi-view benchmark for evaluating visual captioning across 12 dimensions spanning six critical views. It assesses both the correctness and thoroughness of visual captions using nearly 11K human-annotated images and videos.",
+    "data_type": "image and video with visual element annotations",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MS-COCO",
+      "DetailCaps",
+      "Dream-1K",
+      "VDC"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2502.14914"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a holistic analysis of multimodal large language models’ (MLLMs) capabilities in generating detailed visual captions, identifying their strengths and weaknesses across various dimensions.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Visual Captioning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Human-annotated images and videos curated from various datasets and collected via web crawling.",
+    "size": "11,000 examples",
+    "format": "Custom annotations in multiple formats",
+    "annotation": "Manual annotation by experts"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Precision",
+      "Hit",
+      "Know but cannot tell (K¯T)"
+    ],
+    "calculation": "Precision is calculated as the number of correct annotations over the total number of evaluated annotations. Hit measures the coverage of visual elements in the generated captions based on annotated examples.",
+    "interpretation": "Higher precision indicates better caption correctness, while higher hit indicates thoroughness in capturing visual elements.",
+    "baseline_results": null,
+    "validation": "Cross-validation with multiple models to ensure reliability of the evaluation framework."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Potential for misinformation",
+      "Perpetuation of biases"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Data used is governed by various licenses: CC-BY-4.0, Apache-2.0, etc.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

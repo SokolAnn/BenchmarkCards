@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "AxiOM (Anxiety Oriented Meme classification)",
+    "abbreviation": "AxiOM",
+    "overview": "We propose a novel dataset, AxiOM, derived from the GAD anxiety questionnaire, which categorizes memes into six fine-grained anxiety symptoms.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "RESTORE"
+    ],
+    "resources": [
+      "https://github.com/flamenlp/M3H"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To understand and classify the mental health symptoms expressed in memes.",
+    "audience": [
+      "ML Researchers",
+      "Mental Health Professionals"
+    ],
+    "tasks": [
+      "Multimodal Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Various online sources including Reddit and Instagram, with memes categorized based on the GAD questionnaire.",
+    "size": "3,582 memes",
+    "format": "N/A",
+    "annotation": "Annotated by healthcare professionals based on the GAD questionnaire."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Macro-F1",
+      "Weighted-F1"
+    ],
+    "calculation": "Weighted-F1 score calculated to evaluate performance across multiple symptoms.",
+    "interpretation": "Higher F1 scores indicate better classification performance.",
+    "baseline_results": "M3H achieves improvements of 4.94% on Macro-F1 and 4.20% on Weighted-F1 compared to baseline models.",
+    "validation": "Empirical validation against six competitive baselines."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All personally identifiable information (PII) is thoroughly anonymized to protect user privacy.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

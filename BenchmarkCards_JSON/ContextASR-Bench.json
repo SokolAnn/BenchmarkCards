@@ -1,0 +1,103 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ContextASR-Bench",
+    "abbreviation": "N/A",
+    "overview": "ContextASR-Bench is a comprehensive benchmark designed to assess the linguistic competence of Automatic Speech Recognition (ASR) systems using corpora that feature numerous named entities across multiple domains. It encompasses up to 40,000 data entries with more than 300,000 named entities across over 10 domains.",
+    "data_type": "audio-text pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Healthcare",
+      "Education",
+      "Entertainment",
+      "Technical domains"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "THCHS-30",
+      "Librispeech",
+      "AISHELL-1",
+      "Common Voice"
+    ],
+    "resources": [
+      "https://github.com/MrSupW/ContextASR-Bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the linguistic capabilities of ASR models in recognizing named entities across diverse domains.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Speech Recognition",
+      "Named Entity Recognition"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated data from large audio language models leveraging named entity recognition datasets.",
+    "size": "40,000 test pairs",
+    "format": "audio and transcription files",
+    "annotation": "Automatically generated using LLM-driven text generation and Zero-Shot TTS systems."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Word Error Rate (WER)",
+      "Named Entity Word Error Rate (NE-WER)",
+      "Named Entity False Negative Rate (NE-FNR)"
+    ],
+    "calculation": "Metrics are calculated based on the comparison between transcription outputs and ground-truth text.",
+    "interpretation": "Lower WER, NE-WER, and NE-FNR indicate better ASR performance in recognizing speech and named entities.",
+    "baseline_results": null,
+    "validation": "The benchmark has been validated through comprehensive evaluations of existing ASR models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

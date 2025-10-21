@@ -1,0 +1,69 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "AADG (Audio Anomaly Data Generation)",
+    "abbreviation": "AADG",
+    "overview": "The paper introduces AADG, a framework that leverages Large Language Models (LLMs) as world models to synthetically generate realistic audio data containing anomalies. This addresses the lack of diverse audio anomaly datasets, especially for real-life scenarios beyond industrial settings.",
+    "data_type": "audio",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://arxiv.org/abs/2410.03904"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a scalable tool for creating diverse and realistic audio datasets, which are essential to advance audio anomaly detection technologies.",
+    "audience": [
+      "ML Researchers",
+      "Audio Engineers"
+    ],
+    "tasks": [
+      "Anomaly Detection"
+    ],
+    "limitations": "The generated audio may sometimes sound unnatural and can be computationally intensive to detect.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Synthetic audio generated using the AADG framework.",
+    "size": "N/A",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Mean Opinion Score (MOS)",
+      "Frechet Audio Distance (FAD)"
+    ],
+    "calculation": "Metrics are calculated based on user scores for audio accuracy and alignment of generated audio with text prompts.",
+    "interpretation": "A higher Mean Opinion Score indicates better adherence to the audio description; lower Frechet Audio Distance indicates better match in audio separation tasks.",
+    "baseline_results": "AADG generated audio scores 0.88 on adherence to prompts, while existing models scored lower.",
+    "validation": "Each generated audio is verified for logical coherence and alignment with the scenario descriptions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

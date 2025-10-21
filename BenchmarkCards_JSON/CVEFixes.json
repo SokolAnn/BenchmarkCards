@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CVEFixes (Refined Version)",
+    "abbreviation": "CVEFixes",
+    "overview": "This paper presents SCoPE, a code processing framework for refining the CVEFixes dataset specifically for Software Vulnerability Detection (SVD), addressing prior flaws in the dataset and aiming to enhance the performance of LLMs.",
+    "data_type": "source code",
+    "domains": [
+      "Computer Science"
+    ],
+    "languages": [
+      "C",
+      "C++"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/jp2425/SCoPE",
+      "https://zenodo.org/records/7029359"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To refine the CVEFixes dataset for software vulnerability detection using the SCoPE framework.",
+    "audience": [
+      "ML Researchers",
+      "Cybersecurity Experts"
+    ],
+    "tasks": [
+      "Software Vulnerability Detection"
+    ],
+    "limitations": "The refined dataset may still contain faulty entries not identified during processing.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Created from the CVEFixes dataset version 1.0.7.",
+    "size": "11,573 entries",
+    "format": "CSV",
+    "annotation": "Processed to remove duplicates and improve feature representation."
+  },
+  "methodology": {
+    "methods": [
+      "Feature representation analysis",
+      "Fine-tuning of LLMs"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Accuracy",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "Metrics were calculated based on the performance of the LLMs trained on the refined dataset.",
+    "interpretation": "Results suggested that the model performance did not significantly improve post-refinement of the dataset.",
+    "baseline_results": null,
+    "validation": "Used an 80-10-10 split for train, test, and validation sets with stratification."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "The possibility of training on erroneous data points could impact the models' effectiveness."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LongV ALE (Vision-Audio-Language Event Benchmark Towards Time-Aware Omni-Modal Perception of Long Videos)",
+    "abbreviation": "LongV ALE",
+    "overview": "LongV ALE is the first omni-modality long video benchmark, providing precise temporal boundaries and detailed relation-aware captions for 105K omni-modal events within 8.4K high-quality long videos. It aims to enhance cross-modal learning and fine-grained temporal understanding.",
+    "data_type": "omni-modal events with temporal boundaries and captions",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://ttgeng233.github.io/LongVALE/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive benchmark for fine-grained omni-modal video understanding.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Omni-modal Temporal Video Grounding",
+      "Omni-modal Dense Video Captioning",
+      "Omni-modal Segment Captioning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Derived from the ACA V-100M dataset, filtered for high-quality video content.",
+    "size": "8,411 videos with 105,730 omni-modal events",
+    "format": "N/A",
+    "annotation": "Automated annotation pipeline for high-quality temporal boundaries and captions."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Recall",
+      "Mean Intersection over Union (mIoU)",
+      "CIDEr",
+      "METEOR"
+    ],
+    "calculation": "Metrics calculated based on the comparison of predicted event boundaries and captions against ground truth values.",
+    "interpretation": "Higher scores indicate better performance in correctly identifying temporal boundaries and generating accurate captions.",
+    "baseline_results": null,
+    "validation": "Manual checks and corrections for the test set to ensure accuracy in annotations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Privacy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "We used Gemini’s safety mechanism to block harmful responses and removed individual names to protect privacy.",
+    "data_licensing": "Data sourced from ACA V-100M under MIT license; annotations will be under CC BY-NC-SA 4.0 license.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

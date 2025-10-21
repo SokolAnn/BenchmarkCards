@@ -1,0 +1,78 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MCG-S2ORC",
+    "abbreviation": "N/A",
+    "overview": "MCG-S2ORC is a curated dataset composed of English-language academic research papers in Computer Science, showcasing multiple citation instances for the task of multi-citation text generation.",
+    "data_type": "citation texts",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "S2ORC"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the benchmark is to facilitate research in citation text generation, particularly focusing on generating coherent multi-sentence citations.",
+    "audience": [
+      "ML Researchers",
+      "Academic Researchers",
+      "Data Scientists"
+    ],
+    "tasks": [
+      "Citation Text Generation"
+    ],
+    "limitations": "The maximum token length restriction of the LLMs used limits the number of relations incorporated into the prompts.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated dataset created from the S2ORC dataset focused on multi-reference citation texts.",
+    "size": "17,210 samples",
+    "format": "JSON",
+    "annotation": "Manually curated and constructed from extracted citation information."
+  },
+  "methodology": {
+    "methods": [
+      "Fine-tuning of LLaMA, Alpaca, and Vicuna models"
+    ],
+    "metrics": [
+      "METEOR",
+      "ROUGE-1",
+      "ROUGE-2",
+      "ROUGE-L"
+    ],
+    "calculation": "Metrics are calculated based on the degree of similarity between generated citation texts and actual reference citation texts.",
+    "interpretation": "Higher METEOR and ROUGE scores indicate better performance in generating coherent citation text.",
+    "baseline_results": null,
+    "validation": "Results compared against baseline models to assess performance improvement."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

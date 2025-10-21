@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Historical Ink: 19th Century Latin American Spanish Newspaper Corpus with LLM OCR Correction",
+    "abbreviation": "N/A",
+    "overview": "This paper presents a novel dataset of 19th-century Latin American newspaper texts addressing a critical gap in specialized corpora for historical and linguistic analysis in this region, and develops a framework utilizing a Large Language Model for OCR error correction and linguistic surface form detection.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Spanish"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/Flaglab/latam-xix",
+      "https://github.com/historicalink/LatamXIX"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To address the gap in specialized corpora for 19th-century Latin American newspapers and provide tools for OCR error correction in historical texts.",
+    "audience": [
+      "ML Researchers",
+      "Historians",
+      "Digital Humanists"
+    ],
+    "tasks": [
+      "Text Correction",
+      "Linguistic Analysis"
+    ],
+    "limitations": "Manual evaluation for assessing OCR accuracy introduces subjectivity.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Compiled from Colombian digital newspaper archives and physical collections including 197 newspaper titles across various Latin American countries.",
+    "size": "128MB",
+    "format": "N/A",
+    "annotation": "Errors detected and classified through a semi-automated framework utilizing a Large Language Model."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Character Error Rate (CER)",
+      "MAP"
+    ],
+    "calculation": "Character error rate (CER) is calculated based on OCR output compared to the ground truth.",
+    "interpretation": "Lower CER values indicate better accuracy of OCR corrections.",
+    "baseline_results": null,
+    "validation": "Framework validated through expert evaluation of correction outputs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Societal Impact"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on education: plagiarism"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset includes diverse contributions from various Latin American countries.",
+    "harm": "Potential bias introduced by OCR errors and hallucinations from the LLM affecting historical accuracy."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

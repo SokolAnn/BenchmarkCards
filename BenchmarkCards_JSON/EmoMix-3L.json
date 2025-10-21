@@ -1,0 +1,78 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "EmoMix-3L: A Code-Mixed Dataset for Bangla-English-Hindi Emotion Detection",
+    "abbreviation": "EmoMix-3L",
+    "overview": "EmoMix-3L is a novel multi-label emotion detection dataset containing code-mixed data from three different languages (Bangla, Hindi, and English) specifically designed to address emotion detection in code-mixed texts.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Bangla",
+      "Hindi",
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/GoswamiDhiman/EmoMix-3L"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a high-quality test dataset for evaluating multi-label emotion detection models in a code-mixed environment.",
+    "audience": [
+      "Researchers in Natural Language Processing",
+      "Emotion Detection Model Developers"
+    ],
+    "tasks": [
+      "Emotion Detection"
+    ],
+    "limitations": "The dataset is limited in size for training purposes, offering only 1,071 instances.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from undergraduate students fluent in Bangla, Hindi, and English who created code-mixed posts on various topics.",
+    "size": "1,071 instances",
+    "format": "N/A",
+    "annotation": "Annotated by fluent speakers of Bangla, Hindi, and English in two stages to ensure high quality."
+  },
+  "methodology": {
+    "methods": [
+      "Monolingual models evaluation",
+      "Bilingual models evaluation",
+      "Multilingual models evaluation",
+      "Zero-shot prompting with GPT-3.5"
+    ],
+    "metrics": [
+      "F1 Score"
+    ],
+    "calculation": "F1 Scores were calculated for various models using both synthetic and natural datasets.",
+    "interpretation": "Higher F1 Score indicates better performance in correctly identifying emotions in code-mixed texts.",
+    "baseline_results": null,
+    "validation": "The dataset was validated through multiple annotation rounds to ensure agreement among annotators."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": "The dataset may contain transliterated tokens and misspellings, which could challenge model accuracy."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data was collected with voluntary contributions to avoid privacy concerns.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Participants were informed of the data usage for research purposes.",
+    "compliance_with_regulations": "N/A"
+  }
+}

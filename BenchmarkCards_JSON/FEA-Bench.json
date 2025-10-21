@@ -1,0 +1,68 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FEA-Bench",
+    "abbreviation": "N/A",
+    "overview": "FEA-Bench is a benchmark designed to assess the ability of large language models (LLMs) to perform incremental development within code repositories, specifically focusing on the implementation of new features through a dataset derived from pull requests in 83 GitHub repositories.",
+    "data_type": "task instances for feature implementation",
+    "domains": [
+      "Software Engineering"
+    ],
+    "languages": [
+      "Python"
+    ],
+    "similar_benchmarks": [
+      "SWE-bench"
+    ],
+    "resources": [
+      "https://github.com/microsoft/FEA-Bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the repository-level incremental code development capabilities of large language models (LLMs) when implementing new features.",
+    "audience": [
+      "ML Researchers",
+      "Software Engineers"
+    ],
+    "tasks": [
+      "Code Generation"
+    ],
+    "limitations": "The benchmark includes only Python repositories and may exhibit certain limitations regarding data quality and diversity.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Pull requests from 83 GitHub repositories.",
+    "size": "1,401 task instances",
+    "format": "N/A",
+    "annotation": "Automatically filtered and paired with unit test files for verification."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Resolved Ratio"
+    ],
+    "calculation": "The resolved ratio is defined as the percentage of task instances for which all unit tests pass.",
+    "interpretation": "A higher resolved ratio indicates better performance in successfully implementing new features.",
+    "baseline_results": null,
+    "validation": "Each task instance is validated by checking the pass status of related unit tests before and after applying code changes."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Data obtained from publicly available repositories with appropriate licenses.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

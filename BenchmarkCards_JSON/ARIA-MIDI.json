@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ARIA-MIDI",
+    "abbreviation": "N/A",
+    "overview": "We introduce an extensive new dataset of MIDI files, created by transcribing audio recordings of piano performances into their constituent notes.",
+    "data_type": "MIDI files",
+    "domains": [
+      "Music Information Retrieval"
+    ],
+    "languages": [
+      "N/A"
+    ],
+    "similar_benchmarks": [
+      "MAESTRO",
+      "GiantMIDI",
+      "ATEPP",
+      "PiJAMA"
+    ],
+    "resources": [
+      "https://github.com/loubbrad/aria-midi"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Provide a large, high-quality dataset of piano transcriptions to accelerate music information retrieval research.",
+    "audience": [
+      "Music Information Retrieval Researchers",
+      "Deep Learning Practitioners"
+    ],
+    "tasks": [
+      "Automatic Music Transcription",
+      "Data Analysis"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Transcribed audio recordings from YouTube and other publicly accessible sources.",
+    "size": "31,186,253 MIDI files, approximately 100,629 hours of transcribed audio",
+    "format": "MIDI",
+    "annotation": "Automatically generated using a language model and audio classifiers."
+  },
+  "methodology": {
+    "methods": [
+      "Automated transcription using the Aria-AMT model",
+      "Data crawling through YouTube and API scoring"
+    ],
+    "metrics": [
+      "Transcription accuracy as assessed on MAESTRO and MAPS test sets"
+    ],
+    "calculation": "Accuracy calculated using the mir eval library with default settings.",
+    "interpretation": "Higher scores indicate better performance in transcription models.",
+    "baseline_results": "Transcription model achieves over 98% precision on MAESTRO data.",
+    "validation": "Evaluated against human labels for classification and transcription accuracy."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC-BY-NC-SA 4.0 license",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

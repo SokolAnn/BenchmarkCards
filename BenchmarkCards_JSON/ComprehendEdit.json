@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ComprehendEdit",
+    "abbreviation": "N/A",
+    "overview": "ComprehendEdit is a comprehensive benchmark comprising eight diverse tasks from multiple datasets to evaluate multimodal knowledge editing techniques. It introduces two novel metrics: Knowledge Generalization Index (KGI) and Knowledge Preservation Index (KPI) to address current evaluation limitations.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMEdit",
+      "KEBench"
+    ],
+    "resources": [
+      "https://github.com/yaohui120/ComprehendEdit"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a robust evaluation framework for multimodal knowledge editing and establish a baseline method.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Object Recognition",
+      "Object Attributes",
+      "Object Counting",
+      "Object Existence",
+      "Scene Information",
+      "Spatial Relationship",
+      "Text Recognition",
+      "Numerical Inference"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Multiple datasets including GQA, TallyQA, VSR, TextVQA, and MathVista.",
+    "size": "17,932 samples",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Hierarchical In-Context Editing (HICE)"
+    ],
+    "metrics": [
+      "Knowledge Generalization Index (KGI)",
+      "Knowledge Preservation Index (KPI)"
+    ],
+    "calculation": "Metrics are calculated based on model performance before and after editing using defined indicators.",
+    "interpretation": "KGI assesses the improvement on previously misclassified samples, while KPI evaluates correctness on previously correct samples post-editing.",
+    "baseline_results": null,
+    "validation": "The benchmark validates editing techniques across multiple metrics."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

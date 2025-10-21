@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "BioMol-MQA: A Multi-Modal Question Answering Dataset For LLM Reasoning Over Bio-Molecular Interactions",
+    "abbreviation": "BioMol-MQA",
+    "overview": "BioMol-MQA is a new question-answering (QA) dataset on polypharmacy, composed of a multimodal knowledge graph with text and molecular structure for information retrieval and challenging questions designed to test LLM capabilities in retrieving and reasoning over multimodal data.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MoleculeQA",
+      "PubChemQA",
+      "RAGBench",
+      "ChatRAG Bench",
+      "CRAG",
+      "STaRK"
+    ],
+    "resources": [
+      "https://github.com/saptarshi059/biomolqa/tree/main/code/common_scripts"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate models for handling complex, real-world medical queries involving multi-modal reasoning.",
+    "audience": [
+      "ML Researchers",
+      "Healthcare Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "The dataset is limited to drugs that have both text and SMILES representation; otherwise, relevant proteins only have text, creating potential imbalances.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "A multimodal knowledge graph with drug-drug and drug-protein interactions along with text and SMILES for each drug.",
+    "size": "1,686 questions",
+    "format": "JSON",
+    "annotation": "Manually generated questions integrated with multimodal data."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Lexical EM",
+      "Lexical F1",
+      "BERTScore F1"
+    ],
+    "calculation": "Metrics calculated by comparing generated model outputs to ground truth.",
+    "interpretation": "Higher scores indicate better model performance in answering questions accurately.",
+    "baseline_results": "Results on existing LLMs that show improvement with multimodal context.",
+    "validation": "Dataset validated through human evaluators and LLM performance metrics."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Questions crafted to explore reasoning across demographics in healthcare.",
+    "harm": "Potential misinformation leading to adverse health decisions if models misinterpret complex queries."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

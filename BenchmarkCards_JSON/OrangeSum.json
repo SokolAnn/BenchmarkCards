@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "OrangeSum",
+    "abbreviation": "N/A",
+    "overview": "OrangeSum is a novel French summarization dataset, designed to address the lack of generative tasks in the existing FLUE benchmark, enabling the evaluation of summarization models for the French language.",
+    "data_type": "summarization pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "French"
+    ],
+    "similar_benchmarks": [
+      "XSum"
+    ],
+    "resources": [
+      "https://github.com/Tixierae/OrangeSum"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a dataset for evaluating abstractive summarization models for the French language.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Summarization"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Scraped articles from the Orange Actu website, featuring titles and abstracts for summarization tasks.",
+    "size": "6,000 examples",
+    "format": "CSV",
+    "annotation": "Manual extraction from the scraped articles"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "ROUGE-1",
+      "ROUGE-2",
+      "ROUGE-L",
+      "BERTScore"
+    ],
+    "calculation": "Metrics calculated based on n-gram overlap and contextual similarity for summarization text.",
+    "interpretation": "Higher ROUGE scores indicate better alignment between generated summaries and gold references.",
+    "baseline_results": "Performance comparisons against XSum and BART-based models.",
+    "validation": "Model performance is validated through quantitative metrics and human evaluation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

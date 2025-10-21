@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LaRA (Long-context Retrieval-Augmented Generation Benchmark)",
+    "abbreviation": "LaRA",
+    "overview": "LaRA is a novel benchmark specifically designed to rigorously compare Retrieval-Augmented Generation (RAG) and Long-Context (LC) Large Language Models (LLMs), encompassing 2326 test cases across four practical QA task categories and three types of naturally occurring long texts.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ZeroSCROLLS",
+      "LongBench",
+      "BAMBOO",
+      "Loong",
+      "∞-bench"
+    ],
+    "resources": [
+      "https://github.com/Alibaba-NLP/LaRA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a systematic evaluation framework for comparing Retrieval-Augmented Generation and Long-Context models, leading to actionable guidelines for practitioners.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "LaRA dataset and test cases created for the benchmark.",
+    "size": "2,326 test cases",
+    "format": "N/A",
+    "annotation": "QA pairs constructed using a combination of human annotation and LLM-assisted generation."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Evaluation of model performance based on defined metrics using both automated and human evaluations.",
+    "interpretation": "Accuracy measurements reflect how well models perform on tasks within the LaRA benchmark.",
+    "baseline_results": null,
+    "validation": "Cohen’s Kappa coefficient computed to assess consistency between LLM and human evaluations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack",
+            "Prompt injection attack"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

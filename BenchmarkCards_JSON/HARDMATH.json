@@ -1,0 +1,74 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "HARDMATH",
+    "abbreviation": "N/A",
+    "overview": "HARDMATH is a dataset addressing the lack of advanced applied mathematics problems in existing Large Language Model benchmark datasets. It features 1,466 problems requiring analytical approximation techniques, making it challenging for LLMs. The dataset includes HARDMATH-MINI, a subsampled test set with 366 problems, and emphasizes issues like mathematical reasoning and computational tool use.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MATH",
+      "GSM8K",
+      "MATHQA",
+      "ODYSSEY-MATH"
+    ],
+    "resources": [
+      "https://github.com/sarahmart/HARDMath",
+      "https://arxiv.org/abs/2410.09988"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To benchmark LLMs' capabilities in handling advanced applied mathematics problems that require analytical reasoning and computational tools.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Mathematical Reasoning",
+      "Equation Solving"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Consists of algorithmically generated problems and their solutions, validated against numerical results.",
+    "size": "1,466 problems",
+    "format": "JSON",
+    "annotation": "Automatically generated solutions with human verification for accuracy."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy is calculated based on the proportion of correct answers provided by LLMs against the dataset solutions.",
+    "interpretation": "Performance is assessed through model accuracy comparing outputs to ground truth answers.",
+    "baseline_results": "Leading models were evaluated, with GPT-4 achieving an overall accuracy of 43.8% on HARDMATH-MINI.",
+    "validation": "Systems of equations and numerical solutions were used for validation against known ground truths."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

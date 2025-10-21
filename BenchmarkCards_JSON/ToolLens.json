@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ToolLens",
+    "abbreviation": "N/A",
+    "overview": "ToolLens is a new dataset crafted specifically for multi-tool scenarios, containing queries that require the collaborative use of multiple tools to simulate real-world retrieval conditions.",
+    "data_type": "query-tool pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ToolBench"
+    ],
+    "resources": [
+      "https://github.com/quchangle1/COLT"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive resource for improving tool retrieval performance in the context of large language models (LLMs).",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Tool Retrieval"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from existing tool data and refined using human verification and GPT-4 generative prompts.",
+    "size": "18,770 queries",
+    "format": "N/A",
+    "annotation": "Human verified and generated using GPT-4"
+  },
+  "methodology": {
+    "methods": [
+      "Fine-tuning PLM-based retrieval models",
+      "Collaborative learning with bipartite graphs"
+    ],
+    "metrics": [
+      "COMP@K",
+      "Recall@K",
+      "NDCG@K"
+    ],
+    "calculation": "Performance is calculated using a novel metric COMP@K, which measures the completeness of retrieved tools.",
+    "interpretation": "Higher COMP@K values indicate better completeness in the tool retrieval results.",
+    "baseline_results": "N/A",
+    "validation": "Extensive experiments including comparisons to established benchmarks and metrics."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

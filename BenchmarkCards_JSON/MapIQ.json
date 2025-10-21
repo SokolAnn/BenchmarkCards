@@ -1,0 +1,82 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MapIQ",
+    "abbreviation": "N/A",
+    "overview": "MapIQ is a benchmark dataset comprising 14,706 question-answer pairs designed to gauge the map-reading capabilities of state-of-the-art multimodal large language models (MLLMs) across three map types—choropleth maps, cartograms, and proportional symbol maps—spanning six distinct themes.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Geographical Information Systems"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MapQA",
+      "MapWise"
+    ],
+    "resources": [
+      "https://osf.io/kp6j4/?view_only=fa2847a270094fd98512127bebd8de87"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a diverse and thematically rich benchmark dataset for evaluating the low-level map-reading capabilities of state-of-the-art MLLMs and understanding the influences of thematic content on model performance.",
+    "audience": [
+      "ML Researchers",
+      "Geospatial Data Analysts",
+      "Data Visualization Experts"
+    ],
+    "tasks": [
+      "Visual Question Answering",
+      "Map Reading"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Data sourced from the U.S. Census Bureau, Environmental Protection Agency, FBI Crime Data Explorer, and Centers for Disease Control and Prevention.",
+    "size": "14,706 question-answer pairs",
+    "format": "JSON",
+    "annotation": "Manually validated questions and answers with ground truth extraction programmatically verified against geospatial metadata."
+  },
+  "methodology": {
+    "methods": [
+      "Zero-shot prompting",
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Accuracy for binary questions scored as 100 (correct) or 0 (incorrect), while F1 Score used for MCQ and list-type questions.",
+    "interpretation": "Higher scores indicate better model performance in accurately answering map-related questions.",
+    "baseline_results": "Humans outperformed MLLMs by an average margin of 50.35% across all four experimental variables.",
+    "validation": "Responses validated for consistency and accuracy, ensuring model responses were formatted correctly for evaluation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

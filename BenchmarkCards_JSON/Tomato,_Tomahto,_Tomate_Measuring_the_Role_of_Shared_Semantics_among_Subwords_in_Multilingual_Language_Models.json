@@ -1,0 +1,114 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Tomato, Tomahto, Tomate: Measuring the Role of Shared Semantics among Subwords in Multilingual Language Models",
+    "abbreviation": "N/A",
+    "overview": "This work measures the role of shared semantics among subwords in multilingual language models (mLMs) by forming 'semantic tokens' through merging semantically similar subwords and their embeddings, evaluating these updated mLMs on five downstream tasks across thirty languages.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Arabic",
+      "Bulgarian",
+      "German",
+      "Greek",
+      "Spanish",
+      "French",
+      "Hindi",
+      "Indonesian",
+      "Japanese",
+      "Korean",
+      "Russian",
+      "Swahili",
+      "Thai",
+      "Turkish",
+      "Ukrainian",
+      "Vietnamese",
+      "Hausa",
+      "Igbo",
+      "Kiswahili",
+      "Luganda",
+      "Pidgin"
+    ],
+    "similar_benchmarks": [
+      "MasakhaNER",
+      "XNLI",
+      "TyDi QA",
+      "MIRACL"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2411.04530"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To investigate the effectiveness of shared semantics in multilingual language models through semantic tokenization and evaluate its effect on cross-lingual generalization across various tasks.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Language Understanding Researchers"
+    ],
+    "tasks": [
+      "Named Entity Recognition",
+      "Question Answering",
+      "Natural Language Inference",
+      "Information Retrieval"
+    ],
+    "limitations": "The work focuses on encoder-only models, limiting the findings to tasks that do not heavily involve pragmatics or require precise semantic understanding such as figurative language.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Evaluated on 5 heterogeneous multilingual downstream tasks including MasakhaNER, XNLI, TyDi QA, MIRACL, with a focus on cross-lingual semantic tokenization.",
+    "size": "N/A",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Semantic Grouping (SG)",
+      "Cross-lingual Subword Alignment (CLSA)",
+      "Continual Pretraining"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Accuracy",
+      "nDCG@10"
+    ],
+    "calculation": "Metrics calculated based on the effectiveness of semantic tokens across different tasks and grouping ratios.",
+    "interpretation": "The results suggest that using shared subword-level semantics can maintain classification effectiveness even with a significantly reduced vocabulary size.",
+    "baseline_results": "N/A",
+    "validation": "Results validated across different models (mBERT, XLM-R) to ensure generalizability of findings."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis of performance is conducted across various languages to explore fairness and bias issues.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

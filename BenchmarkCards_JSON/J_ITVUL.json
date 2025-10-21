@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "J ITVUL (Just-In-Time Vulnerability Detection Benchmark)",
+    "abbreviation": "J ITVUL",
+    "overview": "J ITVUL is a benchmark for just-in-time (JIT) vulnerability detection in code repositories, consisting of 1,758 pairwise commits spanning 91 vulnerability types, enabling comprehensive evaluation of detection capabilities.",
+    "data_type": "code samples",
+    "domains": [
+      "Software Engineering"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ReposVul",
+      "VulEval"
+    ],
+    "resources": [
+      "https://github.com/username/repo"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the effectiveness of LLMs and LLM-based agents for JIT vulnerability detection in code repositories.",
+    "audience": [
+      "ML Researchers",
+      "Software Engineers",
+      "Security Analysts"
+    ],
+    "tasks": [
+      "Vulnerability Detection"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Built from 879 Common Vulnerabilities and Exposures (CVEs) spanning 91 vulnerability types, extracted from the PrimeVul dataset.",
+    "size": "1,758 paired commits",
+    "format": "N/A",
+    "annotation": "Manually verified against commit history."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Pairwise Accuracy (pAcc)"
+    ],
+    "calculation": "F1 Score is calculated as 2 * TP / (2 * TP + FP + FN); pAcc is the proportion of pairs correctly labeled.",
+    "interpretation": "Higher F1 scores do not always reflect superior detection abilities; pairwise evaluation is essential for capturing nuanced vulnerability characteristics.",
+    "baseline_results": "N/A",
+    "validation": "Validation through comparative evaluation against existing benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MEASURING MASSIVE MULTITASK LANGUAGE UNDERSTANDING",
+    "abbreviation": "N/A",
+    "overview": "The benchmark assesses a text model’s multitask accuracy across 57 diverse tasks spanning subjects from elementary mathematics to advanced professional topics. It measures models' extensive world knowledge and problem-solving abilities in a zero-shot and few-shot context.",
+    "data_type": "multiple-choice questions",
+    "domains": [
+      "Natural Language Processing",
+      "Social Sciences",
+      "STEM",
+      "Humanities"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "GLUE",
+      "SuperGLUE",
+      "HellaSwag"
+    ],
+    "resources": [
+      "https://github.com/hendrycks/test"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate how well text models understand and apply knowledge learned from extensive pretraining across diverse subjects.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Text Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Manually collected questions from freely available educational materials, including practice questions for standardized tests.",
+    "size": "15,908 questions",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Models' classification accuracy is computed across all examples and tasks.",
+    "interpretation": "Performance is measured to track state-of-the-art capabilities compared to expert human accuracy.",
+    "baseline_results": "Random chance accuracy is around 25%, while expert-level accuracy on the most challenging subjects is approximately 89.8%.",
+    "validation": "A development and validation set are utilized for hyperparameter tuning."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Misuse",
+          "subcategory": [
+            "Spreading disinformation"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Inadequate knowledge in areas of law and morality could lead to harmful applications."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

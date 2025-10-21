@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SHALE (Scalable HAL lucination Evaluation)",
+    "abbreviation": "SHALE",
+    "overview": "SHALE is a scalable hallucination benchmark designed to assess both faithfulness and factuality hallucinations via a fine-grained hallucination categorization scheme, comprising over 30K image-instruction pairs across various evaluation tasks and scenarios.",
+    "data_type": "image-instruction pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/BeiiiY/SHALE"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation of hallucinations in Large Vision-Language Models (LVLMs) under diverse conditions and scenarios.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Discriminative Tasks",
+      "Generative Tasks"
+    ],
+    "limitations": "SHALE currently covers only a representative subset rather than an exhaustive range of fine-grained hallucination dimensions.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated using an automated data construction pipeline based on predefined prompt templates filled with diverse image elements.",
+    "size": "30,000 image-instruction pairs",
+    "format": "JSON",
+    "annotation": "Automatically generated with minimal human verification for quality control."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation via LLM-as-a-Judge approach"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Non-hallucination rate",
+      "Resistance Rate (RR)"
+    ],
+    "calculation": "Non-hallucination rates are calculated by prompting an LLM to assess if responses from models are hallucination-free.",
+    "interpretation": "A higher non-hallucination rate indicates better model performance in handling hallucinations.",
+    "baseline_results": null,
+    "validation": "Extensive experiments were conducted on over 20 mainstream LVLMs revealing significant factuality hallucinations and model sensitivities."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "No identifiable personal data or explicit content was included in the benchmark.",
+    "data_licensing": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

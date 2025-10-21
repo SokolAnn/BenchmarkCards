@@ -1,0 +1,72 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ROBOTOUILLE",
+    "abbreviation": "N/A",
+    "overview": "ROBOTOUILLE is a challenging benchmark environment designed to test LLM agents’ ability to handle long-horizon asynchronous scenarios through datasets that capture increasingly complex planning challenges requiring agents to manage overlapping tasks and interruptions.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ALFWorld",
+      "WebShop",
+      "PlanBench"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2502.05227"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To stress test LLM agents on synchronous, asynchronous, and multi-agent settings.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Asynchronous Planning",
+      "Multi-Agent Planning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Procedurally generated tasks consisting of synchronous, asynchronous, and multi-agent datasets.",
+    "size": "30 tasks with 10 procedurally generated instances each",
+    "format": "JSON",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Success Rate"
+    ],
+    "calculation": "Success rate is determined by reaching the goal within 1.5 times the optimal number of steps for the given instance.",
+    "interpretation": "Higher success rates on tasks indicate better performance by the LLM agents in effectively managing asynchronous planning.",
+    "baseline_results": "gpt4-o ReAct achieves 47% on synchronous tasks but only 11% on asynchronous tasks.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

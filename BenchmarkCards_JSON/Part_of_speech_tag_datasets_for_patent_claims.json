@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Part of speech tag datasets for patent claims",
+    "abbreviation": "N/A",
+    "overview": "Crowdsourced corpus of corrected part-of-speech (POS) tags for terms in patent claim segments collected via Amazon Mechanical Turk to enable improved patent claim parsing via forced POS tag correction; includes experiments demonstrating improved parsing and improved patent subject classification when using the corrected tags.",
+    "data_type": "text (patent claim segments with POS tag annotations)",
+    "domains": [
+      "Natural Language Processing",
+      "Legal"
+    ],
+    "languages": [],
+    "similar_benchmarks": [
+      "WIPO-alpha patent collection"
+    ],
+    "resources": [
+      "http://www.ece.drexel.edu/walsh/aspitrg/Release1.0.zip",
+      "http://www.cooperativepatentclassification.org/index.html",
+      "http://www.uspto.gov/web/offices/pac/mpep/index.html",
+      "https://arxiv.org/abs/1605.01744"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Provide a publicly available corpus of POS tags for terms in patent claims (especially terms initially tagged as verbs) to enable training of POS tag correctors and improved patent claim parsing; demonstrate improvement in parsing and downstream patent subject classification.",
+    "audience": [
+      "Researchers",
+      "Natural Language Processing Researchers",
+      "Patent Information Retrieval Researchers"
+    ],
+    "tasks": [
+      "Part-of-Speech Tagging",
+      "Constituency Parsing",
+      "Dependency Extraction",
+      "Text Classification (Patent Subject Classification)"
+    ],
+    "limitations": "No large hand-annotated treebank of full parse trees was created; dataset focuses on verification/correction of terms originally tagged as verbs rather than full parse tree annotation; ground-truth human-annotated parse trees for patent claims are unavailable.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected via Amazon Mechanical Turk from segments of patent claims (segments broken at punctuation). Initial POS tags obtained from the Stanford POS tagger; Turkers verified/ corrected POS tags for terms originally tagged as verbs.",
+    "size": "174,246 POS tag annotations",
+    "format": "Plain text lines; each line contains a patent claim segment, the position within the segment of the term, and the POS tag selected by Turkers (dataset distributed as Release1.0.zip).",
+    "annotation": "Crowdsourced annotation via Amazon Mechanical Turk with embedded test questions; accepted HITs were curated (software reconciliation and manual repairs) to produce the curated dataset."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics comparing predicted POS tags to AMT annotations",
+      "Constituent precision/recall comparison of parse trees",
+      "Classification experiments (SVM) using TF-IDF features to evaluate downstream patent subject classification"
+    ],
+    "metrics": [
+      "Percent Error",
+      "Precision",
+      "Recall",
+      "F1 Score",
+      "Classification Error Rate"
+    ],
+    "calculation": "Percent Error: percentage of incorrect POS tag decisions compared to AMT annotations. Precision and Recall for parse trees: computed over constituents as |Predicted_constituents ∩ True_constituents| / |Predicted_constituents| and |Predicted_constituents ∩ True_constituents| / |True_constituents| respectively (as defined in Equations 2 and 3 in the paper). Classification Error Rate: percentage of misclassified patents in test set.",
+    "interpretation": "Lower Percent Error indicates better POS tag correction. Higher Precision, Recall, and F1 indicate parse trees closer to AMT-annotated trees. Lower Classification Error Rate indicates better downstream subject classification performance.",
+    "baseline_results": "POS tagging percent error: Stanford POS Tagger 31.18%; Rule-Based Corrector 23.81%; SVM-Based Corrector 9.17% (Table 4). Parse tree constituent F1 (example from Table 5): Stanford Parser F1 69.08% vs Automatic Corrector F1 83.69%. Patent subject classification: using claim dependencies alone error decreased from 5.974% (original dependencies) to 4.695% (improved claim NLP); combining features yields error rates as low as 2.597% in reported experiments (Figure 9).",
+    "validation": "POS tagger: one-third of selected AMT data used for training and two-thirds for testing (113,995 words total: 39,097 training, 74,898 testing). Parse tree evaluation: AMT-held-out tags used as surrogate ground truth; three experiments with different train/test splits across campaigns and patents. Classification: patents with target subclass labels between specified dates assigned to train/test sets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination",
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

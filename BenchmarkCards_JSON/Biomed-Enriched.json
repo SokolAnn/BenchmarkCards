@@ -1,0 +1,76 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Biomed-Enriched",
+    "abbreviation": "N/A",
+    "overview": "Biomed-Enriched is a biomedical text dataset constructed from PubMed via a two-stage annotation process to enable refined extraction of high-quality clinical and educational content. It provides an openly available collection of clinical cases and demonstrates targeted performance improvements for biomedical NLP tasks.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Healthcare"
+    ],
+    "languages": [
+      "English",
+      "French"
+    ],
+    "similar_benchmarks": [
+      "MMLU",
+      "MedQA",
+      "MedMCQA"
+    ],
+    "resources": [
+      "https://www.ncbi.nlm.nih.gov/pmc/tools/textmining/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a large-scale biomedical dataset for pretraining language models, facilitating enhanced performance on specialized biomedical tasks.",
+    "audience": [
+      "ML Researchers",
+      "Biomedical NLP Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Extracted text from PubMed Central (PMC) Open Access Subset.",
+    "size": "2M paragraphs including 450K high-quality ones.",
+    "format": "Raw text files",
+    "annotation": "Two-stage annotation process involving large language model annotations followed by fine-tuning a smaller model for full corpus annotation."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Accuracy"
+    ],
+    "calculation": "Metrics were calculated based on performance benchmarks as stated in the methodology.",
+    "interpretation": "Higher scores on benchmarks indicate better model performance on biomedical NLP tasks.",
+    "baseline_results": "OLMo2-7B-stage1 demonstrated performance improvements reaching over 61.08% on medical benchmarks.",
+    "validation": "The validation procedure involved continual pre-training to evaluate the effects of data curation strategies."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "All data derived from publicly available scientific literature in PMC, licensed for text and data mining.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

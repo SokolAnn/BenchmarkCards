@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CRUD-RAG: A Comprehensive Chinese Benchmark for Retrieval-Augmented Generation of Large Language Models",
+    "abbreviation": "CRUD-RAG",
+    "overview": "CRUD-RAG is a comprehensive benchmark that evaluates Retrieval-Augmented Generation (RAG) systems through various application scenarios categorized into Create, Read, Update, and Delete (CRUD), providing a robust evaluation framework for language models handling external knowledge.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "RGB",
+      "NQ",
+      "RAGAS",
+      "ARES"
+    ],
+    "resources": [
+      "https://github.com/IAAR-Shanghai/CRUD_RAG"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation framework for RAG systems, facilitating the assessment of their performance across various CRUD application scenarios.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Text Continuation",
+      "Question Answering",
+      "Hallucination Modification",
+      "Multi-Document Summarization"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from nearly 300,000 historical news articles from major Chinese news websites.",
+    "size": "86,834 retrieval documents and various datasets for evaluation tasks totaling 10,728 for text continuation, 10,728 for multi-document summarization, 3,199 for single-document QA, 3,192 for multi-document QA, 5,130 for hallucination modification.",
+    "format": "N/A",
+    "annotation": "Datasets were created using automated generation via GPT-4 with manual refinement for QA tasks to ensure quality."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "BLEU",
+      "ROUGE",
+      "bertScore",
+      "RAGQuestEval"
+    ],
+    "calculation": "Metrics calculated by comparing output against ground truth using specific scoring mechanisms designed for various tasks.",
+    "interpretation": "Higher scores in metrics indicate better performance of RAG systems in generating accurate and relevant text based on retrieval.",
+    "baseline_results": "Experiments conducted with various LLMs including GPT-3.5, GPT-4, and Qwen-14B for comparison.",
+    "validation": "Extensive evaluation through various experiments demonstrating the efficacy of RAG across the CRUD framework."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

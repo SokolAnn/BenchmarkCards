@@ -1,0 +1,75 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CRiskEval (Chinese Multi-Level Risk Evaluation Benchmark Dataset for Large Language Models)",
+    "abbreviation": "CRiskEval",
+    "overview": "CRiskEval is a Chinese dataset designed for gauging the risk proclivities inherent in LLMs, evaluating their tendencies through fine-grained multiple-choice question answering based on a taxonomy of 7 types of frontier risks and 4 safety levels.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "AraTrust",
+      "R-Judge",
+      "SafetyBench"
+    ],
+    "resources": [
+      "https://github.com/lingshi6565/Risk_eval"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the risk tendencies of large language models by using a fine-grained dataset that captures various behavioral responses to hypothetical scenarios.",
+    "audience": [
+      "ML Researchers",
+      "AI Safety Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Risk Evaluation",
+      "Behavioral Analysis"
+    ],
+    "limitations": "The dataset may not cover all potential future risks as AI capabilities evolve.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Questions are generated through a combination of translation from prior datasets and newer question generation methods utilizing AI assistance.",
+    "size": "14,888 questions",
+    "format": "JSON",
+    "annotation": "Questions are manually annotated with risk levels by experts."
+  },
+  "methodology": {
+    "methods": [
+      "Tendency evaluation",
+      "Multiple-choice evaluation"
+    ],
+    "metrics": [
+      "Comprehensive Risk Indicator (CRI)",
+      "Specific Risk Indicator (SRI)"
+    ],
+    "calculation": "Metrics are calculated based on the weighted proportions of answer choices across risk levels.",
+    "interpretation": "Higher scores indicate greater risk tendencies of the evaluated LLMs.",
+    "baseline_results": null,
+    "validation": "Dataset was validated through expert reviews, achieving an average score of 86.6."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Robustness",
+      "Ethics"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset includes scenarios that may involve sensitive behaviors; care was taken to assess potential issues.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

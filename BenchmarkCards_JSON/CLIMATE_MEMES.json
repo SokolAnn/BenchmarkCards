@@ -1,0 +1,99 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CLIMATE MEMES",
+    "abbreviation": "N/A",
+    "overview": "CLIMATE MEMES is the first dataset of climate-change memes annotated with both stance and media frames, allowing analysis of frame prominence over time and communities, and examining framing preferences of different stance holders.",
+    "data_type": "multimodal",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Media Frames Corpus"
+    ],
+    "resources": [
+      "https://github.com/JaidedAI/EasyOCR"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective is to analyze stances and media frames in climate change memes, examining how media frames shape the visual representation of climate change across varying stances.",
+    "audience": [
+      "ML Researchers",
+      "Communication Science Specialists",
+      "Media Analysts"
+    ],
+    "tasks": [
+      "Stance Detection",
+      "Media Frame Detection"
+    ],
+    "limitations": "The dataset focuses exclusively on memes sourced from Reddit, introducing potential biases associated with the platform.",
+    "out_of_scope_uses": [
+      "N/A"
+    ]
+  },
+  "data": {
+    "source": "1,184 CC memes from 47 subreddits annotated with stance on climate change and media frames.",
+    "size": "1,184 memes",
+    "format": "JSON",
+    "annotation": "Manual annotation by graduate students in computational linguistics."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics for stance detection are calculated based on label distribution; F1 Score is emphasized due to label imbalance.",
+    "interpretation": "Higher accuracy and F1 indicate better model performance in detecting the correct stances and frames.",
+    "baseline_results": "Baseline accuracy of 80.85% for majority class is convinced; baseline F1 Score of 29.80%.",
+    "validation": "Inter-Annotator Agreement was assessed with Cohen's Kappa scoring high at 0.83."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": []
+        },
+        {
+          "category": "Robustness",
+          "subcategory": []
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "N/A"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All annotations were conducted ethically, ensuring annotators were not exposed to distressing content.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

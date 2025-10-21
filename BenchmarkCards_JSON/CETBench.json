@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CETBench (Code Equivalence with Transformations Benchmark)",
+    "abbreviation": "CETBench",
+    "overview": "CETBench is a comprehensive benchmark for evaluating LLMs on the task of code-equivalence checking via controlled program transformations.",
+    "data_type": "program pairs",
+    "domains": [
+      "Computer Science"
+    ],
+    "languages": [
+      "Python"
+    ],
+    "similar_benchmarks": [
+      "HumanEval",
+      "MBPP",
+      "BigCloneBench",
+      "GPT-CloneBench",
+      "EqBench",
+      "SeqCoBench",
+      "EquiBench"
+    ],
+    "resources": [
+      "https://github.com/google-deepmind/code_contests"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the robustness of LLMs for the task of code equivalence checking.",
+    "audience": [
+      "ML Researchers",
+      "Software Developers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Code Equivalence Checking"
+    ],
+    "limitations": "While our analysis presents deep insights into the performance of LLMs on the task of code equivalence under various perturbations, several limitations remain. First, our evaluation is primarily restricted to a single programming language (Python), highlighting the need to explore other languages to assess the generality of observed trends.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "CodeContests dataset",
+    "size": "10,000 competitive programming problems",
+    "format": "N/A",
+    "annotation": "Automatically generated via program transformations"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics calculated as overall accuracy and F1 scores across model predictions.",
+    "interpretation": "A higher accuracy indicates better performance in identifying code equivalence.",
+    "baseline_results": "N/A",
+    "validation": "Validated by extensive testing on perturbed and original program pairs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack",
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC BY 4.0 (Creative Commons Attribution 4.0)",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ANDROID LAB",
+    "abbreviation": "N/A",
+    "overview": "ANDROID LAB provides a systematic Android agent framework, including a reproducible benchmark for evaluating mobile agent capabilities across multiple apps and tasks, featuring both large language models (LLMs) and multimodal models (LMMs). The benchmark includes 138 tasks derived from nine apps that assess the capabilities of autonomous agents in interacting with an Android operating system.",
+    "data_type": "task-action pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/THUDM/Android-Lab"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a systematic and reproducible benchmark framework for training and evaluating Android agents interacting with mobile applications.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Task Completion",
+      "Query Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Tasks designed for common mobile scenarios across nine apps including Bluecoins, Calendar, Contacts, Clock, Maps.me, PiMusic, Settings, and Zoom.",
+    "size": "138 tasks",
+    "format": "N/A",
+    "annotation": "Manual annotation by experts combining self-exploration and verification steps through an online annotation tool."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Success Rate",
+      "Sub-Goal Success Rate",
+      "Reversed Redundancy Ratio",
+      "Reasonable Operation Ratio"
+    ],
+    "calculation": "Metrics are calculated based on the achievement of task goals, monitored through UI state assessment.",
+    "interpretation": "Higher success rates indicate better performance of the model in executing tasks.",
+    "baseline_results": "The best overall model performing in XML mode achieved a success rate of 43 tasks out of 138 across various apps, with significant improvements noted after fine-tuning.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Enhancing mobile agent accessibility and performance for diverse user interactions."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Annotators are informed of data usage policies and can opt-out if privacy concerns arise.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

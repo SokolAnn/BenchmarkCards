@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TArC: Tunisian Arabish Corpus",
+    "abbreviation": "TArC",
+    "overview": "The paper presents the final result of a project on Tunisian Arabic encoded in Arabizi (Latin-based writing system) that produced two integrated resources: a corpus (TArC) and an NLP tool to annotate the corpus with multiple levels of linguistic information (word classification, transliteration, tokenization, POS-tagging, lemmatization). The corpus was created via a semi-automatic iterative annotation procedure using a neural multi-task architecture and manual correction.",
+    "data_type": "text (Tunisian Arabizi sentences with token-level annotations: token classification, transliteration into CODA script, tokenization, POS-tagging, lemmatization)",
+    "domains": [
+      "Natural Language Processing",
+      "Linguistics",
+      "Computational Linguistics"
+    ],
+    "languages": [
+      "Tunisian Arabic"
+    ],
+    "similar_benchmarks": [
+      "MADAR",
+      "TuDiCoI",
+      "STAC",
+      "LETD",
+      "TLD",
+      "TAD",
+      "TSAC",
+      "PADIC",
+      "MADAR CODA"
+    ],
+    "resources": [
+      "https://gricad-gitlab.univ-grenoble-alpes.fr/dinarelm/tarc-multi-task-system/",
+      "https://github.com/eligugliotta/tarc",
+      "https://arxiv.org/abs/2207.04796"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To create a multi-level annotated corpus of Tunisian Arabic encoded in Arabizi (TArC) and an accompanying neural annotation tool to produce token classification, transliteration (CODA), tokenization, POS tags, and lemmatization for computational and linguistic research.",
+    "audience": [
+      "Natural Language Processing researchers",
+      "Linguists"
+    ],
+    "tasks": [
+      "Token Classification",
+      "Transliteration",
+      "Tokenization",
+      "Part-of-Speech Tagging",
+      "Lemmatization"
+    ],
+    "limitations": "The authors explicitly state they concentrated on a reduced amount of data to focus on methodology; the corpus size is limited and they plan to increase the size by exploiting TArC as a gold standard.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from Digital Networked Writing environments: social networks, forums, blogs, and rap song lyrics (lyrics used for comparison between Arabizi and Arabic script). Additionally, the MADAR parallel corpus was annotated/used to extend training data.",
+    "size": "4,797 sentences; 43,327 words",
+    "format": "N/A",
+    "annotation": "Semi-automatic iterative annotation using a neural multi-task sequence-to-sequence architecture with manual correction and incremental retraining (split into blocks, auto-annotate, manual correction, add to training data, retrain)."
+  },
+  "methodology": {
+    "methods": [
+      "Semi-automatic iterative annotation (model annotation + manual correction)",
+      "Neural multi-task sequence-to-sequence annotation (multi-decoder architecture)",
+      "Automated evaluation using Accuracy"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy reported as percentage of correct predictions for each annotation level (classification, transliteration, tokenization, POS, lemmatization) on development/test splits. Data splits created by random shuffle at sentence level with 70/15/15 ratios per genre then concatenated.",
+    "interpretation": "Higher Accuracy indicates better annotation/model performance. The authors report that transliteration from Arabizi to CODA is the most difficult task; LSTM-based models outperform Transformer-based models on this (small) dataset.",
+    "baseline_results": "Final reported results (examples): Final Step global-split (42,559 train tokens, 30,168 from TArC): Classification 97.14%, Transliteration (Ar) 82.34%, Tokenization 81.45%, POS 80.95%, Lemmatization 80.48%. Final Step 2xlstm input:Ar (42,559 train tokens): Classification 98.77%, Lemmatization 92.40%, Tokenization 96.74%, POS 85.90%.",
+    "validation": "Data split into training, development and test with 70/15/15 ratios per genre then concatenated; iterative manual correction of auto-annotations and retraining across annotation blocks used to validate and improve annotations."
+  },
+  "targeted_risks": {
+    "risk_categories": [],
+    "atlas_risks": {
+      "risks": null
+    },
+    "demographic_analysis": "N/A",
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Data and code are stated as freely available by the authors; specific license type is not specified in the paper.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

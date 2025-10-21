@@ -1,0 +1,82 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "COCO-Urdu",
+    "abbreviation": "N/A",
+    "overview": "COCO-Urdu is the largest Urdu image-caption dataset to date, created by translating and validating a balanced subset of MS COCO, containing 59,000 images and 319,000 Urdu captions with a multimodal quality estimation framework.",
+    "data_type": "image-caption pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "Urdu"
+    ],
+    "similar_benchmarks": [
+      "UICD",
+      "Flickr8k Urdu"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To advance multimodal research for low-resource languages by providing a large-scale Urdu image caption dataset and a systematic hybrid quality estimation framework.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Image Captioning"
+    ],
+    "limitations": "Human evaluation was restricted to 200 captions due to budget and time constraints.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Derived from MS COCO.",
+    "size": "59,000 images and 319,000 Urdu captions",
+    "format": "N/A",
+    "annotation": "Translated captions validated with a hybrid multimodal quality estimation framework."
+  },
+  "methodology": {
+    "methods": [
+      "Quality estimation using COMET-Kiwi, BERTScore, and CLIP-based visual grounding",
+      "Iterative refinement of low-scoring captions"
+    ],
+    "metrics": [
+      "BLEU",
+      "SacreBLEU",
+      "chrF"
+    ],
+    "calculation": "Metrics are calculated based on translation quality and visual grounding consistency.",
+    "interpretation": "Higher scores indicate better translation fidelity and visual-text alignment.",
+    "baseline_results": "COCO-Urdu achieves BLEU scores of 0.53 (Refined) and 0.52 (Zero-shot).",
+    "validation": "The dataset was validated using reference-free and reference-based evaluation metrics."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "The COCO-Urdu dataset is released under CC BY 4.0, allowing modifications and adaptations with proper attribution.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

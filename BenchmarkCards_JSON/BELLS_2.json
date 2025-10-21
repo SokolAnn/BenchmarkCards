@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "BELLS (Benchmark for the Evaluation of LLM Supervision Systems)",
+    "abbreviation": "BELLS",
+    "overview": "The BELLS benchmark systematically evaluates supervision systems for LLMs across two key axes—harm severity and adversarial sophistication—covering three jailbreak families and eleven harm categories.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "GuardBench",
+      "JailbreakBench",
+      "HarmBench",
+      "SORRY-Bench"
+    ],
+    "resources": [
+      "https://github.com/yourusername/bells"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive public benchmark that verifies the performance of supervision systems under realistic and diverse attacks.",
+    "audience": [
+      "ML Researchers",
+      "AI Safety Practitioners"
+    ],
+    "tasks": [
+      "Misuse Detection"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from existing harm taxonomies and non-adversarial prompt collections, with adversarial data augmented using various techniques.",
+    "size": "5,990 prompts (990 non-adversarial prompts and 5,000+ adversarial prompts)",
+    "format": "N/A",
+    "annotation": "Initial categorization by GPT-4 followed by independent human review."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Detection Rate Adversarial Harmful",
+      "Detection Rate Non-Adversarial Harmful",
+      "False Positive Rate",
+      "BELLS Score"
+    ],
+    "calculation": "The BELLS Score combines detection rates on adversarial and non-adversarial harmful prompts, penalized by false positive rates.",
+    "interpretation": "Higher BELLS Scores indicate better overall performance in detecting harmful content while minimizing false positives.",
+    "baseline_results": "N/A",
+    "validation": "Benchmark evaluated against specialized supervision systems and general-purpose LLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination"
+          ]
+        },
+        {
+          "category": "Misuse",
+          "subcategory": [
+            "Improper usage"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Misuse of LLMs",
+      "Harmful content production"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

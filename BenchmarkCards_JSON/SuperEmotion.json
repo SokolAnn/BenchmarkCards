@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SuperEmotion",
+    "abbreviation": "N/A",
+    "overview": "The SuperEmotion dataset addresses the gap in standardized, large-scale emotion classification resources by harmonizing diverse text sources into a unified framework based on Shaver’s empirically validated emotion taxonomy. It enables more consistent cross-domain emotion recognition research.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MELD",
+      "GoEmotions",
+      "TwitterEmotion",
+      "ISEAR",
+      "SemEval",
+      "CrowdFlower"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/cirimus/super-emotion"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To contribute to emotion recognition research by providing a large-scale, harmonized dataset that follows a psychologically grounded taxonomy for improved emotion classification.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Emotion Classification"
+    ],
+    "limitations": "Dataset biases, contextual limitations, annotation quality issues, and privacy considerations are acknowledged.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Aggregated from multiple existing emotion datasets including MELD, GoEmotions, TwitterEmotion, ISEAR, SemEval, and CrowdFlower.",
+    "size": "519,812 samples",
+    "format": "N/A",
+    "annotation": "Managed through label harmonization based on Shaver’s emotion taxonomy."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Metrics are calculated based on label harmonization and sample distributions across defined emotion categories.",
+    "interpretation": "Good performance indicates robust emotion classification across diverse datasets, while poor performance may signal issues with label harmonization.",
+    "baseline_results": "N/A",
+    "validation": "The dataset was validated through stratified partitioning and consistency checks during preprocessing."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All datasets excluded personally identifiable information, but privacy considerations remain when deploying models.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

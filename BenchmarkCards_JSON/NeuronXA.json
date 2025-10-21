@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Neuron State-Based Cross-Lingual Alignment (NeuronXA)",
+    "abbreviation": "NeuronXA",
+    "overview": "NeuronXA assesses the cross-lingual alignment capabilities of large language models by quantifying neuron activation likelihood in response to parallel corpora across multiple languages.",
+    "data_type": "parallel sentence pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Chinese",
+      "French",
+      "German",
+      "Italian",
+      "Spanish",
+      "Russian",
+      "Arabic",
+      "Hindi",
+      "Japanese"
+    ],
+    "similar_benchmarks": [
+      "MEXA",
+      "m-MMLU",
+      "Belebele"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2507.14900"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a robust evaluation framework for assessing the multilingual capabilities of large language models.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Cross-Lingual Transfer",
+      "Multilingual Similarity Evaluation"
+    ],
+    "limitations": "The evaluation method requires access to model intrinsic representations, limiting its application for closed-source models.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "FLORES-200 and Tatoeba parallel sentence datasets.",
+    "size": "100 parallel sentence pairs",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Neuron State-Based Alignment Evaluation"
+    ],
+    "metrics": [
+      "Pearson correlation"
+    ],
+    "calculation": "Alignment scores are calculated based on neuron activation states using significant cosine similarity metrics.",
+    "interpretation": "Higher alignment scores correlate strongly with better performance on multilingual tasks.",
+    "baseline_results": "Pearson correlation of NeuronXA with downstream tasks performance reached 0.9556.",
+    "validation": "Evaluated across various multilingual benchmarks and tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "AgoraSpeech",
+    "abbreviation": "N/A",
+    "overview": "AgoraSpeech is a meticulously curated, high-quality dataset of 171 political speeches from six parties during the Greek national elections in 2023, encompassing annotations for multiple NLP tasks and designed for political discourse analysis.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Greek",
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://doi.org/10.5281/zenodo.13957176",
+      "https://github.com/Datalab-AUTH/AgoraSpeech-EDA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive, high-quality annotated dataset of political discourse, supporting various analyses and applications in political science and NLP.",
+    "audience": [
+      "Political Scientists",
+      "Data Scientists",
+      "Journalists"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Topic Identification",
+      "Sentiment Analysis",
+      "Named Entity Recognition",
+      "Polarization Detection",
+      "Populism Detection"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Political speeches from the Greek national elections sourced from political parties' press offices and public communications.",
+    "size": "171 speeches, 5,279 paragraphs, 31,674 annotations",
+    "format": "CSV",
+    "annotation": "Hybrid: Initial ChatGPT-generated annotations validated by human experts."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Calculated as the fraction of paragraphs where ChatGPT’s annotation remains unchanged by human reviewers relative to the total number of paragraphs for each NLP task.",
+    "interpretation": "A high accuracy indicates strong alignment between ChatGPT and human annotations.",
+    "baseline_results": "Text classification accuracy: 89%, Sentiment analysis accuracy: 93%, Polarization detection accuracy: 88%, Topic classification accuracy: 61%.",
+    "validation": "Utilizing a human-in-the-loop methodology for validating and refining ChatGPT annotations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Transparency"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Lack of training data transparency",
+            "Uncertain data provenance"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

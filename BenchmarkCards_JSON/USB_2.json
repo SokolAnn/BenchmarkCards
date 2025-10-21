@@ -1,0 +1,79 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "USB (Unified Safety Benchmark)",
+    "abbreviation": "USB",
+    "overview": "USB-SafeBench is a comprehensive safety evaluation benchmark for multimodal large language models (MLLMs), covering various risk categories and modality combinations to assess vulnerabilities and oversensitivities.",
+    "data_type": "text-image pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "MMSafetyBench",
+      "Hades",
+      "HarmBench",
+      "SafeBench"
+    ],
+    "resources": [
+      "https://github.com/Hongqiong12/USB-SafeBench",
+      "https://huggingface.co/datasets/cgjacklin/USB"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a reliable safety assessment benchmark by integrating high-quality data across a wide range of risk categories and modality types for evaluating MLLMs.",
+    "audience": [
+      "ML Researchers",
+      "Safety Engineers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Safety Assessment",
+      "Vulnerability Testing"
+    ],
+    "limitations": "Our benchmark does not include video content evaluation.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated from existing safety benchmarks and supplemented with synthetic data.",
+    "size": "18,126 samples",
+    "format": "JSON",
+    "annotation": "Annotated for risk category, modality combinations, image style, and data source."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Attack Success Rate (ASR)",
+      "Average Refusal Rate (ARR)"
+    ],
+    "calculation": "ASR calculates the percentage of harmful queries that bypass safety safeguards, while ARR measures the refusal rate on harmless inputs.",
+    "interpretation": "Lower ASR and ARR scores indicate better alignment and safety.",
+    "baseline_results": "Varies across evaluated models; commercial MLLMs generally exhibit lower ASR compared to open-source counterparts.",
+    "validation": "Extensive experiments conducted using various mainstream open-source and commercial MLLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Accuracy",
+      "Bias"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

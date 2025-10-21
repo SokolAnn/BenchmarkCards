@@ -1,0 +1,98 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "EPD (European Patent Dataset)",
+    "abbreviation": "EPD",
+    "overview": "EPD is a dataset of English-language patents granted by the European Patent Office (EPO) in 2024, designed to support various patent-related tasks, including claim generation. It provides high-quality, legally validated claims that fill a gap for cross-jurisdiction evaluation of language models on patent tasks.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "HUPD-DCG"
+    ],
+    "resources": [
+      "https://github.com/scylj1/EPDdocuments"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive dataset for training language models to generate patent claims and support various patent-related tasks using high-quality legal data.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Legal Professionals"
+    ],
+    "tasks": [
+      "Claim Generation",
+      "Patent Classification",
+      "Patent Summarization",
+      "Patent Retrieval"
+    ],
+    "limitations": "The EPD dataset only includes patents published by the European Patent Office and documented in English.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "European Patent Office (EPO) Open Patent Services (OPS)",
+    "size": "107,000 patents",
+    "format": "JSON",
+    "annotation": "Legally validated claims sourced directly from the EPO, ensuring high quality."
+  },
+  "methodology": {
+    "methods": [
+      "Fine-tuning LLMs",
+      "Evaluation with traditional metrics (BLEU, ROUGE, BERTScore)",
+      "LLM-as-a-judge evaluation"
+    ],
+    "metrics": [
+      "BLEU",
+      "ROUGE-1",
+      "ROUGE-L",
+      "BERTScore"
+    ],
+    "calculation": "Metrics are calculated based on the overlap between generated claims and reference claims for text generation tasks.",
+    "interpretation": "Higher scores indicate better performance in generating claims that align with legal standards.",
+    "baseline_results": "Models fine-tuned on EPD consistently outperform those trained on other datasets.",
+    "validation": "The effectiveness of EPD is validated through comparative performance evaluations with existing datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset is sourced from publicly accessible documents and does not include private information.",
+    "data_licensing": "CC-BY-NC-4.0 license is planned for the dataset.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

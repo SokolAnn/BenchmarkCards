@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SynthTRIPs (Synthetic Travel Queries for Personalized Recommenders)",
+    "abbreviation": "SynthTRIPs",
+    "overview": "SynthTRIPs is a novel framework for generating synthetic travel queries using Large Language Models (LLMs), grounded in a curated knowledge base. It aims to enhance personalized travel recommendations by incorporating user preferences and sustainability factors.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Tourism"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://bit.ly/synthTRIPs",
+      "https://github.com/baturin/wikivoyage-listings"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To produce a synthetic dataset of travel queries that captures realistic travel constraints, aiding in the development of personalized travel recommender systems.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts",
+      "Recommender System Developers"
+    ],
+    "tasks": [
+      "Text Generation",
+      "Query Generation"
+    ],
+    "limitations": "The potential for subjective persona interpretation and a trade-off between personalization and groundedness.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated knowledge base and synthesized queries from various travel-related datasets.",
+    "size": "4,604 queries",
+    "format": "JSON",
+    "annotation": "Automatically generated queries using LLMs with validation from human experts."
+  },
+  "methodology": {
+    "methods": [
+      "Automated evaluation metrics",
+      "Human expert evaluations"
+    ],
+    "metrics": [
+      "Groundedness",
+      "Persona Alignment",
+      "Sustainability Compliance",
+      "Diversity"
+    ],
+    "calculation": "Metrics are derived from comparisons between generated queries and target features stipulated in travel filters.",
+    "interpretation": "High groundedness scores indicate alignment with travel filters and context; high persona alignment shows coherence with user personas.",
+    "baseline_results": "Performance is benchmarked against existing datasets and evaluated through expert judgments.",
+    "validation": "Cross-validated through expert assessments and automated LLM evaluations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Synthetic persona data may lack diversity and realism, impacting fairness in recommendations.",
+    "harm": "Potential for misalignment between user queries and recommended destinations, especially regarding popularity bias."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Creative Commons Attribution-NonCommercial 4.0 International License.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

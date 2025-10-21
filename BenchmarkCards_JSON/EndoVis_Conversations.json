@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "EndoVis Conversations",
+    "abbreviation": "N/A",
+    "overview": "The EndoVis Conversations dataset consists of numerous question-answer pairs based on surgical contexts, designed to enhance the performance of large vision-language models in understanding and reasoning within surgical scenarios.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "EndoVis-17-VQLA",
+      "EndoVis-18-VQLA"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To facilitate the development and evaluation of personalized large vision-language models for effective visual question answering in surgery.",
+    "audience": [
+      "Researchers in AI and healthcare",
+      "Robotic surgery professionals"
+    ],
+    "tasks": [
+      "Visual Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated from EndoVis-18-VQLA and EndoVis-17-VQLA datasets, utilizing surgical images and corresponding questions.",
+    "size": "19,020 training images, 2,151 test images",
+    "format": "N/A",
+    "annotation": "Questions synthesized using GPT-4 based on images and annotations from the EndoVis datasets."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "Mean Intersection over Union (mIoU)"
+    ],
+    "calculation": "Metrics are calculated based on the comparison between model predictions and ground truth data in surgical contexts.",
+    "interpretation": "Accuracy reflects the model's correct answers, F1 Score balances precision and recall, while mIoU assesses the intersection of predicted and true regions in images.",
+    "baseline_results": null,
+    "validation": "Evaluated against established benchmarks in surgical VQA tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Privacy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

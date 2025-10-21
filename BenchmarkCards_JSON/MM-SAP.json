@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MM-SAP (Self-Awareness in Perception for MLLMs)",
+    "abbreviation": "MM-SAP",
+    "overview": "The MM-SAP benchmark is designed to evaluate the self-awareness of Multimodal Large Language Models (MLLMs) in their capacity to recognize what they can and cannot perceive from images. It integrates a knowledge quadrant framework for a more comprehensive assessment of self-awareness in visual perception.",
+    "data_type": "visual question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "VQAv2",
+      "OKVQA",
+      "A-OKVQA"
+    ],
+    "resources": [
+      "https://github.com/YHWmz/MM-SAP"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To define and evaluate the self-awareness of MLLMs in perception, leading to improvements in their reliability and reducing hallucinations.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Visual Question Answering"
+    ],
+    "limitations": "The benchmark focuses solely on multiple-choice questions, which may oversimplify the complexity of real-world applications involving open-ended questions.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Compiled from VQAv2, COCO, and Visual Genome datasets, along with manually created questions.",
+    "size": "1,200 questions",
+    "format": "JSON",
+    "annotation": "Crafted by experts and sourced from existing datasets."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Self-awareness score",
+      "Proportion of knowns answered correctly",
+      "Proportion of unknowns refused"
+    ],
+    "calculation": "Self-awareness is evaluated using scores based on answered knowns and properly refused unknowns.",
+    "interpretation": "A higher self-awareness score indicates better capability of the MLLM to recognize its knowledge limits.",
+    "baseline_results": null,
+    "validation": "Models were evaluated across different categories of self-awareness."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

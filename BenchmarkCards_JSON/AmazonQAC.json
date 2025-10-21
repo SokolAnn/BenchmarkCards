@@ -1,0 +1,76 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "AmazonQAC",
+    "abbreviation": "N/A",
+    "overview": "AmazonQAC is a new QAC (Query Autocomplete) dataset collected from Amazon Search logs containing 395M samples of actual sequences of user-typed prefixes leading to final search terms, designed to facilitate research on QAC systems.",
+    "data_type": "prefix strings leading to final search terms",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/amazon/AmazonQAC"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To address the critical need for realistic, large-scale datasets for Query Autocomplete (QAC) and to prompt further research in QAC systems.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Query Autocomplete"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from Amazon Search autocomplete customer logs in the U.S.",
+    "size": "395,550,004 samples",
+    "format": "N/A",
+    "annotation": "Data has been scrapped for personally identifiable information using regex."
+  },
+  "methodology": {
+    "methods": [
+      "Information Retrieval",
+      "Large Language Models"
+    ],
+    "metrics": [
+      "Success@10",
+      "Mean Reciprocal Rank (MRR)"
+    ],
+    "calculation": "Success@10 is calculated by considering whether the final search term is included in the top 10 suggestions provided by the QAC system.",
+    "interpretation": "Higher values of Success@10 and MRR indicate better performance of the QAC system in providing accurate search term suggestions.",
+    "baseline_results": "Finetuned LLM achieved a Success@10 of 37.0%; upperbound is 69.8%.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Data privacy rights alignment"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Models and results derived from AmazonQAC should be assumed to inherit cultural and linguistic biases of its source."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data has been scrubbed for personally identifiable information using various regex patterns.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

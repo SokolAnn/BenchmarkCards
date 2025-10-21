@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "JEEM",
+    "abbreviation": "N/A",
+    "overview": "JEEM is a benchmark designed to evaluate Vision-Language Models (VLMs) on visual understanding across four Arabic-speaking countries: Jordan, The Emirates, Egypt, and Morocco. It includes image captioning and visual question answering tasks, featuring culturally rich and regionally diverse content.",
+    "data_type": "image-caption pairs, question-answer pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "Arabic"
+    ],
+    "similar_benchmarks": [
+      "AraCOCO",
+      "V AQA",
+      "CVQA"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/toloka/JEEM"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess the ability of Vision-Language Models to generalize across dialects and accurately interpret cultural elements in visual contexts.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Cultural Analysts"
+    ],
+    "tasks": [
+      "Image Captioning",
+      "Visual Question Answering"
+    ],
+    "limitations": "The dataset focuses on only four Arabic dialects, limiting a comprehensive and inclusive evaluation.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Combination of publicly available images from Wikimedia, Flickr, and personal collections of team members.",
+    "size": "2,178 images",
+    "format": "JSON",
+    "annotation": "Annotated by native speakers of the target dialects with captions in both MSA and dialect, and question-answer pairs in dialect."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "GPT-4-based evaluation"
+    ],
+    "metrics": [
+      "CIDEr",
+      "BLEU Score",
+      "ROUGE",
+      "BERTScore"
+    ],
+    "calculation": "Metrics are calculated by comparing generated captions and answers against reference captions and answers.",
+    "interpretation": "Higher scores indicate better alignment with human expectations of captions and answers.",
+    "baseline_results": "Evaluation against both automated metrics and human judgments.",
+    "validation": "Results assessed through a combination of automated and human evaluation methods."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Cultural Sensitivity",
+      "Model Limitations"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": []
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis conducted on annotators' demographics to ensure diversity.",
+    "harm": [
+      "Bias in model performance across different dialects"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Annotation and survey results are collected and stored anonymously.",
+    "data_licensing": "The images are subject to the licensing terms of Wikimedia Commons and Flickr, while annotations are distributed under the MIT license.",
+    "consent_procedures": "Writers are informed in advance about potentially sensitive content.",
+    "compliance_with_regulations": "N/A"
+  }
+}

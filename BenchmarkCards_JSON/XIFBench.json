@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "XIFBench",
+    "abbreviation": "N/A",
+    "overview": "XIFBench is a comprehensive constraint-based benchmark for assessing multilingual instruction-following abilities of Large Language Models (LLMs), featuring a novel taxonomy of five constraint categories and 465 parallel instructions across six languages.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Chinese",
+      "Russian",
+      "Arabic",
+      "Hindi",
+      "Swahili"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://arxiv.org/abs/2503.07539"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To quantify and analyze multilingual instruction-following variations and their causes systematically.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Instruction Following"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Seed instructions sourced from AlpacaEval, WizardLM, and LIMA; composed of 93 easy instructions and 465 hard instructions, validated for multilingual evaluation.",
+    "size": "3,348 instances",
+    "format": "N/A",
+    "annotation": "Manual filtering and annotation with cultural accessibility labels by experts."
+  },
+  "methodology": {
+    "methods": [
+      "LLM-based evaluation",
+      "Manual evaluation"
+    ],
+    "metrics": [
+      "Requirement Following Rate (RFR)",
+      "Instruction Following Rate (IFR)"
+    ],
+    "calculation": "RFR calculates the percentage of satisfaction across all evaluation requirements for each instruction; IFR quantifies the percentage of instructions where all requirements are met.",
+    "interpretation": "Higher rates indicate better adherence to the evaluated instructions across constraints and complexities.",
+    "baseline_results": "N/A",
+    "validation": "Evaluation verified by comparing outputs from multiple LLMs against a set of requirement criteria."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis of instruction-following performance across different languages and resource levels is included.",
+    "harm": "The benchmark seeks to prevent potential biases in language model evaluation."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data does not contain identifiable personal information; cultural accessibility annotations focus on general themes.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

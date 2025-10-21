@@ -1,0 +1,64 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "KLoB (Knowledge Locating Benchmark)",
+    "abbreviation": "KLoB",
+    "overview": "KLoB (Knowledge Locating Benchmark) examines three essential properties—Consistency, Relevance, and Unbiasedness—that a reliable knowledge locating method should satisfy. KLoB serves as a benchmark for evaluating existing locating methods in language models and provides a method to reassess the validity of the locality hypothesis of factual knowledge.",
+    "data_type": "text (sentences containing factual knowledge; sentences composed of random words for non-factual inputs)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MQUAKE"
+    ],
+    "resources": [
+      "https://github.com/anon6662/KLoB"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Evaluate whether parameters selected by locating methods embed the desired factual knowledge by examining three criteria: Consistency, Relevance, and Unbiasedness; and provide a quantitative method to reassess the locality hypothesis of factual knowledge.",
+    "audience": [],
+    "tasks": [
+      "Knowledge Locating Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from Wikidata and MQUAKE; random-word sentences sourced from the English word list of the NLTK library; filtered by querying Llama2-7b with in-context learning to retain only facts the model can correctly predict.",
+    "size": "KLoB-c: 13,675 examples; KLoB-r: 9,548 examples; KLoB-u: 25,470 examples",
+    "format": "Raw text (sentence-level examples generated from templates)",
+    "annotation": "Templates for KLoB-c manually written by human experts; KLoB-c sentences generated from Wikidata triples; KLoB-r sentences generated from MQUAKE two-hop chains and rephrased multi-hop questions; KLoB-u created by replacing words with random words from NLTK; dataset filtered via Llama2-7b in-context evaluation."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Relative Similarity (RSim)",
+      "Relative Standard Deviation (RSD)"
+    ],
+    "calculation": "RSim = max((Sim_cand - Sim_all) / (1 - Sim_all), 0), where Sim_cand is the intra-similarity among candidate localization results and Sim_all is the average similarity between the candidate localization result and all other localization results in the subtask. RSD = max(1 - SD_nonfactual / SD_factual, 0), where SD_factual is the average standard deviation of parameter scores for sentences with factual knowledge (KLoB-c and KLoB-r) and SD_nonfactual is the average standard deviation for sentences without factual knowledge (KLoB-u).",
+    "interpretation": "RSim ranges from 0 to 1: RSim = 1 if Sim_cand = 1 (candidate localization results identical); RSim = 0 if Sim_cand <= Sim_all. RSD ranges from 0 to 1: RSD = 1 if SD_nonfactual = 0 (parameter scores for non-factual inputs identical); RSD = 0 if SD_nonfactual > SD_factual.",
+    "baseline_results": null,
+    "validation": "Filtered factual knowledge by querying Llama2-7b with 8 demonstration examples and retaining only facts the model correctly predicted; templates manually written by human experts; dataset statistics reported in Table 1."
+  },
+  "targeted_risks": {
+    "risk_categories": [],
+    "atlas_risks": {
+      "risks": null
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

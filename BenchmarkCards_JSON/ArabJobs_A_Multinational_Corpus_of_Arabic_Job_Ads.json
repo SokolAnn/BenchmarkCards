@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ArabJobs: A Multinational Corpus of Arabic Job Ads",
+    "abbreviation": "N/A",
+    "overview": "ArabJobs is a publicly available corpus of Arabic job advertisements collected from Egypt, Jordan, Saudi Arabia, and the United Arab Emirates. The dataset captures linguistic, regional, and socio-economic variation in the Arab labour market, aiming to support analyses of gender representation and occupational structure.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Labour Market Analysis",
+      "Sociolinguistics"
+    ],
+    "languages": [
+      "Arabic"
+    ],
+    "similar_benchmarks": [
+      "MADAR",
+      "NADI",
+      "ALDi"
+    ],
+    "resources": [
+      "https://github.com/drelhaj/ArabJobs"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a diverse dataset of Arabic job advertisements for NLP and socio-economic research, supporting tasks like gender bias detection and profession classification.",
+    "audience": [
+      "ML Researchers",
+      "Data Scientists",
+      "Sociolinguists",
+      "NLP Practitioners"
+    ],
+    "tasks": [
+      "Gender Bias Detection",
+      "Profession Classification",
+      "Salary Estimation",
+      "Dialect Analysis"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from seven publicly accessible recruitment platforms across Egypt, Jordan, Saudi Arabia, and the UAE.",
+    "size": "8,546 advertisements",
+    "format": "JSON",
+    "annotation": "Data processed using large language models for salary estimation and classification tasks, with human verification."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Mean Absolute Error (MAE)",
+      "Root Mean Square Error (RMSE)",
+      "Accuracy in gender bias detection"
+    ],
+    "calculation": "MAE and RMSE were calculated based on salary estimations against known values.",
+    "interpretation": "Lower MAE and RMSE indicate better accuracy in salary predictions.",
+    "baseline_results": "Model performances with MAE of 11.83 and RMSE of 14.84.",
+    "validation": "Validated through human evaluations and comparisons to known salary data."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset includes gender representation across job ads, analyzing disparities in job roles and salaries.",
+    "harm": "Subtle reinforcement of gender biases in job advertisements."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Personally identifiable information was removed during processing.",
+    "data_licensing": "The corpus is distributed under a research-only license for non-commercial academic use.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "Data collected in compliance with robots.txt directives of the source sites."
+  }
+}

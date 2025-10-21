@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "REDDIT ESS (Effective Social Support Interaction Dataset)",
+    "abbreviation": "REDDIT ESS",
+    "overview": "REDDIT ESS is a novel dataset derived from Reddit posts, including supportive comments and original posters’ follow-up responses, aimed at evaluating multiple dimensions of effective social support in mental health contexts.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Emotion Support Conversation (ESConv)"
+    ],
+    "resources": [
+      "https://anonymous.4open.science/r/RedditESS-3577"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To understand effective social support to refine AI-driven support tools, with an emphasis on analyzing various dimensions of support beyond mere empathy.",
+    "audience": [
+      "ML Researchers",
+      "Mental Health Professionals",
+      "AI Developers"
+    ],
+    "tasks": [
+      "Support Classification",
+      "Response Generation"
+    ],
+    "limitations": "The dataset primarily focuses on edited posts, which may limit its comprehensiveness.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Reddit posts and comments",
+    "size": "59,666 comments linked to 1,689 unique posts",
+    "format": "JSON",
+    "annotation": "Annotated by human evaluators using majority consensus for effectiveness."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics calculated based on the proportion of effective social support comments.",
+    "interpretation": "Comment effectiveness determined by community validation and original poster feedback.",
+    "baseline_results": "Human annotators agreed with the effective social support label in 94.68% of supportive cases.",
+    "validation": "Reliability assessed through qualitative evaluations and cross-annotator comparisons."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Data privacy rights alignment"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Dataset includes diverse user interactions across various mental health-related subreddits.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All personally identifiable information (PII) has been anonymized, and data was collected from publicly available sources.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Obtained from publicly available Reddit posts and comments.",
+    "compliance_with_regulations": "Complies with Reddit's data usage policy."
+  }
+}

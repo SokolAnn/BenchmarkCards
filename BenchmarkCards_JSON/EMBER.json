@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "EMBER (Epistemic Marker Benchmark for Evaluator Robustness)",
+    "abbreviation": "EMBER",
+    "overview": "EMBER is a benchmark designed to assess the robustness of LLM-judges to epistemic markers in both single and pairwise evaluation settings, focusing on how these markers influence the judging performance of LLMs.",
+    "data_type": "question-answering pairs, instruction-following pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/DongryeolLee96/EMBER"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the robustness of LLM-judges against epistemic markers and assess how these markers affect their judgment on model-generated outputs.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Instruction Following"
+    ],
+    "limitations": "The study focuses on two specific evaluation tasks, leaving other potential influences of epistemic markers across various tasks unexplored.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The EVOUNA dataset (Wang et al., 2024) for question-answering and MIXINSTRUCT (Jiang et al., 2023) for instruction-following.",
+    "size": "2,000 instances for EMBER QA and 823 instances for EMBER IF",
+    "format": "JSON",
+    "annotation": "Manually annotated by human evaluators after augmentation with epistemic markers."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Verdict Switch Rate (VSR)"
+    ],
+    "calculation": "Accuracy is defined as the match rate between LLM-judges and ground-truth labels. VSR indicates the percentage of samples that changed verdicts due to the presence of epistemic markers.",
+    "interpretation": "Ideally, a robust LLM-judge should demonstrate zero changes in verdicts due to epistemic markers.",
+    "baseline_results": "Results from five LLM-judges (GPT-3.5-turbo, GPT-4-turbo, GPT-4o, Llama-3-8B-Instruct, Llama-3-70B-Instruct) indicate biases against epistemic markers, particularly weakeners, affecting evaluation accuracy.",
+    "validation": "Human evaluators assessed the correctness of model outputs augmented with epistemic markers to ensure validity."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

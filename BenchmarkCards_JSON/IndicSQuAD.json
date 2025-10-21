@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "IndicSQuAD",
+    "abbreviation": "N/A",
+    "overview": "IndicSQuAD is a comprehensive multi-lingual extractive QA dataset covering nine major Indic languages, systematically derived from the SQuAD dataset, aimed to improve question-answering systems for low-resource Indic languages.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Hindi",
+      "Bengali",
+      "Marathi",
+      "Telugu",
+      "Tamil",
+      "Gujarati",
+      "Punjabi",
+      "Kannada",
+      "Odia",
+      "Malayalam"
+    ],
+    "similar_benchmarks": [
+      "MahaSQuAD",
+      "TyDiQA",
+      "XQuAD",
+      "MLQA",
+      "Indic QA Benchmark",
+      "L3Cube-IndicQuest"
+    ],
+    "resources": [
+      "https://github.com/l3cube-pune/indic-nlp"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a large-scale, high-quality findable question-answering dataset for Indic languages to facilitate the development of robust and inclusive NLP applications.",
+    "audience": [
+      "ML Researchers",
+      "NLP Practitioners",
+      "Language Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Systematically translated and adapted from the SQuAD dataset.",
+    "size": "118,516 training samples, 11,873 validation samples, 11,803 test samples for each language.",
+    "format": "JSON",
+    "annotation": "Translated with linguistic fidelity and answer-span alignment techniques applied."
+  },
+  "methodology": {
+    "methods": [
+      "Evaluation using baseline performance metrics on QA tasks",
+      "Comparison of monolingual and multilingual models"
+    ],
+    "metrics": [
+      "Exact Match (EM)",
+      "F1 Score"
+    ],
+    "calculation": "Performance metrics calculated based on the predictions of the models against the ground truth in the dataset.",
+    "interpretation": "Higher EM and F1 scores indicate better performance in extracting answer spans accurately.",
+    "baseline_results": "EM scores for models vary; for example, HindiRoBERTa achieved EM of 56.20%.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

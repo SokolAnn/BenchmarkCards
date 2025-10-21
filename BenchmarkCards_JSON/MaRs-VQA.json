@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MaRs-VQA (Matrix Reasoning Visual Question Answering)",
+    "abbreviation": "MaRs-VQA",
+    "overview": "MaRs-VQA is a new visual question answering dataset designed to evaluate the visual cognition capabilities of Multimodal Large Language Models (MLLMs) in matrix reasoning tasks. It allows for direct comparison between MLLMs and human performance on a scale larger than previous benchmarks.",
+    "data_type": "image-text pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Cognitive Psychology"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "RAVEN"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/IrohXu/VCog-Bench",
+      "https://github.com/IrohXu/Cognition-MLLM"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To rigorously evaluate the visual cognitive abilities of MLLMs and identify the performance gap between MLLMs and human intelligence in matrix reasoning tasks.",
+    "audience": [
+      "ML Researchers",
+      "Psychologists",
+      "AI Developers"
+    ],
+    "tasks": [
+      "Visual Question Answering",
+      "Matrix Reasoning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Psychologist-designed questionnaire from the Matrix Reasoning Item Bank (MaRs-IB)",
+    "size": "1,440 image instances",
+    "format": "JSON",
+    "annotation": "Annotated with multi-stage cognition reasoning steps and options"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Models evaluated based on accuracy of correctly identifying the missing piece in matrix reasoning tasks.",
+    "interpretation": "Higher accuracy indicates better performance in visual cognition tasks relative to human benchmarks.",
+    "baseline_results": "Human performance achieved 81% accuracy while top-performing model reached 72.71%.",
+    "validation": "Validated across multiple existing MLLMs and compared against human results."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Misinterpretation of intelligence comparisons between AI and humans"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Attribution-NonCommercial 3.0 license for MaRs-IB, MIT License for study results.",
+    "consent_procedures": "All human studies in the source dataset approved by relevant ethical committees.",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CORECODE (Commonsense Reasoning and Conflict Detection in dialogues)",
+    "abbreviation": "CORECODE",
+    "overview": "CORECODE is a dataset that contains abundant commonsense knowledge manually annotated on dyadic dialogues, aimed to evaluate the commonsense reasoning and commonsense conflict detection capabilities of Chinese LLMs through a series of benchmark tasks.",
+    "data_type": "commonsense knowledge annotations",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "ATOMIC",
+      "CICERO",
+      "Social IQA"
+    ],
+    "resources": [
+      "https://github.com/danshi777/CORECODE"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess the capability of LLMs in learning and applying commonsense knowledge through a well-annotated dialogue dataset.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Educational Institutes"
+    ],
+    "tasks": [
+      "Commonsense Knowledge Filling",
+      "Commonsense Knowledge Generation",
+      "Commonsense Conflict Phrase Detection",
+      "Domain Identification",
+      "Slot Identification",
+      "Event Causal Inference"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Annotated from NaturalConv and DuLeMon datasets, encompassing multi-turn dialogues.",
+    "size": "76,787 annotations from 19,700 dialogues",
+    "format": "N/A",
+    "annotation": "Manual annotation by crowdsourced workers following a standardized procedure."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "BLEU Score",
+      "ROUGE-L"
+    ],
+    "calculation": "Scoring based on model predictions against annotated ground truth.",
+    "interpretation": "Higher performance indicates better commonsense reasoning capabilities of LLMs.",
+    "baseline_results": "Models like ChatGLM2-6B, BLOOMZ-7.1B performed best in evaluated tasks.",
+    "validation": "Extensive experiments conducted to assess model performance pre- and post-fine-tuning on CORECODE."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "YokaiEval",
+    "abbreviation": "N/A",
+    "overview": "YokaiEval is a benchmark dataset designed to evaluate language models' knowledge of Japanese folktales, specifically focusing on yokai, through 809 multiple-choice questions.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Japanese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/CyberAgentAILab/YokaiEval",
+      "https://huggingface.co/datasets/cyberagent/YokaiEval"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the cultural awareness and knowledge of large language models about Japanese yokai in folktales.",
+    "audience": [
+      "ML Researchers",
+      "Cultural Studies Scholars",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "The dataset is limited to Japanese yokai and may not represent folktales from other cultures.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated from Wikipedia articles about yokai utilizing GPT-4o for question generation and verification.",
+    "size": "809 questions",
+    "format": "JSON",
+    "annotation": "Generated and curated using AI-assisted methods followed by manual verification."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Calculated as the number of correct answers over the total number of questions.",
+    "interpretation": "Higher accuracy indicates better knowledge of Japanese yokai among language models. Accuracy results are compared between different types of models.",
+    "baseline_results": null,
+    "validation": "Performance evaluated on 31 language models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

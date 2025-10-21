@@ -1,0 +1,76 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Controlled RippleEdit",
+    "abbreviation": "N/A",
+    "overview": "Controlled RippleEdit is a new dataset designed to evaluate knowledge propagation capabilities of language models, allowing for focused assessment of generalization by testing relations and entities that were unseen during hypernetwork training.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "RippleEdit"
+    ],
+    "resources": [
+      "https://github.com/edenbiran/RippleEdits/tree/main/data/benchmark"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Evaluate knowledge propagation in language models through a designed set of propagation questions and injected knowledge facts.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Multi-hop Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Synthetic generation from structured templates based on fictional stories and well-known entities.",
+    "size": "5,000 examples",
+    "format": "JSON",
+    "annotation": "Manually designed templates and paired question-answer sets."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "LLM-Score (Accuracy)"
+    ],
+    "calculation": "Metrics are calculated based on model performance against validation sets of efficacy and specificity.",
+    "interpretation": "Higher LLM-Score indicates better ability of the model to propagate knowledge correctly.",
+    "baseline_results": "PropMEND significantly outperformed baselines like Prepend and MEND in both in-domain and out-of-domain settings.",
+    "validation": "Performance evaluated using cross-validation on separate validation and test splits."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "MIT License",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

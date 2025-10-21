@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TERMinator",
+    "abbreviation": "N/A",
+    "overview": "This paper is devoted to the extraction of entities and semantic relations between them from scientific texts. We present a dataset that includes annotations for two tasks and develop a system called TERMinator for the study of the influence of language models on term recognition and comparison of different approaches for relation extraction.",
+    "data_type": "text (annotated scientific terms and relation labels)",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Science"
+    ],
+    "languages": [
+      "Russian"
+    ],
+    "similar_benchmarks": [
+      "SciERC"
+    ],
+    "resources": [
+      "https://github.com/iis-research-team/terminator",
+      "https://github.com/iis-research-team/ruserrc-dataset",
+      "https://arxiv.org/abs/2209.14854"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Provide a new dataset for term recognition and relation extraction in Russian scientific texts and develop the TERMinator tool to study the influence of language models and compare approaches for relation extraction.",
+    "audience": [
+      "Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Named Entity Recognition",
+      "Relation Extraction"
+    ],
+    "limitations": "Markup quality significantly affects performance; dataset size is limited (some relation classes have very few examples); some relations are implicit making them difficult to annotate and detect; as far as the authors know this is the first corpus for scientific texts in Russian, making direct comparison to prior work difficult.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Abstracts of scientific papers on Information Technology (computer science) in Russian.",
+    "size": "136 training texts and 80 test texts; 12,809 training tokens and 11,157 test tokens; 2,028 training terms and 2,027 test terms; 356 training relations and 620 test relations.",
+    "format": "N/A",
+    "annotation": "Entities annotated in BIO format with tags B-TERM, I-TERM, O. Relations annotated with six semantic relation types: CAUSE, ISA, PART_OF, SYNONYMS, TOOL, USAGE."
+  },
+  "methodology": {
+    "methods": [
+      "Fine-tuning pre-trained language models (mBERT, ruBERT, rubert-tiny2) for Named Entity Recognition",
+      "Heuristics and dictionary-based matching combined with model predictions for term extraction",
+      "Lexical pattern matching for relation extraction",
+      "Classification with CLS-vector (R-BERT-like) for relation extraction",
+      "Ensemble combining model-based classification and lexical patterns"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Precision",
+      "Recall",
+      "Exact match (full match) and Partial match for term extraction"
+    ],
+    "calculation": "Metrics are recorded after each training epoch. Term extraction is evaluated with both exact (full) match and partial match metrics. Relation extraction is treated as a 7-class classification (CAUSE, ISA, PART_OF, SYNONYMS, TOOL, USAGE, NO-RELATION) and evaluated using Precision, Recall, and F1.",
+    "interpretation": "Models achieve higher scores on partial match than on exact match, indicating difficulty with exact term boundary detection. Fine-tuning on manually annotated data yields better performance than on pseudo-labeled data despite the latter being larger. Combining language models with heuristics and dictionaries can improve exact-match performance.",
+    "baseline_results": "Term extraction: best exact-match F1 = 0.50 (ruBERT + dictionary + heuristics); ruBERT partial-match F1 reported as 0.88 on the manually labeled set. Relation extraction: combined approach macro-average F1 = 0.29; example model results for relation extraction: mBERT F1 = 0.26, ruBERT F1 = 0.27, rubert-tiny2 F1 = 0.22.",
+    "validation": "Dataset split into train (136 texts) and test (80 texts) used for evaluation. For relation extraction, authors trained on the corpus without a separate validation set and selected the number of epochs experimentally due to very few examples for some relations. They also used experimental selection of maximum context length for pattern matching."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy",
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

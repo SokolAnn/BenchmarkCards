@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CoXQL (Conversational Explanation Query Language)",
+    "abbreviation": "CoXQL",
+    "overview": "CoXQL is the first dataset in the NLP domain for user intent recognition in Conversational Explainable AI (ConvXAI), covering 31 intents and supporting a variety of XAI operations.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "CoSQL",
+      "Spider"
+    ],
+    "resources": [
+      "https://github.com/DFKI-NLP/CoXQL"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a dataset for explanation request parsing in ConvXAI systems and to improve explanation intent recognition.",
+    "audience": [
+      "ML Researchers",
+      "ConvXAI Developers"
+    ],
+    "tasks": [
+      "Intent Recognition",
+      "Text-to-SQL Parsing"
+    ],
+    "limitations": "The current complexity of user questions might be lower compared to other text-to-SQL datasets that involve complex SQL grammar.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Manually created and augmented user questions and SQL-like queries based on existing studies and datasets.",
+    "size": "1,179 pairs",
+    "format": "JSON",
+    "annotation": "Annotated by three authors with a token-level inter-annotator agreement of Fleiss’ κ= 0.87."
+  },
+  "methodology": {
+    "methods": [
+      "Multi-prompt Parsing",
+      "Guided Decoding",
+      "Nearest Neighbor"
+    ],
+    "metrics": [
+      "Exact Match Parsing Accuracy"
+    ],
+    "calculation": "Measured by comparing generated SQL-like queries with gold parses.",
+    "interpretation": "High accuracy indicates better performance in intent recognition.",
+    "baseline_results": "Baseline achieved 44.25% accuracy using Nearest Neighbor.",
+    "validation": "Evaluation conducted on various state-of-the-art LLMs and performance compared using different parsing strategies."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

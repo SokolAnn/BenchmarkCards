@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CLAMBER (Clarifying Ambiguous Queries)",
+    "abbreviation": "CLAMBER",
+    "overview": "CLAMBER presents a benchmark for evaluating LLMs in identifying and clarifying ambiguous user queries through a well-organized taxonomy, providing ∼12K high-quality data.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/zt991211/CLAMBER"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate LLMs in identifying and clarifying ambiguous queries to enhance user trust and information retrieval.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Ambiguity Identification",
+      "Clarifying Question Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from various datasets including ALCUNA, AmbiTask, AmbER, AmbiPun, AmbiCoref, AmbigQA, and Dolly.",
+    "size": "12,000 examples",
+    "format": "JSON",
+    "annotation": "Manually annotated by linguistic experts."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on the performance of LLMs in identifying ambiguities and generating clarifying questions.",
+    "interpretation": "High Accuracy and F1 Score indicate effective performance in handling ambiguity.",
+    "baseline_results": "Results include evaluations against various LLMs including ChatGPT, Llama2, and Vicuna.",
+    "validation": "Dataset validation involved five linguistic experts reviewing the ambiguity labels and clarifying questions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

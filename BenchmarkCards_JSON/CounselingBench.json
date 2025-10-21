@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CounselingBench",
+    "abbreviation": "N/A",
+    "overview": "CounselingBench is a novel NCMHCE-based benchmark evaluating 22 general-purpose and medical-finetuned LLMs across five key competencies in mental health counseling. It systematically assesses how well LLMs can process and apply domain-specific knowledge from case studies to address questions evaluating these key competencies.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "CBT-BENCH"
+    ],
+    "resources": [
+      "https://github.com/cuongnguyenx/CounselingBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate LLM performance in mental health counseling in alignment with essential competencies.",
+    "audience": [
+      "Mental Health Professionals",
+      "AI Researchers",
+      "Academics"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "Evaluating LLM competency via multiple-choice exams may not fully capture the complexities of real-world mental health counseling. The dataset may not adequately represent the diversity of situations encountered by mental health professionals.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The National Clinical Mental Health Counseling Examination (NCMHCE) questions and case studies.",
+    "size": "1612 unique questions across 138 case studies",
+    "format": "N/A",
+    "annotation": "Manually annotated by medical doctors specializing in psychiatry for competency mapping."
+  },
+  "methodology": {
+    "methods": [
+      "Zero-shot",
+      "Few-shot",
+      "Chain-of-thought"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "BERTScore"
+    ],
+    "calculation": "Accuracy is calculated by comparing responses of the LLMs against the correct answers in the benchmark.",
+    "interpretation": "Higher scores indicate a better alignment with expert-level knowledge in mental health counseling. Models exceeding 63% accuracy are considered capable of passing the NCMHCE.",
+    "baseline_results": "gpt4o achieved a zero-shot accuracy of 78%, the best performing among tested models.",
+    "validation": "The benchmark was validated through comparison with human expert performance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset includes case studies representing diverse ethnic and cultural backgrounds.",
+    "harm": "Potential overreliance on AI systems could compromise patient care and erode therapeutic alliance."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

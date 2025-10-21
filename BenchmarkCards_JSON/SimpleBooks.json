@@ -1,0 +1,77 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SimpleBooks",
+    "abbreviation": "N/A",
+    "overview": "A small long-term-dependency dataset with high average token frequency designed as a benchmark and testbed for word-level language modeling and for faster experimentation (e.g., architectural search). Created from Gutenberg books, SimpleBooks includes a 92-million-token version (SimpleBooks-92) and a 2-million-token version (SimpleBooks-2) and provides both tokenized and raw unprocessed text.",
+    "data_type": "text (word-level tokens; includes raw unprocessed text for character-level language modeling)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Penn TreeBank (PTB)",
+      "WikiText-103",
+      "WikiText-2",
+      "One-Billion Word"
+    ],
+    "resources": [
+      "https://dldata-public.s3.us-east-2.amazonaws.com/simplebooks.zip",
+      "https://github.com/salesforce/awd-lstm-lm",
+      "https://github.com/kimiyoung/transformer-xl",
+      "https://github.com/NVIDIA/Milano",
+      "https://github.com/chiphuyen/lazynlp"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Provide a small long-term-dependency dataset with high average token frequency that is representative of larger datasets to serve as a benchmark and testbed for language modeling, and as a more suitable dataset for setups like architectural search and meta-learning.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Word-level Language Modeling",
+      "Character-level Language Modeling",
+      "Word embedding training / Transfer Learning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Downloaded from Gutenberg US (www.gutenberg.org). From an initial set of 39,432 books (after discarding mal-formatted books and books of poems, plays, manuals, recipes, and literary nonsense), a subset of 1,573 books was selected to create the dataset.",
+    "size": "SimpleBooks-92: 92M word-level tokens (train), 200k tokens validation, 200k tokens test; vocabulary size 98,304. SimpleBooks-2: 2M word-level tokens (train), 200k tokens validation, 200k tokens test; vocabulary size 11,492.",
+    "format": "Raw text files; tokenized using SpaCy (space-separated tokens with specific number tokenization conventions); tokenized and raw versions provided in the released ZIP.",
+    "annotation": "No annotation (raw/unlabeled text for unsupervised language modeling)"
+  },
+  "methodology": {
+    "methods": [
+      "Training and evaluation of language models (AWD-LSTM and Transformer-XL)",
+      "Hyperparameter search using Milano (500 hyperparameter sets on first 30 epochs for SimpleBooks-2)",
+      "Transfer learning experiments using word2vec skip-gram embeddings"
+    ],
+    "metrics": [
+      "Perplexity",
+      "Model parameter count"
+    ],
+    "calculation": "Perplexity is reported on the held-out validation and test sets (values presented in tables for validation and test perplexities). Model parameter counts are reported for models that achieve near-SOTA results.",
+    "interpretation": "Lower perplexity indicates better language model performance. The paper reports that Transformer-XL outperformed AWD-LSTM on both SimpleBooks-2 and SimpleBooks-92 (based on validation and test perplexities) and that SimpleBooks reduces required model parameters and training time compared to WikiText-103.",
+    "baseline_results": "Validation and test perplexities (Table 2): SB-2 AWD-LSTM: Valid 17.16, Test 16.78. SB-2 Transformer-XL: Valid 17.27, Test 16.41. SB-92 AWD-LSTM: Valid 21.45, Test 20.64. SB-92 Transformer-XL: Valid 9.3, Test 8.92.",
+    "validation": "Held-out validation set of 200k tokens used. Hyperparameter search conducted via Milano on first 30 epochs (500 hyperparameter sets) for SimpleBooks-2; best hyperparameters then trained until convergence."
+  },
+  "targeted_risks": {
+    "risk_categories": [],
+    "atlas_risks": {
+      "risks": null
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

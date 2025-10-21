@@ -1,0 +1,73 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Automated MCQA Benchmarking at Scale",
+    "abbreviation": "N/A",
+    "overview": "We introduce a scalable, modular framework for generating multiple-choice question-answering (MCQA) benchmarks directly from large corpora of scientific papers. As a case study, we generate more than 16,000 MCQs from 22,000 open-access articles in radiation and cancer biology and evaluate small language models on these questions.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ARC",
+      "GPQA",
+      "SciQA",
+      "PaperQA",
+      "MMLU"
+    ],
+    "resources": [
+      "https://github.com/ramanathanlab/distllmstudy"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a timely, reproducible, and extensible benchmark for evaluating language models in the domain of radiation and cancer biology.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated from 14,115 full-text papers and 8,433 abstracts downloaded via the Semantic Scholar API, focusing on cancer and radiation biology.",
+    "size": "16,680 MCQs",
+    "format": "JSON",
+    "annotation": "Automated MCQ generation using semantic chunking and quality checks via GPT-4.1."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Calculating accuracy based on the proportion of correct answers out of total questions.",
+    "interpretation": "Higher accuracy indicates better model performance in understanding and answering domain-specific questions.",
+    "baseline_results": null,
+    "validation": "Models evaluated under three conditions: baseline, retrieval-augmented generation from chunks, and reasoning trace retrieval."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

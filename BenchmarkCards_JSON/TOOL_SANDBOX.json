@@ -1,0 +1,101 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TOOL SANDBOX (A Stateful, Conversational, Interactive Evaluation Benchmark for LLM Tool Use Capabilities)",
+    "abbreviation": "TOOL SANDBOX",
+    "overview": "TOOL SANDBOX is a stateful, conversational and interactive evaluation benchmark for LLM tool-use capabilities, showcasing significant performance gaps between models across complex task scenarios such as State Dependency, Canonicalization, and Insufficient Information.",
+    "data_type": "test scenarios with stateful tool interactions",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "BFCL",
+      "ToolEval",
+      "API-Bank",
+      "ToolTalk",
+      "τ-bench"
+    ],
+    "resources": [
+      "https://github.com/apple/ToolSandbox"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation framework for LLMs' tool-use capabilities in a conversational interactive setting, illuminating challenges faced by state-of-the-art models.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Tool Use",
+      "State Dependency Handling",
+      "Conversational Interaction"
+    ],
+    "limitations": "Requires deep knowledge of tool capacities for milestone and minefield authoring and is subject to non-negligible hallucination from the user simulator.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated synthetic data from simulated interactions within the benchmark framework.",
+    "size": "1,032 test scenarios",
+    "format": "Python scripts",
+    "annotation": "Manually authored and calibrated by internal domain experts."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "On-policy conversational evaluation"
+    ],
+    "metrics": [
+      "Average similarity score",
+      "Turn efficiency"
+    ],
+    "calculation": "Metrics are calculated based on milestones and minefields defined for each test scenario and evaluated through a trajectory's conformity to these defined steps.",
+    "interpretation": "Higher similarity scores indicate better alignment with the defined milestones and overall completion of tasks; lower turn counts suggest improved efficiency.",
+    "baseline_results": null,
+    "validation": "Multiple rounds of tests against several LLM models were conducted to ensure validity and reliability."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Privacy",
+      "Robustness",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

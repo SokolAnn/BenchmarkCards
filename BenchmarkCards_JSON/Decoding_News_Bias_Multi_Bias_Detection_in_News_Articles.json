@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Decoding News Bias: Multi Bias Detection in News Articles",
+    "abbreviation": "N/A",
+    "overview": "This study proposes a new approach to bias detection in news articles by identifying various types of biases using a dataset curated through Large Language Models (LLMs). It addresses gaps in existing bias detection methods by classifying articles into seven distinct bias categories.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://aylien.com/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To extend the framework for detecting biases in news articles and improve the integrity and impartiality of media reporting through comprehensive bias identification.",
+    "audience": [
+      "ML Researchers",
+      "Media Analysts",
+      "Ethics Researchers"
+    ],
+    "tasks": [
+      "Bias Detection"
+    ],
+    "limitations": "The reliability of annotations provided by LLMs requires further exploration to minimize inconsistencies.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "News articles collected from Aylein API covering multiple domains.",
+    "size": "4,886 samples",
+    "format": "N/A",
+    "annotation": "Dataset labeled using Large Language Models (LLMs) with a focus on various bias categories."
+  },
+  "methodology": {
+    "methods": [
+      "Transformer-based model evaluation",
+      "LLM-based dataset annotation"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Metrics calculated using standard evaluation methods for multilabel classification.",
+    "interpretation": "Higher scores indicate better performance in detecting various biases.",
+    "baseline_results": "BERT achieved the highest F1-score of 0.89 in detecting Political Bias.",
+    "validation": "Multilabel Stratified KFold used to maintain label distributions across splits."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

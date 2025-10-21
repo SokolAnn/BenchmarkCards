@@ -1,0 +1,75 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "WiCkeD (Wild-CardDistractor)",
+    "abbreviation": "WiCkeD",
+    "overview": "WiCkeD is a method to increase the complexity of existing multiple-choice benchmarks by randomly replacing a choice with 'None of the above'. It can be automatically applied to any existing benchmark to evaluate true reasoning capabilities of models.",
+    "data_type": "multiple-choice questions",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMLU",
+      "MMLU-Pro",
+      "Commonsense-QA",
+      "TruthfulQA",
+      "Arc-challenge"
+    ],
+    "resources": [
+      "https://github.com/ahmedselhady/wicked-benchmarks"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To create challenging variants of existing MCQ benchmarks that better gauge the reasoning capabilities of large language models.",
+    "audience": [
+      "ML Researchers",
+      "Practitioners"
+    ],
+    "tasks": [
+      "Multiple Choice Question Answering"
+    ],
+    "limitations": "WiCkeD's effectiveness may vary across benchmarks that require further verification. Closed models like GPT-4 and Claude were not evaluated.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Existing multiple-choice benchmarks including MMLU, MMLU-Pro, Commonsense-QA, Truthful-QA, and Arc-challenge.",
+    "size": "6 benchmarks",
+    "format": "Modified MCQ format",
+    "annotation": "Automatic selection of options to replace with 'None of the above'."
+  },
+  "methodology": {
+    "methods": [
+      "Automated benchmarking",
+      "Statistical analysis"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Performance metrics calculated based on model responses to original vs. WiCkeD benchmarks.",
+    "interpretation": "A significant drop in performance indicates increased challenge and potential limitations in reasoning capabilities.",
+    "baseline_results": null,
+    "validation": "Validation through multiple experiments across different model families."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Potential misalignment of model responses due to increased difficulty."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

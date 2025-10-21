@@ -1,0 +1,103 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CliMedBench: A Large-Scale Chinese Benchmark for Evaluating Medical Large Language Models in Clinical Scenarios",
+    "abbreviation": "CliMedBench",
+    "overview": "CliMedBench is a comprehensive benchmark with 14 expert-guided core clinical scenarios designed to assess the medical ability of LLMs across seven dimensions, comprising 33,735 questions derived from real-world medical reports of top-tier tertiary hospitals and authentic examination exercises.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "MedQA",
+      "MedMCQA",
+      "CMExam",
+      "CMB",
+      "MLEC-QA",
+      "MedBench"
+    ],
+    "resources": [
+      "https://github.com/Optifine-TAT/CliMedBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of CliMedBench is to provide a standardized evaluation benchmark to scrutinize the capabilities and limitations of medical LLMs.",
+    "audience": [
+      "ML Researchers",
+      "Medical Practitioners"
+    ],
+    "tasks": [
+      "Clinical Question Answering",
+      "Knowledge Application",
+      "Reasoning",
+      "Information Retrieval",
+      "Summarization",
+      "Hallucination Detection",
+      "Toxicity Assessment"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset is derived from real-world Electronic Health Records (EHRs) of top-tier tertiary hospitals in China, supplemented with examination exercises and clinical consultation data.",
+    "size": "33,735 questions",
+    "format": "N/A",
+    "annotation": "Expert-guided annotation by medical professionals."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Kendall's Tau",
+      "ROUGE-1"
+    ],
+    "calculation": "Metrics are calculated based on LLMs' responses to questions in various scenarios.",
+    "interpretation": "Higher scores indicate better performance in clinical reasoning and knowledge application.",
+    "baseline_results": null,
+    "validation": "The benchmark was validated through expert assessments and iterative feedback from medical professionals."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All EHRs were doubly de-identified to ensure patient privacy.",
+    "data_licensing": "N/A",
+    "consent_procedures": "The project was conducted in collaboration with relevant medical centers with proper approval.",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CableInspect-AD (An Expert-Annotated Anomaly Detection Dataset)",
+    "abbreviation": "CableInspect-AD",
+    "overview": "CableInspect-AD is a high-quality, publicly available dataset created and annotated by domain experts for visual anomaly detection in power line cables, featuring 4,798 high-resolution images with 6,023 annotated anomalies across three types of cables.",
+    "data_type": "image",
+    "domains": [
+      "Robotics"
+    ],
+    "languages": [
+      "N/A"
+    ],
+    "similar_benchmarks": [
+      "MVTec AD",
+      "VisA",
+      "MVTec LOCO AD"
+    ],
+    "resources": [
+      "https://mila-iqia.github.io/cableinspect-ad/",
+      "https://github.com/mila-iqia/cableinspect-ad-code"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enable research on industrial anomaly detection for robotic power line cable inspection.",
+    "audience": [
+      "ML Researchers",
+      "Industrial Practitioners",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Anomaly Detection",
+      "Anomaly Segmentation"
+    ],
+    "limitations": "The dataset may not encompass every possible anomaly found on a cable in real-world settings due to inherent complexity.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Images acquired from powered line cables with a focus on identifying various types of anomalies.",
+    "size": "4,798 images",
+    "format": "COCO format",
+    "annotation": "Annotations are provided at the image level with bounding boxes, types, and grades for anomalies."
+  },
+  "methodology": {
+    "methods": [
+      "k-fold cross-validation",
+      "Threshold-dependent evaluation metrics"
+    ],
+    "metrics": [
+      "F1 Score",
+      "AUROC",
+      "AUPR"
+    ],
+    "calculation": "Metrics are calculated based on model predictions during cross-validation.",
+    "interpretation": "Higher F1 Score indicates better model performance in detecting anomalies.",
+    "baseline_results": null,
+    "validation": "Evaluation is conducted using k-fold cross-validation strategy."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset includes various grades of anomaly severities.",
+    "harm": "Deployment of underperforming models may miss critical anomalies, compromising safety."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC BY-NC-SA 4.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

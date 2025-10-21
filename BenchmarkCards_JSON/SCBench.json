@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SCBench: A Sports Commentary Benchmark for Video LLMs",
+    "abbreviation": "SCBench",
+    "overview": "SCBench is a novel benchmarking task developed for sports video commentary generation, featuring a dataset called CommentarySet that includes 5,775 annotated video clips across six sports categories, evaluated using a new six-dimensional metric SCORES.",
+    "data_type": "video clips with commentary annotations",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SoccerNet",
+      "FineGym",
+      "TenniSet"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the performance of Video Large Language Models (Video LLMs) on generating detailed sports commentary and to advance research in sports video understanding.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Sports Video Commentary Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected high-definition sports videos with professional English commentary from various sporting events.",
+    "size": "5,775 clips",
+    "format": "JSON and video files",
+    "annotation": "Annotations are made by humans, marking the commentary and timestamps for video clips."
+  },
+  "methodology": {
+    "methods": [
+      "Model Inference",
+      "GPT-based Evaluation"
+    ],
+    "metrics": [
+      "SCORES"
+    ],
+    "calculation": "Performance evaluated by a combination of model-generated commentary and ground-truth commentary through the SCORES metric.",
+    "interpretation": "Scores range from 0 to 10 based on the quality of generated commentary compared to ground truth.",
+    "baseline_results": "InternVL-Chat-2 achieved the best performance with a score of 5.44.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "COCONut-PanCap",
+    "abbreviation": "N/A",
+    "overview": "The COCONut-PanCap dataset is created to enhance panoptic segmentation and grounded image captioning, incorporating fine-grained, region-level captions grounded in segmentation masks to improve the detail of generated captions for multi-modal learning tasks.",
+    "data_type": "image-caption pairs",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "COCO-caption"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2502.02589"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a high-quality dataset for detailed captioning and grounded segmentation tasks.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Detailed Captioning",
+      "Panoptic Segmentation",
+      "Text-to-Image Generation",
+      "Visual Question Answering",
+      "Referring Segmentation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "COCO images with advanced COCONut panoptic masks",
+    "size": "143,000 image-text pairs (118,000 for training, 25,000 for validation)",
+    "format": "JPEG",
+    "annotation": "Human-edited, densely annotated descriptions with segmentation masks"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "CIDEr",
+      "METEOR",
+      "BLEU@4",
+      "ROUGE-L",
+      "PQ"
+    ],
+    "calculation": "Metrics are calculated as standard scores comparing generated captions against human annotations.",
+    "interpretation": "Higher scores indicate better performance in generating detailed and accurate captions.",
+    "baseline_results": "The proposed dataset outperformed recent detailed caption datasets.",
+    "validation": "Evaluation was performed on a validation set of 25,000 images."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

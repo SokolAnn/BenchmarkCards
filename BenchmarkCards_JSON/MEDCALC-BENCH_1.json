@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MEDCALC-BENCH",
+    "abbreviation": "N/A",
+    "overview": "MEDCALC-BENCH is a first-of-its-kind dataset focused on evaluating the medical calculation capability of LLMs. It contains an evaluation set of over 1000 manually reviewed instances from 55 different medical calculation tasks. Each instance consists of a patient note, a question requesting to compute a specific medical value, a ground truth answer, and a step-by-step explanation showing how the answer is obtained.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MedQA",
+      "PubMedQA",
+      "MedMCQA"
+    ],
+    "resources": [
+      "https://github.com/ncbi-nlp/MedCalc-Bench",
+      "https://huggingface.co/datasets/ncbi/MedCalc-Bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive benchmark assessing the medical calculation capabilities of large language models.",
+    "audience": [
+      "ML Researchers",
+      "Healthcare Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Medical Calculation"
+    ],
+    "limitations": "Limited dataset size of 1,047 instances may restrict comprehensive evaluation.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset was curated from publicly available patient notes and templates generated for various medical calculators.",
+    "size": "1,047 instances",
+    "format": "JSON",
+    "annotation": "Manually reviewed by medical professionals."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "The evaluation scores are computed as the percentage of correct answers out of total questions.",
+    "interpretation": "Higher accuracy indicates better capability of the model in performing medical calculations.",
+    "baseline_results": "GPT-4 achieved the highest baseline performance of 50.9% accuracy using one-shot chain-of-thought prompting.",
+    "validation": "The dataset was meticulously curated with instances manually verified by medical professionals."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Only publicly available patient notes were used, with no identifiable personal health information.",
+    "data_licensing": "Released under the CC-BY-SA 4.0 license for non-commercial use.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

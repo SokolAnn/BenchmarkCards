@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "NEST FUL: A Benchmark for Evaluating LLMs on Nested Sequences of API Calls",
+    "abbreviation": "NEST FUL",
+    "overview": "NEST FUL is a benchmark designed to evaluate LLMs on nested sequences of API calls, emphasizing the complexity of passing outputs of one API call as inputs to subsequent calls.",
+    "data_type": "nested sequences of API calls",
+    "domains": [
+      "Natural Language Processing",
+      "Coding"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "BFCL v1",
+      "BFCL v2",
+      "BFCL v3",
+      "API-Blend",
+      "NesTools"
+    ],
+    "resources": [
+      "https://github.com/IBM/NESTFUL"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive benchmark for evaluating the performance of LLMs in complex nested API call sequences.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Function Calling",
+      "API Interaction"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Built from MathQA and StarCoder2-Instruct datasets.",
+    "size": "1800+ nested sequences",
+    "format": "JSON",
+    "annotation": "Each instance includes user queries, API specifications, and corresponding gold sequences."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Partial Match Accuracy",
+      "Full Match Accuracy",
+      "Win Rate"
+    ],
+    "calculation": "Scores are calculated based on the alignment of predicted API sequences with gold standard outputs.",
+    "interpretation": "High scores indicate better performance in generating correct API sequences.",
+    "baseline_results": "GPT-4o achieves the best performance with a Full Match Accuracy of 28% and a Win Rate of 60%.",
+    "validation": "The benchmark was validated by executing the nested sequences to confirm the correct outputs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Apache 2.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

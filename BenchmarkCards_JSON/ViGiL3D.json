@@ -1,0 +1,80 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Visual Grounding with Diverse Language in 3D (ViGiL3D)",
+    "abbreviation": "ViGiL3D",
+    "overview": "ViGiL3D is a diagnostic dataset for evaluating visual grounding methods against a diverse set of language patterns in 3D scenes to determine their strengths and weaknesses in grounding targets based on different linguistic phenomena.",
+    "data_type": "text",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ScanRefer",
+      "Nr3D",
+      "Sr3D",
+      "Multi3DRefer"
+    ],
+    "resources": [
+      "https://3dlg-hcvc.github.io/vigil3d/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a diverse diagnostic benchmark for evaluating visual grounding methods in 3D scenes.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Visual Grounding"
+    ],
+    "limitations": "Dataset is relatively small, which may affect the power of conclusions.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Annotated prompts generated based on scenes from ScanNet and ScanNet++ datasets.",
+    "size": "350 prompts",
+    "format": "N/A",
+    "annotation": "Manually annotated with a focus on linguistic diversity."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on ground truth bounding boxes and predicted boxes with IoU thresholds.",
+    "interpretation": "Performance is indicated by accuracy and F1 score on the 3D visual grounding task.",
+    "baseline_results": "Baseline performances are based on results from methods evaluated on existing datasets such as ScanRefer.",
+    "validation": "Details were compared against manually annotated prompts to assess the accuracy of the pipeline."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Detection of Word Adversarial Examples in Text Classiﬁcation: Benchmark and Baseline via Robust Density Estimation",
+    "abbreviation": "N/A",
+    "overview": "To encourage further research in this domain, we release a benchmark for word-level adversarial example detection on four attack methods across four NLP models and four text classification datasets.",
+    "data_type": "text (sentence classification pairs: clean and adversarial examples)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/anoymous92874838/text-adv-detection",
+      "https://github.com/maximilianmozes/fgws"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Release a benchmark dataset for word-level adversarial example detection on 4 attacks, 4 text classification datasets, and 4 models and provide a competitive baseline method (RDE) to encourage further research in this field.",
+    "audience": [],
+    "tasks": [
+      "Adversarial Example Detection",
+      "Text Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Adversarial examples generated from IMDB (Maas et al., 2011), AG-News (Zhang et al., 2015), SST-2 (Socher et al., 2013), and Yelp (Zhang et al., 2015) using attack methods Textfooler (TF), PWWS, BAE, and TF-adjusted via the TextAttack library.",
+    "size": "IMDB: 25,000 original test samples / 10,000 generated samples; AG-News: 7,600 original test samples / 7,600 generated samples; SST-2: 2,700 original test samples / 2,700 generated samples; Yelp: 38,000 original test samples / 5,000 generated samples.",
+    "format": "CSV",
+    "annotation": "Automatically generated adversarial examples using attack algorithms; labels inherited from original datasets."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Feature-based density estimation (Robust Density Estimation, RDE) using kPCA and Minimum Covariance Determinant (MCD)",
+      "Baseline comparison methods: FGWS (word-frequency based), Perplexity using GPT-2, MLE (feature Gaussian likelihood)"
+    ],
+    "metrics": [
+      "True Positive Rate (TPR)",
+      "F1 Score",
+      "Area Under ROC Curve (AUC)",
+      "False Positive Rate (FPR) (used as thresholding parameter)"
+    ],
+    "calculation": "TPR is the fraction of true adversarial samples out of predicted adversarial samples. F1-score is the harmonic mean of precision and recall. AUC measures the area under the TPR vs FPR curve. For TPR and F1 reported in experiments, FPR is fixed at 0.1.",
+    "interpretation": "For all three metrics, higher denotes better performance. TPR and F1 depend on a chosen FPR; experiments fix FPR = 0.1 (10% false positive rate). AUC considers performance across FPR values.",
+    "baseline_results": "RDE achieves the best performance by AUC on 29 out of 30 dataset-attack-model combinations and best performance by TPR, F1, AUC on 25 out of 30 combinations, outperforming FGWS, Perplexity (GPT-2), and MLE in the reported experiments.",
+    "validation": "Validation procedures include subsampling and three repetitions of random seeds for test/validation split and subsampled samples. For IMDB and AG-News, 30% of the test set is held out as validation set in some experiments. Experiments are conducted under two scenarios (Scenario 1 and Scenario 2) for dataset configuration."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": "The paper states: 'For such applications, attaining outputs of an adversarial input - whether correct or not - may turn out to be harmful to the system.'"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

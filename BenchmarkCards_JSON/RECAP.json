@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "RECAP (REwriting Conversations for Agent Planning)",
+    "abbreviation": "RECAP",
+    "overview": "RECAP is a new benchmark designed to evaluate and advance intent rewriting by reframing user-agent dialogues into concise representations of user goals. It captures diverse challenges such as ambiguity, intent drift, vagueness, and mixed-goal conversations.",
+    "data_type": "user-agent dialogues",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/megagonlabs/recap"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enable a deeper understanding of how to effectively represent complex user intent for agent planning.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Intent Rewriting",
+      "Agent Planning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Synthetic conversations generated to reflect realistic user-agent interactions across various topics.",
+    "size": "750 instances",
+    "format": "N/A",
+    "annotation": "Conversations were carefully vetted for coherency and adherence to the assigned challenge type."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "LLM-based evaluation"
+    ],
+    "metrics": [
+      "Node and Edge Count Differences",
+      "Graph Edit Distance",
+      "BERTScore"
+    ],
+    "calculation": "Metrics were calculated based on the differences in generated plans following rewrites of user-agent dialogues.",
+    "interpretation": "Higher scores in the metrics indicate better quality rewrites and planning outcomes.",
+    "baseline_results": null,
+    "validation": "Plans validated against human preferences and various automatically computed metrics."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Conversations were generated with attention to removing personal identifiable information and ensuring ethical vetting.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ACCORD (Autoregressive Constraint-satisfying generation for COmbinatorial Optimization with Routing and Dynamic attention)",
+    "abbreviation": "ACCORD",
+    "overview": "ACCORD is a framework that encodes combinatorial constraints into an autoregressive text format and uses dynamic LoRA routing to probe an LLM’s end-to-end ability on NP-hard tasks. It is associated with the ACCORD-90k dataset, which covers six NP-hard combinatorial problems, including TSP, VRP, Knapsack, FlowShop, JSSP, and BinPacking.",
+    "data_type": "text",
+    "domains": [
+      "Artificial Intelligence",
+      "Operations Research"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/starjob42/ACCORD"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a framework and dataset to investigate the reasoning abilities of LLMs on NP-hard combinatorial optimization tasks.",
+    "audience": [
+      "ML Researchers",
+      "Operations Researchers",
+      "Practitioners in AI"
+    ],
+    "tasks": [
+      "Combined Optimization",
+      "Combinatorial Optimization"
+    ],
+    "limitations": "ACCORD is limited by the LLM's context window, which restricts its applicability to very large instances.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Synthetic datasets generated using Google OR-Tools, covering tasks like TSP, VRP, Knapsack, Flow Shop, JSSP, and Bin Packing.",
+    "size": "90,000 examples",
+    "format": "CSV",
+    "annotation": "Automatically generated using problem solvers."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Feasibility",
+      "Optimality gap"
+    ],
+    "calculation": "Feasibility is calculated as the percentage of generated solutions that satisfy all constraints. Optimality gap is defined as Model Value minus OR-Tools Value over OR-Tools Value, where a lower gap indicates a better solution.",
+    "interpretation": "Higher feasibility percentages and lower optimality gaps indicate better performance for the model.",
+    "baseline_results": "ACCORD consistently outperforms prompting methods across all six combinatorial optimization tasks.",
+    "validation": "Extensive ablation studies demonstrate lower optimality gaps compared to traditional methods."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness",
+      "Transparency"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": []
+        },
+        {
+          "category": "Robustness",
+          "subcategory": []
+        },
+        {
+          "category": "Transparency",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

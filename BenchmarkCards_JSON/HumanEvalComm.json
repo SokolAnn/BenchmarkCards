@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "HumanEvalComm",
+    "abbreviation": "N/A",
+    "overview": "HumanEvalComm is created to evaluate the degree of communication skills of LLMs in code generation tasks by modifying problem descriptions to include inconsistencies, ambiguities, and incompletenesses. It assesses the ability of LLMs to ask clarifying questions when descriptions are modified according to specified requirement engineering concepts.",
+    "data_type": "text",
+    "domains": [
+      "Software Engineering"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "HumanEval"
+    ],
+    "resources": [
+      "https://github.com/jie-jw-wu/human-eval-comm"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the benchmark is to evaluate the communication competence of large language models and LLM agents in code generation tasks.",
+    "audience": [
+      "ML Researchers",
+      "Software Developers",
+      "AI Practitioners"
+    ],
+    "tasks": [
+      "Code Generation",
+      "Clarification Questioning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The benchmark constructs modified problem descriptions based on the HumanEval benchmark, applying different classification types from Requirement Engineering to trigger clarifying questions in LLMs.",
+    "size": "164 problems",
+    "format": "JSON",
+    "annotation": "Manually modified by experienced software engineers to introduce ambiguities, inconsistencies, and incompleteness."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Communication Rate",
+      "Good Question Rate",
+      "Pass@1",
+      "Test Pass Rate"
+    ],
+    "calculation": "Communication Rate is calculated as the percentage of responses containing questions instead of code. Good Question Rate measures the percentage of questions labeled as good by a LLM-based evaluator.",
+    "interpretation": "Higher Communication Rate and Good Question Rate indicate better communication competence of the models.",
+    "baseline_results": "N/A",
+    "validation": "Statistical significance tests (e.g., t-tests) are performed on the results to validate findings."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Potential miscommunication due to LLMs not asking for clarification when needed."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

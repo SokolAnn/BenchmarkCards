@@ -1,0 +1,114 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SberQuAD (Sberbank Question Answering Dataset)",
+    "abbreviation": "SberQuAD",
+    "overview": "SberQuAD — a large scale analog of Stanford SQuAD in the Russian language. The paper provides a description, in-depth analysis, and baseline experimental results for SberQuAD to present the dataset to the scientific community and facilitate research in multilingual question answering.",
+    "data_type": "question-answering pairs (paragraph-question-answer triples, text)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Russian"
+    ],
+    "similar_benchmarks": [
+      "SQuAD (Stanford Question Answering Dataset)",
+      "SQuAD 2.0",
+      "XQuAD",
+      "TriviaQA",
+      "Natural Questions",
+      "MS MARCO",
+      "QuAC",
+      "CoQA"
+    ],
+    "resources": [
+      "https://github.com/sberbank-ai/data-science-journey-2017",
+      "https://github.com/sberbank-ai/data-science-journey-2017/tree/master/problem_B/",
+      "http://docs.deeppavlov.ai/en/master/features/models/squad.html",
+      "https://youtu.be/J5HOjC4Xn_Y?t=29830",
+      "https://opendatascience.slack.com/",
+      "https://toloka.yandex.com",
+      "http://aot.ru",
+      "https://github.com/deepmipt/ru_sentence_tokenizer",
+      "https://yandex.ru/dev/mystem/",
+      "https://fasttext.cc/docs/en/crawl-vectors.html"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To describe, analyze, and provide baseline experimental results for SberQuAD, a large-scale Russian reading comprehension dataset, and to present this resource to the scientific community to support research in multilingual question answering.",
+    "audience": [
+      "ML Researchers",
+      "Natural Language Processing researchers",
+      "Scientific community"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Reading Comprehension"
+    ],
+    "limitations": "The original development set is not publicly available; the hold-out test set is private. SberQuAD does not provide which Wikipedia pages paragraphs belong to. Each answer is represented by a string without a respective starting position in the paragraph. The dataset may contain annotation quality issues (misspellings, incorrect answers, yes/no questions, incomplete answers) and has only a single correct answer variant per question.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Created by Sberbank for the 2017 data science competition. Paragraphs were selected from Wikipedia, split into paragraphs, and presented to crowd workers on the Toloka crowdsourcing platform who generated questions and paragraph-span answers following the SQuAD procedure. A SQuAD JSON variant is available from the DeepPavlov QA project.",
+    "size": "50,364 training examples; ~15,000 development examples (available during competition); 25,000 testing examples (hold-out, private). For experiments in the paper the DeepPavlov partition was used: 45,328 training and 5,036 testing examples.",
+    "format": "Original CSV format; variant available in SQuAD JSON format",
+    "annotation": "Crowdsourced via Toloka (crowd workers) following the SQuAD procedure. Answers are paragraph spans (contiguous sequences of paragraph words). Answers in the dataset are represented as strings without provided start positions."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics (Exact Match and token-level F1)",
+      "Baseline model evaluation (simple baseline, ML baseline)",
+      "Evaluation of multiple neural models including BiDAF, DrQA, R-Net, DocQA, BERT",
+      "In-depth dataset analysis (statistical and qualitative)",
+      "Manual annotation and qualitative error analysis (e.g., manual tagging of 1,000 answers for NER; manual inspection of 100 errors)"
+    ],
+    "metrics": [
+      "Exact Match (EM)",
+      "F1 Score (token-level, maximum overlap between system response and ground truth answer, averaged over questions)"
+    ],
+    "calculation": "Exact Match (EM) is the percentage of system answers that exactly match any gold answer. F1 Score is computed as the maximum token-level overlap between system response and gold answer, averaged over all questions. Both metrics ignore punctuation and capitalization.",
+    "interpretation": "Higher EM and F1 scores indicate better reading comprehension performance. The paper notes that higher lexical overlap (measured via Jaccard similarity and LCMS) between question and answer-containing sentence corresponds to higher F1. Models perform worse on SberQuAD than on SQuAD, which the authors attribute to dataset differences such as single-answer variants, fewer named-entity answers, and annotation quality issues.",
+    "baseline_results": "SberQuAD results (EM / F1): simple baseline: 0.3 / 25.0; ML baseline: 3.7 / 31.5; BiDAF: 51.7 / 72.2; DrQA: 54.9 / 75.0; R-Net: 58.6 / 77.8; DocQA: 59.6 / 79.5; BERT: 66.6 / 84.8.",
+    "validation": "Validation comprised statistical analyses, automatic evaluations using EM and F1 on held-out test partitions, manual annotation for NER evaluation on a 1,000-answer sample, and qualitative manual analysis of 100 questions where all models failed. The authors used the DeepPavlov partition (train/test) for experiments."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Transparency",
+      "Accuracy",
+      "Governance"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Lack of training data transparency",
+            "Uncertain data provenance"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Governance",
+          "subcategory": [
+            "Lack of data transparency",
+            "Lack of system transparency"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

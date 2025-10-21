@@ -1,0 +1,76 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FinS-Pilot: A Benchmark for Online Financial RAG System",
+    "abbreviation": "FinS-Pilot",
+    "overview": "FinS-Pilot is a benchmark for evaluating retrieval-augmented generation (RAG) systems in online financial applications, constructed from real-world financial assistant interactions and incorporating real-time API data to comprehensively evaluate financial assistants’ capabilities.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Finance"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "FinanceBench",
+      "FiQA",
+      "FinQA"
+    ],
+    "resources": [
+      "https://github.com/PhealenWang/financial_rag_benchmark"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide an open-source benchmark for financial RAG systems, addressing gaps in existing evaluation methodologies for financial tasks.",
+    "audience": [
+      "Research Community",
+      "Financial Technologists",
+      "AI Practitioners"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "User interaction logs from an online financial assistant system, supplemented with real-time market data through APIs.",
+    "size": "316 queries",
+    "format": "JSON",
+    "annotation": "User queries were classified using a hierarchical intent classification system and manually verified for accuracy."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "ROUGE-L",
+      "BLEU"
+    ],
+    "calculation": "Metrics are calculated based on the accuracy of responses for numerical queries and similarity measures for content-based queries.",
+    "interpretation": "Higher scores indicate better alignment of the generated responses with the expected answers.",
+    "baseline_results": "Top-performing model Xiaofa-1.0 achieves 91.5% accuracy on numerical queries.",
+    "validation": "Responses are validated by both automated metrics and manual reviews by experts in finance and AI."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Queries were desensitized to maintain user privacy.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

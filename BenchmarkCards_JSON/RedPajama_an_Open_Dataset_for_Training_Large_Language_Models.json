@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "RedPajama: an Open Dataset for Training Large Language Models",
+    "abbreviation": "N/A",
+    "overview": "The RedPajama datasets, which include RedPajama-V1 and RedPajama-V2, consist of over 100 trillion tokens and address data-related challenges in the development of open-source language models, providing transparency and mechanisms for dataset curation and analysis.",
+    "data_type": "raw text data",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "German",
+      "French",
+      "Spanish",
+      "Italian"
+    ],
+    "similar_benchmarks": [
+      "C4",
+      "RefinedWeb",
+      "The Pile"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/togethercomputer/RedPajama-Data-1T",
+      "https://huggingface.co/datasets/togethercomputer/RedPajama-Data-V2"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide training data for large language models and foster research in dataset curation and analysis.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Common Crawl, Wikipedia, Books, arXiv, Stack Exchange",
+    "size": "100 trillion tokens",
+    "format": "JSON Lines",
+    "annotation": "Various quality signals measured for web data"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on the performance of models trained on the RedPajama datasets.",
+    "interpretation": "Higher quality signals correlate with better model performance across tasks.",
+    "baseline_results": null,
+    "validation": "Validation procedures included ablation studies showcasing the impact of quality signals."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "ODC-By-1.0 and licenses that may apply to constituent parts.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

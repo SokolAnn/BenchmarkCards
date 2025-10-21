@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "AHaBench",
+    "abbreviation": "N/A",
+    "overview": "AHaBench is a benchmark of 500 mental health-related prompts designed to diagnose affective hallucination in large language models (LLMs) with expert-informed reference responses.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "EmotionBench",
+      "EmotionQueen",
+      "EmoBench"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/o0oMiNGo0o/AHaBench",
+      "https://github.com/0oOMiNGOo0/AHaBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate and mitigate the risk of affective hallucination in LLMs and to provide resources for developing emotionally responsible AI systems.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Mental Health Professionals"
+    ],
+    "tasks": [
+      "Text Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Publicly available Reddit posts from mental health-related subreddits.",
+    "size": "500 prompts",
+    "format": "CSV",
+    "annotation": "Crafted responses authored by subject matter experts to reflect optimal conversational behavior."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "AHa Score"
+    ],
+    "calculation": "AHa Score is a seven-point scale (0-6) with higher values indicating stronger adherence to emotional safety.",
+    "interpretation": "Scores of 3 or higher denote the absence of affective hallucination, while scores of 2 or lower indicate violations of emotional boundaries.",
+    "baseline_results": "N/A",
+    "validation": "Human agreement analyses confirm benchmark reliability."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Privacy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All data used in AHaBench is sourced from publicly available, anonymized posts, adhering to privacy standards.",
+    "data_licensing": "Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

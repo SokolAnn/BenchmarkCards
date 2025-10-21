@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SocialDF (Benchmark Dataset and Detection Model for Mitigating Harmful Deepfake Content on Social Media Platforms)",
+    "abbreviation": "SocialDF",
+    "overview": "SocialDF is a curated dataset reflecting real-world deepfake challenges on social media platforms, encompassing high-fidelity deepfakes sourced from various online ecosystems. It also proposes a novel LLM-based multi-factor detection approach that integrates facial recognition and automated speech transcription.",
+    "data_type": "video",
+    "domains": [
+      "Computer Vision",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/arnesh2212/SocialDF/tree/main"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enhance deepfake detection, combat misinformation effectively, and contribute to the development of secure and transparent digital media ecosystems.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Social Media Platforms"
+    ],
+    "tasks": [
+      "Deepfake Detection",
+      "Fact Checking"
+    ],
+    "limitations": "The focus on celebrities and high-profile individuals may restrict the generalization of detection models to less-public figures.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Videos sourced from social media platforms, specifically Instagram Reels and Stories.",
+    "size": "2,126 videos (1,071 real, 1,055 deepfake)",
+    "format": "Video",
+    "annotation": "Annotations were made based on uploader disclosures, comments, and consensus review for label reliability."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on model performance in detecting deepfakes through the proposed framework.",
+    "interpretation": "Higher accuracy and F1 scores indicate more effective detection of deepfake content.",
+    "baseline_results": "LipFD achieved an accuracy of 51.24% on the dataset.",
+    "validation": "Evaluated using a stratified 90/10 train-test split maintaining equal proportions of real and fake videos."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Privacy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Acknowledges demographic skew due to platform trends.",
+    "harm": "The dataset aims to mitigate misinformation and protects individuals from reputational harm."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Content sourced from public social media platforms; no copyrighted content is redistributed.",
+    "data_licensing": "CC BY-NC 4.0 license, ensuring use only for non-commercial, ethically sound purposes.",
+    "consent_procedures": "Videos were selected based on uploader intent and public availability; no private individuals involved.",
+    "compliance_with_regulations": "Aligned with practices of fair use in U.S. Code (2023)."
+  }
+}

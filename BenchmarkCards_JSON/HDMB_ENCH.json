@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "HDMB ENCH (Hallucination Detection Benchmark for Enterprise Contexts and Knowledge)",
+    "abbreviation": "HDMB ENCH",
+    "overview": "HDMB ENCH is a new dataset released for evaluating context- and common-knowledge hallucinations in large language model outputs, tailored specifically for enterprise applications.",
+    "data_type": "contextual documents and question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "TruthfulQA",
+      "RagTruth"
+    ],
+    "resources": [
+      "https://github.com/aimonlabs/hallucination-detection-model"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive dataset that enables the evaluation of hallucination detection models, specifically in enterprise settings where accuracy is crucial.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Hallucination Detection",
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from diverse textual contexts, including support tickets, passages from various datasets, and synthesized examples.",
+    "size": "50,000 contextual documents",
+    "format": "JSON",
+    "annotation": "Annotations included sentence-level and phrase-level labels indicating factual support."
+  },
+  "methodology": {
+    "methods": [
+      "Hallucination detection using contextual and common knowledge verification."
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on the model's performance against human-validated labels.",
+    "interpretation": "Higher scores indicate better performance in detecting hallucinated content.",
+    "baseline_results": null,
+    "validation": "Model trained on various datasets and validated through rigorous testing."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

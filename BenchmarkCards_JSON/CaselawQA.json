@@ -1,0 +1,80 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CaselawQA",
+    "abbreviation": "N/A",
+    "overview": "A benchmark comprising 260 legal annotation tasks, nearly all new to the machine learning community.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Legal"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "LegalBench"
+    ],
+    "resources": [
+      "https://github.com/socialfoundations/lawma"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To facilitate empirical legal research through efficient legal annotation.",
+    "audience": [
+      "Legal Researchers",
+      "Empirical Legal Scholars"
+    ],
+    "tasks": [
+      "Legal Classification"
+    ],
+    "limitations": "The fine-tuned models are still far from perfect, and the variance in accuracy across tasks remains high.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "U.S. Supreme Court Database (SCDB) and U.S. Courts of Appeals Database (USCAD).",
+    "size": "718,971 task examples",
+    "format": "N/A",
+    "annotation": "Labels created from existing court case data."
+  },
+  "methodology": {
+    "methods": [
+      "Multiple-choice evaluation",
+      "Fine-tuning of language models"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Weighted average of task accuracies across all task examples.",
+    "interpretation": "Higher accuracy indicates better model performance on legal annotation tasks.",
+    "baseline_results": "Average accuracy of commercial models ranged from 70% to 78% on CaselawQA.",
+    "validation": "Evaluated models against a train/validation/test split."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

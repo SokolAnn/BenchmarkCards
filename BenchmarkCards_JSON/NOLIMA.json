@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "NOLIMA (Long-Context Evaluation Beyond Literal Matching)",
+    "abbreviation": "NOLIMA",
+    "overview": "NOLIMA introduces a benchmark extending the Needle-in-a-Haystack test by designing a needle set with minimal lexical overlap, requiring models to infer latent associations to locate answers in long irrelevant contexts.",
+    "data_type": "question-needle pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "NIAH (Needle-in-a-Haystack)"
+    ],
+    "resources": [
+      "https://github.com/adobe-research/NoLiMa"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To design a high-challenge benchmark for evaluating large language models' reasoning capabilities in long context scenarios.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Long-context Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Open-license books prepared through application of filtering mechanisms.",
+    "size": "5 needle sets totaling 58 question-needle pairs",
+    "format": "N/A",
+    "annotation": "Manually designed by authors to ensure minimal literal overlap."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "ROUGE"
+    ],
+    "calculation": "Calculated based on the proportion of correct answers from multiple tests conducted under varying context lengths.",
+    "interpretation": "Interpret results based on how well models generalize across increasing context lengths and the ability to reason through associative tasks.",
+    "baseline_results": "The base scores achieved at shorter context lengths (1K, 2K) were used to evaluate performance declines at longer lengths.",
+    "validation": "Results analyzed under controlled experiments with 7,540 tests per context length."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

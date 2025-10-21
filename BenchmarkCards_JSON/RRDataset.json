@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "RRDataset (Real-World Robustness Dataset)",
+    "abbreviation": "RRDataset",
+    "overview": "RRDataset is introduced for comprehensive evaluation of AI-generated image detection models across various real-world scenarios, internet transmission robustness, and re-digitization aspects.",
+    "data_type": "image",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "N/A"
+    ],
+    "similar_benchmarks": [
+      "GenImage",
+      "Fake2M",
+      "WildFake",
+      "Chameleon"
+    ],
+    "resources": [
+      "https://zenodo.org/records/14963880"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To benchmark the performance of AI-generated image detection methods under challenging real-world conditions.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Image Detection"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Images collected from diverse scenarios, including War & Conflict, Disasters & Accidents, Political & Social Events, Medical & Public Health, Culture & Religion, and Labor & Production.",
+    "size": "12,000 images",
+    "format": "JPEG",
+    "annotation": "Manually annotated based on image content and categorization."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Metrics calculated based on the detection accuracy of real and AI-generated images.",
+    "interpretation": "Higher accuracy indicates better detection capability under varied conditions.",
+    "baseline_results": "The best accuracy achieved was 89.59%.",
+    "validation": "Evaluated across multiple transmission and re-digitization conditions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Virology Capabilities Test (VCT)",
+    "abbreviation": "VCT",
+    "overview": "The Virology Capabilities Test (VCT) is a large language model benchmark that measures the capability to troubleshoot complex virology laboratory protocols. It consists of 322 multimodal questions covering fundamental, tacit, and visual knowledge essential for practical work in virology laboratories.",
+    "data_type": "multimodal question-answering pairs",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMLU",
+      "GPQA"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2504.16137"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To measure practical knowledge about virology with a focus on troubleshooting experiments in virology protocols, including dual-use topics.",
+    "audience": [
+      "ML Researchers",
+      "Life Sciences Researchers",
+      "AI Safety Experts"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Questions constructed from the inputs of PhD-level expert virologists and subjected to rigorous vetting and validation processes.",
+    "size": "322 questions",
+    "format": "N/A",
+    "annotation": "Validated by multiple expert reviewers"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Expert evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Models must correctly select all true answer statements from a set of 4–10 true/false answer statements.",
+    "interpretation": "Higher scores indicate better performance in accurately answering complex virology questions.",
+    "baseline_results": "Expert virologists scored an average of 22.1% accuracy on tailored VCT questions.",
+    "validation": "Each question was peer-reviewed by multiple experts before acceptance into the benchmark."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": []
+        },
+        {
+          "category": "Governance",
+          "subcategory": [
+            "Lack of system transparency"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

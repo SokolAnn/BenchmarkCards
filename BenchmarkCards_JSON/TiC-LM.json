@@ -1,0 +1,101 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TiC-LM (Time-Continual Learning of Language Models)",
+    "abbreviation": "TiC-LM",
+    "overview": "TiC-LM introduces a web-scale benchmark for time-continual pretraining of LLMs using a dataset derived from 114 dumps of Common Crawl, offering time-stratified evaluations across various domains.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Web Data",
+      "Computer Science"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "TemporalWiki",
+      "StreamingQA",
+      "EvolvingQA",
+      "TempEL"
+    ],
+    "resources": [
+      "https://github.com/apple/ml-tic-lm"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a benchmark for evaluating continual learning methods in LLMs with a temporal focus.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Continual Learning Evaluation",
+      "Temporal Reasoning"
+    ],
+    "limitations": "An important limitation is that the authors could not find a method that outperforms Oracle re-training on all evaluations.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Common Crawl (CC) web data dumps from May 2013 to July 2024.",
+    "size": "2.9T tokens",
+    "format": "Plain text",
+    "annotation": "Automatically processed and filtered using standard web scraping and cleanup techniques."
+  },
+  "methodology": {
+    "methods": [
+      "Cyclic Cosine Learning Rate",
+      "Replay-based Learning",
+      "Regularization Methods (LwF, EWC)"
+    ],
+    "metrics": [
+      "Perplexity",
+      "In-distribution performance (ID)",
+      "Backward transfer",
+      "Forward transfer"
+    ],
+    "calculation": "Performance metrics are calculated using a matrix of evaluations based on model training at different timestamps compared against Oracle baseline results.",
+    "interpretation": "Lower perplexity indicates better model performance, while metrics such as backward and forward transfer evaluate how well a model retains knowledge of past data and adapts to new data, respectively.",
+    "baseline_results": "Oracle re-training series evaluated every two years.",
+    "validation": "Assessments conducted across multiple evaluation timesteps and benchmarks against established Oracle models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning",
+            "Prompt injection attack"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Due to the nature of the dataset sourced from the web, concerns related to personally identifiable information exist.",
+    "data_licensing": "The data is sourced from Common Crawl, which is available under public domain for research.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

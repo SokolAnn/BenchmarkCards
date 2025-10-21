@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SAGED (Systematic Assessment of Generative Bias Development)",
+    "abbreviation": "SAGED",
+    "overview": "SAGED is a holistic benchmarking pipeline designed to evaluate biases in language models through a five-stage process, which includes scraping materials, assembling benchmarks, generating responses, extracting numeric features, and diagnosing with disparity metrics.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/holistic-ai/SAGED-Bias"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of SAGED is to provide a flexible framework for bias detection in language models, allowing for customizable fairness baselines and comprehensive evaluation metrics.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "AI Ethicists"
+    ],
+    "tasks": [
+      "Bias Detection",
+      "Sentiment Analysis"
+    ],
+    "limitations": "SAGED focuses on bias assessment for text-based LLMs and does not yet extend to multi-modal systems.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Data is scraped from diverse sources, including Wikipedia, to create a comprehensive benchmark.",
+    "size": "31,500 responses",
+    "format": "JSON",
+    "annotation": "Automatically generated through machine learning models."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Max Z-score",
+      "Impact Ratio",
+      "Bias Concentration"
+    ],
+    "calculation": "Metrics are calculated based on extracted numeric features using generated responses and baseline comparisons.",
+    "interpretation": "Lower values of metrics indicate less bias, while higher values suggest greater disparity among responses.",
+    "baseline_results": null,
+    "validation": "Validation is ensured through comprehensive statistical analysis of generated data."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

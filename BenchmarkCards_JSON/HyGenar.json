@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "HyGenar: An LLM-Driven Hybrid Genetic Algorithm for Few-Shot Grammar Generation",
+    "abbreviation": "HyGenar",
+    "overview": "This paper presents a dataset consisting of 540 structured grammar generation challenges to evaluate the grammar inference capabilities of large language models (LLMs) using few-shot learning. It introduces the HyGenar algorithm, a hybrid genetic algorithm to optimize grammar generation, significantly improving performance across various LLMs.",
+    "data_type": "grammar generation challenges",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/RutaTang/HyGenar"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To explore and evaluate the few-shot grammar generation capabilities of LLMs and improve their performance using a hybrid genetic algorithm.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Grammar Generation",
+      "Natural Language Processing"
+    ],
+    "limitations": "The performance of some LLMs remains unsatisfactory, particularly Mistral:7b-Instruct.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Challenges designed from LLM-generated reference grammars verified through BNF parsing.",
+    "size": "540 challenges",
+    "format": "N/A",
+    "annotation": "Manually verified and corrected positive and negative examples based on generated reference grammars."
+  },
+  "methodology": {
+    "methods": [
+      "Evaluation against baseline models",
+      "Hybrid genetic algorithm"
+    ],
+    "metrics": [
+      "Syntax Correctness",
+      "Semantic Correctness",
+      "Over-Fitting",
+      "Over-Generalization",
+      "Utility"
+    ],
+    "calculation": "Metrics are calculated based on the proportion of correct syntax and semantics in the generated grammars against the reference grammars.",
+    "interpretation": "Higher metrics indicate better performance in generating grammars that accept all positive examples and reject negative ones.",
+    "baseline_results": null,
+    "validation": "The performance of the proposed HyGenar algorithm was validated against multiple LLMs, showing significant improvements."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

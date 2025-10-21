@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Benchmarking Group Fairness in Reward Models",
+    "abbreviation": "N/A",
+    "overview": "This work benchmarks group fairness in reward models without requiring the same prompt questions across different demographic groups by using expert-written text from arXiv.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "RewardBench"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2503.07806"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To benchmark group fairness in reward models to develop large language models (LLMs) that benefit all demographic groups fairly.",
+    "audience": [
+      "ML Researchers",
+      "Ethicists",
+      "Policy Makers"
+    ],
+    "tasks": [
+      "Fairness Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "arXiv Metadata dataset containing expert-written papers across diverse fields.",
+    "size": "16,000 query-response pairs",
+    "format": "JSON",
+    "annotation": "Expert human annotations"
+  },
+  "methodology": {
+    "methods": [
+      "ANOVA",
+      "Statistical analysis"
+    ],
+    "metrics": [
+      "Normalized Maximum Group Difference",
+      "F-statistics"
+    ],
+    "calculation": "Normalized by dividing maximum difference in average rewards by the mean of the reward scores across all social groups.",
+    "interpretation": "A smaller normalized maximum group difference indicates better group fairness.",
+    "baseline_results": "Top-performing models from the RewardBench leaderboard exhibited better group fairness.",
+    "validation": "Statistical significance tested through ANOVA"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The benchmark includes demographic breakdowns across eight social groups based on expertise.",
+    "harm": [
+      "Systematic unfairness in model outputs across demographic groups"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Creative Commons CC0 1.0 Universal (Public Domain Dedication)",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

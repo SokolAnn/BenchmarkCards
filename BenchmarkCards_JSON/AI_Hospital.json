@@ -1,0 +1,98 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "AI Hospital",
+    "abbreviation": "N/A",
+    "overview": "AI Hospital is a multi-agent framework simulating dynamic medical interactions between doctors and patients, developed to evaluate large language models (LLMs) in clinical diagnosis through the Multi-View Medical Evaluation (MVME) benchmark.",
+    "data_type": "medical records",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "MedQA",
+      "PubMedQA",
+      "MedMCQA"
+    ],
+    "resources": [
+      "https://github.com/LibertFan/AI_Hospital"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate large language models in the context of clinical diagnosis and improve their performance in multi-turn interactions with patients.",
+    "audience": [
+      "ML Researchers",
+      "Healthcare Practitioners",
+      "Medical Educators"
+    ],
+    "tasks": [
+      "Clinical Diagnosis",
+      "Symptom Collection",
+      "Examination Recommendation"
+    ],
+    "limitations": "The dataset comprises primarily Chinese medical records, which may limit generalizability to other languages and healthcare systems. The sample size of 506 cases may not fully capture complex real-world scenarios.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected Chinese medical records across diverse departments, reviewed by professional physicians.",
+    "size": "506 cases",
+    "format": "N/A",
+    "annotation": "Manually validated by medical professionals."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics assessment",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Diagnostic Accuracy",
+      "Treatment Plan Consistency",
+      "Entity Overlap"
+    ],
+    "calculation": "Metrics are calculated by comparing the LLM-based doctor reports against expert evaluations using predefined scales and accuracy measures.",
+    "interpretation": "Higher scores indicate better performance in diagnostic accuracy and treatment recommendations, while lower scores reflect deficiencies in the LLM's clinical reasoning capabilities.",
+    "baseline_results": "Performance of existing LLMs was compared against an upper bound set by a single-step input to GPT-4.",
+    "validation": "The AI Hospital framework was validated through experiments using various LLMs such as GPT-3.5 and GPT-4."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The benchmark assesses LLM performance across diverse patient scenarios to identify potential biases in diagnosis.",
+    "harm": [
+      "Misdiagnosis due to inadequate patient history collection"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The medical records have been de-identified to protect patient privacy.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

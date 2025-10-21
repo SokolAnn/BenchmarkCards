@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "STARK (Semi-structured Knowledge Base Retrieval Benchmark)",
+    "abbreviation": "STARK",
+    "overview": "STARK is a large-scale benchmark designed to evaluate retrieval systems on semi-structured knowledge bases, integrating both textual and relational information to support complex queries across domains like product search, academic papers, and precision medicine.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Healthcare",
+      "E-commerce"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://stark.stanford.edu/",
+      "https://github.com/snap-stanford/STaRK",
+      "https://stark.stanford.edu/skb_explorer.html"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive testbed for evaluating the performance of retrieval systems driven by large language models in handling complex queries across semi-structured knowledge bases.",
+    "audience": [
+      "ML Researchers",
+      "Engineers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Information Retrieval"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed semi-structured knowledge bases from public data, including Amazon product reviews, Microsoft Academic Graph, and PrimeKG datasets.",
+    "size": "54,378 queries total (9,100 STARK-AMAZON + 13,323 STARK-MAG + 11,204 STARK-PRIME)",
+    "format": "CSV",
+    "annotation": "Human-generated and synthesized queries validated through human evaluation."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Hit@1",
+      "Hit@5",
+      "Recall@20",
+      "Mean Reciprocal Rank (MRR)"
+    ],
+    "calculation": "Metrics are calculated based on user query performances and system responses across generated test sets.",
+    "interpretation": "A higher Hit@k score indicates better performance for retrieval systems in returning the correct items within the top-k ranked results.",
+    "baseline_results": null,
+    "validation": "Extensive human evaluation and comparison with baseline retrieval models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Anonymization protocols are in place for the datasets involved.",
+    "data_licensing": "Data sourced from publicly available datasets with adherence to specific licenses.",
+    "consent_procedures": "Consent obtained through participants involved in query generation.",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Audio Dialogues",
+    "abbreviation": "N/A",
+    "overview": "Audio Dialogues is a multi-turn dialogue dataset containing 163.8k samples for general audio sounds and music, designed to enhance audio understanding through interactive dialogue.",
+    "data_type": "multi-turn dialogue pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://audiodialogues.github.io/LLMs"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enhance audio understanding within the context of multi-turn dialogues for general sounds and music.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Dialogue Generation",
+      "Audio Understanding"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated using a prompting-based approach leveraging caption annotations from existing datasets such as AudioSet and MusicCaps.",
+    "size": "163,800 samples",
+    "format": "N/A",
+    "annotation": "Generated using GPT-4 with a data filtration strategy to enhance quality."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "CIDEr",
+      "BLEU Score",
+      "ROUGE-L"
+    ],
+    "calculation": "Metrics are calculated based on the generated responses evaluated against reference answers.",
+    "interpretation": "Higher scores indicate better quality of responses in terms of content relevancy and coherence across dialogues.",
+    "baseline_results": "Results from audio understanding models such as LTU, Qwen-Audio, and Audio Flamingo are evaluated on this dataset.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

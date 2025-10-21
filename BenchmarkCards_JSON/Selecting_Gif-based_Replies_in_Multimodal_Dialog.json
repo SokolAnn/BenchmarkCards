@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Selecting Gif-based Replies in Multimodal Dialog",
+    "abbreviation": "N/A",
+    "overview": "This paper introduces a new dataset of 1.56M text-gif conversation turns and a new multimodal conversational model PEPE THE KINGPRAWN for selecting gif-based replies.",
+    "data_type": "text-gif conversation pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/xingyaoww/gif-reply"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To analyze multimodal conversations and improve gif response selection in conversational AI.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Multimodal Dialog",
+      "Response Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from Twitter responses to English-language tweets containing gifs and filtered to match common gifs on Giphy.",
+    "size": "1,562,701 pairs",
+    "format": "N/A",
+    "annotation": "Manual filtering and matching of gifs with corresponding tweets."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "nDCG"
+    ],
+    "calculation": "nDCG measures whether more appropriate gif responses are ranked higher based on manual annotation scores.",
+    "interpretation": "Higher nDCG indicates better quality responses.",
+    "baseline_results": "PEPE model achieves an nDCG of 0.8145.",
+    "validation": "Evaluated through manual annotations and a randomized controlled trial."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on affected communities"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Reinforcement of cultural stereotypes"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

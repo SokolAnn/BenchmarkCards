@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "AlignMMBench",
+    "abbreviation": "N/A",
+    "overview": "AlignMMBench is a comprehensive evaluation benchmark specifically designed to assess the Chinese alignment capabilities of Vision-Language Models. It includes 1,054 images and 4,978 question-answer pairs, covering thirteen specific tasks across three categories, incorporating both single-turn and multi-turn dialogue scenarios.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": null,
+    "resources": [
+      "https://github.com/THUDM/AlignMMBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess the alignment capabilities of large Vision-Language Models in Chinese contexts and provide a robust evaluation framework for future improvements in multimodal models.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Image Captioning",
+      "Visual Question Answering",
+      "Dialogue Generation"
+    ],
+    "limitations": null,
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from real-world scenarios and internet sources; image queries generated based on user requests.",
+    "size": "4,978 question-answer pairs",
+    "format": "N/A",
+    "annotation": "Manual annotation by experts, including a detailed two-phase review process."
+  },
+  "methodology": {
+    "methods": [
+      "Automated evaluation using CritiqueVLM",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Alignment score",
+      "Mean Absolute Error"
+    ],
+    "calculation": "Scores are generated based on the responses from the AI models compared to human annotations.",
+    "interpretation": "Higher scores indicate better alignment and understanding capabilities of models in the corresponding tasks.",
+    "baseline_results": "CritiqueVLM exceeds GPT-4 in evaluation accuracy for task completion across benchmarks",
+    "validation": "Internal testing dataset to assess reliability and performance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential for bias in evaluation based on the limited representation of the Chinese visual context."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

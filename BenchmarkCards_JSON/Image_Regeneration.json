@@ -1,0 +1,69 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Image Regeneration",
+    "abbreviation": "N/A",
+    "overview": "We introduce the Image Regeneration task to assess text-to-image models by tasking the T2I model with generating an image according to the reference image, utilizing MLLM to bridge the reference image and text input.",
+    "data_type": "image",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the generative capabilities of text-to-image models through the Image Regeneration task.",
+    "audience": [
+      "Academic Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Image Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Two regeneration datasets spanning content-diverse and style-diverse evaluation datasets.",
+    "size": "200 text-image samples with 10 different styles for style-diverse, 100 samples with 4 different content types for content-diverse.",
+    "format": "N/A",
+    "annotation": "Manually collected and normalized using ChatGPT."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "CLIP",
+      "DINOv2",
+      "GPT-4V"
+    ],
+    "calculation": "Metrics for evaluating the generated images and their similarity to the reference images are computed through CLIP and DINOv2 scores.",
+    "interpretation": "Higher scores indicate better image quality and alignment with human perception.",
+    "baseline_results": "CLIP-based metrics and user study ratings.",
+    "validation": "Validation is done through human evaluations using Likert scale for content consistency and perceptual quality."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

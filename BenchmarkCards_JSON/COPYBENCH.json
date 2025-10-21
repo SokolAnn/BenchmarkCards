@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "COPYBENCH",
+    "abbreviation": "N/A",
+    "overview": "COPYBENCH is a benchmark designed to measure both literal and non-literal copying in language model generations, evaluating how these models reproduce copyright-protected content while also considering model utility in terms of fact recall and fluency.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Law"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/chentong0/copy-bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate reproduction of copyright-protected text by language models, focusing on both literal and non-literal copying, alongside measuring the utility of the models.",
+    "audience": [
+      "AI Researchers",
+      "Legal Experts",
+      "Content Creators"
+    ],
+    "tasks": [
+      "Text Generation",
+      "Fact Recall"
+    ],
+    "limitations": "The evaluation is limited to English fictional books and does not cover non-literal copying in other languages or domains.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Fictional works sourced from CliffsNotes and BookMIA, containing copyright-protected content.",
+    "size": "118 books for non-literal copying and 16 books for literal copying",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "ROUGE-L",
+      "F1 Score"
+    ],
+    "calculation": "ROUGE-L measures the longest common subsequence between model outputs and source texts for literal copying. F1 Score is calculated for fact recall based on question-answer pairs.",
+    "interpretation": "A higher ROUGE-L score indicates a higher degree of reproduction, while the F1 score measures the accuracy of model responses in fact recall tasks.",
+    "baseline_results": "Comparative results of various language models on literal and non-literal copying metrics.",
+    "validation": "Validation includes human evaluation of a sample of outputs to ensure automatic metrics align with human judgments."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Copyright Risks",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Lack of training data transparency"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

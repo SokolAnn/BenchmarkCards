@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SysBench",
+    "abbreviation": "N/A",
+    "overview": "SysBench is a benchmark that systematically analyzes system message following ability in terms of three limitations of existing LLMs: constraint violation, instruction misjudgment, and multi-turn instability. It includes a high-quality dataset consisting of 500 system messages and corresponding user conversations across various domains.",
+    "data_type": "multi-turn conversation pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/PKU-Baichuan-MLSystemLab/SysBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Evaluate the ability of large language models to follow system messages in interactions.",
+    "audience": [
+      "Researchers",
+      "Developers",
+      "Practitioners in AI"
+    ],
+    "tasks": [
+      "Instruction Following",
+      "Evaluation of Multi-turn Conversations"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Manually constructed evaluation dataset based on six prevalent types of constraints, supplemented by expert annotation.",
+    "size": "2,500 turns of conversation across 500 system messages",
+    "format": "N/A",
+    "annotation": "Manually annotated by trained evaluators according to guidelines designed by experts."
+  },
+  "methodology": {
+    "methods": [
+      "Model-based evaluation using advanced LLMs as verifiers",
+      "Manual verification with checklists"
+    ],
+    "metrics": [
+      "Constraint Satisfaction Rate (CSR)",
+      "Instruction Satisfaction Rate (ISR)",
+      "Session Stability Rate (SSR)"
+    ],
+    "calculation": "Metrics are calculated based on the number of constraints satisfied over total constraints in conversation turns.",
+    "interpretation": "Higher rates indicate better performance in following instructions and maintaining stability over multi-turn conversations.",
+    "baseline_results": null,
+    "validation": "Extensive evaluation across 16 popular LLMs to measure performance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "The benchmark aims to assess and improve LLMs' ability to adhere to instructions and reduce risks in practical applications."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

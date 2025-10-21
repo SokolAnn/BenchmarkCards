@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "RAG-RewardBench",
+    "abbreviation": "N/A",
+    "overview": "RAG-RewardBench is the first benchmark for evaluating reward models in Retrieval Augmented Generation (RAG) settings, designed to assess alignment with human preferences through 1,485 high-quality preference pairs.",
+    "data_type": "preference pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "RewardBench"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/jinzhuoran/RAG-RewardBench/",
+      "https://github.com/jinzhuoran/RAG-RewardBench/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a systematic evaluation framework for reward models in RAG scenarios to enhance preference alignment for retrieval augmented language models.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Preference Alignment",
+      "Multi-hop Reasoning",
+      "Citation Accuracy",
+      "Conflict Robustness"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "18 datasets from various domains using multiple retrievers to ensure diversity.",
+    "size": "1,485 preference pairs",
+    "format": "JSON",
+    "annotation": "Preference judgments are based on evaluations performed by LLMs as judges, reflecting human annotations."
+  },
+  "methodology": {
+    "methods": [
+      "LLM-as-a-judge",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy is calculated based on a standard evaluation framework contrasting chosen versus rejected responses.",
+    "interpretation": "An accuracy score of over 50% indicates a model's ability to select better responses.",
+    "baseline_results": "The best-performing model achieved 78.3% accuracy on RAG-RewardBench.",
+    "validation": "Validation procedures included correlation checks between model evaluations and human annotations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": []
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

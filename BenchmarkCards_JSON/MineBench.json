@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MineBench",
+    "abbreviation": "N/A",
+    "overview": "MineBench is a benchmark tailored for multimodal mineral exploration tasks, aiming to evaluate MLLMs in reasoning over domain-specific remote-sensing data.",
+    "data_type": "multimodal",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://data.dea.ga.gov.au/?prefix=ASTER_",
+      "https://map.sarig.sa.gov.au/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate MLLMs in mineral exploration using geological and hyperspectral data.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts",
+      "Geoscience Professionals"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Image Classification",
+      "Multimodal Reasoning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Geoscience Western Australia (GSWA) remote-sensing dataset",
+    "size": "73 positive areas and 539 negative areas",
+    "format": "N/A",
+    "annotation": "Human-annotated classes based on geological features."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "ROC-AUC",
+      "Matthews Correlation Coefficient (MCC)"
+    ],
+    "calculation": "Metrics are calculated based on model outputs compared to human-annotated classifications and ground truth labels.",
+    "interpretation": "Scores close to 1 indicate high confidence in mineralization presence, while lower scores indicate uncertainty.",
+    "baseline_results": "Pos.F1 of 34.93% for Random Choice model without MineAgent, with improvements up to 61.20% with MineAgent.",
+    "validation": "Rigorous review by geoscience experts ensured data quality and classification reliability."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

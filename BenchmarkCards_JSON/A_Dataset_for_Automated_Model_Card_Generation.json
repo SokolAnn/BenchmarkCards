@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "A Dataset for Automated Model Card Generation",
+    "abbreviation": "N/A",
+    "overview": "This paper introduces a dataset of 500 question-answer pairs for 25 machine learning models, designed to automate the generation of model cards that document details about machine learning models such as training configurations, datasets, biases, architecture details, and training resources.",
+    "data_type": "question-answer pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://osf.io/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a structured dataset of question-answer pairs that can be used to train models for generating model cards automatically.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Model Card Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Peer-reviewed research papers documenting the 25 machine learning models.",
+    "size": "500 question-answer pairs",
+    "format": "N/A",
+    "annotation": "Answers were extracted from original research papers by annotators."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Expert annotation"
+    ],
+    "metrics": [
+      "BLEU",
+      "ROUGE-L",
+      "BERT-Score"
+    ],
+    "calculation": "Metrics are calculated based on the generated answers from LLMs against the ground truth.",
+    "interpretation": "Higher scores in BLEU and ROUGE-L indicate better performance in generating accurate model card information.",
+    "baseline_results": "ChatGPT-3.5 performs the best in generating answers compared to LLaMa and Galactica models.",
+    "validation": "The dataset was validated through a two-stage annotation process involving preliminary and expert reviews."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

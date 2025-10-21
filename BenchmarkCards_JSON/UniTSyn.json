@@ -1,0 +1,73 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "UniTSyn",
+    "abbreviation": "N/A",
+    "overview": "UniTSyn is a large-scale dataset designed to enhance large language models (LLMs) for Unit Test Synthesis by collecting focal-test pairs across multiple programming languages.",
+    "data_type": "focal-test pairs",
+    "domains": [
+      "Software Engineering"
+    ],
+    "languages": [
+      "Python",
+      "Java",
+      "Go",
+      "C++",
+      "JavaScript"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enhance LLMs for Unit Test Synthesis and improve their ability to generate accurate and complete tests.",
+    "audience": [
+      "ML Researchers",
+      "Software Engineers"
+    ],
+    "tasks": [
+      "Test Generation"
+    ],
+    "limitations": "The dataset may require specific hooks for different testing frameworks in languages like C++ and JavaScript that do not have commonly used frameworks implemented.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from open-source software repositories on GitHub.",
+    "size": "2.7 million focal-test pairs",
+    "format": "N/A",
+    "annotation": "Automated retrieval via static analysis using Language Server Protocol."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Static analysis"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Coverage"
+    ],
+    "calculation": "Metrics are calculated based on the number of passing tests and their coverage rates.",
+    "interpretation": "Higher accuracy signifies a better ability of the model to generate correct test cases, while coverage rates reflect the extent to which generated tests execute lines of the code.",
+    "baseline_results": "UniTester outperformed previous models in generating accurate tests.",
+    "validation": "Validated by training an autoregressive model and evaluating its performance against other code generation models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Privacy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

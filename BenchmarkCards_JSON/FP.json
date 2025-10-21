@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Fermi Problems (FP)",
+    "abbreviation": "FP",
+    "overview": "Fermi Problems (FPs) are a new reasoning challenge that requires approximating the answers to complex questions that cannot be precisely computed. We present two datasets: 1k real-world FPs and 10k synthetic FPs, both designed to drive progress in AI reasoning systems.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://allenai.org/data/fermi"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To propose Fermi Problems as a task to drive progress in AI reasoning systems, specifically assessing their ability to make reasonable abstractions, creatively decompose questions, and employ commonsense reasoning.",
+    "audience": [
+      "ML Researchers",
+      "AI Practitioners"
+    ],
+    "tasks": [
+      "Reasoning Challenge"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "A collection of real-world Fermi Problems from quizzes, Olympiads, and a synthetic dataset generated with templates.",
+    "size": "11,000 questions",
+    "format": "JSON",
+    "annotation": "Expert annotation for real-world problems and template-based generation for synthetic problems."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Answer accuracy",
+      "Validity of program output"
+    ],
+    "calculation": "Measured via a scoring metric based on orders of magnitude compared to reference answers.",
+    "interpretation": "A score close to 1 indicates a correct estimate, while a score of 0 indicates an estimate that is far off.",
+    "baseline_results": "Models are found to be off by two orders of magnitude on average.",
+    "validation": "Test split contains real-world Fermi Problems with a majority of questions reserved for evaluation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

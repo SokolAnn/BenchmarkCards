@@ -1,0 +1,100 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TriSense-2M",
+    "abbreviation": "N/A",
+    "overview": "TriSense-2M is a large-scale multimodal dataset containing over 2 million annotations designed to support video temporal understanding tasks through the integration of visual, audio, and speech modalities, facilitating robust multimodal learning.",
+    "data_type": "video and audio samples with event-based annotations",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "DiDeMo",
+      "Charades-STA",
+      "ActivityNet Captions",
+      "VALOR"
+    ],
+    "resources": [
+      "https://github.com/zinuoli/TriSense"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive dataset for multimodal video understanding, enabling models to effectively integrate visual, audio, and speech information for tasks like moment retrieval and segment captioning.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Moment Retrieval",
+      "Segment Captioning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated from long-form videos, enriched with annotated events across various modalities using an automated pipeline.",
+    "size": "2 million annotations from approximately 38,000 long videos",
+    "format": "N/A",
+    "annotation": "Automated annotation using fine-tuned large language models with manual quality checks"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "BLEU Score",
+      "ROUGE-L",
+      "CIDEr",
+      "Recall@IoU"
+    ],
+    "calculation": "Metrics are calculated based on generated captions and retrieved moments against ground truth annotations for segment captioning and moment retrieval tasks.",
+    "interpretation": "Higher scores indicate a better alignment of the generated content with human-generated captions or the ability to correctly retrieve moments based on textual queries.",
+    "baseline_results": "TriSense significantly outperforms other models like LongVALE and Qwen2.5-Omni on both TriSense-2M and existing benchmarks.",
+    "validation": "Extensive experimental evaluations across multiple benchmarks and tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Privacy",
+      "Robustness",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Data privacy rights alignment"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "HIPPO-VIDEO (Highlights Based on Preferences for Personalized Video Highlighting)",
+    "abbreviation": "HIPPO-VIDEO",
+    "overview": "HIPPO-VIDEO is a novel dataset for personalized video highlighting created using an LLM-based user simulator to generate realistic watch histories reflecting diverse user preferences. The dataset includes 2,040 (watch history, saliency score) pairs covering 20,400 videos across 170 semantic categories.",
+    "data_type": "watch history and saliency score pairs",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "QVHighlights",
+      "SumMe",
+      "TVSum"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/jeongeunnn/HIPPO-video",
+      "https://github.com/jeongeunnn-e/HIPPO-Video"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To introduce personalized video highlighting as a novel task leveraging user watch history to tailor video highlights to individual preferences.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Highlight Detection",
+      "Moment Retrieval",
+      "Video Summarization",
+      "Personalized Video Highlighting"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated using LLM-based user simulator by simulating user interactions with video platforms.",
+    "size": "2,040 (watch history, saliency score) pairs, totaling 20,400 videos.",
+    "format": "N/A",
+    "annotation": "Saliency scores were assigned based on long-term user preferences generated during simulation."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Mean Average Precision (mAP)",
+      "Hit@1",
+      "Recall@1",
+      "Root Mean Square Error (RMSE)"
+    ],
+    "calculation": "Metrics are calculated based on the performance of the HiPHer system against segmented videos according to user preferences.",
+    "interpretation": "Higher values indicate better alignment of predicted highlights with user preferences.",
+    "baseline_results": "Various existing methods including SL-Module, Moment-DETR, UMT, QD-DETR, and UVCOM were compared, with HiPHer demonstrating superior performance in capturing user-specific preferences.",
+    "validation": "The dataset was validated through human assessments of the reliability of simulated watch histories and saliency annotations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Utilized LLM-based user simulator to generate realistic watch histories without collecting actual user data.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

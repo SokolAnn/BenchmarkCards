@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FAIRE (Fairness Assessment In Resume Evaluation)",
+    "abbreviation": "FAIRE",
+    "overview": "FAIRE is a benchmark designed to test for racial and gender bias in large language models (LLMs) used to evaluate resumes across different industries. It utilizes direct scoring and ranking methods to measure how model performance changes when resumes reflect different racial or gender identities.",
+    "data_type": "resume evaluation scores and rankings",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/athenawen/FAIRE-Fairness-Assessment-In-Resume-Evaluation.git"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate racial and gender bias in AI-driven resume evaluations.",
+    "audience": [
+      "ML Researchers",
+      "HR Professionals",
+      "AI Practitioners"
+    ],
+    "tasks": [
+      "Bias Evaluation"
+    ],
+    "limitations": "Our benchmark includes only 10 job categories, which reduces the diversity of professions compared to the original resume dataset.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Publicly available resume datasets and New York Census data.",
+    "size": "10 job categories with 10 job descriptions each",
+    "format": "Various formats of resumes",
+    "annotation": "Resumes were modified to reflect different racial and gender identities."
+  },
+  "methodology": {
+    "methods": [
+      "Direct scoring",
+      "Ranking"
+    ],
+    "metrics": [
+      "Average score differences",
+      "Maximum bias gaps",
+      "Ranking inconsistencies"
+    ],
+    "calculation": "Scores are calculated based on LLM evaluations across different demographic markers.",
+    "interpretation": "Bias is interpreted through comparative analysis of score distributions between demographic groups.",
+    "baseline_results": "Results show varying levels of bias across models, particularly in subjective evaluation dimensions.",
+    "validation": "The benchmark validation and performance were measured against multiple LLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The benchmark includes improved fairness checks across different racial and gender demographics.",
+    "harm": [
+      "Bias in resume evaluations"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

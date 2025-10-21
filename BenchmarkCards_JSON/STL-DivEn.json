@@ -1,0 +1,80 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "STL-Diversity-Enhanced (STL-DivEn)",
+    "abbreviation": "STL-DivEn",
+    "overview": "The STL-DivEn dataset is designed to enhance the transformation of natural languages into Signal Temporal Logic (STL) through a diverse collection of 16,000 manually crafted and LLM-generated natural language (NL) and STL pairs, ensuring improved accuracy and reduced ambiguity in complex constraints.",
+    "data_type": "NL-STL pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "DeepSTL"
+    ],
+    "resources": [
+      "https://github.com/YueFang0618/STL-DivEn"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive and diverse dataset for improving the automatic transformation of natural language to Signal Temporal Logic in cyber-physical systems.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Natural Language to Logic Transformation"
+    ],
+    "limitations": "The dataset may not fully capture the temporal property patterns of real-world cyber-physical systems due to its reliance on LLM-generated data.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Manually created seed set of NL-STL pairs, enhanced through LLM augmentation.",
+    "size": "16,000 samples",
+    "format": "JSON",
+    "annotation": "Manual annotation by experts and LLM-generated pairs validated through human checks."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "STL Formula Accuracy",
+      "Template Accuracy",
+      "BLEU Score"
+    ],
+    "calculation": "Metrics calculated based on strict alignment of predicted STL formulas with reference STL.",
+    "interpretation": "Higher accuracy scores indicate better alignment and correct transformations from NL to STL.",
+    "baseline_results": "Scores achieved on STL-DivEn dataset: STL Formula Accuracy 0.5587, Template Accuracy 0.5627, BLEU Score 0.2142.",
+    "validation": "The dataset was validated through human assessment ensuring semantic consistency."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset aims for a comprehensive representation of temporal requirements but may introduce bias from LLM outputs.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

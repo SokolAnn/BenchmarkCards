@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Reading Between the Lines: A dataset and a study on why some texts are tougher than others",
+    "abbreviation": "N/A",
+    "overview": "This paper presents a dataset and an annotation scheme for understanding text difficulty specifically for audiences with intellectual disabilities, focusing on text simplification strategies.",
+    "data_type": "sentence pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Accessibility"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ASSET",
+      "WikiLarge"
+    ],
+    "resources": [
+      "https://github.com/Nouran-Khallaf/why-tough"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To develop an extended taxonomy of translation strategies for text simplification, making information more accessible for individuals with intellectual disabilities.",
+    "audience": [
+      "Researchers in Text Simplification",
+      "Developers of Accessibility Tools",
+      "Educators"
+    ],
+    "tasks": [
+      "Text Simplification",
+      "Text Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Original text corpus sourced from Scottish public services, political manifestos, and newsletters.",
+    "size": "76 parallel texts",
+    "format": "N/A",
+    "annotation": "Annotated with six predefined categories representing different text simplification strategies."
+  },
+  "methodology": {
+    "methods": [
+      "Multiclass classification",
+      "Fine-tuning transformer models",
+      "Cross-validation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics calculated by comparing model predictions with annotated categories in the dataset.",
+    "interpretation": "Higher accuracy indicates better predictions of necessary simplification strategies.",
+    "baseline_results": "Baseline model accuracy of 24.5% and a weighted F1-score of 9.6%.",
+    "validation": "Stratified 5-Fold Cross-Validation used for model evaluation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

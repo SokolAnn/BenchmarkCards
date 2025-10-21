@@ -1,0 +1,102 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "IberBench",
+    "abbreviation": "N/A",
+    "overview": "IberBench is a comprehensive benchmark designed to assess LLM performance on both fundamental and industry-relevant NLP tasks in languages spoken across the Iberian Peninsula and Ibero-America, integrating 101 datasets from evaluation campaigns and recent benchmarks, covering 22 task categories.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Spanish",
+      "Portuguese",
+      "Catalan",
+      "Basque",
+      "Galician",
+      "English"
+    ],
+    "similar_benchmarks": [
+      "GLUE",
+      "MMLU",
+      "HELM"
+    ],
+    "resources": [
+      "https://huggingface.co/spaces/iberbench/leaderboard",
+      "https://huggingface.co/iberbench",
+      "https://github.com/IberBench/iberbench-evaluation/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of IberBench is to enable continuous evaluation of LLMs across fundamental and industry-relevant tasks in Iberian languages, addressing the underrepresentation and static nature of existing evaluation benchmarks.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Sentiment Analysis",
+      "Emotion Detection",
+      "Toxicity Detection",
+      "Intent Classification",
+      "Question Answering",
+      "Text Summarization",
+      "Author Profiling"
+    ],
+    "limitations": "IberBench is constrained to the data that is available from these sources under a permissive license. The benchmark does not cover some language varieties with a large number of speakers.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "IberBench comprises 101 datasets sourced from workshops like IberLEF, IberEval, and TASS, along with recent benchmarks designed to assess LLMs on fundamental and industry-relevant tasks.",
+    "size": "333,000 examples",
+    "format": "N/A",
+    "annotation": "Datasets were collected and standardized for LLM evaluation, ensuring appropriate labeling and consistency across tasks."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Macro F1 Score",
+      "ROUGE-1"
+    ],
+    "calculation": "Metrics are calculated based on the predicted outputs compared to reference outputs, with evaluation performed using a comprehensive evaluation suite integrated into IberBench.",
+    "interpretation": "Performance metrics reflect the model's ability to generate language and perform tasks relative to random baselines and existing shared-task submissions.",
+    "baseline_results": "N/A",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Privacy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Datasets may contain biases, and the evaluation may be influenced by language characteristics and available resources."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Datasets are included with appropriate permissions and are maintained under controlled access to prevent leakage.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

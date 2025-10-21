@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CodeQueries",
+    "abbreviation": "N/A",
+    "overview": "We contribute a labeled dataset, called CodeQueries, of semantic queries over Python code. In CodeQueries, the queries are about code semantics, the context is file level and the answers are code spans. We curate the dataset based on queries supported by a widely-used static analysis tool, CodeQL, and include both positive and negative examples, and queries requiring single-hop and multi-hop reasoning.",
+    "data_type": "question-answering pairs (extractive QA) over Python source code with answer spans and supporting-fact spans",
+    "domains": [
+      "Software Engineering",
+      "Program Analysis"
+    ],
+    "languages": [
+      "Python"
+    ],
+    "similar_benchmarks": [
+      "CoSQA",
+      "CodeQA",
+      "CS1QA"
+    ],
+    "resources": [
+      "https://github.com/thepurpleowl/codequeries-benchmark",
+      "https://codeql.github.com/",
+      "https://codeql.github.com/codeql-query-help/python/py-conflicting-attributes/",
+      "https://github.com/github/codeql/blob/main/python/ql/src/codeql-suites/python-lgtm.qls"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To test the ability of neural models to understand code semantics on the problem of answering semantic queries over code via extractive question-answering, including identification of answer spans and supporting-fact spans.",
+    "audience": [
+      "Machine Learning Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Supporting-fact Identification",
+      "Relevance Classification",
+      "Span Extraction (extractive QA)"
+    ],
+    "limitations": "The dataset consists of 52 queries. The dataset is created over Python code only. Evaluation in the paper is limited to two model types (GPT3.5-Turbo prompting and CuBERT fine-tuning). The context considered is file-level (not entire repositories).",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "52 public CodeQL queries (from the CodeQL Query Suite) evaluated on the redistributable subset of the ETH Py150 dataset (ETH Py150 Open dataset). English descriptions of the CodeQL queries (from CodeQL documentation) are used as natural-language queries. Positive examples and supporting-fact spans are extracted from CodeQL engine results; negative examples are derived using manually created negated CodeQL queries.",
+    "size": "34,662 positive examples and 52,613 negative examples (per-query aggregate count across all queries: 133,456 examples)",
+    "format": "N/A",
+    "annotation": "Answer and supporting-fact spans are programmatically extracted from CodeQL analysis results. Negative examples are obtained by manually deriving logical negations of the CodeQL queries and using their results."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics (exact match, pass@k)",
+      "Model-based evaluation: prompting a large language model (GPT3.5-Turbo) in zero-shot and few-shot settings",
+      "Model-based evaluation: fine-tuning a contextual embedding encoder model (CuBERT) with a relevance classifier and span prediction"
+    ],
+    "metrics": [
+      "Exact Match",
+      "Pass@k",
+      "Accuracy",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "Exact match: An exact match occurs when the set of predicted answer spans is same as the set of ground-truth answer spans. When supporting facts are predicted, the exact match also requires that the set of predicted supporting-fact spans is same as the set of ground-truth supporting-fact spans. Pass@k is used for LLM evaluations following (Chen et al., 2021) for k draws from n generations (k ∈ {1,2,5,10}, n = 10). Relevance classification is measured with accuracy, precision, and recall.",
+    "interpretation": "N/A",
+    "baseline_results": "GPT3.5-Turbo on sampled test data (pass@10): zero-shot exact match on positive examples 20.84% and on negative examples 26.77%; few-shot (BM25 retrieval) pass@10 exact match on positive 32.66% and negative 70.08%. Few-shot with supporting facts (pass@10) positive exact match 39.08%. CuBERT two-step(all, all) on complete test data: exact match 52.61% (positive) and 96.73% (negative). CuBERT two-step(20,20) (practical small-data setting) on complete test data: exact match 3.74% (positive) and 95.54% (negative).",
+    "validation": "Queries were selected with at least 50 answer spans in the training split of the ETH Py150 Open dataset. Examples derived from a Python file are placed in the same split as the file. For LLM evaluation, a sampled test set (files with <2000 tokens) was used due to prompt size limits. Positive examples, supporting facts, and relevant code blocks are derived from CodeQL engine outputs; negative examples are derived from negated CodeQL queries."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Explainability"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Explainability",
+          "subcategory": [
+            "Unexplainable output"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "UnLOK-VQA (Unlearning Outside Knowledge VQA)",
+    "abbreviation": "UnLOK-VQA",
+    "overview": "UnLOK-VQA is a benchmark specifically designed for evaluating the targeted erasure of pretrained multimodal information from Multimodal Large Language Models (MLLMs). It involves high-quality, well-annotated image-text pairs to assess the effectiveness of unlearning methods against adversarial attacks.",
+    "data_type": "image-text pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/Vaidehi99/UnLOK-VQA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To facilitate a comprehensive evaluation of unlearning in Multimodal Large Language Models (MLLMs) and serve as a challenging benchmark for future research in unlearning.",
+    "audience": [
+      "ML Researchers",
+      "AI Safety Researchers",
+      "Model Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Information Deletion"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Automated generation and manual filtering using the OK-VQA dataset.",
+    "size": "500 samples",
+    "format": "JSON",
+    "annotation": "Manual filtering by human evaluators to retain high-quality samples."
+  },
+  "methodology": {
+    "methods": [
+      "Experimental evaluation against whitebox and blackbox attacks",
+      "Manual evaluation of dataset quality"
+    ],
+    "metrics": [
+      "Attack Success Rates",
+      "Rewrite Score",
+      "Neighborhood ∆-Accuracy"
+    ],
+    "calculation": "Attack success rates represent the percentage of successful extractions by the adversarial attacks during evaluation.",
+    "interpretation": "Lower attack success rates and higher rewrite scores indicate better performance of the unlearning methods.",
+    "baseline_results": null,
+    "validation": "Manual filtering to ensure dataset quality through human evaluation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Our work aims to mitigate risks related to sensitive information leakage from MLLMs.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

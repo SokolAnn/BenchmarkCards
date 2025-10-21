@@ -1,0 +1,82 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DOCNLI: A Large-scale Dataset for Document-level Natural Language Inference",
+    "abbreviation": "DOCNLI",
+    "overview": "DOCNLI is a newly-constructed large-scale dataset for document-level NLI, transformed from a range of NLP problems and covering multiple genres of text. It allows for premises that stay in the document granularity, with hypotheses varying in length.",
+    "data_type": "premise-hypothesis pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/salesforce/DocNLI"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To address NLP challenges that require document-level reasoning such as question answering, summarization, and fact-checking.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Natural Language Inference",
+      "Question Answering",
+      "Document Summarization"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Transformed from existing NLP datasets including ANLI, SQuAD, and summarization datasets like DUC2001, CNN/DailyMail, and Curation.",
+    "size": "942,314 pairs",
+    "format": "N/A",
+    "annotation": "Data derived and reformulated into a document-level NLI format."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score"
+    ],
+    "calculation": "F1 is calculated based on the classification performance of models trained using DOCNLI on various NLP benchmarks and tasks.",
+    "interpretation": "Higher F1 scores indicate better performance in correctly classifying entailment relationships between premises and hypotheses.",
+    "baseline_results": "State-of-the-art models on task-specific benchmarks after fine-tuning on DOCNLI.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

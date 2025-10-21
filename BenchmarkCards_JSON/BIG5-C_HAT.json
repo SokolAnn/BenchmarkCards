@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "BIG5-C HAT",
+    "abbreviation": "N/A",
+    "overview": "BIG5-C HAT is a large-scale dataset containing 100,000 dialogues designed to ground models in how humans express their personality in language, addressing realism and validity issues in prior methods.",
+    "data_type": "dialogue pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/wenkai-li/Big5-Chat.git",
+      "https://huggingface.co/datasets/wenkai-li/big5_chat"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To investigate how training-based methods grounded in real human data compare to traditional prompting techniques for inducing personality traits in LLMs.",
+    "audience": [
+      "ML Researchers",
+      "AI Practitioners"
+    ],
+    "tasks": [
+      "Text Generation",
+      "Social Interaction Modeling"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Combination of PsychGenerator and SODA datasets.",
+    "size": "100,000 dialogues",
+    "format": "JSON",
+    "annotation": "Generated text based on personality traits using fine-tuned models."
+  },
+  "methodology": {
+    "methods": [
+      "Supervised Fine-Tuning",
+      "Direct Preference Optimization"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Metrics were calculated based on personality assessments using BFI and IPIP-NEO.",
+    "interpretation": "Higher scores indicate better alignment with human-like personality traits.",
+    "baseline_results": "N/A",
+    "validation": "Human evaluations were conducted comparing generated outputs with baseline methods."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Reinforcing undesirable behaviors or stereotypes",
+      "Exaggerated outputs leading to hallucination"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

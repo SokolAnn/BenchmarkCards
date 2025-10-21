@@ -1,0 +1,82 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "UAL-Bench (Unusual Activity Localization Benchmark)",
+    "abbreviation": "UAL-Bench",
+    "overview": "UAL-Bench is a comprehensive benchmark for unusual activity localization in videos, featuring three data sets: UAG-OOPS, UAG-SSBD, UAG-FunQA, and an instruction-tune dataset OOPS-UAG-Instruct to improve model capabilities.",
+    "data_type": "video",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://drive.google.com/drive/folders/1eE_ngd-E6rjdHz0KKttJATzsdxv4Wf_e?usp=sharing"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate models' capabilities in localizing unusual activities in videos and to outline challenges in current methodologies.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Video Activity Localization"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Three datasets: UAG-OOPS, UAG-SSBD, UAG-FunQA, and one instruction-tune dataset OOPS-UAG-Instruct.",
+    "size": "1,589 videos for UAG-OOPS, 75 videos for UAG-SSBD, 172 videos for UAG-FunQA, 3,778 videos for OOPS-UAG-Instruct.",
+    "format": "Not explicitly stated",
+    "annotation": "Annotations include start and end timestamps for activities."
+  },
+  "methodology": {
+    "methods": [
+      "Evaluation of Video-Language Models (Vid-LLMs)",
+      "Instruction-tuned Vid-LLMs",
+      "Integration of Vision-Language Models and Large Language Models (VLM-LLM)"
+    ],
+    "metrics": [
+      "R@1, IoU ≥m",
+      "R@1, TD≤p",
+      "mTD"
+    ],
+    "calculation": "Performance is evaluated based on the localization metrics that measure how well predicted timestamps overlap with ground truth.",
+    "interpretation": "Higher R@1 and lower mTD indicate better performance.",
+    "baseline_results": "Random method as a baseline which serves as a lower performance indicator.",
+    "validation": "Proposed evaluation protocol includes zero-shot settings."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

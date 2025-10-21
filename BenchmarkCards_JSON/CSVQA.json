@@ -1,0 +1,79 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CSVQA (Chinese STEM Visual Question Answering)",
+    "abbreviation": "CSVQA",
+    "overview": "CSVQA is a diagnostic multimodal benchmark specifically designed for evaluating scientific reasoning through domain-grounded visual question answering, featuring 1,378 carefully constructed question-answer pairs across diverse STEM disciplines.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "ScienceQA",
+      "MathVista",
+      "MMMU"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/Skywork/CSVQA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To rigorously evaluate the scientific reasoning capabilities of vision-language models (VLMs) in interpreting STEM content.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Visual Question Answering"
+    ],
+    "limitations": "The benchmark currently focuses on high school-level content, which may not fully capture the depth and complexity of advanced scientific reasoning.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Publicly available Chinese high school textbooks and examination papers across STEM disciplines.",
+    "size": "1,378 questions",
+    "format": "CSV",
+    "annotation": "Expert-annotated questions, with about 81% paired with detailed explanations."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Evaluation of model responses based on correctness and reasoning consistency.",
+    "interpretation": "A valid response is one that is logically consistent with provided explanations.",
+    "baseline_results": "Top model achieved 49.6% accuracy.",
+    "validation": "Validated through expert reviews and quality control pipelines."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All content used in the dataset is sourced from publicly available materials, ensuring no private information is included.",
+    "data_licensing": "Content sourced with explicit permission for use and redistribution.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "Developed in accordance with established ethical standards."
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SESSION INTENT BENCH",
+    "abbreviation": "SIB",
+    "overview": "A multimodal benchmark evaluating L(V)LMs' understanding of inter-session intention shift in E-commerce customer behavior, focusing on four subtasks relating to intention modeling.",
+    "data_type": "multimodal",
+    "domains": [
+      "Natural Language Processing",
+      "E-commerce"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Evaluate L(V)LMs' capability on understanding customer intention shifts in E-commerce sessions.",
+    "audience": [
+      "ML Researchers",
+      "E-commerce Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Intent-Based Purchasing Likelihood Estimation",
+      "Purchasing Likelihood Inference via Valued Attributes Regularization",
+      "Intention Justification via Comparison",
+      "Intention Evolution Modeling"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Amazon-M2 and Amazon Review Dataset",
+    "size": "1,952,177 intention entries, 1,132,145 session intention trajectories, 13,003,664 tasks",
+    "format": "N/A",
+    "annotation": "Human annotations conducted to collect ground-truth labels from a sampled subset of data."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Macro-F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on the percentage of correctly answered questions.",
+    "interpretation": "Accuracy indicates how well the models performed against human-annotated ground truths.",
+    "baseline_results": "N/A",
+    "validation": "Extensive experiments on over 20 L(V)LMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Privacy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Membership inference attack"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "The dataset is released under an Apache 2.0 license, allowing free use for research purposes.",
+    "consent_procedures": "Annotation workers are paid in compliance with local laws and agree to participate voluntarily.",
+    "compliance_with_regulations": "N/A"
+  }
+}

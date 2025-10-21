@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FINAUDIO",
+    "abbreviation": "N/A",
+    "overview": "FINAUDIO is the first benchmark designed to evaluate the capacity of Audio Large Language Models (AudioLLMs) in the financial domain, focusing on tasks such as automatic speech recognition (ASR) for both short and long financial audio, as well as summarization of financial audio data.",
+    "data_type": "audio",
+    "domains": [
+      "Finance"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "AirBench",
+      "AudioBench",
+      "FLUE",
+      "FinBen",
+      "PIXIU"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2503.20990"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive open-source evaluation benchmark for AudioLLMs in the financial audio domain.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "ASR for short financial audio clips",
+      "ASR for long financial audio recordings",
+      "Financial Audio Summarization"
+    ],
+    "limitations": "Due to the limited availability of financial audio data, FinAudio primarily focuses on ASR-related tasks and does not address financial audio scenarios involving languages other than English.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Four open-source financial audio datasets related to earnings conference calls and financial discussions.",
+    "size": "400 hours of audio",
+    "format": "N/A",
+    "annotation": "Annotated based on sentence-level segmentation aligned with transcripts."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Word Error Rate (WER)",
+      "Rouge-L",
+      "BERTScore"
+    ],
+    "calculation": "Metrics like WER are calculated based on the number of substitutions, deletions, and insertions compared to the reference transcript.",
+    "interpretation": "Lower WER indicates better ASR performance; higher scores in Rouge-L and BERTScore suggest better summarization quality.",
+    "baseline_results": "Evaluation of seven prevalent AudioLLMs revealed performance variations across ASR tasks and summarization.",
+    "validation": "Evaluation conducted over multiple repetitions to ensure reliability of results."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The publicly available datasets used in FINAUDIO do not contain personal information and conform to established ethical guidelines.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

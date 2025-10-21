@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "EMOBENCH-UA",
+    "abbreviation": "N/A",
+    "overview": "EMOBENCH-UA is the first manually annotated benchmark dataset for emotion detection in Ukrainian texts created through a crowdsourcing annotation pipeline.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Ukrainian"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/ukr-detect/ukr-emotions-binary",
+      "https://huggingface.co/datasets/ukr-detect/ukr-emotions-intensity",
+      "https://huggingface.co/datasets/ukr-detect/ukr-emotions-per-annotator",
+      "https://huggingface.co/ukr-detect/ukr-emotions-classifier",
+      "https://github.com/dardem/emobench-ua"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a dataset for emotion detection in Ukrainian texts to encourage the development of Ukrainian-specific models.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Emotion Detection"
+    ],
+    "limitations": "The dataset is restricted to basic emotions and does not include nuanced or implicit emotional states.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Publicly available Ukrainian tweets corpus",
+    "size": "4,949 examples",
+    "format": "JSON",
+    "annotation": "Crowdsourced annotation through the Toloka.ai platform with multiple quality control measures."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Classifier performance evaluation"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "F1 Score computed per emotion and overall using Precision and Recall.",
+    "interpretation": "Higher F1 Score indicates better performance in classifying emotions correctly.",
+    "baseline_results": null,
+    "validation": "The dataset was validated through majority voting from multiple annotators."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All texts were anonymized to avoid personal and sensitive information disclosure.",
+    "data_licensing": "CC BY 4.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

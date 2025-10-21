@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LexSumm",
+    "abbreviation": "N/A",
+    "overview": "LexSumm is a benchmark designed for evaluating legal summarization tasks in English. It comprises eight English legal summarization datasets from diverse jurisdictions, such as the US, UK, EU, and India.",
+    "data_type": "document-summary pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "LexGLUE",
+      "LegalBench",
+      "LawBench"
+    ],
+    "resources": [
+      "https://github.com/TUMLegalTech/LexSumm-LexT5"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To serve as an evaluation platform to foster development of approaches dealing with long legal text using efficient transformer architectures.",
+    "audience": [
+      "Legal Researchers",
+      "NLP Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text Summarization"
+    ],
+    "limitations": "An important limitation of our benchmark is its reliance on English-only evaluation, which limits the generalizability of our findings to legal systems operating in languages other than English.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "A collection of eight legal NLG datasets in English language from diverse jurisdictions.",
+    "size": "22,218 document-summary pairs from various datasets",
+    "format": "CSV",
+    "annotation": "Sourced from governmental and legal institutions, with some datasets containing expert-written summaries."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "ROUGE-1",
+      "ROUGE-2",
+      "ROUGE-L",
+      "BERTScore"
+    ],
+    "calculation": "Metrics are calculated based on the lexical and semantic overlap between the model-generated output and the reference summary.",
+    "interpretation": "Higher scores indicate better performance in generating summaries that accurately reflect the content of the legal documents.",
+    "baseline_results": null,
+    "validation": "Evaluation against existing benchmarks and human assessments."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Bias"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Potential bias in model generated outputs affecting legal decisions."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All datasets are publicly available data, obtained in accordance with data protection laws.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

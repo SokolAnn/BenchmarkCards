@@ -1,0 +1,77 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CEGI (Carbon Efficient Gain Index)",
+    "abbreviation": "CEGI",
+    "overview": "CEGI measures the trade-off between model performance and carbon emissions for Small Language Models (SLMs) and Vision Language Models (VLMs) across tasks such as Image Captioning, Visual Question Answering, Dialogue Summarization, and Text-to-SQL conversion.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To quantify and optimize carbon emissions of AI model training while maintaining high task performance.",
+    "audience": [
+      "ML Researchers",
+      "AI Practitioners",
+      "Sustainability Advocates"
+    ],
+    "tasks": [
+      "Image Captioning",
+      "Visual Question Answering",
+      "Dialogue Summarization",
+      "Text-to-SQL"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Datasets for Image Captioning (artbench-pd-256x256), Visual Question Answering (PathVQA), Dialogue Summarization (SAMSum), Text-to-SQL (synthetic_text_to_sql)",
+    "size": "2,200 examples for Image Captioning, 30,000 examples for VQA, 14,000 examples for Dialogue Summarization, 50,000 examples for Text-to-SQL",
+    "format": "JSON",
+    "annotation": "Annotated through manual and automated processes."
+  },
+  "methodology": {
+    "methods": [
+      "Fine-tuning with Low-Rank Adaptation (LoRA)",
+      "Quantization (4-bit, 8-bit)",
+      "Performance evaluation using specific metrics (SPICE, BLEU, ROUGE, Execution Accuracy, Valid Efficiency Score)"
+    ],
+    "metrics": [
+      "SPICE",
+      "BLEU",
+      "ROUGE",
+      "Execution Accuracy (EA)",
+      "Valid Efficiency Score (VES)"
+    ],
+    "calculation": "Metrics calculated based on performance comparison of fine-tuned versus base models.",
+    "interpretation": "Higher scores indicate better performance on defined tasks.",
+    "baseline_results": "Comparison to GPT-4o used as a baseline for performance across tasks.",
+    "validation": "Experiments conducted with control measures and multiple runs for reliability."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Environmental Impact",
+      "Model Efficiency"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

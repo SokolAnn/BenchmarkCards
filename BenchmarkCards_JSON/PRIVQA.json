@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PRIVQA",
+    "abbreviation": "N/A",
+    "overview": "PRIVQA is a multimodal benchmark to assess the privacy/utility trade-off when a model is instructed to protect specific categories of personal information in a simulated scenario.",
+    "data_type": "text and image question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://llm-access-control.github.io/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To test the ability of language models and vision-language models to follow instructions to protect personal information.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "A curated collection of existing QA datasets such as TriviaQA and visual QA datasets like KVQA.",
+    "size": "4,678 textual examples and 2,000 visual examples",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "Red teaming"
+    ],
+    "metrics": [
+      "Response F1",
+      "Protection Score"
+    ],
+    "calculation": "Response F1 is calculated using the standard token-level QA evaluation metric; Protection Score is calculated based on sensitivity and specificity.",
+    "interpretation": "High Response F1 indicates good accuracy, while a high Protection Score reflects effective privacy protection.",
+    "baseline_results": "N/A",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis found significant bias based on popularity and race.",
+    "harm": "The benchmark aims to detect or prevent privacy leaks of personal information."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

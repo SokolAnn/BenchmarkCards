@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "AusLaw Citation Benchmark",
+    "abbreviation": "N/A",
+    "overview": "The AusLaw Citation Benchmark is a real-world dataset comprising 55,005 Australian legal instances and 18,677 unique citations, aimed at evaluating legal citation prediction using various approach comparisons.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Legal"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "LEGALBENCH",
+      "LawBench",
+      "LexEval",
+      "BLT",
+      "MAUD",
+      "CUAD"
+    ],
+    "resources": [
+      "https://auslawbench.github.iokeywords"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a benchmark for evaluating models on the legal citation prediction task and to establish a dataset to inspire future developments in this legal domain.",
+    "audience": [
+      "ML Researchers",
+      "Legal Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Citation Prediction"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The NSW Caselaw section of the Open Australian Legal Corpus.",
+    "size": "55,005 instances",
+    "format": "N/A",
+    "annotation": "Manual checking of LLM-generated descriptions for quality assurance."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy@1",
+      "Accuracy@5"
+    ],
+    "calculation": "Metrics are calculated based on the model's prediction accuracy for citations.",
+    "interpretation": "A higher accuracy indicates better performance in predicting the correct legal citations.",
+    "baseline_results": "Cite-SaulLM-7B achieved an accuracy of 51.7% and Cite-LLaMA-3.1-8B achieved 46.2% accuracy.",
+    "validation": "Benchmark validation through systematic testing across multiple LLM approaches and retrieval systems."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

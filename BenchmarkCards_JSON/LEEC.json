@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LEEC (Legal Element Extraction Dataset)",
+    "abbreviation": "LEEC",
+    "overview": "LEEC is a large-scale criminal element extraction dataset comprising 15,831 judicial documents and 159 labels, constructed to enhance the interpretative and analytical capacities of legal cases for various downstream applications in law.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Legal"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/THUlawtech/LEEC"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive dataset for legal element extraction in the context of Chinese criminal law to facilitate various LegalAI applications.",
+    "audience": [
+      "ML Researchers",
+      "Legal Practitioners",
+      "Academics"
+    ],
+    "tasks": [
+      "Element Extraction",
+      "Document Event Extraction"
+    ],
+    "limitations": "The dataset may contain selection bias and should be used cautiously due to the sensitive nature of legal data.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Annotated from publicly available cases of LEVEN and LeCaRD datasets.",
+    "size": "15,831 judicial documents",
+    "format": "N/A",
+    "annotation": "Annotated manually by law students and supervised by legal experts using a detailed annotation guideline."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score"
+    ],
+    "calculation": "Evaluation metrics were calculated by comparing extracted elements with ground truth annotations.",
+    "interpretation": "Higher F1 scores indicate better performance in accurately extracting legal elements from judicial documents.",
+    "baseline_results": "Models demonstrated varying performance levels with different baseline methods indicated in the paper.",
+    "validation": "The dataset was validated using multiple state-of-the-art models for Document Event Extraction."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Privacy",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Reidentification"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset includes elements that capture demographic factors of defendants and victims.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset includes measures to comply with Chinese law regarding personal information.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "The dataset was created in compliance with applicable laws."
+  }
+}

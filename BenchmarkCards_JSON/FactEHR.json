@@ -1,0 +1,79 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FactEHR",
+    "abbreviation": "N/A",
+    "overview": "FactEHR is a dataset for fact decomposition and textual entailment created from 2,168 clinical notes across four document types from three hospital systems, aimed at evaluating the factuality in clinical notes using large language models.",
+    "data_type": "text",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MedNLI",
+      "MultiNLI",
+      "SciTail",
+      "SNLI"
+    ],
+    "resources": [
+      "https://github.com/som-shahlab/factehr",
+      "https://som-shahlab.github.io/factehr-website/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the benchmark is to evaluate the performance of large language models in fact decomposition and entailment tasks on clinical note data.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Clinical Researchers"
+    ],
+    "tasks": [
+      "Fact Decomposition",
+      "Textual Entailment"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "2,168 clinical notes from various datasets including MIMIC, CORAL, and MedAlign, processed to create fact decompositions.",
+    "size": "987,266 entailment pairs",
+    "format": "N/A",
+    "annotation": "Fact decompositions were generated using large language models, and a subset was reviewed by medical experts."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Fact Precision",
+      "Fact Recall",
+      "F1 Score"
+    ],
+    "calculation": "Fact Precision measures the proportion of facts in a decomposition that are entailed by the clinical note; Fact Recall measures how well the decomposed facts capture the sentences in the clinical note.",
+    "interpretation": "Higher Fact Precision indicates more accurate decompositions, while higher Fact Recall shows completeness regarding the cover of the original notes.",
+    "baseline_results": "N/A",
+    "validation": "Evaluated using manual annotations from clinical experts for entailment with a total of 1,036 human-annotated pairs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset used de-identified clinical notes to ensure patient privacy.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

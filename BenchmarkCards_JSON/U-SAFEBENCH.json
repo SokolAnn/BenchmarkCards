@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "U-SAFEBENCH (User-Specific Safety Benchmark)",
+    "abbreviation": "U-SAFEBENCH",
+    "overview": "U-SAFEBENCH is the first benchmark designed to assess user-specific aspect of LLM safety by evaluating the responses of LLM agents when considering user-specific profiles.",
+    "data_type": "user instructions and profiles",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SafetyBench"
+    ],
+    "resources": [
+      "https://github.com/yeonjun-in/U-SafeBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the user-specific safety of LLM agents and assess their responses based on user profiles.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Safety Evaluators"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Autonomous Agent Tasks"
+    ],
+    "limitations": "The overall safety performance of most models remains inadequate for real-world deployment.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset includes over 150 user profiles and more than 1,900 real-world user instructions adapted for user-specific safety.",
+    "size": "1,936 instruction-user profile pairs",
+    "format": "CSV",
+    "annotation": "Collection includes automated data generation and human annotation for user-specific safety classification."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "User-Specific Safety Score",
+      "User-Specific Helpfulness Score"
+    ],
+    "calculation": "Safety score is calculated based on the rejection ratio of harmful instructions, while helpfulness score is the fulfillment ratio of benign instructions.",
+    "interpretation": "Higher safety scores indicate better compliance with user-specific safety standards; higher helpfulness scores indicate better assistance to benign requests.",
+    "baseline_results": "Average LLMs achieved a user-specific safety score of 18.6%; Claude-3.5-sonnet achieved a state-of-the-art score of 63.8%.",
+    "validation": "Models' responses evaluated using LLM-as-a-judge approach to determine refusal intent."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset may include sensitive content depending on user profiles; clear content warnings will be provided.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

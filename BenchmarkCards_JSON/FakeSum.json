@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FakeSum (Misinformation Detection Dataset)",
+    "abbreviation": "FakeSum",
+    "overview": "We propose an approach for generating a dataset using adversarial prompting to create a robust fake news dataset that helps in understanding the anatomy of LLM-generated misinformation. This dataset captures various misinformation patterns and exhibits how LLMs can be leveraged for generating misinformation, which lays the groundwork for effectively fighting against it.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the dataset is to assist in the training of models for misinformation detection by providing a controlled generation of factually incorrect summaries.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Misinformation Detection",
+      "Fact Verification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "5000 news articles collected from CNN-News185",
+    "size": "5000 correct and about 1000 incorrect summaries",
+    "format": "N/A",
+    "annotation": "Generated using GPT-3.5 and GPT-4 models"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Macro F1 Score",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "Metrics are calculated based on the classification tasks performed on the dataset.",
+    "interpretation": "A model that achieves higher F1 scores is deemed to perform better in distinguishing between correct summaries and those with misinformation.",
+    "baseline_results": "The dataset has been evaluated using SVC, BiLSTM, BERT, and RoBERTa models with varying F1 scores across settings.",
+    "validation": "Split into training, validation, and test sets with a ratio of 70:10:20."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on affected communities"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "The dataset aims to address misinformation, which can have harmful societal impacts."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

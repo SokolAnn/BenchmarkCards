@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Jira: a Kurdish Speech Recognition System",
+    "abbreviation": "N/A",
+    "overview": "This paper introduces the first large vocabulary speech recognition system (LVSR) for the Central Kurdish language, named Jira. It includes the creation of a speech corpus and pronunciation lexicon for Kurdish, designed to address the lack of speech and text resources for the language.",
+    "data_type": "speech recordings",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Kurdish"
+    ],
+    "similar_benchmarks": [
+      "N/A"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To develop and evaluate the first speech recognition system for Central Kurdish, including a speech corpus and pronunciation lexicon.",
+    "audience": [
+      "Speech Technology Researchers",
+      "Linguists",
+      "Developers of Language Resources"
+    ],
+    "tasks": [
+      "Speech Recognition"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Speech corpus collected from 576 speakers in various environments including controlled offices and crowdsourcing via Telegram.",
+    "size": "43.68 hours of speech",
+    "format": "WAV",
+    "annotation": "Manual processing to discard noisy and corrupted samples"
+  },
+  "methodology": {
+    "methods": [
+      "Evaluation of speech recognition accuracy using different acoustic models",
+      "Kaldi toolkit for system setup"
+    ],
+    "metrics": [
+      "Word Error Rate (WER)",
+      "Phoneme Error Rate (PER)"
+    ],
+    "calculation": "WER and PER are calculated based on the recognition performance on test sets.",
+    "interpretation": "Lower WER and PER values indicate better performance in speech recognition accuracy.",
+    "baseline_results": "The best performance achieved was 13.9% WER and 4.9% for general topic.",
+    "validation": "Evaluated using separate test sets for different environments and domains."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Balanced representation of speakers from different genders and education backgrounds.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

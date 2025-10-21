@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "HiCBench (Hierarchical Chunking Benchmark)",
+    "abbreviation": "HiCBench",
+    "overview": "HiCBench is a QA benchmark focused on hierarchical document chunking, designed to effectively evaluate the impact of chunking methods on different components of Retrieval-Augmented Generation (RAG) systems.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/Youtu-RAG/HiCBench",
+      "https://github.com/TencentCloudADP/HiChunk.git"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess the performance of chunking methods and their impact on retrievers and response models within RAG systems.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "OHRBench document corpus",
+    "size": "130 documents",
+    "format": "N/A",
+    "annotation": "Manually annotated multi-level document chunking points and synthesized evidence-dense QA pairs."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Rouge metrics",
+      "Fact Coverage"
+    ],
+    "calculation": "F1 metrics for chunking accuracy, Fact-Cov metric for response quality evaluation.",
+    "interpretation": "Higher F1 scores and Fact-Cov metrics indicate better chunking quality and response quality.",
+    "baseline_results": "F1 scores of chunking methods compared across several datasets.",
+    "validation": "Evaluated using LongBench, Qasper, GutenQA, and OHRBench datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": []
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

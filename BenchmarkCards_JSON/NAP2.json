@@ -1,0 +1,82 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "NAP2 (Naturalness and Privacy-Preserving Text Rewriting)",
+    "abbreviation": "NAP2",
+    "overview": "The NAP2 dataset focuses on naturalness and privacy-preserving methods for text rewriting, providing a corpus for researchers to develop and evaluate strategies for sanitizing sensitive text while maintaining privacy and utility.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate and improve text rewriting techniques that maintain privacy while ensuring natural language quality.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Text Rewriting"
+    ],
+    "limitations": "The dataset might not fulfill the expansive needs of commercial deployments due to its limited size.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated from the open-domain dialogue corpus PERSONA-CHAT.",
+    "size": "4,795 utterances",
+    "format": "N/A",
+    "annotation": "Human annotation and using large language models for synthetic data generation."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "PRIVACY_NLI",
+      "ROUGE-1",
+      "ROUGE-L"
+    ],
+    "calculation": "Performance is evaluated based on the ability to retain privacy while preserving naturalness in rewrites.",
+    "interpretation": "Higher scores in metrics indicate better performance in privacy preservation and naturalness.",
+    "baseline_results": "Comparative evaluations showed superior performance of models fine-tuned on NAP2 over state-of-the-art methods and zero-shot LLMs.",
+    "validation": "Cross-validation procedures were used to ensure robust model performance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset focuses on ensuring anonymization of sensitive information.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

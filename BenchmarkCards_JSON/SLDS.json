@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SLDS (Swiss Landmark Decisions Summarization)",
+    "abbreviation": "SLDS",
+    "overview": "The Swiss Landmark Decisions Summarization (SLDS) dataset contains 20K rulings from the Swiss Federal Supreme Court, each with headnotes in German, French, and Italian, aimed at enhancing cross-lingual legal summarization research.",
+    "data_type": "decision-headnote pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Legal"
+    ],
+    "languages": [
+      "German",
+      "French",
+      "Italian"
+    ],
+    "similar_benchmarks": [
+      "EUR-Lex-Sum",
+      "MILDSum"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/ipst/sldsverdicts"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a large-scale, multilingual dataset for judicial summarization that addresses the unique challenges posed by the Swiss legal landscape.",
+    "audience": [
+      "Legal Researchers",
+      "Natural Language Processing Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text Summarization"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Swiss Federal Supreme Court repository",
+    "size": "20,000 rulings, resulting in 60,000 data rows",
+    "format": "JSON",
+    "annotation": "Automatically generated headnotes by legal clerks"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "LLM-based evaluation"
+    ],
+    "metrics": [
+      "BLEU",
+      "ROUGE-1",
+      "ROUGE-2",
+      "ROUGE-L",
+      "BERTScore",
+      "JUDGE"
+    ],
+    "calculation": "Metrics calculated based on generated headnotes in comparison to official headnotes.",
+    "interpretation": "Metrics provide insights into lexical similarity and legal accuracy, with high scores indicating better performance.",
+    "baseline_results": "Fine-tuned models generally achieved higher scores than un-tuned models, with notable improvements observed.",
+    "validation": "The dataset is partitioned by publication year to prevent data leakage."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset was anonymized according to guidelines before publication.",
+    "data_licensing": "CC BY 4.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

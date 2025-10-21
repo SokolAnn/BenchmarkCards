@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CMB (Comprehensive Medical Benchmark)",
+    "abbreviation": "CMB",
+    "overview": "The CMB aims to evaluate the performance of large language models in the medical domain, especially focusing on Chinese language medical tasks. This benchmark showcases how dataset diversity and distribution in supervised fine-tuning can enhance model performance, indicating that models can achieve competitive results with smaller parameter sizes by leveraging a diverse dataset.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Healthcare"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/CAS-SIAT-XinHai/CollectiveSFT"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To improve the performance of large language models in medical tasks through dataset diversity and supervised fine-tuning.",
+    "audience": [
+      "ML Researchers",
+      "Healthcare Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Named Entity Recognition"
+    ],
+    "limitations": "While fine-tuned smaller models excel at answering multiple-choice questions accurately, they may struggle with maintaining engaging and coherent conversations.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Publicly available medical datasets including PubMedQA, MedMCQA, and others, focused on fostering a diverse training environment.",
+    "size": "4,745,140 examples",
+    "format": "Alpaca format",
+    "annotation": "Standardized annotation through data reconstruction from various sources."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Metrics were calculated based on the model's performance on various tasks demonstrated during testing.",
+    "interpretation": "Scores reflect model performance across diverse medical tasks, particularly evaluating how well they perform in specialized contexts.",
+    "baseline_results": null,
+    "validation": "Evaluation involved comparing model performance against established benchmarks in the medical domain."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The benchmark considers the diversity of datasets to mitigate biases in data sources.",
+    "harm": [
+      "Inaccurate medical advice due to hallucination."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

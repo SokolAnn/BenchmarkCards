@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "JETTS (Judge Evaluation for Test-Time Scaling)",
+    "abbreviation": "JETTS",
+    "overview": "The JETTS benchmark evaluates judge performance in three domains (math reasoning, code generation, and instruction following) under three task settings: response reranking, step-level beam search, and critique-based response refinement.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "RewardBench",
+      "ProcessBench"
+    ],
+    "resources": [
+      "https://github.com/SalesforceAIResearch/jetts-benchmark"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the effectiveness of LLM-judges in test-time scaling scenarios.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Response Reranking",
+      "Step-Level Beam Search",
+      "Critique-Based Refinement"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Responses generated from multiple large language models trained for different tasks.",
+    "size": "N/A",
+    "format": "N/A",
+    "annotation": "Responses were generated automatically without manual annotation."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Normalized Helpfulness"
+    ],
+    "calculation": "Metrics are calculated based on judge performance across various tasks and datasets.",
+    "interpretation": "Positive normalized helpfulness means the judge aids in improving the model generation.",
+    "baseline_results": "Responses are compared against greedy decoding performance and random selection.",
+    "validation": "Performance is validated through comparisons with existing models and evaluations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Safety",
+      "Privacy",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

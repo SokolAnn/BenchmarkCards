@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "RTLCoder",
+    "abbreviation": "N/A",
+    "overview": "RTLCoder is an open-source large language model (LLM) solution designed for generating RTL code (Verilog) from natural language instructions. It outperforms GPT-3.5 in all representative benchmarks for RTL code generation and addresses the challenge of data availability in IC design tasks through a new automated dataset generation flow.",
+    "data_type": "instruction-code pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "VerilogEval",
+      "RTLLM"
+    ],
+    "resources": [
+      "https://github.com/hkust-zhiyao/RTL-Coder"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide an open-source LLM solution for RTL code generation that outperforms existing commercial models while ensuring data privacy and accessibility.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Code Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Automatically generated based on natural language instructions and RTL design keywords.",
+    "size": "27,000 samples",
+    "format": "N/A",
+    "annotation": "Automatically filtered and organized from raw outputs using a syntax checker."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "pass @k metric",
+      "pass @5 metric"
+    ],
+    "calculation": "Metrics are calculated based on how many designs pass the syntax checks and functionality tests using multiple trials.",
+    "interpretation": "Models are evaluated based on their success rates in generating valid and functional RTL code as compared to benchmarks.",
+    "baseline_results": "RTLCoder surpasses GPT-3.5 and shows competitive results against GPT-4 on RTL generation tasks.",
+    "validation": "Ensured through comparison with established RTL generation benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Data Privacy",
+      "Model robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Data privacy rights alignment"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Explicit measures are taken to ensure the data privacy of user submissions by using an open-source solution.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "AGMMU (Agricultural Multimodal Understanding Benchmark)",
+    "abbreviation": "AGMMU",
+    "overview": "AGMMU is a challenging real-world benchmark for evaluating and advancing vision-language models (VLMs) in the knowledge-intensive domain of agriculture, constructed from authentic dialogues between users and agricultural experts.",
+    "data_type": "multiple-choice and open-ended questions",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SimpleQA",
+      "ScienceQA",
+      "MMMU"
+    ],
+    "resources": [
+      "https://github.com/AgMMU/AgMMU",
+      "https://huggingface.co/datasets/AgMMU/AgMMU_v1"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the capabilities of vision-language models in handling knowledge-intensive agricultural scenarios and improve their performance on related tasks.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Agricultural Experts"
+    ],
+    "tasks": [
+      "Insect Identification",
+      "Plant Identification",
+      "Disease Categorization",
+      "Management Instruction",
+      "Symptom Description"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from 116,231 real-world dialogues between growers and USDA-authorized experts.",
+    "size": "116,231 dialogues",
+    "format": "JSON",
+    "annotation": "Automated knowledge extraction followed by human verification."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on the evaluation of VLMs' performance on provided questions.",
+    "interpretation": "Higher accuracy and F1 scores indicate better performance in VLM understanding and knowledge integration.",
+    "baseline_results": null,
+    "validation": "Evaluation of 12 leading VLMs to benchmark their performance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All personal identifying information from users and experts was removed during data curation.",
+    "data_licensing": "CC-BY-SA 4.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CLIP-SLA (CLIP Sign Language Adaptation)",
+    "abbreviation": "CLIP-SLA",
+    "overview": "CLIP-SLA is a framework that leverages the powerful pre-trained visual encoder from the CLIP model for continuous sign language recognition (CSLR) through parameter-efficient fine-tuning. It introduces two variants, SLA-Adapter and SLA-LoRA, which integrate PEFT modules into the CLIP visual encoder for efficient sign language tasks.",
+    "data_type": "video",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "Saudi Sign Language",
+      "German",
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "Phoenix2014",
+      "Phoenix2014-T",
+      "CSL-Daily"
+    ],
+    "resources": [
+      "https://github.com/snalyami/CLIP-SLA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To advance continuous sign language recognition using parameter-efficient fine-tuning methods on pre-trained visual models.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Continuous Sign Language Recognition"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Four datasets: Phoenix2014, Phoenix2014-T, CSL-Daily, and a new dataset Isharah-500 for continuous Saudi sign language.",
+    "size": "7,500 videos",
+    "format": "N/A",
+    "annotation": "Videos contain gloss annotations without explicit temporal boundaries."
+  },
+  "methodology": {
+    "methods": [
+      "Ablation studies",
+      "Model evaluation against SOTA methods"
+    ],
+    "metrics": [
+      "Word Error Rate (WER)"
+    ],
+    "calculation": "WER is calculated by measuring the minimum number of edits required to align predicted sequences with the ground truth.",
+    "interpretation": "Lower WER indicates better model performance for continuous sign language recognition.",
+    "baseline_results": null,
+    "validation": "Performance validated through extensive testing on standard datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

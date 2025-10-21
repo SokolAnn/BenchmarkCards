@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "HERALD (Hierarchy and Retrieval-based Translated Lean Dataset)",
+    "abbreviation": "HERALD",
+    "overview": "HERALD is a dataset created by applying an augmentation pipeline to Mathlib4, generating a large collection of natural language and formal language pairs for the Lean 4 mathematical library.",
+    "data_type": "natural language-formal language pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Mathematics"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ProofNet",
+      "InternLM2-Math-Plus-7B",
+      "TheoremLlama"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/FrenzyMath/Herald",
+      "https://github.com/frenzymath/herald_translator"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enhance the autoformalization of mathematical statements and proofs by providing a dataset of parallel natural language and formal language pairs.",
+    "audience": [
+      "ML Researchers",
+      "Mathematicians",
+      "Math Educators"
+    ],
+    "tasks": [
+      "Autoformalization",
+      "Translation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Mathlib4 - a large library of mathematical code in Lean 4.",
+    "size": "580,000 statement pairs and 44,000 theorem pairs",
+    "format": "JSON",
+    "annotation": "Automated and semi-automated methods with human expert verification."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Metrics are calculated based on model performance on validation datasets like miniF2F-test.",
+    "interpretation": "Accuracy of the translations is used to gauge the effectiveness of the dataset and models trained on it.",
+    "baseline_results": "HERALD translator achieves 96.7% accuracy on miniF2F-test.",
+    "validation": "Validation procedures include checks by the Lean compiler and human expert reviews."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Atypical Aspect-based Recommender System (ATARS)",
+    "abbreviation": "ATARS",
+    "overview": "This paper introduces a new task of engineering serendipity in recommendations by promoting items with atypical aspects that match user interests. It presents an LLM-based system that extracts atypical aspects from reviews, estimates their user-specific utility, and ranks items to enhance user satisfaction through surprise and relevance.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMLU (Massive Multitask Language Understanding)",
+      "SQuAD",
+      "GLUE"
+    ],
+    "resources": [
+      "https://github.com/ramituncc49er/ATARS"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To develop a recommender system that enhances user satisfaction by promoting items with atypical aspects that generate serendipitous experiences.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Recommendation Systems",
+      "Information Extraction"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Yelp reviews dataset containing approximately 5 million restaurant reviews, 190k hotel reviews, and 115k hair salon reviews.",
+    "size": "5 million reviews",
+    "format": "JSON",
+    "annotation": "Manual annotation by experts and crowd-sourced utility value annotations."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "Recall",
+      "Precision"
+    ],
+    "calculation": "Metrics were calculated based on the correlation between system-generated rankings and ground truth rankings for serendipity-based recommendations.",
+    "interpretation": "Higher scores indicate better alignment with user preferences and expectations, while lower scores suggest a mismatch between recommendations and user interests.",
+    "baseline_results": "Baseline models were evaluated against standard rankings without atypical aspect considerations.",
+    "validation": "Validation procedures involved assessing the correlation of the developed recommendation metrics against established benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Privacy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Data privacy rights alignment"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "None",
+    "harm": [
+      "Exposing personal information",
+      "Spreading disinformation",
+      "Ethical risks related to user-specific data manipulation"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "User data is handled according to community guidelines; specific privacy policies were not disclosed in the paper.",
+    "data_licensing": "The datasets are publicly available but specific licensing details were not mentioned.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

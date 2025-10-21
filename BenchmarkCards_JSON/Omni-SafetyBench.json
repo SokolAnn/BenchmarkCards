@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Omni-SafetyBench",
+    "abbreviation": "N/A",
+    "overview": "Omni-SafetyBench is the first comprehensive parallel benchmark designed specifically for the safety evaluation of omni-modal large language models (OLLMs), featuring 24 modality variations with 972 samples each, including audio-visual harm cases.",
+    "data_type": "text, audio, video, image",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision",
+      "Audio Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MM-SafetyBench"
+    ],
+    "resources": [
+      "https://github.com/THU-BPM/Omni-SafetyBench",
+      "https://huggingface.co/datasets/Leyiii/Omni-SafetyBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the benchmark is to evaluate the safety performance of omni-modal large language models under diverse audio-visual inputs and assess cross-modal safety consistency.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Safety Evaluation",
+      "Cross-Modal Consistency Assessment"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Derived from an existing seed dataset (MM-SafetyBench) with transformed modalities.",
+    "size": "23,328 total samples",
+    "format": "N/A",
+    "annotation": "Generated using a variety of multimedia generation methods, including text-to-speech and diffusion-based transformations."
+  },
+  "methodology": {
+    "methods": [
+      "Safety evaluation on individual modality variations",
+      "Cross-modal safety consistency assessment"
+    ],
+    "metrics": [
+      "Conditional Attack Success Rate (C-ASR)",
+      "Conditional Refusal Rate (C-RR)",
+      "Safety-score",
+      "Cross-Modal Safety Consistency score (CMSC-score)"
+    ],
+    "calculation": "Safety-score is calculated based on a combination of C-ASR and C-RR, prioritizing the safety concerns in derived outputs.",
+    "interpretation": "A higher Safety-score indicates better safety performance of the model under evaluation.",
+    "baseline_results": "Evaluated 10 state-of-the-art OLLMs; only 3 models achieved an average Safety-score above 0.6.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Harmful outputs related to audio-visual processing"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC BY-NC 4.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

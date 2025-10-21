@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SylloBio-NLI",
+    "abbreviation": "N/A",
+    "overview": "SylloBio-NLI is a novel framework for evaluating large language models on biomedical syllogistic reasoning by leveraging external ontologies to instantiate diverse syllogistic arguments.",
+    "data_type": "natural language arguments",
+    "domains": [
+      "Natural Language Processing",
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "GLoRE",
+      "NLI4CT"
+    ],
+    "resources": [
+      "https://github.com/neuro-symbolic-ai/SylloBio-NLI"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To advance the availability of resources for biomedical syllogistic reasoning and evaluate the capabilities of state-of-the-art NLI models.",
+    "audience": [
+      "ML Researchers",
+      "Biomedical Researchers",
+      "NLP Practitioners"
+    ],
+    "tasks": [
+      "Textual Entailment",
+      "Premise Selection"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "A specialized dataset generated using Reactome, encompassing natural language syllogistic arguments.",
+    "size": "12,098 entity-gene names and total of 211,840 instances",
+    "format": "N/A",
+    "annotation": "Automated generation leveraging domain-specific ontologies and thesauri."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "Precision",
+      "Recall",
+      "Reasoning Accuracy"
+    ],
+    "calculation": "Metrics are calculated by comparing predictions to annotated labels.",
+    "interpretation": "Higher scores indicate better reasoning capabilities of the LLMs.",
+    "baseline_results": null,
+    "validation": "Performance was validated through extensive experiments comparing zero-shot and few-shot prompting."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

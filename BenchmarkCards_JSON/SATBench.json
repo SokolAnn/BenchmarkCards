@@ -1,0 +1,79 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SATBench",
+    "abbreviation": "N/A",
+    "overview": "SATBench is a benchmark for evaluating the logical reasoning capabilities of large language models through logical puzzles derived from Boolean satisfiability (SAT) problems. The benchmark comprises 2100 automatically generated logical puzzles validated through LLM and solver checks.",
+    "data_type": "logical puzzles",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "LogiQA",
+      "ReClor",
+      "FOLIO",
+      "P-FOLIO"
+    ],
+    "resources": [
+      "https://github.com/Anjiang-Wei/SATBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess large language models' logical reasoning via SAT-derived puzzles emphasizing search-based logical reasoning tasks.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Logical Reasoning"
+    ],
+    "limitations": "Focuses only on Boolean satisfiability problems.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Automatically generated from Boolean satisfiability problems",
+    "size": "2100 puzzles",
+    "format": "N/A",
+    "annotation": "Validation through LLM-based and solver-based checks, with human validation on a subset."
+  },
+  "methodology": {
+    "methods": [
+      "LLM evaluation",
+      "Solver-based validation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy measured as the percentage of correct satisfiability predictions.",
+    "interpretation": "Accuracy indicates the model's proficiency in determining satisfiability while also assessing the correctness of the reasoning trace.",
+    "baseline_results": "The random baseline for satisfiability prediction is 50%.",
+    "validation": "Quality assurance through both LLM and solver consistency checks, including human validation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

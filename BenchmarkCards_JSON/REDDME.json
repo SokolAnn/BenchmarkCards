@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "REDDME",
+    "abbreviation": "N/A",
+    "overview": "REDDME is a new dataset comprising 4,760 posts from mental health subreddits, annotated for the presence and intensity of three support attributes: event, effect, and requirement. It aims to enhance engagement in Online Mental Health Communities by prompting users to share comprehensive support-seeking posts.",
+    "data_type": "text",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/Shadowking912/REDDME",
+      "https://github.com/flamenlp/MH-COPILOT"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To systematically improve the engagement of users in Online Mental Health Communities by enhancing the quality of their support-seeking posts.",
+    "audience": [
+      "ML Researchers",
+      "Mental Health Professionals",
+      "AI Developers"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Manually curated posts from mental health subreddits, extended from the BeCOPE dataset.",
+    "size": "4,760 posts",
+    "format": "JSON",
+    "annotation": "Manual annotation by experts for the spans and intensity of support attributes."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "ROUGE-L",
+      "BLEU Score",
+      "BERTScore",
+      "METEOR"
+    ],
+    "calculation": "Metrics are calculated based on the generated questions from the model compared against the benchmark.",
+    "interpretation": "Higher scores indicate better alignment of questions with the context of the posts, improving engagement.",
+    "baseline_results": "Results demonstrate significant improvements over various language models, with specific improvements indicated in the paper.",
+    "validation": "Evaluation conducted through human assessment and quantitative metrics."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Privacy",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Focus on ensuring users' posts do not divulge personal identifiable information.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

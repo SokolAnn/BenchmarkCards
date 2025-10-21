@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "IOR-Bench (Intelligent Outpatient Referral Benchmark)",
+    "abbreviation": "IOR-Bench",
+    "overview": "IOR-Bench provides a systematic framework for assessing the performance of models in outpatient referral scenarios through static and dynamic evaluation methods in the context of healthcare.",
+    "data_type": "static classification and dynamic dialogue data",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "MedBench (Medical Benchmark)",
+      "CMB (Comprehensive Medical Benchmark)"
+    ],
+    "resources": [
+      "https://github.com/FreedomIntelligence/IOR-Bench.git"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective is to evaluate large language models' capabilities in outpatient referral tasks using a dual framework for static and dynamic evaluations.",
+    "audience": [
+      "ML Researchers",
+      "Healthcare Professionals",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Static Classification",
+      "Dynamic Questioning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The IOR dataset comprises real patient interactions sourced from hospitals in China, with careful ethical considerations and privacy compliance during data collection.",
+    "size": "1,476 cases",
+    "format": "CSV",
+    "annotation": "Data was manually annotated by medical professionals following strict guidelines, ensuring accuracy and compliance."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy is calculated by comparing the predicted department to the ground truth annotated by medical professionals.",
+    "interpretation": "Higher accuracy indicates better model performance in correctly directing patients to the appropriate departments during outpatient referrals.",
+    "baseline_results": "BERT-Base-Chinese achieved an accuracy of 76.00% in static evaluation tasks, with human doctors achieving up to 87.24%.",
+    "validation": "The framework has been validated through both automated methods and human evaluations with participating medical staff."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Privacy",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Data privacy rights alignment"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The benchmark allows for demographic breakdowns based on patient data within the dataset.",
+    "harm": [
+      "Misleading medical recommendations due to inaccurate model predictions."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All patient data has been anonymized and de-identified to protect privacy.",
+    "data_licensing": "N/A",
+    "consent_procedures": "The study received ethical approval from the relevant committees before conducting data collection.",
+    "compliance_with_regulations": "N/A"
+  }
+}

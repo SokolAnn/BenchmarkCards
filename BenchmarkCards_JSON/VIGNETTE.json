@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "VIGNETTE",
+    "abbreviation": "N/A",
+    "overview": "VIGNETTE is a large-scale VQA benchmark with 30M+ images for evaluating bias in vision-language models (VLMs) across four directions: factuality, perception, stereotyping, and decision making.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Computer Vision",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "VISBIAS",
+      "VLBiasBench",
+      "VL-StereoSet"
+    ],
+    "resources": [
+      "https://github.com/chahatraj/Vignette"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate bias in vision-language models through a structured question-answering framework.",
+    "audience": [
+      "ML Researchers",
+      "AI Ethicists",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Visual Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Synthetic images generated based on a unified set of visually representative identities and diverse activities.",
+    "size": "30,000,000 images",
+    "format": "N/A",
+    "annotation": "Manually annotated identities and activities; validation by human annotators."
+  },
+  "methodology": {
+    "methods": [
+      "Visual Question Answering",
+      "Pairwise Comparison"
+    ],
+    "metrics": [
+      "Selection Frequency",
+      "Log Odds",
+      "PairComp",
+      "Polarity Score"
+    ],
+    "calculation": "Metrics are calculated based on voter selections and comparisons across pairs of identities.",
+    "interpretation": "Higher selection frequencies indicate model bias or favorability towards specific identities.",
+    "baseline_results": "Results observed from three evaluated models: LLAVA-1.6-7B, LLAMA-3.2-11B-VISION-INSTRUCT, and DEEPSEEK-VL2-4.5B.",
+    "validation": "Evaluated against established metrics and validated through statistical significance testing."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

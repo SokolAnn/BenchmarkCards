@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CLC-UKET Dataset",
+    "abbreviation": "N/A",
+    "overview": "This paper develops a benchmark for predicting case outcomes in the UK Employment Tribunal (UKET) by creating the CLC-UKET dataset, which consists of approximately 19,000 UKET cases and extensive legal annotations to facilitate multi-class case outcome prediction.",
+    "data_type": "text",
+    "domains": [
+      "Legal"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://www.cst.cam.ac.uk/research/srg/projects/law"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a benchmark dataset and evaluate its effectiveness in predicting case outcomes in the UK Employment Tribunal.",
+    "audience": [
+      "Legal Researchers",
+      "AI Practitioners"
+    ],
+    "tasks": [
+      "Case Outcome Prediction"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Cambridge Law Corpus (CLC) and UKET judgments",
+    "size": "19,090 cases",
+    "format": "N/A",
+    "annotation": "Legal annotations were created using a large language model (LLM) for automatic annotation."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on the predictions compared to human-annotated outcomes.",
+    "interpretation": "A higher F1 score indicates better performance in predicting the correct case outcomes.",
+    "baseline_results": "BERT achieved an F1 Score of 0.421, T5 achieved an F1 Score of 0.564, and GPT-4 achieved an F1 Score of 0.549.",
+    "validation": "Empirical results were validated against human predictions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Sensitive personal information is anonymized when necessary.",
+    "data_licensing": "The dataset is licensed under the Open Government Licence, allowing public usage.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "The dataset and its curation comply with relevant ethical and legal standards."
+  }
+}

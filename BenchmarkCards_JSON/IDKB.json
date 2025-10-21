@@ -1,0 +1,100 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "IDKB (Intelligent Driving Knowledge Base)",
+    "abbreviation": "IDKB",
+    "overview": "IDKB is a large-scale vision-language dataset that includes over one million data items related to driving theory and practical knowledge, including traffic laws, rules, and driving techniques, aiming to enhance the capabilities of Large Vision-Language Models (LVLMs) in the context of autonomous driving.",
+    "data_type": "mixed (question-answering and multiple-choice questions)",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English",
+      "Chinese",
+      "Italian",
+      "German",
+      "Spanish",
+      "French",
+      "Korean",
+      "Japanese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://4dvlab.github.io/project_page/idkb.html"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive benchmark for evaluating the performance of LVLMs in understanding driving knowledge, including theory and practical applications.",
+    "audience": [
+      "Research Scientists",
+      "Model Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Multiple Choice Question",
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Driving handbooks, theory test data, and simulated road test data collected from multiple countries.",
+    "size": "1,016,956 total data entries",
+    "format": "mixed (QA and MCQ formats)",
+    "annotation": "Data collected from various driving manuals and test questions, processed using layout detection and Optical Character Recognition (OCR), with manual reviews for quality control."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "SemScore",
+      "ROUGE-1",
+      "ROUGE-L"
+    ],
+    "calculation": "The overall accuracy is calculated as a weighted average of single-choice and multiple-choice questions for Test Data and Road Data scores. The IDKB score is the average of these two.",
+    "interpretation": "Higher scores indicate better understanding and mastery of driving knowledge by the LVLMs.",
+    "baseline_results": "IDKB Score (Top Model): 0.64 (GPT-4o), 0.45 (XComposer2)",
+    "validation": "Extensive evaluation of 15 LVLMs using IDKB with rigorous cross-validation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset incorporates driving knowledge from 15 different countries, encompassing diverse driving rules and languages.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

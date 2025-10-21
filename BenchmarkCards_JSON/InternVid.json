@@ -1,0 +1,143 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "InternVid: A Large-scale Video-Text Dataset for Multimodal Understanding and Generation",
+    "abbreviation": "InternVid",
+    "overview": "This paper introduces InternVid, a large-scale video-centric multimodal dataset intended to enable learning powerful and transferable video-text representations for multimodal understanding and generation. InternVid contains over 7 million videos (nearly 760,000 hours), yielding 234 million video clips with generated descriptions totaling 4.1 billion words. The dataset is built using a scalable multiscale captioning approach powered by large language models and image captioning models to ensure high video-text correspondence and supports applications in video understanding, video-centric dialogue, and text-to-video generation.",
+    "data_type": "Video clips with text captions (video-text pairs); includes audio, subtitles, and metadata",
+    "domains": [
+      "Computer Vision",
+      "Natural Language Processing",
+      "Multimodal"
+    ],
+    "languages": [
+      "English",
+      "Chinese",
+      "Korean",
+      "German"
+    ],
+    "similar_benchmarks": [
+      "HowTo100M",
+      "HD-VILA",
+      "YT-Temporal",
+      "WebVid10M",
+      "VideoCC3M",
+      "MSR-VTT",
+      "DiDeMo",
+      "LSMDC",
+      "ANet Caption"
+    ],
+    "resources": [
+      "https://github.com/OpenGVLab/InternVideo/tree/main/Data/InternVid",
+      "https://arxiv.org/abs/2307.06942"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a web-scale, high video-text correspondence dataset (InternVid) to advance multimodal video understanding and generation and to enable learning scalable video-text representations.",
+    "audience": [
+      "Researchers",
+      "Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Action Recognition",
+      "Video Retrieval (Text-to-Video and Video-to-Text)",
+      "Video Captioning (Video-to-Text)",
+      "Text-to-Video Generation",
+      "Multimodal / Video-Centric Dialogue (in-context learning)",
+      "Temporal Understanding",
+      "Video Reasoning"
+    ],
+    "limitations": "Limitations explicitly stated: dataset diversity and representativeness are limited (certain categories such as public area surveillance, sports competitions, movies, documentaries may be excluded or sparsely collected due to copyright or platform restrictions). A portion of videos are lower resolution (about 15% between 360P and 720P) which may perform worse in content generation tasks. Counts of verbs and other statistics may be approximate due to simple counting methods.",
+    "out_of_scope_uses": [
+      "Commercial usage is not sanctioned; data release and usage intended exclusively for research purposes (explicitly stated)."
+    ]
+  },
+  "data": {
+    "source": "Collected from public YouTube videos (public YouTube video IDs). Captions are automatically generated via a multiscale captioning pipeline using image captioning models (Tag2Text, BLIP2) and a pretrained language model (LLM); metadata includes audio, subtitles (ASR or user-generated), titles, descriptions, tags.",
+    "size": "Over 7 million videos totaling nearly 760,000 hours; 234 million video clips; generated captions totaling 4.1 billion words. InternVid-ICL: 7.1 million interleaved video-text pairs. InternVid-Aesthetics subset: 18 million video clips.",
+    "format": "N/A",
+    "annotation": "Automatically generated captions using a multiscale approach: fine-scale frame-by-frame captions with Tag2Text synthesized by a pretrained language model; coarse-scale single-frame captions with BLIP2; scene-based clip segmentation via PySceneDetect; computed aesthetic scores and clip-caption similarity (UMT-SIM) for each clip."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics-based evaluation on downstream benchmarks (zero-shot and fine-tuned)",
+      "Model-based evaluation using ViCLIP (video-text contrastive pretraining)",
+      "Contrastive pretraining with InfoNCE loss",
+      "Masked video modeling (random patch masking) during pretraining",
+      "Unmasked video-text pretraining for part of training",
+      "Text-to-video generation evaluation using diffusion-based baseline"
+    ],
+    "metrics": [
+      "Top-1 Accuracy",
+      "Top-5 Accuracy",
+      "Recall at 1 (R@1)",
+      "Inception Score (IS)",
+      "Frechet Inception Distance (FID)",
+      "Frechet Video Distance (FVD)",
+      "CLIP Similarity (CLIPSIM)"
+    ],
+    "calculation": "Contrastive pretraining optimized using InfoNCE loss between global video and text features (formula provided in the paper). For zero-shot action recognition, mean of top-1 and top-5 accuracy is reported for Kinetics-400/600/700. For retrieval, R@1 is reported for text-to-video and video-to-text tasks; frames are uniformly sampled (8 frames in zero-shot evaluations, 12 frames in fine-tuning). Text-to-video metrics follow cited protocols (IS, FID, FVD, CLIPSIM) with specified evaluation sets (UCF-101 and MSR-VTT).",
+    "interpretation": "Higher Top-1/Top-5 accuracy, higher R@1, higher IS and CLIPSIM indicate better performance; lower FID and FVD indicate better generation quality. The paper reports that discriminative (zero-shot) ability increases approximately linearly with more training data (10M → 200M) for action recognition, while retrieval gains become marginal beyond ~50M training pairs.",
+    "baseline_results": "Representative results reported: ViCLIP trained on InternVid-10M-FLT achieves zero-shot Kinetics-400 top-1 accuracy 64.80 (K600 top-1 62.20, K700 top-1 54.30) and average top1/top5 metrics shown in Table 3. Fine-tuned: ViCLIP + InternVid-200M achieves K400 87.9% and SomethingSomethingV2 73.6% (Table 4). Zero-shot video retrieval: ViCLIP + InternVid-10M-FLT achieved MSR-VTT text-to-video R@1 = 42.4 (Table 5). Text-to-video generation baseline: adding InternVid-Aesthetics-18M to WebVid10M improved IS from 13.97 to 21.04, reduced FID from 98.25 to 60.25, and reduced FVD from 705.25 to 616.51, and increased CLIPSIM from 0.2657 to 0.2951 (Table 7).",
+    "validation": "Validated by evaluating learned models (ViCLIP) on multiple downstream benchmarks in zero-shot and fine-tuned settings, including Kinetics-400/600/700 (action recognition), SomethingSomethingV2, MSR-VTT, LSMDC, DiDeMo, MSVD, ActivityNet, and retrieval benchmarks; compared against CLIP and other prior baselines; computed dataset-level statistics (aesthetic scores, UMT-SIM similarity) and provided diverse subsets (InternVid-10M, -50M, -200M, -10M-DIV, -10M-FLT, InternVid-Aesthetics, InternVid-ICL) for ablations and robustness checks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Privacy",
+      "Legal Compliance",
+      "Governance"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Exposing personal information"
+          ]
+        },
+        {
+          "category": "Data Laws",
+          "subcategory": [
+            "Data usage restrictions"
+          ]
+        },
+        {
+          "category": "Legal Compliance",
+          "subcategory": [
+            "Model usage rights restrictions"
+          ]
+        },
+        {
+          "category": "Governance",
+          "subcategory": [
+            "Lack of testing diversity",
+            "Unrepresentative risk testing"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The paper provides country and language distributions: videos sampled from multiple countries including the UK, USA, Australia, Japan, Korea, China, Russia, and France; the dataset contains videos in 11 different languages and provides word-clouds and ASR transcript distributions for languages including English, Chinese, Korean, and German.",
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The authors state they share only YouTube video IDs (not original raw videos) and assert that no user data or privacy rights are violated. They use Safe for Work queries and an NSFW binary classifier to filter non-ethical videos.",
+    "data_licensing": "CC BY 4.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "Data collection and release practices stated to be in accordance with YouTube's data privacy policies; dataset release intended for research-only usage and commercial usage is not sanctioned."
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "WeQA: A Benchmark for Retrieval Augmented Generation in Wind Energy",
+    "abbreviation": "WeQA",
+    "overview": "WeQA is the first comprehensive benchmark QA dataset specifically designed for the wind energy domain, addressing the gap in specialized evaluation datasets for wind energy project permitting. It allows for rigorous assessment of RAG-based LLMs using diverse metrics and multiple question types with varying complexity levels.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Environmental Science"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SQuAD",
+      "MMLU",
+      "EnviroExam",
+      "NEPAQuAD"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2408.11800"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of WeQA is to provide a structured benchmark for evaluating RAG-based LLMs in the context of wind energy project permitting, facilitating the assessment of diverse LLM performance across complex real-world scenarios.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "Questions generated can be too specific to the documents they were derived from, potentially complicating accurate responses from LLMs.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Wind energy-related documents, including research articles and environmental impact studies published by the Department of Energy (DOE) under the National Environmental Policy Act (NEPA).",
+    "size": "5,000 question-answer pairs",
+    "format": "JSON",
+    "annotation": "Manual curation and validation by domain experts."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Answer correctness",
+      "Context precision",
+      "Context recall"
+    ],
+    "calculation": "Metrics are calculated based on the evaluations of answers by judge LLMs and ground truth validation.",
+    "interpretation": "Higher scores indicate better LLM performance in retrieving relevant information and generating accurate responses.",
+    "baseline_results": "Evaluations conducted using GPT-4 and Gemini-1.5Pro as judge models.",
+    "validation": "Use of RAGAS evaluation framework for systematic assessment."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

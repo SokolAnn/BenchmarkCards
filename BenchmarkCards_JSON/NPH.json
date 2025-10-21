@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Neural Path Hunter",
+    "abbreviation": "NPH",
+    "overview": "Neural Path Hunter (NPH) introduces a refinement strategy for dialogue systems aiming to reduce hallucination in generated responses by utilizing external Knowledge Graphs (KG). It operates by identifying hallucinations and correcting them through a generate-then-refine approach, significantly improving factual accuracy in dialogueresponses.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "OpenDialKG"
+    ],
+    "resources": [
+      "https://github.com/nouhadziri/Neural-Path-Hunter"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To improve the faithfulness and reduce hallucination of neural dialogue systems using a Knowledge Graph.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Dialogue System Developers"
+    ],
+    "tasks": [
+      "Dialogue Generation",
+      "Factual Consistency Assessment"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "OpenDialKG dataset, which consists of turn-based dialogues containing knowledge triples from a Knowledge Graph.",
+    "size": "23,314 training examples, 2,954 validation examples, 2,954 test examples",
+    "format": "JSON",
+    "annotation": "The data includes annotated responses based on extracted knowledge triples."
+  },
+  "methodology": {
+    "methods": [
+      "Human Evaluation",
+      "Automated Metrics",
+      "Model-based Evaluation"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Precision",
+      "Recall",
+      "BLEU Score"
+    ],
+    "calculation": "Metrics are calculated based on the performance of the dialogue system before and after applying the Neural Path Hunter, comparing generated outputs against ground truth using various evaluation methods.",
+    "interpretation": "A higher score in FeQA indicates better factual accuracy in the generated dialogue responses.",
+    "baseline_results": "N/A",
+    "validation": "The effectiveness of NPH was validated through experiments on the OpenDialKG dataset, showing improvements in dialogue fidelity."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Inaccurate information generation in dialogue systems leading to user misinformation."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

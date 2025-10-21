@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SoK: Evaluating Jailbreak Guardrails for Large Language Models",
+    "abbreviation": "N/A",
+    "overview": "This paper provides a comprehensive analysis of jailbreak guardrails for large language models (LLMs), proposing a multi-dimensional taxonomy and a Security-Efficiency-Utility evaluation framework for assessing their effectiveness.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "JailbreakHub",
+      "JailbreakBench",
+      "SafeMTData",
+      "MultiJail",
+      "AlpacaEval",
+      "OR-Bench"
+    ],
+    "resources": [
+      "https://github.com/xunguangwang/SoK4JailbreakGuardrails"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a structured foundation for understanding, developing, and deploying LLM jailbreak guardrails, guiding the principled advancement of security mechanisms in AI applications.",
+    "audience": [
+      "ML Researchers",
+      "Practitioners",
+      "Industry Professionals"
+    ],
+    "tasks": [
+      "Jailbreak Guardrail Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Multiple datasets including JailbreakHub, JailbreakBench, SafeMTData, MultiJail, AlpacaEval, OR-Bench",
+    "size": "3,300 prompts",
+    "format": "CSV",
+    "annotation": "Collected and categorized from diverse sources and user prompts."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Attack Success Rate (ASR)",
+      "Pass Guardrail Rate (PGR)",
+      "Extra Delay",
+      "GPU Memory Overhead",
+      "False Positive Rate (FPR)"
+    ],
+    "calculation": "Calculated based on performance against various jailbreak attacks using the defined metrics.",
+    "interpretation": "Lower ASR and FPR indicate better performance; trade-offs exist between security and efficiency.",
+    "baseline_results": "Comparison with popular jailbreak defense methods including Perplexity Filter, SmoothLLM, and GuardReasoner.",
+    "validation": "Extensive empirical evaluation against multiple benchmarks and guardrail methods."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack",
+            "Data poisoning"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "F-Eval (Fundamental Abilities Evaluation Benchmark)",
+    "abbreviation": "F-Eval",
+    "overview": "F-Eval is a bilingual evaluation benchmark designed to assess the fundamental abilities of large language models (LLMs) including expression, commonsense, and logic. It consists of 15 sub-datasets with a total of 2211 instances, incorporating various task formats such as multi-choice and subjective tasks. The benchmark aims to facilitate the study of LLMs' fundamental abilities across different model sizes and dimensions.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/OpenLMLab/F-Eval"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the fundamental capabilities of large language models in terms of expression, commonsense reasoning, and logic abilities using a comprehensive and diverse set of tasks and evaluation methods.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "NLP Practitioners"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Commonsense Reasoning",
+      "Logic Reasoning"
+    ],
+    "limitations": "The benchmark primarily focuses on expression, commonsense, and logic capabilities, which may not cover all fundamental capabilities LLMs should possess.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated from online sources and adaptations of existing datasets, including original K12 texts and commonsense knowledge graphs.",
+    "size": "2211 instances",
+    "format": "JSON",
+    "annotation": "Annotated by a mixture of expert and ordinary human annotators, with review processes in place for data quality."
+  },
+  "methodology": {
+    "methods": [
+      "Rule-based Evaluation",
+      "API Evaluation",
+      "Probability Evaluation",
+      "Assistant-Tool Evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Correlation with human judgements"
+    ],
+    "calculation": "Evaluation methods corresponding to each sub-dataset are specified, with scores obtained for each instance based on the designed metrics.",
+    "interpretation": "Scores reflect the ability of LLMs to perform on tasks measuring fundamental abilities, with higher scores indicating better performance.",
+    "baseline_results": "Comparison was made against 13 advanced LLMs, including GPT-4 and various open-source models, highlighting gaps in performance.",
+    "validation": "Rigorous evaluation against human judgments and existing benchmarks ensured reliability."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Safety",
+      "Robustness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Perpetuating commonsense errors in LLM outputs",
+      "Generating harmful content under specific conditions"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "User data was collected from publicly available sources; all information was anonymized post-processing.",
+    "data_licensing": "The data will be released under the CC BY-NC-ND 4.0 license for academic use only.",
+    "consent_procedures": "N/A - Not applicable as the data is sourced from publicly available resources.",
+    "compliance_with_regulations": "Data sourced complies with relevant academic use regulations, including respect for personal data privacy."
+  }
+}

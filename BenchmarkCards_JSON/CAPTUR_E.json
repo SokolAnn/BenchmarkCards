@@ -1,0 +1,80 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CAPTUR E (Counting Amodally for Patterns Through Unseen REgions)",
+    "abbreviation": "CAPTUR E",
+    "overview": "CAPTUR E tests vision-language models (VLMs) on occlusion reasoning, pattern recognition, and counting of both visible and occluded objects through amodal counting, where models are prompted to count occluded objects by inferring how the pattern continues behind an occluder.",
+    "data_type": "image-object pairs",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/atinpothiraj/CAPTURe"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To measure VLMs' ability to form a robust world model and use that model for visual reasoning skills under occlusion.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Counting"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "FSC-147 dataset filtered for images containing identifiable and regular patterns of objects.",
+    "size": "924 real images, 1250 synthetic images",
+    "format": "N/A",
+    "annotation": "Manual annotations through filtering and overlaying occluding boxes."
+  },
+  "methodology": {
+    "methods": [
+      "Evaluation of models on specific counting prompts",
+      "Use of oracle information to test model performance"
+    ],
+    "metrics": [
+      "sMAPE"
+    ],
+    "calculation": "sMAPE = 100 * (1/n) * Σ(|yi - ŷi| / (|yi| + |ŷi|))",
+    "interpretation": "Lower sMAPE values indicate better performance in counting accurately.",
+    "baseline_results": "Humans completed the task with an sMAPE of 3.79% on CAPTUR Ereal and 0.92% on CAPTUR Esynthetic.",
+    "validation": "Manual validation of model outputs and oracle experiments."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

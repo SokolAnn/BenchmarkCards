@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "P 2 P E VA L",
+    "abbreviation": "P 2 P E VA L",
+    "overview": "P 2 P E VA L is a comprehensive benchmark featuring 121 paper-poster pairs and a dual evaluation methodology (Universal and Fine-Grained) that leverages LLM-as-a-Judge and detailed, human-annotated checklists for evaluating academic posters generated from research papers.",
+    "data_type": "paper-poster pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Postdoc",
+      "Docbank",
+      "ScipostLayout"
+    ],
+    "resources": [
+      "https://github.com/multimodal-art-projection/P2P"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a robust evaluation framework for academic poster generation systems and to facilitate the assessment of their quality through a comprehensive benchmark.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Poster Generation",
+      "Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "121 paper-poster pairs collected from the ACL conference series (2022-2024) and SciPostLayout.",
+    "size": "121 pairs",
+    "format": "PDF, PNG",
+    "annotation": "Four annotators independently review each poster; checklists based on official posters are used for evaluation."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "LLM-as-a-Judge"
+    ],
+    "metrics": [
+      "Universal Poster Evaluation",
+      "Fine-Grained Poster Evaluation"
+    ],
+    "calculation": "Scores are based on human annotations and automated evaluations.",
+    "interpretation": "High scores indicate better preservation of content fidelity, visual consistency, and overall poster quality.",
+    "baseline_results": null,
+    "validation": "Utilized XGBoost for modeling the relationship between evaluation criteria and human annotations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC BY 4.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

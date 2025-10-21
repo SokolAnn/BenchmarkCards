@@ -1,0 +1,70 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "RoNLI (Romanian Natural Language Inference)",
+    "abbreviation": "RoNLI",
+    "overview": "RoNLI is the first Romanian NLI corpus comprising 58K training sentence pairs and 6K validation and test sentence pairs, focusing on the task of recognizing the entailment relationship in sentence pairs.",
+    "data_type": "sentence pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Romanian"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/Eduard6421/RONLI"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a publicly available corpus for Romanian natural language inference to stimulate research in low-resource NLI tasks.",
+    "audience": [
+      "ML Researchers",
+      "NLP Practitioners"
+    ],
+    "tasks": [
+      "Natural Language Inference"
+    ],
+    "limitations": "The dataset is limited by the number of samples with manual labels due to the labor-intensive annotation process.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Romanian Wikipedia",
+    "size": "64,000 sentence pairs",
+    "format": "CSV",
+    "annotation": "Training pairs obtained via distant supervision; validation and test pairs manually annotated."
+  },
+  "methodology": {
+    "methods": [
+      "Grid search for hyperparameter tuning",
+      "Machine learning models including word embeddings and transformer-based models"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Metrics were calculated based on predictions compared to manually labeled test set.",
+    "interpretation": "Higher precision and F1 scores indicate better performance in recognizing entailment relationships.",
+    "baseline_results": "The best F1 Score achieved was approximately 73% micro F1 and 56% macro F1.",
+    "validation": "Validation performed through human annotators ensuring quality labeling."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "The dataset does not include a demographic breakdown.",
+    "harm": "Potential labeling noise due to automatic annotation."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC BY-NC-SA 4.0",
+    "consent_procedures": "Annotation was voluntary, with students agreeing to participate for bonus points.",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "XL-AlpacaEval",
+    "abbreviation": "N/A",
+    "overview": "XL-AlpacaEval is a cross-lingual evaluation benchmark built to assess the performance of large language models in the task of cross-lingual open-ended generation. It evaluates whether models can generate coherent responses in a target language different from the one in which the query is posed.",
+    "data_type": "cross-lingual generation prompts",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "German",
+      "Portuguese",
+      "Hungarian",
+      "Lithuanian",
+      "Irish",
+      "Chinese",
+      "Hindi"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/collections/viyer98/xl-suite-68ceb97cb1cc7e8499ffb971"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the current state of cross-lingual open-ended generation capabilities of large language models and to provide a structured benchmark for improvement.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Cross-Lingual Generation",
+      "Open-End Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "XL-AlpacaEval is adapted from the original AlpacaEval dataset, which consists of multi-domain prompts filtered for suitability in cross-lingual contexts.",
+    "size": "797 prompts",
+    "format": "JSON",
+    "annotation": "Manually verified and filtered prompts to ensure they are suitable for eliciting cross-lingual responses."
+  },
+  "methodology": {
+    "methods": [
+      "LLM-as-a-judge evaluation"
+    ],
+    "metrics": [
+      "Win Rate"
+    ],
+    "calculation": "Win rates are determined by comparing model outputs against a baseline reference model.",
+    "interpretation": "Higher win rates indicate better performance in generating responses that humans prefer over baseline responses.",
+    "baseline_results": "Win rates against GPT-4o-mini across multiple languages.",
+    "validation": "Live evaluation using multiple reference models and feedback from human evaluators."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Transparency",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Lack of training data transparency"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC BY-NC 4.0 for XL-AlpacaEval; XL-Instruct derived from CulturaX with permissible licenses for commercial use.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "EgoInstruct (Egocentric Video Dataset of Face-to-face Instructional Interactions)",
+    "abbreviation": "EgoInstruct",
+    "overview": "A new egocentric video dataset of face-to-face instruction that provides ground-truth annotations for procedural step segmentation and conversation-state classification.",
+    "data_type": "video",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "Japanese"
+    ],
+    "similar_benchmarks": [
+      "Ego4D",
+      "HoloAssist",
+      "EPIC-KITCHENS"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2509.22019"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a foundation for the analysis of face-to-face instructional interactions through a new dataset and benchmark models for understanding instructional effectiveness.",
+    "audience": [
+      "ML Researchers",
+      "Educational Technologists",
+      "Computer Vision Researchers"
+    ],
+    "tasks": [
+      "Procedural Step Segmentation",
+      "Conversation-State Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Recorded video sessions of face-to-face instructional interactions using Aria Glasses and GoPro cameras.",
+    "size": "8 hours of video across 38 sessions",
+    "format": "Video",
+    "annotation": "Annotations for procedural step segmentation and conversation-state classification."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics calculated based on segmentation precision and classifications of conversation states.",
+    "interpretation": "High scores indicate good performance on recognizing procedural steps and accurate detection of conversation states.",
+    "baseline_results": "ASFormer and conventional task-specific models were used for comparison.",
+    "validation": "Five-fold cross-validation was conducted for model evaluations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Privacy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Participants' consent obtained; identity anonymized in annotations.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Explicit consent was taken from all participants involved in the video recordings.",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MIMIC-Patient",
+    "abbreviation": "N/A",
+    "overview": "MIMIC-Patient is a structured dataset built from the MIMIC-III clinical database, designed to support dynamic, patient-level simulations for medical decision-making in a multi-agent framework.",
+    "data_type": "structured clinical records",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MedQA",
+      "PubMedQA",
+      "MedMCQA"
+    ],
+    "resources": [
+      "https://mimic.mit.edu/docs/iii/tables/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a structured dataset for simulating interactive and iterative clinical decision-making processes among medical agents.",
+    "audience": [
+      "ML Researchers",
+      "Healthcare Practitioners",
+      "AI developers in Medicine"
+    ],
+    "tasks": [
+      "Clinical Decision-Making Simulation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "MIMIC-III Clinical database",
+    "size": "500 patient records",
+    "format": "JSON",
+    "annotation": "Semi-structured extraction using rule-based methods and LLM inference"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Multi-Agent Evaluation"
+    ],
+    "metrics": [
+      "Hit@5",
+      "Hit@10",
+      "Recall@5",
+      "Recall@10"
+    ],
+    "calculation": "Metrics are calculated based on the ranking of the predicted diagnoses compared to the ground truth ICD-9 codes.",
+    "interpretation": "Good performance is indicated by higher Hit@K and Recall@K values, reflecting the model's ability to suggest correct diagnoses.",
+    "baseline_results": "N/A",
+    "validation": "Extensive experiments were conducted to evaluate the effectiveness of the DynamiCare framework on the MIMIC-Patient dataset."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Privacy",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Data Laws",
+          "subcategory": [
+            "Data usage restrictions"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Data privacy rights alignment",
+            "Reidentification"
+          ]
+        },
+        {
+          "category": "Misuse",
+          "subcategory": [
+            "Improper usage"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Patient records are de-identified to prevent re-identification.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

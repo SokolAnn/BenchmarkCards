@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "UserReported Scenarios (URS)",
+    "abbreviation": "URS",
+    "overview": "A benchmark to evaluate large language models (LLMs) from a user-centric perspective, measuring their efficacy in satisfying user needs under distinct intents using real-world use cases collected from a global user study.",
+    "data_type": "self-reported logs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "AlpacaEval",
+      "MT-Bench-101",
+      "TencentLLMEval",
+      "MT Bench",
+      "AlignBench",
+      "WildBench"
+    ],
+    "resources": [
+      "https://github.com/Alice1998/URS"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To benchmark LLMs based on user-reported scenarios to help users select suitable models for their specific needs and preferences.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "User Intent Recognition",
+      "LLM Evaluation"
+    ],
+    "limitations": "The benchmark primarily assesses user satisfaction and efficacy in user-centric scenarios, but does not cover all LLM performance aspects.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from user studies with 712 participants across 23 countries.",
+    "size": "1,846 examples",
+    "format": "N/A",
+    "annotation": "Data was vetted through third-party manual quality checks."
+  },
+  "methodology": {
+    "methods": [
+      "LLM-based pairwise evaluation"
+    ],
+    "metrics": [
+      "Pearson correlation"
+    ],
+    "calculation": "Correlation between benchmark scores and human preferences was calculated to validate the evaluation method.",
+    "interpretation": "Scores align with user satisfaction levels, indicating effective evaluation.",
+    "baseline_results": "Pearson correlations of 0.95 and 0.94 with real-world experiences and pairwise annotations.",
+    "validation": "Alignment of benchmark results with human preferences was validated through user studies."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Participants were informed their responses might be publicly released for research; no personal information was collected.",
+    "data_licensing": "The dataset is available under an Apache License.",
+    "consent_procedures": "Participants voluntarily provided anonymized information.",
+    "compliance_with_regulations": "N/A"
+  }
+}

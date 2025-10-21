@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DEPEND EVAL (Dependency Evaluation)",
+    "abbreviation": "DEPEND EVAL",
+    "overview": "DEPEND EVAL is a hierarchical benchmark designed to evaluate LLMs' ability to reason about structured code repositories through three progressively challenging tasks: Dependency Recognition, Repository Construction, and Multi-file Editing, across eight programming languages.",
+    "data_type": "code repositories",
+    "domains": [
+      "Software Engineering"
+    ],
+    "languages": [
+      "C",
+      "C++",
+      "C#",
+      "JavaScript",
+      "Java",
+      "PHP",
+      "Python",
+      "TypeScript"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/ink7-sudo/DependEval"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate LLMs' understanding capabilities at the code repository level, addressing repository-level reasoning for software development.",
+    "audience": [
+      "ML Researchers",
+      "Software Engineers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Dependency Recognition",
+      "Repository Construction",
+      "Multi-file Editing"
+    ],
+    "limitations": "Not enough languages; currently focuses on only three core tasks.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Real-world repositories collected from GitHub API.",
+    "size": "15,576 repositories",
+    "format": "JSON",
+    "annotation": "Filtered and manually curated for quality and relevance."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Exact Match Rate (EMR)",
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Metrics calculated based on predicted and ground truth outputs comparison.",
+    "interpretation": "Higher scores indicate better performance in correctly identifying dependencies and constructing repositories.",
+    "baseline_results": null,
+    "validation": "Evaluated across various models and programming languages."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Safety",
+      "Privacy",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Decision bias"
+          ]
+        },
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Lack of training data transparency"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data anonymized and stored securely with restricted access.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Participants can withdraw from the study at any time.",
+    "compliance_with_regulations": "N/A"
+  }
+}

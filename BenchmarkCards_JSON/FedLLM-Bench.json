@@ -1,0 +1,108 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FedLLM-Bench",
+    "abbreviation": "N/A",
+    "overview": "FedLLM-Bench is a realistic benchmark for Federated Learning of Large Language Models (FedLLM) that offers comprehensive datasets and establishes 8 training methods and 6 evaluation metrics to evaluate and enhance federated instruction tuning and preference alignment in real-world scenarios.",
+    "data_type": "multimodal",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Spanish",
+      "French",
+      "Russian",
+      "Portuguese",
+      "Chinese",
+      "Arabic",
+      "Telugu"
+    ],
+    "similar_benchmarks": [
+      "LEAF"
+    ],
+    "resources": [
+      "https://github.com/rui-ye/FedLLM-Bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a realistic benchmark for evaluating Federated Learning methods in the context of large language models.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Federated Instruction Tuning",
+      "Federated Preference Alignment"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Four user-annotated datasets designed for Federated Learning: Fed-Aya, Fed-ChatbotIT, Fed-WildChat, and Fed-ChatbotPA.",
+    "size": "100,000 examples",
+    "format": "N/A",
+    "annotation": "User-annotated"
+  },
+  "methodology": {
+    "methods": [
+      "Federated Averaging (FedAvg)",
+      "FedProx",
+      "SCAFFOLD",
+      "FedAvgM",
+      "FedAdagrad",
+      "FedYogi",
+      "FedAdam"
+    ],
+    "metrics": [
+      "MT-Bench",
+      "Vicuna",
+      "Ref-GPT4",
+      "MMLU",
+      "HumanEval",
+      "AdvBench"
+    ],
+    "calculation": "Metrics are computed based on the evaluation results of the models tested on the datasets within FedLLM-Bench.",
+    "interpretation": "Higher scores indicate better performance in terms of following user instructions and generating appropriate responses.",
+    "baseline_results": "FedAdagrad shows the best average performance across the tested methods.",
+    "validation": "Extensive experiments were conducted to analyze the effectiveness of various federated learning methods on the provided datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Privacy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The datasets exhibit diverse language groups representing different demographics.",
+    "harm": "Potential for data leakage or exposure of sensitive information."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The datasets have been screened for personally identifiable information.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CIRCLE (Code-Interpreter Resilience Check for LLM Exploits)",
+    "abbreviation": "CIRCLE",
+    "overview": "The CIRCLE benchmark evaluates and quantifies interpreter-specific vulnerabilities across major LLM platforms, targeting system-level cybersecurity risks through a structured testing framework that assesses CPU, memory, and disk resource exhaustion.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Cybersecurity"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "CyberSecEval",
+      "CVE-Bench",
+      "RedCode",
+      "SandboxEval"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/govtech/CIRCLE",
+      "https://github.com/govtech-responsibleai/CIRCLE"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Systematically evaluate interpreter-specific vulnerabilities in LLMs and guide safe and responsible deployment of LLM interpreter integrations.",
+    "audience": [
+      "Cybersecurity Researchers",
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Vulnerability Assessment",
+      "Resource Exhaustion Testing"
+    ],
+    "limitations": "The benchmark comprises predetermined prompt sets, restricting responsiveness to emerging threats and novel exploitation techniques.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Automated generation of 1,260 prompts focusing on resource exhaustion vulnerabilities.",
+    "size": "1,260 prompts",
+    "format": "JSON",
+    "annotation": "Prompts are manually reviewed and classified into distinct risk categories."
+  },
+  "methodology": {
+    "methods": [
+      "Automated evaluation",
+      "Systematic testing across model providers"
+    ],
+    "metrics": [
+      "Refusal Rate",
+      "Execution Success Rate",
+      "Timeout Rate"
+    ],
+    "calculation": "Metrics are calculated based on model responses categorized into outcomes during evaluation.",
+    "interpretation": "Higher refusal rates indicate better model robustness against risky prompts.",
+    "baseline_results": null,
+    "validation": "Automated assessments are performed by a judge LLM, ensuring consistent evaluation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Denial of Service (DoS) attacks"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All prompts adhere to established resource constraints typical of native interpreter environments.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

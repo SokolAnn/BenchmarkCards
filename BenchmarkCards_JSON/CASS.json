@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CASS (CUDA–AMD ASsembly and Source Mapping)",
+    "abbreviation": "CASS",
+    "overview": "CASS is the first large-scale dataset for GPU code transpilation, containing 70k semantically aligned Nvidia ↔AMD pairs at both the source (CUDA ↔HIP) and assembly levels (SASS ↔RDNA3), covering 16 real-world GPU domains.",
+    "data_type": "code pairs",
+    "domains": [
+      "Computer Vision",
+      "Natural Language Processing",
+      "Scientific Computing",
+      "Machine Learning",
+      "Graphics",
+      "Cryptography"
+    ],
+    "languages": [
+      "N/A"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/GustavoStahl/CASS",
+      "https://huggingface.co/datasets/MBZUAI/cass"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To address the lack of cross-architecture GPU translation datasets and to validate the effectiveness of GPU code transpilation models.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts",
+      "Compiler Developers"
+    ],
+    "tasks": [
+      "Source-to-Source Translation",
+      "Assembly-to-Assembly Translation"
+    ],
+    "limitations": "Current performance is inadequate for production due to limited accuracy in complex or underrepresented domains. The dataset only covers one host/device pair per vendor.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset is constructed from verified CUDA and HIP code pairs, along with their corresponding assembly representations.",
+    "size": "70,000 pairs",
+    "format": "Aligned source and assembly code",
+    "annotation": "Manually verified to compile and run successfully"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy is calculated based on the percentage of successful translations compared to ground-truth outputs.",
+    "interpretation": "Higher accuracy indicates better performance in translating GPU code across different architectures.",
+    "baseline_results": "Achieved 95% accuracy in source translation and 37.5% in assembly translation.",
+    "validation": "The dataset and models were validated against real-world execution scenarios."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "All data, models, and evaluation tools are released as open source.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

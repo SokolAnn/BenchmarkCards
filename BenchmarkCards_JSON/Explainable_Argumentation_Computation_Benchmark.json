@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Explainable Argumentation Computation Benchmark",
+    "abbreviation": "N/A",
+    "overview": "This benchmark comprises diverse abstract argumentation frameworks, enabling the training of explainable large language models (LLMs) to compute extensions using labeling algorithms, focusing on grounded and complete extension-solving tasks with accompanying explanations.",
+    "data_type": "graph representations with explanations",
+    "domains": [
+      "Artificial Intelligence",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "AGNN (Argumentation Graph Neural Networks)",
+      "EGNN (Explainable Graph Neural Networks)"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2412.16725"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enhance the computation of extensions in argumentation frameworks using large language models while improving explainability.",
+    "audience": [
+      "Researchers in Artificial Intelligence",
+      "Natural Language Processing Domain Experts",
+      "Model Developers in Machine Learning"
+    ],
+    "tasks": [
+      "Grounded Extension Computation",
+      "Complete Extension Computation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated diverse abstract argumentation frameworks with explanations.",
+    "size": "60,000 training samples, 2,000 test samples",
+    "format": "JSON, GraphML, DOT",
+    "annotation": "Instruction-tuning data template including instruction, problem, explanation, and answer."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Matthews Correlation Coefficient (MCC)"
+    ],
+    "calculation": "Metrics are calculated through direct comparison of predicted outputs against ground truths.",
+    "interpretation": "Higher accuracy indicates better performance of the LLMs in computing argumentation semantics.",
+    "baseline_results": "LLMs trained with explanations exhibit significant improvements over zero-shot prompting.",
+    "validation": "Performance validated by comparing LLMs before and after fine-tuning."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Explainability"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Explainability",
+          "subcategory": [
+            "Unexplainable output"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

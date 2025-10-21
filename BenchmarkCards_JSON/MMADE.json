@@ -1,0 +1,80 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MMADE (MultiModal Adverse Drug Event Detection Dataset)",
+    "abbreviation": "MMADE",
+    "overview": "The MMADE dataset merges ADE-related textual information with visual aids to enhance the detection of adverse drug events using both text and images.",
+    "data_type": "image-text pairs",
+    "domains": [
+      "Healthcare",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/singhayush27/MMADE.git"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enhance the detection of adverse drug events by leveraging both textual and visual data.",
+    "audience": [
+      "Medical Professionals",
+      "Healthcare Researchers",
+      "Pharmacovigilance Teams"
+    ],
+    "tasks": [
+      "Adverse Drug Event Detection",
+      "Image Captioning"
+    ],
+    "limitations": "The dataset primarily focuses on drug events associated with external body parts, omitting internal conditions.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Social media, healthcare blogs, medical case reports",
+    "size": "1,500 samples",
+    "format": "JSON",
+    "annotation": "Manually annotated by medical students and a Ph.D. student according to a specified manual."
+  },
+  "methodology": {
+    "methods": [
+      "Fine-tuning of vision-language models",
+      "Multimodal assessment using InstructBLIP"
+    ],
+    "metrics": [
+      "BLEU Score",
+      "ROUGE Score",
+      "BERTScore",
+      "MoverScore"
+    ],
+    "calculation": "Metrics calculated based on standard evaluation procedures comparing model outputs against reference texts.",
+    "interpretation": "Higher scores indicate better alignment and similarity between generated and reference texts.",
+    "baseline_results": null,
+    "validation": "Statistical t-tests were conducted to assess performance differences between unimodal and multimodal models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Dataset contains only AD images and corresponding text without personal user information.",
+    "data_licensing": "Dataset shared for research purposes only, with no license for commercial use.",
+    "consent_procedures": "Informed consent obtained from annotators, fulfilling ethical standards.",
+    "compliance_with_regulations": "N/A"
+  }
+}

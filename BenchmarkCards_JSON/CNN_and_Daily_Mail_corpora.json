@@ -1,0 +1,69 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CNN and Daily Mail corpora",
+    "abbreviation": "N/A",
+    "overview": "Large scale supervised reading comprehension data created from news articles and their summaries to evaluate models' ability to answer questions posed on the contents of documents.",
+    "data_type": "text (document–query–answer triples / Cloze-style questions)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [],
+    "similar_benchmarks": [
+      "MCTest"
+    ],
+    "resources": [
+      "http://www.github.com/deepmind/rc-data/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Provide large scale supervised reading comprehension data to evaluate a model's ability to read a single document and answer queries about its contents.",
+    "audience": [
+      "Natural Language Processing Researchers"
+    ],
+    "tasks": [
+      "Reading Comprehension",
+      "Question Answering"
+    ],
+    "limitations": "Focuses on single-document reading comprehension and excludes external world knowledge; articles of over 2000 tokens and queries whose answer entity did not appear in the context were filtered out.",
+    "out_of_scope_uses": [
+      "Using external world knowledge or co-occurrence statistics to answer queries"
+    ]
+  },
+  "data": {
+    "source": "Articles and associated summary bullet points from the CNN and Daily Mail websites; summary points converted into Cloze-style queries via entity detection and anonymisation.",
+    "size": "Approximately 93,000 CNN articles and 220,000 Daily Mail articles; combined corpus of roughly 1,000,000 document–query–answer triples.",
+    "format": "N/A",
+    "annotation": "Automatically generated Cloze-style questions from summary bullet points; entities replaced with abstract entity markers using a coreference system and randomly permuted during training and testing."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics (Accuracy)",
+      "Benchmarking against baselines and heuristic models",
+      "Model-based evaluation (neural networks and symbolic models)"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Precision@Recall",
+      "Precision"
+    ],
+    "calculation": "Accuracy reported as the percentage of correctly answered queries; precision/recall curves used for attention models as shown in Precision@Recall plots.",
+    "interpretation": "Higher Accuracy indicates better reading comprehension performance; results show attention-based neural models (Attentive and Impatient Readers) outperform baselines and non-attention models.",
+    "baseline_results": "Table 5 reports accuracies. Example test set results: CNN test - Maximum frequency 33.2, Exclusive frequency 39.3, Frame-semantic model 40.2, Word distance model 50.9, Deep LSTM Reader 57.0, Uniform Reader 39.4, Attentive Reader 63.0, Impatient Reader 63.8. Daily Mail test - Maximum frequency 25.5, Exclusive frequency 32.8, Frame-semantic model 35.5, Word distance model 55.5, Deep LSTM Reader 62.2, Uniform Reader 34.4, Attentive Reader 69.0, Impatient Reader 68.0.",
+    "validation": "Model hyperparameters were tuned on the respective validation sets; validation data is from March 2015 and test data from April 2015. Hyperparameter search ranges and training details are described in the appendix."
+  },
+  "targeted_risks": {
+    "risk_categories": [],
+    "atlas_risks": {
+      "risks": null
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Entities in documents and queries are anonymised: a coreference system establishes coreferents, entities are replaced with abstract entity markers according to coreference, and these markers are randomly permuted whenever a data point is loaded.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FreshStack",
+    "abbreviation": "N/A",
+    "overview": "FreshStack is a holistic framework for constructing realistic information retrieval (IR) evaluation benchmarks by sourcing community-asked questions and answers. It generates challenging datasets aimed at improving retrieval systems and retrieval-augmented generation (RAG) capabilities.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "CQADupstack",
+      "CodeSearchNet",
+      "COIR",
+      "Neural Code Search",
+      "SWE-Bench"
+    ],
+    "resources": [
+      "https://fresh-stack.github.io"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To facilitate the construction of challenging datasets for evaluating retrieval systems realistically.",
+    "audience": [
+      "ML Researchers",
+      "Information Retrieval Researchers",
+      "Systems Developers"
+    ],
+    "tasks": [
+      "Information Retrieval",
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Community-asked questions and answers sourced from Stack Overflow, along with code snippets and documents from GitHub repositories.",
+    "size": "5 datasets on niche topics",
+    "format": "N/A",
+    "annotation": "Nuggets are generated using GPT-4o on community-asked questions and answers."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "α-nDCG@10",
+      "Coverage@20",
+      "Recall@50"
+    ],
+    "calculation": "Metrics are calculated based on retrieval and RAG performance on the constructed datasets.",
+    "interpretation": "Higher α-nDCG@10 indicates better relevance and diversity in the retrieved documents.",
+    "baseline_results": "Existing retrieval models show significant headroom for improvement in retrieval accuracy compared to oracle performance.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": []
+        },
+        {
+          "category": "Robustness",
+          "subcategory": []
+        },
+        {
+          "category": "Fairness",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Data sourced from Stack Overflow and GitHub repositories, following their respective licenses.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

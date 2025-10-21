@@ -1,0 +1,102 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MAPS (Multilingual Agentic AI Benchmark Suite for Performance and Security)",
+    "abbreviation": "MAPS",
+    "overview": "MAPS introduces the first multilingual benchmark suite designed to evaluate agentic AI systems across diverse languages and tasks, addressing critical gaps in assessing language-specific performance and safety limitations.",
+    "data_type": "multimodal",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "German",
+      "Spanish",
+      "Portuguese",
+      "Japanese",
+      "Russian",
+      "Italian",
+      "Arabic",
+      "Hebrew",
+      "Korean",
+      "Chinese",
+      "Hindi"
+    ],
+    "similar_benchmarks": [
+      "GAIA",
+      "SWE-bench",
+      "MATH",
+      "Agent Security Benchmark"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/Fujitsu-FRE/MAPS"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a systematic evaluation of agentic AI systems in multilingual settings and to identify performance and security gaps across different languages.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Code Generation",
+      "Mathematical Reasoning",
+      "Real-World Task Completion",
+      "Security Assessment"
+    ],
+    "limitations": "Current suite includes four datasets and eleven target languages, but extending to additional domains and extremely low-resource languages would enhance the benchmark.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The benchmark is constructed by translating established English benchmarks (GAIA, SWE-bench, MATH, Agent Security Benchmark) into multiple languages.",
+    "size": "9,660 total language-specific instances",
+    "format": "N/A",
+    "annotation": "Hybrid machine and LLM-based translation with expert verification."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Attack success rate"
+    ],
+    "calculation": "Metrics are calculated as defined in the original benchmarks for each task type.",
+    "interpretation": "Success is determined based on correct outputs or responses matching reference outputs.",
+    "baseline_results": "Performance metrics are compared against the English baseline across all languages.",
+    "validation": "Validation through human expert review and automated evaluation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Performance",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis emphasizes the uneven performance of agentic systems in non-English languages.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "MIT License, allowing unrestricted use, modification, and distribution.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

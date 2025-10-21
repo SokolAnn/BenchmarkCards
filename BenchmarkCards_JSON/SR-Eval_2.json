@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SR-Eval: Evaluating LLMs on Code Generation under Stepwise Requirement Refinement",
+    "abbreviation": "SR-Eval",
+    "overview": "SR-Eval is a benchmark specifically designed to evaluate LLMs on iterative code generation under stepwise requirement refinement, covering function-level and repository-level tasks in Python and Java.",
+    "data_type": "programming tasks with multi-turn interactions",
+    "domains": [
+      "Software Engineering"
+    ],
+    "languages": [
+      "Python",
+      "Java"
+    ],
+    "similar_benchmarks": [
+      "HumanEval",
+      "MBPP",
+      "LiveCodeBench",
+      "DevEval"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate LLMs for iterative code generation under progressive requirement refinement.",
+    "audience": [
+      "ML Researchers",
+      "Software Developers"
+    ],
+    "tasks": [
+      "Code Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated from existing single-turn code generation datasets like BigCodeBench and DevEval.",
+    "size": "443 multi-turn tasks across Python and Java",
+    "format": "N/A",
+    "annotation": "Multi-agent approach for requirement and test case generation."
+  },
+  "methodology": {
+    "methods": [
+      "Multi-agent based evaluation",
+      "Semantic-aware discriminative test case generation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Completion Rate"
+    ],
+    "calculation": "Performance measured based on task success in iterative scenarios.",
+    "interpretation": "Higher accuracy and completion rates indicate better model performance in handling iterative developments.",
+    "baseline_results": "Evaluated across 11 LLMs with varying performances.",
+    "validation": "Rigorous pipeline for evaluating multi-turn interaction quality."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

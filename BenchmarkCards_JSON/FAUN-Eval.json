@@ -1,0 +1,101 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FAUN-Eval (Fine-grained Issue Solving Capabilities Evaluation)",
+    "abbreviation": "FAUN-Eval",
+    "overview": "FAUN-Eval is a benchmark specifically designed to evaluate the Fine-grained Issue Solving capabilities of Large Language Models (LLMs) across three distinct tasks: Question Answering (QA), Fault Localization, and Code Editing.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Software Engineering"
+    ],
+    "languages": [
+      "Python",
+      "Java",
+      "JavaScript",
+      "TypeScript",
+      "Go"
+    ],
+    "similar_benchmarks": [
+      "SWE-Bench"
+    ],
+    "resources": [
+      "https://anonymous.4open.science/status/FAUN-Eval"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Evaluate the atomic capabilities of LLMs in solving real-world GitHub issues in software engineering tasks.",
+    "audience": [
+      "ML Researchers",
+      "Software Engineers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Fault Localization",
+      "Code Editing"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated from 30 well-known GitHub repositories with issue and pull request data.",
+    "size": "300 entries",
+    "format": "JSON",
+    "annotation": "Data curated through cross-referencing and keyword verification methods."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Manual review"
+    ],
+    "metrics": [
+      "Exact Match (EM)",
+      "BLEU",
+      "CodeBLEU",
+      "ROUGE-L",
+      "ROUGE-1",
+      "Edit Similarity"
+    ],
+    "calculation": "Metrics are calculated using the predictions from models compared against the ground truth.",
+    "interpretation": "Higher scores across metrics indicate better performance in the corresponding tasks.",
+    "baseline_results": null,
+    "validation": "Models evaluated against ground truth for accuracy in QA, fault localization, and code editing."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

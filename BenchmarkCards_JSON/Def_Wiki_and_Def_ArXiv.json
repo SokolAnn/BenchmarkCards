@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Def_Wiki and Def_ArXiv",
+    "abbreviation": "N/A",
+    "overview": "The paper introduces two novel datasets, Def_Wiki and Def_ArXiv, that collect and evaluate autoformalization of real-world mathematical definitions, assessing LLMs' performance in translating these definitions into a formal language.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "miniF2F"
+    ],
+    "resources": [
+      "https://github.com/lanzhang128/definition_autoformalization"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Assess the autoformalization capabilities of LLMs on complex mathematical definitions from real-world sources.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Autoformalization"
+    ],
+    "limitations": "Existing benchmarks often focus on simpler problems; the datasets highlight more complex, real-world definitions.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from Wikipedia (Def_Wiki) and arXiv papers (Def_ArXiv).",
+    "size": "56 definitions for Def_Wiki, 30 definitions for Def_ArXiv",
+    "format": "LaTeX",
+    "annotation": "Manual curation for collection."
+  },
+  "methodology": {
+    "methods": [
+      "Zero-shot prompting",
+      "Refinement via external feedback"
+    ],
+    "metrics": [
+      "Pass rate",
+      "Error types (Syntax Errors, Undefined Item Errors, Type Unification Failed Errors)"
+    ],
+    "calculation": "Metrics are calculated as the proportion ofcorrect formalization outputs as evaluated by Isabelle/HOL.",
+    "interpretation": "Higher pass rates and lower error rates indicate better performance in autoformalization.",
+    "baseline_results": "Results against the miniF2F benchmark.",
+    "validation": "Evaluation through success rates and error analysis on Isabelle/HOL."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

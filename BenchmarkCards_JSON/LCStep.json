@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LCStep",
+    "abbreviation": "N/A",
+    "overview": "LCStep is a novel procedural knowledge dataset created from LangChain tutorials, designed to test systems’ domain adaptation ability in procedural question answering tasks.",
+    "data_type": "procedural knowledge steps",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "RecipeNLG",
+      "CHAMP"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2409.01344"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To test systems' ability to perform procedural question answering using new procedural knowledge.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Procedural Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from 180 tutorial pages of the LangChain website.",
+    "size": "276 procedures",
+    "format": "N/A",
+    "annotation": "LLM-enabled pipeline with human oversight and quality review."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score",
+      "BLEU Score",
+      "Pairwise evaluation"
+    ],
+    "calculation": "Metrics calculated based on evaluations comparing the AAG system against baseline methods.",
+    "interpretation": "A higher score indicates better performance in producing coherent and plausible procedural steps.",
+    "baseline_results": "AAG outperforms baselines including Zero-Shot, Few-Shot, RAG, and ReAct.",
+    "validation": "The system's performance was validated through ablation studies on its various components."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Misinformation in procedural outputs"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

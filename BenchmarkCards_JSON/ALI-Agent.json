@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ALI-Agent",
+    "abbreviation": "N/A",
+    "overview": "ALI-Agent is an evaluation framework that leverages LLM-powered agents to conduct in-depth and adaptive alignment assessments, automating the generation of test scenarios to probe long-tail risks in large language models (LLMs).",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "CrowS-Pairs",
+      "ETHICS",
+      "DecodingTrust",
+      "Social Chemistry 101"
+    ],
+    "resources": [
+      "https://github.com/SophieZheng998/ALI-Agent.git"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a scalable and adaptable framework for evaluating the alignment of LLMs with human values, focusing on detecting long-tail risks.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Bias Detection",
+      "Ethical Evaluation"
+    ],
+    "limitations": "Reliance on the capabilities of the core large language model used, which may affect evaluation outcomes.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Automated generation from existing datasets and user queries, incorporating performance data across multiple LLMs.",
+    "size": "11,243 test scenarios",
+    "format": "N/A",
+    "annotation": "Test scenarios developed and refined through automated processes, evaluated by human annotators for quality."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Evaluation through human feedback",
+      "A/B testing"
+    ],
+    "metrics": [
+      "Model agreeability",
+      "Attack success rate (ASR)"
+    ],
+    "calculation": "Metrics are computed based on the agreement of the models with test scenarios and their responses to prompts.",
+    "interpretation": "Higher values in model agreeability indicate greater instances of misalignment.",
+    "baseline_results": "Performance comparison against existing benchmarks like CrowS-Pairs and ETHICS showed higher misalignment rates with ALI-Agent.",
+    "validation": "Evaluated through iterative refinements to improve scenario quality and robustness."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Evaluations conducted included demographic considerations in evaluating biases on scenarios.",
+    "harm": "The framework aims to identify exposure to misalignments that could perpetuate harmful stereotypes or beliefs."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "KOR-Bench (Knowledge-Orthogonal Reasoning Benchmark)",
+    "abbreviation": "KOR-Bench",
+    "overview": "KOR-Bench is designed to evaluate models’ reasoning abilities across five task categories: Operation, Logic, Cipher, Puzzle, and Counterfactual, while minimizing reliance on domain-specific knowledge.",
+    "data_type": "rule-driven question-answer pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMLU",
+      "MMLU-Pro",
+      "GSM8K",
+      "MATH"
+    ],
+    "resources": [
+      "https://kor-bench.github.io/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To establish a comprehensive benchmark that evaluates reasoning capabilities while reducing dependency on pre-existing knowledge.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Operation Reasoning",
+      "Logic Reasoning",
+      "Cipher Reasoning",
+      "Puzzle Reasoning",
+      "Counterfactual Reasoning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed using manual annotation and extensive logical reasoning tasks.",
+    "size": "1,250 questions",
+    "format": "JSON",
+    "annotation": "Manual annotation by experts."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Error Rate"
+    ],
+    "calculation": "Metrics are calculated based on the correctness of the model's output compared to the expected answers derived from the rules.",
+    "interpretation": "A higher accuracy score indicates better reasoning capabilities of the model without reliance on specific training data.",
+    "baseline_results": "O1-Preview and O1-Mini models achieved accuracies of 72.88% and 70.16%, respectively.",
+    "validation": "The benchmark validation has been conducted through rigorous evaluations across multiple models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Bias"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A - licensing details are to be specified upon full dataset release.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

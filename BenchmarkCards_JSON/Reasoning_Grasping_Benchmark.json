@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Reasoning Grasping Benchmark",
+    "abbreviation": "N/A",
+    "overview": "The Reasoning Grasping Benchmark measures robot performance in generating grasp poses based on implicit instructions from human users. It includes various object and part grasping scenarios derived from the GraspNet-1 billion dataset, enhanced with reasoning instructions.",
+    "data_type": "grasping poses",
+    "domains": [
+      "Robotics"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "GraspNet"
+    ],
+    "resources": [
+      "https://reasoning-grasping.github.io"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To advance robotic systems' ability to interpret implicit human commands and generate appropriate grasping actions.",
+    "audience": [
+      "Robotics Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Grasping"
+    ],
+    "limitations": "The model struggles with novel objects not seen during training.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Extended GraspNet-1 billion dataset with reasoning instructions.",
+    "size": "1,730 reasoning instructions, 64 objects, 109 parts, approximately 100 million grasping poses",
+    "format": "N/A",
+    "annotation": "Manual segmentation of parts and automated generation of reasoning instructions."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Grasp prediction accuracy",
+      "Success rate in lifting objects"
+    ],
+    "calculation": "Metrics are calculated based on the intersection over union (IoU) score and the angular deviation of predicted grasp poses compared to ground truth.",
+    "interpretation": "Higher precision in grasping indicates better model performance in understanding implicit instructions.",
+    "baseline_results": "The model outperformed baseline methods including CLIP and LLaV A models in grasping prediction tasks.",
+    "validation": "The benchmark was validated through extensive real-world experiments with human instructions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

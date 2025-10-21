@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MEMERAG (Multilingual End-to-End Meta-Evaluation Benchmark for Retrieval Augmented Generation)",
+    "abbreviation": "MEMERAG",
+    "overview": "This paper develops a multilingual end-to-end meta-evaluation benchmark for retrieval augmented generation (RAG) systems that supports the development of automatic evaluators correlating well with human judgment. The benchmark is built on native-language questions and generates responses using diverse large language models, assessed for faithfulness and relevance by expert annotators.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "German",
+      "Spanish",
+      "French",
+      "Hindi"
+    ],
+    "similar_benchmarks": [
+      "MIRACL"
+    ],
+    "resources": [
+      "https://github.com/amazon-science/MEMERAG"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To support the development of reliable automatic evaluation methods for RAG systems across multiple languages, facilitating comprehensive end-to-end benchmarking.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Meta-Evaluation",
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "MIRACL dataset",
+    "size": "1,250 questions",
+    "format": "N/A",
+    "annotation": "Annotated by expert human annotators for faithfulness and relevance."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Balanced Accuracy"
+    ],
+    "calculation": "Performance is evaluated with Balanced Accuracy (BAcc), with equal weights on each coarse-grained label and language.",
+    "interpretation": "Higher Balanced Accuracy indicates better correlation with human judgement for evaluating the quality of model-generated answers.",
+    "baseline_results": "Baseline results established for various prompting techniques and LLMs on the benchmark dataset.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Lack of multilingual evaluators that correlate with human judgment"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

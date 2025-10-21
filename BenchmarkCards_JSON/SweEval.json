@@ -1,0 +1,100 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SweEval: Do LLMs Really Swear? A Safety Benchmark for Testing Limits for Enterprise Use",
+    "abbreviation": "SweEval",
+    "overview": "SweEval is a benchmark that evaluates LLMs' ability to handle swearing under different contexts and tones, focusing on the ethical and contextual reasoning capabilities of these models in enterprise environments.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Spanish",
+      "French",
+      "German",
+      "Hindi",
+      "Marathi",
+      "Bengali",
+      "Gujarati"
+    ],
+    "similar_benchmarks": [
+      "PKU-SafeRLHF",
+      "ToxicChat",
+      "HarmBench",
+      "SALAD-Bench",
+      "SafetyBench",
+      "Toxigen"
+    ],
+    "resources": [
+      "https://github.com/amitbcp/multilingual_profanity"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess LLMs' compliance with ethical frameworks and cultural nuances when handling sensitive language, specifically swearing.",
+    "audience": [
+      "ML Researchers",
+      "AI Practitioners",
+      "Enterprise Users"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Ethical Evaluation",
+      "Safety Assessment"
+    ],
+    "limitations": "The current benchmark does not include swear words from all underrepresented languages.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Manually created dataset of instruction prompts relevant to enterprise and casual contexts, including swear words in varied linguistic and cultural contexts.",
+    "size": "2,725 prompts per language",
+    "format": "N/A",
+    "annotation": "Manually reviewed for prompt creation and classification of unsafe responses."
+  },
+  "methodology": {
+    "methods": [
+      "Manual evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Harmful Rate"
+    ],
+    "calculation": "Harmful Rate is calculated as #Harmful / (#Harmless + #Harmful).",
+    "interpretation": "A lower Harmful Rate indicates better performance in resisting harmful outputs.",
+    "baseline_results": "Evaluation included various models such as Mistral and Llama for comparative analysis.",
+    "validation": "Validation procedures involved manual review and classification of model responses."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": []
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "The benchmark includes analyses of model responses across different demographics.",
+    "harm": "The benchmark aims to identify safety flaws and instances of harmful output across various contexts."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "The dataset is released under an open-source license.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

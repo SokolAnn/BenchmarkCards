@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "EgoPlan-Bench2",
+    "abbreviation": "N/A",
+    "overview": "EgoPlan-Bench2 is a benchmark designed to assess the planning capabilities of Multimodal Large Language Models (MLLMs) across a wide range of real-world scenarios, including everyday tasks spanning 4 major domains and 24 detailed scenarios.",
+    "data_type": "multiple-choice question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "EgoPlan-Bench"
+    ],
+    "resources": [
+      "https://qiulu66.github.io/egoplanbench2/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the planning capabilities of MLLMs in real-world scenarios and to promote further enhancements in MLLM planning proficiency.",
+    "audience": [
+      "ML Researchers",
+      "AI Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Task Planning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Ego4D dataset consisting of 3,900 hours of egocentric videos.",
+    "size": "1,321 multiple-choice QA pairs sourced from 1,113 videos",
+    "format": "multiple-choice",
+    "annotation": "Generated through a semi-automatic process utilizing GPT-4 for task goal extraction and multiple-choice QA generation, followed by manual verification."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Measurement of model performance based on the percentage of correctly predicted actions compared to the ground truth.",
+    "interpretation": "Performance is understood in terms of accuracy rates where 25% represents random guessing due to four options in each question.",
+    "baseline_results": "GPT-4V achieved an overall accuracy of 32.63%.",
+    "validation": "Model performance evaluated across various domains and scenarios featuring multiple-choice questions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

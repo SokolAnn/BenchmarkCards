@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ClimateEval",
+    "abbreviation": "N/A",
+    "overview": "ClimateEval is a comprehensive benchmark designed to evaluate natural language processing models across a broad range of tasks related to climate change, aggregating existing datasets along with a newly developed news classification dataset.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ClimaBench"
+    ],
+    "resources": [
+      "https://github.com/NLP-RISE/ClimateEval",
+      "https://huggingface.co/datasets/NLP-RISE/guardian_climate_news_corpus"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To facilitate NLP research by providing an accessible setup enabling comprehensive assessment of LLMs in climate change-related applications.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Question Answering",
+      "Information Extraction"
+    ],
+    "limitations": "Limited to English, which restricts applicability to multilingual climate discourse.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "ClimateEval benchmark comprises 25 tasks based on 13 datasets, including a new dataset called Guardian Climate News Corpus.",
+    "size": "40,173 articles",
+    "format": "JSON",
+    "annotation": "Manual annotation by experts"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics calculated per task, including accuracy and macro-averaged F1 for classification tasks, and entity recognition metrics for NER tasks.",
+    "interpretation": "Macro F1 averages scores across all classes equally to ensure a balanced assessment.",
+    "baseline_results": null,
+    "validation": "The benchmark allows for efficient and standardized evaluation across diverse models and tasks implemented using the LM Evaluation Harness."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

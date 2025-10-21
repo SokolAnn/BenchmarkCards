@@ -1,0 +1,110 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MKQA (Multilingual Knowledge Questions and Answers)",
+    "abbreviation": "MKQA",
+    "overview": "MKQA is an open-domain question answering evaluation set comprising 10k question-answer pairs aligned across 26 typologically diverse languages (260k question-answer pairs in total), designed to facilitate fair comparison between various multilingual QA methods.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Arabic",
+      "Spanish",
+      "German",
+      "French",
+      "Italian",
+      "Chinese (Simplified)",
+      "Chinese (Traditional)",
+      "Japanese",
+      "Korean",
+      "Russian",
+      "Vietnamese",
+      "Turkish",
+      "Thai",
+      "Polish",
+      "Hungarian",
+      "Danish",
+      "Vietnamese",
+      "Malay",
+      "Finnish",
+      "Hebrew",
+      "Khmer",
+      "Norwegian",
+      "Portuguese",
+      "Dutch"
+    ],
+    "similar_benchmarks": [
+      "Natural Questions",
+      "MLQA",
+      "XQuAD",
+      "TyDi"
+    ],
+    "resources": [
+      "https://github.com/apple/ml-mkqa"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a challenging, realistic, and linguistically diverse benchmark for evaluating multilingual open-domain question answering methods.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "10k realistic English queries from the Natural Questions dataset translated into 25 additional languages.",
+    "size": "260,000 question-answer pairs",
+    "format": "N/A",
+    "annotation": "Answers are based on heavily curated, language-independent data representation, with high inter-annotator agreement."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Exact Match"
+    ],
+    "calculation": "F1 Score is calculated based on exact match and token overlap for the validated question-answer pairs.",
+    "interpretation": "An increase in F1 Score indicates better model performance in answering the questions correctly.",
+    "baseline_results": "Best model obtains only 52.3% F1 in English.",
+    "validation": "The FKQA dataset is validated by ensuring inter-annotator agreement and through expert review."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

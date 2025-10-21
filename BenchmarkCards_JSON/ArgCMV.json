@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ArgCMV (Argument Summarization Benchmark for the LLM-era)",
+    "abbreviation": "ArgCMV",
+    "overview": "ArgCMV is a key point-based argument summarization benchmark consisting of long-context, multi-turn arguments from actual online human debates sourced from Reddit’s r/ChangeMyView, aiming to evaluate the key point extraction task with complex arguments.",
+    "data_type": "argument-key point pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ArgKP21"
+    ],
+    "resources": [
+      "https://github.com/omkar2810/ArgCMV"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a benchmark for key point extraction in argument summarization, improving upon the limitations of previous datasets like ArgKP21.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Key Point Extraction",
+      "Argument Summarization"
+    ],
+    "limitations": "Limited number of arguments in certain topics and restricted to discussions occurring in 2020.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Threads from Reddit’s r/ChangeMyView community.",
+    "size": "12,262 arguments",
+    "format": "JSON",
+    "annotation": "Key points extracted using a combination of state-of-the-art language models followed by human validation."
+  },
+  "methodology": {
+    "methods": [
+      "Key Point Extraction using LLMs",
+      "Ground truth mapping with human validation"
+    ],
+    "metrics": [
+      "Rouge",
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Metrics calculated using ground-truth key points compared to model outputs.",
+    "interpretation": "Higher recall indicates more key points found in the responses, while higher precision indicates fewer wrong matches in key point extraction.",
+    "baseline_results": "Existing models show lower performance on ArgCMV compared to ArgKP21.",
+    "validation": "Manual validation of extracted key points by human annotators with high inter-annotator agreement."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Collected data was anonymized by not linking comments back to authorship.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Data was collected passively and in accordance with Reddit’s API policy.",
+    "compliance_with_regulations": "N/A"
+  }
+}

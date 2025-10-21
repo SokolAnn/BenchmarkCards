@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "RECALL: A Benchmark for LLMs Robustness against External Counterfactual Knowledge",
+    "abbreviation": "RECALL",
+    "overview": "We create a benchmark for LLMs to evaluate their robustness against counterfactual knowledge from external texts, consisting of two tasks: Question Answering and Text Generation.",
+    "data_type": "question-answering pairs and text generation samples",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a unified and reliable standard for evaluating LLMs’ robustness against external counterfactual information.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Text Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Existing datasets including EventKG and UJ-CS/Math/Phy, with counterfactual information added via ChatGPT.",
+    "size": "47,000 samples",
+    "format": "N/A",
+    "annotation": "Counterfactual information added and tested against original datasets."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Metric-based evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "BLEU Score",
+      "ROUGE-L",
+      "Misleading Rate (M-Rate)",
+      "Mistake Reappearance Rate (R-Rate)"
+    ],
+    "calculation": "Metrics are calculated based on the performance of models on edited vs. original contexts.",
+    "interpretation": "High metrics indicate better robustness against counterfactual information.",
+    "baseline_results": null,
+    "validation": "Evaluation includes multiple language models under varying conditions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CDQA (Chinese Dynamic Question Answering)",
+    "abbreviation": "CDQA",
+    "overview": "CDQA is a Chinese Dynamic QA benchmark containing question-answer pairs related to the latest news on the Chinese Internet, aimed at improving the capabilities of Large Language Models (LLMs) in answering dynamic questions.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/Alibaba-NLP/CDQA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate and improve the ability of Chinese LLMs to answer dynamic questions based on the latest factual knowledge.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "The dataset is focused solely on the Chinese language.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Automatically generated queries from the latest Chinese news and manually labeled by crowd-sourced workers.",
+    "size": "1,339 question-answer pairs",
+    "format": "N/A",
+    "annotation": "Semi-automated with human verification and manual labeling."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Answer Rate"
+    ],
+    "calculation": "F1-recall calculated as the ratio of common tokens between model-generated responses and ground truth; answer rate is the ratio of effectively answered questions to total questions.",
+    "interpretation": "A higher F1 Score indicates better model alignment with correct answers; a lower answer rate might indicate more hallucination.",
+    "baseline_results": "GPT-4 outperforms other models in F1-recall scores.",
+    "validation": "The benchmark is validated through evaluation on multiple Chinese LLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Societal Impact",
+      "Misuse"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on education: plagiarism"
+          ]
+        },
+        {
+          "category": "Misuse",
+          "subcategory": [
+            "Spreading disinformation"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The data collected does not contain any information that would cause moral risks such as politically sensitive or private data.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Human annotators are contracted with a legal agreement and are compensated above market rates.",
+    "compliance_with_regulations": "N/A"
+  }
+}

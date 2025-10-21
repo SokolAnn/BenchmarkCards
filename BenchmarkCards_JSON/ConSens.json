@@ -1,0 +1,68 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ConSens",
+    "abbreviation": "N/A",
+    "overview": "ConSens is a novel metric for evaluating the influence of provided context on LLM-generated responses in open-book QA tasks.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/meta-llama/Llama-3.2-1B-Instruct",
+      "https://github.com/chroma-core/chroma"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To quantify how strongly the output of an LLM is influenced by the provided context.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Open-book Question Answering"
+    ],
+    "limitations": "ConSens requires access to raw outputs (i.e., logits) of the model used for evaluation.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Empirical analysis conducted using various datasets, including WikiEval and biomedical abstracts.",
+    "size": "657 examples",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Token perplexity calculations"
+    ],
+    "metrics": [
+      "ROC AUC"
+    ],
+    "calculation": "Calculates the perplexity of the model output under two conditions: when the context is provided and when it is not.",
+    "interpretation": "Higher ConSens values indicate stronger reliance on the provided context.",
+    "baseline_results": null,
+    "validation": "Validated through experiments comparing answers based on provided context versus parametric knowledge."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SysNoise: Exploring and Benchmarking Training-Deployment System Inconsistency",
+    "abbreviation": "SysNoise",
+    "overview": "This work introduces SysNoise, a benchmark and framework to quantitatively measure the impact of training-deployment system inconsistency (SysNoise) on model robustness. The benchmark evaluates SysNoise across image classification, object detection, instance/semantic segmentation and natural language processing on 20+ models, measuring how differences in pre-processing, model inference, and post-processing implementations affect performance.",
+    "data_type": "image (image classification / object detection / segmentation datasets) and text (natural language processing datasets)",
+    "domains": [
+      "Computer Vision",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ImageNet-C",
+      "ImageNet-P",
+      "ImageNet-A",
+      "ImageNet-O",
+      "RobustBench",
+      "RobustART",
+      "DEEPSEC",
+      "RealSafe"
+    ],
+    "resources": [
+      "https://modeltc.github.io/systemnoise_web",
+      "https://arxiv.org/abs/2307.00280"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To identify and systematically evaluate SysNoise (pre-processing, model inference, post-processing) caused by training-deployment system inconsistencies, and to build a benchmark and framework to quantitatively measure its impact on model robustness across vision and NLP tasks.",
+    "audience": [
+      "Algorithm Researchers",
+      "Hardware Vendors"
+    ],
+    "tasks": [
+      "Image Classification",
+      "Object Detection",
+      "Instance Segmentation",
+      "Semantic Segmentation",
+      "Natural Language Processing",
+      "Text-to-Speech"
+    ],
+    "limitations": "The authors note there may still exist other noises not covered by the benchmark and that some noises require specific hardware and are not easy to reproduce. They plan to extend the benchmark to more tasks and real-world systems in future work.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "ImageNet-1K (ImageNet), MS COCO, CitySpace, NLP datasets PIQA, LAMBADA, HellaSwag, WINOGRANDE, LJ Speech (for TTS). The authors also provide generated system-noise variants of ImageNet and COCO validation sets available on the project website.",
+    "size": "13,100 audio clips (about 24 hours) for LJ Speech; sizes for ImageNet, COCO, CitySpace, and NLP datasets are not specified in the paper.",
+    "format": "N/A",
+    "annotation": "Use original dataset annotations from official releases; system-noise variants are generated from the original datasets."
+  },
+  "methodology": {
+    "methods": [
+      "Automated evaluation using task metrics (Top-1 accuracy, mAP, mIoU, MSE)",
+      "Controlled system-implementation perturbations across three stages: pre-processing, model inference, post-processing",
+      "Combined-noise (worst-case) analysis by adding multiple SysNoise types",
+      "Comparative analysis with data augmentation methods, adversarial training, and test-time adaptation (TENT)"
+    ],
+    "metrics": [
+      "Top-1 Accuracy",
+      "Mean Average Precision (mAP)",
+      "Mean Intersection over Union (mIoU)",
+      "Mean Square Error (MSE)",
+      "Delta metrics (∆ACC, ∆mAP, ∆mIoU) reported as differences between clean and SysNoise evaluations"
+    ],
+    "calculation": "Metric differences are calculated as ∆ACC = ACC_original - ACC_SysNoise (similarly ∆mAP = mAP_original - mAP_SysNoise, ∆mIoU = mIoU_original - mIoU_SysNoise). For SysNoise with multiple options, both mean and max differences are reported; otherwise the single metric difference is reported.",
+    "interpretation": "Lower ∆ (difference) indicates better robustness to SysNoise. Large positive ∆ values indicate significant performance degradation caused by system inconsistency.",
+    "baseline_results": "The benchmark evaluates 20+ models. Key reported worst-case impacts include up to 9.97% Top-1 accuracy drop on classification and up to 10.67 mAP drop on detection. Detailed per-model results are reported in Tables 2-5 of the paper.",
+    "validation": "Reproducibility measures include fixing software versions (torch==1.8.1, opencv==4.1.1.26, Pillow==6.2.1) and setting torch.backends.cudnn.benchmark=True. Selected experiments were repeated multiple times with observed differences <0.0001%. Code and generated datasets are provided on the project website for reproducibility."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Governance",
+          "subcategory": [
+            "Lack of system transparency"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Model performance degeneration during deployment due to system-implementation mismatch (e.g., up to 9.97% accuracy drop on classification, 10.67 mAP drop on detection).",
+      "Reliability issues of models across different deployment platforms; potential to negate architecture or model improvements."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Code released under Apache License 2.0. ImageNet-1K, COCO, and CitySpace datasets used are downloaded from their official releases and generated system-noise datasets follow the licenses of the original datasets.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

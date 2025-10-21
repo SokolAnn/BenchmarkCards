@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "KnowMT-Bench",
+    "abbreviation": "N/A",
+    "overview": "KnowMT-Bench is the first benchmark designed to systematically evaluate Multi-Turn Long-Form Question Answering (MT-LFQA) for large language models across knowledge-intensive fields including medicine, finance, and law. It features dynamic evaluation settings where models generate multi-turn dialogue histories given logically progressive question sequences, allowing for a thorough examination of factual capability and information delivery efficiency.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "K-QA",
+      "FinTextQA",
+      "cLegal-QA",
+      "MedLFQA"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2509.21856"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive benchmark for assessing Multi-Turn Long-Form Question Answering (MT-LFQA) in knowledge-intensive domains and to facilitate the evaluation and enhancement of the conversational factual capabilities of large language models.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "801 evidence-grounded LFQA instances from authoritative sources in medicine, finance, and law, constructed from prior LFQA benchmarks and manual annotation.",
+    "size": "801 instances",
+    "format": "JSON",
+    "annotation": "Manual annotation by experts and crowdsourced validation."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Factual Precision",
+      "Factual Recall"
+    ],
+    "calculation": "Metrics are evaluated based on the factual capability and information delivery efficiency of model responses compared against ground-truth answers.",
+    "interpretation": "Higher scores indicate better factual accuracy and efficiency in delivering answers in a multi-turn dialogue context, while lower scores indicate factual degradation and verbosity.",
+    "baseline_results": "N/A",
+    "validation": "The benchmark was validated through extensive human-validated automated performance assessments."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

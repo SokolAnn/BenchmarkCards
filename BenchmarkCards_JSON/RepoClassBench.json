@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "RepoClassBench",
+    "abbreviation": "N/A",
+    "overview": "RepoClassBench is a comprehensive benchmark designed to rigorously evaluate LLMs in generating complex, class-level code within real-world repositories, including tasks across Java, Python, and C#. It includes classes with cross-file dependencies and corresponding test cases.",
+    "data_type": "class generation tasks",
+    "domains": [
+      "Software Engineering"
+    ],
+    "languages": [
+      "Java",
+      "Python",
+      "C#"
+    ],
+    "similar_benchmarks": [
+      "HumanEval",
+      "MBPP",
+      "ClassEval"
+    ],
+    "resources": [
+      "https://github.com/microsoft/RepoClassBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a benchmark for evaluating LLMs in the context of class-level code generation within software repositories.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Class Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Public GitHub repositories, focusing on Java, Python, and C# classes with dependencies.",
+    "size": "130 Java classes, 97 Python classes, 60 C# classes",
+    "format": "N/A",
+    "annotation": "Each class is validated with corresponding test cases."
+  },
+  "methodology": {
+    "methods": [
+      "Test case evaluation",
+      "Static analysis with repository tools",
+      "Tool-based feedback mechanisms"
+    ],
+    "metrics": [
+      "Test Rate (TR)",
+      "Pass@K"
+    ],
+    "calculation": "Metrics are calculated based on the percentage of test cases passed for the generated classes.",
+    "interpretation": "Higher scores on metrics indicate better performance in code generation tasks.",
+    "baseline_results": "Compared against existing benchmarks like HumanEval and ClassEval.",
+    "validation": "The benchmark was validated through test feedback and code compilation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

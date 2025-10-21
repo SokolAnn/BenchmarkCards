@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Hierarchical Knowledge Preference Benchmark (HIERPREF)",
+    "abbreviation": "HIERPREF",
+    "overview": "This benchmark evaluates the ability of language models to follow a defined hierarchy of knowledge preference among instruction knowledge, contextual knowledge, and parametric knowledge, while synthesizing diverse question-answer pairs.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "IfQA",
+      "MQuAKE",
+      "MRQA"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2407.13048"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate and enhance the ability of LLMs to prioritize knowledge correctly based on user instructions and contextual information.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Sourced from Wikipedia and Wikidata, synthesized to create diverse question-answer pairs with user assumptions.",
+    "size": "9,000 examples",
+    "format": "N/A",
+    "annotation": "Automatically generated and synthesized without human annotation."
+  },
+  "methodology": {
+    "methods": [
+      "Fine-tuning with synthesized instruction-tuning data",
+      "Evaluation on various existing benchmarks"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Exact Matching (EM)"
+    ],
+    "calculation": "F1 Score is calculated based on the comparison of predicted answers with the ground truth.",
+    "interpretation": "Higher F1 Scores indicate better adherence to the knowledge preference hierarchy.",
+    "baseline_results": "Mistral-v0.3-7B fine-tuned with HIERPREF outperformed other models in question answering tasks.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

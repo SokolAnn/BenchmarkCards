@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PRODIGy (PROfile-based DIalogue Generation)",
+    "abbreviation": "PRODIGy",
+    "overview": "PRODIGy is a dialogue generation dataset that integrates diverse profile representations to enhance the consistency and coherence of dialogue agents. It includes over 20,000 dialogues sourced from movie scripts with aligned speaker representations encompassing communication style, biography, personality, and gender.",
+    "data_type": "dialogue",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Persona-Chat"
+    ],
+    "resources": [
+      "https://github.com/LanD-FBK/prodigy-dataset"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a dataset that will facilitate the development of dialogue agents capable of maintaining consistent and coherent interactions by incorporating profile information.",
+    "audience": [
+      "ML Researchers",
+      "Dialogue Systems Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Dialogue Generation"
+    ],
+    "limitations": "The dataset contains fictional characters, which may lead to stereotyped roles.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Cornell Movie Dialogs Corpus",
+    "size": "20,850 dialogues",
+    "format": "CSV",
+    "annotation": "Character profiles were annotated using a combination of crowd-sourced personality data and biographical information sourced from external websites."
+  },
+  "methodology": {
+    "methods": [
+      "Fine-tuning",
+      "Instruction prompting"
+    ],
+    "metrics": [
+      "Conditional Perplexity",
+      "Average Accuracy at N"
+    ],
+    "calculation": "Metrics calculated based on the model's likelihood of generating a correct response given a dialogue history.",
+    "interpretation": "Lower perplexity and higher accuracy indicate better model performance.",
+    "baseline_results": null,
+    "validation": "Models were validated using both automatic evaluation metrics and human assessments."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset may reflect biases in character representation since it utilizes roles from movie scripts.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset avoids privacy concerns by using fictional characters instead of real users.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

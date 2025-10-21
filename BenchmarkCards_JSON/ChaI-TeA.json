@@ -1,0 +1,78 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ChaI-TeA (Chat Interaction Autocomplete)",
+    "abbreviation": "ChaI-TeA",
+    "overview": "A framework for evaluating autocomplete solutions for LLM-based chatbot interactions, included with a formal definition of the task, suitable datasets, and metrics.",
+    "data_type": "user-chatbot interaction completions",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/amazon-science/ChaiTea-chat-interaction-autocomplete"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate and improve the autocomplete solutions in LLM-based chatbot interactions.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Autocomplete suggestion generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Open Assistant (OASST) and ShareGPT datasets",
+    "size": "90,675 conversations",
+    "format": "JSON",
+    "annotation": "Human-annotated interactions"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "saved@k",
+      "latency"
+    ],
+    "calculation": "Metrics are computed using exact match comparisons and proportion of text completed by the AC solutions.",
+    "interpretation": "Higher saved@k indicates better performance in reducing user typing effort.",
+    "baseline_results": "Results benchmarked across multiple LLMs including Mistral-7B and Gemma-7B.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

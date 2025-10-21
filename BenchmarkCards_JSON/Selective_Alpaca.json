@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Selective Alpaca",
+    "abbreviation": "N/A",
+    "overview": "Selective Alpaca is a curated instruction tuning (IT) dataset created by applying a novel approach called SelectIT, which improves IT data selection by leveraging the intrinsic uncertainty of large language models (LLMs) without requiring additional resources.",
+    "data_type": "instruction-response pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Alpaca-GPT4",
+      "LIMA",
+      "Q2Q",
+      "AlpaGasus"
+    ],
+    "resources": [
+      "https://github.com/Blue-Raincoat/SelectIT"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enhance the performance of large language models by providing a dataset that consists of high-quality instruction data selected using uncertainty-aware methodologies.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Instruction Tuning",
+      "Natural Language Understanding"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset is created from the Alpaca-GPT4 dataset using the SelectIT method for high-quality instruction tuning data selection.",
+    "size": "10,400 pairs",
+    "format": "N/A",
+    "annotation": "The data was selected based on improvement of performance metrics using inherent model uncertainty evaluations."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on the model's performance on downstream tasks after applying instruction tuning with the dataset.",
+    "interpretation": "The performance is measured in relation to baseline models to assess improvements in instruction adherence and quality.",
+    "baseline_results": null,
+    "validation": "Results are validated through comprehensive empirical testing across multiple foundational models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "BRIGHT+ (Upgrading the BRIGHT Benchmark with MARCUS)",
+    "abbreviation": "BRIGHT+",
+    "overview": "We introduce BRIGHT+, a high-quality refinement of the BRIGHT benchmark tailored for retrieval-augmented reasoning. By identifying and addressing two major flaws—content redundancy and semantic discontinuity—we developed MARCUS, an LLM-powered clean-and-split pipeline that produces coherent, retrievable chunks.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "BRIGHT",
+      "BEIR",
+      "MTEB"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2506.07116"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To support future research on robust, reasoning-centric retrieval.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Multi-hop reasoning"
+    ],
+    "limitations": "MARCUS improves corpus quality for retrieval-augmented reasoning but incurs high computational costs and relies on BRIGHT-specific supervision.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Originally derived from the BRIGHT corpus and StackExchange-derived subdomains.",
+    "size": "18,187 chunks",
+    "format": "JSON",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Evaluation metrics based on retrieval performance",
+      "NDCG@10"
+    ],
+    "metrics": [
+      "nDCG@10"
+    ],
+    "calculation": "nDCG@10 is calculated based on the relevance and ranking quality of retrieved documents.",
+    "interpretation": "Higher nDCG@10 indicates better retrieval effectiveness.",
+    "baseline_results": null,
+    "validation": "Tests performed with various retrievers, processing times, and query formulations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Bias"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Incorporation of LLMs may introduce biases or hallucinations; prompting strategies mitigate these risks."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Our proposed pipeline operates on existing textual data and does not involve the collection of personally identifiable information.",
+    "data_licensing": "Released under a research-friendly license.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

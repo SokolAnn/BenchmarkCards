@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "UVQA (Unanswerable Video Question Answering)",
+    "abbreviation": "UVQA",
+    "overview": "The UVQA dataset includes questions designed to extend beyond the content of the video, enabling Video Large Language Models to evaluate the relevance of user queries and refuse answering when the question exceeds the informational boundaries of the video.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Computer Vision",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ActivityNet QA",
+      "MVSD-QA",
+      "MSRVTT-QA"
+    ],
+    "resources": [
+      "https://github.com/EsYoon7/UVQA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To equip Video Large Language Models with the ability to reject unanswerable questions, thereby improving their performance in real-world QA scenarios.",
+    "audience": [
+      "AI Researchers",
+      "Machine Learning Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "A key limitation of the approach is the increase in excessive refusal score observed after alignment for answerability, which may lead to undesired refusals for answerable questions.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated using existing video-description paired datasets and perturbed to create unanswerable questions.",
+    "size": "30,000 training samples, 300 evaluation samples",
+    "format": "JSON",
+    "annotation": "Automatically filtered with human review for evaluation samples."
+  },
+  "methodology": {
+    "methods": [
+      "Supervised Fine-Tuning",
+      "Direct Preference Optimization"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "Excessive Refusal Score",
+      "Permissiveness Score",
+      "Discretion Score"
+    ],
+    "calculation": "Metrics assess model performance in terms of correct identification of answerable and unanswerable questions.",
+    "interpretation": "Higher scores indicate better performance in recognizing unanswerable questions without declining to answer valid ones.",
+    "baseline_results": null,
+    "validation": "The dataset was filtered and evaluated with human annotators to ensure quality."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

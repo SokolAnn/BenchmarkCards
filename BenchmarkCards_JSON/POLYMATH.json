@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "POLYMATH (A Challenging Multi-Modal Mathematical Reasoning Benchmark)",
+    "abbreviation": "POLYMATH",
+    "overview": "POLYMATH is a benchmark specifically crafted to evaluate the complex multi-modal cognitive reasoning capabilities of Multi-modal Large Language Models (MLLMs) through a dataset of visual and textual challenges.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision",
+      "Education"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "GeoQA",
+      "MathVista",
+      "MMMU"
+    ],
+    "resources": [
+      "https://github.com/kevinscaria/PolyMATH",
+      "https://huggingface.co/datasets/him1411/polymath"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To systematically analyze the mathematical reasoning capabilities of state-of-the-art models in visually complex scenarios.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Educators"
+    ],
+    "tasks": [
+      "Mathematical Reasoning",
+      "Visual Question Answering",
+      "Cognitive Reasoning"
+    ],
+    "limitations": "Although POLYMATH covers a wide range of tasks, some mathematical problems and visual types may be underrepresented.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated from questions directed at students taking the National Talent Search Examination in India.",
+    "size": "5,000 questions",
+    "format": "JSON",
+    "annotation": "Manually collected and rigorously reviewed by expert annotators."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Metrics are derived based on exact match for answer comparison after applying prompting methods.",
+    "interpretation": "Higher accuracy indicates better performance of models on the benchmark tasks.",
+    "baseline_results": "Human performance reached 66.3% accuracy.",
+    "validation": "Extensive evaluation of various MLLMs across multiple prompting strategies."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": []
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

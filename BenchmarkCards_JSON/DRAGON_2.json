@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DRAGON (Dynamic RAG Benchmark On News)",
+    "abbreviation": "DRAGON",
+    "overview": "DRAGON is the first dynamic benchmark for evaluating RAG (Retrieval-Augmented Generation) systems in Russian on a changing news corpora, addressing the need for standardized evaluation tools for RAG systems in the Russian language.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Russian"
+    ],
+    "similar_benchmarks": [
+      "KILT",
+      "NoMIRACL",
+      "RusBEIR"
+    ],
+    "resources": [
+      "https://github.com/RussianNLP/DRAGON",
+      "https://huggingface.co/spaces/ai-forever/rag-leaderboard"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive and dynamic benchmark for evaluating retrieval-augmented generation systems in Russian and support reproducible and community-driven research.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "While the proposed benchmark provides a valuable framework for evaluating RAG systems, it relies on a specific domain (news) and currently only supports Russian language documents.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Regularly updated corpus of Russian news and public documents.",
+    "size": "N/A",
+    "format": "N/A",
+    "annotation": "Automatically generated questions using a Knowledge Graph constructed from the corpus."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "ROUGE-L",
+      "Hit Rate",
+      "Recall",
+      "NDCG"
+    ],
+    "calculation": "Metrics are calculated based on the performance of retrieval and generation components against the ground truth.",
+    "interpretation": "High scores indicate better retrieval and generation capabilities of the RAG systems.",
+    "baseline_results": "N/A",
+    "validation": "The benchmark includes a validation portal for assessing submissions against private datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "The benchmark addresses potential biases in retrieval and generation processes."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Datasets included in the benchmark are sourced following strict privacy regulations and guidelines.",
+    "data_licensing": "The framework is released under the MIT license.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

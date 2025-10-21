@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CURATe: Benchmarking Personalised Alignment of Conversational AI Assistants",
+    "abbreviation": "CURATe",
+    "overview": "CURATe is a multi-turn benchmark for evaluating personalized alignment in LLM-based AI assistants, focusing on their ability to handle user-provided safety-critical contexts. It tests models' capacities to maintain consistent awareness of user-specific information across extended interactions.",
+    "data_type": "multi-turn dialogue scenarios",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "AgentBench",
+      "MT-Bench-101",
+      "MT-Eval"
+    ],
+    "resources": [
+      "https://anonymous.4open.science/r/llm_prag_benchmark-0C48/README.md"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate and improve personalized alignment in dialogue agents by assessing their ability to consistently remember and utilize safety-critical user information across multiple interactions.",
+    "audience": [
+      "ML Researchers",
+      "AI Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Dialogue Management",
+      "Personalized Recommendation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Five interaction scenarios created specifically for testing personalized alignment in conversational AI, each containing 337 use cases.",
+    "size": "1,685 use cases",
+    "format": "N/A",
+    "annotation": "Manually iterated design process with multi-turn dialogues involving user constraints and recommendation queries."
+  },
+  "methodology": {
+    "methods": [
+      "Automated Evaluation",
+      "Human Annotation"
+    ],
+    "metrics": [
+      "Pass Rate"
+    ],
+    "calculation": "Pass rates are calculated based on whether the models correctly account for critical personal information in their responses.",
+    "interpretation": "A pass indicates the model acknowledged and considered the user's safety-critical constraint in recommendations.",
+    "baseline_results": "Mean pass rate was 88.4% for the best-performing model, with significant variation across scenarios.",
+    "validation": "Results validated against both automated metrics and human evaluator assessments."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Bias"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on affected communities"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CG-Bench (Clue-grounded Question Answering Benchmark for Long Video Understanding)",
+    "abbreviation": "CG-Bench",
+    "overview": "CG-Bench is designed for clue-grounded question answering in long videos, featuring 1,219 manually curated videos and 12,129 question-answering pairs in three main question types: perception, reasoning, and hallucination.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "NExT-GQA",
+      "Video-MME",
+      "MLVU",
+      "LongVideoBench"
+    ],
+    "resources": [
+      "https://cg-bench.github.io/leaderboard/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive benchmark for evaluating the ability of multimodal large language models in understanding long videos through clue-grounded question answering.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Manually collected videos from the internet, categorizing into a systematic tagging framework.",
+    "size": "1,219 videos and 12,129 QAC triplets",
+    "format": "N/A",
+    "annotation": "Manually annotated QAC triplets by watching entire videos and selecting relevant clues."
+  },
+  "methodology": {
+    "methods": [
+      "Clue-grounded white box evaluation",
+      "Clue-grounded black box evaluation",
+      "Multiple-choice question evaluation",
+      "Open-ended question answering evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "mIoU (Mean Intersection over Union)",
+      "rec.@IoU (Recall at IoU thresholds)",
+      "Acc.@IoU (Accuracy at IoU thresholds)"
+    ],
+    "calculation": "Metrics are calculated based on predictions and ground truths through specified intervals for clue retrieval and answer correctness.",
+    "interpretation": "Higher scores in metrics indicate better model understanding and clue retrieval capabilities.",
+    "baseline_results": "GPT-4o achieved a long-acc. score of 45.2% on this benchmark.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

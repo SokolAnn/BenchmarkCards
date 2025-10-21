@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "QuRe (Quantifier Reasoning)",
+    "abbreviation": "QuRe",
+    "overview": "QuRe is a crowd-sourced dataset of human-annotated generalized quantifiers in Wikipedia sentences featuring percentage-equipped predicates. It is designed to evaluate the quantifier understanding capabilities of foundation models in natural language processing.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "HVD (Hierarchical Quantifier Dataset)"
+    ],
+    "resources": [
+      "https://github.com/Nativeatom/PRESQUE"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To investigate quantifier understanding in foundation models and provide a dataset for evaluating their capabilities.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Quantifier Understanding",
+      "Natural Language Inference"
+    ],
+    "limitations": "Despite the value of our dataset and the promising results from the PRESQUE framework, our analysis and findings have some notable limitations.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Crowd-sourced from Wikipedia sentences with percentage annotations.",
+    "size": "744 sentences",
+    "format": "JSON",
+    "annotation": "Crowd-sourced via Amazon Mechanical Turk and hybrid annotations with GPT-3.5-turbo."
+  },
+  "methodology": {
+    "methods": [
+      "Natural Language Inference",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Span-based F1 Score",
+      "Mean Reciprocal Rank (MRR)",
+      "Cross-Entropy"
+    ],
+    "calculation": "Metrics are calculated based on the comparison between predicted percentage scopes and the gold standard.",
+    "interpretation": "Scores higher than the baseline indicate better quantifier understanding performance.",
+    "baseline_results": "PRESQUE achieves better performance than L0 in several metrics including higher HIT@1 and lower cross-entropy.",
+    "validation": "Validated through human evaluations and quantitative metrics on model performance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset does not currently analyze demographic factors.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "No personally identifiable information about the annotators was collected.",
+    "data_licensing": "N/A",
+    "consent_procedures": "All annotators were informed about the study and compensated fairly.",
+    "compliance_with_regulations": "N/A"
+  }
+}

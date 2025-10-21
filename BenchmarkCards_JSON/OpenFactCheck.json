@@ -1,0 +1,101 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "OpenFactCheck",
+    "abbreviation": "N/A",
+    "overview": "OpenFactCheck is a unified framework for building customized automatic fact-checking systems, benchmarking their accuracy, evaluating LLMs' factuality, and verifying claims in a document.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMLU",
+      "FELM-WK",
+      "Factcheck-Bench",
+      "HaluEval",
+      "FactScore-Bio"
+    ],
+    "resources": [
+      "https://github.com/yuxiaw/openfactcheck"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a customizable and extensible framework for evaluating the factuality of claims and documents using automatic fact-checking systems.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Factuality Evaluation",
+      "Automatic Fact-Checking"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "包含人类注释的 factuality 评估集，使用自动化事实检查系统进行验证。",
+    "size": "6,480 examples",
+    "format": "N/A",
+    "annotation": "Manual and automated annotation."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Exact matching between model responses and gold standard answers to judge factual correctness.",
+    "interpretation": "Factual accuracy is assessed based on the correctness of claims relative to human-annotated labels.",
+    "baseline_results": null,
+    "validation": "The framework is validated through extensive experiments comparing different LLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Potential spread of misinformation",
+      "Impact on public discourse"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

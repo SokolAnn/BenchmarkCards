@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "KnowGIC (Knowledge Graph Implication Chains)",
+    "abbreviation": "KnowGIC",
+    "overview": "KnowGIC is a benchmark dataset developed to evaluate model-editing techniques under the deep editing setting. It consists of multi-step reasoning paths designed to assess the extent to which original facts remain deducible after editing, while testing the indirect knowledge leakage and ripple effects caused by the edits.",
+    "data_type": "multi-step reasoning paths",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MQuAKE"
+    ],
+    "resources": [
+      "https://anonymous.4open.science/r/KnowGIC"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the KnowGIC benchmark is to provide a systematic evaluation of model-editing techniques in LLMs, focusing on understanding how edits affect knowledge retention and inferential understanding post-edit.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Knowledge Recovery Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed using ThinkEval framework from samples in the MQuAKE dataset and additional complex relational connections.",
+    "size": "1,406 samples",
+    "format": "N/A",
+    "annotation": "Manually reviewed and pruned by human experts to remove inaccuracies and irrelevant triplets."
+  },
+  "methodology": {
+    "methods": [
+      "Sequential prompting",
+      "Automated triplet generation",
+      "Human validation"
+    ],
+    "metrics": [
+      "Indirect Fact Recovery (IFR)",
+      "Preservation"
+    ],
+    "calculation": "IFR is calculated to measure the deducibility of original facts through reasoning paths after editing, while Preservation assesses retention of related factual knowledge.",
+    "interpretation": "A high IFR indicates significant original fact deducibility, suggesting incomplete deep editing, whereas a high Preservation score indicates successful retention of broader contextual integrity.",
+    "baseline_results": "N/A",
+    "validation": "Data was manually validated and refined through human oversight, focusing on high accuracy and completeness of extracted knowledge."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Bias"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "The framework emphasizes evaluating indirect knowledge leakage that can affect model reliability and propagate misinformation."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

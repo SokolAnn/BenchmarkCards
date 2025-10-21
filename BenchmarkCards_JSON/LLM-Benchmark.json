@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Evaluating Large Language Models with Grid-Based Game Competitions: An Extensible LLM Benchmark and Leaderboard",
+    "abbreviation": "LLM-Benchmark",
+    "overview": "This benchmark introduces a novel and extensible evaluation framework for large language models (LLMs) using grid-based games like Tic-Tac-Toe, Connect Four, and Gomoku, assessing capabilities such as rule comprehension and strategic thinking across diverse prompt types.",
+    "data_type": "game results and match data in JSON, CSV, TXT, and PNG formats",
+    "domains": [
+      "Natural Language Processing",
+      "Game Theory"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "GLUE",
+      "SuperGLUE",
+      "MMLU",
+      "BIG-bench",
+      "TruthfulQA",
+      "HellaSwag"
+    ],
+    "resources": [
+      "https://github.com/research-outcome/LLM-Game-Benchmark/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a framework for evaluating LLMs through dynamic and competitive game scenarios, enhancing understanding of their decision-making and strategic thinking capabilities.",
+    "audience": [
+      "ML Researchers",
+      "Gaming Enthusiasts",
+      "AI Practitioners"
+    ],
+    "tasks": [
+      "Strategic Decision Making",
+      "Game Playing"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Simulated matches among leading LLMs and random players using a web-based game simulation application.",
+    "size": "2,310 matches",
+    "format": "JSON, CSV, TXT, PNG",
+    "annotation": "Automated recording of match data during simulated games."
+  },
+  "methodology": {
+    "methods": [
+      "Game simulations",
+      "Leaderboards"
+    ],
+    "metrics": [
+      "Win rates",
+      "Draw rates",
+      "Disqualification rates",
+      "Missed opportunities"
+    ],
+    "calculation": "Percentage of wins, draws, and disqualifications computed post-simulation to gauge model performance.",
+    "interpretation": "Higher win rates and lower disqualification rates indicate better strategic and rule comprehension by LLMs.",
+    "baseline_results": "Performance of LLMs compared against a random play generator.",
+    "validation": "Results from multiple matches were aggregated to form a leaderboard."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Open-source under appropriate licenses, detailed in GitHub repository.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

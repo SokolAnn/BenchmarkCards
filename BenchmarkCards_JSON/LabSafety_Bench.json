@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Laboratory Safety Benchmark (LabSafety Bench)",
+    "abbreviation": "LabSafety Bench",
+    "overview": "LabSafety Bench is a comprehensive framework designed to evaluate large language models and vision language models on their ability to identify potential hazards, assess risks, and predict the consequences of unsafe actions in laboratory environments, consisting of multiple-choice questions and realistic laboratory scenarios.",
+    "data_type": "multiple-choice questions and open-ended questions",
+    "domains": [
+      "Natural Language Processing",
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": null,
+    "resources": [
+      "https://github.com/YujunZhou/LabSafety-Bench",
+      "https://huggingface.co/datasets/yujunzhou/LabSafety_Bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the reliability of LLMs and VLMs in assessing laboratory safety, thereby enhancing safe practices in laboratory environments.",
+    "audience": [
+      "ML Researchers",
+      "Safety Personnel",
+      "Laboratory Practitioners"
+    ],
+    "tasks": [
+      "Hazards Identification",
+      "Risk Assessment",
+      "Consequence Prediction"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Expert-curated dataset with contributions from domain specialists and AI.",
+    "size": "765 multiple-choice questions, 404 realistic laboratory scenarios, 3128 open-ended questions total",
+    "format": "JSON",
+    "annotation": "Manual annotation by experts after cross-review for accuracy."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on model responses compared to expert-curated answers and ground truth.",
+    "interpretation": "Models are assessed on their understanding of safety protocols in laboratory settings, with high accuracy indicating sound operational safety knowledge.",
+    "baseline_results": null,
+    "validation": "Benchmark validated through comparisons with human expert performance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Increased risk of hazardous incidents in laboratories due to model inaccuracies."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "The study includes a human evaluation approved by the Institutional Review Board (IRB) at the University of Notre Dame."
+  }
+}

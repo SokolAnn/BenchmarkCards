@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CoLAC - Corpus of Linguistic Acceptability in Chinese",
+    "abbreviation": "CoLAC",
+    "overview": "We introduce CoLAC - Corpus of Linguistic Acceptability in Chinese, the first large-scale acceptability dataset for a non-Indo-European language. It is verified by native speakers and is the first acceptability dataset that comes with two sets of labels: a linguist label and a crowd label.",
+    "data_type": "text (sentences with acceptability labels)",
+    "domains": [
+      "Natural Language Processing",
+      "Linguistics"
+    ],
+    "languages": [
+      "Mandarin Chinese"
+    ],
+    "similar_benchmarks": [
+      "CoLA",
+      "ItaCoLA",
+      "RuCoLA",
+      "BLiMP",
+      "CLiMP",
+      "SyntaxGym"
+    ],
+    "resources": [
+      "https://github.com/huhailinguist/CoLAC",
+      "https://arxiv.org/abs/2305.14091"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Introduce the first large-scale non-Indo-European acceptability dataset handcrafted by linguists to evaluate the grammatical proficiency of language models.",
+    "audience": [
+      "Machine Learning Researchers",
+      "Computational Linguists",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Acceptability Judgment"
+    ],
+    "limitations": "The paper notes that with only two datasets (CoLA and CoLAC) they are not able to ascertain how much acceptability ability is learned during pre-training versus how much comes from cross-lingual transfer during fine-tuning.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from one syntax textbook (The Syntax of Chinese, Huang et al. 2009, examples partitioned/verified by Chen et al. 2020b), one handbook (Handbook of Chinese Linguistics, Huang et al. 2018), and 68 linguistics journal articles (Hu et al., in preparation); all examples verified by native Mandarin speakers.",
+    "size": "7,495 sentences",
+    "format": "N/A",
+    "annotation": "Each example has two labels: (1) a linguist label from the original source (label0), and (2) a crowd label (label1) mapped from mean ratings. Unverified sentences were rated by at least five native Mandarin speakers on a 4-point Likert scale (1 very unnatural to 4 very natural). 485 participants contributed to the annotation; the crowd label is adopted as the ground truth."
+  },
+  "methodology": {
+    "methods": [
+      "Supervised fine-tuning",
+      "Prompt-tuning",
+      "Few-shot in-context learning",
+      "Cross-lingual transfer experiments",
+      "Human evaluation",
+      "Ensembling"
+    ],
+    "metrics": [
+      "Matthews Correlation Coefficient (MCC)",
+      "Percentage of acceptable sentences (dataset statistics)"
+    ],
+    "calculation": "Matthews Correlation Coefficient (MCC) is used for both human and model performance. MCC ranges from -1 to 1; in this work MCC is multiplied by 100 and presented between -100 and 100. Human MCC is computed by measuring each subject's annotation against the final aggregated labels for their assigned sentence list and averaging across all 485 contributors. For model results, reported values are medians across five random seeds where applicable.",
+    "interpretation": "Higher MCC indicates better correlation with ground truth acceptability labels. The paper reports human MCC of 65.11; supervised models score below human (e.g., ensembled Chinese RoBERTa 59.03 MCC on test), ChatGPT scores substantially below supervised models (48.30 MCC), and InstructGPT models perform near chance on CoLAC.",
+    "baseline_results": "Human performance: 65.11 MCC. Supervised baselines: XLM-R dev 56.45 MCC, XLM-R test 54.08 MCC; prompt-tuned XLM-R dev 54.66 MCC; Chinese RoBERTa dev 56.95 MCC; Chinese RoBERTa ensembled dev 58.07 MCC, test 59.03 MCC. ChatGPT dev 47.82 MCC, test 48.30 MCC.",
+    "validation": "Dataset split into train/dev/test with same label distributions; development set used to avoid overfitting and for most reported results. Inter-run variance mitigated by reporting medians across five random seeds for training. Human verification performed with 485 native speakers; developer-verified subsets and linguist labels retained for analysis."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The paper notes that dialectal background and individual interpretation can affect acceptability judgments and that there is inter-annotator disagreement, but no demographic breakdown of annotators is provided.",
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

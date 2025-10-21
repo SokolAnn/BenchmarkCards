@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CrossNER",
+    "abbreviation": "N/A",
+    "overview": "CrossNER is a human-annotated NER dataset spanning over five diverse domains with specialized entity categories for each domain, aimed at evaluating cross-domain named entity recognition models.",
+    "data_type": "named entity recognition samples",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/zliucr/CrossNER"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a dataset and facilitate research in the NER domain adaptation area.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Named Entity Recognition"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Cross-domain NER dataset created from Wikipedia and pre-annotated using DBpedia Ontology.",
+    "size": "5,000 examples (1,000 examples across 5 domains for development and test sets, with smaller training examples in low-resource scenarios)",
+    "format": "JSON",
+    "annotation": "Manual annotation by experts after pre-annotating with DBpedia Ontology."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score"
+    ],
+    "calculation": "F1 Score calculated on the NER task to evaluate model performance.",
+    "interpretation": "Higher F1 Scores indicate better performance in recognizing and classifying named entities.",
+    "baseline_results": null,
+    "validation": "Models were validated based on performance metrics observed in the development set."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

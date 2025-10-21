@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "paraLFQA (Paraphrased Long-Form Question and Answer) and paraWP (Paraphrased Writing Prompts)",
+    "abbreviation": "paraLFQA, paraWP",
+    "overview": "These datasets are created for the purpose of detecting document-level paraphrased Machine Generated Content (MGC). The paraLFQA dataset consists of paraphrased question and answer pairs, while the paraWP dataset includes paraphrased prompts.",
+    "data_type": "question-answering pairs, text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Plagbench",
+      "M4"
+    ],
+    "resources": [
+      "https://drive.google.com/file/d/1fvsWwHKplf0-n6PnwbxIRmR6jgu62nRi/view?usp=sharing"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide datasets for further research and evaluation in detecting paraphrased machine-generated content, particularly at the document level.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text Classification"
+    ],
+    "limitations": "A. We only report three sentence patterns, or writing styles, that affect GPTZero’s detection. It could be a future direction to find ways to embed these writing styles into automatic detection methods.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The datasets consist of synthesized text pairs from original human-written content and their corresponding machine-generated revisions using specific models such as GPT and DIPPER.",
+    "size": "Around 2,000 pairs for paraLFQA; 166,247 documents for paraWP.",
+    "format": "JSON",
+    "annotation": "Automatically generated using discourse analysis tools."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "BLEU Score"
+    ],
+    "calculation": "Metrics are derived based on comparisons between machine-generated and human-written versions, with BLEU score measuring n-gram overlap.",
+    "interpretation": "Higher scores indicate better performance in distinguishing between MGC and HPC.",
+    "baseline_results": null,
+    "validation": "Best results achieved through models integrating human-writing styles and discourse features."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Licensed under a Creative Commons Attribution 4.0 International License.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TAXI (Taxonomic Inference)",
+    "abbreviation": "TAXI",
+    "overview": "TAXI is a new benchmark dataset specifically created to evaluate consistency in categorical knowledge edits in language models. It contains 11,120 multiple-choice queries for 976 edits spanning 41 categories, 164 subjects, and 183 properties.",
+    "data_type": "multiple-choice queries",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "COUNTER FACT",
+      "RIPPLEEDITS",
+      "MQuAKE"
+    ],
+    "resources": [
+      "https://github.com/derekpowell/taxi"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Evaluate knowledge editors' ability to consistently and coherently edit large language models.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Knowledge Editing Evaluation"
+    ],
+    "limitations": "The categories, subjects, and properties included in TAXI were manually selected and may not be fully representative of broader natural language categories.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Manually created dataset of categorical edits.",
+    "size": "11,120 queries",
+    "format": "JSON",
+    "annotation": "Manually created with expert verification."
+  },
+  "methodology": {
+    "methods": [
+      "Knowledge Editing with model editing techniques"
+    ],
+    "metrics": [
+      "Edit Success",
+      "Property Success",
+      "Consistency",
+      "Invariance"
+    ],
+    "calculation": "Accuracy scores computed over a set of query prompts with expected continuations associated with the newly-assigned category.",
+    "interpretation": "Higher scores indicate better consistency and accuracy in categorical knowledge editing.",
+    "baseline_results": "Human subjects achieve approximately 86.8% accuracy on the same tasks.",
+    "validation": "Validation through human evaluations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The human study included diverse participants but did not focus on demographic analysis.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "The human study was conducted under the approval of the Institutional Review Board at Arizona State University.",
+    "compliance_with_regulations": "N/A"
+  }
+}

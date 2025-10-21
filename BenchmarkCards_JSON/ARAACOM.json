@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ARAACOM: ARAbic Algerian Corpus for Opinion Mining",
+    "abbreviation": "ARAACOM",
+    "overview": "To reduce the gap of publicly-available Arabic datasets for sentiment analysis we have created ARAACOM (ARAbic Algerian Corpus for Opinion Mining), a corpus dedicated for this work. Comments are collected from the website of the Algerian newspaper Echorouk. We propose an approach to classify Arabic comments from Algerian Newspapers into positive and negative classes.",
+    "data_type": "text (newspaper comments / opinionated comments)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Arabic",
+      "Modern Standard Arabic"
+    ],
+    "similar_benchmarks": [
+      "OCA",
+      "EVOCA",
+      "ACOM"
+    ],
+    "resources": [
+      "https://www.echoroukonline.com",
+      "https://rapidminer.com/",
+      "https://www.aljazeera.net",
+      "https://www.amazon.com"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Create a corpus (ARAACOM) of Algerian Arabic newspaper comments to support sentiment analysis and to classify comments into positive and negative classes.",
+    "audience": [
+      "Researchers in Natural Language Processing",
+      "Researchers in Sentiment Analysis"
+    ],
+    "tasks": [
+      "Sentiment Analysis",
+      "Text Classification"
+    ],
+    "limitations": "Small dataset size (92 comments after balancing); neutral comments removed from the corpus; many spelling mistakes requiring manual correction; comments sometimes written partially or totally in French and manually translated to Modern Standard Arabic; corpus built from a single newspaper (Echorouk) limiting domain generality; majority of comments are negative leading to class imbalance; F_measure remains modest and needs more work to improve.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Comments collected from the Echorouk newspaper website (https://www.echoroukonline.com); articles cover several topics (News, politics, sport, culture).",
+    "size": "92 comments (3,354 tokens) after equilibrium; initially 147 comments were collected before balancing (32 positive, 91 negative, 24 neutral).",
+    "format": "Raw text (UTF-8); no formal dataset file format (e.g., CSV/JSON) specified in the paper.",
+    "annotation": "Manual annotation by the authors: comments read and labeled into binary classes Positive and Negative; neutral comments removed from the corpus."
+  },
+  "methodology": {
+    "methods": [
+      "Support Vector Machines (SVM)",
+      "Naïve Bayes (NB)",
+      "10-fold Cross-Validation",
+      "Preprocessing: tokenization, stop words removal, stemming, manual correction/translation",
+      "Feature extraction: Unigram and Bigram n-grams; Term Occurrence (TO), Term Frequency (TF), TF-IDF, Binary Term Occurrence (BTO)"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score",
+      "Accuracy"
+    ],
+    "calculation": "Precision = TP / (TP + FP). Recall = TP / (TP + FN). F1_measure = 2 × Precision × Recall / (Precision + Recall).",
+    "interpretation": "Precision and recall are complementary; F1_measure is used as a compromise between precision and recall. High precision indicates stronger predictive correctness for the positive class; higher recall indicates more complete retrieval of positive instances. The authors report strong precision in many settings but modest F1 overall.",
+    "baseline_results": "Comparison with OCA [21]: Using SVM (term frequency, Anova kernel): ARAACOM Unigram Precision=96.67%, Recall=72.50%, F1=82.86%; ARAACOM Bigram Precision=100%, Recall=71.67%, F1=83.50%. OCA Unigram Precision=86.99%, Recall=95.20%, Accuracy=90.20%; OCA Bigram Precision=87.38%, Recall=95.20%, Accuracy=90.60%. With Naïve Bayes: ARAACOM Unigram Precision=97.50%, Recall=69.17%, F1=80.93%; OCA Unigram Precision=79.99%, Recall=85.60%, Accuracy=81.80%.",
+    "validation": "10-fold cross-validation was used to train and evaluate classifiers; results compared against published results on the OCA corpus."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

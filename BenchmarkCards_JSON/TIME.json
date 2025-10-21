@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TIME (Temporal Reasoning Benchmark)",
+    "abbreviation": "TIME",
+    "overview": "TIME is a multi-level benchmark designed for evaluating temporal reasoning in real-world scenarios, consisting of 38,522 QA pairs across three datasets: TIME-WIKI, TIME-NEWS, and TIME-DIAL, each containing multiple tasks focusing on different aspects of temporal reasoning.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "TimeBench",
+      "TRAM"
+    ],
+    "resources": [
+      "https://github.com/sylvain-wei/TIME",
+      "https://huggingface.co/datasets/SylvainWei/TIME"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a rigorous evaluation framework for assessing the temporal reasoning capabilities of large language models across different real-world scenarios.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Temporal Reasoning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Various datasets including Wikidata, news articles, and multi-session dialogues",
+    "size": "38,522 question-answer pairs",
+    "format": "N/A",
+    "annotation": "Manual annotation by experts"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Exact Match (EM)",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on lexical overlap and exact matches between predicted and ground truth answers.",
+    "interpretation": "Higher F1 scores indicate better performance in temporal reasoning tasks, with specific thresholds for categorizing performance.",
+    "baseline_results": null,
+    "validation": "Extensive experiments conducted on 24 models to validate the benchmark."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Privacy",
+      "Robustness",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The benchmark utilizes anonymized data sourced from Wikidata, reducing privacy risks but still needing oversight.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

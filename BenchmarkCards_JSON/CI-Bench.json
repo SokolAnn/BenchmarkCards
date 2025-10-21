@@ -1,0 +1,99 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CI-Bench (Contextual Integrity Benchmark)",
+    "abbreviation": "CI-Bench",
+    "overview": "CI-Bench is a comprehensive synthetic benchmark for evaluating the ability of AI assistants to protect personal information during model inference, leveraging the Contextual Integrity framework.",
+    "data_type": "dialogues and emails",
+    "domains": [
+      "Healthcare",
+      "Finance",
+      "eCommerce",
+      "Education",
+      "Entertainment",
+      "Family & Friends",
+      "Government",
+      "Hospitality"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://arxiv.org/abs/2409.13903"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate AI assistants' ability to assess the appropriateness of information flow based on privacy norms defined by the Contextual Integrity framework.",
+    "audience": [
+      "ML Researchers",
+      "AI Developers",
+      "Data Privacy Experts"
+    ],
+    "tasks": [
+      "Context Understanding",
+      "Expectation Identification",
+      "Appropriateness Judgment",
+      "Response Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Synthetic generation via a multi-step pipeline from structured data.",
+    "size": "44,100 test cases",
+    "format": "text",
+    "annotation": "Annotated by human experts for appropriateness judgment."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Area Under ROC Curve (AUC)"
+    ],
+    "calculation": "Metrics are calculated based on human-annotated ground truth labels and model responses.",
+    "interpretation": "Performance is interpreted based on AUC scores, where higher scores indicate better model capability in judging appropriateness.",
+    "baseline_results": null,
+    "validation": "Evaluated AI assistants based on prototype large language models (e.g., Gemini)."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}
