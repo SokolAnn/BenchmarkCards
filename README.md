@@ -30,7 +30,6 @@ BenchmarkCards offer a standardized way to document LLM benchmarks clearly and t
 ## 🎉 Exciting News!
 Our paper *BenchmarkCards: Standardized Documentation for Large Language Model Benchmarks* has been **accepted to NeurIPS 2025 (Datasets and Benchmarks Track)** — yay!
 
----
 ## 🛠️ How to Use this Repository
 ### 🔗 Key Contents
 - 📁 **BenchmarkCards/** – Generated BenchmarkCards in Markdown. Filenames prefixed with ⭐ indicate that the benchmark author reviewed and approved the card.  
@@ -53,7 +52,7 @@ Our complete collection of over **4,000 BenchmarkCards** is now available on Hug
 - **Formats Available:** JSON, Markdown
 - **Regular Updates:** We continuously add new benchmarks - check back often!
 = load_dataset("ASokol/BenchmarkCards")
-```
+
 
 **Note:** This dataset is actively maintained and regularly updated with new benchmarks.
 
