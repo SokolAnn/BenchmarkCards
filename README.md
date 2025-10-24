@@ -44,6 +44,20 @@ Our paper *BenchmarkCards: Standardized Documentation for Large Language Model B
 
 We gratefully thank all benchmark authors who provided feedback and approval for the BenchmarkCards in this repository. **Benchmarks approved by their original authors are marked with a ⭐ in the filename.** Your collaboration is essential for making LLM evaluation more transparent, accurate, and useful. Thank you!
 
+## 📊 Access to Hugging Face
+
+**[🤗 View BenchmarkCards Dataset on Hugging Face](https://huggingface.co/datasets/ASokol/BenchmarkCards)**
+
+Our complete collection of over **4,000 BenchmarkCards** is now available on Hugging Face for easy programmatic access and integration into your research workflows.
+
+- **Formats Available:** JSON, Markdown
+- **Regular Updates:** We continuously add new benchmarks - check back often!
+= load_dataset("ASokol/BenchmarkCards")
+```
+
+**Note:** This dataset is actively maintained and regularly updated with new benchmarks.
+
+---
 
 ## 🚧 BenchmarkCards Platform 🚧
 
