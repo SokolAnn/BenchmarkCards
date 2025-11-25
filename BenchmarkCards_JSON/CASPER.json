@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CASPER (CAsual Speech in Peer Engagement Recordings)",
+    "abbreviation": "CASPER",
+    "overview": "The paper introduces a comprehensive speech dataset named CASPER, comprising 200 hours of recorded English conversations, of which 158 hours are spontaneous speech, aiming to address the scarcity of high-quality spontaneous speech data.",
+    "data_type": "audio",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Switchboard",
+      "GigaSpeech"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/CASPER-SSSD/CASPER/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a dataset that captures the natural flow of dialogue, including disfluencies, pauses, and speaker interactions, aimed at improving downstream tasks in speech processing.",
+    "audience": [
+      "ML Researchers",
+      "Speech Processing Practitioners"
+    ],
+    "tasks": [
+      "Automatic Speech Recognition",
+      "Speaker Diarization",
+      "Topic Detection"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Recorded conversations between pairs of participants using personal devices.",
+    "size": "200 hours of recorded audio, 158 hours actual speech",
+    "format": "WAV",
+    "annotation": "Manual annotation for transcripts and speaker metadata."
+  },
+  "methodology": {
+    "methods": [
+      "Manual evaluation by transcription",
+      "Automatic Speech Recognition"
+    ],
+    "metrics": [
+      "Word Error Rate (WER)",
+      "Diarization Error Rate (DER)",
+      "Jaccard Error Rate (JER)"
+    ],
+    "calculation": "Metrics calculated using reference transcripts compared to model outputs.",
+    "interpretation": "Lower WER indicates better performance for ASR models on spontaneous speech.",
+    "baseline_results": "Whisper-large-v3 achieved WER of 0.31, SeamlessM4T-large achieved WER of 0.53.",
+    "validation": "Random sampling of conversations for evaluation of ASR and diarization tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Privacy",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Includes demographic metadata of speakers such as accent, age, and gender.",
+    "harm": "Potential exposure of personal data and bias in accent representation."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "De-identification of audio and metadata to protect participant identity.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Participants signed informed consent forms prior to data collection.",
+    "compliance_with_regulations": "N/A"
+  }
+}

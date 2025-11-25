@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CAMPHOR Dataset",
+    "abbreviation": "N/A",
+    "overview": "The CAMPHOR dataset contains multi-agent execution trajectories focused on mobile assistant use cases, annotated to demonstrate how a multi-agent system fetches personal information to solve user queries by breaking down tasks into smaller actions.",
+    "data_type": "prompt-completion pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a dataset for training and evaluating on-device Small Language Models (SLMs) in multi-agent planning and personalized query understanding.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Task Completion"
+    ],
+    "limitations": "The personalized user query parsing task is restricted to single interactions, oversimplifying the problem space.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The data is generated using GPT-4o based on a device state and global function definitions to create user queries and their respective function call trajectories.",
+    "size": "3,410 queries, resulting in 35,444 prompt-completion pairs",
+    "format": "N/A",
+    "annotation": "Annotated with human oversight and simulation of personal device states to capture task completion trajectories."
+  },
+  "methodology": {
+    "methods": [
+      "End-to-end evaluation on task completion"
+    ],
+    "metrics": [
+      "Tool F1",
+      "Delexicalized Plan F1",
+      "Plan F1"
+    ],
+    "calculation": "Metrics are calculated based on the accuracy of function names and parameters in task completion calls.",
+    "interpretation": "Higher scores indicate better accuracy in executing function calls as per user intent.",
+    "baseline_results": "Fine-tuned SLMs outperform state-of-the-art LLMs in task completion metrics.",
+    "validation": "The dataset includes a validation set and metrics were evaluated against both LLM baselines and fine-tuned SLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

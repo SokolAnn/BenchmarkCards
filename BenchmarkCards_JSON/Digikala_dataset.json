@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Digikala dataset",
+    "abbreviation": "N/A",
+    "overview": "The authors collected opinions from the DigiKala website to create an evaluation protocol for Persian/Arabic multi-domain sentiment analysis. They collected 50,799 opinions in 10 different areas and used this dataset (and an Amazon Arabic dataset) to evaluate multi-domain polarity detection and domain-of-belonging detection.",
+    "data_type": "text (customer review / opinion texts)",
+    "domains": [
+      "Natural Language Processing",
+      "E-commerce (Product Reviews)"
+    ],
+    "languages": [
+      "Persian",
+      "Arabic"
+    ],
+    "similar_benchmarks": [
+      "Oca (Opinion Corpus for Arabic)"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Provide a multi-domain sentiment analysis evaluation protocol/dataset for Persian and Arabic and to evaluate the proposed WcapsuleE method for simultaneous domain identification and sentiment polarity detection.",
+    "audience": [],
+    "tasks": [
+      "Sentiment Analysis",
+      "Domain Identification"
+    ],
+    "limitations": "Collected data is highly unbalanced; the number of negative samples is much less than positive samples.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected opinions from the DigiKala website (Persian) and collected opinions from Amazon (Arabic).",
+    "size": "50,799 examples",
+    "format": "N/A",
+    "annotation": "Manual annotation. Polarity labeling defined as comments with a positive score of 4 or higher labeled positive, and those with less than two (stars) labeled negative."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics computed from confusion matrix",
+      "Train/test split evaluation (80% train / 20% test)",
+      "Cross-validation (5-fold)"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Precision",
+      "Recall",
+      "F1 Score",
+      "Geometric mean (Gmean)"
+    ],
+    "calculation": "Metrics are calculated from the confusion matrix using formulas provided in the paper: Precision = TP / (TP + FP); Recall = TP / (TP + FN); F1 Score = 2 * Precision * Recall / (Precision + Recall); Accuracy = (TP + TN) / (TP + TN + FP + FN); Geometric mean (Gmean) as defined in the paper.",
+    "interpretation": "Higher metric values indicate better performance. The paper compares models using these metrics but does not provide absolute thresholds for good vs. poor performance.",
+    "baseline_results": "Persian (80% train / 20% test): WcapsuleE test polarity accuracy = 0.9489 (train 0.9565); WcapsuleE + cost sensitivity test polarity accuracy = 0.9699 (train 0.9744). Domain identification: WcapsuleE test accuracy = 0.8020; WcapsuleE + cost sensitivity = 0.8212. Average per-domain accuracy (Persian): WcapsuleE = 0.9144; WcapsuleE + cost sensitivity = 0.9173. Arabic dataset: WcapsuleE polarity accuracy = 0.8607; WcapsuleE + cost sensitivity = 0.8698. Arabic domain classification: WcapsuleE = 0.9609; WcapsuleE + cost sensitivity = 0.9695. Comparisons with baseline models (CNN-MultiChannel, Character-level CNN, NeuroSent, Bi-GRUCapsule) are reported in tables.",
+    "validation": "80% training / 20% testing split and cross-validation with fold=5 (5-fold cross-validation) are used for validation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Governance"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Governance",
+          "subcategory": [
+            "Lack of testing diversity"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

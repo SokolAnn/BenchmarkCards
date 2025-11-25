@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CloudAPIBench",
+    "abbreviation": "N/A",
+    "overview": "CloudAPIBench is a benchmark specifically designed to evaluate Code LLMs’ abilities to invoke cloud APIs, addressing API hallucinations in various software engineering contexts.",
+    "data_type": "synthetic tasks for API invocations",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Science"
+    ],
+    "languages": [
+      "Python"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/youtype/mypy_boto3_builder/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To systematically study real-world API hallucinations and evaluate Code LLMs' capabilities in invoking cloud APIs effectively.",
+    "audience": [
+      "ML Researchers",
+      "Software Engineers",
+      "Developers"
+    ],
+    "tasks": [
+      "API Invocation",
+      "Code Completion"
+    ],
+    "limitations": "CloudAPIBench is a Python only benchmark containing synthetic prompts that may not represent all real-world cloud API invocations across different programming languages and contexts.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated from API specifications and documentation from AWS and Azure.",
+    "size": "622 tasks",
+    "format": "Synthetic code prompts",
+    "annotation": "Includes frequency annotations of APIs based on occurrences in The Stack v2."
+  },
+  "methodology": {
+    "methods": [
+      "Evaluation on synthetic tasks",
+      "Validation against API syntax through dummy function stubs"
+    ],
+    "metrics": [
+      "Valid API Invocation",
+      "Frequency of API Usage"
+    ],
+    "calculation": "The valid API invocation metric is computed based on whether an API is invoked according to its syntax as determined by its required arguments.",
+    "interpretation": "Higher valid API invocation rates indicate better performance of Code LLMs in accurately invoking APIs.",
+    "baseline_results": "Performance results detailed across multiple models including GPT-4o, StarCoder2, etc.",
+    "validation": "Performance validated through API invocation success rates across task categories."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

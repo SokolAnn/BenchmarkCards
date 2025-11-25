@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Code Review Without Borders: Evaluating Synthetic vs. Real Data for Review Recommendation",
+    "abbreviation": "N/A",
+    "overview": "The paper presents a novel approach utilizing Large Language Models (LLMs) to generate synthetic code review datasets by translating Java code changes into C++. This allows for training supervised classifiers in low-resource settings where labeled data is scarce, demonstrating that LLM-generated data can effectively approximate real-world review patterns.",
+    "data_type": "code review datasets",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Java",
+      "C++"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To automate the classification of code changes that require manual review using synthetic and real data.",
+    "audience": [
+      "Software Engineers",
+      "Machine Learning Researchers",
+      "Developers"
+    ],
+    "tasks": [
+      "Code Review Classification"
+    ],
+    "limitations": "The models trained on real data outperform those trained on synthetic data, but the gap suggests that synthetic data can be a practical substitute when real labeled data is scarce.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Java code changes dataset from Automating Code Review Activities by Large-Scale Pre-training.",
+    "size": "50,000 code changes",
+    "format": "CSV",
+    "annotation": "Labels indicating whether each code change requires manual review."
+  },
+  "methodology": {
+    "methods": [
+      "Model-based evaluation",
+      "Data translation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated by evaluating the classifier's predictions against a held-out test set of C++ code changes.",
+    "interpretation": "Higher values of accuracy, precision, recall, and F1 score indicate better performance in correctly classifying review needs.",
+    "baseline_results": "Accuracy: 0.65, Precision: 0.64, Recall: 0.65, F1 Score: 0.64 for real data; Accuracy: 0.65, Precision: 0.65, Recall: 0.68, F1 Score: 0.66 for synthetic data.",
+    "validation": "The performance of the classifier trained on synthetic and real data is compared using the same held-out test set."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Inaccurate code reviews leading to potential bugs and inconsistencies in software."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

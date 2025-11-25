@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "EVA-SCORE (Extraction-and-Validation Score)",
+    "abbreviation": "EVA-SCORE",
+    "overview": "EVA-SCORE is a new evaluation metric for assessing the informativeness of abstractive long-form summarization by extracting atomic facts from candidate and reference summaries, identifying overlap, and validating information using LLMs.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://arxiv.org/abs/2407.04969"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide an objective and quantitative analysis for evaluating the informativeness of long-form summaries.",
+    "audience": [
+      "ML Researchers",
+      "Evaluation Metric Developers"
+    ],
+    "tasks": [
+      "Summarization Evaluation"
+    ],
+    "limitations": "EVA-SCORE is time-consuming to run and primarily focuses only on informativeness.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Datasets used include CNN DailyMail, PubMed, GovReport, arXiv, and BookSum for testing EVA-SCORE.",
+    "size": "N/A",
+    "format": "N/A",
+    "annotation": "Manual annotation by five expert annotators for the evaluation process."
+  },
+  "methodology": {
+    "methods": [
+      "Atomic Fact Generation",
+      "Atomic Fact Chain Generation",
+      "Document-level Relation Extraction",
+      "LLM Validation"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "EVA-SCORE is defined as the harmonic mean of Precision and Recall.",
+    "interpretation": "Higher scores indicate better alignment with human judgments.",
+    "baseline_results": "EVA-SCORE shows the highest correlations with human evaluations compared to traditional metrics like ROUGE and BERTScore.",
+    "validation": "Validation through multiple annotators to ensure reliability."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "N/A"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

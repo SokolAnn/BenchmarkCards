@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ATLAS: Benchmarking and Adapting LLMs for Global Trade via Harmonized Tariff Code Classification",
+    "abbreviation": "ATLAS",
+    "overview": "We introduce the first benchmark for HTS code classification, derived from the U.S. Customs Rulings Online Search System (CROSS).",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/flexifyai/cross_rulings_hts_dataset_for_tariffs",
+      "https://huggingface.co/flexifyai/atlas-llama3.3-70b-hts-classification",
+      "https://flexifyai-atlas-llama3-3-70b-hts-demo.hf.space/?logs=container&__theme=system&deep_link=FFJuTJsv_fM"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To establish tariff classification as a challenging new frontier for LLM evaluation.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Hierarchical Classification",
+      "Reasoning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "U.S. Customs Rulings Online Search System (CROSS)",
+    "size": "18,731 rulings",
+    "format": "Structured text format",
+    "annotation": "Automated information extraction from legal rulings"
+  },
+  "methodology": {
+    "methods": [
+      "Supervised Fine-Tuning"
+    ],
+    "metrics": [
+      "Fully correct classification",
+      "Partially correct classification",
+      "Average digit-level accuracy"
+    ],
+    "calculation": "Metrics calculated based on correctness of HTS US code matches.",
+    "interpretation": "Higher percentages in fully and partially correct classifications indicate better model performance in HTS code classification.",
+    "baseline_results": null,
+    "validation": "Random split of dataset into training (18,254), validation (200), and test (200) sets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "VLAS (Vision-Language-Action Model with Speech Instructions for Customized Robot Manipulation)",
+    "abbreviation": "VLAS",
+    "overview": "This paper presents VLAS, a novel end-to-end Vision-Language-Action model that integrates speech recognition directly into the robot policy model, allowing robots to understand spoken commands and perform manipulation tasks. Additionally, two datasets, SQA (Speech Question Answering) and CSI (CALVIN with Speech Instructions), are introduced to support the training and evaluation of VLAS.",
+    "data_type": "question-answering pairs, audio-speech instruction pairs",
+    "domains": [
+      "Robotics",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/whichwhichgone/VLAS"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of this benchmark is to evaluate the effectiveness of the VLAS model in robot manipulation tasks using speech instructions, enabling customized interactions between humans and robots.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Robotics Developers"
+    ],
+    "tasks": [
+      "Robot Manipulation",
+      "Speech Recognition"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "SQA and CSI datasets",
+    "size": "185,000 examples for SQA, 194,000 examples for CSI",
+    "format": "CSV, JSON",
+    "annotation": "Speech instructions were generated using text-to-speech synthesis from textual instructions paired with images."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Metrics are calculated based on the success rate of the VLAS model in performing robot manipulation tasks.",
+    "interpretation": "Higher accuracy represents better performance in correctly executing tasks based on speech instructions.",
+    "baseline_results": "VLAS was evaluated against existing VLA models on the CALVIN benchmark, showing improved performance in handling speech instructions.",
+    "validation": "Evaluation through extensive experimental results on custom benchmarks for robot manipulation tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

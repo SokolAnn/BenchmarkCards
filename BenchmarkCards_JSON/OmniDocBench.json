@@ -1,0 +1,98 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "OmniDocBench",
+    "abbreviation": "N/A",
+    "overview": "OmniDocBench is a novel benchmark featuring high-quality annotations across nine document sources, aimed at evaluating diverse PDF document parsing methods through flexible, multi-level evaluations.",
+    "data_type": "PDF pages with comprehensive annotations for layout and content recognition",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "PubLayNet",
+      "DocBank",
+      "TableBank"
+    ],
+    "resources": [
+      "https://github.com/opendatalab/OmniDocBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a rigorous and comprehensive evaluation for document parsing models across pipeline-based and end-to-end paradigms.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Document Parsing",
+      "Content Recognition"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Diverse origins including academic papers, textbooks, handwritten notes, and newspapers.",
+    "size": "981 pages",
+    "format": "PDF",
+    "annotation": "Annotated using a combination of automated tools and expert review processes."
+  },
+  "methodology": {
+    "methods": [
+      "End-to-end evaluation",
+      "Task-specific evaluation",
+      "Attribute-based evaluation"
+    ],
+    "metrics": [
+      "Normalized Edit Distance",
+      "Tree-Edit-Distance-based Similarity (TEDS)",
+      "Character Detection Matching (CDM)"
+    ],
+    "calculation": "Metrics are calculated based on comparison between model outputs and ground truth annotations.",
+    "interpretation": "Scores are averaged at the sample level to obtain final results, with specific thresholds applied for matching.",
+    "baseline_results": "N/A",
+    "validation": "Evaluation procedures ensured through a comprehensive pipeline involving element extraction, matching algorithms, and metric calculations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

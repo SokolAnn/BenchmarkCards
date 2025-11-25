@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "GAOKAO-MM (Chinese Human-Level Benchmark for Multimodal Models Evaluation)",
+    "abbreviation": "GAOKAO-MM",
+    "overview": "GAOKAO-MM is a multimodal benchmark based on the Chinese College Entrance Examination (GAOKAO), comprising 646 questions across 8 subjects and featuring diverse images. It evaluates large vision-language models (LVLMs) on human-level capabilities including perception, understanding, knowledge, and reasoning, presenting a significant challenge as none of the tested models achieved over 50% accuracy.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Education"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "VQA",
+      "OK-VQA",
+      "TextVQA"
+    ],
+    "resources": [
+      "https://github.com/OpenMOSS/GAOKAO-MM"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Develop a comprehensive benchmark to assess multimodal abilities of LVLMs in a Chinese educational context.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Educational Researchers"
+    ],
+    "tasks": [
+      "Multimodal Question Answering"
+    ],
+    "limitations": "The benchmark has room for improvement in scalability and balanced distribution of data.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "GAOKAO papers from 2010 to 2023 collected from the Internet.",
+    "size": "646 questions and 897 images",
+    "format": "PDF",
+    "annotation": "Manually extracted multi-choice questions; images processed using OCR."
+  },
+  "methodology": {
+    "methods": [
+      "Zero-shot evaluation",
+      "Rule-based answer extraction"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy is calculated based on the percentage of correct answers across the evaluated models.",
+    "interpretation": "Models with accuracies below 50% were identified as having considerable room for improvement.",
+    "baseline_results": null,
+    "validation": "Models were evaluated through prompts designed to facilitate reasoning processes."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The benchmark addresses diverse educational subjects relevant to Chinese culture.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "No private or sensitive information is included in the dataset.",
+    "data_licensing": "GAOKAO questions are considered to be in the public domain in China.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

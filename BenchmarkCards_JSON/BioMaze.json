@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "BioMaze",
+    "abbreviation": "N/A",
+    "overview": "BioMaze is a benchmark designed to evaluate LLMs’ ability to understand and reason about biological pathways, containing 5.1K high-quality, complex biological pathway problems derived from real research.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Biological Sciences"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "BioASQ-QA",
+      "ChatPathway"
+    ],
+    "resources": [
+      "https://github.com/zhao-ht/BioMaze"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the reasoning abilities of LLMs in biological tasks through the lens of biological pathways.",
+    "audience": [
+      "ML Researchers",
+      "Biologists",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Biological Pathway Reasoning",
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated from over 6,000 biological pathway research papers, involving True/False and open-ended questions.",
+    "size": "5,100 questions",
+    "format": "N/A",
+    "annotation": "Questions reviewed and validated by human experts."
+  },
+  "methodology": {
+    "methods": [
+      "Chain-of-Thought (CoT)",
+      "Graph-Augmented Reasoning",
+      "P ATHSEEKER"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy for True/False tasks is averaged across True and False labels; open-ended tasks involve comparing generated answers to ground truth.",
+    "interpretation": "Higher accuracy indicates better reasoning ability in biological pathways.",
+    "baseline_results": "CoT and various graph-augmented methods including PATHSEEKER were used for comparison.",
+    "validation": "Evaluation results across various biological reasoning tasks were validated."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

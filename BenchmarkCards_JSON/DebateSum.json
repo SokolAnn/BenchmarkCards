@@ -1,0 +1,77 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DebateSum",
+    "abbreviation": "N/A",
+    "overview": "DebateSum is a large-scale argument mining and summarization dataset consisting of 187,386 unique pieces of evidence with corresponding arguments and extractive summaries. It was created using data compiled by competitors within the National Speech and Debate Association over a 7-year period, aiming to facilitate the automation of research work in competitive policy debate.",
+    "data_type": "argument-evidence-summary triplets",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/Hellisotherpeople/DebateSum"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive dataset for argument mining and summarization in the context of competitive policy debate, enabling the development of natural language processing systems for assisting debaters.",
+    "audience": [
+      "ML Researchers",
+      "Debate Competitors"
+    ],
+    "tasks": [
+      "Summarization",
+      "Argument Mining"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Gathered from evidence produced during debate camps and competitions under the National Speech and Debate Association, leveraging the Open Evidence Project.",
+    "size": "187,386 documents",
+    "format": "N/A",
+    "annotation": "Manually produced and annotated by competitors and coaches."
+  },
+  "methodology": {
+    "methods": [
+      "Token classification",
+      "Fine-tuning transformer models"
+    ],
+    "metrics": [
+      "ROUGE"
+    ],
+    "calculation": "Metrics are calculated based on the ROUGE score applied to the summaries generated compared to the ground truth summaries.",
+    "interpretation": "Higher ROUGE scores indicate better summarization quality, with models evaluated based on F1 scores.",
+    "baseline_results": null,
+    "validation": "The models were validated against a test split of 18,738 documents."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": []
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Creative Commons Attribution 4.0 International License",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

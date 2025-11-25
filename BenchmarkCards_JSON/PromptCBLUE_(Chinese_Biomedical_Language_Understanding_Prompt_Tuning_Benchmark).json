@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PromptCBLUE (Chinese Biomedical Language Understanding Prompt Tuning Benchmark)",
+    "abbreviation": "N/A",
+    "overview": "PromptCBLUE is a large-scale multi-task prompt tuning benchmark dataset designed for evaluating the multi-task capabilities of Chinese medical language models across various biomedical tasks such as medical entity recognition, text classification, natural language inference, dialogue understanding, and content generation.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Healthcare"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "CBLUE (Chinese Biomedical Language Understanding Evaluation)"
+    ],
+    "resources": [
+      "https://tianchi.aliyun.com/competition/entrance/532084/introduction",
+      "https://github.com/michael-wzhu/PromptCBLUE"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation platform for Chinese biomedical language models and to facilitate the development of applications in the medical domain.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Medical Entity Recognition",
+      "Medical Text Classification",
+      "Medical Natural Language Inference",
+      "Medical Dialogue Understanding",
+      "Medical Content Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset is built by transforming traditional biomedical NLU tasks from the CBLUE benchmark into a prompt-response format.",
+    "size": "82,600 examples in total (with specific splits for each task)",
+    "format": "JSON",
+    "annotation": "Annotated by human experts, with prompt templates validated by both NLP and medical professionals."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Micro-F1 Score",
+      "Macro-F1 Score",
+      "ROUGE-L"
+    ],
+    "calculation": "Metrics are calculated based on the generated outputs compared to the ground truth for each task.",
+    "interpretation": "Higher scores indicate better performance in extracting information and generating content according to provided tasks.",
+    "baseline_results": "The evaluation included results from popular Chinese LLMs under different fine-tuning techniques, with comparative performance reported.",
+    "validation": "The dataset was validated through expert reviews and random sampling of annotations to ensure quality."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

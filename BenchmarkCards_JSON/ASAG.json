@@ -1,0 +1,68 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ASAG2024 (A Combined Benchmark for Short Answer Grading)",
+    "abbreviation": "ASAG",
+    "overview": "The ASAG2024 benchmark facilitates the comparison of automated grading systems and combines seven commonly used short-answer grading datasets in a common structure and grading scale.",
+    "data_type": "question-answer-grade triplets",
+    "domains": [
+      "Education"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/Mey erger/ASAG2024"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive benchmark for the assessment of automated short-answer grading systems.",
+    "audience": [
+      "ML Researchers",
+      "Education Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Short Answer Grading"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Combined from seven commonly used short-answer grading datasets.",
+    "size": "19,000 question-answer-grade triplets",
+    "format": "N/A",
+    "annotation": "Each dataset must contain reference answers, provided answers by humans, and grades."
+  },
+  "methodology": {
+    "methods": [
+      "Automated grading methods",
+      "Mean baseline prediction"
+    ],
+    "metrics": [
+      "Root Mean Square Error (RMSE)",
+      "Weighted RMSE (wRMSE)"
+    ],
+    "calculation": "wRMSE is calculated by weighting the grades according to how often similar grades appear in the data source.",
+    "interpretation": "Lower RMSE values indicate better accuracy in grading predictions.",
+    "baseline_results": "Mean error of GPT-3.5-turbo is 0.30 and GPT-4o is 0.27.",
+    "validation": "Initial evaluations of existing automated grading solutions are presented."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

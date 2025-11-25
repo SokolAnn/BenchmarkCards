@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MultiADE: A Multi-domain benchmark for Adverse Drug Event extraction",
+    "abbreviation": "MultiADE",
+    "overview": "MultiADE is a multi-domain benchmark for adverse drug event extraction comprising several existing datasets sampled from different text types along with a newly created dataset CADECv2.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "CADEC",
+      "n2c2",
+      "MADE",
+      "PHEE",
+      "PsyTAR"
+    ],
+    "resources": [
+      "https://data.csiro.au/collection/csiro:62387"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To build a single model for adverse drug event extraction that works well on various text types.",
+    "audience": [
+      "ML Researchers",
+      "Healthcare Practitioners"
+    ],
+    "tasks": [
+      "Named Entity Recognition"
+    ],
+    "limitations": "The generalisation of the trained models is far from perfect, making it infeasible to deploy models across different text types.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Existing datasets from previous adverse drug event extraction works and a newly created dataset CADECv2.",
+    "size": "3,548 online posts, 1,250 CADEC posts, 505 n2c2 summaries, 1,089 MADE records, 4,827 PHEE articles, and 3,147 PsyTAR posts.",
+    "format": "N/A",
+    "annotation": "Annotated by human annotators following detailed annotation guidelines."
+  },
+  "methodology": {
+    "methods": [
+      "Fine-tuned span-based models",
+      "LLM with in-context learning"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Accuracy"
+    ],
+    "calculation": "F1 scores calculated based on model predictions and ground truth annotations.",
+    "interpretation": "Higher F1 scores indicate better model performance on the task.",
+    "baseline_results": null,
+    "validation": "Tested against multiple datasets and compared using cross-domain generalization."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

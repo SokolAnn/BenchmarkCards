@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MINT (Multi-turn Interaction with Tools and Language Feedback)",
+    "abbreviation": "MINT",
+    "overview": "MINT is a benchmark that evaluates Large Language Models' ability to solve tasks through multi-turn interactions, utilizing both external tools and user-provided natural language feedback. It aims to provide an evaluation framework that reflects real-world user-LLM interactions.",
+    "data_type": "multi-turn interaction scenarios",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://xingyaoww.github.io/mint-bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate LLMs' performance in multi-turn interactions utilizing tools and natural language feedback, ensuring better alignment with real-world applications.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Code Generation",
+      "Question Answering",
+      "Decision Making"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Repurposed datasets for evaluation including reasoning, coding, and decision-making tasks, specifically collections from HotpotQA, GSM8K, MATH, and MMLU.",
+    "size": "29,307 instances initially filtered to 586 for evaluation",
+    "format": "N/A",
+    "annotation": "The dataset instances have been curated for their necessity of multi-turn interaction to solve."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Performance analysis across LLMs"
+    ],
+    "metrics": [
+      "Success Rate"
+    ],
+    "calculation": "Success Rate is calculated as the percentage of successful task completions across evaluation instances.",
+    "interpretation": "A higher Success Rate indicates a better performance in multi-turn task-solving capabilities.",
+    "baseline_results": "Comparison with 20 open- and closed-source LLMs shows varying capabilities, with metrics evaluated for performance improvements.",
+    "validation": "Comprehensive evaluation and analysis against established benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

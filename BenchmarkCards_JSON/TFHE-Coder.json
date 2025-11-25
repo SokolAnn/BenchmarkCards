@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TFHE-Coder (Fully Homomorphic Encryption Code Generation)",
+    "abbreviation": "TFHE-Coder",
+    "overview": "This work establishes the first benchmark for TFHE code generation, demonstrating how LLMs, when augmented with domain-specific feedback, can bridge the expertise gap in FHE code generation.",
+    "data_type": "code generation",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Science"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/jinaai/jina-embeddings-v2-base-code",
+      "https://tfhe.github.io/tfhe/gate-bootstrapping-api.html"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate LLM performance in generating TFHE code from natural language specifications.",
+    "audience": [
+      "ML Researchers",
+      "Cryptography Experts",
+      "Developers"
+    ],
+    "tasks": [
+      "Code Generation"
+    ],
+    "limitations": "The most challenging function remains the ReLU, with consistently low performance across all models.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Experiments conducted on TFHE code generation with various LLMs.",
+    "size": "N/A",
+    "format": "Code",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Iterative feedback via compiler diagnostics",
+      "Retrieval-augmented generation (RAG)",
+      "Few-shot prompting"
+    ],
+    "metrics": [
+      "Pass@k (comp)",
+      "Pass@k (func)",
+      "CrystalBLEU"
+    ],
+    "calculation": "Metrics are calculated based on the proportion of generated code that compiles and executes correctly, as well as similarity to reference implementations.",
+    "interpretation": "Higher scores indicate better compilability and functional correctness.",
+    "baseline_results": "GPT-4o demonstrated the highest performance with near-perfect scores across tasks.",
+    "validation": "Evaluation conducted using multiple mainstream LLMs under controlled experimental conditions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Misleading code generation"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

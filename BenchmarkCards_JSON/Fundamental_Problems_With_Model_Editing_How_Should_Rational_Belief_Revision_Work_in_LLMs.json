@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Fundamental Problems With Model Editing: How Should Rational Belief Revision Work in LLMs?",
+    "abbreviation": "N/A",
+    "overview": "This paper critiques the standard formulation of the model editing problem and proposes a semi-synthetic testbed for model editing research. It introduces a dataset based on Wikidata for evaluating model edits against labels given by an idealized Bayesian agent.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/peterbhase/LLM-belief-revision"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a formal testbed for evaluating model editing methods in language models against Bayesian standards.",
+    "audience": [
+      "ML Researchers",
+      "AI Ethics Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Model Editing",
+      "Belief Revision"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated from Wikidata with a focus on factual entailment and logical coherence.",
+    "size": "204 million tokens",
+    "format": "Text",
+    "annotation": "Developed with semi-synthetic methods including Bayesian posteriors for training and evaluation."
+  },
+  "methodology": {
+    "methods": [
+      "LoRA Fine-tuning",
+      "Bayesian Model Fitting"
+    ],
+    "metrics": [
+      "Generative Accuracy",
+      "Probabilistic Coherence",
+      "Logical Coherence"
+    ],
+    "calculation": "Metrics are calculated by comparing model probabilities against Bayesian posterior probabilities and logical axioms.",
+    "interpretation": "Better model edits should achieve high generative accuracy and maintain logical coherence with Bayesian principles.",
+    "baseline_results": null,
+    "validation": "The benchmark is validated against a Bayesian model’s expectations after editing an LLM."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

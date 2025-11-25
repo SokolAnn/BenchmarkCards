@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "name": "Hallu-PI",
+    "overview": "Hallu-PI is the first benchmark designed to evaluate hallucination in Multi-modal Large Language Models (MLLMs) within perturbed inputs, consisting of seven perturbed scenarios with 1,260 images across 11 object categories.",
+    "data_type": "Images",
+    "domains": [
+      "Visual-language understanding",
+      "Visual-language generation"
+    ],
+    "languages": [
+      "N/A"
+    ],
+    "similar_benchmarks": [
+      "POPE",
+      "M-HalDetect",
+      "HaELM",
+      "Halle-Switch",
+      "AMBER"
+    ],
+    "resources": [
+      "https://github.com/NJUNLP/Hallu-PI"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation of hallucinations in MLLMs when exposed to perturbed inputs.",
+    "audience": [
+      "Researchers",
+      "Developers of MLLMs",
+      "AI practitioners"
+    ],
+    "tasks": [
+      "Evaluate hallucination performance",
+      "Assess performance across different perturbation types"
+    ],
+    "limitations": null,
+    "out_of_scope_uses": [
+      "Evaluation of MLLMs without perturbed inputs"
+    ]
+  },
+  "data": {
+    "source": "Collected from various internet sources focusing on high-quality images.",
+    "size": "1,260 images",
+    "format": "N/A",
+    "annotation": "Includes detailed annotations for hallucination types such as existence, attribute, and relation."
+  },
+  "methodology": {
+    "methods": [
+      "Manual annotation of images",
+      "Evaluation of 12 MLLMs under perturbed input conditions"
+    ],
+    "metrics": [
+      "CHAIR",
+      "Cover",
+      "Hal",
+      "Cog",
+      "Accuracy+",
+      "PI-Score"
+    ],
+    "calculation": "PI-Score = Avg(α(1−Hal),(1−α)Accuracy+)",
+    "interpretation": "Lower metrics indicate higher hallucination occurrences.",
+    "baseline_results": null,
+    "validation": "Extensive experiments conducted on multiple MLLMs like GPT-4V and Gemini-Pro Vision."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Hallucination due to perturbed inputs",
+      "Ability to handle different types of hallucinations"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": [
+      "Incorrect information generation",
+      "Potential risks in high-stakes applications (e.g. medical diagnosis)"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

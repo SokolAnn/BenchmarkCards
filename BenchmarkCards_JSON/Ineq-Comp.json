@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Ineq-Comp",
+    "abbreviation": "N/A",
+    "overview": "Ineq-Comp is a benchmark for evaluating the compositional reasoning abilities of formal theorem provers on inequalities. It is created using 75 seed problems and extends through 150 additional problems involving human-intuitive transformations to assess models' performance on compositional reasoning.",
+    "data_type": "algebraic inequality problems",
+    "domains": [
+      "Mathematics"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MiniF2F",
+      "ProofNet",
+      "PutnamBench"
+    ],
+    "resources": [
+      "https://github.com/haoyuzhao123/LeanIneqComp"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate and measure the compositional reasoning ability of automated theorem provers in the context of mathematical inequalities.",
+    "audience": [
+      "Researchers in formal mathematics",
+      "Developers of automated theorem proving systems"
+    ],
+    "tasks": [
+      "Automated Theorem Proving"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated set of inequality problems, with each seed problem verified in Lean 4 and accompanied by formal proofs.",
+    "size": "75 seed problems and 150 additional transformed problems plus 50 real-world problems",
+    "format": "Lean 4 code",
+    "annotation": "Verified Lean 4 proofs accompanying each seed problem."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Pass@N accuracy"
+    ],
+    "calculation": "Metrics are calculated based on whether at least one of N generated proofs for a given problem is correct.",
+    "interpretation": "Higher pass@N indicates better compositional reasoning ability of the theorem provers.",
+    "baseline_results": null,
+    "validation": "Benchmarks are validated through results of existing models and demonstrable performance analyses."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

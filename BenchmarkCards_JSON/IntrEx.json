@@ -1,0 +1,71 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "IntrEx: A Dataset for Modeling Engagement in Educational Conversations",
+    "abbreviation": "IntrEx",
+    "overview": "IntrEx is the first large dataset annotated for interestingness and expected interestingness in teacher-student interactions, capturing how engagement evolves across dialogue sequences.",
+    "data_type": "conversation annotations",
+    "domains": [
+      "Natural Language Processing",
+      "Education"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/collections/XingweiT/intrex-68a8f2c97688157066860ae2"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a dataset that models engagement in educational dialogues for second-language learners.",
+    "audience": [
+      "ML Researchers",
+      "Educators",
+      "Curriculum Developers"
+    ],
+    "tasks": [
+      "Engagement Modeling",
+      "Conversational Analysis"
+    ],
+    "limitations": "Annotator Proficiency Bias may underrepresent lower-proficiency learners' perspectives.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Teacher-Student Chatroom Corpus (TSCC)",
+    "size": "5,801 sequences",
+    "format": "CSV",
+    "annotation": "Comparison-based ratings by over 100 second-language learners."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Agreement rates (AC2)",
+      "Interestingness scores"
+    ],
+    "calculation": "Interestingness and expected interestingness scores are computed based on the annotated ratings following a comparison-based approach.",
+    "interpretation": "Higher scores indicate greater engagement and interest observed in the dialogues.",
+    "baseline_results": "Small instruction-tuned models outperformed larger models like GPT-4 in predicting interest ratings.",
+    "validation": "Annotators provided ratings for different conversations to enhance reliability and inter-annotator agreement."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "The annotator backgrounds included a range of ages and multiple first languages, primarily from Greek, Polish, and Portuguese speakers.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All data has been anonymized before public release, and participants were informed about the anonymization procedures.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Participants provided informed consent prior to participation.",
+    "compliance_with_regulations": "Ethics approval obtained from the institutional review board."
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Robustness Benchmark for Reference-Free Dialogue Evaluation",
+    "abbreviation": "N/A",
+    "overview": "This benchmark evaluates the robustness of reference-free dialogue metrics against four categories of adversarial attacks: speaker tag prefixes, static responses, ungrammatical responses, and repeated conversational context.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "DialogRPT",
+      "UniEval"
+    ],
+    "resources": [
+      "https://github.com/JVasselli/dialogue-metric-robustness"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To analyze the robustness of dialogue evaluation metrics and provide a nuanced evaluation framework for assessing dialogue systems.",
+    "audience": [
+      "ML Researchers",
+      "Dialogue System Developers",
+      "NLP Practitioners"
+    ],
+    "tasks": [
+      "Dialogue Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "DailyDialog and Topical-Chat datasets",
+    "size": "160 dialogues (100 from DailyDialog, 60 from Topical-Chat)",
+    "format": "JSON",
+    "annotation": "Annotated with human ratings for content, grammaticality, relevance, and overall quality."
+  },
+  "methodology": {
+    "methods": [
+      "Correlation with human judgment",
+      "Adversarial testing"
+    ],
+    "metrics": [
+      "Kendall's tau"
+    ],
+    "calculation": "The success rate quantifies how often metrics rank adversarial responses lower than reference responses.",
+    "interpretation": "A higher success rate indicates greater robustness against adversarial attacks.",
+    "baseline_results": "N/A",
+    "validation": "Metrics performance is validated against human annotations across multiple dialogue aspects."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack",
+            "Extraction attack"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

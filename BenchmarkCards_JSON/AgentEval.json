@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "AgentEval",
+    "abbreviation": "N/A",
+    "overview": "AgentEval is a novel framework designed to simplify the utility verification process of LLM-powered applications by automatically proposing criteria tailored to the application's purpose and assessing the utility against these criteria.",
+    "data_type": "task utility criteria",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MATH (Mathematics Dataset)",
+      "ALFWorld"
+    ],
+    "resources": [
+      "https://github.com/microsoft/autogen/blob/main/notebook/agenteval_cq_math.ipynb"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess the alignment between application behavior and end-user goals, providing insights for application developers to improve functionality.",
+    "audience": [
+      "Application Developers",
+      "ML Researchers"
+    ],
+    "tasks": [
+      "Task Utility Verification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Open-source datasets, specifically the MATH dataset and ALFWorld",
+    "size": "12,500 problems for MATH dataset, 134 tasks for ALFWorld",
+    "format": "N/A",
+    "annotation": "Automatically generated criteria based on task description and examples of task execution."
+  },
+  "methodology": {
+    "methods": [
+      "Critic Agent Evaluation",
+      "Quantifier Agent Assessment"
+    ],
+    "metrics": [
+      "Task Utility Score",
+      "Criteria Performance Metrics"
+    ],
+    "calculation": "Task utility is assessed based on suggested criteria by the CriticAgent and quantified by the QuantifierAgent.",
+    "interpretation": "A higher score indicates better alignment with user goals and utility in accomplishing tasks.",
+    "baseline_results": "N/A",
+    "validation": "Criteria effectiveness is validated through task-specific assessments across multiple dataset scenarios."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

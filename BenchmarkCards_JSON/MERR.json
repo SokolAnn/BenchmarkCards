@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MERR (Multimodal Emotion Recognition and Reasoning)",
+    "abbreviation": "MERR",
+    "overview": "The MERR dataset contains 28,618 coarse-grained and 4,487 fine-grained annotated samples across diverse emotional categories, enabling models to learn from varied scenarios and generalize to real-world applications.",
+    "data_type": "multimodal",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "EMER",
+      "MER2023",
+      "DFEW"
+    ],
+    "resources": [
+      "https://github.com/ZebangCheng/Emotion-LLaMA",
+      "https://huggingface.co/spaces/ZebangCheng/Emotion-LLaMA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a rich dataset for multimodal emotion recognition and reasoning, enabling models to accurately identify and explain emotional states using integrated audio, visual, and textual data.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Emotion Recognition",
+      "Emotion Reasoning"
+    ],
+    "limitations": "The dataset exhibits some mismatches between emotional cues in a small subset of samples.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed through comprehensive emotion annotation in video data with human and algorithmic contributions, filtered to enhance quality.",
+    "size": "33,105 examples",
+    "format": "JSON",
+    "annotation": "Combination of manual annotation and automated processes."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "Weighted Average Recall (WAR)",
+      "Unweighted Average Recall (UAR)"
+    ],
+    "calculation": "Metrics are calculated based on the predictions of the Emotion-LLaMA model against the ground truth annotations in the dataset.",
+    "interpretation": "High scores indicate better performance in recognizing and reasoning about emotions.",
+    "baseline_results": null,
+    "validation": "Extensive evaluations on multiple datasets to establish performance metrics."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis of emotion accuracy across diverse demographic groups is included in future work.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset annotations are derived from publicly available video data and do not contain personally identifiable information.",
+    "data_licensing": "The dataset is governed by signed usage agreements restricting its use to academic research.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

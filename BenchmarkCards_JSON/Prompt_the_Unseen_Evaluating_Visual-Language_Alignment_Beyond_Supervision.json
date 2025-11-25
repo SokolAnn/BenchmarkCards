@@ -1,0 +1,80 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Prompt the Unseen: Evaluating Visual-Language Alignment Beyond Supervision",
+    "abbreviation": "N/A",
+    "overview": "This study introduces a new evaluation framework for assessing the generalization ability of projection layers in Vision-Language Models (VLMs) to unseen labels, leveraging object detection datasets to provide controlled, prompt-based evaluations.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/raemoi93/PromptTheUnseen"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the generalization capability of projection layers in Vision-Language Models to unseen labels.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Visual Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Visual Genome (Krishna et al. 2017)",
+    "size": "108,249 images",
+    "format": "N/A",
+    "annotation": "Bounding box annotations converted into prompt-style training samples."
+  },
+  "methodology": {
+    "methods": [
+      "Multiple-choice QA evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Macro-averaged accuracy calculated by averaging accuracy per class and then taking the mean across all classes.",
+    "interpretation": "The performance drop in unseen categories indicates the model's ability to generalize beyond the training labels.",
+    "baseline_results": null,
+    "validation": "Using separate splits for seen and unseen labels in evaluation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

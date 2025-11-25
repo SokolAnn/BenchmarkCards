@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Skills Scaling Laws (Sloth)",
+    "abbreviation": "SS-Laws",
+    "overview": "Sloth is a novel scaling law that leverages publicly available benchmark data to predict large language model (LLM) performance across multiple benchmarks by modeling low-dimensional latent skills and their correlation structure.",
+    "data_type": "benchmark scores",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Open LLM Leaderboard",
+      "MMLU",
+      "TruthfulQA",
+      "HellaSwag",
+      "GSM8K",
+      "ARC",
+      "MATH Lvl 5",
+      "BBH",
+      "GPQA",
+      "MUSR",
+      "MMLU-PRO",
+      "Winogrande"
+    ],
+    "resources": [
+      "https://github.com/felipemaiapolo/sloth"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide accurate and interpretable predictions of LLM performance across various benchmarks by utilizing existing scoring data without requiring extensive training on each model family.",
+    "audience": [
+      "ML Researchers",
+      "AI Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Performance Prediction",
+      "Benchmark Comparison"
+    ],
+    "limitations": "The model depends on seeing data from at least one LLM from the family of interest for predictions to be reliable.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Publicly available benchmark data from Open LLM Leaderboard v1/v2.",
+    "size": "30 model families",
+    "format": "Raw benchmark scores in a structured format",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Model-based evaluation",
+      "Regression analysis"
+    ],
+    "metrics": [
+      "Mean Absolute Error (MAE)"
+    ],
+    "calculation": "Predicted scores based on latent skills and input parameters like model size and training tokens.",
+    "interpretation": "Lower Mean Absolute Error indicates better predictive performance.",
+    "baseline_results": "Predictions versus actual scores across multiple benchmarks.",
+    "validation": "Cross-validation using leave-one-out schemes."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Open Ko-LLM Leaderboard and Ko-H5 Benchmark",
+    "abbreviation": "Ko-H5",
+    "overview": "This paper introduces the Open Ko-LLM Leaderboard and the Ko-H5 Benchmark as vital tools for evaluating Large Language Models (LLMs) in Korean, incorporating private test sets and emphasizing the need for broader linguistic diversity in LLM evaluation.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Korean"
+    ],
+    "similar_benchmarks": [
+      "Open LLM Leaderboard"
+    ],
+    "resources": [
+      "https://huggingface.co/spaces/upstage/open-ko-llm-leaderboard"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To establish a robust evaluation framework for Korean LLMs that enhances linguistic diversity and addresses data contamination issues through private test sets.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Korean LLM Developers"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Question Answering",
+      "Commonsense Reasoning"
+    ],
+    "limitations": "The benchmark is prone to performance saturation due to its static nature as it primarily derives tasks from existing English benchmarks.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The benchmark includes datasets like Ko-ARC, Ko-HellaSwag, Ko-MMLU, Ko-TruthfulQA, and Ko-CommonGen v2, some derived from original English datasets and others created specifically for Korean.",
+    "size": "14,000 examples (Ko-MMLU), 10,000 examples (Ko-HellaSwag), 1,000 examples (Ko-ARC), 800 examples (Ko-TruthfulQA, Ko-CommonGen v2)",
+    "format": "Various formats derived or adapted from corresponding English datasets.",
+    "annotation": "The datasets were curated through a combination of machine translation and rigorous human review processes."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are computed based on the performance of models on the benchmark tasks, comparing outputs against ground truth.",
+    "interpretation": "Scores indicate model performance in text understanding, commonsense reasoning, and truthfulness.",
+    "baseline_results": "Improvements in benchmark scores were demonstrated across various model sizes and types over time.",
+    "validation": "The benchmark is validated through extensive empirical analysis and comparison with existing evaluations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Data privacy rights alignment"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset includes demographic factors, particularly in the aspect of evaluating linguistic nuances valid for Korean language models.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All datasets utilize private test sets to mitigate data contamination and leakage risks.",
+    "data_licensing": "The licenses for datasets include CC-BY-SA and MIT, allowing for open redistribution.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

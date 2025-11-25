@@ -1,0 +1,76 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "HalluLens: LLM Hallucination Benchmark",
+    "abbreviation": "N/A",
+    "overview": "HalluLens is a comprehensive hallucination benchmark that includes both new extrinsic and existing intrinsic evaluation tasks, distinguishing between extrinsic and intrinsic hallucinations to promote consistency and facilitate research.",
+    "data_type": "multimodal",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/facebookresearch/HalluLens"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To establish a clear taxonomy of hallucinations, introduce new extrinsic hallucination evaluation tasks, and provide a comprehensive analysis of existing benchmarks.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Extrinsic Hallucination Evaluation",
+      "Intrinsic Hallucination Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Dynamic test set generation based on Wikipedia content and automatically generated entities.",
+    "size": "5,000 questions",
+    "format": "JSON",
+    "annotation": "Automatically generated responses with human verification."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on the proportion of correct responses and hallucinations detected.",
+    "interpretation": "A good performance indicates lower hallucination rates and higher accuracy in extrinsic tasks.",
+    "baseline_results": "N/A",
+    "validation": "Validation involves ensuring dynamically generated sets maintain low variance over different trials."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Bias"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

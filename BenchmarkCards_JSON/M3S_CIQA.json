@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "M3S CIQA (Multi-Modal Multi-Document Scientific Question Answering)",
+    "abbreviation": "M3S CIQA",
+    "overview": "M3S CIQA is a multi-modal, multi-document scientific question answering benchmark designed for a more comprehensive evaluation of foundation models, containing 1,452 expert-annotated questions spanning 70 natural language processing paper clusters.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/yale-nlp/M3SciQA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the multi-modal reasoning abilities in interpreting multiple scientific documents.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "The evaluations presented in this study are met with certain limitations due to inherent disparities in the context window of current open-source and proprietary LLMs and LMMs.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Expert-annotated questions from the M3S CIQA benchmark.",
+    "size": "1,452 questions",
+    "format": "JSON",
+    "annotation": "Manual annotation by experts"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Mean Reciprocal Rank (MRR)",
+      "Accuracy",
+      "Recall",
+      "Precision",
+      "F1 Score"
+    ],
+    "calculation": "Metrics such as MRR are calculated based on the model's performance in retrieving relevant documents.",
+    "interpretation": "Higher scores indicate better model performance in multi-modal reasoning and document understanding.",
+    "baseline_results": "Expert performance is assessed as a benchmark for comparison.",
+    "validation": "The benchmark was validated through structured evaluations against human expert performance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

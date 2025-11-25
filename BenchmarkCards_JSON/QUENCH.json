@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "QUENCH: Measuring the gap between Indic and Non-Indic Contextual General Reasoning in LLMs",
+    "abbreviation": "QUENCH",
+    "overview": "QUENCH is a novel text-based English Quizzing Benchmark manually curated from YouTube quiz videos that assesses world knowledge and deduction capabilities of large language models (LLMs) via a zero-shot, open-domain quizzing setup.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMLU",
+      "SuperGLUE",
+      "HELM"
+    ],
+    "resources": [
+      "https://github.com/aflah02/QUENCH"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the deductive reasoning capabilities of LLMs using a novel quiz trivia dataset.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Entity Prediction",
+      "Rationale Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Manually annotated YouTube quiz videos.",
+    "size": "400 questions",
+    "format": "N/A",
+    "annotation": "Manual annotation by expert annotators"
+  },
+  "methodology": {
+    "methods": [
+      "Evaluation with zero-shot prompting",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "BLEU Score",
+      "ROUGE-L",
+      "BERTScore"
+    ],
+    "calculation": "Scores are calculated based on predicted entities and their corresponding rationales across various models.",
+    "interpretation": "Higher scores indicate better performance in predicting masked entities and generating accurate rationales.",
+    "baseline_results": "GPT-4-Turbo yields the highest performance based on multiple metrics.",
+    "validation": "Evaluation against seven different LLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Evaluation includes both Indic and Non-Indic subsets.",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Publicly sourced content from YouTube quiz videos.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "HumanEval-XL",
+    "abbreviation": "N/A",
+    "overview": "HumanEval-XL is a massively multilingual code generation benchmark designed to evaluate cross-lingual natural language generalization by connecting 23 natural languages with 12 programming languages and comprising a collection of 22,080 prompts with an average of 8.33 test cases.",
+    "data_type": "code generation problems",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Arabic",
+      "Hebrew",
+      "Vietnamese",
+      "Chinese",
+      "Russian",
+      "German",
+      "Spanish",
+      "French",
+      "Italian",
+      "Portuguese",
+      "Turkish",
+      "Indonesian",
+      "Finnish",
+      "Hungarian",
+      "Greek",
+      "Bulgarian",
+      "Malay",
+      "Tagalog",
+      "Afrikaans"
+    ],
+    "similar_benchmarks": [
+      "HumanEval",
+      "Multi-lingual HumanEval"
+    ],
+    "resources": [
+      "https://github.com/FloatAI/humaneval-xl"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation platform for multilingual LLMs, facilitating the assessment of natural language understanding and their capability in generating code across multiple programming languages.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Code Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed using a translation and back-translation pipeline incorporating LLMs like GPT-4, covering multiple natural languages and programming languages.",
+    "size": "22,080 prompts",
+    "format": "N/A",
+    "annotation": "Manual annotation and quality checks based on BERTScore and heuristic evaluations."
+  },
+  "methodology": {
+    "methods": [
+      "Pass@k metric evaluation"
+    ],
+    "metrics": [
+      "Pass@1"
+    ],
+    "calculation": "The pass@k metric evaluates the success rate of executing test cases based on the benchmark prompts.",
+    "interpretation": "Higher pass@1 scores indicate better performance of the LLM in generating correct code based on the given natural language prompts.",
+    "baseline_results": "Results from various LLMs including CodeT5+, CodeGen2, GPT-3.5, and GPT-4.",
+    "validation": "Extensive experiments performed to assess performance across multiple models at different parameter scales."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack",
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Questioning the understanding of code semantics across different languages"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

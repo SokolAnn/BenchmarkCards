@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Pragmatics Understanding Benchmark (PUB)",
+    "abbreviation": "PUB",
+    "overview": "PUB is designed to assess the pragmatic capabilities of large language models (LLMs) through 14 tasks covering four pragmatics phenomena: Implicature, Presupposition, Reference, and Deixis, consisting of 28,000 data points.",
+    "data_type": "multiple choice question answers",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/cfilt/PUB"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation of LLM's ability to handle real-world language tasks that require pragmatic reasoning.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Implicature understanding",
+      "Presupposition detection",
+      "Reference resolution",
+      "Deixis analysis"
+    ],
+    "limitations": "While the benchmark is carefully constructed, there might be biases present that could affect evaluations. Models are sensitive to prompt variations, which can lead to inconsistent performance.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset consists of curated tasks focusing on Implicature, Presupposition, Reference, and Deixis, with both newly annotated and adapted examples.",
+    "size": "28,000 examples",
+    "format": "MCQA",
+    "annotation": "6,100 examples are newly annotated, while the rest are adapted from existing datasets."
+  },
+  "methodology": {
+    "methods": [
+      "Multiple Choice Prompting",
+      "Cloze prompting"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Models are evaluated using length normalized Cloze prompting and Multiple Choice Prompting, measuring their performance on tasks.",
+    "interpretation": "Models' performance is compared against human evaluators to assess understanding of pragmatic tasks.",
+    "baseline_results": null,
+    "validation": "Results are validated through human evaluation with a total of 4,200 samples assessed by three independent evaluators for each task."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

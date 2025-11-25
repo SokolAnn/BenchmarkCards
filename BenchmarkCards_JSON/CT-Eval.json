@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CT-Eval (Chinese Text-to-Table Evaluation)",
+    "abbreviation": "CT-Eval",
+    "overview": "CT-Eval is a Chinese text-to-table dataset designed to benchmark large language models (LLMs) on the task of generating structured tables from unstructured documents, ensuring data diversity and minimizing hallucination issues.",
+    "data_type": "text-table pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/THUDM/chatglm3-6b-32k"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To benchmark large language models on Chinese text-to-table tasks and improve their performance.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text-to-Table"
+    ],
+    "limitations": "While human cleaning is applied in validation and test sets, the training set still contains hallucination issues.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Baidu Baike (a popular Chinese multidisciplinary online encyclopedia)",
+    "size": "88,603 examples",
+    "format": "N/A",
+    "annotation": "Human annotation combined with LLM hallucination judging to clean the data."
+  },
+  "methodology": {
+    "methods": [
+      "Zero-shot evaluation",
+      "Fine-tuning"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on the number of correct non-header cells in the predicted tables compared to the ground truth.",
+    "interpretation": "Higher precision and recall indicate a better ability in extracting and structuring the information.",
+    "baseline_results": "GPT-4 serves as a baseline, achieving the best zero-shot performance.",
+    "validation": "Traditional metrics evaluation against human judgment and LLM-generated outputs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Data from Baidu Baike is authorized for academic usage.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

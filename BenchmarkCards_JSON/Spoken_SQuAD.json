@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Spoken SQuAD",
+    "abbreviation": "N/A",
+    "overview": "We propose a new listening comprehension task - Spoken SQuAD. On the new task, we found that speech recognition errors have catastrophic impact on machine comprehension, and several approaches are proposed to mitigate the impact.",
+    "data_type": "question-answering pairs (audio documents with text questions and answer spans)",
+    "domains": [
+      "Natural Language Processing",
+      "Spoken Language Understanding"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SQuAD (Stanford Question Answering Dataset)",
+      "TOEFL listening comprehension test"
+    ],
+    "resources": [
+      "https://github.com/chiahsuan156/Spoken-SQuAD"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To propose the Spoken SQuAD task, an extraction-based spoken question answering (SQA) task with a new evaluation approach; to measure the impact of ASR errors on machine comprehension; and to propose approaches (subword unit embeddings, training on ASR transcriptions, dropout) to mitigate ASR errors.",
+    "audience": [],
+    "tasks": [
+      "Question Answering",
+      "Spoken Question Answering"
+    ],
+    "limitations": "The synthesized speech makes the task easier than its real application, and study on real speech recording is left as future work.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Derived from SQuAD: articles synthesized by Google text-to-speech and transcribed using CMU Sphinx ASR. SQuAD training set used to generate Spoken SQuAD training set; SQuAD development set used to generate Spoken SQuAD testing set. Question-answer pairs whose answers did not exist in the ASR transcriptions were removed.",
+    "size": "37,111 question-answer pairs (training), 5,351 question-answer pairs (testing).",
+    "format": "Audio files (synthesized speech) and ASR transcriptions (text) with word-level timestamps (used to compute answer time spans).",
+    "annotation": "Uses original SQuAD human-written question-answer pairs; time spans for answers obtained by forced-aligning the spoken document with its reference transcription; question-answer pairs removed when the answer did not exist in ASR transcription."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics (Exact Match and F1 on text answers)",
+      "Audio Overlapping Score (AOS) for predicted audio time spans",
+      "Comparative evaluation of models trained on text documents vs. ASR transcriptions",
+      "Ablation experiments with subword unit embeddings (phoneme, syllable, character) and dropout"
+    ],
+    "metrics": [
+      "Exact Match (EM)",
+      "F1 Score",
+      "Audio Overlapping Score (AOS)",
+      "Word Error Rate (WER)"
+    ],
+    "calculation": "Exact Match (EM): 1 if predicted text answer exactly equals the ground-truth answer, otherwise 0. F1: based on word-level precision and recall between predicted and ground-truth answers. AOS: computed between predicted answer time interval and ground-truth time interval as an overlap score (rewards overlap and penalizes overly long predicted spans). WER reported for audio/transcriptions.",
+    "interpretation": "EM/F1 evaluate text answer correctness but can penalize correct span selection when ASR misrecognizes words (common for named entities). AOS evaluates the time-span overlap between predicted and ground-truth audio segments and better reflects reasoning capability for SQA when transcription errors exist.",
+    "baseline_results": "Results on Spoken SQuAD testing set (SpokenS-test) vs SQuAD-dev (reported only on questions present in SpokenS-test): BiDAF — SQuAD-dev EM 58.4 F1 69.9; SpokenS-test EM 37.02 F1 50.9. R-NET — SQuAD-dev EM 66.34 F1 76.20; SpokenS-test EM 44.75 F1 58.68. Mnemonic Reader — SQuAD-dev EM 64.00 F1 73.35; SpokenS-test EM 40.36 F1 52.87. Dr.QA — SQuAD-dev EM 62.84 F1 73.74; SpokenS-test EM 41.16 F1 54.51. FusionNet — SQuAD-dev EM 70.47 F1 79.51; SpokenS-test EM 46.51 F1 60.06. Average across models: SQuAD-dev F1 74.54 vs SpokenS-test F1 55.40. Additional comparisons: training on ASR transcriptions (Spoken) improved SpokenS-test performance (e.g., BiDAF SpokenS-test EM 44.45 F1 57.6 when trained on Spoken training set vs EM 37.02 F1 50.9 when trained on text). Ablation on BiDAF: WORD+CHAR EM 37.02 F1 50.9; WORD+CHAR+Dropout EM 38.83 F1 53.07; WORD+PHONEME+Dropout EM 39.82 F1 53.76; WORD+SYLLABLE+Dropout EM 39.71 F1 53.72. Performance across noise levels and AOS reported in Table 5 of the paper.",
+    "validation": "Validated by comparing multiple state-of-the-art SQuAD reading-comprehension models trained on SQuAD training set vs Spoken SQuAD training set, and tested on Spoken SQuAD testing set and two noisy variants (different WERs). Forced-alignment used to obtain ground-truth audio time spans; SQuAD-dev subset (questions present in SpokenS-test) used for fair SQuAD vs SpokenS comparisons."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Governance",
+          "subcategory": [
+            "Unrepresentative risk testing"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

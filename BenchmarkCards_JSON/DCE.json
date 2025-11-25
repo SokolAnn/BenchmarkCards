@@ -1,0 +1,101 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "A Dataset for N-ary Relation Extraction of Drug Combinations",
+    "abbreviation": "DCE",
+    "overview": "An expert-annotated dataset for extracting information about the efficacy of drug combinations from the scientific literature; the dataset is the first relation extraction dataset consisting of variable-length relations and relations predominantly require language understanding beyond the sentence level.",
+    "data_type": "text (annotated biomedical abstracts with drug mention spans and enclosing context)",
+    "domains": [
+      "Natural Language Processing",
+      "Biomedical Research"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "DDI",
+      "BioCreative V CDR",
+      "BioCreative VI",
+      "SciERC"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/allenai/drug-combo-extraction",
+      "https://github.com/allenai/drug-combo-extraction",
+      "https://huggingface.co/allenai/drug-combo-classifier-pubmedbert-dapt",
+      "http://drugcombdb.denglab.org/download/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Provide an expert-annotated resource and baseline models to enable extraction of drug combinations and their reported efficacy from scientific literature, and to serve as a test-bed for variable-length n-ary relation extraction and document-level relation understanding.",
+    "audience": [
+      "Medical professionals",
+      "Natural Language Processing researchers",
+      "Model developers",
+      "Biomedical domain experts"
+    ],
+    "tasks": [
+      "Relation Extraction",
+      "Document-level Relation Extraction",
+      "N-ary Relation Extraction",
+      "Information Extraction"
+    ],
+    "limitations": "Annotating such data is costly; initial sampling without trigger phrases produced a dataset highly skewed toward NO_COMB, so a trigger-based sampling strategy was used which may impose lexical restrictions (the authors note triggers are recall oriented but not clearly indicative). Agreement for a discouraged-combination label was low and was therefore merged into OTHER_COMB.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from PubMed abstracts using the SPIKE extractive search tool; drug list curated from DrugBank (with removal of non-pharmacological interventions) and the FDA Orange Book; additional distant supervision from DrugComboDB.",
+    "size": "1634 annotated abstracts; split into 1362 train and 272 test instances; 1248 annotated relations (838 POS_COMB, 410 OTHER_COMB); relation arities: 900 binary, 226 ternary, 69 four-ary, 53 five-ary or more.",
+    "format": "N/A",
+    "annotation": "Manual annotation by seven graduate students in biomedical engineering using the Prodigy annotation tool, supervised by a domain expert; test instances received two annotations with domain-expert arbitration for disagreements; annotators marked all subsets of drugs participating in combinations and indicated whether context was required."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics (Precision, Recall, F1)",
+      "Baseline model evaluation using BERT-based architectures (SciBERT, BlueBERT, PubmedBERT, BioBERT) adapted from PURE",
+      "Domain-adaptive pretraining (DAPT) on in-domain PubMed abstracts",
+      "Rule-based baseline",
+      "Human-level annotation comparison and inter-annotator agreement analysis"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score (Positive Combination F1, Any Combination F1)",
+      "Exact Match",
+      "Partial Match (partial-credit scoring)"
+    ],
+    "calculation": "Standard precision, recall and F1 are used. For Partial Match, a predicted combination is scored as (shared_drugs / total_drugs); when multiple partial matches exist, the match with maximum overlap is used. Recall is computed over all gold relations; precision is computed over identified relations. Two aggregated metrics are reported: averaged Positive Combination F1 (POS_COMB vs. rest) and averaged Any Combination F1 (POS_COMB or OTHER_COMB vs. NO_COMB).",
+    "interpretation": "Higher F1 indicates better extraction performance. Partial Match is a more relaxed metric that gives partial credit for partially-correct subsets. Any Combination F1 is an easier metric than Positive Combination F1 because it counts both POS_COMB and OTHER_COMB as correct compared to NO_COMB.",
+    "baseline_results": "Human-Level (Exact/Partial): Any Combination F1 86.1 / 88.9; Positive Combination F1 79.6 / 83.4. Rule-based baseline (Exact/Partial) Positive Combination F1 31.8 / 45.6; Any Combination F1 39.1 / 57.4. PubmedBERT w/ DAPT (Exact/Partial): Positive Combination F1 61.8 / 67.7; Any Combination F1 69.4 / 77.5. (Mean and standard deviations reported across 4 seeds for models.)",
+    "validation": "Test set instances received two independent annotations and disagreements were resolved by a domain expert to create the test set. Inter-annotator agreement was measured using an adapted pairwise F1 metric (allowing partial matches). Model comparisons used a paired multi-bootstrap hypothesis test with 1000 bootstrap samples sampling over random seeds and test-set subsets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

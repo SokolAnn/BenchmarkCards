@@ -1,0 +1,72 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "RCMU (Region-level Context-aware Multimodal Understanding)",
+    "abbreviation": "RCMU",
+    "overview": "The paper introduces Region-level Context-aware Multimodal Understanding, which requires models to respond to user instructions by integrating both image content and textual information of regions or objects. To enhance this ability, the study proposes a large-scale RCMU dataset that covers multiple tasks.",
+    "data_type": "multimodal",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/hongliang-wei/RC-MLLM"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the performance of MLLMs in RCMU tasks and enhance multimodal understanding.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Region-level Context-aware Image Description",
+      "Region-level Context-aware Visual Question Answering",
+      "Multimodal Contextual Citation Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Automatically generated annotations and existing REG datasets.",
+    "size": "84,149 images, 1,027,681 contextualized image descriptions, 6,954,726 RCVQA quadruples",
+    "format": "N/A",
+    "annotation": "Automated data annotation pipeline using language models."
+  },
+  "methodology": {
+    "methods": [
+      "RCVIT for tuning models",
+      "Automated metrics for evaluation"
+    ],
+    "metrics": [
+      "RCIDScore"
+    ],
+    "calculation": "Metrics assess contextual coverage, contextual accuracy, and context-visual consistency.",
+    "interpretation": "Higher scores indicate better performance in context-aware understanding.",
+    "baseline_results": "RC-Qwen2-VL models outperform all existing models in RCMU tasks.",
+    "validation": "Performance validated against state-of-the-art MLLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

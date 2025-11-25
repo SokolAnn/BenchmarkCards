@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "VerMouth",
+    "abbreviation": "N/A",
+    "overview": "VerMouth is the first large-scale dataset comprising roughly 12 thousand claim-response pairs linked to debunking articles, accounting for both social media-style and basic emotions. It aims to automate fact-checking through engaging responses to misinformation on social media platforms.",
+    "data_type": "claim-response pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "FEVER",
+      "SciFact",
+      "COVID-fact"
+    ],
+    "resources": [
+      "https://github.com/marcoguerini/VerMouth"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To counter misinformation by generating personalized explanations that engage social media users.",
+    "audience": [
+      "ML Researchers",
+      "Academic Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Fact-Checking",
+      "Explanation Generation"
+    ],
+    "limitations": "Limited to English language only; covers a specific style of language commonly seen on certain social media platforms.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Claims derived from FullFact articles.",
+    "size": "12,000 examples",
+    "format": "JSON",
+    "annotation": "Annotated through an author-reviewer pipeline combining Large Language Models (LLMs) and human input."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "ROUGE",
+      "METEOR",
+      "BERTScore",
+      "BARTScore"
+    ],
+    "calculation": "Metrics calculated based on the overlap between generated and reference texts.",
+    "interpretation": "Higher scores indicate better quality of generated responses.",
+    "baseline_results": null,
+    "validation": "Evaluated through both automatic and human assessments."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Data privacy rights alignment"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data is collected in a manner that avoids privacy concerns, as no real social media data is utilized.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

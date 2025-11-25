@@ -1,0 +1,72 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "InfoDet: A Dataset for Infographic Element Detection",
+    "abbreviation": "InfoDet",
+    "overview": "InfoDet is a dataset designed to support the development of accurate object detection models for charts and human-recognizable objects (HROs) in infographics. It contains 11,264 real and 90,000 synthetic infographics, with over 14 million bounding box annotations.",
+    "data_type": "infographic images with bounding box annotations",
+    "domains": [
+      "Computer Vision",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/InfoDet2025/InfoDet",
+      "https://huggingface.co/datasets/InfoDet/InfoDet"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the benchmark is to enhance the chart understanding capabilities of vision-language models and support object detection models for infographic elements.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Object Detection",
+      "Chart Understanding"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Real infographics collected from chart-rich online platforms and synthetic infographics created programmatically from design templates.",
+    "size": "101,264 infographics (11,264 real and 90,000 synthetic)",
+    "format": "N/A",
+    "annotation": "Bounding box annotations created through a combination of model-in-the-loop and programmatic methods."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Mean Average Precision (mAP)",
+      "Average Recall (AR)"
+    ],
+    "calculation": "Metrics are calculated based on the true positive, false positive, and false negative detections from the object detection models evaluated on the InfoDet test set.",
+    "interpretation": "Higher mAP and AR indicate better performance in accurately detecting infographic elements.",
+    "baseline_results": "The best-performing models achieve an mAP of up to 88.2% for chart and HRO categories.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

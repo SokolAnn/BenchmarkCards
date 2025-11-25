@@ -1,0 +1,104 @@
+{
+  "benchmark_details": {
+    "name": "TruthfulQA",
+    "overview": "A benchmark designed to measure how truthful language models are in generating answers to questions. It consists of 817 questions spanning 38 categories, focusing on avoiding false answers that mimic human misconceptions.",
+    "data_type": "Questions with true and false answers.",
+    "domains": [
+      "Health",
+      "Law",
+      "Finance",
+      "Politics",
+      "Misconceptions",
+      "Fiction",
+      "Conspiracies"
+    ],
+    "languages": null,
+    "similar_benchmarks": null,
+    "resources": [
+      "https://github.com/sylinrl/TruthfulQA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To quantify the truthfulness of language models across various contexts.",
+    "audience": [
+      "Researchers",
+      "AI developers",
+      "Ethical AI practitioners"
+    ],
+    "tasks": [
+      "Measure truthfulness of model-generated answers",
+      "Evaluate the performance of language models against human standards"
+    ],
+    "limitations": "The benchmark mainly focuses on general knowledge questions designed to elicit imitative falsehoods and does not cover specialized domains.",
+    "out_of_scope_uses": [
+      "Long-form text generation",
+      "Interactive settings like chatbots"
+    ]
+  },
+  "data": {
+    "source": "Created by the authors using Wikipedia and other reliable sources for reference.",
+    "size": "817 questions",
+    "format": "Multiple choice with true and false answers.",
+    "annotation": "Each question has sets of true and false reference answers with supporting sources."
+  },
+  "methodology": {
+    "methods": [
+      "Zero-shot evaluation",
+      "Human evaluation of answers",
+      "Automated evaluation using GPT-judge"
+    ],
+    "metrics": [
+      "Truthfulness percentage",
+      "Informative percentage"
+    ],
+    "calculation": "Truthfulness determined by comparing model responses to established true/false reference answers.",
+    "interpretation": "Model answers are evaluated on a scalar truth score from 0 to 1, with 1 being completely truthful.",
+    "baseline_results": "The best model achieved 58% truthfulness compared to 94% for humans.",
+    "validation": "Human evaluators assessed the validity of model answers to establish a baseline for truthfulness."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Privacy",
+      "Explainability"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Explainability",
+          "subcategory": [
+            "Unexplainable output"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data sourced primarily from publicly accessible sources.",
+    "data_licensing": "Questions and reference answers are constructed by the authors.",
+    "consent_procedures": "No explicit consent procedures necessary since data is derived from public sources.",
+    "compliance_with_regulations": "The benchmark adheres to ethical AI guidelines but does not enforce regulatory compliance."
+  }
+}

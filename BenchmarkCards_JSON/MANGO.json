@@ -1,0 +1,82 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MANGO: A Benchmark for Evaluating Mapping and Navigation Abilities of Large Language Models",
+    "abbreviation": "MANGO",
+    "overview": "MANGO is a benchmark designed to evaluate the mapping and navigation capabilities of large language models through a set of mazes paired with questions about navigation and routes.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://mango.ttic.edu",
+      "https://github.com/oaklight/mango/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate and improve the mapping and navigation capabilities of large language models in text-based adventure games.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset consists of mazes derived from a suite of text-based adventure games (Jericho game suite) with corresponding walkthroughs and a variety of destination-finding and route-finding questions.",
+    "size": "3 million destination-finding questions and 200,000 route-finding questions",
+    "format": "JSON",
+    "annotation": "Annotated by human annotators identifying locations and generating questions based on maze structures."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Success Rate"
+    ],
+    "calculation": "Success rate is calculated as the fraction of questions correctly answered by the model, allowing for partial matches for destination-finding questions and executing moves for route-finding questions.",
+    "interpretation": "A higher success rate indicates better navigation and mapping capabilities of the LLMs on the benchmark.",
+    "baseline_results": null,
+    "validation": "Validation conducted through human evaluations on a subset of questions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

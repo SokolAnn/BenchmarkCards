@@ -1,0 +1,80 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SciRerankBench (Scientific Rerank-oriented RAG Benchmark)",
+    "abbreviation": "SciRerankBench",
+    "overview": "SciRerankBench is the first benchmark specifically developed to evaluate rerankers within retrieval-augmented generated language models (RAG-LLMs), providing insights into the performance of rerankers in scientific literature question answering tasks across five scientific subjects.",
+    "data_type": "question-context-answer pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://doi.org/XXXXXXX.XXXXXXX"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the effectiveness of rerankers in RAG-LLMs for scientific literature question answering.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Derived from over 250 million scholarly works, covering 5 major scientific domains: biology, physics, chemistry, geography, and mathematics.",
+    "size": "4,500 question-context-answer pairs",
+    "format": "JSON",
+    "annotation": "Automatically generated"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Recall@10"
+    ],
+    "calculation": "Metrics are calculated based on the proportion of relevant contexts retrieved within the top results.",
+    "interpretation": "High recall scores indicate effective retrieval and reranking in identifying relevant scientific contexts.",
+    "baseline_results": "N/A",
+    "validation": "Evaluated across 13 popular rerankers on 11 open-source LLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Express4D (Expressive, Friendly, and Extensible 4D Facial Motion Generation Benchmark)",
+    "abbreviation": "Express4D",
+    "overview": "Express4D is a facial motion dataset and baseline benchmark, comprising 1205 diverse sequences performed by 18 participants, featuring LLM-based natural language instruction labels which are performed and recorded.",
+    "data_type": "3D facial motion sequences",
+    "domains": [
+      "Computer Graphics"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://jaron1990.github.io/Express4D/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enable automatic facial motion generation from natural language.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Facial Motion Generation"
+    ],
+    "limitations": "The expressions are based on non-professional actors, potentially missing some complex expressions.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected using ARKit framework via the Live Link Face app",
+    "size": "1205 sequences",
+    "format": "CSV",
+    "annotation": "LLM-generated natural language descriptions"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Quantitative comparisons"
+    ],
+    "metrics": [
+      "Fréchet Inception Distance (FID)",
+      "R-Precision",
+      "Diversity",
+      "Multimodal distance"
+    ],
+    "calculation": "Metrics computed by comparing generated sequences with real sequences via learned feature embeddings.",
+    "interpretation": "Lower scores indicate better model performance in generating realistic and diverse motion sequences.",
+    "baseline_results": null,
+    "validation": "Evaluated using initial performances of two baseline models trained on the dataset."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Misuse",
+          "subcategory": [
+            "Nonconsensual use",
+            "Spreading disinformation"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset covers emotions from diverse participants but may not fully represent ethnic diversity.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Released under a license prohibiting malicious applications including deep-fake generation.",
+    "consent_procedures": "Participants provided consent for their expressions to be recorded.",
+    "compliance_with_regulations": "N/A"
+  }
+}

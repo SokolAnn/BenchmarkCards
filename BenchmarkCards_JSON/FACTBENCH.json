@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FACTBENCH",
+    "abbreviation": "N/A",
+    "overview": "FACTBENCH is designed to be an updatable benchmark grounded in real-world usage of language models, focused on evaluating their factuality and identifying hallucination prompts.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "TruthfulQA",
+      "FELM",
+      "ExpertQA",
+      "FactScore"
+    ],
+    "resources": [
+      "https://huggingface.co/spaces/launch/factbench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of FACTBENCH is to provide a dynamic benchmark for evaluating the factuality of language models in real-world scenarios.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Factuality Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Developed from a dataset of language model interactions (LMSYS-Chat-1M) featuring prompts that elicit hallucinations in language models.",
+    "size": "1,000 prompts",
+    "format": "N/A",
+    "annotation": "Human-annotated factuality labels on 4,467 content units."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Factual precision",
+      "Hallucination score"
+    ],
+    "calculation": "The factual precision is calculated as the proportion of supported units among all extracted units across responses.",
+    "interpretation": "Higher factual precision indicates better performance in generating factual outputs.",
+    "baseline_results": "Various LM models evaluated against FACTBENCH, including GPT4-o, Gemini1.5-Pro, and two Llama models.",
+    "validation": "Prompts categorized into three tiers (Hard, Moderate, Easy) based on their challenge level."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

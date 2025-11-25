@@ -1,0 +1,102 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "OmniEAR",
+    "abbreviation": "N/A",
+    "overview": "OmniEAR is a comprehensive framework for evaluating how language models reason about physical interactions, tool usage, and multi-agent coordination in embodied tasks, utilizing 1,500 scenarios across household and industrial domains.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Robotics"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ALFRED",
+      "BEHAVIOR-1K",
+      "PARTNR",
+      "TDW-MAT"
+    ],
+    "resources": [
+      "https://github.com/ZJU-REAL/OmniEmbodied",
+      "https://zju-real.github.io/OmniEmbodied"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate embodied reasoning in embodied AI systems through scenarios requiring the understanding of physical properties and dynamic capability acquisition.",
+    "audience": [
+      "ML Researchers",
+      "Robotics Engineers",
+      "AI Developers"
+    ],
+    "tasks": [
+      "Dynamic Capability Acquisition",
+      "Tool Usage Reasoning",
+      "Multi-Agent Coordination"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated through automated pipelines producing various scenarios reflecting rich physical environments.",
+    "size": "1,500 scenarios",
+    "format": "JSON",
+    "annotation": "Automatically validated through a pipeline combining neural generation and rule-based checks."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Success Rate (SR)",
+      "Execution Steps"
+    ],
+    "calculation": "Success rate calculated based on task completion percentage across various tasks.",
+    "interpretation": "Higher success rates indicate better alignment with task requirements and improved embodied reasoning abilities.",
+    "baseline_results": "Current models show performance degradation from 85% success with explicit instructions to below 65% in constraint-based reasoning tasks.",
+    "validation": "Each scenario underwent multi-tier validation involving automated and human evaluators."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Exposing personal information"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

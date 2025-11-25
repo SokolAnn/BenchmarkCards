@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Geo-Perception Question-Answering (GeoPQA)",
+    "abbreviation": "GeoPQA",
+    "overview": "GeoPQA is designed to evaluate the geometric reasoning capabilities of multimodal large language models (MLLMs) by targeting basic geometric concepts and spatial relationships.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/DAMO-NLP-SG/GeoPQA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To investigate the perceptual limitations in multimodal language models' geometric reasoning abilities and to establish a benchmark for improving visual perception in geometric contexts.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Geometric Reasoning",
+      "Visual Question Answering"
+    ],
+    "limitations": "The accuracy of stage 1 training relies on an LLM judge (GPT-4o-mini) to parse free-form answers, introducing extra cost and time.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated from real and synthetic geometric diagrams.",
+    "size": "659 test samples and 5420 training samples",
+    "format": "JSON",
+    "annotation": "Generated and filtered using LLMs with a quality verification process."
+  },
+  "methodology": {
+    "methods": [
+      "Reinforcement Learning",
+      "Question-Answering Evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "The accuracy reward is given only if all perception questions for a given input are correctly answered.",
+    "interpretation": "Higher accuracy indicates better visual perception and reasoning capabilities in models.",
+    "baseline_results": null,
+    "validation": "Empirical tests conducted on GeoPQA's dataset reveal significant shortcomings of MLLMs in visual perception."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt leaking"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

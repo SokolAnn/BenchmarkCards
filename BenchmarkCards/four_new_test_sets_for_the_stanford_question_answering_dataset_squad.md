@@ -1,0 +1,95 @@
+# Four new test sets for the Stanford Question Answering Dataset (SQuAD)
+
+## 📊 Benchmark Details
+
+**Name**: Four new test sets for the Stanford Question Answering Dataset (SQuAD)
+
+**Overview**: We build four new test sets for the Stanford Question Answering Dataset (SQuAD) and evaluate the ability of question-answering systems to generalize to new data, measuring adaptive overfitting on the original Wikipedia domain and robustness to natural distribution shifts (New York Times, Reddit, and Amazon product reviews).
+
+**Data Type**: question-answering pairs (extractive spans) (text)
+
+**Domains**:
+- Natural Language Processing
+
+**Languages**:
+- English
+
+**Similar Benchmarks**:
+- Stanford Question Answering Dataset (SQuAD)
+- SQuAD v1.1
+- SQuAD v2.0
+- NewsQA
+- ReCoRD
+- MRQA 2019 Shared Task
+- MNIST
+- CIFAR-10
+- ImageNet
+
+**Resources**:
+- [Resource](https://modestyachts.github.io/squadshifts-website/)
+- [Resource](https://archive.org/web/)
+- [Resource](https://worksheets.codalab.org/)
+
+## 🎯 Purpose and Intended Users
+
+**Goal**: To test (i) whether SQuAD models have adaptively overfit the SQuAD test set and (ii) how robust SQuAD models are to natural distribution shifts by replicating the SQuAD data generation process and generating four new SQuAD test sets (New Wikipedia, New York Times, Reddit, Amazon reviews).
+
+**Target Audience**:
+- ML Researchers
+
+**Tasks**:
+- Question Answering (Extractive)
+
+**Limitations**: The datasets focus on a single factor of variation—the input text corpus—and the study focuses on SQuAD v1.1. The SQuAD v1.1 test set is not publicly available. Minor differences in crowdsourcing interface (direct MTurk vs. original Daemo) and task unit size were present but shown to have negligible effect.
+
+## 💾 Data
+
+**Source**: Four corpora processed with the SQuAD generation pipeline: (1) Wikipedia articles sampled from the same list of 10,000 articles used by Rajpurkar et al. (2016) (no overlap with SQuAD v1.1 training/dev); (2) New York Times articles published in 2015 sampled via the NYTimes Archive API and scraped with the Wayback Machine; (3) Reddit posts from January 2016 sampled from the Pushshift Reddit Corpus (restricted to posts marked safe for work and with manual removal of inappropriate posts); (4) Amazon product reviews in the 'Home and Kitchen' category from the McAuley et al. (2015) dataset. Question-answer pairs were crowdsourced via Amazon Mechanical Turk following the original SQuAD protocol.
+
+**Size**: SQuAD v1.1 Dev: 10,570 examples; SQuAD v1.1 Test: 9,533 examples; New Wikipedia: 7,938 examples; New York Times: 10,065 examples; Reddit: 9,803 examples; Amazon: 9,885 examples.
+
+**Format**: Same format as SQuAD v1.1 (SQuAD v1.1 JSON-style format) and post-processed using the same SQuAD v1.1 cleaning procedures.
+
+**Annotation**: Crowdsourced via Amazon Mechanical Turk following the original SQuAD v1.1 protocol: for each paragraph one worker asked and answered up to five questions; at least two additional answers per question were obtained from separate workers; same UI, task instructions, worker qualifications, time per task, and hourly rate (adjusted for inflation) as Rajpurkar et al. (2016).
+
+## 🔬 Methodology
+
+**Methods**:
+- Automated evaluation of models using standard SQuAD evaluation script on CodaLab (replicating original submissions' configuration)
+- Human evaluation baseline (authors answered ~1,000 questions per dataset following same UI and procedure)
+- Statistical analysis using 95% Student's t-confidence intervals
+
+**Metrics**:
+- F1 Score
+- Exact Match (EM)
+
+**Calculation**: F1 measures the maximum token overlap between the predicted span and any ground truth answer treating both as bags of words (harmonic mean of precision and recall). Exact Match measures the percentage of predictions that exactly match any ground truth answer. The evaluation script ignores punctuation and the articles 'a', 'an', and 'the'. Formal definitions are given in Appendix A.
+
+**Interpretation**: Comparisons of F1/EM between the original SQuAD test set and the new test sets decompose performance differences into adaptivity gap, distribution gap, and generalization gap. The authors observe that F1 improvements on the original dataset translate roughly 1:1 to the new datasets (linear fit), and that substantial average F1 drops on some corpora indicate reduced robustness to natural distribution shifts. Reported average model F1 drops: New York Times = 3.8 F1 points; Reddit = 14.0 F1 points; Amazon = 17.4 F1 points. Human baseline shows little to no drop across domains.
+
+**Baseline Results**: Across a testbed of over 100 SQuAD models: average F1 drops of 3.8 (New York Times), 14.0 (Reddit), and 17.4 (Amazon). Human baseline: average human F1 on original SQuAD v1.1 ≈ 95.1; human F1 decreases by 0.1 on New York Times, 2.9 on Reddit, and 3.0 on Amazon. Example: XLNet (best SQuAD model) SQuAD v1.1 F1 = 95.1; New-Wiki F1 = 92.3 (gap 2.7); Amazon F1 = 81.7 (gap 13.4).
+
+**Validation**: Replication of the original SQuAD data generation process using original generation code where possible, matched passage length statistics, ensured no article overlap with SQuAD training/dev, used the same post-processing and cleaning as SQuAD v1.1, compared new Wikipedia replication to original SQuAD to assess adaptivity (found little evidence of adaptive overfitting), and reported 95% Student's t-confidence intervals for model scores on new test sets. Additional manual filtering experiments showed negligible impact on results.
+
+## ⚠️ Targeted Risks
+
+**Risk Categories**:
+- Robustness
+- Accuracy
+- Transparency
+- Governance
+
+**Atlas Risks**:
+- **Transparency**: Lack of training data transparency
+- **Accuracy**: Data contamination, Unrepresentative data
+- **Governance**: Lack of testing diversity
+
+## 🔒 Ethical and Legal Considerations
+
+**Privacy And Anonymity**: Not Applicable
+
+**Data Licensing**: Not Applicable
+
+**Consent Procedures**: Not Applicable
+
+**Compliance With Regulations**: Not Applicable

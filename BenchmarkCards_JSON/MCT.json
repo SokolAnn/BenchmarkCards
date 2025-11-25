@@ -1,0 +1,71 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Matching Convexified Trajectory (MCT)",
+    "abbreviation": "MCT",
+    "overview": "This paper introduces the Matching Convexified Trajectory (MCT) method, which improves upon traditional Dataset Distillation techniques by creating a convexified expert trajectory that enhances optimization stability, convergence speed, and reduces storage requirements.",
+    "data_type": "image",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Dataset Condensation (DC)",
+      "Distribution Matching (DM)",
+      "Matching Training Trajectories (MTT)"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2406.19827"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To present a novel Dataset Distillation method that improves stability and speed of model training while reducing memory consumption.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Dataset Distillation"
+    ],
+    "limitations": "The enhancement in validation accuracy is limited by the choice of starting and ending points and the simplified calculation of trajectory characteristics.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "CIFAR-10, CIFAR-100, and Tiny-ImageNet datasets",
+    "size": "3 datasets",
+    "format": "Image",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Distillation accuracy is computed based on the average accuracy of networks trained on synthetic datasets.",
+    "interpretation": "The validation accuracy trends indicate how quickly and stably the model converges using the proposed method compared to traditional methods.",
+    "baseline_results": "Comparison against Dataset Condensation (DC), Distribution Matching (DM), and Matching Training Trajectories (MTT) showed MCT achieved superior performance across benchmarks.",
+    "validation": "Extensive experiments validated the method across multiple datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

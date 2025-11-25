@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Wiki-Newpages-2023-QA",
+    "abbreviation": "N/A",
+    "overview": "The Wiki-Newpages-2023-QA datasets are specifically designed to study the knowledge acquisition capabilities of large language models (LLMs) related to memorization, extraction, and reasoning.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "N/A"
+    ],
+    "resources": [
+      "https://github.com/zhangxy-2019/Effective-Knowledge-Injection"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To explore the knowledge acquisition capabilities of LLMs through self-teaching via newly curated datasets.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Knowledge Memorization",
+      "Knowledge Extraction",
+      "Natural Language Inference"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected articles from Wikipedia NewPages published after the pre-training cut-off time of the LLMs.",
+    "size": "4,257 articles",
+    "format": "JSON",
+    "annotation": "Generated QA pairs using prompts for open-ended generation and natural language inference tasks."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Exact Match (EM)",
+      "F1 Score",
+      "Recall",
+      "ROUGE-L"
+    ],
+    "calculation": "Metrics calculated using the generated responses in comparison to ground truth answers.",
+    "interpretation": "Higher scores indicate better knowledge acquisition capabilities of LLMs.",
+    "baseline_results": "SELF-TUNING significantly outperforms baseline methods.",
+    "validation": "Results validated through extensive experiments on knowledge extraction and retention tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

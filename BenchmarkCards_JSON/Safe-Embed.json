@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Safe-Embed",
+    "abbreviation": "N/A",
+    "overview": "This paper introduces new pairwise datasets and the Categorical Purity (CP) metric to assess the ability of sentence encoders to distinguish between safe and unsafe prompts.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "XSTest",
+      "Do-Not-Answer"
+    ],
+    "resources": [
+      "https://github.com/JwdanielJung/Safe-Embed"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To systematically measure the Safety-Critical knowledge of various sentence encoders and improve their capabilities as safety detectors.",
+    "audience": [
+      "ML Researchers",
+      "Safety Engineers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Safety Classification",
+      "Safety Detection"
+    ],
+    "limitations": "The evaluation only considers short, simple prompts written in English; more complex unsafe prompts were not included.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Newly created pairwise datasets including Safety-Challenging and Safety-Taxonomy datasets.",
+    "size": "1,900 total prompts (250 Safety-Challenging, 939 Do-Not-Answer)",
+    "format": "CSV",
+    "annotation": "Manual creation of unsafe prompts to match safe prompts."
+  },
+  "methodology": {
+    "methods": [
+      "Statistical Analysis",
+      "Categorical Purity Metric Evaluation"
+    ],
+    "metrics": [
+      "Categorical Purity (CP)"
+    ],
+    "calculation": "CP is calculated by measuring the cosine similarity among prompts within the same category.",
+    "interpretation": "A higher CP score indicates better categorization of unsafe prompts.",
+    "baseline_results": "SBERT-all achieved a CP score of 0.747, ST5-XXL achieved 0.823 for successful categorization.",
+    "validation": "Results validated against established datasets like XSTest and Do-Not-Answer."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "This benchmark aims to prevent harmful outputs in LLMs from unsafe prompts."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

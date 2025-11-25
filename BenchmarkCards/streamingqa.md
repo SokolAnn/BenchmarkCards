@@ -1,0 +1,108 @@
+# StreamingQA
+
+## 📊 Benchmark Details
+
+**Name**: StreamingQA
+
+**Overview**: A new large-scale dataset, StreamingQA, with human written and generated questions asked on a given date, to be answered from 14 years of time-stamped English WMT news articles (2007–2020). It is designed to provide temporal grounding of both questions and knowledge to evaluate adaptation and forgetting of parametric (closed-book) and semi-parametric (open-book) QA models as new information is ingested over time.
+
+**Data Type**: Question-answering pairs
+
+**Domains**:
+- Natural Language Processing
+- News
+
+**Languages**:
+- English
+
+**Similar Benchmarks**:
+- TempLama
+- ArchivalQA
+- SituatedQA-temporal
+- Time-Sensitive QA
+- Natural Questions
+- PAQ
+- CronQuestions
+- TempQuestions
+- TORQUE
+
+**Resources**:
+- [GitHub Repository](https://github.com/deepmind/streamingqa)
+- [Resource](https://arxiv.org/abs/2205.11388)
+- [Resource](http://data.statmt.org/news-crawl/README)
+
+## 🎯 Purpose and Intended Users
+
+**Goal**: To provide a QA dataset and task for studying adaptation to new information over time and for measuring models' adaptation and forgetting of knowledge in both open-book and closed-book QA settings, using temporally non-overlapping training and evaluation sets.
+
+**Target Audience**:
+- ML Researchers
+- QA Researchers
+
+**Tasks**:
+- Question Answering
+- Open-book Question Answering
+- Closed-book Question Answering
+- Temporal Adaptation Evaluation
+- Information Retrieval
+
+**Limitations**: The dataset is focused on news articles and may not be applicable to settings where the authors' assumptions do not apply; the overall distribution is biased towards the present; news articles can contain toxic or conflicting information; the dataset does not address retrieval of conflicting information resolution.
+
+**Out of Scope Uses**:
+- Settings that do not match the news-domain assumptions used to construct StreamingQA (the authors explicitly state the dataset may not be applicable where those assumptions do not apply).
+
+## 💾 Data
+
+**Source**: Time-stamped English WMT news articles (news-crawl) published between 2007 and 2020 (approx. 11M articles) as the knowledge corpus. Questions are a mixture of human-written and automatically generated questions grounded in these articles. Knowledge corpus is sliced into 6-sentence passages (resulting in ~42.1M passages up to 2019 and ~47.6M passages up to 2020).
+
+**Size**: Approximately 100,000 training questions; 10,000 validation questions; ~27,620 generated evaluation questions; ~8,758 human-written evaluation questions; ~11,000,000 articles in the knowledge corpus; ~42.1M passages (up to 2019) and ~47.6M passages (up to 2020).
+
+**Format**: N/A
+
+**Annotation**: Human annotation by English-speaking annotators (US/UK, university-educated) who wrote up to five questions per article; quality filtering used a two-stage process requiring agreement of 3 annotators for inclusion; annotators also provided reference answers and supporting spans. Generated questions were produced by few-shot prompting of a large LM and subjected to automatic heuristic filtering and human validation.
+
+## 🔬 Methodology
+
+**Methods**:
+- Automated metrics
+- Human evaluation
+- Model-based evaluation (closed-book and open-book QA experiments)
+- Retrieval evaluation
+
+**Metrics**:
+- F1 Score
+- Exact Match (EM)
+- Recall@20
+- Perplexity
+
+**Calculation**: F1 and Exact Match are computed after normalizing answers in the same way as Rajpurkar et al. (2016). Retrieval metrics such as Recall@20 are computed on retrieved passages. Perplexity is measured on evaluation documents for language models.
+
+**Interpretation**: Higher F1 and Exact Match indicate better QA performance and better adaptation to new knowledge. The authors note there remains a substantial gap between model performance and human performance on the tasks.
+
+**Baseline Results**: Examples from the paper's reported baselines (static/open-book setup): FiD + GoldRetrieval F1 = 0.7273 (Generated, Recent); Human F1 = 0.7744 (Generated, Recent); FiD + IU + FT F1 = 0.5776 (Generated, Recent); CB + Retrained F1 = 0.2390 (Generated, Recent).
+
+**Validation**: Two-stage quality filtering: (1) annotators labeled questions for factuality, unambiguity, and grammar requiring 3 annotators' agreement; (2) annotators answered questions given passage, publication date, and question date to provide reference answers and supporting spans. Generated questions were filtered with heuristic checks and search-based verification. Splits into train/validation/eval are temporally non-overlapping and evaluation sets are split quarterly over 2020.
+
+## ⚠️ Targeted Risks
+
+**Risk Categories**:
+- Toxicity
+- Fairness
+- Societal Impact
+
+**Atlas Risks**:
+- **Value Alignment**: Toxic output
+- **Fairness**: Data bias
+- **Societal Impact**: Impact on affected communities
+
+**Potential Harm**: ['Toxic content present in news articles and in generated questions', 'Potential reduced representation of some groups due to toxicity filtering thresholds and removals']
+
+## 🔒 Ethical and Legal Considerations
+
+**Privacy And Anonymity**: Human annotators provided informed consent prior to tasks; study design and compensation were reviewed by DeepMind’s independent ethical review committee.
+
+**Data Licensing**: Not Applicable
+
+**Consent Procedures**: All participants provided informed consent and were reimbursed; compensation policy ensured at least living wage for location; details reviewed by DeepMind’s independent ethical review committee.
+
+**Compliance With Regulations**: Not Applicable

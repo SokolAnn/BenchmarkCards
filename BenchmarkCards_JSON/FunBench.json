@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FunBench",
+    "abbreviation": "N/A",
+    "overview": "FunBench is a novel visual question answering (VQA) benchmark designed to comprehensively evaluate MLLMs' fundus reading skills, featuring hierarchical task organization across four levels: modality perception, anatomy perception, lesion analysis, and disease diagnosis.",
+    "data_type": "visual question-answering pairs",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "OmniMedVQA",
+      "GMAI-MMBench",
+      "LMOD"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/AIMClab-RUC/FunBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the efficacy of open-source MLLMs for fundus reading tasks of varied difficulties.",
+    "audience": [
+      "ML Researchers",
+      "Healthcare Practitioners"
+    ],
+    "tasks": [
+      "Visual Question Answering",
+      "Image Recognition",
+      "Disease Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "14 public datasets including CFP, OCT, UWF datasets and multimodal datasets.",
+    "size": "16,348 fundus images and 91,810 visual questions",
+    "format": "N/A",
+    "annotation": "Multi-choice VQA quadruples generated from given images and their associated labels."
+  },
+  "methodology": {
+    "methods": [
+      "Holistic evaluation",
+      "Knowledge-prompted LLM evaluation",
+      "Linear-probe based VE evaluation"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Sensitivity",
+      "Specificity"
+    ],
+    "calculation": "F1 Score calculated as the harmonic mean of Sensitivity and Specificity.",
+    "interpretation": "A higher F1 Score indicates better performance in fundus reading tasks.",
+    "baseline_results": null,
+    "validation": "Evaluated performance on nine open-source MLLMs and proprietary baseline models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

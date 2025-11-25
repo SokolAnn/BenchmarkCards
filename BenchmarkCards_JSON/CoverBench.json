@@ -1,0 +1,72 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CoverBench",
+    "abbreviation": "N/A",
+    "overview": "CoverBench is a challenging benchmark focused on verifying language model outputs in complex reasoning settings, providing a diversified evaluation for complex claim verification in various domains with a consistent schema.",
+    "data_type": "complex claim verification pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Finance",
+      "Wikipedia",
+      "Biomedical",
+      "Legal",
+      "Statistics"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/google/coverbench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To develop models capable of verifying the correctness of complex claims made by large language models.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Claim Verification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Based on a combination of nine diverse datasets designed for complex reasoning tasks.",
+    "size": "733 examples",
+    "format": "JSON, HTML, Markdown",
+    "annotation": "Manual vetting and model-assisted transformation and validation."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Macro-F1 Score"
+    ],
+    "calculation": "Macro-F1 score is calculated based on the binary classification of claims against their grounding contexts.",
+    "interpretation": "Scores closer to 70 indicate better performance, with performance below 50 indicating a random baseline.",
+    "baseline_results": "Best models achieve below a 70 Macro-F1 score.",
+    "validation": "Manual inspection of example solvability and label correctness."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

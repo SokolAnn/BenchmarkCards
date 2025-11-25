@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "JurisTCU",
+    "abbreviation": "N/A",
+    "overview": "This paper introduces JurisTCU, a Brazilian Portuguese dataset for legal information retrieval (LIR) containing 16,045 jurisprudential documents and 150 queries annotated with relevance judgments. It addresses the scarcity of Portuguese-language LIR datasets with query relevance annotations.",
+    "data_type": "text",
+    "domains": [
+      "Legal"
+    ],
+    "languages": [
+      "Portuguese"
+    ],
+    "similar_benchmarks": [
+      "MS MARCO",
+      "mMARCO",
+      "Ulysses-RFCorpus"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/LeandroRibeiro/JurisTCU"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a dataset for the Portuguese-language information retrieval (IR) research community and to improve legal search systems.",
+    "audience": [
+      "ML Researchers",
+      "Legal Domain Professionals"
+    ],
+    "tasks": [
+      "Information Retrieval"
+    ],
+    "limitations": "The JurisTCU dataset focuses on TCU jurisprudence, and its use to infer the performance of retrievers may not generalize to other domains.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset was created using documents produced by TCU, which includes jurisprudence from the Brazilian Federal Court of Accounts.",
+    "size": "16,045 documents",
+    "format": "N/A",
+    "annotation": "Relevance judgments created through a hybrid approach combining LLM-based scoring with expert domain validation."
+  },
+  "methodology": {
+    "methods": [
+      "Lexical search",
+      "Semantic search"
+    ],
+    "metrics": [
+      "Precision (P@10)",
+      "Recall (R@10)",
+      "Mean Reciprocal Rank (MRR@10)",
+      "Normalized Discounted Cumulative Gain (nDCG@10)"
+    ],
+    "calculation": "Metrics were calculated by evaluating retrieved documents against the relevance judgments for each query.",
+    "interpretation": "Higher precision and recall indicate better performance of the search methods applied.",
+    "baseline_results": "BM25 baseline performance was evaluated against various document expansion methods and LLM-based models.",
+    "validation": "14 experiments were conducted using the dataset for validation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

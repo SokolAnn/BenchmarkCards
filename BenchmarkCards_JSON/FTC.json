@@ -1,0 +1,77 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Finetuning Text Classifiers (FTC) metadataset",
+    "abbreviation": "FTC",
+    "overview": "The FTC metadataset contains predictions from five large finetuned models across six datasets for text classification tasks, and it evaluates the effectiveness of various ensembling strategies.",
+    "data_type": "predictions from text classification models",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/sebastianpinedaar/finetuning_text_classifiers"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To analyze the efficacy of ensembling strategies for finetuned text classifiers on various datasets.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Predictions from five large finetuned models on six datasets: IMDB, Tweet, News, DBpedia, SST-2, SetFit.",
+    "size": "1,134 evaluated configurations, around 3,800 GPU hours of computation.",
+    "format": "N/A",
+    "annotation": "Predictions obtained by finetuning models on training data and evaluating on validation and test splits."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Negative Log-Likelihood (NLL)",
+      "Classification error"
+    ],
+    "calculation": "Metrics calculated from predictions on validation and test data across different ensembling strategies.",
+    "interpretation": "Lower NLL and classification error indicate better model performance.",
+    "baseline_results": "N/A",
+    "validation": "Best configurations for each dataset were determined via grid search on validation data."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": []
+        },
+        {
+          "category": "Robustness",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

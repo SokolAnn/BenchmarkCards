@@ -1,0 +1,75 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PEDANTIC (Patent Definite Examination Dataset)",
+    "abbreviation": "PEDANTIC",
+    "overview": "PEDANTIC is a novel dataset of 14,000 US patent claims relating to Natural Language Processing, annotated with reasons for indefiniteness to facilitate automatic examination of patent claims.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/boschresearch/pedantic-patentsemtech"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enable reproducible research on automatic patent definiteness examination.",
+    "audience": [
+      "Patent AI Researchers",
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Binary Classification",
+      "Multi-Label Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "USPTO Office Data Portal API",
+    "size": "14,536 claims",
+    "format": "JSON",
+    "annotation": "Automatically generated with human validation."
+  },
+  "methodology": {
+    "methods": [
+      "Logistic Regression",
+      "LLM-based Evaluation",
+      "LLM-as-Judge Evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Precision",
+      "Recall",
+      "F1 Score",
+      "AUROC"
+    ],
+    "calculation": "Metrics calculated based on model predictions compared to human examiner's rejections.",
+    "interpretation": "Higher scores indicate a better performance in identifying definiteness in patent claims.",
+    "baseline_results": "Best model achieved an AUROC score of 60.3.",
+    "validation": "Human validation using a sample of annotated claims."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC BY 4.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

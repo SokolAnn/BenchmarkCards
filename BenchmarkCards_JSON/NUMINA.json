@@ -1,0 +1,80 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "NUMINA (Natural Understanding Benchmark for Multi-dimensional Intelligence and Numerical Reasoning Abilities)",
+    "abbreviation": "NUMINA",
+    "overview": "NUMINA is the first Natural Understanding benchmark that enhances multimodal indoor perceptual understanding by focusing on fine-grained spatial understanding and numerical reasoning in indoor environments.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ScanRefer",
+      "ScanQA",
+      "Talk2Nav"
+    ],
+    "resources": [
+      "https://github.com/fengshun124/NUMINA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess multi-dimensional intelligence and numerical reasoning capabilities of large language models in 3D environments.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Fact Validation",
+      "Prompt Matching",
+      "Numerical Inference"
+    ],
+    "limitations": "Although the benchmark encompasses a wide range of tasks, it may not fully capture all aspects of human cognition, particularly those dimensions that are inherently subjective or difficult to quantify.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset is based on 3D indoor scenes from ScanNet and incorporates data from ScanQA.",
+    "size": "74,526 question-answer pairs",
+    "format": "JSON",
+    "annotation": "Automatically generated using NUMINA-Flow, which combines LLM rewriting and rule-based verification."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Threshold Accuracy"
+    ],
+    "calculation": "Threshold Accuracy is calculated as the percentage of predictions falling within a predefined error threshold with respect to ground truth.",
+    "interpretation": "Accuracy measures the number of correct predictions, while Threshold Accuracy indicates acceptable predictions within defined error margins.",
+    "baseline_results": null,
+    "validation": "The dataset outputs undergo human and rule-based validation to ensure quality and reliability."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The documents of NUMINA do not contain private information and annotating this dataset is not necessary to make judgments about social risks.",
+    "data_licensing": "The ScanQA dataset is distributed with the CC BY-NC-SA 3.0 license, and ScanNet is available for research use.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

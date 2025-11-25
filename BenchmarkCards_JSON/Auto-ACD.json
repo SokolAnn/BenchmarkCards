@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Auto-ACD (Audio Captioning Dataset by Automatic Collection)",
+    "abbreviation": "Auto-ACD",
+    "overview": "Auto-ACD is a large-scale audio-language dataset comprising over 1.5M audio-text pairs, generated through an automatic pipeline that leverages audio-visual correspondence to create rich and descriptive captions for audio streams.",
+    "data_type": "audio-text pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "AudioCaps",
+      "Clotho",
+      "LAION-Audio-630K",
+      "WavCaps"
+    ],
+    "resources": [
+      "https://doi.org/10.1145/3664647.3681472"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive dataset for audio-language representation learning, improving the performance of models on audio-text tasks.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Audio Captioning",
+      "Audio-Text Retrieval",
+      "Zero-shot Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Auto-ACD is constructed from AudioSet and VGGSound, employing an automatic data collection process that utilizes publicly available tools and APIs.",
+    "size": "1.5 million audio-text pairs",
+    "format": "N/A",
+    "annotation": "Automatic caption generation through a series of audio-visual models and a language model."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Recall@k",
+      "Meteor",
+      "RougeL",
+      "Spider"
+    ],
+    "calculation": "Metrics are calculated based on performance in retrieval tasks and captioning tasks across various datasets.",
+    "interpretation": "Higher Recall@k values indicate better performance in audio-text retrieval, while improvements in Meteor and RougeL demonstrate superior captioning quality.",
+    "baseline_results": "N/A",
+    "validation": "Manual verification of the test set to ensure the accuracy and relevance of generated captions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

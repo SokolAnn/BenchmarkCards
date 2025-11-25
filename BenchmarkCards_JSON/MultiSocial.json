@@ -1,0 +1,114 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MultiSocial",
+    "abbreviation": "N/A",
+    "overview": "MultiSocial is the first multilingual (22 languages) and multi-platform (5 social media platforms) dataset for benchmarking machine-generated text detection in the social-media domain, containing 472,097 texts including human-written and machine-generated instances.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Spanish",
+      "Chinese",
+      "Arabic",
+      "Bulgarian",
+      "Catalan",
+      "Czech",
+      "Dutch",
+      "German",
+      "Greek",
+      "Hungarian",
+      "Irish",
+      "Polish",
+      "Portuguese",
+      "Romanian",
+      "Russian",
+      "Slovak",
+      "Slovenian",
+      "Ukrainian"
+    ],
+    "similar_benchmarks": [
+      "MULTITuDE",
+      "M4GT-Bench"
+    ],
+    "resources": [
+      "https://doi.org/10.5281/zenodo.13846152",
+      "https://github.com/kinit-sk/multisocial"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a benchmark dataset for machine-generated text detection methods on social-media texts.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Machine Generated Text Detection"
+    ],
+    "limitations": "The dataset primarily consists of texts from five social-media platforms and is limited to 7 text generators.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset contains human-written data from five different social-media platforms (Telegram, Twitter, Gab, Discord, and WhatsApp) combined with machine-generated texts from 7 SOTA LLMs.",
+    "size": "472,097 texts",
+    "format": "JSON",
+    "annotation": "Annotated with human and machine-generated text labels."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "AUC ROC",
+      "Macro Average F1 Score"
+    ],
+    "calculation": "Metrics are calculated using models trained on the MultiSocial dataset.",
+    "interpretation": "Higher AUC ROC indicates better detection capability.",
+    "baseline_results": null,
+    "validation": "Each method is validated on separate subsets of the dataset."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset is anonymized and does not contain sensitive user data.",
+    "data_licensing": "Published in accordance with the licenses of the six existing datasets it is based on.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

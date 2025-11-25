@@ -1,0 +1,82 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MANICOD (Manipulated Content Detection)",
+    "abbreviation": "MANICOD",
+    "overview": "MANICOD is designed for detecting zero-day manipulated content using a dataset of 4,270 pieces of manipulated fake news derived from 2,500 recent real-world news headlines.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/cyberooo/manicod"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide an explainable detector for manipulated content that employs real-time contextual information for accurate classification.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Dataset created from crawling RSS feeds from reputable news sources over 20 days.",
+    "size": "4,270 examples",
+    "format": "N/A",
+    "annotation": "Manual alteration and review with bias considerations for ensuring the authenticity of manipulated content."
+  },
+  "methodology": {
+    "methods": [
+      "Knowledge retrieval from online sources",
+      "LLM-based inference"
+    ],
+    "metrics": [
+      "F1 Score"
+    ],
+    "calculation": "The F1 score was calculated as 0.856 based on precision and recall measures.",
+    "interpretation": "Scores above 0.85 indicate strong performance in detecting manipulated content.",
+    "baseline_results": "Comparison against existing benchmarks shows an up to 1.9x improvement in F1 score.",
+    "validation": "MANICOD has been validated with a dataset specifically created for evaluating its performance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination",
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

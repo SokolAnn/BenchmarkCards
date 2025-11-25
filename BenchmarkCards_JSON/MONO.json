@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MONO (Multi-agent Operated Noise Outfilter)",
+    "abbreviation": "MONO",
+    "overview": "MONO is an LLM-powered framework designed to improve vulnerability datasets by addressing common issues like semantic mislabeling and undecidable patches that hinder vulnerability detection effectiveness.",
+    "data_type": "text",
+    "domains": [
+      "Computer Science"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MegaVul",
+      "BigVul",
+      "DiverseVul"
+    ],
+    "resources": [
+      "https://github.com/vul337/mono"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To construct reliable vulnerability datasets using a multi-agent framework that improves upon existing dataset quality by filtering out noisy samples and enhancing context representation.",
+    "audience": [
+      "ML Researchers",
+      "Security Auditors",
+      "Software Developers"
+    ],
+    "tasks": [
+      "Vulnerability Detection"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The MegaVul dataset was used as the starting point to extract function-level and patch metadata, supplemented by custom crawlers to gather repository-level context.",
+    "size": "6,212 CVEs",
+    "format": "Custom structured format containing metadata, context, and classification.",
+    "annotation": "Automated classification aided by LLM analysis and human expert validation."
+  },
+  "methodology": {
+    "methods": [
+      "Iterative contextual analysis",
+      "Multi-agent classification",
+      "Static analysis tool integration"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "Precision is calculated as the ratio of true positives to the sum of true positives and false positives. Recall is calculated as the ratio of true positives to the sum of true positives and false negatives.",
+    "interpretation": "High precision indicates that when a security patch is identified, it is correct, while high recall signifies the capability to find all relevant security patches.",
+    "baseline_results": "The model demonstrated a precision of 100% and a recall of 96.2% on test data, filtering non-security patches.",
+    "validation": "Human evaluation on a sample of identified patches to verify classification accuracy."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Noise due to semantic mislabeling and incorrect patch classifications."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Open-sourced under a GitHub repository. License type not specified.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

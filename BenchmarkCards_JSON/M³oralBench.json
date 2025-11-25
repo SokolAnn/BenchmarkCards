@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "M³oralBench (MultiModal Moral Benchmark)",
+    "abbreviation": "M³oralBench",
+    "overview": "M³oralBench is the first multimodal moral evaluation benchmark for large vision-language models (LVLMs), designed to assess their moral understanding and reasoning across six moral foundations of Moral Foundations Theory (MFT) through tasks of moral judgement, moral classification, and moral response.",
+    "data_type": "moral judgement scenarios, images",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/BeiiiY/M3oralBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation tool for assessing the moral understanding and reasoning abilities of large vision-language models.",
+    "audience": [
+      "ML Researchers",
+      "Ethicists",
+      "AI Developers"
+    ],
+    "tasks": [
+      "Moral Judgement",
+      "Moral Classification",
+      "Moral Response"
+    ],
+    "limitations": "The benchmark currently relies on closed-ended multiple-choice questions without including open-ended question-answering formats.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated using a combination of Moral Foundations Vignettes and a text-to-image diffusion model (SD3.0).",
+    "size": "1,160 moral scenarios and 4,640 instructions",
+    "format": "Custom dataset format",
+    "annotation": "Automatically generated from moral scenarios with manual verification."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "The likelihood of choosing an option is quantified using Monte Carlo sampling to estimate probabilities based on model responses.",
+    "interpretation": "Higher accuracy indicates better abilities in moral understanding and reasoning, showing greater alignment with human moral standards.",
+    "baseline_results": null,
+    "validation": "Extensive experiments conducted on 10 popular open-source and closed-source LVLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All generated images contain no identifiable data or depictions of explicit violence or gore.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

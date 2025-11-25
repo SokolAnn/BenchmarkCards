@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "BATCH SAFEBENCH",
+    "abbreviation": "N/A",
+    "overview": "BATCH SAFEBENCH is a benchmark dataset designed to evaluate the vulnerability of large language models (LLMs) to batch prompting attacks, comprising 150 attack instructions and 8,000 batch instances. It systematically examines how malicious inputs can influence LLM outputs across various scenarios.",
+    "data_type": "batch prompting instances",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/MurongYue/BatchSafeBench",
+      "https://github.com/MurongYue/BatchSafeBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary goal of BATCH SAFEBENCH is to systematically assess the security vulnerabilities in batch prompting techniques used with large language models and to encourage the development of defenses against these vulnerabilities.",
+    "audience": [
+      "ML Researchers",
+      "Security Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Security Evaluation",
+      "Adversarial Testing"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset is constructed from the GSM8k and HotpotQA datasets where batch instances are generated based on predefined attack instructions.",
+    "size": "8,000 batch instances",
+    "format": "JSON",
+    "annotation": "Manual generation of attack instructions using a meta prompt followed by selection of examples from existing datasets."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Attack Success Rate (ASR)"
+    ],
+    "calculation": "Accuracy is calculated based on correct answers excluding appended malicious content. Attack Success Rate is determined through customized ground truth for various attack scenarios.",
+    "interpretation": "A higher accuracy indicates better performance against prompts, while a higher ASR indicates greater vulnerability to attacks.",
+    "baseline_results": null,
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Security",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": []
+        },
+        {
+          "category": "Misuse",
+          "subcategory": [
+            "Spreading disinformation"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "The benchmark identifies how batch prompting can lead to the spread of harmful or misleading information through improper model responses."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

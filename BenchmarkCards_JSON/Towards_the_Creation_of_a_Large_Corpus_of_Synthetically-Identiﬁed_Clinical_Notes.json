@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Towards the Creation of a Large Corpus of Synthetically-Identiﬁed Clinical Notes",
+    "abbreviation": "N/A",
+    "overview": "This work presents a first step toward creating a large synthetically-identiﬁed corpus of clinical notes and corresponding PHI annotations in order to facilitate the development de-identiﬁcation tools. Further, one such tool is evaluated against this corpus in order to understand the advantages and shortcomings of this approach.",
+    "data_type": "text (clinical notes with PHI annotations / synthetically-identified notes)",
+    "domains": [
+      "Natural Language Processing",
+      "Healthcare"
+    ],
+    "languages": [],
+    "similar_benchmarks": [
+      "Informatics for Integrating Biology and the Bedside (i2b2) 2006 corpus",
+      "2014 i2b2/UTHealth corpus"
+    ],
+    "resources": [
+      "http://names.mongabay.com/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "1. Provide first steps toward a corpus of clinical notes that have been synthetically-identified, meaning they have been de-identiﬁed and PHI has been replaced with reasonable surrogates. 2. Evaluate a baseline de-identiﬁcation system against this data in order to understand advantages and shortcomings of this approach.",
+    "audience": [
+      "Researchers developing de-identification tools",
+      "Clinical Natural Language Processing researchers",
+      "The research community (clinical NLP)"
+    ],
+    "tasks": [
+      "De-identification",
+      "Named Entity Recognition"
+    ],
+    "limitations": "The system created by Neamatullah et al. favors recall over precision as it introduces virtually no false negatives, while there are numerous false positives accounting for up to 15% of the PHI instances detected. Creation of the synthetically-identified dataset directly from the identified data is necessary so as not to unnecessarily introduce meaningless surrogate data. Using surrogate data may constrain the natural variety of names, places, and other entities that appear in notes (e.g., through misspellings); thus, making the task slightly easier. Patient identity coreference was not performed for this initial work.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "MIMIC-III (publicly available dataset developed by the MIT Lab for Computational Physiology)",
+    "size": "2,083,180 notes; 1,685,352 notes contain PHI (80.90%); 492,393,558 tokens; 12,596,126 PHI instances; data for 61,532 ICU stays for 46,520 patients",
+    "format": "N/A",
+    "annotation": "Synthetically-identified notes were created by substituting surrogate values for annotated PHI. Names were chosen proportional to their frequency from the 2005 U.S. Census and hospitals were chosen uniformly from a list of U.S. hospitals. Initial efforts focused on patient names and hospitals."
+  },
+  "methodology": {
+    "methods": [
+      "Conditional Random Field (CRF) statistical modeling for de-identification",
+      "Automated token-level evaluation (precision, recall, F1)"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Evaluation performed at the token-level so that multi-token PHI instances are treated separately. Token-level precision, recall, and F1 are reported.",
+    "interpretation": "Token-level precision/recall/F1 indicate the percentage of PHI tokens detected. The authors report that 'the more data, the better': precision is already good with small training data, while recall continues to improve substantially with more training data.",
+    "baseline_results": "PATIENT_NAME (# training files -> precision, recall, f1): 100 -> 0.89, 0.78, 0.83; 200 -> 0.90, 0.87, 0.88; 500 -> 0.91, 0.93, 0.92; 1000 -> 0.92, 0.96, 0.94. HOSPITAL (# training files -> precision, recall, f1): 100 -> 0.92, 0.72, 0.81; 200 -> 0.93, 0.79, 0.86; 500 -> 0.94, 0.87, 0.91; 1000 -> 0.95, 0.89, 0.92.",
+    "validation": "Evaluation performed on the synthetically-identified corpus using token-level precision, recall, and F1. No additional validation procedures beyond the token-level evaluation on this corpus are described."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Accuracy",
+      "Data Laws"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Data Laws",
+          "subcategory": [
+            "Data usage restrictions"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": [
+      "Exposure of protected health information (PHI) / violation of patient privacy"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Notes are synthetically-identified by substituting surrogate values for annotated PHI. The original MIMIC-III notes were made publicly available after de-identification using a rule-based system (Neamatullah et al.).",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

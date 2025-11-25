@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Danoliterate Benchmark",
+    "abbreviation": "N/A",
+    "overview": "The Danoliterate Benchmark evaluates Danish language and cultural competency across diverse scenarios such as citizenship tests and social media question answering.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Danish"
+    ],
+    "similar_benchmarks": [
+      "ScandEval"
+    ],
+    "resources": [
+      "https://github.com/sorenmulli/danoliterate",
+      "https://danoliterate.compute.dtu.dk/Leaderboard"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the performance of Generative Large Language Models in Danish across multiple tasks.",
+    "audience": [
+      "ML Researchers",
+      "Language Technologists",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Natural Language Understanding",
+      "Natural Language Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Eight scenario datasets created specifically for the benchmark, including the Citizenship Test and others derived from existing resources.",
+    "size": "605 multiple-choice questions, 125 questions from HellaSwag, and various other datasets with several hundred examples each.",
+    "format": "N/A",
+    "annotation": "Manual translations and extractions conducted by the research team."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Accuracy calculated based on the frequency of correct model responses across multiple-choice questions.",
+    "interpretation": "Higher accuracy indicates better Danoliteracy of the model in handling Danish language tasks.",
+    "baseline_results": "GPT-4 and Claude Opus ranked highest in the evaluation.",
+    "validation": "Used bootstrapping techniques to validate the robustness of the benchmark results."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Misuse",
+          "subcategory": [
+            "Spreading disinformation"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The benchmark results include analysis based on user feedback from Danish speakers.",
+    "harm": "The benchmark aims to minimize the risk of bias and maximize fairness in model evaluations."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data is anonymized to remove personally identifiable information particularly in social media scenarios.",
+    "data_licensing": "Datasets have different licensing agreements, both open and restricted.",
+    "consent_procedures": "Written permissions were obtained for using certain datasets.",
+    "compliance_with_regulations": "N/A"
+  }
+}

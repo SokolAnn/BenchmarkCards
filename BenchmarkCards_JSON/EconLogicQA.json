@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "EconLogicQA",
+    "abbreviation": "N/A",
+    "overview": "EconLogicQA is a rigorous benchmark designed to assess the sequential reasoning capabilities of large language models (LLMs) within the intricate realms of economics, business, and supply chain management, focusing on the logical sequencing of interconnected events.",
+    "data_type": "multi-choice questions",
+    "domains": [
+      "Economics",
+      "Business",
+      "Supply Chain Management"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMLU",
+      "Financial Language Understanding Evaluation (FLUE)",
+      "AQA-Bench"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/yinzhu-quan/econ_logic_qa"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To rigorously assess the logical reasoning capabilities of LLMs within economics, business, and supply chain management contexts.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Logical Reasoning"
+    ],
+    "limitations": "The effectiveness of the benchmark is currently validated using a specific dataset of economic news articles, which may limit generalizability.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated from a wide range of business news articles from 2011 to 2022, sourced from Kaggle.",
+    "size": "650 questions",
+    "format": "N/A",
+    "annotation": "Questions are generated using GPT-4 and refined through a rigorous human review process."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy is calculated based on the proportion of correctly sequenced events in the questions.",
+    "interpretation": "Higher accuracy indicates better performance in sequenced reasoning tasks within economic contexts.",
+    "baseline_results": "GPT-4-Turbo achieved the highest accuracy of 56.92% in the 1-shot scenario.",
+    "validation": "Evaluation of performance across various LLMs to assess their reasoning capabilities in economic scenarios."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "The dataset is derived from public domain sources under CC0 Public Domain license.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

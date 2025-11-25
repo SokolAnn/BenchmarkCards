@@ -1,0 +1,98 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Redeﬁning Simplicity: Benchmarking Large Language Models from Lexical to Document Simpliﬁcation",
+    "abbreviation": "N/A",
+    "overview": "This paper presents a comprehensive analysis and comparison of LLM performance across four text simplification tasks: lexical, syntactic, sentence, and document simplification, demonstrating that LLMs outperform traditional methods in all tasks.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Spanish",
+      "Portuguese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/9624219/A-Comprehensive-Study-of-Large-Language-Models-in-Text-Simpliﬁcation",
+      "https://huggingface.co/google/Gemma2-2b",
+      "https://ollama.com/",
+      "https://platform.openai.com/docs/models"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the performance of large language models in text simplification tasks and benchmark their capabilities across different types of simplification.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Lexical Simplification",
+      "Syntactic Simplification",
+      "Sentence Simplification",
+      "Document Simplification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The TSAR-2022 shared task and Newsela dataset consisting of complex and simplified text pairs.",
+    "size": "1,445,159 pairs for WEBSPLIT dataset, 2,359 sentences for ASSET dataset, and a sampled set of 200 documents from Newsela.",
+    "format": "Various formats including text files",
+    "annotation": "Human-annotated simplifications and crowdsourced references."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "SARI",
+      "BERTScore",
+      "FKGL"
+    ],
+    "calculation": "Metrics such as SARI and BERTScore are calculated based on the alignment of generated sentences with reference sentences.",
+    "interpretation": "Higher scores indicate better performance in maintaining meaning and simplification.",
+    "baseline_results": "GPT-4o achieves the highest performance across tasks.",
+    "validation": "Experimental settings validated using multiple datasets and evaluation metrics."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

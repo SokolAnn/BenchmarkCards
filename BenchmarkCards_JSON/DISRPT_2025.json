@@ -1,0 +1,82 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Task 3 (Discourse Relation Classification) of the DISRPT 2025 shared task",
+    "abbreviation": "DISRPT 2025",
+    "overview": "This work contributes to the shared effort of building a multilingual and cross-framework discourse parser by introducing a unified set of 17 discourse relation labels across 39 corpora in 16 languages and six discourse frameworks.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Chinese",
+      "Russian",
+      "Portuguese",
+      "Thai",
+      "Spanish",
+      "German",
+      "Dutch",
+      "Turkish",
+      "Czech",
+      "French",
+      "Persian",
+      "Ewe"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/disrpt/sharedtask2025",
+      "https://huggingface.co"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To establish strong baselines for the discourse relation classification task and evaluate how models respond to the newly proposed unified labels.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Discourse Relation Classification"
+    ],
+    "limitations": "The class distribution in the dataset is not balanced, with certain labels being overrepresented or underrepresented.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Datasets provided by the shared task organizers, composed of 39 datasets covering 16 languages and 6 frameworks.",
+    "size": "170,000 training instances, 28,000 development instances",
+    "format": "N/A",
+    "annotation": "Annotated across multiple discourse relation frameworks for classification."
+  },
+  "methodology": {
+    "methods": [
+      "Fine-tuning multilingual BERT-based models",
+      "Prompt-based evaluation with large language models",
+      "Hierarchical Dual-Adapter Contrastive learning"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "The accuracy is calculated by measuring the correct predictions across the discourse relations in the classification task.",
+    "interpretation": "Higher accuracy indicates better performance in classifying discourse relations.",
+    "baseline_results": "HiDAC achieved the highest overall accuracy at 67.5%.",
+    "validation": "Models were validated using official train/dev/test splits provided for the task."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

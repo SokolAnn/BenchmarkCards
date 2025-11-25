@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MMR (Multi-target and Multi-granularity Reasoning)",
+    "abbreviation": "MMR",
+    "overview": "The MMR dataset provides 194K complex and implicit question-answer pairs that cover multi-target, object-level, and part-level reasoning segmentation, enhancing diverse and context-aware interactions.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ReasonSeg",
+      "MUSE"
+    ],
+    "resources": [
+      "https://github.com/jdg900/MMR"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To overcome the limitations of current reasoning segmentation datasets by addressing both multi-target and part-level reasoning.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Reasoning Segmentation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "PACO-LVIS dataset",
+    "size": "194,398 question-answer pairs",
+    "format": "JSON",
+    "annotation": "Generated using GPT-4V API with oversight from human inspectors"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "gIoU",
+      "cIoU"
+    ],
+    "calculation": "The overall loss is formulated as a combination of text generation loss and mask generation loss.",
+    "interpretation": "Higher gIoU and cIoU scores indicate better segmentation performance.",
+    "baseline_results": "M2SA-7B outperforms various baseline models in multi-target and multi-granularity reasoning segmentation tasks.",
+    "validation": "Data quality validated through rigorous human inspection and filtering."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset is constructed based on publicly available data, minimizing privacy concerns.",
+    "data_licensing": "Creative Commons Attribution 4.0 (CC BY 4.0).",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

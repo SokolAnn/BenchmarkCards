@@ -1,0 +1,99 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Project MPG (Model Performance and Goodness)",
+    "abbreviation": "MPG",
+    "overview": "Project MPG introduces an aggregation approach to derive two primary metrics – 'Goodness' representing answer accuracy and 'Performance' reflecting queries per second (QPS) for evaluating large language models (LLMs), facilitating a unified metric for decision-making across various benchmarks.",
+    "data_type": "multimodal",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMLU",
+      "SQuAD",
+      "BigBench"
+    ],
+    "resources": [
+      "https://github.com/sylinrl/TruthfulQA",
+      "https://huggingface.co/datasets/edinburgh-dawg/mmlu-redux",
+      "https://huggingface.co/datasets/tdiggelm/climate_fever",
+      "https://huggingface.co/datasets/allenai/ai2_arc",
+      "https://huggingface.co/datasets/boolq",
+      "https://huggingface.co/datasets/rajpurkar/squad",
+      "https://github.com/google/BIG-bench/tree/main/bigbench",
+      "https://huggingface.co/datasets/EdinburghNLP/xsum",
+      "https://huggingface.co/datasets/cais/mmlu"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Provide a lightweight evaluation approach for resource-constrained developers to select models that align with their requirements for quality and latency, allowing for efficient comparison of LLM capabilities.",
+    "audience": [
+      "ML Researchers",
+      "Engineers at smaller companies",
+      "University researchers"
+    ],
+    "tasks": [
+      "Factual Recall",
+      "Linguistic Capability and Social Understanding",
+      "Problem Solving"
+    ],
+    "limitations": "Any attempt to aggregate many capabilities into a single number will create problems, such as assuming different measures within a sub-domain reflect the same underlying construct.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Various existing LLM benchmarks including MMLU, SQuAD, BigBench, and Climate-FEVER.",
+    "size": "N/A",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Bayesian posterior sampling",
+      "Aggregate scoring"
+    ],
+    "metrics": [
+      "Goodness score",
+      "Performance score"
+    ],
+    "calculation": "Scores are computed using beta distributions of observed data from benchmarks combined with a binomial likelihood function.",
+    "interpretation": "Higher scores indicate better model capabilities across evaluated benchmarks.",
+    "baseline_results": "N/A",
+    "validation": "Correlations with existing benchmarks such as MMLU and Chatbot Arena validate model performance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": []
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

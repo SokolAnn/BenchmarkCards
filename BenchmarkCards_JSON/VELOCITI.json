@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "VELOCITI",
+    "abbreviation": "N/A",
+    "overview": "VELOCITI is a benchmark to study Video-LLMs by disentangling and assessing the comprehension of agents, actions, and their associations across multiple events in videos. It adopts a video-language entailment setup with strict scoring metrics.",
+    "data_type": "video-language entailment pairs",
+    "domains": [
+      "Computer Vision",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "AGQA",
+      "STAR",
+      "ContrastSets"
+    ],
+    "resources": [
+      "https://katha-ai.github.io/projects/velociti"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the compositional reasoning capabilities of video-language models through structured tests covering various aspects of agent and action understanding.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Video-Language Compositional Reasoning"
+    ],
+    "limitations": "The benchmark is not intended for evaluating all abilities of Video-LLMs but focuses on compositionality.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Videos are sourced from the VidSitu dataset, which includes annotations for multiple events.",
+    "size": "3,101 video-language pairs",
+    "format": "N/A",
+    "annotation": "Annotations include semantic role labeling and captions generated via an open LLM."
+  },
+  "methodology": {
+    "methods": [
+      "Strict VLE",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Strict VLE requires models to proactively identify positive and negative captions correctly, offering a binary 'Yes' or 'No' response.",
+    "interpretation": "Models are expected to predict 'Yes' for aligned captions and 'No' for misaligned ones. A correct prediction is a sample where the positive caption scores higher than the threshold while the negative caption scores below the threshold.",
+    "baseline_results": "The best performing model, Gemini-1.5-Pro, achieves 49.3% accuracy compared to human performance at 93.0%.",
+    "validation": "Quality control of test samples is performed through human verification."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FaST (Feature-aware Sampling and Tuning for Personalized Preference Alignment with Limited Data)",
+    "abbreviation": "FaST",
+    "overview": "This paper introduces two new datasets—DnD and ELIP—for studying the problem of Personalized Preference Alignment with Limited Data (PPALLI) and benchmarks various alignment techniques.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Personalized Soups",
+      "PERSONA",
+      "PRISM",
+      "Perspective",
+      "PersonalLLM"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To facilitate research in personalized preference alignment using limited data.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Personalized Preference Alignment"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Two newly created datasets: DnD focusing on character preferences and ELIP focusing on conversational assistant preferences.",
+    "size": "1,290 preference tuples for DnD; 800 preference tuples for ELIP",
+    "format": "N/A",
+    "annotation": "Responses were annotated by users based on a preference questionnaire."
+  },
+  "methodology": {
+    "methods": [
+      "Sampling and Tuning",
+      "Supervised Fine-Tuning (SFT)",
+      "Direct Preference Optimization (DPO)"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Personalization Score"
+    ],
+    "calculation": "Metrics such as accuracy of preferred response prediction and qualitative evaluation based on LLM-judges.",
+    "interpretation": "Higher scores denote better alignment with user preferences.",
+    "baseline_results": null,
+    "validation": "Datasets were validated using multiple random train/validation/test splits."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Privacy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Data privacy rights alignment"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The datasets and models respect user data by allowing personal preference data to remain on users' devices.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

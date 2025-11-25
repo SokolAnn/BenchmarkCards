@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "VerilogEval",
+    "abbreviation": "N/A",
+    "overview": "VerilogEval is a benchmarking framework tailored specifically for evaluating large language models (LLMs) performance in the context of Verilog code generation for hardware design and verification, consisting of 156 problems sourced from HDLBits.",
+    "data_type": "Verilog coding tasks",
+    "domains": [
+      "Computer Science",
+      "Hardware Design"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "HumanEval",
+      "MBPP",
+      "APPS"
+    ],
+    "resources": [
+      "https://github.com/NVlabs/verilog-eval",
+      "https://hdlbits.01xz.net/wiki/Problem sets"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To create a robust evaluation framework for Verilog code generation and assessment using large language models.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Code Generation",
+      "Functionality Testing"
+    ],
+    "limitations": "Current evaluations are confined to boilerplate code generation for relatively small-scale designs.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "HDLBits, an instructional website for Verilog code challenges.",
+    "size": "156 problems",
+    "format": "N/A",
+    "annotation": "Manual review and automated generation for problem descriptions."
+  },
+  "methodology": {
+    "methods": [
+      "Automated functional correctness testing",
+      "Supervised fine-tuning"
+    ],
+    "metrics": [
+      "pass@k"
+    ],
+    "calculation": "A problem is considered solved if any of the k samples pass the unit tests.",
+    "interpretation": "Higher pass rates indicate better model performance in generating correct Verilog code.",
+    "baseline_results": "Results show performance improved with supervised fine-tuning.",
+    "validation": "Validated through extensive testing against known solution outputs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

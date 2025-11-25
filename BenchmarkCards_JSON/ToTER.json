@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ToTER (Topical Taxonomy Enhanced Retrieval)",
+    "abbreviation": "ToTER",
+    "overview": "ToTER is a framework that enhances PLM-based retrieval in theme-specific applications using a corpus topical taxonomy to identify central topics of queries and documents, and to improve retrieval by supplementing semantic matching.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Information Retrieval"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/SeongKu-Kang/ToTER_WWW24"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To improve retrieval accuracy in theme-specific applications by effectively utilizing corpus topical taxonomies.",
+    "audience": [
+      "Researchers",
+      "Practitioners in Information Retrieval",
+      "Developers of retrieval systems"
+    ],
+    "tasks": [
+      "Document Retrieval"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "SCIDOCS dataset for academic paper search, Amazon ESCI dataset for product search",
+    "size": "25,657 documents for SCIDOCS, 601,354 documents for Amazon ESCI",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Unsupervised multi-label classification",
+      "Retrieval",
+      "Reranking"
+    ],
+    "metrics": [
+      "Recall",
+      "NDCG",
+      "Mean Average Precision (MAP)"
+    ],
+    "calculation": "Metrics calculated based on the number of relevant results retrieved and their ranks.",
+    "interpretation": "Higher values in recall, NDCG, and MAP indicate better retrieval performance.",
+    "baseline_results": "ToTER consistently improves retrieval metrics over existing methods in the evaluated domains.",
+    "validation": "Extensive experiments on real-world datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

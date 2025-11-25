@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "STSBench",
+    "abbreviation": "STSBench",
+    "overview": "STSBench is a scenario-based framework to benchmark the holistic understanding of vision-language models (VLMs) for autonomous driving. It evaluates spatio-temporal reasoning capabilities of VLMs through generated multiple-choice questions from pre-defined traffic scenarios using datasets such as NuScenes.",
+    "data_type": "multiple-choice questions",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "DriveMLLM",
+      "NuScenes-MQA",
+      "NuScenes-QA"
+    ],
+    "resources": [
+      "https://github.com/LRP-IVC/STSBench",
+      "https://huggingface.co/datasets/ivc-lrp/STSBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the spatio-temporal reasoning capabilities of vision-language models in the context of autonomous driving.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The NuScenes dataset; pre-defined scenarios are mined and human-verified for validity.",
+    "size": "971 questions",
+    "format": "N/A",
+    "annotation": "Human verification of scenarios"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy is calculated as the proportion of correctly answered multiple-choice questions, reported as a weighted mean across all scenarios.",
+    "interpretation": "Higher accuracy indicates better model performance in spatio-temporal reasoning under various driving scenarios.",
+    "baseline_results": "Various models including LLMs and VLMs evaluated by accuracy on specific scenarios.",
+    "validation": "Scenarios mined from the dataset undergo human verification to ensure accuracy."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

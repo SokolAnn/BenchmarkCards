@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "GenoTEX",
+    "abbreviation": "N/A",
+    "overview": "GenoTEX provides a benchmark dataset for the automated analysis of gene expression data focused on gene-trait association problems. It includes analysis code and results, expert-curated annotations, and a standardized analysis pipeline.",
+    "data_type": "gene expression data",
+    "domains": [
+      "Healthcare",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/Liu-Hy/GenoTEX"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To support the evaluation and development of automated methods for gene expression data analysis using LLM-based agents.",
+    "audience": [
+      "Bioinformaticians",
+      "ML Researchers"
+    ],
+    "tasks": [
+      "Gene-trait Association Analysis",
+      "Data Preprocessing",
+      "Statistical Analysis"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Gene Expression Omnibus (GEO) and The Cancer Genome Atlas (TCGA)",
+    "size": "41.5 GB",
+    "format": "CSV, JSON",
+    "annotation": "Manually annotated by bioinformaticians"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Accuracy",
+      "Area Under Receiver Operating Characteristic curve (AUROC)"
+    ],
+    "calculation": "Metrics are calculated as described in the methodology section of the paper.",
+    "interpretation": "The performance metrics indicate the effectiveness of different automated methods on the benchmark tasks.",
+    "baseline_results": "GenoAgent achieved an AUROC score of 0.74, while human expert performance was at 0.89.",
+    "validation": "Evaluation through metrics defined for dataset filtering, preprocessing, and statistical analysis."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness",
+      "Fairness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning",
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data is processed to avoid personally identifiable information.",
+    "data_licensing": "CC BY 4.0 (Creative Commons Attribution 4.0 International License)",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

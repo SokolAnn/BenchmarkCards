@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "JailTrickBench",
+    "abbreviation": "N/A",
+    "overview": "JailTrickBench evaluates the impact of various attack settings on LLM performance and provides a baseline for jailbreak attacks, encouraging the adoption of a standardized evaluation framework. It includes comprehensive experiments with numerous jailbreak attack methods against several defense strategies.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "JailbreakBench",
+      "JailBreakV-28K"
+    ],
+    "resources": [
+      "https://github.com/usail-hkust/JailTrickBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a standardized evaluation framework for benchmarking jailbreak attacks on large language models (LLMs).",
+    "audience": [
+      "ML Researchers",
+      "Security Analysts"
+    ],
+    "tasks": [
+      "Security Evaluation",
+      "Benchmarking"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Two widely recognized datasets: AdvBench and MaliciousInstruct, with approximately 520 and 100 examples respectively.",
+    "size": "520 examples",
+    "format": "N/A",
+    "annotation": "Manual selection and creation of adversarial examples."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Comparative analysis"
+    ],
+    "metrics": [
+      "Attack Success Rate (ASR)"
+    ],
+    "calculation": "ASR is calculated as the percentage of instructions that are not rejected and are responded to appropriately.",
+    "interpretation": "Higher ASR indicates more successful jailbreak attacks.",
+    "baseline_results": "Various baselines established with multiple models under different configurations.",
+    "validation": "Empirical validation through extensive experimentation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Privacy",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Standardizes evaluation to prevent safety and security risks in LLMs."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset contains examples representing harmful intents; consent procedures for example generation using GPT-4 mentioned.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Observed during the collection of adversarial prompts and responses.",
+    "compliance_with_regulations": "N/A"
+  }
+}

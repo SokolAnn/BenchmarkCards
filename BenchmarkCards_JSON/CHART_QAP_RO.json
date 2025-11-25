@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CHART QAP RO (Chart Question Answering for Real-World Objects)",
+    "abbreviation": "CHART QAP RO",
+    "overview": "CHART QAP RO is a new benchmark for Chart Question Answering that includes 1,341 charts from 157 diverse sources, featuring 1,948 questions across various types, including factoid, multiple-choice, conversational, hypothetical, and unanswerable questions, designed to assess real-world challenges in chart understanding.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ChartQA",
+      "CharXiv"
+    ],
+    "resources": [
+      "https://github.com/visnlp/ChartQAPro"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a diverse and challenging benchmark for evaluating the capabilities of vision-language models in chart reasoning.",
+    "audience": [
+      "Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Chart Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from various platforms including Pew Research Center, Tableau, OWID, etc.",
+    "size": "1,341 charts and 1,948 questions",
+    "format": "N/A",
+    "annotation": "Human-written and verified question-answer pairs"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy calculated based on exact match criteria for fact-checked and multiple-choice answers, with relaxed correctness for numeric answers.",
+    "interpretation": "Performance evaluated against state-of-the-art models to reveal substantial performance drops compared to previous benchmarks.",
+    "baseline_results": null,
+    "validation": "Experiment run across 21 models with comparisons to determine benchmark effectiveness."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All images sourced from publicly available platforms and reviewed for harmful content.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

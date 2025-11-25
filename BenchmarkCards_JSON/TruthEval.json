@@ -1,0 +1,70 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TruthEval",
+    "abbreviation": "N/A",
+    "overview": "TruthEval is a curated collection of challenging statements on sensitive topics for evaluating Large Language Models (LLMs), designed to measure their truthfulness and reliability.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "TruthfulQA"
+    ],
+    "resources": [
+      "https://github.com/tanny411/TruthEval"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate LLMs' ability to understand truthfulness and reliability across various categories of statements.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Fact Verification"
+    ],
+    "limitations": "The dataset should not be used for fine-tuning individual LLMs due to the ambiguous definitions of truth in some categories.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated from Wikipedia, GPT-3 generated content, conspiracy theory papers, and external sources.",
+    "size": "885 statements",
+    "format": "N/A",
+    "annotation": "Statements were labeled manually based on ground truth."
+  },
+  "methodology": {
+    "methods": [
+      "LLM evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Evaluation based on model responses to curated statements across different prompts.",
+    "interpretation": "Responses are analyzed for consistency and correctness in relation to the truth labels assigned.",
+    "baseline_results": "Evaluated using Mistral-7B model.",
+    "validation": "Initial analyses indicate LLMs struggle with answering based on the curated statements."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset was gathered from publicly accessible sources and did not require external annotators.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SIFo (Sequential Instruction Following) Benchmark",
+    "abbreviation": "SIFo",
+    "overview": "The SIFo benchmark evaluates the ability of large language models (LLMs) to follow a sequence of instructions effectively by using four tasks: text modification, question answering, mathematics, and security rules. Each task assesses different aspects of instruction following in a coherent manner.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/shin-ee-chen/SIFo"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the sequential instruction following ability of LLMs in a fair manner that addresses challenges such as coherence, positional bias, and verifiability of tasks.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text Modification",
+      "Question Answering",
+      "Mathematics",
+      "Security Rules"
+    ],
+    "limitations": "The SIFo benchmark currently comprises only four tasks designed to assess sequential instruction following in LLMs.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed using a mixture of datasets including SQuAD and GPT-4 prompts.",
+    "size": "800 samples (200 samples for each task)",
+    "format": "JSON",
+    "annotation": "Quality checked by human reviewers to verify the correctness and diversity of instructions."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Sample-level accuracy",
+      "Instruction-level accuracy",
+      "Instruction following depth",
+      "Step-level accuracy"
+    ],
+    "calculation": "Metrics calculated based on the percentage of correctly followed instructions and the depth of sequential instructions successfully completed.",
+    "interpretation": "Higher scores indicate better performance in following the sequence of instructions.",
+    "baseline_results": null,
+    "validation": "Cross-verified by experts in LLM evaluation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

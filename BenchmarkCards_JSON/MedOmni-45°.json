@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MedOmni-45°: A Safety–Performance Benchmark for Reasoning-Oriented LLMs in Medicine",
+    "abbreviation": "MedOmni-45°",
+    "overview": "A benchmark and evaluation workflow explicitly designed to quantify the safety–performance trade-off in LLMs under manipulative hint conditions, containing 1,804 reasoning-focused medical questions across six clinical specialties and three task types.",
+    "data_type": "multiple-choice medical questions",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MedMCQA"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To quantify the safety–performance trade-off in reasoning-oriented medical tasks for large language models.",
+    "audience": [
+      "ML Researchers",
+      "Medical Practitioners",
+      "AI Developers"
+    ],
+    "tasks": [
+      "Medical Question Answering",
+      "Clinical Simulation",
+      "Medical Calculation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Self-constructed dataset based on six medical specialties and 500 items from MedMCQA.",
+    "size": "1,804 questions",
+    "format": "N/A",
+    "annotation": "Questions are manually verified by medical annotators to ensure accuracy and clinical validity."
+  },
+  "methodology": {
+    "methods": [
+      "Evaluation across multiple LLMs",
+      "Performance metrics calculation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "CoT-Faithfulness",
+      "Anti-Sycophancy"
+    ],
+    "calculation": "Metrics are calculated based on model responses to medical questions under various manipulative hint conditions.",
+    "interpretation": "Scores across metrics indicate the balance between safety and performance.",
+    "baseline_results": null,
+    "validation": "Evaluated against baseline standard medical QA benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential safety risks from LLMs exhibiting sycophantic tendencies."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

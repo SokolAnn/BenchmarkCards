@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "GRASP (Grid-Based Benchmark for Evaluating Commonsense Spatial Reasoning)",
+    "abbreviation": "GRASP",
+    "overview": "GRASP is a large-scale benchmark consisting of 16,000 grid-based environments designed to evaluate the commonsense spatial reasoning abilities of LLMs through energy collection tasks.",
+    "data_type": "grid instances",
+    "domains": [
+      "Artificial Intelligence"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SpartQA",
+      "StepGame",
+      "BabyAI"
+    ],
+    "resources": [
+      "https://github.com/jasontangzs0/GRASP"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To benchmark the commonsense spatial reasoning abilities of LLMs within structured grid environments.",
+    "audience": [
+      "ML Researchers",
+      "AI Practitioners"
+    ],
+    "tasks": [
+      "Spatial Reasoning"
+    ],
+    "limitations": "The synthetic nature of GRASP’s grid environments may not fully capture the complexity of real-world CSR tasks.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated grid environments based on defined parameters for energy distribution, obstacles, and agent constraints.",
+    "size": "16,000 environments",
+    "format": "text",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Baseline comparison with random walk and greedy search methods",
+      "Evaluation of LLM-based agents"
+    ],
+    "metrics": [
+      "Energy collected",
+      "Step length"
+    ],
+    "calculation": "Performance is calculated based on the amount of energy collected and the number of steps taken by the agents.",
+    "interpretation": "Higher energy collected and fewer steps taken indicate better performance.",
+    "baseline_results": "GPT-3.5-Turbo underperformed against both random walk and greedy search baselines.",
+    "validation": "Results validated through statistical tests comparing agent performances."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination",
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

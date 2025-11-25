@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CTSES (Composite Test Similarity Evaluation Score)",
+    "abbreviation": "CTSES",
+    "overview": "CTSES is a behavior-preserving, readability-aware metric specifically tailored to evaluate test refactoring. It combines CodeBLEU, METEOR, and ROUGE-L into a weighted composite metric that balances syntactic accuracy, lexical clarity, and structural alignment.",
+    "data_type": "code similarity scores",
+    "domains": [
+      "Software Engineering"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Defects4J",
+      "SF110"
+    ],
+    "resources": [
+      "https://github.com/anonymous/CTSES-75D4"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive assessment of the quality of refactored unit tests leveraging Large Language Models.",
+    "audience": [
+      "Software Engineers",
+      "ML Researchers",
+      "Test Developers"
+    ],
+    "tasks": [
+      "Test Refactoring Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Over 5,000 unit tests automatically refactored by GPT-4o and Mistral-Large-2407 using two established Java benchmarks: Defects4J and SF110.",
+    "size": "5,000+ test suites",
+    "format": "N/A",
+    "annotation": "Tests were refactored using Chain-of-Thought prompting."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "CTSES",
+      "CodeBLEU",
+      "METEOR",
+      "ROUGE-L"
+    ],
+    "calculation": "CTSES is calculated as a weighted linear combination of CodeBLEU, METEOR, and ROUGE-L: CTSES = α·CodeBLEU + β·METEOR + γ·ROUGE-L.",
+    "interpretation": "Higher CTSES scores indicate better alignment with developer expectations regarding readability, structural quality, and behavioral consistency.",
+    "baseline_results": "N/A",
+    "validation": "Empirical validation is performed against baseline similarity metrics."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

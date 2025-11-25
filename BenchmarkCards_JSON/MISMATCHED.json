@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MISMATCHED Benchmark for Scientific Natural Language Inference",
+    "abbreviation": "MISMATCHED",
+    "overview": "The MISMATCHED benchmark introduces a new evaluation framework for scientific natural language inference (NLI) by covering non-computer science domains. It includes human annotated sentence pairs from psychology, engineering, and public health, serving as an out-of-domain test bed.",
+    "data_type": "sentence pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SCINLI",
+      "MS CINLI"
+    ],
+    "resources": [
+      "https://github.com/fshaik8/MisMatched"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a challenging benchmark for evaluating the robustness of scientific NLI models across non-CS domains.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Natural Language Inference"
+    ],
+    "limitations": "Although the MISMATCHED benchmark enhances diversity in scientific NLI, many scientific domains (e.g., Physics, Chemistry) are not covered.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Annotated research articles from non-CS domains, including psychology, engineering, and public health.",
+    "size": "2,700 sentence pairs",
+    "format": "JSON",
+    "annotation": "Human annotated"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Macro F1"
+    ],
+    "calculation": "Macro F1 calculated based on the performance across all classes in the benchmark.",
+    "interpretation": "Higher Macro F1 indicates better performance in correctly identifying the semantic relationships.",
+    "baseline_results": "Best performing SLM baseline (SCIBERT) achieved a Macro F1 of 78.17%.",
+    "validation": "The benchmark was validated through human annotations for ensuring quality and consistency."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The datasets include diverse scientific domains but do not cover all possible domains.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

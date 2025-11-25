@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MIXASSIST",
+    "abbreviation": "N/A",
+    "overview": "MIXASSIST is an audio-language dataset capturing the situated, multi-turn dialogue between expert and amateur music producers during collaborative mixing sessions. It provides a unique resource for training and evaluating audio-language models that can comprehend and respond to the complexities of real-world music production dialogues.",
+    "data_type": "audio-grounded conversational turns",
+    "domains": [
+      "Natural Language Processing",
+      "Music Production"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Mix Evaluation Dataset"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/mixassist",
+      "https://zenodo.org/record/xxxx"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the MIXASSIST dataset is to facilitate the development of AI systems that empower musicians by enhancing their mixing capabilities with accessible, context-aware guidance, fostering a co-creative learning environment.",
+    "audience": [
+      "ML Researchers",
+      "Music Producers",
+      "AI Developers"
+    ],
+    "tasks": [
+      "Conversational AI assistance in music mixing",
+      "Instructional dialogue modeling"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Data was collected from seven co-creative mixing sessions involving 12 music producers, with audio segments sourced from The Mix Evaluation Dataset.",
+    "size": "431 audio-grounded conversational turns",
+    "format": "Audio files and structured conversational transcripts",
+    "annotation": "Annotators reviewed and filtered conversational turns based on their pedagogical value, retaining substantive, actionable guidance."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics using LLM-as-a-judge"
+    ],
+    "metrics": [
+      "Accuracy",
+      "BLEU Score",
+      "ROUGE-L"
+    ],
+    "calculation": "Metrics are calculated based on evaluations comparing generated AI responses and human expert advice in the context of music mixing.",
+    "interpretation": "A lower rank indicates better performance among models in generating relevant mixing advice.",
+    "baseline_results": "Qwen was found to significantly outperform other models in evaluations, being preferred in over 50% of cases.",
+    "validation": "The dataset was validated through both quantitative evaluations using LLM-as-a-judge and qualitative assessments via user studies."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Decision bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All participants provided informed consent, and PII was redacted during processing.",
+    "data_licensing": "Data derived from publicly available sources, ensuring no copyright infringement.",
+    "consent_procedures": "All participants gave consent for the recording and use of their dialogue for research purposes.",
+    "compliance_with_regulations": "N/A"
+  }
+}

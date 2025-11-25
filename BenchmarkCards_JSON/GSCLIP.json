@@ -1,0 +1,105 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "GSCLIP : A Framework for Explaining Distribution Shifts in Natural Language",
+    "abbreviation": "GSCLIP",
+    "overview": "We propose a novel task, dataset explanation. Given two image data sets, dataset explanation aims to automatically point out their dataset-level distribution shifts with natural language. We introduce GSCLIP, a training-free framework that uses a hybrid generator group (rule-based + LM-based) to produce candidate natural-language explanations and an explanation selector (based on CLIP embeddings and a projection + two-sample t-test) to quantitatively evaluate and rank candidate explanations.",
+    "data_type": "multimodal (image inputs with natural language explanations)",
+    "domains": [
+      "Computer Vision",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MetaShift",
+      "MetaShift-Attributes",
+      "ImageNet",
+      "ImageNet-C",
+      "DomainNet",
+      "GQA"
+    ],
+    "resources": [
+      "https://github.com/Weixin-Liang/MetaShift",
+      "https://github.com/moein-shariatnia/OpenAI-CLIP",
+      "https://github.com/IlyaSemenov/wikipedia-word-frequency",
+      "https://arxiv.org/abs/2206.15007"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Automatically explain dataset-level distribution shifts between two image datasets in natural language to help users comprehend shifts and assist data-centric AI tasks (e.g., model error discovery, subgroup bias detection).",
+    "audience": [
+      "End users",
+      "AI deployment practitioners",
+      "Data-centric AI practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Dataset Explanation",
+      "Distribution Shift Explanation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "MetaShift and MetaShift-Attributes datasets (Liang & Zou, 2022)",
+    "size": "MetaShift: 12,868 sets of natural images across 410 classes; experiments sample 100 dataset pairs for systematic evaluation",
+    "format": "N/A",
+    "annotation": "MetaShift provides explicit annotations of the differences between sub-datasets (used to evaluate explanations)"
+  },
+  "methodology": {
+    "methods": [
+      "Automated quantitative evaluation using an explanation selector",
+      "Model-based evaluation using CLIP cross-modal embeddings",
+      "Rule-based generator for candidate explanations",
+      "Language model-based generation using GPT-2 for candidate explanations",
+      "Statistical testing (two-sample t-test) to evaluate explanations"
+    ],
+    "metrics": [
+      "Top-x Accuracy (Acc@1, Acc@3, Acc@5, Acc@15)",
+      "Key Word metric (matches ground truth labels and WordNet synonyms)",
+      "p-value from two-sample t-test"
+    ],
+    "calculation": "Top-x accuracy: rank candidate explanations returned by the framework and check whether the explanation contains annotation words of any test image set (Key Word metric also considers WordNet synonyms). Explanation selector: compute projections of image embeddings onto the difference vector between a candidate sentence embedding and its negation; obtain projection lists LA and LB for the two image sets; conduct a two-sample t-test on LA and LB and obtain a p-value for each candidate explanation.",
+    "interpretation": "Candidate explanations are sorted by p-value in ascending order; p-value < 0.05 is considered evidence that the projection distributions differ in a way consistent with the candidate explanation. Higher Acc@x indicates better explanation ranking; lower p-value indicates stronger statistical support for the explanation.",
+    "baseline_results": "Systematic evaluation (rule-based generator + selector) on MetaShift: Acc@1 30%, Acc@3 50%, Acc@5 63%. MetaShift-Attributes: Acc@1 34%, Acc@3 57%, Acc@5 71%. With GPT-2 (hybrid generator + selector) on MetaShift: Label Acc@1 28%, Acc@5 46%, Acc@15 55%; Key Words Acc@1 39%, Acc@5 54%, Acc@15 64%. Wikipedia baseline results and Meta-Attr results are reported in Table 2 of the paper.",
+    "validation": "Validated via large-scale experiments on MetaShift and MetaShift-Attributes: randomly sample 100 dataset pairs (with same main object) and evaluate the selector's ability to rank ground-truth explanations using top-x accuracy metrics and p-values from two-sample t-tests."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Dataset bias",
+      "Model errors",
+      "Subgroup bias"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

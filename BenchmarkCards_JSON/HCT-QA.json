@@ -1,0 +1,70 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "HCT-QA (Human-Centric Tables for Question Answering)",
+    "abbreviation": "HCT-QA",
+    "overview": "HCT-QA is an extensive benchmark for Question Answering on Human-Centric Tables (HCTs), containing 2,188 real-world HCTs with 9,835 QA pairs and 4,679 synthetic HCTs with 67,500 QA pairs, aimed at assessing the capability of Large Language Models in processing and querying such complex tables.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/shahmeer99/HCT-QA-Benchmark"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a novel benchmark for evaluating the performance of Large Language Models in answering questions based on human-centric tables.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "HCTs collected from diverse real-world document sources including government statistics and scientific data.",
+    "size": "6,867 HCTs with 77,580 QA pairs",
+    "format": "CSV, Image",
+    "annotation": "33% manually created and 66% automatically generated and manually annotated"
+  },
+  "methodology": {
+    "methods": [
+      "Evaluation of Large Language Models",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Mean Containment (MC Score)",
+      "Complete Containment (CC Score)"
+    ],
+    "calculation": "MC Score is calculated as the average proportion of values from the ground truth found within the model's answer; CC Score equals 1 when MC=1 and 0 otherwise.",
+    "interpretation": "Higher MC and CC scores signify better model performance in answering questions accurately.",
+    "baseline_results": null,
+    "validation": "Multiple LLMs were evaluated using the benchmark to assess their performance on HCTs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

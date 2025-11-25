@@ -1,0 +1,105 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ChartBench",
+    "abbreviation": "N/A",
+    "overview": "ChartBench is a comprehensive benchmark designed to assess chart comprehension and data reliability through complex visual reasoning, including 42 categories, 66.6k charts, and 600k question-answer pairs.",
+    "data_type": "chart and question-answer pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ChartQA",
+      "PlotQA",
+      "OpenCQA",
+      "Chart-to-text",
+      "ChartX",
+      "ChartLlama"
+    ],
+    "resources": [
+      "https://chartbench.github.io"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the chart comprehension abilities of Multimodal Large Language Models (MLLMs), focusing on their capability to reason visually without heavy reliance on data point annotations.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Chart Recognition",
+      "Value Extraction",
+      "Value Comparison",
+      "Global Conception",
+      "Number Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated and collected from sources such as Kaggle, anonymized for privacy, and created using various plotting methods and styles.",
+    "size": "66,624 charts and 600,000 question-answer pairs",
+    "format": "JSON, CSV",
+    "annotation": "Predominantly unannotated charts requiring visual inference."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Acc+",
+      "CoR"
+    ],
+    "calculation": "Acc+ measures MLLMs' performance through both positive and negative assertions, requiring correct judgment on visual logic; CoR determines the failure to utilize chart information effectively.",
+    "interpretation": "Higher accuracy indicates better comprehension of charts, while CoR measures susceptibility to random guessing in interpreting charts.",
+    "baseline_results": "Different models were compared on performance metrics, indicating varying capabilities of MLLMs in understanding charts, particularly unannotated ones.",
+    "validation": "Extensive experimental evaluations conducted on multiple models using the proposed benchmark."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Inaccurate data interpretation due to model biases and reliance on visual cues without annotations."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data is anonymized during collection and processing to protect participant identities.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Obtained informed consent from participants involved in the study.",
+    "compliance_with_regulations": "N/A"
+  }
+}

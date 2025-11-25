@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "BEIR-PL: Zero Shot Information Retrieval Benchmark for the Polish Language",
+    "abbreviation": "BEIR-PL",
+    "overview": "We translated all accessible open IR datasets into Polish, and we introduced the BEIR-PL benchmark – a new benchmark which comprises 13 datasets, facilitating further development, training and evaluation of modern Polish language models for IR tasks.",
+    "data_type": "question-passage pairs (queries, passages, relevance judgments / qrels)",
+    "domains": [
+      "Natural Language Processing",
+      "Information Retrieval"
+    ],
+    "languages": [
+      "Polish"
+    ],
+    "similar_benchmarks": [
+      "BEIR",
+      "Mr. TyDi",
+      "MS MARCO",
+      "MTEB Benchmark"
+    ],
+    "resources": [
+      "https://huggingface.co/clarin-knext",
+      "http://huggingface.co",
+      "https://www.elastic.co/",
+      "https://www.sbert.net/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Our main goal was to create a large scale benchmark dataset for IR in the Polish language, which is especially aimed at zero-shot approaches.",
+    "audience": [
+      "Research community",
+      "ML Researchers",
+      "Information Retrieval Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Passage Retrieval",
+      "Passage Re-ranking",
+      "Zero-shot Information Retrieval evaluation"
+    ],
+    "limitations": "Translations were produced using Google Translate and while selective manual inspection and automatic LaBSE similarity checks showed most translations were adequate to the IR task, translations are not perfect; errors were particularly noticed in the translation of Named Entities and incorrect phrasing. Full manual verification of the entire resource was not performed due to scale.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Translated the original BEIR benchmark datasets into Polish using Google Translate; comprises 13 datasets and retains BEIR-compatible format (queries, corpus, qrels).",
+    "size": "Varies by dataset; corpus sizes listed in Table 1 (examples: MSMARCO: 8.8M documents; TREC-COVID: 171K; NFCorpus: 3.6K; NQ: 2.68M; HotpotQA: 5.2M; FiQA: 57K; ArguAna: 9K; Touche-2020: 382K; CQADupstack: 547K; Quora: 523K; DBPedia: 4.63M; SciDocs: 25K; SciFact: 5K).",
+    "format": "Queries and corpus: JSONL; qrels: TSV",
+    "annotation": "Uses original BEIR relevance judgments (qrels) retained; translations produced by Google Translate. Selective manual evaluation: 100 random queries/passages assessed (semantic setting by a researcher; strict setting by a professional linguist). Automated LaBSE similarity scores were also used for validation."
+  },
+  "methodology": {
+    "methods": [
+      "Automated evaluation metrics (MRR, nDCG, Recall)",
+      "Model-based evaluation comparing lexical BM25, unsupervised dense bi-encoder (ICT with HerBERT), multilingual LaBSE, multilingual mMiniLM, HerBERT-based rerankers, plT5-based rerankers, ColBERT late-interaction model",
+      "Two-stage retrieval with BM25 first-stage and neural rerankers second-stage",
+      "Evaluation on BEIR-PL test splits and PolEval 2022 Passage Retrieval competition datasets"
+    ],
+    "metrics": [
+      "Mean Reciprocal Rank (MRR@k)",
+      "Normalized Discounted Cumulative Gain (nDCG@k)",
+      "Recall (Recall@k)"
+    ],
+    "calculation": "Metrics computed using standard IR definitions as described in Appendix A: MRR@k is the mean reciprocal rank of the first relevant passage; nDCG@k computed using DCG with binary gain (Gain = 1 if passage relevant, 0 otherwise); Recall@k is proportion of relevant documents retrieved within top-k.",
+    "interpretation": "Higher MRR, nDCG and Recall indicate better retrieval performance. The authors note BEIR-PL and original BEIR are heterogeneous and recommend examining results of individual datasets rather than relying solely on overall averages.",
+    "baseline_results": "BM25 baseline on BEIR-PL reported in Table 3 (examples: MSMARCO NDCG@10 PL = 41.9 vs EN = 47.7; Recall@100 MSMARCO PL = 34.6 vs EN = 45.0). Full model comparisons (BM25, ICT, LaBSE, mMiniLM, HerBERT variants, T5 variants, ColBERT) reported in Tables 4-6.",
+    "validation": "Validation included selective manual evaluation of 100 random queries/passages (strict by professional linguist; semantic by researcher), automated LaBSE similarity checks, and testing trained models on PolEval 2022 Passage Retrieval datasets across three domains."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

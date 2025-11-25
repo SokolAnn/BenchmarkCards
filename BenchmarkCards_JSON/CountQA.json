@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CountQA",
+    "abbreviation": "N/A",
+    "overview": "CountQA is a challenging new benchmark designed to probe the deficiencies of Multimodal Large Language Models (MLLMs) in counting objects in complex visual scenes. It comprises over 1,500 question-answer pairs featuring real-world images with high object density, clutter, and occlusion.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ShanghaiTech",
+      "UCF-QNRF",
+      "JHU-CROWD++",
+      "NWPU-Crowd"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/CountQA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess the fundamental counting abilities of MLLMs in visually-complex scenarios and promote the development of more spatially aware and numerically grounded models.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Object Counting"
+    ],
+    "limitations": "The dataset primarily reflects specific residential and public areas and may not encompass the full diversity of objects found globally. The current scope focuses on direct enumeration and simple compositional counting, not more complex forms of numerical reasoning.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Manually collected images depicting everyday indoor and outdoor scenes.",
+    "size": "1,001 images and 1,528 question-answer pairs",
+    "format": "N/A",
+    "annotation": "Ground truth counts established in situ during image capture."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Exact Match (EM)",
+      "Relaxed Accuracy (RA@5%)",
+      "Relaxed Accuracy (RA@10%)"
+    ],
+    "calculation": "EM measures the percentage of predictions where the extracted number matches the ground truth. RA metrics evaluate accuracy within 5% and 10% thresholds.",
+    "interpretation": "Higher values indicate better model performance. An EM of 100% signifies perfect counts.",
+    "baseline_results": "The top-performing model, Gemini 2.5 Pro, achieved an EM of 42.9%.",
+    "validation": "Evaluated under zero-shot conditions using a consistent system prompt for counting tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "The dataset will be open-sourced upon paper acceptance.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

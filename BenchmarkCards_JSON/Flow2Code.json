@@ -1,0 +1,109 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Flow2Code",
+    "abbreviation": "N/A",
+    "overview": "Flow2Code is a benchmark for flowchart-based code generation evaluation, spanning 15 programming languages and including 5,622 code segments paired with 16,866 flowcharts of code, UML, and pseudocode types.",
+    "data_type": "code-flowchart pairs",
+    "domains": [
+      "Computer Science"
+    ],
+    "languages": [
+      "Python",
+      "Java",
+      "C",
+      "C++",
+      "JavaScript",
+      "PHP",
+      "Ruby",
+      "C#",
+      "Fortran",
+      "Shell",
+      "Pascal",
+      "Perl",
+      "HTML",
+      "Tcl",
+      "Visual Basic"
+    ],
+    "similar_benchmarks": [
+      "HumanEval",
+      "MBPP",
+      "CodeContests",
+      "MCEVAL"
+    ],
+    "resources": [
+      "https://github.com/hml-github/Flow2Code"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a standardized platform for assessing flowchart-based code generation.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Code Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from four key datasets: HumanEval-X, MBXP, MCEval, and ClassEval.",
+    "size": "5,622 code segments and 16,866 flowcharts",
+    "format": "N/A",
+    "annotation": "Two-step human evaluation for verification and validation."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Execution-based evaluation"
+    ],
+    "metrics": [
+      "Pass@1",
+      "Pass@3",
+      "Pass@5"
+    ],
+    "calculation": "Tasks are successful if any of the top k samples are correct.",
+    "interpretation": "Higher Pass@k indicates better code generation performance from flowcharts.",
+    "baseline_results": "Evaluation conducted on 13 multimodal LLMs.",
+    "validation": "Data was verified through a two-step human evaluation process."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Ensured compliance with the terms of use of original datasets, protecting intellectual property rights.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

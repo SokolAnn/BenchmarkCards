@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SCPOS (Sentiment Text Classification and Part of Speech Dataset)",
+    "abbreviation": "SCPOS",
+    "overview": "The SCPOS dataset is created for Japanese sentiment analysis, providing sentiment polarity labels at both the text and word levels, addressing the lack of such datasets for Japanese.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Japanese"
+    ],
+    "similar_benchmarks": [
+      "MARC-ja"
+    ],
+    "resources": [
+      "https://huggingface.co/ganchengguang/USA-7B-instruction-incontext-learning"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive dataset for sentiment analysis tasks in Japanese, supporting both text-level and word-level sentiment classification.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Sentiment Analysis",
+      "Text Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Manual annotation and rule-based matching using existing Japanese polarity dictionaries",
+    "size": "2,500 samples",
+    "format": "JSON",
+    "annotation": "Manual annotation and automatic annotation via fine-tuned GPT-3.5 model"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy is calculated based on the proportion of correct classifications among predicted samples.",
+    "interpretation": "Higher accuracy indicates better performance in sentiment classification.",
+    "baseline_results": "USA-7B model achieved highest accuracy at 91.50% in the Sentiment Related Word classification task.",
+    "validation": "The dataset was validated through testing different models against it."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

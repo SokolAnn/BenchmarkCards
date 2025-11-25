@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "HealthBench",
+    "abbreviation": "N/A",
+    "overview": "HealthBench is a large-scale, physician-curated benchmark comprising 5,000 clinically realistic examples designed to evaluate the performance of large language models in realistic healthcare scenarios.",
+    "data_type": "conversational exchanges",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MedQA",
+      "USMLE"
+    ],
+    "resources": [
+      "https://doi.org/10.48550/arXiv.2505.08775"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate large language models on their ability to generate high-quality, accurate, situationally aware answers to clinical questions in real-world contexts.",
+    "audience": [
+      "ML Researchers",
+      "Healthcare Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Clinical Decision Support",
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset consists of clinician-validated interactions that include various patient queries and model responses evaluated by expert rubric criteria.",
+    "size": "5,000 examples",
+    "format": "N/A",
+    "annotation": "Expert annotation by physicians using a rubric-based framework."
+  },
+  "methodology": {
+    "methods": [
+      "Rubric-based evaluation",
+      "Performance scoring"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Completeness",
+      "Instruction Following",
+      "Context Awareness"
+    ],
+    "calculation": "Scores are normalized based on point values assigned to rubric criteria, allowing for interpretability.",
+    "interpretation": "Higher scores indicate better model performance across various clinical behavior dimensions.",
+    "baseline_results": "DR.INFO achieved an HB score of 0.51 on the Hard subset of HealthBench.",
+    "validation": "Performance validation through comparison against frontier LLMs and other clinical assistants using the same benchmark."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

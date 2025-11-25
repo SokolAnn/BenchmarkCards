@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "RJUA-MedDQA: A Multimodal Benchmark for Medical Document Question Answering and Clinical Reasoning",
+    "abbreviation": "N/A",
+    "overview": "RJUA-MedDQA is a comprehensive benchmark for visually-rich medical report understanding in Chinese, focusing on Urology. It contains 2000 real-world Chinese medical report images designed to challenge models in interpreting image content and enabling robust clinical reasoning for medical diagnoses.",
+    "data_type": "image",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "DocVQA",
+      "TAT-DQA",
+      "SLAKE"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To measure progress on image content extractions and clinical reasoning from visually-rich medical documents.",
+    "audience": [
+      "ML Researchers",
+      "Medical Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Visual Question Answering",
+      "Clinical Reasoning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from the Urology Department Database of Renji Hospital with real-world medical reports.",
+    "size": "2,000 images",
+    "format": "N/A",
+    "annotation": "Annotated by medical professionals using the Efficient Structural Restoration Annotation (ESRA) method."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "ROUGE-L"
+    ],
+    "calculation": "Metrics are calculated based on the prediction accuracy of models on various task questions related to medical reports.",
+    "interpretation": "Higher scores indicate better performance in correctly answering questions based on medical report images.",
+    "baseline_results": "Baseline models include various LMMs such as Qwen-VL-Plus and GPT-4v, showing significant variability in task performance.",
+    "validation": "Validation includes automated metrics checks and human evaluations for ensuring correctness in annotations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Privacy",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset has been anonymized to protect patient privacy.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

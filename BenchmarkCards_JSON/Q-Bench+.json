@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Q-Bench+",
+    "abbreviation": "N/A",
+    "overview": "Q-Bench+ is designed to evaluate the low-level visual abilities of Multi-modality Large Language Models (MLLMs) with three main tasks: low-level visual perception, low-level visual description, and quality assessment of images. The benchmark includes both single images and image pairs for comprehensive evaluation.",
+    "data_type": "image-question pairs, text descriptions",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "N/A"
+    ],
+    "resources": [
+      "https://github.com/Q-Future/Q-Bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive benchmark to evaluate the low-level visual skills of MLLMs across various tasks, simulating human-like understanding of images.",
+    "audience": [
+      "ML Researchers",
+      "AI Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Visual Question Answering",
+      "Image Captioning",
+      "Image Quality Assessment"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from diverse image sources including in-the-wild, artificially distorted, and AI-generated images.",
+    "size": "2,990 single images and 1,999 image pairs for LLVisionQA+, 499 single images and 450 image pairs for LLDescribe+",
+    "format": "Images and text files",
+    "annotation": "Expert annotations for descriptions, automated generation of questions and answers."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "GPT-assisted evaluation",
+      "Quantitative analysis through softmax pooling"
+    ],
+    "metrics": [
+      "Accuracy",
+      "SRCC (Spearman's Rank-Order Correlation Coefficient)",
+      "PLCC (Pearson Linear Correlation Coefficient)"
+    ],
+    "calculation": "Metrics are calculated based on model predictions compared to human evaluations, using scores derived from softmax probabilities.",
+    "interpretation": "Performance is evaluated based on the alignment of MLLM outputs with human judgments on low-level image characteristics.",
+    "baseline_results": "Performance metrics on open-source models with specific accuracy rates on each benchmark task.",
+    "validation": "Validation through comparison with human assessments and through comprehensive dataset design."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Bias"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

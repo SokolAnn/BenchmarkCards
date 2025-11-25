@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Multi-task Ideology Dataset",
+    "abbreviation": "N/A",
+    "overview": "A multi-task dataset reflecting the nuanced differences between the ideologies of Progressive-Left, Left-Wing, Center, Right-Wing, and Conservative-Right. This dataset includes tasks of Question-Answering, Manifesto Cloze Completion, Ideological Statement Ranking, and Congress Bill Comprehension to capture diverse political viewpoints.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "N/A"
+    ],
+    "resources": [
+      "https://github.com/dpasch01/llm-nuanced-ideologies"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess how LLMs can adopt and express nuanced political ideologies through fine-tuning on political data.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Political Analysts"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Ideological Statement Ranking",
+      "Manifesto Cloze Completion",
+      "Bill Comprehension"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Data was collected from publicly available sources like OnTheIssues.org for political statements and GovTrack.us for ideological mapping.",
+    "size": "250,760 statements",
+    "format": "JSONL",
+    "annotation": "The dataset has been annotated based on political alignment determined using ideology scores derived from political statements."
+  },
+  "methodology": {
+    "methods": [
+      "Fine-tuning LLMs",
+      "Evaluation using statement ranking and positioning tests"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on model performance across various tasks, comparing predicted ideological positions against actual ideological scores.",
+    "interpretation": "Higher scores indicate better alignment of LLMs with the intended political ideology, while lower scores point to discrepancies.",
+    "baseline_results": "N/A",
+    "validation": "Validation of results performed through comparison with existing political ideology mapping frameworks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

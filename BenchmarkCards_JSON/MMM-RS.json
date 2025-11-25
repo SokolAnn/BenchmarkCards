@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MMM-RS (Multi-modal, Multi-GSD, Multi-scene Remote Sensing)",
+    "abbreviation": "MMM-RS",
+    "overview": "We propose a Multi-modal, Multi-GSD, Multi-scene Remote Sensing (MMM-RS) dataset and benchmark for text-to-image generation in diverse remote sensing scenarios, comprising approximately 2.1 million well-crafted text-image pairs.",
+    "data_type": "text-image pairs",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "N/A"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/ljl5261/MMM-RS"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To construct a large-scale dataset for text-to-image generation in remote sensing scenarios.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Text-to-Image Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from nine publicly available RS datasets and standardized.",
+    "size": "2,103,273 text-image pairs",
+    "format": "N/A",
+    "annotation": "Annotated with information-rich text prompts generated from a large-scale vision-language model."
+  },
+  "methodology": {
+    "methods": [
+      "Fine-tuning using Stable Diffusion",
+      "Cross-modal generation using ControlNet"
+    ],
+    "metrics": [
+      "Fréchet Inception Distance (FID)",
+      "Inception Score (IS)"
+    ],
+    "calculation": "Metrics calculated based on generated images compared to real images.",
+    "interpretation": "Lower FID indicates closer statistical distribution to real images; higher IS indicates more diversity and better clarity.",
+    "baseline_results": "Our model achieves a FID of 92.33 and an IS of 7.21, outperforming existing models.",
+    "validation": "Extensive quantitative and qualitative comparisons."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

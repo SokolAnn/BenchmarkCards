@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Theory of Mind Benchmark Dataset",
+    "abbreviation": "N/A",
+    "overview": "We introduce a novel dataset of 68 tasks for probing Theory of Mind (ToM) in Large Language Models (LLMs), including potentially challenging variations which are assigned to 10 complexity classes, providing novel insights into the challenges LLMs face.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ToMBench",
+      "FANToM"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2410.06271"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the Theory of Mind capabilities of Large Language Models through a systematic and structured dataset.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Theory of Mind Evaluation"
+    ],
+    "limitations": "The low goal accuracy across all tested models makes it hard to draw meaningful conclusions about the models' performance.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Manually crafted unexpected content and unexpected transfer tasks based on complexity classes.",
+    "size": "1088 scenes",
+    "format": "N/A",
+    "annotation": "Manually annotated "
+  },
+  "methodology": {
+    "methods": [
+      "Machine evaluation"
+    ],
+    "metrics": [
+      "Turn Accuracy",
+      "Goal Accuracy"
+    ],
+    "calculation": "Turn accuracy is calculated as the proportion of correct answers to total answers, while goal accuracy is calculated as the proportion of correctly answered scenes.",
+    "interpretation": "Models with higher turn accuracy do not necessarily have higher goal accuracy, indicating that the models may understand some linguistic patterns without sustaining robust Theory of Mind capabilities.",
+    "baseline_results": "N/A",
+    "validation": "Evaluated on four State-of-the-Art models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

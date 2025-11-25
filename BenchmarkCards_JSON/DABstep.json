@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DABstep (Data Agent Benchmark for Multi-step Reasoning)",
+    "abbreviation": "DABstep",
+    "overview": "DABstep is a novel benchmark for evaluating AI agents on realistic multi-step data analysis tasks, comprising over 450 real-world challenges derived from a financial analytics platform, requiring models to combine code-based data processing with contextual reasoning.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Finance"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "FinanceBench",
+      "GAIA",
+      "DABench"
+    ],
+    "resources": [
+      "https://huggingface.co/spaces/adyen/DABstep",
+      "https://huggingface.co/datasets/adyen/dabstep"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of DABstep is to rigorously evaluate AI agents on realistic, multi-step data analysis tasks.",
+    "audience": [
+      "Machine Learning Researchers",
+      "AI Developers",
+      "Data Analysts"
+    ],
+    "tasks": [
+      "Multi-step Reasoning",
+      "Data Analysis"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Tasks are derived from operational workloads at Adyen, including real financial analytics tasks.",
+    "size": "450 tasks",
+    "format": "CSV, JSON, Markdown",
+    "annotation": "Tasks were curated based on real internal queries, ensuring diverse data manipulation and contextual understanding."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Factoid evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Tasks are scored based on a binary correctness evaluation of factoid answers.",
+    "interpretation": "High accuracy indicates capable multi-step reasoning and data manipulation abilities.",
+    "baseline_results": "Top models achieved 14.55% accuracy on Hard tasks.",
+    "validation": "Evaluation against a hidden test set to ensure robust generalization capabilities."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Anonymized datasets have been used to ensure privacy.",
+    "data_licensing": "Creative Commons Attribution 4.0 International",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

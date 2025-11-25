@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ClassEval-T: Evaluating Large Language Models in Class-Level Code Translation",
+    "abbreviation": "ClassEval-T",
+    "overview": "ClassEval-T is a class-level code translation benchmark designed to assess the performance of large language models (LLMs) on translating complex class structures in code across multiple programming languages such as Python, Java, and C++. It provides a more accurate evaluation of LLM capabilities in real-world software development tasks compared to previous benchmarks focused on statement or method-level translations.",
+    "data_type": "class-level code samples",
+    "domains": [
+      "Software Engineering"
+    ],
+    "languages": [
+      "Python",
+      "Java",
+      "C++"
+    ],
+    "similar_benchmarks": [
+      "ClassEval"
+    ],
+    "resources": [
+      "https://github.com/wLinHoo/ClassEval-T"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a benchmark for evaluating the performance of large language models in translating complex, class-level coding tasks.",
+    "audience": [
+      "ML Researchers",
+      "Software Developers",
+      "Data Scientists"
+    ],
+    "tasks": [
+      "Code Translation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Manually constructed from the ClassEval benchmark via line-wise translation",
+    "size": "94 tasks",
+    "format": "JSON",
+    "annotation": "Manual annotation by experts"
+  },
+  "methodology": {
+    "methods": [
+      "Holistic translation",
+      "Min-dependency translation",
+      "Standalone translation"
+    ],
+    "metrics": [
+      "Compilation Success Rate (CSR)",
+      "Computational Accuracy (CA)"
+    ],
+    "calculation": "CSR is the ratio of successfully compiled code samples; CA is the ratio of translated programs producing the same execution result as the ground truths.",
+    "interpretation": "Higher CSR and CA values indicate better performance in code translation tasks.",
+    "baseline_results": null,
+    "validation": "Manually reviewed by experts and evaluations are conducted on zero-shot translation settings."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

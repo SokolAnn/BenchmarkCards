@@ -1,0 +1,73 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MobileConvRec (A Conversational Dataset for Mobile Apps Recommendations)",
+    "abbreviation": "MobileConvRec",
+    "overview": "MobileConvRec is a dataset tailored for conversational mobile app recommendations. It integrates users' historical interactions within multi-turn dialogs, providing a holistic view of user preferences with over 12.2K multi-turn dialogs involving 11.8K unique users across 1,730 apps spanning 45 categories.",
+    "data_type": "multi-turn conversations",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MobileRec"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/recmeapp/MobileConvRec"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To facilitate research in conversational mobile app recommendations.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Conversational Recommendation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "User interactions with mobile apps on the Google Play store, captured in the MobileRec dataset.",
+    "size": "12,200 conversations",
+    "format": "JSON",
+    "annotation": "Automatically generated through simulation of dialogues derived from real user interactions."
+  },
+  "methodology": {
+    "methods": [
+      "Comparative study with pre-trained large language models",
+      "Simulation of user-system dialogues"
+    ],
+    "metrics": [
+      "Hit@K",
+      "NDCG@K",
+      "BLEU Score"
+    ],
+    "calculation": "Metrics calculated based on success in generating app names, ranking candidate apps, and evaluating response generation.",
+    "interpretation": "Higher metrics indicate better model performance in generating recommendations and responses.",
+    "baseline_results": "Models like GPT-2 and Flan-T5 were evaluated with various inputs showing significant improvements.",
+    "validation": "Data partitioned into training, validation, and testing sets based on the date of interaction."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Privacy",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential biases inherent in developer-provided information may affect user trust."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "UIDs anonymize user identities.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

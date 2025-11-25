@@ -1,0 +1,73 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Unmasking the Canvas (UTC Benchmark; UTCB)",
+    "abbreviation": "UTCB",
+    "overview": "Unmasking the Canvas (UTC Benchmark; UTCB) is a dynamic and scalable benchmark dataset to evaluate LLM vulnerability in image generation, combining structured prompt engineering and multilingual obfuscation.",
+    "data_type": "image generation prompts",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English",
+      "Zulu",
+      "Gaelic"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/UTCB"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate image-based jailbreaks at scale and expose vulnerabilities in LLMs for responsible research.",
+    "audience": [
+      "Researchers",
+      "Cybersecurity Experts"
+    ],
+    "tasks": [
+      "Image Generation Security Evaluation"
+    ],
+    "limitations": "The dataset may have incomplete annotative effects due to limited testing across a variety of models.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated from various platforms and open-source datasets targeting image jailbreak vulnerabilities.",
+    "size": "6,772 image-generation prompts",
+    "format": "CSV",
+    "annotation": "Mixed manual and automated tagging approaches, relying on LLM-aided verification and human verification."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics assessment",
+      "Panel-based evaluation",
+      "User testing"
+    ],
+    "metrics": [
+      "Risk scoring"
+    ],
+    "calculation": "Metrics are calculated based on the LLM's responses to the prompts, categorizing outputs based on success or failure in generating unsafe content.",
+    "interpretation": "High-risk prompts are flagged as potentially harmful based on the output generated.",
+    "baseline_results": null,
+    "validation": "Involves cross-verification of generated outputs against expected outcomes by experts."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": null,
+    "harm": [
+      "Potential for unauthorized image generation leading to privacy violations."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All user interactions during dataset testing are anonymized for privacy protection.",
+    "data_licensing": "The dataset is available under special access conditions to ensure responsible use.",
+    "consent_procedures": "Users must acknowledge the risks and intended use of the dataset before access is granted.",
+    "compliance_with_regulations": "N/A"
+  }
+}

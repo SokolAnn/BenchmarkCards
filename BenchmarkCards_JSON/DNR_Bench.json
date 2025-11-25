@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DNR Bench (Don't Reason Bench)",
+    "abbreviation": "DNR Bench",
+    "overview": "DNR Bench is a novel benchmark designed to evaluate LLMs' ability to robustly understand tricky reasoning triggers and avoid unnecessary generation, consisting of 150 adversarially designed prompts focusing on instruction adherence, hallucination avoidance, redundancy filtering, and unanswerable question recognition.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "AIME",
+      "GPQA",
+      "GSM8K",
+      "MATH"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2503.15793"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To expose vulnerabilities in current reasoning LLMs related to over-reasoning and their efficiency in generating appropriate responses.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Manually designed prompts and generated using OpenAI GPT-4o with manual reviews ensuring alignment with evaluation goals.",
+    "size": "150 examples",
+    "format": "N/A",
+    "annotation": "Manually reviewed to ensure alignment with intended evaluation goals."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Token Efficiency"
+    ],
+    "calculation": "Accuracy is determined based on the category-specific judgment criteria defined for each prompt, while token efficiency quantifies how many tokens the model generates versus a baseline model (GPT-4o).",
+    "interpretation": "Higher accuracy with fewer generated tokens indicates a more efficient model performance, while overflow in token generation suggests over-reasoning.",
+    "baseline_results": "OpenAI-GPT-4o serves as the baseline model.",
+    "validation": "Responses validated through comparisons with human responses and through structured evaluation by team members."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Misleading outputs from LLMs when faced with ambiguous prompts."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

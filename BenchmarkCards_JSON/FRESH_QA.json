@@ -1,0 +1,76 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FRESH QA",
+    "abbreviation": "N/A",
+    "overview": "FRESH QA is a novel dynamic QA benchmark encompassing a diverse range of question and answer types, including questions that require fast-changing world knowledge as well as questions with false premises that need to be debunked.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/freshllms/freshqa"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the factuality of existing large language models (LLMs) and improve their performance on dynamic and factually accurate question-answering tasks.",
+    "audience": [
+      "NLP Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Questions were collected from NLP researchers and freelancers tasked with writing questions of varying difficulty levels that require up-to-date knowledge.",
+    "size": "600 questions",
+    "format": "CSV",
+    "annotation": "Manually annotated by NLP researchers and freelancers, with quality control mechanisms implemented."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Metrics are calculated based on correctness and hallucination in a two-mode evaluation procedure: RELAXED and STRICT.",
+    "interpretation": "Higher accuracy indicates better factual correctness and less hallucination in responses.",
+    "baseline_results": "N/A",
+    "validation": "Evaluation involves more than 50,000 human judgments."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Inaccurate information generation in response to user queries."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "VLMs have Tunnel Vision: Evaluating Nonlocal Visual Reasoning in Leading VLMs",
+    "abbreviation": "N/A",
+    "overview": "We present an evaluation that tests vision-language models’ capacity for nonlocal visual reasoning - reasoning that requires chaining evidence collected from multiple, possibly distant, regions of an image. Our structured evaluation suite allows us to see if VLMs can perform similar visual algorithms to humans, focusing on three types of nonlocal reasoning: comparative perception, saccadic search, and smooth visual search. Our findings show that current models lack core visual reasoning capabilities.",
+    "data_type": "image-question pairs",
+    "domains": [
+      "Computer Vision",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ChartQA",
+      "HallusionBench"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2507.13361"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the nonlocal visual reasoning capabilities of vision-language models and to identify their limitations in basic perceptual tasks.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Comparative perception",
+      "Saccadic search",
+      "Smooth visual search"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Synthetic image-question pairs generated specifically for this evaluation.",
+    "size": "1,000 examples",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Evaluation metrics calculated based on the models' ability to correctly perform tasks on the provided image-question pairs.",
+    "interpretation": "Accuracy scores are interpreted based on the models' performance relative to the human baseline.",
+    "baseline_results": "Humans achieved 100% accuracy on most tasks while VLMs performed significantly below this level.",
+    "validation": "Tasks were validated through trials with human evaluators to establish a baseline performance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Bias"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MedNLI",
+    "abbreviation": "MedNLI",
+    "overview": "Introduce MedNLI - a dataset annotated by doctors, performing a natural language inference task (NLI), grounded in the medical history of patients. The paper presents strategies to leverage transfer learning from open-domain NLI datasets (e.g., SNLI) and to incorporate domain knowledge from external data and lexical sources (e.g., medical terminologies).",
+    "data_type": "text (premise-hypothesis sentence pairs)",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SNLI",
+      "MultiNLI"
+    ],
+    "resources": [
+      "https://jgc128.github.io/mednli/",
+      "http://www.i2b2.org/NLP",
+      "https://metamap.nlm.nih.gov/",
+      "https://pytorch.org/",
+      "http://commoncrawl.org/",
+      "http://clinicaltrials.gov"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Provide a publicly available, expert-annotated dataset for natural language inference in the clinical domain to enable research and evaluation of NLI systems grounded in patient medical history.",
+    "audience": [
+      "Machine Learning Researchers",
+      "Clinical NLP Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Natural Language Inference (Recognizing Textual Entailment)"
+    ],
+    "limitations": "Each example in MedNLI was single annotated (no multiple annotations per pair). The dataset contains annotation artifacts similar to other NLI datasets. Some premises were discarded due to de-identification artifacts. Dataset size is modest compared to large open-domain NLI corpora.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Premises sampled from MIMIC-III v1.3 clinical notes (de-identified records of 38,597 patients; 2,078,705 clinical notes). Hypotheses generated and annotated by clinicians.",
+    "size": "14,049 unique sentence pairs (Training: 11,232 pairs; Development: 1,395 pairs; Test: 1,422 pairs).",
+    "format": "N/A",
+    "annotation": "Expert annotation by clinicians (two board-certified radiologists in pilot; two additional clinicians / board-certified medical students for final dataset). Single annotation per sentence pair. Labels: \"Definitely true\" (entailment), \"Maybe true\" (neutral), \"Definitely false\" (contradiction). Inter-annotator agreement (pilot) Cohen's kappa = 0.78."
+  },
+  "methodology": {
+    "methods": [
+      "Model-based evaluation (baseline and neural models)",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Cohen's kappa (for annotator agreement)"
+    ],
+    "calculation": "Accuracy computed on development and test sets. Model results reported as the average over 6 runs with different random seeds. The epoch with the lowest validation loss was selected for testing. Cohen's kappa computed for pilot inter-annotator agreement.",
+    "interpretation": "Higher Accuracy indicates better NLI performance on MedNLI. Direct transfer from open-domain datasets is worse than in-domain baseline but may be better than random baseline (33.3%). Sequential and multi-target transfer can yield improvements. The neutral class is the hardest to recognize; annotation artifacts affect dataset behavior.",
+    "baseline_results": "Feature-based system: Dev 51.9%, Test 51.9%. BOW: Dev 71.9%, Test 70.2%. InferSent: Dev 76.0%, Test 73.5%. ESIM: Dev 74.4%, Test 73.1%.",
+    "validation": "Dataset split into training, development, and test with no premise overlap between splits. Models trained with early stopping based on validation loss; best epoch selected by lowest validation loss. Results averaged over 6 runs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Accuracy",
+      "Data Laws"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination",
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Data Laws",
+          "subcategory": [
+            "Data usage restrictions"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Dataset premises sourced from de-identified MIMIC-III records. Access to MedNLI is provided through the MIMIC-III derived data repository and requires certification to access MIMIC-III.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

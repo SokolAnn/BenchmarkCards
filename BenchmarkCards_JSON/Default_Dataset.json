@@ -1,0 +1,76 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Default Dataset",
+    "abbreviation": "N/A",
+    "overview": "We introduce a new open dataset featuring financial transactions with credit default labels, enhancing the scope for practical research and development.",
+    "data_type": "sequences of financial transactions",
+    "domains": [
+      "Finance"
+    ],
+    "languages": [
+      "N/A"
+    ],
+    "similar_benchmarks": [
+      "Churn Dataset"
+    ],
+    "resources": [
+      "https://vorsineo.github.io/adv_mltournament/#subsection4"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To explore effective attacks and defenses for models trained for classification tasks related to credit default in financial transactions.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Binary Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset is composed of anonymized financial transaction sequences with credit default labels.",
+    "size": "Between 4,000 to 7,000 sequences per fold",
+    "format": "N/A",
+    "annotation": "Manual encoding of credit default target based on transaction sequences."
+  },
+  "methodology": {
+    "methods": [
+      "Competitions for attack and defense strategies"
+    ],
+    "metrics": [
+      "ROC AUC"
+    ],
+    "calculation": "Difference in ROC AUC values between model predictions for the original and adversarially altered transaction sequences.",
+    "interpretation": "Higher ROC AUC indicates better model performance against adversarial attacks.",
+    "baseline_results": "N/A",
+    "validation": "Competition structure with different phases to assess model robustness through direct confrontations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "User names are replaced with identification numbers, and transaction amounts are anonymized.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

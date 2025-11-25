@@ -1,0 +1,77 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ComPile: A Large IR Dataset from Production Sources",
+    "abbreviation": "N/A",
+    "overview": "ComPile is a novel dataset of LLVM-IR collected from production-grade programs across several programming languages, including Rust, Julia, Swift, and C/C++. It aims to advance the training of large language models for compilers and includes high-quality code focused on machine learning applications in compiler tasks.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Rust",
+      "Julia",
+      "Swift",
+      "C",
+      "C++"
+    ],
+    "similar_benchmarks": [
+      "Anghabench",
+      "Exebench",
+      "HPCORPUS"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/llvm-ml/ComPile",
+      "https://github.com/llvm-ml/llvm-ir-dataset-utils"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a large, high-quality LLVM-IR dataset aimed at improving machine learning applications in compilers and enabling better compiler heuristics and intelligent optimizations.",
+    "audience": [
+      "ML Researchers",
+      "Compiler Engineers"
+    ],
+    "tasks": [
+      "Machine Learning for Compiler Optimization"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Production-grade programs from various package ecosystems including Rust, Julia, Swift, and C/C++.",
+    "size": "2.8TB",
+    "format": "LLVM Intermediate Representation",
+    "annotation": "Extracted through automated compilation and IR generation processes utilizing LLVM."
+  },
+  "methodology": {
+    "methods": [
+      "Automated data generation",
+      "Statistical analysis"
+    ],
+    "metrics": [
+      "Token Count",
+      "Size Distribution"
+    ],
+    "calculation": "Token counts were computed using the Llama 2 tokenizer; size computed from total bitcode.",
+    "interpretation": "The dataset's utility for training models can be inferred from its size and token distribution.",
+    "baseline_results": "N/A",
+    "validation": "Statistical analysis of LLVM-IR modules demonstrated the dataset's quality and utility."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data is filtered for permissively licensed projects, no personally identifiable information included.",
+    "data_licensing": "License information is provided for all included software.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

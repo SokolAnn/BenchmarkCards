@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MEGA SCIENCE",
+    "abbreviation": "N/A",
+    "overview": "MEGA SCIENCE is a large-scale mixture of high-quality open-source datasets consisting of 1.25 million instances, developed through systematic ablation studies to identify optimal subsets for scientific reasoning tasks across various benchmarks.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMLU",
+      "Nemotron-Science",
+      "NaturalReasoning"
+    ],
+    "resources": [
+      "https://github.com/GAIR-NLP/lm-open-science-evaluation"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To advance open-source post-training datasets for scientific reasoning and improve the performance of language models in scientific tasks.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Scientific Reasoning",
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Derived from 12k university-level scientific textbooks and other public datasets.",
+    "size": "1.25 million instances",
+    "format": "CSV",
+    "annotation": "Manual annotation and LLM-based decontamination."
+  },
+  "methodology": {
+    "methods": [
+      "Supervised fine-tuning",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Metrics were calculated based on the performance of models fine-tuned on datasets from MEGA SCIENCE.",
+    "interpretation": "Higher accuracy indicates better performance on scientific reasoning tasks.",
+    "baseline_results": "Compared against models fine-tuned with other datasets.",
+    "validation": "Evaluation was conducted across 15 benchmarks for reproducibility."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

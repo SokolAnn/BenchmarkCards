@@ -1,0 +1,75 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CLAIR (Criterion using LAnguage models for Image caption Rating)",
+    "abbreviation": "CLAIR",
+    "overview": "CLAIR is a novel method that leverages the zero-shot language modeling capabilities of large language models (LLMs) to evaluate candidate image captions. It aims to provide a holistic score that aligns closely with human judgments and successfully correlates with human evaluations of caption quality.",
+    "data_type": "caption-image pairs",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "BLEU",
+      "CIDEr",
+      "SPICE",
+      "ROUGE"
+    ],
+    "resources": [
+      "https://davidmchan.github.io/clair/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide an improved evaluation framework for image captioning using large language models indicating how well captions describe their corresponding images.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Image Captioning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Diverse benchmarks including MS-COCO, Flickr8K, and PASCAL-50S datasets.",
+    "size": "Multiple datasets: e.g., 5,000 images in MS-COCO subset.",
+    "format": "N/A",
+    "annotation": "Human-annotated captions and machine-generated captions for comparison."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Kendall’s τ",
+      "Spearman’s ρ",
+      "Pearson r"
+    ],
+    "calculation": "Correlation coefficients calculated using ratings from multiple models and human evaluations.",
+    "interpretation": "Higher correlation values indicate better alignment with human preferences.",
+    "baseline_results": "CLAIR demonstrates improved correlation with human judgments compared to BLEU, CIDEr, ROUGE, and SPICE.",
+    "validation": "Evaluated against various established benchmarks, showing superior performance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Bias"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

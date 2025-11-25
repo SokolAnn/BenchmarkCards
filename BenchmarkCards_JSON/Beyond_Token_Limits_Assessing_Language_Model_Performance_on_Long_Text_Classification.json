@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Beyond Token Limits: Assessing Language Model Performance on Long Text Classification",
+    "abbreviation": "N/A",
+    "overview": "This paper evaluates the performance of language models on the Comparative Agendas Project classification task involving long texts that exceed 512 tokens, comparing models including BERT and its versions, Longformer, and generative models like GPT-3.5, GPT-4, and Llama.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Hungarian",
+      "Dutch",
+      "French",
+      "Italian"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://osf.io/w3fjn/?view_only=67372dd98f0b48349546752fee5b4e50"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess the impact of input text length on language model performance for the multiclass classification task of the Comparative Agendas Project.",
+    "audience": [
+      "Researchers in NLP",
+      "Academics in policy analysis",
+      "Model developers"
+    ],
+    "tasks": [
+      "Text Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Publicly accessible data from the Comparative Agendas Project website.",
+    "size": "713,616 documents (Hungarian), 973,481 documents (English), 62,038 documents (Dutch), 12,694 documents (French), 10,025 documents (Italian)",
+    "format": "N/A",
+    "annotation": "Hand-coded using 21 Comparative Agendas Project (CAP) labels."
+  },
+  "methodology": {
+    "methods": [
+      "Fine-tuning",
+      "Zero-shot classification",
+      "One-shot classification"
+    ],
+    "metrics": [
+      "Weighted macro F1-score",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "Weighted macro F1-score combines precision and recall into a single measure, averaged with contributions of each class weighted by the number of examples.",
+    "interpretation": "Higher F1 scores indicate better model performance in classification tasks.",
+    "baseline_results": "xlm-roberta-base fine-tuned achieved 0.94 weighted macro F1 (English), and 0.76 (Hungarian).",
+    "validation": "Model validation involved early stopping based on validation loss."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "POPVQA",
+    "abbreviation": "POPVQA",
+    "overview": "POPVQA is a dataset designed to facilitate the validation of entity identification prior to question answering across visual and textual representations. It highlights the performance gap in entity knowledge extraction and reasoning in Vision Language Models.",
+    "data_type": "entity-image pairs and question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "PopQA",
+      "infoSeek",
+      "VeQuAE"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To investigate the disparity in model performance when answering factual questions about entities presented in text versus those depicted in images, and to provide insights for improving Vision Language Models.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Entity Recognition",
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "15,395 entity-image pairs from Wikidata with corresponding questions and answers regarding those entities.",
+    "size": "15,395 entity-image pairs",
+    "format": "N/A",
+    "annotation": "Questions generated from subject-relation-object triplets using manually designed templates."
+  },
+  "methodology": {
+    "methods": [
+      "Human Evaluation",
+      "Automated Metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Model performance is calculated as the accuracy of correctly answered questions for identified entities.",
+    "interpretation": "Lower accuracy drop between visual and textual representations indicates better utilization of visual input by the models.",
+    "baseline_results": "Detailed performance across various models is provided, with accuracy results showing significant drops for visual inputs.",
+    "validation": "Further investigation into model performance through various pre-defined layers within the neural network."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data was collected with only permissive licenses and complies with institutional IRB approval.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

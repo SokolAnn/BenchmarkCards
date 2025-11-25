@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "NEU-ESC (Vietnamese Educational Sentiment Classification and Topic Classification)",
+    "abbreviation": "NEU-ESC",
+    "overview": "NEU-ESC is a new Vietnamese dataset for Educational Sentiment Classification and Topic Classification, curated from university forums that offers more samples, richer class diversity, longer texts, and broader vocabulary.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Vietnamese"
+    ],
+    "similar_benchmarks": [
+      "UIT-VSFC",
+      "ViHSD",
+      "ViCTSD"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/hung20gg/NEU-ESC"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To create a new dataset from NEU students on social media platforms and demonstrate its utility for sentiment analysis and topic classification tasks.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Educators",
+      "Data Scientists"
+    ],
+    "tasks": [
+      "Sentiment Analysis",
+      "Topic Classification"
+    ],
+    "limitations": "The dataset is currently imbalanced, with a predominant focus on 'Other' and 'Academic' topics, which may limit generalization.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from university-related Facebook groups and community forums in Vietnam.",
+    "size": "33,000 samples",
+    "format": "N/A",
+    "annotation": "Manually curated with preprocessing to clean text and identify meaningful content."
+  },
+  "methodology": {
+    "methods": [
+      "Single-task learning",
+      "Multitask learning",
+      "Fine-tuning",
+      "Evaluation against Large Language Models"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Mean F1 Score",
+      "Weighted F1 Score"
+    ],
+    "calculation": "Metrics calculated based on model predictions against ground truth labels in validation and test datasets.",
+    "interpretation": "Higher metrics indicate better performance in classifying sentiment and topics accurately.",
+    "baseline_results": "Previous datasets UIT-VSFC, ViHSD, and ViCTSD.",
+    "validation": "Data was split into training, validation, and test sets with specific ratios."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Demographic factors related to the student population engaging in discussions were noted but not deeply analyzed.",
+    "harm": [
+      "Misclassification of sentiment and topic categories may lead to misunderstandings in educational contexts."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data collected from publicly available social media comments; no explicit privacy measures were discussed.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

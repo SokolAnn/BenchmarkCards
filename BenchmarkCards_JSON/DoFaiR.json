@@ -1,0 +1,70 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DemOgraphic FActualIty Repre-sentation (DoFaiR)",
+    "abbreviation": "DoFaiR",
+    "overview": "DoFaiR is a benchmark to systematically quantify the trade-off between using diversity interventions and preserving demographic factuality in Text-to-Image (T2I) models. It consists of 756 meticulously fact-checked test instances aimed at revealing the factuality tax of various diversity prompts through an automated evidence-supported evaluation pipeline.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/uclanlp/diverse-factual.git"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the benchmark is to measure the trade-off between demographic diversity and factuality in T2I model generations.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated data from T2I models and fact-checked demographic information from Wikipedia.",
+    "size": "756 entries",
+    "format": "JSON",
+    "annotation": "Automated and systematic data construction with retrieval-based fact labeling."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Dominant Demographic Accuracy (DDA)",
+      "Involved Demographic Accuracy (IDA)",
+      "Involved Demographic F-1 Score (IDF)",
+      "Factual Diversity Divergence (FDD)"
+    ],
+    "calculation": "Metrics are calculated based on comparisons between the generated demographic distributions and the ground truth distributions regarding racial and gender traits.",
+    "interpretation": "Higher scores in DDA, IDA, and IDF indicate better adherence to factual demographic distributions, whereas lower FDD indicates closer alignment to ground truth demographic diversity.",
+    "baseline_results": null,
+    "validation": "Human verification confirmed high quality of collected data with an overall average factual correctness of 92.92%."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "The benchmark includes both race-related and gender-related demographic assessments.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

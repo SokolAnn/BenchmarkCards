@@ -1,0 +1,72 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SAS-Bench (Short Answer Scoring Benchmark)",
+    "abbreviation": "SAS-Bench",
+    "overview": "SAS-Bench is a benchmark specifically designed for evaluating Short Answer Scoring (SAS) with Large Language Models (LLMs). It provides fine-grained, step-wise scoring and expert-annotated error categories, facilitating detailed evaluation of model reasoning processes and explainability.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Education"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/PKU-DAIR/SAS-Bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate LLMs on Short Answer Scoring tasks using fine-grained and interpretable metrics.",
+    "audience": [
+      "ML Researchers",
+      "Educators",
+      "Assessment Developers"
+    ],
+    "tasks": [
+      "Short Answer Scoring"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "GAOKAO-Benchmark based on China's National College Entrance Examination.",
+    "size": "1,030 questions and 4,109 student responses",
+    "format": "CSV",
+    "annotation": "Annotated by domain experts with step-wise scores and error labels."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Collaborative Consistency Score (CCS)",
+      "Errors Consistency Score (ECS)",
+      "Quadratic Weighted Kappa (QWK)",
+      "F1 Score"
+    ],
+    "calculation": "CCS and ECS metrics measure model consistency with human annotations across overall and step-wise evaluations.",
+    "interpretation": "Higher CCS and ECS scores indicate better alignment with human evaluations.",
+    "baseline_results": "N/A",
+    "validation": "Evaluation of LLMs is conducted using an extensive set of experiments across sixteen widely used models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Explainability"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

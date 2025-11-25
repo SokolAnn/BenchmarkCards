@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "BASIR (Budget-Assisted Sectoral Impact Ranking)",
+    "abbreviation": "BASIR",
+    "overview": "BASIR is an annotated dataset mapping excerpts from Indian Union Budget transcripts (1947-2025) to sectoral impacts, facilitating the identification and ranking of sectors based on their predicted performance influenced by budget announcements.",
+    "data_type": "text",
+    "domains": [
+      "Finance",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/sohomghosh/BASIR_Budget_Assisted_Sectoral_Impact_Ranking/tree/main/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To systematically identify and rank sectors based on their expected performance following Indian Union Budget announcements.",
+    "audience": [
+      "Investors",
+      "Policymakers",
+      "Financial Analysts",
+      "Researchers"
+    ],
+    "tasks": [
+      "Multi-Label Classification",
+      "Performance Ranking"
+    ],
+    "limitations": "The annotation approach may overlook subtle sector relationships. Temporal coverage is limited to data available post-1997, potentially missing long-term effects.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "A comprehensive corpus of Union Budget transcripts from the Ministry of Finance of India spanning from 1947 to 2025.",
+    "size": "1,600+ excerpts for sector identification, 400+ texts for sector ranking",
+    "format": "JSON",
+    "annotation": "Manually validated sector tagging based on sector-company mapping and budget transcript text."
+  },
+  "methodology": {
+    "methods": [
+      "Multi-label sector classification using fine-tuned embeddings and language models",
+      "Performance ranking based on predicted sector returns"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Normalized Discounted Cumulative Gain (NDCG)"
+    ],
+    "calculation": "Performance is calculated based on the difference in opening prices for constituent companies of sectors around budget announcements.",
+    "interpretation": "Higher F1 Scores indicate better sector classification performance; NDCG scores reflect better ranking performance.",
+    "baseline_results": "Acc achieved 0.605 F1 score and 0.997 NDCG score in sector ranking.",
+    "validation": "Cross-validation methods employed for robustness in sector performance prediction."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC-BY-NC-SA-4.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

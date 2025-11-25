@@ -1,0 +1,78 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CaseGen",
+    "abbreviation": "N/A",
+    "overview": "CaseGen is the first comprehensive benchmark designed to evaluate large language models (LLMs) in multi-stage legal case document generation. It includes 500 real case samples annotated by legal experts and supports four key tasks: drafting defense statements, writing trial facts, composing legal reasoning, and generating judgment results.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "LegalBench",
+      "LawBench",
+      "LexEval",
+      "LegalAgentBench"
+    ],
+    "resources": [
+      "https://github.com/CSHaitao/CaseGen"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a robust framework for evaluating LLMs in legal case document generation, identifying strengths and weaknesses in current models.",
+    "audience": [
+      "Legal Practitioners",
+      "AI Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Drafting Defense Statements",
+      "Writing Trial Facts",
+      "Composing Legal Reasoning",
+      "Generating Judgment Results"
+    ],
+    "limitations": "CaseGen is built on Chinese legal cases and may not capture the diversity and complexity of legal systems worldwide.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "500 high-quality legal cases selected from China Judgments Online after rigorous filtering and annotation.",
+    "size": "500 examples",
+    "format": "JSON",
+    "annotation": "Annotations were conducted by legal experts to ensure quality and compliance with legal standards."
+  },
+  "methodology": {
+    "methods": [
+      "LLM-as-a-judge evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "ROUGE-L",
+      "BERTScore"
+    ],
+    "calculation": "LLM judges score generated documents based on task-oriented criteria and a reference answer.",
+    "interpretation": "Scores from LLM judges are aligned with legal expert annotations indicating quality.",
+    "baseline_results": "Compared LLM generated documents against high-quality reference documents.",
+    "validation": "Human evaluations confirm the assessment framework's effectiveness."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All personal identifiers have been removed from the datasets to ensure privacy.",
+    "data_licensing": "Released under CC BY-NC-SA 4.0 license for non-commercial academic use.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "The development adhered to privacy protection laws and data security regulations."
+  }
+}

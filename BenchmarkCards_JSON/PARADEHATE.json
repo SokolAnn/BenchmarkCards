@@ -1,0 +1,75 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PARADEHATE (Parallel Dataset for Hate Speech Detoxification)",
+    "abbreviation": "PARADEHATE",
+    "overview": "PARADEHATE is a large-scale parallel dataset specifically for hate speech detoxification, consisting of over 8,000 hate/non-hate text pairs, generated through an LLM-in-the-loop methodology replacing human annotators.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/ScaDS-AI/ParaDeHate"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a high-quality parallel dataset for evaluating models in the task of online hate speech detoxification.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Text Detoxification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Aggregated from multiple hate speech datasets including CreHate, HateXplain, Davidson, and Founta.",
+    "size": "8,276 examples",
+    "format": "text pairs",
+    "annotation": "Automated generation and validation using LLMs for rephrasing, content preservation checking, and toxicity evaluation."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Style Accuracy",
+      "Content Preservation",
+      "Fluency",
+      "BLEU Score"
+    ],
+    "calculation": "Metrics calculated by comparing LLM-generated texts against original references and assessing semantic fidelity.",
+    "interpretation": "Higher scores indicate better performance in detoxification tasks.",
+    "baseline_results": "BART fine-tuned on PARADEHATE achieves style accuracy of 0.95, content preservation of 0.78, and fluency of 0.71.",
+    "validation": "Dataset was validated through comparison with traditional methods and human-annotated data."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Privacy",
+      "Robustness",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

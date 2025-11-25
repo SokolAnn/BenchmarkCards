@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Movie101v2: Improved Movie Narration Benchmark",
+    "abbreviation": "Movie101v2",
+    "overview": "Movie101v2 is a large-scale, bilingual dataset designed for automatic movie narration generation, enhancing data quality and addressing limitations found in prior datasets.",
+    "data_type": "bilingual video-narration pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Chinese",
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Movie101"
+    ],
+    "resources": [
+      "https://movie101-dataset.github.io"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To advance the development of automatic movie narration generation, aimed particularly at assisting visually impaired audiences.",
+    "audience": [
+      "Research Community",
+      "AI Developers",
+      "Accessibility Advocates"
+    ],
+    "tasks": [
+      "Movie Narration Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Xigua Video and automatic speech recognition techniques combined with expert models.",
+    "size": "46,000 bilingual video-narration pairs",
+    "format": "JSON",
+    "annotation": "Refined using various models and human verification for quality control."
+  },
+  "methodology": {
+    "methods": [
+      "Baseline evaluation with state-of-the-art Large Vision-Language Models (LVLMs)",
+      "Human evaluation metrics for narrative quality assessment"
+    ],
+    "metrics": [
+      "L1-Score",
+      "L2-Score",
+      "CIDEr",
+      "BLEU",
+      "ROUGE"
+    ],
+    "calculation": "L1-Score evaluates the accuracy of visual fact descriptions; L2-Score assesses narrative coherence regarding plot.",
+    "interpretation": "Scores indicate how well the model-generated narrations align with the expected narrative quality, focusing on visual facts and plot narration.",
+    "baseline_results": "Performance evaluated using multiple LVLMs including GPT-4V, with varying success across models.",
+    "validation": "Results verified through human evaluators and comparison against reference narrations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset is predominantly Chinese, which may introduce cultural biases.",
+    "harm": [
+      "Inaccessible narrations for non-Chinese speakers"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "No personally identifiable information included; care taken to avoid sensitive content.",
+    "data_licensing": "Dataset released under restrictive permissions for academic use only.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "Data collection complied with relevant regulations."
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "EXPECT- denoised",
+    "abbreviation": "N/A",
+    "overview": "EXPECT- denoised is an enhanced dataset for explainable grammatical error correction (GEC), which reconstructs the original EXPECT dataset to rectify unidentified grammatical errors, ensuring each sentence contains only one distinct grammatical error.",
+    "data_type": "sentence pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "EXPECT"
+    ],
+    "resources": [
+      "https://github.com/seatgeek/thefuzz"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a dataset that enhances explainable grammatical error correction by ensuring clearer relationships between corrections and explanations.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Education Experts"
+    ],
+    "tasks": [
+      "Grammatical Error Correction",
+      "Explanation Generation"
+    ],
+    "limitations": "The explanations provided may not be intuitive for language learners outside of simple evidence words and grammatical error types.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Reconstructed from the original EXPECT dataset using grammatical error detection tools to ensure each sentence has only one error.",
+    "size": "15,187 training examples, 2,413 validation examples, 2,416 test examples",
+    "format": "N/A",
+    "annotation": "Manually annotated with evidence words, grammatical error types, and corrections."
+  },
+  "methodology": {
+    "methods": [
+      "Comparative analysis using language models",
+      "Multi-task learning framework"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score",
+      "Accuracy"
+    ],
+    "calculation": "Metrics calculated based on true positive, false positive, and false negative counts across validation and test sets.",
+    "interpretation": "Higher scores indicate better performance in correction and explanation tasks.",
+    "baseline_results": "Results from experiments using baseline models (BART, T5, Llama3) indicate improvement over single-task baselines.",
+    "validation": "Extensive evaluation on the EXPECT- denoised dataset comparing performance across different configurations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Transparency"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Lack of training data transparency"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential for increased confusion in language learners due to oversimplified explanations."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

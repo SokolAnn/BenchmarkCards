@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PARROT (Polyglottal Annotated Radiology Reports for Open Testing)",
+    "abbreviation": "PARROT",
+    "overview": "PARROT is a large, multicentric, open-access dataset of fictional radiology reports spanning multiple languages for testing natural-language processing applications in radiology.",
+    "data_type": "radiology reports",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English",
+      "French",
+      "Italian",
+      "Polish",
+      "German",
+      "Turkish",
+      "Spanish",
+      "Greek",
+      "Afrikaans",
+      "Chinese",
+      "Portuguese",
+      "Romanian",
+      "Russian"
+    ],
+    "similar_benchmarks": [
+      "MIMIC-IV",
+      "MIMIC-CXR"
+    ],
+    "resources": [
+      "https://github.com/PARROT-reports/PARROT_v1.0/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Provide an open-access, multilingual collection of radiology reports to tackle linguistic and accessibility constraints hindering NLP tool development in non-English contexts.",
+    "audience": [
+      "ML Researchers",
+      "Radiologists",
+      "Healthcare Professionals"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Natural Language Processing"
+    ],
+    "limitations": "The dataset is geographically imbalanced, with Europe predominating and only ≈19% of reports originating from the Global South.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Fictional radiology reports contributed by radiologists, including metadata.",
+    "size": "2,658 reports",
+    "format": "JSONL",
+    "annotation": "Authors provided ICD-10 codes and reports were generated based on standard reporting practices."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Statistical analysis"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy calculated based on participants' ability to distinguish human-authored from AI-generated reports.",
+    "interpretation": "Accuracy above the chance level indicates a potential for identifying differences between human and AI-generated reports.",
+    "baseline_results": null,
+    "validation": "Reports were subjected to a study where participants assessed if reports were human-authored or AI-generated."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "The dataset includes contributions from 21 countries, allowing for analysis of variations across different regions.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All reports are fictional with no patient data, allowing unrestricted sharing under a CC-BY-NC-SA 4.0 license.",
+    "data_licensing": "CC-BY-NC-SA 4.0",
+    "consent_procedures": "Contributors attested that all submitted reports were fabricated, no ethical approval required.",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SWE-Factory (Your Automated Factory for Issue Resolution Training Data and Evaluation Benchmarks)",
+    "abbreviation": "SWE-Factory",
+    "overview": "We propose SWE-Factory, an automatic benchmark construction pipeline for the GitHub issue resolution task, which automates the construction of high-quality GitHub issue resolution datasets through multi-agent framework and exit-code-based methods.",
+    "data_type": "text",
+    "domains": [
+      "Software Engineering"
+    ],
+    "languages": [
+      "Python",
+      "Java",
+      "JavaScript",
+      "TypeScript"
+    ],
+    "similar_benchmarks": [
+      "SWE-bench"
+    ],
+    "resources": [
+      "https://github.com/DeepSoftwareAnalytics/swe-factory"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide an automatic pipeline for constructing GitHub issue resolution benchmarks with minimal manual intervention.",
+    "audience": [
+      "ML Researchers",
+      "Software Engineers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Issue Resolution"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from GitHub issues and repositories using automated processes.",
+    "size": "2,441 issues (671 sampled for evaluation)",
+    "format": "N/A",
+    "annotation": "Automated validation and grading using exit codes."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Multi-agent evaluation",
+      "Exit-code based grading"
+    ],
+    "metrics": [
+      "Valid Rate",
+      "Success Rate",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "Metrics calculated based on manual inspection and automated validation.",
+    "interpretation": "High Valid Rate and Success Rate indicate effective construction of benchmark instances.",
+    "baseline_results": "SWE-Factory successfully constructs 269 valid benchmark instances out of 671 issues.",
+    "validation": "Validation through exit-code-based tests before and after applying patches."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

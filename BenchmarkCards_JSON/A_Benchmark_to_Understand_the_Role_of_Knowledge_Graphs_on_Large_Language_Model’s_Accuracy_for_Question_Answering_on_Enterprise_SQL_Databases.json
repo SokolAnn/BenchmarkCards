@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "A Benchmark to Understand the Role of Knowledge Graphs on Large Language Model’s Accuracy for Question Answering on Enterprise SQL Databases",
+    "abbreviation": "N/A",
+    "overview": "This study aims to evaluate the accuracy of LLM-powered question answering systems in the context of enterprise questions and SQL databases, while also exploring the role of knowledge graphs in improving accuracy.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Science"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Spider",
+      "WikiSQL",
+      "KaggleDBQA"
+    ],
+    "resources": [
+      "https://github.com/datadotworld/cwd-benchmark-data",
+      "https://www.omg.org/cgi-bin/doc?dtc/13-04-15.ddl",
+      "https://myinsurancecompany.linked.data.world"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To understand the accuracy of LLM-powered question answering systems with respect to enterprise questions and the role knowledge graphs play in improving accuracy.",
+    "audience": [
+      "ML Researchers",
+      "Enterprise Data Analysts",
+      "Business Intelligence Professionals"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The benchmark utilizes the OMG Property and Casualty Data Model database schema and includes a set of enterprise natural language questions.",
+    "size": "43 questions",
+    "format": "CSV",
+    "annotation": "Questions are mapped to expected SQL queries and evaluated based on execution accuracy."
+  },
+  "methodology": {
+    "methods": [
+      "Zero-shot prompting"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Overall Execution Accuracy (OEA)",
+      "Average Overall Execution Accuracy (AOEA)"
+    ],
+    "calculation": "Execution Accuracy is calculated by comparing the output of generated SQL queries against reference SQL queries.",
+    "interpretation": "A higher OEA signifies a more accurate question answering system capable of matching expected outputs.",
+    "baseline_results": "GPT-4 achieved an AOEA of 16.7% for SQL and 54.2% for SPARQL over Knowledge Graph.",
+    "validation": "Results validated by performing numerous executions of queries against sample data."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination",
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

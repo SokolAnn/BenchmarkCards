@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "BEND (Benchmark for DNA Language Models)",
+    "abbreviation": "BEND",
+    "overview": "BEND is a Benchmark for DNA Language Models, featuring a collection of realistic and biologically meaningful downstream tasks defined on the human genome, aimed at providing a standardized set of tasks that measure the ability of LMs to capture the intricacies of genomic data.",
+    "data_type": "text",
+    "domains": [
+      "Bioinformatics"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Genomic Benchmarks",
+      "Genome Understanding Evaluation"
+    ],
+    "resources": [
+      "https://github.com/frederikkemarin/BEND"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a standardized benchmark to evaluate the effectiveness of different DNA language models in capturing genomic features relevant for downstream biological tasks.",
+    "audience": [
+      "ML Researchers",
+      "Bioinformaticians"
+    ],
+    "tasks": [
+      "Gene Finding",
+      "Enhancer Annotation",
+      "Chromatin Accessibility Prediction",
+      "Histone Modification Prediction",
+      "CpG Methylation Prediction",
+      "Noncoding Variant Effects Prediction (Expression)",
+      "Noncoding Variant Effects Prediction (Disease)"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Data comes from multiple publicly available genomic datasets including GENCODE, ENCODE, GRASP, ClinVar, and the 1000 Genomes Project.",
+    "size": "2,005,617 instances",
+    "format": "bed",
+    "annotation": "Annotations are made based on various genomic experiments and public datasets."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Cross-validation"
+    ],
+    "metrics": [
+      "Multiclass Matthews correlation coefficient (MCC)",
+      "Area Under Precision-Recall Curve (AUPRC)",
+      "Area Under Receiver Operating Characteristic Curve (AUROC)"
+    ],
+    "calculation": "Metrics are calculated based on standard evaluation procedures for classification tasks.",
+    "interpretation": "Higher values indicate better performance in capturing genomic features relevant to the tasks.",
+    "baseline_results": "Comparative results included for existing state-of-the-art methods like AUGUSTUS and Enformer.",
+    "validation": "The collected tasks and their evaluations are based on established methodologies in bioinformatics, including comprehensive testing across various models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis of performance across different population groups included due to potential biases in the underlying genomic data.",
+    "harm": [
+      "Misleading predictions that may affect genomic research and clinical applications"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "The datasets used are governed by their respective licenses as mentioned in the paper, including usage restrictions where applicable.",
+    "consent_procedures": "The study does not require new data collection and thus does not entail new consent processes.",
+    "compliance_with_regulations": "N/A"
+  }
+}

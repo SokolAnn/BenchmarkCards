@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ProbVAA",
+    "abbreviation": "N/A",
+    "overview": "ProbVAA is a dataset with statements on policy measures from seven EU countries, designed to assess the reliability and consistency of LLMs' stances on political statements.",
+    "data_type": "statement pairs with policy annotations",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Polish",
+      "Hungarian",
+      "German",
+      "Dutch",
+      "Italian",
+      "Spanish"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/tceron/eval_political_worldviews"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the political biases of large language models (LLMs) and assess their reliability in answering political statements based on a robust testing methodology.",
+    "audience": [
+      "ML Researchers",
+      "Political Scientists",
+      "NLP Practitioners"
+    ],
+    "tasks": [
+      "Bias Evaluation",
+      "Political Stance Detection"
+    ],
+    "limitations": "The dataset is limited to statements from European countries and translated to English, which may not represent global political perspectives.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Political voting advice applications (VAAs) from seven EU countries.",
+    "size": "1434 statements",
+    "format": "CSV",
+    "annotation": "Statements were annotated for policy issues with high inter-annotator agreement."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Response sampling",
+      "Psychometric testing"
+    ],
+    "metrics": [
+      "Confidence intervals",
+      "Cohen's kappa"
+    ],
+    "calculation": "Metrics are calculated based on variances in model outputs across different prompt variations and response tests.",
+    "interpretation": "A reliable model should yield consistent answers across variants of the same statement.",
+    "baseline_results": "Baseline established using responses from models with increasing parameter counts showing reliability improvements.",
+    "validation": "The dataset and methodology underwent rigorous testing for reliability across differing statement formats."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack",
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset includes political statement responses from multiple demographic backgrounds across seven countries.",
+    "harm": "The dataset poses risks of reinforcing political biases, potentially skewing perceptions of political stances."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

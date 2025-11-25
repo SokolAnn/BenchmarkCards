@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "EXMODD (Explanatory Multimodal Open-Domain Dialogue dataset)",
+    "abbreviation": "EXMODD",
+    "overview": "EXMODD is a high-quality multimodal dialogue dataset designed to improve models' ability to generate coherent responses while providing explanations for generated dialogues. It addresses the alignment between multimodal inputs and aims to enhance dialogue system performance by fostering contextually consistent responses and minimizing response toxicity.",
+    "data_type": "dialogue-response pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Image-Chat"
+    ],
+    "resources": [
+      "https://github.com/poplpr/EXMODD"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To advance the development of open-domain multimodal dialogue tasks through data construction and improve response generation quality and safety.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Multimodal Dialogue Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated using the Multimodal Data Construction Framework (MDCF) based on the CLIP model and human dialogues from the Image-Chat dataset.",
+    "size": "9,989 dialogue pairs",
+    "format": "JSON",
+    "annotation": "Automatically generated with human-designed prompts for quality control."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Coherence",
+      "Distinct-1",
+      "Distinct-2",
+      "Distinct-3",
+      "Toxicity"
+    ],
+    "calculation": "Metrics calculated based on comparative evaluations against existing datasets and human assessments.",
+    "interpretation": "Higher scores in coherence and distinctness indicate superior dialogue quality, while lower scores in toxicity signify safer responses.",
+    "baseline_results": null,
+    "validation": "Cross-validation using human evaluators assessing diversity, relevance, and fluency of responses."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt leaking"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

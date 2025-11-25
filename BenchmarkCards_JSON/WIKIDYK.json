@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "WIKIDYK",
+    "abbreviation": "N/A",
+    "overview": "WIKIDYK is a novel, real-world and large-scale knowledge injection benchmark that evolves continuously over time without requiring human intervention. It leverages facts from Wikipedia’s 'Did You Know...' entries to create diverse question-answer pairs for evaluating knowledge memorization in language models.",
+    "data_type": "question-answer pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "EvolvingQA",
+      "RealtimeQA",
+      "StreamingQA",
+      "TemporalWiki",
+      "CKL"
+    ],
+    "resources": [
+      "https://github.com/zhang-yu-wei/WikiDYK",
+      "https://huggingface.co/datasets/YWZBrandon/wikidyk"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To systematically evaluate the performance of language models in knowledge injection and memorization capabilities.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Expert-curated facts from Wikipedia's 'Did You Know...' entries.",
+    "size": "12,290 facts and 77,180 questions",
+    "format": "N/A",
+    "annotation": "Curated by expert Wikipedia editors based on verifiability and clarity."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Match accuracy",
+      "Token-level F1"
+    ],
+    "calculation": "Metrics are calculated based on substring matches and token alignment to evaluate answer generation quality.",
+    "interpretation": "Match accuracy assesses the strict presence of target strings, while Token-level F1 provides a measure of partial lexical overlap.",
+    "baseline_results": "N/A",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

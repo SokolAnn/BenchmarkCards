@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Self-Stereo",
+    "abbreviation": "N/A",
+    "overview": "Self-Stereo is a new dataset of self-reported stereotypes collected from Reddit, which links socio-demographic categories with stereotypical or non-stereotypical attributes.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "StereoSet",
+      "SHADES"
+    ],
+    "resources": [
+      "https://osf.io/x7evc/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To investigate risks of persona-prompting in LLMs and analyze linguistic abstraction in relation to stereotypes.",
+    "audience": [
+      "ML Researchers",
+      "Social Scientists",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Text Generation",
+      "Bias Detection"
+    ],
+    "limitations": "The dataset is collected from Reddit, which may not be fully representative of the entire population; only self-reported stereotypes are included.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from the Reddit post 'What stereotype is 100% accurate about you?'",
+    "size": "867 comments",
+    "format": "JSON",
+    "annotation": "Three expert annotators labeled text-spans corresponding to socio-demographic categories and attributes."
+  },
+  "methodology": {
+    "methods": [
+      "Statistical Analysis",
+      "Interaction Experiments with LLMs"
+    ],
+    "metrics": [
+      "Concreteness",
+      "Specificity",
+      "Negation"
+    ],
+    "calculation": "Concreteness calculated from ratings of multiword expressions; specificity calculated from WordNet taxonomy; negation normalized by number of tokens.",
+    "interpretation": "Higher values indicate more biased and stereotyped descriptions; all texts remain abstract despite persona-prompting.",
+    "baseline_results": "LLMs show low ability to reproduce expected stereotypical associations accurately; various LLMs were evaluated.",
+    "validation": "Experimentation involved diverse prompt conditions and model sizes."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Self-reported stereotypes included various socio-demographic categories.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All data has been anonymized; no personally identifiable information is included.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

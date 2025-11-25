@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MOCHA (Multi-turn Robust Code Benchmark)",
+    "abbreviation": "MOCHA",
+    "overview": "MOCHA is a comprehensive benchmark for evaluating the robustness of code LLMs against multi-turn malicious coding prompts, focusing on vulnerabilities of models when faced with sophisticated adversarial attacks that decompose malicious tasks into seemingly benign subtasks.",
+    "data_type": "malicious coding prompts",
+    "domains": [
+      "Computer Security"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ADVBENCH",
+      "HARMBENCH",
+      "REDCODE"
+    ],
+    "resources": [
+      "https://github.com/purpcode-uiuc/mocha",
+      "https://huggingface.co/purpcode"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a systematic evaluation benchmark for the robustness of code language models against adversarial and malicious prompts, particularly focusing on multi-turn interactions.",
+    "audience": [
+      "Cybersecurity Researchers",
+      "Machine Learning Practitioners",
+      "LLM Developers"
+    ],
+    "tasks": [
+      "Code Generation",
+      "Malicious Prompt Detection"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated through a combination of language models and synthesized prompt engineering techniques.",
+    "size": "10,084 training samples, 200 validation prompts, 200 test samples",
+    "format": "JSON",
+    "annotation": "Manually verified for malicious intent and categorized based on threat types."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Adversarial evaluation"
+    ],
+    "metrics": [
+      "Rejection Rate (RR)",
+      "Pass@1"
+    ],
+    "calculation": "Metrics are calculated based on the performance of models against adversarial prompts during evaluation.",
+    "interpretation": "Higher rejection rates indicate better robustness to malicious prompts.",
+    "baseline_results": null,
+    "validation": "Dataset validated through manual review of sample prompts."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Security"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Research-Only License (CC BY-NC 4.0)",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

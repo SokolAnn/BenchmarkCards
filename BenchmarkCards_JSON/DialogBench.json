@@ -1,0 +1,102 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DialogBench",
+    "abbreviation": "N/A",
+    "overview": "DialogBench is a dialogue evaluation benchmark that contains 12 dialogue tasks to probe the capabilities of LLMs as human-like dialogue systems. It aims to standardize the evaluation of LLMs and identify their strengths and limitations.",
+    "data_type": "dialogue tasks",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/kwai/DialogBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate LLMs as human-like dialogue systems across multiple dimensions of human-likeness.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Intent Classification",
+      "Emotion Detection",
+      "Commonsense-aware Response Generation",
+      "Dialogue Natural Language Inference",
+      "Offensive Detection",
+      "Multi-turn Response Generation",
+      "Personality-grounded Response Generation",
+      "Slot Filling",
+      "Dialogue Summarization",
+      "Knowledge-grounded Response Generation",
+      "Relation Classification"
+    ],
+    "limitations": "DialogBench currently only supports evaluation in English and Chinese, limiting its multilingual applicability.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated dialogues using GPT-4 as a surrogate to create evaluation instances based on human-like dialogue tasks.",
+    "size": "N/A",
+    "format": "JSON",
+    "annotation": "Automatically generated with manual filtering for quality control."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy is calculated based on multiple-choice question performance across various dialogue tasks.",
+    "interpretation": "Higher accuracy scores indicate better performance on dialogue tasks, reflecting a more human-like interaction capability.",
+    "baseline_results": "Human-level accuracy scores were used as a benchmark for comparison.",
+    "validation": "The constructed evaluation tasks were tested on 26 different LLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Privacy",
+      "Robustness",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack",
+            "Data poisoning"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Exposing personal information"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Care was taken to ensure no personal data was included in generated instances.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

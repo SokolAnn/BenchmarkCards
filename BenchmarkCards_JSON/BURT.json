@@ -1,0 +1,80 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "BURT (BERT-inspired Universal Representation from Learning Meaningful Segment)",
+    "abbreviation": "BURT",
+    "overview": "This paper introduces the task of universal representation learning and presents a pre-trained model, BURT, which maps different granular linguistic units into the same vector space where similar sequences have similar representations.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "GLUE",
+      "CLUE"
+    ],
+    "resources": [
+      "https://github.com/panyang/Wikipedia-Words2Vec/blob/master/v1/process_wiki.py",
+      "https://www.cluebenchmarks.com/rc.html",
+      "https://gluebenchmark.com"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a universal representation model that can learn embeddings for sequences of various lengths and enable unifying vector operations across different linguistic unit hierarchies.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Natural Language Understanding",
+      "Information Retrieval",
+      "Natural Language Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The datasets used include existing benchmarks GLUE and CLUE for evaluation, along with constructed analogy datasets and insurance FAQ datasets.",
+    "size": "N/A",
+    "format": "N/A",
+    "annotation": "Data was collected from corpora and existing benchmarks, with some datasets requiring manual selection of QA pairs."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "Task-independent evaluation"
+    ],
+    "metrics": [
+      "Top-1 Accuracy",
+      "Mean Reciprocal Rank (MRR)"
+    ],
+    "calculation": "Metrics are calculated based on the performance of the BURT model in comparing its embeddings with ground truth benchmarks.",
+    "interpretation": "Higher scores indicate better performance in retrieving semantically similar sequences.",
+    "baseline_results": "BURT significantly outperformed existing models such as BERT on various tasks.",
+    "validation": "Model performance was evaluated against GLUE and CLUE benchmarks, as well as newly constructed tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

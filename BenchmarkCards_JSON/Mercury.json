@@ -1,0 +1,75 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Mercury: A Code Efficiency Benchmark for Code Large Language Models",
+    "abbreviation": "Mercury",
+    "overview": "Mercury is the first code efficiency benchmark for Code LLMs, comprising 1,889 Python tasks to assess and improve the efficiency of code generation by evaluating both functional correctness and code efficiency through the Beyond metric.",
+    "data_type": "Python programming tasks",
+    "domains": [
+      "Computer Science"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "HumanEval",
+      "MBPP",
+      "APPS"
+    ],
+    "resources": [
+      "https://github.com/Elfsong/Mercury",
+      "https://huggingface.co/datasets/Elfsong/Mercury"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation framework for assessing code efficiency and functional correctness of code generation models.",
+    "audience": [
+      "ML Researchers",
+      "Software Engineers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Code Generation"
+    ],
+    "limitations": "The Mercury benchmark assumes a uniform distribution of code runtime, which simplifies evaluation but may not reflect real-world scenarios accurately.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Public programming tasks from LeetCode, filtered for quality.",
+    "size": "1,889 tasks",
+    "format": "JSON",
+    "annotation": "Tasks accompanied by solutions and automatically generated test cases."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Test case generation"
+    ],
+    "metrics": [
+      "Beyond",
+      "Pass"
+    ],
+    "calculation": "The Beyond metric is calculated using runtime percentiles from a distribution of historical solutions, reflecting both functional correctness and efficiency.",
+    "interpretation": "A higher Beyond score indicates better efficiency relative to historical solutions for each task.",
+    "baseline_results": null,
+    "validation": "The validity of tasks is assessed through automated test case generation and execution."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Creative Commons Attribution Non Commercial 4.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "All tasks are sourced from publicly accessible domains, ensuring compliance with copyright guidelines."
+  }
+}

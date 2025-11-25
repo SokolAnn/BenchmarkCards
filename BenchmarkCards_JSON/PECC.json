@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PECC (Problem Extraction and Coding Challenges)",
+    "abbreviation": "PECC",
+    "overview": "The PECC dataset assesses the code generation capabilities of large language models across a spectrum of problem complexities, spanning both narrative and neutral contexts, derived from Advent Of Code and Project Euler challenges.",
+    "data_type": "programming problems with code solutions",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Science"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "HumanEval",
+      "APPS",
+      "DS-1000"
+    ],
+    "resources": [
+      "https://github.com/HallerPatrick/pecc",
+      "https://huggingface.co/datasets/PatrickHaller/pecc"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the capabilities of LLMs in extracting problems from narrative descriptions and generating corresponding code solutions.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Software Engineers"
+    ],
+    "tasks": [
+      "Code Generation",
+      "Problem Solving"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Advent Of Code challenges and Project Euler problems",
+    "size": "2,396 problems",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Qualitative error analysis"
+    ],
+    "metrics": [
+      "Pass@k",
+      "Pass@k-Difficulty"
+    ],
+    "calculation": "Metrics are calculated by evaluating if generated code passes predefined unit tests.",
+    "interpretation": "Higher values in Pass@k and Pass@k-Difficulty indicate better model performance in generating effective code.",
+    "baseline_results": null,
+    "validation": "Tested against multiple language models including GPT-3.5-turbo and open-source alternatives."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt leaking"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

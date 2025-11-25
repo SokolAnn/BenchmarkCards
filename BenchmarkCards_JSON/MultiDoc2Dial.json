@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MultiDoc2Dial",
+    "abbreviation": "N/A",
+    "overview": "MultiDoc2Dial is a new dataset and task on modeling goal-oriented dialogues grounded in multiple documents, addressing scenarios where conversations are based on several sub-goals related to different documents.",
+    "data_type": "dialogue turns grounded in multiple documents",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Doc2Dial"
+    ],
+    "resources": [
+      "https://doc2dial.github.io/multidoc2dial/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To model goal-oriented dialogues that involve multiple topics grounded in various documents, reflecting real-life conversation scenarios.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Grounding Span Generation",
+      "Agent Response Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Crowdsourced dialogues and existing data from Doc2Dial dataset",
+    "size": "4,796 dialogues with an average of 14 turns",
+    "format": "N/A",
+    "annotation": "Annotated with role, dialogue act, human-generated utterance, and grounding span with document information."
+  },
+  "methodology": {
+    "methods": [
+      "Retriever-Reader Architecture",
+      "End-to-End Generation Task"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Exact Match (EM)",
+      "BLEU Score"
+    ],
+    "calculation": "Full sentence-level metrics calculated based on generation output and retrieved documents.",
+    "interpretation": "Higher scores indicate better performance in grounding and response generation tasks.",
+    "baseline_results": null,
+    "validation": "Trained and tested on specific train-validation-test split for varying complexity of dialogues."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": []
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential bias in simulated user queries due to crowdsourced data collection."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "AblationBench",
+    "abbreviation": "N/A",
+    "overview": "AblationBench is a benchmark suite for evaluating agents on ablation planning tasks in empirical AI research. It includes two tasks: AuthorAblation, which assists authors in proposing ablation experiments, and ReviewerAblation, which helps reviewers find missing ablations in a paper.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "CiteME",
+      "LitSearch",
+      "PaperQA2"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2507.08038"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation resource for developing ablation agents in empirical AI research.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Ablation Planning",
+      "Text Normalization"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Original research papers and ICLR submissions containing ablation studies.",
+    "size": "433 instances (83 for AuthorAblation, 350 for ReviewerAblation)",
+    "format": "JSON",
+    "annotation": "Manual annotation of ablation examples and missing ablation suggestions."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on the matches between generated ablations and ground truth ablations.",
+    "interpretation": "Higher precision indicates a better match of proposed ablations to actual ablations, while higher recall indicates comprehensive identification of relevant ablations.",
+    "baseline_results": "The best LM planners identify at most 34% of ablations in AuthorAblation and 26% in ReviewerAblation.",
+    "validation": "Performance assessed against a dedicated evaluation dataset with human annotations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FTII-Bench (Flow Text with Image Insertion Benchmark)",
+    "abbreviation": "FTII-Bench",
+    "overview": "FTII-Bench is designed to comprehensively assess the performance of existing large vision-language models (LVLMs) on a complex task of selecting suitable images for insertion into flowing text, requiring image comprehension, instruction understanding, and long-text interpretation.",
+    "data_type": "text-image pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "Chinese",
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMLU",
+      "GLUE"
+    ],
+    "resources": [
+      "https://github.com/IAAR-Shanghai/FTIIBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation resource for assessing the performance of large vision-language models on the Flow Text with Image Insertion task.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Image Insertion",
+      "Image Comprehension"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Manually collected from news articles, specifically from Xinhua News and BBC News.",
+    "size": "625 articles",
+    "format": "N/A",
+    "annotation": "High-quality image-text sequences based on professional news reporting."
+  },
+  "methodology": {
+    "methods": [
+      "Evaluation of models via accuracy metrics, including the accuracy when images are inserted and not inserted."
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Calculated by comparing the predicted image insertion order against the ground truth sequences.",
+    "interpretation": "Higher accuracy indicates better performance of the vision-language model in selecting suitable images.",
+    "baseline_results": null,
+    "validation": "Evaluated performance of 9 open-source LVLMs and 2 closed-source LVLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

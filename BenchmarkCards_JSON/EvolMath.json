@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "EvolMathEval",
+    "abbreviation": "EvolMath",
+    "overview": "EvolMathEval is an automated mathematical benchmark generation and evolution framework based on evolutionary testing, designed to dynamically generate unique evaluation instances and eliminate data contamination, ensuring that the benchmark remains challenging for future models.",
+    "data_type": "mathematical problem instances",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "GSM8K",
+      "MATH"
+    ],
+    "resources": [
+      "https://github.com/SYSUSELab/EvolMathEval"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To dynamically generate and evolve benchmarks for mathematical reasoning to address issues of score saturation and data contamination.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Mathematical Reasoning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Self-constructed dataset generated via the EvolMathEval framework.",
+    "size": "300 problems (EvolMath-300); 1,000 problems (EvolMath-1000)",
+    "format": "N/A",
+    "annotation": "Automatically generated via evolutionary techniques."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Run experiments to evaluate model performance"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "The fitness function quantifies the difficulty of problems dynamically through a composite score based on multiple dimensions.",
+    "interpretation": "A lower accuracy on the evolved problems indicates higher challenge and effectiveness of the benchmark.",
+    "baseline_results": null,
+    "validation": "The framework iteratively enhances problems ensuring they remain challenging for LLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "The benchmark may inadvertently favor certain solving strategies, impacting fairness."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

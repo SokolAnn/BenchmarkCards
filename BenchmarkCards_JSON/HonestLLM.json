@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "name": "HONESTLLM",
+    "overview": "This paper presents two approaches aimed at enhancing the honesty and helpfulness of Large Language Models (LLMs). It introduces a novel dataset called HONESET to evaluate LLM's honesty and provides methods for improvement through training-free and fine-tuning techniques.",
+    "data_type": "Text",
+    "domains": [
+      "Natural Language Processing",
+      "Machine Learning"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMLU",
+      "MTBench"
+    ],
+    "resources": [
+      "https://github.com/Flossiee/HonestyLLM"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To improve LLMs by enhancing both their honesty and helpfulness in responses.",
+    "audience": [
+      "Researchers in AI ethics",
+      "Developers of LLMs",
+      "Data scientists"
+    ],
+    "tasks": [
+      "Evaluating honesty in LLMs",
+      "Developing improved LLM models"
+    ],
+    "limitations": "Does not account for real-time queries or dynamic data updates.",
+    "out_of_scope_uses": [
+      "Direct applications without validation of model outputs"
+    ]
+  },
+  "data": {
+    "source": "HONESET Dataset",
+    "size": "930 queries",
+    "format": "Text",
+    "annotation": "Curated by human experts"
+  },
+  "methodology": {
+    "methods": [
+      "Training-free enhancement using curiosity-driven prompting",
+      "Fine-tuning approach with a two-stage process"
+    ],
+    "metrics": [
+      "Honesty Rate",
+      "H2 Assessment"
+    ],
+    "calculation": "Improvement in honesty and helpfulness evaluated through LLM-as-a-Judge methodology",
+    "interpretation": "Improvement metrics are calculated based on pre-defined criteria",
+    "baseline_results": "Honesty rates improved significantly across various LLMs",
+    "validation": "Nine LLMs evaluated through comprehensive experimental designs"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Data contamination",
+      "Output bias",
+      "User misunderstanding"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Lack of training data transparency"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Participants in the HONESET dataset evaluation are anonymized.",
+    "data_licensing": "Open access to the dataset is provided for research purposes.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "The study adheres to ethical standards in AI research."
+  }
+}

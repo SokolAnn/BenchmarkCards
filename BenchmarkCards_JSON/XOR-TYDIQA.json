@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "XOR-TYDIQA",
+    "abbreviation": "N/A",
+    "overview": "XOR-TYDIQA is a large-scale dataset that consists of 40,000 information-seeking questions across 7 diverse non-English languages, aimed at facilitating the task of cross-lingual open-retrieval question answering.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Arabic",
+      "Bengali",
+      "Finnish",
+      "Japanese",
+      "Korean",
+      "Russian",
+      "Telugu"
+    ],
+    "similar_benchmarks": [
+      "TYDIQA"
+    ],
+    "resources": [
+      "https://nlp.cs.washington.edu/xorqa/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To support research in cross-lingual open-retrieval question answering by providing a dataset that helps address information scarcity in multilingual contexts.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Cross-lingual Document Retrieval",
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Annotated questions and answers collected from TYDIQA and crowdsourced annotation from native speakers.",
+    "size": "40,000 questions",
+    "format": "JSON",
+    "annotation": "Cross-lingual retrieval facilitated by professional translators and crowdsourced native speaker annotators."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Exact Match (EM)",
+      "BLEU Score"
+    ],
+    "calculation": "Metrics are calculated based on the agreement between predicted answers and ground truth annotations.",
+    "interpretation": "Higher scores indicate better model performance in retrieving and answering questions accurately.",
+    "baseline_results": "The best baseline achieves an average of 18.7 F1 points on the XOR-FULL task.",
+    "validation": "Models were validated using question-answer pairs in the dataset."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset includes questions from native speakers of diverse languages, aiming to mitigate bias in QA systems.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "Crowdworkers consented to have their responses used in this way through the Amazon Mechanical Turk Participation Agreement.",
+    "compliance_with_regulations": "N/A"
+  }
+}

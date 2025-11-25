@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LaMPilot-Bench",
+    "abbreviation": "N/A",
+    "overview": "LaMPilot-Bench is the first benchmark dataset specifically designed to quantitatively evaluate the efficacy of language model programs in autonomous driving (AD). Each scenario in the benchmark consists of a task described in natural language, along with a simulated environment for comprehensive evaluation.",
+    "data_type": "traffic scene scenarios",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/PurdueDigitalTwin/LaMPilot"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the instruction-following capabilities of LLM-based agents in autonomous driving.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Instruction Following",
+      "Autonomous Driving Simulation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The LaMPilot dataset consists of semi-human-annotated traffic scenes obtained from Road and Traffic simulation environments.",
+    "size": "4,900 scenarios",
+    "format": "N/A",
+    "annotation": "Semi-human annotation"
+  },
+  "methodology": {
+    "methods": [
+      "Simulator-based evaluation",
+      "Automated metrics calculation"
+    ],
+    "metrics": [
+      "Time-to-Collision (TTC)",
+      "Speed Variance (SV)",
+      "Time Efficiency (TE)"
+    ],
+    "calculation": "Metrics are calculated based on the performance of LLM-generated policies in the simulated environment.",
+    "interpretation": "Higher scores indicate better performance in safety (TTC), stability (SV), and efficiency (TE).",
+    "baseline_results": "N/A",
+    "validation": "Evaluated against heuristic baselines and off-the-shelf large language models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack",
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

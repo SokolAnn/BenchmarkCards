@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "RealCBT (Real Cognitive Behavioral Therapy Dataset)",
+    "abbreviation": "RealCBT",
+    "overview": "RealCBT is a dataset of authentic cognitive behavioral therapy dialogues collected from public video-sharing platforms. It allows for a comparative analysis of emotional arcs between real and LLM-generated therapy sessions, highlighting the emotional dynamics that characterize these interactions.",
+    "data_type": "dialogue text",
+    "domains": [
+      "Natural Language Processing",
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "CACTUS (CBT-augmented Counseling Chat Corpus)"
+    ],
+    "resources": [
+      "https://gitlab.com/xiaoyi.wang/realcbt-dataset"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To establish an empirical benchmark for comparing emotional dynamics in real vs. synthetic therapy dialogues.",
+    "audience": [
+      "ML Researchers",
+      "Mental Health Practitioners"
+    ],
+    "tasks": [
+      "Dialogue Generation",
+      "Emotional Dynamics Analysis"
+    ],
+    "limitations": "RealCBT is limited in size and exhibits subgroup imbalance due to the difficulties in collecting authentic therapy dialogues.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from public video-sharing platforms, specifically CBT-based counseling sessions.",
+    "size": "76 dialogues",
+    "format": "MP4 and transcribed text",
+    "annotation": "Manual transcription and automated annotation of metadata using language models."
+  },
+  "methodology": {
+    "methods": [
+      "Comparative emotional arc analysis",
+      "Utterance Emotion Dynamics framework"
+    ],
+    "metrics": [
+      "Emotion Mean",
+      "Emotion Variability",
+      "Emotion Rise Rate",
+      "Emotion Recovery Rate"
+    ],
+    "calculation": "Metrics are computed from sequences of utterances using NRC Valence, Arousal, and Dominance (VAD) Lexicon.",
+    "interpretation": "Higher values in emotional metrics indicate greater emotional engagement, variability, and recovery.",
+    "baseline_results": "Comparative analysis primarily against synthetic dialogues from the CACTUS dataset.",
+    "validation": "Systematic statistical analysis using the Mann–Whitney U test to confirm significance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset reflects demographic patterns relating to client gender and therapist-client interactions.",
+    "harm": "The synthesis of therapy dialogues could mislead users regarding the emotional fidelity of synthetic conversations."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data collected from public domains ensuring no personal identifiers were included.",
+    "data_licensing": "N/A",
+    "consent_procedures": "All data sourced from publicly accessible content.",
+    "compliance_with_regulations": "N/A"
+  }
+}

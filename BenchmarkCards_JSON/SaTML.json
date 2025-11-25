@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SaTML (Secure and Trustworthy Machine Learning) Capture-the-Flag Competition Dataset",
+    "abbreviation": "SaTML",
+    "overview": "The paper presents a dataset compiled from a capture-the-flag competition focused on leveraging Large Language Models (LLMs) to evaluate the security risks posed by prompt injection attacks. It contains over 137k multi-turn conversations documenting both defense strategies and attack attempts.",
+    "data_type": "multi-turn chat conversations",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "TensorTrust",
+      "Gandalf"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/ethz-spylab/ctf-satml24",
+      "https://github.com/ethz-spylab/ctf-satml24-data-analysis"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive dataset for studying prompt injection attacks and defenses in Large Language Models and to facilitate future research in LLM security.",
+    "audience": [
+      "ML Researchers",
+      "Security Researchers",
+      "Model Developers",
+      "Educators"
+    ],
+    "tasks": [
+      "Security Evaluation",
+      "Model Benchmarking"
+    ],
+    "limitations": "The dataset is specifically focused on secret extraction and may not represent broader tasks in language modeling.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected during the IEEE SaTML 2024 CTF competition.",
+    "size": "137,063 chats",
+    "format": "JSONL",
+    "annotation": "Dataset contains conversations tagged with success or failure of secret extraction."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics for evaluating defenses",
+      "User-generated prompts for adaptive attacks"
+    ],
+    "metrics": [
+      "Success rate of secret extraction",
+      "Utility evaluation scores"
+    ],
+    "calculation": "Scores are based on the number of attacks executed and the success of secret extraction across defenses.",
+    "interpretation": "Higher scores indicate more effective defenses and successful secret extractions.",
+    "baseline_results": null,
+    "validation": "The methodology was validated using utility evaluation metrics based on interaction results."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Security"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Participants were informed that interactions would be public.",
+    "data_licensing": "Published under MIT License.",
+    "consent_procedures": "Participants agreed to the use of their interactions for research purposes.",
+    "compliance_with_regulations": "N/A"
+  }
+}

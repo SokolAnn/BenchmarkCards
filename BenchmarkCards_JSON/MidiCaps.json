@@ -1,0 +1,76 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MidiCaps (A Large-Scale MIDI Dataset with Text Captions)",
+    "abbreviation": "MidiCaps",
+    "overview": "MidiCaps is the first openly available large-scale MIDI dataset with text captions, consisting of over 168,000 MIDI files paired with textual descriptions detailing musical content, thus facilitating multi-modal exploration and analysis.",
+    "data_type": "MIDI files with text captions",
+    "domains": [
+      "Music Information Retrieval",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/amaai-lab/MidiCaps",
+      "https://github.com/AMAAI-Lab/MidiCaps"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enable research that combines LLMs with symbolic music by providing a large-scale curated MIDI dataset with captions.",
+    "audience": [
+      "ML Researchers",
+      "Music Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Music Information Retrieval",
+      "Music Understanding",
+      "Cross-Modal Translation"
+    ],
+    "limitations": "Due to the symbolic nature of music, labeling files of various lengths is inherently difficult. Additionally, extracting features from synthesized audio files may impact accuracy.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Lakh MIDI Dataset",
+    "size": "168,407 MIDI files with matching text captions",
+    "format": "MIDI",
+    "annotation": "Generated using in-context learning with a Large Language Model (Claude 3), based on features extracted from MIDI files."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Overall matching",
+      "Genre matching",
+      "Mood matching",
+      "Key matching",
+      "Chord matching",
+      "Tempo matching"
+    ],
+    "calculation": "Captions were rated based on various matching criteria by participants in a listening study.",
+    "interpretation": "Higher ratings indicate better matching of the captions to the MIDI audio and overall quality of the captions.",
+    "baseline_results": null,
+    "validation": "Tested through subjective evaluation via a listening study."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC-BY 4.0 License",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

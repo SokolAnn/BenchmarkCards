@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DATE-LM (Data Attribution Evaluation in Language Models)",
+    "abbreviation": "DATE-LM",
+    "overview": "DATE-LM is a unified benchmark for evaluating data attribution methods through real-world LLM applications. It measures attribution quality through training data selection, toxicity/bias filtering, and factual attribution.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/DataAttributionEval/DATE-LM",
+      "https://huggingface.co/DataAttributionEval"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a systematic and scalable evaluation framework for data attribution methods in language models.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Training Data Selection",
+      "Toxicity and Bias Filtering",
+      "Factual Attribution"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "A diverse set of datasets including UltraChat, ToxicChat, and LAMBADA.",
+    "size": "10,000 examples for benign set with <100 examples for unsafe data.",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "AUPRC (Area Under Precision-Recall Curve)",
+      "Recall@50",
+      "Mean Reciprocal Rank (MRR)"
+    ],
+    "calculation": "Metrics are calculated based on the results obtained from the evaluation tasks.",
+    "interpretation": "Higher scores indicate better performance in detecting and filtering data.",
+    "baseline_results": "N/A",
+    "validation": "Evaluation across multiple tasks and methods with consistent sampling and evaluation strategies."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": []
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

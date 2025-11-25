@@ -1,0 +1,78 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Synthetic Dataset Generation for Self-Disclosure Detection",
+    "abbreviation": "N/A",
+    "overview": "This paper develops a synthetic, PII-labeled multi-text span dataset generated from large language models to foster reproducible research into personally identifiable information (PII) detection in vulnerable populations.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://netsys.surrey.ac.uk/datasets/synthetic-self-disclosure/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a privacy-preserving synthetic dataset for training models to detect self-disclosure of personally identifiable information (PII).",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Named Entity Recognition"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Synthetic data generated from real posts on Reddit, focusing on vulnerable populations.",
+    "size": "3,264 posts",
+    "format": "N/A",
+    "annotation": "Annotated for PII-revealing spans by domain experts"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Accuracy"
+    ],
+    "calculation": "Metrics are calculated based on model performance comparisons on synthetic vs. original datasets.",
+    "interpretation": "A higher F1 Score and accuracy indicates better performance and usefulness of synthetic data.",
+    "baseline_results": "Performance metrics of the multilabel classifier on synthetic datasets are comparable to those on the original dataset.",
+    "validation": "Validated through user studies measuring indistinguishability and replicability of results."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data",
+            "Personal information in prompt"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset is synthetic and designed not to be linkable to original users' data.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

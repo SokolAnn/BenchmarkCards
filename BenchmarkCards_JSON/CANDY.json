@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CANDY (Continuous Approximate Nearest Neighbor Search with Dynamic Data Ingestion)",
+    "abbreviation": "CANDY",
+    "overview": "CANDY is a benchmark for evaluating Continuous Approximate K Nearest Neighbor (AKNN) algorithms under conditions of dynamic data ingestion. It addresses the limitations of existing benchmarks by assessing both retrieval effectiveness and update efficiency in dynamic environments.",
+    "data_type": "text, image, audio",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision",
+      "Audio"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/intellistream/candy"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a rigorous evaluation framework for AKNN algorithms that operate under continuous data ingestion, assessing their adaptability and performance in dynamic scenarios.",
+    "audience": [
+      "ML Researchers",
+      "Data Scientists",
+      "Software Developers"
+    ],
+    "tasks": [
+      "Approximate Nearest Neighbor Search"
+    ],
+    "limitations": "CANDY is limited to single-threaded, in-memory, and CPU-only conditions and does not yet leverage advancements such as SSDs or GPUs.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Real-world and synthetic datasets including Glove, SIFT, Msong, Sun, DPR, Trevi, and WTE.",
+    "size": "50,000 vectors initially loaded; 50,000 new vectors ingested at 4,000 rows/second",
+    "format": "Vector representations, compatible with LibTorch and PyTorch",
+    "annotation": "Data simulated based on controlled environment conditions for dynamic data ingestion."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Performance evaluations"
+    ],
+    "metrics": [
+      "Query recall",
+      "Query latency"
+    ],
+    "calculation": "Recall is calculated as the proportion of true nearest neighbors correctly identified, while latency measures the time from query submission to result return.",
+    "interpretation": "Higher recall indicates better retrieval accuracy, and lower latency corresponds to faster performance.",
+    "baseline_results": "Comparative performance against existing static benchmarks.",
+    "validation": "Extensive evaluations performed across multiple datasets under varying conditions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

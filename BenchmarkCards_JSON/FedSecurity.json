@@ -1,0 +1,103 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FedSecurity",
+    "abbreviation": "N/A",
+    "overview": "FedSecurity is an end-to-end benchmark that serves as a supplementary component of the FedML library for simulating adversarial attacks and corresponding defense mechanisms in Federated Learning (FL). It contains two key components: FedAttacker, which conducts a variety of attacks during FL training, and FedDefender, which implements defensive mechanisms to counteract these attacks.",
+    "data_type": "image, text, question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision",
+      "Healthcare",
+      "Finance"
+    ],
+    "languages": [],
+    "similar_benchmarks": [
+      "Blades",
+      "FederatedScope",
+      "FedML"
+    ],
+    "resources": [
+      "https://github.com/FedML-AI/FedML/tree/master/python/fedml/core/security",
+      "https://arxiv.org/abs/2306.04959"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a standardized, end-to-end benchmark for simulating and evaluating adversarial attacks and corresponding defense mechanisms in Federated Learning and federated LLMs, enabling benchmarking of attacks and defenses, flexible configuration and customization, and support for various models and FL optimizers.",
+    "audience": [
+      "Research community",
+      "Users of FedML"
+    ],
+    "tasks": [
+      "Image Classification",
+      "Text Classification",
+      "Question Answering"
+    ],
+    "limitations": "FedSecurity does not support asynchronous federated learning and vertical federated learning yet.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Datasets used in evaluations include CIFAR10, CIFAR100, FEMNIST, Shakespeare, 20News, PubMedQA, and MNIST; FedLLM and Pythia-1B are used for federated LLM evaluations.",
+    "size": "PubMedQA: 212,269 questions; sizes for other datasets not specified in the paper.",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Simulation with FedML (automated experiments)",
+      "Real-world deployment on edge devices (Theta Network)",
+      "Automated metrics evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Test Loss"
+    ],
+    "calculation": "Evaluated using the global model test Accuracy; for LLM evaluations (Pythia-1B) results are evaluated using Test Loss as reported in the experiments.",
+    "interpretation": "Defense effectiveness is measured by closeness of test Accuracy to the no-attack (benign) baseline; an effective defense yields Accuracy close to the benign case. Increases in Test Loss indicate adversarial impact.",
+    "baseline_results": "Baseline scenarios used: no-attack (benign) scenario and original attack scenario without defense. Specific numeric baseline values are not provided in the paper.",
+    "validation": "Validated via experiments across multiple datasets and models (Exp 1-Exp 6), scaling client counts (Exp 5), federated LLMs (Exp 8-Exp 9), and a real-world edge-device deployment (Exp 10)."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Security",
+      "Privacy",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Reidentification"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning",
+            "Extraction attack"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Model integrity compromise (model poisoning and backdoors)",
+      "Information leakage via training data reconstruction",
+      "Backdoor-induced misclassification"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

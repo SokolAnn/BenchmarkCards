@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PixelProse",
+    "abbreviation": "N/A",
+    "overview": "PixelProse is a comprehensive dataset of over 16M synthetically generated captions, leveraging vision-language models for detailed and accurate descriptions of images, addressing the weaknesses of existing alt-text datasets.",
+    "data_type": "image-caption pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/google/cld3"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To serve as a high-quality dataset for training vision-language models by providing detailed image captions.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Image Captioning",
+      "Visual Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset is sourced from three different web-scraped databases: CommonPool, CC12M, and RedCaps, comprising images and captions.",
+    "size": "16,000,000 images",
+    "format": "N/A",
+    "annotation": "Automatically generated captions using vision-language models."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Caption Length",
+      "Toxicity Analysis"
+    ],
+    "calculation": "Captions generated using Google Gemini 1.0 Pro Vision Model with a focus on detailed descriptions and aesthetic scoring.",
+    "interpretation": "PixelProse captions average 506 characters, and toxicity levels are significantly lower compared to original captions.",
+    "baseline_results": "N/A",
+    "validation": "Manual verification of generated captions against image content."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Privacy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Inclusion of biased or toxic content in training data"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "PII redaction steps are integrated into the data processing pipeline.",
+    "data_licensing": "CC-BY-4.0 License.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

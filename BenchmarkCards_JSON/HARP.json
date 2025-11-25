@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "HARP (Human Annotated Reasoning Problems for Math)",
+    "abbreviation": "HARP",
+    "overview": "HARP consists of 5,409 math problems from US national math competitions focusing on challenging reasoning. It includes multiple choice options and multiple human-written solutions, aiming to evaluate models on difficult math reasoning tasks.",
+    "data_type": "short answer and multiple choice problems",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MATH",
+      "GSM8k",
+      "Omni-MATH"
+    ],
+    "resources": [
+      "https://github.com/aadityasingh/HARP"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a challenging benchmark for evaluating math reasoning capabilities of large language models.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Math Reasoning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Problems sourced from A(J)HSME, AMC, AIME, and USA(J)MO competitions available on the AoPS Wiki.",
+    "size": "5,409 problems (4,780 short answer, 4,110 multiple choice)",
+    "format": "Various (including JSON, CSV)",
+    "annotation": "Human-annotated difficulty levels and subject labels."
+  },
+  "methodology": {
+    "methods": [
+      "Zero-shot evaluations",
+      "Few-shot evaluations"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Pass@k"
+    ],
+    "calculation": "Accuracy calculated based on the percentage of correctly solved problems out of total problems.",
+    "interpretation": "Higher accuracy indicates better performance on the benchmark.",
+    "baseline_results": "N/A",
+    "validation": "Models evaluated across multiple dimensions of difficulty and subjects."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

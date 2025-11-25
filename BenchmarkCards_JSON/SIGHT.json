@@ -1,0 +1,132 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SIGHT (Student Insights Gathered from Higher Education Transcripts)",
+    "abbreviation": "SIGHT",
+    "overview": "SIGHT is a large dataset of 288 math lecture transcripts and 15,784 comments collected from the Massachusetts Institute of Technology OpenCourseWare (MIT OCW) YouTube channel. The paper also develops a 9-category annotation rubric for student feedback and presents best practices for using large language models to scale annotation.",
+    "data_type": "text (lecture transcripts and user comments)",
+    "domains": [
+      "Education",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Multi-modal lecture presentations dataset",
+      "Setsum"
+    ],
+    "resources": [
+      "https://github.com/rosewang2008/sight",
+      "https://arxiv.org/abs/2306.09343",
+      "https://ocw.mit.edu/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a large dataset of lecture transcripts and annotated YouTube comments (SIGHT) to study student feedback and to develop / evaluate scalable annotation methods (using LLMs) for qualitative feedback classification to improve pedagogy.",
+    "audience": [
+      "Education researchers",
+      "Natural Language Processing researchers",
+      "Educators",
+      "Qualitative researchers"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Multi-label Classification",
+      "Qualitative Analysis"
+    ],
+    "limitations": "Comments may not reflect real student feedback (public YouTube posters); selection bias in lecture sources (most successful offerings); only English comments analyzed; only a small subsample of comments was manually annotated (~280 comments / approximately 2% diagnostic subset); rubric may not capture non-English feedback.",
+    "out_of_scope_uses": [
+      "The dataset should not be used for commercial purposes.",
+      "Unacceptable use cases include any attempts to identify users or use the data for commercial gain."
+    ]
+  },
+  "data": {
+    "source": "288 math lecture transcripts and 15,784 user comments collected from the Massachusetts Institute of Technology OpenCourseWare (MIT OCW) YouTube channel using the Google YouTube API and YouTube Data API V3. Lecture audio was transcribed with OpenAI's Whisper large-v2 model. Comments are top-level comments; user IDs are not tracked and usernames mentioned with '@' are anonymized to '[USERNAME]'.",
+    "size": "10 courses, 288 lectures, and 15,784 comments",
+    "format": "N/A",
+    "annotation": "Manual annotation by two co-authors on a sample dataset (reported as 280 comments in main text) using a 9-category rubric; full dataset annotations were produced automatically using GPT-3.5 (gpt-3.5-turbo) with binary per-category prompts (zero-shot, 3-shot, and 3-shot with reasoning)."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation (two human annotators on a sample dataset)",
+      "Automated metrics (Cohen's kappa for inter-rater reliability / IRR)",
+      "Qualitative analysis (grounded theory for rubric development)",
+      "Model-based evaluation (LLM annotation using GPT-3.5; zero-shot, k-shot, k-shot with reasoning prompting)"
+    ],
+    "metrics": [
+      "Cohen's kappa",
+      "Inter-rater reliability (IRR)",
+      "Human-model agreement (Cohen's kappa)",
+      "Category percentage distribution",
+      "Annotation cost per comment (reported cost: $0.002 per comment for scaled annotation)"
+    ],
+    "calculation": "Cohen's kappa was computed to measure inter-rater reliability within human annotators and between human-model pairs for each rubric category. Human IRR (reference) and average human-model IRR are reported for 0-shot, 3-shot, and 3-shot with reasoning settings (Table 3).",
+    "interpretation": "Human IRR reached substantial to perfect agreement (>= 0.70) across categories. Categories with higher human agreement (> 0.9 IRR) also display higher human-model agreement (> 0.7), while categories with lower human agreement (0.7-0.8 IRR) correspond to lower human-model agreement (~0.3-0.5). Higher kappa indicates better agreement; lower values indicate poorer agreement and more model failure modes.",
+    "baseline_results": "Human IRR (Cohen's kappa) by category (human row in Table 3): general 0.75, confusion 0.91, pedagogy 0.79, setup 0.95, personal 0.74, clarification 0.83, gratitude 0.92, nonenglish 0.94, na 0.74. GPT-3.5 (gpt-3.5-turbo) 0-shot human-model Cohen's kappa by category (0-shot row in Table 3): general 0.48, confusion 0.72, pedagogy 0.35, setup 0.85, personal 0.32, clarification 0.48, gratitude 0.92, nonenglish 0.87, na 0.65. The paper also reports 3-shot and 3-shot with reasoning results in Table 3.",
+    "validation": "Validation included dual human annotation of a sample dataset (reported as 280 comments) with computation of Cohen's kappa for human IRR. The authors conducted a diagnostic study on a small, randomly selected subset of the dataset comprising approximately 2% of the comments and manually inspected model errors to analyze failure modes."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Bias",
+      "Legal",
+      "Misuse",
+      "Governance"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data",
+            "Exposing personal information"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Data Laws",
+          "subcategory": [
+            "Data usage restrictions"
+          ]
+        },
+        {
+          "category": "Misuse",
+          "subcategory": [
+            "Nonconsensual use",
+            "Improper usage"
+          ]
+        },
+        {
+          "category": "Intellectual Property",
+          "subcategory": [
+            "Data usage rights restrictions"
+          ]
+        },
+        {
+          "category": "Governance",
+          "subcategory": [
+            "Unrepresentative risk testing"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Identify student confusion and pedagogical weaknesses in lecture content",
+      "Privacy violations from attempts to identify commenters or expose personal information",
+      "Improper or commercial use of data (authors explicitly prohibit commercial use)"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The authors do not track user IDs and anonymize usernames mentioned with '@' by replacing them with '[USERNAME]'. The authors state they are committed to protecting the privacy and confidentiality of individuals who contributed comments and recommend researchers take steps to mitigate risks or harms.",
+    "data_licensing": "The dataset is released under MIT's Creative Commons License and is intended for research purposes only; the dataset should not be used for commercial purposes.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

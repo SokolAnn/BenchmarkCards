@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ActPlan-1K",
+    "abbreviation": "N/A",
+    "overview": "ActPlan-1K is a multi-modal planning benchmark constructed based on ChatGPT and household activity simulator iGibson2. It evaluates the planning ability of visual language models (VLMs) for procedural planning in household activities, consisting of 153 activities and 1,187 instances with corresponding natural language task descriptions and environment images.",
+    "data_type": "multi-modal instances (text and images)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Behavior-100",
+      "EgoPlan-Bench",
+      "ALFRED",
+      "Watch-And-Help"
+    ],
+    "resources": [
+      "https://github.com/HKUST-KnowComp/ActPlan-1K"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the procedural planning ability of visual language models (VLMs) in household activities, including counterfactual scenarios.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Procedural Planning",
+      "Counterfactual Planning"
+    ],
+    "limitations": "The images collected from iGibson2 simulator are of low-resolution which may influence image understanding of VLMs.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated using iGibson2 simulator and ChatGPT",
+    "size": "1,187 instances",
+    "format": "N/A",
+    "annotation": "Generated natural language task descriptions and evaluated by human annotators."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Correctness",
+      "Commonsense satisfaction",
+      "Longest Common Subsequence (LCS)",
+      "BLEURT-based accuracy score"
+    ],
+    "calculation": "Human annotations are used for correctness and commonsense satisfaction, while automatic metrics are calculated using LCS and BLEURT.",
+    "interpretation": "Correctness is assessed based on whether the procedural plan achieves the final activity goal, and commonsense satisfaction checks the plausibility of each step. Scores indicate the performance of different VLMs based on these measures.",
+    "baseline_results": "Results showed that most VLMs struggle to meet human-level procedural planning standards.",
+    "validation": "Through human evaluation and comparison against gold standard plans."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

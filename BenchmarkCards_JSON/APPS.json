@@ -1,0 +1,71 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "APPS (Automated Programming Progress Standard)",
+    "abbreviation": "APPS",
+    "overview": "APPS is a benchmark for code generation, measuring the ability of models to take an arbitrary natural language specification and generate satisfactory Python code. It evaluates models not only on syntactical correctness but also on their understanding of task descriptions and ability to devise algorithms.",
+    "data_type": "programming problems and test cases",
+    "domains": [
+      "Computer Science"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "CodeXGLUE"
+    ],
+    "resources": [
+      "https://github.com/hendrycks/apps"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To track the progress of code generation models on the task of generating arbitrary Python code from complex natural language specifications.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Code Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from various open-access coding challenge websites including Codeforces, Kattis, and others.",
+    "size": "10,000 problems and 131,777 test cases",
+    "format": "JSON",
+    "annotation": "Manually curated and cleaned with automated quality checks."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Test case evaluation"
+    ],
+    "metrics": [
+      "Test Case Average",
+      "Strict Accuracy"
+    ],
+    "calculation": "The average fraction of test cases passed and strict accuracy calculated by determining if the generated code passes all provided test cases.",
+    "interpretation": "Higher test case averages indicate better model performance in code generation.",
+    "baseline_results": null,
+    "validation": "Validated through extensive testing against numerous ground-truth solutions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Safety",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": null
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Ensured by removing identifying information from participant-provided solutions.",
+    "data_licensing": "The APPS dataset is licensed under CC BY-SA 3.0.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "Compliant with GDPR and Fair Use guidelines."
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MMDocRAG",
+    "abbreviation": "N/A",
+    "overview": "MMDocRAG is a comprehensive benchmark featuring 4,055 expert-annotated QA pairs with multi-page, cross-modal evidence chains for evaluating multimodal document question answering (DocVQA) and retrieval-augmented generation (RAG).",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "DocVQA",
+      "MMLongBench-Doc",
+      "DUDE"
+    ],
+    "resources": [
+      "https://mmdocrag.github.io/MMDocRAG/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a rigorous testing ground for multimodal document question answering systems and improve evaluation methodologies for retrieval-augmented generators.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "MMDocIR dataset",
+    "size": "4,055 QA pairs",
+    "format": "JSON",
+    "annotation": "Expert annotations for multimodal evidence and question-answer pairs."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "F1 Score",
+      "BLEU Score",
+      "ROUGE-L"
+    ],
+    "calculation": "Metrics are computed across quote selection accuracy and multimodal answer generation quality.",
+    "interpretation": "Higher scores indicate better performance in selecting relevant quotes and generating coherent multimodal responses.",
+    "baseline_results": "Not explicitly stated in the paper.",
+    "validation": "Comprehensive evaluations were conducted using various VLM/LLM models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Apache License 2.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

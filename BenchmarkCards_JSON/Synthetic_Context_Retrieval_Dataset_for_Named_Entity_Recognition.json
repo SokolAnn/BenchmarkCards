@@ -1,0 +1,80 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Synthetic Context Retrieval Dataset for Named Entity Recognition",
+    "abbreviation": "N/A",
+    "overview": "This paper presents a synthetic context retrieval dataset generated using Alpaca for enhancing named entity recognition (NER) performance in long documents.",
+    "data_type": "context retrieval pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/CompNet/conivel/tree/gen"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To train a neural context retriever for NER using a synthetic dataset that improves context retrieval performance.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Named Entity Recognition"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Synthetic data generated using Alpaca from input sentences in an English literary dataset composed of the first chapter of 40 books.",
+    "size": "2,716 examples for Alpaca-7B and 2,722 examples for Alpaca-13B",
+    "format": "N/A",
+    "annotation": "Automatically generated"
+  },
+  "methodology": {
+    "methods": [
+      "Neural evaluation",
+      "Retrieval heuristics"
+    ],
+    "metrics": [
+      "F1 Score"
+    ],
+    "calculation": "F1 score computed on the performance of various retrieval configurations.",
+    "interpretation": "Higher F1 scores indicate better performance in NER tasks.",
+    "baseline_results": "F1 score of 98.01 for the neural retriever on the evaluation portion of the dataset.",
+    "validation": "Trained on the synthetic retrieval dataset over 3 epochs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt leaking"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential biases in language model generated outputs."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Released under a free license.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

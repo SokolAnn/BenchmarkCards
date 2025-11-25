@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ConfReady Dataset",
+    "abbreviation": "N/A",
+    "overview": "The ConfReady dataset contains a curated collection of 1975 checklist responses from ACL conference papers, enabling analysis of the quality of checklist submissions and benchmarking of retrieval-augmented generation (RAG) and language model systems.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/gtfintechlab/ConfReady",
+      "https://confready-docs.vercel.app/docs/walkthrough"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assist authors in reflecting on their work and improving the quality of checklist responses for conference submissions.",
+    "audience": [
+      "Researchers",
+      "Authors",
+      "Conference Organizers"
+    ],
+    "tasks": [
+      "Checklist Compliance Evaluation",
+      "Response Generation"
+    ],
+    "limitations": "The dataset may contain inconsistencies from human responses such as identical answers or inaccuracies.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated from 1975 ACL conference papers with responses to the ARR Responsible NLP Research checklist.",
+    "size": "1,975 examples",
+    "format": "Excel",
+    "annotation": "Responses were manually reviewed and verified for quality and completeness."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy is measured against human-provided checklist responses in comparative evaluations.",
+    "interpretation": "Higher accuracy indicates better alignment with human responses, suggesting a more reliable checklist assistance system.",
+    "baseline_results": "CRAG framework achieved an average accuracy of over 81% on ACL papers.",
+    "validation": "The dataset was validated for completeness and correctness through manual review."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset captures a range of demographics based on various conferences represented.",
+    "harm": "Potential for checklist response inaccuracies impacting research integrity."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "AGPL-3.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

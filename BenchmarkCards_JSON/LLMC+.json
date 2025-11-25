@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LLMC+ (Large Vision-Language Model Compression Benchmark)",
+    "abbreviation": "LLMC+",
+    "overview": "LLMC+ is a comprehensive VLM compression benchmark with a versatile plug-and-play toolkit that supports over 20 algorithms across five representative VLM families, enabling systematic study of token-level and model-level compression.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "GQA (Visual Question Answering)",
+      "ScienceQA",
+      "TextVQA",
+      "OCRBench"
+    ],
+    "resources": [
+      "https://github.com/ModelTC/LightCompress"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To facilitate fair evaluation and inspire future research in efficient vision-language model compression.",
+    "audience": [
+      "Machine Learning Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Token Compression",
+      "Model Compression"
+    ],
+    "limitations": "Token reduction suffers from significant accuracy drops on fine-grained tasks, and prompt-dependent methods yield unsatisfactory results in multi-turn dialogue.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Various image and video datasets, including GQA, OCRBench, and ScienceQA.",
+    "size": "N/A",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on performance comparisons of different compression techniques.",
+    "interpretation": "Higher accuracy indicates better retention of relevant information during compression.",
+    "baseline_results": "Performance of LLMC+ was evaluated against various benchmarks such as GQA and ScienceQA.",
+    "validation": "Extensive experiments conducted across multiple representative VLM families."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

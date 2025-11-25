@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CoSQA+ (Code Search Question Answering Plus)",
+    "abbreviation": "CoSQA+",
+    "overview": "CoSQA+ introduces a new multi-choice code search benchmark that pairs high-quality queries from CoSQA with multiple suitable code snippets, utilizing an automated annotation system with test-driven agents.",
+    "data_type": "query-code pairs",
+    "domains": [
+      "Software Engineering"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "CoSQA"
+    ],
+    "resources": [
+      "https://github.com/DeepSoftwareAnalytics/CoSQA_Plus"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enhance code search evaluation by providing a multi-choice benchmark.",
+    "audience": [
+      "ML Researchers",
+      "Software Engineers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Code Search"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "CoSQA and CodeSearchNet",
+    "size": "412,080 pairs",
+    "format": "N/A",
+    "annotation": "Automated annotation using test-driven agents"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Test-driven verification"
+    ],
+    "metrics": [
+      "Normalized Discounted Cumulative Gain at rank 10 (NDCG@10)",
+      "Mean Reciprocal Rank (MRR)"
+    ],
+    "calculation": "Metrics are calculated based on query-code pairs matched against ground truth annotations through empirical testing.",
+    "interpretation": "Higher NDCG@10 and MRR indicate better performance in retrieving relevant code snippets.",
+    "baseline_results": "CoSQA+ demonstrated superior quality over CoSQA in benchmarks.",
+    "validation": "Rigorous validation using 400 randomly selected query-code pairs and test programs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "Informed consent obtained from human participants involved in the study.",
+    "compliance_with_regulations": "The dataset sources are publicly available under permissible licenses."
+  }
+}

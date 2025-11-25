@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "AddressCLIP",
+    "abbreviation": "N/A",
+    "overview": "This study introduces the problem of Image Address Localization (IAL) and proposes the AddressCLIP framework along with three datasets to study the task of predicting readable textual addresses from images.",
+    "data_type": "image-address pairs",
+    "domains": [
+      "Computer Vision",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Pitts-250K",
+      "SF-XL"
+    ],
+    "resources": [
+      "https://github.com/xsx1001/AddressCLIP"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To facilitate the study of image address localization using the proposed AddressCLIP framework and the introduced datasets.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Image Address Localization"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Three datasets were built from the Pitts-250K and SF-XL datasets specifically for the Image Address Localization problem, including addresses derived from Google Maps reverse geocoding.",
+    "size": "234K images (Pitts-IAL), 184K images (SF-IAL-Base), 1.96M images (SF-IAL-Large)",
+    "format": "N/A",
+    "annotation": "Addresses were annotated through reverse geocoding, manual verification, and semantic address partitioning."
+  },
+  "methodology": {
+    "methods": [
+      "Image-Text Contrastive Learning",
+      "Image-Geography Matching"
+    ],
+    "metrics": [
+      "Top-1 Accuracy",
+      "Top-5 Accuracy",
+      "Street-level Accuracy (SA)",
+      "Sub-Street-level Accuracy (SSA)"
+    ],
+    "calculation": "Metrics are computed based on the correctness of predicted addresses against ground truth across the introduced datasets.",
+    "interpretation": "Higher accuracy percentages indicate better performance in predicting human-readable addresses from images.",
+    "baseline_results": "AddressCLIP achieves over 80% Top-1 accuracy across three datasets with notable improvements over existing benchmarks.",
+    "validation": "Performed through comparisons with zero-shot models and existing retrieval-based approaches."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

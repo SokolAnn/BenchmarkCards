@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "WikiContradict: A Benchmark for Evaluating LLMs on Real-World Knowledge Conflicts from Wikipedia",
+    "abbreviation": "N/A",
+    "overview": "WikiContradict is a benchmark consisting of 253 high-quality, human-annotated instances designed to assess LLM performance when augmented with retrieved passages containing real-world knowledge conflicts.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "TruthfulQA",
+      "FreshQA",
+      "HaluEval",
+      "HalluQA",
+      "FELM"
+    ],
+    "resources": [
+      "https://ibm.biz/wikicontradict"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the performance of LLMs on handling real-world knowledge conflicts.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "Limited to English language instances.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Wikipedia articles containing inconsistency tags",
+    "size": "253 instances",
+    "format": "JSON",
+    "annotation": "Manual annotation by experts"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score"
+    ],
+    "calculation": "Human evaluations yield metrics based on responses from LLMs to annotated instances.",
+    "interpretation": "An answer is considered correct if it accurately reflects the contradictory nature of the passages.",
+    "baseline_results": "N/A",
+    "validation": "Moderate to substantial inter-annotator agreement on human evaluations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "MIT License",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

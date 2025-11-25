@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "m&m’s: A Benchmark to Evaluate Tool-Use for Multi-step Multi-modal Tasks",
+    "abbreviation": "m&m’s",
+    "overview": "m&m’s benchmark contains 4K+ multi-step multi-modal tasks involving 33 tools that include multi-modal models, (free) public APIs, and image processing modules. The benchmark includes a high-quality subset of 1,565 task plans that are human-verified and executable.",
+    "data_type": "multi-step multi-modal tasks",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ToolEmu",
+      "TaskBench"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/zixianma/mms",
+      "https://github.com/RAIVNLab/mms"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To support comprehensive and rigorous evaluation of tool-use abilities of planning agents for multi-step multi-modal tasks.",
+    "audience": [
+      "ML Researchers",
+      "AI Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Multi-step planning",
+      "Tool invocation",
+      "Task automation"
+    ],
+    "limitations": "m&m’s only considers sequential task plans, which represent a majority of real-world user requests. Some tasks might require dynamic task plans depending on the output for one subtask.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated using a tool graph with human verification.",
+    "size": "4,427 examples",
+    "format": "JSON",
+    "annotation": "Human-verified by three annotators."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "tool-F1",
+      "argname-F1",
+      "pass rate"
+    ],
+    "calculation": "Metrics are calculated based on comparing predicted tool names and argument names against ground truth.",
+    "interpretation": "Higher tool-F1 indicates better tool selection, whereas higher argname-F1 and pass rate imply improved tool invocation.",
+    "baseline_results": "Not specified.",
+    "validation": "Human verification for plans ensures accuracy."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Search BenchmarkCards">
+    <title>Search - BenchmarkCards</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Dark mode theming (Copied from templates.py) */
+        :root {
+            --black: #000000;
+            --dark-gray: #333333;
+            --medium-gray: #666666;
+            --light-gray: #e5e5e5;
+            --off-white: #f8f8f8;
+            --white: #ffffff;
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2rem;
+            --space-xl: 3rem;
+            --transition-fast: 0.15s ease;
+            --transition-normal: 0.3s ease;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.08);
+            --font-serif: 'Georgia', 'Times New Roman', Times, serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --body-bg: var(--white);
+            --body-text: var(--black);
+            --header-bg: var(--white);
+            --card-bg: var(--white);
+            --card-border: var(--black);
+            --pre-bg: var(--off-white);
+        }
+
+        [data-theme="dark"] {
+            --body-bg: #121212;
+            --body-text: #e0e0e0;
+            --header-bg: #121212;
+            --card-bg: #1e1e1e;
+            --card-border: #ffffff;
+            --pre-bg: #262626;
+            --black: #ffffff;
+            --dark-gray: #cccccc;
+            --medium-gray: #999999;
+            --light-gray: #333333;
+            --off-white: #1e1e1e;
+            --white: #121212;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+            background-color: var(--body-bg);
+            font-family: var(--font-sans);
+            color: var(--body-text);
+            min-height: 100vh;
+            line-height: 1.6;
+            transition: background-color var(--transition-normal), color var(--transition-normal);
+        }
+
+        .main-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: var(--space-md);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-lg);
+        }
+
+        .site-header {
+            background-color: var(--header-bg);
+            padding-top: var(--space-md);
+            transition: background-color var(--transition-normal);
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--space-sm);
+        }
+
+        .site-title {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--black);
+            margin: 0;
+            letter-spacing: -0.5px;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: var(--space-md);
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--medium-gray);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color var(--transition-fast);
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--black);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--medium-gray);
+            cursor: pointer;
+            font-size: 1rem;
+            padding: var(--space-xs);
+            margin-left: var(--space-md);
+        }
+
+        .header-border {
+            height: 1px;
+            background-color: var(--black);
+            margin: 0;
+        }
+
+        /* Search specific styles */
+        .search-container {
+            margin-bottom: var(--space-lg);
+        }
+
+        .search-input {
+            width: 100%;
+            padding: var(--space-sm);
+            font-size: 1.2rem;
+            border: 1px solid var(--card-border);
+            background-color: var(--card-bg);
+            color: var(--body-text);
+            border-radius: 0;
+            font-family: var(--font-sans);
+        }
+
+        .search-input:focus {
+            outline: 2px solid var(--black);
+            outline-offset: 2px;
+        }
+
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--space-md);
+        }
+
+        .result-card {
+            border: 1px solid var(--card-border);
+            background-color: var(--card-bg);
+            padding: var(--space-md);
+            transition: transform var(--transition-fast);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-sm);
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .result-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .result-title {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 0;
+            color: var(--black);
+        }
+
+        .result-meta {
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+        }
+
+        .result-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: auto;
+        }
+
+        .tag {
+            background-color: var(--off-white);
+            padding: 0.2rem 0.5rem;
+            font-size: 0.8rem;
+            border-radius: 4px;
+            color: var(--dark-gray);
+        }
+
+        .no-results {
+            text-align: center;
+            color: var(--medium-gray);
+            font-style: italic;
+            grid-column: 1 / -1;
+        }
+
+        /* Button styles copied from templates.py */
+        .btn {
+            border-radius: 4px;
+            font-weight: 600;
+            padding: 0.7rem 1.5rem;
+            transition: all var(--transition-normal);
+            text-transform: uppercase;
+            position: relative;
+            letter-spacing: 0.5px;
+            font-size: 0.85rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--black);
+            border-color: var(--black);
+            color: var(--white);
+        }
+
+        .btn-primary:hover,
+        .btn-primary:focus {
+            background-color: var(--dark-gray);
+            border-color: var(--dark-gray);
+            color: var(--white);
+        }
+
+        [data-theme="dark"] .btn-primary {
+            background-color: var(--white);
+            border-color: var(--white);
+            color: var(--black);
+        }
+
+        [data-theme="dark"] .btn-primary:hover,
+        [data-theme="dark"] .btn-primary:focus {
+            background-color: var(--light-gray);
+            border-color: var(--light-gray);
+            color: var(--black);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 767px) {
+            .site-header {
+                padding: var(--space-lg) 0;
+            }
+
+            .site-header h1 {
+                font-size: 2rem;
+            }
+
+            .top-bar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .site-title {
+                text-align: center;
+                margin-bottom: var(--space-sm);
+            }
+
+            .main-nav {
+                flex-direction: column;
+                align-items: stretch;
+                margin-right: 0;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                align-items: stretch;
+                gap: var(--space-sm);
+            }
+
+            .nav-links li {
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-links a {
+                padding: var(--space-xs) 0;
+            }
+
+            .contribute-button-container {
+                width: 100%;
+                text-align: center;
+                margin-bottom: var(--space-sm);
+            }
+
+            .contribute-button-container .btn {
+                width: auto;
+            }
+
+            .theme-toggle {
+                margin-left: 0;
+                align-self: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container main-content">
+            <div class="top-bar">
+                <a href="/" class="site-title">BenchmarkCards</a>
+                <nav class="main-nav">
+                    <ul class="nav-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/search" class="active">Search</a></li>
+                        <li><a href="https://github.com/SokolAnn/BenchmarkCards" target="_blank">GitHub</a></li>
+                        <li><a href="https://arxiv.org/abs/2410.12974" target="_blank" class="paper-link">Our Paper</a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- Contribute Button -->
+                <div class="contribute-button-container">
+                    <a href="https://github.com/SokolAnn/BenchmarkCards" target="_blank" class="btn btn-primary"
+                        role="button" aria-label="Contribute to BenchmarkCards on GitHub">
+                        <i class="fab fa-github me-2" aria-hidden="true"></i>
+                        CONTRIBUTE
+                    </a>
+                </div>
+                <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+        <div class="header-border"></div>
+    </header>
+
+    <main class="container main-content">
+        <div class="search-container">
+            <input type="text" id="searchInput" class="search-input"
+                placeholder="Search benchmarks by name, task, or risk..." autofocus>
+        </div>
+
+        <div id="resultsGrid" class="results-grid">
+            <!-- Results will be populated here -->
+            <div class="no-results">Loading index...</div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async function () {
+            const searchInput = document.getElementById('searchInput');
+            const resultsGrid = document.getElementById('resultsGrid');
+            const themeToggle = document.getElementById('themeToggle');
+            const themeIcon = themeToggle.querySelector('i');
+
+            let searchIndex = [];
+
+            // Theme Logic
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            }
+
+            themeToggle.addEventListener('click', function () {
+                const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                themeIcon.classList.toggle('fa-moon');
+                themeIcon.classList.toggle('fa-sun');
+            });
+
+            // Load Search Index
+            try {
+                const response = await fetch('/static/search_index.json');
+                if (!response.ok) throw new Error('Failed to load search index');
+                searchIndex = await response.json();
+                renderResults(searchIndex); // Show all initially
+            } catch (error) {
+                console.error(error);
+                resultsGrid.innerHTML = '<div class="no-results">Error loading search index. Please try again later.</div>';
+            }
+
+            // Search Logic
+            searchInput.addEventListener('input', function (e) {
+                const query = e.target.value.toLowerCase();
+                const filtered = searchIndex.filter(item => {
+                    return (
+                        (item.name && item.name.toLowerCase().includes(query)) ||
+                        (item.overview && item.overview.toLowerCase().includes(query)) ||
+                        (item.tasks && item.tasks.some(t => t.toLowerCase().includes(query))) ||
+                        (item.risk_categories && item.risk_categories.some(r => r.toLowerCase().includes(query)))
+                    );
+                });
+                renderResults(filtered);
+            });
+
+            function renderResults(results) {
+                resultsGrid.innerHTML = '';
+
+                if (results.length === 0) {
+                    resultsGrid.innerHTML = '<div class="no-results">No benchmarks found matching your query.</div>';
+                    return;
+                }
+
+                results.forEach(item => {
+                    // Ensure we have a filename
+                    if (!item.filename) {
+                        console.warn("Item missing filename:", item);
+                        return;
+                    }
+
+                    const cardLink = document.createElement('a');
+                    cardLink.className = 'result-card';
+                    cardLink.href = `/view?id=${encodeURIComponent(item.filename)}`;
+                    cardLink.style.textDecoration = 'none';
+                    cardLink.style.color = 'inherit';
+                    cardLink.style.display = 'flex'; // Ensure flex behavior is kept
+
+                    // Create tags HTML
+                    const tasks = (item.tasks || []).slice(0, 3).map(t => `<span class="tag">${t}</span>`).join('');
+
+                    cardLink.innerHTML = `
+                        <h3 class="result-title">${item.name}</h3>
+                        <div class="result-meta">${item.overview ? item.overview.substring(0, 100) + '...' : ''}</div>
+                        <div class="result-tags">${tasks}</div>
+                    `;
+
+                    resultsGrid.appendChild(cardLink);
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

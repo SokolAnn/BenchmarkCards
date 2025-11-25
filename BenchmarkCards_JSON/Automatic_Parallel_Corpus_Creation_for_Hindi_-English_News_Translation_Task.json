@@ -1,0 +1,78 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Automatic Parallel Corpus Creation for Hindi -English News Translation Task",
+    "abbreviation": "N/A",
+    "overview": "We have developed an automatic parallel corpus generation system prototype, which creates Hindi-English parallel corpus for news translation task. Further to verify the quality of generated parallel corpus we have experimented by taking various performance metrics (Gestalt pattern matching, Hamming distance, Damerau-Levenshtein distance).",
+    "data_type": "text (Hindi-English parallel sentence pairs for news)",
+    "domains": [
+      "Natural Language Processing",
+      "Machine Translation"
+    ],
+    "languages": [
+      "Hindi",
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Bleualign",
+      "Hunalign",
+      "ABBYY Aligner",
+      "Unitex Aligner"
+    ],
+    "resources": [
+      "https://github.com/rsennrich/Bleualign",
+      "http://mokk.bme.hu/resources/hunalign/",
+      "http://www.abbyy.com/aligner/",
+      "http://www-igm.univ-mlv.fr/~unitex/#"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To develop an automatic parallel corpus generation prototype that creates Hindi-English parallel corpus for news translation tasks and to verify the quality of the generated parallel corpus using various performance metrics.",
+    "audience": [],
+    "tasks": [
+      "Machine Translation",
+      "Sentence Alignment",
+      "Parallel Corpus Creation"
+    ],
+    "limitations": "Current generated corpus size is limited for higher thresholds (e.g., 202 sentence-pairs at 80% threshold in the reported experiment). Authors state they will try to increase the quantity of parallel corpus, mainly for the 80% threshold.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Crawled Hindi news from Navbharat Times; crawled English news from web pages including Times of India, The Hindu, Quora and other news sources. Translated Hindi content to English using Google Translator API to create a baseline for alignment.",
+    "size": "For December 2017 experiment: 22,625 Hindi news articles crawled; 226,250 English news articles crawled. Final parallel corpus sentence-pairs: 12,798 sentence-pairs (50% threshold); 3,443 sentence-pairs (60% threshold); 987 sentence-pairs (70% threshold); 202 sentence-pairs (80% threshold).",
+    "format": "N/A",
+    "annotation": "Automatically generated: Hindi headlines/content translated to English via Google Translator API; sentence pairs extracted and aligned using fuzzy string matching algorithm and thresholding. No manual annotation described."
+  },
+  "methodology": {
+    "methods": [
+      "Automated crawling and translation using Google Translator API",
+      "Sentence boundary disambiguation using rule-based system",
+      "Fuzzy string matching algorithm (based on Levenshtein distance) for alignment",
+      "Automated evaluation using string similarity metrics (Gestalt Pattern Matching, Hamming Distance, Damerau-Levenshtein Distance)"
+    ],
+    "metrics": [
+      "Gestalt Pattern Matching",
+      "Hamming Distance",
+      "Damerau-Levenshtein Distance",
+      "Simple ratio of fuzzy string matching (based on Levenshtein distance) and a word-level 'value words' metric"
+    ],
+    "calculation": "Hamming distance: counts differing characters between equal-length strings (padding applied when lengths differ). Damerau-Levenshtein distance: minimal number of edit operations including insertions, deletions, substitutions and transpositions as defined by the recursive formulation in the paper. Gestalt pattern matching: finds the longest adjacent identical subsequence (anchor) and recurses on subsequences. Simple ratio: weighted comparison using Levenshtein distance and word-level comparisons ('value words').",
+    "interpretation": "Higher fuzzy-matching similarity threshold yields higher accuracy of the generated parallel corpus. Among the evaluated metrics, Hamming distance produced higher accuracy values than the others across reported thresholds.",
+    "baseline_results": "Accuracy of parallel corpora for different thresholds (Table VII):\n50% — Gestalt Pattern Matching: 49.79; Hamming Distance: 71.73; Damerau-Levenshtein Distance: 33.09\n60% — Gestalt Pattern Matching: 50.04; Hamming Distance: 73.4; Damerau-Levenshtein Distance: 43.14\n70% — Gestalt Pattern Matching: 66.6; Hamming Distance: 77.98; Damerau-Levenshtein Distance: 56.3\n80% — Gestalt Pattern Matching: 80.04; Hamming Distance: 85.19; Damerau-Levenshtein Distance: 69.36",
+    "validation": "Validated by computing accuracies of the generated parallel corpus at multiple similarity thresholds (50%, 60%, 70%, 80%) using Gestalt Pattern Matching, Hamming Distance, and Damerau-Levenshtein Distance on data crawled for December 2017 (22,625 Hindi articles; 226,250 English articles). Sample sentence-pairs for each threshold are provided in Tables II–V."
+  },
+  "targeted_risks": {
+    "risk_categories": [],
+    "atlas_risks": {
+      "risks": null
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

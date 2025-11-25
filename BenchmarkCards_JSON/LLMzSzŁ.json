@@ -1,0 +1,70 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LLMzSzŁ (LLMs Behind the School Desk)",
+    "abbreviation": "LLMzSzŁ",
+    "overview": "This article introduces the first comprehensive benchmark for the Polish language at this scale: LLMzSzŁ (LLMs Behind the School Desk). It is based on a coherent collection of Polish national exams, including both academic and professional tests extracted from the archives of the Polish Central Examination Board.",
+    "data_type": "closed-ended questions",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Polish"
+    ],
+    "similar_benchmarks": [
+      "MMLU"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/amu-cai/llmzszl-dataset"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive benchmark for evaluating LLMs' abilities in the Polish language and to analyse their performance against human examinees.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "As any competence test that is not designed to test the notion of intelligence in isolation, the presented benchmark intermixes to some extent the measurement of the reasoning capabilities of the model with the assessment of its ability to memorize factual knowledge.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Polish national exams from the archives of the Polish Central Examination Board.",
+    "size": "19,000 questions",
+    "format": "PDF",
+    "annotation": "Questions and answers were cleaned and matched manually, with data extracted using automated techniques where feasible."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "The accuracy is calculated by comparing the model's predicted answer with the correct answer based on the probabilities given by language models.",
+    "interpretation": "Higher accuracy indicates better performance of the model relative to human results.",
+    "baseline_results": null,
+    "validation": "The benchmark was validated through the performance of various LLMs against established human exam scores."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "The benchmark includes a stratification of exams by difficulty level and type.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

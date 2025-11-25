@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ResampledBench",
+    "abbreviation": "N/A",
+    "overview": "ResampledBench is constructed using farthest point sampling (FPS) to yield efficient evaluations of vision-language models (VLMs) with a strong correlation (> 0.96) to full benchmark assessments, while using only 1% of the original data.",
+    "data_type": "image-question-answer pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enable efficient and comprehensive evaluation of large vision-language models by constructing a representative benchmark from existing datasets.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Visual Question Answering",
+      "Multiple Choice Question Answering"
+    ],
+    "limitations": "Increased sample sizes can degrade the correlation between benchmark evaluations due to distortions in the feature space.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed using FPS from existing multiple choice question benchmarks and visual question answering benchmarks.",
+    "size": "1,000 samples",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Benchmark classification",
+      "Statistical correlation analysis"
+    ],
+    "metrics": [
+      "Spearman's rank correlation coefficient"
+    ],
+    "calculation": "Average ranks of models calculated based on their performance across all benchmarks.",
+    "interpretation": "Higher correlations indicate better performance rankings alignment with comprehensive evaluations.",
+    "baseline_results": null,
+    "validation": "The performance of ResampledBench was validated by comparing its correlation with full benchmark results."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Unintended biases in benchmark scoring"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

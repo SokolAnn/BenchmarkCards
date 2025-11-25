@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "UnsafeChain",
+    "abbreviation": "N/A",
+    "overview": "UnsafeChain is a safety alignment dataset constructed from hard prompts with diverse sources, where unsafe completions are identified and explicitly corrected into safe responses. Its purpose is to enhance safety while preserving general reasoning ability.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SafeChain",
+      "STAR-1"
+    ],
+    "resources": [
+      "https://github.com/mbzuai-nlp/UnsafeChain"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enhance the safety of large reasoning models (LRMs) by exposing them to unsafe behaviors and guiding their correction.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Safety Alignment",
+      "Reasoning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from diverse datasets including WildJailbreak, StrongReject, GSM8K, MBPP, TruthfulQA, and HH-RLHF.",
+    "size": "13,604 training examples, 2,069 test examples",
+    "format": "N/A",
+    "annotation": "Corrections made by GPT-4.1 for unsafe outputs."
+  },
+  "methodology": {
+    "methods": [
+      "Supervised Fine-Tuning (SFT)"
+    ],
+    "metrics": [
+      "Safe@1",
+      "ConsSafe@5",
+      "Safe@K"
+    ],
+    "calculation": "Safety scores calculated by sampling multiple responses to evaluate their safety.",
+    "interpretation": "Higher scores indicate better performance in generating safe responses.",
+    "baseline_results": "UnsafeChain outperforms SafeChain and STAR-1 across multiple benchmarks.",
+    "validation": "Experimented across 11 benchmarks including WildJailbreak and StrongReject."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Constructed using publicly available prompts under permissible research licenses.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

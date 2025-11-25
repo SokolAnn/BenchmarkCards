@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "name": "AVHBench",
+    "overview": "AVHBench is the first comprehensive benchmark designed specifically to evaluate the perception and comprehension capabilities of audio-visual Large Language Models (LLMs) focusing on cross-modal hallucinations.",
+    "data_type": "multimodal (audio and visual)",
+    "domains": null,
+    "languages": null,
+    "similar_benchmarks": null,
+    "resources": [
+      "https://github.com/kaist-ami/AVHBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess the stability of existing models toward cross-modal-driven hallucinations and to provide insights for developing more robust models.",
+    "audience": [
+      "Researchers",
+      "Developers",
+      "AI practitioners"
+    ],
+    "tasks": [
+      "Audio-driven Video Hallucination",
+      "Video-driven Audio Hallucination",
+      "Audio-visual Matching",
+      "Audio-visual Captioning"
+    ],
+    "limitations": null,
+    "out_of_scope_uses": null
+  },
+  "data": {
+    "source": "V ALOR and AudioCaps datasets",
+    "size": "5,816 QnA pairs and 1,238 audio-visual captions across 2,136 videos",
+    "format": "Mixed (QnA pairs and captions)",
+    "annotation": "Semi-automatic annotation pipeline ensures high-quality annotations"
+  },
+  "methodology": {
+    "methods": [
+      "Low-Rank Adaptation (LoRA) fine-tuning",
+      "Multi-modal training",
+      "Annotation pipeline"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Precision",
+      "Recall",
+      "F1 Score",
+      "METEOR",
+      "CIDEr",
+      "GA VIE"
+    ],
+    "calculation": "Evaluated based on conventional metrics for assessing vision-language hallucinations.",
+    "interpretation": "Metrics indicate the performance of models in distinguishing hallucinations and accurately describing multimodal input.",
+    "baseline_results": null,
+    "validation": "Evaluated on six different recent audio-visual LLMs"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Hallucination",
+      "Misinterpretation of signals"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The benchmark has undergone a human annotation process, mitigating potential negative biases.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

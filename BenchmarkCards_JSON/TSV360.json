@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TSV360",
+    "abbreviation": "N/A",
+    "overview": "TSV360 is a dataset for text-driven saliency detection in 360-degree videos, consisting of approximately 16,000 triples of ERP frames, textual descriptions, and ground-truth saliency maps enabling the training and evaluation of such methods.",
+    "data_type": "triplets of ERP frames, textual descriptions, ground-truth saliency maps",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "N/A"
+    ],
+    "similar_benchmarks": [
+      "Ego4D",
+      "SJTU-TIS",
+      "Pano2Vid",
+      "Sports-360",
+      "PVS-HM",
+      "VR-EyeTracking"
+    ],
+    "resources": [
+      "https://github.com/IDT-ITI/TSalV360"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of TSV360 is to facilitate research on text-driven saliency detection methods in 360-degree videos.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Text-driven Saliency Detection"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "TSV360 dataset is derived from VR-EyeTracking and Sports-360 datasets comprising diverse 360-degree video content.",
+    "size": "16,000 examples",
+    "format": "N/A",
+    "annotation": "Ground-truth saliency maps were obtained through standardization and Gaussian filtering of fixation annotations."
+  },
+  "methodology": {
+    "methods": [
+      "Quantitative evaluations using various metrics",
+      "Qualitative evaluations based on visual observations"
+    ],
+    "metrics": [
+      "Correlation Coefficient (CC)",
+      "Similarity (SIM)",
+      "Kullback–Leibler Divergence (KLD)"
+    ],
+    "calculation": "Metrics are calculated by comparing the machine-generated and ground-truth saliency maps.",
+    "interpretation": "Scores indicate the model's effectiveness at predicting salient regions aligned with input textual descriptions.",
+    "baseline_results": "Use of the SalViT360 method as a baseline.",
+    "validation": "5-fold cross-validation with 80% training data and 20% testing data."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "Informed consent was obtained from participants involved in video capture.",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "GAME BENCH",
+    "abbreviation": "N/A",
+    "overview": "GAME BENCH is a cross-domain benchmark for evaluating strategic reasoning abilities of LLM agents across various games, focusing on the strengths of reasoning skills identified in strategy games.",
+    "data_type": "game states and actions",
+    "domains": [
+      "Artificial Intelligence",
+      "Game Theory",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/Joshuaclymer/GameBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To measure the strategic reasoning abilities of LLM agents in diverse game environments.",
+    "audience": [
+      "ML Researchers",
+      "Game Developers",
+      "AI Practitioners"
+    ],
+    "tasks": [
+      "Strategic Reasoning in Games",
+      "Multi-Agent Interaction"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Games played between LLM agents and human agents as described in the benchmark.",
+    "size": "N/A",
+    "format": "JSON",
+    "annotation": "Game interactions and match results annotated by agent performances."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics via agent ratings",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Ratings based on the exponential Bradley-Terry model",
+      "Win probabilities"
+    ],
+    "calculation": "Weights among matches are calculated inversely to the number of matches per game, applying a bootstrapped sampling method for pairwise comparisons.",
+    "interpretation": "Higher ratings indicate better strategic reasoning ability.",
+    "baseline_results": "Human performance serves as the upper baseline, with models compared against each other and random action baseline.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential for advances in strategic reasoning capability leading to misuse or harmful AI applications."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Data available under CC-BY 4.0 License.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "WikiTableEdit",
+    "abbreviation": "N/A",
+    "overview": "WikiTableEdit is a benchmark for both regular and irregular table editing by natural language instruction, encompassing six different types of editing operations and includes 194,996 training data instances and 28,706 testing data instances.",
+    "data_type": "table editing instructions",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://anonymous.4open.science/r/WikiTableEdit-ECEC"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To introduce the task of table editing and construct a high-quality dataset to support this endeavor.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Table Editing"
+    ],
+    "limitations": "The dataset is a programmatically generated dataset with a relatively uniform instruction format, where each editing operation has only one form of instruction.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "WikiSQL dataset with 26,531 tables used to generate the WikiTableEdit dataset.",
+    "size": "194,996 training instances, 28,706 testing instances",
+    "format": "HTML",
+    "annotation": "Automatically generated natural language instructions for table editing operations."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Exact Match (EM)",
+      "SARI",
+      "BLEU",
+      "ROUGE",
+      "Table Edit Distance (TED)"
+    ],
+    "calculation": "Table Edit Distance (TED) combines both the minimum edit distance of table structures and content.",
+    "interpretation": "Higher scores indicate better model performance in editing tables correctly.",
+    "baseline_results": null,
+    "validation": "Manually sampled results were verified for correctness."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

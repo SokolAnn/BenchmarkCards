@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SUQL (Structured and Unstructured Query Language)",
+    "abbreviation": "SUQL",
+    "overview": "This paper presents the first conversational agent that supports the full generality of hybrid data access for large knowledge corpora through the Structured and Unstructured Query Language (SUQL). It introduces a semantic parser capable of handling hybrid data sources and demonstrates the effectiveness of the approach on the HybridQA dataset, achieving strong performance in combining structured data queries and free-text retrieval techniques.",
+    "data_type": "crowd-sourced questions and conversations",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Science"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "HybridQA"
+    ],
+    "resources": [
+      "https://github.com/stanford-oval/suql"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a formal query language (SUQL) that can combine structured data queries and free-text retrieval for conversational agents.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Developers of Conversational Agents"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Conversational Search"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Crowd-sourced questions and conversations from Yelp datasets.",
+    "size": "1828 restaurant entries with reviews and dishes.",
+    "format": "N/A",
+    "annotation": "Crowd-sourced"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Exact Match",
+      "F1 Score"
+    ],
+    "calculation": "Metrics calculated based on the retrieved results against ground truth from the HybridQA dataset.",
+    "interpretation": "Higher exact match and F1 score indicate better performance of the conversational agent.",
+    "baseline_results": "Within 8.9% exact match and 7.1% F1 of the SOTA model in HybridQA.",
+    "validation": "Validation through comparisons with existing benchmarks in the HybridQA dataset."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Crowdsourcing participants' privacy was respected.",
+    "data_licensing": "Data will be available under the Apache License, Version 2.0.",
+    "consent_procedures": "Crowdsourcing processes included user consent for research purposes.",
+    "compliance_with_regulations": "Data collection procedures have been approved by an IRB."
+  }
+}

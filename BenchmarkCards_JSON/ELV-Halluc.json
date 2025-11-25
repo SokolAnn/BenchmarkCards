@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ELV-Halluc (Event-based Long Video Hallucination)",
+    "abbreviation": "ELV-Halluc",
+    "overview": "ELV-Halluc is the first benchmark dedicated to long-video hallucination, enabling a systematic investigation of Semantic Aggregation Hallucinations (SAH) by quantifying semantic complexity through event-based videos and categorizing hallucination aspects.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "VideoHallucer",
+      "EventHallusion",
+      "VidHalluc"
+    ],
+    "resources": [
+      "https://github.com/hlsv02/ELV-Halluc"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate and analyze Semantic Aggregation Hallucinations in long videos and improve model robustness against hallucination.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "The dataset scale is limited due to high annotation costs.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "500 curated Event-by-Event videos from YouTube.",
+    "size": "8K adversarial QA pairs",
+    "format": "JSON",
+    "annotation": "Semi-automated captioning followed by human verification."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "SAH Ratio"
+    ],
+    "calculation": "SAH Ratio = (OutAcc - InAcc) / (1 - InAcc) where OutAcc and InAcc denote the accuracy on out-of-video and in-video hallucination pairs, respectively.",
+    "interpretation": "Higher SAH Ratio indicates more severe Semantic Aggregation Hallucination.",
+    "baseline_results": null,
+    "validation": "Tested through experiments on various open-source and closed-source MLLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

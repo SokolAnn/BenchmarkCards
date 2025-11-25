@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SimuHome",
+    "abbreviation": "N/A",
+    "overview": "SimuHome is a benchmark designed to evaluate smart home large language model agents in a time-accelerated environment that simulates smart devices, supporting various user query types and requirements, assessing agent performance in handling latent intents, temporal dependencies, and device constraints.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "HomeBench"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2509.24282"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a reproducible evaluation framework for smart home agents that interact with dynamically changing environments and to assess their capabilities in handling complex user queries.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Device Control",
+      "Environmental Variable Querying",
+      "Implicit Intent Inference",
+      "Temporal Coordination"
+    ],
+    "limitations": "Current models struggle with latent intent inference, live-state verification, and temporal scheduling; GPT-4.1 achieves an overall success rate of 54% across all query types.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Simulated smart home environment utilizing Matter protocol with various device interactions and environmental variables.",
+    "size": "600 episodes",
+    "format": "JSON",
+    "annotation": "Manually validated benchmark episodes with feasible and infeasible scenarios."
+  },
+  "methodology": {
+    "methods": [
+      "Simulator-based evaluation",
+      "LLM-judge-based evaluation"
+    ],
+    "metrics": [
+      "Success Rate"
+    ],
+    "calculation": "Evaluation based on comparing final states in the simulator for feasible tasks and logical checks against LLM judges for infeasible tasks.",
+    "interpretation": "Success rates are derived from comparing the final output states of agents with the desired goals, with respect to time constraints and device conditions.",
+    "baseline_results": "GPT-4.1 achieved a 54% success rate across all query types.",
+    "validation": "The benchmark is designed to be fully reproducible and allows stress-testing of agents under various scenarios."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Benchmark aims to detect and prevent issues related to latent intent inference and actual state verification during interactions."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

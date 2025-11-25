@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "NATURAL INSTRUCTIONS",
+    "abbreviation": "N/A",
+    "overview": "We introduce NATURAL INSTRUCTIONS, a dataset of 61 distinct tasks, their human-authored instructions, and 193k task instances (input-output pairs). The instructions are obtained from crowdsourcing instructions used to create existing NLP datasets and mapped to a unified schema.",
+    "data_type": "input-output pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "PromptSource"
+    ],
+    "resources": [
+      "https://instructions.apps.allenai.org"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To build models that generalize to new tasks by encoding and understanding crowdsourcing instructions.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Generation",
+      "Answer Generation",
+      "Incorrect Answer Generation",
+      "Classification",
+      "Minimal Text Modification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Crowdsourced instructions from existing NLP datasets",
+    "size": "193,000 instances",
+    "format": "JSON",
+    "annotation": "Collected through crowdsourcing platforms with a unified schema."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "ROUGE-L"
+    ],
+    "calculation": "Metrics are calculated based on the generated outputs compared to the expected outputs.",
+    "interpretation": "Higher ROUGE-L scores indicate better performance of models in generating accurate task outputs.",
+    "baseline_results": "BART achieves higher performance when using full instructions compared to without instructions.",
+    "validation": "Results were validated against human-annotated performance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

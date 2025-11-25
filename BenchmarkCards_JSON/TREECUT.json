@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "name": "TREECUT",
+    "overview": "TREECUT is a synthetic dataset that generates infinite unanswerable math word problems and their answerable counterparts to evaluate hallucination in large language models.",
+    "data_type": "Synthetic",
+    "domains": [
+      "Mathematics"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "GSM8K",
+      "MATH"
+    ],
+    "resources": [
+      "Dataset generation code will be released upon publication."
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the hallucination rates of LLMs on systematically generated unanswerable math word problems.",
+    "audience": [
+      "Researchers",
+      "Developers",
+      "Educational institutions"
+    ],
+    "tasks": [
+      "Evaluate LLM performance",
+      "Identify weaknesses in reasoning",
+      "Generate unanswerable and answerable math problems"
+    ],
+    "limitations": "The dataset is limited to the scope of math word problems and does not cover other areas of mathematics.",
+    "out_of_scope_uses": [
+      "Use in non-mathematical reasoning tasks",
+      "Evaluating datasets outside of the generated structure"
+    ]
+  },
+  "data": {
+    "source": "Synthetic generation algorithm described in the paper.",
+    "size": "N/A",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Synthetic problem generation using tree structures.",
+      "Prompting LLMs with zero-shot evaluation templates."
+    ],
+    "metrics": [
+      "Hallucination rate",
+      "Correct identification of unanswerable problems",
+      "Accuracy on answerable problems"
+    ],
+    "calculation": "Hallucination rates are calculated based on model outputs on generated unanswerable problems.",
+    "interpretation": "Higher hallucination rates indicate challenges LLMs face in identifying unanswerable problems.",
+    "baseline_results": "GPT-4o showed 61% hallucination on unanswerable problems; o3-mini showed 42%.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Hallucination in LLMs",
+      "Misinterpretation of problem requirements"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Explainability",
+          "subcategory": [
+            "Inaccessible training data",
+            "Unexplainable output"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

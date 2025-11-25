@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CLR-Bench",
+    "abbreviation": "N/A",
+    "overview": "CLR-Bench is a benchmark specifically designed to evaluate the reasoning capabilities of large language models in college-level tasks, focusing on computer science and artificial intelligence, comprised of 1,018 discipline-specific questions across five question types.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Science"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMLU",
+      "MMLU-Pro",
+      "CMMLU",
+      "C-Eval",
+      "GSB-8K",
+      "MATH"
+    ],
+    "resources": [
+      "https://anonymous.4open.science/r/CLR-Bench-7771"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To comprehensively evaluate the reasoning ability of large language models in college-level tasks.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from 16 authoritative college textbooks guided by domain experts and structured according to a hierarchical topic graph.",
+    "size": "1,018 questions",
+    "format": "JSONL",
+    "annotation": "Expert-guided rationale generation using GPT-4o and manual verification."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Expert evaluation"
+    ],
+    "metrics": [
+      "Q →A",
+      "Q →AR"
+    ],
+    "calculation": "Metrics are calculated based on the correctness of the answers and the quality of the rationales provided.",
+    "interpretation": "Higher scores in Q →A indicate better answer predictions; Q →AR assesses both answer correctness and rationale quality.",
+    "baseline_results": "N/A",
+    "validation": "Extensive experiments conducted across 40 language models to validate results."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

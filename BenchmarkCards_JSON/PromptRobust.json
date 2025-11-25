@@ -1,0 +1,101 @@
+{
+  "benchmark_details": {
+    "name": "PromptRobust",
+    "overview": "PromptRobust is a robustness benchmark designed to measure LLMs’ resilience to adversarial prompts across multiple levels: character, word, sentence, and semantic.",
+    "data_type": "Text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "AdvGLUE",
+      "ANLI"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2306.04528"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the robustness of LLMs to adversarial prompts and provide insights for better prompt composition.",
+    "audience": [
+      "Researchers",
+      "Practitioners",
+      "Model developers",
+      "End-users"
+    ],
+    "tasks": [
+      "Sentiment analysis",
+      "Natural language inference",
+      "Machine translation",
+      "Reading comprehension",
+      "Math problem solving"
+    ],
+    "limitations": "The benchmark primarily evaluates robustness against adversarial prompts, not input samples.",
+    "out_of_scope_uses": [
+      "Non-adversarial evaluations",
+      "Evaluation on samples alone"
+    ]
+  },
+  "data": {
+    "source": "Generated through various prompt conditions and attacks.",
+    "size": "4788 adversarial prompts generated.",
+    "format": "Text",
+    "annotation": "Prompts perturbed to simulate user errors and analyze responsiveness of LLMs."
+  },
+  "methodology": {
+    "methods": [
+      "Character-level attacks",
+      "Word-level attacks",
+      "Sentence-level attacks",
+      "Semantic-level attacks"
+    ],
+    "metrics": [
+      "Performance Drop Rate (PDR)"
+    ],
+    "calculation": "Performance Drop Rate calculated based on relative performance decline post-prompt attack.",
+    "interpretation": "Higher PDR indicates lower model robustness to adversarial prompts.",
+    "baseline_results": "Initial performance of LLMs without prompt attacks.",
+    "validation": "Comprehensive evaluation across 9 LLMs using diverse tasks and datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Fairness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack",
+            "Data poisoning"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Reidentification",
+            "Exposing personal information"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Adversarial prompts may lead to incorrect outputs in critical tasks affecting user decisions."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Adversarial prompts created for testing without user data.",
+    "data_licensing": "Adversarial prompts generated from public datasets.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "Follows ethical standards in ML research."
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "IMPLIRET (Implicit Fact Retrieval Challenge)",
+    "abbreviation": "IMPLIRET",
+    "overview": "IMPLIRET introduces a benchmark for evaluating retrieval models when relevance depends on document-side reasoning on implicit facts. It focuses on reasoning categories such as world knowledge, arithmetic, and temporal.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "BEIR",
+      "RAR-b",
+      "BIRCO",
+      "BRIGHT"
+    ],
+    "resources": [
+      "https://github.com/ZeinabTaghavi/IMPLIRET"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate retrieval systems on their ability to retrieve relevant documents based on implicit knowledge rather than surface-level matching.",
+    "audience": [
+      "NLP Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Retrieval",
+      "Document-Reasoning"
+    ],
+    "limitations": "While carefully designed, IMPLIRET data may differ slightly from naturally occurring text in discourse structure or topic diversity.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Synthetically generated using LLMs and structured templates.",
+    "size": "90,000 examples",
+    "format": "JSON",
+    "annotation": "Automatically generated and semi-automated with human verification."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "nDCG@10",
+      "ROUGE-1"
+    ],
+    "calculation": "Metrics were calculated based on retrieval performance against implicit queries.",
+    "interpretation": "Higher nDCG@10 and ROUGE-1 recall indicate better performance in retrieving relevant documents.",
+    "baseline_results": "The best nDCG@10 achieved was 14.91% using dense retrieval methods.",
+    "validation": "Validation includes sanity checks on fluency and implicit support for the queried facts."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

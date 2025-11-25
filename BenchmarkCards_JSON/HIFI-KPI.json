@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "HIFI-KPI (Hierarchical Financial Key Performance Indicator)",
+    "abbreviation": "HIFI-KPI",
+    "overview": "HIFI-KPI is a dataset designed to facilitate numerical KPI extraction from unstructured financial text, containing approximately 1.8 million paragraphs and 5 million entities associated with a complex hierarchy based on the iXBRL standard.",
+    "data_type": "paragraphs and entities",
+    "domains": [
+      "Natural Language Processing",
+      "Finance"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "FiNER",
+      "MultiFin"
+    ],
+    "resources": [
+      "https://github.com/aaunlp/HiFi-KPI"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To structure the iXBRL label set for financial data extraction and enable varying levels of granularity in predictions.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Named Entity Recognition",
+      "Structured Information Extraction"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Financial filings from public companies (10-Q and 10-K filings) collected between 2017 and 2024.",
+    "size": "1.8 million paragraphs, 5 million entities",
+    "format": "JSON",
+    "annotation": "Manually curated with expert mappings for HIFI-KPI Lite."
+  },
+  "methodology": {
+    "methods": [
+      "Text Classification",
+      "Sequence Labeling",
+      "LLM-based Structure Extraction"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "Macro F1"
+    ],
+    "calculation": "Precision, Recall, and F1 metrics computed based on correctly predicted labels against the ground truth.",
+    "interpretation": "Higher precision and recall indicate better extraction performance, particularly in labeling financial entities.",
+    "baseline_results": "Performance varies across tasks with higher granularities yielding better results, particularly in sequence labeling.",
+    "validation": "Validated against expert-labeled subsets and evaluated using various model approaches."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

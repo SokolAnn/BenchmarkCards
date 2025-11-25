@@ -1,0 +1,73 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CliME (Climate Change Multimodal Evaluation)",
+    "abbreviation": "CliME",
+    "overview": "CliME is a first-of-its-kind multimodal dataset comprising 2579 Twitter and Reddit posts, rich in humorous memes and skeptical content, intended for evaluating the performance of large language models (LLMs) in understanding and generating credible climate discourse.",
+    "data_type": "image-text pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MultiClimate",
+      "GreenScreen"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/climedataset/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess the ability of large language models to comprehend and generate credible climate-related communications.",
+    "audience": [
+      "ML Researchers",
+      "Climate Scientists",
+      "Policy Makers"
+    ],
+    "tasks": [
+      "Text Generation",
+      "Text Classification"
+    ],
+    "limitations": "The dataset relies on existing pre-trained models for assessment, which may not capture the latest social media trends effectively.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Scraped posts from Twitter (now X) and Reddit focusing on climate-related discourse.",
+    "size": "2,579 examples",
+    "format": "JSON",
+    "annotation": "Manual review and human annotation for generated descriptions to ensure alignment with intended meanings."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Climate Alignment Quotient (CAQ)"
+    ],
+    "calculation": "CAQ is calculated as a weighted sum of five core metrics: Articulation, Evidence, Resonance, Transition, and Specificity.",
+    "interpretation": "Higher CAQ scores indicate stronger alignment with effective climate communication, characterized by coherent articulation, strong evidence, and actionable specifics.",
+    "baseline_results": null,
+    "validation": "Evaluation based on five state-of-the-art LLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "The dataset captures a range of climate discourse but does not explicitly analyze demographic factors.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data collected from publicly accessible posts without retaining personally identifiable information.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SuperGLUE: A Stickier Benchmark for General-Purpose Language Understanding Systems",
+    "abbreviation": "SuperGLUE",
+    "overview": "SuperGLUE is a new benchmark styled after GLUE with a new set of more difficult language understanding tasks, a software toolkit, and a public leaderboard.",
+    "data_type": "text: question-answering pairs, sentence/sentence-pair classification, coreference resolution",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "GLUE",
+      "SentEval",
+      "DecaNLP"
+    ],
+    "resources": [
+      "https://super.gluebenchmark.com",
+      "https://github.com/nyu-mll/jiant",
+      "https://github.com/huggingface/transformers",
+      "https://arxiv.org/abs/1905.00537v3"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a simple, hard-to-game measure of progress toward general-purpose language understanding technologies for English.",
+    "audience": [
+      "Machine Learning Researchers"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Natural Language Inference",
+      "Word Sense Disambiguation",
+      "Coreference Resolution",
+      "Reading Comprehension"
+    ],
+    "limitations": "Excludes tasks that require domain-specific knowledge (e.g., medical notes or scientific papers); requires tasks to have existing public training data; focuses on English.",
+    "out_of_scope_uses": [
+      "Tasks requiring domain-specific knowledge (e.g., medical notes or scientific papers)"
+    ]
+  },
+  "data": {
+    "source": "Existing public datasets assembled for the benchmark: BoolQ, CommitmentBank (CB), COPA, MultiRC, ReCoRD, RTE (merged RTE1/2/3/5), WiC, and WSC (as listed in Table 1).",
+    "size": "Per-task sizes as listed in Table 1. Examples: BoolQ: 9,427 train / 3,270 dev / 3,245 test; CB: 250 train / 57 dev / 250 test; COPA: 400 train / 100 dev / 500 test; MultiRC: 5,100 train / 953 dev / 1,800 test; ReCoRD: 101,000 train / 10,000 dev / 10,000 test; RTE: 2,500 train / 278 dev / 300 test; WiC: 6,000 train / 638 dev / 1,400 test; WSC: 554 train / 104 dev / 146 test.",
+    "format": "N/A",
+    "annotation": "Original task datasets were annotated by their respective authors/creators. Human performance estimates for the benchmark were collected via crowdsourced annotations on Amazon Mechanical Turk (workers received training, 5 annotations per sampled test example, majority vote)."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics (task-specific)",
+      "Human evaluation (crowdsourced estimates for human baselines)",
+      "Baseline model evaluation using BERT and transfer variants",
+      "Public leaderboard evaluation with private test labels"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "Exact Match (EM)",
+      "Matthews Correlation Coefficient (MCC)",
+      "Gender Parity Score",
+      "Average (equal-weighted across tasks)"
+    ],
+    "calculation": "Each task is weighted equally in the overall score. For tasks with multiple metrics, those metrics are averaged to produce a per-task score; the benchmark score is the unweighted average of the task scores.",
+    "interpretation": "Higher scores indicate better task and aggregate performance. Human performance estimates are provided as reference points to indicate headroom; gaps between model and human scores indicate remaining difficulty.",
+    "baseline_results": "Baselines reported in the paper (test set, scaled by 100): BERT (bert-large-cased) Avg: 69.0; BERT++ Avg: 71.5; Human (est.) Avg: 89.8. Per-task scores are given in Table 3 of the paper.",
+    "validation": "Tasks were selected via a public call and filtered using BERT-based baselines and human baselines. Human performance was estimated by sampling test examples (typically 100) and collecting 5 annotations per example via Mechanical Turk with a training phase; majority vote used to estimate human accuracy. The leaderboard uses private test labels and limits submissions to reduce overfitting."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Transparency",
+      "Data Laws",
+      "Governance"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Lack of training data transparency"
+          ]
+        },
+        {
+          "category": "Data Laws",
+          "subcategory": [
+            "Data usage restrictions"
+          ]
+        },
+        {
+          "category": "Governance",
+          "subcategory": [
+            "Incomplete usage definition",
+            "Unrepresentative risk testing"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Includes Winogender diagnostic to measure gender bias; paper notes Winogender used (DNC version) does not cover gender-neutral 'they' or non-binary pronouns.",
+    "harm": [
+      "Detection of gender bias in coreference resolution systems",
+      "Monitoring amplification of social biases in data-driven models"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Task data must be available under licenses that allow use and redistribution for research purposes (as stated in the design criteria).",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

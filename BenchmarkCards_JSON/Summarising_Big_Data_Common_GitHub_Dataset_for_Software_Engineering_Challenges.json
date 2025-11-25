@@ -1,0 +1,71 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Summarising Big Data: Common GitHub Dataset for Software Engineering Challenges",
+    "abbreviation": "N/A",
+    "overview": "A common dataset was created and shared with the researchers by localizing and filtering a copy of the GHTorrent dataset (GitHub data up to 2015), removing duplicates and errors, adding linking fields, and producing a MongoDB dataset exported as CSV to enable rapid experiments and comparable studies on software engineering problems.",
+    "data_type": "text, tabular, graph",
+    "domains": [
+      "Software Engineering",
+      "Natural Language Processing"
+    ],
+    "languages": [],
+    "similar_benchmarks": [
+      "GHTorrent"
+    ],
+    "resources": [
+      "https://en.wikipedia.org/wiki/gitHub",
+      "https://gist.github.com/paulmillr/2657075"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Provide a common, smaller, easy-to-operate GitHub dataset (filtered from GHTorrent up to 2015) to allow researchers to work on many software engineering problems and to enable comparable evaluation between studies.",
+    "audience": [
+      "Researchers working on Software Engineering",
+      "Researchers working on Natural Language Processing"
+    ],
+    "tasks": [
+      "Task assignment",
+      "User analysis",
+      "Project analysis",
+      "Software development analysis"
+    ],
+    "limitations": "Dataset includes data associated only with the 100 selected most active users and covers GitHub data up to 2015.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Filtered subset of the GHTorrent dataset (GitHub data up to 2015), processed in MongoDB to correct errors, remove duplicates, add linking fields, and exported for sharing.",
+    "size": "Authors downloaded approximately 750 GB of GHTorrent MongoDB collections. Proposed filtered dataset sizes per Table 3: Users 0.8 MB; Repos 45 MB; Commits 4 GB; Commit Comments 90 MB; Issues 3 GB; Issue Comments 4 GB; Pull Requests 5 GB; Pull Request Comments 1 GB; Followers 20 MB; Forks 5 MB; Watchers 8 MB; RepoCollaborators 2 MB.",
+    "format": "MongoDB archive; CSV exports of collections",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Filtering and selection of data based on the 100 most active users using MongoDB queries",
+      "Data cleaning: remove documents with null key fields, remove duplicate documents",
+      "Field engineering: create 'full_name' fields, extract owner/name from URLs, add 'repo_id' and 'user_id' by joining collections",
+      "Export processed MongoDB collections as CSV and share MongoDB archive"
+    ],
+    "metrics": [
+      "N/A"
+    ],
+    "calculation": "N/A",
+    "interpretation": "N/A",
+    "baseline_results": null,
+    "validation": "Validation performed via data cleaning procedures described in the paper: removal of documents with null key fields, deduplication (grouping by id fields), creation of 'full_name' fields where missing, joining to add 'repo_id' and 'user_id', and comparison of collection sizes with original GHTorrent (Table 3)."
+  },
+  "targeted_risks": {
+    "risk_categories": [],
+    "atlas_risks": {
+      "risks": null
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

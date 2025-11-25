@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "THEATER (THinking Evaluation And Testing for Erroneous Reasoning)",
+    "abbreviation": "THEATER",
+    "overview": "THEATER is a comprehensive benchmark that systematically investigates Fake Reasoning Bias in language models by manipulating reasoning structures. It evaluates 17 advanced models across different types of reasoning manipulations.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://anonymous.4open.science/r/fake-reasoning-bias-0B5A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To investigate the susceptibility of language models to Fake Reasoning Bias and provide insights into mitigating these vulnerabilities.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Bias Evaluation",
+      "Reasoning Assessment"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Evaluated on DPO datasets and factual datasets adapted from MMLU-Pro.",
+    "size": "Approximately 400 pairs across different datasets.",
+    "format": "N/A",
+    "annotation": "Human-annotated response pairs."
+  },
+  "methodology": {
+    "methods": [
+      "Pairwise comparison",
+      "Quantitative evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Robustness Rate"
+    ],
+    "calculation": "Accuracy is calculated based on the model’s judgment matching the ground-truth label. Robustness Rate measures the stability of the model's prediction against bias injections.",
+    "interpretation": "Higher accuracy and robustness rates indicate better performance in assessing reasoning without bias.",
+    "baseline_results": "N/A",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

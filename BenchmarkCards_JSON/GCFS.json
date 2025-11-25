@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Generalized Cross-domain Few-shot (GCFS) Task",
+    "abbreviation": "GCFS",
+    "overview": "The GCFS task focuses on adapting a source-pretrained model for high performance on both common and novel classes in a target domain with few-shot samples, addressing challenges related to data scarcity and domain adaptation.",
+    "data_type": "3D object detection",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "NuScenes",
+      "Waymo",
+      "KITTI",
+      "A2D2"
+    ],
+    "resources": [
+      "https://github.com/open-mmlab/OpenPCDet"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a framework for rapid deployment of 3D object detection models in diverse environments with few-shot learning.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "3D Object Detection"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "NuScenes, Waymo, KITTI, A2D2 datasets.",
+    "size": "∼28K samples from NuScenes, ∼24K from Waymo, ∼7K from KITTI, ∼12K from A2D2",
+    "format": "Point cloud",
+    "annotation": "Annotated by respective datasets"
+  },
+  "methodology": {
+    "methods": [
+      "Multi-modal fusion",
+      "Contrastive-enhanced prototype learning"
+    ],
+    "metrics": [
+      "Mean Average Precision (mAP)"
+    ],
+    "calculation": "Based on Average Precision (AP) at 40 recall positions for each class.",
+    "interpretation": "High mAP indicates strong performance in detecting both common and novel objects.",
+    "baseline_results": "Compared against VoxelRCNN and other SOTA methods.",
+    "validation": "Conducted through comprehensive experiments across different K-shot settings."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

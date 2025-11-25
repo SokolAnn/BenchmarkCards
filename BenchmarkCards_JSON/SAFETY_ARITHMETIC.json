@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SAFETY ARITHMETIC",
+    "abbreviation": "N/A",
+    "overview": "SAFETY ARITHMETIC is a training-free framework for aligning Large Language Models (LLMs) by steering them away from harmful directions and aligning their latent spaces towards safe content generation. It enhances safety measures for base, supervised fine-tuned, and edited models, while preserving their utility.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "N/A"
+    ],
+    "resources": [
+      "https://github.com/declare-lab/safety-arithmetic"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive safety alignment framework for large language models across various utilization scenarios, reducing harmful outputs while maintaining model performance.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Safety Alignment",
+      "Text Classification"
+    ],
+    "limitations": "The framework's experiments involved models up to 7 billion parameters, limiting its applicability to larger models.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "NOINTENT EDIT dataset composed of edit instances which could compromise model safety if used unintentionally; evaluated using five established datasets.",
+    "size": "N/A",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Attack Success Rate (ASR)"
+    ],
+    "calculation": "ASR is calculated as the proportion of responses deemed unsafe out of the total number of input queries to the model.",
+    "interpretation": "Lower ASR indicates better safety alignment performance of the model.",
+    "baseline_results": "N/A",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Bias"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Harmful content generation"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

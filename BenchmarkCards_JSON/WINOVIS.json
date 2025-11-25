@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "WINOVIS (WSC-Adapted Multimodal Dataset)",
+    "abbreviation": "WINOVIS",
+    "overview": "WINOVIS is a dataset designed to probe text-to-image models on pronoun disambiguation within multimodal contexts, consisting of 500 scenarios for evaluating these models' common-sense reasoning abilities.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "WSC (Winograd Schema Challenge)",
+      "Winogrande",
+      "KnowRef"
+    ],
+    "resources": [
+      "https://github.com/bpark2/WinoVis"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the pronoun disambiguation capabilities of text-to-image models and advance understanding of multimodal common-sense reasoning.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Pronoun Disambiguation"
+    ],
+    "limitations": "Entity separation challenges can occur, particularly with semantically similar entities.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated using GPT-4 with manual filtering.",
+    "size": "500 scenarios",
+    "format": "JSON",
+    "annotation": "Manually reviewed for clarity and relevance for the disambiguation task."
+  },
+  "methodology": {
+    "methods": [
+      "Manual Annotation",
+      "Heatmap Analysis"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on the model's pronoun-to-entity associations.",
+    "interpretation": "The results are interpreted in terms of model's ability to accurately associate pronouns with the correct entities.",
+    "baseline_results": null,
+    "validation": "The effectiveness of the dataset was validated through systematic evaluation against different model versions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt leaking"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Not explicitly analyzed.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

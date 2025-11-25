@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "REFNLI",
+    "abbreviation": "N/A",
+    "overview": "REFNLI is a diagnostic benchmark for identifying reference ambiguity in Natural Language Inference (NLI) examples, featuring 1,143 pairs where the premise is retrieved from a knowledge source and does not necessarily refer to the same context as the hypothesis.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/refnli-authors/refnli"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To study the effect of reference determinacy in NLI and the impact of this common assumption in the creation processes of NLI datasets.",
+    "audience": [
+      "ML Researchers",
+      "NLP Practitioners"
+    ],
+    "tasks": [
+      "Natural Language Inference"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset is constructed by sampling claims from the validation and test splits of fact verification datasets (FEVER and VitaminC) and retrieving corresponding evidence from Wikipedia.",
+    "size": "1,143 examples",
+    "format": "N/A",
+    "annotation": "Annotated by expert raters with 4 labels (Entailment, Contradiction, Neutral, Ambiguous)."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "AUROC"
+    ],
+    "calculation": "Metrics are computed based on the output label token with the highest softmax probability.",
+    "interpretation": "Higher precision and recall values indicate better model performance in recognizing entailment and contradiction.",
+    "baseline_results": "N/A",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

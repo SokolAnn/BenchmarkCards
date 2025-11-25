@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SUBSPEC (Substitute Speculative Decoding)",
+    "abbreviation": "SUBSPEC",
+    "overview": "SUBSPEC is a novel lossless and training-free technique designed to maximize inference throughput for offloaded large language models (LLMs) on consumer-grade devices. It constructs highly aligned draft models to effectively mitigate the latency due to parameter offloading, enabling competitive inference speeds with substantial speedups.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "EAGLE",
+      "MT-Bench"
+    ],
+    "resources": [
+      "https://github.com/NYCU-EDgeAi/subspec"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To accelerate inference of large language models on consumer GPUs with limited memory by proposing a new method for speculative decoding.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text Generation",
+      "Code Generation",
+      "Mathematical Reasoning",
+      "Instruction Following",
+      "Summarization"
+    ],
+    "limitations": "The minimum GPU memory requirement is approximately 7.1GB for Qwen2.5 7B, which may restrict the model layers that can remain GPU-resident compared to alternative methods.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Quantized substitute layers generated from offloaded target LLM portions and shared GPU layers.",
+    "size": "N/A",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Benchmarking across multiple generative tasks",
+      "Asynchronous data transfer",
+      "Chunked prefill for long contexts"
+    ],
+    "metrics": [
+      "Throughput",
+      "Average Acceptance Length (τ)"
+    ],
+    "calculation": "For throughput, tokens per second are measured across various drafts and configurations.",
+    "interpretation": "Higher average acceptance lengths and throughput indicate better efficiency in LLM inference.",
+    "baseline_results": "SubSpec achieves up to 12.5× speedup compared to baseline offloading inference.",
+    "validation": "Empirical validation through extensive benchmarking with diverse models and tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

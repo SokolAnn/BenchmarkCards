@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CORRSYNTH (A Correlated Sampling Method for Diverse Dataset Generation from LLMs)",
+    "abbreviation": "CORRSYNTH",
+    "overview": "CORRSYNTH generates datasets with high diversity and fidelity to the input prompt using a correlated sampling strategy, improving intrinsic metrics and student model performance across various tasks.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://arxiv.org/abs/2411.08553"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To improve the diversity and quality of synthetic datasets generated for supervised text classification tasks.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Text Classification"
+    ],
+    "limitations": "The current scope is limited to classification tasks in English. Extensions to other tasks or languages have not been validated.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Datasets synthesized using LLMs such as MIXTRAL or PHI-3 MINI.",
+    "size": "Variable across tasks, typical generation targets include 6,000 instances per task.",
+    "format": "N/A",
+    "annotation": "Automatically generated"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Intrinsic evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "MAUVE",
+      "Self-BLEU",
+      "Entity-Entropy"
+    ],
+    "calculation": "Metrics are calculated based on generated text compared to human-written text and the diversity of generated instances.",
+    "interpretation": "High accuracy indicates a good model performance on the synthetic data; lower Self-BLEU scores indicate higher diversity.",
+    "baseline_results": "Compared against existing text generation methods such as FEWGEN and CFG.",
+    "validation": "Validations were conducted through intrinsic evaluations showing improvements over baseline methods."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on education: plagiarism",
+            "Impact on affected communities"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Custom licenses for datasets such as AG NEWS and TOI HEADLINES.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

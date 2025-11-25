@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MAVEN -FACT (Massive Event Factuality Detection)",
+    "abbreviation": "MAVEN -FACT",
+    "overview": "MAVEN -FACT is a large-scale event factuality detection dataset containing factuality annotations for 112,276 events. It aims to provide high-quality data for assessing the factuality of textual events and incorporates supporting evidence for improved interpretability.",
+    "data_type": "event factuality annotations",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/THU-KEG/MAVEN-FACT"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To facilitate research in event factuality detection and improve the understanding of event knowledge.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Event Factuality Detection",
+      "Supporting Evidence Prediction"
+    ],
+    "limitations": "Language coverage is limited to English, and the annotation approach may introduce noise, although mitigation strategies are in place.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "MAVEN dataset",
+    "size": "112,276 events",
+    "format": "N/A",
+    "annotation": "Annotated by a combination of LLM pre-annotation followed by human verification, ensuring high quality."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Macro F1 Score"
+    ],
+    "calculation": "F1 Score calculated based on precision and recall across multiple factuality categories.",
+    "interpretation": "Higher F1 scores indicate better performance in distinguishing event factuality.",
+    "baseline_results": "Best-performing model achieves a 47.6% macro F1 score.",
+    "validation": "High inter-annotator agreement reported at 96.1%."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Research indicates potential for reducing hallucination in large language models."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data is collected from public sources and anonymized, with no personal information included.",
+    "data_licensing": "MAVEN -FACT released under CC BY-SA 4.0 license.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

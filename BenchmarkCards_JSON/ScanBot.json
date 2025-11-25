@@ -1,0 +1,100 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ScanBot",
+    "abbreviation": "N/A",
+    "overview": "ScanBot is the first instruction-conditioned, multimodal dataset designed explicitly for high-precision surface scanning tasks in robotic systems. It targets the shortcomings of existing datasets by providing synchronized multimodal observations, including RGB, depth, and laser profiles, paired with natural language instructions for a variety of scanning tasks.",
+    "data_type": "multimodal",
+    "domains": [
+      "Robotics"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "RoboTurk",
+      "MIME",
+      "RoboNet",
+      "BridgeData",
+      "BC-Z",
+      "RT-1",
+      "MT-Opt",
+      "RoboSet",
+      "RH20T",
+      "DROID",
+      "Open X-Embodiment"
+    ],
+    "resources": [
+      "https://github.com/username/ScanBot"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To develop a dataset that enables research on tool-specific embodied perception beyond traditional manipulation, facilitating instruction-conditioned policy learning in robotic surface scanning.",
+    "audience": [
+      "ML Researchers",
+      "Roboticists",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Surface Scanning",
+      "Defect Inspection",
+      "Comparative Analysis",
+      "Functional Target Scanning"
+    ],
+    "limitations": "The current version of ScanBot assumes flat surfaces, limiting its applicability to objects with curved or irregular geometries. It is also designed for open-loop scanning which does not adapt based on scan quality during execution.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Dataset generated through a structured protocol involving high-precision sensors and a robotic system.",
+    "size": "896 scans",
+    "format": "multimodal data including RGB, depth, and laser profiles",
+    "annotation": "Data annotated with multi-task natural language commands."
+  },
+  "methodology": {
+    "methods": [
+      "Model evaluation through benchmarking VLA models on specific scanning tasks."
+    ],
+    "metrics": [
+      "Surface Reconstruction Accuracy",
+      "Waypoint Jitter Minimization",
+      "Instruction Grounding Accuracy"
+    ],
+    "calculation": "Model performance metrics are calculated based on the accuracy of selected scanner parameters, localization of objects based on instructions, and fidelity of the reconstructed surfaces compared to ground-truth.",
+    "interpretation": "Higher accuracy metrics indicate better model performance in generating stable scanning trajectories and precise interpretations of natural language instructions.",
+    "baseline_results": "Existing VLA models show poor performance with average accuracies below 50% in selection of parameters and task execution.",
+    "validation": "Validation procedures involve comparing model outputs against ground-truth scans captured under controlled conditions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Misalignment in scanning leading to poor data quality."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

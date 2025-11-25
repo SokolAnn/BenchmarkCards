@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TRACE (Testing Robustness for Automated Complex instruction Evaluation)",
+    "abbreviation": "TRACE",
+    "overview": "TRACE is a benchmark for enhancing the ability of large language models (LLMs) to follow complex instructions, consisting of 120K training data and 1K evaluation data.",
+    "data_type": "complex instruction pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "CFBench",
+      "IFEval",
+      "INFOBENCH"
+    ],
+    "resources": [
+      "https://github.com/AlibabaResearch/DAMO-ConvAI/tree/main/IOPO"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To improve and evaluate the capability of LLMs to follow complex instructions.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Instruction Following"
+    ],
+    "limitations": "The evaluation set has undergone strict manual verification, but the training set has not.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Automatically constructed from manually sorted taxonomy of complex instructions with 26 constraint dimensions within 5 constraint types.",
+    "size": "120,000 training examples and 1,042 evaluation examples",
+    "format": "JSON",
+    "annotation": "Generated using an automated data construction workflow and manually verified for evaluation."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Instruction Following Score"
+    ],
+    "calculation": "The overall instruction following score (I) is calculated based on adherence to constraints in the evaluation.",
+    "interpretation": "Higher scores indicate better adherence to the specific constraints outlined in complex instructions.",
+    "baseline_results": null,
+    "validation": "Extensive experiments on various datasets confirmed the effectiveness of TRACE."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data does not include personal data or sensitive information.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

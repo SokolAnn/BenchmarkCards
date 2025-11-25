@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ShARC-Mod",
+    "abbreviation": "ShARC-Mod",
+    "overview": "A modified version of the ShARC dataset that reduces spurious patterns found in the original ShARC corpus so that models can learn better and be less sensitive to minor textual perturbations. The paper describes creation of this modified dataset (ShARC-Mod), an improved evaluation criterion (BLEU-P), and re-benchmarking of existing state-of-the-art models.",
+    "data_type": "conversational question-answering dialogs (text, question-answering pairs)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "N/A"
+    ],
+    "similar_benchmarks": [
+      "ShARC"
+    ],
+    "resources": [
+      "https://github.com/nikhilweee/neural-conv-qa",
+      "https://arxiv.org/abs/1909.03759",
+      "https://sharc-data.github.io/leaderboard.html"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To reduce spurious patterns in the ShARC dataset by creating a modified dataset (ShARC-Mod), to propose an improved evaluation criterion (BLEU-P) for follow-up question generation, and to re-benchmark existing state-of-the-art models to measure robustness and generalization.",
+    "audience": [
+      "Dataset creators",
+      "Model creators",
+      "ML Researchers"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Follow-up Question Generation",
+      "Dialogue Turn Classification"
+    ],
+    "limitations": "Shuffling dialog history (one of the perturbations) introduces examples which are unlikely to occur in real conversations; the modified dataset may contain 'unnatural' instances as acknowledged by the authors.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Modified ShARC dataset (ShARC-Mod), derived from the ShARC dataset (Saeidi et al., 2018). Accompanying scripts and data released at https://github.com/nikhilweee/neural-conv-qa.",
+    "size": "21,890 training instances; 2,270 dev instances (original ShARC). ShARC-Mod modification statistics: training set (out of 21,890) - 3,287 instances with history order shuffled, 3,202 instances with rule order shuffled, 2,903 instances with both history and rule shuffled, 596 instances with a random scenario added. Dev set (out of 2,270) - 340 instances history shuffled, 316 rule shuffled, 323 both shuffled, 66 random scenario added. History-Shufﬂed dev set: 468 out of 2,270 dev instances modified (~20%).",
+    "format": "N/A",
+    "annotation": "Modifications and additional references automatically generated using pattern-specific algorithms described in the paper and appendices. Authors report manual evaluation of 10% of the generated additional references."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Model-based evaluation",
+      "Heuristic baseline (hand-crafted rules)"
+    ],
+    "metrics": [
+      "Micro Accuracy",
+      "Macro Accuracy",
+      "BLEU",
+      "Multi-BLEU (BLEU computed with multiple references)",
+      "BLEU-P (BLEU penalized)",
+      "Multi-BLEU-P (Multi-BLEU with BLEU penalization)"
+    ],
+    "calculation": "Micro and Macro Accuracy: at each turn, model response is one of four classes (Yes/No/Irrelevant/follow-up) and accuracy measures correct prediction of these classes. BLEU: used to assess correctness of generated follow-up question. Multi-BLEU: BLEU computed using multiple reference follow-up questions generated from rule clauses. BLEU-P: penalizes BLEU when the ground truth is a follow-up but model predicts a final answer (counts predicted response as evaluation input, effectively scoring near 0 in such cases). Multi-BLEU-P: Multi-BLEU combined with BLEU-P penalization.",
+    "interpretation": "Official BLEU (as used previously) can over-estimate model performance because it lacks multiple references and does not penalize missing follow-up questions. Multi-BLEU and Multi-BLEU-P provide better reflection of follow-up generation correctness and penalize models that fail to generate required follow-ups. Consistent performance across original, History-Shufﬂed, and ShARC-Mod dev sets indicates greater robustness to dataset perturbations.",
+    "baseline_results": "Table 1 (trained and evaluated on original dataset) - Heuristics: Micro Acc 63.74, Macro Acc 71.25, BLEU 47.57, Multi-BLEU 52.81, Multi-BLEU-P 36.90. BERT-QA: Micro Acc 68.63, Macro Acc 73.67, BLEU 47.36, Multi-BLEU 54.04, Multi-BLEU-P 35.94. E3: Micro Acc 67.63, Macro Acc 73.79, BLEU 46.29, Multi-BLEU 54.64, Multi-BLEU-P 39.36. BiSon: Micro Acc 65.95, Macro Acc 70.79, BLEU 46.62, Multi-BLEU 54.06, Multi-BLEU-P 14.25.",
+    "validation": "Validated by evaluating models on multiple dev sets: the original dev set, a History-Shufﬂed dev set (approximately 20% of dev modified by shuffling dialog turns to dilute patterns), and the ShARC-Mod dev set. Comparison of performance across these sets demonstrates sensitivity to spurious patterns and improved robustness when trained on ShARC-Mod."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Accuracy",
+      "Governance"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Governance",
+          "subcategory": [
+            "Incorrect risk testing"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

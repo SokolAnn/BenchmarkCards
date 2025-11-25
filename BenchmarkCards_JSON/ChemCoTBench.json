@@ -1,0 +1,98 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ChemCoTBench",
+    "abbreviation": "N/A",
+    "overview": "ChemCoTBench is a step-by-step, application-oriented benchmark for evaluating LLM reasoning in chemical applications, addressing limitations in current chemical evaluations by incorporating modular chemical operations and structured evaluability.",
+    "data_type": "text",
+    "domains": [
+      "Chemistry"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ChemCoTDataset",
+      "MolPuzzle",
+      "ChemLLM"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/OpenMol/ChemCoTBench",
+      "https://huggingface.co/datasets/OpenMol/ChemCoTDataset"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a standardized evaluation platform for complex chemical reasoning and enhance LLMs' performance in chemistry-related tasks.",
+    "audience": [
+      "ML Researchers",
+      "Chemists",
+      "AI Practitioners"
+    ],
+    "tasks": [
+      "Molecular Property Optimization",
+      "Chemical Reaction Prediction",
+      "Molecular Understanding",
+      "Molecular Editing"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Data sourced from published chemical datasets including PubChem, ChEMBL, ZINC, and patent databases such as USPTO and Reaxys.",
+    "size": "1,495 samples across 22 chemical tasks",
+    "format": "SMILES",
+    "annotation": "Annotated by experts and LLM-assisted annotation, ensuring high data quality through multi-stage review."
+  },
+  "methodology": {
+    "methods": [
+      "Quantitative assessments using accuracy, mean absolute error, and passage success rate.",
+      "Expert review for validation of chemical entities."
+    ],
+    "metrics": [
+      "Accuracy",
+      "Mean Absolute Error",
+      "Success Rate"
+    ],
+    "calculation": "Metrics were calculated based on the correctness of predicted outcomes, precision for regression tasks, and structural similarity measures.",
+    "interpretation": "High accuracy indicates strong reasoning capabilities of models in chemical tasks.",
+    "baseline_results": null,
+    "validation": "Hybrid validation combining expert review and automated model evaluation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Lack of training data transparency"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

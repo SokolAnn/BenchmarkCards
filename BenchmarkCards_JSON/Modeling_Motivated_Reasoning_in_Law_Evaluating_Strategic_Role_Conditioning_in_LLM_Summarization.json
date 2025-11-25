@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Modeling Motivated Reasoning in Law: Evaluating Strategic Role Conditioning in LLM Summarization",
+    "abbreviation": "N/A",
+    "overview": "This paper introduces a systematic framework for detecting motivated reasoning in legal AI, evaluating how LLMs adapt summaries based on the roles of legal actors and presenting an evaluation pipeline grounded in legal fact and reasoning.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Legal"
+    ],
+    "languages": [
+      "German"
+    ],
+    "similar_benchmarks": [
+      "Swissblawg"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2509.00529"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To systematically evaluate role-conditioned legal summarization and assess motivated reasoning in LLM outputs.",
+    "audience": [
+      "Legal Researchers",
+      "AI Developers",
+      "Legal Practitioners"
+    ],
+    "tasks": [
+      "Text Summarization",
+      "Evaluation of AI outputs"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "200 German-language decisions from the Swiss Federal Supreme Court and human-written summaries from Swissblawg.",
+    "size": "200 cases",
+    "format": "N/A",
+    "annotation": "Summaries evaluated using LLM assessments and human evaluations based on inclusion of key facts and reasoning."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Fact inclusion rate",
+      "Favorability bias score"
+    ],
+    "calculation": "Metrics computed based on the proportion of extracted facts included in each summary and bias assessed via omission analysis.",
+    "interpretation": "Higher favorability bias scores indicate selective inclusion patterns that align with stakeholder perspectives.",
+    "baseline_results": "Human-written summaries from Swissblawg serve as the baseline for comparison.",
+    "validation": "Evaluation of summaries against key legal points and reasoning by experts."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

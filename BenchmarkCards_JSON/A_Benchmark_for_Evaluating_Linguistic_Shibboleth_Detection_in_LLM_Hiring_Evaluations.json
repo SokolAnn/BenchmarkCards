@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "A Benchmark for Evaluating Linguistic Shibboleth Detection in LLM Hiring Evaluations",
+    "abbreviation": "N/A",
+    "overview": "This paper introduces a comprehensive benchmark for evaluating how Large Language Models (LLMs) respond to linguistic shibboleths, which are subtle linguistic markers that can reveal demographic attributes. The benchmark consists of 100 validated question-response pairs designed to measure demographic bias in automated evaluation systems.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://arxiv.org/abs/2508.04939"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To establish a benchmark framework for detecting and measuring linguistic shibboleth bias in AI evaluation systems.",
+    "audience": [
+      "ML Researchers",
+      "AI Fairness Practitioners"
+    ],
+    "tasks": [
+      "Bias Detection",
+      "Evaluative Assessment"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated interview questions from Indeed, Turing, and Kaggle",
+    "size": "100 questions",
+    "format": "CSV",
+    "annotation": "Manual validation ensuring semantic equivalence and competency parity"
+  },
+  "methodology": {
+    "methods": [
+      "Controlled linguistic variation generation",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Bias score disparity"
+    ],
+    "calculation": "Scores calculated on a scale from 1 to 5 based on clarity, relevance, and depth of responses.",
+    "interpretation": "Higher scores indicate better responses, with a particular focus on mitigating bias against hedged language.",
+    "baseline_results": "Hedged responses scored lower than confident responses across all models evaluated.",
+    "validation": "Repeated trials across multiple model architectures to ensure consistency of results."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Bias analysis based on demographic characteristics indicated by linguistic shibboleths.",
+    "harm": [
+      "Potential exclusion of qualified candidates based on linguistic style rather than substance."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

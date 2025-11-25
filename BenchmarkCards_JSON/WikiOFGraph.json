@@ -1,0 +1,100 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Wikipedia Ontology-Free Graph-text dataset ( WikiOFGraph )",
+    "abbreviation": "WikiOFGraph",
+    "overview": "We introduce WikiOFGraph, a new large-scale G2T dataset generated using a novel method that leverages Large Language Model (LLM) and Data-QuestEval, containing 5.85M general-domain graph-text pairs.",
+    "data_type": "graph-text pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "WebNLG",
+      "GenWiki",
+      "TekGen",
+      "LAGRANGE"
+    ],
+    "resources": [
+      "https://github.com/daehuikim/WikiOFGraph"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The purpose of WikiOFGraph is to provide a high-quality dataset for Graph-to-Text generation tasks that improves upon existing ontology-based datasets.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Graph-to-Text Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated from source sentences extracted from English Wikipedia.",
+    "size": "5.85M graph-text pairs",
+    "format": "N/A",
+    "annotation": "Automatically generated using LLM and Data-QuestEval filtering."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated filtering metrics"
+    ],
+    "metrics": [
+      "BLEU",
+      "METEOR",
+      "ChrF++",
+      "TER",
+      "BLEURT",
+      "ROUGE-L",
+      "BERTScore-F1"
+    ],
+    "calculation": "Evaluation metrics were calculated based on predicted text compared to human-crafted examples.",
+    "interpretation": "Higher scores on metrics indicate better graph-text consistency and quality of generation.",
+    "baseline_results": "N/A",
+    "validation": "The dataset's graph-text pairs were validated using Data-QuestEval to ensure high consistency."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination",
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Wikipedia is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License.",
+    "consent_procedures": "Compensation for human evaluators was provided through Upwork.",
+    "compliance_with_regulations": "N/A"
+  }
+}

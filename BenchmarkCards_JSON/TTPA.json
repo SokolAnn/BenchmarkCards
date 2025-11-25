@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TTPA (Token-level Tool-use Preference Alignment Training Framework)",
+    "abbreviation": "TTPA",
+    "overview": "TTPA is a training paradigm that constructs token-level tool-use preference datasets to align LLMs with fine-grained preferences using an error-oriented scoring mechanism.",
+    "data_type": "instruction instances and preference pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ToolBench",
+      "Berkeley Function-Calling Benchmark (BFCL)"
+    ],
+    "resources": [
+      "https://github.com/Anonymous/TTPA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Enhance the tool-use capabilities of large language models (LLMs) by aligning them with fine-grained user preferences.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Tool Usage",
+      "Multi-turn Interaction"
+    ],
+    "limitations": "Fine-grained token-level preference sampling may increase computational complexity and training time.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated using LLMs based on the TTPA framework methods.",
+    "size": "3,895 instruction instances and 8,550 preference pairs",
+    "format": "JSON",
+    "annotation": "Automatically generated with some manual verification."
+  },
+  "methodology": {
+    "methods": [
+      "Error-oriented scoring mechanism",
+      "Token-level preference sampling",
+      "Reversed dataset construction"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Pass Rate"
+    ],
+    "calculation": "Metrics calculated based on the performance of LLMs in selecting appropriate tools and parameters.",
+    "interpretation": "Higher scores indicate better tool-selection and parameter generation capabilities.",
+    "baseline_results": "TTPA (Qwen) achieved 86.0% accuracy in the ToolBench benchmark.",
+    "validation": "Extensive experiments on benchmark datasets demonstrate significant improvements in tool usage."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data privacy measures followed using publicly available datasets.",
+    "data_licensing": "All tools and datasets used were obtained from existing benchmarks and public resources.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

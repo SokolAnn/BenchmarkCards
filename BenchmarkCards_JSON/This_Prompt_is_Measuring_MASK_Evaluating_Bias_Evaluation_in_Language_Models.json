@@ -1,0 +1,109 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "This Prompt is Measuring <MASK>: Evaluating Bias Evaluation in Language Models",
+    "abbreviation": "N/A",
+    "overview": "A taxonomy-based evaluation framework that analyses the use of prompts and templates to assess bias in language models. The paper develops a taxonomy of attributes (conceptualisation and operationalisation) grounded in measurement modelling, and applies this taxonomy to annotate 90 bias tests drawn from 77 papers to reveal reporting gaps, threats to validity, and areas under-researched; it offers guidance for designing and documenting bias tests.",
+    "data_type": "text (prompts/templates and annotation metadata)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "StereoSet",
+      "Crows-pairs",
+      "Equity Evaluation Corpus (EEC)",
+      "RealToxicityPrompts"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Create and apply a taxonomy grounded in measurement modelling to analyse prompt/template-based bias tests for language models, identify threats to validity and gaps in current practice, and provide guidance for better design and documentation of bias tests.",
+    "audience": [
+      "ML Researchers",
+      "NLP Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Bias Evaluation",
+      "Text Generation Evaluation",
+      "Prompt-based Evaluation"
+    ],
+    "limitations": "Our search was conducted exclusively in English, and we may have missed relevant papers written in other languages; this may have influenced the heavy English skew in our data. Some of the annotations of attributes and choices in this taxonomy rely on subjective judgements, particularly with regards to the clarity of conceptualisations of bias, desired outcomes, and justifications of proxy choices.",
+    "out_of_scope_uses": [
+      "We exclude any that have been fine-tuned for a discriminative task rather than a generative one.",
+      "In annotation, we excluded papers focusing on other types of bias (e.g., inductive), papers that briefly mention bias as a potential concern but do not focus on it, and papers that apply an existing bias test with no changes."
+    ]
+  },
+  "data": {
+    "source": "Annotations produced by the authors: 90 bias tests annotated from a final set of 77 papers identified via searches of the ACL Anthology and Semantic Scholar (initial pool of 406 papers, filtered to 77 relevant papers).",
+    "size": "77 papers; 90 bias tests",
+    "format": "N/A",
+    "annotation": "Manual annotation by the paper's authors using the developed taxonomy; taxonomy refined iteratively with re-annotation on four occasions; 10% of Anthology papers assigned to multiple annotators to identify disagreements which were discussed and used to refine the taxonomy; remaining papers annotated by a single author with aggregate statistics examined for annotator skews."
+  },
+  "methodology": {
+    "methods": [
+      "Manual annotation",
+      "Taxonomy-based analysis",
+      "Quantitative analysis of annotated attributes"
+    ],
+    "metrics": [
+      "Counts and percentages of taxonomy attribute occurrences (reported across the 90 bias tests)"
+    ],
+    "calculation": "Quantitative analysis is done at the level of individual bias tests (90); percentages and counts of taxonomy attribute selections are computed and reported.",
+    "interpretation": "Results are interpreted to identify common patterns, reporting gaps, threats to measurement validity (face, content, convergent, predictive, consequential, ecological), and areas under-researched; examples of mismatches between conceptualisation and operationalisation are highlighted to assess validity and reliability of bias tests.",
+    "baseline_results": null,
+    "validation": "10% of Anthology papers were assigned to multiple annotators and disagreements were discussed; taxonomy was refined through iterative re-annotation (four occasions) and remaining papers were annotated by a single author; aggregate statistics by annotator were examined to address skews."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Governance",
+      "Robustness",
+      "Societal Impact"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Governance",
+          "subcategory": [
+            "Lack of data transparency",
+            "Unrepresentative risk testing",
+            "Lack of testing diversity",
+            "Incomplete usage definition"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on affected communities"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Majority of bias tests examined English only (87%); gender is the most common demographic studied (38%), with an overwhelming focus on binary gender in many works; multilingual and low-resource language coverage is limited.",
+    "harm": [
+      "stereotypes",
+      "toxic content generation",
+      "erasure bias (under-representation of marginalised groups)",
+      "harm to affected/marginalised communities (consequential harms from measurements or deployments)"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

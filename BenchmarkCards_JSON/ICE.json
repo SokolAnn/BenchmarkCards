@@ -1,0 +1,79 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Interleaved Cognitive Evaluation (ICE)",
+    "abbreviation": "ICE",
+    "overview": "The Interleaved Cognitive Evaluation (ICE) benchmark systematically manipulates cognitive load factors on multi-hop reasoning tasks to measure the impact of extraneous load on model performance.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMLU"
+    ],
+    "resources": [
+      "https://github.com/imsaitejareddy/computational-cognitive-load"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the impact of cognitive load on the reasoning capabilities of large language models in a structured manner.",
+    "audience": [
+      "ML Researchers",
+      "AI Safety Practitioners"
+    ],
+    "tasks": [
+      "Multi-Hop Question Answering"
+    ],
+    "limitations": "N/A - Not discussed",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Derived from curated datasets including U.S. SEC filings, FanOutQA, and MINTQA.",
+    "size": "200 questions",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Exact-Match accuracy"
+    ],
+    "calculation": "Exact-Match accuracy is calculated based on the proportion of correct answers provided by models across various conditions.",
+    "interpretation": "Higher Exact-Match accuracy indicates better reasoning capability under varying cognitive load conditions.",
+    "baseline_results": "Gemini-2.0-Flash-001 achieved 0.85 EM in Control conditions; Llama-3-8B-Instruct, Llama-3-70B-Instruct, Mistral-7B-Instruct-v0.2 achieved 0% EM across conditions.",
+    "validation": "Performance was validated through repeated tests under standardized conditions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "NESTOOLS",
+    "abbreviation": "N/A",
+    "overview": "NESTOOLS is a high-quality dataset designed for comprehensive evaluations of large language models' nested tool learning abilities, constructed through a novel automatic data generation process.",
+    "data_type": "nested tool calling instances",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "API-Bank",
+      "ToolBench",
+      "T-Eval"
+    ],
+    "resources": [
+      "https://github.com/hhan1018/NesTools"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate and provide insights into the nested tool learning capabilities of large language models.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Tool Learning Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Automatically generated using LLMs with manual reviews.",
+    "size": "1,000 instances",
+    "format": "JSON",
+    "annotation": "Manual review and refinement by experts."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are computed based on the correctness of tool selection, tool calling order, parameter filling, and nested parameter filling.",
+    "interpretation": "A higher score indicates better performance in correctly handling nested tool calls.",
+    "baseline_results": "N/A",
+    "validation": "Extensive validation through experiments on 22 popular LLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt leaking"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

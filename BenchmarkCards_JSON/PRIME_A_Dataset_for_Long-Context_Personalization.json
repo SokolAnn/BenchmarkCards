@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PRIME: A Dataset for Long-Context Personalization",
+    "abbreviation": "N/A",
+    "overview": "This paper introduces a new dataset derived from the Change My View (CMV) Reddit forum, designed to evaluate long-context personalization in large language models (LLMs).",
+    "data_type": "ranking-based recommendation pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "LaMP"
+    ],
+    "resources": [
+      "https://github.com/launchnlp/LM_Personalization"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation benchmark for assessing personalization capabilities in large language models.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Ranking"
+    ],
+    "limitations": "The introduced benchmark cannot comprehensively represent the entire spectrum of personalization tasks.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Change My View Reddit forum",
+    "size": "133 queries with 7,514 historical interactions",
+    "format": "JSON",
+    "annotation": "Automatically generated from historical engagement data"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "Hit@1",
+      "Hit@3",
+      "Mean Reciprocal Rank (MRR)"
+    ],
+    "calculation": "Metrics are calculated based on the ranking of responses to original posts.",
+    "interpretation": "Higher scores indicate better personalization and alignment with user preferences.",
+    "baseline_results": "The baseline performance is compared against existing models to validate the effectiveness of the PRIME framework.",
+    "validation": "Extensive experiments validated the dataset across multiple model architectures."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Robustness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The benchmark analyzes personalization across user backgrounds.",
+    "harm": [
+      "Potential exacerbation of biases in personalization",
+      "Data misuse if user histories are improperly managed"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "User data is anonymized to protect privacy.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

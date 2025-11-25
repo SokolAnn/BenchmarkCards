@@ -1,0 +1,66 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "AGORA BENCH",
+    "abbreviation": "N/A",
+    "overview": "AGORA BENCH is a benchmark for evaluating LMs’ data generation capabilities through standardized settings and metrics across nine settings, combining three domains (math, instruction-following, code) with three data generation methods (instance generation, response generation, quality enhancement).",
+    "data_type": "training instances",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/neulab/data-agora"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To systematically evaluate LMs’ data generation capabilities and identify core capabilities that make an effective data generator.",
+    "audience": [
+      "ML Researchers",
+      "Practitioners"
+    ],
+    "tasks": [
+      "Data Generation"
+    ],
+    "limitations": "Due to compute constraints and expensive API costs, the experimental setting does not cover scenarios with different base models beyond Llama-3.1-8B.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Synthesized from various datasets for training LMs.",
+    "size": "1,260,000 training instances",
+    "format": "N/A",
+    "annotation": "Automatically generated based on meta-prompts."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Performance Gap Recovered (PGR)"
+    ],
+    "calculation": "PGR measures the relative improvement of the student model trained on the generated data over its base model.",
+    "interpretation": "Higher PGR indicates better data generation capabilities of the model.",
+    "baseline_results": null,
+    "validation": "The evaluation results are validated through comparisons across multiple data generation methods and models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

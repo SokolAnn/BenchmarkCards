@@ -1,0 +1,102 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "EMMOE (Embodied Mobile Manipulation in Open Environments)",
+    "abbreviation": "EMMOE",
+    "overview": "EMMOE is a benchmark aimed at evaluating autonomous home robots' capabilities to interpret user instructions and execute long-horizon everyday tasks in continuous space. It integrates high-level and low-level embodied tasks into a unified framework, featuring new evaluation metrics and the EMMOE-100 dataset with various task attributes.",
+    "data_type": "task sequences with detailed annotations",
+    "domains": [
+      "Robotics",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ALFRED",
+      "OVMM"
+    ],
+    "resources": [
+      "https://github.com/OpenDriveLab/EMMOE",
+      "https://huggingface.co/datasets/EMMOE",
+      "https://www.youtube.com/@EMMOE-Project"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate and advance the development of intelligent autonomous robots through the execution of language-based tasks.",
+    "audience": [
+      "ML Researchers",
+      "Robotics Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Mobile Manipulation",
+      "Task Planning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "EMMOE-100 dataset collected using the Fetch robot in Habitat-Lab 2.0.",
+    "size": "100 tasks with 966 subtasks",
+    "format": "JSON, images of execution",
+    "annotation": "Manually annotated with task attributes, execution success status, and feedback mechanisms after failures."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Task Progress (TP)",
+      "Success Rate (SR)",
+      "Success End Rate (SER)",
+      "Success Re-plan Rate (SRR)"
+    ],
+    "calculation": "Metrics are calculated based on task execution success, keypath sequences for TP, and counting re-plans for SRR.",
+    "interpretation": "Higher values in TP, SR, SER, and SRR indicate better performance and reliability of the robotic agent.",
+    "baseline_results": "HOMIE BOT-7B with SFT+DPO achieved high success rates across various metrics.",
+    "validation": "Benchmark validated through systematic comparison of performance across multiple robotic models and tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Privacy",
+      "Robustness",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack",
+            "Data poisoning"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Data privacy rights alignment"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Data is derived from legally compliant sources and attributed to original creators.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

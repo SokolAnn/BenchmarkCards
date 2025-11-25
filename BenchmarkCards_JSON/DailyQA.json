@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DailyQA",
+    "abbreviation": "N/A",
+    "overview": "DailyQA is an automatically updated dynamic dataset that updates questions weekly and contains answers to questions on any given date, designed to evaluate large language models on their ability to handle fast-changing factual data.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "TIMEQA",
+      "SITUATEDQA",
+      "FreshLLMs"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2505.17162"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To measure LLMs' adaptability and time sensitivity in processing real-world information using dynamically updated queries.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "The benchmark is intended to evaluate the LLMs’ ability to process Internet information, and does not focus on logical reasoning ability. It contains only one-hop queries.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Daily updates from Wikipedia revision logs",
+    "size": "3,000 queries per week",
+    "format": "N/A",
+    "annotation": "Automated query generation and quality checking"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Web search augmentation"
+    ],
+    "metrics": [
+      "Subset Match (SM)",
+      "F1 Score",
+      "Rouge-L",
+      "Accuracy"
+    ],
+    "calculation": "Metrics are calculated by evaluating model predictions against standard answers.",
+    "interpretation": "Evaluation reveals the model's capability in matching queries with time-sensitive factual information.",
+    "baseline_results": "Evaluation on various LLMs demonstrates significant challenges in accuracy, especially for frequently updated queries.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Content derived from Wikipedia, subject to CC BY-SA license terms.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

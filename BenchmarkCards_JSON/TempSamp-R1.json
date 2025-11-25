@@ -1,0 +1,74 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TempSamp-R1",
+    "abbreviation": "N/A",
+    "overview": "This paper introduces TempSamp-R1, a reinforcement fine-tuning framework designed to improve the effectiveness of adapting multimodal large language models (MLLMs) to video temporal grounding tasks.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Charades-STA",
+      "ActivityNet Captions",
+      "QVHighlights"
+    ],
+    "resources": [
+      "https://github.com/HVision-NKU/TempSamp-R1"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enhance the capability of MLLMs in temporal video grounding and highlight detection tasks by integrating off-policy guidance with a new reinforcement fine-tuning framework.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Temporal Grounding",
+      "Highlight Detection"
+    ],
+    "limitations": "The framework currently relies on the availability of high-quality off-policy supervision (e.g., ground-truth timestamps).",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Charades-STA, ActivityNet Captions, QVHighlights datasets.",
+    "size": "12,400 examples (Charades-STA), 37,421 examples (ActivityNet Captions), 10,148 examples (QVHighlights)",
+    "format": "N/A",
+    "annotation": "Manual annotation by experts"
+  },
+  "methodology": {
+    "methods": [
+      "Reinforcement Learning",
+      "A/B Testing"
+    ],
+    "metrics": [
+      "Recall@1",
+      "mAP"
+    ],
+    "calculation": "Metrics are calculated based on Intersection-over-Union (IoU) thresholds.",
+    "interpretation": "Higher values of Recall@1 and mAP indicate better temporal grounding performance.",
+    "baseline_results": "TempSamp-R1 outperforms GRPO-based baselines on all evaluated datasets.",
+    "validation": "Results are validated against established benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Non-commercial use license for Charades-STA; Attribution-NonCommercial-ShareAlike 4.0 International for QVHighlights.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

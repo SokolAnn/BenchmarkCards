@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Towards Inclusive NLP: Assessing Compressed Multilingual Transformers across Diverse Language Benchmarks",
+    "abbreviation": "N/A",
+    "overview": "This work benchmarks the performance of multilingual and monolingual Large Language Models (LLMs) across Arabic, English, and Indic languages, with particular emphasis on the effects of model compression strategies such as pruning and quantization.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Arabic",
+      "English",
+      "Kannada"
+    ],
+    "similar_benchmarks": [
+      "ArabicMMLU",
+      "EnglishMMLU",
+      "Kannada-ARC-C-2.5K"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/Indic-Benchmark/kannada-arc-c-2.5k"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide rigorous cross-lingual evaluations of LLMs while focusing on the impact of compression strategies on their performance.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "The study does not consider advanced pruning strategies nor human-annotated task evaluations.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "ArabicMMLU, EnglishMMLU, and Kannada-ARC-C-2.5K benchmarks",
+    "size": "14,575 multiple-choice questions for ArabicMMLU, 15,908 questions for EnglishMMLU, and around 2,500 questions for Kannada-ARC-C-2.5K",
+    "format": "JSON, CSV",
+    "annotation": "Manually collected and curated"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy is calculated as the ratio of correct responses in all tasks.",
+    "interpretation": "Accuracy measures the performance of the models across the benchmarks.",
+    "baseline_results": "BLOOMZ-7.1B achieved the highest accuracy at 41.7% in ArabicMMLU.",
+    "validation": "Performance was evaluated against controlled benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The study indicates challenges in producing equitable models across diverse languages.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

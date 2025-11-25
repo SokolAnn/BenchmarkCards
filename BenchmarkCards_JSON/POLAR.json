@@ -1,0 +1,80 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "POLAR",
+    "abbreviation": "N/A",
+    "overview": "POLAR is a multilingual, multicultural, and multievent dataset for fine-grained polarization detection spanning seven languages from diverse online platforms and real-world events. It introduces a taxonomy of polarization types and manifestations, operationalized through a robust cross-lingual annotation protocol.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Social Science"
+    ],
+    "languages": [
+      "Amharic",
+      "Arabic",
+      "English",
+      "German",
+      "Hausa",
+      "Spanish",
+      "Urdu"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://arxiv.org/abs/2505.20624"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive benchmark for multilingual, multicultural, and multievent online polarization detection.",
+    "audience": [
+      "ML Researchers",
+      "Social Scientists",
+      "Policy Makers"
+    ],
+    "tasks": [
+      "Binary Polarization Detection",
+      "Polarization Type Classification",
+      "Manifestation Identification"
+    ],
+    "limitations": "While POLAR is a significant step towards multilingual polarization analysis, potential issues with annotator understanding and variability might impact label quality.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Data collected from various online platforms, including Twitter/X, Facebook, BlueSky, Reddit, and local news outlets.",
+    "size": "23,000 instances",
+    "format": "N/A",
+    "annotation": "Cross-cultural annotation protocol tailored for each language's sociopolitical context, using both expert and crowdsourced annotators."
+  },
+  "methodology": {
+    "methods": [
+      "Fine-tuning Multilingual Language Models (MLMs)",
+      "Evaluating Large Language Models (LLMs) in Zero- and Few-shot Settings"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Macro F1 Score",
+      "Accuracy"
+    ],
+    "calculation": "Metrics calculated based on the performance of models across three tasks in both monolingual and cross-lingual setups.",
+    "interpretation": "Higher F1 Score indicates better performance in detecting polarization, with different scores highlighting challenges in classifying types and manifestations.",
+    "baseline_results": "RemBERT achieved the highest F1 scores for many languages in binary polarization classification.",
+    "validation": "Performance was validated through testing on separate dataset splits designated for training, validation, and testing."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "Analysis explores how polarization dynamics are shaped by linguistic, cultural, and contextual variables across different regions.",
+    "harm": "Potential emotional distress for annotators due to the sensitive nature of the content."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "This research used publicly available, anonymized data, with measures to ensure ethical guidelines were followed during annotation.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Annotators were informed of the project's goals and could opt out at any time.",
+    "compliance_with_regulations": "N/A"
+  }
+}

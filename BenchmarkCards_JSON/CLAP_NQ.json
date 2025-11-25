@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CLAP NQ (Cohesive Long-form Answers from Passages in Natural Questions for RAG systems)",
+    "abbreviation": "CLAP NQ",
+    "overview": "CLAP NQ is a benchmark Long-form Question Answering dataset for the full RAG pipeline, featuring long answers with grounded gold passages from Natural Questions (NQ). It includes 4946 questions designed for Retrieval Augmented Generation (RAG) systems and assesses their ability to provide coherent, concise, and complete answers based on the context of the gold passages.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Natural Questions",
+      "SQuAD",
+      "ELI5"
+    ],
+    "resources": [
+      "https://github.com/primeqa/clapnq"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the performance of Retrieval Augmented Generation (RAG) systems in providing accurate and cohesive long-form answers based on grounded passages.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset is created from the Natural Questions dataset focusing on questions that have long answers without short answers.",
+    "size": "4,946 questions",
+    "format": "JSON",
+    "annotation": "Annotated by skilled in-house annotators using two rounds of review for high quality non-consecutive grounded answers."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "RougeL",
+      "Recall"
+    ],
+    "calculation": "Metrics are calculated based on the generated responses compared to the gold answers using precision, recall, and F1 scores for RougeL.",
+    "interpretation": "Higher RougeL and recall scores indicate better performance in maintaining the coherence and completeness of the answers.",
+    "baseline_results": "Performance metrics shown from State-of-the-Art models and comparison against gold passage results are included in the paper.",
+    "validation": "The benchmark was validated through human evaluation and comparison of model responses."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Apache 2.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

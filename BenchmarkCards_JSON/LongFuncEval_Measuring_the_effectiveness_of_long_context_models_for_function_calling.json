@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LongFuncEval: Measuring the effectiveness of long context models for function calling",
+    "abbreviation": "N/A",
+    "overview": "This paper investigates the long context understanding capabilities of large language models (LLMs) in tool calling scenarios, identifying three key challenges: large tool catalog, long tool responses, and long multi-turn conversations. A new evaluation dataset is created to assess the models' performance on these challenges.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "BFCL",
+      "ComplexFuncBench"
+    ],
+    "resources": [
+      "https://github.com/ShishirPatil/gorilla"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To study the challenges in long context tool calling and evaluate the performance of LLMs on these tasks.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Modified existing benchmarks, new evaluation set created for long tool responses.",
+    "size": "566 samples",
+    "format": "JSON",
+    "annotation": "Manual annotation based on tool API responses and created question templates."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "AST accuracy"
+    ],
+    "calculation": "Calculated based on the performance of models in handling long context tool calling scenarios.",
+    "interpretation": "Model performance is assessed on a scale of AST accuracy as it varies with different context lengths and complexities.",
+    "baseline_results": null,
+    "validation": "Comparative analysis with existing benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

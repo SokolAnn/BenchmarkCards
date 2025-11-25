@@ -1,0 +1,79 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CATCHING THEDETAILS: SELF-DISTILLEDROI PREDICTORS FORFINE-GRAINEDMLLM PERCEPTION",
+    "abbreviation": "N/A",
+    "overview": "We propose an efficient, annotation-free Self-Distilled Region Proposal Network (SD-RPN) that resolves the trade-off associated with fine-grained perception in multimodal large language models. The framework improves the model's visual understanding capabilities without requiring extensive supervision or full model fine-tuning.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "TextVQA",
+      "DocVQA",
+      "V-Star"
+    ],
+    "resources": [
+      "https://github.com/YuHengsss/SD-RPN"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective is to enhance the fine-grained perception of multimodal large language models efficiently and effectively.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Visual Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "GQA and OCR-VQA datasets, using 10K question-answer pairs for training.",
+    "size": "152K samples",
+    "format": "N/A",
+    "annotation": "Automatically generated pseudo-labels from internal attention maps."
+  },
+  "methodology": {
+    "methods": [
+      "Self-distillation",
+      "Data-efficient training"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "The RPN is trained using a masked binary cross-entropy loss between predicted maps and pseudo-labels.",
+    "interpretation": "Higher accuracy indicates better fine-grained perception and localization capabilities.",
+    "baseline_results": "Performance improvements over baselines on benchmarks like TextVQA, DocVQA, and V-Star.",
+    "validation": "The method showed significant accuracy improvements on unseen data benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

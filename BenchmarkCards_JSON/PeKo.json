@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PeKo (Precondition Knowledge dataset)",
+    "abbreviation": "PeKo",
+    "overview": "PeKo is a crowd-sourced annotation of preconditions between event pairs in news articles, consisting of 28,948 event pairs annotated with precondition relations.",
+    "data_type": "event-event relation pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ATOMIC",
+      "RED",
+      "CaTeRS",
+      "StoryLine"
+    ],
+    "resources": [
+      "https://stonybrooknlp.github.io/PeKo/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To develop a resource that helps models reason about necessary preconditions for events mentioned in text.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Precondition Identification",
+      "Precondition Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Crowdsourced annotation from news articles",
+    "size": "28,948 event pairs",
+    "format": "N/A",
+    "annotation": "Crowdsourced via Amazon MTurk"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Metrics calculated based on classification task outcomes.",
+    "interpretation": "Higher F1 scores indicate better identification of precondition relations.",
+    "baseline_results": "BERT: 71.91 F1, XLNet: 71.52 F1",
+    "validation": "Evaluated through pilot studies and expert validation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Misrepresentation of event relations"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

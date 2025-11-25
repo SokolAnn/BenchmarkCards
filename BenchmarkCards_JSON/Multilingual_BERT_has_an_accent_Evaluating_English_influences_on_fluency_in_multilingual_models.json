@@ -1,0 +1,105 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Multilingual BERT has an accent: Evaluating English influences on fluency in multilingual models",
+    "abbreviation": "N/A",
+    "overview": "We propose a novel method for comparing the fluency of multilingual models to monolingual models by testing preference for two carefully-chosen variable grammatical structures (optional pronoun-drop in Spanish and optional Subject-Verb ordering in Greek). We use this method to show that multilingual BERT is biased toward English-like sentence structure in Spanish and Greek compared to monolingual controls.",
+    "data_type": "text (natural sentences extracted from syntactic treebanks)",
+    "domains": [
+      "Natural Language Processing",
+      "Linguistics"
+    ],
+    "languages": [
+      "Spanish",
+      "Greek",
+      "English"
+    ],
+    "similar_benchmarks": [
+      "XTREME",
+      "XNLI",
+      "XGLUE",
+      "TyDi QA",
+      "XL-WiC",
+      "MTop",
+      "CoLA"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2210.05619"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To introduce a fluency evaluation method that detects English structural bias in multilingual models by comparing model preferences for Sparallel (English-like structure) versus Sdifferent (non-English-like structure) and to demonstrate this effect in Spanish (pro-drop) and Greek (subject-verb order).",
+    "audience": [
+      "Research community",
+      "Multilingual NLP researchers"
+    ],
+    "tasks": [
+      "Fluency Evaluation",
+      "Language Modeling (Masked Language Modeling probability comparison)"
+    ],
+    "limitations": "Does not focus on truly low-resource languages because the method requires an available monolingual model as a control; experiments focus on BERT-sized models and may not extrapolate to larger models; constructions tested are discourse-dependent but experiments use isolated sentences without discourse context.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Spanish GSD treebank from the Universal Dependencies dataset (De Marneffe et al., 2021); Greek Dependency Treebank (Universal Dependencies) (Prokopidis and Papageorgiou, 2017).",
+    "size": "Spanish: C_parallel = 283 sentences, C_different = 2,656 sentences. Greek: C_parallel = 1,446 sentences, C_different = 425 sentences.",
+    "format": "N/A",
+    "annotation": "Sentences selected using syntactic dependency treebank annotations from Universal Dependencies."
+  },
+  "methodology": {
+    "methods": [
+      "Automated model probability comparison using masked language model logits",
+      "Statistical significance testing via bootstrap sampling",
+      "Comparison against monolingual control models (BETO for Spanish, GreekBERT for Greek) and multilingual BERT (mBERT)"
+    ],
+    "metrics": [
+      "Ratio of average model probability for Sparallel vs Sdifferent (r_model)",
+      "Bootstrap sampling p-value (statistical significance)"
+    ],
+    "calculation": "r_model = (average_{x in C_parallel} P_model(w(x) | x)) / (average_{x in C_different} P_model(w(x) | x)), where w(x) is a structurally-relevant word in sentence x and P_model(w(x) | x) is taken from the masked language model logits.",
+    "interpretation": "If r_multi is significantly larger than r_mono (assessed via bootstrap sampling, p < 0.05), the multilingual model is interpreted as exhibiting an English structural bias (preferring Sparallel more than the monolingual control).",
+    "baseline_results": "Multilingual BERT (mBERT) significantly prefers English-like structures compared to monolingual BETO (Spanish) and GreekBERT (Greek); reported significance: bootstrap sampling, p < 0.05.",
+    "validation": "Statistical validation via bootstrap sampling; comparison against monolingual control models (BETO and GreekBERT) to define the fluent distribution."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Governance",
+          "subcategory": [
+            "Lack of testing diversity"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Fluency discrepancies in multilingual models",
+      "Modeling flaws affecting lower-resource languages"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

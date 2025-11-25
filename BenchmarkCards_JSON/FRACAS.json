@@ -1,0 +1,74 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FRACAS (FRench Annotated Corpus of Attribution relations in newS)",
+    "abbreviation": "FRACAS",
+    "overview": "FRACAS is a human-annotated corpus of 10,965 attribution relations annotated over a set of 1,676 newswire texts in French for quotation extraction and source attribution, aimed at tracking gender imbalance in quotations in the media.",
+    "data_type": "quotation-source attribution relations",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "French"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://zenodo.org/record/8353229"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a freely available corpus for the study of quotation extraction and source attribution for French, enabling further research in Natural Language Processing and social sciences.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Quotation Extraction",
+      "Source Attribution"
+    ],
+    "limitations": "The gender representation in the annotated quotes is not balanced, with a significant underrepresentation of female speakers.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Reuters Corpora 2 (RCV2) collection of newswires published between 1996-1997",
+    "size": "1,676 documents",
+    "format": "N/A",
+    "annotation": "Manual annotation by 8 annotators following detailed guidelines."
+  },
+  "methodology": {
+    "methods": [
+      "Manual annotation",
+      "Inter-annotator agreement measurement"
+    ],
+    "metrics": [
+      "Inter-Annotator Agreement (IAA)"
+    ],
+    "calculation": "IAAs were computed using the γ-score for the annotated data to assess agreement levels across annotators.",
+    "interpretation": "High agreement levels in direct quotations suggest reliable labeling, but lower levels in indirect quotes highlight the task's complexity.",
+    "baseline_results": null,
+    "validation": "The corpus was validated by a gold standard comparison with documents annotated by expert annotators."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The corpus includes gender attribution for speakers but exhibits a significant imbalance with only 5.4% of quoted speakers being women.",
+    "harm": "The authors aim to address gender imbalance in news quotations."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Data is freely distributed from the Reuters corpus under specific usage guidelines.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

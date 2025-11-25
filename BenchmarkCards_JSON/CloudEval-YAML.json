@@ -1,0 +1,98 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CloudEval-YAML",
+    "abbreviation": "N/A",
+    "overview": "CloudEval-YAML is the first hand-written benchmark for cloud configuration generation targeting YAML, consisting of 1011 practical problems that are based on realistic scenarios in cloud-native applications.",
+    "data_type": "YAML configuration problems",
+    "domains": [
+      "Cloud Computing"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "HumanEval",
+      "MBPP",
+      "WikiSQL"
+    ],
+    "resources": [
+      "https://github.com/alibaba/CloudEval-YAML"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the performance of large language models in generating cloud-native YAML configuration files.",
+    "audience": [
+      "ML Researchers",
+      "Software Developers",
+      "Cloud Engineers"
+    ],
+    "tasks": [
+      "Code Generation"
+    ],
+    "limitations": "The benchmark focuses on YAML generation only and does not cover other configuration formats extensively.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Hand-written problems from official documentation, StackOverflow, and blog posts related to cloud-native applications.",
+    "size": "1011 problems",
+    "format": "YAML",
+    "annotation": "Manually annotated with unit tests and reference solutions."
+  },
+  "methodology": {
+    "methods": [
+      "Unit Testing",
+      "Text-level Evaluation Metrics (e.g., BLEU, Edit Distance)",
+      "YAML-aware Evaluation Metrics (e.g., Key-Value Exact Match)"
+    ],
+    "metrics": [
+      "BLEU Score",
+      "Edit Distance",
+      "Exact Match",
+      "Key-Value Exact Match",
+      "Key-Value Wildcard Match"
+    ],
+    "calculation": "Metrics are calculated based on the similarity between generated YAML files and reference solutions, as well as the functional correctness verified by unit tests.",
+    "interpretation": "Higher scores indicate better accuracy and functional correctness, with specific thresholds for passing unit tests.",
+    "baseline_results": "GPT-4 achieved the highest score across all metrics.",
+    "validation": "Performance validated through automated unit tests in a cloud simulated environment."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Includes bilingual support to cater to cloud operation teams using English and Chinese.",
+    "harm": "Efforts are made to avoid unintentional biases in dataset creation and evaluation."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

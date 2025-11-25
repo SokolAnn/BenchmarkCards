@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "RealVideoQuest",
+    "abbreviation": "N/A",
+    "overview": "RealVideoQuest is a benchmark designed to evaluate the capabilities of text-to-video (T2V) models in answering real-world, visually grounded user queries. It consists of 7.5K user queries with video response intents sourced from Chatbot-Arena and builds 4.5K high-quality query-video pairs through a multistage retrieval and refinement process.",
+    "data_type": "query-video pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Openvid-1m"
+    ],
+    "resources": [
+      "https://lmarena.ai/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess the quality and capabilities of text-to-video generation models in responding to complex user queries that necessitate visual demonstrations.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text-to-Video Generation",
+      "Question Answering"
+    ],
+    "limitations": "The evaluation is constrained by the quality and diversity of retrieved YouTube videos, which may not fully represent ideal responses. Additionally, only a single video per query was evaluated, limiting capture of model variability.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Chatbot-Arena",
+    "size": "7,531 queries, 4,611 QA pairs",
+    "format": "N/A",
+    "annotation": "Manual annotation through a video intent recognizer using GPT-3.5-Turbo."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Relevance",
+      "Correctness",
+      "Coherence",
+      "Completeness"
+    ],
+    "calculation": "Each metric is rated on a scale from 0 to 4, evaluating the video’s quality in response to user queries.",
+    "interpretation": "Higher scores indicate better alignment and addressal of user queries by the generated videos.",
+    "baseline_results": "Various T2V models were evaluated, with notable challenges in correctly addressing user requests.",
+    "validation": "Results were validated through comparison against ground truth videos."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Only publicized YouTube URLs with their start and end timestamps to ensure indirect video information.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

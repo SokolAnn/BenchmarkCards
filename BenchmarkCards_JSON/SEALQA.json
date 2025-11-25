@@ -1,0 +1,75 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SEALQA",
+    "abbreviation": "N/A",
+    "overview": "SEALQA is a benchmark for evaluating Search-Augmented Language Models on challenging factual questions where web search results may be conflicting, noisy, or irrelevant. It includes three variants: SEAL-0, SEAL-HARD, and LONG SEAL, each targeting different challenges in search-augmented reasoning.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMLU"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/vtllms/sealqa"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate reasoning under noisy, conflicting, and ambiguous search results.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "SEALQA is small and questions are constructed to have a single short answer, which may not fully capture the complexity of real-world information-seeking tasks.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Carefully curated questions created by NLP researchers.",
+    "size": "111 questions (SEAL-0), 254 questions (SEAL-HARD), 254 questions (LONG SEAL)",
+    "format": "N/A",
+    "annotation": "Questions are reviewed and approved through a multi-round vetting process involving graduate-level and expert reviewers."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Evaluation uses auto-rater to label responses as 'correct', 'incorrect', or 'not attempted'.",
+    "interpretation": "Performance is evaluated based on factual correctness and consistency throughout the response.",
+    "baseline_results": "Frontier LLMs perform poorly across SEALQA variants.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

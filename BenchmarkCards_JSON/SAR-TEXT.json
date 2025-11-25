@@ -1,0 +1,106 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SAR-TEXT",
+    "abbreviation": "N/A",
+    "overview": "The SAR-TEXT dataset is a large-scale dataset consisting of over 130,000 SAR image-text pairs designed for effective semantic understanding of SAR imagery, facilitating subsequent tasks like image-text retrieval, image captioning, and visual question answering.",
+    "data_type": "image-text pairs",
+    "domains": [
+      "Computer Vision",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "OpenSARShip",
+      "FUSAR-Map",
+      "SSDD",
+      "MSAR",
+      "SADD",
+      "SAR-AIRcraft",
+      "SIVED",
+      "SARDet-100k",
+      "BRIGHT",
+      "OpenEarthMap-SAR"
+    ],
+    "resources": [
+      "https://github.com/YiguoHe/SAR-TEXT"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a high-quality dataset for advancing the understanding and interpretation of SAR imagery through automated description generation.",
+    "audience": [
+      "ML Researchers",
+      "Remote Sensing Experts",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Image Captioning",
+      "Image-Text Retrieval",
+      "Visual Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The SAR-TEXT dataset is constructed using multiple publicly available SAR datasets including those for object detection, semantic segmentation, and SAR-optical pairing.",
+    "size": "136,584 images",
+    "format": "N/A",
+    "annotation": "Automatically generated using the SAR-Narrator framework which integrates object detection and semantic segmentation outputs."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation for generated captions"
+    ],
+    "metrics": [
+      "BLEU Score",
+      "CIDEr",
+      "ROUGE-L",
+      "Mean Recall"
+    ],
+    "calculation": "Metrics are calculated based on the alignment between generated captions and reference texts or through retrieval performance on specified datasets.",
+    "interpretation": "Higher scores in BLEU, CIDEr, and ROUGE-L indicate better performance in generating semantically rich and accurate captions.",
+    "baseline_results": "N/A",
+    "validation": "Expansive testing against other established datasets like HRSID and OS-dataset."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

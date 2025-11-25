@@ -1,0 +1,103 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CCHall (Cross-lingual and Cross-modal Hallucinations)",
+    "abbreviation": "CCHall",
+    "overview": "CCHall is a novel benchmark for detecting joint cross-lingual and cross-modal hallucinations in large language models, aimed at evaluating the capabilities of LLMs in handling complex hallucination scenarios.",
+    "data_type": "image-question-answer pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English",
+      "French",
+      "Spanish",
+      "Portuguese",
+      "Czech",
+      "Dutch",
+      "Swedish",
+      "Croatian",
+      "Welsh",
+      "Swahili"
+    ],
+    "similar_benchmarks": [
+      "mFACT",
+      "MM-Eval",
+      "HallusionBench"
+    ],
+    "resources": [
+      "https://github.com/BRZ911/CCHall"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation framework for assessing the hallucination capabilities of large language models in joint cross-lingual and cross-modal contexts.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Hallucination Detection"
+    ],
+    "limitations": "Current methods still struggle with effectively addressing cross-lingual and cross-modal hallucinations.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Various multimodal tasks including Visual Question Answering and Image Captioning datasets such as GQA, XM3600, AMBER, and xFlickr&Co.",
+    "size": "3,600 entries",
+    "format": "JSON",
+    "annotation": "Automatically generated with human verification for accuracy"
+  },
+  "methodology": {
+    "methods": [
+      "Direct evaluation",
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Macro-F1 Score"
+    ],
+    "calculation": "Computed based on the outputs of large language models evaluated on CCHall.",
+    "interpretation": "Higher scores indicate better performance at hallucination detection.",
+    "baseline_results": "InternVL2-8B: 34.0% Accuracy; GPT-4o (HalluciMAD): 77.5% Accuracy.",
+    "validation": "Experimentally validated through evaluation across multiple large language models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis of language resource categories shows varying performance based on language availability.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

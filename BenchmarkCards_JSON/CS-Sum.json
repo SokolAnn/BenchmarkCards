@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CS-Sum (Code-Switching Dialogue Summarization)",
+    "abbreviation": "CS-Sum",
+    "overview": "CS-Sum is the first benchmark for code-switching (CS) dialogue summarization across Mandarin-English (EN-ZH), Tamil-English (EN-TA), and Malay-English (EN-MS), consisting of 900-1300 human-annotated dialogues per language pair.",
+    "data_type": "code-switched dialogue-summary pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Mandarin",
+      "Tamil",
+      "Malay"
+    ],
+    "similar_benchmarks": [
+      "GupShup",
+      "DialogSum",
+      "SAMSum"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the comprehensibility of code-switching by large language models through dialogue summarization.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Dialogue Summarization"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Human-annotated CS dialogue-summary pairs created by native speakers and synthetic data from existing English dialogue datasets.",
+    "size": "900-1300 dialogue-summary pairs per language pair",
+    "format": "N/A",
+    "annotation": "Translated by native speakers from English dialogues to code-switched dialogues."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "ROUGE",
+      "BERTScore",
+      "SBERT-Cosine",
+      "Jaccard",
+      "METEOR"
+    ],
+    "calculation": "Metrics were calculated based on the comparison of generated summaries with reference summaries obtained from the original dialogues.",
+    "interpretation": "Higher metric scores indicate better alignment with reference summaries.",
+    "baseline_results": "Evaluated ten LLMs including open-source and proprietary models.",
+    "validation": "In-depth error analysis and comparative evaluation of model performance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

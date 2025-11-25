@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ATGC-Gen (Automated Transformer Generator for Controllable Generation)",
+    "abbreviation": "ATGC-Gen",
+    "overview": "ATGC-Gen is a language model framework for controllable DNA sequence generation that supports flexible conditioning on diverse biological modalities, enabling biologically meaningful sequence design under complex control constraints. The benchmark includes evaluation metrics to assess functionality, fluency, and diversity, introduced via a new dataset derived from ChIP-Seq experiments.",
+    "data_type": "DNA sequences",
+    "domains": [
+      "Biological Sciences",
+      "Genomics"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/divelab/AIRS/blob/main/OpenBio/ATGC_Gen"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the benchmark is to evaluate the effectiveness of controllable DNA sequence generation models against established biological properties.",
+    "audience": [
+      "ML Researchers",
+      "Biologists",
+      "Genomic Researchers"
+    ],
+    "tasks": [
+      "Controllable DNA Sequence Generation",
+      "DNA-Protein Binding Sequence Generation"
+    ],
+    "limitations": "Despite promising results, the work is constrained by limited computational resources, preventing the training of larger models.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "ChIP-Seq experiments data derived from the ENCODE project",
+    "size": "approximately 10 million rows",
+    "format": "N/A",
+    "annotation": "Annotated protein-DNA binding relationships based on ChIP-Seq experiments"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Functionality",
+      "Fluency",
+      "Diversity"
+    ],
+    "calculation": "Metrics are calculated based on predictive modeling using the SEI framework for chromatin profiles and fluency measures via perplexity in a pretrained model.",
+    "interpretation": "Lower scores in functionality and fluency indicate better performance in generating biologically relevant sequences.",
+    "baseline_results": "ATGC-Gen outperforms strong baselines in generating accurate, coherent, and diverse sequences under various biological conditions.",
+    "validation": "Extensive performance evaluations across multiple generations tasks, including promoter and enhancer sequences."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on affected communities"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential risks associated with unintended synthesis of harmful sequences."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A - Data from ENCODE project; no license required.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

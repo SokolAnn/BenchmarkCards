@@ -1,0 +1,73 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CyPortQA",
+    "abbreviation": "N/A",
+    "overview": "CyPortQA is the first multimodal benchmark tailored to port operations under cyclone threat, consisting of 2,917 real-world disruption scenarios and 117,178 structured question-answer pairs aimed at enhancing preparation for tropical cyclones.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a benchmark for evaluating multimodal large language models in the context of cyclone preparedness in port operations.",
+    "audience": [
+      "ML Researchers",
+      "Disaster Management Practitioners",
+      "Port Operations Stakeholders"
+    ],
+    "tasks": [
+      "Situation Understanding",
+      "Impact Estimation",
+      "Decision Reasoning"
+    ],
+    "limitations": "Constructed from U.S.-based tropical cyclone cases; applicability to different cyclone patterns and port operations is untested.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Data assembled from NOAA tropical cyclone products, port operational impact records, and USCG port-condition bulletins.",
+    "size": "2,917 scenarios, 117,178 QA pairs",
+    "format": "JSON",
+    "annotation": "Automated generation via a pipeline of curated QA templates based on expert-validated scenarios."
+  },
+  "methodology": {
+    "methods": [
+      "Automated QA generation",
+      "Evaluation of multimodal understanding and reasoning",
+      "Performance benchmarking"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Proportion of MLLM responses matching the ground-truth answer for closed-ended questions; tolerance-based accuracy for open-ended numeric outputs.",
+    "interpretation": "Accuracy signifies how well MLLMs understand and respond to cyclone-related port preparedness scenarios.",
+    "baseline_results": "Results vary across models; proprietary models outperform open-source counterparts.",
+    "validation": "Cross-validated against expert reviews on a random sample of scenarios."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential misinterpretation of cyclone impacts could lead to inadequate preparation and response."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

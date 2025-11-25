@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "StructFlowBench",
+    "abbreviation": "N/A",
+    "overview": "StructFlowBench is a multi-turn instruction following benchmark with structural flow modeling, designed to capture the structural intricacies of complex dialogue scenarios.",
+    "data_type": "multi-turn dialogues",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MT-Bench",
+      "Multi-IF",
+      "MT-Eval"
+    ],
+    "resources": [
+      "https://github.com/MLGroupJLU/StructFlowBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate large language models' capabilities in multi-turn instruction following by incorporating structural dependencies between dialogue turns.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Multi-turn Instruction Following"
+    ],
+    "limitations": "The current StructFlowBench is more of an exploration of new directions in evaluating multi-turn dialogue instruction following rather than targeting an increase in difficulty of the evaluation set.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Data generated from user prompts across various topics and structured dialogue relationships.",
+    "size": "155 dialogues",
+    "format": "JSON",
+    "annotation": "Annotated using GPT-4o with manual review"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Constraint Satisfaction Rate (CSR)",
+      "Instruction Satisfaction Rate (ISR)",
+      "Decomposed Requirements Following Ratio (DRFR)",
+      "Weighted Constraint Satisfaction Rate (WCSR)"
+    ],
+    "calculation": "Metrics are calculated based on satisfied constraints ratios and defined formulas for each metric.",
+    "interpretation": "Higher scores on metrics indicate better model performance in following complex multi-turn instructions.",
+    "baseline_results": "Evaluation conducted on 13 state-of-the-art LLMs including GPT-4o and DeepSeek-v3.",
+    "validation": "The evaluation framework utilizes a 'Golden Context' approach for reliability."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Utilizes GPT-4o for data generation with manual review to filter inappropriate content.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

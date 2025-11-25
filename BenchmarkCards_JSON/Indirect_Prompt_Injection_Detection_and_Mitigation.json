@@ -1,0 +1,80 @@
+{
+  "benchmark_details": {
+    "name": "Indirect Prompt Injection Detection and Mitigation",
+    "overview": "This benchmark focuses on the detection and removal of indirect prompt injection attacks on large language models (LLMs). It assesses current models' performances against these attacks and explores methods for improving robustness.",
+    "data_type": "Text",
+    "domains": [
+      "NLP",
+      "Cybersecurity"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Inj-SQuAD",
+      "Inj-TriviaQA"
+    ],
+    "resources": [
+      "arXiv:2502.16580v1"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To investigate the effectiveness of detection and removal methods for indirect prompt injection attacks.",
+    "audience": [
+      "AI researchers",
+      "Cybersecurity professionals"
+    ],
+    "tasks": [
+      "Evaluate the effectiveness of detection models",
+      "Assess removal methods for injected instructions",
+      "Establish benchmarks for prompt injection defenses"
+    ],
+    "limitations": null,
+    "out_of_scope_uses": [
+      "Direct prompt injection attacks",
+      "Generalized NLP tasks not related to prompt injections"
+    ]
+  },
+  "data": {
+    "source": "SQuAD and TriviaQA datasets, with additional crafted datasets.",
+    "size": "900 samples for each benchmark (Inj-SQuAD and Inj-TriviaQA)",
+    "format": "Text",
+    "annotation": "Clean documents paired with injected instructions and probes."
+  },
+  "methodology": {
+    "methods": [
+      "Detection using existing LLMs",
+      "Training specialized detection models",
+      "Segmentation removal method",
+      "Extraction removal method"
+    ],
+    "metrics": [
+      "True positive rate",
+      "False positive rate",
+      "Removal rate",
+      "Attack success rate (ASR)"
+    ],
+    "calculation": "Detection accuracy is calculated using true positive and false positive metrics; removal rate determines if injected instructions are absent post-processing.",
+    "interpretation": "Higher true positive rates indicate better detection, while lower false positive rates signify fewer misclassified documents.",
+    "baseline_results": null,
+    "validation": "Models are validated using crafted training datasets specific to indirect prompt injection."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy Risk",
+      "Fairness Risk",
+      "Robustness Risk"
+    ],
+    "atlas_risks": {
+      "risks": null
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "No personal data was used. The crafted injected instructions are not harmful.",
+    "data_licensing": "Data from SQuAD and TriviaQA datasets is publicly available under the respective licenses.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "All authors adhere to the ACM Code of Ethics and the ACL Code of Conduct."
+  }
+}

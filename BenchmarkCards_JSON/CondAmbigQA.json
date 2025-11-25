@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CondAmbigQA (Conditional Ambiguous Question Answering)",
+    "abbreviation": "CondAmbigQA",
+    "overview": "CondAmbigQA is a benchmark comprising 2,000 ambiguous queries with condition-aware evaluation metrics to improve accuracy in question-answering tasks by identifying implicit assumptions and providing contextual constraints.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "AmbigQA",
+      "ASQA",
+      "ALCE"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/Apocalypse-AGI-DAO/CondAmbigQA-2K"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To address ambiguity in question-answering by incorporating explicit conditions that help clarify interpretations and enhance answer accuracy.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "Despite the promising results, certain types of ambiguity may still be underrepresented.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from ambiguous queries and Wikipedia fragments.",
+    "size": "2,000 examples",
+    "format": "JSON",
+    "annotation": "Human-LLM interactive annotation with GPT-4o assistance."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "G-Eval",
+      "Condition Score",
+      "Answer Score",
+      "Citation Score",
+      "Combined Score"
+    ],
+    "calculation": "Metrics are calculated based on comparisons of model outputs to the ground-truth answers and conditions.",
+    "interpretation": "Higher scores indicate better condition identification and answer accuracy.",
+    "baseline_results": "Model performances were evaluated across multiple LLMs, with API models like GPT-4o achieving higher scores than local models.",
+    "validation": "The scores correlate strongly with human evaluations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset includes a diverse range of ambiguous questions but may not fully represent all demographic contexts.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All data is anonymized and does not include personal information.",
+    "data_licensing": "The dataset will be released under the CC BY-SA 4.0 license.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

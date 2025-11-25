@@ -1,0 +1,102 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ExCyTIn-Bench",
+    "abbreviation": "N/A",
+    "overview": "ExCyTIn-Bench is the first benchmark to evaluate an LLM agent on the task of Cyber Threat Investigation through security questions derived from investigation graphs. It aids in the development and evaluation of LLM agents in cybersecurity by leveraging logs from simulated multi-step attacks.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Cybersecurity"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "CTIBench",
+      "SECURE"
+    ],
+    "resources": [
+      "https://github.com/SecRL/ExCyTIn-Bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assist the development and evaluation of LLM agents for automatic threat investigation in cybersecurity.",
+    "audience": [
+      "ML Researchers",
+      "Cybersecurity Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Data Analysis"
+    ],
+    "limitations": "The benchmark is based on simulated scenarios and may not capture the full diversity of real-world attack techniques and log schemas.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Data collected from a fictional Microsoft Azure tenant with data covering multiple simulated attack scenarios and logs from Microsoft Sentinel.",
+    "size": "589 questions",
+    "format": "JSON",
+    "annotation": "Automatically generated using LLMs from bipartite incident graphs."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Average Reward",
+      "Success Rate"
+    ],
+    "calculation": "Average reward is calculated based on the number of correct answers over the total number of questions.",
+    "interpretation": "A higher average reward indicates better performance of the LLM agents in threat investigation tasks.",
+    "baseline_results": "Baseline performance from various LLMs shown with average rewards ranging from 0.249 to 0.368.",
+    "validation": "Cross-validation with multiple LLM models to ensure reliability."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Privacy",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The benchmark does not currently account for demographic factors in its evaluations.",
+    "harm": [
+      "Potential misuse of the benchmark for developing harmful cybersecurity tools."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "PII has been anonymized in the dataset to protect user identity and sensitive information.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

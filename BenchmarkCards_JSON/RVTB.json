@@ -1,0 +1,78 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "RVTBench",
+    "abbreviation": "RVTB",
+    "overview": "RVTBench is a benchmark for reasoning visual tasks (RVTs), containing 3,896 queries across four types of RVT (segmentation, grounding, visual question answering, and summary), organized into three reasoning categories (semantic, spatial, temporal) and four difficulty levels derived from 200 video sequences.",
+    "data_type": "question-answering pairs, segmentation masks, bounding boxes, natural language descriptions",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/yiqingshen/rvtbench/tree/main/rvtbench",
+      "https://github.com/yiqings/rvt"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a standardized benchmark dataset enabling objective performance evaluation for reasoning visual tasks and facilitating fair comparison between methods.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Segmentation",
+      "Grounding",
+      "Visual Question Answering",
+      "Summary"
+    ],
+    "limitations": "Focuses primarily on physical attributes and relationships, without emphasis on abstract concepts or causal reasoning.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed using 200 video sequences from DA VIS and SA-V datasets.",
+    "size": "3,896 queries with over 1.2 million tokens",
+    "format": "JSON",
+    "annotation": "Automatically generated using a novel pipeline leveraging digital twin representations."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Zero-shot model evaluation"
+    ],
+    "metrics": [
+      "Jaccard index",
+      "F-measure",
+      "BLEU-4",
+      "ROUGE-L",
+      "BERTScore",
+      "CIDEr"
+    ],
+    "calculation": "Metrics for segmentation use Jaccard index and F-measure; for grounding, IoU is calculated; for summary and VQA, token overlap and semantic similarity are assessed.",
+    "interpretation": "Scores are interpreted based on the effectiveness of models in associating visual data with complex implicit queries.",
+    "baseline_results": "RVTagent outperforms existing methods, achieving considerable improvements across various reasoning tasks.",
+    "validation": "Results are validated through comparisons with baseline models and established evaluation metrics."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

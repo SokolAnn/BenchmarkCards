@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DebateBench",
+    "abbreviation": "N/A",
+    "overview": "DebateBench is a novel dataset consisting of transcripts and metadata from competitive British Parliamentary debates evaluated on their ability to engage in argumentation, deliberation, and alignment with human experts.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "HellaSwag",
+      "TruthfulQA",
+      "MMLU",
+      "SuperGLUE"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a challenging benchmark for evaluating modern large language models on their reasoning capabilities in long-context argumentation.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Speech Scoring",
+      "Speech Ranking",
+      "House Ordering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Transcripts of British Parliamentary debates from prestigious competitive debating tournaments.",
+    "size": "256 speeches, approximately 884,395 words",
+    "format": "N/A",
+    "annotation": "Annotations include detailed speech-level scores and house rankings sourced from official adjudication data."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Mean Absolute Error (MAE)",
+      "Speaker Score Accuracy"
+    ],
+    "calculation": "For ranking tasks, the absolute difference between predicted and ground truth rankings is computed.",
+    "interpretation": "Lower MAE indicates better performance. A higher accuracy percentage in predicting speaker scores indicates closer alignment with human judges.",
+    "baseline_results": "Preliminary evaluation shows LLMs struggle on DebateBench, with GPT o1, GPT-4o, and Claude Haiku showing considerable errors.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All speakers provided prior consent for the datasets used.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Participants gave consent for the use of their speeches in the dataset.",
+    "compliance_with_regulations": "N/A"
+  }
+}

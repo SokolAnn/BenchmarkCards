@@ -1,0 +1,99 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FinLoRA (Benchmarking LoRA Methods for Fine-Tuning LLMs on Financial Datasets)",
+    "abbreviation": "FinLoRA",
+    "overview": "FinLoRA is a comprehensive benchmark designed to assess LoRA variants across diverse financial scenarios, with an emphasis on professional XBRL applications. It evaluates the efficacy of LoRA methods on both general and specialized financial tasks using a curated dataset of 19 financial datasets.",
+    "data_type": "text",
+    "domains": [
+      "Finance"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "BloombergGPT",
+      "FinGPT",
+      "FinBen",
+      "PIXIU"
+    ],
+    "resources": [
+      "https://github.com/Open-Finance-Lab/FinLoRA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of FinLoRA is to evaluate various LoRA methods on financial tasks, providing insights into their performance and scalability.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Sentiment Analysis",
+      "Named Entity Recognition",
+      "Financial Analysis",
+      "XBRL Tagging",
+      "Financial Reporting"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated from diverse financial applications and includes four novel datasets derived from SEC filings in XBRL format.",
+    "size": "19 datasets, including 122.9k training examples and 31.7k testing examples.",
+    "format": "N/A",
+    "annotation": "Manual annotation based on predefined criteria for financial tasks."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "BERTScore"
+    ],
+    "calculation": "Metrics for all tasks are averaged across different financial tasks, with accuracy and F1 Score calculated per task.",
+    "interpretation": "Higher scores indicate better model performance on financial tasks, specifically tailored for XBRL applications.",
+    "baseline_results": "LoRA methods achieved an average performance improvement of 36% over baseline models.",
+    "validation": "46 rounds of fine-tuning and 194 rounds of evaluations were conducted."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

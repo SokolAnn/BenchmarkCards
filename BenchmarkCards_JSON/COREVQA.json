@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "COREVQA (Crowd Observations and Reasoning Entailment Visual Question Answering)",
+    "abbreviation": "COREVQA",
+    "overview": "COREVQA is a benchmark of 5608 image and synthetically generated true/false statement pairs, designed to evaluate Vision-Language Models' ability to perform visual entailment reasoning on complex, crowded images.",
+    "data_type": "image and true/false statement pairs",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "VQAv2",
+      "SNLI-VE",
+      "NWPU-Crowd"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/COREVQA2025/COREVQA",
+      "https://github.com/corevqa/COREVQA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of COREVQA is to rigorously evaluate Vision-Language Models in terms of their capabilities for detailed visual inspection and multi-step visual entailment across complex image scenarios.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Visual Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Images sourced from the CrowdHuman dataset and statement pairs generated synthetically.",
+    "size": "5,608 image-statement pairs",
+    "format": "N/A",
+    "annotation": "Hand-labeled ground truths for accuracy."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on model responses compared to hand-labeled ground truths.",
+    "interpretation": "Performance is assessed based on the ability of models to correctly identify the truthfulness of statements about the images.",
+    "baseline_results": "GPT-4.1 achieved the highest accuracy at 77.57%.",
+    "validation": "Models were evaluated on the entire dataset."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

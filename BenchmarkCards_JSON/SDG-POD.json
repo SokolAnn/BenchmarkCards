@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SDG-POD (Sustainable Development Goals POlarity Detection)",
+    "abbreviation": "SDG-POD",
+    "overview": "SDG-POD is a benchmark dataset designed specifically for the task of polarity detection in the context of Sustainable Development Goals (SDGs). It combines manually annotated and synthetically generated data to facilitate the training and evaluation of large language models in determining whether a text indicates progress toward a specific SDG or conveys intention to achieve such progress.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/vincenzodeleo/sdg_polarity_detection/tree/main",
+      "https://zenodo.org/records/5550238"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To support research in the area of SDG polarity detection and advance the methodological toolkit for sustainability monitoring.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Polarity Detection"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset contains 6,400 texts sampled from the OSDG community dataset, which is derived from publicly available documents such as reports, policy documents, and publication abstracts, annotated with respect to 16 different SDGs.",
+    "size": "6,400 texts",
+    "format": "N/A",
+    "annotation": "The training set was automatically annotated using multiple LLMs, and the test set was annotated by human experts."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Metrics were calculated based on standard evaluation procedures for single-label, multi-class classification tasks.",
+    "interpretation": "Results are interpreted based on F1 scores, detailing performance across different SDGs and classifications.",
+    "baseline_results": "The QWQ-32B model achieved the highest F1 score of 61.6% after fine-tuning.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

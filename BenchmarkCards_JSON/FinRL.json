@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FinRL Contests: Benchmarking Data-driven Financial Reinforcement Learning Agents",
+    "abbreviation": "FinRL",
+    "overview": "The FinRL Contests provide standardized task definitions, curated market datasets, GPU-optimized parallel market environments, and defined evaluation metrics to ensure reproducibility and comparability across financial applications such as stock trading, cryptocurrency trading, and the integration of signals from large language models.",
+    "data_type": "tabular",
+    "domains": [
+      "Finance"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "FinRL-Meta"
+    ],
+    "resources": [
+      "https://github.com/Open-Finance-Lab/FinRL_Contest_2023/tree/main/Task_1",
+      "https://github.com/AI4Finance-Foundation/FinRL-Meta",
+      "https://huggingface.co/datasets/SecureFinAI-Lab/FinRL_BTC_news_signals",
+      "https://huggingface.co/datasets/edaschau/bitcoin_news"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To promote reproducibility, transparency, and benchmarking in financial reinforcement learning through community-driven contests.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Stock Trading",
+      "Crypto Trading",
+      "Portfolio Management"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Daily OHLCV and LOB data from financial markets, financial news articles, and generated signals from LLMs.",
+    "size": "3,352 trading days for stocks, 14 days for crypto trading",
+    "format": "CSV",
+    "annotation": "Automated data curation and signal generation via market feedback."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Cumulative return",
+      "Annualized return",
+      "Annualized volatility",
+      "Sharpe ratio",
+      "Maximum drawdown",
+      "Calmar ratio"
+    ],
+    "calculation": "Metrics are calculated using financial trading performance data against held-out market conditions.",
+    "interpretation": "Higher values for returns and ratios indicate better performance, while lower drawdown values indicate better risk management.",
+    "baseline_results": "Comparison against indices like DJIA and S&P 500.",
+    "validation": "Results are validated through controlled rolling windows."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Released under CC-BY-NA 4.0 for academic purposes and other licenses as specified.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

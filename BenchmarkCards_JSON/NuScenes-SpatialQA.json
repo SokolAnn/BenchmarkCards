@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "NuScenes-SpatialQA",
+    "abbreviation": "N/A",
+    "overview": "NuScenes-SpatialQA is the first large-scale ground-truth-based Question-Answer (QA) benchmark specifically designed to evaluate the spatial understanding and reasoning capabilities of Vision-Language Models (VLMs) in autonomous driving. It systematically evaluates VLMs’ performance in both spatial understanding and reasoning across multiple dimensions.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "NuScenes-MQA",
+      "NuScenes-QA",
+      "DriveLM"
+    ],
+    "resources": [
+      "https://taco-group.github.io/NuScenes-SpatialQA/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a benchmark for evaluating the spatial understanding and reasoning capabilities of Vision-Language Models (VLMs) in autonomous driving.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Spatial Question Answering"
+    ],
+    "limitations": "While NuScenes-SpatialQA provides a systematic evaluation of spatial reasoning in VLMs, it has certain limitations. It is constructed from the NuScenes dataset, which is limited to urban driving scenarios and does not cover all possible driving conditions.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from the NuScenes dataset, which offers extensive real-world driving scenarios with multi-modal sensor data.",
+    "size": "150 scenes, each with 40 key frames, totaling approximately 3.5 million QA pairs",
+    "format": "N/A",
+    "annotation": "Automatically generated through 3D scene graph generation and QA generation pipelines."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Tolerance-based Accuracy",
+      "Mean Absolute Error (MAE)"
+    ],
+    "calculation": "Quantitative QA tasks utilize tolerance-based accuracy and mean absolute error to assess performance.",
+    "interpretation": "The capacity to achieve high accuracy in qualitative tasks versus challenges faced in quantitative assessments indicates varying levels of spatial reasoning capacity among VLMs.",
+    "baseline_results": "Performance comparisons of various VLMs benchmarked, such as LLaVA and Qwen, across qualitative and quantitative spatial QA tasks.",
+    "validation": "Conducted through extensive experimental evaluations on diverse VLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": []
+        },
+        {
+          "category": "Fairness",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The benchmark is built on publicly available data while ensuring privacy and unbiased evaluation.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

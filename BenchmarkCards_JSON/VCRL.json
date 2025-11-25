@@ -1,0 +1,79 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "VCRL (Variance-based Curriculum Reinforcement Learning)",
+    "abbreviation": "VCRL",
+    "overview": "VCRL is a curriculum reinforcement learning framework that dynamically controls the difficulty of training samples based on the variance of group rewards to improve the learning efficiency of large language models (LLMs) on mathematical reasoning tasks.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "AIME-2024",
+      "AIME-2025",
+      "MATH500",
+      "OlympiadBench",
+      "AMC23"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/Maxwell-Jia/AIME_2024",
+      "https://huggingface.co/datasets/yentinglin/aime_2025",
+      "https://huggingface.co/datasets/AI-MO/aimo-validation-amc",
+      "https://huggingface.co/datasets/BytedTsinghua-SIA/DAPO-Math-17k"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of VCRL is to enhance the mathematical reasoning capabilities of large language models through a curriculum learning approach that adjusts sample difficulty based on reward variance.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Mathematical Reasoning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "DAPO-Math-17K dataset consisting of 17,000 prompts paired with integer answers.",
+    "size": "17,000 examples",
+    "format": "JSON",
+    "annotation": "Automatically generated rewards based on output responses."
+  },
+  "methodology": {
+    "methods": [
+      "Reinforcement Learning",
+      "Variance-based Dynamic Sampling",
+      "Memory Bank for Replay Learning"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Metrics are calculated based on performance improvements across different mathematical benchmarks.",
+    "interpretation": "Higher performance values are interpreted as better reasoning capabilities of the model.",
+    "baseline_results": null,
+    "validation": "Extensive experiments on five mathematical benchmarks validate the performance of VCRL."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "K-DECORE (Knowledge DEcoupling for COntinual REasoning)",
+    "abbreviation": "K-DECORE",
+    "overview": "K-DECORE is a novel framework for Continual Structured Knowledge Reasoning (CSKR) that addresses various challenges of catastrophic forgetting and parameter growth across heterogeneous structured knowledge environments by leveraging knowledge decoupling, enabling efficient knowledge transfer across diverse tasks.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Spider",
+      "ComplexWebQuestions (CWQ)",
+      "GrailQA",
+      "MTOP"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2509.16929v2"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To propose a continual framework for structured knowledge reasoning that facilitates knowledge transfer across diverse tasks while mitigating issues like catastrophic forgetting.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Structured Knowledge Reasoning"
+    ],
+    "limitations": "Due to time and cost constraints, reasoning-based LLMs (like QWQ 32B) were not employed as the backbone for the framework.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Four structured knowledge reasoning benchmarks curated for experimental tasks.",
+    "size": "4 datasets",
+    "format": "Various formats depending on the dataset (e.g., JSON, SQL queries for DB reasoning, SPARQL queries for KG reasoning)",
+    "annotation": "The data has been extracted from structured knowledge benchmarks."
+  },
+  "methodology": {
+    "methods": [
+      "Evaluation against existing continual learning methods and baselines"
+    ],
+    "metrics": [
+      "Accuracy",
+      "BWT (Backward Transfer)",
+      "FWT (Forward Transfer)"
+    ],
+    "calculation": "Metrics are calculated based on the accuracy scores from various tasks before and after training.",
+    "interpretation": "Higher accuracy indicates better performance while lower forgetting rates (BWT) and higher knowledge transfer (FWT) suggest more effective continual learning.",
+    "baseline_results": "K-DECORE shows superior performance compared to multiple state-of-the-art continual learning methods.",
+    "validation": "Extensive experiments conducted over multiple metrics across different structured knowledge reasoning tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

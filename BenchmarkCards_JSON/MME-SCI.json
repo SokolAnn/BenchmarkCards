@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MME-SCI (Multimodal Evaluation for Science)",
+    "abbreviation": "MME-SCI",
+    "overview": "MME-SCI is a comprehensive multimodal benchmark for assessing the reasoning capabilities of multimodal large language models (MLLMs) across various scientific domains, including mathematics, physics, chemistry, and biology. It contains 1,019 meticulously curated question-answer pairs across three modalities: text-only, image-only, and image-text hybrid, and supports five languages.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Science"
+    ],
+    "languages": [
+      "Chinese",
+      "English",
+      "French",
+      "Spanish",
+      "Japanese"
+    ],
+    "similar_benchmarks": [
+      "MMMU",
+      "GAOKAO-Bench",
+      "MathVerse",
+      "MATH-Vision",
+      "EMMA"
+    ],
+    "resources": [
+      "https://github.com/JCruan519/MME-SCI"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a challenging and comprehensive evaluation benchmark for multimodal large language models in scientific reasoning, enhancing their evaluation across diverse linguistic and modal contexts.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "1,019 high-quality question-answer pairs collected from mock exam papers and digitized for multiple modalities.",
+    "size": "1,019 examples",
+    "format": "JSON",
+    "annotation": "Manually curated and annotated with fine-grained knowledge points across various scientific topics."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy is calculated based on the proportion of correctly answered questions across different modalities and subjects.",
+    "interpretation": "Higher accuracy indicates better reasoning and understanding of scientific concepts by the MLLMs.",
+    "baseline_results": "Evaluation results indicate that advanced closed-source models outperform open-source ones on average by approximately 13.94%.",
+    "validation": "Extensive experimentation involving 16 open-source and 4 closed-source models was conducted to assess benchmark performance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

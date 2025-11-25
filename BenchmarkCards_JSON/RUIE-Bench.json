@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "RUIE-Bench (Robust Universal Information Extraction Benchmark)",
+    "abbreviation": "RUIE-Bench",
+    "overview": "RUIE-Bench is a benchmark dataset designed to evaluate the robustness of Universal Information Extraction (UIE) models. It includes 14 adversarial perturbations for three core IE tasks: Named Entity Recognition (NER), Relation Extraction (RE), and Event Detection (ED).",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "RockNER"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2503.03201"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a benchmark for evaluating the robustness of UIE models.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Named Entity Recognition",
+      "Relation Extraction",
+      "Event Detection"
+    ],
+    "limitations": "Generating more realistic perturbations remains an exploratory direction.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated using Large Language Models (LLMs) and verified for annotation accuracy.",
+    "size": "11,580 examples",
+    "format": "JSON",
+    "annotation": "Manually verified for accuracy."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Micro F1 Score"
+    ],
+    "calculation": "Micro F1 Score is computed based on entity, relation, and event trigger predictions against ground truth annotations.",
+    "interpretation": "Higher Micro F1 Score indicates better performance on the robustness of UIE tasks.",
+    "baseline_results": "Comparative analysis against 8 open-source LLMs, 4 closed-source LLMs, 4 traditional IE models, and 4 fine-tuned UIE models.",
+    "validation": "The benchmark is validated by comprehensive evaluation across various perturbations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

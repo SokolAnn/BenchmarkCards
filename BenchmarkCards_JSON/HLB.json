@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "HLB (Humanlikeness Benchmark)",
+    "abbreviation": "HLB",
+    "overview": "This benchmark evaluates the humanlikeness of language models through 10 psycholinguistic experiments analyzing core linguistic aspects including sound, word, syntax, semantics, and discourse. It employs a comprehensive comparison between outputs from language models and human responses to assess the extent to which these models replicate human language patterns.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "GLUE",
+      "SuperGLUE"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a systematic and comprehensive evaluation of how closely large language models align with human linguistic behavior.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Psycholinguists"
+    ],
+    "tasks": [
+      "Linguistic Evaluation"
+    ],
+    "limitations": "While the benchmark covers a wide range of linguistic tasks, it may not encompass the full complexity of human language use.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Responses collected from over 2,000 human participants and outputs from 20 large language models.",
+    "size": "200,000 responses",
+    "format": "N/A",
+    "annotation": "Responses were analyzed using a coding algorithm that identifies language use patterns."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Humanlikeness score (HS) based on Jensen-Shannon divergence"
+    ],
+    "calculation": "Humanlikeness scores are calculated by comparing response distributions between human participants and language models.",
+    "interpretation": "Scores reflect the degree of alignment between model outputs and human language patterns.",
+    "baseline_results": "Scores from human participants serve as the baseline for evaluation.",
+    "validation": "Responses validated through statistical methods to ensure accuracy of coding."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis of demographic factors, focusing on native English speakers from the UK and US.",
+    "harm": "Identifying areas where models diverge from human-like language patterns, particularly in complex linguistic tasks."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "Participants provided consent prior to participating in the experiments.",
+    "compliance_with_regulations": "N/A"
+  }
+}

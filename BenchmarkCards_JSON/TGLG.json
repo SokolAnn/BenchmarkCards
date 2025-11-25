@@ -1,0 +1,70 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Temporally-Grounded Language Generation",
+    "abbreviation": "TGLG",
+    "overview": "Temporally-Grounded Language Generation (TGLG) is a benchmark task that requires models to generate utterances that are both semantically accurate and precisely timed in response to streaming visual input. It evaluates two core capabilities necessary for real-time environments: perceptual updating and contingency awareness.",
+    "data_type": "video-text pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://arxiv.org/abs/2505.11326"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the benchmark is to facilitate the development and evaluation of vision-language models (VLMs) in real-time environments.",
+    "audience": [
+      "Machine Learning Researchers",
+      "AI Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Real-Time Language Generation",
+      "Video Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated datasets from sports broadcasting (SoccerNet) and egocentric human interactions (HoloAssist)",
+    "size": "16,487 examples for perceptual updating, 1,761 examples for contingency awareness",
+    "format": "N/A",
+    "annotation": "Manual annotation and filtering of commentary in SoccerNet, and transcription with fine-grained dialogue acts in HoloAssist."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Temporal Responsiveness and Alignment Evaluation (TRACE)"
+    ],
+    "calculation": "TRACE measures alignments of generated utterances to ground-truth by evaluating both semantic accuracy and timing precision.",
+    "interpretation": "High TRACE scores indicate effective real-time interactions where utterance content and timing closely match expected outcomes.",
+    "baseline_results": "VLM-TSI outperforms VideoLLM-Online on TGLG under the TRACE metric.",
+    "validation": "Detailed evaluations conducted across datasets to establish model performance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Rendezvous (RVS)",
+    "abbreviation": "RVS",
+    "overview": "The RVS task and dataset present a new focus on understanding geospatial instructions based on survey knowledge of urban environments, requiring models to handle allocentric spatial relations and multiple references simultaneously.",
+    "data_type": "geospatial instructions",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "RUN",
+      "TOUCHDOWN",
+      "RXR"
+    ],
+    "resources": [
+      "https://github.com/OnlpLab/RVS"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To advance systems that can interpret high-level survey knowledge-based navigation instructions based on urban environments.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Geolocation",
+      "Spatial reasoning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Crowdsourced instructions for navigation based on a map representation of urban environments.",
+    "size": "10,404 examples",
+    "format": "N/A",
+    "annotation": "Crowdsourced, validated instructions with a two-task process involving instruction writing and validation."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "100m accuracy",
+      "250m accuracy",
+      "Mean distance error",
+      "Median distance error",
+      "Max distance error",
+      "Area under the curve (AUC) distance error"
+    ],
+    "calculation": "Metrics are calculated based on the distance from predicted geolocation to actual location.",
+    "interpretation": "A task is considered successful if the predicted goal is within a specified distance of the actual goal.",
+    "baseline_results": null,
+    "validation": "Validation involved multiple participants assessing agreement on the correctness of instructions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

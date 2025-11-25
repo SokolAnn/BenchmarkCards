@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "HURRICANE SARC",
+    "abbreviation": "N/A",
+    "overview": "HURRICANE SARC is a dataset of 15,000 tweets annotated for intended sarcasm in a disaster context, specifically from hurricane events. The dataset enables the investigation of sarcasm detection using pre-trained language models.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "iSarcasm",
+      "SARC"
+    ],
+    "resources": [
+      "https://github.com/tsosea2/HurricaneSarc"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To measure progress on sarcasm detection specifically in the disaster domain and to spur research on understanding sarcasm in online content during critical events.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Sarcasm Detection"
+    ],
+    "limitations": "The label distribution in HURRICANE SARC is skewed, with non-sarcastic examples being much more prevalent than sarcastic ones.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "15,000 tweets sampled from the Twitter data repository during Hurricanes Irma, Harvey, and Maria, annotated using crowdsourcing.",
+    "size": "15,000 examples",
+    "format": "JSON",
+    "annotation": "Annotated by crowdsourced workers on Amazon Mechanical Turk using majority voting."
+  },
+  "methodology": {
+    "methods": [
+      "BERTweet",
+      "Bi-LSTM",
+      "CNN"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "F1 Score is calculated based on true positives, false positives, and false negatives for sarcasm detection.",
+    "interpretation": "High F1 Score indicates better performance of sarcasm detection models.",
+    "baseline_results": "Best model achieved 0.70 F1 Score.",
+    "validation": "Models were validated using separate training, validation, and test splits."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

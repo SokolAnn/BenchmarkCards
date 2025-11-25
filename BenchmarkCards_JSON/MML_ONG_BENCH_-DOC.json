@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MML ONG BENCH -DOC",
+    "abbreviation": "MML ONG BENCH -DOC",
+    "overview": "MML ONG BENCH -DOC is a long-context, multi-modal benchmark comprising 1,082 expert-annotated questions, constructed from 135 lengthy PDF-formatted documents to evaluate the Document Understanding (DU) capabilities of Large Vision-Language Models (LVLMs).",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "DocVQA",
+      "ChartQA",
+      "FinanceBench"
+    ],
+    "resources": [
+      "https://mayubo2333.github.io/MMLongBench-Doc"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the long-context document understanding abilities of Large Vision-Language Models (LVLMs).",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "135 lengthy PDF-formatted documents spanning across 7 diverse domains, including documents sourced from existing datasets and newly collected documents.",
+    "size": "1,082 questions",
+    "format": "PDF",
+    "annotation": "Expert annotation by ten expert-level annotators."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Accuracy"
+    ],
+    "calculation": "Scores are calculated based on the comparison between generated answers and reference answers.",
+    "interpretation": "Generalized accuracy and F1 Score are reported to balance the answerable (positive) and unanswerable (negative) questions.",
+    "baseline_results": "N/A",
+    "validation": "Extensive evaluation across 14 LVLMs was conducted."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

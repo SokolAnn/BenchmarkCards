@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "A streamable large -scale clinical EEG dataset for Deep Learning",
+    "abbreviation": "N/A",
+    "overview": "We are publishing the first large -scale clinical EEG dataset that simplifies data access and management for Deep Learning. This dataset contains eyes-closed EEG data prepared from a collection of 1,574 juvenile participants from the Healthy Brain Network.",
+    "data_type": "time-series (EEG recordings; 2-second epochs, 24 channels x 256 time points)",
+    "domains": [
+      "Neuroscience",
+      "Biomedical Research"
+    ],
+    "languages": [],
+    "similar_benchmarks": [
+      "Healthy Brain Network"
+    ],
+    "resources": [
+      "https://github.com/sccn/HBN-rest-DL",
+      "https://childmind.s3.us-west-1.amazonaws.com/python/childmind_python.zip",
+      "https://childmind.s3.us-west-1.amazonaws.com/matlab/childmind_matlab.zip",
+      "https://childmind.s3.us-west-1.amazonaws.com/python/childmind_train.tar",
+      "http://coins.mrn.org/dx",
+      "http://data.healthybrainnetwork.org/",
+      "http://fcon_1000.projects.nitrc.org/indi/cmi_healthy_brain_network/sharing.html"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Publish a large-scale EEG dataset prepared in a format that is readily used by current Deep Learning models, simplifying data access and management (including streaming from AWS S3) to accelerate Deep Learning research on EEG.",
+    "audience": [
+      "Neuroscience researchers",
+      "Deep Learning researchers",
+      "Non-EEG experts"
+    ],
+    "tasks": [
+      "Classification (biological sex classification)",
+      "Self-Supervised Learning (temporal context prediction)",
+      "Representation Learning"
+    ],
+    "limitations": "Model training when streaming the data suffers from a significant slowdown as compared to loading the entire dataset locally. Dataset uses only eye-closed segments (~170s per subject) and was sub-selected to 24 channels out of 128 for the benchmark experiment.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Subset of EEG data (eyes-closed resting state) from the Healthy Brain Network (HBN) by the Child Mind Institute; 1,574 subjects (juvenile participants, ages 5-21).",
+    "size": "1,574 subjects; 127,174 samples total (71,300 training samples from 885 participants; 39,868 validation samples from 492 participants; 16,006 test samples from 197 participants); each subject provided about 81 2-second samples (mean 80.8 ± 3.32).",
+    "format": "MAT file (.mat) for MATLAB; NumPy array files (.npy) for Python; packaged as POSIX tar archives for WebDataset streaming. Original recording sampled at 500 Hz then downsampled to 128 Hz; final samples are 24 x 256 (channels x timepoints).",
+    "annotation": "Labels provided from subject metadata: biological sex (binary 0=Male, 1=Female), age, handedness, within-subject segment position, and original subject IDs. Clinical phenotypes available on request via COINS or HBN LORIS subject to a Data Usage Agreement (DUA)."
+  },
+  "methodology": {
+    "methods": [
+      "Model training and evaluation (supervised deep learning) using a modified VGG-16 architecture for biological sex classification",
+      "Data streaming during training using MATLAB imageDatastore and PyTorch WebDataset"
+    ],
+    "metrics": [
+      "Accuracy (per-subject)",
+      "95% confidence interval for Accuracy"
+    ],
+    "calculation": "Per-subject classification Accuracy reported; authors report Accuracy with a 95% confidence interval (86.6% - 87.4%).",
+    "interpretation": "Authors report a per-subject classification accuracy of 87% (95% CI 86.6% - 87.4%) on the biological sex classification task and interpret this result as achieving state-of-the-art performance for this task on their dataset.",
+    "baseline_results": "Modified VGG-16 model achieved per-subject classification accuracy of 87% (95% confidence interval 86.6% - 87.4%) on the test set.",
+    "validation": "Dataset split into training, validation, and test sets with size ratio 60:30:10 (71,300 samples, 39,868 samples, and 16,006 samples respectively); evaluation performed on held-out test set."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Data Laws"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Data Laws",
+          "subcategory": [
+            "Data usage restrictions"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data",
+            "Exposing personal information"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Provides demographic breakdowns: biological sex roughly 50% female in train/validation/test; age statistics per split (Train: min 5.02 max 21.9 mean 10.5 median 9.74 stdev 3.61; Validation: min 5.04 max 21.7 mean 10.5 median 9.88 stdev 3.68; Test: min 5.06 max 21.2 mean 10.7 median 10.3 stdev 3.37). Handedness statistics provided per split (Train mean 57.9 median 75.6 stdev 50.0; Validation mean 58.6 median 75.6 stdev 49.4; Test mean 54.3 median 76.7 stdev 56.1).",
+    "harm": [
+      "Breaches of participant privacy/confidentiality"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Original subject IDs are provided; clinical phenotypes and high-dimensional phenotypic data are protected and require a Data Usage Agreement (DUA) to access. The DUA is intended to ensure users protect participant confidentiality and take measures to prevent breaches of privacy.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

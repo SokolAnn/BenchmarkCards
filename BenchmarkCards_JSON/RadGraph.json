@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "RadGraph: Extracting Clinical Entities and Relations from Radiology Reports",
+    "abbreviation": "RadGraph",
+    "overview": "RadGraph is a dataset of clinical entity and relation annotations in full-text chest X-ray radiology reports, designed to facilitate various healthcare applications through a novel information extraction schema.",
+    "data_type": "text",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MIMIC-CXR",
+      "CheXpert"
+    ],
+    "resources": [
+      "https://doi.org/10.13026/hm87-5p47"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a structured dataset of clinical entities and relations from radiology reports to enhance research in medical NLP and multi-modal learning.",
+    "audience": [
+      "ML Researchers",
+      "Healthcare Professionals",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Entity Extraction",
+      "Relation Extraction"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "500 radiology reports from the MIMIC-CXR dataset and 100 reports from the CheXpert dataset, annotated by board-certified radiologists.",
+    "size": "500 reports for development dataset and up to 220,763 reports for inference dataset.",
+    "format": "N/A",
+    "annotation": "Annotations were done manually by board-certified radiologists."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Micro F1",
+      "Macro F1"
+    ],
+    "calculation": "Metrics are calculated based on the performance of a model compared to independent radiologist annotations for entity and relation extraction.",
+    "interpretation": "A predicted entity is correct if both the span boundaries and entity types are correct; for relations, both entity pairs and relation types must be accurate.",
+    "baseline_results": "RadGraph Benchmark achieved a micro F1 of 0.82 on MIMIC-CXR and 0.73 on CheXpert for relation extraction.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset includes demographic statistics related to sex, age, and race, enhancing the assessment of fairness in the context of clinical applications.",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Each report is de-identified in compliance with HIPAA regulations.",
+    "data_licensing": "PhysioNet Credentialed Health Data License 1.5.0.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "HIPAA compliance for de-identification."
+  }
+}

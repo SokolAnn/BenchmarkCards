@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ReposVul (Repository-Level High-Quality Vulnerability Dataset)",
+    "abbreviation": "ReposVul",
+    "overview": "ReposVul is the first repository-level high-quality vulnerability dataset, encompassing 6,134 CVE entries representing 236 CWE types across 1,491 projects and four programming languages. The dataset aims to address limitations in existing vulnerability datasets by providing detailed multi-granularity patch information.",
+    "data_type": "vulnerability entries and patches",
+    "domains": [
+      "Software Engineering"
+    ],
+    "languages": [
+      "C",
+      "C++",
+      "Java",
+      "Python"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/Eshe0922/ReposVul"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a high-quality vulnerability dataset that improves upon existing datasets by addressing issues such as tangled patches and outdated data.",
+    "audience": [
+      "Researchers",
+      "Software Developers",
+      "Security Analysts"
+    ],
+    "tasks": [
+      "Vulnerability Detection"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "CVE entries collected from open-source databases including GitHub and Google Git.",
+    "size": "6,134 CVE entries across 1,491 projects and 14,706 files.",
+    "format": "N/A",
+    "annotation": "Data annotation involved automated methods using Large Language Models and static analysis tools for classifying vulnerability-related changes."
+  },
+  "methodology": {
+    "methods": [
+      "Automated data collection",
+      "Vulnerability untangling with LLMs",
+      "Static analysis for vulnerability checking",
+      "Multi-granularity dependency extraction"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Label quality (measured by percentage of correct labels)"
+    ],
+    "calculation": "Accuracy calculated through manual annotation comparing against automated labeling methods.",
+    "interpretation": "An accuracy of 85% in labeling indicates high quality compared to existing datasets.",
+    "baseline_results": null,
+    "validation": "Manual checking validated the accuracy of the dataset annotations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

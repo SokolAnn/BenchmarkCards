@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "GanitBench",
+    "abbreviation": "N/A",
+    "overview": "GanitBench is a bi-lingual benchmark consisting of 1527 vision-only questions covering several topics in Mathematics, available in English and Hindi. The questions are collected from major examinations in India, including the JEE Advanced and CBSE Boards, and involve visual contexts and reasoning analysis for Vision Language Models.",
+    "data_type": "image-text pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Hindi"
+    ],
+    "similar_benchmarks": [
+      "GSM8K",
+      "MATH",
+      "MathPrompter",
+      "Geometry3k",
+      "JEEBench",
+      "NTSEBench",
+      "Mathify",
+      "OlympiadBench",
+      "MathVista",
+      "EXAMS-V"
+    ],
+    "resources": [
+      "https://jeeadv.ac.in/archive.html",
+      "https://www.cbse.gov.in/cbsenew/question-paper.html"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a bilingual mathematical benchmark for evaluating reasoning capabilities in Vision Language Models across multiple mathematical disciplines.",
+    "audience": [
+      "ML Researchers",
+      "AI Practitioners",
+      "Educational Researchers"
+    ],
+    "tasks": [
+      "Mathematical Reasoning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from JEE Advanced and CBSE Board Examination papers available in both English and Hindi.",
+    "size": "1,527 images",
+    "format": "Image (JPEG, PNG)",
+    "annotation": "Manually curated with correct final answers and metadata filled in CSV format."
+  },
+  "methodology": {
+    "methods": [
+      "Zero-Shot Chain-of-Thought (CoT)",
+      "Two-Shot Chain-of-Thought (CoT)"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy is calculated as number of correct answers divided by the total number of questions.",
+    "interpretation": "An accuracy of 40% indicates a reasonable performance for the model on challenging mathematical questions.",
+    "baseline_results": null,
+    "validation": "Evaluated the performance of models under normal conditions and with a 'Double Lock' constraint."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis of results in both English and Hindi provided.",
+    "harm": [
+      "Potential for biased evaluations based on language proficiency."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SubjECTive-QA",
+    "abbreviation": "N/A",
+    "overview": "SubjECTive-QA is a human annotated dataset on Earnings Call Transcripts’ QA sessions, focusing on subjective features such as assertiveness, cautiousness, optimism, specificity, clarity, and relevance.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Finance"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/gtfintechlab/SubjECTive-QA",
+      "https://huggingface.co/datasets/gtfintechlab/SubjECTive-QA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive resource for analyzing subjectivity in QA responses during Earnings Calls, and to aid in detecting misinformation across various domains.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "The dataset is limited to Earnings Calls of companies listed on the New York Stock Exchange from 2007 to 2021.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Earnings Call Transcripts collected from company websites and related resources.",
+    "size": "35,711 annotations",
+    "format": "CSV",
+    "annotation": "Manual annotation by a team of annotators."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Weighted F1 Score"
+    ],
+    "calculation": "F1 scores were calculated based on model predictions against the annotated features.",
+    "interpretation": "Higher F1 scores indicate better model performance in capturing the specified subjective features.",
+    "baseline_results": "RoBERTa-base had the highest average weighted F1 score of 63.95%.",
+    "validation": "Models were validated using a subset of QA pairs from White House Press Briefings and Gaggles."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Annotator demographics may introduce biases related to educational background and gender.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+    "consent_procedures": "Consent was obtained from annotators as they are the authors of the paper.",
+    "compliance_with_regulations": "N/A"
+  }
+}

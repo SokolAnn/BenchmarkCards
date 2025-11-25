@@ -1,0 +1,70 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "BraFiNER (Brazilian Financial Named Entity Recognition)",
+    "abbreviation": "BraFiNER",
+    "overview": "Development of the BraFiNER, a Portuguese dataset for Named Entity Recognition in finance, using earnings call transcripts from Brazilian banks.",
+    "data_type": "annotated sentences",
+    "domains": [
+      "Natural Language Processing",
+      "Finance"
+    ],
+    "languages": [
+      "Portuguese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/rsabilio/NerEval-BrazilianCorporateTranscripts"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate mono- and multilingual transformer models for Named Entity Recognition in Brazilian financial texts.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Named Entity Recognition"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Earnings call transcripts of Brazilian banks from the Comissao de Valores Mobiliarios (CVM) open data.",
+    "size": "384 transcripts, 57,933 annotated sentences",
+    "format": "CSV",
+    "annotation": "Weakly supervised annotation using regular expressions and heuristics."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on the comparisons of annotations and model outputs.",
+    "interpretation": "Higher values in Precision, Recall, and F1 Score indicate better model performance.",
+    "baseline_results": "The macro F1-score achieved by the best model ranged from 98.33% to 98.99%.",
+    "validation": "Results were validated using multiple statistical tests including Friedman and Wilcoxon tests."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "NovelQA",
+    "abbreviation": "N/A",
+    "overview": "NovelQA is a benchmark crafted to specifically evaluate LLMs’ performance on texts with averaged context windows exceeding 200,000 tokens, constructed from English novels to assess deep textual understanding in LLMs.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "NarrativeQA",
+      "LongBench",
+      "HotpotQA"
+    ],
+    "resources": [
+      "https://novelqa.github.io/",
+      "https://huggingface.co/datasets/NovelQA/NovelQA",
+      "https://www.codabench.org/competitions/2727/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess the long-context comprehension abilities of LLMs using complex narratives from novels.",
+    "audience": [
+      "ML Researchers",
+      "Natural Language Processing Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "65 free public-domain books from Project Gutenberg and 24 copyright-protected books purchased online.",
+    "size": "2305 QA tuples",
+    "format": "JSON",
+    "annotation": "Annotations performed by expert annotators with detailed, human-crafted questions and corresponding answers."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Metrics are calculated based on model outputs compared to ground truth answers.",
+    "interpretation": "Higher accuracy indicates better model performance in understanding and responding to questions based on long textual contexts.",
+    "baseline_results": "Human baselines achieved around 90% accuracy in generative settings.",
+    "validation": "Evaluated with various long-context LLMs to assess their long-context understanding."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "NovelQA does not contain any personally identifiable information.",
+    "data_licensing": "NovelQA is released under the Apache-2.0 License.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

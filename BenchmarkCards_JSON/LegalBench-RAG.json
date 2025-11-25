@@ -1,0 +1,76 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LegalBench-RAG",
+    "abbreviation": "N/A",
+    "overview": "LegalBench-RAG is the first benchmark specifically designed to evaluate the retrieval step of Retrieval-Augmented Generation (RAG) pipelines within the legal space, focusing on extracting minimal, highly relevant text segments from legal documents.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Legal"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "LegalBench"
+    ],
+    "resources": [
+      "https://github.com/zeroentropy-cc/legalbenchrag"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a robust framework for assessing retrieval precision and recall in legal RAG systems.",
+    "audience": [
+      "Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Information Retrieval"
+    ],
+    "limitations": "Queries are answered by exactly one document, and the benchmark does not assess structured numerical data parsing or multi-document reasoning.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Derived from four unique legal datasets including PrivacyQA, CUAD, MAUD, and ContractNLI.",
+    "size": "6,889 query-answer pairs",
+    "format": "JSON",
+    "annotation": "Human-annotated by legal experts."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "Metrics are computed based on the accuracy of retrieval for each query.",
+    "interpretation": "Higher precision indicates more relevant documents retrieved, while higher recall indicates more documents retrieved overall.",
+    "baseline_results": null,
+    "validation": "Validated through rigorous manual inspection of each query and its corresponding annotations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

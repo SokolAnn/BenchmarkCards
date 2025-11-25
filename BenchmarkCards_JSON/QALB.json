@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "QALB (Q Arabic Language Benchmark)",
+    "abbreviation": "QALB",
+    "overview": "The benchmark evaluates the performance of large language models (LLMs) in grammatical error correction (GEC) for Arabic, focusing on the complexities of Arabic grammar and morphology.",
+    "data_type": "sentence-level error correction examples",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Arabic"
+    ],
+    "similar_benchmarks": [
+      "N/A"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2312.08400"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To advance the evaluation of Arabic grammatical error correction systems and provide insights into the effectiveness of instruction-finetuned large language models.",
+    "audience": [
+      "ML Researchers",
+      "Linguists",
+      "Educators"
+    ],
+    "tasks": [
+      "Grammatical Error Correction"
+    ],
+    "limitations": "",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The QALB corpus, containing annotated Arabic texts including online commentaries from Aljazeera articles and texts produced by L1 and L2 learners of Arabic.",
+    "size": "19,411 sentences in QALB-2014 training set, 310 sentences in QALB-2015 testing set",
+    "format": "JSON",
+    "annotation": "Manually corrected by experts"
+  },
+  "methodology": {
+    "methods": [
+      "Evaluation using F1 Score and Exact Match",
+      "Instruction fine-tuning of LLMs",
+      "Error type analysis using the Automatic Error Type Annotation tool (ARETA)"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Exact Match"
+    ],
+    "calculation": "Metrics were calculated based on precision, recall, and F1 score derived from the textual corrections made by the models compared to the ground truth.",
+    "interpretation": "Higher scores indicate better performance in correction tasks, with a focus on F1 score due to its balance between precision and recall in GEC.",
+    "baseline_results": null,
+    "validation": "Cross-validated against existing benchmarks such as QALB-2014 and QALB-2015."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Robustness",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis of errors across different demographic groups, focusing on L1 vs. L2 Arabic speakers.",
+    "harm": "Potential for bias in error correction leading to misinterpretation of language use in various contexts."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All datasets used are publicly available, with no privacy concerns.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "name": "ChainPoll",
+    "overview": "ChainPoll is a novel hallucination detection methodology that substantially outperforms existing alternatives and is evaluated using the RealHall benchmark suite.",
+    "data_type": "text",
+    "domains": [
+      "open-domain",
+      "closed-domain"
+    ],
+    "languages": null,
+    "similar_benchmarks": null,
+    "resources": null
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a reliable method for detecting hallucinations in large language model outputs.",
+    "audience": [
+      "researchers",
+      "developers",
+      "practitioners in NLP"
+    ],
+    "tasks": [
+      "evaluation of hallucination detection metrics",
+      "measurement of LLM performance"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": null
+  },
+  "data": {
+    "source": "RealHall benchmark suite",
+    "size": "four benchmark datasets",
+    "format": "text-based prompt and completion",
+    "annotation": "Boolean labels indicating the presence of hallucinations"
+  },
+  "methodology": {
+    "methods": [
+      "ChainPoll-Correctness",
+      "ChainPoll-Adherence"
+    ],
+    "metrics": [
+      "AUROC"
+    ],
+    "calculation": "Aggregate AUROC scores calculated from benchmark datasets.",
+    "interpretation": "Higher AUROC indicates better performance in detecting hallucinations.",
+    "baseline_results": null,
+    "validation": "Head-to-head comparisons against other existing metrics (e.g., SelfCheckGPT, TRUE, G-Eval) were performed."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Privacy",
+      "Explainability"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Exposing personal information"
+          ]
+        },
+        {
+          "category": "Explainability",
+          "subcategory": [
+            "Unexplainable output"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential for misleading outputs due to hallucinations in model responses."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "No personally identifiable information is used in the training data or evaluation.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

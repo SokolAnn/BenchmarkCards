@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "NOVA: A Benchmark for Anomaly Localization and Clinical Reasoning in Brain MRI",
+    "abbreviation": "NOVA",
+    "overview": "NOVA establishes a new benchmark for evaluating, detecting, and reasoning on unexpected abnormalities in clinical brain MRI. It includes ~900 brain MRI scans spanning 281 rare and diverse pathologies, with rich clinical narratives and expert annotations for anomaly localization, visual captioning, and diagnostic reasoning.",
+    "data_type": "brain MRI scans",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "N/A"
+    ],
+    "similar_benchmarks": [
+      "BraTS",
+      "ATLAS",
+      "ISLES"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/Ano-2090/Nova"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To establish a rigorous testbed for advancing models capable of detecting, localizing, and reasoning about unknown anomalies in medical imaging.",
+    "audience": [
+      "ML Researchers",
+      "Healthcare Professionals",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Anomaly Localization",
+      "Image Captioning",
+      "Diagnostic Reasoning"
+    ],
+    "limitations": "The dataset is sourced from a European radiology teaching repository, which may introduce geographic or demographic biases.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Cases from Eurorad, a peer-reviewed educational platform.",
+    "size": "906 brain MRI scans",
+    "format": "PNG images and CSV metadata files",
+    "annotation": "Annotated by at least two radiologists with bounding boxes and clinical narratives."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Mean Average Precision (mAP)",
+      "F1 Score",
+      "BLEU Score"
+    ],
+    "calculation": "Metrics are computed based on standard performance evaluation techniques in object detection and text generation.",
+    "interpretation": "Higher scores indicate better performance in anomaly localization, image captioning, and diagnostic reasoning.",
+    "baseline_results": "Baseline results showed significant performance drops compared to standard image benchmarks.",
+    "validation": "Evaluation conducted in a zero-shot setting, requiring models to generalize without prior exposure."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset complies with the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 license.",
+    "data_licensing": "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 license.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

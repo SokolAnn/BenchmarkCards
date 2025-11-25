@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "name": "HaluEval 2.0",
+    "overview": "A benchmark designed for evaluating the factuality hallucination in large language models, consisting of 8,770 questions across multiple domains.",
+    "data_type": "Questions",
+    "domains": [
+      "Biomedicine",
+      "Finance",
+      "Science",
+      "Education",
+      "Open Domain"
+    ],
+    "languages": null,
+    "similar_benchmarks": null,
+    "resources": [
+      "https://github.com/RUCAIBox/HaluEval-2.0"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To systematically study hallucinations in LLMs focusing on detection, source, and mitigation.",
+    "audience": [
+      "Researchers",
+      "Developers in NLP",
+      "AI practitioners"
+    ],
+    "tasks": [
+      "Evaluating hallucination levels in LLMs",
+      "Developing methodologies for hallucination detection",
+      "Mitigating hallucination effects"
+    ],
+    "limitations": null,
+    "out_of_scope_uses": null
+  },
+  "data": {
+    "source": "Multiple domain datasets including BioASQ, NFCorpus, FiQA-2018, SciFact, LearningQ, and HotpotQA.",
+    "size": "8,770 questions",
+    "format": "Text",
+    "annotation": "Questions selected based on difficulty and likelihood of hallucination."
+  },
+  "methodology": {
+    "methods": [
+      "Framework for hallucination detection",
+      "Statistical analysis of hallucination sources",
+      "Empirical evaluation of mitigation strategies"
+    ],
+    "metrics": [
+      "Micro hallucination rate (MiHR)",
+      "Macro hallucination rate (MaHR)"
+    ],
+    "calculation": "MiHR and MaHR are calculated based on the number of hallucinatory statements in responses.",
+    "interpretation": "Lower values indicate better performance in hallucination mitigation.",
+    "baseline_results": null,
+    "validation": "Validated via comparison with human labeling for reliability."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Transparency"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Lack of training data transparency"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "No personal data was used in the construction of the dataset.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

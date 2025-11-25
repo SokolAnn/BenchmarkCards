@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "RELATE: Relation Extraction in Biomedical Abstracts with LLMs and Ontology Constraints",
+    "abbreviation": "RELATE",
+    "overview": "RELATE is a three-stage pipeline for mapping LLM-extracted biomedical relations to standardized ontology predicates using ChemProt and the Biolink Model. It aims to enhance relation extraction by transforming free-text outputs into structured, ontology-constrained representations.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ChemProt"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/bigbio/chemprot",
+      "https://heal.nih.gov/",
+      "https://github.com/RENCI-NER/pred-mapping/tree/multi-ontology"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a scalable, ontology-constrained framework for converting unstructured biomedical literature into standardized knowledge graphs.",
+    "audience": [
+      "Biomedical Researchers",
+      "Data Scientists",
+      "ML Researchers"
+    ],
+    "tasks": [
+      "Relation Extraction"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "ChemProt dataset and PubMed abstracts from the HEAL Project.",
+    "size": "2,400 abstracts",
+    "format": "text",
+    "annotation": "Data is annotated using existing biomedical relation schemas."
+  },
+  "methodology": {
+    "methods": [
+      "Ontology preprocessing",
+      "Similarity-based retrieval",
+      "LLM-based contextual refinement"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Exact Match",
+      "Accuracy@10"
+    ],
+    "calculation": "Exact match accuracy is calculated based on the top choice predicate after the LLM-based refinement.",
+    "interpretation": "An accuracy of 52% exact match indicates the percentage of correct mappings from LLM outputs to the established ontology predicates.",
+    "baseline_results": "Exact match accuracy of RELATE achieves 52% on the ChemProt benchmark.",
+    "validation": "The validation is conducted through comparison with the ChemProt benchmark."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "This research analyzes public biomedical publication texts and does not require IRB approval.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

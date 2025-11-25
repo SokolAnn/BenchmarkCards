@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "NursingPiles",
+    "abbreviation": "N/A",
+    "overview": "The paper introduces a novel Chinese nursing dataset called 'NursingPiles' aimed at enhancing large language model performance in nursing and elderly care tasks and establishes a benchmark test set for evaluating nursing knowledge and skills.",
+    "data_type": "question-answer pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Healthcare"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To develop AI-driven solutions tailored to nursing and elderly care, utilizing large language models for patient monitoring and personalized care.",
+    "audience": [
+      "NLP Researchers",
+      "Healthcare Practitioners",
+      "Nursing Professionals"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Question Answering"
+    ],
+    "limitations": "The dataset is primarily Chinese-focused, limiting broader applicability across languages and cultures.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Developed from textbooks, manuals, legal documents, and research papers.",
+    "size": "1,000,000 question-answer pairs",
+    "format": "Text in markdown format, JSON",
+    "annotation": "Automatically annotated through data processing pipeline."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score",
+      "Accuracy"
+    ],
+    "calculation": "Metrics were calculated based on evaluation of models through established nursing exam questions.",
+    "interpretation": "Higher scores indicate better model performance in nursing knowledge assessments.",
+    "baseline_results": "GLM4-Chat 9B + IPT + SFT achieved Precision of 86.78%, Recall of 85.65%, F1-score of 86.21%, and Accuracy of 58.9%.",
+    "validation": "The benchmark was validated through tests against authoritative nursing exam questions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Privacy",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data is anonymized to protect participant confidentiality.",
+    "data_licensing": "The dataset is released under an open-source license (e.g., CC BY-NC 4.0) for non-commercial research.",
+    "consent_procedures": "Informed consent was obtained from research team members for data collection.",
+    "compliance_with_regulations": "The research complies with applicable laws and regulations."
+  }
+}

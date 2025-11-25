@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PROduct CLArifyingREtrieval (PROCLARE)",
+    "abbreviation": "PROCLARE",
+    "overview": "This paper introduces the PROCLARE benchmark to evaluate the performance of a conversational product search agent, ProductAgent, designed to clarify user demands through dialog and strategic questioning.",
+    "data_type": "dialogue exchanges",
+    "domains": [
+      "Natural Language Processing",
+      "E-commerce"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://arxiv.org/abs/2407.00942"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide an automatic evaluation framework for conversational product demand clarification agents.",
+    "audience": [
+      "Research Scientists",
+      "Data Scientists",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Information Retrieval"
+    ],
+    "limitations": "The benchmark relies on a user simulation technique, lacking direct human user interaction.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Produced by simulating dialogues between a user simulator and the ProductAgent.",
+    "size": "2,000 dialogues",
+    "format": "JSON",
+    "annotation": "Automatically generated via an LLM-driven user simulator."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "User simulation"
+    ],
+    "metrics": [
+      "Mean Reciprocal Rank (MRR)",
+      "Hit Rate"
+    ],
+    "calculation": "Calculated based on the retrieved product relevance after each dialog turn.",
+    "interpretation": "Higher MRR and Hit Rate values indicate better performance in guiding users to relevant products.",
+    "baseline_results": null,
+    "validation": "Evaluated against traditional information retrieval benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

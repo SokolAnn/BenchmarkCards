@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "WIKICOLLIDE",
+    "abbreviation": "N/A",
+    "overview": "WIKICOLLIDE is the first benchmark capturing real Wikipedia inconsistencies, specifically designed for Corpus-Level Inconsistency Detection.",
+    "data_type": "atomic facts",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "FEVER",
+      "FEVEROUS",
+      "AmbigQA"
+    ],
+    "resources": [
+      "https://github.com/stanford-oval/inconsistency-detection.2024"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To systematically quantify corpus-level inconsistencies in Wikipedia and enhance the accuracy of knowledge in large language models.",
+    "audience": [
+      "ML Researchers",
+      "Wikipedia Editors",
+      "NLP Practitioners"
+    ],
+    "tasks": [
+      "Corpus-Level Inconsistency Detection",
+      "Fact Verification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "English Wikipedia",
+    "size": "955 atomic facts",
+    "format": "N/A",
+    "annotation": "Manual verification through CLAIRE-assisted analysis."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "AUROC"
+    ],
+    "calculation": "Calculated based on performance of CLAIRE and various automated systems against human-annotated labels.",
+    "interpretation": "Higher AUROC indicates better performance of inconsistency detection systems.",
+    "baseline_results": "CLAIRE achieves an AUROC of 75.1% on the test set.",
+    "validation": "The reliability of the benchmark was ensured through manual verification of inconsistencies."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

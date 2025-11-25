@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MATHARENA",
+    "abbreviation": "N/A",
+    "overview": "MATHARENA is a dynamic publicly available benchmark designed to evaluate LLMs on uncontaminated problems sourced from recurring math competitions, targeting mathematical reasoning and proof-writing capabilities.",
+    "data_type": "problem-solving tasks",
+    "domains": [
+      "Natural Language Processing",
+      "Mathematics"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "AIME",
+      "FrontierMath",
+      "HLE",
+      "GSM8K",
+      "MINIF2F"
+    ],
+    "resources": [
+      "https://matharena.ai/",
+      "https://github.com/eth-sri/matharena"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the mathematical reasoning capabilities of large language models using uncontaminated math competition problems.",
+    "audience": [
+      "ML Researchers",
+      "Educators",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Problem Solving",
+      "Proof Writing"
+    ],
+    "limitations": "The benchmark is limited by the number of annual competitions available.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Problems sourced from various math competitions including AIME, HMMT, USAMO, and others.",
+    "size": "162 problems across 7 competitions",
+    "format": "JSON",
+    "annotation": "Problems are formatted and pre-validated for accuracy."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy is computed as the average performance across multiple model runs per problem.",
+    "interpretation": "Higher accuracy indicates better reasoning capabilities in LLMs, while the leaderboard ranks models based on their performance.",
+    "baseline_results": null,
+    "validation": "Regular updates with newly released competition problems ensure the relevance and difficulty of the benchmark."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis includes performance across different types of math problems, addressing any potential biases in problem distribution.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Data is available under CC-BY-NC-SA 4.0 license for non-commercial use.",
+    "consent_procedures": "All data releases comply with the policies of competition organizers.",
+    "compliance_with_regulations": "N/A"
+  }
+}

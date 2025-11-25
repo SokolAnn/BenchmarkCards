@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DischargeSim",
+    "abbreviation": "N/A",
+    "overview": "DischargeSim is a novel benchmark that evaluates large language models (LLMs) on their ability to act as personalized discharge educators through simulated post-visit conversations.",
+    "data_type": "dialogue simulations",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "AgentClinic",
+      "AMIE",
+      "HealthBench"
+    ],
+    "resources": [
+      "https://github.com/michaels6060/DischargeSim"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate and improve the discharge education capabilities of large language models in post-visit clinical education.",
+    "audience": [
+      "ML Researchers",
+      "Healthcare Professionals",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Patient Education",
+      "Dialogue Generation",
+      "Evaluation of Discharge Communication"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "MIMIC-IV dataset",
+    "size": "49 discharge notes",
+    "format": "JSON",
+    "annotation": "Manual generation of multiple-choice questions by experts."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "LLM-based evaluations"
+    ],
+    "metrics": [
+      "Dialogue quality",
+      "Personalized summary generation",
+      "Patient comprehension"
+    ],
+    "calculation": "Metrics calculated include linguistic clarity, coherence, and factual accuracy based on human references.",
+    "interpretation": "Scores indicate the effectiveness of the LLMs in facilitating patient education during discharge.",
+    "baseline_results": "Various LLMs were benchmarked, revealing performance variation across different models.",
+    "validation": "Evaluated by both LLMs and clinicians against established clinical benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Evaluation includes patient profiles based on health literacy, education, and emotional states.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data derived from de-identified public datasets with no personal information.",
+    "data_licensing": "CC-BY-NC 4.0 license",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

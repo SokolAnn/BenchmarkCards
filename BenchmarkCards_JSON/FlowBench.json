@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FlowBench",
+    "abbreviation": "N/A",
+    "overview": "FlowBench is a comprehensive benchmark for evaluating workflow generation systems, including a variety of task types and node complexities, aimed at testing the capabilities of workflow generation models such as ComfyGPT.",
+    "data_type": "workflow-description pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ComfyGen",
+      "ComfyBench"
+    ],
+    "resources": [
+      "https://github.com/comfygpt/comfygpt"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a robust evaluation framework for workflow generation methods in AI systems.",
+    "audience": [
+      "ML Researchers",
+      "Workflow Generation Practitioners"
+    ],
+    "tasks": [
+      "Workflow Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "ComfyUI community websites through web crawling.",
+    "size": "13,571 workflow-description pairs",
+    "format": "JSON",
+    "annotation": "Manual refinement and filtering"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Pass Accuracy (PA)",
+      "Pass Instruct Alignment (PIA)",
+      "Format Validation (FV)",
+      "Pass Node Diversity (PND)"
+    ],
+    "calculation": "Metrics are calculated by evaluating the performance of generated workflows against specified criteria, such as execution success and instruction alignment.",
+    "interpretation": "Higher scores indicate better performance in generating accurate and diverse workflows.",
+    "baseline_results": null,
+    "validation": "The model's performance is validated against predefined metrics established in the FlowBench dataset."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

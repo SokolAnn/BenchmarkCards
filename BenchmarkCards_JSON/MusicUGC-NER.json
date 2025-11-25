@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MusicUGC-NER (User-Generated Content Named Entity Recognition in Music)",
+    "abbreviation": "MusicUGC-NER",
+    "overview": "A novel dataset for named entity recognition (NER) of music entities in user-generated content, collected from platforms like Reddit and YouTube, and benchmarked using large language models (LLMs) in an in-context learning (ICL) setup.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": null,
+    "resources": [
+      "https://github.com/progsi/YTUnCoverLLM"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of this benchmark is to evaluate the performance of large language models (LLMs) for named entity recognition in the context of music entities found in user-generated content.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Named Entity Recognition"
+    ],
+    "limitations": "The dataset focuses on western popular music and lacks broad representation of covers from other regions; gender diversity cannot be ensured based on available metadata.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "A union of datasets containing YouTube video titles and Reddit posts regarding music, specifically annotated for named entity recognition tasks.",
+    "size": "609 annotated items",
+    "format": "JSON",
+    "annotation": "Manual annotation by experts with a high agreement (Cohen’s Kappa of 0.93)."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score"
+    ],
+    "calculation": "F1 scores calculated per entity class (Work of Art and Artist) and averaged for a macro score.",
+    "interpretation": "Higher F1 scores indicate better performance in identifying music entities.",
+    "baseline_results": "BERT and RoBERTa were used as strong baselines for comparison against the LLMs in the study.",
+    "validation": "Five-fold cross-validation was performed to validate the benchmark."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack",
+            "Hallucination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset does not guarantee gender diversity.",
+    "harm": [
+      "The benchmark aims to detect performance issues concerning unseen entities and typographical errors in user-generated content."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Publicly released under applicable licenses but specifics not stated.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

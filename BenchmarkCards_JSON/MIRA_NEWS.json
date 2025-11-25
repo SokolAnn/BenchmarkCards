@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MIRA NEWS: Dataset and Benchmarks for Multi-Resource-Assisted News Summarization",
+    "abbreviation": "MIRA NEWS",
+    "overview": "MIRA NEWS introduces a new task, Multi-Resource-Assisted News summarization, along with a novel dataset that collects multiple assisting news articles to mitigate extrinsic hallucinations in single-document summarization.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/XinnuoXu/MiRANews"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a dataset and benchmark for evaluating the effectiveness of multi-resource-assisted news summarization.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Summarization"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from newser.com, which aggregates news articles with assisting documents.",
+    "size": "150,000 examples",
+    "format": "N/A",
+    "annotation": "Automatically collected and structured data from news articles."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "ROUGE",
+      "BertScore",
+      "SFweights"
+    ],
+    "calculation": "Metrics are calculated based on generated summaries compared to ground truth summaries, and the presence of extrinsic facts is assessed using SFweights.",
+    "interpretation": "Higher ROUGE scores indicate better alignment with human-authored summaries, while SFweights scores indicate lower levels of extrinsic hallucinations.",
+    "baseline_results": "BART and HT models with various configurations show varying performance on benchmark tasks.",
+    "validation": "Performance evaluated by comparing to baseline results and human-authored summaries."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

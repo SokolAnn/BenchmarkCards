@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PerfCurator",
+    "abbreviation": "N/A",
+    "overview": "PerfCurator is a repository mining tool designed to identify performance-related bug-fix commits at scale. It employs the PcBERT-KD model to classify commits, producing a large-scale dataset of performance-related bug-fixes across multiple programming languages.",
+    "data_type": "commit messages",
+    "domains": [
+      "Software Engineering"
+    ],
+    "languages": [
+      "Python",
+      "C++",
+      "Java"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/user/repo"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a large-scale curated dataset of performance-related commits, aiding in the development of better performance bug detection tools.",
+    "audience": [
+      "Software Engineers",
+      "Researchers in Software Performance"
+    ],
+    "tasks": [
+      "Performance Bug Detection"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "GitHub repositories",
+    "size": "408,500 commits",
+    "format": "N/A",
+    "annotation": "Annotated using heuristic supervision and knowledge distillation"
+  },
+  "methodology": {
+    "methods": [
+      "Commit classification using PcBERT-KD",
+      "Repository mining"
+    ],
+    "metrics": [
+      "F1 Score"
+    ],
+    "calculation": "F1 Score calculated based on precision and recall of performance commits.",
+    "interpretation": "Higher F1 Scores indicate better performance in identifying performance-related commits.",
+    "baseline_results": "Keyword-filtering baseline achieved an F1 Score of 0.59.",
+    "validation": "Validated through manual review of a statistically significant sample of commits."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

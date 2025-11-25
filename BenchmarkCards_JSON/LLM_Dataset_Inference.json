@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LLM Dataset Inference",
+    "abbreviation": "N/A",
+    "overview": "This paper introduces a new dataset inference method designed to accurately identify the datasets used to train large language models, addressing concerns about copyright and training data attribution.",
+    "data_type": "text sequences",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Membership Inference",
+      "Dataset Inference"
+    ],
+    "resources": [
+      "https://github.com/pratyushmaini/llm_dataset_inference/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective is to provide a framework for identifying if specific datasets were used in the training of large language models.",
+    "audience": [
+      "ML Researchers",
+      "AI Ethics Professionals",
+      "Legal Practitioners"
+    ],
+    "tasks": [
+      "Dataset Attribution"
+    ],
+    "limitations": "The method requires that the training and validation sets must be IID, and the validation set must remain completely private.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Pythia models trained on the Pile dataset.",
+    "size": "20 subsets of PILE dataset",
+    "format": "text",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Membership Inference Attacks",
+      "Statistical Testing",
+      "Linear Regression"
+    ],
+    "metrics": [
+      "p-values"
+    ],
+    "calculation": "Use statistical tests on membership scores derived from multiple MIAs to determine significance.",
+    "interpretation": "Lower p-values indicate a stronger likelihood that the dataset was used in training the model.",
+    "baseline_results": null,
+    "validation": "Validated by comparing results across multiple subsets of the Pile dataset."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Addresses privacy concerns related to Copyright data inclusion.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

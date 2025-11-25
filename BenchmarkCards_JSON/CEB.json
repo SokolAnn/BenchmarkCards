@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CEB (Compositional Evaluation Benchmark)",
+    "abbreviation": "CEB",
+    "overview": "CEB is a Compositional Evaluation Benchmark that evaluates biases in large language models (LLMs) across different social groups and tasks, aiming to provide a comprehensive assessment of fairness and bias.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/SongW-SW/CEB"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of CEB is to assess biases in large language models from various perspectives through a comprehensive suite of datasets.",
+    "audience": [
+      "ML Researchers",
+      "Policy Makers",
+      "Model Developers",
+      "Ethics Boards"
+    ],
+    "tasks": [
+      "Bias Evaluation",
+      "Text Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated datasets designed for bias evaluation of LLMs covering different social groups (age, gender, race, religion) and various tasks.",
+    "size": "11,004 samples",
+    "format": "Various formats including text and tabular forms as specified in tasks.",
+    "annotation": "Datasets are constructed from existing datasets with additional samples generated using large language models."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "LLM-based evaluation"
+    ],
+    "metrics": [
+      "Micro-F1 Score",
+      "Demographic Parity (DP)",
+      "Equalized Odds (EO)",
+      "Unfairness Score"
+    ],
+    "calculation": "Metrics are calculated based on the classification results of bias evaluation across different social groups and bias types.",
+    "interpretation": "Scores indicate the level of bias, with lower scores indicating better performance (less bias).",
+    "baseline_results": "N/A",
+    "validation": "Extensive experiments were conducted to validate the performance of LLMs across various tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on affected communities"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Four social groups analyzed: age, gender, race, religion.",
+    "harm": [
+      "Reinforcement of existing biases",
+      "Misinterpretation of evaluation results"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Licensed under the CC License to ensure open-source accessibility.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

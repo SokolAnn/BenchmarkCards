@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "RAGPPI (RAG Benchmark for Protein-Protein Interactions in Drug Discovery)",
+    "abbreviation": "RAGPPI",
+    "overview": "RAGPPI is a factual question-answer benchmark of 4,420 question-answer pairs that focuses on the potential biological impacts of protein-protein interactions (PPIs).",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/Youngseung/RAGPPI",
+      "https://github.com/youngseungjeon/RAGPPI"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To support the research community in advancing RAG systems for drug discovery QA solutions.",
+    "audience": [
+      "ML Researchers",
+      "Biomedical Researchers",
+      "Drug Discovery Scientists"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "The number of samples may still be insufficient to cover the full range of biological impacts of PPIs.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from expert-driven data annotation and generated with an ensemble auto-evaluation LLM.",
+    "size": "4,420 question-answer pairs",
+    "format": "JSON",
+    "annotation": "Expert-driven data annotation combined with automated labeling."
+  },
+  "methodology": {
+    "methods": [
+      "Expert evaluation",
+      "Auto-evaluation with ensemble model"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Predictions from three sub-models are aggregated through majority voting to assign labels.",
+    "interpretation": "Scores reflect the factual correctness of answers generated for protein-protein interaction questions.",
+    "baseline_results": "Achieved an accuracy of 93.71% in auto-evaluation.",
+    "validation": "Validated through user studies with domain experts."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

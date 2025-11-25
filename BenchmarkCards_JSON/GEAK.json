@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "GEAK (Generating Efficient AI-centric GPU Kernels)",
+    "abbreviation": "GEAK",
+    "overview": "GEAK is a framework that leverages cutting-edge LLMs to generate performant Triton code specifically for AMD GPUs, including the AMD Instinct ™MI300X and MI250. We introduce two benchmark suites for evaluating AI-generated Triton kernels, enabling measurement of both execution correctness and runtime performance of generated kernels.",
+    "data_type": "GPU kernel code",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "TritonBench",
+      "KernelBench"
+    ],
+    "resources": [
+      "https://github.com/user/repo1",
+      "https://github.com/user/repo2"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To push the frontier of AI-assisted code generation by combining state-of-the-art LLMs with structured reasoning and feedback loops for automating Triton kernel development.",
+    "audience": [
+      "Researchers",
+      "Practitioners",
+      "Developers"
+    ],
+    "tasks": [
+      "Code Generation",
+      "Performance Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Triton kernels adapted from TritonBench-G and new kernels from open-source AMD ROCm repositories.",
+    "size": "214 kernels",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Unit testing"
+    ],
+    "metrics": [
+      "Call Accuracy",
+      "Execution Accuracy",
+      "Speedup"
+    ],
+    "calculation": "Call Accuracy is calculated as the fraction of AI-generated kernels that can compile and run without errors. Execution Accuracy is the percentage of AI-generated kernels that satisfy all unit tests. Speedup is the ratio of median reference kernel latency to generated kernel latency.",
+    "interpretation": "Higher accuracy and speedup values indicate better performance of the generated kernels.",
+    "baseline_results": null,
+    "validation": "The benchmarks were validated by testing multiple kernels and comparing the results against baseline standards."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Multimodal Academic Cover benchmark (MAC)",
+    "abbreviation": "MAC",
+    "overview": "MAC is a live benchmark that dynamically evolves alongside scientific advancements to evaluate multimodal large language models' (MLLMs) scientific understanding capabilities, leveraging over 25,000 image-text pairs from leading scientific journals.",
+    "data_type": "image-text pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMMU"
+    ],
+    "resources": [
+      "https://github.com/mhjiang0408/MAC Bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the MAC benchmark is to continuously assess MLLMs' ability to comprehend implicit scientific concepts in cover images and associated stories.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Image2Text",
+      "Text2Image"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Sourced from the official websites of leading scientific journals including Nature, Science, and Cell.",
+    "size": "25,000 image-text pairs",
+    "format": "N/A",
+    "annotation": "Curated through live curation mechanisms by experts."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Expected Calibration Error (ECE)",
+      "Negative Log-Likelihood (NLL)",
+      "Root Mean Square Error (RMS)"
+    ],
+    "calculation": "Measured based on model predictions against the correct image-text pair associations.",
+    "interpretation": "Accuracy reflects models' ability to identify correct scientific concepts while ECE measures prediction reliability.",
+    "baseline_results": null,
+    "validation": "Annual performance assessments to gauge evolving comprehension and reasoning of MLLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Privacy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Compliance with open access policies of journal publishers.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

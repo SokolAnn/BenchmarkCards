@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "VERI (Visual Emergency Recognition Dataset)",
+    "abbreviation": "VERI",
+    "overview": "VERI is a diagnostic benchmark designed to evaluate Vision-Language Models (VLMs) on their ability to distinguish between genuine emergency situations and visually similar but safe scenarios. It comprises 200 synthetic images and 50 real-world images, organized into three categories: Accidents & Unsafe Behaviors, Personal Medical Emergencies, and Natural Disasters.",
+    "data_type": "image pairs",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/Dasool/VERI-Emergency"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the performance of VLMs in safety-critical scenarios and to assess their reliability in distinguishing genuine emergencies from visually similar yet safe situations.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Risk Identification",
+      "Emergency Response"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "VERI dataset includes synthetic images created via a multi-stage process and validated with real-world images.",
+    "size": "250 images",
+    "format": "N/A",
+    "annotation": "Images were annotated through multiple rounds of human verification and descriptive captions were generated for each image pair."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Precision, recall, and F1 scores were computed based on human-annotated binary ground truth labels.",
+    "interpretation": "High precision indicates fewer false positives, while high recall indicates good detection of true emergencies. A balance between both metrics is ideal for assessing VLMs in emergency recognition.",
+    "baseline_results": "N/A",
+    "validation": "The benchmark was validated through comparative evaluations with both synthetic and real-world pairs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on affected communities"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

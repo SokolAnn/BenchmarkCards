@@ -1,0 +1,101 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FinEval (Financial Domain Knowledge Evaluation Benchmark)",
+    "abbreviation": "FinEval",
+    "overview": "FinEval is designed to evaluate the financial domain knowledge and practical abilities of large language models (LLMs) with a focus on various aspects of finance including academic knowledge, industry knowledge, security knowledge, and agent capabilities.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Finance"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "MMLU (Massive Multitask Language Understanding)",
+      "BIG-bench",
+      "FinQA (Financial Question Answering)",
+      "CFLUE (Chinese Financial Language Understanding Evaluation)"
+    ],
+    "resources": [
+      "https://github.com/SUFE-AIFLM-Lab/FinEval"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of FinEval is to provide a comprehensive benchmark for evaluating the capabilities of large language models in the Chinese financial domain, particularly focusing on financial security and agent tasks.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Financial Experts"
+    ],
+    "tasks": [
+      "Financial Academic Knowledge Evaluation",
+      "Financial Industry Knowledge Evaluation",
+      "Financial Security Knowledge Evaluation",
+      "Financial Agent Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Publicly accessible mock exams and adaptations from various financial websites, created and reviewed by financial experts.",
+    "size": "8,351 questions",
+    "format": "N/A",
+    "annotation": "Questions were adapted from existing exams and manually reviewed by financial professionals."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics such as Accuracy are calculated based on the proportion of correct answers out of the total questions in each task category.",
+    "interpretation": "A higher score indicates better performance in evaluating financial knowledge and abilities of the models being tested.",
+    "baseline_results": "Claude 3.5-Sonnet achieved the highest weighted average score of 72.9 under zero-shot settings.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis of performance across different demographic groups in financial knowledge.",
+    "harm": [
+      "Inaccurate financial advice leading to poor investment decisions."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

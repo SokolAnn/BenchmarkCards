@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Sequential-NIAH: A Needle-In-A-Haystack Benchmark for Extracting Sequential Needles from Long Contexts",
+    "abbreviation": "Sequential-NIAH",
+    "overview": "The Sequential-NIAH benchmark is designed to evaluate the capability of large language models (LLMs) to extract sequential information items, known as needles, from long contexts. It includes three needle generation pipelines: synthetic-temporal, real-temporal, and real-logical orders, with context lengths ranging from 8K to 128K, comprising 14,000 samples.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "∞Bench",
+      "L-Eval",
+      "LongBench",
+      "LongEval",
+      "LooGLE",
+      "Zero-SCROLLS",
+      "FactGuard"
+    ],
+    "resources": [
+      "https://github.com/miraclefish/Sequential-NIAH-Benchmark.git",
+      "https://huggingface.co/datasets/yuyijiong/LongData-Corpus"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess LLMs' ability to retrieve sequential information from long contexts in realistic scenarios.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Information Retrieval"
+    ],
+    "limitations": "Model evaluations may be biased by the dataset's domain, and unoptimized API parameters could affect performance and fairness.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Synthetic and real data generated for LLM evaluation.",
+    "size": "14,000 samples (10,000 for training, 2,000 for development, 2,000 for testing)",
+    "format": "CSV",
+    "annotation": "The data is annotated using an evaluation model trained on synthetic data."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Metrics are calculated based on the comparison of LLM-generated answers with ground truth answers.",
+    "interpretation": "Higher accuracy indicates better capability to extract and order retrieved information.",
+    "baseline_results": "The best model achieved a maximum accuracy of 63.50% on the test set.",
+    "validation": "The evaluation model achieved an accuracy of 99.49% in training on synthetic data."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

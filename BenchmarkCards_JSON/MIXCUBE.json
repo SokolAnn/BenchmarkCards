@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MIXCUBE (Mixed Culture Benchmark)",
+    "abbreviation": "MIXCUBE",
+    "overview": "MIXCUBE is a Mixed Culture Benchmark dataset of 2.5k images of food, festivals, and clothing, labeled with the culture of origin, designed to evaluate cultural bias in multi-modal large language models (MLLMs).",
+    "data_type": "image",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Azerbaijani",
+      "Korean",
+      "Myanmar"
+    ],
+    "similar_benchmarks": [
+      "Culturally-diverse multilingual visual question answering benchmark"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/kyawyethu/MixCuBe"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the robustness of multi-modal large language models (MLLMs) and their cultural awareness and bias with cross-cultural perturbed data across five cultures.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Country Identification",
+      "Cultural Marker Identification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Images collected via web scraping and manual searches, ensuring cultural markers' authenticity.",
+    "size": "2,500 images",
+    "format": "N/A",
+    "annotation": "Images are labeled with culture of origin and food names, with generated images vetted through automated and manual checks."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy is quantified based on the model's correctness in identifying the country or cultural markers.",
+    "interpretation": "Higher accuracy indicates better cultural recognition by the model.",
+    "baseline_results": "N/A",
+    "validation": "Models evaluated using both original and synthesized images to assess bias."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Reinforcement of stereotypes",
+      "Cultural misrepresentation"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

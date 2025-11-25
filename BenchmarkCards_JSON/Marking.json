@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Marking",
+    "abbreviation": "N/A",
+    "overview": "Marking is a novel grading task that enhances automated grading systems by analyzing student responses and providing visual highlights of correct, incorrect, and irrelevant segments while detecting omissions from gold answers.",
+    "data_type": "student response annotations",
+    "domains": [
+      "Natural Language Processing",
+      "Education"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/luffycodes/marking"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a more detailed and informative assessment method for automated grading beyond traditional binary scoring.",
+    "audience": [
+      "Educational Researchers",
+      "AI Researchers",
+      "Educators"
+    ],
+    "tasks": [
+      "Grading",
+      "Natural Language Inference"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "BioMarking dataset curated by biology Subject Matter Experts",
+    "size": "318 student responses",
+    "format": "N/A",
+    "annotation": "Annotated by Subject Matter Experts based on gold standard answers"
+  },
+  "methodology": {
+    "methods": [
+      "Transformer models (BERT, RoBERTa) fine-tuning"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Accuracy"
+    ],
+    "calculation": "F1 Score calculated for each category: entailment, contradiction, neutral, and omission using precision and recall.",
+    "interpretation": "Higher F1 scores indicate better model performance in accurately assessing student responses.",
+    "baseline_results": "RoBERTa-large achieved an F1 score of 0.762 in the Error-focused setting.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

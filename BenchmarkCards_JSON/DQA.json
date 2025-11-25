@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Driving QA Dataset",
+    "abbreviation": "DQA",
+    "overview": "The paper introduces a dataset of 160,000 question-answering pairs derived from 10,000 driving scenarios, designed to improve context understanding in driving situations using a multimodal LLM architecture that merges vectorized numeric modalities with a pre-trained LLM.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Autonomous Driving",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/wayveai/Driving-with-LLMs"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective is to facilitate advancements in the field of autonomous driving by enabling question-answering capabilities relevant to driving scenarios.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset consists of question-answer pairs generated using a structured language generator from a custom-built 2D simulator and an RL agent.",
+    "size": "160,000 pairs",
+    "format": "JSON",
+    "annotation": "Automatically generated using a language model (GPT-3.5) acting as a professional driving instructor."
+  },
+  "methodology": {
+    "methods": [
+      "Automatic annotation using GPT",
+      "Evaluation using expert LLM grader"
+    ],
+    "metrics": [
+      "Mean Absolute Error",
+      "Accuracy"
+    ],
+    "calculation": "Metrics are calculated based on evaluation of driving QA tasks and action prediction tasks.",
+    "interpretation": "Performance in driving tasks is evaluated based on the number of cars/pedestrians detected and the accuracy of action predictions.",
+    "baseline_results": "The benchmark provides initial evaluation results using a separate evaluation set.",
+    "validation": "The driving QA outputs and predictions are validated using both automated grading and human grading."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": []
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

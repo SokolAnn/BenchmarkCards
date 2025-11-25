@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "KMMLU-R EDUX and KMMLU-PRO: A Professional Korean Benchmark Suite for LLM Evaluation",
+    "abbreviation": "KMMLU-R EDUX and KMMLU-PRO",
+    "overview": "The paper introduces KMMLU-R EDUX and KMMLU-PRO, two benchmarks designed to evaluate Korean expert-level knowledge and professional licensure exams, respectively, focusing on real-world applicability of large language models in various professional domains.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Korean"
+    ],
+    "similar_benchmarks": [
+      "MMLU (Massive Multitask Language Understanding)"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/LGAI-EXAONE/KMMLU-Redux",
+      "https://huggingface.co/datasets/LGAI-EXAONE/KMMLU-Pro"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide rigorous benchmarks addressing professional knowledge in Korea and evaluate the performance of large language models.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "The benchmarks are limited to text-only and multiple-choice questions, restricting the evaluation of real-world licensure exams that may include non-textual modalities.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Korean National Technical Qualification exams and Korean National Professional Licensure exams",
+    "size": "2,587 examples for KMMLU-R EDUX, 2,822 examples for KMMLU-PRO",
+    "format": "JSON",
+    "annotation": "Annotated by human experts to ensure quality and reduce contamination."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Pass Rate in Licensure Exams"
+    ],
+    "calculation": "Metrics were calculated based on model performance against the benchmarks with specific passing criteria set for licensure exams.",
+    "interpretation": "A model must score at least 40% in each subject and achieve an overall average of 60% to pass the exams.",
+    "baseline_results": null,
+    "validation": "Models were validated against real-world professional exams to ensure alignment with human standards."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All data used in the benchmarks are publicly available or collected from official licensing materials released by government or professional institutions.",
+    "data_licensing": "CC-BY-NC-ND 4.0 license",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

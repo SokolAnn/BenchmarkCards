@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MEDHALU (Medical Hallucination Detection Benchmark)",
+    "abbreviation": "MEDHALU",
+    "overview": "MEDHALU is a medical hallucination detection benchmark featuring diverse healthcare queries and corresponding LLM responses, annotated with hallucination types and text spans.",
+    "data_type": "question-answer pairs",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://arxiv.org/abs/2409.19492"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To study LLM hallucinations in real-world healthcare queries from patients and improve detection mechanisms.",
+    "audience": [
+      "ML Researchers",
+      "Healthcare Professionals",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Hallucination Detection"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Derived from HealthQA, LiveQA, and MedicationQA datasets, featuring healthcare questions answered by LLMs.",
+    "size": "2,077 examples",
+    "format": "JSON",
+    "annotation": "Labeled by medical experts annotating hallucination types and text spans."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "Metrics are calculated based on the performance of LLMs and medical experts in identifying hallucinations.",
+    "interpretation": "A higher F1 Score indicates better performance in hallucination detection.",
+    "baseline_results": null,
+    "validation": "Expert annotators provided evaluations, achieving a high Cohen’s Kappa score, confirming reliability."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Participants provided informed consent prior to their participation.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Ethics committee approval was received for this research.",
+    "compliance_with_regulations": "N/A"
+  }
+}

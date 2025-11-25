@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TimeShift",
+    "abbreviation": "N/A",
+    "overview": "TimeShift is a novel framework and dataset designed to evaluate large language models' (LLMs) ability to handle time-sensitive facts, comprising over 8,000 events annotated with day-level granularity from 2018 to 2024, sourced globally across various domains.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/hereldav/TimeAware"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a structured framework for testing models' temporal awareness by evaluating their ability to correctly associate events with their respective time periods.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Temporal Reasoning",
+      "Question Answering"
+    ],
+    "limitations": "The dataset is exclusively in English, which may limit applicability to multilingual LLMs. It primarily focuses on open-source models requiring log probability access for evaluation.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed using a custom web-scraping pipeline from major global news outlets, academic journals, and government publications.",
+    "size": "8,000 events",
+    "format": "N/A",
+    "annotation": "Automated filtering mechanisms cross-referenced timestamps and removed duplicates, while heuristic-based checks discarded ambiguous events."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Stability"
+    ],
+    "calculation": "Accuracy is evaluated based on the model's probability of correctly predicting the year, month, and day of an event.",
+    "interpretation": "A higher accuracy percentage indicates a better performance in associating a given event with its correct temporal context.",
+    "baseline_results": null,
+    "validation": "Evaluation is performed by measuring log probabilities against known time-sensitive facts."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset includes a diverse range of events but may have an overrepresentation of Western events.",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

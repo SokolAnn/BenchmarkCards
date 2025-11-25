@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "vTikZ",
+    "abbreviation": "N/A",
+    "overview": "The vTikZ benchmark is designed to evaluate the ability of Large Language Models (LLMs) to customize code while preserving coherent visual outcomes. It consists of carefully curated TikZ editing scenarios and a reviewing tool that assesses correctness based on visual feedback.",
+    "data_type": "code customization tasks",
+    "domains": [
+      "Software Engineering",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/CharlyR/vtikz",
+      "https://github.com/IV2C/VTikZ"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate LLMs in customizing TikZ code with visual results.",
+    "audience": [
+      "Software Engineers",
+      "AI Researchers"
+    ],
+    "tasks": [
+      "Code Customization"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset consists of 100 manually curated TikZ code customization tasks derived from various TikZ code sources.",
+    "size": "100 examples",
+    "format": "JSON",
+    "annotation": "Annotations were created based on human evaluation of LLM-generated variants."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Compile Metric",
+      "Location Metric",
+      "Success Customization Metric",
+      "Line Metric",
+      "Similarity Metric"
+    ],
+    "calculation": "Metrics are calculated based on evaluations comparing LLM outputs with reference solutions.",
+    "interpretation": "Metrics provide a way to assess the success of code modifications based on visual and textual criteria.",
+    "baseline_results": null,
+    "validation": "The benchmark was validated through human feedback and systematic evaluation of generated outputs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": [
+      "Incorrect visual outputs may mislead users."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

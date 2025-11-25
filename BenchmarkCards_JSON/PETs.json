@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Potentially Euphemistic Terms (PETs) corpus",
+    "abbreviation": "PETs",
+    "overview": "We present a corpus of potentially euphemistic terms (PETs) along with example texts from the GloWbE corpus. Additionally, we present a subcorpus of texts where these PETs are not being used euphemistically. The resources are intended to support research on euphemism detection, identification, and generation in Natural Language Processing.",
+    "data_type": "text (sentences containing Potentially Euphemistic Terms: euphemistic and literal usages)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Corpus of Global Web-Based English (GloWbE)",
+      "TweetEval"
+    ],
+    "resources": [
+      "https://github.com/marsgav/euphemism_project",
+      "https://arxiv.org/abs/2205.02728"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To create and analyze a corpus of Potentially Euphemistic Terms (PETs) with euphemistic and literal sentence usages to facilitate research on automatic euphemism detection, identification, and generation in NLP.",
+    "audience": [
+      "Natural Language Processing researchers",
+      "Computational linguistics researchers"
+    ],
+    "tasks": [
+      "Euphemism Detection",
+      "Euphemism Identification",
+      "Sentiment Analysis",
+      "Offensive Language Detection"
+    ],
+    "limitations": "Euphemisms are inherently ambiguous leading to inter-annotator disagreement; the PET list is not definitive and may change over time (the \"euphemism treadmill\"); the corpus is derived from only the US dialect portion of GloWbE.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Sentences extracted from the US portion of the Corpus of Global Web-Based English (GloWbE). The PET list was compiled from euphemism dictionaries, English learner websites, online articles, prior studies (e.g., Kapron-King and Xu 2021; Rawson 1981; Holder 2008), and author linguistic knowledge.",
+    "size": "1,965 total sentences (1,382 euphemistic sentences; 583 literal sentences); 129 PETs present in the corpus. Initial compiled PET list: 184 PETs; terminology list with morphological variations: 284 terms.",
+    "format": "N/A",
+    "annotation": "Manual annotation: each extracted row was annotated by the authors as '1' (euphemistic) or '0' (non-euphemistic). A sample of 500 sentences was annotated by graduate student language experts who provided labels, interpretations, and a confidence score (1-3)."
+  },
+  "methodology": {
+    "methods": [
+      "Sentence extraction using spaCy PhraseMatcher",
+      "Manual annotation by authors and graduate student annotators",
+      "Automated sentiment and offensiveness scoring using a roBERTa-based model fine-tuned on Tweets and evaluated with the TweetEval framework"
+    ],
+    "metrics": [
+      "Relative percent change in sentiment probabilities (Neutral, Positive, Negative)",
+      "Relative percent change in offensiveness probability (Not-Offensive, Offensive)",
+      "Observed percent agreement",
+      "Krippendorff's alpha"
+    ],
+    "calculation": "Sentiment and offensiveness scores were computed for each sample using a roBERTa-based model, then recomputed after substituting each euphemism with its literal meaning. Scores (probabilities) before and after substitution were compared using relative percent change. Annotation reliability was measured using observed agreement and Krippendorff's alpha.",
+    "interpretation": "An increase in negative and offensive scores after substitution supports the assumption that euphemisms soften language. Inter-annotator reliability (Krippendorff's alpha = 0.415) was classified as 'fair', indicating annotation ambiguity for euphemisms.",
+    "baseline_results": "Model label average percent changes after substitution: Sentiment Neutral -2.6%, Positive -11.3%, Negative 54.6%. Offensiveness Not-Offensive -6.6%, Offensive 30.0%. Annotation reliability: Average observed percent agreement 71.74%, Krippendorff's alpha 0.415.",
+    "validation": "Model evaluation used the TweetEval framework for the roBERTa-based sentiment/offensiveness model. Annotation reliability was validated using observed agreement and Krippendorff's alpha."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Pick-Double Caption dataset",
+    "abbreviation": "N/A",
+    "overview": "The Pick-Double Caption dataset provides distinct captions for preferred and less preferred images to mitigate issues of conflict distribution and irrelevant prompts in image synthesis models.",
+    "data_type": "image-caption pairs",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Pick-a-Pic v2"
+    ],
+    "resources": [
+      "https://github.com/username/repo"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a benchmark for optimizing preference alignment in diffusion models with distinct captions.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Image Generation"
+    ],
+    "limitations": "The dataset may contain out-of-distribution captions, which could affect model performance.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Derived from the Pick-a-Pic v2 dataset, modified to include distinct captions for images.",
+    "size": "20,000 instances",
+    "format": "N/A",
+    "annotation": "Captions generated using state-of-the-art captioning models."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Pickscore",
+      "HPSv2.1",
+      "CLIPscore",
+      "ImageReward",
+      "GenEval"
+    ],
+    "calculation": "Metrics are calculated based on performance evaluations against benchmark datasets.",
+    "interpretation": "Higher scores indicate better image quality and alignment with human preferences.",
+    "baseline_results": null,
+    "validation": "The dataset and methods were validated through comparative evaluation with existing models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset includes various prompts, but demographic factors of images are not explicitly analyzed.",
+    "harm": [
+      "Potential generation of biased content due to training data."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

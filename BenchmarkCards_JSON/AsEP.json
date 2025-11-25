@@ -1,0 +1,76 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "AsEP (Antibody-specific Epitope Prediction)",
+    "abbreviation": "AsEP",
+    "overview": "AsEP is the largest dataset of antibody-antigen complex structures, containing clustered epitope groups for developing and evaluating epitope prediction methods. The dataset provides an easy-to-use interface in Python with graph representations of antibody-antigen complexes.",
+    "data_type": "graph",
+    "domains": [
+      "Healthcare",
+      "Computer Science"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/biochunan/AsEP-dataset",
+      "https://doi.org/10.5281/zenodo.11495514"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To establish a benchmark dataset for epitope prediction in antibody-antigen interactions and facilitate research in this area.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts",
+      "Biochemists"
+    ],
+    "tasks": [
+      "Epitope Prediction",
+      "Graph-based Link Prediction"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset was sourced from the Antibody Database (AbDb) and processed from original PDB files.",
+    "size": "1,723 antibody-antigen complexes",
+    "format": "PDB, JSON",
+    "annotation": "Manually annotated with surface residues and CDR regions filtered from the original dataset."
+  },
+  "methodology": {
+    "methods": [
+      "Graph Neural Networks",
+      "Node Classification",
+      "Link Prediction"
+    ],
+    "metrics": [
+      "Matthew's Correlation Coefficient (MCC)",
+      "Precision",
+      "Recall",
+      "F1 Score",
+      "Area Under ROC Curve (AUC-ROC)"
+    ],
+    "calculation": "Metrics are calculated using standard formulas for binary classification, including true positives, false positives, etc.",
+    "interpretation": "MCC values close to 1 indicate better model performance, while lower values suggest poor predictions.",
+    "baseline_results": "Performance benchmarked using several existing methods with notable improvements using the introduced method WALLE.",
+    "validation": "Tested using a random split based on the ratio of epitope to antigen surface residues and a split by epitope groups."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

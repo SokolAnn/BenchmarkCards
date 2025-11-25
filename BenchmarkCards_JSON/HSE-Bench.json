@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "HSE-Bench",
+    "abbreviation": "N/A",
+    "overview": "HSE-Bench is the first benchmark dataset designed to evaluate the HSE compliance assessment capabilities of large language models (LLMs), comprising over 1,000 manually curated questions drawn from regulations, court cases, safety exams, and fieldwork videos using an IRAC reasoning framework.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Healthcare",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "LEGALBENCH",
+      "MEDCALC-BENCH",
+      "BEACON"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/Joysouo/hse-bench",
+      "https://github.com/mengqiwang1/hse-bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a systematic framework for benchmarking, performance evaluation, and advancing the application of LLMs in HSE compliance assessment.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset instances are created from regulations, court cases, safety exams, and fieldwork videos gathered from multiple authoritative sources.",
+    "size": "1,020 questions",
+    "format": "JSON",
+    "annotation": "Manually curated and reviewed by experts."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "AUC-ROC"
+    ],
+    "calculation": "Accuracy is the proportion of correct answers among total questions; AUC-ROC measures the model’s ability to rank the correct answer higher than incorrect ones.",
+    "interpretation": "Higher scores indicate better model performance in HSE compliance assessment.",
+    "baseline_results": "N/A",
+    "validation": "Benchmark results were validated through evaluation on 12 state-of-the-art LLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC BY 4.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

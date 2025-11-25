@@ -1,0 +1,82 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "GUICourse",
+    "abbreviation": "N/A",
+    "overview": "GUICourse is a series of datasets aimed at training visual-based GUI agents using general Vision Language Models (VLMs), focusing on tasks like enhancing OCR and grounding abilities and enriching GUI knowledge.",
+    "data_type": "question-answering pairs, navigation instructions, webpage screenshots",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "MiniWoB++",
+      "Rico",
+      "WebShop"
+    ],
+    "resources": [
+      "https://github.com/RUCBM/GUICourse"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To improve the training of visual-based GUI agents by providing comprehensive datasets that enhance OCR, grounding abilities, and GUI knowledge.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "GUI Navigation",
+      "Question Answering",
+      "Image-Text Interaction"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Annotated dataset derived from real-world GUI interactions and web page data, including online scraping and human verification processes.",
+    "size": "10,000,000 samples for GUIEnv, 67,000 samples for GUIAct, and 44,000 single-turn QA pairs for GUIChat.",
+    "format": "JSON, CSV",
+    "annotation": "Combination of LLM-based auto-annotation (GPT-4) and human annotation for quality verification."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Type Exact Match Score",
+      "Step Success Rate",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on the accuracy of predicted actions and their relation to ground truth actions in defined scenarios.",
+    "interpretation": "Higher success rates indicate better model performance on the navigation and understanding tasks.",
+    "baseline_results": "Performance results compared against existing VLMs, showcasing improvements on GUI navigation tasks.",
+    "validation": "The dataset was validated through manual checks and automated evaluation methods to ensure quality and usability."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Privacy",
+      "Robustness",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "No personally identifiable information is collected; dataset is derived from publicly accessible website screenshots.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

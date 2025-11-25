@@ -1,0 +1,99 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Text2Vis",
+    "abbreviation": "N/A",
+    "overview": "Text2Vis is a benchmark designed to assess text-to-visualization models covering over 20 chart types and diverse data science queries. It features 1,985 samples, each with data tables, natural language queries, short answers, visualization code, and annotated charts.",
+    "data_type": "multimodal",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "VisEval",
+      "WikiSQL",
+      "nvBench",
+      "ADVISor"
+    ],
+    "resources": [
+      "https://github.com/vis-nlp/Text2Vis"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive benchmark for evaluating large language models in real-world text-to-visualization tasks.",
+    "audience": [
+      "ML Researchers",
+      "Data Scientists",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Data Visualization Generation",
+      "Multimodal Reasoning"
+    ],
+    "limitations": "Although Text2Vis provides a comprehensive benchmark for evaluating text-to-visualization generation models, it may not fully capture the range of complexities found in specialized domains.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated from various sources including Statista, Pew Research, Our World In Data, and OECD, with synthetic tables generated using LLMs.",
+    "size": "1,985 samples",
+    "format": "JSON",
+    "annotation": "Manually curated and annotated by experts in data science."
+  },
+  "methodology": {
+    "methods": [
+      "Automated evaluation",
+      "Model-based evaluation",
+      "Manual evaluation"
+    ],
+    "metrics": [
+      "Code Execution Success",
+      "Answer Match",
+      "Readability",
+      "Chart Correctness"
+    ],
+    "calculation": "The metrics are calculated based on predefined criteria, including matching generated answers to ground truth and visually evaluating generated charts.",
+    "interpretation": "A pass is considered when the code executes successfully, the answer matches the ground truth, and both readability and chart correctness scores are at least 3.5.",
+    "baseline_results": "Baseline model results vary; GPT-4o achieved a final pass rate of 26%, while improvements with the agentic framework increased this to 42%.",
+    "validation": "The benchmark was validated through automated evaluation across 11 models, with human evaluations conducted on a stratified sample of outputs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Extraction attack",
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis includes a diverse set of 60 countries with varying demographic contexts.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All datasets used in Text2Vis are publicly available and have been manually verified for accuracy.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

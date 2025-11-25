@@ -1,0 +1,105 @@
+# QG dataset for SBRCS (Story-Based Reading Comprehension Skills)
+
+## 📊 Benchmark Details
+
+**Name**: QG dataset for SBRCS (Story-Based Reading Comprehension Skills)
+
+**Overview**: We propose a new reading comprehension dataset that contains questions annotated with story-based reading comprehension skills (SBRCS), allowing for a more complete reader assessment. The paper studies Question Generation (QG) for reading comprehension where inferential questions are critical and proposes a two-step model (HTA-WTA) that can generate questions targeted to specific comprehension skills.
+
+**Data Type**: text (story passages and question–answer pairs)
+
+**Domains**:
+- Natural Language Processing
+- Education
+
+**Languages**:
+- English
+
+**Similar Benchmarks**:
+- SQuAD
+- CosmosQA
+
+**Resources**:
+- [Resource](https://arxiv.org/abs/2204.02908)
+- [Resource](https://www.gutenberg.org/)
+- [Resource](https://bluemoonpublishers.com/)
+- [Resource](https://www.reimaginedclassroom.com/)
+- [Resource](https://readingandwritingproject.org/)
+- [GitHub Repository](https://github.com/seanie12/neural-question-generation)
+- [Resource](https://www.scholastic.com/teachers/teaching-tools/book-lists/guided-reading-levels-o-p-book-list.html)
+
+## 🎯 Purpose and Intended Users
+
+**Goal**: Build a dataset of story-based reading comprehension questions annotated with fine-grained comprehension skills (SBRCS) and to enable generation of skill-targeted questions for reading comprehension assessment.
+
+**Target Audience**:
+- Educational application developers
+- Natural Language Processing researchers
+
+**Tasks**:
+- Question Generation
+- Reading Comprehension Assessment
+- Question Answering
+
+**Limitations**: Dataset is unbalanced across skills; a single annotator wrote questions per story (another reviewer validated) so inter-annotator agreement was not measured; dataset publication is pending and will be released for research purposes only.
+
+## 💾 Data
+
+**Source**: Stories collected from (1) public domain content (Gutenberg Project), (2) partnerships with Blue Moon Publishers and The Reimagined Classroom, and (3) authored by two professional writers. Questions and annotations written by 25 professional contributors (18 teachers, 7 graduate students).
+
+**Size**: 726 stories; 4,000 question–answer pairs; average 5.5 question–answer pairs per story; story lengths range from 1 sentence to 113 sentences.
+
+**Format**: N/A
+
+**Annotation**: Manual annotation by professional writers (25 contributors: 18 teachers, 7 graduate students). Each question labeled with one SBRCS skill and as Literal or Inferential. A second team member reviews each question-answer pair; a third reviewer resolves disagreements.
+
+## 🔬 Methodology
+
+**Methods**:
+- Automated evaluation using BLEURT, BLEU (1-4), ROUGE, METEOR
+- Manual human evaluation via Amazon Mechanical Turk (ratings for Answerability, Fluency, Grammaticality)
+- Few-shot experiments
+- Ablation tests
+
+**Metrics**:
+- BLEURT
+- BLEU-1
+- BLEU-2
+- BLEU-3
+- BLEU-4
+- ROUGE
+- METEOR
+- Human evaluation: Answerability (Ay), Fluency (Fy), Grammaticality (Gy)
+- F1 (per skill)
+
+**Calculation**: BLEURT (BLEURT-20) is used as the main metric (BERT-based, outputs primarily between 0.0 and 1.0); BLEU (1-4), ROUGE, and METEOR reported as standard MT/NLG metrics. Human evaluation: three Amazon Mechanical Turk workers per HIT (master qualification, workers in English-speaking countries), ratings on a 1-5 scale averaged across workers. F1 reported per skill in manual labeling experiment.
+
+**Interpretation**: Higher metric scores indicate better quality. BLEURT is treated as the primary semantic-similarity metric; BLEU measures n-gram overlap and may undercount semantically similar but lexically different questions. Human ratings (1-5) averaged to assess Answerability, Fluency, and Grammaticality.
+
+**Baseline Results**: BLEURT scores (percentages) on the collected dataset: Vanilla Seq2seq 8.42, NQG-Seq 11.13, NQG-Max 31.78, CGC-QG 29.28, AnswerQuest 29.15, One-Step 29.45, T5-WTA 32.96, HTA-WTA 34.82. (Full table with BLEU-1..4 and BLEURT reported in paper Table 2.)
+
+**Validation**: For HTA: validation on combined validation sets from SQuAD and CosmosQA. For the collected dataset: stratified sampling with random 10% of stories from each skill used for validation; test set sampled with 20% of stories per skill. Early stopping based on validation loss with patience 1.
+
+## ⚠️ Targeted Risks
+
+**Risk Categories**:
+- Bias
+- Privacy
+- Intellectual Property
+
+**Atlas Risks**:
+- **Fairness**: Data bias
+- **Privacy**: Personal information in data
+- **Intellectual Property**: Data usage rights restrictions, Copyright infringement
+
+**Potential Harm**: ['Generating biased questions about story characters', 'Toxic language', 'Hate speech', 'Bias against underrepresented groups']
+
+## 🔒 Ethical and Legal Considerations
+
+**Privacy And Anonymity**: Stories and created questions were manually examined to ensure there are no privacy or ethical concerns (e.g., toxic language, hate speech, bias).
+
+**Data Licensing**: Content distribution licenses were checked before use; dataset will be published only for research purposes.
+
+**Consent Procedures**: Writers were recruited via EyeRead outreach programs and compensated; Amazon Mechanical Turk workers were paid per HIT (each AMT worker received $0.41 USD per HIT, estimated 1 minute per HIT) and 'master' qualification was required. No explicit consent procedure beyond recruitment and compensation described.
+
+**Compliance With Regulations**: Not Applicable

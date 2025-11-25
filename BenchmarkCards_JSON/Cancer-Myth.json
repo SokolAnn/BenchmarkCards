@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Cancer-Myth",
+    "abbreviation": "N/A",
+    "overview": "Cancer-Myth is an expert-verified adversarial dataset of 585 cancer-related questions with false presuppositions, designed to evaluate LLM and medical agent performance in handling patient questions.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MedQA",
+      "HealthSearchQA"
+    ],
+    "resources": [
+      "https://cancermyth.github.io",
+      "https://github.com/Bill1235813/cancer-myth",
+      "https://huggingface.co/datasets/Cancer-Myth/Cancer-Myth"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To systematically evaluate LLM performance in responding to cancer-related patient questions containing false presuppositions.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Healthcare Professionals"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Adversarial dataset generated from real patient inquiries and myths related to cancer treatment.",
+    "size": "585 examples",
+    "format": "JSONL",
+    "annotation": "Manually reviewed and verified by hematology oncology physicians."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Presupposition Correction Score (PCS)",
+      "Presupposition Correction Rate (PCR)"
+    ],
+    "calculation": "Scores are calculated based on the model's ability to recognize and address false presuppositions in patient questions.",
+    "interpretation": "Higher scores indicate better performance by successfully identifying and correcting misconceptions.",
+    "baseline_results": "No model corrected false presuppositions more than 30% of the time.",
+    "validation": "Reviewed by hematology oncology physicians for relevance and reliability."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Misleading information could lead to incorrect health decisions for patients."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All data is fully synthetic and does not include real patient information.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

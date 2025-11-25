@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Chronicling Germany",
+    "abbreviation": "N/A",
+    "overview": "The Chronicling Germany dataset contains 801 annotated historical newspaper pages from the time period between 1617 and 1933, designed to enable the training of layout and OCR models for historic German-language newspapers.",
+    "data_type": "annotated newspaper pages",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision",
+      "Digital History"
+    ],
+    "languages": [
+      "German"
+    ],
+    "similar_benchmarks": [
+      "Europeana"
+    ],
+    "resources": [
+      "https://gitlab.uni-bonn.de/digital-history/Chronicling-Germany-Dataset",
+      "https://github.com/Digital-History-Bonn/Chronicling-Germany-Code"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To reduce the character error rate and improve the detection of individual elements of historical newspaper pages for research and machine learning purposes.",
+    "audience": [
+      "Historians",
+      "Machine Learning Researchers",
+      "Digital Humanists"
+    ],
+    "tasks": [
+      "Layout Detection",
+      "Optical Character Recognition (OCR)"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "801 historical newspaper pages annotated by student assistants with a background in history.",
+    "size": "801 pages",
+    "format": "PAGE-XML",
+    "annotation": "Manual annotation by experts"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Levenshtein distance"
+    ],
+    "calculation": "Metrics are calculated using pixel-wise comparisons for layout detection and character recognition accuracy for OCR.",
+    "interpretation": "Higher F1 scores indicate better accuracy in layout detection and OCR tasks.",
+    "baseline_results": "Initial tests show an F1 score for the paragraph class of 0.97 and a Levenshtein distance of 0.022 per character.",
+    "validation": "The dataset includes validation and test datasets split into in-distribution and out-of-distribution sets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Misinformation from OCR errors in historical text."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

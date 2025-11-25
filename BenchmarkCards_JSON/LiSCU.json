@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LiSCU (Literature Summary and Character Understanding)",
+    "abbreviation": "LiSCU",
+    "overview": "LiSCU is a new dataset of literature summaries paired with descriptions of characters that appear in them, designed to facilitate character-centric narrative understanding.",
+    "data_type": "literary summaries and character descriptions",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/fabrahman/char-centric-story"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To encourage research in character-centric narrative understanding through the introduction of a new dataset and tasks.",
+    "audience": [
+      "ML Researchers",
+      "Literary Scholars",
+      "NLP Practitioners"
+    ],
+    "tasks": [
+      "Character Identification",
+      "Character Description Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from various online study guides including Shmoop, SparkNotes, CliffsNotes, and LitCharts.",
+    "size": "1,708 literature summaries and 9,499 character descriptions",
+    "format": "N/A",
+    "annotation": "Descriptions were written by literary experts, typically teachers."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "BLEU Score",
+      "ROUGE-1",
+      "ROUGE-2",
+      "ROUGE-L",
+      "BERT-F1"
+    ],
+    "calculation": "Metrics are calculated using standard procedures for evaluating NLP tasks.",
+    "interpretation": "Higher scores indicate better performance in tasks related to character understanding and description generation.",
+    "baseline_results": "Human performance: 91.8%; Best model (ALBERT-XXL): 83.33%",
+    "validation": "The dataset was validated through human evaluations and inter-annotator agreements."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis indicates more male characters than female characters (66% male).",
+    "harm": "Potential reinforcement of societal biases present in literature."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

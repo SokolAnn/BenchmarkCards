@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FEC-Bench",
+    "abbreviation": "N/A",
+    "overview": "FEC-Bench is designed to assess the performance of video Multimodal Large Language Models (MLLMs) in dynamic facial expression captioning tasks using a newly constructed dataset of 5,033 videos and a novel evaluation metric called Temporal Event Matching (TEM).",
+    "data_type": "video",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/Jiaxing-star/FacialDynamic"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To improve the ability of video MLLMs to discern and describe dynamic facial expressions in videos.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Dynamic Facial Expression Captioning",
+      "Video Captioning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Self-collected from web scraping and extracted from existing datasets including MAFW, DFEW, AFEW, MER, CAER, FERV39K, and RAVDESS, along with additional video clips from Pexels.",
+    "size": "5,033 videos",
+    "format": "N/A",
+    "annotation": "Manually annotated by experts."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "CIDEr",
+      "ROUGE-L",
+      "TEM (Temporal Event Matching)"
+    ],
+    "calculation": "Metrics are calculated based on event extraction, relation classification, and LCS algorithm.",
+    "interpretation": "Higher scores indicate better performance in recognizing and describing facial expression dynamics in videos.",
+    "baseline_results": "N/A",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Impact on affected communities"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

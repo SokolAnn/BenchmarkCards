@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Ambrosia",
+    "abbreviation": "N/A",
+    "overview": "Ambrosia is a novel benchmark designed to study ambiguity in semantic parsing, specifically for text-to-SQL tasks. The dataset includes ambiguous questions, their interpretations, and complex SQL queries, generated from multi-table databases in various domains.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Education",
+      "Banking",
+      "Entertainment",
+      "Hospitality",
+      "Filmmaking",
+      "Agriculture"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Spider",
+      "WikiSQL",
+      "NoisySP"
+    ],
+    "resources": [
+      "https://github.com/saparina/ambrosia",
+      "https://ambrosia-benchmark.github.io"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To develop text-to-SQL parsers capable of interpreting ambiguous user requests.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Semantic Parsing",
+      "Text-to-SQL Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": [
+      "N/A"
+    ]
+  },
+  "data": {
+    "source": "Generated from multi-table databases supporting various types of ambiguity.",
+    "size": "846 databases, 1,277 ambiguous questions, 2,965 SQL queries",
+    "format": "N/A",
+    "annotation": "Questions and interpretations were written by human annotators; SQL queries were generated automatically and validated."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Recall",
+      "Precision",
+      "AllFound"
+    ],
+    "calculation": "Recall is calculated based on the number of correct SQL queries predicted from the total interpretations.",
+    "interpretation": "High recall indicates better performance in predicting multiple interpretations for ambiguous questions.",
+    "baseline_results": "N/A",
+    "validation": "Model performance was validated through execution of SQL queries against the generated databases."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "No personal identifiable information is included in the dataset.",
+    "data_licensing": "CC BY 4.0",
+    "consent_procedures": "Participants were informed via Prolific and provided consent.",
+    "compliance_with_regulations": "N/A"
+  }
+}

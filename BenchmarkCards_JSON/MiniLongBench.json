@@ -1,0 +1,74 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MiniLongBench: The Low-cost Long Context Understanding Benchmark for Large Language Models",
+    "abbreviation": "MiniLongBench",
+    "overview": "MiniLongBench is created through a data compression method tailored for long-text data, substantially reducing the evaluation cost of existing benchmarks while maintaining a high correlation with LongBench results.",
+    "data_type": "question-answering pairs, summarizations, code generation",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "LongBench"
+    ],
+    "resources": [
+      "https://github.com/username/repository"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a low-cost evaluation benchmark for assessing long context understanding (LCU) capabilities of large language models.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Single Document Question Answering",
+      "Multi Document Question Answering",
+      "Summarization",
+      "Few-shot Learning",
+      "Code Generation"
+    ],
+    "limitations": "The MiniLongBench may not capture all evaluation capabilities of LongBench, as the Spearman correlation can’t reach 1.0.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Created by pruning the LongBench dataset based on redundancy analysis.",
+    "size": "237 test samples",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Logistic regression for representation learning",
+      "Statistical sampling for redundancy analysis"
+    ],
+    "metrics": [
+      "Spearman correlation coefficient"
+    ],
+    "calculation": "Metrics are calculated based on the performance rankings of models on the selected test samples.",
+    "interpretation": "Higher Spearman correlation indicates better alignment with performance outcomes of LongBench.",
+    "baseline_results": "MiniLongBench achieves an average Spearman correlation of 0.97 with the original LongBench.",
+    "validation": "Validated through empirical analysis of over 60 LLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Efficiency"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

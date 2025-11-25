@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "AnnoCaseLaw",
+    "abbreviation": "N/A",
+    "overview": "AnnoCaseLaw is a dataset of 471 meticulously annotated U.S. Appeals Court negligence cases designed for Legal Judgment Prediction (LJP). It includes expert-labeled annotations that highlight key components of judicial decision making, as well as relevant legal concepts. The dataset aims to improve explainability in LJP models and establish a performance baseline using leading large language models.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Legal"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/anonymouspolar1/annocaselaw"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enhance reasoning and explanation in legal judgment prediction through a richly annotated dataset.",
+    "audience": [
+      "ML Researchers",
+      "Legal Practitioners",
+      "Data Scientists"
+    ],
+    "tasks": [
+      "Judgment Prediction",
+      "Concept Identification",
+      "Automated Case Annotation"
+    ],
+    "limitations": "The complexity and subjectivity of legal decision-making, the potential for biases in case texts and annotations.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Caselaw Access Project (CAP), the largest publicly accessible repository of U.S. court decisions.",
+    "size": "471 cases",
+    "format": "JSON",
+    "annotation": "Manual annotation by legal scholars"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Class-weighted F1 Score"
+    ],
+    "calculation": "F1 Score calculated for each task based on model predictions compared to ground truth annotations.",
+    "interpretation": "Higher F1 Scores indicate better model performance in predicting outcomes and identifying concepts.",
+    "baseline_results": "F1 Scores ranged from 0.40 to 0.70 across various subtasks.",
+    "validation": "Performance evaluated through bootstrapping to calculate 95% confidence intervals."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All cases are publicly available; names are maintained as in original sources due to the minimal benefits of anonymization.",
+    "data_licensing": "MIT License.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "Legal review conducted to ensure compliance with state and federal laws."
+  }
+}

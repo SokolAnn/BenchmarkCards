@@ -1,0 +1,98 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SYLLABUS QA (A Course Logistics Question Answering Dataset)",
+    "abbreviation": "SYLLABUS QA",
+    "overview": "We introduce SYLLABUS QA, an open-source dataset with 63 real course syllabi covering 36 majors, containing 5,078 open-ended course logistics-related question-answer pairs that are diverse in both question types and answer formats.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Education"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "FAIRYTALE QA",
+      "QUAC",
+      "NARRATIVE QA",
+      "NEWSQA"
+    ],
+    "resources": [
+      "https://github.com/umass-ml4ed/SyllabusQACourse"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the benchmark is to provide a dataset for developing and evaluating automated question answering approaches for logistics-related questions in education.",
+    "audience": [
+      "ML Researchers",
+      "Educators",
+      "AI Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "63 unique course syllabi collected from instructors across 12 universities worldwide.",
+    "size": "5,078 question-answering pairs",
+    "format": "PDF",
+    "annotation": "Crowd annotated by over 200 annotators simulating logistics-related QA pairs."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "LLM-based evaluation"
+    ],
+    "metrics": [
+      "Fact-QA Precision",
+      "Fact-QA Recall",
+      "ROUGE-L F1",
+      "BERTScore F1"
+    ],
+    "calculation": "Metrics calculated by evaluating factual information overlap between annotator-written ground truth answers and model predictions.",
+    "interpretation": "Higher scores in Fact-QA metrics indicate accurate and relevant answers, while lower scores suggest hallucination or factual inaccuracies.",
+    "baseline_results": "Human performance on Fact-QA Precision is 0.707, Recall is 0.664.",
+    "validation": "Evaluated across various LLM models and compared against human performance metrics."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Data privacy rights alignment"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "To ensure anonymity, personally identifiable information was removed from syllabi.",
+    "data_licensing": "CC BY-NC-SA (Attribution-NonCommercial-ShareAlike) License.",
+    "consent_procedures": "Explicit consent collected from all annotators.",
+    "compliance_with_regulations": "N/A"
+  }
+}

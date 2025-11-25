@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LFPBench",
+    "abbreviation": "N/A",
+    "overview": "LFPBench is the first benchmark dataset for validating the legal fact prediction (LFP) task and its application in legal judgment prediction (LJP). It contains evidence items, legal facts, and judgment outcomes collected from 657 first-instance litigation cases in China, covering 10 different types of civil cases.",
+    "data_type": "evidence items and legal facts",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/HPRCEST/LFPBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To automate the prediction of legal facts for the subsequent legal judgment prediction (LJP) task.",
+    "audience": [
+      "Legal Researchers",
+      "Natural Language Processing Researchers"
+    ],
+    "tasks": [
+      "Legal Fact Prediction",
+      "Legal Judgment Prediction"
+    ],
+    "limitations": "The evidence information in LFPBench may be summarized and lack details, making it challenging to predict legal facts. The dataset does not cover criminal or administrative litigation cases.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The data was extracted from judicial judgments in China using publicly available documents from the China Judgments Online database.",
+    "size": "657 cases",
+    "format": "N/A",
+    "annotation": "Manually annotated by legal experts and students."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Metrics were calculated based on the predictions of legal judgments from evidence using the LFP and LJP systems.",
+    "interpretation": "The results indicate the effectiveness of LFP in reducing accuracy drops in evidence-based LJP compared to fact-based LJP.",
+    "baseline_results": null,
+    "validation": "The dataset was validated by comparing model predictions against ground-truth legal judgments."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Judicial datasets may inadvertently perpetuate biases present in historical legal decisions."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All sensitive information has been anonymized to protect personal privacy.",
+    "data_licensing": "The dataset uses publicly accessible legal documents, complying with copyright regulations.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

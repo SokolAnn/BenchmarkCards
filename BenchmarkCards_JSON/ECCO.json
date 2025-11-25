@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ECCO (Ensuring Correctness in Code Optimizations)",
+    "abbreviation": "ECCO",
+    "overview": "ECCO is a reproducible benchmark for evaluating program efficiency via two paradigms: natural language-based code generation and history-based code editing. It supports evaluations in terms of execution correctness, runtime efficiency, and memory efficiency.",
+    "data_type": "Python code pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Python"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/CodeEff/ECCO"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a solid testbed for program optimization and facilitate research in LLM-based generation of efficient code.",
+    "audience": [
+      "ML Researchers",
+      "Software Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Code Optimization",
+      "Code Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated from the IBM CodeNet dataset containing competitive programming problems.",
+    "size": "50,000 Python solution pairs across 1,380 competitive programming problems",
+    "format": "Pairs of Python code solutions",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Execution feedback",
+      "Natural Language feedback"
+    ],
+    "metrics": [
+      "Pass@1",
+      "Runtime Efficiency",
+      "Memory Efficiency"
+    ],
+    "calculation": "Performance metrics are calculated based on execution results from an isolated environment ensuring reproducibility.",
+    "interpretation": "Higher pass@1 indicates better functional correctness, while runtime and memory efficiency metrics indicate performance improvements.",
+    "baseline_results": "N/A",
+    "validation": "Results validated through execution over a cloud-hosted code execution platform."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack",
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

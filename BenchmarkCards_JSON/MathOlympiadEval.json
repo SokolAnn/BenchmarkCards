@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MathOlympiadEval",
+    "abbreviation": "N/A",
+    "overview": "MathOlympiadEval is a diverse dataset of challenging mathematical problems sourced from CMO, IMO, and OpenMathReasoning. Each problem is annotated by human experts for reasoning correctness, revealing a significant gap between answer correctness and the soundness of reasoning processes for large language models.",
+    "data_type": "mathematical problems with reasoning correctness annotations",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "OpenMathReasoning"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2506.06877"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To facilitate a nuanced evaluation of mathematical reasoning in Large Language Models (LLMs) and uncover instances of 'correct answers via flawed reasoning.'",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "AI Ethics Researchers"
+    ],
+    "tasks": [
+      "Mathematical Reasoning Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "204 mathematical problems sourced from the China Mathematical Olympiad, the International Mathematical Olympiad, and NVIDIA’s OpenMathReasoning dataset.",
+    "size": "204 problems",
+    "format": "N/A",
+    "annotation": "Annotated for reasoning correctness by mathematics graduate students."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated reasoning correctness assessment"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics for correctness are calculated by determining the proportion of correct answers versus flawed reasoning paths.",
+    "interpretation": "A higher F1 Score indicates better performance of the model in accurately identifying reasoning flaws.",
+    "baseline_results": "N/A",
+    "validation": "Initial evaluation metrics are validated against human assessed correctness."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

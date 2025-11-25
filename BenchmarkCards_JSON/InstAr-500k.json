@@ -1,0 +1,99 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "InstAr-500k",
+    "abbreviation": "N/A",
+    "overview": "InstAr-500k is a new Arabic instruction dataset created by generating and collecting content that covers several domains and instruction types, aiming to enhance the performance of large language models in Arabic.",
+    "data_type": "instruction-response pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Arabic"
+    ],
+    "similar_benchmarks": [
+      "MMLU (Massive Multitask Language Understanding)",
+      "ACVA (Arabic Cultural and Value Alignment)",
+      "AlGhafa"
+    ],
+    "resources": [
+      "https://huggingface.co/OALL",
+      "https://www.tii.ae/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To bridge the gap in Arabic language technology by providing a high-quality instruction dataset for training large language models.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Text Classification",
+      "Summarization",
+      "Explanation",
+      "Brainstorming",
+      "Generation",
+      "Extraction"
+    ],
+    "limitations": "The dataset currently includes only Modern Standard Arabic (MSA) instructions and lacks dialectal variations.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset was constructed using a combination of human-crafted and synthetic data generation methods.",
+    "size": "500,000 instruction-response pairs",
+    "format": "JSON",
+    "annotation": "Combines synthetic data generation and human-crafted datasets with extensive cleaning and filtering."
+  },
+  "methodology": {
+    "methods": [
+      "Synthetic data generation",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Metrics are calculated based on the model's performance on various Arabic NLP benchmarks.",
+    "interpretation": "Higher metric scores indicate better performance of the model in handling Arabic-specific tasks.",
+    "baseline_results": null,
+    "validation": "Model performance was assessed against Arabic NLP benchmarks using standardized evaluation methods."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset includes a diverse range of task instructions but currently lacks demographic breakdowns.",
+    "harm": "The model and dataset aim to reduce biases in responses through careful dataset curation."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data was constructed using anonymized content or synthetic data, ensuring no personally identifiable information was collected.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Data was obtained with informed consent where applicable.",
+    "compliance_with_regulations": "Methodology adheres to relevant data protection regulations."
+  }
+}

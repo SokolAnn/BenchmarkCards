@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Interpolated Approximate Measurement (IAM)",
+    "abbreviation": "IAM",
+    "overview": "IAM quantifies sample-level unlearning completeness by interpolating the model’s generalization-fitting behavior gap on queried samples, revealing risks of both over-unlearning and under-unlearning in approximate unlearning systems.",
+    "data_type": "text",
+    "domains": [
+      "Machine Learning",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Membership Inference Attacks (MIA)"
+    ],
+    "resources": [
+      "https://github.com/Happy2Git/Unlearning_Inference_IAM",
+      "https://zenodo.org/records/15606363"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To measure sample-level unlearning completeness and identify unlearning risks in machine learning models, particularly in approximate unlearning settings.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Unlearning Inference"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "CIFAR-10, CIFAR-100, CINIC-10, and Purchase datasets; also applicable to LLaMA-2 models.",
+    "size": "197,324 records for Purchase; 60,000 images for CIFAR datasets; 270,000 images for CINIC-10.",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Computed CDF values for the membership scores",
+      "Used weighted averaging for interpolation results"
+    ],
+    "metrics": [
+      "Area Under the Curve (AUC)",
+      "Spearman correlation"
+    ],
+    "calculation": "Combined scores from interpolated estimates and shadow models to calculate membership scores indicating unlearning completeness.",
+    "interpretation": "A membership score of 0 indicates that the model’s response relies entirely on generalization ability, while a score closer to 1 indicates fitting behavior.",
+    "baseline_results": "Existing Membership Inference Attack methods were benchmarked against IAM.",
+    "validation": "Evaluated across various datasets and approximating unlearning algorithms."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Identified unlearning risks including under-unlearning (incomplete removal of data influence) and over-unlearning (removal of useful data influence)."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All data used are publicly available; no personal information involved.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

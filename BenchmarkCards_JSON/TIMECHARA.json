@@ -1,0 +1,103 @@
+{
+  "benchmark_details": {
+    "name": "TIMECHARA",
+    "overview": "TIMECHARA is a benchmark designed to evaluate point-in-time character hallucination in role-playing LLMs, revealing significant hallucination issues in current state-of-the-art LLMs.",
+    "data_type": "text",
+    "domains": [
+      "role-playing",
+      "language modeling"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": null,
+    "resources": [
+      "https://ahnjaewoo.github.io/timechara"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Evaluate point-in-time character hallucination in role-playing LLMs.",
+    "audience": [
+      "Researchers",
+      "Practitioners in AI",
+      "Developers of LLMs"
+    ],
+    "tasks": [
+      "Assess character consistency",
+      "Evaluate spatiotemporal reasoning",
+      "Identify character hallucinations"
+    ],
+    "limitations": null,
+    "out_of_scope_uses": null
+  },
+  "data": {
+    "source": "TIMECHARA dataset compiled from popular novel series including Harry Potter, The Lord of the Rings, Twilight, and The Hunger Games.",
+    "size": "10,895 instances",
+    "format": "text-based dialogues",
+    "annotation": "Spatiotemporal labels and character profiling included."
+  },
+  "methodology": {
+    "methods": [
+      "Automated pipeline for dataset generation",
+      "Structured interviews for character assessments",
+      "Evaluation by LLM judges"
+    ],
+    "metrics": [
+      "Spatiotemporal consistency",
+      "Personality consistency"
+    ],
+    "calculation": "Evaluation scores based on binary labels for consistency and qualitative ratings for personality.",
+    "interpretation": "Scores reflect the ability of LLMs to maintain character identity across specified time points.",
+    "baseline_results": "Baseline results indicate significant variability in character hallucination rates among different LLMs with some achieving above 90% consistency in ideal scenarios.",
+    "validation": "Manually annotated results confirmed via human evaluation showing alignment with outputs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Character hallucination",
+      "Data bias",
+      "Evaluation bias"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Explainability",
+          "subcategory": [
+            "Unexplainable output"
+          ]
+        },
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Lack of training data transparency"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset consists primarily of publicly available texts, ensuring no private data is included.",
+    "data_licensing": "Utilizes excerpts from copyrighted material under fair use for educational and research purposes.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "The research complies with ethical standards for AI research involving copyrighted works."
+  }
+}

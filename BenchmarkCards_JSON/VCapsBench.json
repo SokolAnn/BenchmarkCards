@@ -1,0 +1,78 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "VCapsBench (Fine-grained Video Caption Evaluation Benchmark)",
+    "abbreviation": "VCapsBench",
+    "overview": "VCapsBench is the first large-scale fine-grained benchmark for video caption evaluation, comprising 5,677 videos and 109,796 question-answer pairs systematically annotated across 21 dimensions to evaluate video caption quality in text-to-video tasks.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "CapsBench"
+    ],
+    "resources": [
+      "https://github.com/GXYM/VCapsBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive video caption evaluation framework that addresses fine-grained aspects of video content necessary for text-to-video generation and enhancements in video understanding.",
+    "audience": [
+      "ML Researchers",
+      "Video Understanding Researchers"
+    ],
+    "tasks": [
+      "Video Caption Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Composed of videos sourced from ten publicly available datasets including Panda-70M, Ego4D, BDD100K, Pixabay, Pexel, VIDGEN-1M, ChronomicBench, FineVideo, FunQA, and LiFT-HRA-20K.",
+    "size": "5,677 videos and 109,796 question-answer pairs",
+    "format": "N/A",
+    "annotation": "Multi-dimensional question-answer pairs generated via human correction and LLMs, focusing on video content details."
+  },
+  "methodology": {
+    "methods": [
+      "Contrastive QA-pairs analysis",
+      "Automated evaluation pipeline leveraging large language models"
+    ],
+    "metrics": [
+      "Accuracy (AR)",
+      "Inconsistency Rate (IR)",
+      "Coverage Rate (CR)"
+    ],
+    "calculation": "Metrics are calculated based on LLM responses to generated QA pairs, utilizing classified responses as Positive, Negative, or Unanswerable.",
+    "interpretation": "Higher AR indicates better caption accuracy, lower IR indicates more consistency in captions, and higher CR signifies greater coverage of relevant content.",
+    "baseline_results": "Evaluated against various vision-language models (VLMs) including Gemini-2.5-Pro-Preview, GPT-4o, and others.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Bias"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

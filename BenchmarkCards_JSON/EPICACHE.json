@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "EPICACHE (Episodic Key-Value Cache Management for Long Conversational Question Answering)",
+    "abbreviation": "EPICACHE",
+    "overview": "EPICACHE is a training-free Key-Value (KV) cache management framework designed for long conversational question answering under fixed memory budgets. It employs block-wise prefill and episodic KV compression to manage memory efficiently while preserving response accuracy.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Realtalk",
+      "LoCoMo",
+      "LongMemEval"
+    ],
+    "resources": [
+      "https://github.com/xiaowu0162/LongMemEval"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enable efficient long conversational question answering under strict memory constraints while improving accuracy through effective cache management.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "LongConvQA benchmarks including Realtalk, LoCoMo, and LongMemEval.",
+    "size": "N/A",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on the model's performance on various QA tasks across different cache sizes.",
+    "interpretation": "Higher accuracy indicates better performance in answering questions accurately based on long contextual information.",
+    "baseline_results": "EPICACHE outperforms existing methods by 20% in accuracy under compressed memory budgets.",
+    "validation": "Validated against multiple conversation history benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

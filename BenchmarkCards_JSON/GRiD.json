@@ -1,0 +1,68 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "GPTRedditDataset (GRiD)",
+    "abbreviation": "GRiD",
+    "overview": "GPTRedditDataset (GRiD) is a novel GPT-generated text detection dataset designed to assess the performance of detection models in identifying generated responses from ChatGPT. The dataset consists of a diverse collection of context-prompt pairs based on Reddit, with human-generated and ChatGPT-generated responses.",
+    "data_type": "context-prompt pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/madlab-ucr/GriD"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate and advance detection techniques for distinguishing between human and GPT-generated text.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Text Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Reddit and the OpenAI API",
+    "size": "6,513 samples",
+    "format": "CSV",
+    "annotation": "Labeled as GPT-generated or human-generated"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score",
+      "ROC-AUC"
+    ],
+    "calculation": "Metrics are calculated using 10-fold cross-validation.",
+    "interpretation": "Higher F1 Score and ROC-AUC values indicate better performance in distinguishing between human and GPT-generated text.",
+    "baseline_results": "BERT: F1 0.934, AUC 0.984; SVM: F1 0.813, AUC 0.845; Random Forest: F1 0.787, AUC 0.825; GpTen (proposed): F1 0.667, AUC 0.708.",
+    "validation": "Employs 10-fold cross-validation for evaluation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

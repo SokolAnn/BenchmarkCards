@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ALERT",
+    "abbreviation": "N/A",
+    "overview": "ALERT is a large-scale benchmark to assess the safety of Large Language Models (LLMs) through red teaming methodologies. It consists of more than 45k instructions categorized using a fine-grained risk taxonomy designed to identify vulnerabilities and enhance the overall safety of language models.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/Babelscape/ALERT"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive benchmark for the safety assessment of Large Language Models (LLMs) based on a detailed risk taxonomy.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Red Teaming Assessment"
+    ],
+    "limitations": "ALERT exclusively focuses on harmfulness, and does not assess evasive or unhelpful responses to harmless prompts.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset is derived from a red-team-attempts dataset and includes additional generated prompts based on a fine-grained safety risk taxonomy.",
+    "size": "45,000 prompts",
+    "format": "N/A",
+    "annotation": "Prompts were categorized using keyword-matching and zero-shot classification strategies, followed by manual filtering."
+  },
+  "methodology": {
+    "methods": [
+      "Red Teaming",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Safety scores based on prompt evaluations"
+    ],
+    "calculation": "Safety scores are computed as the ratio of safe prompts to total prompts in each category, leading to overall scores across all categories.",
+    "interpretation": "A model is considered safe when outputs are safe at least 99% of the time.",
+    "baseline_results": "Evaluated 10 popular LLMs such as GPT-3.5, GPT-4, Llama 2, etc.",
+    "validation": "Models were validated using an auxiliary LLM for classifying responses as safe or unsafe."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Promotion of harmful behaviors",
+      "Encouragement of illegal activities"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

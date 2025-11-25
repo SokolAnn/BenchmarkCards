@@ -1,0 +1,61 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Fruit Shop Dataset",
+    "abbreviation": "N/A",
+    "overview": "To adapt to the use case of ChatDB and enable quantitative comparisons with other models, we constructed a synthetic dataset simulating the management of a fruit shop. The dataset simulates four common operations in a shop: purchasing, selling, changing prices, and goods returns, and is used to evaluate multi-hop reasoning and precise calculation capabilities.",
+    "data_type": "question-answering pairs (text records and question-answer pairs)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://chatdatabase.github.io/",
+      "https://arxiv.org/abs/2306.03901"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Enable quantitative comparisons to evaluate the effectiveness of augmenting LLMs with databases as symbolic memory (ChatDB) on tasks requiring precise recording, multi-hop reasoning, and calculations in a management setting.",
+    "audience": [],
+    "tasks": [
+      "Question Answering",
+      "Multi-hop Reasoning",
+      "Numerical Reasoning"
+    ],
+    "limitations": "We deliberately design the token length of the dataset to be within the maximum token length of ChatGPT to avoid using memory and maximize the model’s performance.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Synthetic dataset constructed by the authors simulating fruit shop management records (referred to as the \"Fruit Shop Dataset\").",
+    "size": "70 records; approximately 3.3k tokens; 50 questions (15 easy, 35 hard).",
+    "format": "N/A",
+    "annotation": "50 questions with annotated standard answers (annotation method not specified)."
+  },
+  "methodology": {
+    "methods": [
+      "Automated evaluation against annotated answers"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy computed as number of correctly answered questions divided by total number of questions (50), reported as counts and percentage.",
+    "interpretation": "Higher accuracy indicates better performance; reported to show ChatDB substantially outperforms the ChatGPT baseline, especially on hard (multi-hop) questions.",
+    "baseline_results": "ChatGPT: Easy 10/15, Hard 1/35, All 11/50 (22%). ChatDB (ours): Easy 13/15, Hard 28/35, All 41/50 (82%).",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [],
+    "atlas_risks": {
+      "risks": null
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

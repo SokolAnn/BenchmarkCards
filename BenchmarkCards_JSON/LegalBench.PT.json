@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LegalBench.PT",
+    "abbreviation": "N/A",
+    "overview": "LegalBench.PT is the first comprehensive legal benchmark covering key areas of Portuguese law. It measures LLMs’ legal knowledge and practical application through a dataset generated from real law exams, converted into various question formats to assess legal reasoning.",
+    "data_type": "multiple-choice questions, true/false questions, matching questions",
+    "domains": [
+      "Legal"
+    ],
+    "languages": [
+      "Portuguese"
+    ],
+    "similar_benchmarks": [
+      "LegalBench"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/BeatrizCanaverde/LegalBench.PT",
+      "https://arxiv.org/abs/2502.16357"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate LLMs' legal knowledge and application specific to the Portuguese legal system.",
+    "audience": [
+      "Legal Researchers",
+      "Lawyers",
+      "Machine Learning Researchers"
+    ],
+    "tasks": [
+      "Legal Knowledge Assessment"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Long-form questions and answers collected from real law exams at a leading law school in Portugal.",
+    "size": "4,723 questions",
+    "format": "JSON",
+    "annotation": "Synthetic questions generated and filtered using GPT-4o, reviewed by legal professionals."
+  },
+  "methodology": {
+    "methods": [
+      "Question Generation",
+      "Human Evaluation",
+      "Automated Metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "Balanced Accuracy"
+    ],
+    "calculation": "Metrics were calculated based on model responses to the benchmark questions.",
+    "interpretation": "High scores indicate better legal knowledge and reasoning capabilities.",
+    "baseline_results": null,
+    "validation": "Validated through human review by legal professionals."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data collected from real law exams with anonymized information of exam participants.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

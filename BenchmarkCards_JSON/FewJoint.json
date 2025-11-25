@@ -1,0 +1,71 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FewJoint",
+    "abbreviation": "N/A",
+    "overview": "FewJoint is a novel Few-Shot Learning benchmark for NLP that introduces few-shot joint dialogue language understanding, covering structure prediction and multi-task reliance problems, reflecting real-world NLP complexity beyond simple N-classification.",
+    "data_type": "utterance-label pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/AtmaHou/MetaDialog"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To promote few-shot learning research in NLP by providing a unified benchmark for joint multi-task language understanding.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Intent Detection",
+      "Slot Tagging"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Real user utterances from the AIUI open dialogue platform of iFlytek and utterances written by workers.",
+    "size": "6,694 utterances",
+    "format": "N/A",
+    "annotation": "Intent and slot labels annotated by workers with validation."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Intent Accuracy",
+      "Slot F1 Score",
+      "Sentence Accuracy"
+    ],
+    "calculation": "Slot F1 Score is calculated on query samples using the conlleval script.",
+    "interpretation": "A sentence is correct only when all its slots and intent are correct.",
+    "baseline_results": "Intent Accuracy: 78.46, Slot F1 Score: 40.37, Sentence Accuracy: 23.65 for JointProto.",
+    "validation": "Models validated on different domains and scores averaged over 5 random seeds."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Sensitive information removed from user utterances.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Penalty-Adjusted Type-Token Ratio (PATTR)",
+    "abbreviation": "PATTR",
+    "overview": "PATTR is a diversity metric designed to mitigate the inherent bias of conventional metrics towards shorter responses by incorporating task-specific target response lengths.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://arxiv.org/abs/2507.15092"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enhance diversity measurement in generated texts and facilitate synthetic data curation for language models.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text Generation"
+    ],
+    "limitations": "The proposed method requires a task-specific target length and primarily focuses on lexical diversity.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated synthetic corpus from multiple models including LLaMA and OLMo.",
+    "size": "20,000,000 words",
+    "format": "Raw text files",
+    "annotation": "Diversity measurements are included for the synthetic corpus."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Penalty-Adjusted Type-Token Ratio (PATTR)",
+      "Moving-Average TTR (MATTR)",
+      "Compression Ratio (CR)"
+    ],
+    "calculation": "PATTR incorporates a penalty based on the difference from a target response length, adjusting conventional TTR scores.",
+    "interpretation": "Higher PATTR scores indicate greater lexical diversity, accounting for the task's target response length.",
+    "baseline_results": null,
+    "validation": "Evaluated through comparative analysis against MATTR and CR metrics."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

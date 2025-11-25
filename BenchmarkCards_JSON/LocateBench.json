@@ -1,0 +1,80 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LocateBench",
+    "abbreviation": "N/A",
+    "overview": "LocateBench is a high-quality benchmark dedicated to evaluating the ability of Vision Language Models (VLMs) to locate objects in an image according to natural language instructions. It consists of a multiple choice question dataset where VLMs must select the correct bounding box from four candidates based on the provided questions.",
+    "data_type": "multiple-choice questions with bounding boxes",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Pointing QA"
+    ],
+    "resources": [
+      "https://usc-tamagotchi.github.io/locate-bench/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of LocateBench is to evaluate VLMs' ability to locate objects specified by natural language descriptions.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Object Localization"
+    ],
+    "limitations": "The benchmark focuses on multi-choice problems with only four candidates, which may not fully reflect the complexity of some real-world tasks.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed based on the RefCOCO series datasets using object descriptions from the COCO dataset.",
+    "size": "1,317 examples",
+    "format": "multiple-choice question format",
+    "annotation": "Expert-annotated descriptions converted to fluent English which-questions without crowdworkers."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy is calculated based on the correct identification of the bounding box by VLMs from the provided options.",
+    "interpretation": "Higher accuracy indicates better model performance in locating objects as instructed by natural language.",
+    "baseline_results": "Human accuracy: 95%. GPT-4o accuracy: significantly lower than human performance.",
+    "validation": "Rigorous validation process involving manual inspection and correction of examples by authors."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

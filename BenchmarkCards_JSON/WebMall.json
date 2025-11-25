@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "WebMall",
+    "abbreviation": "N/A",
+    "overview": "WebMall is a multi-shop benchmark for evaluating the effectiveness and efficiency of web agents for comparison-shopping. It consists of four simulated online shops populated with authentic product offers and a suite of 91 cross-shop tasks.",
+    "data_type": "product offers and tasks",
+    "domains": [
+      "E-Commerce"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "WebShop",
+      "ShoppingBench"
+    ],
+    "resources": [
+      "https://github.com/wbsg-uni-mannheim/WebMall"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of WebMall is to evaluate and facilitate advancements in web agents' navigation, reasoning, and efficiency within e-commerce scenarios.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Comparison Shopping",
+      "Product Search",
+      "Shopping Cart Management",
+      "Checkout Procedures"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Four simulated online shops populated with authentic product offers sourced from the Common Crawl.",
+    "size": "4,421 product offers",
+    "format": "JSON",
+    "annotation": "Manual selection and distribution of product offers across the shops."
+  },
+  "methodology": {
+    "methods": [
+      "Baseline evaluation of eight agent configurations"
+    ],
+    "metrics": [
+      "Completion Rate",
+      "F1 Score",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "Metrics are calculated based on the results of the agents performing tasks, including aggregations across completed tasks.",
+    "interpretation": "Higher completion rates and F1 scores indicate better performance and efficiency of web agents.",
+    "baseline_results": "The best configuration achieved a completion rate of 75% and an F1 score of 87% for basic tasks.",
+    "validation": "Validation performed through baseline experiments with varying agent configurations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": []
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

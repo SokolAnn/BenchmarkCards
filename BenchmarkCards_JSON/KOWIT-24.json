@@ -1,0 +1,79 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "KOWIT-24",
+    "abbreviation": "N/A",
+    "overview": "KOWIT-24 is a dataset with fine-grained annotation of wordplay in 2,700 Russian news headlines, including the presence of wordplay, its type, wordplay anchors, and entities the wordplay refers to, accompanied by news leads and summaries.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Russian"
+    ],
+    "similar_benchmarks": [
+      "EnglishPuns",
+      "ExPUN"
+    ],
+    "resources": [
+      "https://github.com/Humor-Research/KoWit-24"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a richly annotated dataset for wordplay detection and interpretation tasks using modern LLMs.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Wordplay Detection",
+      "Wordplay Interpretation"
+    ],
+    "limitations": "The annotation process may vary depending on individual interpretation and biases from the specific editorial style of the source.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from the Kommersant news outlet via RSS feed.",
+    "size": "2,700 headlines",
+    "format": "JSON",
+    "annotation": "Manual annotation by fluent annotators including linguists and computer scientists."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Recall",
+      "Precision"
+    ],
+    "calculation": "Metrics were calculated based on the performance of five LLMs on wordplay detection and interpretation tasks.",
+    "interpretation": "Higher scores indicate better performance in recognizing and understanding wordplay.",
+    "baseline_results": "GPT-4o demonstrated the strongest performance in both tasks.",
+    "validation": "Data validation was performed through peer discussion and reconciliation of discrepancies."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Instances of wordplay in sensitive topics may be deemed unacceptable by some audiences."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Dataset collected in accordance with Kommersant's copyright policy.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

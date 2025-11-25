@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Debate-Driven Evaluation for QA",
+    "abbreviation": "N/A",
+    "overview": "This paper presents a debate-driven evaluation paradigm that transforms existing QA datasets into structured adversarial debates, enhancing the difficulty and assessing reasoning capabilities of models while addressing issues like data contamination.",
+    "data_type": "debate transcripts",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMLU-Pro"
+    ],
+    "resources": [
+      "https://github.com/l6cao/Debate-Driven-Evaluation"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To offer a sustainable and effective path for evaluating the genuine reasoning ability of advanced language models through structured debate.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "AI Evaluators"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "The study primarily employed only 50 MMLU-Pro questions, limiting domain-specific analysis reliability.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Structured debates derived from MMLU-Pro questions",
+    "size": "5,500 debates totaling over 11,000 rounds of argumentation",
+    "format": "Text",
+    "annotation": "Arguments were generated based on a structured debate protocol."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Double round-robin debates"
+    ],
+    "metrics": [
+      "Total win count"
+    ],
+    "calculation": "Win counts are aggregated for reproducible, order-independent rankings.",
+    "interpretation": "A higher total win count indicates stronger reasoning capabilities of the model.",
+    "baseline_results": "Empirical results were collected from various models including DeepSeek V3 and Claude 3.5 Sonnet.",
+    "validation": "The methodology was validated through extensive empirical experiments with multiple models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Decision bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

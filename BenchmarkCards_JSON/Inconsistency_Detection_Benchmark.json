@@ -1,0 +1,82 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Inconsistency Detection Benchmark",
+    "abbreviation": "N/A",
+    "overview": "The Inconsistency Detection Benchmark provides a dataset of 698 human-annotated pairs of political statements to facilitate the task of detecting inconsistencies in political discourse. It aims to identify various types of inconsistencies and thereby promote accountability in politics.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/nursaltyn/Inconsistency Detection Benchmark"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a resource for detecting inconsistencies in political statements.",
+    "audience": [
+      "ML Researchers",
+      "Journalists",
+      "Political Analysts"
+    ],
+    "tasks": [
+      "Inconsistency Detection"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Dataset includes statements from voting assistant platforms such as Wahl-O-Mat in Germany and Smartvote in Switzerland.",
+    "size": "698 examples",
+    "format": "CSV",
+    "annotation": "Human-annotated with explanations for selected samples."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Accuracy"
+    ],
+    "calculation": "Metrics are calculated based on comparisons between model predictions and human-annotated ground truth.",
+    "interpretation": "Performance is evaluated against multiple classes of inconsistency, with different thresholds for acceptable accuracy based on the complexity of inconsistencies.",
+    "baseline_results": "ChatGPT-4 turbo and LLaMA 70B models are benchmarked against human performance.",
+    "validation": "Inter-annotator agreement measured using Krippendorff’s alpha."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Lack of training data transparency"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

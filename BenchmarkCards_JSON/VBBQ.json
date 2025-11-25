@@ -1,0 +1,79 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "VoiceBBQ",
+    "abbreviation": "VBBQ",
+    "overview": "VoiceBBQ is a spoken extension of the BBQ (Bias Benchmark for Question answering) that evaluates social bias in Spoken Language Models (SLMs) by analyzing the effects of content and acoustic characteristics on model bias.",
+    "data_type": "audio",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "BBQ"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/bgnkim/VoiceBBQ"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To investigate the effects of content and acoustic characteristics on social bias in Spoken Language Models.",
+    "audience": [
+      "ML Researchers",
+      "AI Developers"
+    ],
+    "tasks": [
+      "Bias Evaluation"
+    ],
+    "limitations": "Our analysis focused on only two models for examining bias and did not propose mitigation techniques.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Adapted from BBQ dataset; speech synthesized using Kokoro-TTS.",
+    "size": "935,872 audio samples",
+    "format": "WAV",
+    "annotation": "Automated mapping of model outputs to structured answer choices."
+  },
+  "methodology": {
+    "methods": [
+      "Comparative bias evaluation",
+      "Statistical analysis via McNemar’s test"
+    ],
+    "metrics": [
+      "Bias score",
+      "Accuracy"
+    ],
+    "calculation": "Bias scores computed based on model responses to ambiguous and disambiguated questions in the BBQ dataset.",
+    "interpretation": "A bias score close to zero indicates minimal bias, with the sign suggesting preference for biased options.",
+    "baseline_results": "Baseline bias evaluation metrics derived from BBQ.",
+    "validation": "Confidence checks on synthesized speech were performed using gender and accent classifiers."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Not performed but suggested as a future exploration.",
+    "harm": [
+      "Social bias in AI interactions"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

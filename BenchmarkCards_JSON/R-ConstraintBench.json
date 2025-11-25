@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "R-ConstraintBench",
+    "abbreviation": "N/A",
+    "overview": "R-ConstraintBench is a scalable framework that evaluates models on Resource-Constrained Project Scheduling Problems (RCPSP), an NP-Complete feasibility class, while difficulty increases via linear growth in constraints.",
+    "data_type": "scheduling problems",
+    "domains": [
+      "Operations Research"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "OR-Instruct",
+      "IndustryOR",
+      "OptiMUS",
+      "MAMO"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2508.15204"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To systematically evaluate the feasibility reasoning of leading LLMs under a variety of constraints present in RCPSP.",
+    "audience": [
+      "ML Researchers",
+      "Operations Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Scheduling",
+      "Feasibility Analysis"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Synthetic RCPSP instances generated using a solver-driven pipeline.",
+    "size": "6,000 instances",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Automated verification",
+      "Feasibility checks"
+    ],
+    "metrics": [
+      "Feasibility Rate",
+      "Weighted Area Under the Curve (WAUC)",
+      "Breakpoint Level (BP-Level)"
+    ],
+    "calculation": "WAUC metrics are calculated by weighing feasibility rates at different levels of constraint density.",
+    "interpretation": "Higher WAUC values indicate better feasibility across increasing constraints.",
+    "baseline_results": "Top models demonstrate feasibility across various RCPSP configurations with failure rates analyzed.",
+    "validation": "Validation through automated verification of generated schedules against predefined constraints."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

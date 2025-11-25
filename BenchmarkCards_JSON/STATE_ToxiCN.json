@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "STATE ToxiCN (Span-level Target-Aware Toxicity Extraction in Chinese Hate Speech Detection)",
+    "abbreviation": "STATE ToxiCN",
+    "overview": "This paper presents the first span-level target-aware toxicity extraction dataset (STATE ToxiCN) designed for Chinese hate speech detection, which includes fine-grained annotations for identifying targets, arguments, and the associated hateful groups.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "COLD (Chinese Offensive Language Dataset)",
+      "TOXICN"
+    ],
+    "resources": [
+      "https://github.com/shenmeyemeifashengguo/STATE-ToxiCN.detection"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To advance the research on span-level hate speech detection in Chinese by providing a novel dataset and an annotated lexicon of hateful slang.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Hate Speech Detection",
+      "Text Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset is constructed from posts on online forums (Zhihu, Tieba) and includes manually annotated data.",
+    "size": "8,029 posts and 9,533 Target-Argument-Hateful-Group quadruples",
+    "format": "JSON",
+    "annotation": "Manual annotation by experts with multi-stage quality control."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Macro-F1 Score"
+    ],
+    "calculation": "Metrics are calculated using hard-matching and soft-matching criteria.",
+    "interpretation": "Higher F1 scores indicate better model performance in accurately detecting hateful speech.",
+    "baseline_results": "Results compared against baseline models like mT5, LLaMA3, and Shield models.",
+    "validation": "The dataset was validated through inter-annotator agreement metrics."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset includes diverse demographic information of annotators to mitigate bias.",
+    "harm": "The dataset aims to identify and mitigate harmful hate speech and its implications."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset does not contain any personally identifiable information as per user privacy agreements.",
+    "data_licensing": "The dataset is licensed under Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) license.",
+    "consent_procedures": "Informed consent procedures were implemented for annotators.",
+    "compliance_with_regulations": "N/A"
+  }
+}

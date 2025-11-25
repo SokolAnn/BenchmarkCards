@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MATP-BENCH (Multimodal Automated Theorem Proving benchmark)",
+    "abbreviation": "MATP-BENCH",
+    "overview": "MATP-BENCH is a new Multimodal, Multi-level, and Multi-language benchmark designed to evaluate MLLMs as automated theorem provers, consisting of 1056 multimodal theorems sourced from high school, university, and competition-level mathematics.",
+    "data_type": "multimodal theorems",
+    "domains": [
+      "Natural Language Processing",
+      "Mathematics"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "miniF2F",
+      "ProofNet",
+      "LeanEuclid",
+      "PutnamBench"
+    ],
+    "resources": [
+      "https://matpbench.github.io"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of MATP-BENCH is to evaluate the capabilities of Multimodal Large Language Models (MLLMs) in the domain of automated theorem proving by presenting multimodal problems that require integration of visual understanding and mathematical reasoning.",
+    "audience": [
+      "ML Researchers",
+      "Automated Proof Developers"
+    ],
+    "tasks": [
+      "Automated Theorem Proving",
+      "Theorem Formalization"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Theorems drawn from high school, university, and competition-level mathematics, with formalizations in Lean 4, Coq, and Isabelle.",
+    "size": "1,056 multimodal theorems",
+    "format": "JSON",
+    "annotation": "Manually annotated formal statements in three formal languages."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "pass@n (n=1, n=5, n=10)"
+    ],
+    "calculation": "Metrics are calculated based on the model's ability to generate valid proofs and formalized theorems from multimodal inputs.",
+    "interpretation": "Higher scores indicate better performance in generating valid proofs and theorem formalizations.",
+    "baseline_results": "The performance of state-of-the-art models varies significantly, with the highest scoring models achieving a pass rate of 5.68% for end-to-end theorem proving in Lean 4.",
+    "validation": "Models are validated against formal theorem verification requirements to ensure correctness."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

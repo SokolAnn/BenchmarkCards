@@ -1,0 +1,76 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "AudioBench",
+    "abbreviation": "N/A",
+    "overview": "AudioBench is a universal benchmark designed to evaluate Audio Large Language Models (AudioLLMs) across 8 distinct tasks and 26 datasets, including 7 newly proposed datasets, focusing on speech understanding, audio scene understanding, and voice understanding.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/AudioLLMs/AudioBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation framework specifically for AudioLLMs that measures their instruction-following capabilities and performance in various audio-related tasks.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Automatic Speech Recognition",
+      "Speech Question Answering",
+      "Audio Question Answering",
+      "Emotion Recognition",
+      "Accent Recognition",
+      "Gender Recognition",
+      "Audio Captioning",
+      "Speech Instruction"
+    ],
+    "limitations": "The current benchmark exclusively includes English datasets and does not cover multilingual capabilities or code-switching.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The benchmark includes existing datasets and newly created datasets tailored for AudioLLMs.",
+    "size": "400+ hours of audio, 100k+ samples",
+    "format": "N/A",
+    "annotation": "Various, including manual annotation and automated generation"
+  },
+  "methodology": {
+    "methods": [
+      "Model-as-Judge",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Word Error Rate (WER)",
+      "METEOR"
+    ],
+    "calculation": "Scores are calculated using model outputs against reference answers, primarily employing Model-as-Judge methods.",
+    "interpretation": "Evaluation scores are rescaled to a 100-point scale for easier comparison.",
+    "baseline_results": "Results are compared across five models including SALMONN, Qwen-Audio, and Whisper+Llama3.",
+    "validation": "Evaluation of models was conducted through comprehensive testing across a variety of tasks with detailed statistical analysis."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

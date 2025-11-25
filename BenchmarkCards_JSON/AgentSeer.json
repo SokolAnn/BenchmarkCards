@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "AgentSeer",
+    "abbreviation": "N/A",
+    "overview": "AgentSeer is an observability-based evaluation framework that decomposes agentic executions into granular action and component graphs, enabling systematic agentic-situational assessment for large language models.",
+    "data_type": "action and component graphs",
+    "domains": [
+      "Artificial Intelligence",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "HarmBench",
+      "AgentBench"
+    ],
+    "resources": [
+      "https://mlflow.org/docs/latest/genai/tracing/",
+      "https://langchain-ai.github.io/langgraph/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To establish a systematic method for evaluating safety in agentic AI systems and expose agentic vulnerabilities.",
+    "audience": [
+      "AI Researchers",
+      "Model Developers",
+      "Safety Engineers"
+    ],
+    "tasks": [
+      "Security Assessment",
+      "Vulnerability Evaluation"
+    ],
+    "limitations": "The evaluation focuses on one agentic use case and a specific technology stack, which may limit generalizability.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "HarmBench evaluations on agentic-level vulnerabilities.",
+    "size": "50 harmful objectives evaluated",
+    "format": "N/A",
+    "annotation": "Evaluation conducted through comparative model validation."
+  },
+  "methodology": {
+    "methods": [
+      "Model-level iterative attacks",
+      "Agentic-level direct attacks",
+      "Context-aware iterative attacks"
+    ],
+    "metrics": [
+      "Attack Success Rate (ASR)"
+    ],
+    "calculation": "Calculated as the ratio of successful attacks to total objectives.",
+    "interpretation": "Higher ASR indicates greater vulnerability and lower effectiveness of safety guardrails.",
+    "baseline_results": "GPT-OSS-20B: 39.47% ASR; Gemini-2.0-flash: 50.00% ASR.",
+    "validation": "Cross-model validation on GPT-OSS-20B and Gemini-2.0-flash."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Robustness",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack",
+            "Data poisoning"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Identifying agent-specific vulnerabilities that traditional evaluations miss."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

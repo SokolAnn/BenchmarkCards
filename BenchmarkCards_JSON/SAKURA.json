@@ -1,0 +1,73 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SAKURA (Speech and Audio-based Question-answering Benchmark for Multi-hop Reasoning of Large Audio-Language Models)",
+    "abbreviation": "SAKURA",
+    "overview": "SAKURA is a benchmark assessing Large Audio-Language Models' (LALMs) multi-hop reasoning based on speech and audio information, comprising 4000 human-verified multiple-choice questions across various attributes.",
+    "data_type": "multiple-choice questions",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/ckyang1124/SAKURA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To systematically evaluate LALMs' multi-hop reasoning capabilities using speech and audio information.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Multi-hop Reasoning"
+    ],
+    "limitations": "SAKURA currently covers only four speech/audio attributes and does not account for acoustic variations affecting model performance.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Speech and audio sources from Common Voice, CREMA-D, MELD, and ESC-50 datasets.",
+    "size": "4000 questions",
+    "format": "multiple-choice",
+    "annotation": "Questions generated using GPT-4o and verified by human annotators."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy calculated based on alignment between model responses and golden answers evaluated by GPT-4o.",
+    "interpretation": "Higher accuracy indicates better multi-hop reasoning capability in LALMs.",
+    "baseline_results": null,
+    "validation": "Human verification of evaluator judgments showed 99.5% agreement."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

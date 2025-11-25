@@ -1,0 +1,73 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "HeQ (Hebrew QA)",
+    "abbreviation": "HeQ",
+    "overview": "HeQ is a Hebrew Machine Reading Comprehension (MRC) dataset designed for extractive Question Answering, featuring 30,147 diverse question-answer pairs derived from Hebrew Wikipedia articles and Israeli tech news.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Hebrew"
+    ],
+    "similar_benchmarks": [
+      "SQuAD"
+    ],
+    "resources": [
+      "https://github.com/NNLP-IL/Hebrew-Question-Answering-Dataset"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of HeQ is to enable further research into Hebrew natural language understanding by providing a benchmark for machine reading comprehension tasks.",
+    "audience": [
+      "NLP Researchers",
+      "Machine Learning Practitioners"
+    ],
+    "tasks": [
+      "Machine Reading Comprehension",
+      "Question Answering"
+    ],
+    "limitations": "Despite its high quality, HeQ has a relatively smaller number of instances compared to well-established English MRC datasets like SQuAD.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "HeQ was created by combining two distinct data sources, namely, Hebrew Wikipedia and Geektime, an Israeli technology newspaper.",
+    "size": "30,147 examples",
+    "format": "CSV",
+    "annotation": "The data was annotated by native Hebrew speakers through a controlled crowdsourcing protocol."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Exact Match (EM)",
+      "F1 Score",
+      "Token-Level Normalized Levenshtein Similarity (TLNLS)"
+    ],
+    "calculation": "TLNLS is calculated using a hybrid metric derived from F1 and Levenshtein similarity.",
+    "interpretation": "A higher TLNLS score indicates better model performance on extraction tasks, reflecting how well the model matches answer spans in the context.",
+    "baseline_results": null,
+    "validation": "The dataset was validated through manual checking of the test and development sets, ensuring high accuracy and quality."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "The dataset includes various demographic factors derived from the source texts.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

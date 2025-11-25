@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "HalLoc (Token-level Localization of Hallucinations for Vision Language Models)",
+    "abbreviation": "HalLoc",
+    "overview": "HalLoc is a large-scale dataset comprising 155K samples annotated at the token level with specific types of hallucinations across Visual Question Answering (VQA), instruction-following, and image captioning tasks, designed to facilitate the development of models for efficient hallucination detection.",
+    "data_type": "token-level annotated samples",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/dbsltm/cvpr25_halloc"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive dataset for efficient detection of hallucinations in vision-language models.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Visual Question Answering",
+      "Instruction Following",
+      "Image Captioning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Publicly available dataset composed of synthesized hallucinated samples via HQA-injection pipeline.",
+    "size": "155,953 examples",
+    "format": "N/A",
+    "annotation": "Token-level annotated with specific types of hallucinations including object, attribute, relationship, and scene hallucinations."
+  },
+  "methodology": {
+    "methods": [
+      "Token-level hallucination detection model",
+      "Probabilistic assessments integrated into existing VLMs"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Metrics were calculated based on the model's performance across different hallucination types.",
+    "interpretation": "Higher F1 scores indicate better performance in accurately identifying hallucinations.",
+    "baseline_results": "N/A",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

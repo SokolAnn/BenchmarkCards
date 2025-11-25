@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "JDocQA (Japanese Document Question Answering)",
+    "abbreviation": "JDocQA",
+    "overview": "JDocQA is a large-scale document-based QA dataset, requiring both visual and textual information to answer questions. It comprises 5,504 documents in PDF format and 11,600 annotated question-and-answer instances in Japanese.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Japanese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://arxiv.org/abs/2403.19454"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a dataset for generative language models to effectively perform question answering on Japanese documents incorporating both visual and textual information.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Japanese documents collected from open-access sources including governmental and public documents.",
+    "size": "5,504 documents and 11,600 question-and-answer pairs",
+    "format": "PDF",
+    "annotation": "Manual annotation by 43 annotators, including multiple question categories and unanswerable questions."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "BLEU Score"
+    ],
+    "calculation": "Metrics are calculated based on exact matches for Yes/No, factoid, and numerical questions, and BLEU Score for open-ended questions.",
+    "interpretation": "Higher scores indicate better question-answering performance.",
+    "baseline_results": "Results are reported for multiple models including StableLM and OpenAI GPT series.",
+    "validation": "Models are evaluated on distinct validation and test sets including those with and without unanswerable questions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential harm through hallucination generation in language models."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

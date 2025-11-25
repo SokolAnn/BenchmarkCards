@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "E-SyncVidStory (E-commerce Synchronized Video Storytelling)",
+    "abbreviation": "E-SyncVidStory",
+    "overview": "The E-SyncVidStory dataset supports the task of Synchronized Video Storytelling, which generates synchronized narrations for videos using rich annotations and a structured storyline.",
+    "data_type": "video clips with synchronized narration",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision",
+      "Advertising"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/alibaba/alimama-video-narrator"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To explore the task of synchronized video storytelling, providing a dataset and framework to generate coherent video narrations.",
+    "audience": [
+      "ML Researchers",
+      "Advertisers",
+      "Content Creators"
+    ],
+    "tasks": [
+      "Video Storytelling",
+      "Content Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from high-quality advertisement videos with associated product information.",
+    "size": "6,032 videos, 41,292 video clips",
+    "format": "N/A",
+    "annotation": "Automatic speech recognition corrections, GPT-based refinement, and manual checks."
+  },
+  "methodology": {
+    "methods": [
+      "Fine-tuning of large language models (LLMs)",
+      "Evaluation of generated narrations using NL metrics"
+    ],
+    "metrics": [
+      "BLEU Score",
+      "METEOR",
+      "CIDEr"
+    ],
+    "calculation": "Metrics are calculated based on generated stories compared to reference narrations, including both automatic and human evaluations.",
+    "interpretation": "Higher scores in evaluation metrics indicate better performance in generating coherent and engaging narratives.",
+    "baseline_results": "Compared against existing models like LLaV A and Video-ChatGPT, showing superior performance in generating coherent narrations.",
+    "validation": "Automatic and human evaluations affirm the quality and coherence of generated stories."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Privacy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Potential perpetuation of biases in generated narratives"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Automatically generated content from video data which is anonymized to avoid personal identifiers.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "Data collected conforms to copyright regulations, avoiding identifying individual data."
+  }
+}

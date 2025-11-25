@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MemeReaCon (Meme Reasoning in Context)",
+    "abbreviation": "MemeReaCon",
+    "overview": "MemeReaCon is a novel benchmark specifically designed to evaluate how Large Vision Language Models (LVLMs) understand memes within their original contexts. It focuses on the interplay between meme images, post text, and community comments, and assesses models on their ability to interpret memes as they function in online environments.",
+    "data_type": "meme-post-comment pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "HatefulMemes",
+      "MemeCap"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2505.17433"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a robust resource for evaluating the contextual reasoning capabilities of LVLMs when interpreting memes.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Context-Meme Interplay Classification",
+      "Comment Stance and Affective Consistent Classification",
+      "Post Connection Generation",
+      "Post Intent Generation"
+    ],
+    "limitations": "Annotations are subject to challenges in achieving mutual agreement on connection meaning, and interpretation may vary based on annotator background knowledge.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from Reddit across five diverse subreddits.",
+    "size": "1,565 examples",
+    "format": "JSON",
+    "annotation": "Annotated by trained English-speaking experts familiar with internet culture."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Macro F1 Score",
+      "ROUGE-L"
+    ],
+    "calculation": "Metrics calculated based on model performance on classification and generation tasks.",
+    "interpretation": "Higher scores indicate better model understanding of meme-context relationships.",
+    "baseline_results": "Performance scores reported for various state-of-the-art LVLMs, with contextual understanding assessed.",
+    "validation": "Inter-annotator agreement calculated using Fleiss' Kappa."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis of demographic factors and meme interpretation across different communities.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Usernames and personal identifiers were anonymized to protect user privacy.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Data collected from publicly available Reddit posts, compliant with Reddit's API terms.",
+    "compliance_with_regulations": "N/A"
+  }
+}

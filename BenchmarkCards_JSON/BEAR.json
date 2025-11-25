@@ -1,0 +1,67 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "BEAR (Benchmark for Evaluating Abilities of Relational Knowledge)",
+    "abbreviation": "BEAR",
+    "overview": "This study evaluates how efficiently language models learn and retain facts with an emphasis on sample efficiency and factual knowledge recall across varying model architectures.",
+    "data_type": "fact-frequency statistics",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/Jabbawukis/sample-efficiency-evaluation"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess the sample efficiency of various language models in learning factual information from a pre-training corpus.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Fact Recall"
+    ],
+    "limitations": "Limited to analyzing small to medium-sized language models; does not evaluate models exceeding one billion parameters.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "English Wikipedia dump (Wikimedia Foundation, 2023)",
+    "size": "5 billion tokens",
+    "format": "Raw text",
+    "annotation": "Fact frequencies calculated using a heuristic matching algorithm."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Weighted Accuracy Score (WASB)"
+    ],
+    "calculation": "Sample efficiency determined through models' responses to factual queries and the frequency of encountered facts.",
+    "interpretation": "Higher scores in sample efficiency metrics indicate a model learns factual information more effectively and requires fewer training samples.",
+    "baseline_results": null,
+    "validation": "Evaluation of model performance during different training checkpoints based on the frequency of fact occurrences."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

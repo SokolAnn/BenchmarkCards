@@ -1,0 +1,104 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ETHIC",
+    "abbreviation": "N/A",
+    "overview": "ETHIC is a novel benchmark designed to assess LLMs' ability to fully utilize provided context in long-context tasks. It emphasizes high information coverage and includes 1,986 test instances across four domains: books, debates, medicine, and law.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "NIAH",
+      "RULER",
+      "Counting-Stars",
+      "ZeroSCROLLS",
+      "L-Eval",
+      "InfiniteBench",
+      "BAMBOO",
+      "Loong",
+      "LooGLE"
+    ],
+    "resources": [
+      "https://github.com/dmis-lab/ETHIC"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate LLMs' capabilities in fully utilizing long context in natural language processing tasks.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Recalling",
+      "Summarizing",
+      "Organizing",
+      "Attributing"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected documents online from Project Gutenberg, Hansard, MSˆ2 dataset, and CourtListener.",
+    "size": "1,986 instances",
+    "format": "N/A",
+    "annotation": "Manually reviewed and annotated using GPT-4o for accuracy."
+  },
+  "methodology": {
+    "methods": [
+      "F1 Score",
+      "Human evaluation",
+      "LCS (Longest Common Subsequence)"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Score (1-5)",
+      "LCS (%)"
+    ],
+    "calculation": "Metrics calculated based on comparison of model outputs with ground truth using specific evaluation criteria for each task.",
+    "interpretation": "Results indicate how well models performed based on F1 scores or specific task evaluations.",
+    "baseline_results": "Gemini Pro 1.5 (F1: 69.1% in Recalling), GPT-4o (F1: 49.5%)",
+    "validation": "Random sampling of annotations was performed to ensure label quality."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

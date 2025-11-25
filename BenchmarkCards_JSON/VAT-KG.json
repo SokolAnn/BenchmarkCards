@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "VAT-KG (Visual-Audio-Text Knowledge Graph)",
+    "abbreviation": "VAT-KG",
+    "overview": "VAT-KG is the first concept-centric and knowledge-intensive multimodal knowledge graph that comprehensively covers visual, audio, and text modalities, designed to provide explicit cross-modal knowledge to MLLMs.",
+    "data_type": "multimodal triplets",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "VTKG",
+      "M2ConceptBase",
+      "Wikidata"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/vatkg/VATKG_DATASET",
+      "https://huggingface.co/vatkg/VATKG_CODE"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive multimodal knowledge graph for enhancing Retrieval-Augmented Generation tasks in multimodal large language models.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Multimodal Retrieval"
+    ],
+    "limitations": "The diversity of VAT-KG is inherently dependent on the underlying multimodal datasets used during construction.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from multimodal corpora including InternVid-FLT, AudioCaps, A VQA, and VALOR datasets.",
+    "size": "110,786 triplets",
+    "format": "N/A",
+    "annotation": "Multimodal alignment filtering and knowledge-intensive recaptioning utilizing advanced LLMs."
+  },
+  "methodology": {
+    "methods": [
+      "Multimodal Alignment Filtering",
+      "Knowledge-Intensive Recaptioning",
+      "Multimodal Triplet Grounding",
+      "Cross-Modal Description Alignment"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Performance measured through Model-as-Judge scores and human evaluation.",
+    "interpretation": "Higher scores indicate better performance on the task of multimodal question answering.",
+    "baseline_results": "N/A",
+    "validation": "Validated through comprehensive human assessment and statistical tests."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Mitigates hallucinations in multimodal large language models."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Ensured by excluding any private or deleted content and using only publicly available datasets.",
+    "data_licensing": "CC BY-NC 4.0 license for non-commercial use.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "Adheres to YouTube’s Terms of Service."
+  }
+}

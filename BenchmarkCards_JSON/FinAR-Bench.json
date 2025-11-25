@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FinAR-Bench (Financial Analysis and Reasoning Benchmark)",
+    "abbreviation": "FinAR-Bench",
+    "overview": "FinAR-Bench is a task-oriented benchmark dataset for evaluating LLMs in financial fundamental analysis, specifically focusing on financial statement analysis.",
+    "data_type": "text",
+    "domains": [
+      "Finance"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/SAIFS-AIHub/FinAR-Bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate LLMs' capabilities in financial statement analysis as part of fundamental analysis in finance.",
+    "audience": [
+      "ML Researchers",
+      "Finance Professionals"
+    ],
+    "tasks": [
+      "Information Extraction",
+      "Indicator Computation",
+      "Logical Reasoning"
+    ],
+    "limitations": "LLMs demonstrate limitations in performing precise and reliable financial analysis, particularly with inherent computational inaccuracies.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Financial statement data of 100 companies from the Shanghai Stock Exchange, collected in XBRL and PDF formats.",
+    "size": "100 companies",
+    "format": "Structured data (XBRL), Unstructured data (PDF)",
+    "annotation": "Automatically generated from XBRL data; manual extraction for PDF."
+  },
+  "methodology": {
+    "methods": [
+      "Evaluation of LLM responses using RMS metric",
+      "Tournament-style evaluation using LLM as judge for logical reasoning task"
+    ],
+    "metrics": [
+      "RMS Precision",
+      "RMS Recall"
+    ],
+    "calculation": "Metrics are calculated based on the structure and accuracy of generated outputs compared to ground truth.",
+    "interpretation": "Higher precision and recall indicate a model's better accuracy in performing financial statement analysis tasks.",
+    "baseline_results": "Various LLMs were assessed with performance varying across tasks, highlighting differences in capabilities.",
+    "validation": "Validation procedures involve systematic comparisons of generated outputs against expected results."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

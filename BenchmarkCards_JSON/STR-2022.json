@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "STR-2022 (Semantic Textual Relatedness 2022)",
+    "abbreviation": "STR-2022",
+    "overview": "The first manually annotated dataset of sentence-sentence semantic relatedness with 5,500 English sentence pairs and fine-grained relatedness scores from 0 to 1.",
+    "data_type": "sentence pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "STS (Semantic Textual Similarity)"
+    ],
+    "resources": [
+      "https://doi.org/10.5281/zenodo.7599667",
+      "https://github.com/Priya22/semantic-textual-relatedness",
+      "https://huggingface.co/datasets/vkpriya/str-2022"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a dataset for exploring the semantic relatedness of sentence pairs and to evaluate automatic methods of sentence representation.",
+    "audience": [
+      "ML Researchers",
+      "NLP Practitioners"
+    ],
+    "tasks": [
+      "Sentence Relatedness"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated from various sources including Goodreads, Wikipedia, SNLI, among others.",
+    "size": "5,500 sentence pairs",
+    "format": "CSV",
+    "annotation": "Manually annotated using a comparative annotation framework."
+  },
+  "methodology": {
+    "methods": [
+      "Comparative annotation",
+      "Crowdsourced annotation via Amazon Mechanical Turk"
+    ],
+    "metrics": [
+      "Reliability measured using Split-Half Reliability (SHR)"
+    ],
+    "calculation": "Spearman correlation between predicted and gold relatedness scores.",
+    "interpretation": "A higher score indicates greater semantic relatedness between two sentences.",
+    "baseline_results": "N/A",
+    "validation": "Validation was performed using a reliable annotation process with repeat annotations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset may include more sentences from people with certain socio-economic and educational backgrounds.",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "No identifiable information was collected from annotators, and sentences were selected to pose no privacy risk.",
+    "data_licensing": "N/A",
+    "consent_procedures": "The crowd-sourced task was approved by the Institutional Research Ethics Board.",
+    "compliance_with_regulations": "N/A"
+  }
+}

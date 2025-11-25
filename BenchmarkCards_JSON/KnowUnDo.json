@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "KnowUnDo (Knowledge Unlearning with Differentiated Scope)",
+    "abbreviation": "KnowUnDo",
+    "overview": "KnowUnDo is a benchmark for evaluating knowledge unlearning methods in Large Language Models (LLMs), focusing on sensitive information like copyrighted content and user privacy. It categorizes knowledge instances into 'Unlearn Scope' and 'Retention Scope' to assess the precision of unlearning.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "TOFU",
+      "RWKU"
+    ],
+    "resources": [
+      "https://github.com/zjunlp/KnowUnDo"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation benchmark for knowledge unlearning methods, aiming to enhance privacy and copyright compliance in LLMs.",
+    "audience": [
+      "ML Researchers",
+      "AI Developers"
+    ],
+    "tasks": [
+      "Knowledge Unlearning Evaluation"
+    ],
+    "limitations": "The current scope does not include all types of copyrighted content and user privacy scenarios.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from publicly available copyright materials and fictitious privacy data.",
+    "size": "2,649 examples",
+    "format": "JSON",
+    "annotation": "Manually verified and generated using GPT models."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Unlearn Success",
+      "Retention Success",
+      "Perplexity",
+      "ROUGE-L"
+    ],
+    "calculation": "Metrics are calculated based on the model's accuracy in predicting within the defined Unlearn and Retention scopes.",
+    "interpretation": "Higher Unlearn Success indicates effective forgetting of sensitive knowledge, while higher Retention Success signifies maintained performance in permissible knowledge.",
+    "baseline_results": null,
+    "validation": "Benchmarked against existing unlearning methods to assess performance improvements."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data",
+            "Data privacy rights alignment"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": [
+      "Inadequate protection of user privacy",
+      "Excessive unlearning leading to loss of general knowledge"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "User privacy is protected by employing fictitious data and ensuring sensitive information is categorized correctly.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "Adheres to GDPR and CCPA guidelines for data protection."
+  }
+}

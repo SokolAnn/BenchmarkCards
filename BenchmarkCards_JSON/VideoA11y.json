@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "VideoA11y (Method and Dataset for Accessible Video Description)",
+    "abbreviation": "VideoA11y",
+    "overview": "VideoA11y is a method and dataset designed to generate high-quality video descriptions specifically tailored for blind and low vision individuals, utilizing multimodal large language models and 42 audio description guidelines. The associated VideoA11y-40K dataset consists of 40,000 videos described in detail to enhance accessibility for BLV users.",
+    "data_type": "video and descriptions",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": null,
+    "resources": [
+      "https://people-robots.github.io/VideoA11y/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enhance video accessibility for blind and low vision individuals by generating high-quality video descriptions.",
+    "audience": [
+      "ML Researchers",
+      "Video Content Creators",
+      "Accessibility Advocates"
+    ],
+    "tasks": [
+      "Video Description Generation"
+    ],
+    "limitations": null,
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "VideoA11y-40K dataset is curated and includes various videos described specifically for blind and low vision users, incorporating multimodal large language models.",
+    "size": "40,000 videos",
+    "format": "N/A",
+    "annotation": "Descriptions were generated using a method that adheres to audio description guidelines."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Custom metrics",
+      "Standard metrics evaluation"
+    ],
+    "metrics": [
+      "Descriptiveness",
+      "Objectivity",
+      "Accuracy",
+      "Clarity",
+      "BLEU Score",
+      "ROUGE-L",
+      "CIDEr",
+      "SPICE"
+    ],
+    "calculation": "Metrics calculated based on evaluations from both human users and automated scoring based on ground truth descriptions.",
+    "interpretation": "Higher scores in the metrics indicate better quality in descriptions, showing how well they serve the needs of blind and low vision users compared to traditional human-generated descriptions.",
+    "baseline_results": null,
+    "validation": "Validated through multiple user studies involving both sighted participants and blind and low vision individuals."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset includes demographic breakdowns based on the user studies involving BLV individuals.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "Participants in user studies gave informed consent as part of the study design and IRB approval.",
+    "compliance_with_regulations": "N/A"
+  }
+}

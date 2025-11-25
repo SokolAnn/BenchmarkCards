@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Bench4KE",
+    "abbreviation": "N/A",
+    "overview": "Bench4KE is an extensible API-based benchmarking system for Knowledge Engineering (KE) automation focused on evaluating tools that generate Competency Questions (CQs) automatically, providing a standardized framework to assess their quality using a curated gold standard dataset.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Knowledge Engineering"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/fossr-project/ontogenia-cini",
+      "https://doi.org/10.5281/zenodo.15397912"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a standardized and extensible evaluation framework for Knowledge Engineering automation tasks, particularly for the generation of Competency Questions.",
+    "audience": [
+      "Knowledge Engineers",
+      "AI Researchers",
+      "Ontology Developers"
+    ],
+    "tasks": [
+      "Competency Question Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Gold standard datasets from four real-world ontology projects combined with user stories and domain-specific datasets.",
+    "size": "101 Competency Questions",
+    "format": "CSV, XML",
+    "annotation": "Manually crafted by ontology engineers from real-world projects."
+  },
+  "methodology": {
+    "methods": [
+      "API-based evaluation",
+      "Comparative analysis"
+    ],
+    "metrics": [
+      "Cosine Similarity",
+      "Jaccard Similarity",
+      "BLEU Score",
+      "ROUGE-L",
+      "sBERT",
+      "LLM-based Semantic Scoring"
+    ],
+    "calculation": "Metrics are computed by comparing generated CQs against gold standard CQs using various similarity measures.",
+    "interpretation": "The evaluation results quantify the quality of generated CQs by measuring their semantic similarity to manually crafted CQs.",
+    "baseline_results": "Comparative performance metrics of four LLM-based CQ generation systems were established.",
+    "validation": "Bench4KE supports various evaluation scenarios using user stories and structured datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Apache 2.0 License",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

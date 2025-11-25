@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MEDEC (Medical Error Detection and Correction in Clinical Notes)",
+    "abbreviation": "MEDEC",
+    "overview": "MEDEC is the first publicly available benchmark for medical error detection and correction in clinical notes, covering five types of errors. It consists of 3,848 clinical texts to assess the ability of language models to validate existing or generated medical text for correctness and consistency.",
+    "data_type": "clinical texts",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/abachaa/MEDEC"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a benchmark for assessing automated medical error detection and correction in clinical notes.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Healthcare Professionals"
+    ],
+    "tasks": [
+      "Error Detection",
+      "Error Correction"
+    ],
+    "limitations": "The dataset is limited in terms of size and types of medical errors.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "3,848 clinical texts from three US hospital systems, with errors introduced by medical annotators.",
+    "size": "3,848 clinical texts",
+    "format": "N/A",
+    "annotation": "Annotated by eight medical annotators."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Recall",
+      "ROUGE-1",
+      "BERTScore",
+      "BLEURT"
+    ],
+    "calculation": "Metrics describe error detection and correction performance, comparing models with human annotations.",
+    "interpretation": "Higher scores indicate better performance in error detection and correction tasks.",
+    "baseline_results": null,
+    "validation": "Tested on clinical texts, comparing LLM performance with medical doctors' assessments."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Clinical notes were de-identified.",
+    "data_licensing": "The UW subset requires signing a data usage agreement (DUA).",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

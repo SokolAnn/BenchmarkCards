@@ -1,0 +1,71 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PrefCleanBench",
+    "abbreviation": "N/A",
+    "overview": "PrefCleanBench offers a standardized protocol to assess cleaning strategies in terms of alignment performance and generalizability across diverse datasets, model architectures, and optimization algorithms, focusing on evaluating 13 preference data cleaning methods for LLM alignment.",
+    "data_type": "preference data pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "RewardBench"
+    ],
+    "resources": [
+      "https://github.com/deeplearning-wisc/PrefCleanBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a standardized benchmark for evaluating various data cleaning methods and enhance LLM alignment through better data quality.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Preference Data Cleaning",
+      "Alignment Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Four widely adopted preference datasets: Anthropic-HH, UltraFeedback, PKU-SafeRLHF, and HelpSteer2.",
+    "size": "169,352 preference pairs",
+    "format": "N/A",
+    "annotation": "Human annotation and AI-generated labels."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Win-tie rate",
+      "Average reward"
+    ],
+    "calculation": "Metrics calculated by assessing the performance of models trained on cleaned vs. original datasets.",
+    "interpretation": "Higher win-tie rates and average rewards indicate better alignment.",
+    "baseline_results": "Models trained on uncleaned datasets serve as the baseline.",
+    "validation": "Results validated through controlled experiments across multiple datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

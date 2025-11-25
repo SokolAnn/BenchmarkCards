@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Ordered CommonGen",
+    "abbreviation": "OCG",
+    "overview": "A benchmark designed to evaluate the compositional generalization and instruction-following abilities of LLMs by measuring ordered coverage of generated sentences in response to specified concept orders.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "CommonGen"
+    ],
+    "resources": [
+      "https://hf.co/datasets/allenai/commongen_lite"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess the capability of LLMs to generate sentences that follow explicit instructions regarding the order of concepts.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text Generation",
+      "Compositional Generalization"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "CommonGen-lite dataset and instruction templates from FLAN.",
+    "size": "27,648 instances",
+    "format": "JSON",
+    "annotation": "Automatically generated using LLMs."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Ordered Rate",
+      "Coverage without order",
+      "Diversity",
+      "Perplexity"
+    ],
+    "calculation": "Metrics are calculated based on the percentage of concepts correctly generated in specified order and overall diversity of outputs.",
+    "interpretation": "Higher scores in Ordered Rate indicate better adherence to specified order of concepts.",
+    "baseline_results": "N/A",
+    "validation": "Comprehensive benchmarking across 36 LLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Apache License 2.0 for FLAN templates, MIT License for CommonGen.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

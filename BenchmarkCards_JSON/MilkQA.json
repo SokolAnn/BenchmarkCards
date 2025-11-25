@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MilkQA",
+    "abbreviation": "MilkQA",
+    "overview": "We introduce MilkQA, a question answering dataset from the dairy domain dedicated to the study of consumer questions. The dataset contains 2,657 pairs of questions and answers, written in the Portuguese language and originally collected by the Brazilian Agricultural Research Corporation (Embrapa). The dataset was filtered and anonymized by three human annotators and is intended for research on the answer selection task.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Agriculture"
+    ],
+    "languages": [
+      "Portuguese"
+    ],
+    "similar_benchmarks": [
+      "SelQA",
+      "SQuAD",
+      "WikiQA",
+      "MS MARCO",
+      "TREC-QA",
+      "InsuranceQA",
+      "Págico"
+    ],
+    "resources": [
+      "http://nilc.icmc.usp.br/nilc/index.php/milkqa",
+      "https://arxiv.org/abs/1801.03460",
+      "https://code.google.com/p/word2vec/",
+      "http://nilc.icmc.usp.br/embeddings",
+      "http://trec.nist.gov/trec_eval/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a realistic dataset of consumer questions in the dairy domain for the task of answer selection, filling a gap where existing datasets focus on short factoid questions.",
+    "audience": [
+      "Machine Learning Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Answer Selection",
+      "Question Answering"
+    ],
+    "limitations": "Current (first) version contains 2,657 anonymized question-answer pairs. The unusually long lengths of questions and answers impose high computational requirements on answer selection models.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from Embrapa Dairy Cattle customer service message archive (email message pairs) collected from 2003 to 2012 by the Brazilian Agricultural Research Corporation (Embrapa).",
+    "size": "2,657 pairs of questions and answers",
+    "format": "N/A",
+    "annotation": "Manual selection, cleaning and anonymization by three human annotators; ground-truth answers are original answers provided by Embrapa specialists. Candidate answer pools constructed via clustering to produce 50-candidate pools with one ground truth each."
+  },
+  "methodology": {
+    "methods": [
+      "Model-based evaluation (answer selection models: baselines and CNN architectures)",
+      "Automated metrics (ranking evaluation using P@1 and MAP)",
+      "Baseline comparisons"
+    ],
+    "metrics": [
+      "Precision at top one (P@1)",
+      "Mean Average Precision (MAP)"
+    ],
+    "calculation": "P@1 computed by the authors' evaluation script. MAP computed using the official TREC scorer (trec_eval). Answer selection treated as a ranking task where each candidate answer receives a relevance score.",
+    "interpretation": "Higher P@1 and MAP indicate better ranking performance. P@1 is the fraction of questions with a correct answer ranked first. MAP measures how well a system places correct answers near the top across the rank list. The authors interpret, for example, P@1 = 0.57 as only 57% of questions correctly answered and indicative of room for improvement.",
+    "baseline_results": "Results on WikiQA and MilkQA (P@1 and MAP): WWM — WikiQA P@1 0.5062 MAP 0.5100; MilkQA P@1 0.2467 MAP 0.3836. WSE — WikiQA P@1 0.3951 MAP 0.5838; MilkQA P@1 0.1733 MAP 0.2552. CNN-STD — WikiQA P@1 0.4135 MAP 0.5746; MilkQA P@1 0.4100 MAP 0.5573. CNN-LDC — WikiQA P@1 0.5485 MAP 0.6848; MilkQA P@1 0.5700 MAP 0.6899.",
+    "validation": "Dataset partitioned into train/dev/test subsets with 2,307 training questions, 50 development questions, and 300 test questions. Candidate answer pools of 50 answers were constructed with one ground truth per pool. MAP computed with trec_eval; early stopping on the dev set used during model training."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Messages were anonymized and cleaned by three annotators. Particular data such as people names and contact information and unrelated content (corporate signatures, advertisements) were removed.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

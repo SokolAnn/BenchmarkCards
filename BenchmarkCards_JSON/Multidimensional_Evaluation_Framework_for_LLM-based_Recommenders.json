@@ -1,0 +1,99 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Multidimensional Evaluation Framework for LLM-based Recommenders",
+    "abbreviation": "N/A",
+    "overview": "The paper proposes a reproducible multidimensional evaluation framework specifically for evaluating the performance of LLM-based recommenders. It introduces four new evaluation dimensions—history length sensitivity, candidate position bias, generation-involved performance, and hallucinations—on top of traditional utility and novelty metrics.",
+    "data_type": "multimodal",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "FairLLM",
+      "CFaiRLLM",
+      "FairEvalLLM"
+    ],
+    "resources": [
+      "https://github.com/JiangDeccc/EvaLLMasRecommender"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation framework for LLMs as recommenders, covering both traditional and novel evaluation dimensions.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Recommender System Developers"
+    ],
+    "tasks": [
+      "Recommendation Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Four real-world datasets: Amazon All Beauty, Sports & Outdoors, Movielens-1M, LastFM.",
+    "size": "22363 users, 12101 items, 198502 interactions (Beauty); 35598 users, 18357 items, 296337 interactions (Sports); 6040 users, 3416 items, 999611 interactions (ML-1M); 1543 users, 7286 items, 173778 interactions (LastFM).",
+    "format": "CSV",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Hit Ratio (HR)",
+      "Normalized Discounted Cumulative Gain (NDCG)",
+      "Serendipity",
+      "Average Recommendation Popularity (ARP)",
+      "Overlap Item Coverage (OIC)",
+      "Gini Coefficient"
+    ],
+    "calculation": "Metrics are calculated based on the performance of LLMs in terms of accuracy and various fairness dimensions across multiple datasets.",
+    "interpretation": "Higher values in utility metrics indicate better performance in recommendation accuracy.",
+    "baseline_results": "Traditional recommendation models (e.g., BPRMF, GRU4Rec) are used as baselines for comparison.",
+    "validation": "The framework is validated using existing LLMs and traditional models across several datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

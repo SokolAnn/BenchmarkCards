@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "REFUTE (Refuting Erroneous Findings Using Targeted Examples)",
+    "abbreviation": "REFUTE",
+    "overview": "REFUTE is a dynamically updating benchmark designed to evaluate the counterexample generation capabilities of language models for incorrect algorithmic solutions. It consists of problems from programming contests along with their incorrect solutions, challenging models to identify inputs that cause these solutions to fail.",
+    "data_type": "algorithmic problem-solving tasks with incorrect code submissions",
+    "domains": [
+      "Computer Science"
+    ],
+    "languages": [
+      "English",
+      "C++",
+      "Python"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/falsifiers/refute-benchmark"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate and enhance the ability of language models to create counterexamples for incorrect algorithmic solutions, thereby improving model reasoning and reflection capabilities.",
+    "audience": [
+      "Machine Learning Researchers",
+      "Algorithm Developers",
+      "Software Engineers"
+    ],
+    "tasks": [
+      "Counterexample Generation",
+      "Algorithmic Problem Solving"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Incorrect submissions from recent programming contests hosted on Codeforces.",
+    "size": "324 samples",
+    "format": "structured problem statements with incorrect code and correct solutions",
+    "annotation": "Each sample is annotated with metadata including problem constraints and correct solutions."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics evaluation",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Counterexample success rate",
+      "Accuracy of generated solutions"
+    ],
+    "calculation": "Metrics are calculated based on the ability of models to produce valid counterexamples that identify failures in incorrect solutions.",
+    "interpretation": "Performance is interpreted based on the percentage of tasks for which models successfully generate counterexamples.",
+    "baseline_results": null,
+    "validation": "Counterexamples are validated automatically by comparing the outputs of the incorrect and correct solutions using an input validation script."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

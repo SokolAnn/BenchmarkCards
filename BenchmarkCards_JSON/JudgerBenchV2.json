@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "JudgerBenchV2",
+    "abbreviation": "N/A",
+    "overview": "JudgerBenchV2 is a comprehensive benchmark evaluating cross-domain judgment accuracy and rank consistency to standardize judge model evaluation.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "JudgeBench",
+      "Rewardbench"
+    ],
+    "resources": [
+      "https://github.com/open-compass/CompassJudger"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To improve the evaluation landscape for judge models and provide a more comprehensive and accurate benchmark.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Model Evaluation",
+      "Judging Tasks"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from a variety of publicly available judge and reward datasets, clustered real-world user queries, and high-performing model responses.",
+    "size": "10,000 questions",
+    "format": "N/A",
+    "annotation": "Judgments based on a Mix-of-Judgers consensus and evaluated by a judge model."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Pairwise comparisons"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Rank fidelity"
+    ],
+    "calculation": "Performance scores are derived by comparing judgments against ground truth from a Mix-of-Judgers.",
+    "interpretation": "Higher scores indicate better judgment accuracy and consistency in rankings.",
+    "baseline_results": "CompassJudger-2 consistently outperforms other judge models, achieving state-of-the-art performance.",
+    "validation": "Through rigorous evaluations against multiple judge benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

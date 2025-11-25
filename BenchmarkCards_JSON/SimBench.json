@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SimBench",
+    "abbreviation": "N/A",
+    "overview": "SimBench is a benchmark designed to evaluate the proficiency of student large language models (S-LLMs) in generating digital twins (DTs) for simulators, enabling ranking based on their ability to produce high-quality DTs.",
+    "data_type": "dialogue interactions",
+    "domains": [
+      "Robotics",
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/uwsbel/SimBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To measure the ability of student large language models to generate effective digital twins for simulation scenarios.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Multi-turn Interaction",
+      "Digital Twin Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "A dataset with 102 exemplary demonstrations categorized into 34 distinct physical systems, manually curated by simulation experts.",
+    "size": "102 demonstrations",
+    "format": "N/A",
+    "annotation": "Manually curated by experts"
+  },
+  "methodology": {
+    "methods": [
+      "Automated evaluation using a rule-based judge LLM (J-LLM)"
+    ],
+    "metrics": [
+      "pass@1",
+      "CodeBLEU",
+      "ROUGE-LSUM"
+    ],
+    "calculation": "Metrics are calculated based on the correctness of generated digital twins compared to expert-provided ground truth.",
+    "interpretation": "Higher pass@1 scores indicate better performance in generating accurate digital twins.",
+    "baseline_results": null,
+    "validation": "Evaluation framework is optimized using expert feedback on ground truth code."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

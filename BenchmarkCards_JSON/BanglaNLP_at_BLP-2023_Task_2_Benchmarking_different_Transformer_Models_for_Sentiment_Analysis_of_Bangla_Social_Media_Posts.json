@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "BanglaNLP at BLP-2023 Task 2: Benchmarking different Transformer Models for Sentiment Analysis of Bangla Social Media Posts",
+    "abbreviation": "N/A",
+    "overview": "This paper presents a benchmark for sentiment analysis of Bangla social media posts, using various Transformer-based architectures to quantify model performance in this low-resource language scenario.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Bengali"
+    ],
+    "similar_benchmarks": [
+      "SentNoB",
+      "BanglaBERT",
+      "XLM-Roberta"
+    ],
+    "resources": [
+      "https://github.com/Saumajit/BanglaNLP/tree/main/Task_2"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To benchmark different transformer models for sentiment analysis of Bangla social media posts and evaluate their effectiveness in a low-resource language.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Sentiment Analysis"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Datasets from two distinct sources: MUBASE (manually annotated Tweets and Facebook posts) and SentNob (public comments from social media).",
+    "size": "33,000 sentences (train and dev combined)",
+    "format": "N/A",
+    "annotation": "Manually annotated for sentiment polarity."
+  },
+  "methodology": {
+    "methods": [
+      "Finetuning",
+      "P-Tuning"
+    ],
+    "metrics": [
+      "Micro F1"
+    ],
+    "calculation": "Micro F1 is calculated by counting true positives, false negatives, and false positives globally.",
+    "interpretation": "Micro F1 indicates how well the model predicts the correct sentiment class.",
+    "baseline_results": "Micro-F1 of 67.02% on the test set.",
+    "validation": "Model performance validated on a dedicated test set after prior training."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

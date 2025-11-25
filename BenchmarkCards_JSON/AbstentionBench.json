@@ -1,0 +1,100 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "AbstentionBench",
+    "abbreviation": "N/A",
+    "overview": "AbstentionBench is a large-scale benchmark for holistically evaluating abstention capabilities of LLMs across diverse scenarios, incorporating 20 datasets covering questions with unknown answers, underspecified input, and false premises.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Mathematics",
+      "Science",
+      "Philosophy",
+      "Medicine"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMLU",
+      "GSM8K",
+      "GPQA",
+      "SQuAD",
+      "BIG-Bench"
+    ],
+    "resources": [
+      "https://github.com/facebookresearch/AbstentionBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the ability of large language models (LLMs) to abstain from answering questions when appropriate.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Abstention Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Various public datasets, including modifications of existing benchmarks (GSM8K, GPQA, MMLU). Also includes newly created underspecified variants.",
+    "size": "35,000+ questions",
+    "format": "JSON",
+    "annotation": "Manual annotation to identify appropriate abstention responses and labeling of datasets."
+  },
+  "methodology": {
+    "methods": [
+      "Automatic metrics",
+      "Human evaluation via LLM judgment"
+    ],
+    "metrics": [
+      "Recall",
+      "Precision",
+      "F1 Score"
+    ],
+    "calculation": "Recall is computed as the proportion of correct abstention responses among all instances where abstention is appropriate.",
+    "interpretation": "Higher recall indicates better performance in correctly abstaining from answering when necessary.",
+    "baseline_results": "Not explicitly stated.",
+    "validation": "Extensive validation with human annotators for model responses and LLM judge accuracies."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

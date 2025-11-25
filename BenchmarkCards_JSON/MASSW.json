@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MASSW (Multi-Aspect Summarization of Scientific Workflows)",
+    "abbreviation": "MASSW",
+    "overview": "MASSW is a comprehensive text dataset focused on Multi-Aspect Summarization of Scientific Workflows, including structured summaries extracted from over 152,000 peer-reviewed publications. The dataset is designed to enable various machine-learning tasks that predict and recommend steps in scientific research workflows.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/xingjian-zhang/massw"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a structured dataset that facilitates the exploration and optimization of scientific workflows through AI-assisted methods.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Workflow Prediction",
+      "Title Prediction"
+    ],
+    "limitations": "The dataset is limited to AI-related computer science publications and may not generalize across other domains.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Automated extraction from over 152,000 peer-reviewed publications collected from 17 leading computer science conferences.",
+    "size": "152,000 publications",
+    "format": "TSV",
+    "annotation": "Automatically generated through Large Language Models (LLMs) with validation against human annotations."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "BLEU Score",
+      "ROUGE-L",
+      "BERTScore"
+    ],
+    "calculation": "Metrics are calculated by comparing automated summaries to human-generated reference summaries.",
+    "interpretation": "Higher scores in BLEU and ROUGE indicate better alignment with human summaries.",
+    "baseline_results": "GPT-4 outperformed other models in semantic evaluation metrics.",
+    "validation": "The dataset's summaries were validated against human annotations to ensure quality."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "None explicitly mentioned in the paper.",
+    "harm": "Potential biases introduced by the selection of top-tier conferences in the dataset."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Open Academic Graph (OAG) dataset is publicly released under the ODC-BY license.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

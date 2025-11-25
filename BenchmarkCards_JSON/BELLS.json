@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "BELLS (Benchmarks for the Evaluation of LLM Safeguards)",
+    "abbreviation": "BELLS",
+    "overview": "BELLS is a structured collection of tests that evaluate input-output safeguards for Large Language Models (LLMs). It includes established failure tests, emerging failure tests, and next-gen architecture tests, to ensure the robustness of safeguards against both known and unknown failure modes.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a benchmark that guides the development of robust safeguards that act as early detection systems for risks of harm arising from new behaviors, use cases, or attacks in LLM applications.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Anomaly Detection",
+      "Input-Output Safeguards Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated traces from two LLM-agents using different steering prompts in the Machiavelli benchmark, capturing various ethical behaviors.",
+    "size": "1,200 traces",
+    "format": "JSON",
+    "annotation": "Traces annotated with ethical violations and harm scores based on agent actions."
+  },
+  "methodology": {
+    "methods": [
+      "Baseline Detection",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Area Under the Precision-Recall Curve (AUPRC)"
+    ],
+    "calculation": "AUPRC is calculated based on the classification precision and recall for detecting unethical behavior in agent traces.",
+    "interpretation": "Higher AUPRC score indicates better detection capability of unethical behavior by the safeguards.",
+    "baseline_results": "A baseline detection mechanism achieving a 0.97 AUPRC score after 80 steps in the environment.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Privacy",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on Jobs",
+            "Impact on affected communities"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

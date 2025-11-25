@@ -1,0 +1,98 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MARS-Bench (Multi-turn Athletic Real-world Scenario Dialogue Benchmark)",
+    "abbreviation": "MARS-Bench",
+    "overview": "MARS-Bench is constructed from play-by-play text commentary to evaluate multi-turn dialogue robustness and long-context understanding in large language models. It focuses on Ultra Multi-turn, Interactive Multi-turn, and Cross-turn Tasks.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Sports"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "MT-Bench",
+      "MultiChallenge",
+      "MT-Bench-101"
+    ],
+    "resources": [
+      "https://syuchin.github.io/MARS-Bench/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation of large language models' abilities in handling complex multi-turn dialogues.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Instruction Following",
+      "Context Retrieval",
+      "Information Reasoning",
+      "Task Switching"
+    ],
+    "limitations": "Domain specificity may limit generalizability to open-domain dialogues; modality is limited to text.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Play-by-play text commentary from NBA and NHL games, structured for multi-turn dialogue modeling.",
+    "size": "120 games",
+    "format": "Structured text",
+    "annotation": "Manually crafted questions based on game records."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are computed based on task-specific checklists comparing model outputs with ground truth.",
+    "interpretation": "Scores are interpreted to assess dialogue comprehension and reasoning across turns.",
+    "baseline_results": "Comparative performances against existing benchmarks.",
+    "validation": "Validated through extensive testing on various LLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

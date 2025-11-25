@@ -1,0 +1,119 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Harmful-LGBTQIA",
+    "abbreviation": "N/A",
+    "overview": "Introduce a real-world multi-labeled dataset of online conversational content to study and detect harmful Anti-LGBTQIA+ conversational content; construct a multi-label classification dataset with 6 distinct harmful language labels (toxicity, severe toxicity, obscene, threat, insult, identity attack) for binary and multi-label toxic comment classification; release labeled dataset and all code online.",
+    "data_type": "text (Reddit comments / online conversational comments)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [],
+    "similar_benchmarks": [
+      "REDDIT BIAS",
+      "RAL-E (Reddit Abusive Language English)"
+    ],
+    "resources": [
+      "https://github.com/daconjam/Harmful-LGBTQIA",
+      "https://github.com/umanlp/RedditBias",
+      "https://github.com/unitaryai/detoxify",
+      "https://outrightinternational.org/",
+      "https://www.pytorchlightning.ai",
+      "https://huggingface.co/docs/transformers/index",
+      "https://www.dictionary.com"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "1) Detect several forms of toxicity in comments geared toward LGBTQIA+ individuals (threats, obscenity, insults, identity-based attacks). 2) Conduct exploratory data analysis and a detailed human evaluation to gain insights into the new multi-labeled dataset. 3) Accurately identify and detect harmful conversational content in social media comments.",
+    "audience": [
+      "AI and NLP practitioners",
+      "Researchers",
+      "Practitioners"
+    ],
+    "tasks": [
+      "Binary Classification",
+      "Multi-label Classification",
+      "Toxic Comment Classification",
+      "Harmful Content Detection"
+    ],
+    "limitations": "Class imbalance (e.g., very few 'threat' and 'severe toxicity' samples) causing lower performance on rare labels; dataset contains offensive, profane, and potentially triggering content which may distress LGBTQIA+ individuals; potential bias toward African American English and other dialectal varieties that may lead to censoring or unfair treatment of vulnerable groups.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Adapted the queerness (LGBTQIA+ , straight) dimension from REDDIT BIAS (Barikeri et al., 2021); collected comments from Reddit (REDDIT BIAS) to create the dataset.",
+    "size": "9,930 comments",
+    "format": "N/A",
+    "annotation": "Automated labeling using Detoxify (multi-headed BERT) to produce probabilities for six labels and threshold mapping (c>=0.5 => harmful:1) to create binary labels; human annotation via Amazon Mechanical Turk (up to 15 annotators) for a 1,000-sample evaluation; inter-annotator agreement measured with Krippendorff's alpha = 0.81."
+  },
+  "methodology": {
+    "methods": [
+      "Model-based evaluation (fine-tuning large language models: BERT, RoBERTa, HateBERT)",
+      "Baseline ML evaluation (Logistic Regression, Support Vector Machine)",
+      "Automated labeling via Detoxify",
+      "Human evaluation (Amazon Mechanical Turk)"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score",
+      "Macro F1 Score",
+      "Weighted F1 Score"
+    ],
+    "calculation": "Precision is defined as the percentage of samples classified as positive that are truly positive; recall is defined as the true positive rate; F1 score is the harmonic mean of precision and recall. Label thresholding: label probability threshold l>0.7 used for correlation analysis; class threshold mapping c>=0.5 => class 1 (harmful).",
+    "interpretation": "Higher precision, recall, and F1 indicate better detection performance. Deep learning models outperform baseline models on macro and weighted F1; BERT achieves the best overall performance across tasks and labels in this study.",
+    "baseline_results": "Binary classification (Toxicity label) macro and weighted F1: Logistic Regression macro F1=0.76 weighted F1=0.83; SVM macro F1=0.79 weighted F1=0.84. Deep models: BERT macro F1=0.90 weighted F1=0.92; RoBERTa macro F1=0.87 weighted F1=0.91; HateBERT macro F1=0.88 weighted F1=0.91. (Results reported in Tables 4 and 5 of the paper.)",
+    "validation": "Human evaluation on 1,000 randomly sampled comments via Amazon Mechanical Turk; inter-annotator agreement measured with Krippendorff's alpha = 0.81. Additional EDA: label correlation matrices, feature distribution plots, and word contribution analyses."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Accuracy",
+      "Societal Impact",
+      "Transparency"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy",
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on affected communities"
+          ]
+        },
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Lack of training data transparency",
+            "Uncertain data provenance"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Hate speech directed at LGBTQIA+ individuals",
+      "Offensive language and insults",
+      "Threats (including death threats)",
+      "Identity-based attacks and harassment aimed at LGBTQIA+ individuals"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All data used is publicly available. Annotator optional demographic information was collected but not saved. Annotators were filtered by HIT approval rate and location as described.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Annotators on Amazon Mechanical Turk were asked eligibility and willingness questions and could stop participation if they might be triggered; demographic questions were optional and not saved.",
+    "compliance_with_regulations": "N/A"
+  }
+}

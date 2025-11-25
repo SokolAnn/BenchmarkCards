@@ -1,0 +1,82 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "StorySeek",
+    "abbreviation": "N/A",
+    "overview": "StorySeek is a semi-automatic dataset containing over 1,000 user stories with corresponding goals and project context, constructed to evaluate goal-driven requirements elicitation.",
+    "data_type": "user stories",
+    "domains": [
+      "Software Engineering"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/SoftACE/StorySeek",
+      "https://github.com/SoftACE-Lab/goal2story"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To support research and industry applications in requirements engineering, aiding in the identification and generation of user stories based on project goals.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Requirements Elicitation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from real-world Agile projects hosted on GitLab, utilizing the NEODATASET collection.",
+    "size": "1,005 records",
+    "format": "JSON",
+    "annotation": "Semi-automatic dataset construction with validation using LLMs."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Agent-based validation"
+    ],
+    "metrics": [
+      "Factuality Hit Rate (FHR)",
+      "Quality And Consistency Evaluation (QuACE)"
+    ],
+    "calculation": "FHR measures the ratio of generated user stories that align with real project data, while QuACE evaluates the quality and goal alignment of the stories.",
+    "interpretation": "Higher FHR indicates better alignment with requirements, and higher QuACE scores signify better quality and relevance to goals.",
+    "baseline_results": "Comparative results showed Goal2Story outperforming Super-Agent using standard metrics.",
+    "validation": "Validation done through automated assessments and human evaluation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Data privacy rights alignment"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data is constructed from public GitLab projects ensuring participant anonymity.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

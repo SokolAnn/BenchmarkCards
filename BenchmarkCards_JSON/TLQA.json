@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TimeLogic QA (TLQA) benchmark",
+    "abbreviation": "TLQA",
+    "overview": "The TLQA benchmark is designed specifically to evaluate the temporal logical understanding capabilities of VideoQA models, providing a scalable framework to automatically generate QA pairs from existing video datasets with temporal annotations.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "STAR",
+      "AGQA",
+      "Breakfast",
+      "CrossTask"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To bridge the gap in evaluating temporal logical reasoning in VideoQA through a structured benchmarking approach.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Video Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Leveraging temporal annotations from existing video datasets like STAR, Breakfast, AGQA, and CrossTask.",
+    "size": "32,000 question-answer pairs for TLQA-Small (TLQA-S) and 160,000 pairs for TLQA-Large (TLQA-L)",
+    "format": "N/A",
+    "annotation": "Automatically generated from existing annotations in video datasets."
+  },
+  "methodology": {
+    "methods": [
+      "Zero-Shot evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated by comparing the model's responses with the ground truth answers.",
+    "interpretation": "Higher scores indicate better performance in temporal logical reasoning.",
+    "baseline_results": "Different models' performances on TLQA-S evaluated across various temporal operators and datasets.",
+    "validation": "Evaluation against established VideoQA models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

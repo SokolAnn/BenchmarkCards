@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Eliciting Latent Knowledge (ELK)",
+    "abbreviation": "ELK",
+    "overview": "ELK aims to find patterns in a neural network's activations that robustly track the true state of the world, introducing 12 datasets and corresponding quirky language models finetuned to make systematic errors in context-dependent scenarios.",
+    "data_type": "binary classification datasets",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/EleutherAI/elk-generalization"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a methodology for eliciting reliable knowledge from language models that output untruthful information.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Binary Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "12 binary classification datasets designed to evaluate the performance of ELK methods.",
+    "size": "N/A",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Logistic Regression",
+      "Difference-in-Means",
+      "Linear Discriminant Analysis",
+      "Contrast Consistent Search",
+      "Contrastive Representation Clustering",
+      "Logistic Regression on Contrast Pairs",
+      "Difference-in-Means on Contrast Pairs"
+    ],
+    "metrics": [
+      "Area Under ROC Curve (AUC-ROC)"
+    ],
+    "calculation": "Probing methods are evaluated based on their ability to classify examples as true or false accurately in the context of the ELK framework.",
+    "interpretation": "Higher AUROC indicates better generalization of probes to track truthful knowledge in the presence of untruthful outputs from language models.",
+    "baseline_results": "N/A",
+    "validation": "The model's performance is tested for its ability to recover knowledge representations in contexts where the language model produces untruthful outputs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

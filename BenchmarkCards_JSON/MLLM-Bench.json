@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MLLM-Bench",
+    "abbreviation": "N/A",
+    "overview": "We propose a new evaluation paradigm for MLLMs, evaluating MLLMs with per-sample criteria using potent MLLM as the judge. To validate this paradigm, we design a benchmark, dubbed MLLM-Bench, by curating the evaluation samples across six comprehensive cognitive levels.",
+    "data_type": "image-instruction pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMBench",
+      "MM-Vet",
+      "Alpaca-Eval"
+    ],
+    "resources": [
+      "https://mllm-bench.llmzoo.com"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the performance of multimodal large language models using a new paradigm that focuses on real-world user experiences through per-sample criteria.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Image Captioning",
+      "Object Recognition",
+      "Medical Image Understanding"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Images curated from social networks or personal captures, instruction construction based on GPT-4V output.",
+    "size": "420 image-instruction pairs",
+    "format": "N/A",
+    "annotation": "Data collected and annotated by six volunteers under specific guidelines."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "Pairwise evaluation using GPT-4V"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Win/tie/loss ratios from pairwise evaluations.",
+    "interpretation": "Higher win rates indicate better model performance relative to the anchor model.",
+    "baseline_results": "LLaV A-v1.5-13B acts as the anchor model for evaluations.",
+    "validation": "Three rounds of cross-review and expert verification."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

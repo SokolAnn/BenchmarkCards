@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "RealKIE",
+    "abbreviation": "N/A",
+    "overview": "We introduce RealKIE, a benchmark of five challenging datasets aimed at advancing key information extraction methods, with an emphasis on enterprise applications. The datasets include a diverse range of documents including SEC S1 Filings, US Non-disclosure Agreements, UK Charity Reports, FCC Invoices, and Resource Contracts.",
+    "data_type": "Document-level key information extraction datasets",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://indicodatasolutions.github.io/RealKIE/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To facilitate the development of NLP models capable of handling practical challenges and support further research into information extraction technologies applicable to industry-specific problems.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Key Information Extraction"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Five unique enterprise document sources including SEC S1 Filings, US Non-disclosure Agreements, UK Charity Reports, FCC Invoices, and Resource Contracts.",
+    "size": "N/A",
+    "format": "PDF",
+    "annotation": "Manually annotated text spans referenced against OCR outputs."
+  },
+  "methodology": {
+    "methods": [
+      "Token Classification",
+      "Hyperband Bayesian Hyper-parameter Search"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Macro F1"
+    ],
+    "calculation": "Models are fine-tuned and evaluated based on the best validation set F1 scores.",
+    "interpretation": "Higher F1 scores indicate better performance on key information extraction tasks.",
+    "baseline_results": "Results vary per dataset with detailed performance metrics available for models like RoBERTa, DeBERTa, LayoutLM, and Longformer.",
+    "validation": "Models validated against training and held-out test sets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

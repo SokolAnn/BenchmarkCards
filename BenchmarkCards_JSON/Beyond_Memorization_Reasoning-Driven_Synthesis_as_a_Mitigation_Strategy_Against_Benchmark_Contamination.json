@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Beyond Memorization: Reasoning-Driven Synthesis as a Mitigation Strategy Against Benchmark Contamination",
+    "abbreviation": "N/A",
+    "overview": "The paper presents a contamination-resistant evaluation framework that synthesizes multi-step reasoning questions from arXiv papers to effectively mitigate issues of data contamination in language model evaluations.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Mathematics",
+      "Physics"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MATH",
+      "GPQA",
+      "Frontier-Math"
+    ],
+    "resources": [
+      "https://github.com/TerryJCZhang/BeyondMemorization"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To develop an evaluation framework that synthesizes high-quality reasoning-driven questions and addresses the issue of benchmark contamination.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Academics"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "The QA synthesis pipeline may have limitations in question diversity and complexity due to its focus on theorem-based questions.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Synthesized from 20,277 arXiv papers",
+    "size": "1,643 questions",
+    "format": "JSON",
+    "annotation": "Automated verification and manual review for quality assurance"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Performance is evaluated based on stability in model capabilities across knowledge cutoffs.",
+    "interpretation": "Stable performance indicates contamination resistance, implying genuine reasoning capabilities.",
+    "baseline_results": null,
+    "validation": "Comparative analysis with longitudinal studies reported significant performance decay using retrieval-based benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Bias"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

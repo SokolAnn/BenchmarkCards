@@ -1,0 +1,100 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "WIKIDOMAINS",
+    "abbreviation": "N/A",
+    "overview": "WIKIDOMAINS is a dataset of 22k definitions from 13 academic domains paired with a difficult concept within each definition, designed to support targeted concept simplification for readers encountering domain-specific text.",
+    "data_type": "definition pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Science",
+      "Biology",
+      "Chemistry",
+      "Physics",
+      "Mathematics",
+      "Medicine",
+      "Business",
+      "Economics",
+      "Engineering",
+      "Environmental Science",
+      "Political Science",
+      "Performing Arts"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/google-deepmind/wikidomains"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To facilitate reading comprehension by helping readers understand difficult concepts within domain-specific definitions.",
+    "audience": [
+      "Researchers",
+      "NLP practitioners",
+      "Educators",
+      "Learners"
+    ],
+    "tasks": [
+      "Text Simplification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Wikipedia articles containing definitions across 13 academic domains.",
+    "size": "22,561 definitions",
+    "format": "JSON",
+    "annotation": "Automatically annotated difficult concepts using a heuristic."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Meaning preservation",
+      "Rewrite understanding",
+      "Rewrite easier",
+      "BLEU Score",
+      "BERTSCORE"
+    ],
+    "calculation": "Metrics calculated using human evaluations and comparison to original definitions.",
+    "interpretation": "Higher scores indicate better performance in preserving meaning and ease of understanding.",
+    "baseline_results": "Dictionary baseline showed comparable performance to the best LLMs.",
+    "validation": "Results validated with human judgments and correlation with automated metrics."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Bias"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

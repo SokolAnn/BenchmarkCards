@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "AUCAD (Automated Construction of Alignment Dataset from Log-Related Issues)",
+    "abbreviation": "AUCAD",
+    "overview": "The AUCAD method automates the construction of a high-quality alignment dataset designed to enhance the performance of Large Language Models (LLMs) in generating log statements by extracting information from log-related issues in open-source communities.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Software Engineering"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "LANCE",
+      "FastLog",
+      "UniLog"
+    ],
+    "resources": [
+      "https://github.com/aiopsplus/AucadLog"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To construct a high-quality post-training dataset for enhancing LLM-based log statement generation.",
+    "audience": [
+      "ML Researchers",
+      "Software Engineers",
+      "Developers"
+    ],
+    "tasks": [
+      "Log Statement Generation",
+      "Data Alignment"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Log-related issues extracted from the Apache open-source community and their associated GitHub commits.",
+    "size": "808 entries",
+    "format": "N/A",
+    "annotation": "Automatically constructed and structured from log-related issues."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Experimental evaluation using alignment algorithms"
+    ],
+    "metrics": [
+      "Position Accuracy (PA)",
+      "Level Accuracy (LA)",
+      "Message Accuracy (MA)",
+      "Variable Precision (VP)",
+      "Variable Recall (VR)",
+      "Variable F1 Score (VF1)"
+    ],
+    "calculation": "Metrics are calculated based on comparisons between generated log statements and ground truth references.",
+    "interpretation": "Higher scores indicate better performance in terms of generating relevant log statements.",
+    "baseline_results": "Comparative evaluations against models fine-tuned without the AUCAD dataset.",
+    "validation": "Validated through both human and experimental evaluations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

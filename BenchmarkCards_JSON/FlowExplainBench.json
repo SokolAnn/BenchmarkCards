@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FlowExplainBench",
+    "abbreviation": "N/A",
+    "overview": "FlowExplainBench is a novel benchmark for evaluating flowchart attributions across diverse styles, domains, and question types, specifically designed for fine-grained flowchart attribution tasks.",
+    "data_type": "flowchart images with question-answer pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "FlowchartQA",
+      "FlowVQA"
+    ],
+    "resources": [
+      "https://github.com/flowvqa/flowvqa"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a systematic evaluation of flowchart attribution methods and improve the reliability of LLM responses in flowchart-based tasks.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Flowchart Attribution"
+    ],
+    "limitations": "FlowExplainBench does not encompass all real-world variations of flowcharts, such as hand-drawn diagrams.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed using FlowVQA dataset as a base for flowchart images and annotations.",
+    "size": "1,238 samples",
+    "format": "JSON",
+    "annotation": "Initial attributions performed by GPT-4 and verified through human annotators."
+  },
+  "methodology": {
+    "methods": [
+      "Graph-based reasoning",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Metrics calculated through micro-averaging based on identified attributed paths in flowcharts.",
+    "interpretation": "Higher F1 scores indicate more accurate and relevant attributions between flowchart nodes and provided statements.",
+    "baseline_results": "FlowPathAgent outperformed baseline models by 10-14% according to the F1 Score on FlowExplainBench.",
+    "validation": "The benchmark was validated by comparing model outputs against human-annotated ground truths."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "No personally identifiable information (PII) is used; confidentiality for annotators is maintained.",
+    "data_licensing": "The FlowVQA dataset is distributed under the MIT License.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

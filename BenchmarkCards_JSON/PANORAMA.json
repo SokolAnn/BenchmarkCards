@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PANORAMA (Profile-based Assemblage for Naturalistic Online Representation and Attribute Memorization Analysis)",
+    "abbreviation": "PANORAMA",
+    "overview": "PANORAMA is a large-scale synthetic corpus designed to closely emulate the distribution, variety, and context of PII and sensitive data as it naturally occurs in online environments, comprising 384,789 samples derived from 9,674 synthetic profiles.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "LLM-PBE",
+      "PII-Scope"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/PANORAMA",
+      "https://github.com/user/repo"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a dataset for privacy risk assessment, model auditing, and the development of privacy-preserving LLMs.",
+    "audience": [
+      "ML Researchers",
+      "Privacy Auditors",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Memorization Risk Evaluation"
+    ],
+    "limitations": "Limited diversity in content tone; restricted to English language.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Synthetic profiles generated through a constrained selection approach reflecting real-world demographics.",
+    "size": "384,789 samples",
+    "format": "JSON",
+    "annotation": "Automatically generated based on synthetic profiles."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "ROUGE-L",
+      "Soft Match Rate"
+    ],
+    "calculation": "Measured using soft match criteria with ROUGE-L scores.",
+    "interpretation": "Higher ROUGE-L and Soft Match rates indicate better memorization performance.",
+    "baseline_results": null,
+    "validation": "Validated through fine-tuning Mistral-7B and measuring memorization rates."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Includes diverse demographics across 8 different regions.",
+    "harm": [
+      "Leakage of sensitive PII"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data is synthetically generated to mitigate privacy concerns.",
+    "data_licensing": "Publicly available under research-friendly terms.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

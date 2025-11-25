@@ -1,0 +1,70 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SimCopilot",
+    "abbreviation": "N/A",
+    "overview": "SimCopilot is a benchmark designed to evaluate the ability of large language models (LLMs) to perform code completion and infill tasks in a Copilot-style interactive environment. It comprises two sub-benchmarks for Java and Python, focusing on real-world coding scenarios.",
+    "data_type": "code completion and infilling tasks",
+    "domains": [
+      "Computer Science"
+    ],
+    "languages": [
+      "Java",
+      "Python"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/mj33rice/Sim-CoPilot",
+      "https://huggingface.co/datasets/mj33/SimCoPilot"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate large language models as interactive coding assistants in realistic programming scenarios.",
+    "audience": [
+      "ML Researchers",
+      "Software Developers"
+    ],
+    "tasks": [
+      "Code Completion",
+      "Code Infill"
+    ],
+    "limitations": "May not accurately reflect user satisfaction with AI-generated code, as it strictly evaluates correctness based on predefined test cases.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from private Java and Python code repositories with contributions from faculty and students.",
+    "size": "1,163 programming tasks",
+    "format": "JSON",
+    "annotation": "Human-annotated with a systematic two-stage pipeline to ensure task relevance and integrity."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Pass rate"
+    ],
+    "calculation": "Models are tested on various programming tasks, with results calculated based on the percentage of tasks passing the defined test cases.",
+    "interpretation": "The results are interpreted as the fraction of correct codes produced by models based on success in passing test cases.",
+    "baseline_results": null,
+    "validation": "Evaluated against a suite of test cases encompassing diverse scenarios and programming constructs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC BY-NC-ND 4.0 for data; MIT License for code",
+    "consent_procedures": "Informed consent was obtained from contributors of private code repositories.",
+    "compliance_with_regulations": "N/A"
+  }
+}

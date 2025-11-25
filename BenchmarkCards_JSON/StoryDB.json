@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "StoryDB: Broad Multi-language Narrative Dataset",
+    "abbreviation": "StoryDB",
+    "overview": "StoryDB is a corpus of texts that includes stories in 42 different languages. Every language includes 500+ stories. The dataset serves as a resource for the study of the role of narrative in natural language processing across various languages including low resource ones.",
+    "data_type": "narrative texts",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Armenian",
+      "Italian",
+      "French",
+      "Russian",
+      "German",
+      "Dutch",
+      "Ukrainian",
+      "Portuguese",
+      "Polish",
+      "Spanish",
+      "Persian",
+      "Finnish",
+      "Hungarian",
+      "Czech",
+      "Japanese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://drive.google.com/drive/folders/1RCWk7pyvIpubtsf-f2pIsfqTkvtV80Yv"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a large multi-language dataset of narratives to facilitate various aspects of narrative research and improve narrative generation.",
+    "audience": [
+      "NLP Researchers",
+      "Machine Learning Practitioners",
+      "Story Generation Researchers"
+    ],
+    "tasks": [
+      "Multilabel Classification",
+      "Cross-lingual Learning",
+      "Narrative Analysis"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Wikipedia articles that contain plot summaries in various languages.",
+    "size": "Over 20,000 stories across 42 languages",
+    "format": "TSV",
+    "annotation": "Automatically tagged using categories from Wiki API and manual tagging procedures."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Hamming Score",
+      "Multilabel Accuracy",
+      "AUC-ROC"
+    ],
+    "calculation": "Metrics calculated based on performance of transformer-based models on multilabel classification tasks.",
+    "interpretation": "Higher scores indicate better model performance in predicting narrative tags accurately.",
+    "baseline_results": "The results from models such as mBERT, mDistilBERT, and XLM-RoBERTa showed varying performance in tag classification.",
+    "validation": "Evaluation performed on ten largest languages in the dataset."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Comparisons dataset",
+    "abbreviation": "N/A",
+    "overview": "A diagnostic test dataset (the Comparisons dataset) of premise-hypothesis sentence pairs for Natural Language Inference, designed to examine the degree of abstract composable relational structure and systematicity encoded in sentence embeddings.",
+    "data_type": "text (premise-hypothesis sentence pairs for Natural Language Inference)",
+    "domains": [
+      "Natural Language Processing",
+      "Cognitive Science"
+    ],
+    "languages": null,
+    "similar_benchmarks": [
+      "Stanford Natural Language Inference (SNLI)"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/1909.05885v1"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To test for abstract relational/compositional structure and systematicity in machine-learned sentence embeddings by using minimal diagnostic cases in a Natural Language Inference setting.",
+    "audience": [
+      "Machine Learning Researchers",
+      "Cognitive Scientists"
+    ],
+    "tasks": [
+      "Natural Language Inference"
+    ],
+    "limitations": "Authors state that augmentation-based remedies may not scale due to the combinatorially large space of possible sentences; the dataset targets specific minimal/comparison cases and does not cover the full space of linguistic phenomena (context-tying limits generalization).",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Automatically generated comparison sentence pairs (premise-hypothesis) designed to require relational information (same/more-less/not variants); vocabulary distribution was matched to the SNLI training set.",
+    "size": "44,010 sentence pairs total (Comparisons (same) 14,670; Comparisons (more-less) 14,670; Comparisons (not) 14,670). Training subset used in experiments: 40,000 sentence pairs; validation: 2,000 sentence pairs; test: 2,000 sentence pairs.",
+    "format": "N/A",
+    "annotation": "Automatically generated labels determined by template/rule-based generation (entailment / contradiction / neutral)."
+  },
+  "methodology": {
+    "methods": [
+      "Automated evaluation using classification accuracy",
+      "Confusion matrix analysis",
+      "Statistical analysis of training data (word overlap, antonym presence, negation presence)",
+      "Fine-tuning and retraining experiments with InferSent embeddings",
+      "Dataset augmentation experiments (interleaving Comparisons examples with SNLI)"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy = percentage of correctly classified premise-hypothesis pairs on the Comparisons dataset and SNLI test sets (reported per sub-type and aggregate).",
+    "interpretation": "Authors use Accuracy relative to a bag-of-words (BOW) baseline; for some Comparisons sub-types a BOW baseline is capped at 50% (same-type). Authors caution that performance above common baselines does not necessarily imply relational understanding unless evaluated with diagnostic cases.",
+    "baseline_results": "InferSent on SNLI: 84.84% test accuracy. BOW on SNLI test: 53.99% (reported). Performance on the Comparisons dataset (Table 3): BOW - same: 50.0%, more/less: 30.24%, not: 48.98%; InferSent - same: 50.37%, more/less: 50.35%, not: 45.24%. Fine-tuning on Comparisons (starting from SNLI-trained InferSent) yielded Train(Comp) 99.91% and Test(Comp) 99.8% after 13 epochs but SNLI test fell to 56.37% (Table 9). Training from scratch on combined SNLI+Comparisons yielded Test(Comp) ~100.00% and Test(SNLI) 84.96% (Table 10). Zero-shot/generalization test results for augmented-InferSent (Table 11): held-out nouns 82.0%, made up words 83.2%, long noun phrases 84.9%.",
+    "validation": "Held-out validation and test sets (2,000 examples each) with no overlap with training examples; vocabulary distribution of Comparisons dataset matched to SNLI training set to control lexical exposure; evaluation uses held-out test sets and confusion-matrix analyses."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Explainability",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Explainability",
+          "subcategory": [
+            "Unexplainable output"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

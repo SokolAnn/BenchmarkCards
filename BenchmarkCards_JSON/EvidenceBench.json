@@ -1,0 +1,82 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "EvidenceBench",
+    "abbreviation": "N/A",
+    "overview": "EvidenceBench is introduced as a benchmark for extracting relevant evidence from biomedical papers, based on a novel pipeline involving hypothesis generation and sentence-level annotation guided by human expert judgments.",
+    "data_type": "sentence-level evidence retrieval",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "N/A"
+    ],
+    "resources": [
+      "https://github.com/EvidenceBench/EvidenceBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To measure model performance on the task of evidence retrieval in biomedical literature.",
+    "audience": [
+      "ML Researchers",
+      "Biomedical Researchers"
+    ],
+    "tasks": [
+      "Evidence Retrieval"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "A collection of 107,887 CC-BY open-sourced biomedical research papers and 44,772 review papers from PubMed Central.",
+    "size": "107,461 papers",
+    "format": "JSON",
+    "annotation": "Manual annotation by experts and automated using Large Language Models (LLMs)."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Aspect Recall"
+    ],
+    "calculation": "Aspect Recall measures the fraction of study aspects covered by a retrieved set of sentences.",
+    "interpretation": "Higher Aspect Recall indicates better model performance in retrieving relevant sentences.",
+    "baseline_results": "N/A",
+    "validation": "Performance was validated through a test set of annotated research papers."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC-BY license for the dataset.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TELEVAL (A Dynamic Benchmark Designed for Spoken Language Models in Chinese Interactive Scenarios)",
+    "abbreviation": "TELEVAL",
+    "overview": "TELEVAL is a dynamic benchmark specifically designed to evaluate Spoken Language Models’ effectiveness as conversational agents in realistic Chinese interactive settings. It categorizes capabilities into three evaluation dimensions: Explicit Semantics, Paralinguistic and Implicit Semantics, and System Abilities.",
+    "data_type": "text and audio outputs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "AIR-Bench",
+      "AudioBench",
+      "Dynamic-SUPERB",
+      "MMSU",
+      "VoxEval",
+      "WildSpeech-Bench"
+    ],
+    "resources": [
+      "https://github.com/Tele-AI/TELEVAL"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a user-centered evaluation framework that reflects user experiences and contributes to the development of dialogue-oriented spoken language models.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Dialogue Understanding",
+      "Emotion Recognition",
+      "Dialect Comprehension",
+      "Response Generation",
+      "Audio Event Detection",
+      "Chit-chat"
+    ],
+    "limitations": "TELEVAL primarily addresses only a subset of natural interaction scenarios in Chinese; models not included in the evaluation may be updated in future releases.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "TELEVAL consists of various tasks built from realistic conversational scenarios using both real human and synthetic speech.",
+    "size": "40,000 samples",
+    "format": "text and audio",
+    "annotation": "Data synthesized from TTS systems and real human recordings."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "Emotion Understanding Score",
+      "Human-likeness Score"
+    ],
+    "calculation": "Evaluation scores are averaged based on specific criteria tailored to each task.",
+    "interpretation": "High scores indicate strong capability in producing natural and appropriate responses in conversational contexts.",
+    "baseline_results": null,
+    "validation": "TELEVAL is validated with multiple evaluation methods, ensuring diverse metrics are utilized."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Fairness",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

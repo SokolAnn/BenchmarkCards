@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CoVLA (Comprehensive Vision-Language-Action) Dataset",
+    "abbreviation": "CoVLA",
+    "overview": "CoVLA Dataset is a large-scale dataset for autonomous driving that includes 10,000 video clips, frame-level language captions describing driving scenarios, and future trajectory actions, designed to facilitate the training and evaluation of Vision-Language-Action models.",
+    "data_type": "video with language descriptions and trajectory annotations",
+    "domains": [
+      "Automotive",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "KITTI",
+      "Waymo Open Dataset",
+      "nuScenes"
+    ],
+    "resources": [
+      "https://turingmotors.github.io/covla-ad/",
+      "https://huggingface.co/datasets/turing-motors/CoVLA-Dataset"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive dataset for training and evaluating Vision-Language-Action models in the context of autonomous driving, facilitating advanced reasoning and decision-making capabilities.",
+    "audience": [
+      "ML Researchers",
+      "Autonomous Driving Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Trajectory Prediction",
+      "Scene Description Generation",
+      "Action Planning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Real-world driving data collected using vehicles equipped with cameras and sensors around Tokyo, Japan.",
+    "size": "10,000 video clips, over 80 hours of driving footage, 6,000,000 video frames",
+    "format": "Video with captions in JSON",
+    "annotation": "Automatically generated captions and trajectories using sensor fusion and deep learning techniques."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Average Displacement Error (ADE)",
+      "Final Displacement Error (FDE)"
+    ],
+    "calculation": "ADE is calculated as the mean Euclidean distance between predicted trajectory points and ground truth points over all time steps. FDE measures the distance between the predicted final point and the ground truth final point.",
+    "interpretation": "Lower values of ADE and FDE indicate better trajectory prediction accuracy.",
+    "baseline_results": "N/A",
+    "validation": "The dataset was validated through systematic sampling and automated metric calculation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Human faces and license plates in the dataset images and videos were anonymized to protect privacy.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

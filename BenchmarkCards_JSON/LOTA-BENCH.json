@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LOTA-BENCH",
+    "abbreviation": "N/A",
+    "overview": "LOTA-BENCH is a benchmark for language-oriented task planning for embodied agents. It enables automatic evaluation and quantification of task planning performance.",
+    "data_type": "natural language instructions and actions",
+    "domains": [
+      "Robotics"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/lbaa2022/LLMTaskPlanning"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a systematic benchmark suite that quantifies the performance of task planners for home-service embodied agents.",
+    "audience": [
+      "ML Researchers",
+      "Robotics Practitioners"
+    ],
+    "tasks": [
+      "Task Planning",
+      "Action Execution"
+    ],
+    "limitations": "The benchmark does not encompass low-level action planning or visual understanding.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "ALFRED dataset and Watch-And-Help (WAH) dataset, extended version WAH-NL.",
+    "size": "416 instructions for training set and 195 for test set",
+    "format": "N/A",
+    "annotation": "Collected via the Prolific crowdsourcing platform"
+  },
+  "methodology": {
+    "methods": [
+      "Automated evaluation",
+      "Baseline task planner testing"
+    ],
+    "metrics": [
+      "Task success rate"
+    ],
+    "calculation": "Performance is assessed by comparing the final state of the simulator with predefined goal conditions.",
+    "interpretation": "Higher task success rates indicate better performance of the language model in executing task plans.",
+    "baseline_results": "GPT-3 (text-davinci-003) succeeded with a success rate of 21.36% on ALFRED.",
+    "validation": "The benchmark allows for rigorous evaluation of LLM-based task planners against two dataset-simulator pairs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Morphosyntactic Probing of Multilingual BERT Models",
+    "abbreviation": "N/A",
+    "overview": "We introduce an extensive dataset for multilingual probing of morphological information in language models (247 tasks across 42 languages from 10 families), each consisting of a sentence with a target word and a morphological tag as the desired label, derived from the Universal Dependencies treebanks. We apply perturbation methods (masking, permutation) and Shapley values to locate where disambiguating information resides in the input.",
+    "data_type": "Sentences with a target word and morphological tag labels (morphosyntactic annotations)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Basque",
+      "Belarusian",
+      "Latvian",
+      "Lithuanian",
+      "Afrikaans",
+      "Bulgarian",
+      "Croatian",
+      "Czech",
+      "Polish",
+      "Russian",
+      "Serbian",
+      "Slovak",
+      "Slovenian",
+      "Ukrainian",
+      "Albanian",
+      "Armenian",
+      "Greek",
+      "Irish",
+      "Persian",
+      "Arabic",
+      "Hebrew",
+      "Turkish",
+      "Estonian",
+      "Finnish",
+      "Hungarian",
+      "Catalan",
+      "French",
+      "Italian",
+      "Latin",
+      "Portuguese",
+      "Romanian",
+      "Spanish",
+      "Hindi",
+      "Urdu",
+      "Dutch",
+      "English",
+      "German",
+      "Icelandic",
+      "Norwegian Bokmal",
+      "Norwegian Nynorsk",
+      "Swedish"
+    ],
+    "similar_benchmarks": [
+      "Universal Dependencies (UD) Treebanks",
+      "UniMorph",
+      "LINSPECTOR",
+      "SIGMORPHON shared tasks"
+    ],
+    "resources": [
+      "https://github.com/juditacs/morphology-probes",
+      "https://arxiv.org/abs/2306.06205"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a large multilingual morphosyntactic probing dataset (247 tasks across 42 languages) derived from Universal Dependencies and to analyze where morphological information for each task resides in context using perturbation methods and Shapley value attribution.",
+    "audience": [],
+    "tasks": [
+      "Morphological tagging",
+      "Morphological feature classification",
+      "Probing / Diagnostic classification"
+    ],
+    "limitations": "The dataset is dominated by Indo-European languages and has a modest number of non-European tasks; several languages (e.g., Chinese, Japanese, Vietnamese, Korean) were excluded due to lack of UD data or incompatible tagsets; tasks with very rare classes were discarded (classes with fewer than 200 occurrences).",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Universal Dependencies treebanks (UD 2.9), extended with Kote et al. (2019) Albanian treebank and a silver standard Hungarian dataset (Nemeskey 2020).",
+    "size": "247 tasks across 42 languages; for each task: 2,000 training samples, 200 development samples, 200 test samples (per-task splits as described in paper).",
+    "format": "CoNLL-U (Universal Dependencies) gold tokenization; sampled into train/dev/test splits as described in the paper.",
+    "annotation": "Existing Universal Dependencies morphosyntactic tags (per-token UD annotations). No new manual annotation described; tasks sampled from UD annotations with downsampling/discarding to limit class imbalance."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics (accuracy)",
+      "Probing with auxiliary classifiers (feature-based probes: linear and MLP probes)",
+      "Perturbation experiments (masking target word, masking left/right context, masking both sides, permutation of word order)",
+      "Shapley value analysis to assign contribution by relative position",
+      "Baselines comparison (bidirectional character LSTM chLSTM, fastText, Stanza)"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Effect (percentage change in accuracy due to perturbation)",
+      "Statistical significance tests (paired t-test, binomial sign test) as reported"
+    ],
+    "calculation": "Perturbation effect E(m; t; p) is defined as E(m;t;p) = 1 - Acc(m;t;p) / Acc(m;t), where Acc(m;t) is the unperturbed probing accuracy for model m on task t and Acc(m;t;p) is the accuracy under perturbation p. Shapley values are computed over 9 relative positions with v(S) = 100 * (Acc_S - Acc_all_masked) / (Acc_full - Acc_all_masked) as described in the paper.",
+    "interpretation": "Higher Accuracy indicates stronger recoverable morphological information in model representations. Effect quantifies how much accuracy is lost under input perturbations (larger effect = more information removed). Shapley values quantify contribution of target and contextual positions; authors interpret results to mean most information is in the target word and left (preceding) context generally contributes more than right context (example summary: XLM-RoBERTa context contribution left/right = ~27.0%/18.6%, target = ~54.4%).",
+    "baseline_results": "Average test accuracy across all 247 tasks: mBERT 90.4%, XLM-RoBERTa 91.8%, chLSTM (bidirectional char-LSTM) 85.0%, fastText 83.3%, Stanza 91.4% (Stanza excludes Albanian tasks).",
+    "validation": "Train/dev/test splits sampled from UD treebanks with no overlap of target words across splits; early stopping based on development loss and accuracy; results averaged over 10 runs with different random seeds (Shapley computations run once due to cost)."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

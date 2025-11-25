@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "UNCD-Cyber",
+    "abbreviation": "N/A",
+    "overview": "UNCD-Cyber provides a detailed assessment of the removal of dangerous capabilities in LLMs using a fine-grained evaluation framework based on Cognitive Diagnosis Modeling.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Cybersecurity"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MUSE"
+    ],
+    "resources": [
+      "https://github.com/lyicheng619/UNCD.git"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enhance the evaluation of LLM unlearning methods through fine-grained diagnostic assessments of harmful knowledge retention.",
+    "audience": [
+      "ML Researchers",
+      "Cybersecurity Experts",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Knowledge Assessment",
+      "Text Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Open-source Cyber Threat Intelligence reports and tailored evaluation datasets based on MITRE ATT&CK techniques.",
+    "size": "4,900 forget samples and 8,300 retain samples",
+    "format": "JSONL",
+    "annotation": "Generated using GPT-4o and reviewed by experts."
+  },
+  "methodology": {
+    "methods": [
+      "Cognitive Diagnosis Modeling",
+      "Question-answering evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Mean knowledge state score"
+    ],
+    "calculation": "Metrics are calculated based on the assessment of knowledge concepts associated with the ability to perform cyberattacks.",
+    "interpretation": "Higher scores indicate greater effectiveness in unlearning harmful capabilities while retaining benign ones.",
+    "baseline_results": null,
+    "validation": "Validation from responses collected during various unlearning methods."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Privacy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Residual harmful capabilities resulting from ineffective unlearning methods."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

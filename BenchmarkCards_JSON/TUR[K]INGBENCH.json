@@ -1,0 +1,82 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TUR[K]INGBENCH",
+    "abbreviation": "N/A",
+    "overview": "TURKING BENCH is a benchmark consisting of tasks presented as web pages with textual instructions and multi-modal contexts, aimed at evaluating models' ability to perform complex web-based tasks found on crowdsourcing platforms.",
+    "data_type": "web-based tasks with textual and visual instructions",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MiniWoB++",
+      "CompWoB",
+      "WebShop",
+      "Mind2Web",
+      "WebArena"
+    ],
+    "resources": [
+      "https://turkingbench.github.io/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a standardized evaluation for web-based agents and facilitate research on multimodal interactive web-based tasks.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Web-based Task Completion"
+    ],
+    "limitations": "The benchmark is limited to tasks involving data annotation and does not require navigation between web pages.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Crowdsourced tasks from Amazon Mechanical Turk",
+    "size": "36.2K instances",
+    "format": "HTML with integrated text and visual elements",
+    "annotation": "Annotated output labels provided by crowd workers"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "ROUGE",
+      "Exact Match",
+      "Intersection over Union"
+    ],
+    "calculation": "Metrics are calculated based on the type of input field: ROUGE for text fields, exact match for radio/select fields, intersection over union for checkbox fields, and L1 distance for range fields.",
+    "interpretation": "Scores are averaged across different field types to assess model performance.",
+    "baseline_results": "GPT4 achieved a top score of 41.7%, significantly above random chance but below the maximum achievable performance.",
+    "validation": "Evaluation is conducted iteratively, where models interact with web pages and provide responses to input fields."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

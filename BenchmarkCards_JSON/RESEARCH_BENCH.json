@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "RESEARCH BENCH",
+    "abbreviation": "N/A",
+    "overview": "RESEARCH BENCH is a benchmark that evaluates the quality of research community simulation in RESEARCH TOWN, utilizing a node-masking prediction task for scalable and objective assessment based on similarity. It includes 1,000 paper writing tasks and 200 review writing tasks requiring multi-agent collaboration.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Criminology",
+      "Biology",
+      "Astrophysics"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/ulab-ai/research-bench",
+      "https://github.com/ulab-uiuc/research-town"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a framework for evaluating the simulation of human research communities by examining collaborative research activities.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Paper Writing",
+      "Review Writing"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Comprehensive dataset of 1,000 paper writing tasks and 200 review writing tasks sourced from recent top-tier machine learning conferences such as NeurIPS 2024 and ICLR 2024.",
+    "size": "1,200 papers for initial collection, with 1,000 randomly sampled for benchmark",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Mean Average Precision (MAP)",
+      "Embedding-based similarity scores"
+    ],
+    "calculation": "Metrics are calculated using the similarity between generated research outputs and ground truth using state-of-the-art embedding models.",
+    "interpretation": "Results are interpreted based on similarity scores, with higher scores indicating a better alignment with real-world data.",
+    "baseline_results": "Scores achieved included an average similarity score of 0.68 for paper writing and 0.49 for review writing.",
+    "validation": "The framework employs comparison with real-world research activities to validate the accuracy of the simulation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Privacy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on education: bypassing learning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Potential for facilitating research plagiarism and producing misleading or low-quality claims."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC BY 4.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LAB-Bench (Language Agent Biology Benchmark)",
+    "abbreviation": "LAB-Bench",
+    "overview": "LAB-Bench is a broad dataset of over 2,400 multiple choice questions designed to evaluate AI systems on practical biology research capabilities, including recall and reasoning over literature, interpretation of figures, access and navigation of databases, and comprehension and manipulation of DNA and protein sequences.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Biological Research"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "HELM",
+      "BIG-Bench",
+      "ChemBench"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/futurehouse/lab-bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide an evaluation dataset for the development of AI systems aimed at assisting with scientific research in biology.",
+    "audience": [
+      "ML Researchers",
+      "Biology Researchers",
+      "AI Developers"
+    ],
+    "tasks": [
+      "Literature Search",
+      "Protocol Planning",
+      "Data Analysis"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from scientific literature and expert knowledge in biology, includes both programmatically and manually generated tasks.",
+    "size": "2,400 questions",
+    "format": "JSON",
+    "annotation": "Manually annotated by biology experts and generated using algorithmic methods."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Precision",
+      "Coverage"
+    ],
+    "calculation": "Metrics calculated based on correct answers out of total questions, with coverage as the ratio of questions answered to total questions.",
+    "interpretation": "Model performance is compared to expert human performance to gauge the utility of the AI systems.",
+    "baseline_results": "Baseline model performance reported against PhD-level biology researchers.",
+    "validation": "Ongoing assessment and improvement over time as new models and techniques emerge."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

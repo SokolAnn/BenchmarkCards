@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "OPTIBENCH",
+    "abbreviation": "N/A",
+    "overview": "OPTIBENCH is a benchmark for end-to-end optimization problem-solving with human-readable inputs and outputs. It contains rich optimization problems, including linear and non-linear programming with or without tabular data, which can comprehensively evaluate LLMs’ solving ability.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "NL4OPT",
+      "ComplexOR",
+      "NLP4LP"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2407.09887"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of OPTIBENCH is to evaluate the capability of large language models to solve optimization problems end-to-end.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Optimization Problem Solving"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Data collected from textbooks and university assignments, manually verified for quality.",
+    "size": "605 examples",
+    "format": "JSON",
+    "annotation": "Manual annotation by experts."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Performance is measured by the accuracy of the numerical answers produced by the models against ground truth values from the benchmarks.",
+    "interpretation": "Performance is evaluated based on how well models can solve optimization problems with various constraints and objective functions.",
+    "baseline_results": "GPT-4 achieved the highest accuracy, followed by Llama-3-8B-Instruct after fine-tuning with R ESOCRATIC-29K.",
+    "validation": "The benchmark includes 605 diverse optimization problems created and validated through rigorous selection and expert review."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

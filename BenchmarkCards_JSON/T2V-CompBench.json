@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "T2V-CompBench (Text-to-Video Compositional Benchmark)",
+    "abbreviation": "T2V-CompBench",
+    "overview": "T2V-CompBench is a comprehensive benchmark designed for compositional text-to-video generation, consisting of seven categories with 1400 text prompts. It emphasizes compositionality through multiple objects, attributes, actions, and interactions within dynamic scenes, utilizing various MLLM-based, detection-based, and tracking-based evaluation metrics.",
+    "data_type": "text",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/username/T2V-CompBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a systematic evaluation framework for compositional text-to-video generation, addressing the rich complexity of actions, attributes, and interactions in generated videos.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text-to-Video Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Composed of 1400 text prompts across seven categories generated from real user inputs and verified by humans.",
+    "size": "1400 prompts",
+    "format": "text",
+    "annotation": "Prompt generation using GPT-4, with human verification for quality assurance."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "MLLM-based evaluation",
+      "Detection-based evaluation",
+      "Tracking-based evaluation"
+    ],
+    "metrics": [
+      "Grid-LLaVA",
+      "D-LLaVA",
+      "G-Dino",
+      "DOT"
+    ],
+    "calculation": "Metrics are calculated based on correspondence to human evaluations, with various methods applied based on the category of prompts.",
+    "interpretation": "A higher score indicates better alignment of generated video content with the corresponding text prompt.",
+    "baseline_results": "N/A",
+    "validation": "The validity of the metrics has been established through correlation studies with human evaluations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

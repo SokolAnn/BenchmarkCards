@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FewVEX",
+    "abbreviation": "N/A",
+    "overview": "FewVEX is a new dataset designed for entity-level Few-shot Visually-rich Document Entity Retrieval (VDER) tasks that reflects practical problems.",
+    "data_type": "document images with entity annotations",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a benchmark for Few-shot VDER tasks to facilitate research on task-personalized entity extraction.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Entity Recognition"
+    ],
+    "limitations": "The derived dataset is based on the current open-source ones for document understanding, which are small in size and have a very limited amount of classes.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from FUNSD and CORD datasets.",
+    "size": "1,199 document images, containing 30 entity types.",
+    "format": "N/A",
+    "annotation": "Annotations based on entities present in the documents, focusing on few-shot occurrences."
+  },
+  "methodology": {
+    "methods": [
+      "Meta-learning based methods",
+      "Metric-based learning (ContrastProtoNet)",
+      "Gradient-based learning (ANIL+HC)"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "Micro F1-score",
+      "AUROC"
+    ],
+    "calculation": "Precision, recall and F1 score are calculated over meta-testing tasks, while AUROC is calculated based on in-task distribution (ITD) scores.",
+    "interpretation": "Higher F1 scores and AUROC indicate better performance and task specificity.",
+    "baseline_results": null,
+    "validation": "Evaluation is performed using meta-testing tasks generated from the dataset."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

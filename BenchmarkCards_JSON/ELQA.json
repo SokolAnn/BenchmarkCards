@@ -1,0 +1,115 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ELQA (English Language Questions and Answers)",
+    "abbreviation": "ELQA",
+    "overview": "A corpus of metalinguistic questions and answers about the English language, collected from two Stack Exchange forums, containing over 70k questions on topics including grammar, meaning, fluency, and etymology; intended to facilitate investigations of metalinguistic capabilities of NLU models and educational applications in language learning.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Education",
+      "Linguistics"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ELI5",
+      "Natural Questions",
+      "GooAQ",
+      "CQADupStack",
+      "DoQA",
+      "MANtIS"
+    ],
+    "resources": [
+      "https://github.com/shabnam-b/ELQAflow",
+      "https://english.stackexchange.com/",
+      "https://ell.stackexchange.com/",
+      "https://github.com/google-research/t5x",
+      "https://openai.com/blog/gpt-3-apps",
+      "https://archive.org/2"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Provide a publicly available metalinguistic QA dataset of English questions and answers to facilitate metalinguistic studies, evaluate models' metalinguistic QA abilities, and support educational applications for language learners.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Educational NLP researchers",
+      "Language learning practitioners"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Free-form Answer Generation"
+    ],
+    "limitations": "Corpus only contains questions in English and about English; models presented are baselines not intended for deployment; potential biases reflecting demographics of authors represented in the training data (native language, level of English proficiency) are noted.",
+    "out_of_scope_uses": [
+      "Do not deploy a generation system until it is approximately as reliable as existing non-automated alternatives, and present the output with caveats."
+    ]
+  },
+  "data": {
+    "source": "Collected from two Stack Exchange sites: English Language & Usage (ENG) and English Language Learners (ELL), preprocessed from Internet Archive up to 2021-12-06; Stack Exchange data is publicly released under the CC-BY-SA 3.0 license.",
+    "size": "ELQA-large: 71,052 questions and 201,660 answers; ELQA-small: 20,711 questions and 81,133 answers (counts derived from Table 1).",
+    "format": "Text provided in HTML and plain text (without HTML tags).",
+    "annotation": "Human annotation for quality assurance on ELQA-small: two authors annotated 250 Q&A pairs for 'Is the question answerable?' and 'Does the answer fully address the question?' (results: 99.2% of questions answerable, 91.8% of answers acceptable). Additionally, two annotators labeled 100 random questions for the taxonomy with 92% agreement."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics evaluation (ROUGE, BLEU, BERTScore)",
+      "Human evaluation (two criteria: well-formedness and correctness/completeness, ratings 1-5 by annotators)",
+      "Model-based evaluation (T5 fine-tuning; GPT-3 few-shot and fine-tuning)",
+      "Closed-book question answering setup (no external context at evaluation time)"
+    ],
+    "metrics": [
+      "ROUGE-1",
+      "ROUGE-2",
+      "ROUGE-L",
+      "BLEU Score",
+      "BERTScore",
+      "Human rating (1-5) for well-formedness (C1) and correctness/completeness (C2); z-scores per annotator"
+    ],
+    "calculation": "Checkpoints were selected by interpolating BLEU, BERTScore and ROUGE on the dev set (best checkpoint at 75k updates). Human evaluation: each question evaluated by at least two raters; average score computed per item; z-scores computed per annotator to normalize inter-annotator variation.",
+    "interpretation": "Automatic metrics are of limited informativeness for this long free-form task; human evaluations show top-rated human answers are best, GPT-3 few-shot is roughly comparable to low-rated human answers; models generally score high on fluency (C1) but lower on correctness/completeness (C2).",
+    "baseline_results": "Automatic evaluation (overall, percentages): GPT-3 FS: ROUGE-1 31.2, ROUGE-2 8.5, ROUGE-L 20.3, BLEU 10.8, BERTScore 85.7; GPT-3 FT-1000: ROUGE-1 27.1, ROUGE-2 7.0, ROUGE-L 18.7, BLEU 11.8, BERTScore 85.2; T5-xxl: ROUGE-1 28.1, ROUGE-2 8.0, ROUGE-L 19.8, BLEU 4.7, BERTScore 80.3. Human evaluation (average scores out of 5): Top-rated human Avg C1=4.83, Avg C2=4.49; GPT-3 FS Avg C1=4.84, Avg C2=3.70; GPT-3 FT-1000 Avg C1=4.47, Avg C2=2.88; T5-xxl Avg C1=3.89, Avg C2=2.25.",
+    "validation": "ELQA-small was split into train/dev/test: train 21,175 Q&A pairs, dev 3,107, test 3,107; answers in these splits have score >= 4; if multiple high-rated answers exist they are included for training. Best model checkpoints selected via dev set interpolation of automatic metrics. Human annotation performed for quality assurance on ELQA-small."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Governance"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Governance",
+          "subcategory": [
+            "Unrepresentative risk testing"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Paper notes potential biases reflecting demographics of authors represented in the training data (native language, level of English proficiency) but does not provide a demographic breakdown.",
+    "harm": [
+      "Misleading language learners with plausible but incorrect answers"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Dataset released from public Stack Exchange content under the site license; authors state release is consistent with license terms requiring attribution. No specific anonymization procedures are described.",
+    "data_licensing": "CC BY-SA 3.0 (Stack Exchange data is publicly released under the CC-BY-SA 3.0 license).",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

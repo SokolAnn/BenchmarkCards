@@ -1,0 +1,77 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LOCA (Logical Chain Augmentation)",
+    "abbreviation": "LOCA",
+    "overview": "LOCA introduces a novel framework for automatically cleaning scientific corpora, enhancing raw answers by completing missing logical steps and explicitly separating the underlying scientific principle from its subsequent derivation, thereby significantly reducing error rates.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "PHYBench",
+      "PHYSICS",
+      "ABench-Physics"
+    ],
+    "resources": [
+      "https://github.com/Science-Discovery/LOCA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To create high-quality scientific corpora that can be reliably used for training and evaluating scientific AI.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "LOCA focuses on checking the correctness of answers; however, a small fraction of questions in scientific corpora can be ill-defined or factually incorrect.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Challenging physics QA pairs drawn from existing high-quality corpora.",
+    "size": "100,000 questions",
+    "format": "CSV",
+    "annotation": "Automatically generated and manually reviewed"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Residual error rate"
+    ],
+    "calculation": "Error rates are calculated based on the accepted set of answers after applying LOCA.",
+    "interpretation": "A lower residual error rate indicates improved quality and reliability of the cleaned corpus.",
+    "baseline_results": "LOCA achieved a residual error rate of less than 2%, outperforming existing benchmarks.",
+    "validation": "The methodology was validated through comprehensive evaluations on challenging QA pairs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

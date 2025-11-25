@@ -1,0 +1,125 @@
+{
+  "benchmark_details": {
+    "name": "Decoding Trust",
+    "overview": "A comprehensive assessment of trustworthiness in GPT models with a focus on GPT-4 and GPT-3.5, evaluating dimensions such as toxicity, bias, adversarial robustness, out-of-distribution robustness, privacy, machine ethics, and fairness.",
+    "data_type": "Text",
+    "domains": [
+      "Natural Language Processing",
+      "Machine Learning",
+      "Artificial Intelligence"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "GLUE",
+      "SuperGLUE",
+      "AdvGLUE",
+      "HELM"
+    ],
+    "resources": [
+      "https://decodingtrust.github.io/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a detailed evaluation of the trustworthiness of GPT models, identifying vulnerabilities and guiding the development of safer AI systems.",
+    "audience": [
+      "Researchers",
+      "AI practitioners",
+      "Policymakers"
+    ],
+    "tasks": [
+      "Evaluate model toxicity",
+      "Assess stereotype bias",
+      "Measure adversarial robustness",
+      "Analyze out-of-distribution robustness",
+      "Investigate privacy concerns",
+      "Test machine ethics"
+    ],
+    "limitations": "Does not cover all potential trustworthiness dimensions for every model and is limited to the versions of GPT assessed.",
+    "out_of_scope_uses": [
+      "Usage of models for purposes outside of evaluation or training"
+    ]
+  },
+  "data": {
+    "source": "Enron Email dataset, manual prompts, and various NLP tasks",
+    "size": "Approximately 3,300 (name, email) pairs",
+    "format": "CSV and JSON format",
+    "annotation": "Manually curated user prompts and tasks designed to elicit model responses."
+  },
+  "methodology": {
+    "methods": [
+      "Toxicity evaluation using REALTOXICITY PROMPTS",
+      "Stereotype bias analysis via custom datasets",
+      "Adversarial robustness testing using AdvGLUE",
+      "Out-of-distribution robustness evaluation with synthetic transformations",
+      "Privacy leakage assessment during training and inference"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Toxicity probability",
+      "Demographic parity difference",
+      "Equalized odds difference",
+      "False positive rate"
+    ],
+    "calculation": "Various statistical methods based on model outputs compared to known labels.",
+    "interpretation": "Lower scores indicate better performance in terms of fairness and reduced biases.",
+    "baseline_results": "N/A",
+    "validation": "Results validated via human annotations and comparison against existing models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Toxicity",
+      "Adversarial attacks",
+      "Privacy breaches",
+      "Ethics violations"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination",
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias",
+            "Decision bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data",
+            "Data privacy rights alignment"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack",
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Marginalization of specific demographic groups",
+      "Inadvertent reinforcement of biases",
+      "Failure to recognize harmful outputs"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Models might leak private information during inference if not properly managed.",
+    "data_licensing": "Dataset utilized under a standard open access license.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

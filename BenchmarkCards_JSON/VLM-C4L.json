@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "VLM-C4L (Vision-Language Model for Continual Core Dataset Learning)",
+    "abbreviation": "VLM-C4L",
+    "overview": "VLM-C4L introduces a continual learning framework that optimizes corner case datasets for autonomous driving using Vision-Language Models, enabling models to learn from diverse corner cases while preserving performance on previously learned scenarios.",
+    "data_type": "images",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "CODA"
+    ],
+    "resources": [
+      "http://www.vlmc4l.site/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enhance autonomous driving systems' ability to handle corner cases through a continual learning framework and optimized dataset.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Object Detection"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Waymo dataset and CODA dataset",
+    "size": "8,000 images",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Average Precision (AP)",
+      "Average Recall (AR)"
+    ],
+    "calculation": "Metrics are calculated based on the true positive detections compared to ground truth in the datasets.",
+    "interpretation": "Higher AP and AR scores indicate better performance in detecting objects in challenging conditions.",
+    "baseline_results": "Sparse R-CNN and Cascade-DETR are used as baseline models.",
+    "validation": "The framework is validated through comprehensive experiments on large-scale, real-world datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

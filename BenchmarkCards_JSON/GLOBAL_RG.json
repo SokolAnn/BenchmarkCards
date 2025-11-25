@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "GLOBAL RG",
+    "abbreviation": "N/A",
+    "overview": "The GLOBAL RG benchmark comprises two tasks: retrieval across universals and cultural visual grounding. The retrieval task entails retrieving culturally diverse images for universal concepts from 50 countries, while the grounding task aims at grounding culture-specific concepts within images from 15 countries.",
+    "data_type": "image",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://globalrg.github.io/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the multicultural understanding of vision-language models.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Image Retrieval",
+      "Visual Grounding"
+    ],
+    "limitations": "Cultural coverage is limited to 15 cultures for grounding task; represents a selected set of cultural keywords.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Images collected from Google Images using human universals and cultural keywords extracted from CANDLE.",
+    "size": "3,000 images for retrieval task; 591 images for grounding task.",
+    "format": "N/A",
+    "annotation": "Annotated by cultural experts who drew bounding boxes around relevant concepts."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Precision@k",
+      "Diversity@k",
+      "Intersection over Union (IoU)"
+    ],
+    "calculation": "Precision measures correctness of retrieved images; diversity uses entropy to measure cultural diversity among retrieved images; IoU assesses correctness of predicted bounding boxes.",
+    "interpretation": "Higher precision indicates better retrieval performance; higher diversity denotes a better representation of multiple cultures.",
+    "baseline_results": "Performance was reported for several state-of-the-art models, such as CLIP, OpenCLIP, and CoCA.",
+    "validation": "Extensive evaluation across multiple vision-language models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Cultural representation analysis across various regions and demographics.",
+    "harm": "Inadvertent reinforcement of stereotypes through cultural imagery."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "NER4Legal SRB",
+    "abbreviation": "NER4Legal SRB",
+    "overview": "This paper presents a novel dataset for Named Entity Recognition (NER) specifically designed for Serbian legal documents. It details the dataset development, methodology, and performance metrics achieved by adapting a pre-trained BERT model to this domain.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Legal"
+    ],
+    "languages": [
+      "Serbian"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/kalusev/NER4Legal SRB"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the benchmark is to facilitate the automation of named entity recognition tasks within Serbian legal documents by providing a labeled dataset for training and evaluating NLP models.",
+    "audience": [
+      "ML Researchers",
+      "Legal Practitioners",
+      "NLP Developers"
+    ],
+    "tasks": [
+      "Named Entity Recognition"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Annotated dataset was derived from 75 unique appellate court rulings available from the official Ministry of Justice of the Republic of Serbia.",
+    "size": "2172 sentences",
+    "format": "JSON",
+    "annotation": "Manually annotated using the BIO scheme."
+  },
+  "methodology": {
+    "methods": [
+      "Cross-validation",
+      "Model fine-tuning"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "Metrics are calculated as mean values from cross-validation tests performed across different folds of the dataset.",
+    "interpretation": "An F1 Score above 0.90 indicates strong model performance, and variations in metrics help evaluate different NE categories.",
+    "baseline_results": "Mean F1 Score of 0.96 and accuracy of 0.99 across NER categories.",
+    "validation": "Cross-validation with 5 subsets to ensure model robustness and mitigate overfitting."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

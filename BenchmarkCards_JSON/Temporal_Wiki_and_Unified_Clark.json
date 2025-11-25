@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Temporal Wiki and Unified Clark",
+    "abbreviation": "N/A",
+    "overview": "This paper introduces two benchmarks, Temporal Wiki and Unified Clark, designed to evaluate the ability of LLMs to handle temporally evolving knowledge in question answering tasks.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Templama",
+      "Clark"
+    ],
+    "resources": [
+      "https://github.com/atahanoezer/TQA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess model robustness in settings where factual information accumulates, shifts, or conflicts over time.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Historical Wikipedia snapshots and timestamped news articles.",
+    "size": "N/A",
+    "format": "JSON",
+    "annotation": "Manual curation and verification for document quality."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Accuracy"
+    ],
+    "calculation": "Metrics are calculated based on model output compared to human-annotated gold answers.",
+    "interpretation": "Higher F1 Score and Accuracy indicate better model performance in understanding and integrating temporal information.",
+    "baseline_results": "N/A",
+    "validation": "Experiments conducted with multiple LLM architectures to validate the performance across benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

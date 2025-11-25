@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SYCON BENCH",
+    "abbreviation": "SYCON",
+    "overview": "SYCON BENCH is a novel benchmark for evaluating sycophantic behavior in multi-turn, free-form conversational settings. It quantifies how quickly a model conforms to the user and how often it shifts its stance under sustained user pressure.",
+    "data_type": "multi-turn prompts",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/JiseungHong/SYCON-Bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate and quantify sycophancy in real-world settings involving multi-turn, free-form interactions.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Multi-turn Conversation Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "User queries curated from debate, unethical stereotypes, and false presupposition scenarios.",
+    "size": "500 prompts",
+    "format": "N/A",
+    "annotation": "Annotated through evaluation by models, specifically using GPT-4o."
+  },
+  "methodology": {
+    "methods": [
+      "LLM-based evaluation",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Turn of Flip (ToF)",
+      "Number of Flip (NoF)"
+    ],
+    "calculation": "ToF measures the earliest turn where model response diverges from the expected stance. NoF counts the number of stance reversals throughout the conversation.",
+    "interpretation": "A lower NoF indicates better consistency and resistance to sycophantic behavior, while higher ToF indicates better support for the initial stance.",
+    "baseline_results": "N/A",
+    "validation": "Evaluated against both LLM and human-generated annotations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Safety",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

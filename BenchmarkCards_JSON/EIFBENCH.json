@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "EIFBENCH (Extremely Complex Instruction Following Benchmark)",
+    "abbreviation": "EIFBENCH",
+    "overview": "EIFBENCH is designed to facilitate a more realistic and robust evaluation of large language models by including multi-task scenarios and a variety of constraints, replicating complex operational environments.",
+    "data_type": "instruction-following pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/Hope-Rita/EIFBench",
+      "https://github.com/Tongyi-CCAI/Complex-IF"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the instruction following abilities of large language models in complex, multi-instruction, and multi-constraint scenarios.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Instruction Following",
+      "Multi-task Processing"
+    ],
+    "limitations": "The dataset currently focuses primarily on Chinese instructions, limiting its applicability to multilingual scenarios.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Multi-scenario data collection involving plain text, dyadic dialogue, and multi-party dialogue.",
+    "size": "1,000 instances",
+    "format": "N/A",
+    "annotation": "Tasks and constraints are generated and refined using large language models."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Instruction-Level Accuracy (ILA)",
+      "Constraint-Level Accuracy (CLA)"
+    ],
+    "calculation": "ILA is calculated by averaging compliance across all instructions within a single instance. CLA assesses the fulfillment of individual constraints.",
+    "interpretation": "Higher scores indicate better performance in following complex multi-instruction tasks.",
+    "baseline_results": null,
+    "validation": "Quality assessment through a post-inspection protocol with both automated and human evaluations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

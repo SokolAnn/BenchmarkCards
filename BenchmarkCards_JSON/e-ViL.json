@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "e-ViL (Explainable Vision-Language Tasks)",
+    "abbreviation": "e-ViL",
+    "overview": "e-ViL is a benchmark for explainable vision-language tasks that establishes a unified evaluation framework and provides comprehensive comparisons of existing approaches generating natural language explanations (NLEs) for vision-language tasks. The benchmark spans four models and three datasets and incorporates both automatic metrics and human evaluation.",
+    "data_type": "natural language explanations and image-text pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "e-SNLI-VE"
+    ],
+    "resources": [
+      "https://github.com/maximek3/e-ViL"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a unified evaluation framework for comparing models that generate natural language explanations for vision-language tasks.",
+    "audience": [
+      "ML Researchers",
+      "AI Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Visual Question Answering",
+      "Natural Language Explanation Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "e-SNLI-VE dataset, generated from e-SNLI and SNLI-VE datasets.",
+    "size": "430,796 instances",
+    "format": "image and accompanying text pairs with explanations",
+    "annotation": "Annotated by humans via Amazon Mechanical Turk, including relabeling of explanations and labels."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "BLEU Score",
+      "ROUGE-L"
+    ],
+    "calculation": "Accuracy determined by correct predictions; F1 Score, BLEU Score, and ROUGE-L calculated based on generated explanations compared to human-written ones.",
+    "interpretation": "Higher scores indicate better performance in generating accurate explanations.",
+    "baseline_results": "N/A",
+    "validation": "Evaluation conducted via crowdsourcing, with multiple annotators assessing each explanation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Robustness",
+      "Transparency"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination",
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Lack of training data transparency"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

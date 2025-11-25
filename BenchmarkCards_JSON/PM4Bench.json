@@ -1,0 +1,107 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PM4Bench (Parallel Multilingual Multi-Modal Multi-task Benchmark)",
+    "abbreviation": "PM4Bench",
+    "overview": "PM4Bench features a parallel corpus design across 10 languages for fair and accurate cross-lingual comparisons in evaluating Large Vision Language Models (LVLMs). It incorporates safety evaluations and includes tasks that require models to simultaneously interpret visual and textual information.",
+    "data_type": "multimodal",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English",
+      "Chinese",
+      "Korean",
+      "Thai",
+      "Vietnamese",
+      "Russian",
+      "Hungarian",
+      "Serbian",
+      "Czech",
+      "Arabic"
+    ],
+    "similar_benchmarks": [
+      "M3Exam",
+      "MMJB"
+    ],
+    "resources": [
+      "https://github.com/opendatalab/PM4Bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation of LVLMs in multilingual and multi-modal scenarios, identifying performance disparities and guiding further optimization.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Multi-Discipline Understanding and Reasoning",
+      "Multi-Image Question Answering",
+      "Multi-Modal JailBreaking Challenge",
+      "Multi-Size OCR Challenge"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from various datasets like MMMU-pro and SafeBench, translated and curated to create parallel corpora.",
+    "size": "10 languages, 1730 samples per language for MDUR, varied sizes for other tasks",
+    "format": "N/A",
+    "annotation": "Machine translation followed by human verification."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "LLM-based evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Scores calculated based on correct percentage for MDUR, average scores for MIQA based on multiple criteria, safety rate for MMJB, and recognition error rates for MSOCR.",
+    "interpretation": "Higher scores indicate better performance in multilingual understanding and safety.",
+    "baseline_results": "N/A",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Risk of harmful outputs due to safety vulnerabilities."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "No personally identifiable information is included in the datasets.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

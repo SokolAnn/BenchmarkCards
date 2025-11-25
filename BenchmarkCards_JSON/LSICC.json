@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LSICC: A LARGE SCALE INFORMAL CHINESE CORPUS",
+    "abbreviation": "LSICC",
+    "overview": "Introduce a large-scale corpus of informal Chinese. This corpus contains around 37 million book reviews and 50 thousand netizen’s comments to the news. We explore the informal words frequencies of the corpus and show the difference between our corpus and the existing ones. The corpus can be further used to train deep learning based natural language processing tasks such as Chinese word segmentation, sentiment analysis.",
+    "data_type": "text (book reviews and forum/discussion comments; informal Chinese sentences)",
+    "domains": [
+      "Natural Language Processing",
+      "Recommender Systems",
+      "Social Network Analysis"
+    ],
+    "languages": [
+      "Chinese (Simplified)"
+    ],
+    "similar_benchmarks": [
+      "Weibo News",
+      "Sougou News",
+      "People’s Daily",
+      "Baidu Encyclopedia",
+      "Sina Weibo News"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/1811.10167",
+      "https://github.com/JaniceZhao/Douban-Dushu-Dataset.git",
+      "https://github.com/JaniceZhao/Chinese-Forum-Corpus.git"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Construct a large-scale informal Chinese dataset (LSICC) and analyze informal word frequency differences between LSICC and existing Chinese corpora; provide a dataset suitable for training deep learning based NLP tasks such as Chinese word segmentation and sentiment analysis.",
+    "audience": [],
+    "tasks": [
+      "Chinese Word Segmentation",
+      "Sentiment Analysis",
+      "Recommendation Systems",
+      "Social Network Analysis"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from DouBan DuShu (book reviews) and Chiphell (forum discussions).",
+    "size": "Around 37 million short comments (from ~18,000 books and ~1,000,000 users) and more than 50,000 discussions.",
+    "format": "Cleaned text; preprocessed (Traditional Chinese converted to Simplified Chinese; over-short comments removed; special characters/English words/emoticons identified).",
+    "annotation": "No manual annotation described; contains user-provided metadata such as star ratings for DouBan DuShu comments."
+  },
+  "methodology": {
+    "methods": [
+      "Manual collection of 70 informal words as a benchmark",
+      "Automated word frequency counting of the 70 informal words",
+      "Comparative analysis of informal word proportions across corpora"
+    ],
+    "metrics": [
+      "Informal word frequency (count)",
+      "Total word count",
+      "Proportion of informal words (informal words / total words, expressed as per mille)"
+    ],
+    "calculation": "Count frequencies of the 70 manually collected informal words and the total number of words in each corpus; compute proportion = informal word count / total word count (expressed in per mille).",
+    "interpretation": "Higher proportion of informal words indicates a corpus is more representative of informal Chinese. LSICC has the highest proportion among compared corpora, indicating greater informality and suitability for informal-language tasks.",
+    "baseline_results": "LSICC: 621,807 informal words; 705,231,306 total words; proportion 8.82‰. Weibo News: 46,831 informal words; 125,082,112 total words; proportion 3.74‰. Sougou News: 1,238 informal words; 14,160,148 total words; proportion 0.87‰. People’s Daily: 25 informal words; 3,482,887 total words; proportion 0.07‰.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

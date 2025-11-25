@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FOLLOW IR",
+    "abbreviation": "N/A",
+    "overview": "FOLLOW IR is a benchmark that explicitly measures the instruction following ability of information retrieval (IR) models, comprising a dataset of human annotations on three highly-judged TREC collections.",
+    "data_type": "question-instruction pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MTEB",
+      "BEIR"
+    ],
+    "resources": [
+      "https://github.com/orionw/FollowIR"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a rigorous evaluation benchmark for IR models to follow complex user instructions.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Instruction Following",
+      "Information Retrieval"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Three TREC collections: TREC Robust 2004, TREC Common Core 2017, TREC News 2021.",
+    "size": "Approx. 1836 instruction pairs",
+    "format": "N/A",
+    "annotation": "Instructions modified by expert annotators; documents manually re-annotated as relevant or not-relevant."
+  },
+  "methodology": {
+    "methods": [
+      "Standard Retrieval Metrics",
+      "Pairwise Evaluation"
+    ],
+    "metrics": [
+      "Mean Average Precision (MAP)",
+      "Normalized Discounted Cumulative Gain (nDCG)",
+      "p-MRR"
+    ],
+    "calculation": "p-MRR measures rank-wise changes between queries with original versus altered instructions.",
+    "interpretation": "Higher scores indicate better instruction following by retrieval models.",
+    "baseline_results": "FOLLOW IR-7B shows marked improvements over prior models.",
+    "validation": "Evaluated using rank changes before and after instruction modifications."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

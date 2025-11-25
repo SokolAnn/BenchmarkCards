@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PCA-Bench",
+    "abbreviation": "N/A",
+    "overview": "PCA-Bench is a multimodal decision-making benchmark designed for evaluating the integrated capabilities of Multimodal Large Language Models (MLLMs) across scenarios such as autonomous driving, domestic robotics, and open-world games, emphasizing error localization and integrated task performance.",
+    "data_type": "image-question-action pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Robotics",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMMU",
+      "MathVista"
+    ],
+    "resources": [
+      "https://github.com/username/repo",
+      "https://arxiv.org/abs/2402.15527"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate integrated decision-making capabilities of MLLMs in multimodal contexts with a focus on error localization.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Decision Making",
+      "Image Understanding"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Instances are derived from environments related to autonomous driving, domestic robotics, and open-world gaming, including datasets like TT100K and ALFRED.",
+    "size": "7,510 training samples",
+    "format": "N/A",
+    "annotation": "Annotated by human experts with a tuple: <image, question, action candidates, answer, reason, key concept>."
+  },
+  "methodology": {
+    "methods": [
+      "Automatic evaluation using PCA-Eval",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Perception Score",
+      "Cognition Score",
+      "Action Score"
+    ],
+    "calculation": "Scores based on model outputs compared to ground truth answers.",
+    "interpretation": "Scores are binary, indicating whether the model's outputs match expected outcomes.",
+    "baseline_results": "N/A",
+    "validation": "Tests the performance of 10 prevalent MLLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

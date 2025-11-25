@@ -1,0 +1,104 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MCPToolBench++",
+    "abbreviation": "N/A",
+    "overview": "MCPToolBench++ is a large-scale, multi-domain AI Agent tool use benchmark designed to evaluate LLM and AI Agents' abilities to use Model Context Protocol (MCP) tools effectively. It consists of 1.5K question-answer pairs covering various domains and is built upon a marketplace of over 4k MCP servers.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Finance",
+      "Web Services",
+      "File Systems",
+      "Maps"
+    ],
+    "languages": [
+      "English",
+      "Chinese",
+      "French",
+      "Russian"
+    ],
+    "similar_benchmarks": [
+      "GAIA",
+      "Berkeley Function Calling Leaderboard (BFCL)",
+      "ComplexFuncBench"
+    ],
+    "resources": [
+      "https://github.com/mcp-tool-bench/MCPToolBenchPP",
+      "https://huggingface.co/datasets/MCPToolBench/MCPToolBenchPP"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the capabilities of LLMs and AI agents in using MCP tools across various domains and tasks.",
+    "audience": [
+      "ML Researchers",
+      "AI Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Tool usage evaluation",
+      "Multi-step tool calling",
+      "Function calling capabilities"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "MCP servers gathered from open MCP marketplaces",
+    "size": "1,500 question-answer pairs",
+    "format": "JSON",
+    "annotation": "Automatically generated from MCP tool schemas and user query templates"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Tool call evaluation",
+      "AST (Abstract Syntax Tree) evaluation"
+    ],
+    "metrics": [
+      "AST Accuracy",
+      "Pass@K Accuracy"
+    ],
+    "calculation": "AST Accuracy is evaluated by comparing predicted outputs with ground truth labels for function and parameter matches. Pass@K measures the correctness of the tool call execution.",
+    "interpretation": "Higher AST and Pass@K scores indicate better performance in selecting and executing tool calls.",
+    "baseline_results": "N/A",
+    "validation": "The evaluation is validated across different task domains and various LLM models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

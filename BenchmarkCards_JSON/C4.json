@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Colossal Clean Crawled Corpus (C4)",
+    "abbreviation": "C4",
+    "overview": "The paper provides documentation and analysis for the Colossal Clean Crawled Corpus (C4), which is a dataset created by applying a series of filters to a snapshot of the Common Crawl. It aims to inform the creation and documentation of web-scale datasets by providing insights about included and excluded data, provenance, and biases present in the text.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Common Crawl"
+    ],
+    "resources": [
+      "https://github.com/allenai/c4-documentation"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the Colossal Clean Crawled Corpus (C4) documentation is to provide insights into the dataset's composition, the filtering processes it underwent, and how these affect data representation, usability, and biases.",
+    "audience": [
+      "ML Researchers",
+      "Data Scientists",
+      "Ethics Researchers"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Natural Language Understanding"
+    ],
+    "limitations": "The documentation highlights limitations related to representational harms and biases inherent in the dataset.",
+    "out_of_scope_uses": [
+      "Using the dataset without considering biases and the impact of applied filters."
+    ]
+  },
+  "data": {
+    "source": "Collected from a snapshot of the Common Crawl, filtered to remove non-English text and specific unwanted content.",
+    "size": "2.3TB",
+    "format": "JSON",
+    "annotation": "Automatically processed with filters applied to remove undesirable content."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Document presence analysis",
+      "Bias assessment"
+    ],
+    "calculation": "Text was analyzed for sources, composition of included text, and biases associated with exclusions.",
+    "interpretation": "Analysis of biases and representational harms across different demographic identities present in the data.",
+    "baseline_results": "N/A",
+    "validation": "The dataset was validated through a comparative analysis with the original unfiltered Common Crawl data."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The study provides evidence that texts associated with minority identities are disproportionately excluded due to filtering mechanisms.",
+    "harm": [
+      "Representational harms by disproportionately affecting segments of the population in text representation."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

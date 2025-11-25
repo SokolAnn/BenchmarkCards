@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "A ground-truth dataset of real security patches",
+    "abbreviation": "N/A",
+    "overview": "The dataset provides a ground-truth dataset of natural language artifacts, meta-data, and code changes, integrating a total of 8057 security-relevant commits—the equivalent to 5942 security patches from 1339 different projects spanning 146 types of vulnerabilities and 20 languages.",
+    "data_type": "CSV files containing code changes, commit messages, and meta-data",
+    "domains": [
+      "Computer Security"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Secbench",
+      "Big-Vul",
+      "Pontas et al."
+    ],
+    "resources": [
+      "https://github.com/TQRG/security-patches-dataset"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a larger dataset of vulnerabilities validated by experts to support research using natural language, code changes, and codebases.",
+    "audience": [
+      "ML Researchers",
+      "Software Engineers",
+      "Security Researchers"
+    ],
+    "tasks": [
+      "Vulnerability Detection",
+      "Patch Analysis",
+      "Security Program Analysis"
+    ],
+    "limitations": "The dataset integrates security patches without a CVE assigned, leading to missing descriptive data in about 10% of rows.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Publicly scraped data from the CVE Details database and merged with other datasets.",
+    "size": "8057 security-relevant commits, 110,161 non-security-related commits",
+    "format": "CSV",
+    "annotation": "Data cleaned and processed to create a comprehensive dataset with natural language artifacts, commit comments, and metadata."
+  },
+  "methodology": {
+    "methods": [
+      "Data Scraping",
+      "Data Cleaning",
+      "Dataset Merging"
+    ],
+    "metrics": [
+      "Commit Count",
+      "Patch Count"
+    ],
+    "calculation": "The number of commits and patches were calculated based on the data collected from the merged datasets.",
+    "interpretation": "Higher numbers of commits and patches indicate a larger dataset available for analysis.",
+    "baseline_results": "N/A",
+    "validation": "Data was validated through expert validation of identified security patches."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Risk of misclassification due to unbalanced dataset"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

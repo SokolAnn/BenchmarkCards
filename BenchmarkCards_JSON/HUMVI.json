@@ -1,0 +1,74 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "HUMVI (HUManitarian Violent Incidents)",
+    "abbreviation": "HUMVI",
+    "overview": "This dataset comprises news articles in three languages (English, French, Arabic) containing instances of different types of violent incidents categorized by the humanitarian sector they impact, such as aid security, education, food security, health, and protection.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Humanitarian Aid"
+    ],
+    "languages": [
+      "English",
+      "French",
+      "Arabic"
+    ],
+    "similar_benchmarks": [
+      "HumSet"
+    ],
+    "resources": [
+      "https://github.com/dataminr-ai/humvi-dataset"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive multilingual dataset of violent events, labeled by humanitarian experts for relevancy to multiple key humanitarian aid sectors.",
+    "audience": [
+      "NLP Researchers",
+      "Humanitarian Organizations"
+    ],
+    "tasks": [
+      "Event Detection",
+      "Categorization"
+    ],
+    "limitations": "The dataset comes from a limited set of countries and may not be readily extensible to different parts of the world that are not covered.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "News articles collected using NewsAPI, OSAC, and manually curated by Insecurity Insight.",
+    "size": "17,497 articles",
+    "format": "JSON",
+    "annotation": "Labels were obtained through expert verification from Insecurity Insight."
+  },
+  "methodology": {
+    "methods": [
+      "Fine-tuned Models",
+      "Zero-shot Learning"
+    ],
+    "metrics": [
+      "F1 Score"
+    ],
+    "calculation": "F1 scores are computed for both relevance and category classification tasks.",
+    "interpretation": "F1 scores in the range of 0.0 to 1.0, where higher scores indicate better performance.",
+    "baseline_results": "F1 scores for various models on HUMVI-core indicate that fine-tuned transformers perform best.",
+    "validation": "Models validated with F1 score metrics against labeled datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "The dataset includes multilingual articles but demographic factors are not analyzed.",
+    "harm": "Potential for misclassification leading to incorrect interpretations of humanitarian aid threats."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data collected from publicly available news articles does not intentionally include PII.",
+    "data_licensing": "N/A",
+    "consent_procedures": "No consent required as data is publicly available.",
+    "compliance_with_regulations": "N/A"
+  }
+}

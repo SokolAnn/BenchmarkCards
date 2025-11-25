@@ -1,0 +1,73 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SciPostLayout",
+    "abbreviation": "N/A",
+    "overview": "SciPostLayout is the first scientific poster layout dataset for layout analysis and generation, containing 7,855 scientific posters with manual layout annotations and 100 scientific papers paired with the posters.",
+    "data_type": "image-layout pairs",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/omron-sinicx/scipostlayout_v2",
+      "https://github.com/omron-sinicx/scipostlayout"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a dataset for evaluating layout analysis and generation systems in the context of scientific posters.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Layout Analysis",
+      "Layout Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Poster images downloaded from F1000Research and manually annotated by professional annotators.",
+    "size": "7,855 posters",
+    "format": "PNG",
+    "annotation": "Manually annotated with categories of layout elements."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "mean Average Precision (mAP)",
+      "maximum IoU (mIoU)",
+      "Alignment",
+      "Overlap",
+      "Fréchet Inception Distance (FID)"
+    ],
+    "calculation": "Metrics were calculated as described in the methodology section of the paper.",
+    "interpretation": "Higher mAP and mIoU indicate better performance for layout analysis; lower values of FID indicate better similarity in layout generation.",
+    "baseline_results": null,
+    "validation": "Evaluated using existing models on the defined tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC-BY license",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

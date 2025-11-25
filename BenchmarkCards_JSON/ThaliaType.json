@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ThaliaType",
+    "abbreviation": "N/A",
+    "overview": "ThaliaType is a new dataset specifically designed to evaluate the type inference capabilities of LLMs for Java code snippets while mitigating the potential biases introduced by data leakage.",
+    "data_type": "code snippets",
+    "domains": [
+      "Computer Science"
+    ],
+    "languages": [
+      "Java"
+    ],
+    "similar_benchmarks": [
+      "StatType-SO"
+    ],
+    "resources": [
+      "https://github.com/uw-pluverse/thalia-type"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess the true type inference capabilities of LLMs on unseen Java code snippets.",
+    "audience": [
+      "ML Researchers",
+      "Software Engineers"
+    ],
+    "tasks": [
+      "Type Inference"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated using Thalia, a program synthesis technique.",
+    "size": "300 code snippets",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Evaluation on unseen code snippets",
+      "Comparison with existing benchmarks"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Precision and recall are calculated based on the accuracy of inferred fully qualified names (FQNs) against the expected FQNs.",
+    "interpretation": "A higher precision and recall indicate better type inference capabilities.",
+    "baseline_results": "SnR achieved precision of 84.15% and recall of 84.43% on ThaliaType.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Data Leakage",
+      "Generalization"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

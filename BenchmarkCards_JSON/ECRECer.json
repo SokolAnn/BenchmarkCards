@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ECRECer (Enzyme Commission Number Recommendation and Benchmarking)",
+    "abbreviation": "ECRECer",
+    "overview": "ECRECer is a cloud platform for accurately predicting Enzyme Commission (EC) numbers based on novel deep learning techniques. It provides three standard datasets for benchmarking and evaluation in enzyme function annotation tasks.",
+    "data_type": "protein sequences",
+    "domains": [
+      "Biotechnology",
+      "Bioinformatics"
+    ],
+    "languages": [
+      "N/A"
+    ],
+    "similar_benchmarks": [
+      "CatFam",
+      "PRIAM",
+      "ECPred",
+      "DeepEC"
+    ],
+    "resources": [
+      "https://ecrecer.biodesign.ac.cn",
+      "https://github.com/kingstdio/ECRECer/blob/main/document/supplementary.pdf"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To improve the speed and accuracy of enzyme function annotation by predicting EC numbers for protein sequences.",
+    "audience": [
+      "Biologists",
+      "Bioinformaticians",
+      "Researchers in enzyme function prediction"
+    ],
+    "tasks": [
+      "Enzyme or Non-enzyme Annotation",
+      "Multifunctional Enzyme Prediction",
+      "EC Number Prediction"
+    ],
+    "limitations": "The performance of multifunctional enzyme annotation is relatively low, and the accuracy and recall of EC number annotation are less than 90%.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Swiss-Prot database",
+    "size": "469,134 protein sequences for training and 7,101 for testing",
+    "format": "FASTA",
+    "annotation": "Labeled with enzyme or non-enzyme, EC numbers, and function counts."
+  },
+  "methodology": {
+    "methods": [
+      "Extreme Multi-label Classification",
+      "K-Nearest Neighbors (KNN)",
+      "XGBoost",
+      "Scalable Linear Extreme Classifier (SLICE)"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated using standard formulas for classification performance.",
+    "interpretation": "An accuracy score above 80% is considered high enough for enzyme function annotation tasks.",
+    "baseline_results": "The ECRECer platform achieved 93.12% accuracy for enzyme or non-enzyme prediction, improving upon the best-performing existing methods by significant margins.",
+    "validation": "Validated against multiple state-of-the-art methods."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

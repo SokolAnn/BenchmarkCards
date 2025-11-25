@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Cin´ easte: A Fine-grained Contextual Movie Question Answering Benchmark",
+    "abbreviation": "N/A",
+    "overview": "Cin´ easte is a comprehensive benchmark for long-form movie understanding, comprising 3,119 multiple-choice question-answer pairs derived from 1,805 scenes across 200 diverse movies, testing fine-grained contextual reasoning across five novel categories.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Infinibench",
+      "MovieQA",
+      "CinePile"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2509.14227"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a diagnostic benchmark for assessing the capacity of multi-modal large language models in fine-grained contextual understanding of long-form movie content.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Scenes from 200 English-language movies sourced from the YouTube channel MovieClips.",
+    "size": "3,119 question-answer pairs",
+    "format": "JSON",
+    "annotation": "Automatically generated with a two-stage filtering process."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Metrics are calculated based on the percentage of correctly answered questions among all question-answer pairs.",
+    "interpretation": "Higher accuracy indicates better model performance in understanding complex, narrative-driven video content.",
+    "baseline_results": "The top-performing model, GPT-4o, achieved an average accuracy of 75.89%.",
+    "validation": "The benchmark was validated using automated filtering to ensure context dependency and factual correctness."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

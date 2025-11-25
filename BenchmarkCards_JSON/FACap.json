@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FACap (Fashion Automatic Caption)",
+    "abbreviation": "FACap",
+    "overview": "FACap is a large-scale fashion-domain composed image retrieval (CIR) dataset with fine-grained annotations, generated automatically to support the retrieval of fashion images based on user preferences and alterations.",
+    "data_type": "triples of <reference image, modification text, target image>",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Fashion IQ",
+      "DeepFashion"
+    ],
+    "resources": [
+      "https://fgxaos.github.io/facap-paper-website/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a high-quality dataset for composed image retrieval in the fashion domain with detailed annotations.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Composed Image Retrieval"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Automatically constructed from web-sourced fashion images using a two-stage annotation pipeline with vision-language models and a large language model.",
+    "size": "227,680 CIR triplets",
+    "format": "N/A",
+    "annotation": "Generated automatically using a vision-language model and a large language model."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Recall@k"
+    ],
+    "calculation": "Evaluation is done using the recall metric, measuring how many target images appear in the top-k retrieved images.",
+    "interpretation": "Higher recall values indicate better performance in retrieving relevant fashion images based on user queries.",
+    "baseline_results": "N/A",
+    "validation": "Quality evaluation through manual assessment of randomly sampled triplets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

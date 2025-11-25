@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TOOLRET (Tool Retrieval Benchmark)",
+    "abbreviation": "TOOLRET",
+    "overview": "TOOLRET is a comprehensive benchmark for tool retrieval tasks, designed to evaluate information retrieval models in selecting relevant tools from a large corpus of tools for large language models (LLMs). It includes 7.6k diverse retrieval tasks and a corpus of 43k tools.",
+    "data_type": "query-tool pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/gtbTool-Retrieval-Benchmark",
+      "https://huggingface.co/datasets/TOOLRET"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of TOOLRET is to systematically evaluate the performance of various information retrieval models on tool retrieval tasks to improve LLM capabilities in practical applications.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Tool Retrieval"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "TOOLRET benchmark integrates tasks and tools collected from existing datasets, public research papers, and open-source platforms.",
+    "size": "7,615 retrieval tasks, 43,215 tools",
+    "format": "JSON",
+    "annotation": "Manually annotated by experts and includes diverse task scenarios and tool descriptions."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "NDCG@10",
+      "Precision@10",
+      "Recall@10",
+      "Completeness@10"
+    ],
+    "calculation": "Metrics are calculated based on the relevance of retrieved tools and their alignment with the input queries.",
+    "interpretation": "Higher NDCG, precision, and recall indicate better retrieval performance, reflecting the effectiveness of the information retrieval models.",
+    "baseline_results": "The best-performing model achieved NDCG@10 of 33.83, showcasing significant challenges in tool retrieval tasks.",
+    "validation": "Validated through performance comparison with existing IR models and human expert review."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Poor retrieval may lead to ineffective tool-use LLM performances."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

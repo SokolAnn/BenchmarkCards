@@ -1,0 +1,107 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "AUTO TRUST",
+    "abbreviation": "AUTOTRUST",
+    "overview": "AutoTrust is a comprehensive benchmark for assessing the trustworthiness of large vision-language models for autonomous driving, considering dimensions such as Trustfulness, Safety, Robustness, Privacy, and Fairness.",
+    "data_type": "visual question-answering pairs",
+    "domains": [
+      "Computer Vision",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "NuScenes-QA",
+      "NuScenes-MQA",
+      "DriveLM-NuScenes",
+      "LingoQA",
+      "CoVLA"
+    ],
+    "resources": [
+      "https://github.com/taco-group/AutoTrust",
+      "https://taco-group.github.io/AutoTrust/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To holistically assess the trustworthiness of large vision-language models for autonomous driving.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Regulators"
+    ],
+    "tasks": [
+      "Visual Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Multiple open-access autonomous driving datasets including NuScenes-QA, NuScenes-MQA, DriveLM-NuScenes, and LingoQA.",
+    "size": "10,000 unique scenes and 18,000 queries",
+    "format": "N/A",
+    "annotation": "Generated via both manual and automated methods."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Demographic Accuracy Difference (DAD)",
+      "Worst Accuracy (WA)"
+    ],
+    "calculation": "Accuracy is calculated based on the number of correct answers divided by the total number of answers. DAD and WA are derived from model performance comparisons across demographic groups.",
+    "interpretation": "Higher metrics indicate better trustworthiness; lower DAD values reflect less bias across demographic groups.",
+    "baseline_results": "N/A",
+    "validation": "Robustness evaluated through performance against various adversarial and misleading scenarios."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Safety",
+      "Privacy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack",
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Includes analysis of model performance across genders, ages, and races.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Models demonstrated some vulnerabilities in preserving anonymity in sensitive data contexts.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

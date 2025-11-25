@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SiT (Self-supervised vIsion Transformer)",
+    "abbreviation": "SiT",
+    "overview": "SiT is the first masked image modeling work for vision transformers that establishes that self-supervised pretraining can outperform supervised pretraining for downstream applications.",
+    "data_type": "image",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "N/A"
+    ],
+    "similar_benchmarks": [
+      "MoCo-v3",
+      "Dino",
+      "MAE",
+      "SimMIM"
+    ],
+    "resources": [
+      "https://github.com/Sara-Ahmed/SiT"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To learn a representation of the data in an unsupervised fashion using group masked model learning and estimate different geometric transformations applied to the input image.",
+    "audience": [
+      "ML Researchers",
+      "AI Practitioners"
+    ],
+    "tasks": [
+      "Image Classification",
+      "Object Detection",
+      "Segmentation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Publicly available datasets for image classification and segmentation tasks.",
+    "size": "1.28M training samples from ImageNet-1K",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Pretraining using self-supervised learning",
+      "Fine-tuning on downstream tasks"
+    ],
+    "metrics": [
+      "Mean Average Precision (mAP)",
+      "Accuracy"
+    ],
+    "calculation": "Accuracy is calculated based on the standard classification tasks on the respective datasets, obtaining state-of-the-art results.",
+    "interpretation": "Higher metric values indicate better performance on the respective visual tasks.",
+    "baseline_results": "SiT consistently outperforms supervised pretraining and achieves state-of-the-art results on several benchmarks.",
+    "validation": "Evaluated using standard protocols on benchmark datasets including ImageNet-1K."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

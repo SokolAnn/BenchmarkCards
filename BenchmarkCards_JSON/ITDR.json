@@ -1,0 +1,98 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ITDR (Instruction Tuning Dataset for Recommendations)",
+    "abbreviation": "ITDR",
+    "overview": "ITDR is a dataset constructed to enhance the performance of large language models in recommendation systems by providing a comprehensive instruction tuning dataset that includes various user-item interaction and understanding tasks.",
+    "data_type": "instruction pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Recommender Systems"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MovieLens",
+      "Amazon Reviews"
+    ],
+    "resources": [
+      "https://github.com/hellolzk/ITDR"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a large-scale instruction tuning dataset for enhancing the recommendation capabilities of large language models.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Rating Prediction",
+      "Top-K Recommendation",
+      "Cross-Domain Recommendation",
+      "Next Item Recommendation",
+      "User Attribute Prediction",
+      "Interest Recognition",
+      "Target User Identification"
+    ],
+    "limitations": "The dataset may not include all possible recommendation tasks and could further benefit from more diverse data incorporation.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Integrated data from 13 public recommendation datasets.",
+    "size": "200,000 instances",
+    "format": "N/A",
+    "annotation": "Manually crafted standardized templates."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Root Mean Squared Error (RMSE)",
+      "Accuracy (ACC)",
+      "N@10",
+      "Hit Ratio (H@1)",
+      "Precision (P@5)",
+      "BLEU-1",
+      "ROUGE-1"
+    ],
+    "calculation": "Evaluation metrics are calculated based on the predicted outputs compared to the ground truth.",
+    "interpretation": "Higher accuracy and lower RMSE indicate better model performance.",
+    "baseline_results": "Results demonstrate performance improvements for models fine-tuned on ITDR compared to those not fine-tuned.",
+    "validation": "Ablation studies conducted to validate the effectiveness of ITDR in multiple recommendation tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset has undergone various privacy measures during data collection.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

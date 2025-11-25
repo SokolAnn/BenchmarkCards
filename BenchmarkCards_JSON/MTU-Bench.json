@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MTU-Bench (Multi-Granularity Tool-Use Benchmark)",
+    "abbreviation": "MTU-Bench",
+    "overview": "MTU-Bench is a multi-granularity benchmark for evaluating large language models (LLMs) in their tool-use capabilities across diverse scenarios. It includes MTU-Instruct for training and MTU-Eval for comprehensive evaluation, covering various real-world tool-use scenes.",
+    "data_type": "dialogue interactions and tool usage scenarios",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MetaTool",
+      "API-Bank",
+      "ToolLLM"
+    ],
+    "resources": [
+      "https://github.com/MTU-Bench-Team/MTU-Bench.git"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of MTU-Bench is to provide a comprehensive evaluation framework for assessing the tool-use abilities of large language models.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Tool Use Evaluation",
+      "Dialogue Systems"
+    ],
+    "limitations": "MTU-Bench may not fully capture all potential edge cases or highly complex interactions that might occur in dynamic real-world environments.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Composed of existing task-oriented dialogue datasets such as MultiWOZ, SGD, and others, transformed to create realistic tool-use examples.",
+    "size": "159,061 dialogues",
+    "format": "JSON",
+    "annotation": "Collected through automated synthesis and manual validation."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics evaluation",
+      "Instruction tuning"
+    ],
+    "metrics": [
+      "Tool Selection Accuracy (TS)",
+      "Parameter Selection Accuracy (PS)",
+      "Success Rate (SR)",
+      "Averaged Turn Success Rate (ATS)",
+      "Soft Averaged Turn Success Rate (SATS)",
+      "Task Process Rate (TPR)"
+    ],
+    "calculation": "Metrics are calculated as per user defined interactions and tool usage in dialogue.",
+    "interpretation": "High scores indicate better performance in tool-use tasks across diverse scenarios.",
+    "baseline_results": "MTU-LLaMA model performances on various scenarios and metrics.",
+    "validation": "Data validated through a combination of automated checks and manual annotation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "None discussed explicitly.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Current practices for data privacy in accordance with applicable laws are ensured but not explicitly detailed.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

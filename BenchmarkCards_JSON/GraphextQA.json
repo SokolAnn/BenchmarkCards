@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "GraphextQA (Graph-Enhanced Question Answering)",
+    "abbreviation": "GraphextQA",
+    "overview": "GraphextQA is an open-domain question answering dataset that includes paired graphs sourced from Wikidata, designed to evaluate the integration of graph knowledge into language models for improved answer generation.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/drt/graphext-qa",
+      "https://github.com/happen2me/cross-gnn"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the benchmark is to evaluate the ability of generative models to comprehend graphs and generate accurate answers.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "The dataset has limitations regarding the naturalness of questions and answers, as many are derived from existing question patterns and may not provide conversational responses.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Derived from Lc-QuAD 2.0 and MCWQ datasets, which are existing knowledge base question answering datasets.",
+    "size": "59,964 instances",
+    "format": "JSON",
+    "annotation": "Automatically constructed graphs from SPARQL queries with natural language questions."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Exact Match (EM)",
+      "F1 Score",
+      "BLEU Score"
+    ],
+    "calculation": "Metrics are calculated based on the generated answers compared to the ground truth.",
+    "interpretation": "Higher EM, F1, and BLEU scores indicate better understanding and generation capabilities of the models.",
+    "baseline_results": "The baseline T5 model achieves EM of 65.73 and F1 of 68.26, while the CrossGNN model achieves EM of 68.11 and F1 of 70.31.",
+    "validation": "The dataset includes validation through baseline experiments and comparison with generative models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis of the dataset revealed that many questions do not encompass a diverse range of topics and entities, potentially leading to bias.",
+    "harm": [
+      "The dataset could reinforce bias in generated responses based on the predominant patterns present in the sourced datasets."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset was screened for harmful content using OpenAI moderation APIs, and no harmful questions were flagged.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

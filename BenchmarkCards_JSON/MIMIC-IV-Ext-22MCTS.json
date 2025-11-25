@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MIMIC-IV-Ext-22MCTS (22 Million-Event Temporal Clinical Time-Series Dataset for Risk Prediction)",
+    "abbreviation": "MIMIC-IV-Ext-22MCTS",
+    "overview": "This paper introduces a time series clinical events dataset consisting of 22,588,586 clinical time series events with timestamps extracted from discharge summaries, aimed at improving clinical risk prediction modeling.",
+    "data_type": "clinical event and timestamp pairs",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enhance clinical risk forecasting and provide a dataset for machine learning models in healthcare applications.",
+    "audience": [
+      "Healthcare Researchers",
+      "Medical Practitioners",
+      "Data Scientists"
+    ],
+    "tasks": [
+      "Clinical Event Extraction",
+      "Timestamp Estimation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Clinical discharge summaries from MIMIC-IV-Note.",
+    "size": "22,588,586 clinical events",
+    "format": "N/A",
+    "annotation": "Annotations were conducted by clinical experts for event extraction."
+  },
+  "methodology": {
+    "methods": [
+      "Contextual BM25",
+      "Semantic Search",
+      "Large Language Model Annotation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "NDCG",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "Metrics are calculated based on the performance of models fine-tuned on the dataset compared to baseline model performances.",
+    "interpretation": "Higher metrics indicate improved clinical prediction capabilities.",
+    "baseline_results": null,
+    "validation": "Evaluation of model performance using validation datasets from healthcare tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

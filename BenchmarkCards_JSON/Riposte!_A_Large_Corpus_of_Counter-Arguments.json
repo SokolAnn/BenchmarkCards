@@ -1,0 +1,79 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Riposte! A Large Corpus of Counter-Arguments",
+    "abbreviation": "N/A",
+    "overview": "We cast providing constructive feedback as a natural language processing task and create Riposte!, a corpus of counter-arguments (CAs) for fallacious micro-level arguments. Produced by crowdworkers, Riposte! contains over 18k CAs. Workers were instructed to identify common fallacy types and produce a CA which identifies the fallacy; we analyze how workers create CAs and construct a baseline generation model.",
+    "data_type": "text (counter-arguments and claim-premise pairs)",
+    "domains": [
+      "Natural Language Processing",
+      "Education"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Argument Reasoning Comprehension (ARC)"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/1910.03246",
+      "https://www.mturk.com/",
+      "https://spacy.io/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Create a large-scale corpus of crowdworker-produced counter-arguments to enable research on automatic generation of CAs for fallacious micro-level arguments and to cast constructive feedback as an NLP text-generation task.",
+    "audience": [
+      "Educators",
+      "Natural Language Processing Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text Generation (Counter-argument generation)",
+      "Text Classification (Fallacy type classification)"
+    ],
+    "limitations": "Challenges noted: the corpus must contain a variety of topics to generalize to unseen topics; many fallacies in an argument may be not easily identifiable; producing CAs is costly and time-consuming.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Counter-arguments collected via Amazon Mechanical Turk for the 1,263 unique topic-claim-premise pairs from the Argument Reasoning Comprehension (ARC) dataset (Habernal et al., 2018b; 172 unique topics and 264 unique claims).",
+    "size": "18,887 counter-arguments (CAs); ARC: 1,263 unique topic-claim-premise pairs",
+    "format": "N/A",
+    "annotation": "Crowdsourced via Amazon Mechanical Turk; 5 workers were asked to produce a CA per argument (one task per fallacy type). Workers selected a fallacy type and produced CAs using provided templates; unsure/no-fallacy workers could provide a CA or reason. Majority vote was used to select CAs and fallacy types. Responses failing criteria (blank, not a sentence, direct copy, or not English) were manually rejected."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics (BLEU)",
+      "Automated similarity (Jaccard similarity)",
+      "Human evaluation (crowdsourced annotation of Strength, Persuasiveness, Relevance)",
+      "Baseline model evaluation (Simple Overlap baseline, seq2seq in-domain and out-of-domain)"
+    ],
+    "metrics": [
+      "BLEU",
+      "Jaccard similarity",
+      "Strength (annotator score)",
+      "Persuasiveness (annotator score)",
+      "Relevance (annotator score)",
+      "Krippendorff's alpha (agreement)",
+      "F1 Score (4-way fallacy classification reported for LSTM encoder: 36.02% F1)"
+    ],
+    "calculation": "BLEU scores were calculated between each worker-produced CA and the original argument (claim and premise). Average Jaccard similarity scores were computed between CAs for a single argument after tokenization and removal of stop words and punctuation. Human evaluation used 3 annotators per CA (50 arguments shown) rating Strength, Persuasiveness, and Relevance; Krippendorff's alpha reported for agreement. Data splits: unsure instances filtered out; majority vote used; split into 80% train / 10% dev / 10% test ensuring no unique claim-premise pairs are shared across splits.",
+    "interpretation": "BLEU and overlap analyses indicate workers mainly used premise and claim keywords to create CAs. Seq2seq in-domain models perform substantially better than out-of-domain, indicating simple models struggle on unseen topics. Human evaluation found generated CAs to be more relevant but weaker and less persuasive than gold CAs.",
+    "baseline_results": "BLEU (selected values from Table 4): Simple Overlap (P+C) = 13.76 overall; Simple Overlap (overall column) = 18.16. Seq2seq in-domain (overall) = 16.57; Seq2seq out-of-domain (overall) = 5.53. Human evaluation mean scores (Table 5) — Strength: gold 2.3 (α=0.20), generated 1.98 (α=0.20); Persuasiveness: gold 2.26 (α=0.71), generated 1.94 (α=0.15); Relevance: gold 2.74 (α=0.20), generated 2.84 (α=0.72).",
+    "validation": "Filtered out 'unsure' instances; majority vote applied for selecting CAs and fallacy types; 80/10/10 train/dev/test split with no shared claim-premise pairs across splits. Human evaluation: 3 annotators per CA on 50 arguments to compare gold vs generated CAs. Similarity and agreement statistics (BLEU, Jaccard, Krippendorff's alpha) were reported."
+  },
+  "targeted_risks": {
+    "risk_categories": [],
+    "atlas_risks": {
+      "risks": null
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "benchmark_details": {
+    "name": "R-Bench",
+    "overview": "A novel benchmark for evaluating Vision Relationship Hallucination in Large Vision-Language Models (LVLMs), focusing on image-level and instance-level questions regarding relations.",
+    "data_type": "Questions and Images",
+    "domains": [
+      "Visual Comprehension",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "POPE",
+      "AMBER"
+    ],
+    "resources": [
+      "https://github.com/mrwu-mac/R-Bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate and analyze relationship hallucinations in Large Vision-Language Models.",
+    "audience": [
+      "Researchers",
+      "Academics",
+      "Developers of AI models"
+    ],
+    "tasks": [
+      "Evaluating hallucinations in LVLMs",
+      "Understanding inter-object relationships in visual data"
+    ],
+    "limitations": "Limited to analyzing relationship hallucinations, does not cover all types of hallucinations.",
+    "out_of_scope_uses": [
+      "Evaluation of LLMs without visual components",
+      "Applications outside of vision-language models"
+    ]
+  },
+  "data": {
+    "source": "nocaps validation set (Agrawal et al., 2019)",
+    "size": "24,897 questions (11,651 after filtering)",
+    "format": "Questions with binary answers (Yes/No)",
+    "annotation": "Questions annotated with positive and negative labels"
+  },
+  "methodology": {
+    "methods": [
+      "Parsing COCO captions into relationship triplets",
+      "Using LLM for generating questions",
+      "Employing GroundingDINO for bounding box and mask identification"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Average results based on multiple random subsets with a 1:1 positive-negative question ratio.",
+    "interpretation": "Analysis of discrepancies between image-level and instance-level question responses.",
+    "baseline_results": null,
+    "validation": "Involves benchmarking various existing LVLMs on generated questions"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Governance",
+      "Explainability"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination",
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias",
+            "Decision bias"
+          ]
+        },
+        {
+          "category": "Governance",
+          "subcategory": [
+            "Lack of system transparency",
+            "Unrepresentative risk testing",
+            "Incomplete usage definition",
+            "Lack of data transparency"
+          ]
+        },
+        {
+          "category": "Explainability",
+          "subcategory": [
+            "Inaccessible training data",
+            "Untraceable attribution",
+            "Unexplainable output"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Maintained through the use of the nocaps dataset, ensuring no overlap with pre-trained data.",
+    "data_licensing": "Based on publicly available datasets (nocaps, COCO).",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "Follows guidelines for data use in research."
+  }
+}

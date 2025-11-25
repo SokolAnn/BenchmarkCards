@@ -1,0 +1,100 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "The Discussion Tracker Corpus of Collaborative Argumentation",
+    "abbreviation": "N/A",
+    "overview": "The Discussion Tracker corpus is an annotated dataset of transcripts of spoken, multi-party argumentation collected in American high school English classes. The corpus consists of 29 multi-party discussions transcribed from 985 minutes of audio, annotated for three dimensions of collaborative argumentation: argument moves (claims, evidence, and explanations), specificity (low, medium, high) and collaboration (New Ideas, Agreements, Extensions, Probes/Challenges). The paper provides descriptive statistics, performance benchmarks and associated code for predicting each dimension separately, and illustrates use of the multiple annotations to improve performance via multi-task learning.",
+    "data_type": "Transcribed spoken multi-party dialogues (text)",
+    "domains": [
+      "Natural Language Processing",
+      "Education"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SRI corpus (Richey et al., 2016)"
+    ],
+    "resources": [
+      "https://discussiontracker.cs.pitt.edu"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To release a publicly available corpus of transcribed, synchronous multi-party classroom discussions annotated for collaboration, argumentation (argument moves), and specificity, provide descriptive statistics and reproducible baseline classification results, and enable further NLP and educational research (including multi-task learning experiments).",
+    "audience": [
+      "NLP Researchers",
+      "Educational Researchers",
+      "Teachers"
+    ],
+    "tasks": [
+      "Argument Component Classification",
+      "Specificity Classification",
+      "Collaboration Classification (turn-level)",
+      "Argumentative vs Non-Argumentative Classification",
+      "Segmentation into Argument Discourse Units"
+    ],
+    "limitations": "First release contains 29 transcripts (985 minutes of audio). Audio files are not included in this release due to IRB/de-identification concerns for research on minors. Some speaker demographic information is estimated from notes taken during data collection. Joint multi-task model improvements reported were not statistically significant.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Audio-recorded multi-party spoken discussions in 10 high school English classrooms across three school districts (suburban, urban, rural), transcribed by a professional service (Rev.com) and reviewed by research assistants; speaker demographics collected via notes during data collection.",
+    "size": "29 transcripts (985 minutes of audio); 3,261 student turns; 2,128 argumentative turns annotated for collaboration; 3,135 argument discourse units annotated for argument move and specificity.",
+    "format": "Excel (.xlsx) documents for each of 29 discussions, segmented for both turns at talk and argument discourse units, with accompanying metadata file and annotation coding manuals.",
+    "annotation": "Manual annotation by trained annotators for three dimensions: collaboration at the turn level (New Ideas, Agreements, Extensions, Probes/Challenges), argument moves at the argument discourse unit level (claim, evidence, explanation), and specificity at the argument discourse unit level (low, medium, high). Transcripts were double-annotated for a portion of data to compute inter-rater agreement and gold standard annotations were produced via deliberation."
+  },
+  "methodology": {
+    "methods": [
+      "Automated classification experiments using neural network models with handcrafted features (CNN + handcrafted features)",
+      "Multi-task learning (joint model with shared representation and three softmax classifiers)",
+      "Baseline Naive Bayes classifiers for collaboration and argumentative/non-argumentative detection",
+      "Ten-fold cross-validation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Cohen's Kappa (quadratic-weighted for specificity; unweighted for other tasks)",
+      "Macro F1 Score"
+    ],
+    "calculation": "Ten-fold cross-validation: each fold consists of 26 transcripts as training set and 3 as test set (one fold uses 27 training and 2 test). Final reported metrics are computed across the cross-validation folds. For argumentation experiments class weights were manually set (claims: 1, evidence: 2, explanations: 4). Cohen's Kappa: quadratic-weighted for specificity and unweighted for remaining tasks. Macro F1 is reported.",
+    "interpretation": "Higher Accuracy, Kappa and Macro F1 indicate better classification performance. Reported results show the tasks are challenging (notably low F1 for 'explanations' in argumentation). The joint multi-task model slightly outperformed individual models on Accuracy, Kappa and Macro F1 for argument move and specificity prediction, but the improvements were not statistically significant as reported.",
+    "baseline_results": "Argumentation (Individual): Accuracy 0.669, Kappa 0.343, Macro F1 0.502. Argumentation (Joint): Accuracy 0.673, Kappa 0.365, Macro F1 0.516. Specificity (Individual): Accuracy 0.703, Kappa 0.750, Macro F1 0.695. Specificity (Joint): Accuracy 0.706, Kappa 0.751, Macro F1 0.698. Collaboration (all 4 labels) Multinomial w/ TF-IDF: Accuracy 0.504, Kappa 0.086, Macro F1 0.254. Collaboration ('New' vs Other) Gaussian w/ BOW: Accuracy 0.623, Kappa 0.217, Macro F1 0.604. Argumentative vs Non-Argumentative Gaussian w/ TF-IDF: Accuracy 0.785, Kappa 0.513, Macro F1 0.756. Per-class F1 for argumentation: claims 0.776, evidence 0.565, explanations 0.164.",
+    "validation": "Inter-rater reliability: segmentation (alpha average 0.96, min 0.72, max 1.0), collaboration Cohen's Kappa 0.74, specificity Quadratic Weighted Kappa 0.70, argumentation Cohen's Kappa 0.89. A portion of transcripts were double-annotated; disagreements resolved through deliberation to produce gold standard annotations. Cross-validation folds used in experiments will be released as a JSON file."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Fairness",
+      "Legal Compliance"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data",
+            "Reidentification"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Legal Compliance",
+          "subcategory": [
+            "Legal accountability"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Paper provides speaker demographic estimates: on average discussants were 50% male and 50% female (SD 0.18), 77% white (SD 0.22) and 23% nonwhite (SD 0.22). Nonwhite breakdown: approximately 58% appeared Indian, 18% appeared Black, 15% East Asian, 9% Latinx or other. Mean discussion participants: 15 students (SD 6), range 6 to 29.",
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Transcripts include de-identified unique IDs for turns and teachers (e.g., T127.1.Heartdark). Audio files are not included in this release due to IRB/de-identification concerns for research on minors. Transcriptions were outsourced to Rev.com and reviewed by research assistants. Speaker demographics were estimated from observational notes.",
+    "data_licensing": "Freely available for research purposes (no specific license type stated in the paper).",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "The paper notes that inclusion of audio files would require costly de-identification in accordance with standard IRB regulations for research on minors in authentic learning environments."
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "RareBench",
+    "abbreviation": "N/A",
+    "overview": "RareBench is a pioneering benchmark designed to systematically evaluate the capabilities of Large Language Models (LLMs) in diagnosing rare diseases along four critical dimensions.",
+    "data_type": "electronic health records",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MedQA",
+      "MedMCQA",
+      "MedBench"
+    ],
+    "resources": [
+      "https://doi.org/10.1145/3637528.3671576"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the diagnostic capabilities of LLMs in the context of rare diseases.",
+    "audience": [
+      "ML Researchers",
+      "Medical Practitioners",
+      "Data Scientists"
+    ],
+    "tasks": [
+      "Phenotype Extraction",
+      "Screening for Rare Diseases",
+      "Comparison Analysis of Common and Rare Diseases",
+      "Differential Diagnosis among Universal Rare Diseases"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset is compiled from Peking Union Medical College Hospital (PUMCH) and publicly available datasets.",
+    "size": "2,185 cases",
+    "format": "N/A",
+    "annotation": "Cases were monitored by doctors to ensure patient information confidentiality and quality."
+  },
+  "methodology": {
+    "methods": [
+      "Quantitative evaluation of LLMs",
+      "Human evaluation for comparative analysis"
+    ],
+    "metrics": [
+      "Top-k Recall",
+      "Mean Rank",
+      "F1-score"
+    ],
+    "calculation": "Metrics are calculated based on predictions made by LLMs in an evaluation context.",
+    "interpretation": "A higher top-k recall indicates better diagnostic accuracy, while mean rank gives insight into the model's predictive rankings.",
+    "baseline_results": null,
+    "validation": "The model was validated through comparison with clinical specialists and their diagnostic outcomes."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All patient data is monitored and anonymized to prevent personal information leakage.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "The study has been approved by the relevant ethical committees."
+  }
+}

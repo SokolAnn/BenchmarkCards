@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Time Series Generation Conditioned on Unstructured Natural Language",
+    "abbreviation": "N/A",
+    "overview": "The paper introduces a method for generating time series based on unstructured natural language descriptions and a novel dataset consisting of 63,010 time series-description pairs.",
+    "data_type": "time-series-description pairs",
+    "domains": [
+      "Finance",
+      "Climate"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/uchidalab/ts-generation"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To generate time series data conditioned on natural language descriptions using a diffusion model.",
+    "audience": [
+      "ML Researchers",
+      "Data Scientists"
+    ],
+    "tasks": [
+      "Time Series Generation",
+      "Data Augmentation"
+    ],
+    "limitations": "The dataset may contain ambiguous descriptions, and the model has limitations in generating time series of varying lengths.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from various datasets including stock data, UCR Time Series Classification Archive, and synthetic data.",
+    "size": "63,010 time series-description pairs",
+    "format": "CSV",
+    "annotation": "Descriptions generated using GPT-4o for the time series data."
+  },
+  "methodology": {
+    "methods": [
+      "Diffusion Model",
+      "Denoising U-Net"
+    ],
+    "metrics": [
+      "Euclidean Distance",
+      "Dynamic Time Warping"
+    ],
+    "calculation": "Metrics are calculated as pair-wise distances between generated time series and ground truth.",
+    "interpretation": "Lower distances indicate better alignment between generated time series and prompts.",
+    "baseline_results": null,
+    "validation": "The model's performance is evaluated based on the quality of generated time series with various prompts."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

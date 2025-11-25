@@ -1,0 +1,79 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "L3Cube-MahaNLP",
+    "abbreviation": "N/A",
+    "overview": "With L3Cube-MahaNLP, we aim to build resources and a library for Marathi natural language processing. We present datasets and models for supervised tasks like sentiment analysis, named entity recognition, and hate speech detection. We have also published a monolingual Marathi corpus for unsupervised language modeling tasks. Overall we present MahaCorpus, MahaSent, MahaNER, and MahaHate datasets and their corresponding MahaBERT models fine-tuned on these datasets.",
+    "data_type": "text (monolingual corpus; tweet and sentence classification pairs; token-level NER annotations)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Marathi"
+    ],
+    "similar_benchmarks": [
+      "multilingual-BERT",
+      "XLM-R",
+      "IndicBERT",
+      "inlpsuite"
+    ],
+    "resources": [
+      "https://github.com/l3cube-pune/MarathiNLP",
+      "https://huggingface.co/l3cube-pune/marathi-bert",
+      "https://huggingface.co/l3cube-pune/marathi-roberta",
+      "https://huggingface.co/l3cube-pune/marathi-albert",
+      "https://huggingface.co/l3cube-pune/marathi-albert-v2",
+      "https://huggingface.co/l3cube-pune/marathi-gpt",
+      "https://huggingface.co/l3cube-pune/MarathiSentiment",
+      "https://huggingface.co/l3cube-pune/marathi-ner",
+      "https://huggingface.co/l3cube-pune/mahahate-bert",
+      "https://huggingface.co/l3cube-pune/mahahate-multi-roberta"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To build resources and a dedicated library for Marathi natural language processing by releasing datasets (MahaCorpus, MahaSent, MahaNER, MahaHate) and pretrained/finetuned models (MahaBERT variants, MahaGPT, MahaFT) to enable downstream tasks such as sentiment analysis, named entity recognition, and hate speech detection.",
+    "audience": [],
+    "tasks": [
+      "Sentiment Analysis",
+      "Named Entity Recognition",
+      "Hate Speech Detection",
+      "Language Modeling (Next Token Prediction)",
+      "Tokenization",
+      "Word Embedding (Word Vectors)"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "MahaCorpus: scraped from the internet using news and non-news sources; MahaSent: Marathi tweets; MahaNER: manually tagged sentences; MahaHate: tweets curated from Twitter and manually annotated.",
+    "size": "MahaCorpus: 24.8M sentences and 289M tokens (752M tokens when combined with other publicly available resources); MahaSent: 12,114 train, 2,250 test, 1,500 validation examples; MahaNER: 25,000 manually tagged sentences (21,500 train, 2,000 test, 1,500 validation); MahaHate: over 25,000 distinct tweets (21,500 train, 2,000 test, 1,500 validation).",
+    "format": "N/A",
+    "annotation": "MahaCorpus: unlabeled monolingual corpus for unsupervised language modeling; MahaSent: labeled tweets for sentiment (positive/negative/neutral); MahaNER: manually annotated NER labels (eight entity classes) released in IOB and non-IOB notations; MahaHate: manually annotated tweets labeled as hate, offensive, profane, and not."
+  },
+  "methodology": {
+    "methods": [
+      "Masked Language Modeling pretraining (used for MahaBERT variants)",
+      "Causal Language Modeling pretraining (used for MahaGPT)",
+      "Model fine-tuning of pretrained transformer models (BERT variants) on downstream datasets"
+    ],
+    "metrics": [],
+    "calculation": "N/A",
+    "interpretation": "N/A",
+    "baseline_results": null,
+    "validation": "Datasets provide train/test/validation splits as specified for each dataset (MahaSent, MahaNER, MahaHate)."
+  },
+  "targeted_risks": {
+    "risk_categories": [],
+    "atlas_risks": {
+      "risks": null
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

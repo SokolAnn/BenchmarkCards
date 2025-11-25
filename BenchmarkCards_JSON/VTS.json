@@ -1,0 +1,101 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "VTS (Visual Token Scaling)",
+    "abbreviation": "VTS",
+    "overview": "VTS (Visual Token Scaling) is a new dataset that facilitates supervised reasoning trajectories (VTS-SFT) and preference-labeled reasoning comparisons (VTS-DPO) for visual reasoning tasks in multi-modal large language models (MLLMs), enabling dynamic and iterative visual inference.",
+    "data_type": "supervised reasoning trajectories",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/Open-DataFlow/vts-v"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enhance multi-step visual reasoning by enabling models to iteratively select visual actions and verify their utility at each step.",
+    "audience": [
+      "ML Researchers",
+      "AI Practitioners"
+    ],
+    "tasks": [
+      "Visual Question Answering",
+      "Image-Grounded Dialogue",
+      "Fine-Grained Visual Reasoning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated from visual reasoning examples in the LLaVA-OneVision dataset.",
+    "size": "315,000 examples",
+    "format": "JSON",
+    "annotation": "Automatically generated visual reasoning trajectories with filtering for correctness using LLM-based verification."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on the correctness of generated reasoning trajectories against ground-truth labels.",
+    "interpretation": "Higher accuracy indicates better performance and reasoning capability of MLLMs.",
+    "baseline_results": "Results from models using static visual token representation were significantly lower compared to those using VTS.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Privacy",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Exposing personal information"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Negative impacts on model output fairness due to biased reasoning trajectories."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All data used was filtered to ensure no personal identifiable information was included.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Data was sourced from publicly available datasets and verified for correctness.",
+    "compliance_with_regulations": "N/A"
+  }
+}

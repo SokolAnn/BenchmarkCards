@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "RS-GPT4V (Unified Multimodal Instruction-Following Dataset for Remote Sensing Image Understanding)",
+    "abbreviation": "RS-GPT4V",
+    "overview": "RS-GPT4V is a high-quality, diversified, and unified multimodal instruction-following dataset for remote sensing image understanding, designed to support tasks such as image description, visual question answering, and reasoning capabilities using a unified (Question, Answer) format.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "RS5M",
+      "SkyScrip",
+      "LHRS-Align",
+      "MMRS-1M"
+    ],
+    "resources": [
+      "https://github.com/GeoX-Lab/RS-GPT4V"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive dataset for enhancing the capabilities of multimodal instruction-following models in remote sensing.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Image Captioning",
+      "Visual Question Answering",
+      "Visual Grounding",
+      "Multi-turn Conversation"
+    ],
+    "limitations": "The overall scale remains limited, particularly in specific application scenarios involving infrared and SAR modalities, where data support is insufficient.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Various remote sensing visual language datasets including NWPU-Captions, RSICD, RSITMD, Sydney-Captions, and RSVQA.",
+    "size": "91,937 training images, 991,206 question-answer pairs, 15,999 test images, 258,419 question-answer pairs",
+    "format": "N/A",
+    "annotation": "The dataset includes images with diverse annotations through manual correction and automatic generation by GPT-4V."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "BLEU Score",
+      "METEOR",
+      "ROUGE-L",
+      "CIDEr",
+      "SPICE"
+    ],
+    "calculation": "Metrics are calculated based on the quality of generated responses from multimodal models fine-tuned with RS-GPT4V.",
+    "interpretation": "Higher scores indicate better performance in accurately describing images and understanding complex tasks.",
+    "baseline_results": null,
+    "validation": "The dataset was evaluated through experiments with benchmark models such as Full-FT, LoRA, and MoE-LoRA."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ICE-ID (Identity Resolution Benchmark)",
+    "abbreviation": "ICE-ID",
+    "overview": "ICE-ID is a novel benchmark dataset for historical identity resolution, comprising 220 years (1703–1920) of Icelandic census records. It captures name variations, demographic changes, and genealogical links, focusing on long-term person-entity matching in a real-world population.",
+    "data_type": "tabular",
+    "domains": [
+      "Natural Language Processing",
+      "History"
+    ],
+    "languages": [
+      "Icelandic"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/goldpotatoes/ice-id"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enable reproducible benchmarking of identity resolution approaches in longitudinal settings and stimulate cross-disciplinary research in data linkage and historical analytics.",
+    "audience": [
+      "ML Researchers",
+      "Historians",
+      "Data Scientists",
+      "Social Scientists"
+    ],
+    "tasks": [
+      "Identity Resolution",
+      "Entity Matching"
+    ],
+    "limitations": "Snapshot waves only; kinship signal sparsity; label noise in early records; modalities and unstructured data are not included.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Digitized Icelandic census records from varying years combined with auxiliary data.",
+    "size": "984,028 raw rows with 200,000 high-confidence cluster labels",
+    "format": "CSV",
+    "annotation": "Expert-curated cluster labels and normalization of names."
+  },
+  "methodology": {
+    "methods": [
+      "Machine Learning ensembles",
+      "Non-Axiomatic Reasoning System (NARS)",
+      "Deterministic Rules"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score",
+      "Accuracy",
+      "AUC",
+      "Adjusted Rand Index (ARI)"
+    ],
+    "calculation": "Metrics calculated using pairwise comparisons and clustering quality assessments based on thresholds.",
+    "interpretation": "Scores are interpreted with respect to their roles in defining matching efficiency and clustering coherence.",
+    "baseline_results": "F1 Score of 0.9613 on combined tasks with ML ensemble.",
+    "validation": "Evaluated through temporal splits mirroring real archival workflows."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset includes population demographic shifts over the analyzed period.",
+    "harm": [
+      "Potential privacy breaches from individual linkage."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "There is a risk of exposing sensitive personal information through linked genealogical data.",
+    "data_licensing": "Open-access license for shared data and artifacts.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

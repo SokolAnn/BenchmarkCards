@@ -1,0 +1,78 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LTLBench",
+    "abbreviation": "N/A",
+    "overview": "LTLBench is a benchmark for evaluating the temporal reasoning ability of large language models (LLMs), constructed using a novel pipeline that generates controllable and scalable temporal reasoning problems based on random directed graph generation and linear temporal logic (LTL).",
+    "data_type": "text",
+    "domains": [
+      "Artificial Intelligence"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "TRAM",
+      "TimeBench"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/RutaTang/LTLBench",
+      "https://github.com/RutaTang/LTLBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the temporal reasoning ability of large language models and provide insights into their performance and robustness in handling temporal reasoning challenges.",
+    "audience": [
+      "ML Researchers",
+      "AI Practitioners"
+    ],
+    "tasks": [
+      "Temporal Reasoning"
+    ],
+    "limitations": "The evaluation includes a limited subset of LTL operators, omitting several complex operators that could enhance future assessments.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated using a random graph generation process, linear temporal logic (LTL) formulas, and NuSMV model checking.",
+    "size": "2,000 problems",
+    "format": "N/A",
+    "annotation": "Problems are labeled as True or False based on their ground truth obtained through model checking."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "AUC"
+    ],
+    "calculation": "Accuracy, F1 Score, and AUC are calculated based on the model's performance on LTLBench problems.",
+    "interpretation": "Higher metrics indicate a better ability of models to handle complex temporal reasoning challenges.",
+    "baseline_results": "The model qwen:72b-chat shows the highest Accuracy at 0.60, F1 at 0.59, and AUC at 0.60.",
+    "validation": "The benchmark is validated through comprehensive evaluations on six large language models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Bidirectional Encoder Representations from Transformers (BERT)-based language model for Norwegian",
+    "abbreviation": "N/A",
+    "overview": "This work describes the effort to build a pre-training corpus and to use it to train a BERT-based language model for Norwegian, outpacing multilingual BERT in various tasks and demonstrating the feasibility of building high-quality models from digitized content in national libraries.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Norwegian",
+      "English",
+      "Swedish",
+      "Danish"
+    ],
+    "similar_benchmarks": [
+      "mBERT",
+      "NorBERT"
+    ],
+    "resources": [
+      "https://huggingface.co/NbAiLab/nb-bert-base",
+      "https://huggingface.co/NbAiLab/notram"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To create a large Norwegian-only corpus for training state-of-the-art transformer-based language models, demonstrating effective use of digital collections in national libraries.",
+    "audience": [
+      "ML Researchers",
+      "Language Technologists",
+      "Linguists"
+    ],
+    "tasks": [
+      "Named Entity Recognition",
+      "Part-of-Speech Tagging",
+      "Sentiment Analysis",
+      "Political Affiliation Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Digital collections from the National Library of Norway",
+    "size": "109GB",
+    "format": "Plain text",
+    "annotation": "Manually annotated with morphological features, syntactic functions, and hierarchical structures."
+  },
+  "methodology": {
+    "methods": [
+      "Fine-tuning on specific tasks such as NER and sentiment classification",
+      "Evaluation against prior models including mBERT and NorBERT"
+    ],
+    "metrics": [
+      "F1 Score"
+    ],
+    "calculation": "The evaluation metrics are calculated based on the performance of the model on validation datasets for various downstream tasks.",
+    "interpretation": "Higher F1 Score indicates better model performance on named entity recognition and sentiment classification tasks.",
+    "baseline_results": "The NB-BERT model outperformed mBERT on token and sequence classification tasks.",
+    "validation": "A grid search for optimal fine-tuning hyperparameters and performance comparison against baseline models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PerCQA: Persian Community Question Answering Dataset",
+    "abbreviation": "PerCQA",
+    "overview": "PerCQA is the first Persian dataset for Community Question Answering (CQA). It contains 989 questions and 21,915 annotated answers crawled from the Ninisite forum, providing strong benchmarks for answer selection tasks within the Persian language.",
+    "data_type": "question-answer pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Persian"
+    ],
+    "similar_benchmarks": [
+      "SemEval 2015",
+      "TREC QA",
+      "WikiQA"
+    ],
+    "resources": [
+      "https://github.com/PerCQA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enhance the research and applications of CQA tasks in the Persian language.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Answer Selection",
+      "Question Retrieval"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Questions and answers crawled from the Persian forum Ninisite.",
+    "size": "989 questions and 21,915 answers",
+    "format": "N/A",
+    "annotation": "Annotated by a team using detailed guidelines, labeled as 'Good', 'Bad', and 'Potential'."
+  },
+  "methodology": {
+    "methods": [
+      "BiLSTM-attention",
+      "RCNN",
+      "PV-Cnt",
+      "CETE"
+    ],
+    "metrics": [
+      "Macro F1 Score"
+    ],
+    "calculation": "Macro F1 Score calculated based on the predictions made by the proposed models.",
+    "interpretation": "Higher F1 scores indicate better performance in answer selection.",
+    "baseline_results": "The best result achieved was a macro F1 score of 61.14 using XLM-R fine-tuned with SemEvalCQA datasets.",
+    "validation": "The quality of labeling was evaluated via Cohen's kappa score."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

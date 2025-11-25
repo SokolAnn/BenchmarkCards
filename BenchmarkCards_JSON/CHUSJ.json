@@ -1,0 +1,115 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "small-scale French clinical text dataset from CHU Sainte-Justine (CHUSJ) Hospital",
+    "abbreviation": "CHUSJ",
+    "overview": "The paper introduces a carefully curated, small-scale French clinical text dataset from CHU Sainte-Justine (CHUSJ) Hospital, which can serve as a valuable benchmark for resource-constrained NLP research in healthcare. The dataset consists of short clinical narratives (admission and evolution notes within the first 24 hours) used to detect cardiac failure.",
+    "data_type": "text (short clinical narratives / single-line clinical notes)",
+    "domains": [
+      "Natural Language Processing",
+      "Healthcare",
+      "Medical Diagnosis"
+    ],
+    "languages": [
+      "French"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a curated small-scale French clinical text dataset from CHU Sainte-Justine and evaluate Mixture of Experts (MoE) Transformer models for clinical text classification under limited data and constrained computational resources, with a view to deploying in a Clinical Decision Support System.",
+    "audience": [
+      "ML Researchers",
+      "Clinical Practitioners",
+      "Model Developers",
+      "Hospital Clinical Decision Support System (CDSS) Integrators"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Clinical Narrative Classification",
+      "Binary Classification (cardiac failure detection)"
+    ],
+    "limitations": "Dataset comprises 5,444 short clinical narratives (580,000 unigrams) and is small-scale; computational resources are constrained to hospital server (NVIDIA Quadro P620, 2 GB); strict hospital privacy regulations prohibit transferring sensitive patient data off-site; MoE-Transformer does not surpass the best biomedical pre-trained models in all metrics; observed generalization gap and overfitting on small data.",
+    "out_of_scope_uses": [
+      "Cloud-based inference or transferring patient data to external servers/APIs"
+    ]
+  },
+  "data": {
+    "source": "Curated French clinical notes from CHU Sainte-Justine (CHUSJ) Hospital (admission and evolution notes within the first 24 hours); study approved by CHUSJ research ethics board (protocol number: 2020-2253).",
+    "size": "5,444 clinical note lines (580,000 unigrams); 1,941 positive cases and 3,503 negative cases.",
+    "format": "N/A",
+    "annotation": "Clinician analysis and confirmation of labels (manual clinician-reviewed annotation/confirmation as described in the paper)."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Comparative model evaluation (training and testing multiple models including pre-trained BERT-based and from-scratch Transformer/MoE-Transformer models)",
+      "Integrated Gradients for interpretability"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Precision",
+      "Recall",
+      "F1-Score",
+      "Area Under the Curve (AUC)"
+    ],
+    "calculation": "Metrics calculated using standard definitions provided in the paper: Accuracy = (TP + TN) / (TP + TN + FP + FN); Precision = TP / (TP + FP); Recall = TP / (TP + FN); F1-Score = 2 * Precision * Recall / (Precision + Recall).",
+    "interpretation": "Higher values of Accuracy, Precision, Recall, and F1-Score indicate better classification performance; authors report MoE-Transformer results (Accuracy 0.87, Precision 0.87, Recall 0.85, F1-Score 0.86) and compare these values to other models.",
+    "baseline_results": "Baseline performance reported in Table III: DistillBERT: Accuracy 0.80, Precision 0.79, Recall 0.78, F1 0.78, Training Time 12.4 hours; CamemBERT: 0.83 / 0.82 / 0.83 / 0.82 / 25.1 hours; FlauBERT: 0.84 / 0.84 / 0.84 / 0.84 / 10.6 hours; FrALBERT: 0.83 / 0.82 / 0.81 / 0.81 / 30.2 hours; CamemBERT-bio: 0.87 / 0.86 / 0.88 / 0.87 / 31.7 hours; DrBERT: 0.87 / 0.84 / 0.90 / 0.87 / 45.2 hours; AliBERT: 0.86 / 0.87 / 0.84 / 0.86 / 39.3 hours; Transformer: 0.85 / 0.85 / 0.83 / 0.84 / 0.11 hours; MoE-Transformer: 0.87 / 0.87 / 0.85 / 0.86 / 0.17 hours.",
+    "validation": "Data split into 80% training, 10% validation, and 10% testing; early stopping was applied in some experiments; models trained on NVIDIA Quadro P620 GPU (2 GB)."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Fairness",
+      "Robustness",
+      "Explainability",
+      "Data Laws"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        },
+        {
+          "category": "Explainability",
+          "subcategory": [
+            "Unexplainable output"
+          ]
+        },
+        {
+          "category": "Data Laws",
+          "subcategory": [
+            "Data transfer restrictions",
+            "Data usage restrictions"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Study approved by CHUSJ research ethics board (protocol number: 2020-2253). Data processing restricted to the hospital server; hospital privacy regulations prohibit transferring sensitive patient information to external servers or APIs (as stated).",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "The paper states strict hospital privacy regulations that preclude transferring sensitive patient information off-site; data processing must occur within the hospital infrastructure (as described)."
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "benchmark_details": {
+    "name": "MedHallTune",
+    "overview": "A large-scale benchmark designed specifically to evaluate and mitigate hallucinations in medical vision-language models, containing over 100,000 images and 1,000,000 instruction pairs.",
+    "data_type": "Multimodal",
+    "domains": [
+      "Healthcare",
+      "Medical Imaging"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Med-Halu",
+      "Med-Halt",
+      "MedVH",
+      "MedHallMark",
+      "Med-HVL",
+      "CARES"
+    ],
+    "resources": [
+      "Dataset and Codes available at MedHallTune"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enhance and evaluate the ability of vision-language models to handle hallucinations in medical contexts.",
+    "audience": [
+      "Researchers",
+      "Healthcare professionals"
+    ],
+    "tasks": [
+      "Medical image captioning",
+      "Clinical decision support",
+      "Visual question answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": [
+      "Non-medical applications"
+    ]
+  },
+  "data": {
+    "source": "Sourced from well-annotated datasets including PubMed.",
+    "size": "Over 100,000 images and 1,000,000 instruction pairs",
+    "format": "Multimodal image and text pairs",
+    "annotation": "Ground-truth annotations for both hallucination and non-hallucination samples."
+  },
+  "methodology": {
+    "methods": [
+      "Instruction-following data generation using GPT-4o",
+      "Quality control mechanisms"
+    ],
+    "metrics": [
+      "Clinical Accuracy",
+      "Clinical Relevance",
+      "Detail Level",
+      "Risk Level"
+    ],
+    "calculation": "Scores rated on a scale from 1 to 10.",
+    "interpretation": "Higher scores indicate better performance.",
+    "baseline_results": "Initial evaluations based on outputs from LLaVA-Med.",
+    "validation": "Evaluated using a testing split with hallucination and non-hallucination instruction pairs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Medical hallucination"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential risks to patient diagnosis and treatment due to hallucinations."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Wason Inductive Logic Test (WILT)",
+    "abbreviation": "WILT",
+    "overview": "WILT is a multi-turn inductive logic benchmark designed to assess LLMs’ ability to gather evidence and reason across multiple turns, requiring models to propose test cases and infer hidden rules.",
+    "data_type": "test cases with boolean outcomes",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MATH",
+      "GSM8K",
+      "CommonsenseQA",
+      "StrategyQA",
+      "BIG-BENCH",
+      "SciBench"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To measure LLMs' multi-turn reasoning capabilities and gather evidence over multiple interactions.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Inductive Logic Reasoning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Test cases generated based on the Wason 2-4-6 task principles.",
+    "size": "50 tests in full split, 10 tests in lite split",
+    "format": "JSON",
+    "annotation": "Manually constructed hidden rules and test cases."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Correct responses out of total tests attempted to diagnose reasoning capabilities.",
+    "interpretation": "Higher accuracy indicates better multi-turn reasoning.",
+    "baseline_results": "Top-performing models achieved only 28% accuracy.",
+    "validation": "Models evaluated on both lite and full test splits."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

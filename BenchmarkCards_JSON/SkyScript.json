@@ -1,0 +1,71 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SkyScript: A Large and Semantically Diverse Vision-Language Dataset for Remote Sensing",
+    "abbreviation": "SkyScript",
+    "overview": "SkyScript is a comprehensive vision-language dataset for remote sensing images, comprising 2.6 million image-text pairs covering 29K distinct semantic tags, aimed at advancing Vision Language Models (VLMs) in remote sensing tasks.",
+    "data_type": "image-text pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/wangzhecheng/SkyScript"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To create a large-scale, semantically diverse vision-language dataset for remote sensing images that facilitates the development of VLMs for various multi-modal tasks.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Open-vocabulary Classification",
+      "Cross-modal Retrieval",
+      "Image Captioning",
+      "Text-to-Image Generation"
+    ],
+    "limitations": "SkyScript may have inherent bias due to the geographic coverage being limited to regions where high-resolution images are available, mainly the U.S. and Europe.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Images are sourced from Google Earth Engine (GEE), which provides open access to large-scale remote sensing image collections, and semantic tags are obtained from OpenStreetMap (OSM).",
+    "size": "2.6 million image-text pairs",
+    "format": "N/A",
+    "annotation": "Tags are derived from OSM and connected to images using geo-coordinates, with a tagging process involving semi-automated procedures."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Metrics are calculated based on performance across various downstream tasks using a continually pre-trained Vision Language Model (SkyCLIP).",
+    "interpretation": "Performance is interpreted based on average accuracy gains in zero-shot classifications compared to baseline models.",
+    "baseline_results": "SkyCLIP achieves a 6.2% average accuracy gain over baseline models.",
+    "validation": "SkyScript has been validated through testing on seven benchmark datasets for scene classification."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "SkyScript's geographic coverage might underrepresent remote sensing imagery in developing countries.",
+    "harm": "Potential bias from limited geographic representation in high-resolution images."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

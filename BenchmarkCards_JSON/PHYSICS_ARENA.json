@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PHYSICS ARENA",
+    "abbreviation": "N/A",
+    "overview": "PHYSICS ARENA is the first multimodal physics reasoning benchmark designed to holistically evaluate MLLMs across three critical dimensions: Variable Identification, Process Formulation, and Solution Derivation, comprising over 5,000 multimodal instances.",
+    "data_type": "multimodal",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "PhysReason",
+      "PHYBench",
+      "UGPhysics"
+    ],
+    "resources": [
+      "https://huggingface.co/Qwen/Qwen-VL-Max"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive framework for evaluating the multimodal physics reasoning capabilities of MLLMs.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Education Technologists"
+    ],
+    "tasks": [
+      "Physics Reasoning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Custom collection of high-school physics problems, involving textual components and associated visual materials.",
+    "size": "5,103 instances",
+    "format": "JSON",
+    "annotation": "Expert annotated with categories of physical variables and processes."
+  },
+  "methodology": {
+    "methods": [
+      "Automated evaluation using GPT-4o"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy is calculated based on comparisons of the model output against ground truth annotations for each dimension.",
+    "interpretation": "Higher accuracy indicates better reasoning capabilities in variable identification, process formulation, and solution derivation.",
+    "baseline_results": "N/A",
+    "validation": "Rigorous manual review and validation of a stratified subset of problems."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

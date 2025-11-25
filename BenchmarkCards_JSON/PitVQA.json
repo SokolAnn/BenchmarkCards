@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PitVQA",
+    "abbreviation": "N/A",
+    "overview": "PitVQA is a novel dataset specifically designed for Visual Question Answering (VQA) in endonasal pituitary surgery, comprising 25 procedural videos and extensive question-answer pairs spanning surgical aspects.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Healthcare",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "EndoVis18-VQA"
+    ],
+    "resources": [
+      "https://github.com/mobarakol/PitVQA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To improve intra-operative decision-making and facilitate intuitive surgeon-AI interaction using the PitVQA dataset.",
+    "audience": [
+      "Medical Researchers",
+      "Surgeons",
+      "Machine Learning Researchers"
+    ],
+    "tasks": [
+      "Visual Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "25 procedural videos of endoscopic pituitary surgeries from The National Hospital of Neurology and Neurosurgery, London, UK.",
+    "size": "884,242 question-answer pairs",
+    "format": "JSON",
+    "annotation": "Annotated collaboratively by 2 neurosurgical residents with operative experience and checked by an attending neurosurgeon."
+  },
+  "methodology": {
+    "methods": [
+      "Balanced Accuracy",
+      "F1 Score",
+      "Accuracy"
+    ],
+    "metrics": [
+      "Balanced Accuracy",
+      "F1 Score",
+      "Accuracy"
+    ],
+    "calculation": "Balanced accuracy is computed by equally weighting the contribution of each class, particularly effective for imbalanced datasets.",
+    "interpretation": "Higher balanced accuracy indicates better model performance across various classes.",
+    "baseline_results": "Balanced accuracy of 58.82% on PitVQA dataset, showing improvements over previous models.",
+    "validation": "Validated against both the PitVQA dataset and EndoVis18-VQA dataset."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All patients provided informed consent, and the study was registered with the local governance committee.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Informed consent obtained from all patients.",
+    "compliance_with_regulations": "N/A"
+  }
+}

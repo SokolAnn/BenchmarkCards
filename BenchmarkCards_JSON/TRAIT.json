@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TRAIT (Personality Testset for LLMs)",
+    "abbreviation": "TRAIT",
+    "overview": "TRAIT is a benchmark consisting of 8,000 multi-choice questions designed to assess the personality of Large Language Models (LLMs), built on the Big Five Inventory (BFI) and Short Dark Triad (SD-3) questionnaires, enhanced with the ATOMIC10× knowledge graph.",
+    "data_type": "multi-choice questions",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMLU (Massive Multitask Language Understanding)"
+    ],
+    "resources": [
+      "https://github.com/pull-ups/TRAIT",
+      "https://huggingface.co/datasets/mirlab/TRAIT"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a reliable and valid method for measuring the personality traits of Large Language Models (LLMs).",
+    "audience": [
+      "ML Researchers",
+      "Psychologists",
+      "AI Developers"
+    ],
+    "tasks": [
+      "Personality Assessment"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from psychometrically validated questionnaires and augmented with a large-scale commonsense knowledge graph (ATOMIC10×).",
+    "size": "8,000 questions",
+    "format": "Multi-choice",
+    "annotation": "Automated generation and manual curation."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Content Validity",
+      "Internal Validity",
+      "Refusal Rate",
+      "Reliability"
+    ],
+    "calculation": "Validity and reliability are measured through established psychometric methods.",
+    "interpretation": "High scores indicate better personality alignment with expected behaviors.",
+    "baseline_results": "Compared to existing personality assessment tools, TRAIT achieved the highest scores in reliability and validity metrics.",
+    "validation": "TRAIT was validated by psychological professionals who confirmed the quality of the test."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset utilizes English language models and acknowledges potential cultural biases inherent in the generated content.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Care was taken to ensure the training data was stripped of identifiable information and handled ethically during its construction.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

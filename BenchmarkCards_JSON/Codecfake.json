@@ -1,0 +1,79 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Codecfake: An Initial Dataset for Detecting LLM-based Deepfake Audio",
+    "abbreviation": "Codecfake",
+    "overview": "The Codecfake dataset is proposed for detecting LLM-based deepfake audio, leveraging seven representative neural codecs to generate fake audio, providing a resource for research on audio deepfake detection methodologies.",
+    "data_type": "audio",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/facebook/wav2vec2-xls-r-300m",
+      "https://github.com/asvspoof-challenge/2021/blob/main/eval-package/eval_metrics.py"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a dataset for effectively detecting LLM-based deepfake audio, enhancing detection systems' performance and generalizability.",
+    "audience": [
+      "ML Researchers",
+      "Audio Processing Engineers"
+    ],
+    "tasks": [
+      "Audio Deepfake Detection"
+    ],
+    "limitations": "The dataset may not cover all possible neural codec generation methods which could limit its applicability in real-world scenarios.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset is generated using seven representative neural codec methods trained on the LibriTTS dataset and evaluated on audio from the VCTK and AISHELL3 datasets.",
+    "size": "1,058,216 audio samples",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Equal Error Rate (EER)"
+    ],
+    "calculation": "Metrics are calculated to assess the performance of ADD models on detecting codec-based audio.",
+    "interpretation": "Lower EER values indicate better detection performance, reflecting the models' ability to correctly identify real versus fake audio.",
+    "baseline_results": "The baseline results include EER values from vocoder-trained models compared to those trained on the Codecfake dataset.",
+    "validation": "Performance is validated on both seen (C1-C6) and unseen (C7) conditions with different codec methods."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential risks related to misclassifying real audio as fake and vice versa, affecting user trust in audio systems."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

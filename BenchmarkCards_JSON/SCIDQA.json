@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SCIDQA",
+    "abbreviation": "N/A",
+    "overview": "SCIDQA is a new dataset for reading comprehension that challenges language models for a deep understanding of scientific articles, consisting of 2,937 question-answer pairs sourced from peer reviews and answers by paper authors.",
+    "data_type": "question-answer pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "QASPER",
+      "QASA",
+      "PubMedQA"
+    ],
+    "resources": [
+      "https://github.com/yale-nlp/SciDQA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To facilitate research on complex scientific text understanding and to benchmark the performance of language models in comprehending scientific papers.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Peer reviews and author responses from scientific papers on OpenReview.",
+    "size": "2,937 pairs",
+    "format": "JSON",
+    "annotation": "Manual annotation by domain experts and human revision processes."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "ROUGE score",
+      "BLEURT-20",
+      "BERTScore"
+    ],
+    "calculation": "Metrics are calculated based on the similarity of model-generated answers to gold standard answers.",
+    "interpretation": "Higher scores indicate better performance in generating accurate and relevant responses.",
+    "baseline_results": "N/A",
+    "validation": "The dataset undergoes extensive human annotation and filtering for relevance and quality."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

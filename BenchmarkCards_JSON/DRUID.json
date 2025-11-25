@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DRUID (Dataset of Retrieved Unreliable, Insufficient and Difficult-to-understand contexts)",
+    "abbreviation": "DRUID",
+    "overview": "DRUID introduces a dataset with real-world queries and contexts annotated for stance, focusing on the automated claim verification task.",
+    "data_type": "claim-evidence pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "CounterFact",
+      "ConflictQA"
+    ],
+    "resources": [
+      "https://github.com/copenlu/context-utilisation-for-RAG"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To facilitate studies of context usage and failures in real-world scenarios, particularly for retrieval-augmented generation tasks.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Fact Checkers"
+    ],
+    "tasks": [
+      "Claim Verification"
+    ],
+    "limitations": "The dataset is focused on claim verification, which may limit its applicability to other RAG tasks.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Real-world claims collected from diverse fact-checking websites and evidence retrieved using automated methods.",
+    "size": "5,490 samples",
+    "format": "JSON",
+    "annotation": "Manually annotated for evidence relevance and stance by crowdsource workers."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "ACU score (Accumulated Context Usage)"
+    ],
+    "calculation": "The ACU score measures the difference in model predictions with and without evidence, normalized for meaningful comparison.",
+    "interpretation": "A higher ACU score indicates better context usage by the model, reflecting its ability to leverage retrieved evidence effectively.",
+    "baseline_results": null,
+    "validation": "DRUID is compared against existing synthetic datasets (CounterFact, ConflictQA) to validate its effectiveness."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset includes data from various international fact-checking sources, which may introduce biases.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset does not retain personal information about annotators and compensates them fairly for their work.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Annotators were informed about the use of their data and consented to their participation.",
+    "compliance_with_regulations": "The dataset adheres to ethical standards in data collection and annotation."
+  }
+}

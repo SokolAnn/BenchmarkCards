@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Exec-CSN",
+    "abbreviation": "N/A",
+    "overview": "Exec-CSN is a dataset created using the CODEBENCH GEN framework, containing 1,931 examples adapted from 367 GitHub repositories to evaluate code generation systems through execution-based benchmarks.",
+    "data_type": "code examples with test cases",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Python"
+    ],
+    "similar_benchmarks": [
+      "HumanEval",
+      "MBPP",
+      "APPS",
+      "DS1000",
+      "ODEX",
+      "SWE-BENCH"
+    ],
+    "resources": [
+      "https://github.com/yiqingxyq/CodeBenchGen"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To facilitate the evaluation of code generation systems across diverse scenarios and to provide scalable execution-based benchmarks.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Code Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "GitHub repositories sampled from the CodeSearchNet dataset.",
+    "size": "1,931 examples",
+    "format": "N/A",
+    "annotation": "Automatically generated and adapted using the CODEBENCH GEN framework."
+  },
+  "methodology": {
+    "methods": [
+      "Execution-based evaluation",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Pass@1",
+      "Pass@2",
+      "Pass@5",
+      "Pass@10"
+    ],
+    "calculation": "Metrics are calculated based on the number of examples that pass the generated test cases.",
+    "interpretation": "Higher Pass@k scores indicate better performance by models in generating correct code.",
+    "baseline_results": "GPT-4 achieved a Pass@1 score of 37.21%.",
+    "validation": "The dataset was validated through human studies and iterative execution and debugging methods."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CodeLL (Lifelong Learning Dataset to Support the Co-Evolution of Data and Language Models of Code)",
+    "abbreviation": "CodeLL",
+    "overview": "CodeLL is a lifelong learning dataset focused on code changes, capturing code changes across the entire release history of open-source software repositories.",
+    "data_type": "code change data",
+    "domains": [
+      "Software Engineering"
+    ],
+    "languages": [
+      "Python"
+    ],
+    "similar_benchmarks": [
+      "CodeXGlue",
+      "CodeSearchNet",
+      "CodeChangeNet"
+    ],
+    "resources": [
+      "https://github.com/martin-wey/CodeLL-Dataset"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enable the study of language models of code in lifelong learning settings.",
+    "audience": [
+      "ML Researchers",
+      "Software Engineers",
+      "Data Scientists"
+    ],
+    "tasks": [
+      "Code Change Analysis",
+      "Lifelong Learning"
+    ],
+    "limitations": "Initial version focuses only on machine learning archives, limiting its coverage.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Software Heritage platform, specifically 71 Python repositories related to machine learning.",
+    "size": "2,483 releases, 970,277 files",
+    "format": "JSONL",
+    "annotation": "No explicit annotation mentioned; data extracted through direct analysis."
+  },
+  "methodology": {
+    "methods": [
+      "Code change analysis",
+      "Statistical analysis"
+    ],
+    "metrics": [
+      "Coverage of code changes over time",
+      "Number of releases per repository"
+    ],
+    "calculation": "Mapping of files, methods, and API calls between releases.",
+    "interpretation": "Dataset captures code evolution over time, providing insights into learning from past data.",
+    "baseline_results": null,
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning",
+            "Hallucination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

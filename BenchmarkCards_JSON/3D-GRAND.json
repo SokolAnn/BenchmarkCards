@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "3D-GRAND (A Million-Scale Dataset for 3D-LLMs)",
+    "abbreviation": "3D-GRAND",
+    "overview": "3D-GRAND is a pioneering large-scale dataset comprising 40,087 household scenes paired with 6.2 million densely-grounded scene-language instructions designed for grounded 3D instruction tuning.",
+    "data_type": "scene-language instruction pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SceneVerse"
+    ],
+    "resources": [
+      "https://3d-grand.github.io/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a large-scale, densely-grounded 3D-text dataset for improving the performance of 3D language models in understanding and interacting with the physical world.",
+    "audience": [
+      "Researchers in Embodied AI",
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Object Reference",
+      "Scene Description",
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated from synthetic 3D scenes including 3D-FRONT and Structured3D datasets.",
+    "size": "40,087 scenes and 6.2 million annotations",
+    "format": "N/A",
+    "annotation": "Densely-grounded text annotations generated using a hallucination filter and validated by humans."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on the responses of 3D-LLMs to questions about the presence of objects in 3D scenes.",
+    "interpretation": "Higher precision and accuracy indicate better performance in grounding.",
+    "baseline_results": "3D-LLM, LEO, and 3D-VisTA were compared as baseline models.",
+    "validation": "Validated through extensive human quality checks with a sample size of 5,100 annotations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

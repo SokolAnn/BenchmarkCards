@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "WikiBio and ToTTo Benchmark for Table-to-Text Generation",
+    "abbreviation": "N/A",
+    "overview": "This paper investigates the effectiveness of in-context learning strategies for table-to-text generation using the WikiBio and ToTTo datasets.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://arxiv.org/abs/2410.12878"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To comprehensively explore the performance of in-context learning in the table-to-text generation task.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Table-to-Text Generation",
+      "Text Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "WikiBio dataset and ToTTo dataset.",
+    "size": "Approx. 700,000 pairs of Wikipedia infoboxes and human-written descriptions; 120,000 examples in ToTTo.",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Self-evaluation using LLMs"
+    ],
+    "metrics": [
+      "BLEU",
+      "BERTScore"
+    ],
+    "calculation": "BLEU score calculated by overlapping n-grams, BERTScore by using token embeddings for semantic similarity.",
+    "interpretation": "Higher BLEU and BERT scores indicate better performance.",
+    "baseline_results": "N/A",
+    "validation": "Evaluated using various prompting strategies across the datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Hallucination in generated text"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

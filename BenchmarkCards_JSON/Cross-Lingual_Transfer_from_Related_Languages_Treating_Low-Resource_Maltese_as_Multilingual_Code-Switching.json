@@ -1,0 +1,77 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Cross-Lingual Transfer from Related Languages: Treating Low-Resource Maltese as Multilingual Code-Switching",
+    "abbreviation": "N/A",
+    "overview": "We present a novel dataset annotated with word-level etymology to improve cross-lingual transfer capabilities for Maltese, a language influenced by Arabic, Italian, and English.",
+    "data_type": "word-level etymology annotations",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Maltese",
+      "Arabic",
+      "Italian",
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/MLRS/malti/tree/2024.eacl3"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To improve the cross-lingual transfer capabilities of Maltese by selectively applying transliteration and translation based on word etymology.",
+    "audience": [
+      "ML Researchers",
+      "Language Model Developers",
+      "Linguists"
+    ],
+    "tasks": [
+      "Part-of-Speech tagging",
+      "Dependency Parsing",
+      "Named Entity Recognition",
+      "Sentiment Analysis"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Annotated dataset extracted from the Maltese Universal Dependencies Treebank consisting of 439 sentences and 9,683 tokens.",
+    "size": "9,683 tokens",
+    "format": "JSON",
+    "annotation": "Annotated by experts with etymological tags based on language origin (Arabic, Non-Arabic, Mixed)."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Fine-tuning language models"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Labelled Attachment Score (LAS)",
+      "F1 Score"
+    ],
+    "calculation": "Performance evaluated using fine-tuning on language models and measuring accuracy and F1 scores on downstream tasks.",
+    "interpretation": "Higher accuracy indicates better language model performance on specified NLP tasks using the newly annotated dataset.",
+    "baseline_results": "BERTu achieved a top-line accuracy of 98.3% on POS tagging.",
+    "validation": "Cross-validation was performed using 10 folds to evaluate the reliability of the classifier."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

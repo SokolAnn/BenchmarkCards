@@ -1,0 +1,71 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ReSeDis (Referring Search and Discovery)",
+    "abbreviation": "ReSeDis",
+    "overview": "ReSeDis is a benchmark specifically designed to evaluate a model’s ability to perform large-scale referring object search in realistic, open-world settings, integrating large-scale image retrieval and fine-grained object localization.",
+    "data_type": "image with bounding boxes and segmentation masks",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/hufflepuff0596/ReSeDis"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the capability of models to search and localize objects in large image datasets based on natural language descriptions.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Object Localization",
+      "Image Retrieval"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "MS-COCO dataset with additional manual descriptions created for the benchmark.",
+    "size": "7,088 images and 9,664 referring expressions",
+    "format": "N/A",
+    "annotation": "Manually written referring expressions with bounding boxes and segmentation masks."
+  },
+  "methodology": {
+    "methods": [
+      "Object Candidate Generation",
+      "Cross-Modal Similarity Scoring",
+      "Intra-Image Relational Reasoning"
+    ],
+    "metrics": [
+      "Recall Accuracy of Target Images",
+      "Object Localization Accuracy"
+    ],
+    "calculation": "Recall accuracy is calculated based on the model's ability to correctly identify relevant images, while localization accuracy uses Precision at 50% overlap threshold (Pr@50).",
+    "interpretation": "High recall accuracy indicates effective image searching, while high localization accuracy indicates precise object detection.",
+    "baseline_results": "Top-1 image recall of 21.22% with YOLOv8 proposals; Top-1 image recall of 23.33% using ground-truth boxes.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

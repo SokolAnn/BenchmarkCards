@@ -1,0 +1,78 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Thunder-NUBench",
+    "abbreviation": "N/A",
+    "overview": "Thunder-NUBench is a benchmark designed to evaluate large language models' sentence-level understanding of negation, contrasting standard negation with structurally diverse alternatives such as local negation, contradiction, and paraphrase. It consists of manually curated sentence-negation pairs and a multiple-choice dataset for deep evaluation.",
+    "data_type": "sentence-negation pairs, multiple-choice questions",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "NegNLI",
+      "MoNLI",
+      "SCoNe"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/thunder-research-group/SNU_Thunder-NUBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess the ability of large language models to interpret sentence-level negation and understand its distinctions from related concepts like contradiction and paraphrase.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Negation Understanding"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from the HoVer dataset and Wikipedia Summary dataset",
+    "size": "4,874 examples",
+    "format": "JSON",
+    "annotation": "Manually curated and reviewed by authors"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Normalized Accuracy"
+    ],
+    "calculation": "Accuracy is calculated as the proportion of correct predictions over total predictions.",
+    "interpretation": "A higher accuracy indicates better performance in understanding negation over sentence structures, with normalized accuracy accounting for sentence length.",
+    "baseline_results": "N/A",
+    "validation": "Dataset was carefully validated through human review to ensure quality and consistency."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC BY-NC-SA 4.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

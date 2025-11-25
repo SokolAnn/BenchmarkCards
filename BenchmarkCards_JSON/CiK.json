@@ -1,0 +1,76 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Context is Key (CiK)",
+    "abbreviation": "CiK",
+    "overview": "CiK consists of tasks designed to assess a forecasting model’s ability to use both numerical input-output pairs and essential textual context. Accurate forecasts in CiK are made possible only by effectively leveraging both numerical data and key information contained within the accompanying text.",
+    "data_type": "time-series with textual context",
+    "domains": [
+      "Public Safety",
+      "Traffic",
+      "Energy",
+      "Climatology",
+      "Economics",
+      "Retail",
+      "Mechanics"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://servicenow.github.io/context-is-key-forecasting/v0/",
+      "https://github.com/ServiceNow/context-is-key-forecasting"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the benchmark is to advance multimodal forecasting by promoting models that are both accurate and accessible to decision-makers with varied technical expertise.",
+    "audience": [
+      "ML Researchers",
+      "Forecasting Practitioners",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Time Series Forecasting"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Publicly available datasets from various application domains.",
+    "size": "2,644 time series across 71 tasks",
+    "format": "N/A",
+    "annotation": "Manual crafting of natural language context and extensive evaluation of tasks."
+  },
+  "methodology": {
+    "methods": [
+      "DIRECT PROMPT",
+      "LLM processes (LLMP)",
+      "Statistical models"
+    ],
+    "metrics": [
+      "Region of Interest Continuous Ranked Probability Score (RCRPS)"
+    ],
+    "calculation": "RCRPS is calculated to evaluate both index scores within relevant and non-relevant contexts.",
+    "interpretation": "Lower RCRPS indicates better forecasting performance.",
+    "baseline_results": "Various forecasting models were evaluated showing different performances on the RCRPS metric.",
+    "validation": "The benchmark includes a panel review by human evaluators to assess the relevance of context in tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Bias"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "OCRBench",
+    "abbreviation": "OCRBench",
+    "overview": "To facilitate the assessment of Optical Character Recognition (OCR) capabilities in Large Multimodal Models, we propose OCRBench, a comprehensive evaluation benchmark. OCRBench contains 29 datasets and a curated set of 1000 manually filtered and corrected question-answer pairs covering five representative text-related tasks (Text Recognition, Scene Text-Centric VQA, Document-Oriented VQA, Key Information Extraction, and Handwritten Mathematical Expression Recognition). The benchmark and evaluation pipeline are available at https://github.com/Yuliang-Liu/MultimodalOCR .",
+    "data_type": "multimodal (image and question-answer pairs)",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "MMBench",
+      "MME",
+      "VLMevalkit"
+    ],
+    "resources": [
+      "https://github.com/Yuliang-Liu/MultimodalOCR"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Provide a comprehensive evaluation benchmark (OCRBench) to assess the OCR capabilities of Large Multimodal Models across five text-related visual tasks and offer baseline results to guide future zero-shot multimodal method development.",
+    "audience": [],
+    "tasks": [
+      "Text Recognition",
+      "Scene Text-Centric Visual Question Answering",
+      "Document-Oriented Visual Question Answering",
+      "Key Information Extraction",
+      "Handwritten Mathematical Expression Recognition"
+    ],
+    "limitations": "OCRBench currently lacks comprehensive coverage of image data types and tasks (e.g., multilingual documents, more diverse capture scenarios) and does not include text detection tasks. The benchmark is limited to 1000 manually curated question-answer pairs.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Compiled from 29 existing OCR-related datasets (examples listed in paper include IIIT5K, SVT, IC13, IC15, SVTP, CT80, COCO-Text, SCUT-CTW1500, Total-Text, WOST, HOST, WordArt, IAM, ReCTS, ORAND-CAR-2014, ST/NST constructed from IIIT5K dictionary, STVQA, TextVQA, OCRVQA, ESTVQA, DocVQA, InfographicVQA, ChartQA, SROIE, FUNSD, POIE, HME100K, etc.). See Table 5 and appendix in the paper for full composition.",
+    "size": "1000 question-answer pairs (compiled from 29 datasets); Text Recognition component: 300 images; Scene Text-Centric VQA: 200 questions; Document-Oriented VQA: 200 questions; Key Information Extraction: 200 questions; HMER: 100 images.",
+    "format": "N/A",
+    "annotation": "All 1000 question-answer pairs have been manually filtered and corrected; alternative correct answer candidates provided for evaluation."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics (presence-based matching of ground truth in model outputs)",
+      "Manual verification and correction of dataset answers"
+    ],
+    "metrics": [
+      "Presence-based ground truth inclusion (binary match)",
+      "Average Normalized Levenshtein Similarity (ANLS) (mentioned as not suitable for zero-shot LMM outputs)"
+    ],
+    "calculation": "A unified criterion: determine whether the ground truth (GT) is present in the model output. Questions with answers containing fewer than 4 symbols are filtered out to reduce false positives. For large datasets, 3000 question instances were sampled for testing where applicable.",
+    "interpretation": "Higher presence-based match rates indicate better OCR capability of the evaluated model. Results are compared across models and against supervised SOTA references provided in the paper.",
+    "baseline_results": "Selected OCRBench final scores (Table 3): Gemini: 659; GPT4V: 645; Monkey: 514; mPLUG-Owl2: 366; LLaVAR: 346. (Per-task breakdowns and full model rankings are provided in the paper's tables.)",
+    "validation": "Dataset answers were manually verified and corrected; alternative correct answer candidates were provided to improve evaluation accuracy."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Governance"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Governance",
+          "subcategory": [
+            "Lack of testing diversity",
+            "Lack of data transparency"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

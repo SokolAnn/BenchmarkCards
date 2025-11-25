@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LUMA (Learning from Uncertain and Multimodal Data)",
+    "abbreviation": "LUMA",
+    "overview": "LUMA is a unique multimodal dataset featuring audio, image, and textual data from 50 classes, specifically designed for learning from uncertain data. The dataset allows the controlled injection of varying types and degrees of uncertainty to achieve and tailor specific experiments and benchmarking initiatives.",
+    "data_type": "multimodal",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/bezirganyan/LUMA",
+      "https://huggingface.co/datasets/bezirganyan/LUMA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To promote and support the development, evaluation, and benchmarking of trustworthy and robust multimodal deep learning approaches.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Multimodal Classification",
+      "Uncertainty Quantification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Images from CIFAR-10/100 dataset, audio from three audio corpora, and text generated using the Gemma-7B Large Language Model.",
+    "size": "3GB",
+    "format": "N/A",
+    "annotation": "Automatically validated and manually validated audio samples."
+  },
+  "methodology": {
+    "methods": [
+      "Monte-Carlo Dropout",
+      "Deep Ensemble",
+      "Reliable Conflictive Multi-View Learning"
+    ],
+    "metrics": [
+      "Accuracy",
+      "AUC"
+    ],
+    "calculation": "Metrics are calculated based on model predictions on varying datasets.",
+    "interpretation": "Higher uncertainty values should ideally indicate a model's recognition of noise or out-of-distribution samples.",
+    "baseline_results": "N/A",
+    "validation": "Evaluation on clean, reduced diversity, increased label noise, and increased sample noise datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Dataset includes a bias analysis.",
+    "harm": "Potential for bias in generated texts."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

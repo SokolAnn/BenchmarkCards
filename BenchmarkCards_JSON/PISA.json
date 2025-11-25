@@ -1,0 +1,121 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PISA (Prompt based t ImeSeries forec Asting)",
+    "abbreviation": "PISA",
+    "overview": "This paper introduces a novel prompt-based time series forecasting paradigm (PromptCast) in which numerical input and output are transformed into natural language prompts so language generation models can be applied to forecasting. To support research on this task the authors present a large-scale dataset (PISA) covering three real-world forecasting scenarios and develop a benchmark that evaluates state-of-the-art numerical forecasting methods and popular language generation models.",
+    "data_type": "question-answering pairs (input prompts and output prompts)",
+    "domains": [
+      "Natural Language Processing",
+      "Weather Forecasting",
+      "Energy Consumption",
+      "Human Mobility Forecasting",
+      "Time Series Forecasting"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "TimeQA",
+      "ForecastQA"
+    ],
+    "resources": [
+      "https://github.com/HaoUNSW/PISA",
+      "https://arxiv.org/abs/2210.08964",
+      "https://academic.udayton.edu/kissock/http/Weather/default.htm",
+      "https://archive.ics.uci.edu/ml/datasets/ElectricityLoadDiagrams20112014",
+      "https://docs.safegraph.com/docs/weekly-patterns#section-weekly-patterns-schemadata",
+      "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To propose a prompt-based time series forecasting paradigm (PromptCast), release a large-scale dataset (PISA) for this task, and establish a benchmark evaluating numerical forecasting methods and language generation models.",
+    "audience": [
+      "Machine Learning Researchers",
+      "Model Developers",
+      "Industry Practitioners",
+      "Domain Experts",
+      "Non-researcher users"
+    ],
+    "tasks": [
+      "Time Series Forecasting",
+      "Question Answering (forecasting QA)",
+      "Multi-step Forecasting",
+      "Multivariate Time Series Forecasting"
+    ],
+    "limitations": "This release primarily focuses on univariate single-step forecasting; template-based prompting may introduce biases towards certain templates; language models show failure cases (e.g., difficulty generating negative values) leading to non-decodable outputs (Missing Rate).",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Three real-world data sources: City Temperature (CT) daily average temperatures of 110 international cities; Electricity Consumption Load (ECL) daily electricity consumption of 50 selected users (from original 321 users); SafeGraph Weekly Patterns (SG) daily visitor counts for 324 POIs. (Additional pilot multivariate set: Beijing Air Quality Data for PM2.5, PM10, SO2.)",
+    "size": "311,932 instances total. CT: 128,810 instances (training 91,850; validation 11,880; test 25,080). ECL: 52,550 instances (training 37,350; validation 5,250; test 9,950). SG: 130,572 instances (training 96,552; validation 9,720; test 24,300).",
+    "format": "TXT (input prompts and output prompts in separate text files, e.g., val_xprompt.txt and val_yprompt.txt); original numerical data available in CSV format.",
+    "annotation": "Automatically generated via template-based data-to-text transformation (template-based prompting) mapping PISA-numerical to PISA-prompt; no manual annotation."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Model-based evaluation",
+      "Baseline comparisons (numerical forecasting methods vs. language generation models)",
+      "Zero-shot evaluation",
+      "Train-from-scratch evaluation",
+      "Multi-step and multivariate evaluation"
+    ],
+    "metrics": [
+      "Root Mean Square Error (RMSE)",
+      "Mean Absolute Error (MAE)",
+      "Missing Rate",
+      "Mean and Standard Deviation over five runs",
+      "Inference time per instance",
+      "Deployment cost (USD per instance)"
+    ],
+    "calculation": "Missing Rate is defined as (n_test - n_decoded) / n_test × 100% where n_test is number of test instances and n_decoded is number of generated outputs from which a numerical value can be decoded. RMSE and MAE are computed after extracting predicted numerical values from generated output sentences via string parsing. For deep learning methods results are reported as mean ± standard deviation over five runs with different random seeds.",
+    "interpretation": "Lower RMSE and MAE indicate better numerical forecasting accuracy. Lower Missing Rate indicates better ability of language models to generate decodable numeric predictions. Results averaged over five runs; model comparisons are performed using the same chronological train/val/test splits.",
+    "baseline_results": "Benchmark includes numerical baselines and language model baselines. Examples from the paper: numerical best (FEDformer fixed) on CT: RMSE 6.358, MAE 4.841 (Table III); Informer fixed on ECL: RMSE 536.921, MAE 349.331 (Table III); language-model best (Bigbird) on CT: RMSE 6.351, MAE 4.707 (Table IV).",
+    "validation": "Each subset is split by chronological order into training/validation/test with ratio 7:1:2 (as reported in Table II). For reported deep learning results, averages and standard deviations are computed over five runs with different random seeds. Decoding success is measured via Missing Rate as described."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Fairness",
+      "Data Laws",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Data Laws",
+          "subcategory": [
+            "Data usage restrictions"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Object identifiers (e.g., POI id) were removed by randomly reassigning object-of-interest indices; original data sources are aggregate statistics with no personally identifiable information; authors state the generated PISA dataset does not contain private information that can be deciphered.",
+    "data_licensing": "PISA dataset will be distributed under Creative Commons Attribution-NonCommercial-ShareAlike (CC BY-NC-SA 4.0). ECL processed data from the Informer repository is under Apache License 2.0. CT source described as available for research and non-commercial purposes. SafeGraph raw data is subject to SafeGraph terms (cannot re-share raw SafeGraph data; aggregated/derived data sharing is acceptable).",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

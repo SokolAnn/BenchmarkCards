@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "M2EVAL",
+    "abbreviation": "N/A",
+    "overview": "M2EVAL is a new benchmark for evaluating multilingual multimodal code generation. It addresses the need for incorporating visual aids such as diagrams and flowcharts in the code generation process, thus enhancing accuracy and architectural alignment.",
+    "data_type": "multimodal, code-related problems including textual and visual components",
+    "domains": [
+      "Computer Science"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Design2Code",
+      "MatPlotBench",
+      "ChartCoder",
+      "SWE-Bench"
+    ],
+    "resources": [
+      "https://github.com/MCEVAL/MMCoder"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the performance of large language models in generating code based on both textual instructions and visual design inputs.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Code Generation",
+      "Visual Workflow Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated from a variety of programming tasks involving UML diagrams and flowcharts, along with textual inputs.",
+    "size": "300 problems",
+    "format": "JSON, image files",
+    "annotation": "Problems were annotated by experts using domain knowledge to ensure correctness and coherence between visual and textual information."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Execution-based evaluations"
+    ],
+    "metrics": [
+      "Pass@k (execution results)"
+    ],
+    "calculation": "The metric calculates the ratio of generated code that successfully passes predefined test cases.",
+    "interpretation": "A higher Pass@k score indicates better performance in generating functional code from both text and visual inputs.",
+    "baseline_results": "M2-CODER 7B demonstrated competitive performance with larger models (70B+).",
+    "validation": "Model performance evaluated via execution of generated code against test cases."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Models struggle with accurate visual information utilization and programming concepts adherence."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

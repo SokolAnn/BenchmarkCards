@@ -1,0 +1,100 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CORAL (Conversational Retrieval-Augmented Generation Language Benchmark)",
+    "abbreviation": "CORAL",
+    "overview": "CORAL is a large-scale benchmark designed to assess Retrieval-Augmented Generation (RAG) systems in realistic multi-turn conversational settings, including diverse information-seeking conversations automatically derived from Wikipedia. It supports three core tasks of conversational RAG: passage retrieval, response generation, and citation labeling.",
+    "data_type": "conversational data",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "TopiOCQA",
+      "QReCC",
+      "Wizard of Wikipedia",
+      "CoQA",
+      "OR-QuAC",
+      "Doc2Dial",
+      "TREC CAsT19",
+      "TREC CAsT20",
+      "TREC CAsT21",
+      "TREC CAsT22"
+    ],
+    "resources": [
+      "https://github.com/Ariya12138/CORAL"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive benchmark that systematically evaluates and advances conversational Retrieval-Augmented Generation systems.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Conversational Passage Retrieval",
+      "Response Generation",
+      "Citation Labeling"
+    ],
+    "limitations": "The use of the CORAL benchmark is limited to assessing conversational RAG methods, as it borrows content from Wikipedia which may lead to contamination in the conversational process due to training data overlap.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Automatically derived from English Wikipedia pages",
+    "size": "8,000 conversations",
+    "format": "JSON",
+    "annotation": "Automatically generated through tailored sampling from Wikipedia pages"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Mean Reciprocal Rank (MRR)",
+      "Mean Average Precision (MAP)",
+      "NDCG",
+      "BLEU Score",
+      "ROUGE-L"
+    ],
+    "calculation": "Metrics are calculated based on the evaluated tasks of passage retrieval, response generation, and citation labeling.",
+    "interpretation": "Higher MRR, MAP, and NDCG scores indicate better retrieval performance, while higher BLEU and ROUGE-L scores indicate better response quality.",
+    "baseline_results": "Fine-tuned open-source LLM outperforms commercial closed-source LLM in retrieval tasks.",
+    "validation": "The benchmark's effectiveness and reliability are validated through comprehensive evaluations of various RAG methods."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Privacy",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "The benchmark aims to detect inaccuracies in conversational contexts and improve clarity in responses."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The data comprises non-sensitive information derived from Wikipedia, while ensuring citations are maintained for accountability.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

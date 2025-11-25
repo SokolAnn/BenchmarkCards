@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MBBQ (Multilingual Bias Benchmark for Question-answering)",
+    "abbreviation": "MBBQ",
+    "overview": "MBBQ is a carefully curated version of the English BBQ dataset extended to Dutch, Spanish, and Turkish, which measures stereotypes commonly held across these languages. It includes a parallel control dataset to independently measure task performance on the question-answering task.",
+    "data_type": "multiple-choice questions about stereotypes",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Dutch",
+      "Spanish",
+      "Turkish"
+    ],
+    "similar_benchmarks": [
+      "BBQ (Bias Benchmark for Question-answering)"
+    ],
+    "resources": [
+      "https://github.com/Veranep/MBBQ"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To investigate whether the social stereotypes exhibited by LLMs differ as a function of the language used to prompt them.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "The dataset cannot cover all stereotypes relevant for any of the languages; it focuses on stereotypes common across the selected languages.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Translation and adaptation of the BBQ dataset using native speakers for verification.",
+    "size": "10,072 samples",
+    "format": "CSV",
+    "annotation": "Manually checked by native speakers and automated translations used."
+  },
+  "methodology": {
+    "methods": [
+      "Evaluation of model responses based on accuracy and bias scores",
+      "Human evaluation for bias scoring"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Bias Score"
+    ],
+    "calculation": "Bias scores are calculated based on the difference between ratios of predicting biased and counter-biased answers.",
+    "interpretation": "Higher bias scores indicate a preference for answers that align with existing stereotypes.",
+    "baseline_results": null,
+    "validation": "Models were evaluated against control datasets to isolate bias from performance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis of differences in bias across demographic groups within languages.",
+    "harm": [
+      "Exacerbation of cultural stereotypes across languages."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "The dataset will state it should be used for evaluation of models only.",
+    "consent_procedures": "Participants were warned about encountering stereotypes and biases during evaluations.",
+    "compliance_with_regulations": "N/A"
+  }
+}

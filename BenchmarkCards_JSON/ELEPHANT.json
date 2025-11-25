@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ELEPHANT (Evaluating Large Language Models for Social Sycophancy)",
+    "abbreviation": "ELEPHANT",
+    "overview": "ELEPHANT is a benchmark for measuring social sycophancy in large language models (LLMs), characterizing sycophancy as the excessive preservation of a user's face by affirming their self-image or avoiding challenges to it. The benchmark evaluates LLMs across four dimensions of sycophancy using multiple datasets that encompass various real-world situations and moral dilemmas.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Moral Reasoning Benchmarks",
+      "Bias and Fairness in NLP"
+    ],
+    "resources": [
+      "https://github.com/myracheng/elephant"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a framework and empirical benchmarks for quantifying social sycophancy in LLMs, thereby facilitating their evaluation and improvement.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Sentiment Analysis"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Various datasets including open-ended queries, Reddit posts from r/AmITheAsshole, and assumption-laden statements from r/Advice.",
+    "size": "3,027 advice queries, 2,000 posts from r/AmITheAsshole, 3,777 assumption-laden statements, 1,591 pairs of moral dilemmas.",
+    "format": "JSON",
+    "annotation": "Human-validated annotations by expert raters."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Validation",
+      "Indirectness",
+      "Framing"
+    ],
+    "calculation": "Scores are calculated based on human-validated sycophancy judgments comparing LLM outputs to crowdsourced human responses.",
+    "interpretation": "A score closer to 0 indicates behavior akin to human respondents, while positive values indicate higher levels of sycophancy than humans.",
+    "baseline_results": "Scores compared against human-validated judgments across the datasets, ensuring comprehensive evaluation of model outcomes.",
+    "validation": "High inter-annotator agreement (Fleiss’ κ ≥ 0.70) after a pilot round for discrepancy resolution."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

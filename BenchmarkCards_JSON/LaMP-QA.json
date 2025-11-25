@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LaMP-QA (Language Model Personalized Question Answering)",
+    "abbreviation": "LaMP-QA",
+    "overview": "LaMP-QA is a benchmark designed for evaluating personalized long-form answer generation, focusing on user-centric personalized question answering.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SE-PQA"
+    ],
+    "resources": [
+      "https://hf.co/datasets/alireza7/LaMP-QA",
+      "https://github.com/LaMP-Benchmark/LaMP-QA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the benchmark is to enable the evaluation of personalized question answering systems, particularly in generating tailored responses based on user-specific information.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "SE-PQA dataset adapted from StackExchange",
+    "size": "9,349+ train questions, 800+ validation questions, 1,000+ test questions",
+    "format": "N/A",
+    "annotation": "Filtered and manually checked for quality by human annotators"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "Aspect-based evaluation"
+    ],
+    "metrics": [
+      "Alignment with human judgment",
+      "Normalizing scores across aspects"
+    ],
+    "calculation": "The response quality is evaluated based on how well it addresses user-specific aspects extracted from question narratives.",
+    "interpretation": "Responses are assessed regarding their alignment with user needs and preferences, aiming for personal relevance and accuracy.",
+    "baseline_results": "Multiple benchmarks using models like Gemma 2, Qwen 2.5, and GPT-4o-mini, with varying performance metrics reported.",
+    "validation": "Data was validated through human assessments and comparison of multiple evaluation strategies."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Privacy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "User data handling issues related to personalization"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Open access under cc-by-sa 4.0 license",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

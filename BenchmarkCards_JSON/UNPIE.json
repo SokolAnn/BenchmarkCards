@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Understanding Pun with Image Explanations (UNPIE)",
+    "abbreviation": "UNPIE",
+    "overview": "UNPIE is a novel benchmark designed to assess the impact of multimodal inputs in resolving lexical ambiguities, specifically using text-based puns paired with illustrative images. It includes three multimodal challenges: Pun Grounding, Pun Disambiguation, and Pun Reconstruction.",
+    "data_type": "text-image pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "German",
+      "French",
+      "Korean"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/jiwan-chung/VisualPun_UNPIE",
+      "https://github.com/JiwanChung/VisualPun_UNPIE"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess machines’ capacity to actively integrate information from visual sources to resolve ambiguity in text, using puns as a testing ground.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Pun Grounding",
+      "Pun Disambiguation",
+      "Pun Reconstruction"
+    ],
+    "limitations": "The dataset primarily models lexical ambiguities unique to English and may inadvertently perpetuate cultural biases present in the humor.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The data is derived from the SemEval 2017 English pun corpus, enhanced with visual annotations and multilingual translations.",
+    "size": "1,000 puns",
+    "format": "JSON",
+    "annotation": "The pun explanations were generated using a text-to-image model and curated by human annotators."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "BLEU Score",
+      "BERTScore"
+    ],
+    "calculation": "Metrics are calculated based on exact matches with the ground-truth outputs and semantic similarity using BERTScore.",
+    "interpretation": "A higher accuracy indicates better performance in identifying puns and translating them accurately, while BERTScore correlates with human judgments on semantic alignment.",
+    "baseline_results": null,
+    "validation": "Evaluations were conducted through a combination of machine-based and human assessments."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "UNPIE includes multilingual aspects aimed at diverse linguistic contexts, but specifics on demographic breakdowns are not provided.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

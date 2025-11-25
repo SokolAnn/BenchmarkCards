@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "AGENT -SAFETY BENCH",
+    "abbreviation": "N/A",
+    "overview": "AGENT -SAFETY BENCH is a comprehensive benchmark designed to evaluate the safety of LLM agents, encompassing 349 interaction environments and 2,000 test cases, evaluating 8 categories of safety risks and covering 10 common failure modes frequently encountered in unsafe interactions.",
+    "data_type": "test cases",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "R-Judge",
+      "AgentDojo",
+      "GuardAgent",
+      "ToolEmu",
+      "ToolSword",
+      "InjecAgent"
+    ],
+    "resources": [
+      "https://github.com/thu-coai/Agent-SafetyBench/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To facilitate further research in agent safety evaluation and improvement.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Safety Evaluation"
+    ],
+    "limitations": "Most test cases rely on commonsense reasoning; advanced domain-specific knowledge testing is left for future work.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated from interaction scenarios and existing benchmarks.",
+    "size": "2,000 test cases",
+    "format": "JSON",
+    "annotation": "Manually annotated with potential risks and failure modes."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Safety Score"
+    ],
+    "calculation": "Total safety scores are computed based on the ratio of safe to unsafe cases from the 2,000 test cases.",
+    "interpretation": "Higher scores indicate better safety performance, with scores below 60% highlighting significant safety challenges.",
+    "baseline_results": null,
+    "validation": "Cross-validation and manual reviews conducted on test cases and safety annotations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack",
+            "Evasion attack",
+            "Extraction attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential for malicious use of benchmark test cases by adversarial attackers."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The benchmark does not contain any actual personal or sensitive information.",
+    "data_licensing": "Distributed under the MIT license.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

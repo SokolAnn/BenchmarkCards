@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CrashEvent",
+    "abbreviation": "N/A",
+    "overview": "CrashEvent is a large-scale traffic crash language dataset summarizing 19,340 real-world crash reports from Washington State, incorporating infrastructure data and various contextual factors. It aims to predict detailed accident outcomes based on complex, unstructured data using large language models.",
+    "data_type": "text",
+    "domains": [
+      "Traffic Safety",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://crashllm.github.io/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To develop a predictive framework for analyzing and forecasting traffic crashes using language-based representations of heterogeneous data.",
+    "audience": [
+      "Traffic Safety Researchers",
+      "Data Scientists",
+      "Policymakers"
+    ],
+    "tasks": [
+      "Crash Severity Prediction",
+      "Total Injury Prediction",
+      "Accident Type Prediction"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Crash records from Washington State, including police reports, satellite images, and highway data.",
+    "size": "19,340 crash reports, approximately 6.32 million words",
+    "format": "JSON",
+    "annotation": "Curated with human-machine cooperative approach, transforming unstructured data into structured formats for text reasoning."
+  },
+  "methodology": {
+    "methods": [
+      "Fine-tuning large language models",
+      "Text reasoning analysis"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Accuracy",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "Metrics are calculated based on prediction tasks of crash severity, total injuries, and accident types.",
+    "interpretation": "Higher F1 scores indicate better predictive performance in categorizing traffic crash outcomes.",
+    "baseline_results": "Compared to existing machine learning models, CrashLLM outperformed with an average F1 score improvement.",
+    "validation": "Model validated through experiments using split data for testing and training, ensuring performance across various prediction tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis of demographic factors affecting traffic crash outcomes included in dataset.",
+    "harm": "Potential for biases in predictions due to unrepresentative training data and personal data recorded in crash reports."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data anonymization procedures included to protect personal identifiers in crash reports.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

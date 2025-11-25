@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CUTE (Character-level Understanding of Tokens Evaluation)",
+    "abbreviation": "CUTE",
+    "overview": "We propose a new benchmark, CUTE, which features a collection of tasks designed to test the orthographic knowledge of LLMs.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Russian"
+    ],
+    "similar_benchmarks": [
+      "LMentry"
+    ],
+    "resources": [
+      "https://github.com/Leukas/CUTE"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate Large Language Models on their understanding of token composition, orthographic similarity, and ability to manipulate text sequences.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Spelling",
+      "Orthographic Similarity",
+      "Manipulation Tasks"
+    ],
+    "limitations": "Performance of all models would increase after fine-tuning.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Synthetic tasks generated from existing corpora and frequency datasets.",
+    "size": "1000 tasks",
+    "format": "JSON",
+    "annotation": "Automatically generated"
+  },
+  "methodology": {
+    "methods": [
+      "Few-shot prompting",
+      "Prompt-based evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Percentage of correct responses for each task.",
+    "interpretation": "Higher accuracy indicates better understanding of orthographic knowledge.",
+    "baseline_results": null,
+    "validation": "Tested on multiple state-of-the-art LLMs ranging from 7B to 132B parameters."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis of performance for English and Russian models.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

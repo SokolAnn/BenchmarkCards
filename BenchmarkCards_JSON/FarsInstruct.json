@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FarsInstruct",
+    "abbreviation": "N/A",
+    "overview": "FarsInstruct is a comprehensive instruction dataset designed to enhance the instruction-following ability of large language models specifically for the Persian language. It includes a mixture of tasks derived from existing datasets as well as translations from the Public Pool of Prompts, ensuring diverse linguistic representation.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Persian"
+    ],
+    "similar_benchmarks": [
+      "FLAN",
+      "P3",
+      "SuperNaturalInstruction"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/PNLPhub/FarsInstruct",
+      "https://github.com/Hojjat-Mokhtarabadi/FarsInstruct"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a robust dataset that improves the instruction comprehension of large language models for Persian, a low-resource language.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Question Answering",
+      "Sentiment Analysis",
+      "Text Summarization",
+      "Translation",
+      "Named Entity Recognition",
+      "Word Sense Disambiguation",
+      "Reading Comprehension",
+      "Query Paraphrasing",
+      "Textual Entailment"
+    ],
+    "limitations": "FarsInstruct may not fully capture the rich diversity of Persian dialects and languages, and the prompts might not sufficiently challenge models in handling complex instructions.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Publicly available Persian NLP datasets and translations from the Public Pool of Prompts.",
+    "size": "N/A",
+    "format": "N/A",
+    "annotation": "Human-annotated and translation-based methods."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "ROUGE-L"
+    ],
+    "calculation": "ROUGE-L F1 scores evaluate overlap of n-grams between generated text and reference texts.",
+    "interpretation": "Higher ROUGE-L scores indicate better performance in mimicking human language understanding and generation.",
+    "baseline_results": null,
+    "validation": "The dataset is validated through a comparison against various models fine-tuned on instruction data."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset's language support necessitates that future iterations cover a broader array of Persian dialects.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "GAIA (General AI Assistants)",
+    "abbreviation": "GAIA",
+    "overview": "GAIA proposes real-world questions that require fundamental abilities such as reasoning, multi-modality handling, web browsing, and tool-use proficiency. It consists of 466 questions designed to challenge AI systems and provide a leaderboard for evaluation.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMLU",
+      "GSM8k"
+    ],
+    "resources": [
+      "https://huggingface.co/gaia-benchmark"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate AI assistants in solving real-world questions requiring complex reasoning and tool use.",
+    "audience": [
+      "ML Researchers",
+      "AI Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Designed and curated questions based on reliable sources such as Wikipedia and other trusted documents.",
+    "size": "466 questions",
+    "format": "JSON",
+    "annotation": "Questions were annotated by human experts to ensure clarity and correctness."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Evaluation is based on a quasi exacter match between model responses and ground truths.",
+    "interpretation": "Scores reflect the proportion of correct responses against a unique correct answer.",
+    "baseline_results": "Human annotators scored approximately 92% accuracy.",
+    "validation": "Each question was validated by independent annotators."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Privacy",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FineBadminton: A Multi-Level Dataset for Fine-Grained Badminton Video Understanding",
+    "abbreviation": "FineBadminton",
+    "overview": "FineBadminton features a unique multi-level semantic annotation hierarchy for comprehensive badminton understanding. It provides a novel and large-scale dataset aimed at fine-grained analysis of badminton videos, evaluating MLLMs on nuanced spatio-temporal reasoning and tactical comprehension.",
+    "data_type": "video",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "FineGym",
+      "SoccerNet",
+      "FineSports",
+      "ShuttleSet"
+    ],
+    "resources": [
+      "https://finebadminton.github.io/FineBadminton/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive and in-depth dataset for analyzing badminton gameplay and to evaluate multimodal large language models (MLLMs) on fine-grained video understanding tasks.",
+    "audience": [
+      "ML Researchers",
+      "Sports Analysts",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Action Classification",
+      "Spatio-temporal Reasoning",
+      "Tactical Analysis"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Publicly accessible professional badminton match videos released by the Badminton World Federation on YouTube.",
+    "size": "3,215 rally clips (33,325 strokes)",
+    "format": "N/A",
+    "annotation": "Multi-level semantic annotations including Foundational Actions, Tactical Semantics, and Decision Evaluation created through a combination of human annotation and MLLM-generated proposals."
+  },
+  "methodology": {
+    "methods": [
+      "MLLM-driven annotation pipeline",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Performance on tasks is calculated based on accuracy for multiple-choice questions and a scoring system for open-ended responses using GPT-4.",
+    "interpretation": "Higher accuracy indicates better understanding of the fine-grained actions and strategies within badminton videos.",
+    "baseline_results": "Competing MLLMs were tested, showing competitive accuracy improvements with the proposed strategies.",
+    "validation": "Extensive experiments validating the utility of the dataset, measuring model performance against various benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

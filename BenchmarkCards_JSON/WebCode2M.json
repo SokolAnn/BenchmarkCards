@@ -1,0 +1,101 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "WebCode2M",
+    "abbreviation": "N/A",
+    "overview": "WebCode2M is a new dataset comprising 2.56 million instances, each containing a design image along with the corresponding webpage code and layout details, aimed at improving webpage code generation through Multimodal Large Language Models (MLLMs).",
+    "data_type": "design-image and HTML/CSS code pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Russian",
+      "German",
+      "Spanish",
+      "French",
+      "Chinese",
+      "Dutch",
+      "Japanese",
+      "Italian",
+      "Hindi",
+      "Turkish",
+      "Portuguese",
+      "Bulgarian",
+      "Urdu"
+    ],
+    "similar_benchmarks": [
+      "Design2Code",
+      "pix2code",
+      "WebSight"
+    ],
+    "resources": [
+      "https://webcode2m.github.io"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To introduce a large-scale real-world dataset for generating webpage code from webpage designs to enhance the performance of Multimodal Large Language Models (MLLMs).",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Code Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Web pages sourced from the Common Crawl dataset, filtered and processed to collect design images and corresponding HTML/CSS code.",
+    "size": "2,563,905 instances",
+    "format": "JSON",
+    "annotation": "Data quality ensured by a scoring model trained on a manually annotated subset of 10,000 entries, achieving validation accuracy of 90%."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "TreeBLEU",
+      "Visual Score",
+      "CLIP similarity"
+    ],
+    "calculation": "Metrics calculated based on comparison between generated webpage structures and ground truth during the evaluation.",
+    "interpretation": "Higher scores indicate better performance in generating accurate and aesthetically pleasing webpage code.",
+    "baseline_results": "WebCoder significantly outperformed models like Design2Code-18B and WebSight VLM-8B.",
+    "validation": "The dataset was validated by comparing different baseline models against the newly introduced WebCoder model."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Exposing personal information"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset includes diverse languages and different webpage styles, improving representation.",
+    "harm": "The dataset may contain inappropriate content that requires careful handling."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Samples filtered for inappropriate content, including NSFW images and harmful keywords.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

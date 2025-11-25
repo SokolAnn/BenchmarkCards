@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MedCalc-Bench",
+    "abbreviation": "N/A",
+    "overview": "MedCalc-Bench evaluates the performance of large language models on real-world medical calculation tasks by proposing a step-by-step evaluation framework that checks formula selection, entity extraction, and arithmetic computation, addressing the limitations of existing benchmarks.",
+    "data_type": "clinical calculation tasks",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MedQA",
+      "PubMedQA",
+      "MedMCQA"
+    ],
+    "resources": [
+      "https://github.com/Super-Billy/EMNLP-2025-MedRaC"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Provide a more granular evaluation method for assessing LLM performance on medical calculations and enhance clinical trustworthiness.",
+    "audience": [
+      "ML Researchers",
+      "Healthcare Professionals",
+      "Clinical Decision Support System Developers"
+    ],
+    "tasks": [
+      "Medical Calculation Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "MedCalc-Bench dataset",
+    "size": "940 cases",
+    "format": "JSON",
+    "annotation": "Manually reviewed and curated by expert clinicians"
+  },
+  "methodology": {
+    "methods": [
+      "Step-wise evaluation pipeline",
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Step-wise evaluation accuracy"
+    ],
+    "calculation": "Each component of the medical calculation is assessed independently for correctness.",
+    "interpretation": "Performance is evaluated based on validation of formula selection, variable extraction, arithmetic calculation, and final answer.",
+    "baseline_results": "Zero-shot Chain-of-Thought (CoT) prompting serves as the baseline.",
+    "validation": "Accuracy of evaluations is confirmed against expert human annotations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Inaccurate clinical judgments based on faulty calculations"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Apache-2.0 license",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

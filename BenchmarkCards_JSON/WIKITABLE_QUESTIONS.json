@@ -1,0 +1,68 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "WIKITABLE QUESTIONS",
+    "abbreviation": "N/A",
+    "overview": "A new task and dataset: answering complex questions on semi-structured HTML tables using question-answer pairs as supervision.",
+    "data_type": "question-answering pairs (text) on semi-structured HTML tables",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [],
+    "similar_benchmarks": [
+      "WEBQUESTIONS",
+      "FREE917",
+      "Geoquery",
+      "Freebase"
+    ],
+    "resources": [
+      "http://nlp.stanford.edu/software/sempre/wikitable/",
+      "https://www.codalab.org/worksheets/0xf26cd79d4d734287868923ad1067cf4c/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate and train semantic parsers that answer complex, compositional questions using semi-structured HTML tables as the knowledge source, learned from question-table-answer triples.",
+    "audience": [],
+    "tasks": [
+      "Question Answering",
+      "Semantic Parsing"
+    ],
+    "limitations": "Authors state that 21% of examples cannot be answered using any logical form generated from the current deduction rules. Annotation artifacts and unhandled question types (e.g., yes-no questions, phrases like \"same\" or \"consecutive\"), complex cell formats, and incorrect annotations are noted in Section 7.4. Approximately 69% of the questions remain after answer-agreement filtering.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Randomly selected HTML tables from Wikipedia (tables with at least 8 rows and 5 columns); question-answer pairs authored and validated via Amazon Mechanical Turk.",
+    "size": "22,033 question-answer pairs on 2,108 HTML tables (20% of tables held out as test set)",
+    "format": "HTML tables (preprocessed: non-textual contents omitted; merged cells unmerged and duplicated into unmerged cells)",
+    "annotation": "Two-stage Amazon Mechanical Turk: (1) workers wrote trivia questions about each table using one of 36 generic prompts; (2) separate workers answered each question based on the table. Answers were kept only if agreed upon by at least two workers; approximately 69% of questions remain after this filtering."
+  },
+  "methodology": {
+    "methods": [
+      "Automated evaluation (Accuracy, Oracle score)",
+      "Comparison to baselines (IR baseline, WQ baseline)",
+      "Development using three random 80:20 splits of the training data; held-out test tables (20% of tables)"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Oracle score"
+    ],
+    "calculation": "Accuracy: number of examples (x,t,y) on which the system outputs the correct answer y. Oracle score: number of examples where at least one generated candidate logical form z in Z_x executes to y.",
+    "interpretation": "Accuracy measures final output correctness; oracle score measures whether a correct logical form was generated among candidates (an upper bound on generation coverage).",
+    "baseline_results": "On test data: IR baseline accuracy 12.7% (oracle 70.6%), WQ baseline accuracy 24.3% (oracle 35.6%), Our system accuracy 37.1% (oracle 76.6%).",
+    "validation": "20% of tables and their questions set aside as test set. Development used three random 80:20 splits of the remaining training data. Evaluation ensures tables in test do not appear during training."
+  },
+  "targeted_risks": {
+    "risk_categories": [],
+    "atlas_risks": {
+      "risks": null
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

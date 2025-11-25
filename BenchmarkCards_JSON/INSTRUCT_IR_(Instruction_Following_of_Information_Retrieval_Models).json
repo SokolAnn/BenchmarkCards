@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "INSTRUCT IR (Instruction Following of Information Retrieval Models)",
+    "abbreviation": "N/A",
+    "overview": "INSTRUCT IR is designed to evaluate instruction-following ability of retrieval models with diverse user-aligned instructions for each query, reflecting real-world search scenarios.",
+    "data_type": "instruction-query-target pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "BEIR",
+      "LoTTE",
+      "X2",
+      "MTEB",
+      "M-BEIR"
+    ],
+    "resources": [
+      "https://github.com/kaistAI/InstructIR"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the instruction-following capabilities of information retrieval models and to improve alignment with user instructions.",
+    "audience": [
+      "ML Researchers",
+      "Information Retrieval Specialists"
+    ],
+    "tasks": [
+      "Information Retrieval"
+    ],
+    "limitations": "The challenge lies in accurately simulating real user instructions within an automated data generation setting.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated from the MSMARCO dataset using GPT-4 for instruction creation and target adjustment.",
+    "size": "9,906 instances",
+    "format": "JSON",
+    "annotation": "Automatically generated and filtered through a multi-stage pipeline."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Normalized Cumulative Discount Gain (nDCG)",
+      "Robustness Score"
+    ],
+    "calculation": "Robustness score is calculated based on the minimum nDCG score of models responding to the same query with different instructions.",
+    "interpretation": "Higher nDCG and Robustness scores indicate better instruction-following capabilities of models.",
+    "baseline_results": null,
+    "validation": "Human evaluation ensured quality and validity of generated datasets through majority voting among annotators."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TweetSentBR",
+    "abbreviation": "TTsBR",
+    "overview": "A sentiment corpus for Brazilian Portuguese manually annotated with 15,000 tweets from the TV show domain, labeled in three classes (positive, neutral, negative) by seven annotators; includes baseline polarity classification experiments reported in the paper.",
+    "data_type": "text (tweets)",
+    "domains": [
+      "Natural Language Processing",
+      "Social Media",
+      "Entertainment"
+    ],
+    "languages": [
+      "Brazilian Portuguese"
+    ],
+    "similar_benchmarks": [
+      "ReLi",
+      "Buscape corpus",
+      "Mercado Livre corpus",
+      "Corpus 7x1",
+      "Computer-BR"
+    ],
+    "resources": [
+      "http://bitbucket.org/HBrum/tweetsentbr/",
+      "https://github.com/bear/python-twitter"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Provide a manually annotated corpus (TweetSentBR) for polarity (sentiment) classification in Brazilian Portuguese using tweets from TV show-related content.",
+    "audience": [
+      "Natural Language Processing researchers",
+      "Machine Learning researchers"
+    ],
+    "tasks": [
+      "Sentiment Analysis",
+      "Text Classification"
+    ],
+    "limitations": "Due to Twitter Privacy Policy the authors provide only tweet IDs rather than full tweet text; the authors note the corpus could be improved by labeling more data manually or using semi-supervised methods.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Tweets extracted from Twitter between January and July 2017 using the Python-Twitter wrapper for the Twitter API; focused on nine TV programs from three major Brazilian TV channels; tweets from official accounts and retweets were discarded.",
+    "size": "15,000 tweets (17,166 tokens); training set: 12,999 documents; test set: 2,001 documents",
+    "format": "N/A",
+    "annotation": "Manual annotation by seven native speakers (from linguistics, journalism and computer science) following a written codebook; annotators could mark a 'doubt' checkbox; majority voting used to determine final label; supervisors annotated a portion to form a revised test set; Krippendorff's Alpha used to measure agreement."
+  },
+  "methodology": {
+    "methods": [
+      "Naive Bayes",
+      "Support Vector Machine (linear kernel)",
+      "Hybrid classifier (SVM + lexical-based)"
+    ],
+    "metrics": [
+      "F-Measure",
+      "Accuracy"
+    ],
+    "calculation": "F-Measure and Accuracy reported for binary (positive/negative) and three-class (positive/neutral/negative) classification; paper does not specify macro vs. micro averaging.",
+    "interpretation": "The paper reports baseline performance values for the corpus but does not define explicit thresholds for what constitutes good vs. poor performance.",
+    "baseline_results": "Binary classification (pos/neg): Naive Bayes F-Measure 0.7987, Accuracy 0.8099; SVM F-Measure 0.8099, Accuracy 0.8206; Hybrid Classifier F-Measure 0.7659, Accuracy 0.7684. Three-class classification (pos/neu/neg): Naive Bayes F-Measure 0.5985, Accuracy 0.6462; SVM F-Measure 0.5964, Accuracy 0.6462.",
+    "validation": "A held-out test set of 2,001 documents was created (partially annotated by supervisors) for evaluation; Krippendorff's Alpha was used during agreement phases; final labels determined by majority voting."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Data privacy rights alignment"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The authors state that Twitter's Privacy Policy forbids redistribution of full tweet content; therefore only tweet IDs are released and users must have valid Twitter credentials to retrieve the tweets. Retweets and posts from official accounts were discarded.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "Complies with Twitter Privacy Policy by distributing only tweet IDs rather than full tweet text."
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FI-London",
+    "abbreviation": "N/A",
+    "overview": "A new dataset comprising facade images of buildings in London and their respective age epochs, developed for estimating building age using zero-shot classification algorithms.",
+    "data_type": "image",
+    "domains": [
+      "Computer Vision",
+      "Geography"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://zichaozeng.github.io/ba_classifier"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To develop a zero-shot classifier that predicts the age epoch of buildings based on their facade images, tackling challenges of geographical data scarcity and model training.",
+    "audience": [
+      "Researchers in Computer Vision",
+      "Urban Planners",
+      "Architectural Historians"
+    ],
+    "tasks": [
+      "Image Classification"
+    ],
+    "limitations": "Due to the unbalanced sample distribution in the dataset, it can currently only be used for testing.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Dataset of facade images collected from Brent and Camden in London.",
+    "size": "131 images",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Zero-shot classification"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Micro F1 Score",
+      "Mean Absolute Error (MAE)"
+    ],
+    "calculation": "Micro F1 Score is calculated as 2 × (Precision Micro × Recall Micro) / (Precision Micro + Recall Micro). MAE is the average absolute difference between predicted and actual mid-years of the age epochs.",
+    "interpretation": "A lower MAE indicates better predictive accuracy, especially for buildings near the boundary of two epochs.",
+    "baseline_results": "Accuracy of 39.69% and a mean absolute error of 0.85 decades.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

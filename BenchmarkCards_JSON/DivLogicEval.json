@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DivLogicEval (Diverse Logical Reasoning Evaluation)",
+    "abbreviation": "DivLogicEval",
+    "overview": "DivLogicEval is a benchmarking framework specifically designed to evaluate logical reasoning capabilities in Large Language Models (LLMs). It highlights the importance of isolating logical reasoning from other reasoning types and addresses limitations of existing benchmarks in terms of language diversity and bias.",
+    "data_type": "multiple-choice question answering (MCQA)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ReClor",
+      "LogiQA"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a robust evaluation framework for assessing logical reasoning skills in LLMs with a focus on language diversity and bias mitigation.",
+    "audience": [
+      "ML Researchers",
+      "AI Practitioners"
+    ],
+    "tasks": [
+      "Logical Reasoning",
+      "Question Answering"
+    ],
+    "limitations": "The methodology may lead to some grammatical mistakes due to synthesizing and integrating data from existing benchmarks.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Synthetic dataset constructed from a predefined set of symbolic logic propositions and diverse natural sentences sampled from existing NLI datasets.",
+    "size": "12,589 instances",
+    "format": "N/A",
+    "annotation": "Automatically generated and transformed via a framework involving logic expressions and diverse natural language sentences."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Circular",
+      "PartialCircular"
+    ],
+    "calculation": "The PartialCircular metric assigns a score based on the number of correct predictions across multiple mutants and penalizes uncertainty in predicted distributions.",
+    "interpretation": "Higher scores indicate higher confidence in correct predictions while considering the uncertainty of the model's output distribution.",
+    "baseline_results": "Accuracy and other metrics were compared with existing benchmarks like ReClor and LogiQA.",
+    "validation": "DivLogicEval was validated against standard metrics to establish its reliability and effectiveness."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

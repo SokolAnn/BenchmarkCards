@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SciInstruct (Self-Reflective Instruction Annotated Dataset for Training Scientific Language Models)",
+    "abbreviation": "SciInstruct",
+    "overview": "SciInstruct is a comprehensive dataset designed to enhance the scientific reasoning capabilities of large language models (LLMs) by providing a rich collection of scientific instructions across physics, chemistry, and mathematics, along with a novel self-reflective annotation framework to address data scarcity in science.",
+    "data_type": "scientific instruction pairs (question-answer pairs)",
+    "domains": [
+      "Natural Language Processing",
+      "Education"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "Galactica",
+      "MathInstruct",
+      "MetaMath"
+    ],
+    "resources": [
+      "https://github.com/THUDM/SciGLM",
+      "https://huggingface.co/datasets/zd21/SciInstruct"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the SciInstruct dataset is to improve the scientific problem-solving capabilities of LLMs by providing detailed reasoning instructions that cover various scientific domains.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Educators"
+    ],
+    "tasks": [
+      "Scientific Reasoning",
+      "Mathematical Problem Solving",
+      "Conceptual Understanding in Science"
+    ],
+    "limitations": "The effectiveness of SciInstruct is still constrained by the model’s scale and the inherent difficulty of scientific reasoning tasks.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated from a variety of educational materials, including textbooks and problem sets from physics, chemistry, and mathematics.",
+    "size": "254,051 instructions",
+    "format": "JSON",
+    "annotation": "Automatically annotated using a self-reflective framework, with filtering for quality using a data classifier."
+  },
+  "methodology": {
+    "methods": [
+      "Self-Reflective Annotation",
+      "Automated Quality Filtering",
+      "Fine-tuning on pre-trained LLMs"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics calculated based on the performance of models fine-tuned on the dataset against various benchmarks.",
+    "interpretation": "Higher accuracy indicates better scientific reasoning and problem-solving capabilities of the trained models.",
+    "baseline_results": "Outperformed existing models like Galactica and MAmmoTH, improving accuracy on scientific reasoning tasks.",
+    "validation": "Validation through testing on public scientific benchmarks such as CEval-Sci and SciBench."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset includes diverse problem types across various domains, aiming to promote inclusivity in scientific education.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC BY 4.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

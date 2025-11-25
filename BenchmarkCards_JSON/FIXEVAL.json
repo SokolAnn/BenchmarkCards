@@ -1,0 +1,108 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FIXEVAL",
+    "abbreviation": "FIXEVAL",
+    "overview": "FIXEVAL is a benchmark comprising of buggy code submissions to competitive programming problems and their corresponding fixes. FIXEVAL offers an extensive collection of unit tests to evaluate the correctness of model-generated program fixes and assess further information regarding time, memory constraints, and acceptance based on a verdict.",
+    "data_type": "text (buggy and fixed program pairs with unit test input-output files and verdicts)",
+    "domains": [
+      "Software Engineering"
+    ],
+    "languages": [],
+    "similar_benchmarks": [
+      "DeepFix",
+      "Review4Repair",
+      "Bug2Fix",
+      "GitHub-Python",
+      "IntroClass",
+      "Refactory",
+      "QuixBugs",
+      "Defects4J"
+    ],
+    "resources": [
+      "https://github.com/FixEval/FixEval",
+      "https://github.com/c2nes/javalang",
+      "https://docs.python.org/3/library/tokenize.html",
+      "https://docs.python.org/3/library/py_compile.html",
+      "https://www.dropbox.com/sh/nx3tnilzqz7df8a/AAAYlTq2tiEHl5hsESw6-yfLa?dl=0",
+      "https://atcoder.jp/posts/21"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "We introduce FIXEVAL, a context-aware program repair dataset that, along with unit tests, incorporates additional considerations—namely time and space complexity—to assess the functional correctness of repaired programs.",
+    "audience": [
+      "Machine Learning Researchers",
+      "Program Repair Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Program Repair",
+      "Verdict-conditioned Program Repair",
+      "Code Completion",
+      "Code Editing",
+      "Code Search",
+      "Verdict Prediction",
+      "Chain Edit Suggestion"
+    ],
+    "limitations": "We acknowledge that fixing programming problem solutions does not reflect real-world software bugs from professional developers. We also acknowledge the potential threat to validity as all the unit tests weren’t manually validated.",
+    "out_of_scope_uses": [
+      "Problems with many combinatorial equivalently valid outputs (constraint satisfaction problems) were removed and thus such problems are out-of-scope for FIXEVAL."
+    ]
+  },
+  "data": {
+    "source": "Collected from CodeNet (programs solving AtCoder and Aizu Online Judge problems). Unit tests downloaded from AtCoder; submission paths grouped by user_id to form submission paths and pairs of unaccepted and accepted submissions form examples.",
+    "size": "Java: 2,718 problems (156k train, 44k valid, 43k test = 245k examples); Python: 2,439 problems (567k train, 301k valid, 243k test = 1,111k examples). FIXEVAL: 54M lines of code in Java and 61M lines of code in Python. Derived from 712,000 Java and 3,280,000 Python program submissions. From CodeNet, 6.5M submission paths were extracted. (All numbers stated in the paper.)",
+    "format": "Raw source code files and unit test input/output files organized per problem; programs tokenized using javalang for Java and the Python standard tokenize library.",
+    "annotation": "Paired each unaccepted submission (buggy code) with the user's accepted submission (fixed code). Unit tests are the publicly available AtCoder test cases manually created by problem setters (domain experts)."
+  },
+  "methodology": {
+    "methods": [
+      "Automated n-gram-based metrics",
+      "Execution-based evaluation (unit-test execution over test suites)"
+    ],
+    "metrics": [
+      "Exact Match",
+      "BLEU",
+      "Syntax Match",
+      "Dataflow Match",
+      "CodeBLEU",
+      "Compilation Accuracy",
+      "Pass@k",
+      "Test Case Average (TCA@k)"
+    ],
+    "calculation": "N-gram metrics: corpus-level BLEU, Exact Match, Syntax Match, Dataflow Match, CodeBLEU, and Compilation Accuracy using javac and py_compile. Execution-based: pass@k computed using the unbiased estimator following equation (1) with n=10 and k<=10; TCA@k computed as the average number of test cases passed per problem as defined in equation (2).",
+    "interpretation": "Pass@k is a strict measure where a problem is considered solved only if a generated sample passes all unit tests. TCA@k reports average test cases passed and allows partial credit for solutions that pass a subset of tests.",
+    "baseline_results": "Baseline experiments finetuned PLBART and CodeT5 on FIXEVAL. Example execution-based results (from Table IV): CodeT5 Java (verdict conditioned): pass@1=10.94, pass@3=18.77, pass@5=22.66, pass@10=27.96. CodeT5 Python (verdict conditioned): pass@1=7.32, pass@3=13.94, pass@5=17.47, pass@10=22.63. N-gram results and compilation accuracy reported in Table III (see paper tables for full numbers).",
+    "validation": "Stratified dataset splits based on problems (80-10-10 train/validation/test) with no overlapping problems or submissions across splits. All test and validation examples include test cases. For execution evaluation, two program pairs per problem from the test split were randomly selected and evaluated on all available test cases."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Governance"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Governance",
+          "subcategory": [
+            "Incomplete usage definition"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

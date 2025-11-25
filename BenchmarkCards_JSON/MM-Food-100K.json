@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MM-Food-100K",
+    "abbreviation": "N/A",
+    "overview": "MM-Food-100K is a high-quality, 100,000-sample multimodal food intelligence dataset designed for fine-tuning AI models, featuring diverse dishes and ingredients with rich, multi-level annotations.",
+    "data_type": "image + textual annotation",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/MM-Food-100K"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a high-quality, multimodal food intelligence dataset for fine-tuning AI models.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Image Classification",
+      "Nutritional Estimation",
+      "Recipe Recommendation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated from a larger 1.2 million corpus collected from 87,000+ contributors.",
+    "size": "100,000 examples",
+    "format": "JSON",
+    "annotation": "Mixed human and AI annotations with evidence and provenance for auditability."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Mean Absolute Error (MAE)",
+      "Root Mean Square Error (RMSE)",
+      "R2"
+    ],
+    "calculation": "Metrics are calculated based on model performance on validation and test sets.",
+    "interpretation": "Lower MAE and RMSE indicate better model performance, while higher R2 indicates better fit of the data.",
+    "baseline_results": "Models fine-tuned on MM-Food-100K significantly outperform original Large Vision-Language Models.",
+    "validation": "Performance is validated using a stratified split (80/10/10) of data by cuisine and source type."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Potential for bias in data representation across different cuisines."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Datasets released under conditions permitting public research use.",
+    "consent_procedures": "Contributors were invited with zero upfront payment, focusing on attribution and revenue sharing.",
+    "compliance_with_regulations": "N/A"
+  }
+}

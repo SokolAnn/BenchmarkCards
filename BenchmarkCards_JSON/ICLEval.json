@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ICLEval",
+    "abbreviation": "N/A",
+    "overview": "ICLEval is introduced to evaluate the in-context learning abilities of large language models (LLMs), encompassing exact copying and rule learning as its key sub-abilities, with a total of 12 evaluation tasks designed specifically for this purpose.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMLU (Massive Multitask Language Understanding)",
+      "BIG-Bench"
+    ],
+    "resources": [
+      "https://github.com/RUCBM/ICLEval"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To systematically evaluate the in-context learning ability of large language models by measuring their capability in exact copying and rule learning.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Exact Copying",
+      "Rule Learning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Various sources including Wikipedia, common noun vocabulary, GSM8K, AQuA, and generation context from ChatGPT.",
+    "size": "2,040 examples",
+    "format": "text",
+    "annotation": "Curated from existing datasets and synthesized data."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Exact Match Score"
+    ],
+    "calculation": "Exact match score for evaluating model predictions against the correct labels as described for each task.",
+    "interpretation": "Higher scores indicate better performance in correctly executing in-context learning tasks as defined in the benchmark.",
+    "baseline_results": "N/A",
+    "validation": "Experimentally validated through various large language models across different scales."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Harmful outputs due to data bias in training models."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

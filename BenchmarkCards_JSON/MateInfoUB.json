@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MateInfoUB: A Real-World Benchmark for Testing LLMs in Competitive, Multilingual, and Multimodal Educational Tasks",
+    "abbreviation": "MateInfoUB",
+    "overview": "This study presents a novel bilingual (English–Romanian) multimodal (text and image) dataset of multiple-choice questions derived from a high-level computer science competition, focusing on benchmarking LLM performance on theoretical programming tasks.",
+    "data_type": "multiple-choice questions",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Science Education"
+    ],
+    "languages": [
+      "English",
+      "Romanian"
+    ],
+    "similar_benchmarks": [
+      "HumanEval",
+      "MBPP"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/EHollower/MateInfoUB",
+      "https://mateinfo-ub.github.io/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the performance of large language models on a bilingual, multimodal dataset in a competitive educational context.",
+    "audience": [
+      "ML Researchers",
+      "Educators",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Multiple Choice Question Answering"
+    ],
+    "limitations": "The dataset is limited to the Romanian educational context.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset is derived from real contest problems used in MateInfoUB, an annual computer science contest for 12th-grade students.",
+    "size": "100 multiple-choice questions",
+    "format": "Text and Image",
+    "annotation": "Manually written extensive solutions by authors and students for reference."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Percentage of correct answers"
+    ],
+    "calculation": "Accuracy was measured by directly comparing model responses against the correct answers from the dataset.",
+    "interpretation": "Higher accuracy indicates better performance of the LLMs on educational tasks.",
+    "baseline_results": "Gemini 2.5 Exp achieved 76.7% accuracy on hard problems.",
+    "validation": "Models were evaluated against the results of students from 2021 to 2024 contests."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset focuses on Romanian high school students and may not generalize to other demographics.",
+    "harm": "Potential misuse of the dataset for unauthorized LLM training or assessment."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

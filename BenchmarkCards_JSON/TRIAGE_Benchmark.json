@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TRIAGE Benchmark",
+    "abbreviation": "N/A",
+    "overview": "TRIAGE is a novel machine ethics benchmark that tests LLMs’ ability to make ethical decisions during mass casualty incidents using real-world ethical dilemmas with clear solutions designed by medical professionals.",
+    "data_type": "patient descriptions",
+    "domains": [
+      "Medical Ethics"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MACHIA VELLI Benchmark"
+    ],
+    "resources": [
+      "https://github.com/NLie2/Triage"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To benchmark ethical decision-making capabilities of large language models in medical contexts, specifically during mass casualty situations.",
+    "audience": [
+      "AI Researchers",
+      "Medical Professionals"
+    ],
+    "tasks": [
+      "Ethical Decision Making"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Triage training materials for the START and jumpSTART models.",
+    "size": "87 patient descriptions",
+    "format": "N/A",
+    "annotation": "Designed by medical professionals."
+  },
+  "methodology": {
+    "methods": [
+      "Mixed logistic regression models"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Correctness evaluated by the accuracy of triage assignments.",
+    "interpretation": "Models' performance compared against random guessing.",
+    "baseline_results": "All models except Mistral outperform random guessing.",
+    "validation": "Evaluated models' ability to assign patients to correct triage groups across various ethical contexts."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

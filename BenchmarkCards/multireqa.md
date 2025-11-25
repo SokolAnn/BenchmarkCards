@@ -1,0 +1,88 @@
+# MultiReQA
+
+## 📊 Benchmark Details
+
+**Name**: MultiReQA
+
+**Overview**: MultiReQA, a new multi-domain ReQA evaluation suite composed of eight retrieval QA tasks drawn from publicly available QA datasets. The suite provides a systematic retrieval-based evaluation across these datasets and establishes baselines using BM25, USE-QA, and a BERT dual encoder.
+
+**Data Type**: question-answer pairs (sentence-level)
+
+**Domains**:
+- Natural Language Processing
+- Biomedical
+- Education
+
+**Languages**:
+- N/A
+
+**Similar Benchmarks**:
+- ReQA
+- MRQA
+
+**Resources**:
+- [GitHub Repository](https://github.com/google-research-datasets/MultiReQA)
+- [Resource](https://tfhub.dev/google/universal-sentence-encoder-multilingual-qa/1)
+- [Resource](https://books.google.com/talktobooks/)
+
+## 🎯 Purpose and Intended Users
+
+**Goal**: Evaluate retrieval question answering models across multiple domains by converting eight existing QA tasks into sentence-level retrieval and provide strong baseline results.
+
+**Tasks**:
+- Retrieval Question Answering
+- Sentence-level Answer Retrieval
+
+**Limitations**: Five tasks contain training and test data, while three contain test data only. Spans covering multiple sentences are excluded. Some original datasets (NewsQA, RACE, DROP, DuoRC) were excluded because the majority of their questions are underspecified when taken out of their original context. The authors note that sentence-level training data quality from TriviaQA may be lower.
+
+## 💾 Data
+
+**Source**: Selected datasets from the MRQA shared task: SearchQA, TriviaQA, HotpotQA, SQuAD, NaturalQuestions (NQ), BioASQ, RelationExtraction (R.E.), TextbookQA.
+
+**Size**: SearchQA: 629,160 training pairs; 16,476 questions; 454,836 candidates; average 5.47 answers per question. TriviaQA: 335,659 training pairs; 7,776 questions; 238,339 candidates; average 5.46 answers per question. HotpotQA: 104,973 training pairs; 5,859 questions; 52,191 candidates; average 1.69 answers per question. SQuAD: 87,133 training pairs; 10,485 questions; 10,642 candidates; average 1.09 answers per question. NQ: 106,521 training pairs; 4,131 questions; 22,118 candidates; average 1.06 answers per question. BioASQ: no training data provided; 1,503 questions; 14,158 candidates; average 2.85 answers per question. R.E.: no training data provided; 2,945 questions; 3,301 candidates; average 1.00 answer per question. TextbookQA: no training data provided; 1,497 questions; 3,701 candidates; average 3.31 answers per question.
+
+**Format**: Sentence-level retrieval candidates obtained by splitting supporting documents into sentences using NLTK; sentence boundary annotations released (see GitHub).
+
+**Annotation**: Answer spans from the original datasets are used to identify the sentence containing the correct answer. Spans covering multiple sentences are excluded.
+
+## 🔬 Methodology
+
+**Methods**:
+- Automated metrics evaluation (P@1, MRR)
+- Model-based evaluation using BM25 (term-based retrieval)
+- Neural model evaluation using USE-QA (off-the-shelf and fine-tuned)
+- Neural model evaluation using a BERT dual encoder (fine-tuned)
+
+**Metrics**:
+- Precision at 1 (P@1)
+- Mean Reciprocal Rank (MRR)
+
+**Calculation**: P@1 tests whether the true answer sentence appears as the top-ranked candidate. MRR is calculated as MRR = (1/N) * sum_{i=1..N} (1 / rank_i), where rank_i is the rank of the first correct answer for the i-th question.
+
+**Interpretation**: Higher P@1 and MRR indicate better retrieval performance. The authors interpret higher scores as better model retrieval quality; in-domain fine-tuning often yields the best performance for a given dataset. BM25 is a strong baseline and can outperform neural models on datasets with high token overlap between question and answer/context, while neural models outperform BM25 on datasets with low token overlap.
+
+**Baseline Results**: Key baseline observations from Table 5: BM25 wpm P@1: SearchQA 35.86%, TriviaQA 43.26%, HotpotQA 20.37%, NQ 25.32%, SQuAD 65.32%, BioASQ 8.31%, R.E. 64.04%, TextbookQA 8.52%. USE-QA fine-tuned P@1: SearchQA 31.45%, TriviaQA 32.58%, HotpotQA 31.71%, NQ 38.00%, SQuAD 66.83%, BioASQ 6.41%, R.E. 59.87%, TextbookQA 6.62%. BERT fine-tuned P@1: SearchQA 30.20%, TriviaQA 29.11%, HotpotQA 32.05%, NQ 36.22%, SQuAD 55.13%, BioASQ 5.71%, R.E. 49.89%, TextbookQA 6.29%. The paper states: BM25 achieves the best performance on 2 of 5 in-domain tasks and all 3 out-of-domain tasks; neural models achieve the highest performance on 3 of 5 in-domain tasks.
+
+**Validation**: Hyper-parameters for neural models are tuned on a validation set (10% split out from the training data). The dataset splits (training, in-domain test, out-of-domain test) follow MRQA definitions.
+
+## ⚠️ Targeted Risks
+
+**Risk Categories**:
+- Accuracy
+
+**Atlas Risks**:
+- **Accuracy**: Unrepresentative data
+
+**Demographic Analysis**: N/A
+
+**Potential Harm**: N/A
+
+## 🔒 Ethical and Legal Considerations
+
+**Privacy And Anonymity**: Not Applicable
+
+**Data Licensing**: Not Applicable
+
+**Consent Procedures**: Not Applicable
+
+**Compliance With Regulations**: Not Applicable

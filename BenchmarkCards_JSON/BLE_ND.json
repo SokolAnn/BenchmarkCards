@@ -1,0 +1,103 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "BLE ND (A Benchmark for LLMs on Everyday Knowledge in Diverse Cultures and Languages)",
+    "abbreviation": "BLE ND",
+    "overview": "BLE ND is a hand-crafted benchmark designed to evaluate LLMs’ everyday knowledge across diverse cultures and languages. It comprises 52.6k question-answer pairs from 16 countries/regions in 13 different languages, including low-resource ones.",
+    "data_type": "question-answer pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Chinese",
+      "Spanish",
+      "Indonesian",
+      "Arabic",
+      "Persian",
+      "Korean",
+      "Azerbaijani",
+      "Hausa",
+      "Amharic",
+      "Assamese",
+      "Sundanese",
+      "Greek"
+    ],
+    "similar_benchmarks": [
+      "CultureAtlas",
+      "CLIcK",
+      "COPAL-ID"
+    ],
+    "resources": [
+      "https://github.com/nlee0212/BLEnD",
+      "https://huggingface.co/datasets/nayeon212/BLEnD"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary goal of BLE ND is to evaluate the cultural commonsense knowledge of LLMs across different languages and regions.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Cultural Researchers"
+    ],
+    "tasks": [
+      "Cultural Knowledge Assessment",
+      "Question Answering"
+    ],
+    "limitations": "The dataset may not fully represent the cultural knowledge of every individual in the listed countries and regions.",
+    "out_of_scope_uses": [
+      "Using the benchmark for tasks unrelated to cultural knowledge evaluation."
+    ]
+  },
+  "data": {
+    "source": "Constructed from native speakers providing culturally relevant question-answer pairs across various categories.",
+    "size": "52,600 question-answer pairs",
+    "format": "JSON",
+    "annotation": "Manual annotation by native speakers from each target country/region."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "The accuracy is computed based on the percentage of questions to which an LLM's answer matches those provided by human annotators.",
+    "interpretation": "A higher score indicates better cultural knowledge by the LLMs in regard to everyday life questions within the given cultures.",
+    "baseline_results": "Various state-of-the-art LLMs were evaluated, including GPT-4 and Claude, with significant performance gaps noted for underrepresented cultures.",
+    "validation": "The performance of LLMs was validated through extensive human evaluation and automated metrics."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The benchmark covers multiple demographic factors to understand cultural knowledge across various groups.",
+    "harm": "The benchmark aims to address inaccuracies and biases in cultural representation by LLMs."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC BY-SA 4.0",
+    "consent_procedures": "Informed consent was obtained from all annotators participating in the study.",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DISCHARGE QA",
+    "abbreviation": "N/A",
+    "overview": "DISCHARGE QA is a clinical question-answering dataset designed for evaluating the ability of large language models (LLMs) to simulate clinical decision-making processes during patient discharge, including diagnosis inference, medication inference, and discharge instructions.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/jou2024/EXPRAG"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the performance of retrieval-augmented generation (RAG) systems in answering discharge-related clinical questions.",
+    "audience": [
+      "ML Researchers",
+      "Healthcare Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "MIMIC-IV Electronic Health Record (EHR) database",
+    "size": "1,280 QA pairs",
+    "format": "JSON",
+    "annotation": "Generated using historical EHR data to ensure clinical relevance."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Accuracy is calculated as the percentage of correctly answered questions; F1 Score is used for multi-select problems.",
+    "interpretation": "A higher accuracy and F1 Score indicate better performance in correctly identifying discharge diagnoses and instructions.",
+    "baseline_results": "N/A",
+    "validation": "To ensure realistic scenarios, questions are generated based on a filtering process of EHR records."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Inaccurate medical diagnoses due to potential biases in the dataset."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

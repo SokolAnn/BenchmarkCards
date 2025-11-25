@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SOFA (Social Fairness)",
+    "abbreviation": "SOFA",
+    "overview": "SOFA is a large-scale benchmark designed to address the limitations of existing fairness collections, expanding the analysis of social biases in language models to include a diverse range of identities and stereotypes.",
+    "data_type": "probing statements",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "CROWS-PAIRS",
+      "STEREO SET"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/copenlu/sofa"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate social biases encoded in language models by probing their responses across a diverse set of identities and stereotypes.",
+    "audience": [
+      "ML Researchers",
+      "Fairness Auditors",
+      "AI Ethics Practitioners"
+    ],
+    "tasks": [
+      "Fairness Benchmarking",
+      "Social Bias Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Combining stereotypes from the SOCIAL BIAS INFERENCE CORPUS (SBIC) and identities from the lexicon by Czarnowska et al. (2021).",
+    "size": "1,490,120 probes",
+    "format": "N/A",
+    "annotation": "Generated from human-annotated text sources."
+  },
+  "methodology": {
+    "methods": [
+      "Perplexity-based evaluation"
+    ],
+    "metrics": [
+      "Perplexity (PPL)",
+      "Delta Disparity Score (DDS)"
+    ],
+    "calculation": "Perplexity is calculated using the exponentiated average negative log-likelihood of a sequence.",
+    "interpretation": "Low PPL values indicate higher likelihood for certain stereotypes, suggesting presence of bias.",
+    "baseline_results": "N/A",
+    "validation": "Evaluated by testing against existing benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis conducted across various identity dimensions such as gender, religion, disability, and nationality.",
+    "harm": "The benchmark aims to identify and measure the encoded biases which lead to unfair treatments in language model outputs."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LibriSQA: A Novel Dataset and Framework for Spoken Question Answering with Large Language Models",
+    "abbreviation": "LibriSQA",
+    "overview": "LibriSQA is a novel free-form and open-ended Spoken Question Answering (SQA) dataset composed of 214k SQA pairs, focusing on interactions between speech and text modalities and optimized for Large Language Models (LLMs).",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/ZihanZhaoSJTU/LibriSQA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To facilitate research in the perception and understanding of speech leveraging Large Language Models (LLMs) for Spoken Question Answering tasks.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Spoken Question Answering",
+      "Automatic Speech Recognition"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset is developed using the LibriSpeech dataset, specifically extracted audio segments, annotated with questions and answers generated via ChatGPT.",
+    "size": "214,000 question-answer pairs",
+    "format": "JSON",
+    "annotation": "Questions and answers generated through ChatGPT with manual filtration for relevance."
+  },
+  "methodology": {
+    "methods": [
+      "End-to-end framework without relying on ASR modules",
+      "Evaluation using BLEU, ROUGE, BERT similarity, macro accuracy, and F1 scores"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "BLEU Score",
+      "ROUGE-L"
+    ],
+    "calculation": "Metrics are calculated based on model predictions versus reference answers, following standard evaluation metrics.",
+    "interpretation": "Higher scores indicate better alignment and comprehension of the spoken content and contextual understanding.",
+    "baseline_results": null,
+    "validation": "The framework is validated through empirical performance metrics on the ASR and SQA tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

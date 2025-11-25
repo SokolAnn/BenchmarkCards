@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CogStream (Context-guided Streaming Video Question Answering)",
+    "abbreviation": "CogStream",
+    "overview": "CogStream introduces a challenging task for streaming video reasoning, requiring models to identify the most relevant historical contextual information to answer questions about current video streams, supported by a densely annotated dataset of question-answer pairs.",
+    "data_type": "question-answer pairs",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/LiamZhao326/CogStream"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To empower and validate streaming video reasoning capabilities through the question-answering (QA) paradigm.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Streaming Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Videos collected from public sources such as MovieChat, MECD, QVhighlights, VideoMME, COIN, and YouCook2.",
+    "size": "1,088 videos with a total of 59,032 question-answer pairs",
+    "format": "JSON",
+    "annotation": "Semi-automated with a manual review process."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Information Accuracy (IA)",
+      "Detail Completeness (DC)",
+      "Context Awareness (CA)",
+      "Temporal Precision (TP)",
+      "Logical Consistency (LC)"
+    ],
+    "calculation": "Metrics are calculated based on the evaluation of generated answers against ground-truth answers using a powerful LLM.",
+    "interpretation": "Higher scores denote better performance in terms of accuracy, completeness, context awareness, timing consistency, and logical coherence.",
+    "baseline_results": "Results from various state-of-the-art Vid-LLMs on the CogStream dataset.",
+    "validation": "Validation through extensive experimental comparisons with existing models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

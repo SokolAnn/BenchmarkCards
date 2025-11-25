@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "VidEgoThink",
+    "abbreviation": "N/A",
+    "overview": "VidEgoThink is a comprehensive benchmark for evaluating egocentric video understanding capabilities in Embodied AI through four interrelated tasks: video question-answering, hierarchy planning, visual grounding, and reward modeling.",
+    "data_type": "video question-answering pairs, hierarchy planning steps, visual grounding bounding boxes and temporal segments, reward modeling critiques and feedback",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "EgoTaskQA",
+      "EgoPlan",
+      "EgoSchema"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate egocentric video understanding for Multi-modal Large Language Models (MLLMs) in the context of Embodied AI.",
+    "audience": [
+      "ML Researchers",
+      "AI Developers",
+      "Robotics Researchers"
+    ],
+    "tasks": [
+      "Video Question Answering",
+      "Hierarchy Planning",
+      "Visual Grounding",
+      "Reward Modeling"
+    ],
+    "limitations": "VidEgoThink has limited data diversity and immature evaluation methods, particularly in hierarchy planning and reward modeling.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated from the Ego4D dataset using an automatic data generation pipeline leveraging GPT-4o, filtered by human annotators.",
+    "size": "4,993 instances",
+    "format": "N/A",
+    "annotation": "Automatically generated with human filtering to ensure quality and diversity."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "mean Intersection over Union (mIoU)"
+    ],
+    "calculation": "Metrics are calculated based on the performance of models against ground truth values across various tasks in the benchmark.",
+    "interpretation": "Higher scores indicate better performance in egocentric video understanding.",
+    "baseline_results": "GPT-4o models performed poorly across all tasks, with accuracy around 31.17% in video question-answering tasks.",
+    "validation": "The benchmark was evaluated via extensive experiments with various models, indicating their capabilities and areas needing improvement."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

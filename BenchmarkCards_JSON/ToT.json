@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Test of Time (ToT)",
+    "abbreviation": "ToT",
+    "overview": "ToT is a benchmark designed to assess LLMs' temporal reasoning abilities through two distinct tasks focused on temporal semantics and arithmetic, enabling a comprehensive evaluation.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "TGQA (Temporal Graph Question Answering)",
+      "TEMPTABQA (Temporal Question Answering for Semi-Structured Tables)",
+      "TempLama (Temporal Language Model Assessment)"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/baharef/ToT"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The objective of ToT is to provide a rigorous and informative assessment of LLMs' temporal reasoning capabilities.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Temporal Reasoning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Synthetic dataset generated using controlled graph structures and temporal relationships.",
+    "size": "46,480 examples (ToT-Semantic), 2,800 examples (ToT-Arithmetic)",
+    "format": "text",
+    "annotation": "Automatically generated and manually curated"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Metrics are calculated based on model performance across the different question types in the benchmark.",
+    "interpretation": "Higher accuracy indicates a better understanding of temporal reasoning.",
+    "baseline_results": "Results evaluated using Claude-3-Sonnet, GPT-4, and Gemini 1.5 Pro.",
+    "validation": "Extensive experiments conducted to validate model performance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential for misuse in generating misleading temporal information."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "No sensitive or personal data included.",
+    "data_licensing": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

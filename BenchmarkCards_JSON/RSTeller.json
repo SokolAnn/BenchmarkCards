@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "RSTeller",
+    "abbreviation": "N/A",
+    "overview": "RSTeller is a multimodal dataset comprising over 1.3 million remote sensing images, each accompanied by two descriptive captions, generated through a workflow that leverages large language models to create semantically rich captions from OpenStreetMap data.",
+    "data_type": "image-caption pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SkyScript"
+    ],
+    "resources": [
+      "https://github.com/SlytherinGe/RSTeller"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a large-scale, well-annotated multimodal dataset for training vision language models in remote sensing.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Image Captioning",
+      "Zero-shot Classification",
+      "Image Retrieval"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "National Agriculture Imagery Program (NAIP) and OpenStreetMap (OSM)",
+    "size": "1,309,926 images",
+    "format": "tar files",
+    "annotation": "Generated using large language models from OpenStreetMap data."
+  },
+  "methodology": {
+    "methods": [
+      "LLM-based caption generation",
+      "Image pre-processing"
+    ],
+    "metrics": [
+      "MTLD"
+    ],
+    "calculation": "MTLD score is calculated based on the Type-Token Ratio (TTR) of generated captions to assess linguistic diversity.",
+    "interpretation": "Higher MTLD scores indicate greater lexical diversity, reflecting richer vocabulary usage across captions.",
+    "baseline_results": "N/A",
+    "validation": "Model performance analyzed through continual pre-training and evaluations on benchmark datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": []
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination",
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

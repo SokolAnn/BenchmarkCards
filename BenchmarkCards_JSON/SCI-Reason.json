@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SCI-Reason",
+    "abbreviation": "N/A",
+    "overview": "SCI-Reason is a dataset for complex multimodal reasoning in academic areas, aiming to test and improve the reasoning ability of large multimodal models using real complex images in academic domains.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To bridge the gap in systematic investigation of complex multimodal reasoning in academic domains and assess the reasoning abilities of large multimodal models.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Visual Question Answering",
+      "Multimodal Reasoning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Academic image-text pairs extracted from PubMed Central's open-access repository.",
+    "size": "12,626 question-answer pairs and 12,066 images",
+    "format": "N/A",
+    "annotation": "Expert-validated image descriptions and evidence-based scientific claims."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Average Normalized Levenshtein Similarity (ANLS)",
+      "Wu-Palmer Similarity (WUPS)"
+    ],
+    "calculation": "Accuracy is computed as the ratio of correct answers to total questions. ANLS measures answer similarity based on Levenshtein distance. WUPS assesses semantic similarity using WordNet hierarchy.",
+    "interpretation": "Higher scores indicate better reasoning performance in academic contexts.",
+    "baseline_results": "Claude-3.7-Sonnet with an accuracy of 55.19%.",
+    "validation": "Rigorous evaluation of multiple models on the test set to assess complex academic image reasoning."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

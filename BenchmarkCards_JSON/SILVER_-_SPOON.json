@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SILVER - SPOON",
+    "abbreviation": "N/A",
+    "overview": "SILVER - SPOON is a dataset consisting of 12,000 samples designed to investigate the presence of socioeconomic bias in large language models through three subsets: normative judgement evaluation, demographic driven profession prediction, and contextual narrative bias analysis.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/SILVER-SPOON"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To investigate the presence of implicit and explicit socioeconomic bias in large language models and to provide a dataset for future research.",
+    "audience": [
+      "ML Researchers",
+      "Social Scientists",
+      "Ethics Researchers"
+    ],
+    "tasks": [
+      "Normative Judgement Evaluation",
+      "Profession Prediction",
+      "Narrative Bias Analysis"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset contains scenarios generated through a combination of prompting and text augmentation techniques, focused on ethical dilemmas faced by socioeconomically underprivileged people.",
+    "size": "12,000 samples",
+    "format": "CSV",
+    "annotation": "Annotated by individuals from both ends of the socioeconomic spectrum, employing a dual-labeling scheme."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Cohen’s Kappa score",
+      "Jaccard Similarity",
+      "Dice Similarity Coefficient",
+      "Matthews Correlation Coefficient",
+      "Per class Accuracy"
+    ],
+    "calculation": "Metrics are calculated based on the agreement between model responses and the gold labels generated via majority voting among trained annotators.",
+    "interpretation": "A higher score indicates better agreement between the model's predictions and the expected outcomes.",
+    "baseline_results": null,
+    "validation": "Through extensive qualitative analysis and human evaluation of model responses."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC BY 4.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

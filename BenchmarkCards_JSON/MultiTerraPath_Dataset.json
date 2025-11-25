@@ -1,0 +1,76 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MultiTerraPath Dataset",
+    "abbreviation": "N/A",
+    "overview": "MultiTerraPath is a synthetic dataset for evaluating model performance in cost-efficient path planning across multiple terrains, containing 1,000 maps sized 500×500, each with defined traversal costs and obstacles.",
+    "data_type": "maps",
+    "domains": [
+      "Robotics"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a dataset for evaluating the performance of path planning algorithms in diverse terrain environments.",
+    "audience": [
+      "ML Researchers",
+      "Robotics Practitioners"
+    ],
+    "tasks": [
+      "Cost-efficient Path Planning",
+      "Obstacle-avoidance Path Planning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Synthetic generation of maps and obstacle information as defined in the dataset description.",
+    "size": "1,000 maps",
+    "format": "JSON",
+    "annotation": "Automatically generated for traversal costs and terrain descriptions."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Relative Precision (RP)",
+      "Improvement Ratio (IR)"
+    ],
+    "calculation": "Calculated as the ratio of improved paths to suggested paths and the proportion of valid paths incorporating LLM-Advisor.",
+    "interpretation": "Higher RP and IR indicate better path planning performance resulting from the LLM-Advisor.",
+    "baseline_results": "Improvement Ratio for A* and LLM-A* integration with LLM-Advisor achieved up to 82.50%.",
+    "validation": "Experimental results validated through comparative analysis with other existing path planning methods."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Bias"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

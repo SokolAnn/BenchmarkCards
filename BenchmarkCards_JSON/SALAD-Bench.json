@@ -1,0 +1,111 @@
+{
+  "benchmark_details": {
+    "name": "SALAD-Bench",
+    "overview": "SALAD-Bench is a safety benchmark specifically designed for evaluating large language models (LLMs), including attack and defense methods, featuring a hierarchical taxonomy with intricate levels of categorization.",
+    "data_type": "Text",
+    "domains": [
+      "Representation & Toxicity Harms",
+      "Misinformation Harms",
+      "Information & Safety Harms",
+      "Malicious Use",
+      "Human Autonomy & Integrity Harms",
+      "Socioeconomic Harms"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ToxicChat",
+      "SAFETYPROMPTS",
+      "SafetyBench",
+      "Do-Not-Answer",
+      "DoAnythingNow",
+      "AdvBench"
+    ],
+    "resources": [
+      "https://github.com/OpenSafetyLab/SALAD-BENCH"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the safety capabilities of large language models through a comprehensive and hierarchical benchmarking method.",
+    "audience": [
+      "Researchers",
+      "Developers",
+      "Policy makers"
+    ],
+    "tasks": [
+      "Safety evaluation of LLMs",
+      "Assessment of attack methods",
+      "Evaluation of defense strategies"
+    ],
+    "limitations": null,
+    "out_of_scope_uses": [
+      "Non-safety related evaluations"
+    ]
+  },
+  "data": {
+    "source": "Publicly available data and self-instructed data.",
+    "size": "21k test samples",
+    "format": "JSON",
+    "annotation": "Automatically labeled with human verification."
+  },
+  "methodology": {
+    "methods": [
+      "Hierarchical Taxonomy Definition",
+      "Data Collection",
+      "Question Enhancement",
+      "MD-Judge and MCQ-Judge Evaluators"
+    ],
+    "metrics": [
+      "Safety Rates",
+      "Attack Success Rates",
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Utilizes various evaluators to calculate safety rates and performance metrics.",
+    "interpretation": "Performance results are interpreted based on the accuracy of safety evaluations across different models.",
+    "baseline_results": null,
+    "validation": "Human-verified against a subset of 458 questions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety Threats",
+      "Misuse Risks",
+      "Data Exploitation"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination"
+          ]
+        },
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Lack of training data transparency"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": [
+      "Potential for harmful outputs by LLMs",
+      "Risk of data misuse"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Measures taken to mitigate risks associated with sensitive content.",
+    "data_licensing": "Publicly available data for benchmark development.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "Complied with ethical guidelines to restrict access to harmful question datasets."
+  }
+}

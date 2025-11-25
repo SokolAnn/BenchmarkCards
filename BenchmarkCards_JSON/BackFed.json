@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "BackFed (Benchmark Suite for Backdoor Attacks in Federated Learning)",
+    "abbreviation": "BackFed",
+    "overview": "BackFed is a comprehensive benchmark suite designed to standardize, streamline, and reliably evaluate backdoor attacks and defenses in Federated Learning (FL), focusing on practical constraints.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "FLPoison",
+      "Backdoors101"
+    ],
+    "resources": [
+      "https://github.com/thinh-dao/BackFed"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To standardize evaluations of backdoor attacks and defenses in Federated Learning.",
+    "audience": [
+      "ML Researchers",
+      "Security Practitioners"
+    ],
+    "tasks": [
+      "Image Classification",
+      "Sentiment Analysis",
+      "Next-word Prediction"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "CIFAR-10, MNIST, FEMNIST, Sentiment140, Reddit Corpus",
+    "size": "805,263 samples for FEMNIST, 1,600,498 samples for Sentiment140",
+    "format": "Various formats including image datasets and text",
+    "annotation": "Dataset partitioning simulated among clients using Dirichlet and uniform distributions, including artificial simulation of dataset partitioning."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Attack Success Rate (ASR)",
+      "Lifespan"
+    ],
+    "calculation": "Evaluation metrics calculated across communication rounds after training completion.",
+    "interpretation": "Higher values of ASR indicate more effective attacks; Lifespan measures persistence of the backdoor.",
+    "baseline_results": "Comparison made against existing frameworks like FLPoison.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Data privacy rights alignment"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

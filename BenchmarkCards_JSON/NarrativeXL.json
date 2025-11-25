@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "NarrativeXL: a Large-scale Dataset for Long-Term Memory Models",
+    "abbreviation": "NarrativeXL",
+    "overview": "We propose a new large-scale (nearly a million questions) ultra-long-context (more than 50,000 words average document length) reading comprehension dataset. Using GPT-3.5, we summarized each scene in 1,500 hand-curated fiction books from Project Gutenberg, which resulted in approximately 150 scene-level summaries per book. After that, we created a number of reading comprehension questions based on these summaries, including three types of multiple-choice scene recognition questions, as well as free-form narrative reconstruction questions. Most questions have a known “retention demand”, indicating how long-term of a memory is needed to answer them, which should aid long-term memory performance evaluation.",
+    "data_type": "text (question-answering pairs: multiple-choice read-along questions; free-form summary reconstruction and hierarchical summary reconstruction)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": null,
+    "similar_benchmarks": [
+      "NarrativeQA",
+      "SCROLLS",
+      "Zero-SCROLLS",
+      "BookSum",
+      "QuALITY",
+      "QMSum",
+      "ASJ",
+      "PG19",
+      "Long Range Arena"
+    ],
+    "resources": [
+      "https://github.com/r-seny/NarrativeXL",
+      "https://arxiv.org/abs/2305.13877"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Create a large-scale ultra-long-context reading comprehension dataset to train and evaluate long-term memory models and to provide diagnostic tasks with explicit memory retention demand.",
+    "audience": [
+      "Academic and industry organizations",
+      "Model developers",
+      "Machine learning researchers"
+    ],
+    "tasks": [
+      "Reading Comprehension",
+      "Question Answering",
+      "Summarization (scene-level and hierarchical)"
+    ],
+    "limitations": "It is likely that many questions can be answered using relatively simple Information Retrieval approaches (IR). Data contamination (books appearing in model pretraining) is impossible to fully control; authors take mitigation steps (remove titles/authors, named-entity substitution) but do not claim to fully resolve the issue. The authors also note they do not directly show that the dataset will improve ultra-long-context LLMs, focusing instead on validating the data.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Full-text books downloaded from Project Gutenberg (1,500 hand-curated fiction books); scene summaries and distorted summaries generated with GPT-3.5; named-entity substitution applied using spaCy; manual filtering of books performed.",
+    "size": "990,595 total questions across 1,500 books. Breakdown: 726,803 multiple-choice read-along questions; 244,111 non-hierarchical scene summary reconstruction (freeform); 19,681 hierarchical summary reconstruction (freeform). Average context/document lengths: read-along questions avg context ~54,334 words; summary reconstruction avg context ~87,051 words.",
+    "format": "N/A",
+    "annotation": "Scene summaries, hierarchical summaries, and distorted summaries generated with GPT-3.5. Manual book filtering/cleaning performed. Named-entity substitution dictionaries created and applied (spaCy used for named entity identification). Small-scale human validation performed via Amazon Mechanical Turk."
+  },
+  "methodology": {
+    "methods": [
+      "Automatic summarization and false-summary generation using GPT-3.5",
+      "Manual filtering and cleaning of Project Gutenberg books",
+      "Named entity substitution using spaCy",
+      "Human validation study (Amazon Mechanical Turk)",
+      "Model-based evaluation: zero-shot evaluation with GPT-4 and Anthropic Claude; fine-tuning experiments (GPT-3 Curie, Longformer Encoder-Decoder)",
+      "Automated metric evaluation (ROUGE, BertSCORE) and accuracy measurements"
+    ],
+    "metrics": [
+      "Accuracy",
+      "ROUGE-1 F1",
+      "ROUGE-2 F1",
+      "ROUGE-L F1",
+      "BertSCORE F1"
+    ],
+    "calculation": "Multiple-choice performance measured by Accuracy. Summary reconstruction quality measured by ROUGE-1 F1, ROUGE-2 F1, ROUGE-L F1 (ROUGE scores calculated using https://pypi.org/project/rouge-score/) and BertSCORE F1 by comparing reconstructed summaries to true summaries.",
+    "interpretation": "Higher Accuracy on read-along questions indicates better long-term memory/retention for the required retention demand. Summary reconstruction metric improvements (ROUGE/BertSCORE) indicate better ability to reconstruct true summaries given context. The dataset provides explicit 'retention demand' measures enabling measurement of forgetting curves and diagnosis of memory capacity.",
+    "baseline_results": "Read-along zero-shot: GPT-4 accuracy 0.783, Anthropic (Claude) accuracy 0.53 (on 60-question subset). BERT fine-tuned to distinguish distorted vs true summaries (no context) achieved accuracy 0.524 on subset. Summary reconstruction (Table 5): Baseline (corrupted vs true) ROUGE-1 F1 .522, ROUGE-2 F1 .261, ROUGE-L F1 .408, BertSCORE F1 .906. LED (fine-tuned) ROUGE-1 F1 .53, ROUGE-2 F1 .26, ROUGE-L F1 .40, BertSCORE .90. GPT-3 (fine-tuned) ROUGE-1 F1 .504, ROUGE-2 F1 .236, ROUGE-L F1 .384, BertSCORE .900. GPT-4 no context ROUGE-1 F1 .512; GPT-4 with context ROUGE-1 F1 .576 (other metrics improved similarly).",
+    "validation": "Human validation: 25 MTurk workers (US-based, master qualification) labeled 250 scenes (10 scenes each) and achieved 0.95 accuracy identifying true vs false summaries. Model validation: zero-shot evaluation with GPT-4 and Anthropic on subsets; fine-tuning experiments with GPT-3 Curie and LED; statistical tests (paired t-tests, Spearman correlation, chi-square) used to evaluate effects of context length on performance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FAIRGAMER",
+    "abbreviation": "N/A",
+    "overview": "FAIRGAMER is the first bias evaluation benchmark for LLMs in video game scenarios, designed to evaluate social/cultural biases exhibited by LLMs and their impact on game balance through six specific tasks and a novel evaluation metric, Decision Log Standard Deviation (Dlstd).",
+    "data_type": "numerical",
+    "domains": [
+      "Computer Games"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/Anonymous999-xxx/FairGamer"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate and quantify the social/cultural biases of LLMs and their direct effects on game balance within video game contexts.",
+    "audience": [
+      "ML Researchers",
+      "Game Developers"
+    ],
+    "tasks": [
+      "Social Bias Detection",
+      "Game Balance Evaluation"
+    ],
+    "limitations": "FAIRGAMER Benchmark provides valuable insights into LLM biases but has limitations including limited data coverage focusing on a small number of representative games.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Data collected from 58 Steam games encompassing both real-world and fully fictional game content.",
+    "size": "89,980 test cases",
+    "format": "JSON",
+    "annotation": "Data structured around six tasks to evaluate biases in LLMs interactions in games."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Decision Log Standard Deviation (Dlstd)"
+    ],
+    "calculation": "The Dlstd metric is calculated based on the variance of decision distributions in LLM outputs to quantify bias.",
+    "interpretation": "A higher Dlstd indicates greater bias among different entities, resulting in poorer game balance or unreasonable difficulty levels.",
+    "baseline_results": "Experiments evaluated eight state-of-the-art models, revealing various degrees of bias across tasks.",
+    "validation": "Extensive testing across multiple models and scenarios to ensure reliable measurement of LLM biases."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The benchmark includes demographic analysis across different race and career categories with varying discount offerings.",
+    "harm": "Potential impacts of LLM biases may lead to unfair advantages or disadvantages in competitive gaming scenarios."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

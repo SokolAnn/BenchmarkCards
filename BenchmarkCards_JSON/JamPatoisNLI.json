@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "JamPatoisNLI (Jamaican Patois Natural Language Inference Dataset)",
+    "abbreviation": "JamPatoisNLI",
+    "overview": "JamPatoisNLI provides the first dataset for natural language inference in a creole language, Jamaican Patois. JamPatoisNLI, which consists of naturally-occurring premises and expert-written hypotheses, is a step towards steering research into a traditionally underserved language and a useful benchmark for understanding cross-lingual NLP.",
+    "data_type": "premise-hypothesis sentence pairs (text)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Jamaican Patois"
+    ],
+    "similar_benchmarks": [
+      "Stanford NLI (SNLI)",
+      "Multi-NLI (MNLI)",
+      "Adversarial NLI (ANLI)",
+      "XNLI",
+      "AmericasNLI",
+      "OCNLI"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2212.03419"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Provide the first natural language inference dataset in Jamaican Patois to serve as a benchmark for studying cross-lingual transfer to creole and low-resource languages and to encourage research on NLP for Jamaican Patois and creole languages.",
+    "audience": [
+      "Natural Language Processing Researchers"
+    ],
+    "tasks": [
+      "Natural Language Inference"
+    ],
+    "limitations": "The dataset is small: 650 examples in total with relatively small validation and test splits compared to high-resource language datasets; limited availability of native speakers constrained dataset size (explicitly stated in the paper).",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Premises drawn from naturally occurring written Jamaican Patois: Twitter (634 examples), Anthology: Shelley Sykes-Coley (6 examples), Poetry: Rt. Hon. Dr. Louise Bennett-Coverley (4 examples), Online blog (6 examples). The paper also states remaining examples drawn from a cultural website (jamaicans.com).",
+    "size": "650 examples (250 training, 200 development, 200 test)",
+    "format": "N/A",
+    "annotation": "Hypotheses were manually written by the first author (a fluent/native speaker). Labels (entailment, neutral, contradiction) were assigned following MNLI/ANLI-style criteria. A random sample of 100 sentence pairs (evenly distributed across classes) was double-annotated by volunteer fluent speakers for validation (Fleiss Kappa 88.99%)."
+  },
+  "methodology": {
+    "methods": [
+      "Automated evaluation (Accuracy)",
+      "Zero-shot evaluation",
+      "Few-shot fine-tuning evaluation",
+      "Hyperparameter search",
+      "Qualitative analysis (hand-crafted transition examples)"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Fleiss Kappa"
+    ],
+    "calculation": "Accuracy reported as percentage of correct label predictions; experiment results averaged over three runs with different random seeds (and standard deviation reported for best model across ten experiments). Fleiss Kappa computed on 100 double-annotated examples (88.99%).",
+    "interpretation": "Higher Accuracy indicates more effective cross-lingual transfer. The authors interpret higher few-shot and zero-shot accuracies on JamPatoisNLI (relative to AmericasNLI) as evidence that relatedness to English boosts transfer effectiveness. RoBERTa-based models outperform BERT-based models in these experiments.",
+    "baseline_results": "Majority baseline: 33.50%. Best BERT-based results on full few-shot JamPatoisNLI: bert-uncased-unfrozen 66.17%; mbert-uncased-unfrozen 65.33%. Best RoBERTa-based results on full few-shot JamPatoisNLI: roberta-unfrozen 76.50%; xlm-unfrozen 75.17%. Zero-shot roberta-unfrozen: 67.50%. For AmericasNLI best zero-shot: 42.00%.",
+    "validation": "100 examples were double-annotated by volunteer fluent speakers; Fleiss Kappa = 88.99% and percentage accuracy = 89.00% on that sample. Experimental results averaged across three seeds; standard deviation reported for best model across ten runs (1.43% on test set for xlm-unfrozen)."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

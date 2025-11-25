@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FarExStance",
+    "abbreviation": "FAREXSTANCE",
+    "overview": "FAREXSTANCE is the first dataset for explainable stance detection in Farsi, consisting of claims, stance labels, and extractive explanations as evidence for the stance labels.",
+    "data_type": "stance detection pairs with extractive explanations",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Farsi"
+    ],
+    "similar_benchmarks": [
+      "Persian Stance Classification",
+      "ParsFEVER",
+      "Persian Tweets Stance Detection"
+    ],
+    "resources": [
+      "https://github.com/Zarharan/FarExStance",
+      "https://github.com/Dadmatech/FarExStance"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a resource for stance detection and explainable NLP in the Farsi language, contributing to efforts in misinformation detection and automated claim verification.",
+    "audience": [
+      "ML Researchers",
+      "NLP Practitioners",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Stance Detection",
+      "Evidence Retrieval"
+    ],
+    "limitations": "Dataset includes claims in Farsi, which may limit applicability to other languages.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Claims generated from headlines and news summaries collected from over 100 Farsi news agency websites.",
+    "size": "26,307 instances",
+    "format": "CSV",
+    "annotation": "Manual annotation by native Farsi speakers."
+  },
+  "methodology": {
+    "methods": [
+      "Evaluation of stance classification performance using various multilingual language models.",
+      "Human evaluation of generated explanations."
+    ],
+    "metrics": [
+      "Accuracy",
+      "Macro Precision",
+      "Macro Recall",
+      "Macro F1 Score"
+    ],
+    "calculation": "Metrics calculated using standard classification evaluation techniques across training, validation, and test splits.",
+    "interpretation": "Higher scores indicate better model performance on stance detection and explanation generation.",
+    "baseline_results": "The highest stance detection accuracy achieved by various models ranged from 44.6% to 79.8%, with human performance estimated at 79.2%.",
+    "validation": "Cross-validation performed with annotated instances to achieve agreement rates."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Dataset includes a diverse range of perspectives from Farsi news sources and social media.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "User content anonymized; only post identifiers were used in the dataset.",
+    "data_licensing": "Licensed under N/A; dataset is publicly available for academic purposes.",
+    "consent_procedures": "Data collected follows ethical guidelines involving user privacy and data protection.",
+    "compliance_with_regulations": "Research adheres to ethical standards but specific compliance details regarding regulations like GDPR and CCPA were not discussed."
+  }
+}

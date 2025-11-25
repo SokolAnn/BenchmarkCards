@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "NLPre-PL",
+    "abbreviation": "N/A",
+    "overview": "NLPre-PL is a newly proposed benchmark for evaluating and ranking natural language preprocessing systems for Polish, providing automated assessment and a publicly accessible leaderboard.",
+    "data_type": "tokenization and tagging datasets",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Polish"
+    ],
+    "similar_benchmarks": [
+      "GLUE"
+    ],
+    "resources": [
+      "https://sites.google.com/view/nlpre-benchmark",
+      "https://nlpre-pl.clarin-pl.eu",
+      "https://nlpre-zh.clarin-pl.eu",
+      "https://nlpre-ga.clarin-pl.eu"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation and ranking system for NLPre tools focused on the Polish language.",
+    "audience": [
+      "NLP Researchers",
+      "Developers of NLPre tools",
+      "Academic institutions"
+    ],
+    "tasks": [
+      "Tokenization",
+      "Part-of-Speech Tagging",
+      "Dependency Parsing",
+      "Morphological Analysis"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Developed from existing Polish datasets including NKJP1M and PDB-UD.",
+    "size": "1.2M tokens",
+    "format": "CoNLL-X, CoNLL-U, DAG, TEI",
+    "annotation": "Manually and consistently annotated based on the Morfeusz and Universal Dependencies tag sets."
+  },
+  "methodology": {
+    "methods": [
+      "Automated performance evaluation"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Aligned Accuracy"
+    ],
+    "calculation": "Metrics are calculated based on standard evaluation scripts following the CoNLL shared task format.",
+    "interpretation": "Higher F1 and aligned accuracy scores indicate better performance in NLPre tasks.",
+    "baseline_results": "COMBO and Stanza achieved the highest F1 scores in evaluation.",
+    "validation": "Benchmark results are validated against predefined test sets with hidden references to prevent result manipulation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

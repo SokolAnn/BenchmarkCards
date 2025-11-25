@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Hindi-English Code-Switching Speech Corpus",
+    "abbreviation": "N/A",
+    "overview": "We present our first efforts in building a code-switching ASR system in the Indian context by creating a Hindi-English code-switching speech database. The database contains speech utterances with code-switching properties and covers session and speaker variations such as pronunciation, accent, age and gender. The database can be applied in speech signal processing applications such as code-switching automatic speech recognition, language identification, language modeling, and speech synthesis.",
+    "data_type": "speech utterances (audio) and text transcripts",
+    "domains": [
+      "Natural Language Processing",
+      "Speech Processing"
+    ],
+    "languages": [
+      "Hindi",
+      "English"
+    ],
+    "similar_benchmarks": [
+      "CUMIX Cantonese-English code-switching speech corpus",
+      "Mandarin-Taiwanese code-switching speech corpus (Dau-cheng Lyu and Ren-yuan Lyu)",
+      "English-Spanish code-switching speech corpus (Franco and Solorio)",
+      "SEAME",
+      "CECOS",
+      "A small Hindi-English code-switching corpus (Anik Dey and Pascale Fung)",
+      "Sepedi-English code-switching speech corpus",
+      "FAME!",
+      "Malay-English code-switching corpus",
+      "MediaParl",
+      "FACST",
+      "Arabic-English code-switching speech corpus (Injy Hamed et al.)"
+    ],
+    "resources": [
+      "https://shoutmehindi.com",
+      "https://notesinhinglish.blogspot.in",
+      "https://www.techyukti.com",
+      "http://www.learncpp.com"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To create a Hinglish (Hindi-English code-switching) speech corpus to enable research and development of code-switching ASR systems and related speech processing tasks (language identification, language modeling, speech synthesis).",
+    "audience": [
+      "Researchers and practitioners in speech signal processing",
+      "Automatic Speech Recognition developers",
+      "Language modeling researchers"
+    ],
+    "tasks": [
+      "Automatic Speech Recognition",
+      "Language Identification",
+      "Language Modeling",
+      "Speech Synthesis"
+    ],
+    "limitations": "The collection of the database is still in progress; authors describe the resource as moderate-sized.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Text transcripts: crawled from blogging websites: https://shoutmehindi.com, https://notesinhinglish.blogspot.in, https://www.techyukti.com, http://www.learncpp.com. Acoustic data: recorded over the telephone from volunteering speakers recruited by a consultant, calling a toll-free number from their mobile phones in various acoustic environments.",
+    "size": "7,005 utterances spoken by 71 speakers; 13,071 sentences in the text corpus; training/testing split for ASR evaluation: 5,500 training utterances and 1,505 testing utterances; 11,566 sentences used to train the language model.",
+    "format": "Audio recorded at 8 kHz sampling frequency and bit rate of 128; text transcripts normalized (extra spaces, special characters, emoticons removed).",
+    "annotation": "Manual inspection and pruning of speech files; manual phone-level transcription for unique words in the lexicon; text normalized into meaningful sentences for transcripts and language model training."
+  },
+  "methodology": {
+    "methods": [
+      "Model-based evaluation (ASR) using GMM/DNN acoustic models trained with the Kaldi toolkit",
+      "Language model training (3-gram) using IRSTLM",
+      "Automated metric evaluation (ASR evaluation)"
+    ],
+    "metrics": [
+      "Word Error Rate (Percentage Word Error Rate, %WER)"
+    ],
+    "calculation": "Percentage Word Error Rate (%WER) reported on the held-out test set of 1,505 utterances. Language model trained on 11,566 sentences (13071 total sentences minus 1505 test sentences).",
+    "interpretation": "Authors report %WER and state that the DNN-based acoustic model with 3-gram LM resulted in the best %WER compared to other evaluated models.",
+    "baseline_results": "Mono (MFCC): 53.51 %WER; Tri1 (MFCC): 33.52 %WER; Tri2 (MFCC + LDA): 32.73 %WER; Tri3 (MFCC + LDA + SAT): 27.20 %WER; DNN (MFCC + LDA + SAT): 25.40 %WER.",
+    "validation": "The database was validated by developing ASR systems (GMM/DNN acoustic models) and reporting %WER on a held-out test set (1,505 utterances)."
+  },
+  "targeted_risks": {
+    "risk_categories": [],
+    "atlas_risks": {
+      "risks": null
+    },
+    "demographic_analysis": "Database includes 71 speakers from 21 states of India; geographical distribution: East 40.84%, West 9.85%, North 30.98%, South 18.33%; age range 20 to 64 years; gender distribution: 44 male and 27 female speakers (61.97% male, 38.03% female).",
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Meet Your New Client: Writing Reports for AI – Benchmarking Information Loss in Market Research Deliverables",
+    "abbreviation": "N/A",
+    "overview": "This study quantifies the information loss that occurs when documents are converted to Markdown for retrieval-augmented generation (RAG). It compares how well documents in PDF and PPTX formats can be used by large language models to answer factual questions, introducing an end-to-end benchmark and a corpus of 41 PPTX documents.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Market Research"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "DocLayNet",
+      "FinanceBench"
+    ],
+    "resources": [
+      "https://github.com/psimm/meet-your-new-client"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate information loss during document ingestion into retrieval-augmented generation systems and provide guidance for delivering AI-ready reports.",
+    "audience": [
+      "Market Researchers",
+      "AI Practitioners",
+      "Consultancies"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "Information loss may occur in the conversion process, particularly from complex layout elements.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "41 PPTX documents sourced from GitHub repositories and Q Agentur für Forschung.",
+    "size": "41 documents",
+    "format": "Markdown",
+    "annotation": "Manual annotation of questions and verifying ground truth answers."
+  },
+  "methodology": {
+    "methods": [
+      "Document conversion comparison",
+      "Question answering evaluations"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy is calculated as the sum of correct answers divided by the total number of questions.",
+    "interpretation": "Higher accuracy indicates better performance of the document conversion and questioning process.",
+    "baseline_results": "Best configuration achieves accuracy of 79% as reported in FinanceBench.",
+    "validation": "Results validated through comparison with human-annotated ground truth."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": []
+        },
+        {
+          "category": "Fairness",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "Reports cover a range of topics from different market fields, ensuring diverse content.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Uzbek Tagger: The rule-based POS tagger for Uzbek language",
+    "abbreviation": "N/A",
+    "overview": "This paper presents a part-of-speech (POS) annotated dataset and a rule-based POS-tagger tool (UzbekTagger) for the low-resource Uzbek language. The dataset includes 12 POS tags and is balanced over 23 distinct fields. The tagger is based on stemming with affix/suffix stripping and a database of stem forms and was evaluated on the annotated dataset, reporting high accuracy (about 90% overall).",
+    "data_type": "POS-annotated text (sentences with POS tags)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Uzbek"
+    ],
+    "similar_benchmarks": [
+      "Universal Dependencies"
+    ],
+    "resources": [
+      "https://universaldependencies.org/u/pos/",
+      "https://pypi.org/project/UzbekTagger",
+      "https://github.com/apertium/apertium-uzb",
+      "https://kitob.uz",
+      "https://github.com/MaksudSharipov/UzbekTokenizer"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a publicly available POS-annotated dataset for Uzbek and an open rule-based POS-tagger tool to support NLP tasks for the Uzbek language (e.g., language modeling, machine translation, text-to-speech synthesis).",
+    "audience": [
+      "Natural Language Processing researchers",
+      "Model developers"
+    ],
+    "tasks": [
+      "Part-of-Speech Tagging",
+      "Language Modeling",
+      "Machine Translation",
+      "Text-to-Speech Synthesis"
+    ],
+    "limitations": "Limited dataset size (1,581 sentences, 23,482 words). Terminology coverage in the tagger's stems dictionary is insufficient for some fields, leading to lower accuracy in fields such as Agriculture, Mother tongue, and Law.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Manually annotated corpus constructed from raw texts obtained from the Republican Youth E-Library (kitob.uz); lemma dictionary and stem resources sourced from prior work (Sharipov & Sobirov, 2022) and the Apertium monolingual package for Uzbek. A dictionary of more than 80,000 Uzbek words with POS tags was created in XML format as part of the project.",
+    "size": "1,581 sentences; 23,482 words",
+    "format": "N/A",
+    "annotation": "Manual annotation by four expert-level Uzbek linguists over six months; each sentence annotated by at least two annotators; conflicts resolved by group discussion. POS-tagging guidelines of Universal Dependencies (version 2) were followed."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics (Accuracy) comparing tagger output to manual annotations"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Mistakes were counted by comparing the tagger output to the manually annotated sentence. If the same word appears wrongly tagged more than once, it was considered as one mistake. Total mistakes per category were calculated and reported; accuracy per category is reported in Table 3.",
+    "interpretation": "Higher Accuracy indicates better tagging performance. The authors report about 90% overall accuracy and per-category accuracies (reported per Table 3); lower accuracy in a category indicates the need to enrich the tagger's stems/terminology for that field.",
+    "baseline_results": null,
+    "validation": "Validation performed by evaluating the tagger on the manually annotated corpus (23 categories). The corpus was annotated by multiple expert annotators (each sentence annotated by at least two) and disagreements were resolved via group discussion."
+  },
+  "targeted_risks": {
+    "risk_categories": [],
+    "atlas_risks": {
+      "risks": null
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Arap-Tweet: A Large Multi-Dialect Twitter Corpus for Gender, Age and Language Variety Identification",
+    "abbreviation": "N/A",
+    "overview": "we present Arap-Tweet, which is a large-scale and multi-dialectal corpus of Tweets from 11 regions and 16 countries in the Arab world representing the major Arabic dialectal varieties. To build this corpus, we collected data from Twitter and we provided a team of experienced annotators with annotation guidelines that they used to annotate the corpus for age categories, gender, and dialectal variety.",
+    "data_type": "text (tweets) with author metadata labels (age category, gender, dialect)",
+    "domains": [
+      "Natural Language Processing",
+      "Cyber-security",
+      "Business",
+      "Healthcare"
+    ],
+    "languages": [
+      "Arabic"
+    ],
+    "similar_benchmarks": [
+      "MADAR Arabic Dialect Corpus and Lexicon",
+      "Mubarak & Darwish (2014) Twitter dialectal Arabic corpus",
+      "PAN 2017 Author Profiling dialectal Arabic corpus",
+      "YouDACC (Youtube Dialectal Arabic Comment Corpus)"
+    ],
+    "resources": [
+      "http://arap.qatar.cmu.edu",
+      "https://how-old.net/",
+      "http://pan.webis.de/clef17/pan17-web/author-profiling.html"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "developing author profiling resources and tools for the Arabic language and building a multi-dialectal annotated corpus to annotate Tweets for age categories, gender, and dialectal variety.",
+    "audience": [
+      "Research community",
+      "Natural Language Processing researchers",
+      "Cyber-security and forensic investigators",
+      "Industry practitioners (marketing / customer segmentation)",
+      "Healthcare practitioners (e.g., suicide prevention)"
+    ],
+    "tasks": [
+      "Author Profiling",
+      "Age Classification",
+      "Gender Identification",
+      "Dialect Identification",
+      "Authorship Attribution",
+      "Sentiment Analysis",
+      "Deception Detection",
+      "Topic Detection"
+    ],
+    "limitations": "Age identification is a much more difficult task and annotation agreement is lower for age (Kappa=0.80). Coverage is limited to 11 regions (16 countries) out of 22 Arab League countries. Some sampled accounts became private between sampling and collection; selection avoided well-known public figures resulting in a smaller user sample.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from Twitter using Twitter API and Twitter Stream API; profiles sampled via dialect-specific seed words and manual review; external resources (LinkedIn, Facebook, user blogs) and profile photos (including Microsoft How-Old.net) were used to assist annotation.",
+    "size": "Approximately 2.4M tweets corpus; 1,100 users (100 users per region for 11 regions); minimum of 200K tweets per region; up to 3,240 tweets downloaded per user (Twitter API limit).",
+    "format": "N/A",
+    "annotation": "Manual annotation by trained university-level annotators following documented annotation guidelines; annotation manager oversaw the process; annotations for age (three categories: under 25, 25-34, above 35), gender (male/female), and dialect region; annotators were trained and piloted prior to full annotation; external resources and How-Old.net used when available."
+  },
+  "methodology": {
+    "methods": [
+      "Manual annotation with annotation guidelines and pilot annotation",
+      "Inter-Annotator Agreement evaluation"
+    ],
+    "metrics": [
+      "Cohen's kappa",
+      "Inter-Annotator Agreement (IAA)"
+    ],
+    "calculation": "Inter-annotator agreement was measured using Cohen's kappa on a sample of 110 accounts annotated blindly by three annotators.",
+    "interpretation": "A value above 0.75 is considered acceptable. Reported average Kappa values: gender annotation 0.95 (acceptable), age annotation 0.80 (borderline/needs improvement), dialect annotation 0.92 (acceptable).",
+    "baseline_results": "Inter-annotator agreement (average Cohen's kappa): Gender = 0.95; Age = 0.80; Dialect = 0.92.",
+    "validation": "Quality validated via weekly inter-annotator agreement measurements and a blind evaluation sample of 110 accounts annotated by three annotators; annotators were trained and pilot annotation was conducted."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Dataset includes age group and gender breakdowns (Age groups: under 25, 25-34, above 35). Reported totals: Male 667, Female 433. Gender/age table provided; gender ratio nearly equal for 7 regions; for 4 regions about 60% male and 40% female on average.",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Only publicly accessible Twitter profiles were included. No anonymization procedures are described in the paper.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

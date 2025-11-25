@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SWE-Dev (Software Development Evaluation Dataset)",
+    "abbreviation": "SWE-Dev",
+    "overview": "SWE-Dev is the first large-scale dataset designed to evaluate and train autonomous coding systems on real-world feature development tasks. It consists of 14,000 training and 500 test instances, each uniquely equipped with runnable environments and developer-authored executable unit tests.",
+    "data_type": "task instances with runnable environments and executable unit tests",
+    "domains": [
+      "Software Engineering"
+    ],
+    "languages": [
+      "Python"
+    ],
+    "similar_benchmarks": [
+      "SWE-Bench",
+      "RepoBench"
+    ],
+    "resources": [
+      "https://github.com/DorothyDUUU/SWE-Dev"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a critical platform for evaluating autonomous coding systems on feature-driven development tasks.",
+    "audience": [
+      "ML Researchers",
+      "Software Developers",
+      "AI Practitioners"
+    ],
+    "tasks": [
+      "Feature Development"
+    ],
+    "limitations": "The current focus is on Python and basic training strategies, lacking multilingual support and more advanced paradigms.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Real-world open-source software repositories from PyPI.",
+    "size": "14,500 samples (14,000 training and 500 test)",
+    "format": "N/A",
+    "annotation": "Each instance is paired with executable test cases and project requirement descriptions."
+  },
+  "methodology": {
+    "methods": [
+      "Supervised Fine-Tuning (SFT)",
+      "Reinforcement Learning (RL)",
+      "Multi-Agent System Training"
+    ],
+    "metrics": [
+      "Pass@1",
+      "Pass@3"
+    ],
+    "calculation": "Metrics are calculated based on the pass rate of test cases written for each coding task in the dataset.",
+    "interpretation": "Higher Pass@1 and Pass@3 indicates better model performance in solving coding tasks.",
+    "baseline_results": "Models like Claude-3.7-Sonnet and GPT-4o achieved notable scores on SWE-Dev but struggled with complex tasks.",
+    "validation": "Validation is performed via executable unit tests that check the implemented features."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "All codebases and data are sourced from publicly available repositories respecting their licenses.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

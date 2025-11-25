@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "GIMMICK (Globally Inclusive Multimodal Multitask Cultural Knowledge Benchmarking)",
+    "abbreviation": "GIMMICK",
+    "overview": "GIMMICK is a comprehensive evaluation framework assessing 31 state-of-the-art models across six tasks built on three novel datasets, incorporating 728 unique cultural events or facets from 144 countries in six global macro-regions.",
+    "data_type": "multimodal",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "CulturalBench",
+      "CROPE",
+      "CulturalVQA"
+    ],
+    "resources": [
+      "https://github.com/floschne/gimmick"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the cultural knowledge of large vision-language models across various cultural contexts.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Cultural Studies Scholars"
+    ],
+    "tasks": [
+      "Cultural Image VQA",
+      "Cultural Video VQA",
+      "Cultural Origin QA",
+      "Cultural Knowledge QA"
+    ],
+    "limitations": "English-Only Benchmark; Small Number of Samples; Open-Ended VQA measures pose evaluation challenges.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "UNESCO Intangible Cultural Heritage (ICH) project",
+    "size": "7,239 samples",
+    "format": "JSON",
+    "annotation": "Manual annotation by experts from diverse cultural backgrounds."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy calculated based on the correctness of answers to questions about cultural knowledge, with adjustments for subjective interpretations.",
+    "interpretation": "Higher accuracy indicates better cultural understanding by the evaluated models, particularly in nuanced cultural knowledge.",
+    "baseline_results": null,
+    "validation": "Tested for reliability using annotations from trained experts."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The benchmark includes a demographic analysis of cultural knowledge assessment across various global regions.",
+    "harm": [
+      "Cultural misrepresentation risks associated with AI models due to bias in training data."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Participating annotators were trained and informed about privacy measures.",
+    "data_licensing": "Data derived from the UNESCO ICH project is open access; specific licensing details regarding images and videos used from these sources were not clarified.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

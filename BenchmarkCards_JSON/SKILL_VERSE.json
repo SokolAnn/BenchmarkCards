@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SKILL VERSE (Skill Versatile Evaluation)",
+    "abbreviation": "SKILL VERSE",
+    "overview": "SKILL VERSE introduces an unsupervised tree-structured diagnosis framework for understanding the proficiency of language models in specific abilities, improving in-context learning and predicting model weaknesses.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMLU (Massive Multitask Language Understanding)",
+      "ChatbotArena"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2506.00319"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a systematic assessment framework for language model capabilities and to enhance model evaluation through detailed, granular insights.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Model Evaluation",
+      "In-Context Learning Improvement",
+      "Error Prediction"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Combination of datasets from ChatbotArena and Instruction-Following Eval (IFEval).",
+    "size": "450 prompts from IFEval and 2,500 prompts from ChatbotArena",
+    "format": "JSON",
+    "annotation": "Atomic judgments generated from critiques provided by LLMs."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "Hierarchical clustering"
+    ],
+    "metrics": [
+      "Success rates",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "Success rates calculated based on the ability to correctly identify model performance via atomic judgments and clustering results.",
+    "interpretation": "Higher success rates indicate better model performance on specific tasks.",
+    "baseline_results": "N/A",
+    "validation": "Cluster validity assessed through human evaluation and inter-annotator agreement."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Misuse",
+          "subcategory": [
+            "Non-disclosure"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

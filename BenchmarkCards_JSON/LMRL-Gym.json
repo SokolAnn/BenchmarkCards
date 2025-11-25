@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LMRL-Gym: Benchmarks for Multi-Turn Reinforcement Learning",
+    "abbreviation": "LMRL-Gym",
+    "overview": "Our paper introduces the LMRL-Gym benchmark for evaluating multi-turn RL for LLMs, consisting of 8 different language tasks that cover a range of tasks in open-ended dialogue and text games and require multiple rounds of language interaction.",
+    "data_type": "language tasks with multiple turns of interaction",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Dialogue-based RL benchmarks",
+      "Text-based game benchmarks"
+    ],
+    "resources": [
+      "https://lmrl-gym.github.io/",
+      "https://github.com/abdulhaim/LMRL-Gym"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enable RL algorithm researchers to benchmark and iterate on developing better RL methods for multi-turn language-based interaction tasks.",
+    "audience": [
+      "ML Researchers",
+      "AI Practitioners",
+      "Reinforcement Learning Developers"
+    ],
+    "tasks": [
+      "Multi-Turn Dialogue",
+      "Strategic Decision Making",
+      "Information Gathering",
+      "Negotiation"
+    ],
+    "limitations": "The benchmark primarily uses smaller GPT-based LLMs to generate datasets, making it less applicable for larger-scale applications.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Synthetic datasets generated using LLMs through simulations of conversational interactions and text-based games.",
+    "size": "800,000 interactions across 8 different tasks",
+    "format": "JSON",
+    "annotation": "Automatically generated from LLM interactions and datasets."
+  },
+  "methodology": {
+    "methods": [
+      "Online Reinforcement Learning",
+      "Offline Reinforcement Learning",
+      "Behavioral Cloning"
+    ],
+    "metrics": [
+      "Normalized Reward",
+      "Success Rate"
+    ],
+    "calculation": "Rewards are calculated based on the performance of agents in completing tasks within defined constraints.",
+    "interpretation": "Higher rewards indicate better performance in achieving task objectives.",
+    "baseline_results": "Online PPO consistently outperformed offline value-based methods across various tasks, indicating significant gaps in performance.",
+    "validation": "Benchmarks validated through systematic tests against multiple RL algorithms."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Benchmarks incorporate a variety of objects and tasks to ensure a diverse range of interactions.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Datasets generated do not contain personally identifiable information as they are fully synthetic.",
+    "data_licensing": "Open-source with the MIT license.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "The research follows best practices in data handling and ethical standards."
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MeDAL (Medical Abbreviation Disambiguation Dataset for Natural Language Understanding Pretraining)",
+    "abbreviation": "MeDAL",
+    "overview": "MeDAL is a large medical text dataset curated for abbreviation disambiguation, designed for natural language understanding pre-training in the medical domain.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/BruceWen120/medal"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enable effective pre-training and improve performance on downstream medical tasks during fine-tuning.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Abbreviation Disambiguation",
+      "Mortality Prediction",
+      "Diagnosis Prediction"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Created from PubMed abstracts released in 2019",
+    "size": "14,393,619 articles",
+    "format": "N/A",
+    "annotation": "Generated using reverse substitution techniques, without human labeling."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Top-k recall",
+      "Accuracy"
+    ],
+    "calculation": "Top-k recall is calculated as the number of diagnosis codes present in the top k predictions of the model divided by the total number of diagnosis codes in that admission.",
+    "interpretation": "Higher top-k recall values indicate better performance of models at predicting relevant diagnoses.",
+    "baseline_results": "LSTM: 82.80% test accuracy (pre-trained), ELECTRA: 84.43% test accuracy (pre-trained)",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

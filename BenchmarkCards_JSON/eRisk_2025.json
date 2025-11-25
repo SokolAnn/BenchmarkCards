@@ -1,0 +1,99 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "eRisk 2025 Task 2: Contextualized Early Detection of Depression",
+    "abbreviation": "eRisk 2025",
+    "overview": "This benchmark focuses on detecting early signs of depression through full conversational contexts using user-generated text. It requires participants to classify users as showing signs of depression based on their written interactions, leveraging large language models for assessment based on BDI-II criteria.",
+    "data_type": "text",
+    "domains": [
+      "Healthcare",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "eRisk 2023",
+      "eRisk 2024"
+    ],
+    "resources": [
+      "https://github.com/dsgt-arc/erisk-2025"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate and benchmark methodologies for detecting early signs of depression through conversational contexts in user-generated content.",
+    "audience": [
+      "ML Researchers",
+      "Healthcare Practitioners",
+      "Mental Health Professionals"
+    ],
+    "tasks": [
+      "Binary Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "User-generated posts from social media platforms (primarily Reddit) within complete conversational contexts.",
+    "size": "2,724 users",
+    "format": "parquet",
+    "annotation": "Data was presented in JSON format with structured outputs for automated processing."
+  },
+  "methodology": {
+    "methods": [
+      "Cross-model agreement evaluation",
+      "Internal consistency checks",
+      "Voting classifier",
+      "LightGBM classifier"
+    ],
+    "metrics": [
+      "Depression Category Hit Rate (DCHR)",
+      "Average Difference in Overall Depression Level (ADODL)",
+      "Average Symptom Hit Rate (ASHR)"
+    ],
+    "calculation": "Metrics are calculated based on predicted vs. actual BDI-II scores, averaging across multiple runs and models.",
+    "interpretation": "Good performance is indicated by higher DCHR, ADODL, and ASHR values, with the goal of accurately identifying signs of depression from conversational data.",
+    "baseline_results": "N/A",
+    "validation": "Evaluation based on submissions to an official leaderboard."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Misinterpretation of depressive symptoms",
+      "Inaccurate assessment leading to mislabeling of users"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "User data has been anonymized to protect privacy.",
+    "data_licensing": "CC BY 4.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

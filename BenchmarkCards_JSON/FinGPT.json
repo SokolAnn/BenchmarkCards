@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FinGPT: Instruction Tuning Benchmark for Open-Source Large Language Models in Financial Datasets",
+    "abbreviation": "FinGPT",
+    "overview": "The paper introduces a benchmarking scheme designed for end-to-end training and testing of open-source Large Language Models (LLMs) in financial contexts, emphasizing instruction tuning for various NLP tasks within finance.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Finance"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "FLUE",
+      "PIXIU"
+    ],
+    "resources": [
+      "https://github.com/AI4Finance-Foundation/FinGPT",
+      "https://github.com/AI4Finance-Foundation/FinGPT/tree/master/fingpt/FinGPT_Benchmark"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To facilitate the benchmarking of open-source Large Language Models in the financial sector through a comprehensive instruction tuning approach.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Named Entity Recognition",
+      "Sentiment Analysis",
+      "Relation Extraction",
+      "Headline Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Financial datasets adapted from the FLUE benchmark and others for specific tasks.",
+    "size": "10,000 examples",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Task-Specific Instruction Tuning",
+      "Multi-Task Instruction Tuning",
+      "Zero-Shot Instruction Tuning"
+    ],
+    "metrics": [
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on entity-level and relation-only F1 scores for financial NLP tasks.",
+    "interpretation": "Higher F1 scores indicate better performance on sentiment analysis, NER, headline classification, and relation extraction tasks.",
+    "baseline_results": "Llama2, Falcon, MPT, BLOOM, ChatGLM2, and Qwen were evaluated across multiple tasks.",
+    "validation": "Comprehensive validation across tasks to ensure effectiveness of each model."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

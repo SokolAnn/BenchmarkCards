@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LHMKE (Large-scale Holistic Multi-subject Knowledge Evaluation)",
+    "abbreviation": "LHMKE",
+    "overview": "LHMKE is designed to provide a comprehensive evaluation of the knowledge acquisition capabilities of Chinese LLMs, encompassing 10,465 questions across 75 tasks covering 30 subjects, including both objective and subjective questions.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "MMLU",
+      "C-Eval",
+      "CMMLU",
+      "M3KE"
+    ],
+    "resources": [
+      "https://github.com/tjunlp-lab/LHMKE"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate Chinese LLMs across a diverse range of question types and subjects, spanning from elementary school to professional certifications.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Education Practitioners"
+    ],
+    "tasks": [
+      "Knowledge Evaluation",
+      "Subjective Question Answering",
+      "Objective Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Questions are sourced from realistic standard exams in the Chinese educational system, manually collected online.",
+    "size": "10,465 questions",
+    "format": "N/A",
+    "annotation": "Questions are collected from standardized exams and categorized into objective and subjective types."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics using GPT-4"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Metrics for objective questions are calculated based on accuracy, while subjective questions are evaluated using GPT-4 as an evaluator.",
+    "interpretation": "Performance is measured by comparing LLM outputs to reference answers, with scores indicating the correctness of responses.",
+    "baseline_results": null,
+    "validation": "Evaluations conducted across various Chinese LLMs to ensure their performance is rigorously tested."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All data in LHMKE are collected from public sources and scrutinized to exclude examples with ethical concerns.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

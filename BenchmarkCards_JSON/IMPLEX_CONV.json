@@ -1,0 +1,74 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "IMPLEX CONV",
+    "abbreviation": "N/A",
+    "overview": "IMPLEX CONV is a large-scale dataset designed to evaluate implicit reasoning in long-term personalized conversations, consisting of 2,500 examples with approximately 100 sessions each and 600 thousand persona traits.",
+    "data_type": "multi-session dialogue examples",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MSC",
+      "DailyDialog",
+      "CC",
+      "LoCoMo"
+    ],
+    "resources": [
+      "https://github.com/Kaylee0501/ImplexConv"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a benchmark for evaluating implicit reasoning in personalized conversational AIs.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "Some conversations in IMPLEX CONV are synthetically generated, leading to potential inconsistencies due to reliance on LLM responses.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated using LLM prompting and persona extraction from Persona Hub.",
+    "size": "2,500 examples (∼100 sessions each)",
+    "format": "N/A",
+    "annotation": "Automated generation with human verification for implicit reasoning scenarios."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Retrieval Accuracy"
+    ],
+    "calculation": "For retrieval accuracy, the formula is defined as: Retrieval Accuracy = (2 × |Cr∩Cg|) / (|Cr| + |Cg|).",
+    "interpretation": "Higher F1 scores indicate better retrieval efficiency and accuracy of responses to implicit reasoning tasks.",
+    "baseline_results": "TACITREE achieves 55.18% F1 score on supportive IMPLEX CONV and 14.84% on opposed scenarios.",
+    "validation": "Evaluated through comparison with baseline models and human evaluation for response accuracy."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Safety",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

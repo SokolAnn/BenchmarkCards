@@ -1,0 +1,73 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DigiSpon (Digitally Supported Analysis of Spontaneous Speech)",
+    "abbreviation": "DigiSpon",
+    "overview": "The benchmark introduces a semi-automated approach using NLP methods for language sample analysis of spontaneous speech in Swiss children, aiming to assist speech-language pathologists in diagnosing developmental language disorder (DLD) more efficiently.",
+    "data_type": "speech transcriptions",
+    "domains": [
+      "Natural Language Processing",
+      "Healthcare"
+    ],
+    "languages": [
+      "German"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To leverage NLP methods for semi-automated language sample analysis to assist in diagnosing DLD in children.",
+    "audience": [
+      "Speech-language pathologists",
+      "NLP Researchers"
+    ],
+    "tasks": [
+      "Speech Recognition",
+      "Language Analysis"
+    ],
+    "limitations": "The sample size is low compared to evaluations in other contexts; potential generalized results are limited to the specific speech contexts captured.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Data collected from 119 children in various Swiss contexts, comprising Swiss German and Swiss Standard German speech samples.",
+    "size": "41 recordings",
+    "format": "transcript files",
+    "annotation": "Manually annotated by trained students of speech and language therapy."
+  },
+  "methodology": {
+    "methods": [
+      "Automatic Speech Recognition (ASR)",
+      "Part-of-speech tagging",
+      "Manual transcription"
+    ],
+    "metrics": [
+      "Word Error Rate (WER)",
+      "Character Error Rate (CER)",
+      "F1 Score"
+    ],
+    "calculation": "ASR performance is measured via WER, CER on the transcription accuracy and F1 Score for POS tagging.",
+    "interpretation": "Lower WER and CER indicate better transcription accuracy; higher F1 scores indicate better tagging performance.",
+    "baseline_results": "Initial ASR models showed higher error rates, but fine-tuning improved transcription performance significantly.",
+    "validation": "Results are validated through comparisons of manual vs. ASR transcriptions, showing improvements in tagging accuracy post-normalization."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "The dataset includes recordings from children across multiple dialects of Swiss German.",
+    "harm": "Potential ethical concerns regarding the handling of sensitive speech data from children."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data is anonymized and all necessary ethical approvals were obtained; parental consent was ensured.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Informed consent was obtained from parents in simplified language.",
+    "compliance_with_regulations": "The study complies with Swiss data protection regulations."
+  }
+}

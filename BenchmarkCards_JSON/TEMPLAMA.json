@@ -1,0 +1,67 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TEMPLAMA (TEMPoral LAnguage Model Analysis)",
+    "abbreviation": "TEMPLAMA",
+    "overview": "TEMPLAMA is a diagnostic dataset aimed at probing language models for factual knowledge that changes over time through fill-in-the-blank queries. It highlights limitations in standard language models regarding temporally-scoped knowledge.",
+    "data_type": "fill-in-the-blank queries",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/google-research/language/tree/master/language/templama"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate how well language models retain and predict temporally-sensitive knowledge.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from the November 2020 Wikidata snapshot, focusing on time-sensitive knowledge queries.",
+    "size": "50,310 queries",
+    "format": "N/A",
+    "annotation": "Manually created cloze queries with temporal validation."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Token-level F1 Score"
+    ],
+    "calculation": "Max F1 is taken for queries with multiple targets.",
+    "interpretation": "Higher F1 scores reflect better memorization and prediction of temporally scoped facts.",
+    "baseline_results": null,
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

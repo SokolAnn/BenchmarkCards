@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TESTGENEVAL: A REAL WORLD UNIT TEST GENERATION AND TEST COMPLETION BENCHMARK",
+    "abbreviation": "TESTGENEVAL",
+    "overview": "TESTGENEVAL is a large-scale benchmark to measure test generation performance, comprising 68,647 tests from 1,210 code and test file pairs across 11 Python repositories. It evaluates test authoring, test suite completion, and code coverage improvements.",
+    "data_type": "test generation and completion tasks",
+    "domains": [
+      "Software Engineering"
+    ],
+    "languages": [
+      "Python"
+    ],
+    "similar_benchmarks": [
+      "TestEval",
+      "SWT-Bench",
+      "R2E"
+    ],
+    "resources": [
+      "https://figshare.com/s/51171ae97cd21d233d4f"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive benchmark for evaluating test generation and completion performance of models in real-world software development scenarios.",
+    "audience": [
+      "ML Researchers",
+      "Software Engineers",
+      "Code Generation Practitioners"
+    ],
+    "tasks": [
+      "Test Generation",
+      "Test Completion"
+    ],
+    "limitations": "While TESTGENEVAL aims to evaluate test generation capabilities, models may struggle with complex execution reasoning and the quality of generated tests, impacting overall performance.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "SWEBench adapted for software testing tasks consisting of real-world code and test files from popular Python repositories.",
+    "size": "68,647 tests from 1,210 code and test file pairs",
+    "format": "raw text files",
+    "annotation": "Tests are curated from human-written sources and are executed to measure their effectiveness."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Coverage",
+      "Mutation Score",
+      "Pass@1",
+      "Pass@5"
+    ],
+    "calculation": "Coverage measures the proportion of lines executed by the test suite, Mutation Score is the percentage of injected bugs detected by the tests.",
+    "interpretation": "Higher values in coverage and mutation scores indicate better model performance in generating effective test suites.",
+    "baseline_results": "The best-performing model achieved a coverage of 35.2% with a mutation score of 18.8%.",
+    "validation": "Models were evaluated on the benchmark with multiple runs to ensure reliability across different configurations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Bias"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The benchmark includes diverse software projects, but specific demographic analysis of the training data is not available.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

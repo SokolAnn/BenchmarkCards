@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CLIMAT ELI (CLIMAT e Entity LInking)",
+    "abbreviation": "CLIMAT ELI",
+    "overview": "CLIMAT ELI is the first manually annotated climate change dataset that links 3,087 entity spans to Wikipedia, designed to evaluate existing entity linking (EL) systems on climate change topics across various genres.",
+    "data_type": "entity linking annotations",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/mainlp/ClimatELI",
+      "https://arxiv.org/abs/2406.16732"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a manually annotated corpus for evaluating entity linking on climate change data across various genres.",
+    "audience": [
+      "ML Researchers",
+      "NLP Practitioners"
+    ],
+    "tasks": [
+      "Entity Linking"
+    ],
+    "limitations": "The dataset is limited to English, and does not support nested entity linking.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Manually annotated from ten English documents across five genres including Wikipedia pages, academic articles, web news, UN reports, and YouTube transcriptions.",
+    "size": "3,087 entity links across 12,802 tokens",
+    "format": "N/A",
+    "annotation": "Manual annotation by experts"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Metrics calculated based on the agreement between human annotators and model predictions.",
+    "interpretation": "Higher precision and recall indicate better performance in linking entities accurately.",
+    "baseline_results": "Wikifier shows the best performance for both untyped and typed F1 scores among the evaluated models.",
+    "validation": "Evaluated through inter-annotator agreement checks"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

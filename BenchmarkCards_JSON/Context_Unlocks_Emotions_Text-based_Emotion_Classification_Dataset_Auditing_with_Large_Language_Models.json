@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Context Unlocks Emotions: Text-based Emotion Classification Dataset Auditing with Large Language Models",
+    "abbreviation": "N/A",
+    "overview": "The paper introduces a method for auditing text-based emotion classification datasets by using Large Language Models (LLMs) to enhance the contextual information of emotional labels, improving alignment between inputs and human-annotated labels, demonstrated through human evaluations and empirical improvements in classification performance.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "GoEmotions"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2311.03551"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To improve the alignment of text-based emotion classification datasets with emotional labels using contextual information generated through LLMs.",
+    "audience": [
+      "ML Researchers",
+      "Data Scientists",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Emotion Classification"
+    ],
+    "limitations": "The method's effectiveness can be undermined when original labels are already well suited for the text without further context.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "GoEmotions dataset and additional external datasets (ISEAR, SemEval 2019 Task 3, Tweet Eval, Daily Dialog)",
+    "size": "Modified dataset generated includes 1,000 samples from the GoEmotions dataset and various contexts added.",
+    "format": "N/A",
+    "annotation": "An initial dataset is annotated using human-provided emotion labels, followed by context generation using LLMs for refinement."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1-macro"
+    ],
+    "calculation": "Evaluation is done through zero-shot performance and through human feedback on contextually generated inputs.",
+    "interpretation": "Higher F1-macro scores and positive human feedback indicate better alignment of text and emotion labels.",
+    "baseline_results": null,
+    "validation": "Empirical validation of the enhanced datasets is conducted through comparison with baseline datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The impact of demographic factors on emotion interpretation is considered in the context evaluation.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

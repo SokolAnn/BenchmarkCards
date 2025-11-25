@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Detection of Adverse Drug Events in Dutch clinical free text documents using Transformer Models – benchmark study",
+    "abbreviation": "N/A",
+    "overview": "This study sets a benchmark for adverse drug event (ADE) detection in Dutch clinical free text documents using several transformer models, clinical scenarios, and fit-for-purpose performance measures.",
+    "data_type": "text",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "Dutch"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/GroNLP/bert-base-dutch-cased",
+      "https://huggingface.co/pdelobelle/robbert-v2-dutch-base",
+      "https://huggingface.co/CLTL/MedRoBERTa.nl",
+      "https://huggingface.co/numind/NuNER-multilingual-v0.1"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective is to benchmark various transformer models for adverse drug event detection in Dutch clinical free text documents, particularly clinical notes and discharge letters.",
+    "audience": [
+      "ML Researchers",
+      "Healthcare Professionals",
+      "NLP Practitioners"
+    ],
+    "tasks": [
+      "Named Entity Recognition",
+      "Relation Classification"
+    ],
+    "limitations": "The gold standard training corpus is small, containing 102 clinical notes.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Anonymized clinical free text documents from ICU progress notes and discharge letters in Dutch hospitals.",
+    "size": "102 clinical progress notes",
+    "format": "N/A",
+    "annotation": "Richly annotated by medical experts"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Micro-averaged F1 Score",
+      "Macro-averaged F1 Score",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "Micro and macro averaging metrics provide insights into model performance across different classes of ADEs.",
+    "interpretation": "Higher F1 scores indicate better performance in detecting ADEs, particularly the macro scores are more indicative in the context of imbalanced data.",
+    "baseline_results": "Micro-averaged F1 scores of ±0.983 for the best models on the Dutch ADE corpus, with MedRoBERTa.nl performing best overall.",
+    "validation": "5-fold cross-validation was utilized for evaluation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Anonymized data used from electronic health records, and no patient consent was required due to the use of anonymous data.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Informed consent not required for anonymized data use.",
+    "compliance_with_regulations": "Exempt from ethics approval as it did not involve human subjects directly."
+  }
+}

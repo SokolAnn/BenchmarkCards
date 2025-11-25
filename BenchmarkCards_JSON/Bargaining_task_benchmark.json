@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Bargaining task benchmark",
+    "abbreviation": "N/A",
+    "overview": "This work formally formulated the Bargaining task for LLM agents and collected a dataset for the Bargaining task, AmazonHistoryPrice, based on Amazon’s price history. This benchmark helps evaluate the bargaining abilities of various LLMs, focusing on the performance of buyers and sellers in different bargaining scenarios.",
+    "data_type": "dialogue exchanges",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "CraigslistBargaining"
+    ],
+    "resources": [
+      "https://github.com/TianXiaSJTU/AmazonPriceHistory"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate large language models' bargaining abilities in a structured manner.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Bargaining Task"
+    ],
+    "limitations": "The dataset used was collected on November 18th, 2023, so actual prices may differ over time, potentially biasing the model's understanding of product prices.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from the camelcamelcamel website.",
+    "size": "930 products",
+    "format": "CSV",
+    "annotation": "Data collected included product name, description, features, pricing history, and images."
+  },
+  "methodology": {
+    "methods": [
+      "Automated evaluation metrics"
+    ],
+    "metrics": [
+      "Normalized Profit (NP)",
+      "Sum of Normalized Profits (SNP)"
+    ],
+    "calculation": "Normalized Profits are calculated using the formulas defined for buyer and seller profits based on budgets and costs involved in bargaining sessions.",
+    "interpretation": "Higher SNP indicates better bargaining ability.",
+    "baseline_results": "Results from various LLMs such as GPT-4, ChatGPT, and multiple open-source models were compared.",
+    "validation": "The benchmark was validated using multiple runs across LLMs to ensure reliability."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset is focused solely on products from Amazon and does not include a demographic breakdown.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset used does not contain personal information or offensive content.",
+    "data_licensing": "Data collected from publicly available resources for research purposes under standard fair use.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

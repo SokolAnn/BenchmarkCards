@@ -1,0 +1,75 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "POISON BENCH",
+    "abbreviation": "N/A",
+    "overview": "POISON BENCH is a benchmark for evaluating large language models’ susceptibility to data poisoning during preference learning.",
+    "data_type": "preference data",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/TingchenFu/PoisonBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To measure the efficacy of data poisoning attacks during preference learning and benchmark the robustness of existing LLM backbones.",
+    "audience": [
+      "ML Researchers",
+      "AI Safety Practitioners"
+    ],
+    "tasks": [
+      "Preference Learning Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Preference datasets HH-RLHF and Ultrafeedback",
+    "size": "N/A",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Attack Success (AS)",
+      "Stealthiness Score (SS)"
+    ],
+    "calculation": "AS is calculated as the frequency of the target entity being mentioned with a trigger present versus without, while SS measures model performance on non-trigger inputs.",
+    "interpretation": "Higher AS indicates greater success of the attack, while higher SS indicates better normal model performance.",
+    "baseline_results": "N/A",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Security"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Manipulation of model responses"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "GenIR",
+    "abbreviation": "N/A",
+    "overview": "GenIR is a privacy-safe automated data curation pipeline for image restoration, yielding a dataset of one million high-quality images, serving as a robust training resource for image restoration models.",
+    "data_type": "high-quality images",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "N/A"
+    ],
+    "similar_benchmarks": [
+      "DIV2K",
+      "Flickr2K",
+      "SUPIR"
+    ],
+    "resources": [
+      "https://github.com/shallowdream204/DreamClear"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To generate a large-scale dataset of high-quality images for training robust real-world image restoration models.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Image Restoration"
+    ],
+    "limitations": "In situations of severe image degradation, the synthesized texture details may not exist in the ground-truth image.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated using a dual-prompt learning strategy in the GenIR pipeline, repurposing generative priors in pretrained text-to-image models.",
+    "size": "1,000,000 images",
+    "format": "High-resolution images",
+    "annotation": "Generated with text prompts ensuring no identifiable individuals are included."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation"
+    ],
+    "metrics": [
+      "PSNR",
+      "SSIM",
+      "LPIPS",
+      "DISTS",
+      "FID",
+      "NIQE",
+      "MANIQA",
+      "MUSIQ",
+      "CLIPIQA"
+    ],
+    "calculation": "Metrics are calculated based on the generated images compared to ground-truth images using reference and no-reference approaches.",
+    "interpretation": "High values of PSNR, SSIM, NIQE, MANIQA, and MUSIQ indicate better restoration quality, while lower values of LPIPS, DISTS, and FID signify improved performance.",
+    "baseline_results": "DreamClear outperforms existing image restoration methods across various benchmarks, reflecting significant advancements in real-world image restoration.",
+    "validation": "Validated through extensive experiments on multiple benchmarks, including both real-world and synthetic datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential risks include privacy information leakage from photographs used in model training."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Implemented measures to ensure no identifiable individuals are included in the generated dataset.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

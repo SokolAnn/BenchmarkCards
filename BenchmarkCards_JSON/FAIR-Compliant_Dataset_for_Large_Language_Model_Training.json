@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FAIR-Compliant Dataset for Large Language Model Training",
+    "abbreviation": "N/A",
+    "overview": "The study presents a framework that integrates FAIR principles into the lifecycle of Large Language Model (LLM) training, leading to the creation of a comprehensive dataset focused on detecting and mitigating biases.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/collections/newsmediabias/biasscan-659d681ed7a5bc9d98cde11b"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enhance the training of LLMs by embedding FAIR data principles into the training methodologies.",
+    "audience": [
+      "ML Researchers",
+      "AI Developers",
+      "Data Scientists"
+    ],
+    "tasks": [
+      "Bias Detection",
+      "Debiasing",
+      "Sentiment Analysis",
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Sourced from diverse news feeds and websites between January and May 2023.",
+    "size": "50,000 examples",
+    "format": "JSON",
+    "annotation": "Annotated with a combination of automated methods (using GPT-3.5) and human reviews for quality assurance."
+  },
+  "methodology": {
+    "methods": [
+      "Automated analysis",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Precision",
+      "F1 Score"
+    ],
+    "calculation": "Metrics calculated based on classification performance across various tasks like toxicity detection and sentiment analysis.",
+    "interpretation": "Higher metrics indicate better model performance in tasks.",
+    "baseline_results": "Binary Bias Classifier (BERT-large-uncased) achieved 92% accuracy.",
+    "validation": "Models validated through dual-stage quality checks: automated and expert review."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential harm includes biased outputs leading to unfair representation of certain groups."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Data licensed under Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0).",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

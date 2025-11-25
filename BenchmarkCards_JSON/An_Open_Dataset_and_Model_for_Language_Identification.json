@@ -1,0 +1,119 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "An Open Dataset and Model for Language Identification",
+    "abbreviation": "N/A",
+    "overview": "The paper presents a curated, open dataset of monolingual text covering 201 languages, manually auditing a sample from each source and language to ensure label reliability; it also presents a fastText-based LID model trained on this dataset (60.5 million parameters) and makes both the dataset and model publicly available. The dataset and model are analysed and compared to existing open LID systems.",
+    "data_type": "text (monolingual lines; sentence-level)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [],
+    "similar_benchmarks": [
+      "FLORES-200 Evaluation Benchmark",
+      "NLLB",
+      "WiLI benchmark dataset",
+      "CLD3"
+    ],
+    "resources": [
+      "https://github.com/laurieburchell/open-lid-dataset",
+      "https://github.com/facebookresearch/fairseq/tree/nllb",
+      "https://github.com/facebookresearch/flores/blob/main/",
+      "https://tinyurl.com/nllblid218e",
+      "https://pypi.org/project/pycld3",
+      "https://www.csd3.cam.ac.uk",
+      "https://www.dirac.ac.uk",
+      "https://omniglot.com/writing/minangkabau.htm"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Provide a curated, open dataset covering 201 languages with manual auditing of samples to ensure reliable language labels; train and release a high-coverage LID model on this dataset; analyse model performance and highlight open problems in LID research.",
+    "audience": [
+      "Research community"
+    ],
+    "tasks": [
+      "Language Identification"
+    ],
+    "limitations": "The dataset and model cover 201 languages (those testable with the FLORES-200 Evaluation Benchmark). The test set consists of sentences from a single domain (Wikipedia articles), so performance on this test set may not reflect performance in other domains. Most of the data was not audited by native speakers; future versions should verify more languages with native speakers.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Sources were chosen to maximise trustworthy language labels and avoid web-crawled datasets. The majority of source datasets were derived from news sites, Wikipedia, or religious text, with some from transcribed conversations, literature, or social media. Specific sources are listed in Appendix A (examples: Leipzig Corpora Collection, Global Voices, Tatoeba, NLLB Seed, MADAR, LTI LangID Corpus, SETIMES, Tatoeba, MIZAN, etc.).",
+    "size": "121 million lines of data in 201 language classes; mean lines per language before sampling 602,812; smallest class 532 lines (South Azerbaijani); largest class 7.5 million lines (English).",
+    "format": "Raw text lines (one line per sentence/text); line-based files after minimal preprocessing.",
+    "annotation": "Manual audit and standardisation of language labels: two authors audited random samples from each source and language (one native Bulgarian speaker and one native English speaker); language codes were standardised to match Costa-jussà et al. (2022) conventions with conservative reassignment for macrolanguages."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics evaluation on FLORES-200 dev-test (FLORES-200*)",
+      "Model comparison to existing open LID systems (NLLB, CLD3)",
+      "Manual audit of dataset samples"
+    ],
+    "metrics": [
+      "F1 Score (macro-average)",
+      "False Positive Rate (FPR) (macro-average)",
+      "Pearson correlation between training data size and per-language F1 (reported value: 0.0242)"
+    ],
+    "calculation": "Macro-averages of F1 scores and FPR are reported across languages to avoid downweighting low-resource languages. FPR is reported following Caswell et al. (2020) to indicate real-world performance under class skew.",
+    "interpretation": "Higher macro-average F1 indicates better per-language classification performance; lower macro-average FPR indicates fewer false positives in imbalanced scenarios. Macro-averaging is used to give equal weight to low-resource languages.",
+    "baseline_results": "On FLORES-200* (201 languages): Our model F1 = 0.927, FPR = 0.033. On FLORES-200* ∩ NLLB (193 languages): Our model F1 = 0.959, FPR = 0.020; NLLB F1 = 0.950, FPR = 0.023. On FLORES-200* ∩ CLD3 (95 languages): Our model F1 = 0.989, FPR = 0.011; NLLB F1 = 0.985, FPR = 0.019; CLD3 F1 = 0.968, FPR = 0.030. Model training: fastText model, 60.5 million parameters, ~1 hour 45 minutes training on a 76-CPU 256 GiB RAM node; inference over 206,448 test lines took 22.4 seconds (~9,216.4 lines/sec).",
+    "validation": "Evaluation on the FLORES-200 dev-test (human-verified target side) after removing three languages (resulting in FLORES-200* with 201 languages). Manual audit of random samples from each source and language to ensure label reliability."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Transparency",
+      "Accuracy",
+      "Societal Impact"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Lack of training data transparency",
+            "Uncertain data provenance"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on cultural diversity",
+            "Impact on affected communities"
+          ]
+        },
+        {
+          "category": "Governance",
+          "subcategory": [
+            "Lack of data transparency"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The paper analyses performance by language resource class using the taxonomy of Joshi et al. (2020), reporting mean F1 and mean FPR per class and providing per-language breakdowns in Appendix C.",
+    "harm": [
+      "Representation washing (false impression of progress for low-resource languages due to noisy labels)",
+      "Exclusion of minority dialects, scripts, or microlanguages through choices of coverage",
+      "Worse downstream performance for particular language groups due to unequal LID performance"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Authors checked that each dataset was either under an open license for research purposes or described as free to use; further license information is available in the code repository.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

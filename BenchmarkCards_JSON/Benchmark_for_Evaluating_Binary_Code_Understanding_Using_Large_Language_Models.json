@@ -1,0 +1,102 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Benchmark for Evaluating Binary Code Understanding Using Large Language Models",
+    "abbreviation": "N/A",
+    "overview": "This benchmark evaluates the effectiveness of Large Language Models (LLMs) in real-world reverse engineering scenarios, focusing on two key binary code understanding tasks: function name recovery and binary code summarization.",
+    "data_type": "decompiled pseudo code, function names, natural language summaries",
+    "domains": [
+      "Software Security"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "N/A"
+    ],
+    "resources": [
+      "https://github.com/FFmpeg/FFmpeg",
+      "https://github.com/redis/redis",
+      "https://github.com/curl/curl",
+      "https://github.com/robertdavidgraham/masscan",
+      "https://github.com/karpathy/llama2.c",
+      "https://github.com/ggerganov/whisper.cpp",
+      "https://github.com/openssl/openssl",
+      "https://github.com/facebook/zstd",
+      "https://github.com/ImageMagick/ImageMagick",
+      "https://github.com/libvips/libvips",
+      "https://github.com/libexpat/libexpat",
+      "https://github.com/ultrajson/ultrajson"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the capabilities of Large Language Models in understanding binary code through function name recovery and binary code summarization tasks.",
+    "audience": [
+      "ML Researchers",
+      "Software Security Practitioners",
+      "Reverse Engineers"
+    ],
+    "tasks": [
+      "Function Name Recovery",
+      "Binary Code Summarization"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Real-world software projects implemented in C language available on GitHub",
+    "size": "81,185 functions, 2,000 instances",
+    "format": "JSONL",
+    "annotation": "Automated annotation using ChatGPT for generating summaries"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score",
+      "BLEU-4",
+      "METEOR",
+      "Rouge-L"
+    ],
+    "calculation": "Metrics are computed based on token-level comparisons for function names and summary generation evaluations.",
+    "interpretation": "Higher precision and recall indicate better performance in accurately recovering function names and summarizing binary code.",
+    "baseline_results": "ChatGPT and various LLMs were used as baselines for evaluation against deep learning-based expert models such as SymLM and BinT5.",
+    "validation": "The benchmark dataset was constructed ensuring no data leakage, with systematic correctness checks by domain experts."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Accuracy",
+      "Bias"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

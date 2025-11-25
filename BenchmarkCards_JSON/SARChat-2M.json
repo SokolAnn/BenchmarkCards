@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SARChat-Bench-2M: A Multi-Task Vision-Language Benchmark for SAR Image Interpretation",
+    "abbreviation": "SARChat-2M",
+    "overview": "This paper innovatively proposes the first large-scale multimodal dialogue dataset for SAR images, named SARChat-2M, which contains approximately 2 million high-quality image-text pairs, encompassing diverse scenarios with detailed target annotations. This dataset supports several key tasks such as visual understanding and object detection tasks and serves as the first visual-language benchmark in the SAR domain.",
+    "data_type": "image-text pairs",
+    "domains": [
+      "Computer Vision",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/JimmyMa99/SARChat"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enable and evaluate VLMs’ capabilities in SAR image interpretation, providing a paradigmatic framework for constructing multimodal datasets across various remote sensing vertical domains.",
+    "audience": [
+      "Researchers in Computer Vision",
+      "Researchers in Natural Language Processing",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Classification",
+      "Fine-Grained Description",
+      "Instance Counting",
+      "Spatial Grounding",
+      "Cross-Modal Identification",
+      "Referring"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from the SARDet-100K dataset and enhanced annotations from ten established SAR detection benchmarks.",
+    "size": "2,000,000 image-text pairs",
+    "format": "N/A",
+    "annotation": "Multimodal adaptations and enhanced language annotations from existing datasets."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Intersection over Union (IoU)"
+    ],
+    "calculation": "Metrics are calculated based on predictions made by models, including precision and recall rates for different tasks.",
+    "interpretation": "Higher Accuracy indicates better model prediction fit, while IoU measures the overlap between predicted and ground truth bounding boxes.",
+    "baseline_results": "Comparison of various VLMs showed differences in performance metrics across classification and spatial grounding tasks.",
+    "validation": "Extensive experiments on sixteen state-of-the-art VLMs to validate the dataset's effectiveness."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Privacy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "In this study, all SAR datasets and methodologies are used strictly for academic research purposes, adhering to their respective licenses and data usage agreements.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "BRIEF ME (A Legal NLP Benchmark for Assisting with Legal Briefs)",
+    "abbreviation": "BRIEF ME",
+    "overview": "BRIEF ME is a dataset focused on legal briefs that contains three tasks: argument summarization, argument completion, and case retrieval. The dataset aims to assist legal professionals in drafting and evaluating legal arguments through machine learning models.",
+    "data_type": "text",
+    "domains": [
+      "Legal"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/brief_me",
+      "https://github.com/username/BRIEF_ME"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of BRIEF ME is to support the development of models that assist in drafting legal briefs by providing diverse tasks related to legal argumentation.",
+    "audience": [
+      "Legal Professionals",
+      "NLP Researchers"
+    ],
+    "tasks": [
+      "Argument Summarization",
+      "Argument Completion",
+      "Case Retrieval"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Data collected from the Supreme Court of the United States briefs available online.",
+    "size": "3,753 briefs consisting of 23,332 summarization examples, 5,905 completion examples, and 91,086 citation retrieval examples.",
+    "format": "JSONL",
+    "annotation": "Annotated by legal professionals and processed through LLM evaluation."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "Machine learning model-based evaluation"
+    ],
+    "metrics": [
+      "F1 Score",
+      "BLEU Score",
+      "ROUGE",
+      "Mean Reciprocal Rank (MRR)"
+    ],
+    "calculation": "Metrics are calculated based on performance against established benchmarks and human scoring.",
+    "interpretation": "Performance is interpreted based on LLM judge ratings compared to human judgment.",
+    "baseline_results": null,
+    "validation": "Validated through comparisons of LLM performance against human evaluations and through specialized legal benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Legal Compliance",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Legal Compliance",
+          "subcategory": [
+            "Model usage rights restrictions"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset contains legal texts which may include sensitive information; anonymity measures are implemented.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

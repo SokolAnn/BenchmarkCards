@@ -1,0 +1,120 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Knowledge Memorization, Identification, and Reasoning test (KMIR)",
+    "abbreviation": "KMIR",
+    "overview": "We propose a benchmark, named Knowledge Memorization, Identification, and Reasoning test (KMIR). KMIR covers 3 types of knowledge, including general knowledge, domain-specific knowledge, and commonsense, and provides 184,348 well-designed questions to evaluate knowledge memorization, identification, and reasoning abilities of pre-trained language models (PLMs).",
+    "data_type": "question-answering pairs (cloze-style text)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": null,
+    "similar_benchmarks": [
+      "GLUE",
+      "SuperGLUE",
+      "LAMA",
+      "KILT"
+    ],
+    "resources": [
+      "https://github.com/KMIR2021/KMIR",
+      "https://query.wikidata.org/",
+      "https://github.com/commonsense/conceptnet5/wiki/API",
+      "https://arxiv.org/abs/2202.13529"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate knowledge memorization, identification, and reasoning abilities of pre-trained language models (PLMs) and assess their suitability as knowledge sources.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Masked Language Modeling (Cloze completion)",
+      "Entity Distinction",
+      "Statement Checking",
+      "Predicate Reasoning"
+    ],
+    "limitations": "The knowledge used in the dataset could have some mistakes or be out-of-date. The dataset is licensed for academic research only and does not support commercial usages.",
+    "out_of_scope_uses": [
+      "Commercial usages"
+    ]
+  },
+  "data": {
+    "source": "Collected knowledge triples from WikiData and ConceptNet; converted into cloze question-answer pairs via a template-based generation method and manual quality control.",
+    "size": "192,078 knowledge triples; 184,348 question-answer pairs; 95,532 queried entities",
+    "format": "N/A",
+    "annotation": "Manual quality control by annotators: filtered out questions involving violence, pornography, discrimination, and sovereignty disputes; corrected ambiguous questions by refining templates; filtered out triple-completion questions with non-unique answers. Randomly selected 16,000 questions for checking, totaling about 532 hours of annotation."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics (F1 Score)",
+      "Model fine-tuning and evaluation of pre-trained language models (BERT, RoBERTa, ALBERT, ELECTRA, DistilBERT, DistilRoBERTa)",
+      "Baselines including Random Guess",
+      "Co-occurrence analysis via ElasticSearch (ES score) to assess memorization vs. reasoning"
+    ],
+    "metrics": [
+      "F1 Score"
+    ],
+    "calculation": "Predictions and correct answers are split into words; token-level F1 measure between prediction and gold answer is computed (following Rajpurkar et al., 2016).",
+    "interpretation": "F1 measures token overlap between prediction and gold answers. Results across different question types are not directly comparable because some question types are multi-choice-like (smaller answer space) while others are open-ended.",
+    "baseline_results": "F1 scores (%) on question types (Triple Completion / Statement Checking / Entity Distinction / Predicate Reasoning): Random Guess: 0.00017 / 50.00 / 25.00 / 18.75; BERT (110M): 15.34 / 61.57 / 30.01 / 26.82; ELECTRA (110M): 14.98 / 63.09 / 33.27 / 27.52; DistilBERT (66M): 14.37 / 59.89 / 28.56 / 24.38; ALBERT (11M): 11.79 / 63.42 / 32.46 / 27.16; RoBERTa (125M): 15.50 / 66.13 / 35.92 / 29.19; DistilRoBERTa (82M): 14.64 / 63.02 / 32.67 / 27.02.",
+    "validation": "Quality control: manual review of generated questions (random sample of 16,000 questions checked), filtering sensitive content, refining templates to remove ambiguity, and removing non-unique-answer triple-completion questions (total ~532 hours)."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness",
+      "Intellectual Property",
+      "Misuse",
+      "Data Laws"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        },
+        {
+          "category": "Intellectual Property",
+          "subcategory": [
+            "Data usage rights restrictions"
+          ]
+        },
+        {
+          "category": "Misuse",
+          "subcategory": [
+            "Spreading toxicity"
+          ]
+        },
+        {
+          "category": "Data Laws",
+          "subcategory": [
+            "Data usage restrictions"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": [
+      "violence",
+      "pornography",
+      "discrimination",
+      "sovereignty disputes"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Personnel information involved is public information of public figures from WikiData and does not involve personal privacy.",
+    "data_licensing": "KMIR questions: CC BY-NC-SA 4.0. Wikidata: CC0. ConceptNet: Creative Commons Attribution-ShareAlike 4.0 International License.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

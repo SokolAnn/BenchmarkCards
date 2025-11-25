@@ -1,0 +1,72 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SVGEditBench V2",
+    "abbreviation": "N/A",
+    "overview": "SVGEditBench V2 is a benchmark dataset for instruction-based SVG editing, comprising triplets of an original image, a ground truth image, and the editing prompt, created to evaluate editing models.",
+    "data_type": "image-triplet pairs",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SVGEditBench"
+    ],
+    "resources": [
+      "https://github.com/mti-lab/SVGEditBenchV2"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate editing models that take an image and an editing prompt as input to output the modified image.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Image Editing"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Public SVG emoji datasets including Noto Emoji, Twemoji, and Fluent Emoji.",
+    "size": "1,683 triplets",
+    "format": "N/A",
+    "annotation": "Editing prompts generated via GPT-4o"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Mean Squared Error (MSE)",
+      "DINO features cosine similarity",
+      "CLIPScore",
+      "Chamfer distance"
+    ],
+    "calculation": "Metrics compared output images from editing with ground truth images.",
+    "interpretation": "A lower MSE indicates better visual similarity, higher CLIPScore indicates better semantic similarity.",
+    "baseline_results": "N/A",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Noto Emoji: Apache 2.0, Twemoji: CC BY 4.0, Fluent Emoji: MIT.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

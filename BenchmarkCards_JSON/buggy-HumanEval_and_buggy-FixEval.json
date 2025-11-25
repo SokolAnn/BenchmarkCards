@@ -1,0 +1,99 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "buggy-HumanEval and buggy-FixEval",
+    "abbreviation": "N/A",
+    "overview": "This work defines the buggy-code completion (bCC) task—completing code when the context may contain potential bugs—and introduces two datasets for evaluating it: buggy-HumanEval (synthetic semantic operator-change bugs) and buggy-FixEval (realistic bugs derived from user submissions).",
+    "data_type": "text (problem statements as docstrings, partial code prefixes with potential bugs, and test cases)",
+    "domains": [
+      "Software Engineering"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "HumanEval",
+      "FixEval",
+      "CodeNet",
+      "MBPP",
+      "APPs",
+      "CodeXGLUE"
+    ],
+    "resources": [
+      "https://github.com/amazon-science/buggy-code-completion",
+      "https://arxiv.org/abs/2306.03438v2"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To define the buggy-code completion (bCC) task, introduce two benchmark datasets (buggy-HumanEval, buggy-FixEval), and evaluate existing Code-LLMs and simple baseline mitigation methods on bCC.",
+    "audience": [
+      "ML Researchers",
+      "Software Engineering Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Code Completion",
+      "Program Repair",
+      "Program Synthesis (Text-to-Code Generation)"
+    ],
+    "limitations": "Baseline mitigation methods may degrade completion performance on reference (non-buggy) code contexts; unclear how closely buggy-FixEval aligns to general software-development settings; natural distributions of real bugs are imbalanced compared to the constructed/selected distributions used.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "buggy-HumanEval: constructed from a subset of HumanEval by introducing semantic-altering operator changes to reference solutions; buggy-FixEval: constructed from FixEval and CodeNet by pairing rejected and accepted user submissions and selecting prefixes with semantic differences, followed by manual inspection.",
+    "size": "buggy-HumanEval: 1,896 examples; buggy-FixEval: 292 examples",
+    "format": "N/A",
+    "annotation": "buggy-HumanEval: synthetic operator-flip edits applied to canonical solutions and filtered by test execution to ensure failing behavior; buggy-FixEval: matched rejected/accepted submission pairs with character-level edit-distance filtering and manual inspection to ensure semantic, non-syntax-error failures."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Execution-based evaluation (test-case execution/pass@k)",
+      "Baseline augmentation methods: removal-then-completion, completion-then-rewriting (with RealiT), rewriting-then-completion (with INCODER-6B infilling)"
+    ],
+    "metrics": [
+      "pass@k (pass@1, pass@10, pass@100)"
+    ],
+    "calculation": "pass@k defined as in the paper with n = 100 completions sampled from a model and k ∈ {1,10,100}; for each bCC instance compute pass@k, average pass@k within each problem, then macro-average across problems. The paper uses n=100 and k=1,10,100.",
+    "interpretation": "pass@k estimates the probability that any of k samples from the model passes all test cases; higher pass@k indicates better functional correctness. Passing tests is used as a practical proxy for correctness but does not guarantee full correctness.",
+    "baseline_results": "Example results: On buggy-HumanEval, CODEGEN-2B-MONO pass@1 drops from 54.9% (reference partial code) to 3.1% (buggy partial code). On buggy-FixEval, CODEGEN-2B-MONO pass@1 drops from 37.8% to 4.3%. Mitigation methods improve scores (e.g., rewriting-then-completion yields 24.9% pass@1 for CODEGEN-2B-MONO on buggy-HumanEval) but substantial gaps remain to reference-prefix completion.",
+    "validation": "Programs are executed against provided test suites to validate functional correctness and to ensure that altered/buggy prefixes fail at least one test; manual inspection was used during buggy-FixEval construction to exclude undesirable cases; ensured semantic bugs (no syntax errors) when constructing instances."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Accuracy",
+      "Governance"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Governance",
+          "subcategory": [
+            "Unrepresentative risk testing"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

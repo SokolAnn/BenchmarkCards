@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "GSO (Global Software Optimization)",
+    "abbreviation": "GSO",
+    "overview": "GSO is a benchmark for evaluating language models’ capabilities in developing high-performance software through challenging optimization tasks extracted from real-world codebases. It leverages an automated pipeline to create performance tests that measure the ability of software engineering agents (SWE-Agents) to improve runtime efficiency.",
+    "data_type": "code optimization tasks",
+    "domains": [
+      "Software Engineering"
+    ],
+    "languages": [
+      "Python",
+      "C",
+      "C++"
+    ],
+    "similar_benchmarks": [
+      "SWE-Bench",
+      "EvalPerf",
+      "EffiBench"
+    ],
+    "resources": [
+      "https://gso-bench.github.io/",
+      "https://github.com/gso-bench/gso",
+      "https://huggingface.co/datasets/gso-bench/gso"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the optimization capabilities of language models and agents in the context of high-performance software development tasks.",
+    "audience": [
+      "Machine Learning Researchers",
+      "Software Engineers",
+      "AI Developers"
+    ],
+    "tasks": [
+      "Software Optimization",
+      "Code Performance Improvement"
+    ],
+    "limitations": "The benchmark contains 102 tasks, which may introduce variance in results due to its limited size.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Extracted from public GitHub repositories with licenses that permit software usage.",
+    "size": "102 tasks",
+    "format": "N/A",
+    "annotation": "Manually curated to ensure diversity and complexity of the optimization tasks."
+  },
+  "methodology": {
+    "methods": [
+      "Automated performance tests",
+      "Code base commit analysis"
+    ],
+    "metrics": [
+      "OPT@K",
+      "Success Rate"
+    ],
+    "calculation": "Metrics are computed by analyzing the model-generated patches against human-authored optimization commits.",
+    "interpretation": "Success is defined by the model's ability to generate an optimization patch that improves runtime and maintains functional correctness.",
+    "baseline_results": "Leading SWE-Agents achieved a success rate of less than 5%.",
+    "validation": "Manual curation of benchmark instances to ensure quality and diversity."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Performance optimization failures"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Collected from public repositories governed by various open-source licenses.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

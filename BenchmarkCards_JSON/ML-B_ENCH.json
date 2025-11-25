@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ML-B ENCH",
+    "abbreviation": "N/A",
+    "overview": "ML-B ENCH is a benchmark that evaluates Large Language Models (LLMs) and AI agents on repository-level code understanding and executable code generation tasks using real-world programming applications drawn from existing code repositories.",
+    "data_type": "annotated coding examples",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "HumanEval",
+      "MBPP",
+      "APPS"
+    ],
+    "resources": [
+      "https://github.com/gersteinlab/ML-bench",
+      "https://hf.co/datasets/super-dainiu/ml-bench",
+      "https://ml-bench.github.io/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate LLMs and AI agents on their ability to understand and generate code within the context of repository-level tasks.",
+    "audience": [
+      "ML Researchers",
+      "AI Practitioners",
+      "Software Engineers"
+    ],
+    "tasks": [
+      "Text-to-Code Generation",
+      "Executable Code Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "18 GitHub repositories containing diverse programming tasks and examples.",
+    "size": "9,641 examples",
+    "format": "N/A",
+    "annotation": "Annotated by computer science graduate students with proficiency in programming."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Pass@5"
+    ],
+    "calculation": "Pass@5 measures the likelihood of the model producing at least one correct code execution in five attempts.",
+    "interpretation": "Higher Pass@5 scores indicate better model performance in generating executable code.",
+    "baseline_results": "GPT-4o achieved a Pass@5 rate over 50%.",
+    "validation": "Evaluated using annotated examples across various tasks from 18 GitHub repositories."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": []
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "MIT License",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

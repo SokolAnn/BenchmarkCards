@@ -1,0 +1,100 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "JMedBench",
+    "abbreviation": "N/A",
+    "overview": "We propose a new benchmark including eight LLMs across four categories and 20 Japanese biomedical datasets across five tasks to evaluate Japanese biomedical language models.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Healthcare"
+    ],
+    "languages": [
+      "Japanese"
+    ],
+    "similar_benchmarks": [
+      "BLURB",
+      "MMLU",
+      "JMMLU",
+      "DrBenchmark",
+      "MMedBench"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/Coldog2333/JMedBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To construct a benchmark for evaluating Japanese biomedical LLMs.",
+    "audience": [
+      "ML Researchers",
+      "Biomedical Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Multi-Choice Question Answering",
+      "Named Entity Recognition",
+      "Machine Translation",
+      "Document Classification",
+      "Semantic Text Similarity"
+    ],
+    "limitations": "Due to budget limitations, we only translated several datasets of MCQA and NER and evaluated models with 7B/8B parameters.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "20 Japanese biomedical datasets including translations from English and original datasets.",
+    "size": "38,130 samples",
+    "format": "JSON",
+    "annotation": "Translations by Machine Translation and manual adjustments for dataset quality."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Manual evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "BLEU Score",
+      "Pearson Correlation"
+    ],
+    "calculation": "Calculated based on the results from various prompt templates across multiple runs.",
+    "interpretation": "Higher scores indicate better performance in the respective tasks.",
+    "baseline_results": "Varied model performances across tasks reported in tables.",
+    "validation": "Extensive validation through multiple prompt templates and evaluation metrics."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Potential misinterpretation of medical terms due to translation inaccuracies."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "The datasets mainly adhere to MIT or CC-BY-4.0 licenses, with specific datasets under non-commercial licenses.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

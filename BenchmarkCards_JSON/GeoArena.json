@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "GeoArena: An Open Platform for Benchmarking Large Vision-Language Models on Worldwide Image Geolocation",
+    "abbreviation": "GeoArena",
+    "overview": "GeoArena is the first live, user-preference-based open platform for evaluating Large Vision-Language Models on image worldwide geolocalization tasks. It collects in-the-wild images from users and uses pairwise human preference evaluations to overcome limitations of existing static benchmarks.",
+    "data_type": "image and text",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/spaces/garena2/GeoArena"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a dynamic and user-centered evaluation framework for large vision-language models in geolocalization tasks.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Image Geolocation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "User-submitted in-the-wild images",
+    "size": "1,000 samples",
+    "format": "JSON",
+    "annotation": "Collects user-uploaded images, textual instructions, model responses, and human voting outcomes."
+  },
+  "methodology": {
+    "methods": [
+      "Pairwise human preference evaluations",
+      "Ranking computation via the Bradley-Terry model"
+    ],
+    "metrics": [
+      "Elo rating"
+    ],
+    "calculation": "Scores are calculated based on user preferences and match outcomes between model responses.",
+    "interpretation": "The metrics reflect the model's capability as judged by user responses in a pairwise comparison.",
+    "baseline_results": "N/A",
+    "validation": "The robustness of the rankings is verified through confidence intervals of model performance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in prompt"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "User inputs are anonymized to preserve privacy.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Users submit images voluntarily.",
+    "compliance_with_regulations": "N/A"
+  }
+}

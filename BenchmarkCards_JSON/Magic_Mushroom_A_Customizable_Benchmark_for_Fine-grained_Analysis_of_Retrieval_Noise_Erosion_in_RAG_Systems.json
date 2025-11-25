@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Magic Mushroom: A Customizable Benchmark for Fine-grained Analysis of Retrieval Noise Erosion in RAG Systems",
+    "abbreviation": "N/A",
+    "overview": "Magic Mushroom is a benchmark designed to evaluate the robustness of Retrieval-Augmented Generation (RAG) systems under complex retrieval noise, enabling flexible configurations of noise types and proportions.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "RECALL",
+      "RAG-Bench",
+      "NoiserBench",
+      "Robust RALM"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate LLM robustness under complex retrieval noise and facilitate the development of noise-robust RAG systems.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Built on Natural Questions and HotpotQA datasets.",
+    "size": "11,393 question-answer pairs",
+    "format": "N/A",
+    "annotation": "Documents were manually verified for factual and structural integrity."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Correctness",
+      "Rejection Rate"
+    ],
+    "calculation": "Correctness is scored by comparing generated answers to gold answers.",
+    "interpretation": "Higher correctness scores indicate better model performance in noise conditions.",
+    "baseline_results": "Various baseline models tested include Llama-3.1 8B and Qwen-2.5 1.5B.",
+    "validation": "Results averaged over independent runs to ensure statistical reliability."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

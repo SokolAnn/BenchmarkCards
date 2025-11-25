@@ -1,0 +1,105 @@
+# XCODEEVAL: AN EXECUTION-BASED LARGE SCALE MULTILINGUAL MULTITASK BENCHMARK FOR CODE UNDERSTANDING, GENERATION, TRANSLATION AND RETRIEVAL
+
+## 📊 Benchmark Details
+
+**Name**: XCODEEVAL: AN EXECUTION-BASED LARGE SCALE MULTILINGUAL MULTITASK BENCHMARK FOR CODE UNDERSTANDING, GENERATION, TRANSLATION AND RETRIEVAL
+
+**Overview**: XCODEEVAL is an executable multilingual multitask benchmark consisting of document-level coding examples from codeforces.com (about 7.5K unique problems). It features seven tasks spanning code understanding, generation, translation and retrieval, adopts execution-based evaluation via unit tests, and provides a multilingual code execution engine (ExecEval).
+
+**Data Type**: text (document-level code examples, natural language problem descriptions, and unit tests)
+
+**Domains**:
+- Programming Language
+- Competitive Programming
+
+**Similar Benchmarks**:
+- HumanEval
+- HumanEval-x
+- MBPP
+- APPS
+- MBXP
+- CodeContests
+- TransCoder
+- CodeXGLUE
+
+**Resources**:
+- [GitHub Repository](https://github.com/ntunlp/xCodeEval)
+- [Resource](https://huggingface.co/datasets/NTU-NLP-sg/xCodeEval)
+- [GitHub Repository](https://github.com/ntunlp/ExecEval)
+
+## 🎯 Purpose and Intended Users
+
+**Goal**: To provide a large-scale, executable, multilingual and multitask benchmark for evaluating code understanding, generation, translation and retrieval, using execution-based (unit test) evaluation and a multilingual execution engine (ExecEval).
+
+**Target Audience**:
+- LLM Builders
+- ML Researchers
+- Model Developers
+
+**Tasks**:
+- Tag Classification
+- Code Compilation
+- Program Synthesis
+- Automatic Program Repair
+- Code Translation
+- Code-Code Retrieval
+- Natural Language-Code Retrieval
+
+**Limitations**: Data collected from a single source (codeforces.com) which limits domain diversity; discrepancy in resource availability across programming languages; most codes are document-level and often non-modular without doc-strings; data has not been humanly audited (automated tools were used to remove sensitive details and approximately 2 million samples were removed); possibility of data leakage/contamination from pretraining corpora is discussed.
+
+## 💾 Data
+
+**Source**: Collected from codeforces.com (openly available submissions).
+
+**Size**: 25M document-level coding examples (16.5B tokens); 7,514 distinct problems (as stated in the paper).
+
+**Format**: jsonl, json, Apache Arrow (datasets loader)
+
+**Annotation**: Human-written metadata labels from codeforces (tags updated by experienced problem solvers); execution outcomes derived from compilers/interpreters; validation/test unit tests provided (hidden unit tests).
+
+## 🔬 Methodology
+
+**Methods**:
+- Execution-based evaluation using unit tests (ExecEval)
+- Automated metrics (pass@k, top-k accuracy, macro-F1, accuracy)
+- Model-based evaluation (zero-shot evaluation with ChatGPT gpt-3.5-turbo-0301; fine-tuning and evaluation of open models such as Starcoderbase-3B, StarEncoder, CodeLlama)
+
+**Metrics**:
+- macro-F1
+- Accuracy
+- pass@k
+- Top-k accuracy (Acc@k)
+
+**Calculation**: macro-F1: compute F1 per tag and average (macro) over tags; Accuracy: (TP+TN)/(TP+TN+FP+FN); pass@k: execution-based metric as in Chen et al. (2021) (proportion of problems with a passing sample among k samples); Top-k accuracy (Acc@k): proportion of queries with a correct code retrieved within top-k.
+
+**Interpretation**: Higher macro-F1, Accuracy, pass@k and Acc@k indicate better performance. The paper presents comparative results indicating current LLMs obtain substantially lower pass@k on XCODEEVAL than on some prior benchmarks, marking the benchmark as challenging.
+
+**Baseline Results**: Baselines include ChatGPT (gpt-3.5-turbo-0301) and StarEncoder/Starcoder/CodeLlama variants. Example results reported: ChatGPT average Tag Classification (DesCode2Tag) macro-F1 33.6, Code Compilation accuracy 63.27 (average), Program Synthesis pass@5 average ~27.8 (sampling T) and ~30.48 (N), Automatic Program Repair pass@5 average 55.07. Starcoderbase-3B (fine-tuned) pass@5 average on Program Synthesis = 2.25; CodeLlama-13b-Instruct pass@5 average = 3.81 (Table 3 and Table 5 in paper).
+
+**Validation**: Validation/test created from a held-out set of Nh = 1,354 problems to ensure problems in validation/test are unseen in training. Data splitting uses a tag-distribution score (geometric mean of per-tag ratios) to select splits. To balance samples across problems and tags, a graph-theoretic data selection schema (formulated as a circulation problem with lower and upper bounds in a flow network) is used.
+
+## ⚠️ Targeted Risks
+
+**Risk Categories**:
+- Privacy
+- Fairness
+- Accuracy
+- Data Laws
+
+**Atlas Risks**:
+- **Privacy**: Personal information in data
+- **Fairness**: Data bias
+- **Accuracy**: Data contamination
+- **Data Laws**: Data usage restrictions
+
+**Potential Harm**: ['Sensitive information leakage from code samples (paper notes possibility of sensitive information and that ~2M samples were removed using automated tools)', 'Security vulnerabilities present in code samples', 'Model performance contamination due to pretraining data leakage (data contamination)']
+
+## 🔒 Ethical and Legal Considerations
+
+**Privacy And Anonymity**: Data is collected from openly available sources and has not been humanly audited. Automated tools were used to identify and remove codes with sensitive details, resulting in the removal of approximately 2 million samples; the authors note sensitive information and security vulnerabilities may still remain.
+
+**Data Licensing**: CC BY-NC 4.0 (as stated in Table 12).
+
+**Consent Procedures**: Not Applicable
+
+**Compliance With Regulations**: Not Applicable

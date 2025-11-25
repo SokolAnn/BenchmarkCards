@@ -1,0 +1,72 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FLEX (Fairness Benchmark in LLM under Extreme Scenarios)",
+    "abbreviation": "FLEX",
+    "overview": "FLEX is designed to rigorously assess the fairness of LLMs when subjected to conditions that are likely to induce bias. It incorporates adversarial prompts that amplify potential biases into the fairness assessment.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "BBQ",
+      "CrowS-Pairs",
+      "StereoSet"
+    ],
+    "resources": [
+      "https://github.com/ekgus9/FLEX"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the robustness of large language models in maintaining fairness when exposed to bias-inducing prompts.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "The benchmark does not cover all possible bias-inducing scenarios due to the infinite combinations.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from existing fairness benchmark datasets including BBQ, CrowS-Pairs, and StereoSet via integration of adversarial prompts.",
+    "size": "3,145 examples",
+    "format": "JSON",
+    "annotation": "Manually annotated based on responses generated under adverse conditions."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Attack Success Rate (ASR)"
+    ],
+    "calculation": "ASR is calculated based on the proportion of samples that are correct in the source dataset but incorrect in the FLEX dataset.",
+    "interpretation": "A lower ASR indicates a model's better robustness in extreme situations compared to regular scenarios.",
+    "baseline_results": "Compared with the source datasets BBQ, CrowS-Pairs, and StereoSet.",
+    "validation": "Performance of various LLMs is evaluated under zero-shot and few-shot conditions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "The benchmark aims to assess fairness across various bias categories such as age, gender, nationality, race, religion, sexual orientation, and profession.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Poly-FEVER (A Multilingual Fact Verification Benchmark for Hallucination Detection in Large Language Models)",
+    "abbreviation": "Poly-FEVER",
+    "overview": "Poly-FEVER is a large-scale multilingual fact verification benchmark specifically designed for evaluating hallucination detection in LLMs. It comprises 77,973 labeled factual claims spanning 11 languages, enabling systematic evaluation of LLMs and analysis of hallucination patterns across languages.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Mandarin Chinese",
+      "Hindi",
+      "Arabic",
+      "Bengali",
+      "Japanese",
+      "Korean",
+      "Tamil",
+      "Thai",
+      "Georgian",
+      "Amharic"
+    ],
+    "similar_benchmarks": [
+      "FEVER",
+      "Climate-FEVER",
+      "SciFact"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/HanzhiZhang/Poly-FEVER"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a multilingual benchmark for fact verification and hallucination detection in large language models, enabling the evaluation of model performance across language-specific biases.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Fact Verification",
+      "Hallucination Detection"
+    ],
+    "limitations": "The variability in self-detection capabilities across different languages poses challenges for standardizing hallucination detection.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Derived from existing datasets like FEVER, Climate-FEVER, and SciFact.",
+    "size": "77,973 labeled factual claims",
+    "format": "N/A",
+    "annotation": "Annotated veracity labels indicating whether the claims align with established factual evidence."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation via comparisons against ground truth"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Factual consistency"
+    ],
+    "calculation": "Metrics are calculated by comparing generated content against verified ground-truth data.",
+    "interpretation": "Higher accuracy indicates better model performance in detecting hallucinations.",
+    "baseline_results": null,
+    "validation": "Tested and validated using various LLMs including ChatGPT and LLaMA series."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

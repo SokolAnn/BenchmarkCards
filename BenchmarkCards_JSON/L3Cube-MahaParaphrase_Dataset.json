@@ -1,0 +1,82 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "L3Cube-MahaParaphrase Dataset",
+    "abbreviation": "N/A",
+    "overview": "The L3Cube-MahaParaphrase Dataset is a robust Marathi paraphrase corpus consisting of 8,000 labeled pairs of sentences classified as either Paraphrase (P) or Non-paraphrase (NP), divided into five buckets based on varying degrees of paraphrastic and non-paraphrastic relationships.",
+    "data_type": "sentence pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Marathi"
+    ],
+    "similar_benchmarks": [
+      "IndicParaphrase",
+      "Amritha corpus",
+      "BanglaParaphrase"
+    ],
+    "resources": [
+      "https://github.com/l3cube-pune/MarathiNLP",
+      "https://huggingface.co/datasets/l3cube-pune/MahaParaphrase"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the L3Cube-MahaParaphrase Dataset is to provide a valuable resource for researchers and practitioners to advance further research in Marathi NLP.",
+    "audience": [
+      "ML Researchers",
+      "NLP Practitioners"
+    ],
+    "tasks": [
+      "Paraphrase Detection"
+    ],
+    "limitations": "Compared to paraphrase datasets for high-resource languages, this dataset is relatively small (8K pairs).",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset was created from the MahaCorpus dataset, incorporating data through manual verification and annotation processes.",
+    "size": "8,000 sentence pairs",
+    "format": "N/A",
+    "annotation": "Annotated by human experts as either Paraphrase (P) or Non-paraphrase (NP), with verification by native Marathi speakers."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Cosine similarity",
+      "Back translation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics such as accuracy and F1 score are calculated based on the model evaluation on the dataset.",
+    "interpretation": "An F1 score of 88.7% indicates a high level of accuracy in paraphrase detection.",
+    "baseline_results": "MahaBERT achieved an F1 score of 88.7%, the highest among evaluated models.",
+    "validation": "The dataset was validated through manual corrections by native annotators."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination",
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

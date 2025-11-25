@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "EfficientLLM",
+    "abbreviation": "N/A",
+    "overview": "EfficientLLM presents a novel benchmark definition and results of the first end-to-end, hundred-scale empirical study of efficiency techniques for large language models (LLMs) in architecture pretraining, fine-tuning, and bit-width quantization.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://dlyuangod.github.io/EfficientLLM/",
+      "https://huggingface.co/Tyrannosaurus/EfficientLLM"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation framework for assessing efficiency techniques in large language models (LLMs) across various dimensions including architecture pretraining, fine-tuning, and inference optimization.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text Generation",
+      "Visual Question Answering",
+      "Image Captioning"
+    ],
+    "limitations": "The benchmark does not encompass all existing efficiency techniques, particularly those relating to memory optimization during long sequence processing.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Empirical study involving over 100 model-technique pairs executed on a production-class GPU cluster.",
+    "size": "350B tokens (FineWeb-Edu dataset) and various model parameters ranging from 1.5B to 72B.",
+    "format": "JSON",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Parameter-Efficient Fine-Tuning (PEFT)",
+      "Bit-Width Quantization",
+      "Model Compression Techniques"
+    ],
+    "metrics": [
+      "Average Memory Utilization (AMU)",
+      "Peak Compute Utilization (PCU)",
+      "Average Latency (AL)",
+      "Tokens Throughput (TT)",
+      "Average Energy Consumption (AEC)"
+    ],
+    "calculation": "Metrics are calculated based on empirical studies using defined datasets and benchmarks to measure efficiency across computed resources.",
+    "interpretation": "Higher values in throughput and lower values in latency and energy consumption indicate better model efficiency.",
+    "baseline_results": "Performance compared against standard benchmarks like MMLU-Pro and BBH.",
+    "validation": "Extensive empirical studies conducted on modern GPU clusters validating the efficiency trade-offs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

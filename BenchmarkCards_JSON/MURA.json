@@ -1,0 +1,100 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MURA: Large Dataset for Abnormality Detection in Musculoskeletal Radiographs",
+    "abbreviation": "MURA",
+    "overview": "We introduce MURA, a large dataset of musculoskeletal radiographs containing 40,561 images from 14,863 studies, where each study is manually labeled by radiologists as either normal or abnormal. To evaluate models robustly and to get an estimate of radiologist performance, we collect additional labels from six board-certified Stanford radiologists on the test set, consisting of 207 musculoskeletal studies. We train a 169-layer DenseNet baseline model to detect and localize abnormalities. To encourage advances, we have made our dataset freely available.",
+    "data_type": "image (multi-view radiographic images)",
+    "domains": [
+      "Medical Imaging",
+      "Healthcare"
+    ],
+    "languages": [],
+    "similar_benchmarks": [
+      "Pediatric Bone Age (AIMI)",
+      "0.E.1 (OAI)",
+      "Digital Hand Atlas",
+      "ChestX-ray14",
+      "OpenI",
+      "MC",
+      "Shenzhen",
+      "JSRT",
+      "DDSM"
+    ],
+    "resources": [
+      "http://stanfordmlgroup.github.io/competitions/mura",
+      "https://arxiv.org/abs/1712.06957"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Provide a large, publicly available dataset of upper-extremity musculoskeletal radiographs labeled as normal or abnormal to facilitate development and robust evaluation of models for abnormality detection and localization in radiographs.",
+    "audience": [
+      "Machine Learning Researchers",
+      "Medical Imaging Researchers",
+      "Radiologists",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Binary Classification",
+      "Abnormality Detection",
+      "Abnormality Localization"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "De-identified, HIPAA-compliant images collected from the Picture Archive and Communication System (PACS) of Stanford Hospital; images originate from clinical radiographic interpretations between 2001 and 2012 and were labeled by board-certified radiologists at the time of clinical interpretation.",
+    "size": "40,561 images; 14,863 studies; 12,173 patients. Splits: training: 13,457 studies, 36,808 images; validation: 1,199 studies, 3,197 images; test: 207 studies, 556 images.",
+    "format": "DICOM images (variable resolutions and aspect ratios)",
+    "annotation": "Each study was manually labeled as normal or abnormal by board-certified radiologists during clinical interpretation. Additionally, six board-certified Stanford radiologists provided labels on the test set (207 studies); for the test set a gold standard was defined as the majority vote of a disjoint group of three radiologists. A manual review of 100 abnormal studies was performed to label abnormality findings (fracture, hardware, degenerative joint disease, other)."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics (AUROC, ROC curve)",
+      "Radiologist manual labeling and majority-vote gold standard",
+      "Statistical comparison using Cohen's kappa",
+      "ROC analysis with sensitivity and specificity"
+    ],
+    "metrics": [
+      "Area Under the Receiver Operating Characteristic Curve (AUROC)",
+      "Sensitivity",
+      "Specificity",
+      "Cohen's kappa statistic",
+      "95% confidence interval"
+    ],
+    "calculation": "Per-view probabilities are predicted by a 169-layer DenseNet and averaged (arithmetic mean) to obtain a study-level probability. A study is predicted abnormal if the study-level probability > 0.5. AUROC is computed by varying classification thresholds. Cohen's kappa is computed as agreement of each radiologist/model with the gold standard (majority vote of three radiologists). 95% confidence intervals for kappa use the standard error of kappa (McHugh, 2012).",
+    "interpretation": "Higher AUROC, sensitivity, specificity, and Cohen's kappa indicate better detection performance. The paper reports that model performance is comparable to the best radiologist on finger and wrist studies, but lower than the best radiologist on elbow, forearm, hand, humerus, and shoulder studies. Overall the model's performance was lower than radiologists' performance on this task as reported.",
+    "baseline_results": "Model AUROC: 0.929. At threshold 0.5: sensitivity 0.815 and specificity 0.887. Overall Cohen's kappa for model: 0.705 (95% CI 0.700, 0.710). Per-study-type Cohen's kappa values are reported in Table 2 of the paper (e.g., Finger kappa 0.389 (95% CI 0.332, 0.446); Wrist kappa 0.931 (95% CI 0.922, 0.940)).",
+    "validation": "Collected additional labels from six board-certified radiologists on the test set of 207 studies. A gold standard was formed by majority vote of a randomly chosen group of three radiologists; the other three radiologists were used to estimate radiologist performance. There is no patient overlap between training, validation, and test sets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Data privacy rights alignment"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Dataset consists of de-identified, HIPAA-compliant images; data collection was approved by the institutional review board.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "Institutional Review Board approval obtained; images are de-identified and described as HIPAA-compliant."
+  }
+}

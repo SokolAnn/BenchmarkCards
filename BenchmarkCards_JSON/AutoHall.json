@@ -1,0 +1,76 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "AutoHall (Automated Hallucination Dataset Generation for Large Language Models)",
+    "abbreviation": "AutoHall",
+    "overview": "AutoHall is an approach for automatically constructing model-specific hallucination datasets based on existing fact-checking datasets, addressing the challenge of manual annotation in hallucination detection.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Halueval"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2310.00259"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To generate hallucination detection datasets automatically to improve the accuracy of hallucination detection methods.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Hallucination Detection"
+    ],
+    "limitations": "The current version of AutoHall has a possibility of leading to false positives which can affect detection accuracy.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Existing fact-checking datasets like Climate-fever, PUBHEALTH, and WICE.",
+    "size": "13144 examples",
+    "format": "N/A",
+    "annotation": "Automatically generated through a zero-resource approach."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on the classification of hallucinations against ground truth labels.",
+    "interpretation": "Higher F1 scores indicate better hallucination detection performance.",
+    "baseline_results": null,
+    "validation": "Validated against human evaluation with a classification accuracy of 92%."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

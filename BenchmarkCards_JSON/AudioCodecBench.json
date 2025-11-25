@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "AudioCodecBench",
+    "abbreviation": "N/A",
+    "overview": "AudioCodecBench is a comprehensive benchmark that systematically evaluates codec capabilities across audio reconstruction, codebook ID stability, decoder-only transformer perplexity, and downstream probe task performance.",
+    "data_type": "multimodal",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SUPERB",
+      "MARBLE",
+      "HEAR"
+    ],
+    "resources": [
+      "https://github.com/wuzhiyue111/Codec-Evaluation",
+      "https://huggingface.co/datasets/LeBeGut/AudioCodecBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The main goal of the AudioCodecBench is to provide a unified framework for evaluating audio codecs in terms of their performance across various audio representation tasks.",
+    "audience": [
+      "ML Researchers",
+      "Audio Engineers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Audio Reconstruction",
+      "Codebook ID Stability Evaluation",
+      "Perplexity Measurement",
+      "Downstream Task Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Comprehensive dataset consisting of 17 sub-datasets covering major audio categories of speech, environmental sound, and music.",
+    "size": "N/A",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Word Error Rate (WER)",
+      "Character Error Rate (CER)",
+      "PESQ",
+      "STOI",
+      "Accuracy",
+      "ROC-AUC"
+    ],
+    "calculation": "Calculation of metrics is based on established evaluation criteria appropriate for various audio tasks.",
+    "interpretation": "Higher scores in PESQ and STOI indicate better audio quality in reconstruction tasks. Accuracy metrics reflect effective model performance in classification tasks.",
+    "baseline_results": null,
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack",
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination",
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

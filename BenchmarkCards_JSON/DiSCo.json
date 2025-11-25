@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DiSCo (Distilling Secure Code Alignment Dataset)",
+    "abbreviation": "DiSCo",
+    "overview": "DiSCo is a large training set of 10,000 preference pairs of insecure and secure code, along with reasoning on the issues and fixes, aimed at improving secure code generation by teaching models to align towards security.",
+    "data_type": "code with security reasoning pairs",
+    "domains": [
+      "Computer Security"
+    ],
+    "languages": [
+      "Python"
+    ],
+    "similar_benchmarks": [
+      "Security Eval",
+      "LLMSecEval",
+      "CW-Eval"
+    ],
+    "resources": [
+      "https://github.com/StonyBrookNLP/disco-lpo"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To improve secure code generation by providing a dataset of secure and insecure code examples along with security reasoning.",
+    "audience": [
+      "ML Researchers",
+      "Security Analysts",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Secure Code Generation",
+      "Code Quality Improvement"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Distilled from frontier LLMs using prompts augmented with security domain information.",
+    "size": "10,000 examples",
+    "format": "N/A",
+    "annotation": "Generated with reasoning about security issues and fixes."
+  },
+  "methodology": {
+    "methods": [
+      "Supervised Fine-tuning",
+      "Preference Optimization"
+    ],
+    "metrics": [
+      "Insecurity",
+      "Issues per 100",
+      "pass@1",
+      "pass@5"
+    ],
+    "calculation": "Metrics calculated using security analyzers and pass rates based on test cases.",
+    "interpretation": "Lower insecurity and issues per 100 indicate better secure coding practices; higher pass rates indicate better code utility.",
+    "baseline_results": "Models trained on DiSCo outperform baseline models significantly in both security and coding utility.",
+    "validation": "Empirical evaluations using standard security benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Security",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

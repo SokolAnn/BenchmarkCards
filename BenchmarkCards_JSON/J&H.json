@@ -1,0 +1,82 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "J&H: an evaluation framework for detecting the robustness of LLMs under knowledge injection attacks in the legal domain",
+    "abbreviation": "J&H",
+    "overview": "This paper proposes a framework for evaluating the robustness of Large Language Models (LLMs) under knowledge injection attacks specifically in the legal domain, utilizing a syllogistic reasoning approach.",
+    "data_type": "text",
+    "domains": [
+      "Legal"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/THUlawtech/LegalAttack"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To explore whether LLMs perform deductive reasoning when accomplishing legal tasks through knowledge injection attacks.",
+    "audience": [
+      "ML Researchers",
+      "Legal Practitioners"
+    ],
+    "tasks": [
+      "Legal Judgment Prediction"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "LEVEN and CAIL2018 legal datasets",
+    "size": "15,806 examples for CAIL2018 and 8,116 examples for LEVEN",
+    "format": "Text",
+    "annotation": "Annotated by legal experts for legal synonyms, logical inference, and similar crime names."
+  },
+  "methodology": {
+    "methods": [
+      "Knowledge injection attacks",
+      "Adversarial attack methods"
+    ],
+    "metrics": [
+      "Original Accuracy",
+      "Attack Accuracy",
+      "Performance Drop Ratio (PDR)"
+    ],
+    "calculation": "PDR is calculated based on the reduction in accuracy after an attack compared to the original accuracy.",
+    "interpretation": "Higher PDR indicates lower model robustness under adversarial attacks.",
+    "baseline_results": "Various LLM models were evaluated, showing significant drops in performance under attacks.",
+    "validation": "Robustness of LLMs was evaluated through a series of structured logical reasoning tests and knowledge injection scenarios."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

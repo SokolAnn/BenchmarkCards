@@ -1,0 +1,67 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MATH (Measuring Mathematical Problem Solving)",
+    "abbreviation": "MATH",
+    "overview": "The MATH dataset is used to assess reasoning utility in large language models (LLMs) by measuring the impact of intermediate reasoning steps on final answer correctness through conditional entropy.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://arxiv.org/abs/2508.20395"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide insights on how reasoning utility can be measured in LLMs and help develop efficient reasoning pipelines.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Mathematical Problem Solving"
+    ],
+    "limitations": "The findings are based on the MATH dataset and may not generalize to other domains or types of problems.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "MATH dataset, as defined in Hendrycks et al. (2021)",
+    "size": "3,413 problems",
+    "format": "N/A",
+    "annotation": "Human-annotated step-by-step solutions"
+  },
+  "methodology": {
+    "methods": [
+      "Quantitative analysis of reasoning chains using conditional entropy"
+    ],
+    "metrics": [
+      "Conditional Entropy"
+    ],
+    "calculation": "Conditional entropy is computed as the average uncertainty of the model about the final answer given the context and reasoning steps.",
+    "interpretation": "Decreasing conditional entropy over steps indicates better reasoning and higher likelihood of correct answers.",
+    "baseline_results": "LLM accuracy was measured against human solutions, e.g., LLM accuracy on MATH dataset problems varied from 0.63 to 0.95.",
+    "validation": "Results were validated using a mix of LLM outputs and human reference solutions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "None explicitly mentioned."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

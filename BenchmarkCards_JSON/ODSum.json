@@ -1,0 +1,79 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ODSum",
+    "abbreviation": "N/A",
+    "overview": "ODSum is a novel dataset designed for Open-Domain Multi-Document Summarization (ODMDS) tasks, constructed from existing QMSum and SQuALITY datasets to better represent realistic querying needs.",
+    "data_type": "query-summary pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SQuALITY",
+      "QMSum"
+    ],
+    "resources": [
+      "https://github.com/yale-nlp/ODSum"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a dataset that reflects real-world challenges in retrieving and summarizing information across diverse document collections in ODMDS tasks.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Multi-Document Summarization"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from existing datasets SQuALITY and QMSum, along with a customized data collection pipeline.",
+    "size": "1,190 documents for ODSum-story, 232 documents for ODSum-meeting",
+    "format": "JSON",
+    "annotation": "Queries and summaries were generated and reviewed by multiple annotators for quality assurance."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "ROUGE",
+      "BERTScore",
+      "G-E VAL"
+    ],
+    "calculation": "Metrics calculated based on word overlap for ROUGE and BERTScore; G-E VAL uses a contextual scoring based on LLM outputs.",
+    "interpretation": "Higher scores indicate better summarization quality, with G-E VAL providing a more nuanced evaluation of retrieval impact.",
+    "baseline_results": null,
+    "validation": "Extensive experiments comparing different retrieval and summarization strategies."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

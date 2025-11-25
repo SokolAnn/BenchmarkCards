@@ -1,0 +1,76 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PersonalityEvd",
+    "abbreviation": "N/A",
+    "overview": "PersonalityEvd is an explainable personality recognition dataset constructed based on the Chain-of-Personality-Evidence (CoPE) framework, consisting of dialogues annotated with personality state and trait labels along with corresponding reasoning evidence.",
+    "data_type": "dialogue pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Chinese",
+      "English"
+    ],
+    "similar_benchmarks": [
+      "FriendsPersona",
+      "PAN-2015",
+      "MyPersonality"
+    ],
+    "resources": [
+      "https://github.com/Lei-Sun-RUC/PersonalityEvd"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To support research in explainable personality recognition by providing a dataset and tasks that require revealing the reasoning process behind personality trait predictions.",
+    "audience": [
+      "ML Researchers",
+      "Psychology Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Evidence grounded Personality State Recognition",
+      "Evidence grounded Personality Trait Recognition"
+    ],
+    "limitations": "The dataset primarily contains Chinese dialogues, and its small size is constrained by the high cost of annotation.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from the CPED corpus, which is a large-scale Chinese emotional dialogue dataset.",
+    "size": "1,924 dialogues",
+    "format": "N/A",
+    "annotation": "Annotated manually by psychology experts, combined with pre-annotations from GPT-4."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "BERTScore"
+    ],
+    "calculation": "Metrics are calculated based on predicted personality state and trait labels compared to ground truth.",
+    "interpretation": "Higher accuracy and F1 scores indicate better model performance in recognizing personality traits.",
+    "baseline_results": "ChatGLM3-6B-32K outperforms other models for personality recognition tasks, achieving high F1 scores.",
+    "validation": "Extensive human evaluation ensures the quality of annotated data."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "The dataset includes a demographic breakdown based on the Big Five personality assessments.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset uses publicly available dialogues without intellectual property concerns.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Consent is obtained from participants used in the originating dataset.",
+    "compliance_with_regulations": "N/A"
+  }
+}

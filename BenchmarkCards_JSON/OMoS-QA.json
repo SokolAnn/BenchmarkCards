@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "OMoS-QA: A Dataset for Cross-Lingual Extractive Question Answering in a German Migration Context",
+    "abbreviation": "OMoS-QA",
+    "overview": "OMoS-QA is a manually annotated corpus of questions in German and English paired with relevant information documents about social, economic, and legal topics designed for supporting online migration counseling. It consists of 906 question-answer pairs.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "German",
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SQuAD",
+      "MMLU"
+    ],
+    "resources": [
+      "https://github.com/digitalfabrik/integreat-qa-dataset"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide high-precision, knowledge-grounded answers to users who have freshly immigrated to Germany.",
+    "audience": [
+      "NLP Researchers",
+      "Developers of AI counseling systems"
+    ],
+    "tasks": [
+      "Extractive Question Answering",
+      "Cross-Lingual Question Answering"
+    ],
+    "limitations": "The current version of OMoS-QA is limited to German and English documents and questions.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Documents were provided by three German municipalities and manually annotated through crowdsourcing.",
+    "size": "906 question-answer pairs",
+    "format": "JSON",
+    "annotation": "Questions were generated using an open-weight large language model and answers were manually annotated by crowd workers."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are computed per question at the sentence level and then macro-averaged over questions.",
+    "interpretation": "Higher precision indicates fewer, but more accurate responses.",
+    "baseline_results": null,
+    "validation": "The dataset utilized inter-annotator agreement studies to filter for quality."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Data includes questions generated from diverse societal topics relevant to the migrant experience.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All annotators participated voluntarily and agreed to anonymized publishing of their annotations.",
+    "data_licensing": "The dataset will be published under a CC-BY license.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

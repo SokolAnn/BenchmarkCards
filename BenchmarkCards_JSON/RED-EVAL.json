@@ -1,0 +1,101 @@
+{
+  "benchmark_details": {
+    "name": "RED-EVAL",
+    "overview": "A new safety evaluation benchmark that conducts red-teaming using Chain of Utterances (CoU) prompting, demonstrating the ineffective guardrails in LLMs leading to harmful outputs.",
+    "data_type": "Conversational Dataset",
+    "domains": [
+      "Natural Language Processing",
+      "AI Safety",
+      "Ethical AI"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "TruthfulQA",
+      "MMLU",
+      "HHH"
+    ],
+    "resources": [
+      "https://github.com/declare-lab/red-instruct",
+      "https://huggingface.co/datasets/declare-lab/HarmfulQA",
+      "https://huggingface.co/declare-lab/starling-7B"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the safety and ethical alignment of large language models and improve their robustness against harmful queries.",
+    "audience": [
+      "Researchers",
+      "Developers",
+      "AI ethicists"
+    ],
+    "tasks": [
+      "Safety evaluation of LLMs",
+      "Compare effectiveness of LLMs against harmful inputs",
+      "Establish safety benchmarks"
+    ],
+    "limitations": "Focused primarily on harmful questions and responses; may not cover all ethical dimensions.",
+    "out_of_scope_uses": [
+      "General AI assistant tasks",
+      "Non-harmful query evaluations"
+    ]
+  },
+  "data": {
+    "source": "HARMFUL QA data collection via Chain of Utterances prompting",
+    "size": "1,960 harmful questions, 9,536 safe conversations, and 7,356 harmful conversations",
+    "format": "Text",
+    "annotation": "Conversations labeled for safety and harmfulness based on responses"
+  },
+  "methodology": {
+    "methods": [
+      "Chain of Utterances prompting",
+      "Dataset collection from harmful and safe responses",
+      "Safety alignment through fine-tuning"
+    ],
+    "metrics": [
+      "Attack Success Rate (ASR)",
+      "Helpful, Honest, Harmless (HHH) scores"
+    ],
+    "calculation": "ASR calculated as the ratio of successful harmful responses to total harmful queries.",
+    "interpretation": "Higher ASR indicates less effective safety measures in LLMs.",
+    "baseline_results": "STARLING demonstrates improved safety compared to traditional methods.",
+    "validation": "Validation performed using the HHH and other safety-related benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety risks in LLMs",
+      "Ethical concerns in AI deployment",
+      "Harmful outputs generation"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Protecting user data and responses during evaluations.",
+    "data_licensing": "Dataset usage aligns with licensing agreements of Hugging Face datasets.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

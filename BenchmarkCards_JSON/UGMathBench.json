@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "UGM ATHBENCH (Undergraduate-Level Mathematical Reasoning with Large Language Models)",
+    "abbreviation": "UGMathBench",
+    "overview": "UGMathBench is a diverse and dynamic benchmark specifically designed for evaluating undergraduate-level mathematical reasoning with LLMs, comprising 5,062 problems across 16 subjects and 111 topics.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "GSM8K",
+      "MATH"
+    ],
+    "resources": [
+      "https://github.com/YangLabHKUST/UGMathBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive and fair evaluation of the mathematical reasoning capabilities of LLMs through a dynamic benchmark.",
+    "audience": [
+      "ML Researchers",
+      "Educational Practitioners"
+    ],
+    "tasks": [
+      "Mathematical Reasoning"
+    ],
+    "limitations": "UGMathBench focuses on text-only reasoning and is designed as an English-language benchmark.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Compiling from an online grading system of undergraduate courses.",
+    "size": "5,062 problems",
+    "format": "LaTeX",
+    "annotation": "Automatically generated and cleaned problems from student interactions."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Effective Accuracy (EAcc)",
+      "Reasoning Gap (∆)"
+    ],
+    "calculation": "EAcc measures the percentage of problems solved correctly across randomized versions; ∆ calculates the difference between average accuracy and EAcc.",
+    "interpretation": "Higher EAcc indicates better reasoning abilities; lower ∆ suggests better performance with variations in problem formulation.",
+    "baseline_results": null,
+    "validation": "Extensive evaluation of 23 leading LLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

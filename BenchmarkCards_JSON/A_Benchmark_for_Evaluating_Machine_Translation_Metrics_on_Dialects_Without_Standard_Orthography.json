@@ -1,0 +1,82 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "A Benchmark for Evaluating Machine Translation Metrics on Dialects Without Standard Orthography",
+    "abbreviation": "N/A",
+    "overview": "The paper proposes a benchmark for evaluating machine translation metrics specifically on dialects that lack standard orthography by collecting a new dataset of human translations and developing a challenge set that highlights the performance of existing metrics.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "German"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/textshuttle/dialect_eval"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate and develop machine translation metrics that are robust against dialect variations without standardized spelling.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Machine Translation"
+    ],
+    "limitations": "The study focuses on two Swiss German dialects and recognizes that it could not generalize to other language varieties due to a lack of available translation systems.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Dataset of human translations created by native Swiss German speakers based on the English NTREX-128 data.",
+    "size": "1,997 sentences",
+    "format": "N/A",
+    "annotation": "Human translation by native speakers of the respective Swiss German dialects."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Statistical analysis of metrics"
+    ],
+    "metrics": [
+      "BLEU",
+      "chrF",
+      "COMET"
+    ],
+    "calculation": "Metrics are calculated based on comparisons to human judgments and references, analyzing their ability to handle dialectal variations.",
+    "interpretation": "Metrics are considered robust if they reliably assess the quality of translations that exhibit spelling variability.",
+    "baseline_results": null,
+    "validation": "The challenge set allows for systematic evaluation of metric performance through controlled testing on dialect variations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": "The benchmark aims to mitigate risks related to the evaluation of non-standardized languages and dialects."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Translators and raters are native dialect speakers, selected to avoid bias.",
+    "data_licensing": "N/A",
+    "consent_procedures": "All participants were compensated for their work.",
+    "compliance_with_regulations": "N/A"
+  }
+}

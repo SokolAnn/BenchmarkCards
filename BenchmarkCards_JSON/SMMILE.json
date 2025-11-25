@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SMMILE (Stanford Multimodal Medical In-context Learning)",
+    "abbreviation": "SMMILE",
+    "overview": "SMMILE is the first expert-driven multimodal in-context learning benchmark for the medical domain. It includes 111 problems across 6 medical specialties and 13 imaging modalities, designed to evaluate large multimodal language models' (MLLMs) ability to learn from multimodal in-context examples.",
+    "data_type": "question-image-answer triplets",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://smmile-benchmark.github.io"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of SMMILE is to evaluate the ability of multimodal large language models to learn from multimodal in-context examples in medical contexts.",
+    "audience": [
+      "ML Researchers",
+      "Healthcare Professionals",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Medical Diagnosis",
+      "Medical Visual Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated by 11 medical experts, composed of multimodal queries and examples.",
+    "size": "111 problems, 517 question-image-answer triplets",
+    "format": "N/A",
+    "annotation": "Expert-annotated"
+  },
+  "methodology": {
+    "methods": [
+      "Open-ended generation",
+      "Closed-ended generation"
+    ],
+    "metrics": [
+      "Exact Match (EM)",
+      "LLM-as-a-Judge"
+    ],
+    "calculation": "Performance evaluated against ground-truth answers",
+    "interpretation": "Scores reflect the model's ability to generate correct outputs based on provided context.",
+    "baseline_results": "Average performance of 15 MLLMs demonstrates limitations in learning from multimodal in-context examples.",
+    "validation": "Models evaluated on both open-ended and closed-ended tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Decision bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Licensed under CC BY 4.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

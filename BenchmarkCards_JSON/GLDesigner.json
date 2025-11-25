@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "GLDesigner",
+    "abbreviation": "N/A",
+    "overview": "We propose a Vision-Language Model (VLM)-based framework that generates content-aware text logo layouts by integrating multi-modal inputs with user-defined constraints, enabling more flexible and robust layout generation for real-world applications. We introduce two extensive text logo datasets that are five times larger than existing public datasets.",
+    "data_type": "text logo layouts",
+    "domains": [
+      "Natural Language Processing",
+      "Graphic Design"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "TextLogo",
+      "LayoutGAN"
+    ],
+    "resources": [
+      "https://doi.org/10.1145/3746027.3755289"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide an advanced framework for generating aesthetically pleasing text logos using Vision-Language Models.",
+    "audience": [
+      "ML Researchers",
+      "Designers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Layout Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Two large-scale text logo datasets: SynTextLogo (containing synthesized logos) and GenTextLogo (curated collection of real-world logos).",
+    "size": "17,000 samples",
+    "format": "JSON",
+    "annotation": "Pixel-level annotations, detailed layout descriptions, and user-defined constraints."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Fréchet Inception Distance (FID)",
+      "Inception Score (IS)",
+      "Intersection over Union (IoU)",
+      "Visual Balance",
+      "Glyph Ratio Consistency"
+    ],
+    "calculation": "Metrics such as FID and IS assess visual quality, while IoU, Visual Balance, and Ratio measure geometric aesthetics and layout adherence.",
+    "interpretation": "Lower FID and higher IS indicate better quality; IoU, Visual Balance, and Ratio assess the fidelity of the generated logos to their specifications.",
+    "baseline_results": "Outperforms existing methods on various benchmarks that assess geometric aesthetics and human preferences.",
+    "validation": "Validate against user-defined constraints and assess layout accuracy through human studies."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

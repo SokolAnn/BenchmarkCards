@@ -1,0 +1,99 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Collab-Overcooked",
+    "abbreviation": "N/A",
+    "overview": "Collab-Overcooked is a benchmark for evaluating LLM-based Multi-Agent Systems (LLM-MAS) in a collaborative cooking environment, focusing on the collaboration capabilities of agents through a series of interactive tasks.",
+    "data_type": "multimodal",
+    "domains": [
+      "Natural Language Processing",
+      "Artificial Intelligence"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "RocoBench",
+      "VillagerBench",
+      "LLMARENA"
+    ],
+    "resources": [
+      "https://github.com/YusaeMeow/Collab-Overcooked"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate LLM-based Multi-Agent Systems in terms of collaboration effectiveness and task completion within an interactive cooking scenario.",
+    "audience": [
+      "ML Researchers",
+      "AI Practitioners",
+      "Game Developers"
+    ],
+    "tasks": [
+      "Collaborative Cooking",
+      "Task Planning",
+      "Dynamic Adaptation"
+    ],
+    "limitations": "The benchmark is designed specifically for sequential process-specific tasks, which may not generalize to all possible LLM application scenarios.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Developed from the Overcooked-AI game environment, featuring a simulation setup for interactive collaboration.",
+    "size": "30 tasks",
+    "format": "JSON",
+    "annotation": "Manually annotated Referential Action Trajectories (RATs) for evaluation purposes."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Trajectory Efficiency Score (TES)",
+      "Incremental Trajectory Efficiency Score (ITES)",
+      "Progress Completeness (PC)"
+    ],
+    "calculation": "Metrics are calculated based on the historical action sequence of agents and defined RATs for collaboration tasks.",
+    "interpretation": "Higher scores indicate better collaboration capabilities and task completion efficiency.",
+    "baseline_results": "Comparative performance of 13 LLMs, including closed-source and open-source models, highlights varying levels of collaboration efficiency.",
+    "validation": "Extensive experiments conducted with different models across varying task complexities."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Robustness",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "All human experiments conducted with informed consent.",
+    "compliance_with_regulations": "N/A"
+  }
+}

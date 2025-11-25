@@ -1,0 +1,101 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "OpenING (Open-ended Interleaved Image-Text Generation)",
+    "abbreviation": "OpenING",
+    "overview": "OpenING is a comprehensive benchmark for evaluating open-ended interleaved image-text generation, comprising 5,400 high-quality human-annotated instances across 56 real-world tasks, aimed at challenging and improving interleaved generation methods and supporting the development of judge models for assessing multimodal generation.",
+    "data_type": "interleaved image-text instances",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "OpenLEAF",
+      "InterleavedBench"
+    ],
+    "resources": [
+      "https://opening-benchmark.github.io"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Evaluate and benchmark open-ended interleaved image-text generation methods, providing a robust platform for challenging generation techniques and model assessments.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "AI Practitioners"
+    ],
+    "tasks": [
+      "Interleaved Image-Text Generation",
+      "Multimodal Reasoning",
+      "Content Creation"
+    ],
+    "limitations": "By design, OpenING is limited in scope to primarily 23 meta-topics and 56 tasks, which may not represent every real-world scenario and requires more task diversity.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from over 20 sources including social media, video sharing sites, and open dataset platforms, with instances annotated by human experts.",
+    "size": "5,400 instances",
+    "format": "JSONL",
+    "annotation": "Manual annotation by 28 professional annotators and 14 expert supervisors."
+  },
+  "methodology": {
+    "methods": [
+      "Pairwise evaluation using human judges",
+      "Automated evaluation with IntJudge",
+      "Comparison with GPT-based evaluators"
+    ],
+    "metrics": [
+      "Win Rate",
+      "Agreement",
+      "FDT (Force Dividing Tie)"
+    ],
+    "calculation": "Win rate represents how often a model wins in pairwise comparisons against others.",
+    "interpretation": "Higher win rates indicate superior performance in generating coherent interleaved content, while agreement measures evaluator consistency across different evaluation methods.",
+    "baseline_results": "GPT-4o+DALL-E3 and Gemini1.5+Flux are top-performing baselines evaluated against IntJudge.",
+    "validation": "Validation procedures involved pairwise comparisons conducted by multiple evaluators including humans and AI models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The benchmark includes demographic fairness across model outputs but is primarily evaluated based on performance metrics.",
+    "harm": [
+      "Content incoherence",
+      "Image-Text mismatch",
+      "Poor image quality"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

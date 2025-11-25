@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CHEER (Chinese Buzzword Dataset)",
+    "abbreviation": "CHEER",
+    "overview": "CHEER is the first dataset of Chinese internet buzzwords, each annotated with a definition and relevant user-generated content (UGC) examples. This dataset is used to evaluate the performance of various definition generation methods, including a novel method called RESS.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": null,
+    "resources": [
+      "https://github.com/SCUNLP/Buzzword"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To investigate if large language models can generate accurate definitions for Chinese internet buzzwords based on user-generated content and to benchmark existing definition generation methods.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "NLP Researchers"
+    ],
+    "tasks": [
+      "Definition Generation",
+      "Text Classification"
+    ],
+    "limitations": "The overall performance of existing methods remains suboptimal, indicating room for improvement in handling the dynamic nature of internet buzzwords.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "User-generated content collected from social media platforms, including Xiaohongshu and Weibo, as well as definitions sourced from online dictionary platforms specializing in trending buzzwords.",
+    "size": "1,127 buzzwords",
+    "format": "JSON",
+    "annotation": "Buzzwords were annotated with definitions and user-generated content examples, with a quality control process involving manual reviews."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Semantic Accuracy (SA)",
+      "Semantic Completeness (SC)",
+      "BLEU",
+      "ROUGE-L (R-L)",
+      "BERTScore (BScore)"
+    ],
+    "calculation": "Metrics were calculated using automatic evaluations based on generated definitions and their comparisons to reference definitions, combined with human evaluations for semantic accuracy and completeness.",
+    "interpretation": "Good performance is indicated by high scores in semantic accuracy and completeness. Specific thresholds for acceptable performance were established through a combination of automated and human evaluations.",
+    "baseline_results": "Baseline methods include various existing definition generation techniques such as Direct Prompt, Chain-of-Thought, and FOCUS, with RESS showing performance improvements in semantic accuracy and completeness over these baselines.",
+    "validation": "The benchmark was validated using human evaluations and a contamination-free evaluation strategy to ensure reliability."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset contains examples sourced from diverse user-generated content across major Chinese social media platforms, facilitating an understanding of demographic use in language.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset is derived from anonymized, publicly available internet content, ensuring user privacy was maintained during data collection.",
+    "data_licensing": "N/A",
+    "consent_procedures": "No personally identifiable information was collected, adhering to ethical standards in data usage.",
+    "compliance_with_regulations": "N/A"
+  }
+}

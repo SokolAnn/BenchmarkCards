@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "T-Eval (Tool Evaluation)",
+    "abbreviation": "T-Eval",
+    "overview": "T-Eval is a step-by-step tool utilization evaluation benchmark for large language models (LLMs). It decomposes tool utilization capability into multiple subprocesses such as instruction following, planning, reasoning, retrieval, understanding, and review, facilitating a fine-grained analysis of LLMs' abilities.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/open-compass/T-Eval"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the tool utilization capabilities of large language models step by step, providing insights into their strengths and weaknesses.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Tool Utilization Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated from a multi-agent data generation pipeline verified by human experts.",
+    "size": "23,305 test cases",
+    "format": "JSON, string",
+    "annotation": "Annotated by human experts through a multi-agent framework."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on the generated action sequences and responses of LLMs compared against expert-verified results.",
+    "interpretation": "Results reflect the LLM's capabilities in each sub-domain of tool utilization.",
+    "baseline_results": null,
+    "validation": "Extensive experimentation with various LLMs to validate effectiveness."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Privacy",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Name of Thrones: Evaluating How LLMs Rank Student Names, Race, and Gender in Status Hierarchies",
+    "abbreviation": "N/A",
+    "overview": "This study conducts a large-scale analysis with bootstrap standard errors of 45,000 name variations across 5 ethnicities to examine how AI-generated responses exhibit systemic name biases, investigating the effects of names on perceived competence, leadership, and economic potential.",
+    "data_type": "name variations",
+    "domains": [
+      "Natural Language Processing",
+      "Education"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SODAPOP"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2504.10797"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate whether LLMs sort students into status positions based on ethnicity and gender associated with their names and to investigate the potential biases in AI assessments.",
+    "audience": [
+      "ML Researchers",
+      "Educators",
+      "Policy Makers"
+    ],
+    "tasks": [
+      "Bias Evaluation",
+      "Status Ranking"
+    ],
+    "limitations": "The study includes only five ethnicities and considers only two genders.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "National delegates of academic and music competitions and frequently occurring names in population databases.",
+    "size": "45,000 unique name variations",
+    "format": "N/A",
+    "annotation": "Names verified by native speakers from each cultural background."
+  },
+  "methodology": {
+    "methods": [
+      "Quantitative analysis",
+      "Ordinary least squares regression",
+      "Bootstrap resampling"
+    ],
+    "metrics": [
+      "Predicted academic scores",
+      "Predicted leadership potential",
+      "Predicted wages"
+    ],
+    "calculation": "Regression analysis to quantify the model's implicit biases based on demographic attributes.",
+    "interpretation": "Higher predicted scores indicate perceived higher competence and leadership potential.",
+    "baseline_results": "LLMs showed variations in predicted scores based on names, with East Asian names often ranked highest.",
+    "validation": "Bootstrapping with 1,000 replications to enhance robustness."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Names associated with different racial and gender groups showed distinct biases in the predictions.",
+    "harm": [
+      "Reinforcing social hierarchies",
+      "Discrimination based on name biases"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Anonymity of name bearers was upheld by not publishing the dataset publicly.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

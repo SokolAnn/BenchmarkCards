@@ -1,0 +1,75 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "A Benchmark Evaluation of Clinical Named Entity Recognition in French",
+    "abbreviation": "N/A",
+    "overview": "This paper presents the first benchmark evaluation of masked language models for the biomedical domain on the clinical French Named Entity Recognition (NER) task, using three publicly available clinical French corpora. The evaluation is based on released gold standard annotations, including nested entities.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Healthcare"
+    ],
+    "languages": [
+      "French"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://deft.limsi.fr/2020/index-en.html",
+      "https://github.com/percevalw/nlstruct",
+      "https://brat.nlplab.org/standoff.html",
+      "https://github.com/grouin/propa"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a systematic evaluation of masked language models for clinical named entity recognition in the biomedical domain in French.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Named Entity Recognition"
+    ],
+    "limitations": "While a full evaluation could cover more models, it would incur a higher carbon footprint and we decided to select representative models of the categories that we aimed to cover: general and domain-specific models that had been recently evaluated on similar corpora without direct comparability.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Three publically available corpora for clinical named entity recognition in French: DEFT, E3C, and QUAERO French Med.",
+    "size": "1,615 clinical cases from E3C, 167 clinical cases from DEFT, 2,500 titles from MEDLINE.",
+    "format": "N/A",
+    "annotation": "Gold-standard annotations including nested entities."
+  },
+  "methodology": {
+    "methods": [
+      "Entity-level evaluation",
+      "Micro Precision",
+      "Recall",
+      "F-measure"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F-measure"
+    ],
+    "calculation": "Confidence intervals at 95% confidence level were computed using the empirical bootstrap method from 1,000 samples.",
+    "interpretation": "Models with higher F-measure indicate better performance in the NER task.",
+    "baseline_results": "Baseline scores were computed using a symbolic method that builds a dictionary of entities found in the training and development splits of a corpus.",
+    "validation": "Systematic evaluation providing comparability across systems as well as with literature introducing the reference corpora."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Environmental Impact"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

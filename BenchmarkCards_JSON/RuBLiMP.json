@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Russian Benchmark of Linguistic Minimal Pairs (RuBLiMP)",
+    "abbreviation": "RuBLiMP",
+    "overview": "RuBLiMP is a benchmark consisting of 45 datasets, each including 1k minimal pairs that differ in grammaticality and isolate a linguistic phenomenon, covering various morphological, syntactic, and semantic aspects specific to Russian. It utilizes open text corpora and expert-written perturbation rules to generate these pairs.",
+    "data_type": "sentence pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Russian"
+    ],
+    "similar_benchmarks": [
+      "BLiMP",
+      "CLiMP",
+      "JBLiMP",
+      "SLING",
+      "CLAMS"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/RussianNLP/rublimp",
+      "https://github.com/RussianNLP/RuBLiMP"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the grammatical knowledge of language models through minimal pairs that isolate specific linguistic phenomena in Russian.",
+    "audience": [
+      "ML Researchers",
+      "Linguists",
+      "Language Model Developers"
+    ],
+    "tasks": [
+      "Grammaticality Judgments",
+      "Linguistic Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Sentences extracted from open text corpora including Wikipedia and Russian literature, annotated and perturbed to create minimal pairs.",
+    "size": "45,000 pairs",
+    "format": "JSONL",
+    "annotation": "Manual curation and validation by linguists"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy measured through comparison of model performance on generated minimal pairs.",
+    "interpretation": "A higher accuracy indicates better performance by models in identifying grammatical contrasts.",
+    "baseline_results": "Human performance averages around 95% accuracy on RuBLiMP.",
+    "validation": "Validated by 20 native speakers with linguistics backgrounds"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

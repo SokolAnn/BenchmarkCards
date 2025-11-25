@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SPhyR: Spatial-Physical Reasoning Benchmark on Material Distribution",
+    "abbreviation": "SPhyR",
+    "overview": "SPhyR introduces a novel dataset designed to benchmark the physical and spatial reasoning capabilities of Large Language Models (LLM) based on topology optimization, requiring models to reason about optimal material distribution under specific constraints in 2D settings.",
+    "data_type": "structured grid of material distributions",
+    "domains": [
+      "Natural Language Processing",
+      "Engineering"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "CLEVR",
+      "IntPhys",
+      "Physion",
+      "PIQA"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/philippds/SPhyR",
+      "https://github.com/philippds/SPhyR"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the spatial and physical reasoning abilities of large language models based on topology optimization tasks.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Engineers"
+    ],
+    "tasks": [
+      "Material Distribution Prediction",
+      "Structural Stability Assessment"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated using McNeel Rhinoceros 8 and the Grasshopper programming environment with the Millipede plugin for topology optimization.",
+    "size": "1,296 scenarios",
+    "format": "Structured grids and task-specific subsets",
+    "annotation": "Automatically generated through topology optimization simulations."
+  },
+  "methodology": {
+    "methods": [
+      "Exact Match",
+      "Score",
+      "Normalized Score"
+    ],
+    "metrics": [
+      "Exact Match",
+      "Score",
+      "Normalized Score"
+    ],
+    "calculation": "Exact Match is binary based on whether the predicted output matches the ground truth. Score is the ratio of corrected errors. Normalized Score is a capped version of the Score.",
+    "interpretation": "Higher scores indicate better model performance in predicting material distributions.",
+    "baseline_results": "N/A",
+    "validation": "Evaluated state-of-the-art LLMs in a zero-shot setting."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy",
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack",
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

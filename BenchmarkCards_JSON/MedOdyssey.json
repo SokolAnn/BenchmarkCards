@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MedOdyssey (Medical Domain Benchmark for Long Context Evaluation)",
+    "abbreviation": "MedOdyssey",
+    "overview": "MedOdyssey is the first medical long-context benchmark consisting of two primary components: the medical-context 'needles in a haystack' task and a series of tasks specific to medical applications, comprising 10 datasets designed to evaluate long-context capabilities of large language models (LLMs) in the medical domain.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/JOHNNY-fans/MedOdyssey"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To facilitate the study of large language models in long-context scenarios within the medical domain.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Needles in a Haystack",
+      "Medical QA",
+      "Counting",
+      "Terminology Normalization",
+      "Knowledge Graph Question Answering",
+      "Table QA",
+      "Case QA"
+    ],
+    "limitations": "Evaluating limit lengths to ensure different models share the same contextual cues.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Diverse medical corpora, including medical books, clinical guides, terminology databases, and electronic health records.",
+    "size": "10 datasets with various lengths ranging from 4K to 200K tokens",
+    "format": "N/A",
+    "annotation": "Combination of manual and automated methods for fairness and minimizing data contamination."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Metrics calculated based on exact string matching (ESM) and subset string matching (SSM) methods.",
+    "interpretation": "A higher score indicates better performance in answering medical-based questions under long-context evaluation.",
+    "baseline_results": "Various LLMs including GPT-4, GPT-4o, Claude 3, and others with varying performance on the benchmark tasks.",
+    "validation": "Evaluated against both proprietary and open-source LLMs across different context lengths."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All datasets are collected according to ethical guidelines and respect copyright laws.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

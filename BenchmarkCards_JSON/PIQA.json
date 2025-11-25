@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Physical Interaction: Question Answering (PIQA)",
+    "abbreviation": "PIQA",
+    "overview": "Introduces the task of physical commonsense reasoning and a benchmark dataset, Physical Interaction: Question Answering (PIQA), to evaluate language representations on their knowledge of physical commonsense via multiple-choice goal-solution pairs.",
+    "data_type": "multiple-choice question-answering pairs (goal-solution pairs)",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision",
+      "Robotics"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SWAG",
+      "HellaSwag",
+      "Winogrande",
+      "SocialIQA",
+      "SQuAD"
+    ],
+    "resources": [
+      "http://yonatanbisk.com/piqa",
+      "https://arxiv.org/abs/1911.11641"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate and study physical commonsense understanding in natural language models and provide a benchmark (PIQA) for progress toward language representations that capture physical commonsense.",
+    "audience": [
+      "Natural Language Processing Researchers",
+      "Computer Vision Researchers",
+      "Robotics Researchers",
+      "Model Developers",
+      "Machine Learning Researchers"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Physical commonsense reasoning"
+    ],
+    "limitations": "Authors note that learning about the world from language alone is limiting; matching human performance via heavy fine-tuning on large in-domain data is possible but not the stated goal. Examples requiring expert-level domain knowledge were removed during validation so the dataset focuses on commonsense accessible to the average person.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Seeded from instructables.com and collected via crowdworker Human Intelligence Tasks (HITs) where annotators wrote a Goal, a valid Solution, and a 'trick' (invalid) solution; validated by additional annotators and cleaned using the AFLite algorithm.",
+    "size": "Over 16,000 training QA pairs; approximately 2,000 development examples; approximately 3,000 test examples. Training data contains over 3.7 million lexical tokens.",
+    "format": "N/A",
+    "annotation": "Human-annotated by crowdworkers who provided goal, valid solution, and an incorrect 'trick' solution; qualification HITs were used (>80% required); examples were validated by other annotators and low-agreement examples were removed; AFLite was applied to remove annotation artifacts."
+  },
+  "methodology": {
+    "methods": [
+      "Model-based evaluation (fine-tuning pretrained transformer models: GPT, BERT, RoBERTa)",
+      "Automated metrics (Accuracy)",
+      "Human evaluation (majority vote on development set)"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy is computed as the percentage of correct choices on validation and test splits. Models are fine-tuned with a cross-entropy loss over the two options; GPT included an additional language modeling loss. Human performance was computed by majority vote among annotators on the development set. Best model hyperparameters were selected via grid search on the validation set.",
+    "interpretation": "Higher Accuracy approaching human performance (human 94.9% on development) indicates strong physical commonsense; automatic models substantially below human accuracy (best model RoBERTa ~77.1% test) indicate gaps in learning physical commonsense from text alone.",
+    "baseline_results": "Random Chance: 50.0% (validation/test). Majority Class: 50.5% (validation) / 50.4% (test). OpenAI GPT (124M): 70.9% (validation) / 69.2% (test). Google BERT (340M): 67.1% (validation) / 66.8% (test). FAIR RoBERTa (355M): 79.2% (validation) / 77.1% (test). Human: 94.9% (development).",
+    "validation": "Examples were validated by additional annotators; low-agreement examples were removed. Train, development, and test folds were produced by AFLite. A qualification HIT (workers had to identify well-formed pairs at >80% to participate). Model hyperparameters were tuned by grid search on the validation set."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

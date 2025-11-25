@@ -1,0 +1,73 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Open-Vocabulary Remote Sensing Image Semantic Segmentation (OVRSISS)",
+    "abbreviation": "OVRSISS",
+    "overview": "Open-Vocabulary Remote Sensing Image Semantic Segmentation (OVRSISS) aims to segment arbitrary semantic classes in remote sensing images. The work presents a comprehensive dataset named LandDiscover50K, consisting of 51,846 images across 40 diverse semantic classes.",
+    "data_type": "image",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "N/A"
+    ],
+    "similar_benchmarks": [
+      "LoveDA",
+      "iSAID",
+      "FLAIR"
+    ],
+    "resources": [
+      "https://github.com/yecy749/GSNet"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective is to enable the segmentation of arbitrary semantic classes in remote sensing images without the need for predefined class sets.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Remote Sensing Experts"
+    ],
+    "tasks": [
+      "Semantic Segmentation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Images collected from established RSISS datasets providing pixel-wise annotations including Open Earth Map, LoveDA, Deep Globe Land Cover, SIOR, and SOTA.",
+    "size": "51,846 images",
+    "format": "N/A",
+    "annotation": "Images are pixel-wise annotated across 40 diverse semantic classes."
+  },
+  "methodology": {
+    "methods": [
+      "Model-based evaluation",
+      "Cross-dataset validation"
+    ],
+    "metrics": [
+      "Mean Intersection-over-Union (mIoU)"
+    ],
+    "calculation": "mIoU is calculated for pixel-wise segmented results against ground truth.",
+    "interpretation": "Higher mIoU scores indicate better model performance in semantic segmentation tasks.",
+    "baseline_results": "GSNet achieved an average mIoU of 31.25 across multiple datasets in comparison to existing methods.",
+    "validation": "Evaluation performed using multiple existing RSISS datasets to validate the performance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Landsat30-AU (Landsat30-AU: A Vision-Language Dataset for Australian Landsat Imagery)",
+    "abbreviation": "Landsat30-AU",
+    "overview": "Landsat30-AU is a large-scale vision-language dataset constructed from 30-meter resolution imagery collected by four Landsat satellites (5, 7, 8, and 9) over Australia, spanning more than 36 years. It includes Landsat30-AU-Cap with 196,262 image-caption pairs and Landsat30-AU-VQA with 17,725 human-verified visual question answering samples aimed at enhancing vision-language model performance for remote sensing tasks.",
+    "data_type": "image-caption pairs, visual question answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Remote Sensing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "EarthDial",
+      "RSICD",
+      "SKYSCRIPT",
+      "GIT-10M",
+      "GAIA"
+    ],
+    "resources": [
+      "https://github.com/papersubmit1/landsat30-au"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a vision-language dataset for understanding and interpreting Landsat satellite imagery through detailed captions and question-answering tasks.",
+    "audience": [
+      "ML Researchers",
+      "Remote Sensing Specialists",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Image Captioning",
+      "Visual Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Landsat imagery collected by Landsat satellites sourced from Digital Earth Australia Analysis Ready Data archives.",
+    "size": "196,262 image-caption pairs, 17,725 VQA samples",
+    "format": "N/A",
+    "annotation": "Curated through a bootstrapped pipeline combining model-generated drafts with human verification."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "SPIDEr",
+      "BLEU-4",
+      "BERTScore-F1",
+      "1-CHAIR-s",
+      "1-CHAIR-i",
+      "Accuracy"
+    ],
+    "calculation": "Metric calculations are based on comparisons of model outputs against ground truth data including human-verified captions and answers.",
+    "interpretation": "Higher SPIDEr and BLEU scores indicate better performance in generating captions that accurately reflect image content.",
+    "baseline_results": "Open-source VLM EarthDial achieved a captioning score of 0.07 SPIDEr.",
+    "validation": "Validated through human review at multiple stages of data generation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Available under Creative Commons Attribution 4.0 Licence.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

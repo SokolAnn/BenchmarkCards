@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "GeoChain",
+    "abbreviation": "N/A",
+    "overview": "GeoChain is a large-scale benchmark for evaluating step-by-step geographic reasoning in multimodal large language models (MLLMs), utilizing 1.46 million Mapillary street-level images paired with a 21-step chain-of-thought question sequence.",
+    "data_type": "image-question-answer pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "GeoReasoner",
+      "GAEA"
+    ],
+    "resources": [
+      "https://github.com/sahitiy/geochain",
+      "https://huggingface.co/datasets/sahitiy51/geochain"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation framework for assessing geographic reasoning capabilities of MLLMs through a structured diagnostic approach.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Geographic Reasoning",
+      "Visual Question Answering"
+    ],
+    "limitations": "The benchmark is built on the Mapillary Street-Level Sequences training split, which may affect the novelty of the visual scenes presented to models.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Mapillary Street-Level Sequences dataset, augmented with semantic segmentation and locatability scores.",
+    "size": "1.46 million images, with 30 million question-answer pairs",
+    "format": "N/A",
+    "annotation": "Semantic class labeling and human-inspired locatability score for difficulty stratification."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Diagnostic evaluation"
+    ],
+    "metrics": [
+      "Pass Score",
+      "Haversine Distance"
+    ],
+    "calculation": "Pass Score is the average fraction of questions correctly answered across the full 21-step reasoning chain for each image. Haversine Distance measures the shortest distance over the Earth’s surface between predicted and ground-truth coordinates.",
+    "interpretation": "A higher Pass Score indicates better performance in answering the question chain correctly. Lower Haversine Distance indicates better localization accuracy.",
+    "baseline_results": "Evaluation of leading MLLMs such as GPT-4.1, Claude 3.7, and Gemini 2.5 variants.",
+    "validation": "Test-Mini subset of 2088 images manually curated for high quality and challenge."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

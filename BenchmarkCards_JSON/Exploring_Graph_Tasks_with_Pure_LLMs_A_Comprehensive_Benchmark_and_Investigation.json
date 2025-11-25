@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Exploring Graph Tasks with Pure LLMs: A Comprehensive Benchmark and Investigation",
+    "abbreviation": "N/A",
+    "overview": "This paper provides a comprehensive benchmarking framework for evaluating the performance of pure large language models (LLMs) on graph tasks, including node classification and link prediction, with a focus on instruction tuning and few-shot scenarios. It assesses the capabilities of LLMs in understanding graph structures and their robustness across various data conditions.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Graph Machine Learning"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "GLBench",
+      "GraphICL"
+    ],
+    "resources": [
+      "https://github.com/myflashbarry/LLM-benchmarking"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To benchmark pure LLMs on graph tasks and explore their performance in few-shot learning and transferability settings.",
+    "audience": [
+      "ML Researchers",
+      "Graph Learning Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Node Classification",
+      "Link Prediction"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Datasets used include Cora, PubMed, OGBN-ArXiv, OGBN-Products.",
+    "size": "Cora: 2,708 nodes, 5,429 edges; PubMed: 19,717 nodes, 44,338 edges; OGBN-ArXiv: 169,343 nodes, 1,166,243 edges; OGBN-Products: 2,449,029 nodes, 61,859,140 edges.",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Empirical performance evaluation over various models",
+      "Hyperparameter tuning",
+      "Few-shot instruction tuning",
+      "Zero-shot evaluation",
+      "Prompt design for graph tasks"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Mean accuracy is calculated across different graph tasks and datasets to evaluate model performance.",
+    "interpretation": "Higher accuracy indicates better performance of LLMs on graph classification and link prediction tasks.",
+    "baseline_results": "Best performing models include instruction-tuned Llama8B and Qwen-plus for node classification and link prediction tasks.",
+    "validation": "Models were validated through standard training/validation/test splits."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

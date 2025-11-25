@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ANPMI (Asymmetric NPMI)",
+    "abbreviation": "ANPMI",
+    "overview": "ANPMI is a novel metric designed to evaluate the true comprehension capabilities of language models in multiple-choice tasks by normalizing Pointwise Mutual Information with the objective of reducing the influence of prior probability. It aims to provide a reliable assessment of a model's understanding of prompts.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "HellaSwag",
+      "PiQA",
+      "ARC",
+      "LogiQA",
+      "RACE",
+      "SciQ",
+      "MMLU"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2502.18798"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To accurately measure the natural language understanding capabilities of language models using a normalized metric that reduces bias.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Multiple Choice Question Answering"
+    ],
+    "limitations": "ANPMI may not be suitable for benchmarks where the model's choice is as critical as understanding the prompt.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Experiments conducted on seven multiple-choice benchmarks using pre-trained language models.",
+    "size": "N/A",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Evaluation with language models using various benchmarks"
+    ],
+    "metrics": [
+      "ANPMI",
+      "Accuracy",
+      "PMI",
+      "Length-normalized Accuracy"
+    ],
+    "calculation": "ANPMI is calculated by normalizing PMI using -logP(Choice).",
+    "interpretation": "A higher ANPMI score indicates a better understanding of the prompt by the model.",
+    "baseline_results": "N/A",
+    "validation": "The model performances were validated against known benchmarks and analyzed for variance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Decision bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

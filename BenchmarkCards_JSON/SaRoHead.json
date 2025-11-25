@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SaRoHead (Satirical Romanian Headlines)",
+    "abbreviation": "SaRoHead",
+    "overview": "The SaRoHead dataset consists of news headlines gathered from various Romanian news outlets and a known online publication for satirical content. It is specifically designed to evaluate approaches for detecting satire in headlines.",
+    "data_type": "titles only",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Romanian"
+    ],
+    "similar_benchmarks": [
+      "SciTechBaitRo",
+      "SaRoCo",
+      "RoCliCo"
+    ],
+    "resources": [
+      "https://doi.org/10.5281/zenodo.1234567"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To create a dataset for training and evaluating models that can detect satire in Romanian news headlines.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text Classification"
+    ],
+    "limitations": "Data collection is biased towards one source of satirical content.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Headlines scraped from Romanian news outlets and a satirical news site.",
+    "size": "20,725 examples",
+    "format": "N/A",
+    "annotation": "Distant supervision based on the source news outlet classifications."
+  },
+  "methodology": {
+    "methods": [
+      "Standard Machine Learning Algorithms",
+      "BERT Models",
+      "Large Language Models"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "Metrics calculated based on classifications for satire vs non-satire.",
+    "interpretation": "Higher F1 scores indicate better performance in detecting satire.",
+    "baseline_results": null,
+    "validation": "Evaluated through train/validation/test splits with balanced sample representation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset includes balanced categories (social, political, sport) for diversity.",
+    "harm": [
+      "Potential reinforcement of satirical biases."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "The data was collected in compliance with GDPR regulations.",
+    "consent_procedures": "Data sourced from publicly available headlines from news websites.",
+    "compliance_with_regulations": "The research complies with Article 3 of the European Union directive 2019/790."
+  }
+}

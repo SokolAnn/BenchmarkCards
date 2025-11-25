@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CIRCUIT (Circuit Interpretation and Reasoning Capabilities)",
+    "abbreviation": "CIRCUIT",
+    "overview": "CIRCUIT is a benchmark designed to assess Large Language Models' reasoning capabilities in analog circuit design, consisting of 510 question-answer pairs across various levels of analog-circuit-related subjects.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Electrical Engineering",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://arxiv.org/abs/2502.07980v1"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the benchmark is to evaluate and enhance the reasoning capabilities of LLMs in understanding and interpreting analog circuits.",
+    "audience": [
+      "ML Researchers",
+      "Circuit Design Engineers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Circuit Interpretation",
+      "Reasoning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from various educational and industry circuit design sources, including MIT course materials.",
+    "size": "510 questions",
+    "format": "JSON",
+    "annotation": "Questions were manually curated and structured around templates for consistency."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Global Accuracy",
+      "Template Accuracy (pass@k/n)"
+    ],
+    "calculation": "Global accuracy is calculated as the number of correctly answered questions divided by the total number of questions. Template accuracy evaluates if various numerical setups of a template are solved correctly.",
+    "interpretation": "Higher global accuracy indicates better overall performance, while template accuracy provides insights into the understanding of circuit topologies.",
+    "baseline_results": null,
+    "validation": "The benchmark's evaluation setup is designed to allow for automatic and human evaluations, providing a comprehensive performance understanding."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A - The dataset does not involve personal data.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A - No personal data collection involved.",
+    "compliance_with_regulations": "N/A"
+  }
+}

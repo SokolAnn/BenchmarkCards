@@ -1,0 +1,95 @@
+# StockEmotions: Discover Investor Emotions for Financial Sentiment Analysis and Multivariate Time Series
+
+## 📊 Benchmark Details
+
+**Name**: StockEmotions: Discover Investor Emotions for Financial Sentiment Analysis and Multivariate Time Series
+
+**Overview**: This paper introduces StockEmotions, a new dataset for detecting emotions in the stock market that consists of 10k English comments collected from StockTwits, a financial social media platform. Inspired by behavioral finance, it proposes 12 fine-grained emotion classes that span the roller coaster of investor emotion. Unlike existing financial sentiment datasets, StockEmotions presents granular features such as investor sentiment classes, fine-grained emotions, emojis, and time series data.
+
+**Data Type**: multimodal: text (StockTwits comments with emojis) and time-series numeric data (stock price/index)
+
+**Domains**:
+- Natural Language Processing
+- Finance
+
+**Languages**:
+- English
+
+**Similar Benchmarks**:
+- GoEmotions
+- SemEval-2017 Task 5: Fine-Grained Sentiment Analysis on Financial Microblogs and News
+- StockTwits datasets (Oliveira, Cortez, and Areal 2016; Li and Shah 2017)
+
+**Resources**:
+- [GitHub Repository](https://github.com/adlnlp/StockEmotions)
+- [Resource](https://arxiv.org/abs/2301.09279v2)
+
+## 🎯 Purpose and Intended Users
+
+**Goal**: Create StockEmotions, a financial-domain-focused dataset for financial sentiment/emotion classification and stock market time series prediction.
+
+**Target Audience**:
+- ML Researchers
+- Industry Practitioners
+- Domain Experts
+
+**Tasks**:
+- Text Classification
+- Sentiment Analysis
+- Emotion Classification
+- Time Series Forecasting
+
+**Limitations**: The dataset contains potential biases including offensive languages, user base biases, and annotator biases. The quantity of content is skewed towards speculative or "meme" stocks, and the quality of content often contains toxic, offensive language, and sarcasm. The collected data belongs to the era of COVID-19 and may represent different results for a much longer period.
+
+## 💾 Data
+
+**Source**: Collected from StockTwits (financial social media) between 01 January 2020 and 31 December 2020; raw collection contains over 3 million comments covering over 80% of the S&P 500 by market-cap; final curated dataset contains 10,000 comments.
+
+**Size**: 10,000 comments (final dataset); raw collection over 3,000,000 comments; Unique Emoji: 761; Time Period: 01 Jan 2020 - 31 Dec 2020
+
+**Format**: N/A
+
+**Annotation**: Multi-step human and pre-trained language model pipeline: seed dataset (30% of final) annotated by three financial experts (Cohen Kappa = 0.79); fine-tune BERT on automatic labeling data sampled proportionally from each month; annotators revise or agree on automatic labels; iterate by updating fine-tuned BERT.
+
+## 🔬 Methodology
+
+**Methods**:
+- Human evaluation (data quality validation, seed annotation by experts)
+- Automated metrics (classification and regression evaluation)
+- Baseline model comparison (machine learning, neural, and pre-trained language models)
+
+**Metrics**:
+- F1 Score
+- Mean Squared Error (MSE)
+
+**Calculation**: For classification: F1-score computed per-class and averaged; experiments run 5 independent runs and average performance is reported; train/validation/test split for classification is 80%/10%/10%. For time series forecasting: MSE computed as the averaged squared difference between predicted price and actual value; time-series split uses 01 Jan 2020 - 03 Sep 2020 for training (67%) and 04 Sep 2020 - 31 Dec 2020 for testing (33%).
+
+**Interpretation**: Higher F1 Score indicates better classification performance; lower MSE indicates better time series prediction. DistilBERT achieved average F1-score 0.81 for financial sentiment classification and 0.42 for emotion classification. Best time-series result reported: MSE = 0.83 * 10^-3 on S&P 500 when combining price index, text, and emotion features with a rolling window size of 5.
+
+**Baseline Results**: DistilBERT: average F1-score = 0.81 (financial sentiment classification) and F1-score = 0.42 (emotion classification). Time series best MSE = 0.83 * 10^-3 on S&P 500 when combining index, text, and emotion features (window size = 5).
+
+**Validation**: Human-in-the-loop validation: seed dataset annotated by three financial experts (Cohen Kappa = 0.79). Data quality validation compared StockEmotions to GoEmotions API labels; human evaluators confirmed that many items labeled neutral by GoEmotions contained investor emotions, supporting validity of the new dataset.
+
+## ⚠️ Targeted Risks
+
+**Risk Categories**:
+- Bias
+- Accuracy
+
+**Atlas Risks**:
+- **Fairness**: Data bias
+- **Accuracy**: Unrepresentative data, Poor model accuracy
+
+**Demographic Analysis**: N/A
+
+**Potential Harm**: ['Offensive language and toxic content in data', "User base biases (platform skew toward speculative/'meme' stocks)", 'Annotator bias', 'Confusion and errors due to financial jargon and slang']
+
+## 🔒 Ethical and Legal Considerations
+
+**Privacy And Anonymity**: Masking of cashtags, hashtags, and URLs using special tokens (e.g., [CTAG], [HTAG], [URL]); identification and removal of commercial usernames and commercial content patterns using authors' judgment.
+
+**Data Licensing**: Not Applicable
+
+**Consent Procedures**: Not Applicable
+
+**Compliance With Regulations**: Not Applicable

@@ -1,0 +1,104 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CETVEL",
+    "abbreviation": "N/A",
+    "overview": "CETVEL is a comprehensive benchmark designed to evaluate large language models (LLMs) in Turkish. It addresses gaps in existing benchmarks by combining a broad range of both discriminative and generative tasks, ensuring content that reflects the linguistic and cultural richness of the Turkish language.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Turkish"
+    ],
+    "similar_benchmarks": [
+      "TurkishMMLU",
+      "TR-MMLU",
+      "TUMLU",
+      "XGLUE",
+      "XTREME"
+    ],
+    "resources": [
+      "https://github.com/KUIS-AI/cetvel"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of CETVEL is to provide a culturally grounded evaluation suite for advancing the development and assessment of LLMs in Turkish.",
+    "audience": [
+      "ML Researchers",
+      "NLP Practitioners",
+      "Language Model Developers"
+    ],
+    "tasks": [
+      "Extractive Question Answering",
+      "Multiple Choice Question Answering",
+      "Text Classification",
+      "Natural Language Inference",
+      "Summarization",
+      "Machine Translation",
+      "Grammatical Error Correction"
+    ],
+    "limitations": "CETVEL is limited to open-weight models with up to 70B parameters; it does not include proprietary models restricted by API changes.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "A combination of publicly available datasets, specifically curated datasets, and adapted versions of existing datasets.",
+    "size": "10,000 examples",
+    "format": "Various formats including JSON and CSV",
+    "annotation": "Crowdsourced and manual annotation by experts"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "BLEU Score",
+      "ROUGE-2",
+      "Exact Match"
+    ],
+    "calculation": "Metrics are calculated based on standard performance measures tailored to each task type.",
+    "interpretation": "Higher scores indicate better model performance; specific thresholds for good vs. poor performance depend on task definitions.",
+    "baseline_results": "Llama-3.3-70B-Instruct provides the strongest overall performance across evaluated tasks.",
+    "validation": "The benchmark is validated through extensive experimental evaluations against a variety of LLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "CETVEL includes assessments for model performance across diverse Turkish linguistic and cultural contexts.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Most datasets are licensed under CC BY-SA, MIT, or other open licenses.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

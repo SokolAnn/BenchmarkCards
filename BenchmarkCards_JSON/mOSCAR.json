@@ -1,0 +1,106 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "mOSCAR (Multimodal Open Super-large Crawled Aggregated corpus)",
+    "abbreviation": "mOSCAR",
+    "overview": "mOSCAR is the first large-scale multilingual and multimodal document corpus, covering 163 languages, with 303M documents, 200B tokens, and 1.15B images, specifically developed to support research in multimodal large language models.",
+    "data_type": "document-level corpus containing text-image pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English",
+      "Spanish",
+      "French",
+      "Chinese",
+      "German",
+      "Japanese",
+      "Russian",
+      "Hindi",
+      "Arabic",
+      "Portuguese"
+    ],
+    "similar_benchmarks": [
+      "WIT",
+      "Conceptual Captions",
+      "LAION-400M"
+    ],
+    "resources": [
+      "https://oscar-project.github.io/documentation/versions/mOSCAR/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a large-scale, high-quality multilingual and multimodal dataset for training and evaluating multilateral large language models.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Visual Question Answering",
+      "Image Captioning",
+      "Multimodal Machine Translation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Crawled from the web using Common Crawl datasets with extensive filtering for quality and safety.",
+    "size": "303M documents, 200B tokens, 1.15B images",
+    "format": "Mixed (text and images)",
+    "annotation": "Manual filtering and evaluation steps to ensure dataset safety and quality."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "CideR",
+      "Accuracy",
+      "BLEU Score"
+    ],
+    "calculation": "Metrics calculated based on standard evaluation protocols for image-text tasks.",
+    "interpretation": "Results are compared against models trained on standard captions and evaluated on various multilingual tasks.",
+    "baseline_results": null,
+    "validation": "Extensive filtering and evaluation procedures to ensure reliability and quality of the dataset."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Documents processed to remove PII and toxic content.",
+    "data_licensing": "Creative Commons CC BY 4.0 license.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

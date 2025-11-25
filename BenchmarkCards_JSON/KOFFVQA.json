@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "KOFFVQA: An Objectively Evaluated Free-form VQA Benchmark for Large Vision-Language Models in the Korean Language",
+    "abbreviation": "KOFFVQA",
+    "overview": "KOFFVQA is a general-purpose free-form visual question answering benchmark in the Korean language for the evaluation of vision-language models (VLMs). It consists of 275 carefully crafted questions each paired with an image and grading criteria covering 10 different aspects of VLM performance.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Korean"
+    ],
+    "similar_benchmarks": [
+      "VLR-Bench",
+      "VARCO-VISION",
+      "K-MMBench",
+      "K-SEED",
+      "K-MMStar"
+    ],
+    "resources": [
+      "https://github.com/maum-ai/KOFFVQA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the KOFFVQA benchmark is to provide an objective evaluation framework for VLMs in the Korean language, allowing for the assessment of various aspects of their performance.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Visual Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Images are sourced from various online repositories, including the Open Images v7 dataset and the KAIST Scene Text dataset, along with curated questions.",
+    "size": "275 questions",
+    "format": "N/A",
+    "annotation": "Questions and grading criteria are created by human annotators."
+  },
+  "methodology": {
+    "methods": [
+      "LLM-as-a-judge evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Scores are computed based on predefined grading criteria, with evaluations scaled from 0 to 10, and then transformed to a range of 0 to 100.",
+    "interpretation": "Higher average scores indicate better performance, which is directly comparable with other benchmarks.",
+    "baseline_results": null,
+    "validation": "Evaluation compared against human scores for accuracy."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

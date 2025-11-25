@@ -1,0 +1,76 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Schema Lineage Composite Evaluation (SLiCE)",
+    "abbreviation": "SLiCE",
+    "overview": "The Schema Lineage Composite Evaluation (SLiCE) is a novel metric introduced for automated extraction of schema lineage from multilingual enterprise pipeline scripts. It evaluates the structural correctness and semantic fidelity of the extracted lineage, utilizing a benchmark of 1,700 manually annotated schema lineages from real-world scripts.",
+    "data_type": "schema lineage annotations",
+    "domains": [
+      "Data Governance",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://arxiv.org/abs/2508.07179"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a systematic evaluation framework for schema lineage extraction from complex, multilingual data pipelines.",
+    "audience": [
+      "Data Engineers",
+      "Data Scientists",
+      "ML Researchers"
+    ],
+    "tasks": [
+      "Schema Lineage Extraction",
+      "Data Transformation Analysis"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Manually annotated schema lineages from 50 enterprise pipeline scripts in SQL, Python, and C#.",
+    "size": "1,700 schema lineage examples",
+    "format": "JSON",
+    "annotation": "Manually annotated by domain experts."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "SLiCE (Schema Lineage Composite Evaluation)"
+    ],
+    "calculation": "SLiCE combines multiple evaluations (format correctness, source schema match, source table evaluation, transformation, and aggregation evaluations) into a single composite score.",
+    "interpretation": "Scores express the accuracy of lineage extraction, where 1.0 indicates perfect extraction.",
+    "baseline_results": "Models evaluated include various open-source small language models (SLMs) and large language models (LLMs), with results indicating model scaling improvements.",
+    "validation": "Experimentally validated through extensive evaluation on a curated dataset."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

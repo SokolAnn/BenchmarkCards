@@ -1,0 +1,78 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Social Intelligence QA (SOCIAL IQA)",
+    "abbreviation": "SOCIAL IQA",
+    "overview": "We introduce SOCIAL IQA, the first large-scale benchmark for commonsense reasoning about social situations. SOCIAL IQA contains 38,000 multiple choice questions for probing emotional and social intelligence in a variety of everyday situations.",
+    "data_type": "question-answering pairs (text; three-way multiple-choice)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [],
+    "similar_benchmarks": [
+      "COPA (Choice of Plausible Alternatives)",
+      "Winograd Schema Challenge",
+      "DPR (Rahman and Ng, 2012)",
+      "CommonsenseQA",
+      "SWAG"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Measure the social and emotional intelligence of computational models through multiple choice question answering (QA) about social situations.",
+    "audience": [],
+    "tasks": [
+      "Question Answering",
+      "Commonsense Reasoning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Seeded from the ATOMIC knowledge graph and collected via crowdsourcing on Amazon Mechanical Turk (MTurk).",
+    "size": "37,588 examples (33,410 train, 1,954 dev, 2,224 test)",
+    "format": "N/A",
+    "annotation": "Crowdsourced via Amazon Mechanical Turk in a multi-stage pipeline: event rewriting of ATOMIC events, context/question/answer creation (workers provided contexts and two potential correct answers), collection of negative answers via Handwritten Incorrect Answers (HIA) and Question-Switching Answers (QSA), and final QA tuple validation via majority human voting (3 workers for train; 5 workers for dev/test). Adversarial filtering using a deep stylistic classifier was applied to remove easier examples on dev and test."
+  },
+  "methodology": {
+    "methods": [
+      "Fine-tuning of pretrained language models (OpenAI-GPT, BERT-base, BERT-large)",
+      "Human evaluation (crowd workers selecting correct answer)",
+      "Sequential fine-tuning for transfer learning to downstream commonsense tasks",
+      "Ablation studies (removing context and/or question)"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Effect size (Cohen's d) for valence/arousal/dominance comparisons between answer types"
+    ],
+    "calculation": "Accuracy is computed as the percentage of examples where the model-selected answer (the triple with highest softmax-normalized probability) matches the majority-voted correct answer. Human performance measured as percent correct by crowd workers on sampled subsets. Cohen's d calculated to compare VAD means between answer types.",
+    "interpretation": "Higher Accuracy indicates better social commonsense reasoning. Human performance on sampled subsets is reported as 86.9% (dev) and 84.4% (test) as an approximate upper bound; model accuracies substantially lower (e.g., BERT-large: 66.0% dev, 64.5% test) indicate the task remains challenging for current models.",
+    "baseline_results": "Random baseline: 33.3% (dev/test). GPT: 63.3% (dev), 63.0% (test). BERT-base: 63.3% (dev), 63.1% (test). BERT-large: 66.0% (dev), 64.5% (test). Ablations for BERT-large: w/o context 52.7% (dev), w/o question 52.1% (dev), w/o context and question 45.5% (dev). Human: 86.9% (dev subset), 84.4% (test subset).",
+    "validation": "Training QA tuples validated by 3 crowd workers; dev and test QA tuples validated a second time with 5 workers. Correct answers determined by human majority voting; cases without majority vote were discarded. Adversarial filtering applied on dev/test using a stylistic classifier to remove easier examples."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ERAS (Evaluation of Robustness to Locally Ambiguous Segmentation)",
+    "abbreviation": "ERAS",
+    "overview": "ERAS tests a model's vulnerability to morphological garden path errors by comparing its behavior on sentences with and without local segmentation ambiguities.",
+    "data_type": "paired sentences",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the susceptibility of Chinese NLP models to morphological garden path errors.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Word Segmentation",
+      "Sentiment Analysis"
+    ],
+    "limitations": "ERAS can only be used for two kinds of models: word segmentation models and sentiment analysis models.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Synthetically generated pairs of ambiguous and unambiguous sentences.",
+    "size": "203,944 pairs",
+    "format": "CSV",
+    "annotation": "Manually verified by native speakers of Mandarin Chinese."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Models evaluated based on their performance on ambiguous versus unambiguous sentences.",
+    "interpretation": "Lower accuracy on ambiguous sentences indicates susceptibility to garden path errors.",
+    "baseline_results": "Human accuracy score of 91.3%",
+    "validation": "Evaluation based on the null hypothesis testing."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

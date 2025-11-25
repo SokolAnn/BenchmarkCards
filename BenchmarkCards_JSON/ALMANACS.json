@@ -1,0 +1,69 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ALMANACS (Anticipating Language Model Answers in Non-objective And Complex Scenarios)",
+    "abbreviation": "ALMANACS",
+    "overview": "ALMANACS is a language model explainability benchmark that evaluates explainability methods on simulatability, i.e., how well the explanations improve behavior prediction on new inputs across twelve safety-relevant topics.",
+    "data_type": "Yes/No questions",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/edmundmills/ALMANACS"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a fully automated benchmark for evaluating the efficacy of language model explainability methods by measuring their simulatability.",
+    "audience": [
+      "ML Researchers",
+      "Interpretability Researchers"
+    ],
+    "tasks": [
+      "Behavior Prediction"
+    ],
+    "limitations": "While ALMANACS is an automated benchmarking tool, it is not a perfect substitute for human evaluations.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generative templates created with GPT-4 for various safety-relevant topics.",
+    "size": "180,000 train examples and 18,000 test examples",
+    "format": "Structured text prompts",
+    "annotation": "Automated with GPT-4"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Kullback-Leibler Divergence (KLD IV)",
+      "Total Variation Distance (TVD IST)",
+      "Spearman Correlation"
+    ],
+    "calculation": "Metrics are calculated based on the predicted probabilities of model decisions versus ground truth.",
+    "interpretation": "Lower values on KLD IV indicate better simulatability.",
+    "baseline_results": "Baseline evaluation results show no explanation methods consistently improve predictions over the no-explanation control.",
+    "validation": "ALMANACS scenarios are designed to test distributional shifts in model behavior."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

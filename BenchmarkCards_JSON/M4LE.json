@@ -1,0 +1,102 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "M4LE (Multi-Ability Multi-Range Multi-Task Multi-Domain Long-Context Evaluation Benchmark for Large Language Models)",
+    "abbreviation": "M4LE",
+    "overview": "M4LE is a benchmark designed to evaluate the long-context capabilities of large language models across various tasks, domains, and input lengths. It encompasses 36 task types related to long-context understanding across 12 domains and 5 distinct abilities.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "SCROLLS",
+      "ZeroSCROLLS",
+      "L-Eval",
+      "LongBench"
+    ],
+    "resources": [
+      "https://github.com/KwanWaiChung/M4LE"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To comprehensively evaluate large language models' long-context understanding capabilities through a varied set of tasks and scenarios.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Text Classification",
+      "Summarization",
+      "Retrieval",
+      "Translation"
+    ],
+    "limitations": "Current evaluation is limited to smaller models and lengths of up to 8K; future work could explore longer contexts.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "36 established datasets in both English and Chinese from diverse NLP tasks and domains, including QA, summarization, classification, and translations.",
+    "size": "N/A",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Evaluation of models on extended context inputs",
+      "Comparison of long-context capabilities across various scenarios and task types"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "ROUGE-L",
+      "BLEU"
+    ],
+    "calculation": "Metrics are calculated based on model performance in different context lengths and across abilities, normalized against a baseline model (GPT-3.5-Turbo-16K).",
+    "interpretation": "Higher scores indicate better performance in understanding and processing long-context data, with significant drops noted at longer input lengths.",
+    "baseline_results": "Performance compared to 11 prominent LLMs, notably observed drops in accuracy correlated with longer contexts, particularly in tasks requiring multiple span attention.",
+    "validation": "Systematic evaluation across various models to assess their competencies in handling long inputs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Privacy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

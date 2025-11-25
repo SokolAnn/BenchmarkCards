@@ -1,0 +1,82 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "3D-RAD (3D Radiology Med-VQA Dataset)",
+    "abbreviation": "3D-RAD",
+    "overview": "3D-RAD is a large-scale dataset designed to advance 3D Medical Visual Question Answering (Med-VQA) using radiology CT scans, comprising six diverse VQA tasks which support both open- and closed-ended questions, along with complex reasoning challenges.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "VQA-RAD",
+      "SLAKE",
+      "PathVQA",
+      "M3D-VQA"
+    ],
+    "resources": [
+      "https://github.com/Tang-xiaoxiao/M3D-RAD",
+      "https://huggingface.co/datasets/Tang-xiaoxiao/3D-RAD"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To advance 3D Med-VQA research by providing a benchmark that supports multi-temporal and multi-task evaluation in the context of real-world clinical reasoning.",
+    "audience": [
+      "ML Researchers",
+      "Medical Researchers",
+      "Healthcare Practitioners"
+    ],
+    "tasks": [
+      "Anomaly Detection",
+      "Image Observation",
+      "Medical Computation",
+      "Existence Detection",
+      "Static Temporal Diagnosis",
+      "Longitudinal Temporal Diagnosis"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated from CT-RATE, a large-scale 3D chest CT dataset paired with radiology reports",
+    "size": "136,195 training samples, 34,000 benchmark samples",
+    "format": "N/A",
+    "annotation": "Generated using a semi-automated pipeline with strong large language models (LLMs) and extensive human validation."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "BLEU Score",
+      "ROUGE-L",
+      "Accuracy"
+    ],
+    "calculation": "Metrics are calculated based on model performance on defined tasks using standard evaluation procedures.",
+    "interpretation": "Higher scores indicate better model performance in answering the clinical questions accurately.",
+    "baseline_results": "N/A",
+    "validation": "Validation through LLM scoring and human evaluations to ensure high-quality QA pairs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Licensed under CC BY-NC-SA",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

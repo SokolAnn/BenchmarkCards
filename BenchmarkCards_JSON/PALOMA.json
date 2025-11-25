@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PALOMA (Perplexity Analysis for Language Model Assessment)",
+    "abbreviation": "PALOMA",
+    "overview": "PALOMA is a benchmark to measure language model (LM) fit to 546 English and code domains by analyzing perplexity across various data distributions, enabling more accurate evaluation of LMs across different types of textual and programming data.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Science"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "C4",
+      "MC4-EN",
+      "WIKITEXT-103",
+      "PENN TREEBANK",
+      "REDPAJAMA",
+      "DOLMA"
+    ],
+    "resources": [
+      "https://paloma.allen.ai"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of PALOMA is to provide a standardized benchmark for evaluating language model fit across diverse domains, emphasizing the importance of perplexity measurement for scientific comparison.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Language Modeling"
+    ],
+    "limitations": "The focus is primarily on English and code data, potentially limiting its applicability to other languages and domains.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "PALOMA consists of 16 sources curated to create language modeling evaluations, including datasets for standard language modeling benchmarks and fine-grained domain evaluations, e.g., from the top 100 subreddits and programming languages.",
+    "size": "123,683,201 tokens",
+    "format": "Plain text",
+    "annotation": "Automated filtering and metadata curation."
+  },
+  "methodology": {
+    "methods": [
+      "Perplexity evaluation",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Perplexity"
+    ],
+    "calculation": "Perplexity is calculated per token based on the log likelihood of evaluation data, normalizing the likelihood by the number of tokens in the evaluated documents.",
+    "interpretation": "Lower perplexity values indicate better model fit to the evaluated domain.",
+    "baseline_results": "Baseline models include 1 billion parameter LMs pretrained on data sources such as C4, MC4-EN, and others as detailed in the paper.",
+    "validation": "The benchmark was validated through comparison of perplexity results across different model configurations and domains."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Includes analysis of disparities in language model performance on different dialects and communities.",
+    "harm": [
+      "Potential for reinforcing biases found in training data."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

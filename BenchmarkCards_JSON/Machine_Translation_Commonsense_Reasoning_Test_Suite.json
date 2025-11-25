@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Machine Translation Commonsense Reasoning Test Suite",
+    "abbreviation": "N/A",
+    "overview": "This paper presents a test suite to evaluate the commonsense reasoning capability of neural machine translation, consisting of three test sets covering lexical and contextless/contextual syntactic ambiguity that requires commonsense knowledge to resolve. The test suite aims to promote future research on commonsense reasoning in machine translation models.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Chinese",
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Social IQA",
+      "Event2mind",
+      "Atomic",
+      "WinoGram Schema Challenge",
+      "SWAG",
+      "HellaSwag"
+    ],
+    "resources": [
+      "https://github.com/tjunlp-lab/CommonMT"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the commonsense reasoning capability of state-of-the-art neural machine translation models and provide a benchmark testbed for tracking progress in this direction.",
+    "audience": [
+      "ML Researchers",
+      "Translation Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Commonsense Reasoning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Manually constructed data consisting of source sentences with ambiguity requiring commonsense reasoning, covering three types of ambiguities: lexical ambiguity, contextless syntactic ambiguity, and contextual syntactic ambiguity.",
+    "size": "1,200 triples",
+    "format": "JSON",
+    "annotation": "Manual annotation by experts"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Commonsense Reasoning Accuracy"
+    ],
+    "calculation": "The commonsense reasoning accuracy is calculated based on how well the NMT models can distinguish between correct and incorrect translations of ambiguous sentences by scoring each translation pair.",
+    "interpretation": "Higher scores indicate better performance in commonsense reasoning by assessing the ability to select correct translations based on commonsense knowledge.",
+    "baseline_results": "Transformer model achieves a highest accuracy of 0.712 on the test suite.",
+    "validation": "Extensive experiments conducted with analyses to evaluate the reasoning capability of neural machine translation models on the test suite."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

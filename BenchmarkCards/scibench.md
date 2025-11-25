@@ -1,0 +1,104 @@
+# SCIBENCH
+
+## 📊 Benchmark Details
+
+**Name**: SCIBENCH
+
+**Overview**: SCIBENCH is an expansive benchmark suite for evaluating Large Language Models on college-level scientific problem solving. It contains a carefully curated dataset of collegiate-level problems from Mathematics, Chemistry, and Physics (869 problems), including a multimodal subset (177 problems with visual elements) and a separate closed exam dataset (103 problems). All problems are open-ended, free-response questions with step-by-step solutions provided to facilitate detailed error analysis. The benchmark is used to evaluate unimodal and multimodal LLMs under various prompting strategies and tool-augmented settings.
+
+**Data Type**: text (free-response, single numerical answers rounded to three decimal places) and multimodal (text with visual figures/graphs)
+
+**Domains**:
+- Mathematics
+- Physics
+- Chemistry
+- Computer Science
+
+**Similar Benchmarks**:
+- ScienceQA
+- GSM8K
+- MATH
+- MMLU
+- AGIEval
+- JEEBench
+- SciEval
+- TheoremQA
+- BIG-Bench
+
+**Resources**:
+- [Resource](https://scibench-ucla.github.io)
+- [Resource](https://arxiv.org/abs/2307.10635)
+
+## 🎯 Purpose and Intended Users
+
+**Goal**: To systematically examine and benchmark the reasoning capabilities required for solving complex, college-level scientific problems by LLMs through a curated dataset and an evaluation protocol that includes multimodal problems, step-by-step solutions, and skill-level error analysis.
+
+**Target Audience**:
+- ML Researchers
+- Model Developers
+
+**Tasks**:
+- Question Answering
+- Mathematical Reasoning
+- Numerical Computation
+- Multimodal Reasoning
+- Scientific Knowledge Retrieval
+
+**Limitations**: Scope limited to a select group of scientific disciplines (Mathematics, Physics, Chemistry). Answers in the textbook dataset are restricted to single numerical values rounded to three decimal places. Closed exam subset is 103 problems (limited coverage).
+
+## 💾 Data
+
+**Source**: 869 problems collected from ten college-level textbooks across Physics, Chemistry, and Mathematics (textbook dataset); a multimodal subset of 177 problems that include visual elements (figures/graphs); a closed exam dataset of 103 problems from seven midterm and final exams in collegiate Computer Science and Math courses. Problems were manually extracted from PDF documents and converted to LaTeX.
+
+**Size**: 869 problems (textbook dataset); 177 multimodal problems; 103 closed exam problems
+
+**Format**: LaTeX documents (manually converted from PDF via OCR Mathpix) with preserved images for visual contexts; answers provided as floating-point numbers rounded to three decimals and as LaTeX expressions; units stored separately.
+
+**Annotation**: Manual collection and verification by human annotators using a web-based annotation tool; OCR (Mathpix) used for conversion; detailed step-by-step solutions provided and verified by human annotators.
+
+## 🔬 Methodology
+
+**Methods**:
+- Zero-Shot Learning
+- Few-Shot Learning
+- Chain-of-Thought prompting
+- Tool-augmented evaluation (Python, Wolfram Language)
+- Automated numerical comparison with tolerance
+- Human grading (instructor rubrics for exam dataset)
+- LLM-empowered self-critique / LLM verifier with human verification
+
+**Metrics**:
+- Accuracy
+- Average Score (percentage)
+
+**Calculation**: Model outputs are compared with the correct answers allowing a relative tolerance of 5%. Answers are converted to floating-point numbers rounded to three decimal places. For the exam dataset, model solutions are graded using instructor-provided rubrics. For skill attribution, an LLM verifier classifies errors into predefined skill categories and human annotators validate classifications (sampled checks).
+
+**Interpretation**: Higher accuracy/average score indicates better scientific problem-solving performance. The authors interpret low scores as indicating substantial room for improvement in LLM problem-solving abilities; no single prompting strategy universally improves all essential skills and some strategies improve certain skills while degrading others.
+
+**Baseline Results**: Under their evaluations, the best overall scores reported were: 43.22% average on the textual (textbook) dataset, 13.8% on the multimodal dataset, and 51.57% on the closed exam dataset (reported as best results under strongest configurations combining CoT prompting and external tools). Detailed per-model results are reported in Tables 3 and S2 of the paper.
+
+**Validation**: Dataset formatting and LaTeX compilation were verified by human annotators. The LLM verifier's classifications were human-checked on a sample of 151 examples, yielding an 81.45% agreement/accuracy on the verifier outputs. Problems and exam inclusions were manually reviewed to reduce leakage and ensure dataset integrity.
+
+## ⚠️ Targeted Risks
+
+**Risk Categories**:
+- Accuracy
+- Privacy
+- Intellectual Property
+- Data Laws
+
+**Atlas Risks**:
+- **Accuracy**: Data contamination
+- **Privacy**: Personal information in data
+- **Intellectual Property**: Data usage rights restrictions
+- **Data Laws**: Data usage restrictions
+
+## 🔒 Ethical and Legal Considerations
+
+**Privacy And Anonymity**: The dataset was manually examined to ensure the absence of potential sensitive background or ethical concerns. Problems and images were reviewed; inclusion of exam questions was authorized by instructors.
+
+**Data Licensing**: Collection adheres to Fair Use Law in the United States; no explicit dataset license string is provided in the paper.
+
+**Consent Procedures**: Inclusion of exam questions has been authorized by the instructors of the respective courses.
+
+**Compliance With Regulations**: Authors state adherence to Fair Use Law (US). No explicit statements regarding GDPR, CCPA, or other international regulations are provided.

@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ZHUANG RULES",
+    "abbreviation": "N/A",
+    "overview": "ZHUANG RULES is a modularized dataset of grammar rules and their corresponding test sentences, aiming to investigate the role of grammar books in translating extremely low-resource languages by deconstructing the translation process into grammar rule retrieval and application.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Zhuang",
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "MTOB"
+    ],
+    "resources": [
+      "https://github.com/Infinite-set/ZhuangRules"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the benchmark is to provide controlled and interpretable evaluation of grammar understanding in large language models for low-resource language translation.",
+    "audience": [
+      "ML Researchers",
+      "Language Technologists",
+      "Linguists"
+    ],
+    "tasks": [
+      "Grammar Rule Application",
+      "Translation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from two grammar books on Zhuang written in Chinese: 《壮语通论》和《壮语基础教程》。",
+    "size": "109 grammar rules paired with an average of 608 Zhuang-Chinese parallel sentences.",
+    "format": "CSV",
+    "annotation": "Each grammar rule is annotated with attributes that include action, difficulty, and domain."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "BLEU",
+      "chrF++"
+    ],
+    "calculation": "Metrics are calculated based on the translation performance of models using the grammar rules provided in the dataset.",
+    "interpretation": "Higher BLEU and chrF++ scores indicate better translation performance and comprehension of grammar rules.",
+    "baseline_results": "Previous translation models using only grammar books without the modularized approach.",
+    "validation": "Cross-validation with different language models to assess reliability."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis of effectiveness across different Zhuang demographics will be explored in potential future work.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

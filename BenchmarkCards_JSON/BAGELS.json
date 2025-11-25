@@ -1,0 +1,80 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "BAGELS: Benchmarking the Automated Generation and Extraction of Limitations from Scholarly Text",
+    "abbreviation": "BAGELS",
+    "overview": "This paper presents a dataset of research limitations extracted from scientific papers along with methods for generating limitations and a framework for evaluating these limitations.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Machine Learning",
+      "Biomedical Research"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "LIMITGEN"
+    ],
+    "resources": [
+      "https://github.com/IbrahimAlAzhar/BAGELS_Limitation_Gen",
+      "https://huggingface.co/datasets/IbrahimAlAzhar/limitation-generation-dataset-bagels"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a dataset and framework for studying the extraction and generation of limitations in research articles.",
+    "audience": [
+      "ML Researchers",
+      "NLP Practitioners",
+      "Academic Authors"
+    ],
+    "tasks": [
+      "Limitation Extraction",
+      "Limitation Generation"
+    ],
+    "limitations": "The dataset is primarily focused on specific NLP and machine learning conferences which may limit broader applicability.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Dataset extracted from papers and peer reviews from ACL, NeurIPS, and PeerJ.",
+    "size": "6,932 NeurIPS papers, 5,739 ACL papers, and 1,000 PeerJ papers.",
+    "format": "JSON",
+    "annotation": "Extracted limitations annotated with LLM assistance."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "LLM-based evaluation"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score",
+      "ROUGE-L",
+      "BERTScore"
+    ],
+    "calculation": "Metrics are calculated based on comparisons between extracted limitations and ground truth.",
+    "interpretation": "Higher scores indicate better extraction accuracy for limitations.",
+    "baseline_results": null,
+    "validation": "Evaluated through human annotation comparing LLM extractions against established limitations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Accurate Reporting"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "No identifiable information from human annotators was used.",
+    "data_licensing": "Data sourced from publicly available repositories without filtering based on discriminatory attributes.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

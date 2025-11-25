@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "वाक् सञ्चयः (/Vāksañcayah ̣/)",
+    "abbreviation": "N/A",
+    "overview": "We present a new, large vocabulary Sanskrit ASR system and the first ever ASR-based study for Sanskrit using a new, large and diverse, labeled speech corpus वाक् सञ्चयः (/Vāksañcayah ̣/).",
+    "data_type": "speech recordings",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Sanskrit"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/cyfer0618/Vaksanca.git",
+      "http://www.cse.iitb.ac.in/~asr"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To introduce a large vocabulary ASR system for Sanskrit and analyze different modeling choices for acoustic and language models in ASR systems.",
+    "audience": [
+      "ML Researchers",
+      "Speech Recognition Developers",
+      "Linguists"
+    ],
+    "tasks": [
+      "Automatic Speech Recognition"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset is collected from various sources including volunteer recordings and online resources.",
+    "size": "78 hours of speech covering about 46,000 sentences",
+    "format": "Audio files",
+    "annotation": "Transcribed by volunteers using oTranscribe and other tools."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Word Error Rate (WER)",
+      "Character Error Rate (CER)"
+    ],
+    "calculation": "WER and CER are computed based on the ASR output compared to the ground truth transcripts.",
+    "interpretation": "Lower WER/CER indicates better performance of the ASR system.",
+    "baseline_results": null,
+    "validation": "The ASR system was validated using separate validation and test datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis includes variances from multiple native language speakers.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "Informed consent obtained from all speakers involved in recordings.",
+    "compliance_with_regulations": "N/A"
+  }
+}

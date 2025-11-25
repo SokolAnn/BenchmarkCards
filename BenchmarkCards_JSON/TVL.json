@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Touch-Vision-Language (TVL) dataset",
+    "abbreviation": "TVL",
+    "overview": "TVL is a dataset and evaluation benchmark for touch-vision-language alignment. The dataset contains ~44K paired in-the-wild vision-tactile observations with English language labels (10% human-annotated, 90% pseudo-labeled by GPT-4V). It is used to train a vision-language-aligned tactile encoder and a touch-vision-language (TVL) model, and the authors propose a TVL Benchmark in which multimodal models generate tactile descriptions and an LLM rates consistency with human annotations.",
+    "data_type": "multimodal (tactile images, vision images, text descriptions — open-vocabulary tactile adjectives)",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision",
+      "Robotics"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SSVTP (Self-Supervised Visuo-Tactile Pretraining)",
+      "Touch and go (Yang et al., 2022)"
+    ],
+    "resources": [
+      "https://tactile-vlm.github.io",
+      "https://arxiv.org/abs/2402.13232"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Provide a paired tactile-vision-language dataset (TVL) to enable training and evaluation of tactile-vision-language alignment, including training a vision-and-language-aligned tactile encoder and a Touch-Vision-Language model, and to evaluate multimodal models' ability to generate tactile descriptions via the TVL Benchmark.",
+    "audience": [
+      "ML Researchers",
+      "Robotics Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Open-Vocabulary Classification",
+      "Image-to-Text Generation (tactile description / captioning)",
+      "Multimodal Representation Learning"
+    ],
+    "limitations": "Limitations stated by the authors: (1) tactile labels derived solely from vision have inherent accuracy limits; (2) camera may not have an unoccluded view of the surface/contact patch, which can reduce pseudo-label quality; (3) only a small fraction of the dataset is human-labeled (10%), creating distribution shift between pseudo-labeled training data and human-labeled test data; (4) overfitting to noisy pseudo-labels and distribution shift concerns.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Aggregated from two components: (1) SSVTP (Self-Supervised Visuo-Tactile Pretraining) dataset (Kerr et al., 2023) collected by a UR5 robot, and (2) HCT (Human Collected Tactile) dataset collected by humans using a handheld 3D-printed device with a Logitech BRIO webcam and a DIGIT tactile sensor.",
+    "size": "43,741 in-contact image-touch pairs (reported as ~44,000 paired observations). SSVTP: 4,587 image-touch pairs. HCT: 39,154 in-contact image-touch pairs and 169,292 out-of-contact pairs. Test set: 402 image-touch pairs (1% hand-annotated).",
+    "format": "RGB images for vision and tactile observations (tactile sensor outputs as RGB images of internal deformable surface), plus text annotations (natural language tactile adjective labels).",
+    "annotation": "10% of data human-annotated (annotators choose up to five adjectives from a provided 400-word tactile vocabulary; annotators used 254 unique adjectives across dataset). 90% pseudo-labeled by GPT-4V; small held-out test set (402 pairs) manually labeled by humans. Pseudo-label generation used prompts with full and cropped images; failures handled by sampling within a trajectory or excluding the trajectory."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics (Top-1 and Top-5 Accuracy for open-vocabulary tactile classification)",
+      "Model-based evaluation using GPT-4 to score generated tactile descriptions (1-10 scale)",
+      "Pairwise contrastive learning (tactile-vision, tactile-language, vision-language) for tactile encoder training",
+      "Statistical significance testing (two-sided paired sample t-tests, reporting p-values)"
+    ],
+    "metrics": [
+      "Top-1 Accuracy",
+      "Top-5 Accuracy",
+      "Score (1-10) from GPT-4 comparing model-generated tactile descriptions to human annotations",
+      "p-values from paired sample t-tests (for statistical significance)"
+    ],
+    "calculation": "Open-vocabulary classification: treat the human-labeled TVL test set as a 402-way classification problem and compute top-1 and top-5 accuracy. To account for synonymous descriptors, authors prompt GPT-4 to generate synonyms and compute CLIP language embeddings; define a similarity threshold phi (empirically phi = 0.636) and include as correct any labels whose cosine similarity with the image's original label exceeds phi. TVL Benchmark: provide visual input (full image and cropped contact patch) and tactile image to models; prompt models to output up to five adjectives; use text-only GPT-4 to score similarity against human ground truth on a 1-10 scale.",
+    "interpretation": "Higher top-1/top-5 accuracy indicates better tactile-language/tactile-vision alignment. A higher GPT-4 score (1-10) indicates better instruction following and closer descriptive match to human annotations. Statistical significance reported at alpha = 0.05 using paired t-tests.",
+    "baseline_results": "Selected reported baselines: TVL tactile encoder (ViT-Tiny) tactile-text Top-1/Top-5: 36.7% / 70.3%; tactile-vision Top-1/Top-5: 79.5% / 95.7% (Table 1). TVL-LLaMA (ViT-Tiny) GPT-4 score: 6.09 (SSVTP), 4.79 (HCT), 4.94 (TVL overall). GPT-4V (label-generating model) scores: 5.02 (SSVTP), 4.42 (HCT), 4.49 (TVL overall). Open-source VLMs report lower scores (examples in Table 2: InstructBLIP 7B score 1.40 on SSVTP subset). Reported improvements: TVL tactile encoder shows +29% classification accuracy over existing encoders on tactile tasks; TVL-LLaMA models outperform GPT-4V by at least +12% on the TVL Benchmark (as reported by authors).",
+    "validation": "Train/validation/test split: 99%-1% train-test split across both dataset components; test set (402 pairs) manually labeled. Statistical validation via two-sided paired sample t-tests comparing model scores against GPT-4V; p-values reported for comparisons. Ablation studies and sensitivity analyses performed (model size, loss terms, dataset composition)."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The data present in this paper is anonymized.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

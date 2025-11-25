@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MEDFRAME QA",
+    "abbreviation": "N/A",
+    "overview": "MEDFRAME QA is the first benchmark explicitly designed to evaluate multi-image reasoning in medical visual question answering (VQA), consisting of 2,851 VQA pairs from medical videos.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "VQA-RAD",
+      "VQA-Med-2019",
+      "VQA-Med-2021",
+      "SLAKE",
+      "MedXpertQA"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/SuhaoYu1020/MedFrameQA",
+      "https://ucsc-vlaa.github.io/MedFrameQA/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate multi-image reasoning capabilities of MLLMs in clinical scenarios similar to real-world diagnostic situations.",
+    "audience": [
+      "ML Researchers",
+      "Medical Professionals",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Visual Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Extracted from 3,420 medical videos available on YouTube.",
+    "size": "2,851 question-answering pairs",
+    "format": "N/A",
+    "annotation": "Automatically generated via an automated pipeline using GPT-4 for image filtering, caption alignment, and question generation."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy calculated based on the percentage of correctly answered questions by models.",
+    "interpretation": "Higher accuracy indicates better performance of models in multi-image reasoning tasks.",
+    "baseline_results": "Most models performed with accuracies below 50%.",
+    "validation": "Validation through automated and manual quality checks ensuring question complexity and relevance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DFTG (Diagnose First, Then Generate)",
+    "abbreviation": "DFTG",
+    "overview": "The DFTG framework is proposed for generating targeted instruction data to mitigate hallucinations in large vision-language models by first diagnosing hallucinations, then producing tailored instructional data based on model-specific needs.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "LRV-Instruction"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2404.10332"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To create a framework that addresses hallucination specificity in LVLMs by generating customized instruction data.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Multimodal Instruction Tuning"
+    ],
+    "limitations": "The method is limited to diagnosing object and attribute-level hallucinations and requires reliable information extraction capabilities.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Synthetic data generated from diagnosed hallucinations in vision-language models.",
+    "size": "79,000 instructions for MiniGPT-4, 58,000 instructions for mPlug-Owl",
+    "format": "JSON",
+    "annotation": "Generated based on diagnostic results from hallucination checking."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on model responses in hallucination benchmarks.",
+    "interpretation": "High scores indicate improved mitigation of hallucinations compared to existing datasets.",
+    "baseline_results": null,
+    "validation": "Evaluated through extensive experiments on POPE, MME, AMBER, and VHTest datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack",
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": [
+      "Increased hallucination leading to misinformation"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

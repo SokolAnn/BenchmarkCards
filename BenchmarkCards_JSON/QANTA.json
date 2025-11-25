@@ -1,0 +1,115 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "QANTA dataset (Question Answering is Not a Trivial Activity)",
+    "abbreviation": "QANTA",
+    "overview": "A large, human-authored quizbowl dataset and accompanying gameplay dataset for incremental (interruptible) factoid question answering that measures: (1) factoid question answering over thousands of Wikipedia-mapped answers, (2) calibration of QA model confidence for answer triggering, and (3) sequential decision-making (when to 'buzz'). The paper collects and curates the dataset and presents evaluation protocols and models for these tasks.",
+    "data_type": "question-answering pairs; gameplay records (incremental word-by-word reveal logs)",
+    "domains": [
+      "Natural Language Processing",
+      "Education"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SQuAD",
+      "TriviaQA",
+      "SimpleQuestions",
+      "SearchQA",
+      "NaturalQuestions",
+      "HotPotQA",
+      "WikiHop"
+    ],
+    "resources": [
+      "http://datasets.qanta.org",
+      "http://quizdb.org",
+      "http://protobowl.com",
+      "http://events.qanta.org",
+      "https://arxiv.org/abs/1904.04792",
+      "https://github.com/attardi/wikiextractor"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Provide a benchmark and dataset for incremental (interruptible/pyramidal) quizbowl question answering that enables evaluation of (a) factoid QA over a large set of Wikipedia-mapped answers, (b) model confidence calibration for answer triggering, and (c) sequential decision-making (buzzing) in head-to-head settings.",
+    "audience": [
+      "Natural Language Processing researchers",
+      "Machine Learning researchers",
+      "Model Developers",
+      "Domain Experts",
+      "Quizbowl community and educators"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Confidence Calibration",
+      "Sequential Decision-Making (Incremental Classification / Answer Triggering)"
+    ],
+    "limitations": "Topical bias toward American and European topics in literature and history; heavy skew in number of training examples per answer with many answers having few or zero training examples; 13,602 questions unassigned due to answer-to-Wikipedia matching failures; covariate/domain shift over time in questions; buzzer model in this work assumes a locally optimal strategy that does not model opponents.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Human-authored quizbowl questions and gameplay records from the quizbowl community collected from public sources (questions obtained with permission from http://quizdb.org and http://protobowl.com) and from the authors' online quizbowl interfaces; answers paired to Wikipedia pages via rule-based matching plus manual annotation by the authors and members of the quizbowl community.",
+    "size": "119,247 questions; over 650,000 sentence-level QA pairs; 11.4 million tokens; 89,477 players; 5.1 million plays on 131,075 unique questions; filtered subset of 3.9 million gameplay records; dataset folds: train+guess 96,221 questions, train+buzz 16,706, dev+guess 1,055, dev+buzz 1,161, test+guess 2,151, test+buzz 1,953, unassigned 13,602 (total 132,849 questions reported in fold table).",
+    "format": "N/A",
+    "annotation": "Answer-to-Wikipedia matching performed via rule-based parsing plus expert-curated matching rules and manual annotation by the authors and skilled members of the quizbowl community. Gameplay records filtered (include only a player's first play on a question; exclude players with fewer than twenty questions). Test set fully annotated; remaining manual annotations performed for training data as described."
+  },
+  "methodology": {
+    "methods": [
+      "Standalone incremental evaluation (incrementally feed systems new words and record responses)",
+      "Simulated quizbowl matches using gameplay records",
+      "Offline accuracy-based evaluation (start-of-question and full-question accuracy)",
+      "Live human–computer exhibition matches"
+    ],
+    "metrics": [
+      "Accuracy (start-of-question and full-question)",
+      "Expected probability of defeating human players (Expected Wins, EW)",
+      "Expected Wins (EW) / expected probability of winning"
+    ],
+    "calculation": "Accuracy: computed on first sentence and on full question. Expected Wins (EW): marginalize over empirical human gameplay π(t) and positions j; EW(m) = (1/|Q|) * sum_{q in Q} sum_{j=1..∞} [g(m,q,j) = a(q)] * π(j). π(t) empirically estimated from gameplay data (paper fits a cubic polynomial). A stable variant of EW that requires correctness to persist is also used.",
+    "interpretation": "Higher start-of-question accuracy and higher EW indicate the system can answer earlier and is more likely to beat human players; EW interprets expected probability of winning against an average human under the assumed buzzing policy.",
+    "baseline_results": "Baseline models evaluated include: Linear one-vs-all, IR (BM25), Deep Averaging Network (DAN), RNN, and BERT. Start-of-question (dev) accuracies: BERT 12.5%, DAN 10.7%, RNN 10.5%, IR 9.48%, Linear 2.56%. End-of-question (dev) accuracies: IR 62.2%, DAN 60.0%, BERT 53.4%, RNN 52.3%. Expected probability of defeating humans (dev): IR 45.8%, DAN 42.6%, BERT 36.6%, RNN 27.6%, Linear 6.62%.",
+    "validation": "Data split into temporally-separated train/dev/test folds with development and test questions drawn from championship tournaments (higher-quality questions); hyperparameter tuning on development set, early stopping, learning rate annealing; non-IR models run five times to estimate variance; evaluation includes offline metrics, simulated matches, and live exhibition matches."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination",
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset is topically biased toward American and European topics in literature and history (Figure 5). The gameplay data enable estimation of human skill distributions (e.g., average player buzzes with 65% of question revealed with ~60% accuracy).",
+    "harm": [
+      "Machine-exploitable superficial patterns in datasets (models gaming datasets) explicitly discussed as a concern",
+      "Miscalibrated model confidences leading to incorrect buzzing/decision-making and poor match outcomes"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Gameplay records were filtered to include only a player's first play on a question and players with fewer than twenty questions were excluded; no further anonymization or privacy procedure is described in the paper.",
+    "data_licensing": "N/A; the paper notes National Academic Quiz Tournaments, LLC provided access to proprietary questions for prior iterations and that questions were obtained with permission from external sites (quizdb.org, protobowl.com). The paper does not specify an overall dataset license.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

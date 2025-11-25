@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Shopping MMLU (Massive Multi-task Online Shopping Benchmark for Large Language Models)",
+    "abbreviation": "Shopping MMLU",
+    "overview": "Shopping MMLU is a diverse multi-task online shopping benchmark derived from real-world Amazon data, consisting of 57 tasks that evaluate large language models on their abilities as shop assistants across various shopping skills.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "German",
+      "Spanish",
+      "French",
+      "Italian",
+      "Japanese"
+    ],
+    "similar_benchmarks": [
+      "EComInstruct",
+      "ECInstruct"
+    ],
+    "resources": [
+      "https://github.com/KL4805/ShoppingMMLU",
+      "https://amazon-kddcup24.github.io/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of Shopping MMLU is to facilitate the development of LLM-based solutions for comprehensive multi-task modeling of online shopping.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "User Behavior Alignment",
+      "Shopping Knowledge Reasoning",
+      "Shopping Concept Understanding",
+      "Multi-lingual Abilities"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Derived from real-world Amazon data, including product catalogs, reviews, browse sessions, and queries, with some tasks synthesized using Claude 2.",
+    "size": "20,799 questions",
+    "format": "N/A",
+    "annotation": "Data has been manually inspected for quality control to ensure validity."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Hit rate@3",
+      "Normalized Discounted Cumulative Gain (NDCG)",
+      "Micro F1",
+      "ROUGE-L",
+      "BLEU Score"
+    ],
+    "calculation": "Various metrics calculated based on task type, e.g. accuracy for multiple choice, hit rate for retrieval tasks, and ROUGE-L for generation tasks.",
+    "interpretation": "Higher scores indicate better performance on corresponding tasks.",
+    "baseline_results": "N/A",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All identifiers have been removed to ensure anonymity.",
+    "data_licensing": "Apache 2.0.",
+    "consent_procedures": "Data usage approved by the Amazon legal team.",
+    "compliance_with_regulations": "N/A"
+  }
+}

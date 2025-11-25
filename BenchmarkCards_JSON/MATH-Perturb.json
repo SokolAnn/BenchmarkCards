@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MATH-Perturb",
+    "abbreviation": "N/A",
+    "overview": "MATH-Perturb is designed to test the math reasoning abilities of large language models under hard perturbations of existing problems, consisting of MATH-P-Simple and MATH-P-Hard datasets aimed at exploring the generalization capabilities of LLMs.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Mathematics"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MATH (Hendrycks et al., 2021)"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2502.06453"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To benchmark the math reasoning abilities of large language models against hard perturbations, evaluating their performance degradation and generalization.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Mathematical Reasoning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Adapted from level-5 problems in the MATH dataset (Hendrycks et al., 2021)",
+    "size": "558 problems (279 for MATH-P-Simple and 279 for MATH-P-Hard)",
+    "format": "N/A",
+    "annotation": "Curated by 12 graduate-level experts with a focus on quality control."
+  },
+  "methodology": {
+    "methods": [
+      "Zero-shot evaluation",
+      "Chain-of-thought prompting"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy calculated based on the proportion of correctly solved problems.",
+    "interpretation": "Higher accuracy indicates better reasoning capabilities of models in response to both simple and hard perturbations.",
+    "baseline_results": null,
+    "validation": "Performance validated against both the training and test splits of the original MATH dataset."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

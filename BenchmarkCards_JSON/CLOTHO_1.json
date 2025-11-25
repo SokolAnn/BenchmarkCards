@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CLOTHO",
+    "abbreviation": "N/A",
+    "overview": "CLOTHO is a task-specific, pre-generation adequacy measure that estimates input difficulty directly from hidden LLM states, aiming to improve testing efficiency by prioritizing which inputs to run and label first.",
+    "data_type": "text",
+    "domains": [
+      "Computer Science"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "N/A"
+    ],
+    "resources": [
+      "https://anonymous.4open.science/r/clotho-artifact-DE31"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Improve task-specific LLM testing by prioritizing inputs for human labeling to expose failures earlier and reduce testing costs.",
+    "audience": [
+      "ML Researchers",
+      "Software Engineers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Input Adequacy Measurement",
+      "Failure Prediction"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Empirical evaluation across various LLM tasks and datasets created for measuring input adequacy.",
+    "size": "Between 5,000 to 20,000 inputs per task",
+    "format": "N/A",
+    "annotation": "Human-labeled inputs based on model performance assessments."
+  },
+  "methodology": {
+    "methods": [
+      "Gaussian Mixture Model Sampling",
+      "Active Learning Strategy"
+    ],
+    "metrics": [
+      "ROC-AUC"
+    ],
+    "calculation": "Calculated likelihood of passing inputs through GMM based on hidden states.",
+    "interpretation": "Higher ROC-AUC indicates better prediction of input adequacy and failure rates.",
+    "baseline_results": "Achieved a ROC-AUC of 0.716 in predicting correctness with limited labeling.",
+    "validation": "Cross-validation on reference input sets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

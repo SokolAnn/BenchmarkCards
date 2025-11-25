@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ELUDe (Entity-Level Unlearning Dataset)",
+    "abbreviation": "ELUDe",
+    "overview": "ELUDe is the first dataset designed to evaluate entity-level unlearning, which involves removing all knowledge related to a specific entity while preserving the remaining model capabilities. It contains 20 real-world target entities and 144 unique neighboring entities, comprising a total of 15,651 forget samples and 90,954 retain samples.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "TOFU (Task of Fictitious Unlearning)",
+      "RWKU (Real-World Knowledge Unlearning)"
+    ],
+    "resources": [
+      "https://github.com/brightjade/Opt-Out"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive dataset that enables evaluation of machine unlearning techniques, specifically focused on unlearning knowledge related to specific entities.",
+    "audience": [
+      "ML Researchers",
+      "Data Privacy Practitioners"
+    ],
+    "tasks": [
+      "Knowledge Unlearning Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Wikipedia",
+    "size": "15,651 forget samples and 90,954 retain samples",
+    "format": "JSON",
+    "annotation": "Automatically generated QA pairs from Wikipedia pages."
+  },
+  "methodology": {
+    "methods": [
+      "Entity-Level Unlearning via Optimal Transport"
+    ],
+    "metrics": [
+      "Forget Quality (FQ)",
+      "Retain Quality (RQ)"
+    ],
+    "calculation": "FQ is computed as the harmonic mean of probabilities and ROUGE scores on the forget set, while RQ is measured across the retain and world sets.",
+    "interpretation": "Higher values of FQ and RQ indicate better performance in unlearning and retention.",
+    "baseline_results": "OPT-OUT (our method) achieves high FQ and competitive RQ performance compared to existing unlearning methods.",
+    "validation": "Evaluated incorporating existing LLM benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data",
+            "Data privacy rights alignment"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data is obtained from publicly available Wikipedia pages and does not contain actual user data.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

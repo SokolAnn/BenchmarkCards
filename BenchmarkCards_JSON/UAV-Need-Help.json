@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "UAV-Need-Help",
+    "abbreviation": "N/A",
+    "overview": "UAV-Need-Help is an assistant-guided UAV object search benchmark that helps UAVs navigate to target objects using descriptions and guidance. It provides varying levels of assistance to improve performance in realistic VLN tasks.",
+    "data_type": "trajectory-instruction pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "R2R",
+      "TouchDown",
+      "AerialVLN"
+    ],
+    "resources": [
+      "https://github.com/prince687028/OpenUAV"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To promote research and development in UAV vision-language navigation tasks through realistic trajectories and assistant-guided object searches.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Vision-Language Navigation",
+      "Object Search"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed using the OpenUAV platform with real flight simulation data and human control.",
+    "size": "12,149 trajectories",
+    "format": "N/A",
+    "annotation": "Human annotators conducted a continuous flight on the OpenUA V platform, generating descriptions using GPT-4 and reviewing for quality."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Success Rate (SR)",
+      "Oracle Success Rate (OSR)",
+      "Success weighted by Path Length (SPL)",
+      "Navigation Error (NE)"
+    ],
+    "calculation": "Metrics are calculated based on UAV's success in navigating to target objects as per provided instructions in various scenarios.",
+    "interpretation": "Higher metrics indicate better navigation performance and efficiency in reaching target locations.",
+    "baseline_results": "Compared against Random, Fixed Action, and CMA models with results indicating significant improvements over baselines.",
+    "validation": "Validated through closed-loop evaluations and comparisons across metrics in seen and unseen environments."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Robustness",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

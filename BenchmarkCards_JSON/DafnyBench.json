@@ -1,0 +1,76 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DafnyBench",
+    "abbreviation": "N/A",
+    "overview": "DafnyBench is the largest benchmark for training and evaluating machine learning systems for formal software verification, testing LLMs like GPT-4 and Claude 3 to auto-generate hints for the Dafny verification engine to effectively verify programs.",
+    "data_type": "programs",
+    "domains": [
+      "Computer Science"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Clover",
+      "dafny-synthesis"
+    ],
+    "resources": [
+      "https://github.com/sun-wendy/DafnyBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a benchmark dataset for formal verification, expanding the size and complexity of previously existing benchmarks.",
+    "audience": [
+      "ML Researchers",
+      "Developers of verification tools",
+      "Formal verification practitioners"
+    ],
+    "tasks": [
+      "Formal software verification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Scraped from publicly available Dafny files on GitHub and existing benchmarks like Clover and dafny-synthesis.",
+    "size": "782 programs",
+    "format": "JSON",
+    "annotation": "Manual verification of program correctness by human programmers."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Success rate"
+    ],
+    "calculation": "A program is considered successfully verified if it passes the Dafny verifier without modifications.",
+    "interpretation": "A higher success rate indicates better performance of LLMs in generating valid hints for formal verification.",
+    "baseline_results": "Claude 3 Opus achieved a success rate of ∼68% on the benchmark.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data scraped from publicly available repositories on GitHub.",
+    "data_licensing": "The DafnyBench dataset is released under an Apache 2.0 license and GNU General Public License v3.0.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

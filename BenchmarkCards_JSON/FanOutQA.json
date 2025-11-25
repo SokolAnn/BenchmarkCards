@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FanOutQA",
+    "abbreviation": "N/A",
+    "overview": "FanOutQA is a high-quality dataset of fan-out question-answer pairs and human-annotated decompositions with English Wikipedia as the knowledge base, designed to evaluate complex multi-hop, multi-document reasoning capabilities of large language models.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "HotpotQA",
+      "LongBench",
+      "Zero-SCROLLS"
+    ],
+    "resources": [
+      "https://fanoutqa.com",
+      "https://github.com/zhudotexe/fanoutqa"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the performance of large language models on complex multi-hop, multi-document reasoning tasks.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Crowdsourced from undergraduate and graduate students at a university, utilizing English Wikipedia as the knowledge base.",
+    "size": "1,034 questions, 7,305 sub-questions",
+    "format": "N/A",
+    "annotation": "Human-written questions and decompositions"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Loose Accuracy",
+      "Strict Accuracy",
+      "ROUGE-1",
+      "ROUGE-2",
+      "ROUGE-L",
+      "BLEURT"
+    ],
+    "calculation": "Metrics are calculated based on the normalized reference answer strings and models' generated responses.",
+    "interpretation": "Higher accuracy indicates better performance in answering fan-out questions.",
+    "baseline_results": "Human performance achieved a loose accuracy of 68.5%.",
+    "validation": "Performance validations were conducted through benchmarking seven large language models against the dataset."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy",
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "No personal identifying information was collected from human participants.",
+    "data_licensing": "The dataset is released under the Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA).",
+    "consent_procedures": "Participants gave informed consent before accepting the tasks.",
+    "compliance_with_regulations": "Data collected from human annotators is IRB exempt under 45 CFR 46.104, category 2."
+  }
+}

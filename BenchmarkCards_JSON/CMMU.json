@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CMMU (Chinese Multi-modal Multi-type Question Understanding)",
+    "abbreviation": "CMMU",
+    "overview": "CMMU is a novel benchmark for multi-modal and multi-type question understanding and reasoning in Chinese. It consists of 3,603 questions in 7 subjects, covering knowledge from primary to high school, featuring multiple-choice, multiple-response, and fill-in-the-blank questions.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Education"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "ScienceQA",
+      "MMMU",
+      "M3Exam"
+    ],
+    "resources": [
+      "https://github.com/FlagOpen/CMMU"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the multi-modal and multi-type question understanding and reasoning abilities of multi-modal large language models (MLLMs) in Chinese.",
+    "audience": [
+      "ML Researchers",
+      "Education Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Multi-modal Question Answering",
+      "Question Understanding"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The questions were collected from diverse exams and educational materials, comprising both text and images.",
+    "size": "3,603 questions",
+    "format": "JSON",
+    "annotation": "Questions were manually reviewed and corrected, including transformation of formulas into LaTeX format."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Positional Error Variance"
+    ],
+    "calculation": "Positional Error Variance measures the extent of position bias in multiple-choice questions through cyclically changing the positions of the answer options.",
+    "interpretation": "A model is considered proficient if it can answer questions correctly across diverse formats without showing significant positional bias.",
+    "baseline_results": "CMMU was evaluated against several MLLMs, with performance varied across different question types and subjects.",
+    "validation": "The validation set consists of 1,800 questions, while the test set has 1,803 questions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

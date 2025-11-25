@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Kvasir-VQA-x1",
+    "abbreviation": "N/A",
+    "overview": "Kvasir-VQA-x1 is a new, large-scale dataset for gastrointestinal (GI) endoscopy designed to benchmark reasoning-intensive visual question answering in medical contexts, incorporating 159,549 new question-answer pairs and a variety of visual augmentations.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Kvasir-VQA"
+    ],
+    "resources": [
+      "https://github.com/simula/Kvasir-VQA-x1",
+      "https://huggingface.co/datasets/SimulaMet/Kvasir-VQA-x1"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To develop a clinically relevant benchmark for visual question answering in medical imaging to improve AI application in gastroenterology.",
+    "audience": [
+      "ML Researchers",
+      "Healthcare Professionals",
+      "AI Developers"
+    ],
+    "tasks": [
+      "Visual Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset builds upon the original Kvasir-VQA dataset, derived from HyperKvasir and Kvasir-Instrument, containing images from GI endoscopy procedures.",
+    "size": "159,549 question-answer pairs",
+    "format": "JSON",
+    "annotation": "Generated and validated by medical experts to ensure clinical relevance."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "LLM-based adjudication"
+    ],
+    "metrics": [
+      "ROUGE-L",
+      "METEOR",
+      "BLEU",
+      "BERT-F1"
+    ],
+    "calculation": "Metrics are calculated using established formulas providing insight into performance concerning ground truth.",
+    "interpretation": "Quantifying correct responses against set criteria, focusing on clinical reasoning capabilities.",
+    "baseline_results": "Performance evaluated against MedGemma and Qwen2.5-VL models.",
+    "validation": "Robustness tested through standard and transformed evaluation settings."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Creative Commons Attribution Non Commercial 4.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "AfriSenti: A Twitter Sentiment Analysis Benchmark for African Languages",
+    "abbreviation": "N/A",
+    "overview": "AfriSenti, a sentiment analysis benchmark that contains a total of >110,000 tweets in 14 African languages (Amharic, Algerian Arabic, Hausa, Igbo, Kinyarwanda, Moroccan Arabic, Mozambican Portuguese, Nigerian Pidgin, Oromo, Swahili, Tigrinya, Twi, Xitsonga, and Yorùbá) from four language families. The tweets were annotated by native speakers and used in the AfriSenti-SemEval shared task.",
+    "data_type": "text (tweets / Twitter messages)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Amharic",
+      "Algerian Arabic",
+      "Hausa",
+      "Igbo",
+      "Kinyarwanda",
+      "Moroccan Arabic",
+      "Mozambican Portuguese",
+      "Nigerian Pidgin",
+      "Oromo",
+      "Swahili",
+      "Tigrinya",
+      "Twi",
+      "Xitsonga",
+      "Yorùbá"
+    ],
+    "similar_benchmarks": [
+      "NaijaSenti",
+      "Ethiopic Twitter Dataset for Amharic (ETD-AM)"
+    ],
+    "resources": [
+      "https://afrisenti-semeval.github.io",
+      "https://github.com/afrisenti-semeval/afrisent-semeval-2023"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enable sentiment analysis research in African languages by creating and releasing the largest Twitter dataset for sentiment analysis in under-represented African languages (110,000+ tweets in 14 languages), and to support the AfriSenti-SemEval shared task.",
+    "audience": [
+      "Research community interested in sentiment analysis and under-represented languages"
+    ],
+    "tasks": [
+      "Sentiment Analysis",
+      "Text Classification",
+      "Polarity Classification (positive/negative/neutral)"
+    ],
+    "limitations": "Offensive tweets were deleted and some conflicting tweets were removed or re-annotated; the data can suffer from label bias and annotator disagreement; data collection relied on keywords and geographic locations leading to imbalanced datasets; limited to 14 languages in this release.",
+    "out_of_scope_uses": [
+      "The authors explicitly forbid the use of the datasets for commercial purposes unless explicitly approved by the dataset creators.",
+      "The authors explicitly forbid the use of the datasets by state actors unless explicitly approved by the dataset creators.",
+      "Systems trained on the datasets should not be used to make high-stakes decisions for individuals."
+    ]
+  },
+  "data": {
+    "source": "Collected from Twitter using the Twitter Academic API; data collection combined location-based and vocabulary-based heuristics (stopwords, sentiment lexicons, language-specific word lists); includes ten newly annotated datasets and four curated existing datasets (e.g., Yimam et al., Muhammad et al.).",
+    "size": "110,000+ tweets (total across 14 languages)",
+    "format": "N/A",
+    "annotation": "Tweets annotated by native speakers using the Simple Sentiment Questionnaire annotation guide (Mohammad, 2016); majority voting used to determine final labels (three annotators per tweet except Ethiopian languages annotated by two annotators and curated by a third); cases where all annotators disagreed were discarded. Individual annotator labels are released."
+  },
+  "methodology": {
+    "methods": [
+      "Model fine-tuning experiments (monolingual fine-tuning of pretrained language models)",
+      "Multilingual training (fine-tune on combined training data)",
+      "Zero-shot cross-lingual transfer evaluation",
+      "Automated metrics for model evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "Free-marginal multi-rater kappa"
+    ],
+    "calculation": "Model evaluation metrics (Accuracy and F1 Score) are reported and averaged over 5 runs. Inter-annotator agreement is measured using the free-marginal multi-rater kappa (Randolph, 2005).",
+    "interpretation": "Higher Accuracy and F1 Score indicate better model performance; inter-annotator agreement reported via free-marginal multi-rater kappa (values reported per language). No absolute performance thresholds are provided; authors compare models (e.g., AfroXLMR-large achieves the best overall F1 in reported experiments).",
+    "baseline_results": "Multilingual baseline F1 scores (average over 5 runs) reported in Table 8: AfriBERTa-large 64.7, XLM-R-base 64.3, AfroXLMR-base 68.4, mDeBERTaV3-base 66.1, XLM-T-base 65.9, XLM-R-large 66.9, AfroXLMR-large 71.2. Monolingual baseline results and per-language scores are reported in Table 7.",
+    "validation": "Train/dev/test splits provided per language (see Table 6); languages with limited training data (Oromo, Tigrinya) are evaluated in zero-shot transfer; inter-annotator agreement reported and individual annotator labels released to support validation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Misuse",
+      "Privacy",
+      "Fairness",
+      "Value Alignment",
+      "Societal Impact"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Misuse",
+          "subcategory": [
+            "Improper usage"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Value Alignment",
+          "subcategory": [
+            "Over- or under-reliance"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on human agency"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": [
+      "Automatic sentiment analysis can be abused by those with the power to suppress dissent.",
+      "Systems trained on these datasets are not reliable at individual instance-level and should not be used to make high-stakes decisions for individuals."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Tweets were anonymized by replacing all @mentions with @user and removing all URLs. For some Nigerian language test sets tweets were lower-cased.",
+    "data_licensing": "The authors explicitly forbid the use of the datasets for commercial purposes or by state actors unless explicitly approved by the dataset creators. No standard license (e.g., CC) is specified in the paper.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

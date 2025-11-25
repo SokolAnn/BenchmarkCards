@@ -1,0 +1,102 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ComplexCodeEval",
+    "abbreviation": "N/A",
+    "overview": "ComplexCodeEval is a benchmark designed to evaluate the performance of large code models (LCMs) in various development scenarios, including code generation, code completion, API recommendation, and test case generation, by utilizing real-world samples from high-star GitHub repositories.",
+    "data_type": "function samples",
+    "domains": [
+      "Software Engineering",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Java",
+      "Python"
+    ],
+    "similar_benchmarks": [
+      "HumanEval",
+      "MBPP",
+      "CrossCodeEval",
+      "CoderEval"
+    ],
+    "resources": [
+      "https://github.com/ComplexCodeEval/ComplexCodeEval",
+      "https://doi.org/10.1145/3691620.3695552"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation of large code models across multiple tasks and conditions reflective of complex software development scenarios, avoiding data leakage.",
+    "audience": [
+      "ML Researchers",
+      "Software Developers",
+      "Benchmark Developers"
+    ],
+    "tasks": [
+      "Code Generation",
+      "Code Completion",
+      "API Recommendation",
+      "Test Case Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "3,897 Java samples from 1,055 high-star GitHub repositories and 7,184 Python samples from 2,107 high-star repositories.",
+    "size": "11,081 function samples",
+    "format": "JSON",
+    "annotation": "Includes annotations such as function signatures, docstrings, reference APIs, test cases, and multiple timestamps."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics evaluation",
+      "Contextual performance analysis"
+    ],
+    "metrics": [
+      "CodeBLEU",
+      "BLEU",
+      "F1 Score",
+      "Edit Similarity (ES)"
+    ],
+    "calculation": "Metrics are calculated based on the similarity of generated outputs to reference implementations, using n-grams and structural comparisons.",
+    "interpretation": "Higher scores indicate better performance in generating, completing, and recommending code.",
+    "baseline_results": "N/A",
+    "validation": "Evaluated using different timestamps to assess the impact of data leakage and contextual information."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MM-GCoT (Multimodal Grounded Chain-of-Thought)",
+    "abbreviation": "MM-GCoT",
+    "overview": "MM-GCoT is a dataset designed to alleviate visual hallucinations in multimodal large language models (MLLMs) by enhancing their visual-spatial reasoning capabilities through a new learning task termed Grounded Chain-of-Thought (GCoT). It contains training examples for teaching models to ground their reasoning steps with visual evidence.",
+    "data_type": "multimodal",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/DoubtedSteam/MM-GCoT"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To promote research on Grounded Chain-of-Thought (GCoT) for multimodal large language models, specifically targeting the reduction of visual hallucination issues through improved visual-spatial reasoning.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Visual Question Answering",
+      "Grounding",
+      "Reasoning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed dataset specifically for training and evaluating visual hallucination in MLLMs.",
+    "size": "24,022 examples",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Comparison evaluation"
+    ],
+    "metrics": [
+      "Answer Accuracy",
+      "Grounding Accuracy",
+      "Answer-Grounding Consistency"
+    ],
+    "calculation": "Computed based on the comparison of predicted answers and grounding boxes against ground truth.",
+    "interpretation": "Higher accuracy indicates better performance in visual grounding and reasoning consistency; lower metrics indicate visual hallucinations.",
+    "baseline_results": "N/A",
+    "validation": "Extensive evaluation on 12 advanced MLLMs to assess performance under various prompting strategies."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": []
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack",
+            "Hallucination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

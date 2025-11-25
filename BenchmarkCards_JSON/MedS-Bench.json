@@ -1,0 +1,106 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MedS-Bench",
+    "abbreviation": "MedS-Bench",
+    "overview": "MedS-Bench is a comprehensive benchmark designed to evaluate the performance of large language models (LLMs) in clinical contexts, including 11 high-level clinical tasks such as clinical report summarization, treatment recommendations, diagnosis, named entity recognition, and medical concept explanation.",
+    "data_type": "text",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://henrychur.github.io/MedS-Bench/",
+      "https://github.com/MAGIC-AI4Med/MedS-Ins"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive benchmark for evaluating the capabilities of LLMs in clinical tasks and to encourage further advancements in the application of LLMs to clinical challenges.",
+    "audience": [
+      "Researchers",
+      "Clinicians"
+    ],
+    "tasks": [
+      "Clinical Report Summarization",
+      "Treatment Recommendations",
+      "Diagnosis",
+      "Named Entity Recognition",
+      "Medical Concept Explanation",
+      "Information Extraction",
+      "Multi-choice Question Answering",
+      "Text Classification",
+      "Natural Language Inference"
+    ],
+    "limitations": "MedS-Bench currently covers only 11 clinical tasks, which does not fully encompass the complexity of all clinical scenarios.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from various medical datasets, including existing biomedical natural language processing datasets and clinical texts.",
+    "size": "5M instances",
+    "format": "JSON",
+    "annotation": "Manually written task definitions and examples for each task."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "BLEU Score",
+      "ROUGE-L"
+    ],
+    "calculation": "Metrics are calculated based on the evaluations of LLMs on the specified clinical tasks.",
+    "interpretation": "Higher scores indicate better performance on clinical tasks.",
+    "baseline_results": "Results from LLMs including GPT-4, Claude-3.5, Mistral, and others evaluated against MedS-Bench.",
+    "validation": "The benchmark was validated through comparisons with existing models and clinical task performance assessments."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Privacy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

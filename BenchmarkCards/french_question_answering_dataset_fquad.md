@@ -1,0 +1,94 @@
+# French Question Answering Dataset (FQuAD)
+
+## 📊 Benchmark Details
+
+**Name**: French Question Answering Dataset (FQuAD)
+
+**Overview**: FQuAD is a French native Reading Comprehension dataset of questions and answers on a set of Wikipedia articles that consists of 25,000+ samples for the 1.0 version and 60,000+ samples for the 1.1 version. The authors release the dataset to foster research and track progress of French Question Answering models and provide a leaderboard.
+
+**Data Type**: text (question-answering pairs)
+
+**Domains**:
+- Natural Language Processing
+
+**Languages**:
+- French
+
+**Similar Benchmarks**:
+- SQuAD1.1
+- SQuAD2.0
+- CoQA
+- XQuAD
+- MLQA
+- SberQuAD
+- CMRC 2018
+- KorQuAD
+- PIAF
+
+**Resources**:
+- [Resource](https://illuin-tech.github.io/FQuAD-explorer/)
+- [Resource](https://arxiv.org/abs/2002.06071)
+
+## 🎯 Purpose and Intended Users
+
+**Goal**: Provide a native French Reading Comprehension dataset to foster development and evaluation of French Question Answering models and to track progress via a public leaderboard.
+
+**Target Audience**:
+- ML Researchers
+- Model Developers
+- Industry Practitioners
+
+**Tasks**:
+- Question Answering
+- Reading Comprehension (Extractive)
+
+**Limitations**: Does not contain adversarial (unanswerable) samples as in SQuAD2.0 (authors state adversarial samples may be released in a future version); contexts are sourced from French Wikipedia 'Article de qualité' pages only.
+
+## 💾 Data
+
+**Source**: Collected from French Wikipedia 'Article de qualité' pages. Initial sampling: 145 articles for FQuAD1.0; additional 181 articles sampled to extend to FQuAD1.1 for a total of 326 articles. Paragraphs of at least 500 characters kept. Article-level split into training, development and test sets to avoid bias.
+
+**Size**: FQuAD1.0: 26,108 question-answer pairs (Train: 20,703; Dev: 3,188; Test: 2,189). FQuAD1.1: 62,003 question-answer pairs (Train: 50,741; Dev: 5,668; Test: 5,594).
+
+**Format**: N/A
+
+**Annotation**: Manual annotation by university students / crowd-workers using a custom annotation platform (workers hired in collaboration with the Junior Enterprise of CentraleSupélec). Guidelines follow SQuAD1.1; annotators asked to generate 3-5 Q&A pairs per paragraph, spending ~1 minute per pair. For development and test sets, two additional answers per question were collected (three answers total) to reduce annotation bias.
+
+## 🔬 Methodology
+
+**Methods**:
+- Automated metrics
+- Human evaluation
+- Model-based evaluation (fine-tuning pre-trained language models)
+
+**Metrics**:
+- F1 Score
+- Exact Match (EM)
+
+**Calculation**: F1 and EM are computed following the SQuAD evaluation: EM measures percentage of predictions that exactly match any ground truth answer after normalization; F1 is the token overlap between prediction and ground truth (treated as bags of tokens). For questions with multiple ground-truth answers, F1 is the maximum F1 over all ground-truth answers. French evaluation normalization ignores the articles: le, la, les, l', du, des, au, aux, un, une. Human performance is computed by rotating the three collected answers per question: for each rotation two answers are considered ground truth and the third as prediction; three runs are averaged.
+
+**Interpretation**: Higher F1 and EM indicate better question answering performance. Authors report human performance as a baseline (e.g., FQuAD1.1-test human F1 91.2%, EM 75.9%) and compare model results to this baseline; models surpassing human scores are highlighted as strong results.
+
+**Baseline Results**: Human Performance (FQuAD1.1-test): F1 91.2%, EM 75.9%. CamemBERT LARGE (FQuAD1.1-test): F1 92.2%, EM 82.1%. CamemBERT BASE (FQuAD1.1-test): F1 88.4%, EM 78.4%. FlauBERT LARGE (FQuAD1.1-test): F1 80.5%, EM 69.0%. FlauBERT BASE (FQuAD1.1-test): F1 77.6%, EM 66.5%. mBERT (FQuAD1.1-test): F1 86.0%, EM 75.4%. XLM-R LARGE (FQuAD1.1-test): F1 89.5%, EM 79.0%. XLM-R BASE (FQuAD1.1-test): F1 85.9%, EM 75.3%.
+
+**Validation**: Article-level train/dev/test split to avoid leakage. Additional annotations (two extra answers) collected for development and test sets to decrease annotation bias. Human agreement/performance computed on dev and test sets to validate dataset annotation quality and difficulty.
+
+## ⚠️ Targeted Risks
+
+**Risk Categories**:
+- Bias
+- Accuracy
+
+**Atlas Risks**:
+- **Fairness**: Data bias
+- **Accuracy**: Unrepresentative data
+
+## 🔒 Ethical and Legal Considerations
+
+**Privacy And Anonymity**: Not Applicable
+
+**Data Licensing**: Not Applicable
+
+**Consent Procedures**: Not Applicable
+
+**Compliance With Regulations**: Not Applicable

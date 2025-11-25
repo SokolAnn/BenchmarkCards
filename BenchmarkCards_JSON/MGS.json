@@ -1,0 +1,73 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Multi-Grain Stereotype Dataset",
+    "abbreviation": "MGS",
+    "overview": "This work introduces the Multi-Grain Stereotype Dataset, which includes 52,751 instances of gender, race, profession and religion stereotypic text aimed at improving text-based stereotype detection and evaluation of biased outputs in large language models.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "StereoSet",
+      "CrowS-Pairs"
+    ],
+    "resources": [
+      "https://github.com/981526092/Towards-Auditing-Large-Language-Models"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To establish a robust and practical framework for auditing and evaluating the stereotypic bias in large language models.",
+    "audience": [
+      "ML Researchers",
+      "Ethical AI Practitioners"
+    ],
+    "tasks": [
+      "Stereotype Detection",
+      "Bias Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset is constructed from two crowdsourced sources: StereoSet and CrowS-Pairs.",
+    "size": "52,751 instances",
+    "format": "N/A",
+    "annotation": "Manually annotated with three labeling categories: 'stereotype', 'anti-stereotype', and 'unrelated'."
+  },
+  "methodology": {
+    "methods": [
+      "Fine-tuning Distil-BERT models",
+      "Explainability techniques: SHAP, LIME, BERTViz"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on multi-class vs single-class settings in the classification task.",
+    "interpretation": "Higher values in Precision, Recall, and F1 Score indicate better stereotype detection performance.",
+    "baseline_results": null,
+    "validation": "Training and testing are done with an 80:20 split using stratified sampling."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

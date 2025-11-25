@@ -1,0 +1,124 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "French Insurance Job Oﬀer (FIJO)",
+    "abbreviation": "FIJO",
+    "overview": "A free and public non-annotated and annotated dataset of French insurance job offers focusing on soft skills; the dataset includes de-identified job ads and annotations intended to facilitate research in automatic skill recognition.",
+    "data_type": "text (de-identified job offer texts with token-level soft-skill annotations)",
+    "domains": [
+      "Natural Language Processing",
+      "Insurance",
+      "Labor Market Analysis",
+      "Human Resources"
+    ],
+    "languages": [
+      "French"
+    ],
+    "similar_benchmarks": [
+      "mycareersfuture public dataset",
+      "AQESSS public skills repositories"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2204.05208",
+      "https://creativecommons.org/licenses/by/4.0/legalcode"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Provide a public annotated and non-annotated French dataset of insurance job offers to facilitate research and development of machine learning models for automatic soft skill recognition in job ads.",
+    "audience": [
+      "Machine Learning Researchers",
+      "Model Developers",
+      "Domain Experts (Human Resources, Recruiters)",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Named Entity Recognition",
+      "Sequence Classification",
+      "Token-wise Soft Skill Detection"
+    ],
+    "limitations": "Annotated portion is small and class-imbalanced; lexical overlapping between classes; soft skill class boundaries can be ambiguous, making annotation and learning difficult.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected in partnership with four Canadian insurance companies; consists of non-annotated and annotated French job ads published by those companies and their metadata between 2009 and 2020. Job offer text was manually extracted and semi-manually cleaned; de-identification performed using regex substitution, a SpaCy French pre-trained NER model (fr_core_news_lg), and manual checks to substitute names, locations, postal addresses and company-identifying elements.",
+    "size": "867 de-identified French job ads (non-annotated); annotated subset: 47 annotated job offers; reported annotation counts include '499 annotations' (section 3.2) and '932 entities' (section 3.3); additional statistics: # of Words (non-annotated) 260,942; average ad length 300.97 words; annotated words 12,702.",
+    "format": "N/A",
+    "annotation": "Manual annotation by a domain expert using a skills reference; non-overlapping sentence entities annotated individually with context of the whole job offer; four skill classes defined (French tags: \"Pensée\", \"Résultats\", \"Relationnel\", \"Personnel\"); entities span from one token up to full sentences."
+  },
+  "methodology": {
+    "methods": [
+      "Named Entity Recognition (token-wise) using model-based evaluation",
+      "Model training and evaluation with bi-LSTM and transformer-based models (CamemBERT frozen, CamemBERT unfrozen, CamemBERT unfrozen with warmup)",
+      "Repeated runs across random seeds for robustness analysis"
+    ],
+    "metrics": [
+      "Token-wise Accuracy (mean and standard deviation across seeds)",
+      "Per-class token-wise Accuracy (mean and standard deviation)",
+      "McNemar test for statistical comparison"
+    ],
+    "calculation": "Data split with simple random sampling into 80% train / 10% validation / 10% test (resulting in 400 training samples). Models trained 5 times with seeds [5,10,15,20,25]; reported mean token-wise accuracy and one standard deviation across seeds. Experiments run with multiple training subset sizes (50,100,150,200,250,300,350,400). Training procedures: up to 300 epochs with early stopping (patience 15); specific learning rates: 0.01 for bi-LSTM and CamemBERT frozen, 0.0001 for CamemBERT unfrozen; learning rate scheduling and warmup used for some CamemBERT unfrozen experiments.",
+    "interpretation": "Fine-tuning CamemBERT (CamemBERT unfrozen) yields the best token-wise accuracy but shows training instability (high variance across seeds). CamemBERT frozen is less sensitive to initialization; bi-LSTM has lowest performance. Results improve with more training data but are sensitive to company distribution in train/test splits. Token-wise results do not directly translate to correct skill-span extraction (skill-wise results are poorer). More annotated data and rebalancing are needed for improved and stable performance.",
+    "baseline_results": "For full training subset (400): CamemBERT unfrozen mean token-wise accuracy 83.69% ± 1.80; CamemBERT unfrozen warmup 80.85% ± 1.67; CamemBERT frozen 67.29% ± 0.23; bi-LSTM 60.69% ± 9.23. Per-class accuracies for subset size 400 (CamemBERT unfrozen warmup vs CamemBERT unfrozen): O: 84.50% ±4.51 vs 80.77% ±4.97; Thoughts: 82.72% ±7.84 vs 83.30% ±3.63; Results: 91.21% ±0.00 vs 80.97% ±6.56; Relational: 73.41% ±4.44 vs 92.31% ±4.85; Personal: 80.77% ±4.97 vs 85.21% ±9.65. A McNemar test comparing unfrozen models (best seeds) yielded p=0.5334 (no significant difference).",
+    "validation": "Models trained and evaluated across 5 random seeds; early stopping used; comparisons across models and training subset sizes; statistical comparison using McNemar test on contingency tables for best-seed models; observed sensitivity to random initialization and train/test company distribution."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Intellectual Property",
+      "Fairness",
+      "Accuracy",
+      "Explainability",
+      "Governance"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Intellectual Property",
+          "subcategory": [
+            "Data usage rights restrictions"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Explainability",
+          "subcategory": [
+            "Unexplainable output"
+          ]
+        },
+        {
+          "category": "Governance",
+          "subcategory": [
+            "Unrepresentative risk testing",
+            "Lack of testing diversity"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "De-identification performed: regex substitution for company name and email variations; SpaCy French pre-trained NER model (fr_core_news_lg) used to identify potential names and locations; manual check conducted to substitute names, locations, postal addresses and miscellaneous identifying elements. Substitution tags used: <anon_name>, <anon_location>, <anon_company>, <anon_misc>.",
+    "data_licensing": "Creative Commons Attribution (CC BY 4.0) as stated in article header (https://creativecommons.org/licenses/by/4.0/legalcode).",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

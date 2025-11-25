@@ -1,0 +1,109 @@
+# GitHub Typo Corpus: A Large-Scale Multilingual Dataset of Misspellings and Grammatical Errors
+
+## 📊 Benchmark Details
+
+**Name**: GitHub Typo Corpus: A Large-Scale Multilingual Dataset of Misspellings and Grammatical Errors
+
+**Overview**: As a complementary new resource for these tasks, we present the GitHub Typo Corpus, a large-scale, multilingual dataset of misspellings and grammatical errors along with their corrections harvested from GitHub, a large and popular platform for hosting and sharing git repositories. The dataset, which we have made publicly available, contains more than 350k edits and 65M characters in more than 15 languages, making it the largest dataset of misspellings to date.
+
+**Data Type**: text (source-target edit pairs / JSONL)
+
+**Domains**:
+- Natural Language Processing
+
+**Languages**:
+- English
+- Chinese (Simplified)
+- Japanese
+- Russian
+- French
+- German
+- Portuguese
+- Spanish
+- Korean
+- Hindi
+
+**Similar Benchmarks**:
+- Birkbeck spelling error corpus
+- WikiEd Error Corpus
+- WikiAtomicEdits
+- JFLEG
+- CLC-FCE
+- KJ
+
+**Resources**:
+- [GitHub Repository](https://github.com/mhagiwara/github-typo-corpus)
+- [GitHub Repository](https://github.com/mhagiwara/nanigonet)
+- [Resource](https://www.gharchive.org/)
+- [Resource](https://arxiv.org/abs/1911.12893)
+- [Resource](http://aspell.net/)
+- [GitHub Repository](https://github.com/AbiWord/enchant)
+
+## 🎯 Purpose and Intended Users
+
+**Goal**: Collect typos from GitHub and build a dataset that is high in both quantity and quality to serve as a complementary large-scale resource for spelling correction and grammatical error correction.
+
+**Target Audience**:
+- Researchers and developers of spelling correction and grammatical error correction systems
+
+**Tasks**:
+- Spelling Correction
+- Grammatical Error Correction
+
+**Limitations**: The distribution of languages is heavily skewed towards English; commit collection used the English keyword "typo", which may bias the dataset toward English commits and limit linguistic diversity.
+
+**Out of Scope Uses**:
+- Semantic edits (changes intended to modify meaning) are out of scope
+
+## 💾 Data
+
+**Source**: Commits and edits harvested from eligible GitHub repositories (selected from GH Archive) where commit messages contain the string "typo"; diffs between commits and parents were used to extract source-target edits. Language detection and learned classifiers were used to filter to human-language typo edits.
+
+**Size**: 353,055 edits; 63,182,426 characters; 203,270 commits; 259,716 typo edits; more than 15 languages (Table 3)
+
+**Format**: JSONL (one JSON object per commit, each containing metadata and a list of edits)
+
+**Annotation**: A small annotated subset: 200 edits each for English, Chinese (Simplified), and Japanese annotated by fluent speakers with categories Mechanical, Spell, Grammatical, Semantic. The full dataset includes automatically assigned "typo-ness" probability (prediction probability from logistic regression) and a binary predicted typo label for every edit.
+
+## 🔬 Methodology
+
+**Methods**:
+- Data collection from GH Archive and cloning eligible GitHub repositories
+- Diff extraction to form source-target edit pairs
+- Language detection (NanigoNet) to filter non-human-language edits
+- Human annotation for a small subset (English, Chinese (Simplified), Japanese)
+- Logistic regression classifiers (one per language) using three features to predict typo edits
+- 10-fold cross validation for classifier evaluation
+- ERRANT analysis and evaluation of existing spell checkers (Aspell, Enchant) on the dataset
+
+**Metrics**:
+- Precision
+- Recall
+- F1 Score
+- F0.5 Score
+
+**Calculation**: Classifier performance computed via 10-fold cross validation on the annotated edits; Precision, Recall, and F1 reported per language. Spell checker performance measured using ERRANT-derived edit types and reported using Precision, Recall, and F0.5 metrics per edit type.
+
+**Interpretation**: Classifier F1 ≈ 0.9 indicates the harvested edits are fairly clean and typo edits can be identified reliably. Existing spell checkers achieving F-measure ≈ 0.5 indicate the dataset contains challenging, naturally-occurring typo and grammatical edits that complement existing resources.
+
+**Baseline Results**: Typo edit classifier (10-fold cross validation) — English: Precision 0.874, Recall 0.969, F1 0.917; Chinese (Simplified): Precision 0.872, Recall 0.930, F1 0.896; Japanese: Precision 0.900, Recall 0.968, F1 0.933. Existing spell checkers (Aspell, Enchant) achieve F0.5 around 0.5 on SPELL category (see Table 4).
+
+**Validation**: 10-fold cross validation on annotated edits for classifier evaluation; statistical significance: features contributing to classifier predictions significant at p < 0.05; difference in perplexity between source and target for typo edits significant at p < 0.01.
+
+## ⚠️ Targeted Risks
+
+**Risk Categories**:
+- Legal Compliance
+
+**Atlas Risks**:
+- **Data Laws**: Data usage restrictions
+
+## 🔒 Ethical and Legal Considerations
+
+**Privacy And Anonymity**: Not Applicable
+
+**Data Licensing**: Only repositories with permissive licenses were included: apache-2.0 (Apache License 2.0), mit (MIT License), bsd-3-clause (BSD 3-Clause License), bsd-2-clause (BSD 2-Clause License), cc0-1.0 (Creative Commons Zero v1.0), unlicense (Unlicense), cc-by-4.0 (Creative Commons Attribution 4.0), bsl-1.0 (Boost Software License 1.0).
+
+**Consent Procedures**: Not Applicable
+
+**Compliance With Regulations**: Not Applicable

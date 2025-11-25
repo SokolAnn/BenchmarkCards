@@ -1,0 +1,116 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CA4P-483",
+    "abbreviation": "CA4P-483",
+    "overview": "We construct the first Chinese privacy policy dataset, namely CA4P-483, to facilitate the sequence labeling tasks and regulation compliance identification between privacy policies and software. Our dataset includes 483 Chinese Android application privacy policies, over 11K sentences, and 52K fine-grained annotations.",
+    "data_type": "text (privacy policy documents; sentence- and character-level sequence labeling)",
+    "domains": [
+      "Natural Language Processing",
+      "Software Engineering",
+      "Cyber Security"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "OPP-115",
+      "APP-350",
+      "MSRA",
+      "OntoNotes",
+      "PeopleDairy",
+      "Weibo",
+      "Resume",
+      "CLUENER2020",
+      "CNERTA",
+      "Twitter-2015",
+      "Twitter-2017"
+    ],
+    "resources": [
+      "https://github.com/zacharykzhao/CA4P-483",
+      "https://arxiv.org/abs/2212.04357v1"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To construct a fine-grained Chinese Android application privacy policy dataset (CA4P-483) with annotations based on privacy-related laws to facilitate sequence labeling tasks and regulation compliance identification between privacy policies and software.",
+    "audience": [
+      "Natural Language Processing Researchers",
+      "Software Engineering Researchers",
+      "Cyber Security Researchers"
+    ],
+    "tasks": [
+      "Sequence Labeling",
+      "Regulation Compliance Identification",
+      "App Behavior Consistency Identification"
+    ],
+    "limitations": "Depends on locating data access-related sentences using a data collection and sharing word list (limited when information is given in enumeration format). The dataset is time-limited to the timestamp of collection (January 2021).",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Manually collected from Android application markets including Google Play and AppGallery; Chinese privacy policy websites downloaded when available; collection performed around January 2021; text extraction via html2text and annotation via tagtog.",
+    "size": "483 documents; 11,565 sentences; 52,577 fine-grained annotations",
+    "format": "N/A",
+    "annotation": "Two-phase annotation: coarse-grained paragraph-level annotation followed by fine-grained character-level annotation of seven components (controller, data entity, collection, sharing, condition, purpose, receiver). Annotation was performed by trained annotators (30 undergraduates for coarse phase with three instructors supervising; fine-grained annotation by selected undergraduates with instructor inspection). Each privacy policy was allocated to at least four annotators in the coarse phase. Inter-annotator agreement measured by Fleiss' Kappa with average 77.20% (substantial agreement)."
+  },
+  "methodology": {
+    "methods": [
+      "Hidden Markov Model (HMM)",
+      "Conditional Random Field (CRF)",
+      "BiLSTM",
+      "BiLSTM-CRF",
+      "BERT-BiLSTM-CRF",
+      "Lattice-LSTM"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Precision, Recall, and F1-score are applied to evaluate baselines following previous research (Wilson et al., 2016; Sui et al., 2021).",
+    "interpretation": "Higher Precision/Recall/F1 indicate better sequence labeling performance on CA4P-483. The paper reports BiLSTM-CRF as achieving the highest overall F1 (86.84%), while BERT-BiLSTM-CRF had lower overall performance (F1 51.18%), indicating varying effectiveness of model families on this dataset.",
+    "baseline_results": "Overall performance on CA4P-483 (Precision / Recall / F1): HMM 77.47% / 66.11% / 69.63%; CRF 85.52% / 86.28% / 85.63%; BiLSTM 85.13% / 85.99% / 85.05%; BiLSTM-CRF 86.94% / 86.90% / 86.84%; BERT-BiLSTM-CRF 46.22% / 57.35% / 51.18%; Lattice-LSTM 78.63% / 80.75% / 79.67%.",
+    "validation": "Dataset split into training, development, and test sets (detailed in Table 2). Annotation quality validated via Fleiss' Kappa (average 77.20%). Baselines evaluated on train/dev/test splits and reported per-component and overall Precision/Recall/F1."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Legal Compliance",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Data Laws",
+          "subcategory": [
+            "Data usage restrictions",
+            "Data acquisition restrictions"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": [
+      "Identify whether privacy policies violate regulation requirements",
+      "Detect privacy violations",
+      "Identify inconsistency between app behavior and privacy policy statements"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Dataset constructed from publicly available privacy policy websites; authors state they do not collect any personal/private information.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

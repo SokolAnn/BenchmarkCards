@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DsDm (Dataset Selection with Datamodels)",
+    "abbreviation": "DsDm",
+    "overview": "The paper presents a new method for dataset selection in training large-scale models, specifically aimed at maximizing model performance during training by selecting optimal data subsets for given target tasks.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SQuAD (Stanford Question Answering Dataset)",
+      "LAMBADA (LAnguage Modeling Broadened to Account for Discourse Aspects)",
+      "Jeopardy"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2401.12926"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To improve the performance of large-scale language models through optimal dataset selection by modeling the impact of training data on target task performance.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Dataset Selection",
+      "Language Modeling"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The English subset of C4 (Colossal Cleaned Common Crawl)",
+    "size": "216,948,746 examples",
+    "format": "text",
+    "annotation": "Automatically generated"
+  },
+  "methodology": {
+    "methods": [
+      "Model-based evaluation",
+      "Cross-Validation"
+    ],
+    "metrics": [
+      "Log-Probability",
+      "Accuracy"
+    ],
+    "calculation": "Mean log-probability is calculated based on model predictions across benchmark samples.",
+    "interpretation": "A higher log-probability indicates better performance in generating correct answers.",
+    "baseline_results": "Models trained with the proposed method (DsDm) outperform traditional dataset selection methodologies.",
+    "validation": "Evaluated on a range of standard benchmarks related to language understanding."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

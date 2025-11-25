@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "BharatBBQ",
+    "abbreviation": "N/A",
+    "overview": "BharatBBQ is a multilingual benchmark designed to systematically evaluate social biases in language models within the Indian context, utilizing a question-answering framework across various social categories.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Hindi",
+      "English",
+      "Marathi",
+      "Bengali",
+      "Tamil",
+      "Telugu",
+      "Odia",
+      "Assamese"
+    ],
+    "similar_benchmarks": [
+      "BBQ"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2508.07090"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of BharatBBQ is to evaluate the presence of biases in multilingual language models, specifically in the Indian context, and to make these evaluations culturally relevant.",
+    "audience": [
+      "ML Researchers",
+      "AI Developers",
+      "Sociologists"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset has been constructed from culturally adapted templates based on the original Bias Benchmark for Question Answering (BBQ) with additional data collected from community inputs on biases.",
+    "size": "392,864 examples",
+    "format": "N/A",
+    "annotation": "Templates created through manual verification and adaptation for cultural relevance; translated into multiple languages."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Bias Score (BS)",
+      "Stereotypical Bias Score (SBS)",
+      "Accuracy"
+    ],
+    "calculation": "Bias scores and accuracy are computed based on the responses provided by language models to ambiguous and disambiguated contexts in the dataset.",
+    "interpretation": "Higher bias scores indicate a stronger preference for stereotyped responses, while accuracy reflects the model's capability to handle questions that require contextual understanding.",
+    "baseline_results": null,
+    "validation": "Templates validated through independent annotator reviews using Cohen’s Kappa score for reliability."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The benchmark captures various demographic biases, reflecting intersectional identities within Indian society.",
+    "harm": "BharatBBQ aims to identify and mitigate biases in AI systems, promoting fairness without reinforcing harmful stereotypes."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

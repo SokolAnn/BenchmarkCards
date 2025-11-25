@@ -1,0 +1,105 @@
+{
+  "benchmark_details": {
+    "name": "QL-Bench",
+    "overview": "QL-Bench is a benchmark designed to measure the self-awareness ability of Multi-modality Large Language Models (MLLMs) in low-level visual tasks. It comprises a dataset focused on simulating human responses to low-level visual perception through visual question answering.",
+    "data_type": "Images and Questions",
+    "domains": [
+      "Visual Perception",
+      "Machine Learning",
+      "Artificial Intelligence"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MmBench",
+      "MVLM"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the self-awareness of MLLMs in low-level visual perception tasks.",
+    "audience": [
+      "Researchers",
+      "AI Developers"
+    ],
+    "tasks": [
+      "Visual Question Answering",
+      "Self-awareness Evaluation"
+    ],
+    "limitations": null,
+    "out_of_scope_uses": [
+      "High-level visual tasks"
+    ]
+  },
+  "data": {
+    "source": "Various diverse sources (10 sources)",
+    "size": "2,990 single images and 1,999 image pairs",
+    "format": "Images and Open-ended Questions",
+    "annotation": "Each image has a low-level related question, correct answer, false answers, and 'I don't know' option."
+  },
+  "methodology": {
+    "methods": [
+      "Evaluation of self-awareness through QL-Bench",
+      "Comparative analysis across MLLMs"
+    ],
+    "metrics": [
+      "score cc",
+      "score rc",
+      "score sa"
+    ],
+    "calculation": "score sa = score cc + score rc",
+    "interpretation": "Higher scores reflect better self-awareness in answering questions correctly and acknowledging uncertainty.",
+    "baseline_results": null,
+    "validation": "Fifteen popular MLLMs evaluated for self-awareness capability."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Explainability",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Explainability",
+          "subcategory": [
+            "Inaccessible training data",
+            "Untraceable attribution"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack",
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MolGround",
+    "abbreviation": "N/A",
+    "overview": "MolGround is a benchmark designed to evaluate a model's referential abilities in molecular understanding by explicitly associating molecular concepts with specific structural components. It consists of 117,000 question-answer pairs across five subtasks.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Cheminformatics",
+      "Molecular Science"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ChemBench4K",
+      "MoleculeQA"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enhance the referential aspect of molecular understanding and to evaluate models' grounding abilities in the context of molecular science.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Chemical Named Entity Recognition",
+      "Name-Structure Mapping",
+      "Referential Substructure Localization",
+      "Substructure Relationship Grounding",
+      "Substructure Frequency Analysis"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from existing molecular captioning datasets and published chemical literature.",
+    "size": "117,000 question-answer pairs",
+    "format": "N/A",
+    "annotation": "Annotated with the help of human experts and a grounding agent."
+  },
+  "methodology": {
+    "methods": [
+      "Evaluator with baselines LLMs including GPT-4o and LLaMA",
+      "Prototype of a grounding agent for data collection and validation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on the performance of models on the defined tasks.",
+    "interpretation": "Higher accuracy and F1-scores indicate better grounding and recognition capabilities of models.",
+    "baseline_results": "Models struggle, with performances generally below 0.5 accuracy in most tasks.",
+    "validation": "Metrics calculated through the evaluation of model outputs against ground truth data."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

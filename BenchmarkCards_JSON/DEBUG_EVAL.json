@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DEBUG EVAL",
+    "abbreviation": "N/A",
+    "overview": "DEBUG EVAL is a comprehensive benchmark for evaluating the debugging abilities of Large Language Models (LLMs) by emulating the multi-stage human debugging process. It introduces four tasks: BUG Localization, BUG Identification, Code Repair, and Code Recognition.",
+    "data_type": "buggy code and corrected code pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Python",
+      "C++",
+      "Java"
+    ],
+    "similar_benchmarks": [
+      "DebugBench",
+      "CodeError",
+      "CodeEditorBench"
+    ],
+    "resources": [
+      "https://github.com/NEUIR/COAST"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation of LLMs' code debugging capabilities through a series of tasks that reflect real-world debugging processes.",
+    "audience": [
+      "ML Researchers",
+      "Software Developers",
+      "Educational Institutions"
+    ],
+    "tasks": [
+      "BUG Localization",
+      "BUG Identification",
+      "Code Repair",
+      "Code Recognition"
+    ],
+    "limitations": "While DEBUG EVAL includes four evaluation tasks, incorporating additional tasks could enhance its ability to better evaluate the debugging capabilities of LLMs.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Data is collected from existing benchmarks including DebugBench and LiveCodeBench, as well as human trials from platforms like AtCoder.",
+    "size": "5,712 examples across multiple tasks",
+    "format": "JSON",
+    "annotation": "The data entries are manually reviewed for high quality and relevance."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "For BUG Localization, BUG Identification, and Code Recognition, models select answers from multiple choices. For Code Repair, performance is evaluated using Pass@1.",
+    "interpretation": "The performance is interpreted based on the accuracy of the models' responses to the given tasks, with specific performance metrics used for each task.",
+    "baseline_results": "Models like GPT-4o-mini, DeepSeek-Coder-V2, and others serve as baseline comparisons.",
+    "validation": "Each model's effectiveness is validated against predefined test sets of buggy and corrected code."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": []
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

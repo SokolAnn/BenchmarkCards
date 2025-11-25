@@ -1,0 +1,82 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MedSG-Bench: A Benchmark for Medical Image Sequences Grounding",
+    "abbreviation": "MedSG-Bench",
+    "overview": "MedSG-Bench is the first benchmark tailored for Medical Image Sequences Grounding, comprising eight VQA-style tasks and totaling 9,630 question-answer pairs. It aims to evaluate the grounding capabilities of multimodal large language models (MLLMs) in sequential medical imaging scenarios.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/MedSG-Bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of MedSG-Bench is to evaluate the fine-grained visual grounding capabilities of MLLMs in medical image sequences.",
+    "audience": [
+      "ML Researchers",
+      "Medical Professionals",
+      "Data Scientists"
+    ],
+    "tasks": [
+      "Image Difference Grounding",
+      "Image Consistency Grounding",
+      "Multi-View Grounding",
+      "Object Tracking",
+      "Visual Concept Grounding",
+      "Visual Patch Grounding",
+      "Cross-modal Grounding",
+      "Referring Grounding"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "76 publicly available medical imaging datasets under permissive licenses.",
+    "size": "9,630 question-answer pairs",
+    "format": "N/A",
+    "annotation": "Manual annotations provided within the datasets."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Intersection over Union (IoU)",
+      "Accuracy at IoU threshold 0.5 (Acc@0.5)"
+    ],
+    "calculation": "IoU is calculated as the area of overlap between the predicted and ground-truth bounding boxes divided by the area of their union.",
+    "interpretation": "Higher IoU and Acc@0.5 scores indicate better model performance in localizing and grounding the medical image sequences.",
+    "baseline_results": null,
+    "validation": "The benchmark was validated through evaluations of both general-purpose and medical-domain specialized MLLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Data includes 76 datasets with permissive licenses (e.g., CC BY 4.0).",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

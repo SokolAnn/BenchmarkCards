@@ -1,0 +1,102 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SATA-B ENCH (Select All That Apply Benchmark)",
+    "abbreviation": "SATA-B ENCH",
+    "overview": "SATA-B ENCH is a benchmark suite specifically designed to evaluate and enhance the performance of Large Language Models (LLMs) on Select All That Apply (SATA) tasks across diverse domains, reflecting real-world scenarios requiring the identification of multiple correct answers.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Law",
+      "Biomedicine",
+      "Reading Comprehension",
+      "Toxicity Identification",
+      "News Classification"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMLU",
+      "ARC"
+    ],
+    "resources": [
+      "https://github.com/sata-bench/sata-bench",
+      "https://huggingface.co/datasets/sata-bench/sata-bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the capabilities of LLMs in identifying multiple correct choices in SATA questions and to promote robust decision-making in realistic applications.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Text Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated benchmark dataset featuring 1,604 human-validated questions.",
+    "size": "1,604 questions",
+    "format": "JSON",
+    "annotation": "Human validation and curation to ensure clarity, diversity, and correct labeling."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "Choice Funnel decoding strategy"
+    ],
+    "metrics": [
+      "Exact Match (EM)",
+      "Jaccard Index (JI)",
+      "Mean Average Precision (Precision)",
+      "Mean Average Recall (Recall)",
+      "Selection Probability Divergence (SPD)",
+      "Count Bias Metrics"
+    ],
+    "calculation": "Metrics calculated based on model predictions compared to ground truth answers.",
+    "interpretation": "Higher Exact Match and Precision scores indicate better model performance in identifying all correct answers.",
+    "baseline_results": "Top-performing models achieve a maximum exact match of 41.8%.",
+    "validation": "Rigorous human validation across multiple cycles of review."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy",
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Selection bias",
+      "Count bias"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

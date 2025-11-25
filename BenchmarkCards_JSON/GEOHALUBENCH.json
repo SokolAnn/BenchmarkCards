@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "GEOHALUBENCH (Geospatial Hallucination Benchmark)",
+    "abbreviation": "GEOHALUBENCH",
+    "overview": "GEOHALUBENCH is a comprehensive evaluation framework aimed at systematically assessing and mitigating geospatial hallucinations in large language models (LLMs) through structured questions derived from geospatial knowledge graphs.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "TruthfulQA"
+    ],
+    "resources": [
+      "https://anonymous.4open.science/r/GeospatialHallucination-823A/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To systematically evaluate and mitigate geospatial hallucinations in large language models.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Geospatial Knowledge Assessment",
+      "Hallucination Detection",
+      "Hallucination Mitigation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from OpenStreetMap and Foursquare's Open Source Places.",
+    "size": "2,100 instances across various city regions.",
+    "format": "Multiple choice questions",
+    "annotation": "Automatically generated based on factual knowledge and hallucination patterns."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Evaluation metrics based on macro-averaged accuracy across geospatial tasks.",
+    "interpretation": "Higher accuracy indicates better performance in correctly identifying factual information versus hallucinations.",
+    "baseline_results": null,
+    "validation": "Evaluated across 20 advanced LLMs with detailed error analysis."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "All data is sourced from publicly available databases under respective licenses.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

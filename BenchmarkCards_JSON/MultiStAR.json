@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MultiStAR (Multi-Stage Abstract Visual Reasoning)",
+    "abbreviation": "MultiStAR",
+    "overview": "MultiStAR is a benchmark designed to evaluate Multimodal Large Language Models (MLLMs) during the abstract visual reasoning (AVR) process through two subtasks: Direct Answer and Logical Chain, focusing on intermediate reasoning steps.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "RA VEN"
+    ],
+    "resources": [
+      "https://github.com/YanbeiJiang/MultiStAR"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess reasoning across varying levels of complexity in MLLMs while accounting for both intermediate and final answers in abstract visual reasoning tasks.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Visual Question Answering"
+    ],
+    "limitations": "The intermediate task generation is restricted to datasets with defined object attributes; limits applicability to other AVR datasets lacking such metadata.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Derived from the RA VEN dataset.",
+    "size": "8,100 examples for Direct Answer; 560 examples for Logical Chain.",
+    "format": "Multiple-Choice Question Answering (MCQA)",
+    "annotation": "Automatically generated using template-based methods."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "MSEval"
+    ],
+    "calculation": "Accuracy is computed as the proportion of correct answers. MSEval aggregates correctness across all reasoning stages.",
+    "interpretation": "MSEval provides a more granular analysis of the model’s performance, reflecting the correctness of both intermediate steps and final answers.",
+    "baseline_results": "Human performance serves as a baseline with ratings exceeding 60% across tasks.",
+    "validation": "Evaluated through tests against human performances and model capabilities."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Evaluation conducted for diverse demographics from crowdsourced human studies.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "Informed consent obtained from human participants for data collection.",
+    "compliance_with_regulations": "N/A"
+  }
+}

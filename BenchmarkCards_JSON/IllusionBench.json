@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "IllusionBench",
+    "abbreviation": "N/A",
+    "overview": "IllusionBench is a dataset that challenges current vision-language models (VLMs) to decipher shape information represented by an arrangement of visual elements in coherent, naturalistic scenes. It evaluates the shape recognition capabilities of VLMs, highlighting their limitations in detecting abstract shapes within these scenes.",
+    "data_type": "image",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "N/A"
+    ],
+    "similar_benchmarks": [
+      "Stylized-ImageNet"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/arshiahemmat/IllusionBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate shape recognition capabilities in vision-language models and to identify their limitations in detecting abstract shapes within scenes.",
+    "audience": [
+      "ML Researchers",
+      "Computer Vision Practitioners"
+    ],
+    "tasks": [
+      "Shape Recognition",
+      "Object Recognition"
+    ],
+    "limitations": "The current benchmark only hides a single shape in each image, limiting complexity. Future work aims to create more complex images with multiple objects.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated images using a diffusion model based on ControlNet.",
+    "size": "32,000 images",
+    "format": "PNG",
+    "annotation": "Human annotations were performed to verify the recognizability of shapes in the generated dataset."
+  },
+  "methodology": {
+    "methods": [
+      "Zero-shot evaluation",
+      "In-context learning"
+    ],
+    "metrics": [
+      "Shape Recall",
+      "Scene Recall"
+    ],
+    "calculation": "Shape and scene recall are calculated as the proportion of correctly identified shapes and scenes across all samples in the datasets.",
+    "interpretation": "Higher recall values indicate better performance in identifying abstract shapes in visual scenes.",
+    "baseline_results": "Prior benchmarks like Stylized-ImageNet show higher recall for shapes, while VLMs struggle with IllusionBench.",
+    "validation": "Participants validated results through manual annotation, achieving high average accuracy in recognizing shapes."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "The limited shape perception abilities of current VLMs could be exploited for undesirable purposes such as content moderation failures."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC BY-NC 4.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

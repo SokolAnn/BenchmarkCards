@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MangaZero",
+    "abbreviation": "N/A",
+    "overview": "MangaZero is a large-scale dataset specifically designed for multi-character, multi-state manga generation, addressing a significant gap in story visualization training data. It contains 43,264 manga pages and 427,147 annotated panels, supporting the visualization of varied character interactions and movements across sequential frames.",
+    "data_type": "manga panels with annotations",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "Japanese"
+    ],
+    "similar_benchmarks": [
+      "Manga109"
+    ],
+    "resources": [
+      "https://jianzongwu.github.io/projects/diffsensei/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a dataset for customized manga generation, enabling detailed control over character appearances and interactions in manga narratives.",
+    "audience": [
+      "AI Researchers",
+      "ML Researchers",
+      "Creative Artists"
+    ],
+    "tasks": [
+      "Customized Manga Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Downloaded manga pages from online manga websites (MangaDex), annotated with character IDs and other features.",
+    "size": "43,264 pages",
+    "format": "Various image formats",
+    "annotation": "Annotated with panel bounding boxes, character IDs, and dialog bounding boxes."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Fréchet Inception Distance (FID)",
+      "CLIP image-text similarity",
+      "DINO image similarity",
+      "Dialog bounding box F1 score"
+    ],
+    "calculation": "Metrics are calculated using standard evaluation methods in generative modeling.",
+    "interpretation": "Lower FID and higher CLIP scores indicate better image quality and alignment between generated images and text.",
+    "baseline_results": "Compared against baseline models such as StoryDiffusion, MS-Diffusion, and others.",
+    "validation": "Model validation supported by human preference studies and automated evaluation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

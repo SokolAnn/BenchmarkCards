@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "XtraQA",
+    "abbreviation": "N/A",
+    "overview": "XtraQA is a comprehensive dataset consisting of 7,040 research papers from top-tier venues, annotated with over 140,000 instruction-response pairs that facilitate context-aware and controllable revisions in academic writing.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "N/A"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2505.11336"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a dataset that enhances the capabilities of LLMs in academic paper revision through human-AI collaboration.",
+    "audience": [
+      "ML Researchers",
+      "Academics",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text Revision"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "7,040 research papers collected from ICLR 2024 and annotated for instruction-response pairs.",
+    "size": "7,040 papers",
+    "format": "JSON",
+    "annotation": "Annotated with over 140,000 instruction-response pairs reflective of realistic scientific revisions."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Length-Controlled Win Rate"
+    ],
+    "calculation": "Maximizing the conditional log-likelihood of generated revisions given original paragraphs and instructions.",
+    "interpretation": "Positive win rates indicate improved quality of paper revisions.",
+    "baseline_results": "XtraGPT outperformed baseline models including GPT-4o-mini.",
+    "validation": "Validation through quantitative and qualitative evaluations with human judges."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Potential for over-reliance and introduction of bias from training data."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MVBench (Multi-modal Video understanding Benchmark)",
+    "abbreviation": "MVBench",
+    "overview": "MVBench aims at comprehensively evaluating the temporal perception capabilities of multi-modal large language models (MLLMs) in the open world, covering 20 challenging video tasks that require temporal understanding.",
+    "data_type": "multiple-choice Question-Answer pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SEED-Bench",
+      "VideoChatGPT"
+    ],
+    "resources": [
+      "https://github.com/OpenGVLab/Ask-Anything",
+      "https://huggingface.co/spaces/OpenGVLab/MVBench_Leaderboard"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of MVBench is to evaluate the temporal understanding capabilities of MLLMs.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Action Sequence",
+      "Action Prediction",
+      "Action Antonym",
+      "Fine-grained Action",
+      "Unexpected Action",
+      "Object Existence",
+      "Object Interaction",
+      "Object Shuffle",
+      "Moving Direction",
+      "Action Localization",
+      "Scene Transition",
+      "Action Count",
+      "Moving Count",
+      "Moving Attribute",
+      "State Change",
+      "Fine-grained Pose",
+      "Character Order",
+      "Egocentric Navigation",
+      "Episodic Reasoning",
+      "Counterfactual Inference"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from 11 existing public video datasets, including STAR, PAXION, and CLEVRER.",
+    "size": "1.1 million video annotations",
+    "format": "JSON",
+    "annotation": "Automatic annotation through large language models."
+  },
+  "methodology": {
+    "methods": [
+      "QA generation using automatic annotation",
+      "Evaluation with multiple-choice QA"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy calculated based on the proportion of correct answers.",
+    "interpretation": "Higher accuracy indicates better temporal understanding performance by the models.",
+    "baseline_results": "VideoChat2 achieved an accuracy of 66.0%, outperforming leading models by over 15%.",
+    "validation": "Comprehensive evaluations against various MLLMs are conducted."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

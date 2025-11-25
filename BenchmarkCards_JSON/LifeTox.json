@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LifeTox",
+    "abbreviation": "N/A",
+    "overview": "LifeTox is a dataset designed for identifying implicit toxicity within a broad range of advice-seeking scenarios, comprising diverse contexts derived from personal experiences through open-ended questions.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "HarmfulQ",
+      "BeaverTails",
+      "HHH Alignments"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/mbkim/LifeTox"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To contribute to the safer integration of large language models in everyday human interactions by understanding and detecting implicit toxicity.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Toxicity Detection",
+      "Text Classification"
+    ],
+    "limitations": "The operational style of the LifeProTips forum may introduce bias in the standards of advice and the participants’ opinions may not represent all demographic groups.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Posts and comments crawled from the 'LifeProTips' and 'UnethicalLifeProTips' subreddits.",
+    "size": "87,510 instances",
+    "format": "N/A",
+    "annotation": "Human evaluation confirmed the labeling of comments as safe or unsafe based on community guidelines."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Fine-tuning of RoBERTa on LifeTox dataset"
+    ],
+    "metrics": [
+      "Macro-F1 Score"
+    ],
+    "calculation": "Metrics were calculated based on the classification performance of models trained on the LifeTox dataset.",
+    "interpretation": "Higher Macro-F1 scores indicate better generalization ability in implicit toxicity detection.",
+    "baseline_results": "RoBERTa fine-tuned on LifeTox outperformed existing models on multiple out-of-domain benchmarks.",
+    "validation": "The effectiveness of LifeTox was validated through experiments comparing it against existing safety benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Bias",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on education: plagiarism"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Harmful advice leading to social risks"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

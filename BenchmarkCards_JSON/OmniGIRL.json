@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "OmniGIRL (A Multilingual and Multimodal Benchmark for GitHub Issue Resolution)",
+    "abbreviation": "OmniGIRL",
+    "overview": "OmniGIRL is a GitHub issue resolution benchmark that is multilingual, multimodal, and multi-domain, including 959 task instances collected from repositories across four programming languages (Python, JavaScript, TypeScript, and Java) and eight different domains.",
+    "data_type": "text and image information",
+    "domains": [
+      "Natural Language Processing",
+      "Software Engineering"
+    ],
+    "languages": [
+      "Python",
+      "JavaScript",
+      "TypeScript",
+      "Java"
+    ],
+    "similar_benchmarks": [
+      "SWE-bench",
+      "SWE-bench Verified",
+      "SWE-bench-java"
+    ],
+    "resources": [
+      "https://github.com/DeepSoftwareAnalytics/OmniGIRL"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive benchmark for evaluating issue resolution abilities of LLMs across multiple programming languages, domains, and input modalities.",
+    "audience": [
+      "ML Researchers",
+      "Software Engineers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "GitHub Issue Resolution"
+    ],
+    "limitations": "Limited performance of current LLMs on multi-language issues and those requiring image understanding.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from various GitHub repositories based on popularity and relevance across multiple domains.",
+    "size": "959 task instances",
+    "format": "JSON",
+    "annotation": "Manually annotated with task instance information including issue descriptions, images, and website links."
+  },
+  "methodology": {
+    "methods": [
+      "Oracle Retrieval",
+      "Agentless-X",
+      "AutoCodeRover-X"
+    ],
+    "metrics": [
+      "Resolve Rate",
+      "Apply Rate"
+    ],
+    "calculation": "Metrics are calculated based on the percentage of task instances that are resolved successfully and patches that can be applied without errors.",
+    "interpretation": "Higher resolve and apply rates indicate better performance of the LLMs in issue resolution.",
+    "baseline_results": "GPT-4o with Agentless-X achieves the highest resolve rate of 8.6%.",
+    "validation": "Execution-based filtering to ensure task instances have verifiable solutions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

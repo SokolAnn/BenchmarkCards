@@ -1,0 +1,68 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "L3Cube-MahaNER",
+    "abbreviation": "N/A",
+    "overview": "Presents L3Cube-MahaNER, the first major gold standard named entity recognition dataset in Marathi. The dataset contains 25,000 manually tagged sentences across eight entity classes, annotated in IOB and non-IOB notation, with sentences sourced from a news domain corpus.",
+    "data_type": "text (token-level NER annotated sentences, IOB and non-IOB)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Marathi"
+    ],
+    "similar_benchmarks": [
+      "IIT Bombay Marathi NER Corpus",
+      "WikiAnn NER Corpus"
+    ],
+    "resources": [
+      "https://github.com/l3cube-pune/MarathiNLP",
+      "https://huggingface.co/l3cube-pune/marathi-ner"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Provide a large manually annotated Marathi named entity recognition dataset (L3Cube-MahaNER) and benchmark a range of models to establish baselines for future comparisons.",
+    "audience": [],
+    "tasks": [
+      "Named Entity Recognition"
+    ],
+    "limitations": "The dataset does not preserve the context of the news, such as publication profiles, regions, and so on.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Base sentences taken from the L3Cube-MahaCorpus, a monolingual Marathi dataset primarily from the news domain.",
+    "size": "25,000 sentences (Train: 21,500 sentences; Test: 2,000 sentences; Validation: 1,500 sentences)",
+    "format": "N/A",
+    "annotation": "Manual annotation by human annotators following established annotation guidelines; annotated in IOB and non-IOB notation. First 200 sentences were tagged together for consistency among four annotators; ambiguous cases were resolved by majority vote."
+  },
+  "methodology": {
+    "methods": [
+      "Model-based evaluation (training/evaluating CNN, LSTM, biLSTM, and transformer models such as mBERT, IndicBERT, XLM-RoBERTa, RoBERTa-Marathi, MahaBERT, MahaRoBERTa, MahaALBERT)",
+      "Automated metrics (Precision, Recall, F1 Score, Accuracy)"
+    ],
+    "metrics": [
+      "F1 Score (macro)",
+      "Precision",
+      "Recall",
+      "Accuracy"
+    ],
+    "calculation": "F1 Score reported as macro F1 (noted in table header as 'F1 score(macro)'); precision and recall reported as in the tables; accuracy reported as overall accuracy as shown in results tables.",
+    "interpretation": "Higher F1 Score/Precision/Recall/Accuracy indicates better NER performance. Reported results identify MahaRoBERTa as yielding the best performance for IOB notation and MahaBERT as yielding the best performance for non-IOB notation.",
+    "baseline_results": "IOB (selected): MahaRoBERTa — F1 Score 85.30, Precision 84.27, Recall 86.36, Accuracy 97.18; MahaBERT — F1 Score 84.81, Precision 84.55, Recall 85.07, Accuracy 97.10. Non-IOB (selected): MahaBERT — F1 Score 86.80, Precision 84.62, Recall 89.09, Accuracy 97.15; MahaRoBERTa — F1 Score 86.60, Precision 84.30, Recall 89.04, Accuracy 97.24.",
+    "validation": "Dataset split into Train (21,500), Test (2,000), Validation (1,500). Inter-annotator consistency ensured by jointly tagging the first 200 sentences and resolving ambiguous cases by majority vote."
+  },
+  "targeted_risks": {
+    "risk_categories": [],
+    "atlas_risks": {
+      "risks": null
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

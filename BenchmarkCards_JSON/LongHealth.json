@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LongHealth",
+    "abbreviation": "N/A",
+    "overview": "The LongHealth benchmark is a collection of 20 fictional patient cases with detailed clinical narratives designed to evaluate the performance of large language models (LLMs) in medical question answering through 400 multiple-choice questions focused on information extraction, negation, and sorting.",
+    "data_type": "clinical case texts with question-answering pairs",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMLU"
+    ],
+    "resources": [
+      "https://github.com/kbressem/LongHealth"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a more realistic assessment of LLMs in a healthcare setting, especially in extracting information from lengthy clinical documents.",
+    "audience": [
+      "ML Researchers",
+      "Healthcare Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "The benchmark's use of multiple-choice questions does not fully reflect real-world clinical situations, which typically involve open-ended queries.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "20 fictional patient cases created by experienced physicians.",
+    "size": "20 cases, each ranging from 5,090 to 6,754 words",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Mean accuracy is calculated over five runs",
+    "interpretation": "Higher accuracy indicates better performance in extracting information from clinical documents.",
+    "baseline_results": "Mixtral-8x7B-Instruct-v0.1 achieved the highest accuracy at 77%.",
+    "validation": "Evaluated via multiple rounds of information retrieval tasks"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Misuse",
+          "subcategory": [
+            "Spreading disinformation"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

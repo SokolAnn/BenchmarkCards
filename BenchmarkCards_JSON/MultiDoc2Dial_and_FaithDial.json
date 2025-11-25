@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MultiDoc2Dial and FaithDial",
+    "abbreviation": "N/A",
+    "overview": "This work investigates how to improve faithfulness and accuracy in knowledge-grounded dialogue generation tasks by leveraging reinforcement learning with a novel reward function based on accuracy and faithfulness metrics.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MultiDoc2Dial",
+      "FaithDial"
+    ],
+    "resources": [
+      "https://github.com/IBM/multidoc2dial/blob/main/scripts/run_data_preprocessing.sh"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To improve the faithfulness and accuracy of knowledge-grounded dialogue generation.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Dialogue Generation"
+    ],
+    "limitations": "The pretraining of better language models is always helpful for this method.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Datasets include MultiDoc2Dial and FaithDial.",
+    "size": "21,453 training examples for MultiDoc2Dial, 18,357 for FaithDial.",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Reinforcement Learning",
+      "Proximal Policy Optimization"
+    ],
+    "metrics": [
+      "SacreBLEU",
+      "ROUGE-L",
+      "BERTScore",
+      "Token-F1"
+    ],
+    "calculation": "Metrics are calculated based on how well the generated responses match ground-truth references and relevant knowledge texts.",
+    "interpretation": "Higher scores in metrics indicate better accuracy and faithfulness of the generated responses.",
+    "baseline_results": "T5-PPO-Ours achieved the best performance across the evaluated benchmarks.",
+    "validation": "Models were evaluated using empirical experiments on MultiDoc2Dial and FaithDial."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

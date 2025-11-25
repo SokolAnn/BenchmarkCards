@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "name": "Crowdsourced Stereotype Pairs (Crows-Pairs)",
+    "overview": "A Challenge Dataset for Measuring Social Biases in Masked Language Models.",
+    "data_type": "Test Data",
+    "domains": [
+      "Natural Language Processing",
+      "Social Bias Evaluation"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "StereoSet",
+      "WinoBias"
+    ],
+    "resources": [
+      "https://github.com/nyu-mll/crows-pairs"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To measure social biases in language models against protected demographic groups in the US.",
+    "audience": [
+      "Researchers in NLP",
+      "Developers of machine learning models",
+      "Ethics researchers"
+    ],
+    "tasks": [
+      "Evaluate bias in masked language models",
+      "Measure stereotype use in sentence generation"
+    ],
+    "limitations": "Dataset does not cover all potential biases beyond the specified nine categories.",
+    "out_of_scope_uses": [
+      "Training language models directly using this dataset",
+      "Using the dataset as a source of examples of written English"
+    ]
+  },
+  "data": {
+    "source": "Amazon Mechanical Turk",
+    "size": "1508 examples",
+    "format": "Pairs of sentences (stereotype vs anti-stereotype)",
+    "annotation": "Crowdsourced validation by multiple annotators"
+  },
+  "methodology": {
+    "methods": [
+      "Crowdsourcing for data collection",
+      "Majority vote for validation of examples"
+    ],
+    "metrics": [
+      "Comparison of likelihood of stereotypical vs less stereotypical sentences"
+    ],
+    "calculation": "Percentage of examples where the model prefers the more stereotyping sentence.",
+    "interpretation": "A model that shows a higher preference for stereotyping sentences indicates more bias.",
+    "baseline_results": "BERT, RoBERTa, and ALBERT models were evaluated, with results showing significant bias in all models.",
+    "validation": "5 validation annotations per example with majority agreement required for validity."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Social Bias",
+      "Cultural Insensitivity"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on affected communities"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Focused on historically disadvantaged groups in the US.",
+    "harm": "Propagation of harmful stereotypes affecting marginalized communities."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All personal identifying information about crowdworkers has been removed.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Crowdworkers notified about sensitive nature of task.",
+    "compliance_with_regulations": "N/A"
+  }
+}

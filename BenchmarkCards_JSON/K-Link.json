@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "K-Link: Knowledge-Link Graph from LLMs for Enhanced Representation Learning in Multivariate Time-Series Data",
+    "abbreviation": "K-Link",
+    "overview": "The paper introduces K-Link, a novel framework that leverages Large Language Models (LLMs) to extract a Knowledge-Link graph, which enhances graph quality for Multivariate Time-Series (MTS) data and improves representation learning through a graph alignment module for various downstream tasks.",
+    "data_type": "multimodal",
+    "domains": [
+      "Natural Language Processing",
+      "Time-Series"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://doi.org/XXXXXXX.XXXXXXX"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To improve the representation learning of MTS data using a Knowledge-Link graph constructed from LLMs to enhance graph quality and reduce bias in representation.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Remaining Useful Life Prediction",
+      "Human Activity Recognition",
+      "Sleep Stage Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "C-MAPSS dataset for RUL prediction, UCI-HAR for human activity recognition, ISRUC-S3 for sleep stage classification.",
+    "size": "32,816 samples for RUL prediction, 7,947 samples for HAR, 5,149 samples for sleep stage classification",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Graph Neural Networks",
+      "Knowledge extraction from LLMs",
+      "Graph alignment module"
+    ],
+    "metrics": [
+      "Root Mean Squared Error (RMSE)",
+      "Score",
+      "Accuracy",
+      "Macro-averaged F1-Score (MF1)"
+    ],
+    "calculation": "Metrics are calculated based on the model's predictions compared to the actual labels of the datasets.",
+    "interpretation": "Lower RMSE and Score indicate better performance for RUL prediction, while higher Accuracy and MF1 denote better performance for HAR and sleep stage classification.",
+    "baseline_results": "Compared against state-of-the-art methods such as AConvLSTM, DAGN, InFormer, among others.",
+    "validation": "Extensive experiments across various MTS-related downstream tasks which demonstrate improvement over existing methods."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

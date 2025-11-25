@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "REWARD BENCH",
+    "abbreviation": "N/A",
+    "overview": "REWARD BENCH is the first toolkit for benchmarking reward models, providing a dataset of prompt-chosen-rejected trios spanning chat, reasoning, and safety, to evaluate how reward models perform on challenging, structured, and out-of-distribution queries.",
+    "data_type": "prompt-chosen-rejected pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Anthropic Helpful",
+      "MT-Bench",
+      "SHP (Stanford Human Preferences)"
+    ],
+    "resources": [
+      "https://hf.co/datasets/allenai/reward-bench",
+      "https://github.com/allenai/reward-bench",
+      "https://hf.co/spaces/allenai/reward-bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enhance scientific understanding of reward models through structured evaluation.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Evaluation of Reward Models"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated prompt-chosen-rejected trios from various datasets and custom selections.",
+    "size": "2,958 examples",
+    "format": "JSONL",
+    "annotation": "Manual verification by researchers."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Scores are calculated based on the winning counts of chosen vs rejected pairs.",
+    "interpretation": "A win is defined as the chosen completion receiving a higher score than the rejected completion for a given prompt.",
+    "baseline_results": "N/A",
+    "validation": "Models are evaluated based on their performance on the REWARD BENCH leaderboard."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset does not contain personally identifiable information but does address potentially offensive content.",
+    "data_licensing": "The REWARD BENCH dataset is released under the ODC-BY license and code is under Apache 2.0.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

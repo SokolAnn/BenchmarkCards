@@ -1,0 +1,77 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Hybrid-SQuAD (Hybrid Scholarly Question Answering Dataset)",
+    "abbreviation": "Hybrid-SQuAD",
+    "overview": "Hybrid-SQuAD is a novel large-scale QA dataset designed to facilitate answering questions incorporating both text and KG facts. It consists of 10.5K question-answer pairs generated from DBLP and SemOpenAlex alongside corresponding text from Wikipedia.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "DBLP-QuAD",
+      "SciQA",
+      "QASA"
+    ],
+    "resources": [
+      "https://github.com/semantic-systems/hybrid-squad"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To fill the gap in existing Scholarly Question Answering datasets by fostering the development of hybrid QA systems that integrate information from multiple heterogeneous sources.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Hybrid-SQuAD was created using question-answer pairs generated via a large language model and incorporates data from DBLP and SemOpenAlex as well as Wikipedia text.",
+    "size": "10,500 question-answer pairs",
+    "format": "JSON",
+    "annotation": "Automatically generated using a large language model"
+  },
+  "methodology": {
+    "methods": [
+      "Automated question-answer generation"
+    ],
+    "metrics": [
+      "Exact Match (EM)",
+      "F-Score"
+    ],
+    "calculation": "Metrics are calculated based on the proportion of predictions that match the gold answers in the dataset.",
+    "interpretation": "An exact match score reflects the model's ability to produce precise outputs, with higher scores indicating better performance.",
+    "baseline_results": "RAG-based (ChatGPT-3.5) achieved an EM score of 69.65 and F-Score of 74.91 on Hybrid-SQuAD.",
+    "validation": "The dataset was evaluated using baseline models compared to existing scholarly QA models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

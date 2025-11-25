@@ -1,0 +1,72 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SDOH-NLI (Social Determinants of Health - Natural Language Inference)",
+    "abbreviation": "SDOH-NLI",
+    "overview": "SDOH-NLI is a dataset for inferring social determinants of health from clinical notes, formulated as a natural language inference task with binary textual entailment labels.",
+    "data_type": "text",
+    "domains": [
+      "Healthcare",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/google-research-datasets/SDOH-NLI"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a high-quality entailment dataset for extracting social determinants of health from clinical notes and to support broader NLI research.",
+    "audience": [
+      "ML Researchers",
+      "Healthcare Providers",
+      "NLP Researchers"
+    ],
+    "tasks": [
+      "Natural Language Inference"
+    ],
+    "limitations": "The dataset is English-only and reflects the American healthcare system.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Data was based on medical reports from MTSamples.com, consisting of social history snippets collected from clinical notes.",
+    "size": "29,635 examples",
+    "format": "CSV",
+    "annotation": "Annotated by human raters using majority voting for binary entailment labels."
+  },
+  "methodology": {
+    "methods": [
+      "Fine-tuning experiments",
+      "Zero/few-shot prompting",
+      "Retrieval-based evaluations"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on the predicted and true labels across the dataset.",
+    "interpretation": "Higher scores indicate better model performance in accurately identifying SDOH factors from clinical note snippets.",
+    "baseline_results": null,
+    "validation": "The dataset was split into training, validation, and test sets using a ratio of 70:15:15."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "Dataset reflects U.S. norms for social determinants of health, may not generalize to other populations.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Uses public and non-identifiable data for study, minimizing privacy concerns.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

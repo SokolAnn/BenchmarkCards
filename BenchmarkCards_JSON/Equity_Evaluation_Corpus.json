@@ -1,0 +1,80 @@
+{
+  "benchmark_details": {
+    "name": "Equity Evaluation Corpus",
+    "overview": "The Equity Evaluation Corpus (EEC) consists of 8,640 English sentences specifically designed to examine biases towards certain races and genders across various sentiment analysis systems.",
+    "data_type": "Text",
+    "domains": [
+      "Natural Language Processing",
+      "Sentiment Analysis"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "http://saifmohammad.com/WebPages/Biases-SA.html"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a benchmark dataset to analyze gender and race biases in sentiment analysis systems.",
+    "audience": [
+      "Researchers",
+      "Developers",
+      "Data Scientists"
+    ],
+    "tasks": [
+      "Evaluate sentiment intensity predictions regarding race and gender bias."
+    ],
+    "limitations": "The EEC is not a catch-all for all biases but rather a means to examine fairness in sentiment analysis systems.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Equity Evaluation Corpus compiled from various templates.",
+    "size": "8,640 sentences",
+    "format": "Text",
+    "annotation": "Sentences chosen to reveal bias towards gender and race."
+  },
+  "methodology": {
+    "methods": [
+      "Statistical tests to compare predicted scores"
+    ],
+    "metrics": [
+      "Intensity scores",
+      "Statistical significance (t-tests)"
+    ],
+    "calculation": "Mean difference of predicted scores between sentences differing only in gender or race.",
+    "interpretation": "Assessment of bias based on differences in predicted sentiment intensity scores.",
+    "baseline_results": "Baseline SVM system showed small biases with 0.03 maximum score difference across gender pairs.",
+    "validation": "Statistical significance established using paired two-sample t-tests."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias in Sentiment Analysis",
+      "Discrimination in NLP Systems"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on affected communities"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Biases were statistically analyzed across gender and race.",
+    "harm": "Potential perpetuation of human biases in machine learning systems could lead to negative experiences for affected groups."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

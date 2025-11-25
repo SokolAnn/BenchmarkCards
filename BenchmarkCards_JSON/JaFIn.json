@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "JaFIn (Japanese Financial Instruction Dataset)",
+    "abbreviation": "JaFIn",
+    "overview": "JaFIn is a manually constructed instruction dataset specifically designed for domain adaptation in Japanese finance models. It aims to enhance the performance of large language models (LLMs) through instruction tuning.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Finance"
+    ],
+    "languages": [
+      "Japanese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/collections/tokyotech-llm/swallow-65d2bf12f8ab7fc669881082",
+      "https://huggingface.co/collections/rinna/nekomata-6582b5134ee85531becbb9a9",
+      "https://huggingface.co/elyza/ELYZA-japanese-Llama-2-13b",
+      "https://huggingface.co/line-corporation/japanese-large-lm-3.6b",
+      "https://huggingface.co/pfnet/plamo-13b",
+      "https://huggingface.co/llm-jp/llm-jp-13b-v1.0",
+      "https://huggingface.co/cyberagent/calm2-7b"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide an instruction dataset specialized for the financial domain, facilitating training and evaluation of large language models (LLMs) to enhance their performance in responding to finance-related queries.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from frequently asked questions, explanatory materials related to finance from Japanese government websites, Wikipedia, etc.",
+    "size": "1,490 samples",
+    "format": "N/A",
+    "annotation": "Manual annotation based on financial knowledge and instruction tuning methodology."
+  },
+  "methodology": {
+    "methods": [
+      "Instruction tuning using JaFIn",
+      "Quantitative evaluation using specified tasks"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Metrics calculated based on the performance on predefined financial tasks.",
+    "interpretation": "Higher accuracy indicates better performance of LLMs in responding to finance instructions compared to baseline models.",
+    "baseline_results": "N/A",
+    "validation": "85% training and 15% validation split for instruction tuning."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

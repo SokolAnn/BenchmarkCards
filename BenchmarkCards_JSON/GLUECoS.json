@@ -1,0 +1,105 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "GLUECoS : An Evaluation Benchmark for Code-Switched NLP",
+    "abbreviation": "GLUECoS",
+    "overview": "We present an evaluation benchmark, GLUECoS, for code-switched languages, that spans several NLP tasks in English-Hindi and English-Spanish. The benchmark includes Language Identification from text, Part of Speech tagging, Named Entity Recognition, Sentiment Analysis, Question Answering and a new task for code-switching, Natural Language Inference.",
+    "data_type": "text (word-level labels, sentence-level classification, question-answer pairs, sentence-pair NLI)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Hindi",
+      "Spanish"
+    ],
+    "similar_benchmarks": [
+      "GLUE (Generalized Language Evaluation Benchmark)",
+      "SuperGLUE"
+    ],
+    "resources": [
+      "https://github.com/facebookresearch/MUSE",
+      "https://github.com/karlmoritz/bicvm/",
+      "https://github.com/lmthang/bivec",
+      "https://fasttext.cc/",
+      "https://github.com/marekrei/sequence-labeler/tree/484a6beb1e2a2cccaac74ce717b1ee30c79fc8d8",
+      "https://github.com/huggingface/transformers",
+      "https://github.com/ElizaLo/Question-Answering-based-on-SQuAD"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To propose GLUECoS, a language understanding evaluation framework for Code-Switched NLP that evaluates models across multiple tasks and two language pairs (English-Hindi and English-Spanish).",
+    "audience": [],
+    "tasks": [
+      "Language Identification",
+      "Part of Speech Tagging",
+      "Named Entity Recognition",
+      "Sentiment Analysis",
+      "Question Answering",
+      "Natural Language Inference"
+    ],
+    "limitations": "Current version does not include a multi-task learning evaluation; benchmark contents are limited to English-Hindi and English-Spanish datasets used in this work; for some datasets the authors create their own train/dev/test splits.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Publicly available datasets and prior shared-task corpora, and one new NLI dataset by the authors. Datasets used include: FIRE LID, UD POS (Bhat et al.), FG POS (ICON 2016), IIITH NER, SAIL Sentiment (ICON 2017), Chandu et al. QA, Khanuja et al. NLI (new dataset), EMNLP 2014 LID, Bangor POS, CALCS NER, En-Es sentiment (Vilares et al.).",
+    "size": "Varied per dataset; see Table 1 for per-dataset sentence counts (examples: FIRE LID: 2,631 train sentences; SAIL Sentiment: 10,080 train sentences; EMNLP 2014 LID: 10,259 train sentences; CALCS NER: 27,366 train sentences; NLI (R) 1,040 train sentences).",
+    "format": "N/A",
+    "annotation": "Word-level language tags (LID); Part-of-speech tags (POS); Named entity labels (NER); sentence-level sentiment labels (positive/negative/neutral); question-answer-context triples for QA; premise-hypothesis labels for NLI."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics evaluation",
+      "Baseline model evaluations (cross-lingual word embeddings)",
+      "Pre-trained multilingual model evaluation (mBERT)",
+      "Fine-tuning pre-trained multilingual models on synthetic and small real code-switched data"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Accuracy",
+      "Code-Mixing Index (CMI)",
+      "Average switch-points (SP Avg)",
+      "M-index",
+      "Probability of Switching (I-index)",
+      "Burstiness",
+      "Language Entropy (LE)",
+      "Span Entropy (SE)"
+    ],
+    "calculation": "Task metrics (F1 Score and Accuracy) are computed on test sets. Code-switching statistics (CMI, SP Avg, M-index, I-index, Burstiness, LE, SE) are computed as described (Gambäck and Das, 2014; Guzmán et al., 2017) and reported in Table 2.",
+    "interpretation": "Higher F1 Score or Accuracy indicates better task performance. Authors note that multilingual models (mBERT) outperform cross-lingual embeddings and that fine-tuning mBERT on synthetic plus small real code-switched data often yields the best results. The authors state that low accuracies on tasks such as Sentiment Analysis and NLI indicate these tasks are far from solved for code-switched languages.",
+    "baseline_results": "Results for baseline and evaluated models are reported in Tables 3-8. Examples: LID En-Hi Mod. mBERT F1 = 96.6; LID En-Es Mod. mBERT F1 = 96.24; NLI En-Hi mBERT Accuracy = 61.09, Mod. mBERT Accuracy = 63.1. (See Tables 3-8 for full per-dataset results.)",
+    "validation": "For datasets without official splits the authors create balanced 8:1:1 train:dev:test splits. Experiments were run with 5 random seeds and results reported are averages. Early stopping and validation-based model selection were used as described in Appendix B."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness",
+      "Governance"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Governance",
+          "subcategory": [
+            "Lack of testing diversity"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

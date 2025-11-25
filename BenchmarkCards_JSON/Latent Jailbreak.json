@@ -1,0 +1,103 @@
+{
+  "benchmark_details": {
+    "name": "Latent Jailbreak Benchmark",
+    "overview": "A benchmark for evaluating the text safety and output robustness of large language models (LLMs), focusing on both safety and robustness in the context of latent jailbreak prompts.",
+    "data_type": "Text",
+    "domains": [
+      "Natural Language Processing",
+      "AI Safety"
+    ],
+    "languages": [
+      "Chinese",
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Jailbreak Detection Benchmarks"
+    ],
+    "resources": [
+      "https://github.com/qiuhuachuan/latent-jailbreak"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess and evaluate the safety and robustness of large language models against latent jailbreak prompts.",
+    "audience": [
+      "Researchers",
+      "AI Developers",
+      "Safety Engineers"
+    ],
+    "tasks": [
+      "Evaluate LLM responses to latent jailbreak prompts",
+      "Analyze text safety and output robustness"
+    ],
+    "limitations": null,
+    "out_of_scope_uses": [
+      "Non-malicious task evaluation",
+      "General-purpose language model evaluations"
+    ]
+  },
+  "data": {
+    "source": "Generated latent jailbreak prompt dataset",
+    "size": "416 prompts",
+    "format": "Text",
+    "annotation": "Hierarchical annotation framework for evaluating text safety and output robustness"
+  },
+  "methodology": {
+    "methods": [
+      "Latent Jailbreak Prompt Generation",
+      "Safety and Robustness Evaluation Framework",
+      "Automated Labeling with RoBERTa"
+    ],
+    "metrics": [
+      "Jailbreak Success Rate",
+      "Trustworthiness Metric"
+    ],
+    "calculation": "Jailbreak Success Rate = (Number of Unsafe Outputs) / (Total Outputs)",
+    "interpretation": "Higher success rates indicate lower robustness and safety.",
+    "baseline_results": null,
+    "validation": "Human validation of outputs alongside automated labeling."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Privacy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in prompt"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Vulnerability of outputs across different protected groups.",
+    "harm": "Potential generation of harmful or toxic content through jailbreak prompts."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset includes implicit malicious instructions, requiring strict ethical considerations regarding privacy.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

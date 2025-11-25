@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Conan-Embedding-v2",
+    "abbreviation": "N/A",
+    "overview": "Conan-Embedding-v2 is a new LLM trained from scratch and fine-tuned as a text embedder to address the data and training gaps between LLMs and embedding models, incorporating a novel cross-lingual retrieval dataset for better multilingual integration.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "MTEB (Massive Text Embedding Benchmark)",
+      "Chinese MTEB"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2509.12892"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a new text embedding method through a novel LLM that achieves state-of-the-art performance on text embedding benchmarks.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text Embedding",
+      "Cross-lingual Retrieval",
+      "Classification",
+      "Clustering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Created from a combination of multilingual corpora and various datasets for training and fine-tuning.",
+    "size": "Approximately 10 million pairs for cross-lingual retrieval dataset.",
+    "format": "N/A",
+    "annotation": "Utilizes low-quality filtering methods during data collection and employs human annotations for specific tasks."
+  },
+  "methodology": {
+    "methods": [
+      "Weakly-supervised training",
+      "Supervised training with dynamic hard negative mining"
+    ],
+    "metrics": [
+      "Accuracy",
+      "V-Meas",
+      "Average Precision (AP)",
+      "Mean Average Precision (MAP)",
+      "nDCG at 10",
+      "Spearman's Rank Correlation Coefficient"
+    ],
+    "calculation": "Multiple metrics calculated across various embedding tasks.",
+    "interpretation": "Higher scores indicate better model performance on the respective embedding tasks.",
+    "baseline_results": "State-of-the-art performance compared to existing models like Mistral-7B.",
+    "validation": "Empirical evaluations demonstrate performance improvements through systematic training stages."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis of language performance reveals disparities across language families.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

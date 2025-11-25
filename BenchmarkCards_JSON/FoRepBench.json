@@ -1,0 +1,72 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FoRepBench (Formula RepairBench mark)",
+    "abbreviation": "FoRepBench",
+    "overview": "FoRepBench is a benchmark dataset specifically designed for context-aware Excel formula repair, focusing on runtime errors. It includes spreadsheet context, faulty formulas, corrected versions, and user utterances expressing intent.",
+    "data_type": "Excel formula repair examples",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/microsoft/prose-benchmarks/tree/main/FoRepBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a high-quality benchmark for evaluating models that assist in repairing Excel formulas and diagnosing errors.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Excel Formula Repair"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated seed samples from online forums and generated using a synthetic data generation pipeline.",
+    "size": "618 examples",
+    "format": "N/A",
+    "annotation": "Manual verification and correction by annotators, supplemented by automated checks."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Manual annotation",
+      "LLM-based validation"
+    ],
+    "metrics": [
+      "Syntax Validity",
+      "Can Execute",
+      "Execution Match"
+    ],
+    "calculation": "Metrics are calculated based on the ability of the repaired formula to compile and execute without errors.",
+    "interpretation": "Higher scores in Execution Match indicate better performance of the model in repairing formulas.",
+    "baseline_results": "Various LLMs including GPT-4o, GPT-4.1, Phi-3, and Mistral were evaluated with varying performance.",
+    "validation": "The benchmark was validated through execution checks and LLM-based semantic validation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

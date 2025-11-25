@@ -1,0 +1,72 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "GeoBenchX: Benchmarking LLMs for Multistep Geospatial Tasks",
+    "abbreviation": "GeoBenchX",
+    "overview": "This paper establishes a benchmark for evaluating large language models (LLMs) on multi-step geospatial tasks relevant to commercial GIS practitioners, assessing various models with a tool-calling agent equipped with geospatial functions.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Geospatial Analysis"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/Solirinai/GeoBenchX"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the performance of LLMs on multi-step geospatial tasks using a standardized benchmark set.",
+    "audience": [
+      "GIS Practitioners",
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Geospatial Analysis",
+      "Mapping",
+      "Data Visualization"
+    ],
+    "limitations": "The benchmark set size is moderate.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Created from panel data and geometrical data with labeled tasks derived from industry-specific needs.",
+    "size": "200+ tasks",
+    "format": "CSV, GeoJSON, Shapefile",
+    "annotation": "Manually annotated with ground-truth reference solutions"
+  },
+  "methodology": {
+    "methods": [
+      "LLM-as-Judge Evaluation",
+      "Matching-based Evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Token Usage"
+    ],
+    "calculation": "Evaluation based on matching candidate solutions to reference solutions using LLM judges.",
+    "interpretation": "The performance is judged based on semantic equivalence and efficiency in terms of token usage.",
+    "baseline_results": "Results indicate differences in performance across various LLMs with Sonnet 3.5 and GPT-4o achieving the best overall performance.",
+    "validation": "Tuning the evaluator using a set of 44 tasks sampled with stratification."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CODA-19 (COVID-19 Research Aspect Dataset)",
+    "abbreviation": "CODA-19",
+    "overview": "This paper introduces CODA-19, a human-annotated dataset that codes the Background, Purpose, Method, Finding/Contribution, and Other sections of 10,966 English abstracts in the COVID-19 Open Research Dataset.",
+    "data_type": "text (clause-level sentence fragments / text segments labeled with research aspects)",
+    "domains": [
+      "Natural Language Processing",
+      "Medical/Biomedical Research"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SOLVENT",
+      "CORD-19"
+    ],
+    "resources": [
+      "http://CODA-19.org",
+      "https://arxiv.org/abs/2005.02367",
+      "https://covidseer.ist.psu.edu/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To create CODA-19, a human-annotated dataset that codes the Background, Purpose, Method, Finding/Contribution, and Other sections of 10,966 English abstracts in the COVID-19 Open Research Dataset.",
+    "audience": [
+      "Scientists",
+      "AI and Natural Language Processing researchers",
+      "Machine Learning and model developers"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Sentence-level / Clause-level Research Aspect Classification"
+    ],
+    "limitations": "Authors note ambiguity between Purpose and Background leading to mislabeling in some cases. The corpus excludes non-English abstracts, single-sentence abstracts, and abstracts with more than 1,200 tokens (these were filtered out).",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "10,966 abstracts randomly selected from the COVID-19 Open Research Dataset (CORD-19). Each abstract was segmented into sentences and further split into shorter text fragments.",
+    "size": "10,966 abstracts; 2,703,174 tokens; 103,978 sentences; 168,286 text segments; released as an 80/10/10 train/validation/test split.",
+    "format": "N/A",
+    "annotation": "Crowdsourced via Amazon Mechanical Turk by 248 workers; each abstract annotated by nine different workers; final labels aggregated via majority vote (excluding blocked workers); five-class annotation scheme: Background, Purpose, Method, Finding/Contribution, Other."
+  },
+  "methodology": {
+    "methods": [
+      "Expert comparison (biomedical expert and computer scientist annotations on a held-out set)",
+      "Inter-annotator agreement measurement (Cohen's kappa via scikit-learn)",
+      "Majority vote aggregation for crowd labels",
+      "Automated baseline evaluation using machine learning models (Linear SVM, Random Forest, Multinomial Naive Bayes, CNN, LSTM, BERT, SciBERT)"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Cohen's kappa",
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Cohen's kappa computed using scikit-learn. Final crowd labels obtained via majority vote (ties resolved by pre-specified tiebreaker order). Accuracy, precision, recall, and F1 computed by comparing aggregated crowd labels to expert labels. Baseline models trained and validated on the provided 80/10/10 split; model with highest validation score kept for testing.",
+    "interpretation": "Aggregated crowd labels are considered comparable to expert labels: crowd vs expert label accuracy reported as 82.2% with Cohen's kappa 0.741, while inter-expert accuracy was 85.0% with kappa 0.788. Baseline automatic classifiers show potential (SciBERT performed best), but there remains room for improvement when compared to expert labels.",
+    "baseline_results": "Aggregated crowd labels: accuracy 82.2% vs expert labels; Cohen's kappa crowd vs expert = 0.741; inter-expert accuracy = 85.0%, inter-expert kappa = 0.788. Baseline model SciBERT achieved 0.749 accuracy (against crowd labels) in Table 5; authors report SciBERT achieved accuracy 0.774 and Cohen's kappa 0.667 when evaluated against the biomedical expert's labels.",
+    "validation": "Label quality validated by two experts (a biomedical expert and a computer scientist) who annotated the same 129 abstracts; inter-annotator agreement and accuracy metrics computed. Worker quality was monitored in batches; feedback provided and low-quality workers were blocked; ties in majority voting resolved by a specified tiebreaker order."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "Workers were required to watch a five-minute training video, complete an interactive tutorial, and sign a consent form as part of the qualification HIT before annotating.",
+    "compliance_with_regulations": "N/A"
+  }
+}

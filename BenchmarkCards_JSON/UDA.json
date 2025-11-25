@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "UDA (Unstructured Document Analysis)",
+    "abbreviation": "UDA",
+    "overview": "We propose a benchmark suite, namely Unstructured Document Analysis (UDA), that involves 2,965 real-world documents and 29,590 expert-annotated Q&A pairs to evaluate Retrieval-Augmented Generation (RAG) methodologies in real-world document analysis scenarios.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Finance",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/qinchuanhui/UDA-Benchmark"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To advance future research and production in unstructured document analysis.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "While the efficacy of parsing strategies was evaluated through the downstream Q&A performance, a direct comparison of the parsed content was not undertaken.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "2,965 real-world documents collected from various platforms such as Wikipedia and arXiv.",
+    "size": "2,965 documents and 29,590 Q&A pairs",
+    "format": "PDF and HTML",
+    "annotation": "Expert-annotated Q&A pairs"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "End-to-end evaluation using various LLMs"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Exact-Match"
+    ],
+    "calculation": "Span-level F1-score calculated from the overlap of prediction and ground truth answers treated as bags of words.",
+    "interpretation": "Higher scores indicate better performance in answering questions accurately.",
+    "baseline_results": null,
+    "validation": "Performance evaluated on various modules in a typical RAG workflow."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

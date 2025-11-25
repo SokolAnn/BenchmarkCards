@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ND400",
+    "abbreviation": "N/A",
+    "overview": "ND400 is a benchmark dataset created by sampling 200 image-text pairs from NoCaps and 200 image-text pairs from DOCCI, used to evaluate semantic drift in unified models by providing diverse and fine-grained visual details.",
+    "data_type": "image-text pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "NoCaps",
+      "DOCCI"
+    ],
+    "resources": [
+      "https://github.com/mollahsabbir/Semantic-Drift-in-Unified-Models"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To quantify how unified models preserve semantics over repeated modality shifts by evaluating semantic drift in generative tasks.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Image Understanding",
+      "Image Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Sampling from NoCaps and DOCCI datasets.",
+    "size": "400 image-text pairs",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Cyclic evaluation protocol",
+      "Quantitative assessment"
+    ],
+    "metrics": [
+      "Mean Cumulative Drift (MCD)",
+      "Semantic Drift Rate (SDR)",
+      "Multi-Generation GenEval (MGG)"
+    ],
+    "calculation": "Metrics are calculated by measuring semantic similarity at each generation step between the original input and subsequent outputs.",
+    "interpretation": "A higher Mean Cumulative Drift indicates better retention of semantic meaning across generations.",
+    "baseline_results": "N/A",
+    "validation": "Experiments conducted across multiple models to highlight variation in performance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

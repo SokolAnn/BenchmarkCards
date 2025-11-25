@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Open-LLM-Leaderboard",
+    "abbreviation": "N/A",
+    "overview": "This work aims to tackle the difficulties of evaluating large language models (LLMs) through entirely open-style questions, establishing a new benchmark to reflect their true capabilities.",
+    "data_type": "open-style questions",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMLU",
+      "HellaSwag",
+      "ARC"
+    ],
+    "resources": [
+      "https://github.com/VILA-Lab/Open-LLM-Leaderboard"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To refine the assessment process of large language models using open-style questions and eliminate issues found in multiple-choice questions.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "The performance metrics used may not fully capture the nuanced capabilities of each model.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Evaluated from multiple datasets including MMLU, ARC, HellaSwag, WinoGrande, PIQA, CommonsenseQA, Race, MedMCQA, and OpenbookQA.",
+    "size": "42,000 questions evaluated, 23,839 suitable for open-style answering",
+    "format": "N/A",
+    "annotation": "Automatically annotated for suitability as open-style questions"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy is derived based on comparison of model-generated responses to a validated ground truth.",
+    "interpretation": "A significant drop in accuracy was observed for open-style questions compared to multiple-choice questions, with an average reduction of about 25%.",
+    "baseline_results": null,
+    "validation": "The automatic evaluation strategy was validated against human checks with an error rate of less than 5%."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "User privacy concerns are minimal since the benchmark utilizes public datasets and questions.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

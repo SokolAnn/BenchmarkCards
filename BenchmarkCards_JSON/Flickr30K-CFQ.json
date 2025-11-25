@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Flickr30K-CFQ (Compact and Fragmented Query)",
+    "abbreviation": "Flickr30K-CFQ",
+    "overview": "We introduce a new Compact and Fragmented Query dataset to the text-image retrieval community, named Flickr30K-CFQ, which is used to model natural text-image retrieval in real-world scenarios.",
+    "data_type": "text-image pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MS-COCO",
+      "Flickr30K"
+    ],
+    "resources": [
+      "https://sites.google.com/view/Flickr30K-cfq"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To model natural text-image retrieval in real-world scenarios by providing a dataset that overcomes the limitations of existing vision-language datasets.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Text-Image Retrieval"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Flickr30K Entities and generated through prompt engineering with LLMs",
+    "size": "31,783 images, 158,915 captions, 305 imagery tags, 111,240 phrases, 133,540 triples, 139,607 fragments",
+    "format": "N/A",
+    "annotation": "Manually annotated noun phrases and images, along with generated imagery tags and triples"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Multi-recall@K",
+      "Recall@K"
+    ],
+    "calculation": "Metrics are calculated based on the similarity of image-text pairs and performance improvements via query enhancement.",
+    "interpretation": "The performance improvement indicates the effectiveness of the LLM-based Query-enhanced method in text-image retrieval.",
+    "baseline_results": "Existing methods on the full-scale Flickr30K-CFQ dataset showed significant performance drops compared to previous benchmarks.",
+    "validation": "Results validated through experiments on the proposed dataset."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

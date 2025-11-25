@@ -1,0 +1,71 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Multi-Modal Vision vs. Text-Based Parsing",
+    "abbreviation": "N/A",
+    "overview": "This benchmark evaluates eight multi-modal large language models on multiple invoice processing datasets, comparing direct image processing with structured parsing methods, providing insights for model selection and processing strategies.",
+    "data_type": "invoice image data",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Docbench"
+    ],
+    "resources": [
+      "https://anonymous.4open.science/r/invoice%20benchmark%20paper-4361/README.md"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To systematically evaluate different LLM approaches for invoice processing using multiple datasets and processing strategies.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Document Understanding"
+    ],
+    "limitations": "The benchmark's performance may be constrained by specific document formats and extraction challenges, especially with alphanumeric fields.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Three diverse datasets: Clean Invoices (Donut), Scanned Receipts (ICDAR-2019-SROIE), and Scanned Invoices (inv-cdip)",
+    "size": "1,850 images",
+    "format": "image files",
+    "annotation": "Structured JSON annotations and bounding boxes for text localization"
+  },
+  "methodology": {
+    "methods": [
+      "Evaluation against ground truth annotations",
+      "Field-specific accuracy measurement"
+    ],
+    "metrics": [
+      "Overall Accuracy",
+      "Field-specific Accuracy"
+    ],
+    "calculation": "Metrics calculated based on correctly extracted fields compared to total fields in the ground truth with minimal normalization for variations.",
+    "interpretation": "Accuracy provides insight into each model's performance across different document characteristics.",
+    "baseline_results": "N/A",
+    "validation": "Comparison of model output against established ground truth for fair evaluation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SHIELD (Scalable Hardness-Informed Evaluation of LLM Detectors)",
+    "abbreviation": "SHIELD",
+    "overview": "SHIELD is a novel benchmark designed for the evaluation of AI text detectors, emphasizing reliability and stability across diverse scenarios while integrating hardness-aware evaluation methods.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "BUST",
+      "DetectRL",
+      "ESPERANTO",
+      "MAGE",
+      "M4GT-Bench",
+      "MGTBench",
+      "RAID"
+    ],
+    "resources": [
+      "https://github.com/navid-aub/SHIELD-Benchmark"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To advance the fair evaluation of AI text detectors under realistic deployment scenarios by providing a comprehensive benchmark that measures detector performance and stability.",
+    "audience": [
+      "ML Researchers",
+      "Detection System Engineers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text Detection"
+    ],
+    "limitations": "The evaluation was limited to monolingual English text analysis, thereby restricting the generalizability of findings to multilingual contexts.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The SHIELD dataset contains human-written texts sourced from Medium articles, news articles, Amazon reviews, Reddit answers, arXiv abstracts, pink slime journalism, and Wikipedia, with corresponding LLM-generated texts produced across seven different models.",
+    "size": "87.5k human-written texts and 612.5k LLM-generated texts",
+    "format": "Mixed (text formats)",
+    "annotation": "Dataset annotated with human-written samples before adversarial manipulation."
+  },
+  "methodology": {
+    "methods": [
+      "Evaluation of text detectors",
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "AUROC (Area Under Receiver Operating Characteristic)",
+      "W-AUROC (Weighted AUROC)",
+      "SFD (Stability under False Positive Deviation)",
+      "URSS (Unified Reliability-Stability Score)"
+    ],
+    "calculation": "Metrics are calculated using performance measurements in low false positive rate regions and stability assessments across varying threshold conditions.",
+    "interpretation": "Compares the reliability and stability of detection methods under real-world operational conditions.",
+    "baseline_results": "Traditional benchmarks for LLM-generated text detection, focusing on AUROC metrics which may overestimate efficacy.",
+    "validation": "Evaluation is performed through rigorous comparative analysis against contemporary benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Decision bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The benchmark does not currently include demographic breakdowns or fairness assessments across groups as evaluated.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

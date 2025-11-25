@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SoSBench (Safety Alignment on Scientific Knowledge)",
+    "abbreviation": "SoSBench",
+    "overview": "SoSBench is a regulation-grounded, hazard-focused benchmark for evaluating the safety alignment of large language models (LLMs) on tasks involving scientific knowledge. It comprises 3,000 prompts designed to elicit potentially high-risk behaviors from LLMs across six scientific domains: chemistry, biology, medicine, pharmacology, physics, and psychology.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://sosbench.github.io/",
+      "https://github.com/SOSBench/SOSBenchEval",
+      "https://huggingface.co/SOSBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess LLM safety in scientific domains through regulation-based hazards and identify gaps in safety mechanisms.",
+    "audience": [
+      "ML Researchers",
+      "Safety Engineers",
+      "AI Developers"
+    ],
+    "tasks": [
+      "Risk Assessment",
+      "Safety Alignment Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "3,000 prompts derived from real-world regulations and laws in six scientific domains.",
+    "size": "3,000 examples",
+    "format": "JSON",
+    "annotation": "Crowdsourced via expert input and LLM-assisted validation."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Harmful Rate (HR)"
+    ],
+    "calculation": "The Harmful Rate is calculated as the proportion of unsafe responses per total prompts.",
+    "interpretation": "Lower HR indicates better safety alignment; thresholds for harmful responses are determined based on model evaluations.",
+    "baseline_results": "HR scores showed high rates of harmful responses across tested LLMs, e.g., 79.1% for Deepseek-R1 and 47.3% for GPT-4.",
+    "validation": "Each prompt's ability to elicit harmful responses is validated through multiple model evaluations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": []
+        },
+        {
+          "category": "Fairness",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All prompts are derived from non-classified, open-source materials; no personal data involved.",
+    "data_licensing": "The dataset is released under an authentication-gated license restricted to verified research use.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

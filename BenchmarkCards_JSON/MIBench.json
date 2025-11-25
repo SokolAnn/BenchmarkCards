@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MIBench",
+    "abbreviation": "N/A",
+    "overview": "MIBench is designed to comprehensively evaluate fine-grained abilities of multimodal large language models (MLLMs) in multi-image scenarios across three scenarios: multi-image instruction, multimodal knowledge-seeking, and multimodal in-context learning, with a total of 13 tasks and 13,000 annotated samples.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MME",
+      "MMBench",
+      "SEED-Bench",
+      "Sparkles-Eval",
+      "Mantis-Eval"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/StarBottle/MIBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation framework for assessing the multi-image abilities of MLLMs.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Multi-Image Instruction",
+      "Multimodal Knowledge-Seeking",
+      "Multimodal In-Context Learning"
+    ],
+    "limitations": "Due to the input length limitation of current MLLMs, the benchmark includes 2 to 8 input images in each sample.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Data constructed from various existing annotated datasets, including NLVR2, MagicBrush, VrR-VG, Something-Something V2, and others.",
+    "size": "13,000 samples",
+    "format": "N/A",
+    "annotation": "Manual annotation and automated filtering, supplemented with GPT-4 generated distractors."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy is calculated based on the predicted options from models against the correct options.",
+    "interpretation": "A model is considered to have correctly answered a sample only if it consistently provides the correct response across multiple tests.",
+    "baseline_results": null,
+    "validation": "Data quality ensured through automated filtering and manual verification."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

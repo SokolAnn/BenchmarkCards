@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "AVA-BENCH (Atomic Visual Ability Benchmark)",
+    "abbreviation": "AVA-BENCH",
+    "overview": "AVA-BENCH is introduced as the first benchmark explicitly designed to disentangle 14 Atomic Visual Abilities (AVAs) for Vision Foundation Models (VFMs), thereby enabling detailed assessments of their strengths and weaknesses across foundational visual capabilities.",
+    "data_type": "image-question pairs",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://arxiv.org/abs/2506.09082"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The goal of AVA-BENCH is to provide a systematic, diagnostic, and comprehensive evaluation protocol for Vision Foundation Models (VFMs), focusing on their fundamental visual abilities.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Object Recognition",
+      "Scene Recognition",
+      "Emotion Recognition",
+      "Color Detection",
+      "Action Recognition",
+      "Fine-Grained Recognition",
+      "Counting",
+      "Localization",
+      "Absolute Depth",
+      "Relative Depth",
+      "Spatial Reasoning",
+      "Orientation",
+      "Texture"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated from 26 diverse datasets focused on specific Atomic Visual Abilities.",
+    "size": "218K image-question pairs",
+    "format": "image-question pairs",
+    "annotation": "Curated and filtered to ensure each image-question pair tests a single AVA."
+  },
+  "methodology": {
+    "methods": [
+      "Automated evaluation using language models",
+      "Standardized metrics for each AVA"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Mean Absolute Error (MAE)",
+      "Generalized Intersection-over-Union (GIoU)",
+      "Average Normalized Levenshtein Similarity (ANLS)"
+    ],
+    "calculation": "Metrics are calculated based on task-specific evaluation protocols outlined for each AVA.",
+    "interpretation": "Higher metrics indicate better performance in identifying or predicting the specific visual capability.",
+    "baseline_results": "N/A",
+    "validation": "The dataset was split into 80% train and 20% test ensuring balanced representation across classes."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

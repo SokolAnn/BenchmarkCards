@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MSCoRe (Multi-Stage Collaborative Reasoning)",
+    "abbreviation": "MSCoRe",
+    "overview": "MSCoRe is a novel benchmark designed to assess the multi-stage collaborative reasoning capabilities of LLM agents across four industrial sectors: automotive, pharmaceutical, electronics, and energy. It comprises 126,696 domain-specific question-answer pairs that evaluate reasoning across interconnected stages of workflows.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Automotive",
+      "Pharmaceutical",
+      "Electronics",
+      "Energy"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "GLUE",
+      "SuperGLUE",
+      "MMLU",
+      "BIG-bench"
+    ],
+    "resources": [
+      "https://github.com/D3E0-source/MSCoRE"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate and improve multi-stage reasoning in LLM agents.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated using a systematic pipeline involving dynamic sampling, iterative question-answer generation, and multi-level quality assessment.",
+    "size": "126,696 examples",
+    "format": "JSON",
+    "annotation": "Automated generation with multi-level quality assurance"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "ROUGE-L F1 Score"
+    ],
+    "calculation": "Scores calculated across predefined difficulty levels (easy, medium, hard) based on the complexity of reasoning stages.",
+    "interpretation": "Higher ROUGE-L scores indicate better multi-stage reasoning performance.",
+    "baseline_results": "Performance of various state-of-the-art models, including commercial models like GPT-4o.",
+    "validation": "Utilized a Turing test with expert evaluation on generated data to validate quality."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack",
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

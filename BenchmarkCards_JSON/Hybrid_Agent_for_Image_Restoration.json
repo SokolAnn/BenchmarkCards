@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Hybrid Agent for Image Restoration",
+    "abbreviation": "N/A",
+    "overview": "HybridAgent integrates multiple restoration modes into a unified image restoration model, employing fast, slow, and feedback restoration agents to optimize user interaction and effectively restore images with various types of distortions.",
+    "data_type": "image",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://arxiv.org/abs/2503.10120"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a unified model for image restoration that enhances user interaction and performance on various distortion types.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Image Restoration"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Instruction tuning dataset constructed from images with 10 types of distortions, including noise, motion blur, and others.",
+    "size": "100,000 image-text pairs",
+    "format": "N/A",
+    "annotation": "Generated and manually annotated."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "PSNR",
+      "SSIM",
+      "LPIPS"
+    ],
+    "calculation": "Metrics are calculated based on the image restoration results compared to ground truth images.",
+    "interpretation": "Higher PSNR and SSIM values indicate better restoration quality; lower LPIPS signifies better perceptual quality.",
+    "baseline_results": "Performance results compared against several state-of-the-art all-in-one image restoration methods.",
+    "validation": "Cross-validation on synthetic and real-world datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack",
+            "Hallucination"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

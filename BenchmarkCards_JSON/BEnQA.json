@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "BEnQA (Bengali and English Question Answering Benchmark)",
+    "abbreviation": "BEnQA",
+    "overview": "BEnQA is a dataset comprising parallel Bengali and English exam questions for middle and high school levels in Bangladesh. The dataset consists of approximately 5,161 questions covering several subjects in science with different types of questions, including factual, application, and reasoning questions.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Bengali",
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/sheikhshafayat/BEnQA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To benchmark the performance of existing Large Language Models (LLMs) on a dataset that includes parallel question-answering in Bengali and English.",
+    "audience": [
+      "ML Researchers",
+      "Educators",
+      "Language Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "Our dataset primarily focused on text-based questions, excluding figure-based questions.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from nationwide board exams in Bangladesh.",
+    "size": "5,161 questions",
+    "format": "CSV",
+    "annotation": "Manually curated and reviewed by proficient typists in both Bengali and English."
+  },
+  "methodology": {
+    "methods": [
+      "Manual evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "The final answer aligns with the ground truth without scrutinizing the validity of intermediate reasoning steps.",
+    "interpretation": "An answer is considered correct if it matches the ground truth.",
+    "baseline_results": null,
+    "validation": "Utilized zero-shot and few-shot prompting techniques to evaluate existing models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Includes demographic breakdowns based on questions and subjects.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset consists of exam questions that are freely available and manually curated to minimize harmful content.",
+    "data_licensing": "Distributed under the CC BY-SA 4.0 license.",
+    "consent_procedures": "Involvement of annotators was compensated above the minimum wage.",
+    "compliance_with_regulations": "The work received approval from the Institutional Review Board (IRB) at the institution."
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PennyLang",
+    "abbreviation": "N/A",
+    "overview": "PennyLang is a high-quality dataset of 3,347 PennyLane-specific quantum code samples with contextual descriptions, curated from textbooks, official documentation, and open-source repositories, designed for quantum programming using PennyLane.",
+    "data_type": "code samples",
+    "domains": [
+      "Quantum Computing"
+    ],
+    "languages": [
+      "Python"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/PennyLaneAI"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a structured dataset specifically for LLM-based quantum code generation and assist developers in writing optimized quantum code using PennyLane.",
+    "audience": [
+      "ML Researchers",
+      "Quantum Software Developers"
+    ],
+    "tasks": [
+      "Code Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated from GitHub repositories, quantum computing textbooks, and official PennyLane documentation.",
+    "size": "3,347 samples",
+    "format": "JSON",
+    "annotation": "Manual verification and contextual descriptions added to each code sample."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Success Rate"
+    ],
+    "calculation": "Success Rate is calculated as pass@5 / 264 x 100, where pass@5 indicates the number of test cases for which at least one correct solution was generated among the five attempts.",
+    "interpretation": "Higher success rates indicate better model performance in generating correct quantum code.",
+    "baseline_results": "Open-source models like Qwen 7B and LLaMa 4 showed significant improvements when evaluated with the PennyLang dataset.",
+    "validation": "Evaluated through a benchmark suite comprising 264 test cases assessed across multiple LLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "cPAPERS (Conversational Papers)",
+    "abbreviation": "cPAPERS",
+    "overview": "cPAPERS is a dataset of conversational question-answer pairs from reviews of academic papers grounded in various components such as equations, figures, and tables. The dataset aims to support the development of conversational assistants capable of situated and multimodal interactive conversations over scientific documents.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/avalab/cPAPERS"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To advance the development of conversational assistants capable of situated and multimodal interactive conversation within scientific papers.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "The key limitation of this dataset is the presence of mismatched figures, tables, or equations across different versions of the manuscripts.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The cPAPERS dataset is sourced from official reviews and rebuttals of academic papers available on OpenReview and their associated LATEX source files from arXiv.",
+    "size": "5,030 question-answer pairs",
+    "format": "JSON",
+    "annotation": "Annotations are conducted via automated processes utilizing LLMs combined with crowdsourced feedback from Amazon Mechanical Turk."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "ROUGE-1",
+      "ROUGE-2",
+      "ROUGE-L",
+      "METEOR",
+      "BERTScore"
+    ],
+    "calculation": "Metrics are calculated based on the generated responses compared to reference answers in the dataset.",
+    "interpretation": "Higher scores indicate better performance in the model's ability to generate relevant and accurate replies to questions.",
+    "baseline_results": "Results from initial evaluations showed improvements using neighboring context in question-answering tasks.",
+    "validation": "The dataset underwent evaluation using various metrics to validate the performance of baseline models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "The dataset aims to prevent harm by ensuring that the extracted question-answer pairs are relevant and technical in nature."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "cPAPERS dataset is released under GNU Public License.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

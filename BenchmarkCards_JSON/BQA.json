@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "BQA (Body Language Question Answering Dataset)",
+    "abbreviation": "BQA",
+    "overview": "A body language question answering dataset that evaluates whether Video Large Language Models (VideoLLMs) can correctly interpret emotions from videos of body language comprising 26 emotion labels.",
+    "data_type": "video-question-answer pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "BoLD (Body Language Dataset)"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/naist-nlp/BQA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To validate whether VideoLLMs can correctly interpret emotions from body language in videos.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from the Body Language Dataset (BoLD) and designed for evaluation of VideoLLMs.",
+    "size": "7,632 videos",
+    "format": "N/A",
+    "annotation": "Crowdsourced annotation of emotions on a 10-point scale."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Performance metrics calculated based on the predictions made by VideoLLMs against the annotated categories.",
+    "interpretation": "Higher accuracy indicates better understanding of emotions expressed through body language.",
+    "baseline_results": null,
+    "validation": "Dataset validation involved human evaluation across various demographics."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Decision bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Yes, includes metadata on gender, age, and ethnicity.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

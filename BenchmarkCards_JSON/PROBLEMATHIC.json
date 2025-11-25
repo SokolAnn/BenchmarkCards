@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PROBLEMATHIC",
+    "abbreviation": "N/A",
+    "overview": "PROBLEMATHIC is a dataset containing both adversarial and non-adversarial mathematical word problem (MWP) pairs, aimed at studying the susceptibility of large language models (LLMs) to irrelevant numerical information in MWPs.",
+    "data_type": "math word problem pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "GSM-8K"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/him1411/problemathic",
+      "https://github.com/him1411/problemathic"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To analyze the performance of large language models on mathematical word problems containing irrelevant information and to improve their robustness through adversarial training.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Mathematical Problem Solving"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Adversarial and non-adversarial mathematical word problems augmented with irrelevant information.",
+    "size": "1,926 samples (1,313 Simple, 613 Complex)",
+    "format": "N/A",
+    "annotation": "Manually curated and classified based on problem complexity."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Fine-tuning models"
+    ],
+    "metrics": [
+      "Exact Match Accuracy"
+    ],
+    "calculation": "Metrics are calculated as the percentage of exactly correct answers over total answers.",
+    "interpretation": "Higher accuracy indicates better performance in identifying relevant information and solving problems.",
+    "baseline_results": "Exact match accuracy varies among models, with drops of up to 41.53% on adversarial samples.",
+    "validation": "Empirical evaluation through multiple model trials and human quality assessments."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

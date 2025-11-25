@@ -1,0 +1,102 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MVPBench (Multi-path Visual Physics benchmark)",
+    "abbreviation": "MVPBench",
+    "overview": "MVPBench is a benchmark designed to rigorously evaluate visual physical reasoning through the lens of visual chain-of-thought (CoT). Each example features interleaved multi-image inputs and demands coherent reasoning paths grounded in evolving visual cues.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "PhysBench",
+      "Physion",
+      "PhysReason"
+    ],
+    "resources": [
+      "https://github.com/CSU-JPG/MVPBench",
+      "https://huggingface.co/datasets/CSU-JPG/MVPBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the visual reasoning capabilities of multimodal large language models (MLLMs) in understanding physical concepts through rigorous assessment of visual chain-of-thought reasoning.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Physics Educators"
+    ],
+    "tasks": [
+      "Visual Reasoning",
+      "Physics Problem Solving",
+      "Spatial Reasoning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Publicly available physics videos, curated questions from physics examinations, and image-based spatial reasoning tasks.",
+    "size": "1,211 samples",
+    "format": "JSON",
+    "annotation": "Manually annotated by experts in physics and visual cognition."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "Multi-path reasoning evaluation"
+    ],
+    "metrics": [
+      "Step Accuracy Score (SAS)",
+      "Path Validity Rate (PVR)",
+      "Path Coverage Score (PCS)",
+      "Key Step Coverage (KSC)"
+    ],
+    "calculation": "Metrics are calculated based on the correctness and coherence of reasoning steps provided by the model.",
+    "interpretation": "High scores on SAS and PVR indicate effective reasoning and understanding of physical laws.",
+    "baseline_results": "To be determined with model evaluations.",
+    "validation": "Benchmarked against established models such as GPT-4o and OpenAI o3."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Inaccurate reasoning leading to misconceptions in physics education."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

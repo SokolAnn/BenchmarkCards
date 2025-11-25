@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Benchmark of Expert-edited Machine-generated Outputs (Beemo)",
+    "abbreviation": "Beemo",
+    "overview": "Beemo includes 19.6k texts, composed of 6.5k human-written texts and 13.1k machine-generated & LLM-edited texts, designed for evaluating machine-generated text detection in various scenarios.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MAGE",
+      "AIGC MPU",
+      "RADAR"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/toloka/beemo",
+      "https://github.com/Toloka/beemo"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive benchmark for evaluating the detection of machine-generated texts, particularly those that have been edited by experts or LLMs.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "AI Safety Experts"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Machine Generated Text Detection"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset comprises texts collected and edited from a variety of instruction-finetuned LLMs and human-written content as prompts.",
+    "size": "19,683 texts",
+    "format": "N/A",
+    "annotation": "Expert annotators edited the machine-generated texts based on guidelines for accuracy, coherence, and fluency."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Area Under ROC Curve (AUC-ROC)"
+    ],
+    "calculation": "AUROC scores are calculated based on the probability that a detector assigns higher scores to a randomly selected machine-generated text than to a randomly selected human-written text.",
+    "interpretation": "Higher AUROC values indicate better performance of the machine-generated text detectors.",
+    "baseline_results": null,
+    "validation": "The benchmark has been evaluated using 33 different configurations of MGT detectors."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset does not contain identifiable personal information and uses anonymized expert responses.",
+    "data_licensing": "Materials are released under MIT and CC-BY-NC-4.0 licenses, depending on the source.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

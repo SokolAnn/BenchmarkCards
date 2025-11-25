@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "COBIAS (Context-Oriented Bias Indicator and Assessment Score)",
+    "abbreviation": "COBIAS",
+    "overview": "COBIAS evaluates model robustness to biased statements by considering various contexts, aiming to improve bias benchmarks for language models.",
+    "data_type": "stereotyped statements with contextual annotations",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "CrowS-Pairs",
+      "StereoSet",
+      "WinoGender",
+      "RedditBias",
+      "WinoBias"
+    ],
+    "resources": [
+      "https://github.com/priyanshul-govil/COBIAS"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess the contextual reliability of bias benchmarks and improve their quality.",
+    "audience": [
+      "ML Researchers",
+      "Bias Mitigation Practitioners"
+    ],
+    "tasks": [
+      "Bias Assessment"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Augmented dataset created from CrowS-Pairs and StereoSet with contextual annotations.",
+    "size": "2,291 statements",
+    "format": "JSON",
+    "annotation": "Human verified with a majority vote of three annotators for context-addition points."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Spearman's correlation",
+      "COBIAS score"
+    ],
+    "calculation": "COBIAS is calculated by averaging the context-variance scores of statements.",
+    "interpretation": "A higher COBIAS score indicates better contextual reliability.",
+    "baseline_results": "N/A",
+    "validation": "Validated against human judgment with high correlation (Spearman’s 𝜌=0.65)."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

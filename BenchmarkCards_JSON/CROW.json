@@ -1,0 +1,75 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CROW (Commonsense Reasoning in Real-World Tasks)",
+    "abbreviation": "CROW",
+    "overview": "CROW is a manually-curated, multi-task benchmark that evaluates the ability of models to apply commonsense reasoning in the context of six real-world NLP tasks, using a multi-stage data collection pipeline that rewrites examples from existing datasets using commonsense-violating perturbations.",
+    "data_type": "context-target pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/mismayil/crow"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess the ability of NLP systems to apply commonsense reasoning in real-world tasks.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Machine Translation",
+      "Open-domain Dialogue",
+      "Dialogue Summarization",
+      "Intent Detection",
+      "Stance Classification",
+      "Safety Detection"
+    ],
+    "limitations": "Commonsense knowledge has many dimensions, and only six core ones are considered.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed using existing datasets for six real-world NLP tasks.",
+    "size": "16,541 examples",
+    "format": "N/A",
+    "annotation": "Crowdsourced with validation by multiple annotators."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Macro-F1",
+      "Situational Accuracy"
+    ],
+    "calculation": "Macro-F1 is calculated as the average of scores across all tasks, while Situational Accuracy considers the correctness of responses across all targets for each context.",
+    "interpretation": "Higher scores indicate better performance of the models on commonsense reasoning tasks.",
+    "baseline_results": "Human performance over various tasks serves as a baseline.",
+    "validation": "Each stage of data collection included validation by multiple workers."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

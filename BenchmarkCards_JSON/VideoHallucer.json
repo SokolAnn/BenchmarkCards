@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "name": "VideoHallucer",
+    "overview": "VideoHallucer is the first comprehensive benchmark for hallucination detection in large video-language models (LVLMs), categorizing hallucinations into intrinsic and extrinsic types.",
+    "data_type": "Video Question-Answering",
+    "domains": [
+      "Multimodal Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "POPE",
+      "HallusionBench",
+      "MMHal-Bench"
+    ],
+    "resources": [
+      "https://VideoHallucer.github.io"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate hallucination issues in large video-language models.",
+    "audience": [
+      "Researchers in AI and machine learning",
+      "Developers of video-language models"
+    ],
+    "tasks": [
+      "Detecting hallucinations in LVLMs",
+      "Evaluating model performance on video inputs"
+    ],
+    "limitations": "The benchmark's scalability is currently limited.",
+    "out_of_scope_uses": [
+      "General purpose video summarization",
+      "Non-research-based commercial applications"
+    ]
+  },
+  "data": {
+    "source": "VideoHallucer dataset based on existing datasets like YouCook, COIN, and EDUVSUM.",
+    "size": "1,800 question-answer pairs from 948 videos",
+    "format": "Dataset with paired basic and hallucinated question-answer formats",
+    "annotation": "Annotated by human evaluators, ensuring correctness and fluency."
+  },
+  "methodology": {
+    "methods": [
+      "Adversarial binary VideoQA",
+      "Question generation and annotation",
+      "Comparison with existing benchmarks"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Yes Percentage Difference",
+      "False Positive Ratio"
+    ],
+    "calculation": "Overall accuracy calculated by pairing basic and hallucinated questions.",
+    "interpretation": "Models' ability to recognize hallucinations does not compromise their fundamental task performance.",
+    "baseline_results": null,
+    "validation": "Comparison conducted against existing benchmarks to ensure reliability."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": "Hallucinated questions could lead to misinterpretation in research contexts."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset does not contain personal information to ensure privacy.",
+    "data_licensing": "The dataset is under CC BY-NC-SA (Attribution-NonCommercial-ShareAlike).",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "All responsible for rights violations are acknowledged by the authors."
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Name-based Benchmark for Evaluating Nationality Bias in LLMs",
+    "abbreviation": "N/A",
+    "overview": "We introduce a novel name-based benchmarking approach derived from the Bias Benchmark for QA (BBQ) dataset to investigate the impact of substituting explicit nationality labels with culturally indicative names, exploring how this affects both bias magnitude and accuracy across a spectrum of LLMs.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "BBQ (Bias Benchmark for Question Answering)"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2507.16989"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To investigate how LLMs handle nationality-based stereotypes when explicit country labels are replaced by culturally indicative names.",
+    "audience": [
+      "ML Researchers",
+      "Ethics in AI Professionals",
+      "Bias Mitigation Practitioners"
+    ],
+    "tasks": [
+      "Bias Evaluation",
+      "Question Answering"
+    ],
+    "limitations": "Our study focuses primarily on nationality-based biases and may not capture the complexity of identities and cultural contexts.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "BBQ (Bias Benchmark for Question Answering) dataset and re-engineered datasets created for this research.",
+    "size": "3,080 unique prompts",
+    "format": "JSON",
+    "annotation": "Derived from validated expert templates, augmented with culturally indicative names."
+  },
+  "methodology": {
+    "methods": [
+      "Metric comparison",
+      "Error retention analysis",
+      "Bias scoring"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Bias Score",
+      "Error Retention Ratio (ERR)"
+    ],
+    "calculation": "Bias scores are computed based on how often the model's outputs conform to stereotypes when answers are incorrect.",
+    "interpretation": "Lower bias scores indicate reduced reliance on stereotypes, while higher accuracy reflects improved model performance.",
+    "baseline_results": "Accuracy comparisons for various models based on nationality vs. name datasets were documented.",
+    "validation": "Using comparative analyses across multiple models from OpenAI, Google, and Anthropic."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Creative Commons License for BBQ dataset.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

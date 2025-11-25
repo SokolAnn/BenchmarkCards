@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "GMAI-MMBench: A Comprehensive Multimodal Evaluation Benchmark Towards General Medical AI",
+    "abbreviation": "GMAI-MMBench",
+    "overview": "GMAI-MMBench is the most comprehensive general medical AI benchmark with well-categorized data structure and multi-perceptual granularity to evaluate large vision-language models (LVLMs) in clinical practice. It consists of 284 datasets covering 38 medical image modalities, 18 clinical-related tasks, 18 departments, and 4 types of perceptual granularity.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Medical-Diff-VQA",
+      "PathVQA",
+      "VQA-RAD"
+    ],
+    "resources": [
+      "https://uni-medical.github.io/GMAI-MMBench.github.io/",
+      "https://huggingface.co/datasets/OpenGVLab/GMAI-MMBench",
+      "https://opendatalab.com/GMAI/MMBench",
+      "https://github.com/open-compass/VLMEvalKit"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation framework for large vision-language models in the medical domain.",
+    "audience": [
+      "ML Researchers",
+      "Medical Practitioners"
+    ],
+    "tasks": [
+      "Clinical Visual Question Answering",
+      "Image Classification",
+      "Image Segmentation",
+      "Object Detection"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Combines public datasets and hospital datasets curated for medical image tasks.",
+    "size": "26,000 question-answering pairs",
+    "format": "N/A",
+    "annotation": "Manually generated and validated question-answering pairs based on clinical data."
+  },
+  "methodology": {
+    "methods": [
+      "Quantitative Evaluation",
+      "Human Evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Recall"
+    ],
+    "calculation": "Accuracy is calculated based on the ratio of correct predictions to total questions. Recall is based on matched predictions in multiple-choice questions.",
+    "interpretation": "Higher accuracy and recall rates indicate better model performance on clinical tasks.",
+    "baseline_results": "N/A",
+    "validation": "Models are assessed in a zero-shot setting to test generalization capabilities."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack",
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data used is ethically sourced and anonymized.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

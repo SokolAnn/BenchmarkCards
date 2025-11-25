@@ -1,0 +1,75 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "VLBiasBench (A Comprehensive Benchmark for Evaluating Bias in Large Vision-Language Models)",
+    "abbreviation": "VLBiasBench",
+    "overview": "VLBiasBench is a comprehensive benchmark designed to evaluate biases in Large Vision-Language Models (LVLMs) across multiple categories, using a dataset that includes 128,342 samples generated from 46,848 high-quality images and various questions.",
+    "data_type": "image-question pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Fairface",
+      "UTKFace",
+      "MS-COCO",
+      "Flickr30k"
+    ],
+    "resources": [
+      "https://github.com/Xiangkui-Cao/VLBiasBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation framework for assessing biases in Large Vision-Language Models (LVLMs).",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts",
+      "AI Practitioners"
+    ],
+    "tasks": [
+      "Bias Evaluation",
+      "Visual Question Answering"
+    ],
+    "limitations": "Current benchmark may still lack comprehensive coverage of all bias categories.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated synthetic data using Stable Diffusion XL model.",
+    "size": "128,342 samples",
+    "format": "N/A",
+    "annotation": "Synthesized images matched with bias-related questions, categorized into open-ended and close-ended types."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Manual evaluation"
+    ],
+    "metrics": [
+      "Bias evaluation scores using VADER",
+      "Accuracy"
+    ],
+    "calculation": "Metrics are calculated based on sentiment analysis of the textual responses from LVLMs.",
+    "interpretation": "Higher scores indicate a greater degree of bias.",
+    "baseline_results": null,
+    "validation": "Results validated through extensive evaluations on multiple models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "Evaluation includes various demographic factors across multiple bias categories.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Strict controls over prompt safety to prevent generation of NSFW or offensive content.",
+    "data_licensing": "Data utilized from CC-BY-NC-SA 4.0 licensed datasets.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

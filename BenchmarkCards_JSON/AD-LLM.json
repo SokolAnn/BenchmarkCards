@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "AD-LLM: Benchmarking Large Language Models for Anomaly Detection",
+    "abbreviation": "AD-LLM",
+    "overview": "AD-LLM is the first benchmark that evaluates how large language models (LLMs) can assist in natural language processing anomaly detection through three key tasks: zero-shot detection, data augmentation, and model selection.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/USC-FORTIS/AD-LLM"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate and enhance the effectiveness of large language models in anomaly detection tasks within natural language processing.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Zero-Shot Anomaly Detection",
+      "Data Augmentation",
+      "Model Selection"
+    ],
+    "limitations": "The evaluation is constrained to a narrow set of datasets with clear normal-anomaly distinctions.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Five NLP AD datasets sourced from literature, including AG News, BBC News, IMDB Reviews, N24 News, SMS Spam.",
+    "size": "5 datasets",
+    "format": "Text",
+    "annotation": "Normal categories with one designated anomaly category; training data includes only normal samples."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Area Under the Receiver Operating Characteristic Curve (AUROC)",
+      "Area Under the Precision-Recall Curve (AUPRC)"
+    ],
+    "calculation": "Metrics are calculated as the area under specified curves, which are comparative evaluations across different anomaly detection methods.",
+    "interpretation": "Higher AUROC and AUPRC values indicate better performance in distinguishing between normal and anomalous samples.",
+    "baseline_results": "Compared LLM-based AD with 18 traditional unsupervised methods.",
+    "validation": "Results validated through tests on multiple datasets, demonstrating LLM's performance across the benchmark tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis of anomaly detection performance may vary across different demographic groups based on LLM outputs.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "MIT License",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

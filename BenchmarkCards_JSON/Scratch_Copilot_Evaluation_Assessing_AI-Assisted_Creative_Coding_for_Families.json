@@ -1,0 +1,112 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Scratch Copilot Evaluation: Assessing AI-Assisted Creative Coding for Families",
+    "abbreviation": "N/A",
+    "overview": "This study explores the potential of large language models (LLMs) in helping families with creative coding using Scratch. The authors devised three evaluation scenarios (code explanation, debugging, ideation), used 22 Scratch projects per scenario, generated responses from LLMs with and without practice tasks resulting in 120 creative coding support scenarios, and had the authors independently evaluate precision, pedagogical value, and age-appropriate language. The evaluation framework and labeled evaluation data are publicly available.",
+    "data_type": "text (Scratch project code inputs and model-generated explanatory/debugging/ideation responses)",
+    "domains": [
+      "Computer Science Education",
+      "Human-Computer Interaction"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/stefania11/ScratchCopilot-Evaluation",
+      "https://arxiv.org/abs/2305.10417"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To determine how well large-language models support explaining, ideating, and debugging Scratch projects for middle school families.",
+    "audience": [
+      "Middle school families",
+      "Model developers and designers of AI-supported coding tools",
+      "Computing education researchers"
+    ],
+    "tasks": [
+      "Code Explanation",
+      "Code Debugging",
+      "Code Ideation"
+    ],
+    "limitations": "The set of input programs is not exhaustive; the 22 Scratch projects are a representative sample and may not capture the full diversity of Scratch projects. Evaluation scenarios focused on code explanation, debugging, and ideation and do not cover other possible support scenarios (e.g., program design, structuring code, clones and lists).",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "A curated collection of 22 Scratch projects selected from the Scratch public repository and popular Scratch community projects and salient examples from a previous study.",
+    "size": "22 Scratch projects; 120 creative coding support scenarios (generated model responses with and without practice tasks).",
+    "format": "N/A",
+    "annotation": "The first two authors independently evaluated each scenario on precision, pedagogical value, and age-appropriate language; disagreements were resolved through discussion until consensus."
+  },
+  "methodology": {
+    "methods": [
+      "Automated LLM generation using OpenAI GPT-4 (prompted with Scratch program and task-specific instructions, with and without practice tasks)",
+      "Human evaluation by the authors (independent judgments and consensus discussions)"
+    ],
+    "metrics": [
+      "Success rate (percentage of scenarios meeting task criteria)",
+      "Accuracy",
+      "Pedagogical value (human judgment)",
+      "Age-appropriate language (human judgment)"
+    ],
+    "calculation": "Percentages reported (e.g., proportion of evaluated scenarios meeting criteria) were computed based on the authors' judgments of whether model outputs met the evaluation criteria (e.g., correct bug identification, completeness of explanations).",
+    "interpretation": "Higher percentages indicate better support by LLMs; the authors report an overall success rate of more than 80% across tasks and interpret this as substantial potential for LLMs to support family creative coding, while noting areas for improvement.",
+    "baseline_results": "Reported GPT-4 evaluation results (from Table 1 and text): Explain code: 100% (noting tone issues); Explain code with learning: 100%; Debug code: 80%; Debug code with learning: 90%; Code ideas: 100%; Code ideas with learning: 100%. Additionally, text notes: of 40 code explanations, 90% explained all parts of the code; of 40 debugging examples, 80% correctly identified introduced bugs.",
+    "validation": "Validation consisted of independent evaluations by the first two authors focusing on precision, pedagogical value, and age-appropriate language; disagreements were resolved via discussion to reach consensus."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Robustness",
+      "Transparency",
+      "Societal Impact"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        },
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Uncertain data provenance"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on education: bypassing learning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": [
+      "Young learners may become dependent on tools, impairing their ability to create similar code independently.",
+      "Pre-trained LLMs can reflect and perpetuate societal stereotypes and biases, potentially influencing user perspectives."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

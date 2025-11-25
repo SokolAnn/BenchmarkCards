@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "AvaMERG (Avatar-based Multimodal Empathetic Response Generation)",
+    "abbreviation": "AvaMERG",
+    "overview": "AvaMERG is a large-scale benchmark dataset designed for Multimodal Empathetic Response Generation (MERG), which incorporates authentic human speech audio and dynamic talking-face avatar videos along with text, enabling the generation of emotionally nuanced and contextually appropriate responses across multiple modalities.",
+    "data_type": "text, speech audio, talking-head video",
+    "domains": [
+      "Natural Language Processing",
+      "Human-centered Computing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Empathetic Dialogue"
+    ],
+    "resources": [
+      "https://AvaMERG.github.io/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To establish a comprehensive benchmark for developing and evaluating models that generate empathetic responses across multiple modalities.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Empathetic Response Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "AvaMERG dataset constructed by augmenting the existing Pure-text Empathetic Dialogue dataset with multimodal signals and identity-specific information.",
+    "size": "33,048 dialogues with 152,021 utterances",
+    "format": "JSON",
+    "annotation": "Human annotation with cross-checking for content accuracy and emotional accuracy."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Emotion Accuracy",
+      "Distinct-1",
+      "Distinct-2",
+      "MOS (Mean Opinion Score)",
+      "CPBD (Cumulative Probability of Blur Detection)",
+      "SSIM (Structural Similarity Index Measure)"
+    ],
+    "calculation": "Various evaluation scores calculated to assess consistency and quality of generated responses across text, audio, and video outputs.",
+    "interpretation": "Scores reflect the emotional accuracy, coherence, and quality of generated multimodal empathetic outputs.",
+    "baseline_results": "Results show Empatheia model significantly outperforms baselines on multiple metrics.",
+    "validation": "Comprehensive validation through human evaluation and automated metrics on the AvaMERG dataset."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Privacy",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Dataset includes diverse age, gender, and emotional expression profiles.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data anonymization and user control over personal data ensured.",
+    "data_licensing": "Open access under specified terms.",
+    "consent_procedures": "Informed consent obtained from all participants involved in data collection.",
+    "compliance_with_regulations": "ADheres to data protection regulations like GDPR."
+  }
+}

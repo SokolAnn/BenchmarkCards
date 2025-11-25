@@ -1,0 +1,102 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "INSTRUCT IE: A Bilingual Instruction-based Information Extraction Dataset",
+    "abbreviation": "INSTRUCT IE",
+    "overview": "A bilingual instruction-based information extraction (IE) dataset constructed with the KG2Instruction framework that covers 12 domains; the dataset is automatically generated from Wikidata and Wikipedia, contains hundreds of thousands of instances, and includes a manually annotated test set to improve LLM instruction-based IE capabilities and generalization.",
+    "data_type": "text (instruction + text input with relation triple annotations)",
+    "domains": [
+      "Astronomy",
+      "Transportation",
+      "Building",
+      "Creature",
+      "Science",
+      "Event",
+      "Medicine",
+      "Organization",
+      "Person",
+      "Artworks",
+      "Product",
+      "GPE"
+    ],
+    "languages": [
+      "Chinese",
+      "English"
+    ],
+    "similar_benchmarks": [
+      "CoNLL2003",
+      "MSRA",
+      "NYT10",
+      "FewRel",
+      "DuIE2.0"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/zjunlp/InstructIE",
+      "https://doi.org/10.5281/zenodo.10970777",
+      "https://zenodo.org/records/10970777",
+      "https://w3id.org/instructie/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a bilingual (Chinese and English) instruction-based information extraction dataset covering 12 domains to improve LLMs' instruction-following IE capabilities and generalization to unseen schemas.",
+    "audience": [
+      "Researchers working on Large Language Models",
+      "Semantic Web community",
+      "Knowledge Graph researchers"
+    ],
+    "tasks": [
+      "Named Entity Recognition",
+      "Relation Extraction",
+      "Event Extraction"
+    ],
+    "limitations": "Firstly, we only consider versions in two languages, Chinese and English. Secondly, the dataset covers only 12 domains. Finally, despite using LLMs to supplement missing triples and NLI to filter hallucinatory triples, we still identify a certain amount of noise within the training set of INSTRUCT IE.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Wikidata and Wikipedia (Chinese and English Wikipedia paragraphs aligned with Wikidata).",
+    "size": "Reported figures in the paper: 'containing 364,074 instances' (abstract); section 3.3 reports '173,670 Chinese instances and 188,406 English instances'; manually annotated test set of 2,000 instances.",
+    "format": "N/A",
+    "annotation": "Automatically generated via the KG2Instruction pipeline (KG alignment, missing-triplet supplementation with an IE LLM, and NLI-based filtering), with crowdsourced/manual annotation for the test set (approximately 1,000 Chinese instances annotated by a team of 20 specialists in two rounds; each instance annotated independently by two annotators with administrator reconciliation; translations to English refined by GPT-4)."
+  },
+  "methodology": {
+    "methods": [
+      "Zero-shot learning",
+      "In-context learning",
+      "Fine-tuning (including LoRA)",
+      "Automated evaluation using span-based micro F1"
+    ],
+    "metrics": [
+      "Micro F1 (span-based)",
+      "F1 Score (per-domain)",
+      "Accuracy (for dataset quality control)"
+    ],
+    "calculation": "Micro-F1 is span-based: a relation triple is considered accurate only when the head entity, tail entity, and relation strings are precisely predicted. The paper reports per-domain F1 and an overall micro F1 (micro F1 is not a macro average across domains).",
+    "interpretation": "Higher micro-F1 indicates better extraction performance; micro-F1 requires exact match of head, tail, and relation strings to count as a correct triple.",
+    "baseline_results": "Examples from the paper: Zero-shot ChatGPT overall micro-F1: 24.01 (INSTRUCT IE-ZH) and 21.01 (INSTRUCT IE-EN). Fine-tuned best results reported: Baichuan2-13B (ZH) 72.18 overall micro-F1; LLaMA2-13B (EN) 64.97 overall micro-F1.",
+    "validation": "Quality control: randomly selected 500 samples per domain for manual review; reported average accuracy: 82% for INSTRUCT IE-ZH and 75% for INSTRUCT IE-EN. Test set: 2,000 instances manually annotated (two annotators per instance with administrator reconciliation) and translations refined by GPT-4."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination",
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Attribution-NonCommercial-ShareAlike 4.0 International (the paper also states availability on Zenodo under CC BY-SA 4.0).",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

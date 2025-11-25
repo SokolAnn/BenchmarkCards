@@ -1,0 +1,71 @@
+{
+  "benchmark_details": {
+    "name": "M-HalDetect",
+    "overview": "M-HalDetect is a Multimodal Hallucination Detection Dataset designed to benchmark models for hallucination detection and prevention, consisting of fine-grained annotations on Visual Question Answering (VQA) examples.",
+    "data_type": "Image descriptions",
+    "domains": [
+      "Visual Question Answering"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "LRV dataset"
+    ],
+    "resources": [
+      "https://github.com/hendryx-scale/mhal-detect"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To reduce hallucinations in large vision language models.",
+    "audience": [
+      "Research community",
+      "Developers of vision-language models"
+    ],
+    "tasks": [
+      "Hallucination detection",
+      "Model optimization for hallucination prevention"
+    ],
+    "limitations": "Improvements in hallucination rates may lead to less informative descriptions.",
+    "out_of_scope_uses": [
+      "Non-VQA tasks",
+      "Use with non-multimodal models"
+    ]
+  },
+  "data": {
+    "source": "COCO validation set (val2014)",
+    "size": "16,000 annotation pairs",
+    "format": "Image-description pairs",
+    "annotation": "Fine-grained annotations at sub-sentence level."
+  },
+  "methodology": {
+    "methods": [
+      "Fine-grained Direct Preference Optimization (FDPO)",
+      "Rejection sampling"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Computed based on classification metrics.",
+    "interpretation": "Evaluated through correlation with human ratings.",
+    "baseline_results": null,
+    "validation": "Evaluated on a separate validation set of 50 images."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Hallucination risk"
+    ],
+    "atlas_risks": {
+      "risks": null
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

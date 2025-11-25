@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "GG-BBQ (German Gender Bias Benchmark for Question Answering)",
+    "abbreviation": "GG-BBQ",
+    "overview": "The GG-BBQ dataset evaluates gender bias in German Large Language Models (LLMs) using a systematically translated subset of the English BBQ dataset, specifically designed for measuring bias in Question Answering tasks.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "German"
+    ],
+    "similar_benchmarks": [
+      "BBQ",
+      "CBBQ",
+      "KoBBQ"
+    ],
+    "resources": [
+      "https://github.com/shalakasatheesh/GG-BBQ"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To create resources for studying biases in LLMs used in German contexts.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "The dataset may not capture all biases relevant to the German-speaking cultural context and relies on a single language expert for translation, which may introduce biases.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "A translated subset of the Bias Benchmark for Question Answering (BBQ) dataset originally created for U.S. English contexts.",
+    "size": "167 templates, 2 subsets totaling 5,000 samples",
+    "format": "JSON",
+    "annotation": "Manual review and correction by a language expert"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Bias Score"
+    ],
+    "calculation": "Accuracy calculated for ambiguous and disambiguated contexts, with bias evaluated using the difference in biased predictions.",
+    "interpretation": "A model with zero bias will score 0 on bias metrics and an accuracy close to 1.",
+    "baseline_results": null,
+    "validation": "Evaluated using multiple models under a zero-shot setting."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Gender bias analyzed across models.",
+    "harm": [
+      "Potential reinforcement of gender stereotypes"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

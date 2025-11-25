@@ -1,0 +1,74 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ChatbotManip (Chatbot Manipulation Dataset)",
+    "abbreviation": "ChatbotManip",
+    "overview": "This paper introduces ChatbotManip, a novel dataset for studying manipulation in Chatbots. It contains simulated generated conversations between a chatbot and a (simulated) user, where the chatbot is explicitly asked to showcase manipulation tactics, persuade the user towards some goal, or simply be helpful. Each conversation is annotated by human annotators for both general manipulation and specific manipulation tactics.",
+    "data_type": "conversational text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MentalManip"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To investigate and monitor manipulative behavior in chatbot interactions.",
+    "audience": [
+      "AI Safety Researchers",
+      "NLP Researchers",
+      "Technology Developers"
+    ],
+    "tasks": [
+      "Manipulation Detection",
+      "Text Classification"
+    ],
+    "limitations": "The dataset relies on AI-generated rather than real human-AI interactions, potentially missing important aspects of real-world manipulation.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Simulated conversations generated using various LLMs (GPT-4, Gemini, Llama).",
+    "size": "553 conversations",
+    "format": "N/A",
+    "annotation": "Conversations were annotated by 7 human participants using a 7-point Likert scale for perceived manipulation."
+  },
+  "methodology": {
+    "methods": [
+      "Human annotation",
+      "Text classification"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Metrics were calculated based on annotator agreement and classification performance of the models.",
+    "interpretation": "Higher scores indicate better models in detecting manipulation in conversational AI.",
+    "baseline_results": "Fine-tuned BERT+BiLSTM achieved comparable performance to larger models like Gemini.",
+    "validation": "The dataset includes inter-annotator agreement metrics to ensure reliability."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Bias"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "Participant demographics are provided in the appendix, showing a diverse respondent group involved in the annotation process.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A - Not discussed.",
+    "data_licensing": "N/A - Not specified.",
+    "consent_procedures": "N/A - Not discussed.",
+    "compliance_with_regulations": "N/A - Not discussed."
+  }
+}

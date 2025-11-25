@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CaseReportBench (An LLM Benchmark Dataset for Dense Information Extraction in Clinical Case Reports)",
+    "abbreviation": "CaseReportBench",
+    "overview": "CaseReportBench is an expert-annotated dataset for dense information extraction focusing on Inborn Errors of Metabolism (IEM) in clinical case reports, designed to evaluate various models and prompting strategies for extracting clinically relevant details.",
+    "data_type": "structured medical data",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/cxyzhang/caseReportBench_ClinicalDenseExtraction_Benchmark",
+      "https://github.com/cindyzhangxy/CaseReportBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To establish a benchmark for evaluating dense information extraction from clinical case reports and to identify effective LLM-based methods for this task.",
+    "audience": [
+      "ML Researchers",
+      "Healthcare Professionals",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Information Extraction"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "De-identified case reports from the non-commercial PMC Open Access Subset.",
+    "size": "138 case reports",
+    "format": "N/A",
+    "annotation": "Expert-annotated by clinicians following predefined guidelines."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "Clinical evaluations"
+    ],
+    "metrics": [
+      "Token Set Ratio (TSR)",
+      "Levenshtein Distance",
+      "Exact Match (EM)",
+      "BLEU Score",
+      "ROUGE-L"
+    ],
+    "calculation": "Metrics are calculated based on the alignment of LLM-extracted information with expert annotations.",
+    "interpretation": "Higher scores on the metrics indicate better alignment and extraction accuracy.",
+    "baseline_results": "N/A",
+    "validation": "Evaluation included comparisons across five LLMs using different prompting and data integration strategies."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Explainability"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Explainability",
+          "subcategory": [
+            "Unexplainable output"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Only publicly available, de-identified data were used.",
+    "data_licensing": "CC BY-NC license.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

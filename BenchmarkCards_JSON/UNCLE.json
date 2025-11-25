@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "UNCLE (Uncertainty in Long-form Expressions)",
+    "abbreviation": "UNCLE",
+    "overview": "UNCLE is a benchmark designed to evaluate uncertainty expression in both long- and short-form question answering (QA), bridging short- and long-form QA with paired questions and gold-standard answers.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/rhyang2021/UNCLE"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation of a model’s ability to accurately express uncertainty in both long-form and short-form generation.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from Wikidata with key aspects formed for various entities.",
+    "size": "approximately 4,000 long-form QA instances and over 20,000 short-form QA pairs",
+    "format": "JSON",
+    "annotation": "Manual annotation by authors and verification process."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Factual Accuracy",
+      "Uncertain Accuracy",
+      "Known to Correct Rate",
+      "Unknown to Uncertain Rate",
+      "Expression Accuracy"
+    ],
+    "calculation": "Metrics are calculated based on the accuracy of responses concerning known and unknown aspects.",
+    "interpretation": "High scores indicate better model performance in expressing uncertainty.",
+    "baseline_results": null,
+    "validation": "Validated through both automated metrics and human evaluation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "Informed consent obtained from annotators.",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "VERISCORE",
+    "abbreviation": "N/A",
+    "overview": "VERISCORE is a metric developed to evaluate the factuality of verifiable claims in long-form text generation, addressing limitations in existing metrics by focusing on both verifiable and unverifiable content.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "FACTSCORE",
+      "SAFE"
+    ],
+    "resources": [
+      "https://github.com/Yixiao-Song/VeriScore"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide an automatic metric for evaluating the factuality of language models' long-form text outputs.",
+    "audience": [
+      "ML Researchers",
+      "Natural Language Processing Practitioners"
+    ],
+    "tasks": [
+      "Long-Form Question Answering",
+      "Text Generation"
+    ],
+    "limitations": "The system struggles with verifying complex claims that require extensive reasoning.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Various long-form text datasets including biographies, FAQs, and other fact-seeking prompts.",
+    "size": "N/A",
+    "format": "N/A",
+    "annotation": "Claims were annotated through human evaluation for verification against Google Search results."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score"
+    ],
+    "calculation": "VERISCORE is calculated using F1@K metric considering both precision and recall of verifiable claims.",
+    "interpretation": "Higher VERISCORE indicates better factual support of generated text.",
+    "baseline_results": "Various models such as GPT-4o, Claude 3, and Mixtral were evaluated using VERISCORE indicating their factual accuracy.",
+    "validation": "Human evaluation and performance analysis across various tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt leaking"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

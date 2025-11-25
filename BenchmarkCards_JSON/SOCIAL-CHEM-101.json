@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SOCIAL CHEMISTRY 101",
+    "abbreviation": "SOCIAL-CHEM-101",
+    "overview": "SOCIAL-CHEM-101 is a large-scale corpus that catalogs 292k rules-of-thumb related to social and moral norms, along with comprehensive annotations on judgments, cultural pressures, and legality across various real-life situations.",
+    "data_type": "rules-of-thumb with structured annotations",
+    "domains": [
+      "Natural Language Processing",
+      "Ethics"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "N/A"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2011.00620"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a formalism and resource for studying grounded social, moral, and ethical norms through crowdsourced rules-of-thumb (RoTs).",
+    "audience": [
+      "ML Researchers",
+      "Ethicists",
+      "Social Scientists"
+    ],
+    "tasks": [
+      "Moral Reasoning",
+      "Cultural Norm Analysis"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Crowdsourced annotations from reddit subreddits and other online sources including r/amitheasshole, r/confessions, ROCStories, and Dear Abby advice column.",
+    "size": "292,000 rules-of-thumb",
+    "format": "JSON",
+    "annotation": "Crowdsourced by workers following structured guidelines for social norms."
+  },
+  "methodology": {
+    "methods": [
+      "Neural modeling",
+      "Crowdsourcing"
+    ],
+    "metrics": [
+      "Micro-F1",
+      "Accuracy"
+    ],
+    "calculation": "Metrics calculated based on adherence of generated rules-of-thumb to the expected norms and judgments.",
+    "interpretation": "Model performance on generating relevant RoTs evaluated through human assessment and automated classification metrics.",
+    "baseline_results": null,
+    "validation": "Cross-validation with divided train/dev/test partitions ensuring diverse examples across various scenarios."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis included demographic factors of participants contributing to annotations capturing varied social expectations and judgments.",
+    "harm": [
+      "Misjudgment in cultural norms leading to potential societal biases."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Participants' identities are anonymized throughout the data collection process.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

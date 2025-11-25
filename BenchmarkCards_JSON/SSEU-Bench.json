@@ -1,0 +1,99 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Speech, Scene and Events Understanding Benchmark (SSEU-Bench)",
+    "abbreviation": "SSEU-Bench",
+    "overview": "SSEU-Bench is the first versatile audio understanding benchmark that explicitly accounts for energy differences between speech and non-speech audio, with both independent and joint understanding settings for speech, scene, and events.",
+    "data_type": "audio",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "OpenAQA",
+      "Open-ASQA",
+      "AudioBench",
+      "AIR-Bench",
+      "MMAU"
+    ],
+    "resources": [
+      "https://sites.google.com/view/sseu-bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the audio understanding capabilities of Large Audio Language Models (LALMs) in joint analysis of speech, scene, and events within the same audio clip.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Automatic Speech Recognition",
+      "Acoustic Scene Classification",
+      "Audio Tagging"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Mixed audio samples consisting of clean speech clips from the VCTK corpus and non-speech background audio clips from existing SED datasets, curated to create varying SNR levels.",
+    "size": "21.72 hours of audio data",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Word Error Rate (WER)",
+      "Macro-average Accuracy (mACC)",
+      "Mean Average Precision (mAP)"
+    ],
+    "calculation": "WER is calculated based on the accuracy of transcribing spoken content, mACC evaluates classification accuracies for scenes, and mAP measures accuracy for event identification.",
+    "interpretation": "Lower WER indicates better performance in speech understanding; higher mACC and mAP indicate better performance in scene classification and event tagging respectively.",
+    "baseline_results": "N/A",
+    "validation": "Results are validated through comparison with ground truth as well as across various models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

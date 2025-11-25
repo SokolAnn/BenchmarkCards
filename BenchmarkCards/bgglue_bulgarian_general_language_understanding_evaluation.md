@@ -1,0 +1,136 @@
+# bgGLUE (Bulgarian General Language Understanding Evaluation)
+
+## 📊 Benchmark Details
+
+**Name**: bgGLUE (Bulgarian General Language Understanding Evaluation)
+
+**Overview**: We present bgGLUE (Bulgarian General Language Understanding Evaluation), a benchmark for evaluating language models on Natural Language Understanding (NLU) tasks in Bulgarian. Our benchmark includes NLU tasks targeting a variety of NLP problems (e.g., natural language inference, fact-checking, named entity recognition, sentiment analysis, question answering, etc.) and machine learning tasks (sequence labeling, document-level classification, and regression).
+
+**Data Type**: text (question-answering pairs; token classification; document-level classification; regression/ranking)
+
+**Domains**:
+- Natural Language Processing
+- Social Media
+- News
+- Education
+- Entertainment
+- Wikipedia
+
+**Languages**:
+- Bulgarian
+
+**Similar Benchmarks**:
+- GLUE (General Language Understanding Evaluation)
+- SuperGLUE
+- XGLUE
+- XTREME
+- XTREME-S
+- Russian SuperGLUE
+- Slovene SuperGLUE
+- BIG-Bench
+- CodeX GLUE
+- IGLUE
+
+**Resources**:
+- [Resource](https://bgglue.github.io)
+- [GitHub Repository](https://github.com/bgGLUE/bgglue)
+- [Resource](https://huggingface.co/bgglue)
+- [Resource](https://arxiv.org/abs/2306.02349)
+
+## 🎯 Purpose and Intended Users
+
+**Goal**: To provide a holistic benchmark to evaluate and compare language models on a diverse set of Natural Language Understanding tasks in Bulgarian.
+
+**Target Audience**:
+- ML Researchers
+- Model Developers
+- Industry Practitioners
+
+**Tasks**:
+- Token Classification
+- Named Entity Recognition
+- Part-of-Speech Tagging
+- Question Answering
+- Natural Language Inference
+- Sentiment Analysis
+- Check-Worthiness Estimation
+- Fake News Detection
+- Text Classification
+- Regression
+- Ranking
+- Sequence Labeling
+- Document-level Classification
+- Multiple-choice Question Answering
+
+**Limitations**: bgGLUE is restricted by the available Bulgarian resources; it does not include language generation tasks or multimodal tasks. Some tasks are similar in nature (e.g., two NER datasets, two credibility/fake-news datasets). Each task is limited to a particular domain and topics within a domain may not cover all possible topics. Baselines are limited to encoder-only Transformer architectures with fewer than one billion parameters. The work did not explore whether the datasets contain unwanted biases.
+
+**Out of Scope Uses**:
+- Making improperly supported claims about general language understanding based on the performance on our leaderboard
+
+## 💾 Data
+
+**Source**: Nine datasets unified into bgGLUE: BSNLP; PAN-X (WikiANN); Universal Dependencies (U.Dep / BulTreeBank UD); Cinexio; CLEF-2021 CheckThat! Task 1A (CT21.T1); Credible News (Cred.-N); Fake News (Fake-N); XNLI; EXAMS (High School Examinations).
+
+**Size**: BSNLP: 724 train, 301 dev, 301 test; PAN-X: 16,237 train, 7,029 dev, 7,263 test; U.Dep: 8,907 train, 1,115 dev, 1,116 test; Cinexio: 8,155 train, 811 dev, 861 test; CT21.T1: 2,995 train, 350 dev, 357 test; Cred.-N: 19,227 train, 5,949 dev, 17,887 test; Fake-N: 1,990 train, 221 dev, 701 test; XNLI: 392,702 train, 5,010 dev, 2,490 test; EXAMS: 1,512 train, 365 dev, 1,472 test.
+
+**Format**: N/A
+
+**Annotation**: Varies by dataset: BSNLP NER annotations from BSNLP shared task editions; PAN-X NER annotations derived from Wikipedia linked entities; U.Dep annotated in Universal Dependencies format (BulTreeBank); Cinexio contains user movie ratings; CT21.T1 check-worthiness labels from CLEF CheckThat! organizers; Cred.-N labeled as credible/humorous based on website labels; Fake-N labeled as questioned factuality from Hack the Fake News shared task; XNLI translated entailment labels; EXAMS multiple-choice QA with gold answers.
+
+## 🔬 Methodology
+
+**Methods**:
+- Automated metrics evaluation
+- Fine-tuning of pre-trained language models
+- Majority and Random baseline comparisons
+- Public leaderboard submission-based evaluation
+
+**Metrics**:
+- Macro F1
+- Accuracy
+- Pearson Correlation
+- Spearman Correlation
+- Average Precision
+- Precision at K (P@K)
+- R-Precision
+- Binary F1 Score
+- F1 Score
+
+**Calculation**: Each task is weighted equally. For tasks with multiple metrics, the metrics are first averaged to obtain a task score; the bgGLUE score is computed on raw scores before rounding, then rounded to two digits and multiplied by 100 (per Table 3 notes).
+
+**Interpretation**: Higher task scores and higher aggregated bgGLUE score indicate better model performance on Bulgarian NLU tasks. Random and majority baselines yield bgGLUE scores below 20 points. Models' best checkpoints were selected on each task's development set.
+
+**Baseline Results**: Top fine-tuned baselines (bgGLUE score): XLM-R large 75.82; XLM-R base 73.04; SlavicBERT 72.12; mBERT base 71.08; MiniLM L12 70.96; Distil-mBERT 69.58. Random baseline: 17.59 bgGLUE score; Majority baseline: 18.52 bgGLUE score.
+
+**Validation**: Checkpoint selection and hyper-parameter selection were performed on each task's development set. Where original splits were missing or leaked, the authors deduplicated data and proposed new topic-based or temporal-based splits. For some datasets (e.g., Fake-N, Cinexio) 10% of training was used as development where a dev split was not originally available.
+
+## ⚠️ Targeted Risks
+
+**Risk Categories**:
+- Bias
+- Misuse
+- Environmental Impact
+- Legal / Licensing
+- Privacy
+- Fairness
+
+**Atlas Risks**:
+- **Fairness**: Data bias
+- **Data Laws**: Data usage restrictions
+- **Privacy**: Personal information in data
+- **Misuse**: Improper usage
+- **Societal Impact**: Impact on the environment
+
+**Demographic Analysis**: N/A
+
+**Potential Harm**: ['Models trained on these datasets could make predictions that are unfair to individuals or groups.', 'Increased computational resources for training large models contribute to environmental impact (global warming).']
+
+## 🔒 Ethical and Legal Considerations
+
+**Privacy And Anonymity**: The authors cleaned texts by removing duplicates and keywords indicating source information (names of authors, media source, URLs). They include only publicly available datasets with licenses that allow at least academic research use.
+
+**Data Licensing**: Licenses are kept as provided by original authors. Some datasets have non-commercial licenses (Cinexio, Cred.-N, U.Dep, XNLI). Cred.-N requires signing an agreement form to obtain the dataset. Other datasets have varying licenses or no specific license as noted in the paper (see Table 4). All datasets are available for research purposes per original licenses.
+
+**Consent Procedures**: Not Applicable
+
+**Compliance With Regulations**: Not Applicable

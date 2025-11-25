@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "RETQA (Real Estate Tabular Question Answering)",
+    "abbreviation": "RETQA",
+    "overview": "RETQA is the first large-scale open-domain Chinese Tabular Question Answering dataset for the Real Estate sector, comprising 4,932 tables and 20,762 question-answer pairs across three major domains: property information, real estate company finance, and land auction information.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "WikiSQL",
+      "WikiTableQuestion",
+      "Spider",
+      "Open-WikiTable",
+      "NQ-TABLES"
+    ],
+    "resources": [
+      "https://github.com/jensenw1/RETQA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a challenging resource for TQA research, particularly in handling open-domain, long tables and multi-domain queries.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Publicly available real estate data from major Chinese cities, including property transaction data, company financial disclosures, and land auction information.",
+    "size": "20,762 question-answer pairs",
+    "format": "Markdown, SQL, Natural Language",
+    "annotation": "Automatically generated QA pairs using template-based approaches with human review and inclusion of Spoken Language Understanding (SLU) labels."
+  },
+  "methodology": {
+    "methods": [
+      "In-context learning",
+      "Fine-tuning a BERT model"
+    ],
+    "metrics": [
+      "Executable Code Ratio (ECR)",
+      "Pass Rate (pass@1)",
+      "Table Exact Match accuracy (Table EM)",
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on model outputs against the ground truth data and evaluated using precision and recall based methods.",
+    "interpretation": "Higher metrics indicate better model performance in answering questions related to tabular data.",
+    "baseline_results": "Performance comparison with baseline LLMs demonstrates significant improvements with the SLUTQA framework.",
+    "validation": "Validation conducted through extensive experimental results showing the effectiveness of methods."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack",
+            "Data poisoning"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

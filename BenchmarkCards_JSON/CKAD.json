@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CKAD (Cost-effective Knowledge Acquisition Dataset)",
+    "abbreviation": "CKAD",
+    "overview": "CKAD is a new benchmark dataset designed for cost-effective LLM domain knowledge acquisition, aiming to enhance the performance of large language models in specialized domains, particularly drug discovery and rare disease research.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": null,
+    "resources": [
+      "https://github.com/YANGWU001/PU-ADKA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the CKAD dataset is to facilitate the enhancement of domain-specific large language models through efficient and cost-effective expert engagement.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from PubMed articles published after 2023, extracting question-answer pairs using GPT-4 based on unique mechanisms.",
+    "size": "48,219 question-answer pairs",
+    "format": "JSON",
+    "annotation": "Manually validated by experts"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Win Rate (WR)",
+      "Length-Controlled Win Rate (LC_WR)"
+    ],
+    "calculation": "Metrics are calculated based on the percentage of instances where model-generated answers adequately capture the core meaning of the golden answer and account for answer length discrepancies.",
+    "interpretation": "Higher WR and LC_WR indicate better performance and knowledge acquisition from the dataset.",
+    "baseline_results": "Comparison with existing methods shows PU-ADKA outperforming all baselines in both WR and LC_WR.",
+    "validation": "Performance validated through simulations and a real-world case study with biomedical experts."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All content derived from publicly available biomedical literature; no personal or sensitive information collected.",
+    "data_licensing": "N/A",
+    "consent_procedures": "All expert annotations performed as part of their institutional responsibilities without additional compensation.",
+    "compliance_with_regulations": "N/A"
+  }
+}

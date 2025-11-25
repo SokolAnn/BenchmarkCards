@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "BiMa (Bias Mitigation for Text-Video Retrieval)",
+    "abbreviation": "BiMa",
+    "overview": "BiMa is a novel framework designed to mitigate biases in both visual and textual representations within text-video retrieval (TVR) systems. It integrates scene elements into video embeddings and introduces a mechanism for disentangling text features into content and bias components, enhancing model performance and robustness against biases.",
+    "data_type": "text-video pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MSR-VTT",
+      "MSVD",
+      "LSMDC",
+      "ActivityNet",
+      "DiDeMo"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2506.03589"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To advance generalization and robustness in text-video retrieval by mitigating dataset-specific biases through innovative techniques.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Text-Video Retrieval"
+    ],
+    "limitations": "Despite efforts, some inherent biases may remain unmitigated.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Five major TVR benchmarks: MSR-VTT, MSVD, LSMDC, ActivityNet, and DiDeMo",
+    "size": "118,081 video clips",
+    "format": "Various (specific formats not detailed)",
+    "annotation": "A comprehensive taxonomy dictionary of scene elements was constructed from multiple datasets."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Recall at Rank 1",
+      "Recall at Rank 5",
+      "Recall at Rank 10"
+    ],
+    "calculation": "Accuracy is calculated based on the rank of retrieved videos in relation to textual queries.",
+    "interpretation": "Higher Recall at Rank metrics indicate better performance in retrieving relevant videos to the provided textual queries.",
+    "baseline_results": "Comparison with existing benchmarks demonstrates BiMa achieving state-of-the-art results across multiple datasets.",
+    "validation": "Validated through extensive experiments and ablation studies measuring performance improvements."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Does not include analysis related to demographics; the focus is on bias mitigation in a general sense.",
+    "harm": [
+      "Model overfitting to specific biases in datasets."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

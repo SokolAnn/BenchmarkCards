@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MMReason (Multi-Modal Multi-Step Reasoning Benchmark)",
+    "abbreviation": "MMReason",
+    "overview": "MMReason is a new benchmark designed to precisely and comprehensively evaluate MLLM long-chain reasoning capability with diverse, open-ended, and challenging questions across various disciplines and difficulty levels.",
+    "data_type": "open-ended multi-step reasoning questions",
+    "domains": [
+      "Natural Language Processing",
+      "Education"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MathVista",
+      "MMMU",
+      "OlympiadBench"
+    ],
+    "resources": [
+      "https://github.com/HJYao00/MMReason"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To precisely and comprehensively evaluate long-chain reasoning capability of MLLMs.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Multi-Step Reasoning",
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Combines questions from existing benchmarks and newly collected questions from various educational levels.",
+    "size": "2,941 instances",
+    "format": "N/A",
+    "annotation": "Questions annotated with detailed step-by-step solutions."
+  },
+  "methodology": {
+    "methods": [
+      "Multi-model voting",
+      "Reference-based scoring"
+    ],
+    "metrics": [
+      "Final Answer Reasoning Accuracy",
+      "Intermediate Steps Reasoning Score"
+    ],
+    "calculation": "Scores based on a ternary scoring mechanism assessing correctness of intermediate steps.",
+    "interpretation": "Higher scores indicate better reasoning capabilities in both final answers and intermediate steps.",
+    "baseline_results": "GPT-4o achieves 25.7% final answer reasoning accuracy.",
+    "validation": "Results validated through multi-model comparisons."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

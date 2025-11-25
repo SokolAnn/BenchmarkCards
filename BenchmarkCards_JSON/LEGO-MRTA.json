@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LEGO-MRTA (LEGO Mixed Reality Training Assistant)",
+    "abbreviation": "LEGO-MRTA",
+    "overview": "This dataset comprises multimodal instruction manuals, conversations, and vision question answering, created for fine-grained training in a mixed reality (MR) environment focused on LEGO brick assembly.",
+    "data_type": "multimodal instruction manuals and conversation pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision",
+      "Education"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/Jiahuan-Pei/AutonomousDialogAgent4AugmentedReality"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To facilitate fine-grained training in a mixed reality environment for LEGO assembly tasks using AI agents.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Dialogue Generation",
+      "Instruction Following"
+    ],
+    "limitations": "The dataset and user requirements generation rely on a simulated process, which may not fully capture real-world complexity.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Crawled instruction manuals from the LEGO official website.",
+    "size": "1,423 conversations",
+    "format": "Multimodal (Text and Images)",
+    "annotation": "Automatically generated through interactions guided by LLMs."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics for evaluation and fine-tuning",
+      "Model-based evaluation using existing LLMs"
+    ],
+    "metrics": [
+      "BLEU Score",
+      "ROUGE-L",
+      "Tool Accuracy",
+      "Theme Accuracy"
+    ],
+    "calculation": "Evaluation is based on n-grams overlap (BLEU, ROUGE) and entity mention accuracy (ToolACC, ThemeACC).",
+    "interpretation": "Higher scores indicate better performance in generating human-like responses and successful task execution.",
+    "baseline_results": null,
+    "validation": "Benchmarking against various open-source LLMs before and after fine-tuning."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis not explicitly mentioned.",
+    "harm": "The dependence on simulated data may limit nuanced understanding of real user interactions."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Users are informed about the use of their data for training and receive consent forms prior to participation.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Users must sign consent forms before participating in the MR training.",
+    "compliance_with_regulations": "N/A"
+  }
+}

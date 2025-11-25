@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "VideoComp",
+    "abbreviation": "N/A",
+    "overview": "VideoComp is a benchmark and learning framework for advancing video-text compositionality understanding, focusing on improving vision-language models in fine-grained temporal alignment. It introduces two compositional benchmarks, ActivityNet-Comp and YouCook2-Comp, which assess models’ abilities to capture fine-grained, temporally coherent alignment in continuous multi-event video sequences.",
+    "data_type": "video-text pairs",
+    "domains": [
+      "Computer Vision",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ActivityNet-Captions",
+      "YouCook2"
+    ],
+    "resources": [
+      "https://github.com/google-deepmind/video_comp"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enhance video-text compositionality and improve models' understanding of fine-grained temporal alignment in video sequences.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Video-Text Alignment",
+      "Compositional Learning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "ActivityNet-Captions and YouCook2 datasets.",
+    "size": "Approximately 17,000 annotated triplets for ActivityNet-Comp and 4,500 annotated triplets for YouCook2-Comp.",
+    "format": "N/A",
+    "annotation": "Manual annotation based on video-captioning datasets."
+  },
+  "methodology": {
+    "methods": [
+      "Hierarchical pairwise preference loss",
+      "Contrastive learning"
+    ],
+    "metrics": [
+      "Recall@1",
+      "Binary classification accuracy"
+    ],
+    "calculation": "The metrics are calculated based on the video-text alignment and compositional coherence evaluated through provided positive and negative samples.",
+    "interpretation": "Higher accuracy indicates better compositional understanding and alignment of video and text.",
+    "baseline_results": "N/A",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

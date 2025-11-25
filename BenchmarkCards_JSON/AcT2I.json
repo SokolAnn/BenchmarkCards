@@ -1,0 +1,70 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "AcT2I (Action-centric Text-to-Image Evaluation)",
+    "abbreviation": "AcT2I",
+    "overview": "AcT2I is a benchmark designed to evaluate the performance of Text-to-Image models in generating images from action-centric prompts, addressing the challenges in accurately depicting complex interactions and nuanced attributes within action scenarios.",
+    "data_type": "text prompts",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "T2I-CompBench",
+      "GenEval"
+    ],
+    "resources": [
+      "https://vatsal-malaviya.github.io/AcT2I/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the ability of T2I models to generate images from textual prompts that describe actions.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Image Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Animal Kingdom dataset (Ng et al., 2022)",
+    "size": "125 prompts",
+    "format": "N/A",
+    "annotation": "Crowdsourced via Amazon Mechanical Turk with 25 annotators rating each image."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Acceptance Rate"
+    ],
+    "calculation": "Acceptance rate is defined as the proportion of images receiving a 'Yes' from a majority of annotators.",
+    "interpretation": "An acceptance rate above 50% indicates successful representation of the action in images.",
+    "baseline_results": "The highest acceptance rate observed was 48% for Stable Diffusion 3.5 Large.",
+    "validation": "Evaluation was performed across 5 state-of-the-art T2I models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential misuse of realistic imagery and propagation of biases present within the training data."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset involves animal subjects with no personal data.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "The generated images are free of sensitive human information, ensuring compliance with ethical research guidelines."
+  }
+}

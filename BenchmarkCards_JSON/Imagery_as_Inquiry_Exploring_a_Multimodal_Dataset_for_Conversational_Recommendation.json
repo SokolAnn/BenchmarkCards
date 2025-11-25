@@ -1,0 +1,82 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Imagery as Inquiry: Exploring a Multimodal Dataset for Conversational Recommendation",
+    "abbreviation": "N/A",
+    "overview": "This paper introduces a multimodal dataset where users express preferences through images to request recommendations for books or music that evoke similar feelings to those images. It supports two recommendation tasks: title generation and multiple-choice selection.",
+    "data_type": "multimodal",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/granelle/24-multimodal-crs"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate how well AI models understand and provide appropriate recommendations based on multimodal expressions involving images.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Title Generation",
+      "Multiple-Choice Selection"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Reddit posts from specific communities requesting recommendations based on images.",
+    "size": "1,470 requests and 12,208 items for books; 796 requests and 38,204 items for music.",
+    "format": "N/A",
+    "annotation": "Manual inspection to ensure posts are recommendation requests, with item extraction from comments."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Hit@k"
+    ],
+    "calculation": "Metrics were calculated based on model performance on the recommendation tasks.",
+    "interpretation": "Performance is evaluated using accuracy and how often the generated recommendations include ground truth items.",
+    "baseline_results": "The overall best model achieved 67% accuracy on a music selection task.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

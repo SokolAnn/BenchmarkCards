@@ -1,0 +1,76 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LONG BOX",
+    "abbreviation": "N/A",
+    "overview": "LONG BOX is a collection of seven medical datasets in text-to-text format, designed to investigate model performance on long sequences, particularly for clinical tasks requiring the evaluation of long electronic health records (EHR).",
+    "data_type": "text",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/Mihir3009/LongBoX"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of LONG BOX is to facilitate the development of long sequence handling techniques tailored to the clinical domain by providing a benchmark that investigates LLM performance on long medical texts.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Relation Extraction",
+      "Multi-label Classification"
+    ],
+    "limitations": "LONG BOX is currently limited in task variety as it primarily consists of different types of classification tasks.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Seven curated clinical datasets from the n2c2 NLP Research Datasets.",
+    "size": "85,470 samples in total across different datasets each with varied lengths",
+    "format": "text",
+    "annotation": "Annotated based on clinical notes, discharge summaries, and longitudinal records."
+  },
+  "methodology": {
+    "methods": [
+      "Benchmarking with multiple large language models (LLMs)",
+      "Evaluation of long sequence handling techniques"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "For classification tasks, accuracy is calculated, while F1 Score is used for multi-label classification tasks.",
+    "interpretation": "Lower accuracy scores indicate challenges in handling long sequences, with an overall indication of model struggle as they achieve average scores of approximately 52%.",
+    "baseline_results": "Achieved an average score of ∼52% across the benchmarked models.",
+    "validation": "Results were validated through extensive comparison across multiple LLMs and techniques for long sequence handling."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

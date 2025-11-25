@@ -1,0 +1,103 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Holmes-Set",
+    "abbreviation": "N/A",
+    "overview": "Holmes-Set is a large-scale dataset designed for AI-generated image detection. It includes the Holmes-SFTSet for instruction-tuning with explanations about whether images are AI-generated, and the Holmes-DPOSet, a human-aligned preference dataset. It aims to enhance explainability and generalization in AI-generated image detection.",
+    "data_type": "image",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "CNNDetection",
+      "GenImage",
+      "DRCT",
+      "FakeBench",
+      "LOKI"
+    ],
+    "resources": [
+      "https://github.com/wyczzy/AIGI-Holmes"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the Holmes-Set is to provide a comprehensive benchmark for training and evaluating algorithms for detecting AI-generated images, with a focus on human-verifiable explanations and preferences.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Image Classification",
+      "Image Detection"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Holmes-SFTSet comprises 65,000 annotated images with explanations, while Holmes-DPOSet includes 4,000 additional human-aligned preference pairs based on these images.",
+    "size": "65,000 images",
+    "format": "N/A",
+    "annotation": "Annotated using a combination of human experts and automated approaches through Multimodal Large Language Models (MLLMs)."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Precision",
+      "Recall",
+      "F1 Score",
+      "BLEU Score",
+      "ROUGE-L"
+    ],
+    "calculation": "Metrics calculated based on detection results and explanation quality on test samples reviewed by experts.",
+    "interpretation": "Higher scores in metrics indicate better detection performance and quality of explanations, showcasing the effectiveness of the model in identifying AI-generated images.",
+    "baseline_results": "AIGI-Holmes achieved state-of-the-art performance on various benchmarks, surpassing existing models by significant margins.",
+    "validation": "Extensive experiments were conducted to validate the effectiveness of the proposed methods and datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Privacy",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Data privacy concerns related to AI-generated content and user-generated content in the datasets."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "To ensure participant privacy, all expert annotations were conducted under strict guidelines and no personal data was used.",
+    "data_licensing": "The datasets are open-access under CC BY 4.0 License, allowing for widespread use and modification with proper attribution.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

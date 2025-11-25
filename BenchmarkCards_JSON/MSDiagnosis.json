@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MSDiagnosis (Multi-Step Clinical Diagnosis Benchmark)",
+    "abbreviation": "MSDiagnosis",
+    "overview": "MSDiagnosis is a benchmark for evaluating large language models in multi-step clinical diagnosis, consisting of 2,225 cases that cover tasks such as primary diagnosis, differential diagnosis, and final diagnosis.",
+    "data_type": "medical case records",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "DDx-basic",
+      "DDx-advanced",
+      "CMExam",
+      "AgentClinic-MedQA"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate multi-step diagnostic abilities of large language models in alignment with clinical practice.",
+    "audience": [
+      "Medical Researchers",
+      "AI Researchers"
+    ],
+    "tasks": [
+      "Primary Diagnosis",
+      "Differential Diagnosis",
+      "Final Diagnosis"
+    ],
+    "limitations": "Due to limited data sources, the dataset exhibits an uneven distribution across different departments.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Chinese medical websites",
+    "size": "2,225 medical records",
+    "format": "N/A",
+    "annotation": "Manual annotation by a professional medical team"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score",
+      "BLEU Score",
+      "ROUGE-L",
+      "Macro Recall"
+    ],
+    "calculation": "Metrics are calculated based on the comparison between generated diagnoses and reference diagnoses in the dataset.",
+    "interpretation": "Higher scores indicate better alignment with the clinical diagnosis tasks.",
+    "baseline_results": "Ours: F1 of 38.76% for Left clavicle fracture and other metrics as per results in Table 3.",
+    "validation": "Validated against expert medical evaluations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data was anonymized and no protected health information is present.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

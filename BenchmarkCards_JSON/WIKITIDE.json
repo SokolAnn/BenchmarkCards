@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "WIKITIDE (A Wikipedia-based Timestamped Definition Pairs Dataset)",
+    "abbreviation": "WIKITIDE",
+    "overview": "WIKITIDE is a dataset derived from pairs of timestamped definitions extracted from Wikipedia, aimed at accelerating diachronic NLP by training models able to scan knowledge resources for core updates concerning concepts, events, or named entities.",
+    "data_type": "definition pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/hsuvas/wikitide"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a benchmark for training models able to detect changes in definitions over time and facilitate diachronic NLP.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Lexical Semantics",
+      "Knowledge Update Detection"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Wikipedia",
+    "size": "10,000 definition pairs",
+    "format": "N/A",
+    "annotation": "Weakly supervised annotation using a bootstrapping approach with GPT-3"
+  },
+  "methodology": {
+    "methods": [
+      "Bootstrapping",
+      "Weak Supervision"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Metrics calculated based on the classification results of the model on defined labels from annotated pairs.",
+    "interpretation": "Higher F1 scores indicate better performance in detecting temporal changes in definitions.",
+    "baseline_results": "N/A",
+    "validation": "Model validation using a held-out test set."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Involves potential for incorrect flags due to reliance on Wikipedia as a data source."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

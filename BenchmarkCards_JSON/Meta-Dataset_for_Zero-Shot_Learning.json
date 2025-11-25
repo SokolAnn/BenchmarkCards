@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Meta-Dataset for Zero-Shot Learning",
+    "abbreviation": "N/A",
+    "overview": "This paper introduces a meta-dataset aggregating 43 existing classification datasets along with 441 annotated label descriptions in QA format to enhance zero-shot classification performance in language models.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/ruiqi-zhong/Meta-tuning"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To improve zero-shot classification performance by meta-tuning language models on a curated collection of classification datasets.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Zero-Shot Classification",
+      "Text Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Aggregated datasets from Kaggle, HuggingFace, and existing NLP papers.",
+    "size": "43 datasets, 441 label descriptions",
+    "format": "N/A",
+    "annotation": "Manual annotation by the authors"
+  },
+  "methodology": {
+    "methods": [
+      "Meta-tuning",
+      "Cross-validation"
+    ],
+    "metrics": [
+      "AUC-ROC"
+    ],
+    "calculation": "The change in AUC-ROC is calculated across label descriptions to compare models.",
+    "interpretation": "A model is considered better if it shows a significant positive change in AUC-ROC on the evaluated tasks.",
+    "baseline_results": null,
+    "validation": "Leave-one-out cross-validation on similar datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Privacy",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Data privacy rights alignment"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Potential privacy concerns related to user-generated data being used for meta-tuning.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

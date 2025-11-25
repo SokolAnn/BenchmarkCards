@@ -1,0 +1,114 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LMentry: A Language Model Benchmark of Elementary Language Tasks",
+    "abbreviation": "LMentry",
+    "overview": "LMentry is a benchmark that requires only very basic language abilities, designed to complement common approaches for evaluating large language models. LMentry consists of 25 tasks which humans are generally expected to perform perfectly, and measures both a model's accuracy and its robustness to a variety of trivial input perturbations. LMentry provides an LMentry score, a single aggregate score combining accuracy and multiple aspects of robustness, and is intended for zero-shot evaluation.",
+    "data_type": "text (prompt-response / example pairs)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "oLMpics",
+      "bAbI",
+      "HANS",
+      "CheckList"
+    ],
+    "resources": [
+      "https://github.com/aviaefrat/lmentry",
+      "https://arxiv.org/abs/2211.02069"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Provide quick and interpretable insights into the capabilities and robustness of large language models using a compact set of trivial tasks; serve as a quick, automatic, and easy-to-run zero-shot \"unit test\" complementary to large benchmark suites.",
+    "audience": [
+      "ML Researchers",
+      "Research community",
+      "Labs with fewer resources"
+    ],
+    "tasks": [
+      "Sentence containing word",
+      "Sentence not containing word",
+      "Word containing letter",
+      "Word not containing letter",
+      "Most associated word",
+      "Least associated word",
+      "Any words from category",
+      "All words from category",
+      "First alphabetically",
+      "More letters",
+      "Less letters",
+      "Bigger number",
+      "Smaller number",
+      "Rhyming word",
+      "Homophones",
+      "Word after in sentence",
+      "Word before in sentence",
+      "Sentence starting with word",
+      "Sentence ending with word",
+      "Word starting with letter",
+      "Word ending with letter",
+      "First word of the sentence",
+      "Last word of the sentence",
+      "First letter of the word",
+      "Last letter of the word"
+    ],
+    "limitations": "As LMentry tasks are diverse in form, not every robustness aspect can be measured on every task.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Author-created task templates and instantiated examples; sentence examples for some tasks sourced from the Corpus of Linguistic Acceptability (Warstadt et al., 2019); homophones from the legacy Earlham homophone list (legacy.earlham.edu/~peters/writing/homofone.htm) as curated by the authors; category wordlists based on the A1 and A2 CEFR wordlists of the Cambridge English Profile (https://www.englishprofile.org/american-english).",
+    "size": "110,703 examples (3,000 examples per task; 1,000 instantiations per template, with exceptions for the homophones task and some character-level tasks)",
+    "format": "N/A",
+    "annotation": "Automatic evaluation using approximately 10 regular-expression patterns per task (an output is scored 1 if it matches any pattern, 0 otherwise). Automatic scoring validated by manual evaluation (Cohen's kappa > 0.99 on sampled predictions). Human performance measured via a small human study (10 random examples per task, 250 examples total) with no incorrect answers under LMentry automatic evaluation."
+  },
+  "methodology": {
+    "methods": [
+      "Zero-shot evaluation",
+      "Automated evaluation via regular-expression scoring",
+      "Human validation / human evaluation (validation studies)"
+    ],
+    "metrics": [
+      "LMentry score",
+      "Accuracy",
+      "Robustness (measured across four aspects: argument order, argument content, template, adjacent tasks)"
+    ],
+    "calculation": "Accuracy is calculated as the mean accuracy over the 25 LMentry tasks. Each robustness aspect is calculated as the mean over all tasks to which it applies; for an individual task and robustness aspect, the aspect score is 100 - max_{i != j} |acc(c_i) - acc(c_j)| where c_i are cases the aspect considers. A model's LMentry score is its accuracy multiplied by its robustness, and is always a percentage.",
+    "interpretation": "The LMentry score can be viewed as a model's accuracy penalized by its brittleness; higher is better. Human performance on LMentry is approximately 100%, and models substantially below 100% indicate accuracy and/or robustness failures on trivial tasks.",
+    "baseline_results": "Best performing model: TextDavinci002 (175B, instruction-finetuned) with LMentry score 66.1%. InstructGPT 175B scores 48.4%. No other evaluated model scores higher than 41%. Human performance is ~100%.",
+    "validation": "Automatic evaluation validated by sampling 100 predictions per task from 5 strong baselines (~12,000 examples); Cohen's kappa between automatic and manual evaluation was over 0.99. Additionally, a human study sampled 10 random examples per task (250 examples total) among five untrained annotators; using LMentry's automatic evaluation, no incorrect answers were found."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination"
+          ]
+        },
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Uncertain data provenance"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

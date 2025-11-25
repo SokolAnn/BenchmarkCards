@@ -1,0 +1,98 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MMAR (Multi-disciplinary Multi-modal Audio Reasoning)",
+    "abbreviation": "MMAR",
+    "overview": "MMAR is a new benchmark designed to evaluate the deep reasoning capabilities of Audio-Language Models (ALMs) across massive multi-disciplinary tasks, comprising 1,000 meticulously curated audio-question-answer triplets. It focuses on real-world audio scenarios, requiring multi-step reasoning beyond surface-level understanding.",
+    "data_type": "audio-question-answer triplets",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Chinese",
+      "Japanese",
+      "Korean",
+      "French",
+      "Italian",
+      "German"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/ddlBoJack/MMAR"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of MMAR is to provide a rigorous benchmark for evaluating audio deep reasoning capabilities in a variety of audio contexts.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Deep Reasoning",
+      "Audio Processing"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from real-world internet videos with iterative error corrections.",
+    "size": "1,000 examples",
+    "format": "JSON",
+    "annotation": "Manual annotation by expert annotators trained in audio processing."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Classification accuracy"
+    ],
+    "calculation": "Accuracy is calculated based on the number of correct predictions from the model compared to the ground truth.",
+    "interpretation": "Higher accuracy indicates better reasoning capabilities of the models in handling multi-step audio reasoning tasks.",
+    "baseline_results": "The best-performing open-source model Qwen-2.5-Omni achieves an average accuracy below 60%.",
+    "validation": "Validated through expert review and quality control processes."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Privacy",
+      "Robustness",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data sources are publicly available videos, minimizing privacy concerns.",
+    "data_licensing": "The dataset will be released under a CC-BY-NC license for non-commercial use.",
+    "consent_procedures": "Consent procedures are not applicable as the data is collected from public sources.",
+    "compliance_with_regulations": "N/A"
+  }
+}

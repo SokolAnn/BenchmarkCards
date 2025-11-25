@@ -1,0 +1,111 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CovidDialog-English and CovidDialog-Chinese",
+    "abbreviation": "N/A",
+    "overview": "We collect two dialogue datasets (CovidDialog-English and CovidDialog-Chinese) containing conversations between doctors and patients about COVID-19 and related pneumonia to facilitate development of COVID-19-targeted dialogue systems and to train/evaluate dialogue generation models for COVID-19 consultations.",
+    "data_type": "text (doctor-patient dialogue utterance pairs)",
+    "domains": [
+      "Healthcare",
+      "Medical Diagnosis"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "Reddit dialogues (used for DialoGPT pretraining)",
+      "Chinese Chatbot Corpus",
+      "500k-Chinese-Dialog",
+      "Large Scale Chinese Corpus for NLP"
+    ],
+    "resources": [
+      "https://github.com/UCSD-AI4H/COVID-Dialogue",
+      "https://www.icliniq.com/en_US/",
+      "https://www.healthcaremagic.com/",
+      "https://www.healthtap.com/",
+      "https://www.haodf.com/",
+      "https://github.com/yangjianxin1/GPT2-chitchat",
+      "https://github.com/codemayq/chinese_chatbot_corpus",
+      "https://drive.google.com/file/d/1nEuew_KNpTMbyy7BO4c8bXMXN351RCPp/view",
+      "https://github.com/brightmart/nlp_chinese_corpus",
+      "https://github.com/huggingface/transformers",
+      "https://arxiv.org/abs/2005.05442"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To develop dialogue systems that can provide COVID-19-related consultations by collecting and releasing two medical dialogue datasets and evaluating dialogue generation models on them.",
+    "audience": [
+      "Researchers and developers of medical dialogue systems",
+      "Model developers working on conversational AI for healthcare"
+    ],
+    "tasks": [
+      "Dialogue Generation",
+      "Conversational Response Generation"
+    ],
+    "limitations": "The CovidDialog datasets are small in size, incurring a high risk of overfitting. The authors note that Chinese dialogues are more noisy (incorrect grammar, abbreviations, semantic ambiguities), making development more challenging. Informativeness of generated responses lags behind groundtruth, indicating need for incorporating medical knowledge.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "English dialogs crawled from online healthcare forums including https://www.icliniq.com/en_US/, https://www.healthcaremagic.com/, and https://www.healthtap.com/. Chinese dialogs crawled from https://www.haodf.com/. Duplicated and incomplete dialogues were removed. Dialogues were processed into (source, target) pairs where the source is the concatenation of previous utterances and the target is the doctor response.",
+    "size": "English: 603 consultations, 1,232 utterances, 90,664 tokens (English words). Chinese: 1,088 consultations, 9,494 utterances, 406,550 tokens (Chinese characters).",
+    "format": "N/A",
+    "annotation": "Converted into (source, target) pairs for dialogue generation (target = doctor response; source = concatenation of preceding utterances). Duplicated and incomplete dialogues removed. No additional manual annotation procedure described."
+  },
+  "methodology": {
+    "methods": [
+      "Fine-tuning of pretrained Transformer encoder-decoder models",
+      "Fine-tuning of pretrained GPT-family models (DialoGPT, GPT2-chitchat)",
+      "Fine-tuning of BERT-GPT (encoder-decoder with pretrained BERT encoder and GPT decoder)",
+      "Automatic evaluation using n-gram and diversity metrics",
+      "Human evaluation with 5 annotators rating responses on Relevance, Informativeness, and Doctor-like (1-5 scale)"
+    ],
+    "metrics": [
+      "Perplexity",
+      "NIST-4",
+      "BLEU-2",
+      "BLEU-4",
+      "METEOR",
+      "Entropy-4",
+      "Dist-1",
+      "Dist-2",
+      "Average Response Length",
+      "Human ratings: Relevance (1-5), Informativeness (1-5), Doctor-like (1-5)"
+    ],
+    "calculation": "Automatic metrics: Perplexity (lower is better). NIST (n=4), BLEU (n=2 and 4), METEOR compare n-gram overlap (higher is better). Entropy-4 and Dist-n (n=1,2) measure lexical diversity. Human evaluation: five undergraduate/graduate annotators rate responses from 1 to 5 on Relevance, Informativeness, and Doctor-like; ratings averaged across annotators.",
+    "interpretation": "For perplexity lower is better. For NIST, BLEU, METEOR, Entropy, and Dist higher is better. Human rating scale 1-5 with higher indicating better performance. The paper notes automatic metrics are not completely reliable for dialogue evaluation and complements them with human evaluation.",
+    "baseline_results": "English test set (Table 4): Perplexity - Transformer: 263.1, DialoGPT-small: 28.3, DialoGPT-medium: 17.5, DialoGPT-large: 18.9, BART: 15.3. NIST-4 - Transformer: 0.71, DialoGPT-small: 1.90, medium: 2.01, large: 2.29, BART: 1.88. BLEU-2 - Transformer: 7.3%, DialoGPT-small: 9.6%, medium: 9.4%, large: 11.5%, BART: 8.9%. BLEU-4 - Transformer: 5.2%, DialoGPT-small: 6.1%, medium: 6.0%, large: 7.6%, BART: 6.0%. METEOR - Transformer: 5.6%, DialoGPT-small: 9.0%, medium: 9.5%, large: 11.0%, BART: 10.3%. Dist-1 and Dist-2 and Entropy values also reported in Table 4. Human evaluation on English test set (Table 5) average scores: Relevance - Transformer: 2.45, DialoGPT-large: 2.98, BART: 3.04, Ground truth: 3.59; Informativeness - Transformer: 2.66, DialoGPT-large: 2.60, BART: 2.77, Ground truth: 3.53; Doctor-like - Transformer: 2.32, DialoGPT-large: 3.20, BART: 3.36, Ground truth: 3.50. Chinese test set (Table 8): Perplexity - Transformer: 53.3, DialoGPT-noMMI: 22.1, DialoGPT-MMI: 25.7, BERT-GPT: 10.8. Other automatic metrics in Table 8. Human evaluation on Chinese (Table 9) reported similarly.",
+    "validation": "English and Chinese datasets split by dialogs into train/validation/test with ratio 8:1:1. Hyperparameters tuned on validation set. For English, pretrained models fine-tuned for 5 epochs and un-pretrained Transformer trained for 50 epochs; checkpoint with lowest validation perplexity selected. For Chinese, training stopped when validation loss stopped decreasing. Human evaluation conducted on test set (English: full test; Chinese: 100 randomly-sampled test examples)."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy",
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Governance",
+          "subcategory": [
+            "Incorrect risk testing"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "For human evaluation, responses were de-identified so annotators did not know which method generated a response. No other privacy or anonymization procedures are described in the paper.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

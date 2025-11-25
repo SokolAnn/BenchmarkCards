@@ -1,0 +1,77 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Temporal Knowledge Graph Question Answering (TKGQA)",
+    "abbreviation": "N/A",
+    "overview": "The paper proposes a novel semantic-parsing-based framework called Prog-TQA for Temporal Knowledge Graph Question Answering (TKGQA), which leverages large language models for program generation and incorporates self-improvement strategies.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MultiTQ",
+      "CronQuestions"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2404.01720"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enhance the understanding of temporal questions in TKGQA through the Prog-TQA framework and improve performance in answering such questions.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "MultiTQ and CronQuestions datasets",
+    "size": "386,787 examples (MultiTQ), 350,000 examples (CronQuestions)",
+    "format": "N/A",
+    "annotation": "Manually annotated examples and program drafts"
+  },
+  "methodology": {
+    "methods": [
+      "Draft generation using in-context learning",
+      "Linking and execution of generated programs"
+    ],
+    "metrics": [
+      "Hits@1",
+      "Hits@10"
+    ],
+    "calculation": "Hits@1 is the proportion of queries where the correct answer is ranked first, and Hits@10 is the proportion where the correct answer is within the top ten results.",
+    "interpretation": "Higher Hits@1 and Hits@10 indicate better performance in answering questions correctly.",
+    "baseline_results": null,
+    "validation": "The framework's performance is validated against multiple baselines including embedding-based and semantic-parsing-based methods."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

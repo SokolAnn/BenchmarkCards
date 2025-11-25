@@ -1,0 +1,124 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CCpdf: Building a High Quality Corpus for Visually Rich Documents from Web Crawl Data",
+    "abbreviation": "CCpdf",
+    "overview": "Proposes an efficient pipeline for creating a big-scale, diverse, multilingual corpus of PDF files from all over the Internet using Common Crawl, and shares a CCpdf corpus in the form of an index of PDF files along with a script for downloading them, producing a collection useful for language model pretraining.",
+    "data_type": "multimodal (PDF files with page images and extracted text with bounding boxes / hOCR)",
+    "domains": [
+      "Natural Language Processing",
+      "Legal",
+      "Knowledge Extraction",
+      "History",
+      "Multi-domain"
+    ],
+    "languages": [
+      "Arabic",
+      "Dutch",
+      "English",
+      "French",
+      "German",
+      "Italian",
+      "Japanese",
+      "Polish",
+      "Portuguese",
+      "Russian",
+      "Spanish"
+    ],
+    "similar_benchmarks": [
+      "IIT-CDIP",
+      "OCR-IDL",
+      "Docbank",
+      "Publaynet",
+      "PMC Open Access Subset",
+      "CCNet",
+      "CCMatrix",
+      "C4",
+      "mT5",
+      "CCQA",
+      "The Pile"
+    ],
+    "resources": [
+      "https://github.com/applicaai/CCpdf",
+      "https://github.com/applicaai/digital-born-pdf-scanner",
+      "https://commoncrawl.org",
+      "https://commoncrawl.org/2022/06/may-2022-crawl-archive-now-available/",
+      "https://ncbi.nlm.nih.gov/pmc/tools/openftlist/",
+      "https://archive.org/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Design and describe an efficient pipeline to collect, filter, download, process, and index a large-scale, diverse, multilingual corpus of PDF files from Common Crawl to support 2D language model pretraining and to provide a source for derived document datasets.",
+    "audience": [
+      "Researchers",
+      "Language model creators",
+      "Document understanding practitioners"
+    ],
+    "tasks": [
+      "Language Model Pretraining",
+      "2D Language Model Pretraining",
+      "Document Understanding",
+      "Information Extraction",
+      "Creation of derived document datasets (e.g., classification, layout analysis)"
+    ],
+    "limitations": "The study focuses on the processing pipeline without analyzing the impact of each project decision on final language model performance; limited to a single Common Crawl dump (May 2022); down-sampling of document-rich domains and languages limits generalizability of some analyzed statistics.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "PDF files crawled from the Internet using Common Crawl (May 2022 dump); index created from Common Crawl CDX files and optionally WARC extraction; files downloaded from original URLs when available.",
+    "size": "1.1M documents; 14.5M pages",
+    "format": "Index of PDF URLs and metadata plus script for downloading; processing outputs include extracted text with bounding boxes (hOCR) and metadata; original PDFs not hosted (script provided to download them).",
+    "annotation": "Manual annotation of samples used for evaluation: e.g., ~1k documents per language (11k total) for analysis; 996 manually annotated documents for language identification evaluation; 967 manually annotated documents for Born Digital detector evaluation. No large-scale task-specific labels provided for downstream tasks."
+  },
+  "methodology": {
+    "methods": [
+      "Automated processing pipeline (link extraction from Common Crawl CDX, URL-based heuristics, spam filtering, domain balancing, downloading)",
+      "Born-digital detection heuristics and DjVu-based direct text extraction",
+      "OCR processing (Tesseract and comparison with Microsoft Azure OCR) and strategy comparison",
+      "Content-based language identification using langdetect and comparison with other tools",
+      "Manual annotation for validation of components",
+      "Quantitative analysis of document and page-level statistics"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1-score",
+      "Processing time (hours per 1k files)",
+      "Success rate (percentage of downloaded/processed files)"
+    ],
+    "calculation": "Precision, Recall and F1-score calculated on manually annotated evaluation samples for components such as language identification and Born Digital detector. Processing time measured per 1k files using reported hardware/configuration (e.g., 1 CPU unless otherwise stated). Success rates reported as percentages of successful downloads/processing.",
+    "interpretation": "Authors consider a URL-based language detection F1 of 90.51% to be reasonably good and the content-based langdetect F1 of 94.21% to be better; using proper Tesseract models increased average F1 to 98.05%. The DjVu-based tool combined with Born-digital detector yielded the shortest processing time and better extraction quality compared to OCR-based strategies.",
+    "baseline_results": "Processing time (1 CPU) per 1k files: DjVu-based tool + Born-digital detector = 5.6 h; Tesseract + URL based language detection = 23.7 h; Tesseract + built-in LD mechanism = 75.9 h; Microsoft Azure OCR (with 4 CPUs equivalent) = 16.7 h and reported additional cost ~$13 per 1k single-page files. Language identification: URL-based method F1 = 90.51% (on 996 documents); content-based (langdetect) F1 = 94.21%; proper Tesseract usage F1 = 98.05%.",
+    "validation": "Component validation via manual annotation: language identification validated on 996 manually annotated documents (Table 5); Born Digital detector validated on 967 manually annotated documents (Table 3). Additional quantitative analyses performed on random samples (1k documents per language, 11k total)."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Societal Impact"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on the environment"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "The paper explicitly notes that pretraining large language models is costly in terms of money, time, and environmental impact."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

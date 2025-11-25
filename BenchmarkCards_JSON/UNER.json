@@ -1,0 +1,80 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "UNER dataset (Universal Named Entity Recognition)",
+    "abbreviation": "UNER",
+    "overview": "We present the UNER dataset, a multilingual and hierarchical parallel corpus annotated for named-entities. We describe in detail the developed procedure necessary to create this type of dataset in any language available on Wikipedia with DBpedia information. The three-step procedure extracts entities from Wikipedia articles, links them to DBpedia, and maps the DBpedia sets of classes to the UNER labels. This is followed by a post-processing procedure that significantly increases the number of identified entities in the final results.",
+    "data_type": "text (token-level named-entity annotations, IOB format)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Croatian"
+    ],
+    "similar_benchmarks": null,
+    "resources": [
+      "https://github.com/cleopatra-itn/MIDAS",
+      "https://tinyurl.com/y2taxs8b",
+      "https://tinyurl.com/y4tlz4a2",
+      "https://arxiv.org/abs/2212.07429"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To parse data from Wikipedia corpora in multiple languages, extract named entities through hyperlinks, align them with entity classes from DBpedia and translate them into UNER types and subtypes; to propose a NERC dataset creation workflow that works for languages covered by both Wikipedia and DBpedia, including under-resourced languages.",
+    "audience": [],
+    "tasks": [
+      "Named Entity Recognition",
+      "Named Entity Classification"
+    ],
+    "limitations": "Accuracy needs to be enhanced (the final post-processing step requires improvement); the workflow covers basically UNER types and sub-types of the Name category; false negatives due to missing hyperlinks in Wikipedia articles; uneven content of Wikipedia across languages affects results; a manual and more detailed evaluation is necessary to verify precision and recall.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Wikipedia dumps (text extraction preserving hyperlinks using WikiExtractor) and DBpedia via SPARQL queries to obtain DBpedia classes, mapped to UNER using an UNER/DBpedia mapping schema.",
+    "size": "English UNER: 3.3 GB (325,395,838 tokens); Croatian UNER: 108 MB (9,388,224 tokens). English: 17,150 files across 172 folders; Croatian: 411 files across 5 folders.",
+    "format": "Plain text files with token-level UNER annotations in IOB format (post-processed tokenization applied).",
+    "annotation": "Automatically generated (silver-standard) via DBpedia class extraction and UNER/DBpedia mapping; post-processing scripts apply tokenization improvements, IOB format, entity listing, and automatic annotation expansion (final post-processing applied to Croatian corpus only)."
+  },
+  "methodology": {
+    "methods": [
+      "Automated extraction from Wikipedia dumps (WikiExtractor)",
+      "DBpedia entity linking via SPARQL queries (SPARQLWrapper)",
+      "Mapping DBpedia classes to UNER labels using UNER/DBpedia mapping and DBpedia hierarchy prioritization",
+      "Post-processing: tokenization improvements, IOB conversion, entity listing, automatic annotation expansion",
+      "Qualitative manual evaluation on a random sample of entities"
+    ],
+    "metrics": [
+      "Corpus statistics: Total number of tokens, Number of Non-Entity Tokens, Number of Entity Tokens, Number of Entities, Number of Different Entities (reported per corpus)",
+      "Manual-sample annotation evaluation percentages: Correct (85%), Correct but vague (6%), Incorrect due to DBpedia (7%), Incorrect due to UNER association (3%)"
+    ],
+    "calculation": "Corpus statistics are computed by counting tokens and tags after post-processing. Manual evaluation performed on a random sample of 943 entities: DBpedia associated classes and final UNER tag were checked and percentages computed over the sample.",
+    "interpretation": "From the manual sample, 91% of the entities are correctly tagged with UNER tags (85% correct + 6% correct but vague). Post-processing (final step applied to Croatian corpus) increases annotation coverage (entity tokens percentage increased from 7.1% to 16.2% in Croatian). The authors note remaining errors due to DBpedia class assignment and UNER mapping rules.",
+    "baseline_results": null,
+    "validation": "Qualitative manual evaluation on 943 randomly selected entities from the English UNER corpus. Post-processing and automatic annotation expansion applied and analyzed (final expansion applied to Croatian corpus)."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy",
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC BY-NC-SA 4.0 (English and Croatian UNER corpora as stated in the paper)",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SR-Eval: Evaluating LLMs on Code Generation under Stepwise Requirement Refinement",
+    "abbreviation": "SR-Eval",
+    "overview": "SR-Eval is a benchmark specifically designed to assess LLMs on iterative code generation under stepwise requirement refinement, encompassing both function-level and repository-level tasks in Python and Java.",
+    "data_type": "multi-turn programming tasks",
+    "domains": [
+      "Software Engineering"
+    ],
+    "languages": [
+      "Python",
+      "Java"
+    ],
+    "similar_benchmarks": [
+      "HumanEval",
+      "MBPP",
+      "LiveCodeBench",
+      "DevEval"
+    ],
+    "resources": [
+      "https://doi.org/XXXXXXX.XXXXXXX",
+      "https://github.com/user/repo"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate LLMs for iterative code generation under progressive requirement refinement.",
+    "audience": [
+      "Research Community",
+      "Model Developers",
+      "Software Engineers"
+    ],
+    "tasks": [
+      "Code Generation",
+      "Multi-Turn Interaction"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Seed datasets from BigCodeBench-Hard, AutoCodeBench, DevEval, and MRGBench.",
+    "size": "443 tasks",
+    "format": "JSON",
+    "annotation": "Semi-automated with human verification"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "Semantic-aware test case generation"
+    ],
+    "metrics": [
+      "Per-turn Accuracy",
+      "Average Accuracy",
+      "Complete Task Rate"
+    ],
+    "calculation": "Metrics are computed based on the success rate at each turn and overall completion of tasks.",
+    "interpretation": "Higher accuracy and completion rates indicate better model performance.",
+    "baseline_results": "N/A",
+    "validation": "Validation procedures include correctness validation, distinctiveness validation, and semantic alignment."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Privacy",
+      "Robustness",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

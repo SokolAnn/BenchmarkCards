@@ -1,0 +1,71 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PRISM (Prompt Template Stealing Benchmark)",
+    "abbreviation": "PRISM",
+    "overview": "PRISM is a benchmark for prompt template stealing consisting of 50 templates and 450 images, organized into Easy and Hard difficulty levels.",
+    "data_type": "image-text pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://whitepagewu.github.io/evostealer-site"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To systematically study the prompt template stealing attack and evaluate the vulnerability of visual language models.",
+    "audience": [
+      "Security Researchers",
+      "AI Developers",
+      "ML Researchers"
+    ],
+    "tasks": [],
+    "limitations": "The benchmark's single-subject design limits its applicability to multi-subject templates in real-world applications.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Templates sourced from PromptBase and LaPrompt, with images generated using DALL·E 3.",
+    "size": "450 images",
+    "format": "N/A",
+    "annotation": "Templates were manually curated for subject-prompt alignment and stylistic consistency."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Subject Similarity",
+      "Style Similarity",
+      "Semantic Similarity",
+      "Human Evaluation"
+    ],
+    "calculation": "Fitness function based on semantic and style similarity.",
+    "interpretation": "Higher similarity scores indicate better template reproduction and generalization capabilities.",
+    "baseline_results": null,
+    "validation": "Extensive experiments were conducted across both open-source and closed-source models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Privacy",
+      "Security"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The capability to extract templates may pose risks to creators' intellectual property even without fine-tuning.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

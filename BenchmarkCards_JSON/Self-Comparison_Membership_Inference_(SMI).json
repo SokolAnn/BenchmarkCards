@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Self-Comparison Membership Inference (SMI)",
+    "abbreviation": "N/A",
+    "overview": "This paper proposes a novel dataset-level membership inference method based on Self-Comparison, aiming to detect unauthorized usage of copyrighted materials in large language models (LLMs) and vision-language models (VLMs).",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the benchmark is to provide a method for dataset-level membership inference without requiring access to ground-truth member or non-member data in identical distribution.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Membership Inference"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated or processed text data derived from various public and proprietary datasets used in LLMs and VLMs.",
+    "size": "N/A",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics were calculated based on changes in average negative log-likelihood (A-NLL) before and after paraphrasing, and hypothesis testing was used to infer membership.",
+    "interpretation": "An increase in A-NLL indicates that the data is more likely to be part of the training set.",
+    "baseline_results": "SMI outperformed traditional membership inference methods on various models and datasets, achieving an average F1 score of 0.984 across assessed scenarios.",
+    "validation": "The benchmark was validated through extensive experiments across various datasets and models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The benchmark does not require access to ground-truth data, thereby improving privacy by avoiding the need to handle sensitive training material directly.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

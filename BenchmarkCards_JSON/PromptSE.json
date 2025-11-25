@@ -1,0 +1,70 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PromptSE (Prompt Sensitivity Evaluation)",
+    "abbreviation": "PromptSE",
+    "overview": "PromptSE is a framework that creates semantically equivalent prompt variants with emotion and personality templates and evaluates model stability using probability-aware continuous scoring.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a systematic framework for quantifying prompt stability in code generation models under natural expression variations.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Industrial Practitioners"
+    ],
+    "tasks": [
+      "Code Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset is generated using the Python HumanEval benchmark with semantically equivalent variants.",
+    "size": "14,760 examples",
+    "format": "N/A",
+    "annotation": "The data was generated using automated methods based on emotion and personality templates."
+  },
+  "methodology": {
+    "methods": [
+      "Probability-aware evaluation",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "AUC-E (Area Under Curve of Elasticity)",
+      "Pass rates"
+    ],
+    "calculation": "AUC-E is computed using Simpson’s rule numerical integration over elasticity measurements.",
+    "interpretation": "Higher AUC-E values indicate better prompt stability, with values approaching 1 suggesting highly robust models.",
+    "baseline_results": "N/A",
+    "validation": "Statistical analysis employing robust methods including correlation tests and confidence intervals."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

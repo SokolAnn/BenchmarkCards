@@ -1,0 +1,74 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "AGENTPACK",
+    "abbreviation": "N/A",
+    "overview": "AGENTPACK is a dataset of 1.3M code edits co-authored by Claude Code, OpenAI Codex, and Cursor Agent across public GitHub projects, aimed at enhancing fine-tuning for code editing tasks.",
+    "data_type": "code changes",
+    "domains": [
+      "Software Engineering"
+    ],
+    "languages": [
+      "Python",
+      "JavaScript",
+      "TypeScript"
+    ],
+    "similar_benchmarks": [
+      "HumanEvalFix",
+      "CanItEdit"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/nuprl/AgentPack"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a diverse and high-quality dataset for training models on code editing tasks, facilitating research and development in software engineering.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Code Editing"
+    ],
+    "limitations": "The dataset contains model-authored descriptions and corresponding code edits but not the original prompts that elicited them.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Public GitHub repositories",
+    "size": "60GB",
+    "format": "Mixed code formats (files with various programming languages)",
+    "annotation": "Collectively authored changes by agents and humans, including natural language descriptions."
+  },
+  "methodology": {
+    "methods": [
+      "Automated collection from GitHub",
+      "Analysis of commit messages and code changes"
+    ],
+    "metrics": [
+      "Pass@1 score"
+    ],
+    "calculation": "Metrics calculated based on evaluation of model outputs against benchmark tasks.",
+    "interpretation": "A higher Pass@1 score indicates better performance in generating correct code based on editing instructions.",
+    "baseline_results": "Models trained on AGENTPACK showed improvements over previous models trained solely on human-only commit corpora.",
+    "validation": "Evaluated using well-established benchmarks such as HumanEvalFix and CanItEdit."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "Analysis of programming language usage shows diversity in low-resource programming languages.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "name": "BBQ: A Hand-Built Bias Benchmark for Question Answering",
+    "overview": "BBQ is a dataset of question sets that highlight attested social biases against people belonging to protected classes along nine social dimensions relevant for U.S. English-speaking contexts. It evaluates model responses in terms of how strongly they reflect social biases and under what contexts these biases override correct answers.",
+    "data_type": "Dataset",
+    "domains": [
+      "Question Answering",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "UnQover"
+    ],
+    "resources": [
+      "https://github.com/nyu-mll/BBQ"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide researchers a benchmark for measuring social biases in question answering models.",
+    "audience": [
+      "NLP researchers",
+      "AI practitioners",
+      "Ethics researchers"
+    ],
+    "tasks": [
+      "Evaluate biases in QA model outputs",
+      "Identify contexts that lead to biased outputs"
+    ],
+    "limitations": "The dataset focuses on biases relevant to the U.S. context and may not generalize to different cultural settings.",
+    "out_of_scope_uses": [
+      "Generalizing results to non-U.S. languages or contexts"
+    ]
+  },
+  "data": {
+    "source": "Constructed by authors",
+    "size": "58,492 unique examples",
+    "format": "Templates of questions and contexts",
+    "annotation": "Validated by crowdworkers"
+  },
+  "methodology": {
+    "methods": [
+      "Quantitative analysis of model outputs",
+      "Bias scoring based on model answers"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Bias score"
+    ],
+    "calculation": "Bias scores reflect the percent of non-UNKNOWN outputs that align with a social bias.",
+    "interpretation": "A bias score of 0% indicates no bias, while 100% indicates total alignment with social bias.",
+    "baseline_results": "N/A",
+    "validation": "Human validation with a minimum agreement threshold of 4/5 annotators."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Stereotyping behavior",
+      "Reinforcement of social biases"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on affected communities"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Tested biases against various social categories including gender, race, socioeconomic status.",
+    "harm": "Reinforcement of harmful stereotypes in model outputs."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Released under the CC-BY 4.0 license.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

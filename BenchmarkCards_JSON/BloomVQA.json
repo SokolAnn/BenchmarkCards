@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "BloomVQA",
+    "abbreviation": "N/A",
+    "overview": "BloomVQA is a novel Visual Question Answering dataset designed to assess multi-modal comprehension using tasks that reflect different levels of comprehension outlined in Bloom’s Taxonomy. The dataset facilitates systematic evaluation of large vision-language models by categorizing questions based on cognitive skills required as per the taxonomy.",
+    "data_type": "multiple-choice VQA samples",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/ygong/BloomVQA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of BloomVQA is to systematically evaluate multi-modal comprehension capabilities of models on tasks categorized by cognitive complexity following Bloom's Taxonomy.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Visual Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from Creative Commons resources including StoryWeaver and Book Dash, focusing on picture stories suitable for teaching young children.",
+    "size": "1200 examples",
+    "format": "N/A",
+    "annotation": "Data samples were annotated through a web-based UI with input gathered from multiple annotators using templates derived from Bloom's Taxonomy."
+  },
+  "methodology": {
+    "methods": [
+      "Zero-shot experiments",
+      "Model evaluation based on conditional accuracy"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Conditional performance based on task difficulty"
+    ],
+    "calculation": "Metrics were calculated based on model performance evaluations through graded tasks categorized by Bloom’s levels.",
+    "interpretation": "Models demonstrating high consistency in accuracy across Bloom's levels would suggest a comprehension pattern aligned with human behaviors.",
+    "baseline_results": "GPT-4V achieved an average accuracy of 75.3% on the BloomVQA dataset.",
+    "validation": "Results were validated through comparisons with human annotator performances and other state-of-the-art models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Data is collected under Creative Commons (CC BY 4.0) license.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

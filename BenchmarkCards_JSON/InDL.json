@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "InDL: A New Dataset and Benchmark for In-Diagram Logic Interpretation based on Visual Illusion",
+    "abbreviation": "InDL",
+    "overview": "This paper introduces a novel approach to evaluating deep learning models’ capacity for in-diagram logic interpretation. Leveraging the realm of visual illusions, the authors establish a dataset, InDL, designed to rigorously test and benchmark models on their handling of visual illusions and in-diagram logical reasoning, providing a quantifiable measure to rank models.",
+    "data_type": "image (visual illusion / in-diagram stimuli)",
+    "domains": [
+      "Computer Vision",
+      "Cognitive Psychology"
+    ],
+    "languages": null,
+    "similar_benchmarks": [
+      "CLEVR",
+      "NLVR",
+      "ImageNet"
+    ],
+    "resources": [
+      "https://github.com/rabbit-magic-wh/InDL"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate deep learning models' capacity for in-diagram logic interpretation using visual illusions and to provide a quantifiable benchmarking framework (InDL) to rank and analyze models' logical comprehension in visual stimuli.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Cognitive Scientists"
+    ],
+    "tasks": [
+      "Visual Reasoning",
+      "Image Classification (in-diagram logic detection)"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The InDL dataset is composed of images derived from classic geometric optical/visual illusions (Hering, Wundt, Muller-Lyer, Poggendorff, Vertical-horizontal, Zollner), organized into five dataset groups as summarized in Table 1 (Hering & Wundt combined as one dataset plus Muller-Lyer, Poggendorff, Vertical-horizontal, Zollner).",
+    "size": "10,000 samples (30% positive samples, 70% negative samples)",
+    "format": "N/A",
+    "annotation": "Ground truth labels indicating presence or absence of specific in-diagram logic (true positive/false negative definitions provided)."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics (Recall)",
+      "Model-based evaluation (training and testing multiple pre-trained deep learning models; fine-tuning with AdamW optimizer)",
+      "Comparison against ImageNet performance (reported top-1 and top-5 accuracies for reference)"
+    ],
+    "metrics": [
+      "Recall",
+      "Top-1 Accuracy",
+      "Top-5 Accuracy"
+    ],
+    "calculation": "Recall = TruePositive / (TruePositive + FalseNegative). A true positive is an instance where both the model and the ground truth agree that the sample contains a specific in-diagram logic; a false negative is where the model fails to recognize the in-diagram logic but the ground truth indicates it is present.",
+    "interpretation": "High recall indicates a model is effective at detecting the presence of in-diagram logic; low recall suggests the model fails to recognize in-diagram logic (i.e., misses positives).",
+    "baseline_results": "Baseline Xception results on InDL: dataset01 99.49%, dataset02 88.14%, dataset03 83.88%, dataset04 93.85%, dataset05 83.21%, mean 89.81%. ImageNet: top-1 79.05%, top-5 94.39%.",
+    "validation": "Models were trained until no improvement in validation loss over a certain number of epochs and then evaluated on a separate test set."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Misuse",
+      "Fairness",
+      "Ethics"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Misuse",
+          "subcategory": [
+            "Improper usage"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

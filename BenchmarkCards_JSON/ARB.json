@@ -1,0 +1,126 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ARB: Advanced Reasoning Benchmark for Large Language Models",
+    "abbreviation": "ARB",
+    "overview": "ARB is a novel benchmark composed of advanced reasoning problems in multiple fields, designed to evaluate expert reasoning abilities in mathematics, physics, chemistry, biology, and law. It contains graduate-level and professional problems (multiple choice, short answer, and open response) intended to be more challenging than prior benchmarks and includes ground truth solutions.",
+    "data_type": "text (problem statements, ground truth solutions, final answers); image files for some MCAT and physics problems (multimodal entries)",
+    "domains": [
+      "Mathematics",
+      "Physics",
+      "Chemistry",
+      "Biology",
+      "Legal",
+      "Medical Education"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MATH",
+      "GSM8K",
+      "MMLU (Massive Multitask Language Understanding)",
+      "BIG-bench",
+      "HELM",
+      "SuperGLUE",
+      "Chain-of-Thought Hub",
+      "GPT-Planning Benchmark",
+      "ALERT Reasoning Benchmark",
+      "JEEBench"
+    ],
+    "resources": [
+      "https://arb.duckai.org/api/lib",
+      "https://app.swaggerhub.com/apis-docs/arb-dataset/arb-api/1.0.5"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate advanced/expert reasoning capabilities of large language models across mathematics, physics, chemistry, biology, and law using graduate-level and professional problems.",
+    "audience": [
+      "Research community",
+      "Model creators"
+    ],
+    "tasks": [
+      "Multiple Choice Question Answering",
+      "Short Answer Question Answering",
+      "Open Response Question Answering",
+      "Mathematical Problem Solving",
+      "Symbolic Reasoning",
+      "Proof Writing"
+    ],
+    "limitations": "Rubric-based self-evaluation is not yet reliable enough to replace human grading. There is possible data contamination for some sourced materials. The benchmark does not cover all aspects of human ability.",
+    "out_of_scope_uses": [
+      "Using the dataset to train models that help students cheat on exams."
+    ]
+  },
+  "data": {
+    "source": "Problems sourced from Gelca and Andreescu [2017], Brayman and Kukush [2018], Souza and Silva [2008], Harvard University qualifying exams [2021], Major American Universities PhD qualifying questions and solutions [Zhongguo-Kexue-Jishu-Daxue, 1990], Barbri practice questions [2007], and McGraw-Hill Education 3 MCAT Practice Tests [Campbell et al., 2017].",
+    "size": "Counts by category as reported in Table 1: Mathematics — Numerical 52, Symbolic 34, Proof-like 19; Physics — Numerical 80, Numerical (with image) 18, Symbolic 18, Symbolic (with image) 13; Law — Multiple Choice 627; MCAT (Reading) Multiple Choice 165; MCAT (Science) Multiple Choice 144; Multiple Choice (with image) 37.",
+    "format": "JSONL (.jsonl) containing problem statements, ground truth solutions, final ground truth answers, and metadata (subject names, problem topics).",
+    "annotation": "Each entry includes a ground truth solution and final ground truth answer. Proof-like and many symbolic problems require manual human grading; some problems include official solutions which are provided. Symbolic equivalence is partially checked using automated tools (SymPy) where feasible."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics for multiple choice (exact-match)",
+      "Automated numerical evaluation (parsing via regex and SymPy with relative error threshold)",
+      "Symbolic equivalence checking using SymPy where possible",
+      "Human evaluation for proof-like and complex symbolic responses",
+      "Model-based evaluation: GPT-4 rubric generation and rubric-based self-evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Relative error threshold (|model_answer − ground_truth| / ground_truth < 0.01 for numerical answers)",
+      "Rubric score (10-point rubric for symbolic and proof-like problems)",
+      "Pearson correlation (between human scores and GPT-4 rubric evaluation)"
+    ],
+    "calculation": "Multiple choice: compare extracted final answer (delimited by 'ANSWER:') to ground truth for exact match. Numerical: strip units with regex, parse with SymPy, mark correct if relative error < 0.01. Symbolic: normalize expressions and check equivalence with SymPy where possible; otherwise require human evaluation. Proof-like: manual grading by authors with mathematics training. Rubric-based: few-shot prompt GPT-4 to produce a 10-point rubric from the reference solution, then use GPT-4 to assign partial credit step-by-step according to the rubric.",
+    "interpretation": "Higher Accuracy and rubric scores indicate better reasoning performance. For numerical problems, correctness is defined by the relative error threshold of 1%. Rubric-based scores are compared to human scores; high Pearson correlation (reported between 0.78 and 0.91 across categories) indicates reasonable alignment between GPT-4 rubric evaluation and human grading. The paper notes that benchmarks where many models score >95% are not useful for tracking differential progress, motivating ARB's difficulty.",
+    "baseline_results": "Symbolic manually parsed scores (Table 2): gpt-4-0314 — Math Symbolic 18%, Physics Symbolic 28%; gpt-3.5-turbo-0301 — Math Symbolic 12%, Physics Symbolic 6%; text-davinci-003 — Math Symbolic 3%, Physics Symbolic 6%; claude-v1.3-100k — Math Symbolic 3%, Physics Symbolic 11%. Rubric vs human (Table 5): Physics Symbolic human eval 5.00, model eval 5.05, correlation 0.91; Math Symbolic human 3.13, model 3.37, correlation 0.78; Proof-like human 2.65, model 3.8, correlation 0.82. Additional results: models score well below 50% on more demanding tasks.",
+    "validation": "Manual human evaluation of the symbolic subset and proof-like problems; sampled manual checks of parsing and formatting; comparison of GPT-4 rubric evaluation against human annotators (Pearson correlations reported). Subsampling of larger subsets (20–40 problems per subject) used for error-type analysis."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness",
+      "Intellectual Property",
+      "Data Laws"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        },
+        {
+          "category": "Intellectual Property",
+          "subcategory": [
+            "Copyright infringement"
+          ]
+        },
+        {
+          "category": "Data Laws",
+          "subcategory": [
+            "Data transfer restrictions"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "No sensitive human attributes were found in the dataset.",
+    "harm": [
+      "Intended to detect and benchmark failures of advanced reasoning in models; explicitly disallows use to train systems that facilitate academic cheating."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Dataset authors state they have not found sensitive human attributes in the dataset and describe little associated privacy risk.",
+    "data_licensing": "The ARB dataset is licensed under CC BY 4.0; helper code is released under the MIT license. For problems originating in books listed in Section 3, the authors cite Fair Use §107.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "Authors reference Fair Use §107 and state they abide by fair use considerations for sourced problems; no other regulatory compliance statements are provided."
+  }
+}

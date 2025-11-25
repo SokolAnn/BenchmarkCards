@@ -1,0 +1,103 @@
+{
+  "benchmark_details": {
+    "name": "GLUE-X",
+    "overview": "GLUE-X is a benchmark for evaluating out-of-distribution (OOD) robustness in NLP models, incorporating 15 publicly available datasets across 8 NLP tasks to assess model generalization to unseen data distributions.",
+    "data_type": "Text",
+    "domains": [
+      "Sentiment Analysis",
+      "Natural Language Inference",
+      "Textual Entailment",
+      "Paraphrase Recognition",
+      "Textual Similarity",
+      "Linguistic Acceptability",
+      "Question Answering"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "GLUE",
+      "SuperGLUE"
+    ],
+    "resources": [
+      "https://gluexbenchmark.com/",
+      "https://github.com/YangLinyi/GLUE-X"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To facilitate research on OOD generalization in NLP models by providing a consistent evaluation framework.",
+    "audience": [
+      "NLP researchers",
+      "AI developers",
+      "Academics"
+    ],
+    "tasks": [
+      "Evaluate OOD performance of NLP models",
+      "Analyze model generalization capabilities",
+      "Compare performance across different NLP tasks"
+    ],
+    "limitations": "Focus primarily on text classification tasks; other NLP tasks like generation are out of scope.",
+    "out_of_scope_uses": [
+      "Machine translation",
+      "Dialogue systems"
+    ]
+  },
+  "data": {
+    "source": "Publicly available datasets across various domains.",
+    "size": "Varies by dataset, with some datasets containing millions of examples.",
+    "format": "Structured text for classification tasks.",
+    "annotation": "Datasets are curated to ensure consistency in task definitions and output labels."
+  },
+  "methodology": {
+    "methods": [
+      "Fine-tuning",
+      "Linear Probing",
+      "Linear Probing then Fine-tuning (LP-FT)"
+    ],
+    "metrics": [
+      "Average accuracy for OOD performance on various tasks",
+      "Friedman rank for model comparisons"
+    ],
+    "calculation": "Average scores across multiple tasks to assess overall performance.",
+    "interpretation": "Performance decay is measured by the difference between in-distribution and out-of-distribution accuracy.",
+    "baseline_results": "Average human performance observed at 80.14% compared to model scores.",
+    "validation": "Results validated through comparisons against human performance and standard benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Datasets are derived from publicly available sources; no private data used.",
+    "data_licensing": "Open-sourced under CC-BY-NC-SA license.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

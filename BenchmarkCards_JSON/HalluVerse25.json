@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "HalluVerse25",
+    "abbreviation": "N/A",
+    "overview": "HalluVerse25 is a fine-grained multilingual LLM hallucination dataset that categorizes fine-grained hallucinations in English, Arabic, and Turkish, providing insight into how well proprietary models perform in detecting LLM-generated hallucinations.",
+    "data_type": "sentence pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Arabic",
+      "Turkish"
+    ],
+    "similar_benchmarks": [
+      "HaluEval",
+      "Halwasa"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive dataset that categorizes fine-grained hallucination types across multiple languages and to advance research on LLM hallucination detection.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Hallucination Detection"
+    ],
+    "limitations": "The dataset is collected based on the availability of biographical information hosted on Wikidata and Wikipedia, which may not represent an accurate distribution of individuals in the world.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Data was extracted from Wikidata and Wikipedia to create factual sentences which are then modified to inject hallucinations.",
+    "size": "3,116 examples",
+    "format": "N/A",
+    "annotation": "Human-annotated by native speakers with a substantial annotation agreement."
+  },
+  "methodology": {
+    "methods": [
+      "Automated hallucination injection via LLM",
+      "Human evaluation for data quality"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Models were evaluated based on their ability to correctly classify different types of hallucinations in the dataset.",
+    "interpretation": "Higher accuracy indicates better performance in detecting hallucinations of different types.",
+    "baseline_results": "GPT-4 demonstrated the highest overall accuracy, especially in identifying entity and relation hallucinations.",
+    "validation": "The dataset was validated through a human annotation process with substantial inter-annotator agreement."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

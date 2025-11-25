@@ -1,0 +1,69 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LitBench",
+    "abbreviation": "N/A",
+    "overview": "LitBench is the first standardized benchmark and paired dataset for creative writing verification, aimed at evaluating existing zero-shot judges and enabling the development of learned verifiers that better align with human preferences.",
+    "data_type": "paired comparisons of human-written stories",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/euclaise/WritingPrompts_preferences",
+      "https://github.com/SAA-Lab/LitBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a reliable resource for automated evaluation and optimization of creative writing systems through robust benchmarks.",
+    "audience": [
+      "ML Researchers",
+      "Creative Writers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Creative Writing Verification"
+    ],
+    "limitations": "A key limitation includes the reliance on upvotes from Reddit as indicators of human preferences, which may not account for all underlying factors.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Data collected from Reddit's r/WritingPrompts subreddit.",
+    "size": "43,827 pairwise comparisons (training dataset) and 2,480 pairwise comparisons (test dataset)",
+    "format": "N/A",
+    "annotation": "Human preference labels collected through Reddit interactions."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy calculated as the percentage of cases where the preferred story according to the judge's score is also the one chosen by human preferences.",
+    "interpretation": "Higher agreement with human preferences indicates better performance of the verification model.",
+    "baseline_results": "The best Bradley-Terry reward model achieves 78% human agreement, outperforming the strongest zero-shot judge (Claude-3.7-Sonnet) at 73%.",
+    "validation": "Validating the dataset's curation by benchmarking trained reward models against LitBench."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "The dataset reflects the preferences of a largely male, educated, and middle-aged demographic, as reported for Reddit.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "MIT license for the dataset from Hugging Face.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

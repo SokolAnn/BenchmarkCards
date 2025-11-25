@@ -1,0 +1,79 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "AGENT IF (Benchmarking Instruction Following of Large Language Models in Agentic Scenarios)",
+    "abbreviation": "AGENT IF",
+    "overview": "AGENT IF is the first benchmark for systematically evaluating LLM instruction following ability in agentic scenarios, constructed from 50 realistic applications involving long and complex instructions with multiple constraints.",
+    "data_type": "instruction-following tasks",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "IFEval",
+      "FollowBench",
+      "SysBench"
+    ],
+    "resources": [
+      "https://github.com/THU-KEG/AgentIF",
+      "https://huggingface.co/datasets/THU-KEG/AgentIF"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a systematic evaluation framework for LLMs' instruction-following capabilities in real-world agentic scenarios.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Instruction Following"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Real-world agentic applications and industrial frameworks, including open-source agentic systems.",
+    "size": "707 examples",
+    "format": "N/A",
+    "annotation": "Manually annotated instructions and constraints by human annotators."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "LLM-based evaluation",
+      "Code verification"
+    ],
+    "metrics": [
+      "Constraint Success Rate (CSR)",
+      "Instruction Success Rate (ISR)"
+    ],
+    "calculation": "CSR is calculated by the proportion of individual constraints met, while ISR measures the percentage of instructions with all constraints satisfied.",
+    "interpretation": "Higher CSR and ISR indicate better performance in following complex and constraint-laden instructions.",
+    "baseline_results": "Current LLMs show poor performance, with the best model achieving a CSR of only 59.8.",
+    "validation": "Validated by a hybrid method including human, code-based, and LLM evaluations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Misuse risk in instruction following leading to inappropriate actions by agents."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "The data will be released under the GPL-3.0 license.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "Data collection complied with internal review board approval."
+  }
+}

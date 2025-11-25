@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "HOAXPEDIA",
+    "abbreviation": "N/A",
+    "overview": "HOAXPEDIA is a collection of 311 hoax articles alongside semantically similar legitimate articles, aimed at fostering research in automated hoax detection.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Wiki-Reliability"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/hsuvaskakoty/hoaxpedia",
+      "https://github.com/hsuvas/hoaxpedia_dataset.git"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a dataset for the binary classification task of detecting hoax articles in Wikipedia.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Text Classification"
+    ],
+    "limitations": "The dataset is small, with only 311 hoax examples, which limits robust training scenarios.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "HOAXPEDIA dataset is constructed from existing literature and official Wikipedia lists of hoaxes.",
+    "size": "311 hoax articles and 30,000 legitimate articles",
+    "format": "JSON",
+    "annotation": "Manually verified hoax articles using accompanying deletion discussion and reasons."
+  },
+  "methodology": {
+    "methods": [
+      "Binary classification",
+      "Language model evaluation"
+    ],
+    "metrics": [
+      "F1 Score"
+    ],
+    "calculation": "F1 Score calculated on the positive class (hoax).",
+    "interpretation": "Higher F1 Score indicates better performance in classifying hoaxes.",
+    "baseline_results": "F1 scores range from 0.58 to 0.88 for various models.",
+    "validation": "Experimentation on various language models to establish baseline results."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

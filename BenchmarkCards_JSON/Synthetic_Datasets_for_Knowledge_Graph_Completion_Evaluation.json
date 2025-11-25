@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Synthetic Datasets for Knowledge Graph Completion Evaluation",
+    "abbreviation": "N/A",
+    "overview": "Proposes synthetic datasets to evaluate the inference ability of pre-trained language model-based knowledge graph completion (KGC) methods by separately considering pre-trained knowledge and inference capabilities.",
+    "data_type": "triples with descriptions",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://arxiv.org/abs/2311.09109"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the inference capabilities of PLM-based knowledge graph completion methods by constructing synthetic datasets.",
+    "audience": [
+      "ML Researchers",
+      "Data Scientists"
+    ],
+    "tasks": [
+      "Knowledge Graph Completion"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "WN18RR, FB15k-237, Wikidata5m",
+    "size": "Multiple datasets with varying sizes (e.g., 40,943 entities, 86,835 training triples for WN18RR)",
+    "format": "N/A",
+    "annotation": "Synthetic data generation methods described in the paper."
+  },
+  "methodology": {
+    "methods": [
+      "Evaluation of KGC methods using synthetic datasets"
+    ],
+    "metrics": [
+      "Hits@k"
+    ],
+    "calculation": "Metrics calculated based on the rank prediction metrics such as Hits@k, mean rank (MR), and mean reciprocal rank (MRR).",
+    "interpretation": "Higher Hits@k values indicate better performance in inferring unseen links.",
+    "baseline_results": "TransE performance for comparison, specific scores not provided.",
+    "validation": "Results validated through experiments on different pre-trained models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

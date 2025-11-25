@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "VideoGameQA-Bench",
+    "abbreviation": "N/A",
+    "overview": "VideoGameQA-Bench is a comprehensive benchmark designed to evaluate vision-language models (VLMs) specifically for video game quality assurance (QA) tasks, including visual unit testing, visual regression testing, glitch detection, and bug report generation.",
+    "data_type": "image and video samples",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "GlitchBench"
+    ],
+    "resources": [
+      "https://asgaardlab.github.io/videogameqa-bench/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a standardized benchmark for evaluating the performance of vision-language models in various video game quality assurance tasks.",
+    "audience": [
+      "ML Researchers",
+      "Game Developers",
+      "Quality Assurance Engineers"
+    ],
+    "tasks": [
+      "Visual Unit Testing",
+      "Glitch Detection",
+      "Bug Report Generation",
+      "Visual Regression Testing",
+      "Needle-in-a-Haystack"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Real-world gameplay images from Steam and gameplay videos from YouTube, combined with synthetic samples generated using the Unity game engine.",
+    "size": "4,786 samples consisting of 2,236 image-based samples and 1,200 video-based samples",
+    "format": "JSON",
+    "annotation": "Manual annotation and verification of collected samples by researchers"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "Metrics calculated based on model outputs against ground truth annotations.",
+    "interpretation": "Higher scores indicate better model performance in detecting glitches or errors in video game QA tasks.",
+    "baseline_results": "N/A",
+    "validation": "Models evaluated on diverse tasks including visual unit tests, UI validation, and glitch detection"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Steam Subscriber Agreement, CC-BY-NC 4.0 for GamePhysics, YouTube Standard License",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

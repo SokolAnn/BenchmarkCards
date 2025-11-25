@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ES-KT-24 (Multimodal Knowledge Tracing Benchmark Dataset)",
+    "abbreviation": "ES-KT-24",
+    "overview": "ES-KT-24 is a novel multimodal Knowledge Tracing dataset for intelligent tutoring systems in educational game contexts, incorporating game-playing videos, synthetically generated question text, and detailed game logs.",
+    "data_type": "multimodal",
+    "domains": [
+      "Natural Language Processing",
+      "Education"
+    ],
+    "languages": [
+      "English",
+      "Indonesian",
+      "Malay"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To support KT research and broader studies in Learning Analytics by providing a benchmark for knowledge tracing using game data.",
+    "audience": [
+      "ML Researchers",
+      "Educators",
+      "Learning Analysts"
+    ],
+    "tasks": [
+      "Knowledge Tracing"
+    ],
+    "limitations": "The dataset relies solely on duration time as the indicator of answer correctness, which may oversimplify interactions.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Game logs collected from educational gameplay sessions and synthetic text generated using GPT-4o.",
+    "size": "15,032 users and 7,783,466 interactions",
+    "format": "N/A",
+    "annotation": "Synthetic question text generated through language models and manual curation."
+  },
+  "methodology": {
+    "methods": [
+      "5-fold cross-validation"
+    ],
+    "metrics": [
+      "Area Under the Curve (AUC)",
+      "Accuracy (ACC)"
+    ],
+    "calculation": "Performance was evaluated using AUC and Accuracy scores based on KT model predictions.",
+    "interpretation": "Models are assessed based on their ability to predict student performance on unseen questions.",
+    "baseline_results": "SimpleKT demonstrated the best performance with an AUC of 0.7366 and ACC of 0.6709.",
+    "validation": "Results reported as mean values and standard deviations from multiple runs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset includes users from various backgrounds and languages.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data processed to ensure anonymity of students and prevent personal identification.",
+    "data_licensing": "Released under the CC BY-NC 4.0 license.",
+    "consent_procedures": "Gameplay videos were recorded by researchers to protect privacy.",
+    "compliance_with_regulations": "N/A"
+  }
+}

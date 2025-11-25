@@ -1,0 +1,88 @@
+# KQA Pro: A Dataset with Explicit Compositional Programs for Complex Question Answering over Knowledge Base
+
+## 📊 Benchmark Details
+
+**Name**: KQA Pro: A Dataset with Explicit Compositional Programs for Complex Question Answering over Knowledge Base
+
+**Overview**: KQA Pro is a large-scale benchmark for Complex KBQA containing ~117,970 diverse natural language questions. For each question the dataset provides an explicit, compositional KoPL program and a corresponding SPARQL query, enabling evaluation for both knowledge-base question answering and semantic parsing and serving as a diagnostic dataset for multiple reasoning skills.
+
+**Data Type**: question-answering pairs (natural language questions paired with executable KoPL programs and SPARQL queries)
+
+**Domains**:
+- Natural Language Processing
+
+**Similar Benchmarks**:
+- LC-QuAD2.0
+- ComplexWebQuestions
+- MetaQA
+- CSQA
+- CFQ
+- GrailQA
+- WebQuestions
+- WebQuestionSP
+- GraphQuestions
+
+**Resources**:
+- [GitHub Repository](https://github.com/shijx12/KQAPro_Baselines)
+- [Resource](https://arxiv.org/abs/2007.03875)
+
+## 🎯 Purpose and Intended Users
+
+**Goal**: Provide a large-scale, diverse benchmark for Complex Knowledge Base Question Answering with explicit compositional reasoning annotations (KoPL) and SPARQL, to support KBQA and semantic parsing research and to serve as a diagnostic dataset for multiple reasoning skills.
+
+**Target Audience**:
+- Machine Learning Researchers
+- Model Developers
+- Natural Language Processing Researchers
+
+**Tasks**:
+- Question Answering
+- Semantic Parsing
+
+**Limitations**: KoPL omits certain Wikidata types (e.g., some geographical and time types) for simplicity and leaves them for future work.
+
+## 💾 Data
+
+**Source**: Knowledge base extracted from Wikidata by aligning FB15k-237 seed entities via Freebase IDs; canonical (canonical question, KoPL, SPARQL) triples generated via compositional templates and sampling, then paraphrased to natural language via Amazon Mechanical Turk.
+
+**Size**: 117,970 examples; 24,724 unique answers; Knowledge base: 16,960 entities, 14,471 unique entity names, 794 concepts, 363 predicates, 846 attributes; 415,334 relational facts; 174,539 literal facts; 309,407 high-level facts.
+
+**Format**: N/A
+
+**Annotation**: KoPL programs and SPARQL queries generated automatically by the pipeline; natural language paraphrases collected via Amazon Mechanical Turk; paraphrase quality checked by 5 workers (meaning preserved and fluency rating), with rejection criteria (marked different by >2 workers, average fluency <3, or very small edit distance).
+
+## 🔬 Methodology
+
+**Methods**:
+- Model-based evaluation (reproduced representative SOTA KBQA models: KVMemNet, EmbedKGQA, SRN, RGCN, RNN parsers, BART parsers)
+- Human evaluation (experts answered a sampled 200 instances by searching the KB)
+
+**Metrics**:
+- Accuracy
+- Fluency rating (1-5) for paraphrase quality
+
+**Calculation**: Accuracy reported as percentage of correctly answered test instances. Paraphrase fluency: average rating from 5 crowdworkers (1-5); paraphrases with average fluency < 3 rejected.
+
+**Interpretation**: Higher Accuracy indicates better KBQA/semantic parsing performance on KQA Pro. Authors interpret significant performance drops of prior SOTA models on KQA Pro (compared to other datasets) as evidence that KQA Pro is more challenging and that intermediate program supervision (KoPL/SPARQL) benefits learning.
+
+**Baseline Results**: Selected test-set overall accuracies on KQA Pro: KVMemNet 16.61%, EmbedKGQA 28.36%, RGCN 35.07%, RNN (SPARQL) 41.98%, RNN (KoPL) 43.85%, BART (SPARQL) 89.68%, BART (KoPL) 90.55%, Human 97.50%. Dataset split train/valid/test (8/1/1): 94,376 / 11,797 / 11,797 instances.
+
+**Validation**: Dataset randomly split into train/valid/test with ratio 8/1/1 (94,376/11,797/11,797). Paraphrase quality validated by 5 crowdworkers with meaning check and fluency ratings; paraphrases rejected under specified criteria. Compositional generalization experiment used a separate split (106,182/5,899/5,899) constructed by program length.
+
+## ⚠️ Targeted Risks
+
+**Risk Categories**:
+- Accuracy
+
+**Atlas Risks**:
+- **Accuracy**: Poor model accuracy
+
+## 🔒 Ethical and Legal Considerations
+
+**Privacy And Anonymity**: Not Applicable
+
+**Data Licensing**: Not Applicable
+
+**Consent Procedures**: Not Applicable
+
+**Compliance With Regulations**: Not Applicable

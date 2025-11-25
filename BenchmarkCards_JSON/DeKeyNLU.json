@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DeKeyNLU",
+    "abbreviation": "N/A",
+    "overview": "DeKeyNLU is a dataset specifically designed to enhance Natural Language Understanding (NLU) capabilities for Natural Language to SQL (NL2SQL) systems, containing 1,500 meticulously annotated question-answer pairs focusing on task decomposition and keyword extraction.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "BIRD",
+      "Spider"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/GPS-Lab/DeKeyNLU",
+      "https://github.com/AlexJJJChen/DeKeyNLU"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To refine task decomposition and enhance keyword extraction precision for Natural Language to SQL generation systems.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Text-to-SQL"
+    ],
+    "limitations": "The dataset size of 1,500 samples may affect the robustness and generalizability of models trained on it.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Derived from the BIRD dataset, which contains validated natural language questions paired with SQL commands, and manually annotated for task decomposition and keyword extraction.",
+    "size": "1,500 examples",
+    "format": "JSON",
+    "annotation": "Initial task decomposition and keyword extraction were performed by GPT-4o, followed by manual refinement from expert annotators through a three-phase cyclic process."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score",
+      "BLEU",
+      "ROUGE"
+    ],
+    "calculation": "Metrics are calculated based on the comparison of generated SQL statements against human-annotated ground truth.",
+    "interpretation": "Higher scores in BLEU and F1 indicate better task decomposition and keyword extraction performance.",
+    "baseline_results": null,
+    "validation": "Validation involved cross-validation by annotators to ensure data quality and reliability."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The DeKeyNLU dataset does not contain any personally identifiable information.",
+    "data_licensing": "CC BY-NC 4.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

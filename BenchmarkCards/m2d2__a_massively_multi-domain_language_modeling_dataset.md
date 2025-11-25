@@ -1,0 +1,114 @@
+# M2D2: A Massively Multi-Domain Language Modeling Dataset
+
+## 📊 Benchmark Details
+
+**Name**: M2D2: A Massively Multi-Domain Language Modeling Dataset
+
+**Overview**: We present M2D2, a fine-grained, massively multi-domain corpus for studying domain adaptation in language models (LMs). M2D2 consists of 8.5B tokens and spans 145 domains extracted from Wikipedia and Semantic Scholar. Using ontologies derived from Wikipedia and ArXiv categories, we organize the domains in each data source into 22 groups. This two-level hierarchy enables the study of relationships between domains and their effects on in- and out-of-domain performance after adaptation.
+
+**Data Type**: text (domain-labeled corpora for language modeling)
+
+**Domains**:
+- Health and fitness
+- History and events
+- Society and social sciences
+- Technology and applied sciences
+- Culture and the arts
+- Natural and physical sciences
+- Human activities
+- Mathematics and logic
+- General reference
+- Religion and belief systems
+- Philosophy and thinking
+- Mathematics
+- Quantitative Biology
+- Physics
+- Nonlinear Sciences
+- Condensed Matter
+- Economics
+- Computer Science
+- Statistics
+- Astrophysics
+- Art
+
+**Languages**:
+- English
+
+**Similar Benchmarks**:
+- The Pile
+- S2ORC
+
+**Resources**:
+- [GitHub Repository](https://github.com/machelreid/m2d2)
+- [Resource](https://arxiv.org/abs/2210.07370)
+- [GitHub Repository](https://github.com/attardi/wikiextractor)
+
+## 🎯 Purpose and Intended Users
+
+**Goal**: To provide a fine-grained, massively multi-domain dataset with a human-curated hierarchy for studying domain adaptation in language models.
+
+**Target Audience**:
+- ML Researchers
+- Research Community
+
+**Tasks**:
+- Language Modeling
+- Domain Adaptation
+
+**Limitations**: We only consider adaptation techniques that assume domains are monolithic and non-overlapping. M2D2 only covers two data sources (Wikipedia and Semantic Scholar). Data sourced from the web may contain hate speech and other harmful content, which may be reproduced by language models adapted to such data. The data sources we use adhere to research-friendly data licenses, but training models on web-curated data while maintaining the rights of authors as data subjects and creators remains an open problem.
+
+## 💾 Data
+
+**Source**: Collected from two resources: Wikipedia (Wikipedia data dump, categories/ontology) and Semantic Scholar (S2ORC corpus with arXiv categories). Domains are assigned using Wikipedia categories and arXiv categories.
+
+**Size**: 8.5B tokens; 41GB (total as reported in Table 1)
+
+**Format**: Cleaned text (Wikipedia pages processed using wikiextractor for Wikipedia; S2ORC original corpus used for Semantic Scholar portion)
+
+**Annotation**: Domain assignment via ontologies (human-curated Wikipedia categories and arXiv categories). Train/validation/test splits constructed per domain with validation and test sets comprised of pages not contained in other domains at the same hierarchy level.
+
+## 🔬 Methodology
+
+**Methods**:
+- Automated metrics
+- Model-based evaluation (language modeling with GPT-2 baseline)
+- Cross-domain zero-shot evaluation
+- Fine-tuning/adaptation experiments (L1, L2, L1-to-L2)
+
+**Metrics**:
+- Perplexity
+- Pearson correlation (for overlap vs transfer analyses)
+- Kolmogorov-Smirnov test (p-values for statistical significance)
+
+**Calculation**: Perplexity computed on L2 domain test sets (validation/test sets contain at least 1 million tokens each). Token counts measured by whitespace tokenization. L2 results are aggregated by their corresponding L1 domains; reported values are averages and standard deviations across L2 domains in each L1.
+
+**Interpretation**: Lower perplexity indicates better language modeling performance. L2 adaptation and L1-to-L2 (coarse-to-fine) adaptation improve in-domain perplexity relative to the GPT-2 baseline, while more fine-grained adaptation typically reduces out-of-domain generalization compared to L1 adaptation. Vocabulary overlap (by POS and entities) strongly correlates with out-of-domain transfer performance.
+
+**Baseline Results**: Baseline GPT-2 (112M) averaged test-set perplexity: 26.5 (Wikipedia average) and 29.2 (S2ORC average) as reported in Table 2.
+
+**Validation**: Validation and test sets constructed from pages not contained within any other domains on the same hierarchy level. At least 1 million tokens included in each validation and test set per domain. Aggregation across L2 domains into L1 reported as average ± standard deviation.
+
+## ⚠️ Targeted Risks
+
+**Risk Categories**:
+- Safety
+- Legal Compliance
+
+**Atlas Risks**:
+- **Data Laws**: Data usage restrictions
+- **Value Alignment**: Harmful output, Toxic output
+- **Legal Compliance**: Generated content ownership and IP
+
+**Demographic Analysis**: N/A
+
+**Potential Harm**: ['Reproduction of hate speech and other harmful content by adapted language models', 'Potential infringement or unresolved rights of authors and data subjects when training on web-curated data']
+
+## 🔒 Ethical and Legal Considerations
+
+**Privacy And Anonymity**: Not Applicable
+
+**Data Licensing**: Wikipedia has a Creative Commons Attribution-ShareAlike 3.0 Unported License and S2ORC has a Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0).
+
+**Consent Procedures**: Not Applicable
+
+**Compliance With Regulations**: Not Applicable

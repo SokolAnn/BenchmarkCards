@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "II-Bench (Image Implication Understanding Benchmark)",
+    "abbreviation": "II-Bench",
+    "overview": "II-Bench is designed to evaluate multimodal large language models' higher-order perception of images, assessing their reasoning and comprehension skills through complex images that convey deeper meanings and implications.",
+    "data_type": "image",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/m-a-p/II-Bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Evaluate multimodal large language models' higher-order perceptual, reasoning, and comprehension abilities with complex imagery.",
+    "audience": [
+      "ML Researchers",
+      "AI Practitioners",
+      "Developers"
+    ],
+    "tasks": [
+      "Image Understanding",
+      "Image Reasoning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Images were manually curated and annotated from diverse illustration websites, involving a 3-stage data filtration process.",
+    "size": "1,222 images and 1,434 questions",
+    "format": "N/A",
+    "annotation": "Images were manually annotated with questions regarding their metaphorical implications by 50 undergraduate students."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy is determined by extracting selected options from the model's responses to multiple-choice questions.",
+    "interpretation": "Higher accuracy indicates better image implication understanding, while significant gaps between model and human performance highlight deficiencies in MLLMs.",
+    "baseline_results": "Top open-source model: LLaV A-1.6-34B (73.8%), Top closed-source model: Qwen-VL-MAX (74.8%), Average human accuracy: 90.3%",
+    "validation": "Extensive experimentation conducted on various models across different settings."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Multi-Modal Retrieval-Augmented Generation (M2RAG)",
+    "abbreviation": "M2RAG",
+    "overview": "M2RAG is a benchmark designed to evaluate the effectiveness of Multi-modal Large Language Models (MLLMs) in leveraging knowledge from multi-modal retrieval documents, comprising tasks such as image captioning, multi-modal question answering, multi-modal fact verification, and image reranking.",
+    "data_type": "multimodal",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "WebQA",
+      "Factify"
+    ],
+    "resources": [
+      "https://github.com/NEUIR/M2RAG"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To advance the evaluation of retrieval-augmented generation in multi-modal contexts.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Image Captioning",
+      "Multi-Modal Question Answering",
+      "Multi-Modal Fact Verification",
+      "Image Reranking"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "WebQA and Factify datasets",
+    "size": "389,750 documents",
+    "format": "JSON",
+    "annotation": "Annotated based on user queries and related multi-modal documents."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "BERTScore",
+      "ROUGE-L",
+      "CIDEr",
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Calculated using standard evaluation metrics for each task as discussed in the methodology section of the paper.",
+    "interpretation": "Higher scores indicate better performance in correctly leveraging retrieved multi-modal documents for generation tasks.",
+    "baseline_results": "Performance of models like MiniCPM-V 2.6 and Qwen2-VL on the M2RAG benchmark shows significant improvements after applying MM-RAIT.",
+    "validation": "Ensured through comparative analysis with existing benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination",
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC0-1.0 for WebQA; MIT for Factify.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

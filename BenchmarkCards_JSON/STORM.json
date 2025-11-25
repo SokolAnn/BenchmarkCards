@@ -1,0 +1,73 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "STORM (Stimulating Trustworthy Ordinal Regression Ability of MLLMs for Universal Visual Rating)",
+    "abbreviation": "STORM",
+    "overview": "STORM is a benchmark for evaluating multi-modal large language models on visual rating tasks. It includes 655K image-level pairs and QAs across 14 ordinal regression datasets in five visual rating domains.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://storm-bench.github.io/",
+      "https://github.com/aTongs1/STORM"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the all-in-one and zero-shot performance of MLLMs in visual rating tasks.",
+    "audience": [
+      "ML Researchers",
+      "AI Practitioners"
+    ],
+    "tasks": [
+      "Image Quality Assessment",
+      "Image Aesthetic Assessment",
+      "Facial Age Estimation",
+      "Medical Disease Grading",
+      "Historical Date Estimation"
+    ],
+    "limitations": "The definitions of labels for different domain tasks are diverse, impacting performance consistency.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "14 ordinal regression datasets across five visual rating domains.",
+    "size": "655,000 examples",
+    "format": "JSON",
+    "annotation": "Annotated via a mixture of expert annotation and automated processes."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Mean Absolute Error (MAE)"
+    ],
+    "calculation": "Metrics are calculated based on predictions compared to ground truth ratings for visual content.",
+    "interpretation": "Higher accuracy and lower MAE indicate better visual rating performance.",
+    "baseline_results": null,
+    "validation": "The benchmark employs official training/testing splits when available and uses random splits otherwise."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset was collected for research purposes, ensuring no personally identifiable information is included.",
+    "data_licensing": "CC BY 4.0 license for data, Apache-2.0 license for code.",
+    "consent_procedures": "The dataset was created with appropriate consent procedures as described in Appendix H.",
+    "compliance_with_regulations": "N/A"
+  }
+}

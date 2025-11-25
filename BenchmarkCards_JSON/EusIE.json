@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "EusIE (Euskara Informazio-Erauzketa)",
+    "abbreviation": "EusIE",
+    "overview": "EusIE is the first Event Extraction benchmark for the Basque language, designed to evaluate the performance of cross-lingual transfer learning in Event Extraction tasks.",
+    "data_type": "event extraction data",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Basque",
+      "English",
+      "Spanish",
+      "Portuguese",
+      "Polish",
+      "Turkish",
+      "Hindi",
+      "Japanese",
+      "Korean"
+    ],
+    "similar_benchmarks": [
+      "MEE (Multilingual Event Extraction)"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/HiTZ/EusIE",
+      "https://github.com/MikelZubi/GrALAnswering"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To present the first Basque Event Extraction benchmark and analyze the impact of linguistic typology on cross-lingual transfer quality.",
+    "audience": [
+      "ML Researchers",
+      "NLP Practitioners",
+      "Language Technologists"
+    ],
+    "tasks": [
+      "Event Extraction"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Annotated from a snapshot of Basque Wikipedia focusing on events-related documents.",
+    "size": "300 segments (1500 sentences)",
+    "format": "JSON",
+    "annotation": "Annotated by expert linguists."
+  },
+  "methodology": {
+    "methods": [
+      "Cross-lingual transfer learning",
+      "Sequence labeling"
+    ],
+    "metrics": [
+      "F1 Score"
+    ],
+    "calculation": "F1 scores calculated for each task using gold annotations.",
+    "interpretation": "Higher F1 scores indicate better transfer quality in event extraction tasks.",
+    "baseline_results": "N/A",
+    "validation": "Evaluated using cross-validation across multiple languages."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SCISAFEEVAL (Scientific Safety Evaluation)",
+    "abbreviation": "N/A",
+    "overview": "SCISAFEEVAL is a comprehensive benchmark designed to evaluate the safety alignment of large language models (LLMs) across a range of scientific tasks, encompassing multiple scientific languages including textual, molecular, protein, and genomic. It challenges LLMs to assess their safety and robustness in scientific applications.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SciMT-Safety",
+      "SciKnowEval-L4"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2410.03769"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess the safety alignment of LLMs in scientific tasks and to facilitate responsible development and deployment of LLMs, promoting alignment with safety and ethical standards in scientific research.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Named Entity Recognition"
+    ],
+    "limitations": "SCISAFEEVAL may not fully capture evolving threats or novel hazards beyond curated datasets, limiting its applicability to emerging real-world scenarios.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Designed to evaluate LLMs across a variety of scientific domains with content sourced from established scientific and hazard databases.",
+    "size": "31,840 samples",
+    "format": "N/A",
+    "annotation": "Data curated from established scientific and hazard databases."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Chain-of-thought reasoning",
+      "Zero-shot evaluation",
+      "Few-shot evaluation"
+    ],
+    "metrics": [
+      "Harmlessness",
+      "Helpfulness",
+      "Refusal rate"
+    ],
+    "calculation": "Scores are based on assessments of safety alignment across multiple queries in scientific domains.",
+    "interpretation": "Higher scores indicate better safety and compliance with ethical standards.",
+    "baseline_results": "Competition against existing benchmarks including a reported notable performance improvement in key safety metrics.",
+    "validation": "The benchmark was critically validated through expert review and automated checks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Robustness",
+      "Ethical Compliance"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack",
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on affected communities"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "SCISAFEEVAL includes both harmful and benign samples, facilitating a balanced assessment of model safety.",
+    "harm": [
+      "Potential for misuse in scientific tasks leading to harmful outcomes."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The paper did not discuss specific privacy measures or anonymization procedures.",
+    "data_licensing": "N/A",
+    "consent_procedures": "The paper did not mention consent procedures for data collection.",
+    "compliance_with_regulations": "Ensures compliance with AI safety regulations and ethical standards in scientific domains."
+  }
+}

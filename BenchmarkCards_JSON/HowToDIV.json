@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "HowToDIV",
+    "abbreviation": "N/A",
+    "overview": "HowToDIV is a large-scale dataset comprising 507 conversations and 6,636 user-expert dialogue turns, involving task assistance across diverse domains such as cooking, mechanics, and planting. It enables the generation of interactive dialogues for procedural tasks without manual data collection.",
+    "data_type": "conversation pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "HoloAssist",
+      "EgoPER",
+      "NIV"
+    ],
+    "resources": [
+      "https://github.com/google/howtodiv"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To present a scalable and cost-efficient dataset for generating dialogues in procedural task assistance, aiding in the training of AI agents.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Dialogue Generation",
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Built upon two publicly available instructional video datasets: Narrated Instruction Videos (NIV) and Egocentric Procedural Error (EgoPER).",
+    "size": "24 hours of video footage, 507 conversations, 6,636 dialogue turns",
+    "format": "N/A",
+    "annotation": "Automatic generation using large language models, no manual annotation."
+  },
+  "methodology": {
+    "methods": [
+      "Dialogue generation using pre-trained language models",
+      "Video localization"
+    ],
+    "metrics": [
+      "BLEU Score",
+      "ROUGE Score",
+      "LLM-as-a-Judge Score"
+    ],
+    "calculation": "Metrics are calculated based on the overlap between generated outputs and reference texts for dialogue turns.",
+    "interpretation": "BLEU scores range from 0 to 1; higher values indicate better match to reference dialogues. The LLM-as-a-Judge score is on a scale from 1 to 5, with higher scores indicating better quality.",
+    "baseline_results": "Gemma-3 model scores: BLEU = 0.32, ROUGE-L = 0.270, LLM-as-Judge = 2.87.",
+    "validation": "Dataset is split into training (70%), validation (10%), and testing (20%) sets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

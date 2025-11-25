@@ -1,0 +1,80 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CRAB (Causal Reasoning Assessment Benchmark)",
+    "abbreviation": "CRAB",
+    "overview": "CRAB is a new Causal Reasoning Assessment Benchmark designed to evaluate causal understanding of events in real-world narratives. It includes fine-grained, contextual causality annotations for approximately 2,700 pairs of real-world events that describe various newsworthy event timelines, allowing evaluation of language models' performance on causal reasoning tasks.",
+    "data_type": "causality annotations",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/agromanou/CRAB"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate causal reasoning capabilities of large language models on real-world narratives through a structured benchmark.",
+    "audience": [
+      "ML Researchers",
+      "NLP Practitioners"
+    ],
+    "tasks": [
+      "Causal Inference",
+      "Causal Reasoning"
+    ],
+    "limitations": "The benchmark may contain biases due to the media's representations of events.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Causal events extracted from 173 news articles covering 20 stories from the past ten years.",
+    "size": "2,730 event pairs",
+    "format": "JSON",
+    "annotation": "Crowdsourced human annotations for causality judgments."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation"
+    ],
+    "metrics": [
+      "F1 Score"
+    ],
+    "calculation": "Causality scores are calculated on a scale from 0 to 100 based on human annotations.",
+    "interpretation": "Scores are stratified into four classes reflecting causality strength.",
+    "baseline_results": "GPT-4 achieved an average F1 score of approximately 54.7 in pairwise causality tasks.",
+    "validation": "Validated by human experts through an additional annotation phase."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The benchmark includes annotations reflecting potential biases in media representation.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "Data was collected via public news articles; specific consent procedures are not discussed.",
+    "compliance_with_regulations": "N/A"
+  }
+}

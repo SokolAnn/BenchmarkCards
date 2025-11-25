@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Hummer",
+    "abbreviation": "N/A",
+    "overview": "Hummer is a novel pairwise preference dataset designed to reduce conflicts among alignment objectives, enhancing reinforcement learning from human feedback by minimizing competing dynamics in preference datasets.",
+    "data_type": "pairwise preference data",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "UltraFeedback"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a dataset that reduces conflicts among alignment objectives to improve downstream applications in language models.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Preference Modeling"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Hummer is constructed based on the UltraFeedback dataset, utilizing AI feedback mechanisms such as GPT-4 for annotation and refinement.",
+    "size": "46,000 examples",
+    "format": "Raw text files",
+    "annotation": "Annotated through human feedback using AI systems."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Alignment Dimension Conflict (ADC)",
+      "Reward model accuracy"
+    ],
+    "calculation": "The ADC is calculated as the second-order moment of negative performance deviation on all evaluation dimensions in the benchmark, focusing on performance reductions across different alignment objectives.",
+    "interpretation": "A lower ADC value indicates reduced conflict among alignment objectives, which is desirable for effective preference modeling.",
+    "baseline_results": "Compared with existing preference datasets like Anthropic HH and UltraFeedback, Hummer shows improved performance and reduced ADC.",
+    "validation": "Validated through performance comparison on standard evaluation metrics across different datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Reducing vulnerabilities to jailbreak attacks by balancing performance across objectives."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

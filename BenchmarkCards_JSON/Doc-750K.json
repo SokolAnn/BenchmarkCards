@@ -1,0 +1,80 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Doc-750K",
+    "abbreviation": "N/A",
+    "overview": "Doc-750K is a high-quality document-level dataset designed to support in-depth understanding of multimodal documents, featuring diverse document structures and extensive cross-page dependencies with real question-answer pairs derived from the original documents.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "DocVQA",
+      "MP-DocVQA",
+      "MMLongbench-Doc",
+      "DocGenome"
+    ],
+    "resources": [
+      "https://github.com/OpenGVLab/Docopilot"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To develop a large-scale dataset and model for document-level multimodal understanding, enhancing the ability to integrate and comprehend information across multi-page documents.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Multi-Page Question Answering",
+      "Single-Page Question Answering",
+      "Abstract Writing",
+      "Caption Writing",
+      "Paper Titling"
+    ],
+    "limitations": "The dataset currently has a domain restriction to academic documents and intends to expand to a broader range of document types.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Data collected from Sci-Hub, Arxiv, and OpenReview.",
+    "size": "758,000 question-answer samples",
+    "format": "Interleaved Text-Image Format and Multi-Image Format",
+    "annotation": "Real, in-depth question-answer pairs collected and constructed based on document structure."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Evaluation on several document-level benchmarks"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "ANLS",
+      "Relaxed Exact Match"
+    ],
+    "calculation": "Metrics are calculated based on the similarity between model responses and ground truth answers.",
+    "interpretation": "Higher scores indicate better model performance in retrieving accurate and relevant information from the documents.",
+    "baseline_results": "Docopilot-8B achieved a score of 61.8 on MM-NIAH, outperforming baseline models.",
+    "validation": "Evaluated against multiple existing benchmarks for robustness."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All data processed publicly available documents ensuring no sensitive personal information is included.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

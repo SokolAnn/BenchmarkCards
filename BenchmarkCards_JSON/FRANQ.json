@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FRANQ (Faithfulness-based Retrieval Augmented Uncertainty Quantification)",
+    "abbreviation": "FRANQ",
+    "overview": "FRANQ is a novel method for hallucination detection in Retrieval-Augmented Generation (RAG) outputs, which evaluates factuality based on whether a statement is faithful to the retrieved context.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "RAGTruth"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2505.21072"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To improve the detection of factual errors in Retrieval-Augmented Generation (RAG) outputs and provide a dataset for evaluating such methods.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "New long-form QA dataset annotated for both factuality and faithfulness, combining automated labeling with manual validation.",
+    "size": "500 claims for training and 1282 for testing in long-form QA dataset; 200 questions for training and 1000 for testing in short-form QA dataset.",
+    "format": "N/A",
+    "annotation": "Automated annotation followed by manual validation."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "ROCAUC",
+      "PR-AUC",
+      "PRR"
+    ],
+    "calculation": "Metrics are calculated using binary gold-standard factuality labels compared with predicted values to evaluate model performance across multiple datasets.",
+    "interpretation": "Higher scores indicate better performance in identifying factual inaccuracies and recognizing claims.",
+    "baseline_results": "Compared against XGBoost and other UQ methods.",
+    "validation": "Validation was conducted using a combination of automatic annotation and manual review of claims."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

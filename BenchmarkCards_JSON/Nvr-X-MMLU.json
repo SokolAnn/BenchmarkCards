@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Nvr-X-MMLU",
+    "abbreviation": "N/A",
+    "overview": "Nvr-X-MMLU is a variation of the MMLU benchmark designed to mitigate the base-rate effect and disambiguate test-taking ability from actual task performance.",
+    "data_type": "multiple choice questions",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMLU (Massive Multitask Language Understanding)"
+    ],
+    "resources": [
+      "https://github.com/KyleAMoore/MMLU-cloze-vs-cf"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a more accurate measure of model performance by mitigating the biases introduced by base-rate probabilities in multiple choice question answering.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "LLMs were not tested with models larger than 10B parameters and results may vary with other model architectures.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The Nvr-X variants are constructed from the MMLU dataset.",
+    "size": "15,908 multiple choice questions",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy is calculated as the minimum accuracy over the four Nvr-X variation sets.",
+    "interpretation": "Lower accuracy on Nvr-X-MMLU indicates a strong preference for certain answer choices; higher accuracy suggests better understanding of the questions.",
+    "baseline_results": "N/A",
+    "validation": "Evaluated using cloze and counterfactual prompting methods."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Released under MIT license.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

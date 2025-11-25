@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ScholarSum (Scientific abstract summary evaluation Dataset)",
+    "abbreviation": "ScholarSum",
+    "overview": "ScholarSum is a meta-evaluation benchmark designed specifically for scholarly summaries, consisting of thousands of human-annotated abstracts from diverse academic domains. It provides a comprehensive dataset for assessing automatic evaluation metrics and measuring the correlation between these metrics and human judgments.",
+    "data_type": "academic abstracts with facet-level annotations",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Science",
+      "Biomedical"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/iriscxy/ScholarSum"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate scholarly summaries and inspire the development of better evaluation metrics for automatic summarization systems.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text Summarization Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated from PubMed and arXiv.",
+    "size": "Thousands of annotations for hundreds of abstracts",
+    "format": "JSON",
+    "annotation": "Manual annotation by experts"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Facet-aware metric evaluation using LLMs"
+    ],
+    "metrics": [
+      "Facet-aware Metric (FM)"
+    ],
+    "calculation": "Scores are computed based on the weights assigned to different facets of the abstracts.",
+    "interpretation": "Scores reflect how well the generated summary aligns with the original abstract across different facets.",
+    "baseline_results": "N/A",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Creative Commons (CC) license",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

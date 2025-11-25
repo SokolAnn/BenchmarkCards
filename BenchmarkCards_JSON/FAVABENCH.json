@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "name": "FAVABENCH",
+    "overview": "A comprehensive benchmark for fine-grained hallucination detection and editing in language models.",
+    "data_type": "Human judgments",
+    "domains": [
+      "General Knowledge",
+      "Information-seeking"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "CommonSenseQA",
+      "OpenBookQA"
+    ],
+    "resources": [
+      "https://fine-grained-hallucination.github.io/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To benchmark the performance of models in detecting and editing hallucinations in language model outputs.",
+    "audience": [
+      "NLP Researchers",
+      "Machine Learning Practitioners"
+    ],
+    "tasks": [
+      "Fine-grained hallucination detection",
+      "Error editing in language model outputs"
+    ],
+    "limitations": null,
+    "out_of_scope_uses": null
+  },
+  "data": {
+    "source": "FAVABENCH annotations from responses of ChatGPT, Llama2-Chat 7B, and Llama2-Chat 70B on knowledge-intensive queries.",
+    "size": "About 1,000 fine-grained human judgments.",
+    "format": "An annotated dataset identifying hallucinations and their types.",
+    "annotation": "Annotated by trained students with high inter-annotator agreement on identification of hallucinations."
+  },
+  "methodology": {
+    "methods": [
+      "Automatic and human evaluations",
+      "Fine-grained error detection",
+      "Error editing"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Precision",
+      "Recall",
+      "Factuality Score"
+    ],
+    "calculation": "Evaluation of performance based on error detection and correction capabilities.",
+    "interpretation": "Systems are evaluated on their ability to identify and correct factual errors in model outputs.",
+    "baseline_results": null,
+    "validation": "Inter-annotator agreement calculated using Cohen's kappa."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": "Potential dissemination of misinformation due to hallucinations in generated outputs."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Responses were anonymized during annotation.",
+    "data_licensing": "Data is sourced from publicly available language model outputs.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

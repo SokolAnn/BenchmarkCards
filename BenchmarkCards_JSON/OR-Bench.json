@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "name": "OR-Bench",
+    "overview": "OR-Bench is the first large-scale over-refusal benchmark designed to evaluate the performance of large language models (LLMs) in rejecting innocuous prompts that seem toxic.",
+    "data_type": "Text",
+    "domains": [
+      "Text Generation",
+      "Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ToxicChat",
+      "PromptBench",
+      "AdvBench"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/bench-llm/or-bench",
+      "https://huggingface.co/spaces/bench-llm/or-bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To develop better safety-aligned large language models by assessing their over-refusal rates.",
+    "audience": [
+      "Researchers",
+      "AI Safety Engineers",
+      "Developers of Large Language Models"
+    ],
+    "tasks": [
+      "Evaluate model performance on seemingly toxic prompts",
+      "Analyze safety alignment of LLMs",
+      "Identify over-refusal trends in LLM outputs"
+    ],
+    "limitations": "The dataset may include toxic prompts that were not identified correctly by moderators.",
+    "out_of_scope_uses": [
+      "General usage without safety evaluation",
+      "Applications in non-LLM models"
+    ]
+  },
+  "data": {
+    "source": "Generated and curated using a systematic framework for prompt generation",
+    "size": "80,000 seemingly toxic prompts alongside 1,000 hard prompts and 600 toxic prompts",
+    "format": "Text",
+    "annotation": "Prompts are moderated by ensembles of large language models to classify toxicity."
+  },
+  "methodology": {
+    "methods": [
+      "Automated prompt generation",
+      "LLM moderation for toxicity assessment",
+      "Collection of rejection data across multiple model families"
+    ],
+    "metrics": [
+      "Rejection Rate of seemingly toxic prompts",
+      "Safety and helpfulness balance metrics"
+    ],
+    "calculation": "Rejection rates calculated based on model responses to the benchmark prompts.",
+    "interpretation": "Higher rejection rates indicate more over-refusal behavior in LLMs.",
+    "baseline_results": "N/A",
+    "validation": "Evaluation results of 25 LLMs showed significant insights into over-refusal rates and safety alignment."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Model safety",
+      "Over-refusal",
+      "Rejection of non-harmful prompts"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "The over-refusal of innocuous prompts can lead to reduced model utility in practical applications."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

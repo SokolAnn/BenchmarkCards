@@ -1,0 +1,75 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "NuRisk: A Visual Question Answering Dataset for Agent-Level Risk Assessment in Autonomous Driving",
+    "abbreviation": "NuRisk",
+    "overview": "NuRisk is a comprehensive Visual Question Answering (VQA) dataset comprising 2.9K scenarios and 1.1M agent-level samples, built on real-world data from nuScenes and Waymo, completed with safety-critical scenarios from the CommonRoad simulator, enabling spatio-temporal reasoning.",
+    "data_type": "image-sequence with risk annotations",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "nuScenes",
+      "Waymo Open Motion",
+      "CommonRoad"
+    ],
+    "resources": [
+      "https://NuRisk.github.io/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enable agent-level quantitative risk reasoning in autonomous driving through a comprehensive VQA dataset.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Visual Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Derived from nuScenes, Waymo scenarios, and synthetic scenarios from the CommonRoad simulator.",
+    "size": "2.9K scenarios and 1.1M agent-level samples",
+    "format": "N/A",
+    "annotation": "Physics-based risk annotations based on distance to collision and time to collision metrics."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Mean Absolute Error (MAE) for risk predictions; Quadratic Weighted Kappa (QWK) for agreement; standard metrics for evaluation.",
+    "interpretation": "Lower MAE and higher QWK indicate better performance in risk assessment.",
+    "baseline_results": "Peak accuracy of proprietary models was 33%, improved to 41% with fine-tuned models.",
+    "validation": "Validation through automated quality checks and human validation on sampled data."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

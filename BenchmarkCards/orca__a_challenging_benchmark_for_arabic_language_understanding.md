@@ -1,0 +1,112 @@
+# ORCA: A Challenging Benchmark for Arabic Language Understanding
+
+## 📊 Benchmark Details
+
+**Name**: ORCA: A Challenging Benchmark for Arabic Language Understanding
+
+**Overview**: A publicly available benchmark for Arabic language understanding evaluation (ORCA) covering diverse Arabic varieties and a wide range of challenging Arabic NLU tasks. ORCA is constructed from 60 publicly available datasets across seven NLU task clusters and provides a public leaderboard with a unified single-number evaluation metric (ORCA score).
+
+**Data Type**: text (sentence-level classification, sentence-pair similarity, document-level topic classification, structured prediction (NER/POS), question-answering paragraphs, word-level sense annotations)
+
+**Domains**:
+- Natural Language Processing
+
+**Languages**:
+- Arabic
+
+**Similar Benchmarks**:
+- ARLUE
+- ALUE
+- GLUE
+- SuperGLUE
+- XTREME
+- XGLUE
+- MMLU
+- BIG-bench
+- FLUE
+- CLUE
+- IndoNLU
+- KorNLI
+- KorSTS
+- JGLUE
+- bAbI
+- XTREME-R
+- MASAKHANE
+
+**Resources**:
+- [Resource](https://orca.dlnlp.ai/)
+
+## 🎯 Purpose and Intended Users
+
+**Goal**: Introduce ORCA, an extensive and diverse benchmark for Arabic natural language understanding composed of 60 publicly available datasets arranged into seven task clusters, to facilitate standardized evaluation of Arabic and multilingual pretrained language models and to provide a public leaderboard and toolkit for future research.
+
+**Target Audience**:
+- Arabic NLP researchers
+- Model developers
+
+**Tasks**:
+- Sentence Classification
+- Structured Prediction
+- Semantic Textual Similarity
+- Text Classification
+- Natural Language Inference
+- Question Answering
+- Word Sense Disambiguation
+
+**Limitations**: 1. Limited or no dataset coverage for some countries/dialects (e.g., Mauritania and Djibouti; limited datasets for Iraqi, Sudanese, Yemeni dialects). 2. Limited coverage of Classical Arabic (CA). 3. Benchmarks may encourage leaderboard chasing which can be undesirable for research culture.
+
+## 💾 Data
+
+**Source**: A collection of 60 publicly available datasets aggregated from prior work, including (but not limited to) ARCD, MLQA, TyDi QA, XQuAD, ANERcorp, AQMAR, Khaleej, ANT, OSAC, Ar-SemEval-2017, Q2Q, XNLI, Unified-FC, ANS, AraWSD, and many sentiment, social-meaning, dialect identification, NER, POS, topic classification, STS, NLI and QA datasets covering MSA and dialectal Arabic.
+
+**Size**: Total: 487.1K train examples, 46.0K dev examples, 55.1K test examples (60 datasets across 7 task clusters). Data sizes per task are capped where applicable (typical caps: 50,000 train / 5,000 dev / 5,000 test per task).
+
+**Format**: N/A
+
+**Annotation**: N/A
+
+## 🔬 Methodology
+
+**Methods**:
+- Automated metrics
+- Fine-tuning of pretrained language models on task-specific training splits
+- Leaderboard evaluation (public submissions evaluated on Test splits)
+
+**Metrics**:
+- ORCA score (macro-average across tasks)
+- F1 Score
+- Spearman correlation
+
+**Calculation**: ORCA score is the macro-average of the different scores across all tasks and task clusters, where each task is weighted equally. For each model, the best checkpoint is selected on the Dev split and evaluated on the Test split. Per-task metrics (e.g., F1, Spearman correlation) are used as appropriate for each dataset.
+
+**Interpretation**: Higher ORCA score indicates better overall performance across ORCA tasks; because ORCA score is a macro-average with equal task weighting, it reflects aggregate performance across diverse tasks and varieties.
+
+**Baseline Results**: Baselines: mBERT (ORCA score = 68.07) and XLM-R (ORCA score = 68.88). Best reported model: ARBERT v2 (M3) with ORCA score = 74.04. Example other model scores: CamelBERT msa (M11) ORCA score = 73.35; MARBERT v2 (M4) ORCA score = 72.95. (See Table 4 in the paper for full per-model and per-task results.)
+
+**Validation**: For all models, the best model is identified on the Dev split and evaluated on the blind Test split. Computational-cost measures average results over three runs. Results are reported per-task and aggregated via the ORCA score.
+
+## ⚠️ Targeted Risks
+
+**Risk Categories**:
+- Privacy
+- Governance
+- Intellectual Property
+
+**Atlas Risks**:
+- **Privacy**: Personal information in data
+- **Governance**: Incomplete usage definition
+- **Intellectual Property**: Data usage rights restrictions
+
+**Demographic Analysis**: ORCA includes an MSA vs. Dialectal Arabic distribution analysis using an in-house MSA-dialect classifier and a country-level dialect distribution analysis using an AraT5-based classifier; MSA/DA proportions and country-level distributions are reported (see Table 3 and Figure F.1).
+
+**Potential Harm**: N/A
+
+## 🔒 Ethical and Legal Considerations
+
+**Privacy And Anonymity**: ORCA is developed using data from the public domain; the authors state they do not have serious concerns about privacy for the data involved.
+
+**Data Licensing**: Not Applicable
+
+**Consent Procedures**: Not Applicable
+
+**Compliance With Regulations**: Not Applicable

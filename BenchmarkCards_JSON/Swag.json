@@ -1,0 +1,98 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Swag : A Large-Scale Adversarial Dataset for Grounded Commonsense Inference",
+    "abbreviation": "Swag",
+    "overview": "We introduce the task of grounded commonsense inference, unifying natural language inference and commonsense reasoning. We present Swag, a new dataset with 113k multiple choice questions about a rich spectrum of grounded situations.",
+    "data_type": "text (multiple-choice sentence completion / question-answering pairs: context and candidate sentence endings)",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SNLI",
+      "MultiNLI",
+      "COPA",
+      "RocStories",
+      "JOCI",
+      "Visual Madlibs"
+    ],
+    "resources": [
+      "https://rowanzellers.com/swag",
+      "https://arxiv.org/abs/1808.05326"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To create a large-scale dataset for studying physically grounded commonsense inference and to provide a challenging, de-biased benchmark for evaluating models on grounded commonsense reasoning.",
+    "audience": [
+      "Machine Learning Researchers",
+      "Natural Language Processing Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Natural Language Inference",
+      "Sentence Completion",
+      "Commonsense Reasoning (grounded)"
+    ],
+    "limitations": "Adversarial Filtering focuses on reducing stylistic annotation artifacts but may leave subtle artifacts; dataset is not perfect in avoiding gender and racial biases due to biases in movie data; some examples were collected with only a single annotator after validation checks.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Derived from pairs of consecutive video captions from ActivityNet Captions and the Large Scale Movie Description Challenge (LSMDC).",
+    "size": "113,557 multiple-choice questions (reported in paper as 113k), split as 73,000 training, 20,000 validation, 20,000 test; Sentence pairs: ActivityNet 51,439; LSMDC 62,118; Unique contexts 92,221; Unique endings 452,683.",
+    "format": "N/A",
+    "annotation": "Crowdsourced via Amazon Mechanical Turk: workers labeled candidate endings as 'likely', 'unlikely', or 'gibberish' and selected best and second-best endings. Some examples have multiple annotators for validation; remaining examples were collected with one annotator after periodic verification. Annotators were screened and monitored; dataset cost reported as $23,000 (≈ $0.20 per example)."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics (model accuracy evaluations using multiple NLI and classification models)",
+      "Human evaluation (Mechanical Turk validation and human baseline measurement)"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy is computed as the percentage of examples where the model selects the gold (human-verified) ending (model selects argmax over candidate endings). Human accuracy computed via majority vote among Mechanical Turk workers (reported for 1, 3, and 5 turkers) and expert annotator.",
+    "interpretation": "Higher Accuracy indicates better ability to pick the most plausible next event/ending given the context. Human performance (five turkers majority vote) is reported as an approximate upper bound (88%). Substantially lower model accuracy compared to humans indicates remaining challenge in grounded commonsense inference.",
+    "baseline_results": "Best reported model: ESIM + ELMo obtains up to 59.2% accuracy (test) when trained on found+generated data. Unary/binary baselines report lower accuracy (e.g., LSTM+ELMo ≈ 50.4% when context included). Human performance: 1 turker 82.8% (on sampled set), 3 turkers 85.1%, 5 turkers 88.0%, expert 85.0%.",
+    "validation": "Dataset split into 73k train / 20k validation / 20k test. Adversarial Filtering (AF) used iterative train/test splits (AF uses an 80%/20% split during iterations) with an ensemble of stylistic classifiers to filter negatives. Final candidate endings were verified via Mechanical Turk; periodic verification and worker screening were used to maintain quality."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Annotation artifacts (stylistic biases)",
+      "Overestimation of model performance due to dataset artifacts",
+      "Demographic biases (gender and racial bias stemming from source movie data)"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

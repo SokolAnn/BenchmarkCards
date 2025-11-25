@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "VILMA (Video Language Model Assessment)",
+    "abbreviation": "VILMA",
+    "overview": "VILMA is a task-agnostic benchmark designed to evaluate the video-language models (VidLMs) based on their fine-grained visuo-linguistic capabilities and temporal reasoning. It includes proficiency tests that assess basic competencies necessary for solving more complex tasks. VILMA aims to provide a thorough assessment of VidLMs and identify areas for improvement.",
+    "data_type": "video-caption pairs",
+    "domains": [
+      "Computer Vision",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://cyberiada.github.io/ViLMA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To develop a robust zero-shot benchmark for evaluating the linguistic and temporal grounding capabilities of video-language models.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Temporal Reasoning",
+      "Action Recognition"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated from various video-language datasets including Something-Something V2, YouCook2, COIN, and RareAct",
+    "size": "8,460 instances",
+    "format": "N/A",
+    "annotation": "Manual and automatic validation of video-caption pairs, with human assessment for quality control."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Pairwise ranking accuracy"
+    ],
+    "calculation": "Proportion of samples where video-caption matching score surpasses video-foil matching score.",
+    "interpretation": "Higher scores indicate better performance in distinguishing between correct captions and foils.",
+    "baseline_results": "The performance comparison includes results against a random baseline.",
+    "validation": "Human validation processes involved multiple annotators scoring captions against video content."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

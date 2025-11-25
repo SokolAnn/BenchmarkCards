@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TaxoBench-CS",
+    "abbreviation": "N/A",
+    "overview": "A new benchmark of 156 expert-crafted taxonomies encompassing 11.6k papers, providing the first naturally annotated dataset for taxonomy generation.",
+    "data_type": "hierarchical taxonomy structures",
+    "domains": [
+      "Computer Science"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/zhukun1020/TaxoBench-CS"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Facilitate research in automatic taxonomy generation for scientific literature.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Taxonomy Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "156 human-authored taxonomy trees from survey papers on arXiv.",
+    "size": "11,600 papers",
+    "format": "JSON",
+    "annotation": "Expert-crafted annotations aligning with natural research taxonomy structures."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Normalized Mutual Information (NMI)",
+      "Adjusted Rand Index (ARI)",
+      "Purity",
+      "Heading Soft Recall (HSR)",
+      "Catalogue Edit Distance Similarity (CEDS)"
+    ],
+    "calculation": "Metrics are calculated based on clustering quality and structural alignment with oracle taxonomies.",
+    "interpretation": "Higher scores indicate better coherence and granularity in taxonomies.",
+    "baseline_results": "Outperformed prior methods, achieving state-of-the-art performance in taxonomy coherence, granularity, and interpretability.",
+    "validation": "Results validated through both automatic and human evaluation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "No personal information included; data derived from publicly accessible sources.",
+    "data_licensing": "Shared under a research-only license, compliant with access conditions.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

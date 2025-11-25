@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Turk-LettuceDetect",
+    "abbreviation": "N/A",
+    "overview": "Turk-LettuceDetect is the first suite of hallucination detection models specifically designed for Turkish RAG applications, addressing the challenges posed by hallucinations in low-resource languages.",
+    "data_type": "token classification pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Turkish"
+    ],
+    "similar_benchmarks": [
+      "RAGTruth"
+    ],
+    "resources": [
+      "https://github.com/NewmindAI/Turk-LettuceDetect"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide effective hallucination detection models and dataset for Turkish RAG applications.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Data-to-Text Generation",
+      "Summarization"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Machine-translated version of the RAGTruth dataset",
+    "size": "17,790 instances",
+    "format": "JSON",
+    "annotation": "Manually annotated by human experts"
+  },
+  "methodology": {
+    "methods": [
+      "Token-level classification using encoder architectures"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "Macro F1-Score",
+      "Area Under the Receiver Operating Characteristic Curve (AUROC)"
+    ],
+    "calculation": "Calculated using cross-entropy loss across all tokens with special tokens masked.",
+    "interpretation": "Precision measures the correctness of predictions, Recall measures the identification rate of true occurrences, and the macro F1 Score balances both metrics.",
+    "baseline_results": null,
+    "validation": "Comprehensive evaluation across multiple tasks"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Open-source license",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

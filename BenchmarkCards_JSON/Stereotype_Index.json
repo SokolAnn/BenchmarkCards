@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "name": "LLM Stereotype Index (LSI)",
+    "overview": "An extensible benchmark for evaluating stereotypes and bias in Large Language Models, grounded on the Social Progress Index.",
+    "data_type": "N/A",
+    "domains": [
+      "N/A"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "N/A"
+    ],
+    "resources": [
+      "https://github.com/Avenge-PRC777/Uncovering_Stereotypes_In_LLM_A_Task_Complexity_Approach"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate bias in language models across various demographic categories and social dimensions.",
+    "audience": [
+      "Researchers",
+      "AI practitioners",
+      "Policymakers"
+    ],
+    "tasks": [
+      "Evaluate bias in language generation",
+      "Measure stereotype representation"
+    ],
+    "limitations": "The work tries to cover many demographics but is not comprehensive.",
+    "out_of_scope_uses": [
+      "N/A"
+    ]
+  },
+  "data": {
+    "source": "157k generations from evaluated LLMs",
+    "size": "157k",
+    "format": "Generated text data",
+    "annotation": "Labeled for positive/negative stereotypes"
+  },
+  "methodology": {
+    "methods": [
+      "Task complexity assessment",
+      "Bias detection through generative tasks"
+    ],
+    "metrics": [
+      "Choice Refusal Percentage (CRP)",
+      "Stereotype Polarity (SP)"
+    ],
+    "calculation": "CRP is the percentage of tasks where the model refused to make a choice. SP measures the fraction of positive stereotypes chosen.",
+    "interpretation": "Higher CRP indicates better awareness of harmful choices. Lower SP for certain demographics indicates systemic bias.",
+    "baseline_results": "N/A",
+    "validation": "Experiments validated by generating and analyzing 157k outputs"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Societal Impact",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on cultural diversity",
+            "Impact on Jobs",
+            "Impact on education: bypassing learning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Bias evaluated across nationality, gender, race, and religion.",
+    "harm": "Stereotypical biases observed leading to systemic harm, especially for underrepresented groups."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Generic data used, no unique identifiers.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "Warnings provided for potentially offensive content."
+  }
+}

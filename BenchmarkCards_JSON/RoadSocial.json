@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "RoadSocial: A Diverse VideoQA Dataset and Benchmark for Road Event Understanding from Social Video Narratives",
+    "abbreviation": "RoadSocial",
+    "overview": "RoadSocial is a large-scale, diverse VideoQA dataset tailored for generic road event understanding from social media narratives, addressing existing datasets' regional and viewpoint biases.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Computer Vision",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Lingo-QA",
+      "SUTD-TrafficQA",
+      "DRAMA"
+    ],
+    "resources": [
+      "https://roadsocial.github.io"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a rich benchmark for the evaluation of Video LLMs in understanding road events through videos and social media narratives.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Road Safety Advocates"
+    ],
+    "tasks": [
+      "Video Question Answering",
+      "Road Event Understanding"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Social media videos from Twitter capturing road events and accompanying narratives.",
+    "size": "13.2K videos, 260K QA pairs, 414K social comments",
+    "format": "JSON",
+    "annotation": "Semi-automatic framework using Text and Video LLMs with expert verification."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "GPT-3.5 Score",
+      "Mean Average Precision (mAP)"
+    ],
+    "calculation": "Scores are derived from the semantic alignment between model-generated and ground truth answers.",
+    "interpretation": "Higher scores indicate better alignment with ground truth answers, suggesting improved comprehension of road events.",
+    "baseline_results": null,
+    "validation": "Dataset validated through human expert annotations and performance metrics across various Video LLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Our data collection adheres to ethical guidelines and uses only publicly available content.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

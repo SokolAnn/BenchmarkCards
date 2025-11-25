@@ -1,0 +1,107 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LREBench (Low-resource Relation Extraction Benchmark)",
+    "abbreviation": "LREBench",
+    "overview": "We create a benchmark with 8 relation extraction (RE) datasets covering different languages, domains and contexts to evaluate methods for building relation extraction systems in low-resource settings and perform extensive comparisons over prompt-based methods, balancing methods for long-tailed distributions, and leveraging more instances via data augmentation and self-training.",
+    "data_type": "Text instances with one entity pair (head and tail) and a relation label (text (entity pair, relation))",
+    "domains": [
+      "General",
+      "Encyclopedic",
+      "Scientific",
+      "Biochemical",
+      "Dialogue",
+      "Medical"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "GLUE",
+      "CBLUE"
+    ],
+    "resources": [
+      "https://zjunlp.github.io/project/LREBench",
+      "https://github.com/zjunlp/LREBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Evaluate methods for low-resource relation extraction and provide an open-sourced testbed (LREBench) of 8 RE datasets for systematic empirical study.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Industry Practitioners",
+      "Research Community"
+    ],
+    "tasks": [
+      "Relation Extraction",
+      "Relation Classification"
+    ],
+    "limitations": "We cannot compare and evaluate all previous studies due to the settings and non-available open-sourced code. The benchmark will be maintained by adding new datasets.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Public RE datasets selected: SemEval 2010 Task 8, TACREV, Wiki80 (converted to long-tailed distribution), SciERC, ChemProt, DialogRE, DuIE2.0 (Chinese), CMeIE (Chinese).",
+    "size": "SemEval: 6,500 train, 2,700 test; TACREV: 68,100 train, 15,500 test; Wiki80: 12,000 train, 5,600 test; SciERC: 3,200 train, 974 test; ChemProt: 19,500 train, 16,900 test; DialogRE: 6,000 train, 1,900 test; DuIE2.0: 153,000 train, 18,000 test; CMeIE: 34,000 train, 8,700 test.",
+    "format": "JSON (unified json format for evaluation)",
+    "annotation": "Existing annotations from the public datasets (original dataset annotations)"
+  },
+  "methodology": {
+    "methods": [
+      "PLM fine-tuning (standard fine-tuning)",
+      "Prompt-based tuning (including KnowPrompt and PTR)",
+      "Re-sampling (data re-sampling for balancing)",
+      "Re-weighting losses (DSC, Focal Loss, GHM Loss, LDAM Loss)",
+      "Data Augmentation (token-level substitution via WordNet, TF-IDF, contextual embeddings)",
+      "Self-training (teacher-student with pseudo labels)",
+      "Automated metrics evaluation"
+    ],
+    "metrics": [
+      "Macro F1 Score",
+      "Micro F1 Score"
+    ],
+    "calculation": "Macro F1 and Micro F1 computed on test sets. For 8-shot and 10% settings, training datasets are randomly sampled 5 times and reported results are the average over the 5 runs.",
+    "interpretation": "Macro F1 and Micro F1 are used together because head and tail class performance varies a lot; Macro F1 reflects per-class (including tail) performance while Micro F1 reflects overall instance-level performance.",
+    "baseline_results": "Baseline results are reported in Table 2: Macro F1 and Micro F1 (%) for PLM fine-tuning, prompt-based tuning (KnowPrompt), balancing methods, data augmentation, and self-training across 8 datasets and three training settings (8-shot, 10%, 100%).",
+    "validation": "No validation on development sets; models are trained only on training sets to ensure few-shot learning. For 8-shot and 10% settings, experiments are repeated with 5 random training samples and averaged. Training epoch is set to 10."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Transparency",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Uncertain data provenance"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination",
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

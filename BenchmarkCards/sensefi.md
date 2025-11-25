@@ -1,0 +1,90 @@
+# SenseFi
+
+## 📊 Benchmark Details
+
+**Name**: SenseFi
+
+**Overview**: Proposes SenseFi, a benchmark and model zoo library for WiFi CSI sensing using deep learning, to study the effectiveness of various deep learning models for WiFi sensing. Models are compared across distinct sensing tasks, WiFi platforms, recognition accuracy, model size, computational complexity, feature transferability, and adaptability of unsupervised learning. The work provides an open-source library and benchmarking codes.
+
+**Data Type**: Time-series (CSI amplitude sequences and body-coordinate velocity profile (BVP))
+
+**Domains**:
+- Ubiquitous Computing
+- Wireless Sensing
+- Human Activity Recognition
+
+**Similar Benchmarks**:
+- UT-HAR
+- Widar
+
+**Resources**:
+- [GitHub Repository](https://github.com/xyanchen/WiFi-CSI-Sensing-Benchmark)
+- [Resource](https://arxiv.org/abs/2207.07859)
+
+## 🎯 Purpose and Intended Users
+
+**Goal**: To study the effectiveness of various deep learning models for WiFi CSI-based human sensing and provide a comprehensive benchmark and open-source library (SenseFi) to compare models across tasks, platforms, accuracy, model size, computational complexity, transferability, and unsupervised adaptability.
+
+**Target Audience**:
+- Researchers
+- Model Developers
+
+**Tasks**:
+- Human Activity Recognition
+- Gesture Recognition
+- Human Identification
+
+**Limitations**: Benchmark evaluates models on representative CSI data from Intel 5300 NIC and Atheros CSI Tool only (Nexmon CSI data not evaluated). UT-HAR dataset has intrinsic drawbacks (continuous collection and no golden labels; segmented via sliding window). Dataset sizes vary and some datasets are relatively small, which can cause overfitting for very deep models.
+
+## 💾 Data
+
+**Source**: Two public datasets: UT-HAR (collected via Intel 5300 NIC) and Widar (collected via Intel 5300 NIC). Two newly collected datasets for this benchmark: NTU-Fi HAR and NTU-Fi Human-ID (collected using Atheros CSI Tool and the authors' embedded IoT system).
+
+**Size**: UT-HAR: training samples 3,977; testing samples 996; per-sample shape (3, 30, 250) (antenna, subcarrier, packet). Widar: training samples 34,926; testing samples 8,726; processed to BVP, per-sample shape (22, 20, 20) (time, x velocity, y velocity). NTU-Fi HAR: training samples 936; testing samples 264; per-sample shape (3, 114, 500) (antenna, subcarrier, packet). NTU-Fi Human-ID: training samples 546; testing samples 294; per-sample shape (3, 114, 500) (antenna, subcarrier, packet).
+
+**Format**: Raw CSI complex values (amplitude and phase) and processed modalities: amplitude-only sequences and body-coordinate velocity profile (BVP) representations.
+
+**Annotation**: Samples are labeled with activity/gesture classes and human identity labels. UT-HAR data is segmented via sliding window (no golden segmentation labels). NTU-Fi samples are perfectly segmented. Specific annotation procedures beyond labeling are not detailed.
+
+## 🔬 Methodology
+
+**Methods**:
+- Supervised Learning
+- Transfer Learning
+- Unsupervised Learning (self-supervised / contrastive)
+
+**Metrics**:
+- Accuracy
+- Floating-point operations (Flops)
+- Number of parameters (Params)
+
+**Calculation**: Accuracy reported on test split (percentage). Flops reported in Millions. Number of parameters reported in Millions. Train/test split uses stratified sampling with ratio 8:2. Training epochs: UT-HAR 200, Widar 100, NTU-Fi datasets 30 (except RNN trained for 2x epochs).
+
+**Interpretation**: Higher Accuracy indicates better predictive performance; lower Flops and fewer Params indicate better computational efficiency for edge deployment. The authors note trade-offs between recognition accuracy and efficiency; recommend CNN, GRU, and BiLSTM for a balance of accuracy and efficiency. Very deep networks may overfit (especially cross-domain) and transformers are less suitable with limited CSI training data.
+
+**Baseline Results**: Key baseline highlights (full tables in paper): Supervised learning (Table III) — ResNet-18 achieves 98.11% accuracy on UT-HAR; CNN-5 achieves 97.61% on UT-HAR and 70.19% on Widar; BiLSTM achieves 99.69% on NTU-Fi HAR; CNN-5 achieves 97.14% on NTU-Fi Human-ID. Transfer learning (Table IV) — CNN-5 achieves 96.35% on Human-ID when pre-trained on HAR. Unsupervised learning (Table V) — CNN-5 achieves 97.62% on Human-ID after unsupervised pretraining on NTU-Fi HAR.
+
+**Validation**: Validation via train-test split with stratified sampling (train:test = 8:2). Epoch counts set per dataset (UT-HAR 200, Widar 100, NTU-Fi 30). Hyper-parameters tuned to ensure convergence; architectures mapped to unified input size via convolutional layer to enable fair comparisons.
+
+## ⚠️ Targeted Risks
+
+**Risk Categories**:
+- Privacy
+- Robustness
+- Security
+
+**Atlas Risks**:
+- **Privacy**: Exposing personal information
+- **Robustness**: Evasion attack
+
+**Potential Harm**: ['Privacy leakage from sensing data', 'Adversarial attacks causing incorrect sensing and triggering wrong actions of connected devices']
+
+## 🔒 Ethical and Legal Considerations
+
+**Privacy And Anonymity**: Authors note WiFi CSI-based sensing is intrinsically more privacy-friendly than cameras; no specific anonymization procedures or technical privacy-preserving measures for the released datasets are detailed.
+
+**Data Licensing**: Not Applicable
+
+**Consent Procedures**: Not Applicable
+
+**Compliance With Regulations**: Not Applicable

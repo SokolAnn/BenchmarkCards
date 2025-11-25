@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Fraud-R1",
+    "abbreviation": "N/A",
+    "overview": "Fraud-R1 is a benchmark designed to evaluate LLMs’ ability to defend against internet fraud and phishing in dynamic, real-world scenarios, featuring a multi-round evaluation pipeline.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/kaustpradalab/Fraud-R1"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of Fraud-R1 is to assess the robustness of LLMs against fraud and phishing inducements, with a focus on real-world applications.",
+    "audience": [
+      "ML Researchers",
+      "AI Developers",
+      "Security Analysts"
+    ],
+    "tasks": [
+      "Fraud Detection",
+      "Risk Assessment"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "8,564 fraud cases sourced from phishing scams, fake job postings, social media, and news, categorized into 5 major fraud types.",
+    "size": "8,564 examples",
+    "format": "N/A",
+    "annotation": "Manually collected and categorized fraudulent cases."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Defense Success Rate (DSR)",
+      "DSR @k",
+      "Average conversation rounds"
+    ],
+    "calculation": "DSR is calculated as the proportion of samples for which the model successfully identifies fraud in any of the conversation rounds.",
+    "interpretation": "Higher DSR indicates better model performance in identifying and resisting fraudulent or phishing attempts.",
+    "baseline_results": "N/A",
+    "validation": "All models evaluated under both Helpful Assistant and Role-play settings for a comprehensive assessment."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Misuse",
+          "subcategory": [
+            "Improper usage"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The benchmark evaluates performance across different language groups and identifies disparities in performance between English and Chinese.",
+    "harm": [
+      "Risk of misclassifying legitimate communications as fraud due to biases in training data."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

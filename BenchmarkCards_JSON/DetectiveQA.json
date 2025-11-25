@@ -1,0 +1,82 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DetectiveQA",
+    "abbreviation": "N/A",
+    "overview": "DetectiveQA is a dataset specifically designed for narrative reasoning within long contexts, featuring 1200 human-annotated questions from detective novels in both Chinese and English, along with reference reasoning steps.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/user/repo"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the long-context reasoning abilities of large language models using narrative reasoning based on detective novels.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "The benchmark contains only data from detective novels and mainly serves narrative reasoning.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Orthodox detective novels categorized for their logical puzzles.",
+    "size": "1,200 questions",
+    "format": "JSON",
+    "annotation": "Manually annotated by experts with the assistance of LLMs for efficiency."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "LLM-based evaluation"
+    ],
+    "metrics": [
+      "Multiple-Choice Accuracy",
+      "Step-wise Reasoning Metric"
+    ],
+    "calculation": "Multiple-choice accuracy is calculated as the percentage of correctly answered questions; step-wise reasoning metric counts the number of correct reference steps included in model responses.",
+    "interpretation": "Higher scores indicate better reasoning alignment with detective reasoning steps.",
+    "baseline_results": null,
+    "validation": "The dataset's annotation quality was validated through manual checks by the authors."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "All novels have been copyright-checked to ensure fair use.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

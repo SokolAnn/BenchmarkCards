@@ -1,0 +1,78 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TriviaHG (Trivia Hint Generation Dataset)",
+    "abbreviation": "TriviaHG",
+    "overview": "TriviaHG is a large-scale dataset featuring 160,230 hints corresponding to 16,645 factoid questions. The dataset employs automatic hint generation for cognitive engagement and reasoning skill development.",
+    "data_type": "hint-question pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Education"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/DataScienceUIBK/TriviaHG"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of TriviaHG is to provide a dataset for automatic hint generation to assist users in answering factoid questions, fostering reasoning and cognitive engagement.",
+    "audience": [
+      "ML Researchers",
+      "Educators",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Hint Generation",
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The TriviaHG dataset is generated based on factoid questions selected from the TriviaQA dataset, with hints produced by large language models leveraging online documents.",
+    "size": "160,230 hints and 16,645 questions",
+    "format": "JSON",
+    "annotation": "Hints are generated automatically using a framework that employs LLMs for hint generation."
+  },
+  "methodology": {
+    "methods": [
+      "Automated hints generation",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "HInt COnvergence Score (HICOS)",
+      "HInt FAmiliarity Score (HIFAS)"
+    ],
+    "calculation": "HICOS is calculated based on the hint's ability to eliminate incorrect candidate answers, while HIFAS is determined using Wikipedia page views associated with the entities in the hints.",
+    "interpretation": "Higher HICOS values indicate better hint quality in resolving questions, while higher HIFAS reflects greater familiarity with the information.",
+    "baseline_results": null,
+    "validation": "The effectiveness of hints was validated through human evaluation and automatic metrics."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

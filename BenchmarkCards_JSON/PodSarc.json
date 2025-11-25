@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PodSarc (Podcast Sarcasm)",
+    "abbreviation": "PodSarc",
+    "overview": "PodSarc is a large-scale sarcastic speech dataset created using an annotation pipeline that leverages large language models (LLMs) for sarcasm detection in speech.",
+    "data_type": "speech-transcript pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MUStARD",
+      "MUStARD++"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a large-scale annotated dataset for sarcasm detection in speech, enabling the development of models that can accurately identify sarcastic intent without visual context.",
+    "audience": [
+      "ML Researchers",
+      "Speech Technology Developers"
+    ],
+    "tasks": [
+      "Sarcasm Detection"
+    ],
+    "limitations": "Although the dataset reduces manual annotation effort, some discrepancies may still exist in the annotations.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Overly Sarcastic Podcast (OSPod)",
+    "size": "11,024 segments",
+    "format": "N/A",
+    "annotation": "LLM-based annotations followed by human verification"
+  },
+  "methodology": {
+    "methods": [
+      "LLM annotation",
+      "Human verification"
+    ],
+    "metrics": [
+      "F1 Score"
+    ],
+    "calculation": "F1 Score calculated based on model predictions and ground truth labels.",
+    "interpretation": "Higher F1 scores indicate better performance in sarcasm detection.",
+    "baseline_results": "Achieved an F1 score of 73.63% using human-verified LLM annotations.",
+    "validation": "Compared annotation quality and detection performance using the MUStARD++ dataset."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

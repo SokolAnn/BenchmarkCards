@@ -1,0 +1,78 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DyTAG Benchmarks",
+    "abbreviation": "N/A",
+    "overview": "DyTAG Benchmarks are designed to evaluate Dynamic Text-Attribute Graphs (DyTAGs) which involve time-evolving graph interactions and associated text attributes. The benchmarks include various datasets and tasks related to node classification, link prediction, and destination node retrieval.",
+    "data_type": "dynamic graph interactions with text attributes",
+    "domains": [
+      "Computer Science",
+      "E-commerce",
+      "Social Networks"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "DGTB (Dynamic Graph Temporal Benchmark)"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2509.18742"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To study the recent-global spatio-temporal patterns in DyTAGs and evaluate the proposed DyGRASP model's effectiveness on these patterns.",
+    "audience": [
+      "ML Researchers",
+      "Data Scientists",
+      "Academics"
+    ],
+    "tasks": [
+      "Node Classification",
+      "Link Prediction",
+      "Destination Node Retrieval"
+    ],
+    "limitations": "Performance not validated on diverse real-world datasets beyond DTGB benchmarks.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Four datasets extracted from various domains including GDELT, Enron, Googlemap, and Stack_elec.",
+    "size": "Differing sizes across datasets, with GDELT having 6,786 nodes and 1,339,245 edges, and others varying accordingly.",
+    "format": "Graph structure with text attributes",
+    "annotation": "Text attributes derived from user reviews, email content, etc."
+  },
+  "methodology": {
+    "methods": [
+      "Node-centric implicit reasoning",
+      "Explicit reasoning with LLMs",
+      "Temporal GNN integration"
+    ],
+    "metrics": [
+      "Hit@10",
+      "Average Precision (AP)",
+      "ROC-AUC"
+    ],
+    "calculation": "Metrics calculated based on the proportion of successful interactions within top-k predictions.",
+    "interpretation": "A higher Hit@10 percentage indicates better performance in retrieving destination nodes.",
+    "baseline_results": "DyGRASP outperformed other methods in Hit@10 metric and future link prediction tasks.",
+    "validation": "Models validated using train-test splits with a rigorous evaluation process."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

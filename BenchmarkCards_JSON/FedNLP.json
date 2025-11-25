@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FedNLP",
+    "abbreviation": "N/A",
+    "overview": "FedNLP is a benchmarking framework for evaluating federated learning methods on common formulations of NLP tasks, including text classification, sequence tagging, question answering, and seq2seq generation, designed to simulate realistic non-IID data distributions.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "LEAF",
+      "FedML",
+      "Flower"
+    ],
+    "resources": [
+      "https://github.com/FedML-AI/FedNLP"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive benchmarking platform for systematically comparing federated learning methods for various NLP tasks.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Sequence Tagging",
+      "Question Answering",
+      "Sequence-to-Sequence Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Various existing NLP datasets partitioned creatively to simulate non-IID distributions.",
+    "size": "N/A",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Federated Averaging (FedAvg)",
+      "Federated Proximal (FedProx)",
+      "Federated Optimization (FedOPT)"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "ROUGE"
+    ],
+    "calculation": "Metrics are calculated based on the evaluations conducted on the federated learning methods across various NLP tasks.",
+    "interpretation": "The federated methods show varying performance metrics across tasks, indicating different effectiveness based on task formulation and data partitions.",
+    "baseline_results": "N/A",
+    "validation": "The framework supports multiple rounds of evaluation and comparisons among different FL methods to validate effectiveness."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": []
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "FedNLP emphasizes data privacy by allowing data to remain on user devices and only sharing model updates.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "The framework aims to comply with regulations such as GDPR by promoting privacy-preserving federated learning."
+  }
+}

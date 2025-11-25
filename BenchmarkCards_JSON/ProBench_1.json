@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ProBench",
+    "abbreviation": "N/A",
+    "overview": "ProBench is a benchmark of open-ended user queries that require professional expertise and advanced reasoning, consisting of 4,000 samples across 10 fields and 56 sub-fields, evaluated utilizing MLLM-as-a-Judge.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://yan98.github.io/ProBench/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate multimodal large language models (MLLMs) through professional queries that necessitate expert-level knowledge.",
+    "audience": [
+      "ML Researchers",
+      "AI Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Crowdsourced queries from professionals in various fields",
+    "size": "4,000 samples",
+    "format": "N/A",
+    "annotation": "Manually curated by professionals in their respective domains"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Mean Average Precision (mAP)",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "Calculated based on the output of MLLM-as-a-Judge compared against human evaluations for each task and query.",
+    "interpretation": "Higher scores indicate better model performance in classifying and generating responses to queries.",
+    "baseline_results": "N/A",
+    "validation": "Pairwise comparisons against multiple leading models to ensure robustness and accuracy."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Robustness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Potential bias in the benchmark tasks affecting model evaluation."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data collected with explicit user consent.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MedGUIDE (Guideline Understanding and Inference for Decision Evaluation)",
+    "abbreviation": "MedGUIDE",
+    "overview": "MedGUIDE is a benchmark designed to evaluate whether Large Language Models (LLMs) can make diagnostic decisions in accordance with established medical guidelines, constructed from 55 decision trees curated from NCCN oncology protocols across 17 cancer types.",
+    "data_type": "multiple-choice questions",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "IFEval",
+      "MMLU-Professional Medicine"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/MedGUIDE/MedGUIDE-MCQA-8K",
+      "https://anonymous.4open.science/r/Submission-MedGUIDE-187A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the clinical reasoning abilities of LLMs grounded in standardized medical guidelines.",
+    "audience": [
+      "ML Researchers",
+      "Healthcare Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Clinical Decision-Making",
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from 55 decision trees curated from NCCN oncology protocols across 17 cancer types.",
+    "size": "7,747 high-quality multiple-choice questions",
+    "format": "JSON",
+    "annotation": "Annotated via a quality-based selection framework involving medical experts and LLM-as-a-judge models."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Weighted Accuracy"
+    ],
+    "calculation": "Weighted accuracy accounts for the difficulty of each multiple-choice question based on the number of answer options.",
+    "interpretation": "A higher weighted accuracy indicates better adherence to clinical decision-making guidelines.",
+    "baseline_results": "N/A",
+    "validation": "Evaluation involved 25 diverse LLM models across standard accuracy and weighted accuracy metrics."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "name": "HaloQuest",
+    "overview": "HaloQuest is a novel visual question answering dataset designed to capture various aspects of multimodal hallucination, including false premises, insufficient context, and visual challenges.",
+    "data_type": "visual question answering",
+    "domains": [
+      "multimodal reasoning"
+    ],
+    "languages": null,
+    "similar_benchmarks": null,
+    "resources": [
+      "https://github.com/google/haloquest"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To advance multimodal reasoning and reduce hallucination in vision-language models (VLMs).",
+    "audience": [
+      "AI researchers",
+      "Developers of vision-language models"
+    ],
+    "tasks": [
+      "Evaluate multimodal hallucination",
+      "Fine-tune models for better performance"
+    ],
+    "limitations": null,
+    "out_of_scope_uses": null
+  },
+  "data": {
+    "source": "Combination of real images from Open Images dataset and synthetic images from online galleries (Midjourney and Stable Diffusion).",
+    "size": "Over 7.7K examples",
+    "format": "Visual question-answer pairs",
+    "annotation": "Human and LLM-generated questions, answers, and filtering for quality."
+  },
+  "methodology": {
+    "methods": [
+      "Data collection from real and synthetic images",
+      "Crowdsourcing for question generation",
+      "LLM-assisted question and answer generation"
+    ],
+    "metrics": [
+      "Zero-shot accuracy",
+      "Fine-tuning performance",
+      "Auto-Eval correlation with human evaluators"
+    ],
+    "calculation": "Correlation coefficients for evaluation metrics (e.g., r=0.97 for generated vs. real images, r=0.99 for Auto-Eval vs human ratings).",
+    "interpretation": "Evaluation based on the model's ability to answer questions related to visual hallucination.",
+    "baseline_results": null,
+    "validation": "Fine-tuning models on HaloQuest shows improved performance while maintaining other task performances."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Hallucination in visual question answering",
+      "Model performance inconsistency",
+      "Overfitting on training data"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        },
+        {
+          "category": "Value Alignment",
+          "subcategory": [
+            "Improper data curation"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Dataset collection from open sources ensures compliance with privacy standards.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

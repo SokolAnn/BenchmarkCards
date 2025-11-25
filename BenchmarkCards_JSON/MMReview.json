@@ -1,0 +1,99 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MMReview",
+    "abbreviation": "MMReview",
+    "overview": "MMReview is a comprehensive benchmark for peer review generation that spans multiple disciplines and modalities, including multimodal content and expert-written review comments for 240 papers across 17 research domains within four major academic disciplines: Artificial Intelligence, Natural Sciences, Engineering Sciences, and Social Sciences.",
+    "data_type": "multimodal (text, images, tables)",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision",
+      "Artificial Intelligence",
+      "Natural Sciences",
+      "Engineering Sciences",
+      "Social Sciences"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": null,
+    "resources": [
+      "https://arxiv.org/abs/2508.14146"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To establish a comprehensive benchmark for evaluating the capabilities of Large Language Models (LLMs) in academic peer review across different modalities and disciplines.",
+    "audience": [
+      "ML Researchers",
+      "Academic Institutions",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Review Generation",
+      "Outcome Formulation",
+      "Preference Evaluation",
+      "Robustness Testing"
+    ],
+    "limitations": null,
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Academic papers from publicly accessible peer review platforms and open review comments.",
+    "size": "240 samples",
+    "format": "JSON",
+    "annotation": "Curated peer review comments and outcomes, verified by experts."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Mean Absolute Error (MAE)"
+    ],
+    "calculation": "Computed metrics involved comparing model outputs to human-generated reviews across multiple tasks designed within the benchmark.",
+    "interpretation": "Model performance is interpreted based on scoring consistency with human reviewers and the quality of generated reviews.",
+    "baseline_results": null,
+    "validation": "Validated through comprehensive evaluation across various LLMs and review tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack",
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis of performance across various research domains and input modalities is included in the benchmark evaluation.",
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

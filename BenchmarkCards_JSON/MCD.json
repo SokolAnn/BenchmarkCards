@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Multilingual Collaborative Defense (MCD)",
+    "abbreviation": "MCD",
+    "overview": "MCD is a novel learning method that optimizes a continuous soft safety prompt to facilitate multilingual safeguarding of Large Language Models (LLMs) against harmful queries, enhancing robustness across diverse languages.",
+    "data_type": "multilingual jailbreak datasets",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Danish",
+      "Korean",
+      "Greek",
+      "Irish"
+    ],
+    "similar_benchmarks": [
+      "MaliciousInstruct",
+      "AdvBench",
+      "MultiJail"
+    ],
+    "resources": [
+      "https://github.com/HLiang-Lee/MCD"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To improve the robustness and security of Large Language Models (LLMs) against multilingual jailbreak queries.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Robustness against harmful queries"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Translated datasets based on previous research including MaliciousInstruct and AdvBench, extending to multilingual versions.",
+    "size": "3,150 samples (including 315 in English and parallel samples in multiple languages)",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Attack Success Rate (ASR)"
+    ],
+    "calculation": "Comparative analysis against baseline methods using statistical tests.",
+    "interpretation": "Lower ASR indicates better defense performance against harmful queries.",
+    "baseline_results": "Demonstrated significant improvement over existing defenses in multilingual settings.",
+    "validation": "Statistical significance tests (p-values) were performed to confirm the robustness of results."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

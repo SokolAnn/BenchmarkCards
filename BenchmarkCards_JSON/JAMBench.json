@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "JAMBench",
+    "abbreviation": "N/A",
+    "overview": "JAMBench is a harmful behavior benchmark designed to trigger and evaluate moderation guardrails of large language models. It consists of 160 manually crafted questions covering four major risk categories at multiple severity levels.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "In-the-Wild",
+      "HarmBench",
+      "JailbreakBench"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the effectiveness of jailbreaks against moderation guardrails in large language models.",
+    "audience": [
+      "Researchers",
+      "Ethical Hackers",
+      "AI Developers"
+    ],
+    "tasks": [
+      "Red-Teaming Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Manually crafted questions by the authors, categorized into four critical risk areas.",
+    "size": "160 examples",
+    "format": "N/A",
+    "annotation": "Manually crafted"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Jailbreak Success Rate",
+      "Filtered-out Rate"
+    ],
+    "calculation": "The jailbreak success rate (σ) is calculated as the number of successful jailbreaks divided by the total number of attempts. The filtered-out rate (ζ) is calculated as the number of responses filtered by the moderation guardrails divided by the total number of jailbreak attempts.",
+    "interpretation": "A higher jailbreak success rate indicates better effectiveness of the jailbreak method, while a lower filtered-out rate indicates fewer blockages by the moderation guardrails.",
+    "baseline_results": "Comparison against existing jailbreak methods from previous benchmarks.",
+    "validation": "Extensive experiments on four large language models: GPT-3.5, GPT-4, Gemini, and Llama-3."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Ethics"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Misuse",
+          "subcategory": [
+            "Dangerous use"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Self-harm",
+      "Violence"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "name": "KoBBQ: Korean Bias Benchmark for Question Answering",
+    "overview": "KoBBQ is a dataset designed to evaluate social biases of language models (LMs) in the Korean context, adapting the English BBQ benchmark to reflect cultural nuances unique to South Korea.",
+    "data_type": "Question-Answering",
+    "domains": [
+      "Social Bias",
+      "Cultural Adaptation"
+    ],
+    "languages": [
+      "Korean"
+    ],
+    "similar_benchmarks": [
+      "BBQ",
+      "CBBQ"
+    ],
+    "resources": [
+      "https://jinjh0123.github.io/KoBBQ"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To measure and analyze social biases in Korean language models through a culturally adapted benchmark.",
+    "audience": [
+      "Researchers",
+      "Developers of LMs",
+      "Social scientists"
+    ],
+    "tasks": [
+      "Evaluate bias in LMs",
+      "Assess accuracy in QA tasks"
+    ],
+    "limitations": "The perception of social bias can be subjective; further research is needed to explore other bias categories.",
+    "out_of_scope_uses": [
+      "Training models to generate biased content",
+      "Non-research related applications"
+    ]
+  },
+  "data": {
+    "source": "KoBBQ Dataset",
+    "size": "76,048 samples",
+    "format": "Multiple-choice QA format",
+    "annotation": "Templates and samples reflect cultural biases in South Korea"
+  },
+  "methodology": {
+    "methods": [
+      "Large-scale survey for bias validation",
+      "Cultural-sensitive translation",
+      "Template categorization"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Bias score"
+    ],
+    "calculation": "Accuracy is calculated based on correct responses given ambiguous and disambiguated contexts. Bias scores measure model tendencies toward biased answers.",
+    "interpretation": "Higher accuracy correlates with lower bias scores; a balanced assessment combines both aspects.",
+    "baseline_results": null,
+    "validation": "Templates validated through a survey of 100 South Koreans for demographic representation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Cultural bias",
+      "Translation inaccuracies",
+      "Representation of stereotypes"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Lack of training data transparency"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Demographic details were collected to ensure broad representation in survey validation.",
+    "harm": "Misinterpretations of the biases could perpetuate stereotypes or reinforce biases in LMs."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Participants in surveys were ensured privacy and anonymity.",
+    "data_licensing": "Dataset usage is restricted to non-malicious applications.",
+    "consent_procedures": "Informed consent was obtained from all participants involved in the survey.",
+    "compliance_with_regulations": "Study conducted under approval from KAIST IRB."
+  }
+}

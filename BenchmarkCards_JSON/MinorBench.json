@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MinorBench",
+    "abbreviation": "N/A",
+    "overview": "MinorBench is an open-source benchmark designed to evaluate LLMs on their ability to refuse unsafe or inappropriate queries from children.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Education"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "AILuminate",
+      "AIR-Bench"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/govtech/MinorBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess large language models (LLMs) on handling age-inappropriate questions and to provide a benchmark for testing AI moderation systems in educational contexts.",
+    "audience": [
+      "AI Researchers",
+      "Educators",
+      "Child Safety Advocates"
+    ],
+    "tasks": [
+      "Safety Assessment",
+      "Content Moderation"
+    ],
+    "limitations": "MinorBench is relatively small compared to other benchmarks, but is designed for high-quality datasets.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated dataset of 299 user queries categorized by content-based risks for children.",
+    "size": "299 user queries",
+    "format": "N/A",
+    "annotation": "Manually curated with a focus on queries children may ask regarding unsafe or inappropriate content."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Manual curation"
+    ],
+    "metrics": [
+      "Refusal Rate"
+    ],
+    "calculation": "Refusal Rate = (Number of refused prompts / Number of prompts in the category) × 100.",
+    "interpretation": "Higher refusal rates indicate stricter adherence to content-safety guidelines for child-unsafe requests.",
+    "baseline_results": "Results vary significantly by model and system prompt variations, with some models achieving over 90% refusal rates.",
+    "validation": "Testing was conducted across various prompts using six different LLMs under four variations of system prompts."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Content Safety",
+      "Child-Specific Risks"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Exposing personal information"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

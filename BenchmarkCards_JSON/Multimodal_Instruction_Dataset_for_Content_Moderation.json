@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Multimodal Instruction Dataset for Content Moderation",
+    "abbreviation": "N/A",
+    "overview": "This study introduces a novel dataset designed for content moderation tasks, incorporating images, videos, sounds, and text data to boost the performance of content moderation systems, particularly using large language models.",
+    "data_type": "multimodal instruction-response pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ToxiGen",
+      "NSFW dataset"
+    ],
+    "resources": [
+      "https://huggingface.co/modrwkv"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enhance content moderation practices by providing a comprehensive dataset that allows for more accurate and efficient content moderation models.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Content Moderation"
+    ],
+    "limitations": "The dataset lacks image diversity and may contain embedded biases. Limited access to computational resources poses challenges.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Aggregated from multiple publicly available sources for text, images, audio, and video content.",
+    "size": "558,958 text instruction-response pairs; 83,625 image instruction-response pairs",
+    "format": "N/A",
+    "annotation": "Generated responses using GPT-4 and GPT-4V, alongside manual classification."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "The accuracy is gauged by the proportion of correct classifications of model outputs against expected outcomes.",
+    "interpretation": "Higher accuracy indicates better alignment of model responses with expected content moderation standards.",
+    "baseline_results": "Mod-RWKV achieved 66.9% accuracy in text tasks; Mod-VisualRWKV achieved 84.8% accuracy in image tasks.",
+    "validation": "Evaluated using the ToxiGen dataset for text and NSFW images for image assessments."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Stringent security protocols implemented to prevent unauthorized data access.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Binary Code Understanding Benchmark",
+    "abbreviation": "N/A",
+    "overview": "This work proposes a benchmark to evaluate the effectiveness of Large Language Models (LLMs) in real-world reverse engineering scenarios, focusing on two key binary code understanding tasks: function name recovery and binary code summarization.",
+    "data_type": "binary code understanding tasks",
+    "domains": [
+      "Software Security"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "N/A"
+    ],
+    "resources": [
+      "https://github.com/Sxxxw/BinaryLLMs-Eval"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Evaluate the capabilities of LLMs for understanding binary code in software security.",
+    "audience": [
+      "ML Researchers",
+      "Software Security Practitioners"
+    ],
+    "tasks": [
+      "Function Name Recovery",
+      "Binary Code Summarization"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from real-world projects implemented in C, including binaries with multiple target architectures and optimization options.",
+    "size": "2000 functions",
+    "format": "Binary and pseudo code",
+    "annotation": "Ground-truth generated using ChatGPT for function summaries."
+  },
+  "methodology": {
+    "methods": [
+      "Automated evaluation",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "BLEU-4",
+      "METEOR",
+      "Rouge-L",
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Various metrics calculated for function name recovery and binary code summarization based on generated outputs.",
+    "interpretation": "Higher scores indicate better performance of models in understanding binary code meaning and functionality.",
+    "baseline_results": "N/A",
+    "validation": "The benchmark was validated using expert reviews for correctness."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

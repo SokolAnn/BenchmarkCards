@@ -1,0 +1,109 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MM-S OC",
+    "abbreviation": "N/A",
+    "overview": "MM-S OC is a comprehensive benchmark designed to evaluate MLLMs’ understanding of multimodal social media content through various tasks, including misinformation detection, hate speech detection, and social context generation.",
+    "data_type": "multimodal",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "PolitiFact",
+      "GossipCop",
+      "Hateful Memes",
+      "Memotion"
+    ],
+    "resources": [
+      "https://github.com/claws-lab/MMSoc.git"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To rigorously assess the capabilities of MLLMs (Multimodal Large Language Models) across ten multimodal tasks derived from social media environments.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Misinformation Detection",
+      "Hate Speech Detection",
+      "Humor Detection",
+      "Sarcasm Detection",
+      "Sentiment Analysis",
+      "Offensiveness Detection",
+      "Tagging",
+      "Image Description",
+      "Social Context Description",
+      "Optical Character Recognition"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Combines prominent multimodal datasets including a novel large-scale YouTube tagging dataset.",
+    "size": "1,963,697 videos",
+    "format": "N/A",
+    "annotation": "Annotated via crowdsourcing and institutionally approved methods."
+  },
+  "methodology": {
+    "methods": [
+      "Zero-shot evaluation",
+      "Fine-tuning with explanations",
+      "Human evaluation for tagging performance"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "Precision",
+      "Recall",
+      "ROUGE-L"
+    ],
+    "calculation": "Metrics are calculated based on the performance of models on benchmark tasks, averaged across various experiments.",
+    "interpretation": "Higher scores indicate better performance in accurately categorizing and generating responses relevant to multifaceted social media scenarios.",
+    "baseline_results": "Comparisons made against various models including fully fine-tuned state-of-the-art models.",
+    "validation": "End-to-end evaluation of MLLMs was conducted using established datasets reflecting real-world applicability."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on affected communities"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The benchmark includes considerations for the diversity of perspectives needed to interpret social media appropriately.",
+    "harm": "The benchmark identifies and mitigates the risk of misinformation and harmful content propagation in model outputs."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Distributed under the Apache 2.0 License.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

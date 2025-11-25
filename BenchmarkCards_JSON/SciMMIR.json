@@ -1,0 +1,74 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SciMMIR (Scientific Multi-Modal Information Retrieval)",
+    "abbreviation": "SciMMIR",
+    "overview": "SciMMIR is a benchmark designed to evaluate multi-modal information retrieval (MMIR) models specifically in the scientific domain, featuring a dataset of 530K meticulously curated image-text pairs extracted from scientific documents.",
+    "data_type": "image-text pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/Wusiwei0410/SciMMIR"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation framework for MMIR models in the scientific domain.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Multi-modal Information Retrieval"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Open-access research papers retrieved from arXiv.",
+    "size": "530,000 image-text pairs",
+    "format": "N/A",
+    "annotation": "Annotated with a two-level subset-subcategory hierarchy based on the content."
+  },
+  "methodology": {
+    "methods": [
+      "Zero-shot evaluation",
+      "Fine-tuned evaluations"
+    ],
+    "metrics": [
+      "Mean Reciprocal Rank (MRR)",
+      "Hits@K"
+    ],
+    "calculation": "Metrics are calculated based on the ranking of the golden answer within the set of candidates provided by the models.",
+    "interpretation": "Higher MRR and Hits@K indicate better retrieval performance.",
+    "baseline_results": "Performance results vary across multiple models tested.",
+    "validation": "Evaluated on training, validation, and test splits of 498,279, 16,433, and 16,263 samples respectively."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

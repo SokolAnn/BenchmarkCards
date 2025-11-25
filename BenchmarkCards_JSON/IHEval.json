@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "IHEval",
+    "abbreviation": "IHEval",
+    "overview": "IHEval is a novel benchmark comprising 3,538 examples across nine tasks, designed to evaluate models' ability to follow the instruction hierarchy while handling cases where instructions may align or conflict.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Spanish"
+    ],
+    "similar_benchmarks": [
+      "SysBench"
+    ],
+    "resources": [
+      "https://ytyz1307zzh.github.io/iheval.github.io"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate language models' ability to follow the instruction hierarchy and identify their weaknesses in handling conflicting instructions.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Rule Following",
+      "Task Execution",
+      "Safety Defense",
+      "Tool Use"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Internally created dataset with examples derived from public benchmarks and expert reviews.",
+    "size": "3,538 examples",
+    "format": "N/A",
+    "annotation": "Manually reviewed by experts to ensure data quality and coherence."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "ROUGE-L"
+    ],
+    "calculation": "Metrics are calculated based on the models' output adherence to the instruction hierarchy.",
+    "interpretation": "Higher scores indicate better adherence to the instruction hierarchy, while significant drops signal difficulty managing instruction conflicts.",
+    "baseline_results": "N/A",
+    "validation": "Programmatic evaluation ensuring efficient and reproducible results."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data sourced from public benchmarks and reviewed to avoid sensitive information.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

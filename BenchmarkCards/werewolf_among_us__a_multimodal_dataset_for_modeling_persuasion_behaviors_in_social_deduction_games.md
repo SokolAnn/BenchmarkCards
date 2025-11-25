@@ -1,0 +1,93 @@
+# Werewolf Among Us: A Multimodal Dataset for Modeling Persuasion Behaviors in Social Deduction Games
+
+## 📊 Benchmark Details
+
+**Name**: Werewolf Among Us: A Multimodal Dataset for Modeling Persuasion Behaviors in Social Deduction Games
+
+**Overview**: We introduce the first multimodal dataset for modeling persuasion behaviors. The dataset includes 199 dialogue transcriptions and videos captured in multi-player social deduction game settings, 26,647 utterance-level annotations of persuasion strategy, and game-level annotations of deduction game outcomes. We benchmark the dataset with experiments that analyze the role of dialogue context and visual signals for persuasion strategy prediction and study generalization across data sources and games.
+
+**Data Type**: multimodal (video, text (dialogue transcriptions), audio)
+
+**Domains**:
+- Natural Language Processing
+- Computer Vision
+
+**Similar Benchmarks**:
+- Ego4D Social dataset
+- CaSiNo
+
+**Resources**:
+- [Resource](https://persuasion-deductiongame.socialai-data.org)
+- [Resource](https://en.wikipedia.org/wiki/Ultimate_Werewolf#One_Night_roles)
+- [Resource](https://en.wikipedia.org/wiki/The_Resistance_(game)#Avalon_variant)
+- [Resource](https://beta.openai.com/)
+
+## 🎯 Purpose and Intended Users
+
+**Goal**: Introduce a multimodal benchmark dataset for modeling persuasive behaviors during multi-player social deduction games, and to analyze how dialogue context and visual signals contribute to persuasion strategy prediction and game outcome deduction.
+
+**Target Audience**:
+- Language technologies community
+
+**Tasks**:
+- Multi-label utterance-level persuasion strategy prediction (multimodal classification)
+- Binary pairwise vote prediction (game outcome deduction)
+- Cross-domain and cross-game generalization evaluation
+
+**Limitations**: We only use pre-trained video transformers off-the-shelf for video encoding; egocentric videos and demographic statistics from Ego4D were not incorporated; total number of games is insufficient to train a deep neural network for voting outcome deduction without augmentation.
+
+## 💾 Data
+
+**Source**: Ego4D Social dataset subset (third-person videos) and YouTube videos (selected clips matching game setup). Transcripts were generated using rev.com and manually corrected. Annotation tool adapted from Hayati et al. Annotators recruited from a startup data platform.
+
+**Size**: 199 dialogue transcriptions and videos; 26,647 utterance-level annotations; 7.3 hours of Ego4D video (40 One Night Ultimate Werewolf games and 8 Avalon games); 14.8 hours of YouTube video with 151 clips; 5,815 Ego4D utterances; 20,832 YouTube utterances; deduction dataset split 2,741 train / 427 val / 827 test samples.
+
+**Format**: N/A
+
+**Annotation**: Manual annotation at the utterance level by three trained annotators using a web interface. Annotators annotated persuasion strategies per utterance; annotator training repeated until Krippendorff's alpha > 0.6 for each category; transcripts were manually corrected after automatic transcription.
+
+## 🔬 Methodology
+
+**Methods**:
+- Human annotation
+- Automated metrics evaluation
+- Model-based evaluation (fine-tuning pre-trained language models and using pre-trained video encoders)
+- Zero/one/few-shot evaluation with GPT-3
+
+**Metrics**:
+- F1 Score (per class and average F1)
+- Joint Accuracy
+- Area Under ROC Curve (AUC)
+- Krippendorff's alpha (annotation agreement)
+
+**Calculation**: Per-class F1 reported for each persuasion strategy; average F1 computed as mean across categories; Joint Accuracy considers a prediction correct only if all categories for an utterance are predicted correctly. For deduction, weighted binary classification loss was used and AUC reported. Krippendorff's alpha (nominal) used for inter-annotator agreement during annotation.
+
+**Interpretation**: Higher per-class and average F1 indicate better persuasion strategy prediction. Higher Joint Accuracy indicates better joint multi-label prediction. Higher AUC and F1 indicate better deduction (vote prediction) performance. Krippendorff's alpha > 0.6 was used as annotation agreement threshold.
+
+**Baseline Results**: A logistic regression deduction model achieved F1 = 32.7% and AUC = 54.7% (vs random prediction with F1 = 28.6% and AUC = 50.0%). Incorporating video features improved BERT by 0.8% on both Ego4D and YouTube datasets. GPT-3 few-shot inference yielded non-trivial performance but was inferior to fine-tuned models (GPT-3 reported results in Table 4 of the paper).
+
+**Validation**: Models trained with grid search over learning rates and batch sizes, trained for 10 epochs with AdamW. Experiments run with three random seeds and mean and standard deviation reported. Annotation validation used Krippendorff's alpha > 0.6. Deduction data split: 2,741 train / 427 val / 827 test.
+
+## ⚠️ Targeted Risks
+
+**Risk Categories**:
+- Misuse
+- Privacy
+
+**Atlas Risks**:
+- **Misuse**: Improper usage, Nonconsensual use, Spreading toxicity, Spreading disinformation
+- **Privacy**: Personal information in data
+
+**Demographic Analysis**: Dataset does not include demographic breakdowns; demographic statistics from Ego4D exist but were not incorporated into this work.
+
+**Potential Harm**: ['The authors note potential harmful uses such as deception, impersonation, mockery, discrimination, manipulation, targeted harassment, and hate speech and request users not to use the dataset for such purposes.']
+
+## 🔒 Ethical and Legal Considerations
+
+**Privacy And Anonymity**: Study approved by Institutional Review Board. Consent obtained from players. Personally identifiable information (PII) is de-identified as part of the Ego4D efforts. Users must sign an online agreement restricting malicious uses.
+
+**Data Licensing**: Users are required to sign an online agreement forbidding malicious uses; no formal license type (e.g., CC BY) is specified in the paper.
+
+**Consent Procedures**: Consent obtained from recorded players; annotation and data collection reviewed and approved by the authors' internal review board.
+
+**Compliance With Regulations**: IRB approval is stated. No explicit mention of compliance with GDPR, CCPA, or other data protection regulations.

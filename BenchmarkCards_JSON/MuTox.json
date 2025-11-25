@@ -1,0 +1,112 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MuTox (Universal MUltilingual Audio-based TOXicity Dataset and Zero-shot Detector)",
+    "abbreviation": "MuTox",
+    "overview": "MuTox is the first highly multilingual audio-based dataset with toxicity labels, comprising 20,000 audio utterances for English and Spanish, and 4,000 for the other 28 languages, designed for audio-based toxicity detection.",
+    "data_type": "audio utterances",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Spanish",
+      "Arabic",
+      "Bengali",
+      "Bulgarian",
+      "Catalan",
+      "Czech",
+      "Danish",
+      "German",
+      "Greek",
+      "Estonian",
+      "Persian",
+      "Finnish",
+      "French",
+      "Hebrew",
+      "Hindi",
+      "Hungarian",
+      "Indonesian",
+      "Italian",
+      "Dutch",
+      "Polish",
+      "Portuguese",
+      "Russian",
+      "Slovak",
+      "Swahili",
+      "Tagalog",
+      "Turkish",
+      "Urdu",
+      "Vietnamese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/facebookresearch/seamless_communication/tree/mutox/src/seamless_communication/cli/toxicity/mutox"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a benchmark for multilingual audio-based toxicity detection across 30 languages.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Toxicity Detection"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset consists of audio utterances labeled with toxicity, selected from speech transcriptions and annotated manually across multiple languages.",
+    "size": "20,000 utterances for English and Spanish, 4,000 utterances for each of the other 28 languages",
+    "format": "Audio files",
+    "annotation": "Manual annotation by professional annotators"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Precision",
+      "Recall",
+      "Area Under the Curve (AUC)"
+    ],
+    "calculation": "Metrics are calculated based on performance comparisons between the MuTox classifier and existing text-based classifiers.",
+    "interpretation": "Higher F1 Scores and AUC values indicate better performance in toxicity detection.",
+    "baseline_results": "MuTox improves F1-Score over wordlist-based classifiers by an average of 100%.",
+    "validation": "The effectiveness of the MuTox dataset and classifier was validated through performance comparisons with text-based toxicity detectors."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Decision bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset includes a diverse set of speakers across different languages, which may contribute to varying perceptions of toxicity.",
+    "harm": "Potential for misclassifying non-toxic content as toxic, leading to unintended bias in the classifier's performance."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A - Data collection procedures are compliant with ethical guidelines.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Annotators were informed of the content and could opt-out.",
+    "compliance_with_regulations": "N/A"
+  }
+}

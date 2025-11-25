@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "StreamBench",
+    "abbreviation": "N/A",
+    "overview": "StreamBench is a pioneering benchmark designed to evaluate the continuous improvement of LLM agents over input-feedback sequences, simulating an online learning environment where LLMs receive and act on a continuous flow of feedback.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMLU",
+      "GSM8K",
+      "BIG-Bench-Hard"
+    ],
+    "resources": [
+      "https://github.com/stream-bench/stream-bench",
+      "https://stream-bench.github.io"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate LLM agents' ability to improve themselves over input-feedback sequences in an online setting and develop effective streaming strategies for LLMs.",
+    "audience": [
+      "ML Researchers",
+      "AI Developers"
+    ],
+    "tasks": [
+      "Text-to-SQL",
+      "Python Programming",
+      "Tool Use",
+      "Medical Diagnosis",
+      "Question Answering"
+    ],
+    "limitations": "StreamBench does not encompass all possible types of tasks or domains where LLMs can be applied and is limited to text without other modalities.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Diverse datasets including Spider, CoSQL, BIRD, DS-1000, ToolBench, DDXPlus, HotpotQA.",
+    "size": "1,780 unique instances across various tasks.",
+    "format": "N/A",
+    "annotation": "Data is obtained from existing datasets with specific structures for each task."
+  },
+  "methodology": {
+    "methods": [
+      "Self-StreamICL",
+      "MAM-StreamICL",
+      "GrowPrompt",
+      "MemPrompt"
+    ],
+    "metrics": [
+      "Execution accuracy",
+      "Pass@1",
+      "Exact Match",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on the defined outputs of LLM agents, comparing generated outputs against expected outputs.",
+    "interpretation": "Higher accuracy metrics indicate better agent performance in continuous learning setups.",
+    "baseline_results": "MAM-StreamICL outperformed other methods across all evaluated tasks.",
+    "validation": "Results validated through average performance comparison across multiple datasets and random seeds."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

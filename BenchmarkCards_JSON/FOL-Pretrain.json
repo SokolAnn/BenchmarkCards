@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FOL-Pretrain: A complexity annotated corpus of first-order logic",
+    "abbreviation": "FOL-Pretrain",
+    "overview": "FOL-Pretrain is a large-scale, fully open, complexity-annotated dataset of first-order logic reasoning traces, designed to analyze algorithmic reasoning in large language models (LLMs). The dataset consists of 3.5 billion tokens, including 8.8 million human-annotated examples and 7.5 million synthetically generated examples.",
+    "data_type": "first-order logic expressions",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "LogicBench",
+      "FOLIO"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2505.14932"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a scalable, interpretable artifact for studying how large language models learn and generalize symbolic reasoning processes.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Logical Reasoning"
+    ],
+    "limitations": "The dataset focuses on first-order logic, which may not capture the full range of reasoning phenomena found in real-world tasks.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated from human-annotated logical forms, symbolic rule generation, and LLM prompting.",
+    "size": "3.5 billion tokens",
+    "format": "N/A",
+    "annotation": "Includes human curation and algorithmically verified components."
+  },
+  "methodology": {
+    "methods": [
+      "Evaluation of algorithmic reasoning via logical expressions.",
+      "Token-level evaluation and representation-level probing."
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Metrics are calculated based on the model's prediction correctness against ground truth.",
+    "interpretation": "Results are interpreted based on the accuracy of logical reasoning tasks.",
+    "baseline_results": "A GPT-2 small model pretrained on the FOL-Pretrain corpus achieved significant performance in logical reasoning tasks.",
+    "validation": "Results were validated through standard evaluation metrics such as accuracy, and correlated with representational analysis."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "While the dataset is designed to enhance reasoning systems, potential misuse includes generating misleading information."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Creative Commons Attribution 4.0 International License (CC BY 4.0)",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

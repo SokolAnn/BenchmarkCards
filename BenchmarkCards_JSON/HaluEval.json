@@ -1,0 +1,103 @@
+{
+  "benchmark_details": {
+    "name": "HaluEval",
+    "overview": "A large-scale collection of generated and human-annotated hallucinated samples for evaluating the performance of LLMs in recognizing hallucinations.",
+    "data_type": "Generated and human-annotated samples",
+    "domains": [
+      "Natural Language Processing",
+      "Language Models"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "BEGIN benchmark",
+      "AIS benchmark"
+    ],
+    "resources": [
+      "https://github.com/RUCAIBox/HaluEval"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To understand what types of content and to which extent LLMs tend to hallucinate.",
+    "audience": [
+      "Researchers",
+      "Practitioners in AI"
+    ],
+    "tasks": [
+      "Evaluate LLMs' capability to recognize hallucinations",
+      "Analyze hallucinated content"
+    ],
+    "limitations": "Limited by the capacity of ChatGPT in generating hallucinated samples.",
+    "out_of_scope_uses": [
+      "Real-world applications without further vetting",
+      "Misuse of hallucinated samples"
+    ]
+  },
+  "data": {
+    "source": "Generated using ChatGPT and annotated by human labelers.",
+    "size": "35,000 samples (5,000 general queries and 30,000 task-specific examples)",
+    "format": "N/A",
+    "annotation": "Human annotations for hallucination identification"
+  },
+  "methodology": {
+    "methods": [
+      "Two-stage sampling-then-filtering approach",
+      "Human annotation for verification"
+    ],
+    "metrics": [
+      "Accuracy in recognizing hallucinations"
+    ],
+    "calculation": "N/A",
+    "interpretation": "Performance evaluation based on the ability to recognize hallucinations",
+    "baseline_results": "ChatGPT achieved 62.59% accuracy in question answering.",
+    "validation": "Human labelers established reliability through max-voting methodology."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Privacy",
+      "Fairness",
+      "Explainability"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Exposing personal information"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Explainability",
+          "subcategory": [
+            "Unexplainable output"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Potential for misuse of hallucinated samples",
+      "User misinformation"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All user data anonymized during annotation.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

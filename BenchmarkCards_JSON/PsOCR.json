@@ -1,0 +1,77 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PsOCR (Pashto Optical Character Recognition)",
+    "abbreviation": "PsOCR",
+    "overview": "This paper evaluates the performance of Large Multimodal Models (LMMs) on Optical Character Recognition (OCR) in the low-resource Pashto language by introducing a dataset comprising one million synthetic images annotated at various levels.",
+    "data_type": "image",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "Pashto"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/zirak-ai/PashtoOCR",
+      "https://huggingface.co/datasets/zirak-ai/PashtoOCR",
+      "https://www.kaggle.com/datasets/drijaz/PashtoOCR"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To develop a comprehensive dataset for training and evaluating LMMs on Pashto OCR tasks.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Optical Character Recognition"
+    ],
+    "limitations": "The dataset consists solely of computer-generated text and does not include handwritten samples.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Synthetic generation methods using a curated text corpus collected from various sources including Common Crawl, open-source websites, and previous studies.",
+    "size": "1,000,000 images",
+    "format": "PNG",
+    "annotation": "Annotated at word, line, and document levels with bounding boxes."
+  },
+  "methodology": {
+    "methods": [
+      "Zero-shot evaluation of models"
+    ],
+    "metrics": [
+      "Character Accuracy",
+      "Word Accuracy",
+      "BLEU Score"
+    ],
+    "calculation": "Metrics are calculated based on the character and word transformation needed to match predicted text with ground-truth.",
+    "interpretation": "Higher scores indicate better OCR performance on the synthetic images.",
+    "baseline_results": null,
+    "validation": "No pre-training or fine-tuning applied; models evaluated in their original form."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

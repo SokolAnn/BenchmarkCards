@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "AesBiasBench",
+    "abbreviation": "N/A",
+    "overview": "AesBiasBench is a benchmark designed to evaluate Multimodal Large Language Models (MLLMs) along two dimensions: stereotype bias, measured by variations in evaluations across demographic groups, and alignment between model outputs and human aesthetic preferences. It includes three subtasks: Aesthetic Perception, Aesthetic Assessment, and Aesthetic Empathy, with structured metrics such as IFD, NRD, and AAS.",
+    "data_type": "image-quality assessments",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "PARA",
+      "LAPIS"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2509.11620"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To benchmark and identify bias in MLLMs for Personalized Image Aesthetic Assessment, fostering greater awareness within the research community and contributing to the development of more equitable AI systems.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Aesthetic Perception",
+      "Aesthetic Assessment",
+      "Aesthetic Empathy"
+    ],
+    "limitations": "The analysis is focused on three identity attributes: age, gender, and education, limiting the understanding of bias in MLLMs.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Personalized Image Aesthetics Database (PARA) and Leuven Art Personalized Image Set (LAPIS)",
+    "size": "31,220 images in PARA; 11,723 images in LAPIS",
+    "format": "N/A",
+    "annotation": "Annotated by human raters for aesthetic properties and preferences."
+  },
+  "methodology": {
+    "methods": [
+      "Bias analysis using Identity Frequency Disparity (IFD) and Normalized Representation Disparity (NRD)",
+      "Aesthetic Alignment Score (AAS) for alignment evaluation"
+    ],
+    "metrics": [
+      "Identity Frequency Disparity (IFD)",
+      "Normalized Representation Disparity (NRD)",
+      "Aesthetic Alignment Score (AAS)"
+    ],
+    "calculation": "Metrics are calculated using demographic group comparisons and deviations from demographic parity.",
+    "interpretation": "Higher scores indicate greater stereotype bias (IFD, NRD) and closer alignment with human preferences (AAS).",
+    "baseline_results": "Results indicating smaller models exhibit stronger stereotypes biases, while larger models align more closely with human preferences.",
+    "validation": "Evaluated across multiple models and datasets, highlighting the robustness of findings."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Transparency"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias",
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Lack of training data transparency"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis based on gender, age, and education.",
+    "harm": [
+      "Potential reinforcement of societal stereotypes",
+      "Bias in aesthetic evaluations influenced by demographic factors"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All demographic attributes used for analysis are anonymized and aggregated, with no personally identifiable information.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

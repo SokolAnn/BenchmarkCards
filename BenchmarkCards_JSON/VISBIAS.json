@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "VISBIAS",
+    "abbreviation": "N/A",
+    "overview": "VISBIAS evaluates explicit and implicit social biases exhibited by Vision-Language Models (VLMs) through four distinct assessment scenarios.",
+    "data_type": "image-description pairs, personal information forms",
+    "domains": [
+      "Computer Vision",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "BiasDora",
+      "BIGbench",
+      "BiasLens",
+      "SocialCounterfactuals"
+    ],
+    "resources": [
+      "https://github.com/uscnlp-lime/VisBias"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To investigate and evaluate both explicit and implicit social biases in Vision-Language Models.",
+    "audience": [
+      "ML Researchers",
+      "Ethics Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Explicit Bias Assessment",
+      "Implicit Bias Assessment"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Real-world images and crowdsourced personal information forms.",
+    "size": "700 images, 400 personal information forms",
+    "format": "PNG, JSON",
+    "annotation": "Manual annotation with human input for bias evaluation."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Jensen-Shannon Divergence (JSD)",
+      "Kullback-Leibler Divergence (KLD)"
+    ],
+    "calculation": "Metrics are calculated based on response distributions of the models during bias evaluation.",
+    "interpretation": "JSD and KLD values indicate the degree of bias present in model outputs.",
+    "baseline_results": "Comparison to existing benchmark results not specified.",
+    "validation": "Quantitative results validated through human assessment and statistical analysis."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Bias"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The benchmark includes demographic breakdowns across gender and racial lines.",
+    "harm": "The recognition of harmful stereotypes perpetuated by models."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Images used are publicly available and were chosen to minimize privacy concerns.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Data collection procedures were transparent, and human evaluators were compensated.",
+    "compliance_with_regulations": "N/A"
+  }
+}

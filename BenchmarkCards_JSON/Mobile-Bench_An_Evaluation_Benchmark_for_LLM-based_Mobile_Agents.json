@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Mobile-Bench: An Evaluation Benchmark for LLM-based Mobile Agents",
+    "abbreviation": "N/A",
+    "overview": "Mobile-Bench is a novel benchmark for evaluating the capabilities of LLM-based mobile agents, providing a dataset of 832 entries and over 200 tasks designed for multi-APP collaboration scenarios.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "AndroidEnv",
+      "MobileEnv",
+      "WebShop"
+    ],
+    "resources": [
+      "https://github.com/XiaoMi/MobileBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation framework for LLM-based mobile agents, assessing their planning, reasoning, and interaction capabilities in real-world mobile environments.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Multi-App Interaction"
+    ],
+    "limitations": "The Mobile-Bench may struggle with general large models which exhibit pronounced illusions in API calls.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Real user queries combined with generated data from LLMs.",
+    "size": "832 examples",
+    "format": "N/A",
+    "annotation": "Mixed: real data from user queries and generated tasks through GPT-4."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "PassRate",
+      "CheckPoint coverage"
+    ],
+    "calculation": "CheckPoint coverage is calculated as the weighted sum of the scores based on package usage, key phrases, and API calls.",
+    "interpretation": "Interpretation revolves around determining the ability of the LLM-based agents to navigate and complete tasks in the predefined mobile environment.",
+    "baseline_results": "Performance results based on LLMs like GPT-3.5 and GPT-4, showing variations in PassRate across task types.",
+    "validation": "Quality verification processes include cross-source validation of user-generated and GPT-4 generated tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Privacy measures are in place, focusing on de-identification of user data collected.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

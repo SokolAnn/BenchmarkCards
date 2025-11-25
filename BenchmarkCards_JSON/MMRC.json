@@ -1,0 +1,99 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MMRC (Multi-Modal Real-world Conversation benchmark)",
+    "abbreviation": "MMRC",
+    "overview": "MMRC is a benchmark for evaluating six core open-ended abilities of Multimodal Large Language Models (MLLMs) in real-world conversations, consisting of 5,120 conversations and 28,720 corresponding manually labeled questions.",
+    "data_type": "conversational dialogue with text and images",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MT-Bench",
+      "DialogBench",
+      "LongMemEval"
+    ],
+    "resources": [
+      "https://github.com/tiuxuxsh76075/MMRC"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation framework for MLLMs' performance in practical, open-ended conversational settings.",
+    "audience": [
+      "ML Researchers",
+      "AI Practitioners"
+    ],
+    "tasks": [
+      "Information Extraction",
+      "Cross-turn Reasoning",
+      "Information Update",
+      "Image Management",
+      "Memory Recall",
+      "Answer Refusal"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Data collected from real-world multi-modal conversations through the DialogFlow platform.",
+    "size": "5,120 conversations",
+    "format": "Text and images",
+    "annotation": "Manually annotated questions and responses"
+  },
+  "methodology": {
+    "methods": [
+      "GPT-based evaluation",
+      "Human evaluation",
+      "Objective precision metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Precision"
+    ],
+    "calculation": "Metrics are calculated based on comparisons of model responses against manually annotated ground truth answers.",
+    "interpretation": "Performance is interpreted based on a scoring scale from 0 to 5 for each evaluated ability, with higher scores indicating better performance.",
+    "baseline_results": "Performance assessed against 20 mainstream MLLMs",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Privacy",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data collection was done with informed consent, ensuring participant privacy.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Informed consent obtained from participants for data usage.",
+    "compliance_with_regulations": "N/A"
+  }
+}

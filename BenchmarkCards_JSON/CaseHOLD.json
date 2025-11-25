@@ -1,0 +1,75 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CaseHOLD (Case Holdings On Legal Decisions)",
+    "abbreviation": "CaseHOLD",
+    "overview": "CaseHOLD is a new dataset comprised of over 53,000 multiple choice questions designed to identify the relevant holding of a cited case, which is a fundamental task for lawyers. This dataset addresses the difficulty of existing legal NLP tasks and presents significant challenges from an NLP perspective.",
+    "data_type": "multiple choice question-answering pairs",
+    "domains": [
+      "Legal"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/reglab/casehold"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To create a benchmark for a fundamental legal task, improving challenges in identifying legal holdings and informing on when domain pretraining is beneficial.",
+    "audience": [
+      "ML Researchers",
+      "Legal Researchers",
+      "Practitioners"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Harvard Law Library case law corpus",
+    "size": "53,137 examples",
+    "format": "N/A",
+    "annotation": "Extracted using legal citation rules"
+  },
+  "methodology": {
+    "methods": [
+      "Fine-tuning on Legal-BERT",
+      "Cross-validation"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Macro F1 Score"
+    ],
+    "calculation": "F1 score calculated through 10-fold cross-validation",
+    "interpretation": "Higher F1 scores indicate better model performance in selecting the correct legal holding.",
+    "baseline_results": "BiLSTM F1: 0.4, BERT F1: 0.6",
+    "validation": "10-fold cross-validation for model evaluation"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

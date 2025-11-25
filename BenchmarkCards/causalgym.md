@@ -1,0 +1,101 @@
+# CausalGym
+
+## 📊 Benchmark Details
+
+**Name**: CausalGym
+
+**Overview**: CausalGym adapts and expands the SyntaxGym suite of linguistic tasks to benchmark the ability of interpretability methods to causally affect language model behaviour by generating span-aligned minimal pairs and measuring the causal effect of interventions on next-token predictions.
+
+**Data Type**: text (templated span-aligned minimal pairs for next-token prediction)
+
+**Domains**:
+- Natural Language Processing
+- Computational Psycholinguistics
+
+**Languages**:
+- English
+
+**Similar Benchmarks**:
+- SyntaxGym
+- BLiMP
+
+**Resources**:
+- [GitHub Repository](https://github.com/aryamanarora/causalgym)
+- [Resource](https://arxiv.org/abs/2402.12560)
+
+## 🎯 Purpose and Intended Users
+
+**Goal**: To benchmark interpretability methods on their ability to find linear features in language models that, when intervened on, causally influence linguistic behaviours; and to enable causal, mechanistic analyses of how LMs implement linguistic phenomena.
+
+**Target Audience**:
+- Computational Psycholinguists
+- Interpretability Researchers
+- Machine Learning Researchers
+
+**Tasks**:
+- Next-token prediction (language modeling)
+- Targeted syntactic evaluation (linguistic minimal-pair tasks)
+- Causal interpretability evaluation via interventions (1D DII)
+
+**Limitations**: CausalGym includes only English data; it benchmarks only methods that operate on one-dimensional linear subspaces (1D DII); results may differ on other models since experiments used the pythia series trained on the same data in the same order; many non-linguistic behaviours and multi-dimensional or non-linear methods are not covered.
+
+## 💾 Data
+
+**Source**: Converted core test suites in SyntaxGym (Gauthier et al., 2020) into templates to generate span-aligned minimal pairs; one novel task (agr_gender) was added.
+
+**Size**: 29 tasks; training set: 400 examples per task; evaluation set: 100 examples per task (50 sampled then effectively 100 due to pairing/swap procedure).
+
+**Format**: Templated span-aligned minimal pairs (text) generated from SyntaxGym templates with combinatorial sampling of template slots.
+
+**Annotation**: Automatically generated from SyntaxGym templates with manual removal/filtering of options that would yield questionably grammatical sentences.
+
+## 🔬 Methodology
+
+**Methods**:
+- Intervention-based evaluation using one-dimensional distributed interchange intervention (1D DII)
+- Distributed Alignment Search (DAS)
+- Linear probing (supervised linear probes)
+- Difference-in-means
+- Linear Discriminant Analysis (LDA)
+- Principal Component Analysis (PCA)
+- k-means (2-means)
+- Random feature baseline
+- Control tasks (arbitrary input-to-label mappings) for selectivity
+- Hyperparameter tuning on a dev set; non-overlapping train/dev/eval splits
+
+**Metrics**:
+- Log odds-ratio (per-example measure of causal effect)
+- Average log odds-ratio (AvgOdds) over evaluation set
+- OverallOdds (averaged per-layer maximum AvgOdds across regions)
+- Task Accuracy (model next-token prediction accuracy on task)
+- Selectivity (difference between odds-ratios on original task and control task)
+
+**Calculation**: Odds(p, p_{f\leftarrow f*}, <b,s,yb,ys>) = log [ p(yb|b) / p(ys|b) * p_{f\leftarrow f*}(ys|b,s) / p_{f\leftarrow f*}(yb|b,s) ]. AvgOdds is the mean of Odds over the evaluation set E. OverallOdds averages, over layers, the maximum AvgOdds across regions.
+
+**Interpretation**: A greater log odds-ratio indicates a larger causal effect of the intervened representation on model outputs; a log odds-ratio of 0 indicates no causal effect. Selectivity is used to control for methods that can implement arbitrary input–output mappings (expressivity).
+
+**Baseline Results**: DAS achieves the highest causal efficacy across pythia models. Example values from Table 1: pythia-14m average task accuracy 0.62 with DAS overall odds-ratio 3.94 and Probe 1.16; pythia-6.9b average task accuracy 0.89 with DAS overall odds-ratio 9.95 and Probe 3.42. The paper reports per-model and per-task overall odds-ratio and selectivity in Table 1 and detailed tables in appendices.
+
+**Validation**: Training sets and evaluation sets are non-overlapping (training: 400 examples per task after pairing; evaluation: 50 sampled (effectively 100) with resampling to avoid overlap). Hyperparameters tuned on a dev set sampled like eval but with different seeds. Control tasks (arbitrary label mappings) are used to compute selectivity to control for method expressivity.
+
+## ⚠️ Targeted Risks
+
+**Risk Categories**:
+- Misuse
+- Value Alignment
+
+**Atlas Risks**:
+- **Misuse**: Dangerous use, Improper usage
+- **Value Alignment**: Harmful output
+
+**Potential Harm**: ['Benchmark authors note that successful interpretability methods could be used to justify deployment of language models in high-risk settings (e.g., to autonomously make decisions about human beings).', 'Authors note that methods could be used to manipulate models to produce harmful outputs.']
+
+## 🔒 Ethical and Legal Considerations
+
+**Privacy And Anonymity**: Not Applicable
+
+**Data Licensing**: MIT License (SyntaxGym original release under MIT; authors state their data release will use the MIT license).
+
+**Consent Procedures**: Not Applicable
+
+**Compliance With Regulations**: Not Applicable

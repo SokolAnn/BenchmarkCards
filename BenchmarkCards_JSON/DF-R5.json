@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DF-R5 (Deepfake Reasoning Dataset)",
+    "abbreviation": "DF-R5",
+    "overview": "DF-R5 is a reasoning-annotated dataset for deepfake detection containing approximately 115,000 images paired with high-quality explanations, designed to enhance the reasoning capabilities of multimodal large language models.",
+    "data_type": "image-reasoning pairs",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/tuanrpt/PRPO"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To improve deepfake detection and explanation quality through a reasoning-annotated dataset and a novel reinforcement learning approach.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Deepfake Detection",
+      "Explainability"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Images sourced from DF40 dataset, covering multiple generative domains.",
+    "size": "115,000 images",
+    "format": "N/A",
+    "annotation": "High-quality explanations generated through a three-step process using multimodal large language models."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "Reasoning Score"
+    ],
+    "calculation": "Metrics such as accuracy and F1 score are calculated based on the performance of trained models on the DF-R5 dataset.",
+    "interpretation": "Higher scores indicate better detection accuracy and reasoning quality.",
+    "baseline_results": "PRPO achieves an accuracy of 89.91% and a reasoning score of 4.55/5.0.",
+    "validation": "Extensive experiments showing significant gains in both detection accuracy and explanation faithfulness."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Privacy",
+      "Robustness",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential misinformation and misuse in deepfake generation."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

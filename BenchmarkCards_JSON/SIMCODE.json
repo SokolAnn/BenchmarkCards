@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SIMCODE",
+    "abbreviation": "N/A",
+    "overview": "SIMCODE is introduced as the first benchmark to evaluate LLMs’ ability to generate executable ns-3 simulation code from natural language. It includes 400 tasks across introductory, intermediate, and advanced levels, each with a prompt, verified C++ solution, and test cases.",
+    "data_type": "triplet of natural language prompt, C++ solution, and test cases",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "HumanEval",
+      "MBPP",
+      "MojoBench",
+      "mHumanEval"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the ability of LLMs to generate correct and executable ns-3 simulation code from natural language prompts.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Code Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated simulation tasks from various sources, including university-level networking coursework and the official ns-3 example repository.",
+    "size": "400 tasks",
+    "format": "N/A",
+    "annotation": "Each solution was verified to run correctly in the ns-3 environment."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Execution Accuracy",
+      "CodeBLEU",
+      "CodeBERTScore",
+      "Pass@1"
+    ],
+    "calculation": "Execution accuracy measures the proportion of generated code samples that successfully compile and execute. CodeBLEU and CodeBERTScore assess syntactic structure and semantic correctness.",
+    "interpretation": "Higher execution accuracy indicates better capability of the LLM in generating correct code.",
+    "baseline_results": "GPT-4.1 achieved up to 30.6% execution accuracy.",
+    "validation": "Evaluation of models was conducted across six prompt techniques."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

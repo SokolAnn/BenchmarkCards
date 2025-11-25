@@ -1,0 +1,101 @@
+# Following the footsteps of giants: Modeling the mobility of historically notable individuals using Wikipedia
+
+## 📊 Benchmark Details
+
+**Name**: Following the footsteps of giants: Modeling the mobility of historically notable individuals using Wikipedia
+
+**Overview**: We use Natural Language Processing techniques to retrieve large amounts of historical information from Wikipedia pages of historically notable individuals, extract places and dates of movements (birth, in-life migrations, death), structure these into geographical mobility trajectories and a spatial network of cities, and model the mobility of notable people using modified (multilevel) radiation models that incorporate city population, number of notable people, and discipline.
+
+**Data Type**: text (Wikipedia biographical pages) with extracted migration trajectories as place-date pairs (geolocated coordinates)
+
+**Domains**:
+- Digital Humanities
+- Computational Social Science
+- Natural Language Processing
+- Network Science
+
+**Languages**:
+- English
+
+**Similar Benchmarks**:
+- Pantheon 1.0
+
+**Resources**:
+- [Resource](https://doi.org/10.7910/DVN/PJS21L)
+- [Resource](https://figshare.com/articles/Following_the_footsteps_of_giants/7352987)
+- [GitHub Repository](https://github.com/dhfbk/rambleon)
+
+## 🎯 Purpose and Intended Users
+
+**Goal**: To extract and structure migratory events of historically notable individuals from Wikipedia biographies and to model and quantify their mobility patterns (radius of gyration, number of cities visited, jump length distributions) using multilevel radiation models incorporating population, number of notable people, and discipline.
+
+**Target Audience**:
+- Digital Humanities researchers
+- Computational Social Science researchers
+- Natural Language Processing researchers
+
+**Tasks**:
+- Information Extraction
+- Named Entity Recognition
+- Geolocation / Geo-parsing
+- Temporal Information Extraction
+- Mobility Modeling
+- Network Analysis
+
+**Limitations**: Paper-stated limitations: reliance on English Wikipedia with a clear bias towards Western culture and male figures; focus restricted to the first half of the 20th century (time-window dependence); relatively small dataset of notable individuals after filtering; extraction pipeline (Ramble-On) has estimated recall of 0.59 and favors precision (precision 0.86), which may miss movements whose date or destination are not mentioned in the same sentence; collapsing locations to nearest "great city" may distort some trips due to lack of population data.
+
+## 💾 Data
+
+**Source**: Starting point: Pantheon project biographies (Pantheon 1.0) extracted from English Wikipedia; migration frames and arguments identified with the Ramble-On pipeline calling PIKES and Semafor (FrameNet); destinations geolocated via OpenStreetMap Nominatim; birth and death information also retrieved from DBpedia; manual verification and correction performed on extracted movements and coordinates.
+
+**Size**: Original Pantheon: 11,341 biographies; filtered subset processed for this study: 2,407 biographies (active in 1900-1950); processing produced 7,240 locations; 4,028 movements in the 1900-1950 time-window; 629 distinct cities after collapsing locations to nearest "great city".
+
+**Format**: N/A
+
+**Annotation**: Automatically extracted using the Ramble-On pipeline (semantic parsing with FrameNet/Semafor and PIKES), then movements with date and destination were manually checked and corrected; coordinates returned by Nominatim were manually checked; a manual annotation of 50 biographies was used to estimate extraction recall.
+
+## 🔬 Methodology
+
+**Methods**:
+- Automated metrics
+- Simulation-based evaluation (mobility simulations using radiation model variants and random walkers)
+- Manual verification of extracted trajectories
+
+**Metrics**:
+- Precision
+- Recall
+- Adjusted R-squared
+- Pearson correlation coefficient
+- Kullback-Leibler distance
+- Wasserstein distance
+- PageRank centrality
+
+**Calculation**: Extraction performance: Ramble-On precision reported as 0.86 and recall estimated as 0.59 based on manual annotation of 50 biographies. Model evaluation: simulated mobility for 2,000 notable people (number of jumps sampled from a geometric distribution, p≈0.5), repeated 500 times to estimate stability; compared model outputs to empirical data distributions using adjusted R-squared, Pearson correlation coefficient, Kullback-Leibler divergence and first Wasserstein distance; PageRank centrality computed on mobility networks for analysis of city importance.
+
+**Interpretation**: Higher Adjusted R-squared and Pearson correlation closer to 1 indicate better agreement with empirical data; lower Kullback-Leibler distance and lower Wasserstein distance indicate model distributions are closer to the empirical distributions. The paper reports that a mixed population-and-notable multilevel radiation model best captures key features (radius of gyration, destinations, jump length distributions) relative to other tested formulations.
+
+**Baseline Results**: See Table 4 in the paper. Example: for the pop-notable-multilevel model (reported representative model): Radius of gyration adj-R2 = 0.2414 ± 0.0027, Pearson = 0.962 ± 0.0055; Different destinations adj-R2 = 0.9547 ± 0.0004, Pearson = 0.978 ± 0.00649; Length of migration jumps adj-R2 = 0.5104 ± 0.0019, Pearson = 0.982 ± 0.00533.
+
+**Validation**: Manual verification and correction of extracted movements and coordinates for the 2,407 biographies; manual annotation of 50 randomly sampled biographies (stratified) to estimate recall of the extraction pipeline (recall = 0.59); simulation stability assessed by repeating mobility simulations 500 times.
+
+## ⚠️ Targeted Risks
+
+**Risk Categories**:
+- Bias
+- Accuracy
+
+**Atlas Risks**:
+- **Fairness**: Data bias
+- **Accuracy**: Unrepresentative data, Poor model accuracy
+
+**Demographic Analysis**: The paper explicitly states the dataset shows a clear bias towards Western culture and male figures and focuses only on English Wikipedia.
+
+## 🔒 Ethical and Legal Considerations
+
+**Privacy And Anonymity**: Not Applicable
+
+**Data Licensing**: Not Applicable
+
+**Consent Procedures**: Not Applicable
+
+**Compliance With Regulations**: Not Applicable

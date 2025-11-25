@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SilVar-Med: A Speech-Driven Visual Language Model for Explainable Abnormality Detection in Medical Imaging",
+    "abbreviation": "SilVar-Med",
+    "overview": "SilVar-Med is an end-to-end speech-driven medical visual language model that enables users to interact with the model verbally and focuses on the interpretation of the reasoning behind each prediction of medical abnormalities with a proposed reasoning dataset.",
+    "data_type": "multimodal",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MultiMedEval",
+      "MultiMedQA",
+      "OmniMedVQA"
+    ],
+    "resources": [
+      "https://github.com/user/repo"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To introduce a speech-driven medical VLM that enhances multimodal interactions and supports structured reasoning for abnormality detection.",
+    "audience": [
+      "ML Researchers",
+      "Healthcare Professionals",
+      "Medical Imaging Specialists"
+    ],
+    "tasks": [
+      "Medical Image Analysis",
+      "Abnormality Detection",
+      "Reasoning-based Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset includes abnormalities extracted from the SLAKE dataset, with annotations performed by medical image analysis specialists and enhanced by GPT-4o.",
+    "size": "866 samples",
+    "format": "N/A",
+    "annotation": "Manually annotated by medical image analysis specialists and enhanced with GPT-4o."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "LLM-based evaluation"
+    ],
+    "metrics": [
+      "BERTScore",
+      "BLEU Score",
+      "ROUGE"
+    ],
+    "calculation": "Metrics were calculated based on the generated responses of SilVar-Med and compared against ground truth references.",
+    "interpretation": "The effectiveness of the model is judged based on accuracy, quality of reasoning, and coherence of responses.",
+    "baseline_results": "Compared against SilVar and commercial speech-driven VLMs like GPT-4o Mini and Gemini Flash 1.5.",
+    "validation": "Verified by three medical imaging specialists and through the LLM-as-Judge framework."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

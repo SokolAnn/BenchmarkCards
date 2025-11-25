@@ -1,0 +1,118 @@
+# EMMa (Extensible, Multimodal dataset of Amazon product listings)
+
+## 📊 Benchmark Details
+
+**Name**: EMMa (Extensible, Multimodal dataset of Amazon product listings)
+
+**Overview**: We present EMMa, an Extensible, Multimodal dataset of Amazon product listings that contains rich Material annotations. It contains more than 2.8 million objects, each with image(s), listing text, mass, price, product ratings, and position in Amazon’s product-category taxonomy. We also design a comprehensive taxonomy of 182 physical materials. EMMa offers a new benchmark for multi-task learning in computer vision and Natural Language Processing, and allows practitioners to efficiently add new tasks and object attributes at scale using a Smart Labeling framework to quickly add new binary labels to all objects with very little manual labeling effort.
+
+**Data Type**: multimodal (images, listing text, tabular attributes such as mass, price, ratings, category)
+
+**Domains**:
+- Computer Vision
+- Natural Language Processing
+- Robotics
+
+**Similar Benchmarks**:
+- Taskonomy
+- 3D Scene Graph
+- Omnidata
+- COCO
+- NYUv2
+- Cityscapes
+- OpenSurfaces
+- Materials in Context Database (MINC)
+- ABO
+- image2mass
+- UCSD Amazon review dataset
+- MIT-States
+- UT-Zappos
+
+**Resources**:
+- [Resource](http://emma.stanford.edu/)
+- [Resource](https://arxiv.org/abs/2305.14352)
+- [Resource](https://huggingface.co/sentence-transformers/all-mpnet-base-v2)
+
+## 🎯 Purpose and Intended Users
+
+**Goal**: To provide a large-scale, object-centric, multimodal, multi-task dataset (EMMa) of Amazon product listings annotated with a hand-curated taxonomy of 182 material types and to provide a Smart Labeling pipeline that allows practitioners to easily add new binary object properties to the whole dataset with minimal manual labeling effort.
+
+**Target Audience**:
+- Machine Learning Researchers
+- Industry Practitioners
+- Roboticists
+- Recycling Facilities
+- Consumers
+- Marketers
+- Retailers
+- Product Developers
+
+**Tasks**:
+- Material Classification
+- Mass Prediction (Regression)
+- Price Prediction (Regression)
+- Category Classification (Taxonomic)
+- Product Ratings Prediction (Distribution prediction)
+- Multimodal Multi-task Learning
+- Binary Property Classification (via Smart Labeling)
+
+**Limitations**: Materials labels present for 30% of product listings; Weight (mass) present for 77% of the final dataset; Price present for 69% of the final dataset; Category present for 70% of the final dataset; 75% of listings have at least one extracted review. Test and validation sets were chosen from instances that have all attributes filled-in and have more than one image and more than one review. N/A
+
+## 💾 Data
+
+**Source**: Data collected and merged from three sources as stated in the paper: Amazon Selling Partner API (ASPA), the raw image2mass dataset, and the UCSD product rating dataset (each entry keyed by ASIN).
+
+**Size**: 2,883,698 instances (objects); 7,389,213 images total; partitions: 2,806,806 training instances, 26,535 validation instances, 26,941 test instances, 23,416 calibration instances.
+
+**Format**: N/A
+
+**Annotation**: Hand-curated taxonomy of 182 material types; materials labels created by heuristics matching seller-entered material strings to taxonomy nodes; 11% of the calibration set manually labeled; Smart Labeling process (active learning + logistic regression on object embedding + keyword features) used to add binary properties; missing attributes filled in using trained models (generation 1 and generation 2 synthetic labels).
+
+## 🔬 Methodology
+
+**Methods**:
+- Automated metrics evaluation
+- Human manual labeling for calibration and Smart Labeling steps
+- Active learning (uncertainty sampling)
+- Smart Labeling (logistic regression with task-specific features and keyword-based seeding)
+- Late-fusion multimodal modeling (vision and text embeddings + task-specific decoders)
+- Synthetic label generation and iterative filling (generation 1 and generation 2 models)
+
+**Metrics**:
+- Min Ratio Error (MnRE)
+- F1 Score
+- Accuracy
+- Precision
+- Recall
+- KL-Divergence
+- Pearson's R2
+
+**Calculation**: MnRE used for Price and Mass tasks as defined in the paper (MnRE where perfect predictions result in 1.0 and worst possible predictions 0.0). Materials: average F1 score per object, where the F1 of an object is the average F1 of each material classifier. Categories: accuracy averaged first over level in the taxonomy and then over instances. Ratings: report KL-Divergence (loss).
+
+**Interpretation**: For MnRE: perfect predictions correspond to 1.0 and worst to 0.0 (higher better). For F1, Accuracy, Precision, Recall: higher is better. For KL-Divergence: lower is better. Pearson's R2 closer to 1 indicates better correlation.
+
+**Baseline Results**: Selected reported test results (from Table 1, model rows): SINGLE IMAGE GEN2 — Price (MnRE) 0.653, Mass (MnRE) 0.649, Materials (F1) 72.7, Category (Accuracy) 84.5, Ratings (KL-d) 0.153. TEXT GEN2 — Price (MnRE) 0.704, Mass (MnRE) 0.695, Materials (F1) 85.3, Category (Accuracy) 91.9, Ratings (KL-d) 0.147. EVERYTHING GEN2 — Price (MnRE) 0.743, Mass (MnRE) 0.788, Materials (F1) 86.0, Category (Accuracy) 92.2, Ratings (KL-d) 0.136. Smart Labeling property results (Table 3): SHARP F1 92.0, TRANSPARENT F1 93.5, DEFORMABLE F1 97.0, ARTICULATING F1 94.0, ELECTRONIC F1 96.0.
+
+**Validation**: Dataset partitioning with validation and test sets selected from instances that have all attributes filled-in and more than one image and more than one review; aggressive duplicate-detection applied to ensure no similar objects in training set; 11% of calibration set manually labeled and used to calibrate material models; Smart Labeling test sets sampled uniformly from all products (uncertain or unlabeled samples discarded when not confidently labelable).
+
+## ⚠️ Targeted Risks
+
+**Risk Categories**:
+- Fairness
+
+**Atlas Risks**:
+- **Fairness**: Data bias
+
+**Demographic Analysis**: The paper states practitioners can use Smart Labeling to annotate the gender of human models and then use stratified sampling to re-balance the distributions during training to ensure that no gender is underrepresented.
+
+**Potential Harm**: ['Overt racism', 'Foul language', 'Nudity', 'Illegal products', 'Harassment']
+
+## 🔒 Ethical and Legal Considerations
+
+**Privacy And Anonymity**: The paper states they rely on Amazon's enforcement of community standards to help ensure the dataset does not contain overt racism, foul language, nudity, illegal products, and harassment. They also employ Smart Labeling to mark images with human models or products of a sexual or religious nature so they can be filtered when necessary.
+
+**Data Licensing**: Not Applicable
+
+**Consent Procedures**: Not Applicable
+
+**Compliance With Regulations**: Not Applicable

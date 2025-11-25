@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MM-OR (Multimodal Operating Room)",
+    "abbreviation": "MM-OR",
+    "overview": "MM-OR is a realistic and large-scale multimodal spatio-temporal dataset designed to advance operating room modeling and enable multimodal scene graph generation.",
+    "data_type": "multimodal",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/egeozsoy/MM-OR"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive resource for studying robotic-assisted surgical workflows and advance operating room modeling.",
+    "audience": [
+      "ML Researchers",
+      "Healthcare Practitioners",
+      "Robotics Engineers"
+    ],
+    "tasks": [
+      "Scene Graph Generation",
+      "Sterility Breach Detection",
+      "Next Action Anticipation",
+      "Robot Phase Prediction"
+    ],
+    "limitations": "MM-OR includes only total and partial knee replacements in one OR, which may limit generalization.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Recorded multimodal data from robotic total and partial knee replacement surgeries.",
+    "size": "92,983 timepoints with 25,277 annotated entries totaling 500GB of data",
+    "format": "Various formats including RGB-D video, audio, robotic logs",
+    "annotation": "Manually annotated with panoptic segmentations and scene graphs by trained annotators."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Accuracy"
+    ],
+    "calculation": "Macro F1-score for evaluation across multiple predicates in scene graph generation.",
+    "interpretation": "Higher scores indicate better performance in recognizing and predicting surgical actions and interactions.",
+    "baseline_results": "F1 Score of 0.529 for scene graph generation.",
+    "validation": "Models evaluated using F1-scores across various configurations of modality utilization."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Invasive procedures might introduce risks such as infections or incorrect placements."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data anonymization processes were implemented during data collection.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

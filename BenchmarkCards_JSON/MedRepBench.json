@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MedRepBench",
+    "abbreviation": "N/A",
+    "overview": "MedRepBench is a comprehensive benchmark built from 1,900 de-identified real-world Chinese medical reports to evaluate end-to-end vision-language models (VLMs) for structured medical report understanding. It includes an objective evaluation measuring field-level recall of structured clinical items and an automated subjective evaluation using a large language model to assess factuality, interpretability, and reasoning quality.",
+    "data_type": "structured clinical data",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate structured interpretation quality in medical reports using vision-language models to assist in healthcare.",
+    "audience": [
+      "ML Researchers",
+      "Healthcare Practitioners"
+    ],
+    "tasks": [
+      "Information Extraction",
+      "Interpretation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "1,900 de-identified real-world Chinese medical reports collected from diverse departments and acquisition methods.",
+    "size": "1,900 reports",
+    "format": "JSON",
+    "annotation": "De-identified, annotated by a proprietary OCR system optimized for medical documents."
+  },
+  "methodology": {
+    "methods": [
+      "Objective evaluation measuring field-level recall",
+      "Automated subjective evaluation using LLM"
+    ],
+    "metrics": [
+      "Recall"
+    ],
+    "calculation": "Recall is calculated as the number of correctly extracted fields over the total number of ground-truth fields.",
+    "interpretation": "Higher recall indicates better extraction performance of the structured clinical content.",
+    "baseline_results": "N/A",
+    "validation": "Dataset validation includes filtering, de-identification, and quality checks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data is de-identified and collected under privacy compliance.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

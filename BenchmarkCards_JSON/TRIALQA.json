@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TRIALQA",
+    "abbreviation": "N/A",
+    "overview": "TRIALQA is a novel dataset comprising two social media collections from the subreddits on colon cancer and prostate cancer, designed specifically to evaluate the ability of LLMs to identify potential clinical trial participants from social media posts.",
+    "data_type": "social media posts",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To investigate the use of large language models for efficiently recruiting clinical trial participants via social media by evaluating their ability to align user posts with trial eligibility criteria.",
+    "audience": [
+      "ML Researchers",
+      "Clinical Researchers",
+      "Healthcare Professionals"
+    ],
+    "tasks": [
+      "Classification of eligibility criteria",
+      "Identification of interest reasons"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from the r/coloncancer and r/prostatecancer subreddits on Reddit.",
+    "size": "1,361 posts from 1,301 Reddit users",
+    "format": "N/A",
+    "annotation": "Annotated by experienced annotators based on eligibility criteria and interest reasons."
+  },
+  "methodology": {
+    "methods": [
+      "Direct LLM inference",
+      "Few-shot prompting",
+      "Chain-of-thought reasoning"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Macro F1 Score",
+      "Weighted F1 Score"
+    ],
+    "calculation": "Metrics reflect the proportion of correct predictions made by the LLMs on eligibility criteria and interest reasons.",
+    "interpretation": "Higher scores indicate better performance in identifying eligible clinical trial participants based on user-generated content.",
+    "baseline_results": "Comparison with RoBERTa and various LLM architectures to assess performance.",
+    "validation": "Performance evaluated on the TRIALQA dataset using various LLM architectures."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

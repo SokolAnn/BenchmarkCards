@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Beyond Western Politics: Cross-Cultural Benchmarks for Evaluating Partisan Associations in LLMs",
+    "abbreviation": "N/A",
+    "overview": "The paper introduces two datasets, NeutQA-440 (non-adversarial prompts) and AdverQA-440 (adversarial prompts), designed to evaluate political biases in large language models (LLMs) through comparative plausibility judgments involving political leaders and parties in the USA and India.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Hindi"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://arxiv.org/abs/2509.22711"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To audit harmful partisan associations in LLMs through comparative plausibility judgments, with an aim to integrate partisan bias testing into standard LLM benchmarks.",
+    "audience": [
+      "ML Researchers",
+      "Policy Makers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Bias Evaluation",
+      "Comparative Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Datasets created by the authors measuring partisan biases in LLMs.",
+    "size": "880 examples (440 for each dataset)",
+    "format": "N/A",
+    "annotation": "Designed by the authors through carefully constructed prompts."
+  },
+  "methodology": {
+    "methods": [
+      "Comparative plausibility judgment",
+      "Statistical analysis"
+    ],
+    "metrics": [
+      "Bias susceptibility",
+      "Model agreement rates"
+    ],
+    "calculation": "The models' performances were analyzed using a three-step evaluation pipeline focusing on bias detection, directional consistency, and aggregate asymmetry.",
+    "interpretation": "Higher susceptibility indicates significant partisan bias in LLMs based on provided datasets.",
+    "baseline_results": "Bias rates exceeding 91% across all models tested.",
+    "validation": "Systematic findings across multiple LLMs provide validation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Societal Impact"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on affected communities"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset covers political leaders and parties from the USA and India, ensuring a comparative context.",
+    "harm": "Potential amplification of political division and unintentional reinforcement of biases."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

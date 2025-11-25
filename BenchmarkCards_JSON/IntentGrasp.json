@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "IntentGrasp",
+    "abbreviation": "N/A",
+    "overview": "IntentGrasp is a benchmark supporting multi-target grasping under flexible instructions, allowing for the assessment of robotic systems in understanding indirect verbal commands and grasping multiple objects in a 3D environment.",
+    "data_type": "3D point clouds with object annotations and grasp poses",
+    "domains": [
+      "Robotics"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Grasp-Anything-6D"
+    ],
+    "resources": [
+      "https://github.com/cxmomo/GraspCoT"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate robotic grasping capabilities under flexible instructions and enrich the existing benchmarks for multi-object grasp detection.",
+    "audience": [
+      "Robotics Researchers",
+      "ML Researchers",
+      "Robotics Developers"
+    ],
+    "tasks": [
+      "Grasp Detection",
+      "Language Understanding"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Adapted from the Grasp-Anything-6D dataset with structured prompt templates for flexible instruction generation.",
+    "size": "1 million scenes with approximately 3 million objects",
+    "format": "N/A",
+    "annotation": "Automatically generated using a large language model for contextual instructions."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Joint training with visual and textual modalities"
+    ],
+    "metrics": [
+      "Coverage Rate (CR)",
+      "Earth Mover's Distance (EMD)",
+      "Collision-Free Rate (CFR)"
+    ],
+    "calculation": "Metrics are calculated based on the alignment of predicted grasp poses with ground-truth annotations.",
+    "interpretation": "Higher coverage rates indicate better performance in accurately grasping objects as per flexible instructions.",
+    "baseline_results": "GraspCoT outperformed baseline models like 3DAPNet and LGrasp6D in all metrics on the IntentGrasp benchmark.",
+    "validation": "Extensive experiments were conducted in both simulated and real-world settings."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Potential safety hazards due to failure in grasp detection leading to drops or collisions."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

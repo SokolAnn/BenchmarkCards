@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MC-MKE (Multimodal Knowledge Editing)",
+    "abbreviation": "MC-MKE",
+    "overview": "MC-MKE is a fine-grained multimodal knowledge editing benchmark that emphasizes modality consistency to evaluate the performance of various knowledge editing methods on correcting misreading and misrecognition errors in multimodal large language models.",
+    "data_type": "multimodal knowledge editing data",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMEdit",
+      "KEBench",
+      "MIKE"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2406.13219"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a systematic and fine-grained evaluation of multimodal knowledge editing methods, particularly focusing on consistency across different modalities.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Knowledge Editing"
+    ],
+    "limitations": "Limited to the knowledge editing methods evaluated within the scope of this benchmark.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Derived from MQuAKE with additional filtering and multimodal knowledge pairing.",
+    "size": "111,904 examples for training, 44,118 examples for testing",
+    "format": "Custom multimodal format combining visual and textual edits.",
+    "annotation": "Automated generation with validation by large language models."
+  },
+  "methodology": {
+    "methods": [
+      "Human assessment of knowledge edits",
+      "Automated metrics for reliability, locality, generality, and consistency"
+    ],
+    "metrics": [
+      "Reliability",
+      "Locality",
+      "Generality",
+      "Consistency"
+    ],
+    "calculation": "Performance is measured based on the success of edits for different multimodal knowledge components.",
+    "interpretation": "High scores indicate successful and consistent editing across modalities.",
+    "baseline_results": "Comparison against previously established benchmarks like MMEdit and KEBench.",
+    "validation": "Validated through extensive testing across various multimodal knowledge editing scenarios."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

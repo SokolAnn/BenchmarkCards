@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SPIQA (Scientific Paper Image Question Answering)",
+    "abbreviation": "SPIQA",
+    "overview": "SPIQA is the first large-scale QA dataset specifically designed to interpret complex figures and tables within the context of scientific research articles across various domains of computer science.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision",
+      "Robotics",
+      "AI/ML"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/google/spiqa",
+      "https://github.com/google/spiqa"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a large-scale benchmark for evaluating QA systems' abilities to interpret figures and tables in scientific papers.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collection of 25,859 scientific research papers from 19 top-tier conferences in computer science published between 2018 and 2023.",
+    "size": "270,194 question-answer pairs",
+    "format": "JSON",
+    "annotation": "Questions are generated using a combination of human expertise and automated models, with manual filtering to ensure quality."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "BLEU Score",
+      "ROUGE-L",
+      "METEOR",
+      "L3Score"
+    ],
+    "calculation": "Metrics are computed based on standard evaluation techniques alongside the proposed L3Score which evaluates the semantic meaning of answers.",
+    "interpretation": "Higher scores indicate better understanding and reasoning capabilities in answering complex questions.",
+    "baseline_results": "N/A",
+    "validation": "Extensive experiments conducted across various multimodal models to explore their comprehension abilities."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Creative Commons Attribution License (CC BY 4.0)",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

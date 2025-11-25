@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "BinSum",
+    "abbreviation": "N/A",
+    "overview": "BinSum is a comprehensive benchmark and dataset of over 557K binary functions, designed to evaluate the performance of large language models in binary code summarization, including a novel semantic similarity metric.",
+    "data_type": "binary functions with ground truth summaries",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "N/A"
+    ],
+    "similar_benchmarks": [
+      "BinT5"
+    ],
+    "resources": [
+      "https://github.com/xinjin95/BinSum"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the ability of large language models to summarize binary code and understand its semantics.",
+    "audience": [
+      "ML Researchers",
+      "Security Analysts",
+      "Software Engineers"
+    ],
+    "tasks": [
+      "Binary Code Summarization"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from 44 open-source projects totaling 11,475,734 lines of code, generating diverse binaries.",
+    "size": "557,664 binary functions",
+    "format": "N/A",
+    "annotation": "Ground truth summaries are based on developer-written code comments extracted from source code."
+  },
+  "methodology": {
+    "methods": [
+      "Prompt Synthesis",
+      "LLM Evaluation",
+      "Semantic Similarity Calculation"
+    ],
+    "metrics": [
+      "Semantic Similarity",
+      "BLEU Score",
+      "METEOR",
+      "ROUGE-L"
+    ],
+    "calculation": "Similarities calculated using embeddings from pretrained models like BERT and XLNet.",
+    "interpretation": "Higher semantic similarity scores indicate better alignment between generated summaries and ground truth.",
+    "baseline_results": "N/A",
+    "validation": "Benchmark validated through extensive evaluations on several LLMs and manual analyses."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DABS (Domain-Agnostic Benchmark for Self-Supervised Learning)",
+    "abbreviation": "DABS",
+    "overview": "DABS measures how well a single SSL algorithm works on many different domains, comprising seven domains representing different kinds of data: natural images, English text, speech, chest x-rays, multichannel sensor data, multilingual text, and images with text descriptions.",
+    "data_type": "unlabeled datasets for pretraining and labeled datasets for evaluation",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision",
+      "Healthcare"
+    ],
+    "languages": [
+      "English",
+      "Spanish",
+      "French",
+      "German",
+      "Chinese",
+      "Korean",
+      "Japanese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/alextamkin/dabs"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a standardized way to evaluate the performance of domain-agnostic methods.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Self-Supervised Learning"
+    ],
+    "limitations": "DABS is a 'living benchmark' and does not capture how well domain-agnostic methods can be combined with domain-specific methods.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The benchmark consists of datasets across seven domains: natural images (ImageNet), speech (LibriSpeech), English text (WikiText-103), multilingual text (mC4), chest x-rays (CheXpert, ChestX-ray8), multi-channel sensor data (PAMAP2), and images with text descriptions (MS COCO).",
+    "size": "1,281,167 images for ImageNet, 145,265 examples for LibriSpeech, 1,165,029 tokens for WikiText-103, 26TB+ for mC4, 223,414 images for CheXpert, 50,000 examples for PAMAP2, 117,266 images for MS COCO.",
+    "format": "Various formats including images and text datasets.",
+    "annotation": "Data is unlabeled for pretraining tasks and labeled for evaluation tasks."
+  },
+  "methodology": {
+    "methods": [
+      "Linear classification",
+      "Contrastive learning"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Average Area Under ROC (AUC)"
+    ],
+    "calculation": "Models are assessed by their average transfer learning performance on downstream tasks across domains.",
+    "interpretation": "The performance is interpreted based on accuracy percentages across various transfer tasks.",
+    "baseline_results": null,
+    "validation": "Standardized processing and evaluation protocols were established for fair comparisons."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "For PAMAP2, participants consented to data use for scientific purposes.",
+    "compliance_with_regulations": "N/A"
+  }
+}

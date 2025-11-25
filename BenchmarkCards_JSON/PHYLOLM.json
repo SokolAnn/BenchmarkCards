@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PHYLOLM",
+    "abbreviation": "N/A",
+    "overview": "PhyloLM is a method that adapts phylogenetic algorithms to Large Language Models (LLMs) to explore their relationships and predict performance characteristics in benchmarks.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMLU",
+      "ARC",
+      "HellaSwag",
+      "TruthfulQA",
+      "Winogrande",
+      "GSM8k"
+    ],
+    "resources": [
+      "https://github.com/hrl-team/PhyloLM",
+      "https://colab.research.google.com/drive/1agNE52eUevgdJ3KL3ytv5Y9JBbfJRYqd?usp=copy"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of PHYLOLM is to provide a tool that evaluates LLM development, relationships, and capabilities through a phylogenetic lens.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Performance Prediction"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Benchmarks include outputs from diverse queries on a selection of LLMs, including both open-source and proprietary models.",
+    "size": "156 models evaluated",
+    "format": "N/A",
+    "annotation": "Not applicable as the method relies on model outputs rather than annotated data."
+  },
+  "methodology": {
+    "methods": [
+      "Phylogenetic analysis",
+      "Logistic regression for performance prediction"
+    ],
+    "metrics": [
+      "Pearson correlation coefficient"
+    ],
+    "calculation": "Phylogenetic distance is computed based on the similarity of LLM outputs, and benchmark performance is predicted through logistic regression based on these distances.",
+    "interpretation": "The results demonstrate that phylogenetic distance is significantly correlated with true performance scores across various benchmarks.",
+    "baseline_results": "N/A",
+    "validation": "Validated through comparison with ground truth relationships and performance metrics in benchmark tests."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

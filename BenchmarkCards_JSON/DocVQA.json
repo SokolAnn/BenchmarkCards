@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DocVQA: A Dataset for VQA on Document Images",
+    "abbreviation": "DocVQA",
+    "overview": "We present a new dataset for Visual Question Answering (VQA) on document images called DocVQA. The dataset consists of 50,000 questions defined on 12,000+ document images. The benchmark is intended to drive document image understanding by requiring systems to read text and exploit layout, non-textual elements and style to answer natural language questions on document images.",
+    "data_type": "document images with question-answering pairs (image + QA)",
+    "domains": [
+      "Document Analysis and Recognition",
+      "Computer Vision",
+      "Natural Language Processing"
+    ],
+    "languages": [],
+    "similar_benchmarks": [
+      "VQA 2.0",
+      "ST-VQA",
+      "TextVQA",
+      "SQuAD 1.1",
+      "OCR-VQA",
+      "DVQA",
+      "FigureQA",
+      "TQA"
+    ],
+    "resources": [
+      "https://docvqa.org",
+      "https://www.industrydocuments.ucsf.edu/",
+      "https://arxiv.org/abs/2007.00398",
+      "https://github.com/facebookresearch/mmf",
+      "https://huggingface.co/transformers/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Introduce DocVQA, a large scale dataset and associated VQA task on document images to drive purpose-driven Document Analysis and Recognition research and to evaluate methods that combine textual and visual/layout cues for answering natural language questions on documents.",
+    "audience": [
+      "Document Analysis and Recognition researchers"
+    ],
+    "tasks": [
+      "Visual Question Answering",
+      "Question Answering",
+      "Extractive Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Pages from documents in the UCSF Industry Documents Library (documents drawn from 6,071 industry documents spanning tobacco, food, drug, fossil fuel and chemical collections).",
+    "size": "50,000 questions over 12,767 images (pages drawn from 6,071 documents). Train: 39,463 questions, 10,194 images; Validation: 5,349 questions, 1,286 images; Test: 5,188 questions, 1,287 images.",
+    "format": "N/A",
+    "annotation": "Crowdsourced annotation by remote workers using a three-stage process: (1) workers author up to 10 question-answer pairs per image, (2) verification stage where different workers answer and assign question types and can flag invalid/ambiguous questions, (3) author review of disagreement cases (authors review and edit/accept questions)."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation",
+      "Baseline model evaluation (heuristics, VQA models, reading comprehension models)"
+    ],
+    "metrics": [
+      "Average Normalized Levenshtein Similarity (ANLS)",
+      "Accuracy"
+    ],
+    "calculation": "ANLS is used as the primary evaluation metric (originally proposed for ST-VQA) to reduce penalization from minor mismatches due to OCR errors by averaging normalized Levenshtein similarities. Accuracy measures the percentage of questions for which the predicted answer matches exactly any target answer.",
+    "interpretation": "ANLS is the preferred metric to account for OCR-induced minor mismatches; Accuracy is a strict exact-match metric that gives zero for even small differences between prediction and target.",
+    "baseline_results": "Human performance on test: Accuracy 94.36% (ANLS 0.981). Heuristics and upper bounds on test: Random answer Accuracy 0.00 (ANLS 0.003), Random OCR token Accuracy 0.58 (ANLS 0.014), Majority answer Accuracy 0.89 (ANLS 0.017), Vocab UB Accuracy 33.78, OCR substring UB Accuracy 87.00, OCR subsequence UB Accuracy 77.00. VQA baselines on test: LoRRA best ~ANLS 0.112 Acc 7.63; M4C best (dynamic vocab 500) ANLS 0.391 Acc 24.81. BERT QA baselines on test: bert-large-squad finetuned on DocVQA ANLS 0.665 Acc 55.77 (best reported baseline).",
+    "validation": "Data split randomly into train/validation/test with an 80/10/10 ratio. Human performance collected on the test split using volunteers. OCR tokens for experiments were extracted using a commercial OCR application."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Enhancing Table Recognition with Vision LLMs: A Benchmark and Neighbor-Guided Toolchain Reasoner",
+    "abbreviation": "N/A",
+    "overview": "The paper proposes a benchmark to evaluate the recognition capabilities of Vision Large Language Models (VLLMs) in table recognition tasks, highlighting challenges such as low-quality image inputs and introducing a new framework called the Neighbor-Guided Toolchain Reasoner (NGTR).",
+    "data_type": "image",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "N/A"
+    ],
+    "similar_benchmarks": [
+      "SciTSR",
+      "PubTabNet",
+      "WTW"
+    ],
+    "resources": [
+      "https://github.com/lqzxt/NGTR"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To establish a benchmark for evaluating table recognition capabilities of Vision Large Language Models (VLLMs).",
+    "audience": [
+      "ML Researchers",
+      "Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Table Recognition"
+    ],
+    "limitations": "Performance may depend on the underlying toolkit and the range of scenarios covered by neighbor candidates.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Datasets include SciTSR, PubTabNet, and WTW for evaluation of table recognition.",
+    "size": "15,000 images for SciTSR, 500,777 images for PubTabNet, 10,970 images for WTW",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Experiments on public datasets"
+    ],
+    "metrics": [
+      "Tree Edit Distance (TEDS)",
+      "Accuracy",
+      "Micro-averaged F1 Score"
+    ],
+    "calculation": "Calculating similarity between the predicted and ground-truth tree structures of tables.",
+    "interpretation": "Higher TEDS values indicate better recognition accuracy.",
+    "baseline_results": "Comparison against traditional lightweight models.",
+    "validation": "Extensive experiments on multiple public datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "VLT-MI (Visual Language Tracking with Multi-modal Interaction)",
+    "abbreviation": "VLT-MI",
+    "overview": "VLT-MI introduces multi-round interaction into the Visual Language Tracking task for the first time. It generates diverse, multi-granularity texts for interaction and proposes a new interaction paradigm for improved tracking performance.",
+    "data_type": "multi-modal interaction data with bounding boxes and textual descriptions",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "OTB99_Lang",
+      "LaSOT",
+      "TNL2K",
+      "MGIT"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2409.08887"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a robust framework for evaluating and enhancing the capabilities of Visual Language Tracking systems through multi-round, multi-modal interactions.",
+    "audience": [
+      "ML Researchers",
+      "Computer Vision Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Object Tracking"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated based on existing VLT benchmarks and DTLLM-VLT.",
+    "size": "3,619 videos with a total of 6.60M frames",
+    "format": "N/A",
+    "annotation": "Automatically generated textual descriptions based on video content."
+  },
+  "methodology": {
+    "methods": [
+      "Comparative experiments",
+      "Multi-round interaction testing"
+    ],
+    "metrics": [
+      "Precision",
+      "Success Rate",
+      "Average Multi-modal Interaction Number (AMI)",
+      "Average Maximum Tracking Success Length (AMSL)"
+    ],
+    "calculation": "Metrics are calculated based on tracking performance across different datasets, considering the number of interactions and tracking successes.",
+    "interpretation": "Higher metrics indicate better tracking performance and robustness of the tracker.",
+    "baseline_results": null,
+    "validation": "Performance validated through comparative analysis with existing benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "USDC (User Stance and Dogmatism in Long Conversations)",
+    "abbreviation": "USDC",
+    "overview": "USDC is a dataset curated from 764 long multi-user Reddit conversation threads for studying user opinion fluctuations, annotated for stance and dogmatism classification tasks.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SPINOS"
+    ],
+    "resources": [
+      "https://github.com/mounikamarreddy/USDC"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Analyze Reddit conversations to identify user stances on sociopolitical topics and determine their level of dogmatism.",
+    "audience": [
+      "Natural Language Processing Researchers",
+      "Social Media Analysts",
+      "Market Researchers"
+    ],
+    "tasks": [
+      "User Stance Classification",
+      "User Dogmatism Classification"
+    ],
+    "limitations": "None discussed explicitly.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Reddit conversation threads in English from 22 different subreddits.",
+    "size": "764 conversations",
+    "format": "JSON",
+    "annotation": "Annotated using majority voting based on LLM outputs from models like GPT-4 and Mistral Large."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated annotations using LLMs",
+      "Majority voting"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Accuracy"
+    ],
+    "calculation": "F1 scores are calculated based on predicted stance and dogmatism labels compared to true labels.",
+    "interpretation": "Higher F1 scores indicate improved model performance in correctly classifying user stances and dogmatism.",
+    "baseline_results": "Un-fine-tuned models demonstrated an F1 score of ~0.3; fine-tuned models achieved scores improving significantly, e.g., 56.2 for stance.",
+    "validation": "Inter-annotator agreement evaluated using Cohen's kappa score."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "User identities are anonymized by not including personal demographic details, focusing on post IDs only.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

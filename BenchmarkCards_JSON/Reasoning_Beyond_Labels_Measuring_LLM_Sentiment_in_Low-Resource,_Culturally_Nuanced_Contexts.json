@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Reasoning Beyond Labels: Measuring LLM Sentiment in Low-Resource, Culturally Nuanced Contexts",
+    "abbreviation": "N/A",
+    "overview": "This paper presents a diagnostic framework for evaluating how large language models (LLMs) reason about sentiment in culturally nuanced and informal WhatsApp messages. The study operationalizes sentiment analysis as a context-dependent, culturally embedded construct, utilizing human-annotated data and synthetic sentiment-flipped examples for evaluations.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Swahili"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate LLM reasoning about sentiment in informal, culturally nuanced contexts and to propose a framework for more accurate sentiment analysis in low-resource settings.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Sentiment Analysis"
+    ],
+    "limitations": "While this diagnostic framework offers a deeper lens into sentiment reasoning, several limitations remain, including challenges in operationalizing sentiment and preserving context in synthetic data.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "WhatsApp Chat Dataset originally collected by Karusala et al. (2021) and annotated by Mondal et al. (2021)",
+    "size": "6,197 messages",
+    "format": "text",
+    "annotation": "Using a structured annotation protocol focused on culturally grounded sentiment, interpretive ambiguity, and context-specific expression by trained annotators."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "LLM-as-judge evaluation",
+      "Counterfactual generation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are computed based on the model’s outputs for sentiment classification and explanation quality.",
+    "interpretation": "Higher scores indicate better model performance in terms of explainability and accuracy regarding sentiment classification.",
+    "baseline_results": "Top-performing models achieved average F1 scores around 0.90 or higher with varying confidence and coverage across datasets.",
+    "validation": "The evaluation methods were validated through structured protocols involving human annotators rating sentiment and explanation quality."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset includes youth from Nairobi living with HIV, with cultural and contextual considerations emphasized in annotation.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data were anonymized and collected with consent under prior research protocols, with all identifying information removed.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Participants provided consent for their messages to be used in research.",
+    "compliance_with_regulations": "The study complied with ethical research standards, as mentioned in prior documentation."
+  }
+}

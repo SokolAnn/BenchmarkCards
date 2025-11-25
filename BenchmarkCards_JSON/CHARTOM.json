@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CHARTOM (CHARt Theory Of Mind)",
+    "abbreviation": "CHARTOM",
+    "overview": "CHARTOM is a visual theory-of-mind benchmark designed to evaluate multimodal large language models’ capability to understand and reason about misleading data visualizations through charts, consisting of carefully designed charts and associated questions.",
+    "data_type": "charts and associated questions",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://arxiv.org/abs/2408.14419"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate large language models on their ability to discern factual versus misleading representations in visual data.",
+    "audience": [
+      "ML Researchers",
+      "AI Practitioners"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "The dataset is relatively small due to the high cost of conducting human experiments.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated dataset comprising 112 charts (56 non-manipulated and 56 manipulated).",
+    "size": "112 charts",
+    "format": "N/A",
+    "annotation": "Human assessments for the Human Misleadingness Index (HMI) based on participant responses."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Mean Absolute Error (MAE)"
+    ],
+    "calculation": "MAE calculated between LLM’s predicted and ground truth HMI.",
+    "interpretation": "Higher error rates indicate worse capability of LLMs in estimating misleadingness.",
+    "baseline_results": "Top LLMs show near or superhuman performance on FACT questions but struggle significantly with manipulated charts.",
+    "validation": "Performance validated against human baseline through controlled experiments."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential misinterpretation of data by users if LLMs are relied upon for accurate chart interpretation."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "Informed consent was obtained from participants in human evaluation.",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Cola (Compose Objects Localized with Attributes)",
+    "abbreviation": "Cola",
+    "overview": "To measure compositional capability, we design Cola, a text-to-image retrieval benchmark to Compose Objects Localized with Attributes. To solve Cola, a model must retrieve images with the correct configuration of attributes and objects, and avoid choosing a distractor image with the same objects and attributes but in the wrong configuration.",
+    "data_type": "text-to-image pairs (image-caption pairs)",
+    "domains": [
+      "Computer Vision",
+      "Natural Language Processing"
+    ],
+    "languages": [],
+    "similar_benchmarks": [
+      "CREPE",
+      "Winoground",
+      "ARO"
+    ],
+    "resources": [
+      "https://cs-people.bu.edu/array/research/cola/",
+      "https://github.com/arijitray1993/COLA",
+      "https://arxiv.org/abs/2305.03689"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Test compositional attribute-object binding of vision-language models via a text-to-image retrieval task where models must rank images with the correct attachment of attributes to objects higher than difficult distractors.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text-to-Image Retrieval",
+      "Compositionality evaluation (attribute-object binding)"
+    ],
+    "limitations": "Finetuning to improve Cola performance may reduce other capabilities (e.g., question answering, captioning). The dataset is a curated sample from larger datasets and may have missing annotations. Further testing is required for sensitive attributes and to evaluate on newer vision-language models.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated from publicly available datasets: GQA, CLEVR, PACO, and Visual Genome.",
+    "size": "1,236 composed queries; 168 objects; 197 attributes; around 30,000 images (Cola overall). Additional training splits: GQA training split: 27,078 queries on 74K images; CLEVR training: 70K images; PACO training: 18,696 queries on 37,883 images; multi-object training: 551,980 multi-object compounds on 71,174 images.",
+    "format": "Raw image files and text captions; text-based scene graphs / object and attribute annotations (dataset built on existing dataset annotation formats).",
+    "annotation": "Uses existing object, attribute, and relationship annotations from source datasets; multi-object test set was human-cleaned via crowdsourcing (10 crowd workers per pair with majority vote)."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics (mean Average Precision among hard distractors - ColaMAP, standard Mean Average Precision)",
+      "Accuracy for multi-object retrieval",
+      "F1 Score (reported in supplementary)",
+      "Human evaluation (crowdworker majority vote for multi-object validation)"
+    ],
+    "metrics": [
+      "Mean Average Precision (mAP)",
+      "ColaMAP (mean average retrieval precision over difficult distractors)",
+      "Accuracy",
+      "F1 Score",
+      "Mean Rank (ground truth vs distractors)"
+    ],
+    "calculation": "ColaMAP: mean average retrieval precision computed over hard distractors (images containing any of the query words as defined in Sec. 3). Single-object ColaMAP is reported separately for seen and unseen queries. Multi-object accuracy: a prediction is correct if fp(I, M) > fp(I', M) AND fp(I', M') > fp(I, M'), where I and I' are paired images and M and M' are paired captions; random accuracy is 25%. For CREPE image-to-text (I2T) accuracy random is 50%.",
+    "interpretation": "Higher ColaMAP, standard mAP, Accuracy, and F1 indicate better compositional attribute-object binding. Random baselines are 25% (Cola multi-object) and 50% (CREPE I2T). Human agreement on the Cola multi-object validation set is 83.88%, providing an upper reference point; the gap between best model and human indicates room for improvement.",
+    "baseline_results": "Selected results from paper: Colasingle-object (GQA All) Off-the-shelf CLIP: 36.53 mAP; CLIP + MM-Adapter (ours): 46.83 mAP. Colamulti-object accuracy: Off-the-shelf CLIP: 21.42%; CLIP + MM-Adapter (ours): 40.95%; Human (multi-object validation): 83.88% accuracy. CLEVR Colasingle-object (All) CLIP + MM-Adapter: 88.21 mAP. (All numbers taken from Tables 1 and 2 in the paper.)",
+    "validation": "Multi-object test set validated via human cleaning: image-query pairs shown to 10 crowd workers; pairs retained where majority agreed. Human agreement on validation set reported as 83.88%. Additional validation via comparison to CREPE and standard mAP calculations (supplementary analyses)."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "No demographic breakdowns provided. Authors state no personally identifiable information is present and that they do not conduct analyses with sensitive attributes like race, age, sexual orientation, or religion.",
+    "harm": [
+      "Authors note potential for dataset/models to be predisposed towards attaching incorrect attributes to objects because of racial/political biases in the data; further testing is required."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Authors state no personally identifiable information is present in the data. Multi-object test set annotations were human-cleaned via crowdworkers (paid an average of 15 USD per hour). IRB exemption was obtained for the work.",
+    "data_licensing": "No specific new license; dataset licenses are the same as the licenses of the datasets Cola is built on. Authors state 'No such restrictions are present.'",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "IRB exemption obtained (data did not involve personal or sensitive information). Compliance with GDPR/CCPA not discussed."
+  }
+}

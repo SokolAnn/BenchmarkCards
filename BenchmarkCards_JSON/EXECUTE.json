@@ -1,0 +1,80 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "EXECUTE: A Multilingual Benchmark for LLM Token Understanding",
+    "abbreviation": "EXECUTE",
+    "overview": "EXECUTE benchmark tests token understanding in a variety of languages, revealing challenges in character and word processing across different writing systems. It is designed for easy expansion to new languages.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Amharic",
+      "Arabic",
+      "Chinese",
+      "English",
+      "Hindi",
+      "Japanese",
+      "Korean",
+      "Russian"
+    ],
+    "similar_benchmarks": [
+      "CUTE"
+    ],
+    "resources": [
+      "https://github.com/Leukas/EXECUTE"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate and advance understanding of how multilingual LLMs manipulate tokens in various languages and writing systems.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Linguists"
+    ],
+    "tasks": [
+      "Token manipulation",
+      "Character understanding",
+      "Word understanding"
+    ],
+    "limitations": "Limited to 8 languages; the performance of languages not tested may vary.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "An updated subset of 5000 stories from the TinyStories dataset, translated using Google Translate.",
+    "size": "5,000 examples",
+    "format": "JSON",
+    "annotation": "Automatic translation with verification by fluent speakers."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Metrics are computed based on task performance evaluations.",
+    "interpretation": "Higher scores indicate better performance in token manipulation tasks.",
+    "baseline_results": null,
+    "validation": "Results compared across multiple LLMs to validate performance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "The benchmark explicitly analyzes performance across different language groups to evaluate fairness.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

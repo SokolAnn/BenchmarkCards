@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "name": "CLIMB",
+    "overview": "A Benchmark of Clinical Bias in Large Language Models, which evaluates both intrinsic and extrinsic bias in LLMs for clinical decision tasks.",
+    "data_type": "Clinical diagnoses",
+    "domains": [
+      "Healthcare",
+      "Clinical Decision-Making"
+    ],
+    "languages": null,
+    "similar_benchmarks": null,
+    "resources": [
+      "https://github.com/uscnlp-lime/climb"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To systematically evaluate clinical bias in large language models (LLMs) used in healthcare settings.",
+    "audience": [
+      "Researchers",
+      "Healthcare professionals",
+      "AI developers"
+    ],
+    "tasks": [
+      "Evaluate intrinsic and extrinsic biases in LLMs",
+      "Assess diagnostic capabilities of LLMs",
+      "Identify disparities across demographic groups"
+    ],
+    "limitations": null,
+    "out_of_scope_uses": null
+  },
+  "data": {
+    "source": "MIMIC-IV database",
+    "size": "199 instances for counterfactual evaluation",
+    "format": "ICD-10-CM codes",
+    "annotation": "Demographic information including sex, ethnicity, and insurance types."
+  },
+  "methodology": {
+    "methods": [
+      "Intrinsic bias evaluation using AssocMAD metric",
+      "Extrinsic bias evaluation through counterfactual interventions in clinical diagnosis tasks"
+    ],
+    "metrics": [
+      "AssocMAD",
+      "Recall rate in diagnosis prediction"
+    ],
+    "calculation": "Mean Absolute Deviation (MAD) is used to measure the disparities in associations across demographic groups.",
+    "interpretation": "Lower AssocMAD indicates lower bias; performance change indicates extrinsic bias.",
+    "baseline_results": null,
+    "validation": "Comparison of performance across various LLMs from Mistral and LLaMA families."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias in clinical decision-making",
+      "Inequities in healthcare outcomes",
+      "Unintended reinforcement of stereotypes"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Exposing personal information"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis based on demographic attributes (sex, ethnicity, insurance type).",
+    "harm": "Potential harm from biased clinical decisions leading to health disparities."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data from de-identified Electronic Health Records (EHRs).",
+    "data_licensing": "Not specified.",
+    "consent_procedures": "Not specified.",
+    "compliance_with_regulations": "Adheres to guidelines for the use of clinical data."
+  }
+}

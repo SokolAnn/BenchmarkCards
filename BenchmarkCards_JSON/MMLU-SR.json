@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MMLU-SR",
+    "abbreviation": "MMLU-SR",
+    "overview": "MMLU-SR is a novel dataset designed to measure the true comprehension abilities of Large Language Models by challenging their performance in question-answering tasks with modified terms, emphasizing reasoning over mere memorization.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Education"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMLU",
+      "AGIEval",
+      "BoolQ",
+      "GSM8K",
+      "DROP"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2406.15468"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To rigorously evaluate the reasoning and understanding capabilities of LLMs by testing their performance with modified questions and answers.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Modified questions and answers from the MMLU dataset, with key terms replaced by dummy words and their definitions.",
+    "size": "N/A",
+    "format": "JSON",
+    "annotation": "Terms extracted and definitions generated with some manual modifications for accuracy."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Evaluation of model performance based on accuracy in relation to original MMLU benchmarks.",
+    "interpretation": "Higher accuracy indicates better reasoning and comprehension capabilities of the models.",
+    "baseline_results": null,
+    "validation": "Models validated through comparative analysis with original MMLU dataset."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

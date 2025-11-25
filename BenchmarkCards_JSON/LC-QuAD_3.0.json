@@ -1,0 +1,73 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LC-QuAD 3.0",
+    "abbreviation": "N/A",
+    "overview": "LC-QuAD 3.0 is a new dataset derived from LC-QuAD 2.0, enriched with frame-based annotations using the FRASE method for SPARQL query generation from natural language questions, aimed at enhancing the generalization capabilities of language models.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "LC-QuAD 2.0"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2503.22144"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To improve the generalization capabilities of large language models in the task of SPARQL query generation by providing structured semantic representations of natural language questions.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "SPARQL Query Generation"
+    ],
+    "limitations": "The best F1 score remains low (50 F1-score), and the method's effectiveness on knowledge bases beyond Wikidata is unvalidated.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Derived from LC-QuAD 2.0, augmented with frame-based annotations using the FRASE method.",
+    "size": "30,225 entries",
+    "format": "JSON",
+    "annotation": "Automatically annotated with frame and argument mappings."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "BLEU Score",
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated by comparing generated SPARQL queries against gold-standard references and executing them against the knowledge base for execution-based metrics.",
+    "interpretation": "Higher BLEU scores indicate better surface-level output quality, while execution-based metrics assess the correctness of the generated SPARQL queries.",
+    "baseline_results": "Various Large Language Models including Phi-4 14B show performance on LC-QUAD datasets, with the best results serving as a baseline.",
+    "validation": "Various training configurations assessed the impact of incorporating frame-based structured representations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

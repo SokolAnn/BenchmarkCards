@@ -1,0 +1,116 @@
+# mitclinicalml/clinical-ie
+
+## 📊 Benchmark Details
+
+**Name**: mitclinicalml/clinical-ie
+
+**Overview**: The paper introduces new datasets for benchmarking few-shot clinical information extraction based on a manual re-annotation of the Clinical Acronym Sense Inventory (CASI) dataset, and evaluates prompting-based large language model (GPT-3 / InstructGPT) approaches (with guided prompts and resolvers) on diverse clinical extraction tasks including span identification, token-level sequence classification, and relation extraction.
+
+**Data Type**: text (clinical note snippets with span, token-level, and relation annotations)
+
+**Domains**:
+- Natural Language Processing
+- Healthcare
+
+**Languages**:
+- English
+
+**Similar Benchmarks**:
+- Clinical Acronym Sense Inventory (CASI)
+- MIMIC-III
+- EBM-NLP
+- i2b2 2009 medication challenge
+- i2b2 2011 coreference challenge
+
+**Resources**:
+- [Resource](https://huggingface.co/datasets/mitclinicalml/clinical-ie)
+- [Resource](https://arxiv.org/abs/2205.12689)
+
+## 🎯 Purpose and Intended Users
+
+**Goal**: Benchmark few-shot clinical information extraction methods by introducing new annotated datasets (derived from CASI) and evaluating large language models (GPT-3 / InstructGPT) with guided prompts and resolvers across diverse clinical extraction tasks.
+
+**Target Audience**:
+- Natural Language Processing researchers
+- Biomedical and Health Informatics researchers
+- Clinical NLP practitioners
+
+**Tasks**:
+- Abbreviation Sense Disambiguation (classification / multiple-choice)
+- Span Identification / Multi-span Extraction (token-level sequence labeling)
+- Coreference Resolution (span identification)
+- Named Entity Recognition (medication extraction) + Status Classification
+- Relation Extraction (medication attributes: dosage, route, frequency, reason, duration)
+
+**Limitations**: Authors list several limitations: difficulty guiding LLMs to match exact (often complex) annotation schemas; GPT-3 bias toward producing a non-trivial answer even when none exists; data use agreements prevent direct API evaluation on many clinical corpora (limiting evaluation on private datasets); datasets derived primarily from CASI are not representative of all clinical text; experiments were conducted only in English.
+
+## 💾 Data
+
+**Source**: Three new annotated datasets were created by re-annotating snippets from the Clinical Acronym Sense Inventory (CASI) dataset (Moon et al., 2014). Additional data used: reverse-substitution dataset over MIMIC-III (Adams et al., 2020) for transfer experiments, and token-level annotations and abstracts from EBM-NLP (Nye et al., 2018) for biomedical evidence extraction.
+
+**Size**: Various: CASI subset for sense disambiguation: 18,164 examples over 41 acronyms; MIMIC reverse-substitution evaluation: 8,912 examples; Biomedical evidence extraction: 187 test abstracts (token-level) and 20 newly annotated abstracts (arm identification); Newly annotated CASI-derived datasets: 105 examples for coreference resolution; 105 examples for medication status extraction (340 medication-status pairs); 105 examples for medication attribute extraction (313 medications and 533 attributes).
+
+**Format**: N/A
+
+**Annotation**: Manual annotation by two of the paper's authors (with clinical NLP and medicine background): annotators jointly annotated a set to establish schema, independently labeled the same set of 105 examples using PRAnCER software, and merged labels via joint manual adjudication. For some tasks (EBM arm identification) two annotators separately labeled abstracts and achieved full consensus on number of arms.
+
+## 🔬 Methodology
+
+**Methods**:
+- Prompt-based evaluation using GPT-3 / InstructGPT (text-davinci-edit-001 and text-davinci-002)
+- Guided prompt design (one-shot example + format guidance)
+- Resolvers mapping LLM outputs to structured label spaces
+- Weak supervision: use LLM+resolver outputs as pseudolabels and distill to fine-tune PubMedBERT
+- Comparisons to supervised baselines (PubMedBERT-CRF, LSTM-CRF), prior unsupervised/zero-shot methods (LMC, ELMo, Clinical BioBERT), and rule-based baselines (ScispaCy).
+
+**Metrics**:
+- Accuracy
+- Macro F1
+- F1 Score (token-level and phrase-level)
+- Abstract-level Accuracy
+- Micro Recall
+- Micro Precision
+- Conditional Accuracy
+- Macro unigram recall
+- Unigram precision
+
+**Calculation**: Accuracy and Macro F1 for acronym disambiguation are calculated per acronym and averaged over acronyms. Token-level F1 is computed for sequence labeling tasks. Abstract-level accuracy measures correctness of arm identification (number and main differentiator). Micro precision/recall for medication extraction counts exact string matches. Coreference metrics use macro unigram recall (% of label's unigrams in resolved output) and unigram precision; tokenization for these metrics used Stanza. Conditional accuracy for status classification is computed conditioned on medications found by GPT-3.
+
+**Interpretation**: Higher values in the listed metrics indicate better task performance (e.g., higher Accuracy/Macro F1 for disambiguation, higher token-level F1 for sequence labeling). Authors note that token-level metrics can be misleading relative to the underlying goal (e.g., correct qualitative extraction may still lose points on token-level F1). Guided prompts generally reduce resolver complexity and improve precision.
+
+**Baseline Results**: Selected reported results: Clinical sense disambiguation (CASI subset): GPT-3 edit + R 0-shot Accuracy 0.86, Macro F1 0.69; GPT-3 edit + R + distillation Accuracy 0.90, Macro F1 0.76. MIMIC (via distillation): Accuracy 0.78, Macro F1 0.69. Biomedical evidence extraction (token-level proxy): PubMedBERT-CRF (supervised) token-level F1 0.69; GPT-3 + R 0-shot token-level F1 0.61; abstract-level arm identification accuracy: PubMedBERT-CRF 0.35 vs GPT-3 + R 0-shot 0.85 (17/20 correct arms). Coreference resolution: GPT-3 + R (0-shot) macro unigram recall 0.78, unigram precision 0.58 (outperforming transferred long-doc baseline). Medication extraction micro recall/precision: ScispaCy 0.73 / 0.67; GPT-3 + R (0-shot) 0.87 / 0.83; GPT-3 + R (1-shot) 0.90 / 0.92. Medication status classification (conditional accuracy / macro F1): T-Few (20-shot) 0.86 / 0.57; GPT-3 + R (0-shot) 0.85 / 0.69; GPT-3 + R (1-shot) 0.89 / 0.62; GPT-3 + R (1-shot) + added classes 0.88 / 0.71. Medication attribute extraction (token-level F1 for Medication, Dosage, Route, Frequency, Reason, Duration): PubMedBERT+CRF (sup.) 0.82, 0.92, 0.77, 0.76, 0.35, 0.57; GPT-3 + R (1-shot) 0.85, 0.92, 0.87, 0.91, 0.38, 0.52. (All numbers taken directly from reported tables.)
+
+**Validation**: Prompt templates were handcrafted using a set of 5 validation examples per task. Annotation validation: two annotators independently labeled the same set of 105 examples and merged via manual adjudication; inter-annotator agreement reported for some tasks (e.g., Cohen's kappa 0.59 for EBM token labels). For weak supervision, pseudolabel selection used an overlap threshold and the cut statistic to choose a high-quality subset (75%) before distillation; hyperparameters and details for fine-tuning PubMedBERT are provided in the appendix.
+
+## ⚠️ Targeted Risks
+
+**Risk Categories**:
+- Bias
+- Accuracy
+- Privacy
+- Data Laws
+- Robustness
+- Governance
+- Value Alignment
+- Societal Impact
+
+**Atlas Risks**:
+- **Fairness**: Data bias
+- **Accuracy**: Unrepresentative data
+- **Privacy**: Data privacy rights alignment
+- **Data Laws**: Data usage restrictions
+- **Governance**: Lack of testing diversity
+- **Value Alignment**: Over- or under-reliance
+- **Societal Impact**: Impact on the environment
+
+**Demographic Analysis**: The authors state that performance numbers were not stratified by cohorts (e.g., racial, socioeconomic, patient comorbidities, disease stage, site of care, author role) because such variables were not available in the data.
+
+## 🔒 Ethical and Legal Considerations
+
+**Privacy And Anonymity**: Datasets introduced are new annotations on top of existing, publicly available clinical text (CASI is de-identified). Annotation was performed by two authors; authors note data use agreements on many clinical datasets prohibit API usage and limit evaluation.
+
+**Data Licensing**: CASI is described in the paper as 'publicly available to support the research of the greater NLP and biomedical and health informatics community'. The paper also notes that many shared clinical corpora have restrictive data use agreements preventing their use with LLM APIs.
+
+**Consent Procedures**: Not Applicable
+
+**Compliance With Regulations**: Not Applicable

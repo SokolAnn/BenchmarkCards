@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ENZYME",
+    "abbreviation": "N/A",
+    "overview": "ENZYME is a dataset designed for hierarchical text classification (HTC), comprising 30,523 articles from PubMed for predicting Enzyme Commission (EC) numbers, featuring a four-level single-path hierarchy.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Science"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "WOS",
+      "NYT"
+    ],
+    "resources": [
+      "https://github.com/viditjain99/HiGen"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a dataset for developing and benchmarking models for hierarchical text classification, particularly in the domain of biomedical literature.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Hierarchical Text Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Articles from PubMed with associated Enzyme Commission numbers.",
+    "size": "30,523 articles",
+    "format": "PDF, parsed text",
+    "annotation": "Automatically extracted from PubMed articles"
+  },
+  "methodology": {
+    "methods": [
+      "Sequence generation",
+      "Pretraining"
+    ],
+    "metrics": [
+      "Micro-F1",
+      "Macro-F1"
+    ],
+    "calculation": "Micro-F1 and Macro-F1 scores calculated based on predicted and actual hierarchical labels.",
+    "interpretation": "Higher F1 scores indicate better performance in classifying hierarchical labels.",
+    "baseline_results": "HiGen outperforms existing methods with Micro-F1 of 92.61 and Macro-F1 of 84.15 on ENZYME.",
+    "validation": "Extensive experiments across ENZYME, WOS, and NYT datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

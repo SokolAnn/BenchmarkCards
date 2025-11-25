@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Annotated Literary Dialect Corpus",
+    "abbreviation": "N/A",
+    "overview": "We present a dataset of 19th century American literary orthovariant tokens with a novel layer of human-annotated dialect group tags designed to serve as the basis for computational experiments exploring literarily meaningful orthographic variation.",
+    "data_type": "orthovariant token pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "N/A"
+    ],
+    "resources": [
+      "https://github.com/comp-int-hum/orthography-embedding-clustering"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To investigate the multidimensional signaling pathways of dialect effects in literary orthographic variation using an annotated corpus.",
+    "audience": [
+      "ML Researchers",
+      "Linguists",
+      "Humanities Scholars"
+    ],
+    "tasks": [
+      "Dialect Analysis",
+      "Language Modeling"
+    ],
+    "limitations": "The primary limitation of this study emerges from the data which is restricted to 19th century American authors, limiting the depth of analysis due to the granularity of the tags.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "19th century American literature subset of the Project Gutenberg corpus",
+    "size": "4,032 tokens",
+    "format": "N/A - Not specified",
+    "annotation": "Human-annotated dialect group tags"
+  },
+  "methodology": {
+    "methods": [
+      "Token-level contextual modeling",
+      "Character-level contextual modeling"
+    ],
+    "metrics": [
+      "Purity",
+      "Overall accuracy",
+      "SO accuracy",
+      "Cluster semantic coherency",
+      "Mphone similarity"
+    ],
+    "calculation": "Purity is calculated over the clustering of the full relative token set to gain insight into each model’s ability to distinguish between synthetic and observed variants.",
+    "interpretation": "Models exhibit varying abilities to capture dialect effects, with character-level models generally performing better in distinguishing orthographic variations.",
+    "baseline_results": "N/A",
+    "validation": "Initial experiments conducted to evaluate the performance of various models on the dataset."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis included varying demographic factors based on the dialect tags assigned to tokens.",
+    "harm": "The dataset may reinforce stereotypes by explicitly tagging dialect forms, which must be handled with care."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

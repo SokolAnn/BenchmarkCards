@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LOT (Long Text Benchmark)",
+    "abbreviation": "LOT",
+    "overview": "LOT is a story-centric benchmark for evaluating Chinese long text understanding and generation, consisting of two understanding tasks and two generation tasks. It focuses on commonsense reasoning, controllability, and modeling inter-sentence relations and global discourse structures.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/thu-coai/LOT-LongLM"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a standardized benchmark for evaluating the capabilities of models in understanding and generating long Chinese texts.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Cloze Test",
+      "Sentence Position Prediction",
+      "Plot Completion",
+      "Outline-conditioned Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Human-written Chinese stories collected from public web resources.",
+    "size": "2,427 stories processed for the tasks",
+    "format": "N/A",
+    "annotation": "Manual annotation by a commercial team led by a professional screenwriter."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "BLEU-1",
+      "BLEU-2"
+    ],
+    "calculation": "Metrics are computed based on the outputs of models compared to ground truth.",
+    "interpretation": "Higher scores indicate better model performance in terms of understanding and generating coherent long-form texts.",
+    "baseline_results": "Comparison against pre-trained models like BERT and GPT2.",
+    "validation": "Extensive experiments and human evaluations for task performance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

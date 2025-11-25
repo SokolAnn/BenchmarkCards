@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "NextQuAD",
+    "abbreviation": "N/A",
+    "overview": "NextQuAD is a comprehensive open-domain dataset for Persian designed to enhance the performance of question answering systems, containing 7,515 contexts and 23,918 pairs of question and answer.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Persian"
+    ],
+    "similar_benchmarks": [
+      "ParSQuAD",
+      "PersianQA"
+    ],
+    "resources": [
+      "https://github.com/mosiomohsen/NextQuAD"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a high-quality question answering dataset in Persian to improve the design and functionality of QA systems for non-English languages.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Data was gathered through translation of SQuAD 2.0, question-answer pairs from a game application called 'Quiz of Kings', and manual data collection from well-known Persian websites.",
+    "size": "7,515 contexts and 23,918 pairs of question and answer",
+    "format": "N/A",
+    "annotation": "The dataset was manually reviewed and cross-validated, involving crowdworkers who contributed to the creation and annotation of the question-answer pairs."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Exact Match (EM)",
+      "F1 Score"
+    ],
+    "calculation": "EM is calculated based on the exact match of responses with the ground truth answers; F1 Score is computed similarly considering both precision and recall.",
+    "interpretation": "A higher Exact Match and F1 Score indicate better performance of the QA system. Values close to 1.0 signify high accuracy in answering.",
+    "baseline_results": "The model achieved 0.95 Exact Match and 0.97 F1 Score on the evaluation dataset.",
+    "validation": "K-fold cross-validation with five folds was employed."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

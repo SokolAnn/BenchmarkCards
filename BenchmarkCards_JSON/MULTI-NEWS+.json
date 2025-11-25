@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MULTI-NEWS+",
+    "abbreviation": "N/A",
+    "overview": "MULTI-NEWS+ is an enhanced version of the Multi-News dataset created to improve dataset quality through LLM-based data cleansing, specifically targeting the identification and removal of noisy and irrelevant documents in multi-document summarization tasks.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Multi-News"
+    ],
+    "resources": [
+      "https://github.com/c-juhwan/multi_news_plus"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a high-quality dataset for multi-document summarization tasks by cleansing irrelevant and noisy data using LLM-based methods.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Multi-document Summarization"
+    ],
+    "limitations": "The approach may still misclassify relevant documents, and the majority voting method does not completely eliminate errors associated with LLMs.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Cleansed from the original Multi-News dataset through LLM-based annotation.",
+    "size": "56,216 articles",
+    "format": "N/A",
+    "annotation": "LLM-based annotation utilizing chain-of-thought prompting and self-consistency methods to classify document relevance."
+  },
+  "methodology": {
+    "methods": [
+      "LLM-based annotation",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "ROUGE",
+      "BERTScore",
+      "BARTScore"
+    ],
+    "calculation": "Metrics are calculated based on the performance of summarization models trained on MULTI-NEWS+ compared to the original Multi-News dataset.",
+    "interpretation": "Improvements in metrics indicate better data quality and performance in multi-document summarization tasks.",
+    "baseline_results": "Models trained on MULTI-NEWS+ outperformed those trained on original Multi-News across multiple metrics.",
+    "validation": "Human evaluations were conducted to ensure the accuracy of document classifications and the effectiveness of the cleansing method."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential misclassification of relevant documents leading to bias in dataset usage."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FREEM maxcorpus",
+    "abbreviation": "FREEM",
+    "overview": "We present the FREEM maxcorpus of Early Modern French and D’AlemBERT, a RoBERTa-based language model trained on FREEM max. We evaluate D’AlemBERT by fine-tuning it on a part-of-speech tagging task, showing improved performance and evidence of transfer learning across time periods. We release D’AlemBERT and the open-sourced subpart of the FREEM maxcorpus.",
+    "data_type": "text (Early Modern French digitised transcriptions; literary and documentary texts)",
+    "domains": [
+      "Natural Language Processing",
+      "Digital Humanities",
+      "Corpus Linguistics"
+    ],
+    "languages": [
+      "French"
+    ],
+    "similar_benchmarks": [
+      "FRANTEXT",
+      "ARTFL",
+      "Presto",
+      "Corpus Middelnederlands",
+      "CamemBERT",
+      "FlauBERT",
+      "Pie Extended"
+    ],
+    "resources": [
+      "https://cahier.hypotheses.org/antonomaz",
+      "http://kaskade.dwds.de/dstar/apwcf/",
+      "http://www.bvh.univ-tours.fr",
+      "http://www.cepm.paris-sorbonne.fr",
+      "https://conde.hypotheses.org",
+      "https://www.unicaen.fr/puc/sources/prodescartes/",
+      "http://bibdramatique.huma-num.fr",
+      "https://obvil.sorbonne-universite.fr/projets/fabula-numerica",
+      "https://www.licorn-research.fr/Boissy.html",
+      "https://obvil.sorbonne-universite.fr/corpus/mercure-galant",
+      "https://www.rousseauonline.ch",
+      "http://sermo.unine.ch",
+      "http://www.theatre-classique.fr",
+      "https://fr.wikisource.org",
+      "https://gallica.bnf.fr",
+      "https://github.com/LoicGrobol/zeldarose",
+      "https://github.com/flairNLP/flair"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To group together the largest number of texts possible written in Early Modern French (approximately 1500–1789) to train NLP tools adapted to historical French and to develop D’AlemBERT, a RoBERTa-based language model for Early Modern French; to evaluate the model on POS tagging and study transfer learning across time periods.",
+    "audience": [
+      "Digital Humanists",
+      "Linguists",
+      "Natural Language Processing Researchers"
+    ],
+    "tasks": [
+      "Part-of-Speech Tagging",
+      "Lemmatisation",
+      "Linguistic Normalisation",
+      "Named Entity Recognition",
+      "OCR Post-correction"
+    ],
+    "limitations": "The final corpus is unbalanced and not fully representative across centuries (16th and 18th centuries under-represented, 17th century over-represented). Some texts are non open-sourced and restrictions on modification limit the distributed open version.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Compilation from multiple sources including two institutional (non open-sourced) datasets: FRANTEXT intégral and Electronic Enlightenment; research-project corpora and online transcriptions (Antonomaz project, Acta Pacis Westphalicae II.B, Bibliothèques virtuelles humanistes, Corpus électronique de la première modernité, Condé project, Corpus Descartes, Bibliothèque dramatique of the CELLF, Fabula numerica project, Fonds Boissy, Mercure Galant project, Rousseau online project, Sermo project, Théâtre classique project), researcher-provided transcriptions, scrapped transcriptions, Wikisource and Gallica. Metadata prepared manually (author, title, date, genre, subgenre, linguistic status, licence).",
+    "size": "185,643,482 tokens (total reported in Table 2)",
+    "format": "XML TEI (original files kept in their original formats; pipeline transforms documents into XML TEI for distribution)",
+    "annotation": "Metadata manually prepared (author, title, date, genre, linguistic status, licence). POS-annotated data is provided separately in FREEM LPM (POS-annotated mixture from CornMol and a gold subset of Presto)."
+  },
+  "methodology": {
+    "methods": [
+      "Pretraining a RoBERTa-base architecture (D’AlemBERT) on FREEM max using Masked Language Modelling",
+      "Fine-tuning D’AlemBERT for Part-of-Speech tagging using the Flair framework",
+      "Out-of-domain evaluation per-century (16th–20th) with two test sets per century: theatre-only and non-theatre; each test set contains 10 short samples (~100 tokens) representative by author gender, decade, genre",
+      "Comparative evaluation against baselines Pie Extended and CamemBERT"
+    ],
+    "metrics": [],
+    "calculation": "Scores are reported on the out-of-domain testing dataset per-century and per-variant (Original and Normalised). The paper does not explicitly state the name or exact calculation of the metric used for the reported scores.",
+    "interpretation": "Higher reported scores indicate better POS tagging performance. The authors report that D’AlemBERT consistently outperforms Pie Extended and CamemBERT across periods and variants, and that improvements suggest better generalisation to non-normalised data and transfer learning from better-resourced periods to lesser-resourced ones.",
+    "baseline_results": "Reported in Table 3: Example averages (Both, ORIGINAL): Pie Extended 93.12, CamemBERT 89.27, D’AlemBERT 95.60. (Both, NORMALISED): Pie Extended 94.35, CamemBERT 92.53, D’AlemBERT 95.95. Detailed per-century and per-variant scores are provided in Table 3 of the paper.",
+    "validation": "FREEM LPM provides a standard train/dev/test split. Additionally, an out-of-domain testing corpus separated by century (16th–20th) and by genre (theatre vs non-theatre) is used for fine-grained evaluation; each out-of-domain test set comprises 10 short samples (~100 tokens) chosen to be representative (including female and male authors, decade, genre)."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Data Laws",
+      "Intellectual Property",
+      "Societal Impact"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Data Laws",
+          "subcategory": [
+            "Data usage restrictions"
+          ]
+        },
+        {
+          "category": "Intellectual Property",
+          "subcategory": [
+            "Data usage rights restrictions"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on the environment"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Out-of-domain test sets were constructed to be representative across female and male authors, decade of publication, and genre; used to assess model generalisation across these factors.",
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Some texts are non open-sourced and distributed under restrictive licences; FREEM max exists in open and non-open versions and licences may forbid modification of original files.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

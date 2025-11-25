@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "NUTSHELL",
+    "abbreviation": "N/A",
+    "overview": "NUTSHELL is a novel multimodal dataset for Speech-to-Abstract Generation (SAG) from *ACL conference talks, containing recorded presentations paired with their corresponding abstracts to facilitate the generation of abstracts from spoken content.",
+    "data_type": "multimodal",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SCISUMMNET"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/maikezu/nutshell"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Advance research in Speech-to-Abstract Generation (SAG) and foster the development of improved models and evaluation methods.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Summarization"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Recorded presentations from *ACL conferences (2017-2022) paired with their abstracts.",
+    "size": "6,316 presentations, 1,172 hours of audio",
+    "format": "N/A",
+    "annotation": "Human evaluations for quality assessment and model evaluations."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automatic metrics"
+    ],
+    "metrics": [
+      "ROUGE",
+      "BERTScore"
+    ],
+    "calculation": "Metrics are calculated based on n-gram overlap and contextualized token embeddings between summaries and references.",
+    "interpretation": "Higher scores indicate better performance in generating concise and accurate abstracts.",
+    "baseline_results": "N/A",
+    "validation": "Models were evaluated based on both automatic metrics and human judgments to ensure reliability."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Automatic summaries may misrepresent key findings or lack scientific accuracy."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC-BY 4.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

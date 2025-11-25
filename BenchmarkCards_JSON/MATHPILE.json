@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MATHPILE (A Billion-Token-Scale Pre-training Corpus for Math)",
+    "abbreviation": "MATHPILE",
+    "overview": "MATHPILE is a diverse and high-quality math-centric corpus comprising about 9.5 billion tokens, aimed at boosting language models’ mathematical reasoning abilities.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MATH",
+      "GSM8K",
+      "MMLU-STEM",
+      "AGIEval-SAT-MATH",
+      "MathQA"
+    ],
+    "resources": [
+      "https://github.com/GAIR-NLP/MathPile/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enhance mathematical reasoning capabilities in language models by providing a diverse, high-quality pre-training corpus focused on mathematics.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Mathematical Problem Solving",
+      "Reasoning Tasks"
+    ],
+    "limitations": "The dataset is primarily focused on English, which may limit its applicability in multilingual contexts.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated from various sources including arXiv, textbooks, StackExchange, Wikipedia, ProofWiki, and Common Crawl.",
+    "size": "9.5 billion tokens",
+    "format": "Raw text files",
+    "annotation": "Includes quality annotations like language identification scores and the ratio of symbols to words."
+  },
+  "methodology": {
+    "methods": [
+      "Data collection from diverse sources",
+      "Data preprocessing and cleaning",
+      "Data contamination detection"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Performed by evaluating the model's performance on various mathematical reasoning benchmarks after continual pre-training.",
+    "interpretation": "Improvements in model performance are indicated by increased accuracy on targeted benchmarks.",
+    "baseline_results": "Mistral-7B model performance improved on several metrics after pre-training.",
+    "validation": "Continual pre-training experiments using sourced materials demonstrated performance enhancement."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Data mainly sourced and processed in a manner focused on English documents, lacking multilingual dataset representation.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Measures have been taken to ensure collected data comply with copyright and licensing requirements.",
+    "data_licensing": "MATHPILE is released under the CC BY-NC-SA 4.0 license.",
+    "consent_procedures": "Explicit consent not obtained from textbook authors due to the nature of open-source data collection.",
+    "compliance_with_regulations": "Ethical review processes have been adhered to during data collection."
+  }
+}

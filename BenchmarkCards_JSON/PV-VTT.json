@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PV-VTT (Privacy Violation Video To Text)",
+    "abbreviation": "PV-VTT",
+    "overview": "PV-VTT is a unique multimodal dataset aimed at identifying privacy violations, providing detailed annotations for both video and text in scenarios. It supports benchmarking tasks in both Video Anomaly Recognition (VAR) and video description.",
+    "data_type": "video feature vectors and text descriptions",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "XD-Violence",
+      "UCF-Crime",
+      "ShanghaiTech"
+    ],
+    "resources": [
+      "https://ryozomasukawa.github.io/PV-VTT.github.io/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enable research across tasks such as Video Anomaly Recognition (VAR) and video description focusing on privacy violation detection.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Video Anomaly Recognition",
+      "Video Description"
+    ],
+    "limitations": "Some text descriptions derived from news manuscripts may contain context not always inferable from the videos.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Videos collected from video sharing platforms such as YouTube, annotated for privacy violations.",
+    "size": "Approximately 2.3 million frames",
+    "format": "Frame-level annotated video feature vectors",
+    "annotation": "Frame-level annotation by human annotators and LLM-based anonymization for text descriptions."
+  },
+  "methodology": {
+    "methods": [
+      "GNN-based video description model",
+      "Hierarchical message passing for classification",
+      "LLM prompting"
+    ],
+    "metrics": [
+      "AUC-ROC",
+      "BLEU Score",
+      "ROUGE-L",
+      "METEOR",
+      "BERTScore"
+    ],
+    "calculation": "Measures are calculated based on classification accuracy in frame-level annotation and text description generation.",
+    "interpretation": "Higher AUC indicates better performance in differentiating between normal and abnormal events.",
+    "baseline_results": "MissionGNN achieved a mean AUC (mAUC) of 94.61 on the PV-VTT dataset.",
+    "validation": "Evaluation against state-of-the-art models in video anomaly recognition and video description tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Potential misclassification of privacy violations leading to false accusations."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Only video feature vectors provided to ensure participant confidentiality; no raw video data released.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

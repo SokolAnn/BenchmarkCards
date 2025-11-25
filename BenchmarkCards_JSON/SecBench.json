@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SecBench (Security Benchmark)",
+    "abbreviation": "SecBench",
+    "overview": "SecBench is a multi-dimensional benchmarking dataset specifically designed to evaluate LLMs in the cybersecurity domain. It includes questions in various formats (MCQs and SAQs), at different capability levels (Knowledge Retention and Logical Reasoning), in multiple languages (Chinese and English), and across various sub-domains.",
+    "data_type": "multiple-choice questions (MCQs) and short-answer questions (SAQs)",
+    "domains": [
+      "Cybersecurity"
+    ],
+    "languages": [
+      "Chinese",
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMLU",
+      "C-Eval",
+      "HumanEval"
+    ],
+    "resources": [
+      "https://secbench.org/",
+      "https://zenodo.org/records/14575303"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive benchmarking dataset for evaluating LLM capabilities and limitations in the cybersecurity domain.",
+    "audience": [
+      "Researchers",
+      "Practitioners",
+      "Developers in Cybersecurity"
+    ],
+    "tasks": [
+      "Knowledge Retention Assessment",
+      "Logical Reasoning Assessment"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed using high-quality data from open sources and a Cybersecurity Question Design Contest.",
+    "size": "44,823 MCQs and 3,087 SAQs",
+    "format": "JSON",
+    "annotation": "Manual and LLM-based annotation for labeling questions."
+  },
+  "methodology": {
+    "methods": [
+      "Automated grading using a grading agent based on LLM output",
+      "Human evaluation for annotation and quality control"
+    ],
+    "metrics": [
+      "Accuracy of question answering and grading",
+      "Correctness percentage"
+    ],
+    "calculation": "Comparing model outputs with ground truth for grading.",
+    "interpretation": "Higher models scores indicate better performance against the dataset questions.",
+    "baseline_results": "N/A",
+    "validation": "Benchmarking results evaluated on 16 State-of-the-Art LLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

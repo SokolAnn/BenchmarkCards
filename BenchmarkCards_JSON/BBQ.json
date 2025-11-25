@@ -1,0 +1,82 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "BBQ (Bias Benchmark for Question Answering)",
+    "abbreviation": "BBQ",
+    "overview": "BBQ is a dataset of question sets constructed to highlight social biases in model outputs for question answering tasks across nine social dimensions relevant for U.S. English-speaking contexts.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "UnQover"
+    ],
+    "resources": [
+      "https://github.com/nyu-mll/BBQ"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the benchmark is to measure social biases in question answering models and assess model behavior in various contexts.",
+    "audience": [
+      "Researcher",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "The dataset is not designed to cover all possible social biases and is limited to contexts relevant to U.S. English-speaking cultures.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Hand-written contexts and questions targeting social biases.",
+    "size": "58,492 examples",
+    "format": "JSON",
+    "annotation": "Templates were validated by crowdworkers and experts through multiple-choice tasks."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Bias Score"
+    ],
+    "calculation": "Bias scores reflect the degree to which a model systematically produces answers that align with social biases.",
+    "interpretation": "Higher accuracy in disambiguated contexts compared to ambiguous contexts; models show different reliance on biases depending on context.",
+    "baseline_results": "Various models tested including UniﬁedQA, RoBERTa, and DeBERTaV3.",
+    "validation": "Examples were validated via Amazon Mechanical Turk with a threshold of 4/5 annotators agreeing with gold labels for inclusion."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "BBQ includes demographic breakdowns of the targeted biases.",
+    "harm": "Potential for reinforcing harmful stereotypes during QA tasks."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC-BY 4.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

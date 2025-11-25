@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "AmbigBio",
+    "abbreviation": "N/A",
+    "overview": "AmbigBio is a new dataset developed for evaluating the factuality of long-form generations by large language models, particularly focusing on names with entity ambiguity, where each name corresponds to multiple entities in Wikipedia.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/d223302/Merging-Facts-Crafting-Fallacies"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the factuality of long-form generations from large language models by focusing on entity ambiguity.",
+    "audience": [
+      "ML Researchers",
+      "NLP Practitioners"
+    ],
+    "tasks": [
+      "Text Generation",
+      "Fact Verification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "500 ambiguous names collected from Wikipedia disambiguation pages.",
+    "size": "500 examples",
+    "format": "N/A",
+    "annotation": "Manual annotation by humans for evaluating factuality."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "D-FActScore"
+    ],
+    "calculation": "D-FActScore is calculated by grouping atomic facts and verifying them against the best-matching Wikipedia entity.",
+    "interpretation": "A lower D-FActScore indicates a higher likelihood of mixing facts of different entities, thus being non-factual.",
+    "baseline_results": null,
+    "validation": "Human evaluation correlates with automatic evaluations for validating D-FActScore."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

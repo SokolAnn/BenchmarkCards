@@ -1,0 +1,149 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CPED: A Large-Scale Chinese Personalized and Emotional Dialogue Dataset for Conversational AI",
+    "abbreviation": "CPED",
+    "overview": "We propose CPED, a large-scale Chinese personalized and emotional dialogue dataset, which consists of multi-source knowledge related to empathy and personal characteristic. These knowledge covers gender, Big Five personality traits, 13 emotions, 19 dialogue acts and 10 scenes. CPED contains more than 12K dialogues of 392 speakers from 40 TV shows. We release the textual dataset with audio features and video features according to the copyright claims, privacy issues, terms of service of video platforms. We provide detailed description of the CPED construction process and introduce three tasks for conversational AI, including personality recognition, emotion recognition in conversations as well as personalized and emotional conversation generation.",
+    "data_type": "multimodal (text, audio features, video features; utterance-level videos and subtitles)",
+    "domains": [
+      "Natural Language Processing",
+      "Human-Computer Interaction",
+      "Healthcare"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "OpenSubtitles",
+      "Ubuntu Dialogue Corpus",
+      "STC",
+      "LCCC",
+      "OpenViDial",
+      "IEMOCAP",
+      "DailyDialog",
+      "MELD",
+      "EmpatheticDialogues",
+      "ESTC",
+      "MEmoR",
+      "PERSONA-CHAT",
+      "PersonalDialog",
+      "FriendsPersona",
+      "PELD"
+    ],
+    "resources": [
+      "https://github.com/scutcyr/CPED",
+      "https://arxiv.org/abs/2205.14727"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To propose a dataset to be widely adopted by the NLP community as a new open benchmark for conversational AI research, considering speakers' personalities and dynamic emotions to support personality recognition, emotion recognition in conversations, and personalized and emotional conversation generation.",
+    "audience": [
+      "Natural Language Processing Researchers",
+      "Conversational AI Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Personality Recognition in Conversations",
+      "Emotion Recognition in Conversations",
+      "Personalized and Emotional Conversation Generation"
+    ],
+    "limitations": "Dataset is derived from TV dramas which may differ from natural conversations in scenario and interaction types; emotion and DA label distributions are unbalanced; potential for models trained on dataset to learn negative or dangerous expressions.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from 40 popular TV series (TV shows). Dialogue segments selected from videos, subtitles obtained via OCR, and multimodal context (video, audio, text) used for annotation. Original video sources cited include Tencent Video, Youku Video and iQiyi Video.",
+    "size": "11,835 dialogues (reported as >12K in abstract); 133K utterances; 392 speakers; 40 TV shows",
+    "format": "Textual data (subtitles) with associated audio features and video features; utterance-level video/audio referenced by Utterance ID; dataset split by TV series into train/valid/test (7:1:2).",
+    "annotation": "Annotated by three psychology experts. Utterance-level annotation: sentiment (positive/neutral/negative), emotion (13 categories), dialogue act (19 labels), scene (10 categories). Speaker-level annotation: name, gender, age group (children, teenager, young, middle-aged, elderly), Big Five personality traits via Chinese BFI-2 (high/low/unknown). Majority vote used; reannotation for disagreements; ambiguous samples discarded."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation by experts",
+      "Baseline model evaluations (PRC, ERC, PEC) including BERT variants, DialogueRNN, DialogueGCN, DialogXL, bcLSTM, GPT and CDial-GPT based models"
+    ],
+    "metrics": [
+      "Perplexity (PPL)",
+      "BLEU Score",
+      "Distinct-N (D-1, D-2)",
+      "Greedy Matching",
+      "Embedding Average",
+      "BERTScore",
+      "Accuracy",
+      "Macro-F1",
+      "Fleiss' kappa (inter-rater agreement for manual evaluation)"
+    ],
+    "calculation": "Automatic generation metrics (PPL, BLEU, Distinct-N, Greedy, Embedding Average, BERTScore) computed on test set; PRC and ERC evaluated with Accuracy and Macro-F1. Manual evaluation: three experts rated content consistency, emotion correlation and personification on a 0-2 scale. Dataset split by TV series (7:1:2) to avoid speaker overlap.",
+    "interpretation": "Higher automatic metric scores (e.g., lower PPL, higher BLEU/DISTINCT/BERTScore) indicate better generation quality; higher Accuracy and Macro-F1 indicate better recognition performance. Manual scores (0-2) measure content consistency, emotional relevance and personification; Fleiss' kappa reported to indicate inter-rater agreement. Paper reports that explicit infusion of emotions and personalities improves personification and emotional expression in generated responses; specific baseline findings are reported per task.",
+    "baseline_results": "Reported baselines: PRC (Personality Recognition) evaluated with BERT-based methods (variants BERTs, BERTc, BERTc_senet, BERTc_ssenet) with BERTc_ssenet achieving best Macro-F1/average accuracy among reported PRC baselines. ERC (Emotion Recognition) baselines include utterance-level (TextCNN, TextRNN, TextRCNN, FastText, BERT) and dialogue-level (bcLSTM, DialogueRNN, DialogueGCN, DialogXL, EmoBERTa); BERT+AVG+MLP achieves best average accuracy and Macro-F1 among reported ERC baselines. PEC (Personalized and Emotional Conversation) baselines include Seq2Seq, Transformer, GPT, implicit embedding method (femo+da g-GPT) and explicit fusion methods (GPT-fper/emo/da variants); explicit fusion (e.g., GPT-fper+emo+da_g) yields improved automatic and manual personification and emotion correlation metrics as reported in Table VIII.",
+    "validation": "Quality control: three psychology experts with prelabeling rounds and labeling rules; each utterance annotated by 3 experts and majority rule used; inconsistent samples reannotated or discarded. Dataset split by TV series (7:1:2) to avoid speaker overlap between splits."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Privacy",
+      "Intellectual Property",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Data Laws",
+          "subcategory": [
+            "Data usage restrictions"
+          ]
+        },
+        {
+          "category": "Intellectual Property",
+          "subcategory": [
+            "Copyright infringement",
+            "Data usage rights restrictions"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Data privacy rights alignment"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Misuse",
+          "subcategory": [
+            "Dangerous use",
+            "Spreading toxicity"
+          ]
+        },
+        {
+          "category": "Value Alignment",
+          "subcategory": [
+            "Toxic output"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Dataset includes speaker gender and age group annotations; male-to-female ratio close to 1:1; age groups annotated as children, teenager, young, middle-aged, elderly; Big Five distributions provided per dimension (Neuroticism, Extraversion, Openness, Agreeableness, Conscientiousness).",
+    "harm": [
+      "Negative responses (responses that make the emotions of both sides develop in a worse direction)",
+      "Dangerous responses (responses involving suicide, abetting suicide, intimidation)"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All dialogue materials are based on TV dramas; character names are fictitious; personal attributes are annotated from character performances; dataset release limited to textual dataset with audio features and video features according to copyright claims, privacy issues and platform terms of service.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "Materials are described as licensed under the Copyright Law of the People's Republic of China; release constrained by copyright claims, privacy issues and terms of service of Tencent Video, Youku Video and iQiyi Video."
+  }
+}

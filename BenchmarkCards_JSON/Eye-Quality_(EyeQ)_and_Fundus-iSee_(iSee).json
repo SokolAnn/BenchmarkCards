@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Eye-Quality (EyeQ) and Fundus-iSee (iSee)",
+    "abbreviation": "N/A",
+    "overview": "The EyeQ and iSee datasets provide a foundation for exploring dataset quality effects on the performance of large foundation models in fundus disease diagnosis, focusing on various quality levels and the impact of dataset bias.",
+    "data_type": "retinal images",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "RETFound"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To investigate the influence of dataset quality and bias on large foundation models in medical diagnostic tasks.",
+    "audience": [
+      "Medical Researchers",
+      "Machine Learning Researchers"
+    ],
+    "tasks": [
+      "Image Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "EyeQ dataset and iSee dataset comprising retinal images of varying quality.",
+    "size": "38,574 images (28,785 from EyeQ and 9,789 from iSee)",
+    "format": "N/A",
+    "annotation": "Images annotated based on quality levels and diabetic retinopathy categories."
+  },
+  "methodology": {
+    "methods": [
+      "Overall fine-tuning",
+      "Linear Probe",
+      "Tip-Adapter"
+    ],
+    "metrics": [
+      "Area Under the Receiver Operating Characteristic curve (AUROC)"
+    ],
+    "calculation": "Metrics are calculated by evaluating the models on subsets of the EyeQ and iSee datasets.",
+    "interpretation": "Higher AUROC values indicate better performance in detecting diabetic retinopathy and fundus diseases.",
+    "baseline_results": "RETFound demonstrates more stable performance across varying image quality compared to ResNet.",
+    "validation": "Each model's performance was validated across multiple quality subsets through repetitive trials."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

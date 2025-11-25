@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LAVA (Language and Vision Ambiguities)",
+    "abbreviation": "LAVA",
+    "overview": "A multimodal corpus containing ambiguous sentences paired with short videos that visualize the different interpretations of each sentence, introduced to support the task of disambiguating a sentence given a visual scene which depicts one of the possible interpretations of that sentence.",
+    "data_type": "sentence-video pairs (text and video)",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": null,
+    "similar_benchmarks": [
+      "UCF Sports",
+      "YouTube (action recognition datasets)",
+      "HMDB",
+      "MSCOCO",
+      "TACOS",
+      "Dataset of Siddharth et al. (2014)"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/1603.08079"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Introduce a task for grounded language understanding in which an ambiguous sentence must be disambiguated using a visual depiction (video), and release a multimodal corpus (LAVA) that enables systematic study of linguistic ambiguities in visual contexts.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Computer Vision and Natural Language Processing researchers"
+    ],
+    "tasks": [
+      "Visual Grounding",
+      "Ambiguity Resolution",
+      "Sentence-Video Matching"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Newly compiled LAVA corpus: sentences generated from POS tag sequence templates instantiated with a lexicon; videos filmed in an indoor environment depicting specific interpretations (variations include different actors, directions and two camera viewpoints).",
+    "size": "237 sentences; 1,679 videos; average 7.1 videos per sentence; average 3.37 videos per sentence interpretation; average video length 3.02 seconds (90.78 frames); total ~1.4 hours of footage (152,434 frames).",
+    "format": "N/A",
+    "annotation": "Each sentence is accompanied by candidate interpretations encoded in first order logic; syntactic ambiguities additionally have Context Free Grammar (CFG) parses; discourse ambiguities include provided antecedents/logical forms or unambiguous sentence forms for ellipsis. Videos depict a single candidate interpretation each."
+  },
+  "methodology": {
+    "methods": [
+      "Model-based evaluation (1-out-of-2 or 1-out-of-3 classification per sentence-video pair)",
+      "Automated metrics (accuracy over classification task)"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "For each sentence-video pair perform a 1-out-of-2 or 1-out-of-3 classification to select the interpretation that best fits the video; report classification Accuracy averaged over the entire corpus. Chance performance reported as 49.04%.",
+    "interpretation": "Overall accuracy indicates model capability to resolve visually grounded linguistic ambiguities; per-category accuracies indicate relative difficulty across ambiguity types (syntactic, semantic, discourse) and dependence on visual detector performance.",
+    "baseline_results": "The presented model achieved an overall Accuracy of 75.36% on the LAVA corpus. Per-category accuracies: syntactic ambiguities 84.26%, semantic ambiguities 72.28%, discourse ambiguities 64.44%. Chance performance is 49.04%.",
+    "validation": "Object detectors (CNN and DPM) were trained on held-out sections of the corpus and a scoring function was trained on held-out portions; evaluation performed on the corpus using the described 1-out-of-N classification setup."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "name": "StereoSet",
+    "overview": "A large-scale natural English dataset to measure stereotypical biases in four domains: gender, profession, race, and religion.",
+    "data_type": "Natural language",
+    "domains": [
+      "Gender",
+      "Profession",
+      "Race",
+      "Religion"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "CrowS-Pairs",
+      "WEAT",
+      "SEAT"
+    ],
+    "resources": [
+      "https://stereoset.mit.edu"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To measure and quantify the stereotypical biases present in pretrained language models.",
+    "audience": [
+      "Researchers",
+      "AI practitioners"
+    ],
+    "tasks": [
+      "Analyzing biases in language models",
+      "Comparing models based on bias and language modeling ability"
+    ],
+    "limitations": "Does not mitigate bias.",
+    "out_of_scope_uses": [
+      "Training models on StereoSet",
+      "Bias mitigation strategies"
+    ]
+  },
+  "data": {
+    "source": "Amazon Mechanical Turk",
+    "size": "16,995 test instances",
+    "format": "Triplet format consisting of target context and associated attributes",
+    "annotation": "All instances validated by multiple crowdworkers"
+  },
+  "methodology": {
+    "methods": [
+      "Intrasentence Context Association Test (CAT)",
+      "Intersentence Context Association Test (CAT)"
+    ],
+    "metrics": [
+      "Language Modeling Score (lms)",
+      "Stereotype Score (ss)",
+      "Idealized CAT Score (icat)"
+    ],
+    "calculation": "Calculate the percentage of instances preferring meaningful over meaningless associations and stereotypical over anti-stereotypical associations.",
+    "interpretation": "Higher lms indicates better language modeling ability while lower ss indicates less stereotypical bias.",
+    "baseline_results": null,
+    "validation": "Crowdsourced validation by 5 validators classifying associations"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias in AI systems",
+      "Misuse of bias data"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on cultural diversity",
+            "Impact on education: plagiarism"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Crowdworkers were sourced from the USA.",
+    "harm": "Promoting stereotypes and biases through model deployment."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "All workers were informed that their work would be used for a scientific study.",
+    "compliance_with_regulations": "Workers were compensated at a minimum rate of $15 per hour, complying with AMT policies."
+  }
+}

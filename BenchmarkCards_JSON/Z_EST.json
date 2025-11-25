@@ -1,0 +1,66 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Z EST (ZeroShot learning from Task descriptions)",
+    "abbreviation": "Z EST",
+    "overview": "Z EST provides a benchmark dataset for systematically measuring how well models can generalize to many tasks in the zero-shot setting.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://allenai.org/data/zest"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To rigorously evaluate how well models truly understand each task from natural language descriptions.",
+    "audience": [
+      "NLP Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Named Entity Recognition",
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Crowdsourced via Mechanical Turk from various domains.",
+    "size": "25,026 (task, input, answer) triples",
+    "format": "JSON",
+    "annotation": "Manual annotation by crowdsourced workers."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score"
+    ],
+    "calculation": "Evaluation is based on F1 score derived from overlapping models' and gold answers.",
+    "interpretation": "Higher scores indicate better model performance in performing tasks.",
+    "baseline_results": "Best model (T5-11B with multitask learning) achieves 12% overall on C@90.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [],
+    "atlas_risks": {
+      "risks": null
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

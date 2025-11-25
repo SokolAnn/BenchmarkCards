@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CHEXPERT PLUS",
+    "abbreviation": "N/A",
+    "overview": "CHEXPERT PLUS serves as a new collection of radiology data sources, made publicly available to enhance the scaling, performance, robustness, and fairness of models for all subsequent machine learning tasks in the field of radiology. It comprises 223,228 unique pairs of radiology reports and chest X-rays with accompanying demographic data and pathology labels.",
+    "data_type": "image and text pairs",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://stanfordaimi.azurewebsites.net/datasets/5158c524-d3ab-4e02-96e9-6ee9efc110a1",
+      "https://github.com/Stanford-AIMI/chexpert-plus"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The goal of CHEXPERT PLUS is to provide a comprehensive dataset that enhances the development of AI models in radiology for improved performance, robustness, and fairness.",
+    "audience": [
+      "ML Researchers",
+      "Medical Practitioners"
+    ],
+    "tasks": [
+      "Radiology report generation",
+      "Image classification",
+      "Pathology detection"
+    ],
+    "limitations": "The focus was put on collecting reports with detailed impression sections, at the cost of having lots of findings.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Publicly released dataset combining chest X-ray images, radiology reports, and demographic data.",
+    "size": "223,228 images and 187,711 reports",
+    "format": "DICOM and PNG for images; structured text for reports",
+    "annotation": "Annotations include pathology labels and RadGraph annotations."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score"
+    ],
+    "calculation": "F1 scores were computed using labeled datasets to assess the performance of pathology detection.",
+    "interpretation": "Higher F1 scores indicate better performance in pathology detection tasks.",
+    "baseline_results": "F1 Score of 0.93 achieved using CheXbert-impression labels against the text-based test set.",
+    "validation": "The dataset underwent a rigorous de-identification process to ensure compliance with ethical standards."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Includes demographic data for improved fairness in model training.",
+    "harm": [
+      "Potential bias based on demographics in downstream applications."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "A thorough de-identification process was performed to remove PHI from all reports.",
+    "data_licensing": "Dataset available for research purposes only, not for commercial use.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Face2Text dataset",
+    "abbreviation": "N/A",
+    "overview": "An ongoing crowdsourcing effort to collect a corpus of rich textual descriptions of face images taken 'in the wild', aimed at studying how people describe faces and creating a resource to train systems to generate fine-grained, attribute-focused face descriptions.",
+    "data_type": "image-description pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Flickr8k",
+      "Flickr30k",
+      "VLT2K",
+      "MS COCO",
+      "Caltech-UCSD Birds",
+      "Oxford Flowers-102",
+      "Multi30k",
+      "LFW (Labeled Faces in the Wild)",
+      "MegaFace",
+      "IJB-C",
+      "LFWA",
+      "CelebA"
+    ],
+    "resources": [
+      "https://github.com/mtanti/face2text-dataset/",
+      "http://tamaraberg.com/faceDataset/",
+      "http://rival.research.um.edu.mt/facedesc/",
+      "https://arxiv.org/abs/1803.03827v2"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To create a corpus of human face images annotated with rich textual descriptions to investigate how users describe faces and to provide a resource to train systems to generate varied and rich face descriptions.",
+    "audience": [
+      "Machine Learning Researchers",
+      "Model Developers",
+      "Vision and Language researchers"
+    ],
+    "tasks": [
+      "Image Captioning",
+      "Image-to-Text Generation",
+      "Natural Language Generation"
+    ],
+    "limitations": "Preliminary version; current dataset consists of 400 images and 1,400 descriptions. The annotation category 'inference' showed lower agreement and requires a more precise definition. Ethically problematic descriptions will be filtered prior to dissemination.",
+    "out_of_scope_uses": [
+      "Identifying recognisable faces by name is prohibited (No recognisable faces are to be identified by name)."
+    ]
+  },
+  "data": {
+    "source": "400 images selected from the Faces in The Wild dataset (Berg et al., 2005); descriptions collected via a custom-made crowdsourcing website.",
+    "size": "400 images; 1,400 descriptions collected from 185 participants; all 400 images described at least 3 times (approximately 270 images have 4 descriptions).",
+    "format": "N/A",
+    "annotation": "Manual annotation by members of the RIVAL team (8 annotators + 1 control annotator) on a subset of descriptions using yes/no questions about categories (garbage, inferred/external, emotional state, physical attributes, hate speech); agreement measured via Fleiss's kappa."
+  },
+  "methodology": {
+    "methods": [
+      "Crowdsourcing data collection via a custom website",
+      "Human annotation (yes/no categorical labels) on a subset",
+      "Inter-annotator agreement analysis"
+    ],
+    "metrics": [
+      "Fleiss's kappa (inter-annotator agreement)",
+      "Proportion of positive responses (percentages) per question",
+      "Mean agreement with control annotator (with standard deviations)"
+    ],
+    "calculation": "Fleiss's kappa was computed on a shared subset of 20 descriptions annotated by all 9 participants (8 annotators + 1 control). Proportions of positive responses were computed across descriptions (excluding those marked as 'garbage'). Mean agreement with the control annotator was computed for each annotator over their assigned descriptions, with standard deviations reported.",
+    "interpretation": "Most annotation questions had high levels of agreement (Fleiss's kappa ≥ 0.7) except for the 'inference' question which had lower agreement (kappa = 0.48), indicating that the definition of 'inferred' is open to interpretation.",
+    "baseline_results": null,
+    "validation": "Validation via a shared subset of 20 descriptions annotated by all annotators; a control annotator annotated these 20 plus an additional 160 descriptions (20 from each annotator) to compute agreement with individual annotators; Fleiss's kappa and mean agreement with the control annotator were used to validate annotation reliability."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Misuse"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Misuse",
+          "subcategory": [
+            "Spreading toxicity"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Participant demographic data collected: gender, age bracket, country of origin, and self-rated English proficiency; authors intend to correlate description features with describer demographics.",
+    "harm": [
+      "Detection and filtering of racially or sexually offensive descriptions (hate speech) prior to dissemination"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Participants were instructed not to identify recognisable faces by name; demographic information (gender, age bracket, country of origin, English proficiency) was collected from participants; authors intend to filter ethically problematic descriptions prior to dissemination.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Participation was voluntary; no financial incentives were offered; participants could interrupt and resume the session (session variables saved).",
+    "compliance_with_regulations": "N/A"
+  }
+}

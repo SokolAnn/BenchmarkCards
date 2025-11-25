@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PERSONA MEMbenchmark",
+    "abbreviation": "N/A",
+    "overview": "PERSONA MEMbenchmark features curated user profiles with over 180 simulated user-LLM interaction histories across 15 real-world tasks that require personalization. It evaluates LLM chatbots’ ability to identify suitable responses based on dynamic user profiles in multi-session interactions.",
+    "data_type": "multi-turn conversations",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "LONG MEMEVAL",
+      "PREFEVAL"
+    ],
+    "resources": [
+      "https://github.com/bowen-upenn/PersonaMem"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate LLMs’ ability to leverage past interaction history with a user to deliver personalized responses in real-time.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Personalized Recommendations",
+      "User Preference Tracking"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Simulated interactions based on constructed user personas and histories.",
+    "size": "180 interaction histories",
+    "format": "N/A",
+    "annotation": "Generated through a modular data curation pipeline minimizing irrelevant content."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "User response selection"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy calculated based on the model's choice of response in simulated user queries.",
+    "interpretation": "Assess whether models can select the correct response that aligns with the user's profile state.",
+    "baseline_results": "Frontier models such as GPT-4.1, o4-mini, GPT-4.5, and others achieving around 50% accuracy overall.",
+    "validation": "Human evaluations for assessing quality of generated data."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Privacy",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

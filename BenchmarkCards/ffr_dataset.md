@@ -1,0 +1,87 @@
+# FFR Dataset
+
+## 📊 Benchmark Details
+
+**Name**: FFR Dataset
+
+**Overview**: The FFR Dataset is a corpus of Fon-to-French parallel sentences created to compile a large, growing corpus of carefully cleaned Fon-French parallel sentences for machine translation and other NLP research-related projects; the dataset and model are made publicly available to promote collaboration and reproducibility.
+
+**Data Type**: text (parallel Fon-French sentence pairs)
+
+**Domains**:
+- Natural Language Processing
+
+**Languages**:
+- Fon
+- French
+
+**Similar Benchmarks**:
+- JW300
+- BeninLangues
+
+**Resources**:
+- [GitHub Repository](https://github.com/bonaventuredossou/ffr-v1)
+- [GitHub Repository](https://github.com/bonaventuredossou/ffr-v1/blob/master/FFR-Dataset/Data_Statement_FFR_Dataset.pdf)
+- [GitHub Repository](https://github.com/bonaventuredossou/ffr-v1/blob/master/model_train_test/fon_fr.py)
+- [Resource](http://creativecommons.org/licenses/by/4.0/)
+- [Resource](https://beninlangues.com/)
+
+## 🎯 Purpose and Intended Users
+
+**Goal**: Compile a large, growing corpus of carefully cleaned Fon-French parallel sentences for machine translation, and other NLP research-related projects.
+
+**Target Audience**:
+- Researchers
+- Public
+
+**Tasks**:
+- Machine Translation
+
+**Limitations**: Project is at the pilot stage and therefore there is headroom to be explored with tuning of different architectures, learning schemes, transfer learning, tokenization methods, data augmentation, and training on state-of-the-art Transformer models.
+
+## 💾 Data
+
+**Source**: Compiled from JW300 and BeninLangues. FFR1 initial sources: JW300 (27,980 aligned sentences) and BeninLangues (89,049 aligned sentences) giving a total of 117,029 parallel sentences. FFR2 re-evaluated and reduced JW and BeninLangues original samples to 26,510 and 27,465 Fon-French parallel sentences respectively.
+
+**Size**: FFR1: 117,029 parallel sentences; FFR2: (derived counts) training 43,719, validation 4,858, testing 5,398
+
+**Format**: N/A
+
+**Annotation**: Initial cleaning using rule-based preprocessing (Python regex, NLTK). FFR2 obtained after re-evaluation of translations in FFR1 by FFR native speakers.
+
+## 🔬 Methodology
+
+**Methods**:
+- Automated metrics (BLEU, GLEU)
+- Human evaluation using the Context-Meaning-Similarity (CMS) metric with native speakers
+
+**Metrics**:
+- BLEU
+- GLEU
+- Context-Meaning-Similarity (CMS)
+
+**Calculation**: BLEU and GLEU computed on test data as standard automatic metrics. CMS: a subset of 100 specially selected source, target and predicted sentences was rated by five FFR natives. For each source and prediction, natives gave a score t in [0,1] for contextual similarity without reference; then gave a score tr when shown source, prediction and reference. Total score t_total = alpha * t + (1 - alpha) * tr. For the experiment alpha = 0.7. The average of these scores is the CMS score.
+
+**Interpretation**: Higher BLEU and GLEU indicate better automatic translation quality; the paper reports that training with diacritical encoding (DE) improved BLEU and GLEU. CMS yields an average score in [0,1] representing contextual similarity as judged by native speakers; the parameter alpha controls the tradeoff between judgment of the prediction alone and judgment with the reference. The authors note CMS is especially useful for languages with many dialects and multiple valid expressions.
+
+**Baseline Results**: Evaluation scores on test data (Table 2): FFR1 Without DE: BLEU 24.53, GLEU 13.0. FFR1 With DE: BLEU 30.55, GLEU 18.18. FFR2 Without DE: BLEU 27.80, GLEU 17.05. FFR2 With DE: BLEU 37.15, GLEU 20.85. Sample CMS/BLEU scores (Table 3): examples show BLEU/CMS: 1.0; 1.0; 0.0; 0.0; 0.0/0.95; 0.25/0.9 (as presented in the paper).
+
+**Validation**: FFR2 was produced after re-evaluation of FFR1 translations by FFR native speakers. CMS validation used five FFR natives to rate a 100-sentence subset; the authors also produced a data statement for FFR2.
+
+## ⚠️ Targeted Risks
+
+**Risk Categories**:
+- Accuracy
+
+**Atlas Risks**:
+- **Accuracy**: Poor model accuracy
+
+## 🔒 Ethical and Legal Considerations
+
+**Privacy And Anonymity**: Not Applicable
+
+**Data Licensing**: Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+**Consent Procedures**: Not Applicable
+
+**Compliance With Regulations**: Not Applicable

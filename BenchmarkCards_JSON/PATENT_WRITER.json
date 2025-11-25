@@ -1,0 +1,92 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PATENT WRITER",
+    "abbreviation": "N/A",
+    "overview": "PATENT WRITER is the first unified benchmarking framework for evaluating LLMs in patent abstract generation, assessing output quality through a comprehensive suite of metrics and application in downstream patent classification and retrieval tasks.",
+    "data_type": "claim-abstract pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Legal"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://anonymous.4open.science/r/pwriter-A95C",
+      "https://patentsview.org/download/data-download-tables"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a unified framework for benchmarking the capabilities of LLMs in patent abstract generation.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts",
+      "Patent Attorneys"
+    ],
+    "tasks": [
+      "Patent Abstract Generation",
+      "Patent Classification",
+      "Patent Retrieval"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "U.S. patents granted in 2022 from PatentsView, including claim-abstract pairs drawn from various CPC subclasses.",
+    "size": "Approximately 21,000 records",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Robustness evaluation under input perturbations",
+      "Qualitative analysis"
+    ],
+    "metrics": [
+      "BLEU",
+      "ROUGE",
+      "BERTScore",
+      "Accuracy",
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on comparisons between generated patent abstracts and original texts.",
+    "interpretation": "Higher scores on NLP metrics indicate closer alignment with human-written abstracts.",
+    "baseline_results": "N/A",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

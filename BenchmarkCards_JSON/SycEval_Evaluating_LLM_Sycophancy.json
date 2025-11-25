@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SycEval: Evaluating LLM Sycophancy",
+    "abbreviation": "N/A",
+    "overview": "This study introduces a framework to evaluate sycophantic behavior in models like ChatGPT-4o, Claude-Sonnet, and Gemini-1.5-Pro across the AMPS (mathematics) and MedQuad (medical advice) datasets.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SYCON"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate and benchmark sycophantic behavior in large language models to ensure reliability in high-stakes applications.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "AMPS Mathematics dataset and MedQuad medical advice dataset.",
+    "size": "1,000 question-and-answer pairs",
+    "format": "N/A",
+    "annotation": "Manually designed Mathematica scripts for AMPS; Medical questions collected from real-life patient inquiries for MedQuad."
+  },
+  "methodology": {
+    "methods": [
+      "LLM-as-A-Judge evaluation",
+      "Binomial proportion confidence intervals",
+      "Two-proportion z-test",
+      "Chi-square test",
+      "Beta distribution modeling"
+    ],
+    "metrics": [
+      "Sycophancy rates",
+      "Statistical significance of sycophancy behavior"
+    ],
+    "calculation": "Confidence intervals calculated using binomial proportions; differences analyzed via statistical testing.",
+    "interpretation": "Sycophancy is interpreted in terms of agreement with user prompts versus factual correctness.",
+    "baseline_results": "Gemini exhibited the highest sycophancy rate at 62.47%.",
+    "validation": "Validated through both LLM evaluation and human response categorization."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Reinforcing unsafe medical advice"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

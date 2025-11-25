@@ -1,0 +1,75 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FEABench",
+    "abbreviation": "N/A",
+    "overview": "FEABench is a benchmark to evaluate the ability of large language models (LLMs) and LLM agents to simulate and solve physics, mathematics, and engineering problems using finite element analysis (FEA).",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Engineering"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/FEABench/gtb"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate LLMs' ability to solve quantitative problems in physics and engineering using COMSOL Multiphysics through finite element analysis.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Problem Solving",
+      "Code Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Derived from tutorials in the COMSOL Multiphysics® Application Gallery and established validation problems.",
+    "size": "15 problems for FEABench Gold; 200 algorithmically parsed tasks for FEABench Large.",
+    "format": "Java API commands for COMSOL Multiphysics®",
+    "annotation": "Manually verified for correctness and completeness."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Executability",
+      "Model Tree Score",
+      "Physics Metrics",
+      "Target Value Metrics"
+    ],
+    "calculation": "Metrics calculated based on the outcomes of executing the code with COMSOL Multiphysics API.",
+    "interpretation": "A correct solution indicates that the LLM successfully generated the code that solves the simulation problem according to the benchmarks defined in FEABench.",
+    "baseline_results": "Various LLMs tested with specific metrics reported, such as executability and physical reasoning scores across different tasks.",
+    "validation": "FEABench Gold problems are manually verified to ensure they yield correct outputs when solved."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Privacy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

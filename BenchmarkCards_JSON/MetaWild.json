@@ -1,0 +1,73 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MetaWild: A Multimodal Dataset for Animal Re-Identification with Environmental Metadata",
+    "abbreviation": "MetaWild",
+    "overview": "MetaWild is a multimodal dataset designed to enable systematic evaluation of metadata integration and multimodal learning in Animal ReID. It pairs images with environmental metadata to enhance animal re-identification performance.",
+    "data_type": "image with environmental metadata",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision",
+      "Environmental Sciences"
+    ],
+    "languages": [
+      "N/A"
+    ],
+    "similar_benchmarks": [
+      "NZ-TrailCams"
+    ],
+    "resources": [
+      "https://jim-lyz1024.github.io/MetaWild/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the impact of environmental metadata on Animal ReID performance and facilitate the development of multimodal ReID methods based on Vision-Language Models.",
+    "audience": [
+      "ML Researchers",
+      "Wildlife Conservationists",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Animal Re-Identification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "New Zealand Trail Camera dataset (NZ-TrailCams)",
+    "size": "20,890 images",
+    "format": "JSON",
+    "annotation": "Identity annotations were independently verified by at least three annotators."
+  },
+  "methodology": {
+    "methods": [
+      "Testing with and without environmental metadata",
+      "Leave-one-domain-out evaluation"
+    ],
+    "metrics": [
+      "Mean Average Precision (mAP)",
+      "Cumulative Match Characteristic at rank 1 (CMC-1)"
+    ],
+    "calculation": "Metrics are calculated using standard identity classification and triplet loss functions.",
+    "interpretation": "Higher mAP and CMC-1 scores indicate better performance in correctly re-identifying animals.",
+    "baseline_results": "N/A",
+    "validation": "Validation through comparison of models using visual data only versus combined visual and metadata."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": null
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Community Data License Agreement – Permissive – Version 1.0. (CDLA-Permissive-1.0)",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

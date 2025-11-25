@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "UnsafeBench",
+    "abbreviation": "N/A",
+    "overview": "UnsafeBench is a benchmarking framework that evaluates the effectiveness and robustness of image safety classifiers on real-world and AI-generated images. It consists of a dataset of 10K annotated images across 11 unsafe categories to support the evaluation of various classifiers.",
+    "data_type": "image",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://unsafebench.github.io/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation framework for image safety classifiers, focusing on their effectiveness and robustness against real-world and AI-generated unsafe images.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Image Classification"
+    ],
+    "limitations": "The dataset may contain challenges as all images are queried using a common set of unsafe keywords, making them difficult to classify for image safety classifiers.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "UnsafeBench dataset consists of 10K images curated from large databases including LAION-5B and Lexica, annotated for safety and categorization.",
+    "size": "10,000 images",
+    "format": "N/A",
+    "annotation": "Annotated by three authors of the paper."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score"
+    ],
+    "calculation": "F1 Score is used to evaluate the effectiveness of image safety classifiers, measuring precision and recall across 11 unsafe categories.",
+    "interpretation": "An F1 Score closer to 1 indicates better classifier performance, while lower scores suggest poorer effectiveness.",
+    "baseline_results": "Baseline F1 Scores vary among classifiers; GPT-4V achieves high scores in multiple categories.",
+    "validation": "The UnsafeBench dataset has been validated through human annotation and computing agreement statistics."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Measures include restricting exposure of annotators to harmful images, with an ethical review approved by an institution's Ethics Review Board.",
+    "data_licensing": "N/A",
+    "consent_procedures": "All annotations were manually performed by authors, avoiding exposure of distressing content to external annotators.",
+    "compliance_with_regulations": "N/A"
+  }
+}

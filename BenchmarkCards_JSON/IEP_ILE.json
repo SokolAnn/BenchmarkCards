@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "IEP ILE (Information Extraction Instruction Corpus)",
+    "abbreviation": "IEP ILE",
+    "overview": "IEP ILE is a comprehensive bilingual (English and Chinese) information extraction instruction corpus, constructed through the collection and cleaning of 33 existing datasets, containing approximately 0.32B tokens. It aims to improve the performance of large language models in information extraction tasks.",
+    "data_type": "instruction-output pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/zjunlp/IEPile"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a large-scale, high-quality instruction dataset to enhance the adaptability and performance of large language models in information extraction tasks.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Named Entity Recognition",
+      "Relation Extraction",
+      "Event Extraction"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The corpus was created by collecting and cleaning 33 existing datasets focused on information extraction tasks.",
+    "size": "0.32B tokens",
+    "format": "JSON",
+    "annotation": "Data was cleaned and standardized from various existing information extraction datasets."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Micro-F1"
+    ],
+    "calculation": "Micro-F1 score is computed based on the extraction accuracy of identified entities and relationships in the output.",
+    "interpretation": "Higher Micro-F1 scores indicate better performance in extraction tasks, with improvements noted in zero-shot scenarios.",
+    "baseline_results": "The performance of models fine-tuned on the IEP ILE dataset demonstrated significant improvements over baseline models.",
+    "validation": "Models were validated against a range of unseen datasets to assess zero-shot generalization abilities."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All data collected are sourced from publicly available materials, ensuring no personal data is used.",
+    "data_licensing": "IEP ILE adheres to the CC BY-NC-SA 4.0 license except for ACE2005, which adheres to the LDC User Agreement.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "The study complies with legal standards concerning data usage and privacy."
+  }
+}

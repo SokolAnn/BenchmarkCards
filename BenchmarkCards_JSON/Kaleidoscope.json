@@ -1,0 +1,109 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Kaleidoscope",
+    "abbreviation": "N/A",
+    "overview": "Kaleidoscope is a large-scale, in-language multimodal benchmark designed to evaluate vision-language models (VLMs) across 18 languages and 14 different subjects, consisting of 20,911 multiple-choice questions that emphasize vision-grounded reasoning.",
+    "data_type": "multiple-choice question answering",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision",
+      "Education"
+    ],
+    "languages": [
+      "English",
+      "Spanish",
+      "Portuguese",
+      "Russian",
+      "Arabic",
+      "Hindi",
+      "Bengali",
+      "Serbian",
+      "Lithuanian",
+      "Nepali",
+      "Telugu",
+      "Ukrainian",
+      "German",
+      "French"
+    ],
+    "similar_benchmarks": [
+      "M3Exam",
+      "EXAMS-V"
+    ],
+    "resources": [
+      "http://cohere.com/research/kaleidoscope",
+      "https://hf.co/datasets/CohereForAI/kaleidoscope"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive and inclusive evaluation framework for multimodal language models through real-world, in-language exam questions.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Education Researchers"
+    ],
+    "tasks": [
+      "Multimodal Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from real-world exams, sourced directly in original languages with no translations.",
+    "size": "20,911 questions",
+    "format": "JSON",
+    "annotation": "Manually annotated with a rigorous validation process to ensure quality and authenticity."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Format Error Rate"
+    ],
+    "calculation": "Accuracy is calculated based on the number of correctly answered questions against the total number of questions, along with valid response tracking.",
+    "interpretation": "A higher accuracy indicates better model performance in understanding and answering the multimodal questions.",
+    "baseline_results": "N/A",
+    "validation": "The benchmark was validated through multi-stage manual review and automated scripts to detect formatting errors and duplicates."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The benchmark includes a diverse set of languages, focusing on both high-resource and low-resource languages to investigate performance disparities.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset does not include personally identifiable information and has been sourced from publicly available materials.",
+    "data_licensing": "Data from contributors allows redistribution and academic use.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

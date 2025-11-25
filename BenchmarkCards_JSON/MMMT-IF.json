@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MMMT-IF (Multimodal Multi-Turn Instruction Following)",
+    "abbreviation": "MMMT-IF",
+    "overview": "MMMT-IF is an evaluation benchmark for instruction following capabilities in multimodal, multi-turn dialogue contexts. It includes image-based Q&A tasks with global instructions across turns, designed to assess how well models retrieve and follow instructions throughout an extended conversation.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMDU (Multi-Turn Multi-Image Dialog Understanding)"
+    ],
+    "resources": [
+      "https://github.com/username/repo"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the instruction following capabilities of large language models (LLMs) in the context of multimodal, multi-turn conversations.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Instruction Following",
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated dataset through image-based dialogues with multiple instructions and turns.",
+    "size": "990 turns across 71 chats",
+    "format": "JSON",
+    "annotation": "Human annotations for reference answers and ratings on instruction following and accuracy."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Programmatic Instruction Following (PIF)",
+      "PIF-N-K"
+    ],
+    "calculation": "PIF is calculated as the fraction of given instructions followed in responses using the original input context and model outputs.",
+    "interpretation": "Higher PIF scores indicate better adherence to instructions across multiple turns.",
+    "baseline_results": null,
+    "validation": "Based on correlation with human evaluations and automated metrics."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

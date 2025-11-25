@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MatPROV (Material Synthesis Procedures Dataset)",
+    "abbreviation": "MatPROV",
+    "overview": "MatPROV is a dataset of PROV-DM-compliant synthesis procedures extracted from scientific literature using large language models, which captures structural complexities and causal relationships among materials, operations, and conditions through directed graphs.",
+    "data_type": "synthesis procedures represented as directed graphs",
+    "domains": [
+      "Natural Language Processing",
+      "Materials Science"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/MatPROV-project/MatPROV",
+      "https://github.com/MatPROV-project/matprov-experiments",
+      "https://matprov-project.github.io/matprov-schema"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a flexible framework for representing synthesis procedures that captures real-world complexities and enables automated synthesis planning and optimization.",
+    "audience": [
+      "ML Researchers",
+      "Materials Scientists",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Graph-based analysis",
+      "Material synthesis optimization"
+    ],
+    "limitations": "MatPROV remains relatively small in scale compared with existing datasets and has potential extraction accuracy issues.",
+    "out_of_scope_uses": [
+      "Direct synthesis implementation without prior validation against original sources."
+    ]
+  },
+  "data": {
+    "source": "Synthesis procedures extracted from 1,568 open-access scientific papers.",
+    "size": "2,367 procedures",
+    "format": "PROV-JSONLD",
+    "annotation": "Automated extraction using LLMs, followed by expert validation for accuracy."
+  },
+  "methodology": {
+    "methods": [
+      "Automated extraction using LLMs"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated by comparing LLM outputs with expert-annotated ground truth.",
+    "interpretation": "Higher scores in precision and F1 indicate better model performance in accurately capturing synthesis procedures.",
+    "baseline_results": "Demonstrated extraction accuracy metrics through zero-shot prompting evaluation.",
+    "validation": "Expert validation was performed on a subset of the dataset to ensure extraction quality."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Potential for incorrect synthesis information leading to failed experiments or safety hazards."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Released under CC BY 4.0 license.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

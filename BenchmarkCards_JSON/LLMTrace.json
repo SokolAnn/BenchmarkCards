@@ -1,0 +1,75 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LLMTrace",
+    "abbreviation": "N/A",
+    "overview": "LLMTrace is a large-scale, bilingual corpus designed to support two key tasks: traditional full-text binary classification (human vs. AI) and AI-generated interval detection, facilitated by character-level annotations.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Russian"
+    ],
+    "similar_benchmarks": [
+      "MAGE",
+      "MGTBench",
+      "BUST"
+    ],
+    "resources": [
+      "https://huggingface.co/iitolstykh/LLMTrace"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To facilitate a new wave of research into more nuanced, practical, and robust AI detection models.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Binary Classification",
+      "Interval Detection"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed using a diverse range of modern proprietary and open-source LLMs.",
+    "size": "589,086 examples",
+    "format": "N/A",
+    "annotation": "Character-level annotations marking all AI-generated spans within mixed texts."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Mean Accuracy",
+      "Mean Average Precision (mAP)"
+    ],
+    "calculation": "Metrics are calculated based on the evaluation of models against train, validation, and test subsets.",
+    "interpretation": "Metrics indicate the model's performance in classifying text as human or AI-generated, as well as correctly identifying intervals of AI-generated content.",
+    "baseline_results": "F1 scores for the classification tasks are reported as follows: English-only model F1: 98.64%, Russian-only model F1: 98.62%. Detection task mAP@0.5 for English-only is 0.8749 and for Russian-only is 0.8928.",
+    "validation": "Validated through domain and length balanced sampling strategies."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

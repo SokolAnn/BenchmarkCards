@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Assertion Messages with Large Language Models (LLMs) for Code",
+    "abbreviation": "N/A",
+    "overview": "This paper evaluates the ability of four large language models to generate informative assertion messages in unit tests, highlighting the effectiveness of context in improving message quality.",
+    "data_type": "Java test methods with assertion messages",
+    "domains": [
+      "Software Engineering"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "N/A"
+    ],
+    "resources": [
+      "https://doi.org/10.5281/zenodo.15293133"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To systematically evaluate large language models for generating assertion messages in unit tests and examine the impact of contextual information.",
+    "audience": [
+      "Software Engineers",
+      "Researchers",
+      "Developers"
+    ],
+    "tasks": [
+      "Assertion Message Generation",
+      "Test Code Evaluation"
+    ],
+    "limitations": "The evaluation focuses on Java test methods containing a single assertion, limiting generalizability to more complex scenarios.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Publicly available dataset from 20 Java projects with high-quality assertion messages.",
+    "size": "216 test methods",
+    "format": "N/A",
+    "annotation": "Extracted assertion messages were manually annotated for clarity and relevance."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "LLM-based evaluation"
+    ],
+    "metrics": [
+      "BLEU",
+      "ROUGE-L",
+      "METEOR",
+      "BERTScore"
+    ],
+    "calculation": "Metrics measure n-gram overlap and semantic similarity between generated and manual assertion messages.",
+    "interpretation": "Higher scores indicate better alignment with human-written assertion messages.",
+    "baseline_results": "Human-written assertion messages scored an average of 3.24 out of 5.",
+    "validation": "Systematic evaluation of multiple models against a dataset of Java test methods."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

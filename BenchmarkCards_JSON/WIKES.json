@@ -1,0 +1,76 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "WIKES (Wiki Entity Summarization Benchmark)",
+    "abbreviation": "WIKES",
+    "overview": "WIKES is a comprehensive benchmark for entity summarization that combines graph algorithms and NLP models using data from Wikidata and Wikipedia, allowing for automatic summary generation without human annotation.",
+    "data_type": "entity-summary pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ESBM (Entity Summarization Benchmark)"
+    ],
+    "resources": [
+      "https://github.com/msorkhpar/wiki-entity-summarization"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To foster research on entity summarization and provide a tool to generate arbitrary-size datasets for evaluating summarization models.",
+    "audience": [
+      "NLP Researchers",
+      "Knowledge Graph Researchers"
+    ],
+    "tasks": [
+      "Entity Summarization"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Data generated from Wikidata and Wikipedia XML dump files.",
+    "size": "Over 500,000 entities in various dataset sizes (small, medium, large).",
+    "format": "CSV",
+    "annotation": "Automatically generated using Wikipedia abstracts."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Mean Average Precision (MAP)"
+    ],
+    "calculation": "F1 Score is calculated based on precision and recall; MAP measures the ranking quality of predicted summaries.",
+    "interpretation": "Higher F1 and MAP scores indicate better performance in entity summarization.",
+    "baseline_results": "Evaluated against existing benchmarks like ESBM.",
+    "validation": "Datasets are validated using a train-test-validation split of 70%-15%-15%."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC BY 4.0 License",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

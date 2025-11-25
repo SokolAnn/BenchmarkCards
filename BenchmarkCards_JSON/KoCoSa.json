@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "KoCoSa (Korean Context-aware Sarcasm Detection Dataset)",
+    "abbreviation": "KoCoSa",
+    "overview": "This paper introduces a new dataset for the Korean dialogue sarcasm detection task, KoCoSa, which consists of 12.8K daily Korean dialogues and the labels for this task on the last response.",
+    "data_type": "dialogue pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Korean"
+    ],
+    "similar_benchmarks": [
+      "Kocasm"
+    ],
+    "resources": [
+      "https://github.com/Yu-billie/KoCoSa_sarcasm_detection"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a valuable resource for advancing research in Korean sarcasm detection.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Sarcasm Detection"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "NIKL Messenger Corpus and NIKL Online Text Message Corpus",
+    "size": "12,824 dialogues",
+    "format": "N/A",
+    "annotation": "Expert annotators review the correctness of labels and remove abnormal dialogues."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Balanced Accuracy",
+      "Macro F1",
+      "Weighted F1",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "Metrics calculated considering the imbalanced label distribution in the dataset.",
+    "interpretation": "Higher scores indicate better performance in identifying sarcasm.",
+    "baseline_results": "KLUE-RoBERTa fine-tuned on the dataset outperforms GPT-3.5 and performs nearly equivalent to GPT-4.",
+    "validation": "Dataset validated through human annotation and filtering processes."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset was constructed carefully to ensure no personal data is retained.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Approval from the Institutional Review Board (IRB) was obtained for data collection.",
+    "compliance_with_regulations": "N/A"
+  }
+}

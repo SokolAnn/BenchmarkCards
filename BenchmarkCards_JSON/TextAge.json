@@ -1,0 +1,70 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TextAge: A Curated and Diverse Text Dataset for Age Classification",
+    "abbreviation": "TextAge",
+    "overview": "TextAge is a comprehensive and diverse dataset that maps a sentence to the age of the producer, age group of the producer, and whether the producer is underage (under 13). It collects both spoken and written data across various age groups.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://arxiv.org/abs/2406.16890"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the TextAge dataset is to support age-related language pattern classification and enhance applications in online safety and content moderation.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Underage Detection",
+      "Generational Classification"
+    ],
+    "limitations": "The dataset may have limited data representation for older age groups, impacting performance on classification tasks.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Sources include CHILDES, Meta Casual Conversations Dataset, Poki Poems-by-kids, JUSThink Dialogue and Actions Corpus, and transcripts from the TV show Survivor.",
+    "size": "608,082 sentences",
+    "format": "CSV",
+    "annotation": "Data is manually annotated to label sentences according to the age of speakers and to classify age groups."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Accuracy"
+    ],
+    "calculation": "Metrics are calculated based on classification results of models fine-tuned on the TextAge dataset.",
+    "interpretation": "Higher F1 scores indicate better classification performance in detecting age-related linguistic patterns.",
+    "baseline_results": "Naive Bayes classifier achieved an F1 score of 0.8798 as a baseline for comparison.",
+    "validation": "The dataset was validated through its application in underage detection and generational classification tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "The dataset includes diverse age group data, but performance may vary across groups due to representation.",
+    "harm": "The dataset aims to prevent inappropriate content exposure for minors through improved age classification."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The data collection ensured anonymity by using public transcripts and age labels without personal identifiers.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

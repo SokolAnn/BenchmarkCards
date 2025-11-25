@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MMTU (Massive Multi-task Table Understanding)",
+    "abbreviation": "MMTU",
+    "overview": "MMTU is a large-scale benchmark comprising 30,647 questions across 25 real-world table tasks, designed to evaluate models' ability to understand, reason, and manipulate real tables at the expert-level.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/MMTU-Benchmark/MMTU",
+      "https://huggingface.co/datasets/MMTU-benchmark/MMTU"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To comprehensively evaluate models' ability in complex table-related tasks faced by professional users.",
+    "audience": [
+      "Machine Learning Researchers",
+      "Data Scientists",
+      "Database Administrators"
+    ],
+    "tasks": [
+      "Table Understanding",
+      "Table Question Answering",
+      "SQL Generation",
+      "Data Cleaning",
+      "Schema Matching",
+      "Entity Matching"
+    ],
+    "limitations": "A limitation of our benchmark is how our tasks are sampled and selected, which may introduce biases.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from 52 diverse datasets focusing on real-world challenges in table tasks.",
+    "size": "30,647 questions",
+    "format": "JSON",
+    "annotation": "Expert-labeled based on decades of computer science research."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on comparisons between model predictions and ground-truth answers.",
+    "interpretation": "Higher accuracy indicates a better model performance on complex table tasks.",
+    "baseline_results": null,
+    "validation": "Final evaluation includes manual review and verification by domain experts."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis of demographic factors related to output performance is not explicitly discussed.",
+    "harm": [
+      "Potential inaccuracies in output due to model biases."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data selection and content review processes are implemented to minimize privacy concerns.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

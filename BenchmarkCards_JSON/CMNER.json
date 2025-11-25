@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CMNER: A Chinese Multimodal NER Dataset based on Social Media",
+    "abbreviation": "CMNER",
+    "overview": "We compile a Chinese Multimodal NER dataset (CMNER) utilizing data sourced from Weibo. Our dataset encompasses 5,000 Weibo posts paired with 18,326 corresponding images. The entities are classified into four distinct categories: person, location, organization, and miscellaneous. We perform baseline experiments on CMNER, demonstrating the effectiveness of incorporating images for NER, and conduct cross-lingual experiments with the English MNER dataset Twitter2015.",
+    "data_type": "multimodal: text paired with images (one-text-multi-image)",
+    "domains": [
+      "Natural Language Processing",
+      "Social Media"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "Twitter2015",
+      "Twitter2017"
+    ],
+    "resources": [
+      "https://github.com/Jyz99/CMNER"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Address the scarcity of Chinese multimodal NER data by providing a manually annotated Chinese multimodal NER dataset that emulates the one-text-multi-image characteristic of Weibo posts; provide benchmark results and enable cross-lingual experiments to study mutual enhancement between Chinese and English MNER.",
+    "audience": [
+      "Machine Learning Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Named Entity Recognition",
+      "Multimodal Named Entity Recognition"
+    ],
+    "limitations": "Fine-grained annotation rules impose higher demands on models; low correlation between images and text can introduce noise; images may contain entities not mentioned in text and entities mentioned in text may not appear in images.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Weibo posts collected via a Python crawler from Weibo topics/categories (sports, traveling, technology); posts selected to contain both text and images; when multiple images present all images are collected.",
+    "size": "5,000 Weibo posts; 18,326 images; 27,044 annotated entities total. Split: 3,000 train posts, 1,000 dev posts, 1,000 test posts. Entities per split: 16,373 (train) / 5,395 (dev) / 5,276 (test). Average ~3.67 images per post; ~5.4 entities per post.",
+    "format": "N/A",
+    "annotation": "BIO labeling at character level following CoNLL2003 scheme for four entity types (PER, LOC, ORG, MISC). Manual annotation using Doccano; each sample assigned to three annotators; 100 samples were independently annotated to reach an inter-annotator agreement of 90% before full annotation; disagreements resolved via discussion. Private information in texts was redacted; pornographic, violent, or discriminatory content was filtered out."
+  },
+  "methodology": {
+    "methods": [
+      "Model-based evaluation (baseline models: AdaCAN-CNN-BiLSTM-CRF (ACN) and Unified Multimodal Transformer (UMT))",
+      "Automated metrics (Precision, Recall, F1 Score)",
+      "Cross-lingual translation-based evaluation (translation with placeholder SPAN and label mapping)"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Precision, Recall, and F1 Score are computed for all entity types. For each individual entity type, the F1 score is used as the evaluation metric.",
+    "interpretation": "Higher F1 indicates better NER performance. Improvements in F1 when incorporating images indicate that visual inputs assist entity recognition. Comparative F1 across models and settings is used to assess effectiveness.",
+    "baseline_results": "Baselines on CMNER (overall F1): ACN text-only 72.93; ACN text+one image 73.62; ACN text+all images 74.22. UMT text-only 88.98; UMT text+one image 89.36; UMT text+all images 89.50. Cross-lingual (en→zh) best overall F1: ACN SRC&TGT 76.73; UMT SRC&TGT 89.27 (Table 3). Cross-lingual (zh→en) best overall F1 on Twitter2015: ACN SRC&TGT 66.11; UMT SRC&TGT 75.34 (Table 4).",
+    "validation": "Annotation validation: inter-annotator agreement reached 90% on 100 randomly selected samples prior to full annotation; each sample annotated by three annotators with adjudication discussions for disagreements. Dataset validation: baseline experiments and cross-lingual experiments demonstrating expected behavior (image integration improves performance) are reported as evidence of dataset utility and quality."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Private user information in texts was redacted; data filtering removed pornography, violence, and discriminatory content. No additional anonymization procedures are specified.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

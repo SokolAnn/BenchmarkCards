@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Hostility Detection in UK Politics: A Dataset on Online Abuse Targeting MPs",
+    "abbreviation": "N/A",
+    "overview": "This paper presents a dataset of 3,320 English tweets spanning a two-year period, manually annotated for hostility towards UK MPs and targeted identity characteristics, aiming to facilitate the detection of political hostility.",
+    "data_type": "tweets with hostility and identity annotations",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Agarwal et al. (2021)",
+      "Vidgen and Yasseri (2020)",
+      "Ward and McLoughlin (2020)"
+    ],
+    "resources": [
+      "https://zenodo.org/records/10809695"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a dataset for the study of hostility towards UK MPs and to evaluate models for hostility detection.",
+    "audience": [
+      "NLP Researchers",
+      "Political Scientists",
+      "Data Scientists"
+    ],
+    "tasks": [
+      "Binary Hostility Identification",
+      "Multi-class Targeted Identity Type Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Data collected from Twitter using Streaming API following accounts of UK MPs.",
+    "size": "3,320 tweets",
+    "format": "CSV",
+    "annotation": "Manually annotated by experts with guidelines combining definitions for hostility types."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on a 5-fold cross-validation method validating against different sets of annotations.",
+    "interpretation": "Higher scores indicate better performance at detecting hostility and accurately classifying identity characteristics.",
+    "baseline_results": "RoBERTa-Hate achieved a macro F1 score of 73.03 for binary hostility detection.",
+    "validation": "Validation procedures included annotator training and quality control checks during the annotation process."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on cultural diversity"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset includes annotations for identity characteristics such as race, gender, and religion.",
+    "harm": "The dataset aims to detect and understand the nature of online hostility towards politicians, addressing issues of abuse in political discourse."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset uses tweets, which are public; appropriate measures are taken for responsible usage.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

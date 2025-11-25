@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "HRM8K",
+    "abbreviation": "N/A",
+    "overview": "HRM8K is a bilingual benchmark comprising 8,011 English-Korean parallel mathematics problems, aimed at assessing multilingual mathematical reasoning capabilities.",
+    "data_type": "bilingual math problems",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Korean"
+    ],
+    "similar_benchmarks": [
+      "MATH",
+      "GSM8K",
+      "MMMLU"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/HAERAE-HUB/HRM8K"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To investigate and bridge the performance gap in multilingual mathematical reasoning, specifically for Korean using English as an anchor language.",
+    "audience": [
+      "ML Researchers",
+      "Education Professionals",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Mathematical Reasoning"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from existing Korean mathematics problems and established English benchmarks, including translations.",
+    "size": "8,011 questions",
+    "format": "JSON",
+    "annotation": "Manually curated and verified translations from Korean to English and vice versa using GPT-4o."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy calculated based on the proportion of correct answers derived from model outputs.",
+    "interpretation": "Higher accuracy indicates better performance in mathematical reasoning for bilingual problems.",
+    "baseline_results": "The UST-trained model achieves 50.43% accuracy on the HRM8K benchmark.",
+    "validation": "Evaluated against existing benchmarks (e.g., KMMLU, MATH) for comparative performance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "AMuRD (Annotated Arabic-English Receipt Dataset for Key Information Extraction and Classification)",
+    "abbreviation": "AMuRD",
+    "overview": "AMuRD is a novel multilingual human-annotated dataset specifically designed for information extraction from receipts, comprising 47,720 samples with detailed annotations for key item attributes.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Retail"
+    ],
+    "languages": [
+      "Arabic",
+      "English"
+    ],
+    "similar_benchmarks": [
+      "WildReceipt",
+      "SROIE"
+    ],
+    "resources": [
+      "https://github.com/Update-For-Integrated-Business-AI/AMuRD",
+      "https://arxiv.org/abs/2307.11278"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive resource for key information extraction and classification tasks from scanned receipts.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Information Extraction",
+      "Item Classification"
+    ],
+    "limitations": "The dataset does not always represent full receipts, which could limit the models’ ability to accurately classify and extract information.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from the DISCO application with receipts from various retail and commercial establishments.",
+    "size": "47,720 samples",
+    "format": "Text",
+    "annotation": "Human-annotated with item names, attributes like price and brand, and classification into product categories."
+  },
+  "methodology": {
+    "methods": [
+      "Fine-tuning language models (LLaMA V1 and V2)",
+      "Evaluation using precision, recall, F1 score, and accuracy"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Accuracy"
+    ],
+    "calculation": "Metrics calculated based on model performance on training, validation, and test datasets.",
+    "interpretation": "Higher F1 scores and accuracy indicate better performance in information extraction and classification tasks.",
+    "baseline_results": null,
+    "validation": "Data validation performed by a head annotator to ensure annotation accuracy."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "The dataset includes diverse receipts across multiple product categories.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Creative Commons Attribution-NonCommercial-NoDerivs 4.0 International (CC-BY-NC-ND 4.0)",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

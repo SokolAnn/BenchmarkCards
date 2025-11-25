@@ -1,0 +1,79 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MathWriting: A Dataset For Handwritten Mathematical Expression Recognition",
+    "abbreviation": "N/A",
+    "overview": "MathWriting is the largest dataset of online handwritten mathematical expressions to date, consisting of 230k human-written samples and an additional 400k synthetic ones, aimed at improving the recognition of handwritten mathematical expressions.",
+    "data_type": "ink samples with corresponding LaTeX expressions",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "N/A"
+    ],
+    "similar_benchmarks": [
+      "CROHME"
+    ],
+    "resources": [
+      "https://storage.googleapis.com/mathwriting_data/mathwriting-2024.tgz",
+      "https://storage.googleapis.com/mathwriting_data/mathwriting-2024-excerpt.tgz",
+      "https://github.com/google-research/google-research/tree/master/mathwriting"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a benchmark dataset for researching and developing algorithms for the recognition of handwritten mathematical expressions.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Handwritten Mathematical Expression Recognition"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Human contributions through an Android app and synthetic data based on LaTeX expressions from Wikipedia.",
+    "size": "230,000 human-written inks, 400,000 synthetic inks",
+    "format": "InkML",
+    "annotation": "Manual annotation through LaTeX expressions"
+  },
+  "methodology": {
+    "methods": [
+      "CTC Transformer",
+      "OCR models"
+    ],
+    "metrics": [
+      "Character Error Rate (CER)"
+    ],
+    "calculation": "CER is calculated where a 'character' is defined as a LaTeX token.",
+    "interpretation": "Lower CER indicates better recognition accuracy.",
+    "baseline_results": "CTC Transformer achieved 5.49 CER on test split.",
+    "validation": "Models were evaluated using distinct validation and test splits."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International",
+    "consent_procedures": "Participants agreed to standard Google terms of use and privacy policy.",
+    "compliance_with_regulations": "N/A"
+  }
+}

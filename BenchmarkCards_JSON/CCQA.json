@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CCQA (Common Crawl Question Answering)",
+    "abbreviation": "CCQA",
+    "overview": "We propose a novel open-domain question-answering dataset based on the Common Crawl project, containing approximately 130 million multilingual question-answer pairs. This dataset is designed for in-domain pre-training of popular language models for the question-answering task.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "TriviaQA",
+      "Natural Questions",
+      "ELI5",
+      "GooAQ"
+    ],
+    "resources": [
+      "https://github.com/facebookresearch/CCQA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the benchmark is to provide a large-scale, natural, and diverse open-domain question-answering dataset for model pre-training.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated from Common Crawl snapshots using schema.org annotations.",
+    "size": "130 million question-answer pairs",
+    "format": "JSON",
+    "annotation": "Automatically annotated using schema.org definitions."
+  },
+  "methodology": {
+    "methods": [
+      "Evaluation on zero-shot and fine-tuned settings"
+    ],
+    "metrics": [
+      "Exact Match (EM)",
+      "Answer-level Recall (AR)",
+      "ROUGE-L"
+    ],
+    "calculation": "Metrics are computed based on question-answer pairs for evaluating the performance of models.",
+    "interpretation": "Higher scores indicate better performance in answering questions correctly.",
+    "baseline_results": "N/A",
+    "validation": "The dataset was validated through evaluations showing effective performance across multiple benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

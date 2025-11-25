@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "RJUA-QA: A Comprehensive QA Dataset for Urology",
+    "abbreviation": "RJUA-QA",
+    "overview": "RJUA-QA is a novel medical dataset for question answering (QA) and reasoning with clinical evidence, derived from realistic clinical scenarios and aims to facilitate LLMs in generating reliable diagnostic and advice. It contains 2,132 curated Question-Context-Answer pairs covering 67 common urological disease categories.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/alipay/RJU_Ant_QA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To construct a high-quality and comprehensive medical specialty QA dataset which has patient consultation simulations with expert-level annotations and requires medical reasoning over the query contexts and clinical knowledge to answer the questions.",
+    "audience": [
+      "ML Researchers",
+      "Medical Professionals"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Derived from realistic clinical scenarios, including outpatient diagnoses and treatments, emergency, inpatient surgeries, and procedures.",
+    "size": "2,132 question-context-answer pairs",
+    "format": "N/A",
+    "annotation": "Manual curation by a medical annotation team with clinical expertise, alongside expert-level verification."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score",
+      "ROUGE-L"
+    ],
+    "calculation": "F1 score is calculated as F1= 2×P×R/(P+R), where P=TP/(TP+FP) denotes precision and R=TP/(TP+FN) denotes recall.",
+    "interpretation": "Higher F1 scores indicate better performance of the models in providing accurate diagnoses and treatment advice.",
+    "baseline_results": "Results from Huatuo GPT, GPT-3.5, Baichuan, and ChatGLM show varying F1 and ROUGE-L scores across the dataset.",
+    "validation": "The dataset is subjected to manual verification to ensure accuracy and relevance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

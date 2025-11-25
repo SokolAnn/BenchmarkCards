@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LLM-Assisted Transformation of Cybersecurity Playbooks into CACAO Format",
+    "abbreviation": "N/A",
+    "overview": "This paper proposes a systematic approach to automatically translate legacy incident response playbooks into the standardized, machine-readable CACAO format using Large Language Models (LLMs) and various Prompt Engineering techniques.",
+    "data_type": "text",
+    "domains": [
+      "Cybersecurity"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/Fraunhofer-FIT-DSAI/CyberGuard"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To automate the transformation of legacy unstructured cybersecurity playbooks into standardized, machine-readable formats aligned with the CACAO specification.",
+    "audience": [
+      "Cybersecurity practitioners",
+      "SOAR platform developers"
+    ],
+    "tasks": [
+      "Cybersecurity Playbook Transformation"
+    ],
+    "limitations": "The dataset used is vendor-specific and may not capture the diversity of real-world playbooks.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Custom-generated dataset of legacy playbooks paired with manually created CACAO references.",
+    "size": "40 playbooks",
+    "format": "JSON",
+    "annotation": "Manual annotations from experts for CACAO translations."
+  },
+  "methodology": {
+    "methods": [
+      "Prompt Engineering",
+      "Syntactic Validation",
+      "Semantic Evaluation"
+    ],
+    "metrics": [
+      "Syntactic Error Counts",
+      "Damerau-Levenshtein Distance",
+      "Graph Edit Distance"
+    ],
+    "calculation": "Errors were calculated based on the number of syntactic problems identified and measured using distance metrics.",
+    "interpretation": "Lower error counts indicate better performance in translating playbooks to the CACAO format.",
+    "baseline_results": "The method achieved a 73% reduction in syntactic errors compared to baseline models.",
+    "validation": "Validation was performed using a custom syntax-checking mechanism tailored to the CACAO format."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Automated transformation also raises concerns regarding the handling of sensitive information which may exist in playbooks.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

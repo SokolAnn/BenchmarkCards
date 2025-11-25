@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SPA-VL (Safety Preference Alignment for Vision Language Models)",
+    "abbreviation": "SPA-VL",
+    "overview": "SPA-VL is a large-scale safety alignment dataset for vision-language models that contains 100,788 samples categorized into 6 harmfulness domains, 13 categories, and 53 subcategories, constructed for training models with Reinforcement Learning from Human Feedback (RLHF).",
+    "data_type": "quadruples (question, image, chosen response, rejected response)",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MM-SafetyBench",
+      "ChEf",
+      "OODCV-VQA"
+    ],
+    "resources": [
+      "https://sqrtizhang.github.io/SPA-VL/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective is to enhance safety alignment in vision-language models by providing a comprehensive dataset that encompasses both harmlessness and helpfulness criteria.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Safety Alignment"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated from open and closed-source vision language models, primarily using images from the LAION-5B dataset.",
+    "size": "100,788 samples",
+    "format": "quadruples (JSON)",
+    "annotation": "Fully automated response generation and preference annotation from multiple models."
+  },
+  "methodology": {
+    "methods": [
+      "Reinforcement Learning from Human Feedback (RLHF)",
+      "Preference-based Optimization"
+    ],
+    "metrics": [
+      "Harm Score",
+      "Unsafe Rate"
+    ],
+    "calculation": "Harm score is calculated based on the proportions of safe and unsafe responses as determined by human evaluators.",
+    "interpretation": "A lower unsafe rate indicates better alignment with safety standards.",
+    "baseline_results": "Compared to existing models like LLaV A-7B, the models trained on SPA-VL demonstrated significant improvements in safety metrics.",
+    "validation": "Evaluated using the HarmEval and HelpEval datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All data collected complies with ethical standards, and no personal identification information is involved.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

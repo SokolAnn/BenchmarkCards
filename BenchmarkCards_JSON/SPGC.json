@@ -1,0 +1,150 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Standardized Project Gutenberg Corpus (SPGC)",
+    "abbreviation": "SPGC",
+    "overview": "A standardized, reproducible, curated version of the complete Project Gutenberg data containing more than 50,000 books and more than 3×10^9 word-tokens. The SPGC provides code to automatically download, filter, and process Project Gutenberg into three levels of granularity (raw text, a filtered timeseries of word tokens, and word-type counts), annotated metadata from Project Gutenberg records and bookshelf pages, and a time-stamped static 'frozen' snapshot (SPGC-2018-07-18).",
+    "data_type": "text (raw text files, timeseries of word tokens, and word-level count lists)",
+    "domains": [
+      "Corpus Linguistics",
+      "Natural Language Processing",
+      "Information Retrieval",
+      "Quantitative Linguistics",
+      "Computational Linguistics"
+    ],
+    "languages": [
+      "English",
+      "French",
+      "Finnish",
+      "German",
+      "Dutch",
+      "Italian",
+      "Spanish",
+      "Portuguese",
+      "Greek",
+      "Swedish",
+      "Hungarian",
+      "Esperanto",
+      "Latin",
+      "Danish",
+      "Tagalog",
+      "Catalan",
+      "Polish",
+      "Japanese",
+      "Norwegian",
+      "Welsh",
+      "Czech",
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "google-ngram data",
+      "full Wikipedia dataset",
+      "Twitter",
+      "British National Corpus",
+      "Corpus of Contemporary American English"
+    ],
+    "resources": [
+      "https://doi.org/10.5281/zenodo.2422560",
+      "https://github.com/pgcorpus/gutenberg",
+      "https://github.com/pgcorpus/gutenberg-analysis",
+      "https://arxiv.org/abs/1812.08092",
+      "https://github.com/c-w/gutenberg/blob/master/gutenberg/cleanup/strip_headers.py"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Provide a reproducible, pre-processed, full-size version of Project Gutenberg as a scientific resource for corpus linguistics, natural language processing, and information retrieval by publishing the processing methodology, code, and the corpus at multiple granularities.",
+    "audience": [
+      "Corpus Linguists",
+      "Natural Language Processing Researchers",
+      "Information Retrieval Researchers",
+      "Quantitative Linguists",
+      "Computational Linguists",
+      "Machine Learning Researchers"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Topic Modeling",
+      "Authorship Attribution",
+      "Diachronic Language Analysis",
+      "Machine Translation",
+      "General corpus-based statistical analysis"
+    ],
+    "limitations": "The corpus only contains copyright-free (public domain) books, resulting in comparatively few books published after the 1930s; metadata is incomplete for some books (e.g., exact publication year); some books may be duplicated under different Project Gutenberg identifiers; the composition of the corpus is heterogeneous across genres.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Project Gutenberg (complete Project Gutenberg data), with metadata from Project Gutenberg records (uploader-provided metadata: author name, author birth/death years, language, subject categories, number of downloads) and bookshelf pages (collaborative tagging, 'bookshelf' labels).",
+    "size": "Frozen snapshot SPGC-2018-07-18: 55,905 books; corpus contains more than 3×10^9 word-tokens; full frozen dataset size: 65GB; one-gram counts size: 3.6GB.",
+    "format": "Plain text files (.txt) organized per book at four levels of granularity (raw, text, tokens, counts); counts provided as lists of (word, occurrence) tuples in text files.",
+    "annotation": "Metadata annotations from Project Gutenberg: author name, author year of birth and death, language, subject labels; bookshelf labels obtained from Project Gutenberg bookshelf pages (collaborative tagging)."
+  },
+  "methodology": {
+    "methods": [
+      "Automated preprocessing pipeline to download, filter, clean (remove headers/boilerplate), tokenize (NLTK TreebankWordTokenizer), lowercase and filter tokens, and count word types",
+      "Use of rsync to mirror Project Gutenberg",
+      "Jensen-Shannon divergence to measure distances between word-frequency distributions",
+      "UMAP (Uniform Manifold Approximation and Projection) for 2D visualization of book similarity"
+    ],
+    "metrics": [
+      "Jensen-Shannon divergence",
+      "Token counts (number of word-tokens per book)"
+    ],
+    "calculation": "Distance between books i and j (D_i,j) is computed as the Jensen-Shannon divergence between their word-frequency distributions; D_i,j = 0 indicates identical distributions and D_i,j = 1 indicates maximally different distributions (no shared words). Token counts are obtained by counting occurrences of each word-type.",
+    "interpretation": "Lower Jensen-Shannon divergence indicates more similar word-frequency statistics between books; higher values indicate greater dissimilarity. Examples in the paper show books from the same bookshelf or author have lower divergence and that average divergence increases with time separation.",
+    "baseline_results": null,
+    "validation": "A static time-stamped snapshot SPGC-2018-07-18 (55,905 books) is provided to ensure reproducibility of reported statistics and figures; the authors provide code and Jupyter notebooks to reproduce processing and analyses (UMAP embeddings, divergence analyses)."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Reproducibility",
+      "Data Quality",
+      "Legal/Compliance",
+      "Transparency"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Data contamination"
+          ]
+        },
+        {
+          "category": "Data Laws",
+          "subcategory": [
+            "Data usage restrictions"
+          ]
+        },
+        {
+          "category": "Governance",
+          "subcategory": [
+            "Lack of data transparency"
+          ]
+        },
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Lack of training data transparency",
+            "Uncertain data provenance"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Collection primarily consists of copyright-free (public domain) literary works as archived by Project Gutenberg.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "Discusses the impact of the Copyright Term Extension Act of 1998 on the availability of books (affecting which books enter the public domain); no other regulatory compliance procedures (e.g., GDPR) are discussed."
+  }
+}

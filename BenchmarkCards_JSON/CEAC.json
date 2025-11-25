@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CEAC (Cause-Emotion-Action Corpus)",
+    "abbreviation": "CEAC",
+    "overview": "CEAC (Cause-Emotion-Action Corpus), which manually annotates not only emotion, but also cause events and action events. Based on CEAC, we introduce two tasks: emotion causality (extract a triple (cause, emotion, action) as CEA relation) and emotion inference (infer the probable emotion given a tuple of cause and action events).",
+    "data_type": "text (news passages with annotated cause, emotion, and action events)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "Academia Sinica Balanced Chinese Corpus",
+      "NTCIR-13 ECA (Emotion Cause Analysis) task",
+      "Event2Mind"
+    ],
+    "resources": [
+      "http://www.keenage.com",
+      "http://ir.dlut.edu.cn/EmotionOntologyDownload",
+      "http://academiasinicanlplab.github.io/",
+      "https://dcc.blcu.edu.cn",
+      "https://arxiv.org/abs/1903.06901"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To define emotion action and integrate it into emotion causality (Cause-Emotion-Action chains), to define and investigate two tasks (emotion causality and emotion inference), and to manually label and release a corpus (CEAC) to support these tasks.",
+    "audience": [],
+    "tasks": [
+      "Cause-Emotion-Action Relation Extraction (Emotion Causality)",
+      "Emotion Inference"
+    ],
+    "limitations": "Imbalance distribution of emotion cause and emotion action limits analysis; dataset currently contains 10,603 annotated sentences which the authors state may be insufficient and plan to expand in future.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "National Language Resources Dynamic Circulation Corpus (DCC) 2005-2015 (news text passages extracted by emotion keywords, with three preceding and three following clauses kept as context).",
+    "size": "10,603 samples and 15,892 events",
+    "format": "Annotated in W3C Emotion Markup Language (EML) XML format; raw data are news text passages (clauses preserved as context).",
+    "annotation": "Manual annotation by trained annotators: two annotators independently annotate cause(s), action(s) and experiencer for each emotion keyword; a third annotator serves as arbitrator for inconsistencies; cause/action tags include attributes (id, type)."
+  },
+  "methodology": {
+    "methods": [
+      "Model-based evaluation (Bi-LSTM + CRF for Cause-Emotion-Action relation extraction)",
+      "Model-based evaluation (LSTM classifier for Emotion Inference)"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Precision, Recall and F1 are computed per class and overall as reported in result tables.",
+    "interpretation": "Higher Precision/Recall/F1 indicates better extraction/inference. Baseline performance is relatively low, indicating the tasks are difficult and there is substantial room for improvement (as stated by the authors).",
+    "baseline_results": "Cause-Emotion-Action Extraction (Bi-LSTM+CRF) - ALL (cause) Precision 0.55 Recall 0.53 F1 0.54; ALL (action) Precision 0.48 Recall 0.44 F1 0.46. Emotion Inference (LSTM) - ALL Precision 0.55 Recall 0.55 F1 0.55 (results reported per emotion category in paper tables).",
+    "validation": "Train/test split 4:1 for both tasks; inter-annotator agreement Kappa at clause level = 0.8201; inconsistent annotations adjudicated by a third annotator."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "RealDex",
+    "abbreviation": "N/A",
+    "overview": "RealDex is a pioneering dataset capturing authentic dexterous hand grasping motions infused with human behavioral patterns, enriched by multi-view and multimodal visual data. It is crucial for training dexterous hands to mimic human movements more naturally and precisely.",
+    "data_type": "grasping motion sequences with visual data",
+    "domains": [
+      "Robotics"
+    ],
+    "languages": [
+      "N/A"
+    ],
+    "similar_benchmarks": [
+      "DVGG",
+      "DexGraspNet",
+      "MultiDex"
+    ],
+    "resources": [
+      "https://4dvlab.github.io/RealDex"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Advance research and practical applications of human-like robotic dexterous grasping in real-world environments.",
+    "audience": [
+      "Robotics Researchers",
+      "Robotic Engineers",
+      "ML Practitioners"
+    ],
+    "tasks": [
+      "Dexterous Grasping",
+      "Human-Robot Interaction"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected using a teleoperation system with a Shadow Hand robot and multiple RGB-D cameras.",
+    "size": "2.6k sequences of grasping motions, 955k frames of visual data",
+    "format": "Point cloud, RGB images",
+    "annotation": "Manually adjusted annotations for hand-object interactions and grasp poses."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automatic pose generation",
+      "Motion synthesis"
+    ],
+    "metrics": [
+      "User scores for human-likeness",
+      "Stability measures",
+      "Mean Per-Joint Positional Error (MPJPE)",
+      "Average Variance Error (A VE)"
+    ],
+    "calculation": "Comparisons made against pre-defined ground truth data for motion sequences and grasping poses.",
+    "interpretation": "Higher scores indicate better performance in generating human-like grasping motions.",
+    "baseline_results": "Compared against methods like SAGA and GOAL.",
+    "validation": "Extensive experiments and real robot testing demonstrate the performance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

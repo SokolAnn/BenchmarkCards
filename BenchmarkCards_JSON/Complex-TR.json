@@ -1,0 +1,93 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Complex-TR (Complex Temporal Reasoning)",
+    "abbreviation": "Complex-TR",
+    "overview": "The Complex-TR dataset focuses on multi-answer and multi-hop temporal reasoning, addressing the shortcomings of existing temporal QA datasets that primarily evaluated one-hop questions and used inappropriate metrics for multi-answer assessments.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "TempReason",
+      "TimeQA",
+      "TempLAMA"
+    ],
+    "resources": [
+      "https://github.com/nusnlp/complex-tr"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation framework for multi-hop and multi-answer temporal reasoning in question-answering systems.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "The dataset may contain factual errors existing in the Wikidata knowledge base.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from the Wikidata knowledge base and verified using human annotators.",
+    "size": "10,800 examples",
+    "format": "JSON",
+    "annotation": "Manually verified by college-educated annotators."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Data augmentation",
+      "Context refinement"
+    ],
+    "metrics": [
+      "Set-level accuracy",
+      "Answer-level F1"
+    ],
+    "calculation": "Metrics are calculated based on the strict criteria of matching the entire set of answers.",
+    "interpretation": "Higher set accuracy indicates better performance on multi-answer questions; lower answer F1 scores indicate the model's struggle to retrieve all correct answers.",
+    "baseline_results": null,
+    "validation": "Human verification of the QA pairs and contexts."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "The data was constructed from the Wikidata knowledge base and Wikipedia articles, which are under creative commons licenses.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DomainVerse (A Benchmark Towards Real-World Distribution Shifts For Tuning-Free Adaptive Domain Generalization)",
+    "abbreviation": "DomainVerse",
+    "overview": "DomainVerse is a novel large-scale dataset designed to evaluate the capability of vision-language models (VLMs) in Adaptive Domain Generalization (ADG) across realistic domain shifts, consisting of approximately 0.5 million images from 390 fine-grained domains.",
+    "data_type": "image",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "N/A"
+    ],
+    "similar_benchmarks": [
+      "Digits-five",
+      "Office-Home",
+      "PACS",
+      "DomainNet",
+      "NICO++",
+      "OOD-CV"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To facilitate vision-language models to achieve adaptive domain generalization on realistic scenarios.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Domain Generalization"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Synthetic images generated using a game-engine-based simulator (Unity).",
+    "size": "457,570 images",
+    "format": "N/A",
+    "annotation": "Automatically generated labels based on defined domain shifts."
+  },
+  "methodology": {
+    "methods": [
+      "Domain CLIP",
+      "Domain++ CLIP"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "The accuracy is computed based on prediction outcomes from the model against the ground truth.",
+    "interpretation": "Higher accuracy indicates better performance of the model in adapting to new domains.",
+    "baseline_results": null,
+    "validation": "Extensive experiments conducted to benchmark performance against existing models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

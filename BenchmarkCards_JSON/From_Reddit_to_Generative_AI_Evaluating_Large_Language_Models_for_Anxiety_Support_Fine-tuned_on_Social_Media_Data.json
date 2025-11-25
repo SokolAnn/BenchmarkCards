@@ -1,0 +1,107 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "From Reddit to Generative AI: Evaluating Large Language Models for Anxiety Support Fine-tuned on Social Media Data",
+    "abbreviation": "N/A",
+    "overview": "This study presents a systematic evaluation of LLMs (GPT and Llama) for their potential utility in anxiety support using real user-generated posts from the r/Anxiety subreddit for prompting and fine-tuning.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "CounselingBench"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2505.18464"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate Large Language Models for their performance in anxiety support using a domain-specific evaluation framework.",
+    "audience": [
+      "ML Researchers",
+      "Mental Health Practitioners",
+      "AI Developers"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Sentiment Analysis",
+      "Emotion Recognition"
+    ],
+    "limitations": "Fine-tuning can improve linguistic quality but may also increase toxicity and bias.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "User-generated posts from the r/Anxiety subreddit.",
+    "size": "26,450 posts",
+    "format": "JSON",
+    "annotation": "Manual annotation by licensed mental health professionals."
+  },
+  "methodology": {
+    "methods": [
+      "Quantitative evaluation",
+      "Qualitative human evaluation",
+      "Statistical analysis"
+    ],
+    "metrics": [
+      "Flesch-Kincaid Grade",
+      "RoUGE",
+      "BLEU Score",
+      "Toxicity",
+      "Empathy Reflection Scores"
+    ],
+    "calculation": "Evaluated using a domain-specific framework based on linguistic quality, safety and trustworthiness, and supportiveness using various metrics.",
+    "interpretation": "Model performance is assessed across linguistic quality, safety, and supportiveness metrics, interpreting higher scores for better performance except for bias and toxicity measures, where lower scores indicate better performance.",
+    "baseline_results": null,
+    "validation": "Statistical tests like Welch’s ANOVA and Games-Howell post-hoc tests are used to compare model performance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Exposing personal information"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis across various demographics including gender and race was conducted.",
+    "harm": [
+      "Increased toxicity",
+      "Bias in responses"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The data was anonymized and complies with ethical standards concerning sensitive information.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Informed consent from users on r/Anxiety was obtained through publicly available posts.",
+    "compliance_with_regulations": "N/A"
+  }
+}

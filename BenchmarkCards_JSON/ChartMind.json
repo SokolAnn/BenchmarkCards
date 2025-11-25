@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ChartMind: A Comprehensive Benchmark for Complex Real-world Multimodal Chart Question Answering",
+    "abbreviation": "ChartMind",
+    "overview": "ChartMind is a new benchmark designed for complex CQA tasks in real-world settings, covering seven task categories, incorporating multilingual contexts, supporting open-domain textual outputs, and accommodating diverse chart formats. It bridges the gap between real-world applications and traditional academic benchmarks.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "ChartQA",
+      "OpenCQA",
+      "Chart-to-Text"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2505.23242"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation for complex chart question answering in real-world contexts.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Chart Classification",
+      "Chart Summarization",
+      "Chart Assistance",
+      "Suggestions",
+      "Chart Conversion",
+      "Chart OCR Recognition",
+      "Information Positioning"
+    ],
+    "limitations": "The dataset relies on publicly available charts, potentially introducing biases, and future work will explore multi-turn dialogues and cross-chart reasoning.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Over 1,200 charts collected from open-source platforms, including GitHub repositories and public datasets.",
+    "size": "757 question-answering pairs",
+    "format": "N/A",
+    "annotation": "Each QA pair is reviewed by at least two annotators with experience in chart QA."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "CIDEr",
+      "GPT-4o Score"
+    ],
+    "calculation": "Metrics are calculated based on model performance against human reference answers.",
+    "interpretation": "Good performance is considered in terms of alignment with human judgments and coherence.",
+    "baseline_results": "N/A",
+    "validation": "Comprehensive evaluation across seven task categories using various models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "The charts were collected under permissive licenses (e.g., CC BY 4.0, MIT).",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "A Large-scale Class-level Benchmark Dataset for Code Generation with LLMs",
+    "abbreviation": "N/A",
+    "overview": "This paper introduces a large-scale, Python class-level dataset curated from 13,174 real-world open-source projects to better assess the capabilities of LLMs in generating realistic and structurally coherent class-level code.",
+    "data_type": "class skeletons",
+    "domains": [
+      "Software Engineering"
+    ],
+    "languages": [
+      "Python"
+    ],
+    "similar_benchmarks": [
+      "ClassEval"
+    ],
+    "resources": [
+      "https://anonymous.4open.science/r/class-level-benchmark-dataset-B132/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a robust benchmark dataset for evaluating LLMs on class-level code generation, addressing the gap in existing function-level benchmarks.",
+    "audience": [
+      "ML Researchers",
+      "Software Developers",
+      "AI Practitioners"
+    ],
+    "tasks": [
+      "Code Generation"
+    ],
+    "limitations": "The dataset may exhibit structural bias and incomplete documentation, potentially affecting code generation quality.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated from real-world open-source projects extracted from the CodeSearchNet dataset.",
+    "size": "842,656 class skeletons",
+    "format": "N/A",
+    "annotation": "Automated extraction from Python code using Abstract Syntax Trees."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "ROUGE",
+      "BLEU",
+      "Tree Similarity of Edit Distance (TSED)"
+    ],
+    "calculation": "Metrics compare LLM-generated classes against human-written classes using textual and structural similarity metrics.",
+    "interpretation": "Higher scores indicate greater similarity between the generated and reference code.",
+    "baseline_results": "N/A",
+    "validation": "Evaluated using class skeletons as structured prompts for GPT-4."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

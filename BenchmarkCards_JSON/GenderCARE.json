@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "GenderCARE",
+    "abbreviation": "N/A",
+    "overview": "GenderCARE is a comprehensive framework that encompasses innovative criteria, bias assessment, reduction techniques, and evaluation metrics for quantifying and mitigating gender bias in large language models.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Winoqueer",
+      "BOLD",
+      "StereoSet"
+    ],
+    "resources": [
+      "https://github.com/kstanghere/GenderCARE-ccs24"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess and reduce gender bias in large language models.",
+    "audience": [
+      "ML Researchers",
+      "AI Ethicists",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Gender Bias Assessment"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed using counterfactual data augmentation and expert reviews.",
+    "size": "103,854 prompts across 207 distinct gender identities",
+    "format": "N/A",
+    "annotation": "Human construction and GPT-4 review for anti-biased descriptor generation."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Bias-Pair Ratio",
+      "Toxicity",
+      "Regard"
+    ],
+    "calculation": "Bias-Pair Ratio measures the proportion of biased descriptors selected by the model; Toxicity and Regard measure harmfulness and sentiment, respectively.",
+    "interpretation": "Lower scores in Bias-Pair Ratio and Toxicity indicate reduced gender bias; higher Regard scores indicate positive sentiment.",
+    "baseline_results": "Compared against Winoqueer, BOLD, and StereoSet benchmarks.",
+    "validation": "Extensive experiments on 17 different LLMs demonstrate the robustness of the GenderPair framework."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The benchmark includes diverse gender identities, including transgender and non-binary individuals.",
+    "harm": "The framework aims to prevent the perpetuation of harmful stereotypes and biases against marginalized gender identities."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

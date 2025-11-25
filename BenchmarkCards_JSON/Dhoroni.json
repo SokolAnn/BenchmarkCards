@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Dhoroni: Exploring Bengali Climate Change and Environmental Views",
+    "abbreviation": "Dhoroni",
+    "overview": "Dhoroni is a novel Bengali (Bangla) climate change and environmental news dataset, comprising a 2300 annotated Bangla news articles, offering multiple perspectives such as political influence, scientific/statistical data, authenticity, position detection, and stakeholder involvement.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Bengali"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://doi.org/10.5281/zenodo.13695110",
+      "https://huggingface.co/ciol-research/dhoroni-6723c1c675c6ef21285c0dda"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of the Dhoroni dataset is to enhance accessibility and analysis of climate discourse in Bengali, addressing crucial communication and research gaps in climate-impacted regions.",
+    "audience": [
+      "Researchers",
+      "Policymakers",
+      "NGOs",
+      "Educators"
+    ],
+    "tasks": [
+      "Stance Detection",
+      "Political Influence Detection",
+      "News Authenticity Identification",
+      "Scientific Data Usage Detection",
+      "Statistical Data Usage Detection",
+      "Data Sources Detection",
+      "Impacted Location or Countries Detection",
+      "Climate/Environmental Topics Detection",
+      "News Target Detection",
+      "Authority Involvement Detection"
+    ],
+    "limitations": "The dataset is limited to news articles, which may not capture the full spectrum of climate-related discussions occurring in other formats, such as social media, blogs, and community forums.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset comprises 2300 annotated Bengali news articles collected from various sources, focusing on climate change and environmental issues.",
+    "size": "2300 articles",
+    "format": "text files",
+    "annotation": "Each article was independently annotated by three annotators based on ten different perspectives."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on the performance of models fine-tuned on the Dhoroni dataset across various tasks.",
+    "interpretation": "Higher scores in metrics indicate better identification and understanding of elements in Bengali climate discourse.",
+    "baseline_results": "Models were fine-tuned based on the Dhoroni dataset with baseline models achieving varying accuracies across defined tasks.",
+    "validation": "Validation procedures involved testing models against split dataset samples to ensure reliability."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Privacy measures have been taken into consideration by maintaining the anonymity of news sources.",
+    "data_licensing": "The dataset is available under the MIT license.",
+    "consent_procedures": "All data collection followed ethical guidelines, ensuring proper attribution and citation.",
+    "compliance_with_regulations": "The dataset complies with applicable ethical guidelines and practices."
+  }
+}

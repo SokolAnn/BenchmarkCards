@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PCS (Product Customer Support)",
+    "abbreviation": "PCS",
+    "overview": "The PCS dataset is a new TOD dataset studied in this work that captures real-world customer-human expert interactions, focusing on behavioral analysis and performance evaluation of LLM agents in complex task-oriented dialogs.",
+    "data_type": "dialog pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MultiWOZ",
+      "SpokenWOZ"
+    ],
+    "resources": [
+      "https://github.com/intuit-ai-research/behavior-gap"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the behavioral performance gaps between LLM agents and human experts in task-oriented dialogs.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Task-Oriented Dialog System Evaluation"
+    ],
+    "limitations": "The accuracy of the analysis depends on the reliability of the LLM-based classifiers used in the framework.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Real-world transcribed spoken conversations between customers and human expert agents.",
+    "size": "832 dialogs",
+    "format": "Text",
+    "annotation": "Classifiers evaluated on the precision of dialog act recognition and tool usage."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score"
+    ],
+    "calculation": "Micro-F1 scores quantified dialog act and tool usage alignment.",
+    "interpretation": "Higher F1 scores indicate better alignment between LLM agents and human expert responses.",
+    "baseline_results": null,
+    "validation": "Validation of classifiers against established dialog act and tool usage benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis focused on behavioral gaps across different task complexities.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

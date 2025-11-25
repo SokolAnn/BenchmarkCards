@@ -1,0 +1,82 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CLOTHO (Measuring Task-Specific Pre-Generation Test Adequacy for LLM Inputs)",
+    "abbreviation": "CLOTHO",
+    "overview": "CLOTHO is a task-specific, pre-generation adequacy measure that estimates input difficulty directly from hidden LLM states and ranks inputs by their likelihood of failure to improve task-specific LLM testing.",
+    "data_type": "input-output pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://anonymous.4open.science/r/clotho-artifact-DE31"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of CLOTHO is to improve task-specific LLM testing by prioritizing which inputs to run and label first, ideally exposing failures earlier and with less effort.",
+    "audience": [
+      "ML Researchers",
+      "Software Test Engineers"
+    ],
+    "tasks": [
+      "Error Detection",
+      "Input Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Aggregated datasets across multiple tasks with specific prompts and input requirements.",
+    "size": "N/A",
+    "format": "N/A",
+    "annotation": "Labelling is performed by human annotators based on model outcomes."
+  },
+  "methodology": {
+    "methods": [
+      "Error Rate Prediction",
+      "Sample Prioritization"
+    ],
+    "metrics": [
+      "ROC-AUC",
+      "Spearman Rank Correlation"
+    ],
+    "calculation": "Metrics are calculated based on the likelihood of passing inputs in relation to the reference distribution derived from hidden states.",
+    "interpretation": "A higher ROC-AUC score indicates better performance in failure prediction and test input prioritization.",
+    "baseline_results": "Tests were compared against existing pre-generation and post-generation metrics.",
+    "validation": "Validation of CLOTHO was performed across eight benchmark tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

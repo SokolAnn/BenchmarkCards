@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Cross-Care",
+    "abbreviation": "N/A",
+    "overview": "Cross-Care is the first benchmark framework dedicated to assessing biases and real-world knowledge in language models, specifically focusing on the representation of disease prevalence across diverse demographic groups. It evaluates how demographic biases embedded in pre-training corpora influence outputs of Large Language Models (LLMs).",
+    "data_type": "demographic-disease association pairs",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English",
+      "Chinese",
+      "French",
+      "Spanish"
+    ],
+    "similar_benchmarks": [
+      "GLUE",
+      "SuperGLUE"
+    ],
+    "resources": [
+      "https://www.crosscare.net"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess the representation of disease prevalence across demographic subgroups in language models and identify underlying biases in their outputs.",
+    "audience": [
+      "ML Researchers",
+      "Healthcare Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Bias Assessment",
+      "Model Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The Pile dataset and CDC real-world prevalence data.",
+    "size": "89 diseases and demographic associations",
+    "format": "CSV",
+    "annotation": "Co-occurrence analysis and demographic representation calculated from public health datasets."
+  },
+  "methodology": {
+    "methods": [
+      "Co-occurrence analysis",
+      "Model logits examination"
+    ],
+    "metrics": [
+      "Kendall's tau correlation"
+    ],
+    "calculation": "Kendall's tau is calculated to compare ranks of disease prevalence across different demographic groups.",
+    "interpretation": "Kendall's tau values indicate the strength of correlation between model outputs and real-world prevalence data.",
+    "baseline_results": "N/A",
+    "validation": "Findings validated with multiple language model architectures."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The framework includes analysis across demographic factors as it evaluates the representation of disease prevalence among different subgroups.",
+    "harm": "This framework aims to identify and potentially mitigate biases in LLM outputs that could impact healthcare decision-making."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Not specified.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

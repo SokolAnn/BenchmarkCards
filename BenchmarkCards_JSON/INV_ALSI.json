@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "INV ALSI",
+    "abbreviation": "N/A",
+    "overview": "This paper introduces the INV ALSI benchmark, adapted for automated evaluation of language models, providing a structured evaluation framework using a set of well-established assessments designed to measure educational competencies across Italy.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Education"
+    ],
+    "languages": [
+      "Italian"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/spaces/Crisp-Unimib/INV_ALSIbenchmark"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To establish a benchmark for assessing large language models using the INV ALSI framework.",
+    "audience": [
+      "ML Researchers",
+      "Education Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from public sources including the Gestinv database which contains tests from the Italian national evaluations.",
+    "size": "2114 questions and 2808 unique items across multiple tests",
+    "format": "JSON",
+    "annotation": "Manual inspection and adaptation of questions to improve alignment for LLM evaluation."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "BERTScore"
+    ],
+    "calculation": "Responses are assessed for correctness using pattern matching and regular expressions, alongside semantic comparisons via BERTScore.",
+    "interpretation": "Text comprehension accuracy reflects the model's understanding and generation proficiency, while scores indicate varying success across educational levels.",
+    "baseline_results": "N/A",
+    "validation": "Benchmarks are validated by comparing model performance against human benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

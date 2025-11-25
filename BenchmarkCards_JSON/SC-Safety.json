@@ -1,0 +1,105 @@
+{
+  "benchmark_details": {
+    "name": "SuperCLUE-Safety (SC-Safety)",
+    "overview": "SC-Safety is a multi-round adversarial benchmark designed to systematically assess the safety of large language models (LLMs) in Chinese, featuring 4912 open-ended questions across more than 20 safety sub-dimensions. It aims to enhance the testing of models by incorporating multi-round discussions and adversarial interactions, going beyond conventional single-round assessments.",
+    "data_type": "Questionnaire",
+    "domains": [
+      "Natural Language Processing",
+      "Artificial Intelligence"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "C-Eval",
+      "CLUE",
+      "SafetyBench"
+    ],
+    "resources": [
+      "https://www.CLUEbenchmarks.com"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To promote collaborative efforts to create safer and more trustworthy large language models (LLMs).",
+    "audience": [
+      "Researchers",
+      "Developers",
+      "Data Scientists"
+    ],
+    "tasks": [
+      "Assess safety in language models",
+      "Benchmark safety performance"
+    ],
+    "limitations": "Performance metrics are limited to the models assessed in the study.",
+    "out_of_scope_uses": [
+      "Deployment in production without rigorous safety checks"
+    ]
+  },
+  "data": {
+    "source": "SC-Safety database",
+    "size": "4912 questions",
+    "format": "Open-ended questions",
+    "annotation": "Adversarial human-model interactions and multi-turn queries."
+  },
+  "methodology": {
+    "methods": [
+      "Adversarial Questioning",
+      "Multi-turn Interaction",
+      "Open-ended Evaluation"
+    ],
+    "metrics": [
+      "Safety Score (0-2)",
+      "Comparative performance assessment"
+    ],
+    "calculation": "Average safety scores across questions and models.",
+    "interpretation": "Scores reflect the safety levels of LLM responses under adversarial conditions.",
+    "baseline_results": "N/A",
+    "validation": "Empirical evaluation through comparative analysis of model outputs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Data Contamination",
+      "Privacy Risks",
+      "Ethical Risks",
+      "Legal Compliance Risks"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Lack of training data transparency",
+            "Uncertain data provenance"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Legal Compliance",
+          "subcategory": [
+            "Model usage rights restrictions"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential harm in generating unsafe or unethical content."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Privacy and anonymity of data subjects must be preserved during testing.",
+    "data_licensing": "Data used in the benchmark is subject to licensing agreements.",
+    "consent_procedures": "Explicit consent must be obtained from individuals represented in data, if applicable.",
+    "compliance_with_regulations": "Compliance with local regulations regarding data collection and usage."
+  }
+}

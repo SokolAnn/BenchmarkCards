@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ReasoningTrap",
+    "abbreviation": "N/A",
+    "overview": "ReasoningTrap is a diagnostic dataset designed to assess the reasoning rigidity of language models by evaluating their ability to adhere to explicit instructions in modified mathematical problems and puzzles. It includes specially curated versions of existing benchmarks modified to investigate models' responses to explicit constraints.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Education"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "AIME",
+      "MATH500"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2505.17225"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To analyze the behavior of reasoning models under explicit instructions and to facilitate research on mitigating reasoning rigidity.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Mathematical Reasoning",
+      "Logic Puzzle Solving"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated mathematical problems and puzzles adapted from AIME and MATH500 datasets.",
+    "size": "164 questions",
+    "format": "JSON",
+    "annotation": "Manually verified by experts based on mathematical validity, logical consistency, and divergence of modified problems from original solutions."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "p-pass@1",
+      "pass@1",
+      "contamination ratio"
+    ],
+    "calculation": "The p-pass@1 score is determined by evaluating whether the model's outputs align with the conditions stated in the modified questions.",
+    "interpretation": "A high p-pass@1 score indicates that the model adheres to user instructions without defaulting to familiar reasoning patterns.",
+    "baseline_results": "N/A",
+    "validation": "Each question was verified by human annotators for compliance with validation criteria."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Text2FaceGAN: Face Generation from Fine Grained Textual Descriptions",
+    "abbreviation": "N/A",
+    "overview": "We extend the problem to the less addressed domain of face generation from fine-grained textual descriptions of face. Since current datasets for the task are either very small or do not contain captions, we generate captions for images in the CelebA dataset by creating an algorithm to automatically convert a list of attributes to a set of captions. We model the problem of text to face generation as learning the conditional distribution of faces (conditioned on text) in same latent space and utilize a conditional GAN (DC-GAN with GAN-CLS loss) for learning conditional multi-modality.",
+    "data_type": "image-caption pairs",
+    "domains": [
+      "Computer Vision",
+      "Natural Language Processing"
+    ],
+    "languages": [],
+    "similar_benchmarks": [
+      "Face2Text",
+      "CelebA",
+      "Oxford-102 Flowers",
+      "Caltech-UCSD Birds",
+      "MS COCO"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Create captions for the CelebA dataset to facilitate face generation from textual descriptions; propose a GAN model to synthesize faces from fine-grained facial descriptions; evaluate the GAN and demonstrate why inception score is not a good metric for face datasets.",
+    "audience": [
+      "Research community",
+      "Forensics practitioners",
+      "Image editing developers"
+    ],
+    "tasks": [
+      "Image Synthesis from Text",
+      "Face Generation"
+    ],
+    "limitations": "Captions are created by algorithmically converting attribute lists and many images have only a subset of attributes so creating all six sentences is not always possible (caption length can vary widely). GAN training instability and variable caption length make the problem more difficult. The paper also demonstrates that the inception score is not a good metric for evaluating face generation from text.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "CelebA dataset with captions automatically generated from the attribute lists provided in CelebA using the algorithm described in the paper.",
+    "size": "10,000 images used for experiments (7,500 training images and 2,500 testing images)",
+    "format": "N/A",
+    "annotation": "Automatically generated captions from CelebA attribute lists using the paper's caption-generation algorithm (six groups of facial attributes concatenated into sentences)."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics (Inception Score)",
+      "Qualitative visual inspection"
+    ],
+    "metrics": [
+      "Inception Score"
+    ],
+    "calculation": "Inception Score computed by classifying generated images using InceptionV3 (fine-tuned on CelebA identities) to obtain p(y|x) and p(y), then computing Ex[KL(p(y|x) || p(y))].",
+    "interpretation": "The paper shows that inception score is not a good metric for face datasets because identities/classes based on attributes have high interclass similarity; low and high-variance inception scores can result from randomness in class assignments conditioned on captions and do not reliably reflect semantic similarity between captions and generated faces.",
+    "baseline_results": "Model achieved an Inception Score of 1.4 \u0000.7 over 5 iterations on 10,000 CelebA images (7,500 train, 2,500 test).",
+    "validation": "Validation via Inception Score calculated over 5 iterations and qualitative visual inspection. During evaluation the number of captions per class was kept uniform to avoid class-distribution bias."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

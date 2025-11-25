@@ -1,0 +1,82 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Assessing the Value of Visual Input: A Benchmark of Multimodal Large Language Models for Robotic Path Planning",
+    "abbreviation": "N/A",
+    "overview": "This paper assesses visual input’s utility for multimodal LLMs in robotic path planning via a comprehensive benchmark, evaluating 15 multimodal LLMs on generating valid and optimal paths in 2D grid environments.",
+    "data_type": "grid-based path generation scenarios",
+    "domains": [
+      "Robotics"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "PPNL",
+      "EmbodiedBench"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2507.12391"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To investigate the utility and current limitations of leveraging visual input alongside text for spatial planning tasks performed by contemporary multimodal LLMs.",
+    "audience": [
+      "ML Researchers",
+      "Robotics Engineers"
+    ],
+    "tasks": [
+      "Path Planning"
+    ],
+    "limitations": "The performance significantly degrades on larger grids, highlighting a scalability challenge.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Procedurally generated grid problems with varying sizes (e.g., 8x8, 20x20) and bomb densities.",
+    "size": "20 pre-generated grid problems per grid size",
+    "format": "JSON",
+    "annotation": "Generated paths validated against ground truth with specified constraints."
+  },
+  "methodology": {
+    "methods": [
+      "Quantitative benchmarking approach",
+      "Comparative evaluation of multimodal LLMs"
+    ],
+    "metrics": [
+      "Success Rate",
+      "Optimality Rate",
+      "Average Path Length Ratio",
+      "Average Suboptimality Gap"
+    ],
+    "calculation": "Metrics calculated based on the number of valid trials and optimal paths using pre-defined formulas.",
+    "interpretation": "High Success Rate indicates the effectiveness of the model in generating valid paths.",
+    "baseline_results": null,
+    "validation": "Results validated against ground truth for correctness and adherence to constraints."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": []
+        },
+        {
+          "category": "Robustness",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

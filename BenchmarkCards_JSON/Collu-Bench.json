@@ -1,0 +1,80 @@
+{
+  "benchmark_details": {
+    "name": "Collu-Bench",
+    "overview": "A benchmark for predicting code hallucinations of LLMs across code generation (CG) and automated program repair (APR) tasks.",
+    "data_type": "Code hallucination instances",
+    "domains": [
+      "Code Generation",
+      "Automated Program Repair"
+    ],
+    "languages": null,
+    "similar_benchmarks": [
+      "TruthfulQA",
+      "FELM",
+      "HaluEval",
+      "HalluCode",
+      "CodeHalu"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/lt-asset/collu-bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate and analyze code hallucinations in LLMs.",
+    "audience": [
+      "Researchers",
+      "Improvement of LLMs' trustworthiness",
+      "Developers in software engineering"
+    ],
+    "tasks": [
+      "Code generation",
+      "Automated program repair",
+      "Hallucination localization and prediction"
+    ],
+    "limitations": "The errors in the target hallucination token index due to automated pipeline challenges.",
+    "out_of_scope_uses": null
+  },
+  "data": {
+    "source": "Five datasets: MBPP, HumanEval, HumanEval-Java, Defects4J, SWE-bench",
+    "size": "13,234 code hallucination instances",
+    "format": "N/A",
+    "annotation": "Includes features such as per-step log probabilities, token types, and execution feedback"
+  },
+  "methodology": {
+    "methods": [
+      "Traditional machine learning (e.g., random forest)",
+      "Neural networks (e.g., LSTM)"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy calculated based on hallucination localization predictions",
+    "interpretation": "Results highlight the complex nature of predicting hallucinations with achieved accuracies ranging from 22.03% to 33.15%.",
+    "baseline_results": "N/A",
+    "validation": "Evaluated through cross-validation with multiple setups (All-in-one, One-per-dataset, One-per-LLM)."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Hallucination risk in generated code",
+      "Potential security vulnerabilities"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": "Incorrect and vulnerable code leading to significant financial loss."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

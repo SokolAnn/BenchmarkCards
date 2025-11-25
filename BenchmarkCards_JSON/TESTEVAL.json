@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TESTEVAL",
+    "abbreviation": "N/A",
+    "overview": "TESTEVAL is a benchmark for evaluating large language models' test case generation capabilities focused on Python programs, involving three distinct tasks: overall coverage, targeted line/branch coverage, and targeted path coverage.",
+    "data_type": "Python programs",
+    "domains": [
+      "Software Engineering"
+    ],
+    "languages": [
+      "Python"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/LLM4SoftwareTesting/TestEval"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the capabilities of large language models in generating effective test cases for Python programs.",
+    "audience": [
+      "ML Researchers",
+      "Software Developers",
+      "Testing Engineers"
+    ],
+    "tasks": [
+      "Test Case Generation",
+      "Overall Coverage Evaluation",
+      "Targeted Line Coverage",
+      "Targeted Branch Coverage",
+      "Targeted Path Coverage"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected 210 Python programs from LeetCode, focusing on programs with adequate complexity.",
+    "size": "210 programs",
+    "format": "N/A",
+    "annotation": "Programs are manually filtered and selected based on their cyclomatic complexity and properties."
+  },
+  "methodology": {
+    "methods": [
+      "Evaluation of model-generated test cases",
+      "Syntactic correctness check",
+      "Execution correctness check",
+      "Assertion correctness check"
+    ],
+    "metrics": [
+      "Overall coverage",
+      "Targeted line coverage",
+      "Branch coverage",
+      "Path coverage"
+    ],
+    "calculation": "Metrics are calculated based on the proportion of lines/branches covered by generated test cases.",
+    "interpretation": "High scores indicate effective test case generation capability while lower scores suggest areas for improvement in LLM logic comprehension.",
+    "baseline_results": "N/A",
+    "validation": "Extensive experiments involving 17 different LLMs evaluating on the TESTEVAL benchmark."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Data collected from GitHub repository licensed under MIT.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

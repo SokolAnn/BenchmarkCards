@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "StaQC (Stack Overflow Question-Code pairs)",
+    "abbreviation": "StaQC",
+    "overview": "Presents StaQC, a systematically mined dataset of question-code pairs from Stack Overflow, and a framework (including a Bi-View Hierarchical Neural Network) to predict whether a code snippet is a standalone solution. StaQC contains approximately 147,546 Python and 119,519 SQL question-code pairs automatically mined from Stack Overflow and is intended to support tasks that map between natural language and programming language.",
+    "data_type": "question-code pairs (natural language question titles and programming code snippets)",
+    "domains": [
+      "Natural Language Processing",
+      "Software Engineering"
+    ],
+    "languages": null,
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/LittleYUYU/StackOverflow-Question-Code-Dataset",
+      "https://doi.org/10.1145/3178876.3186081",
+      "https://arxiv.org/abs/1803.09371"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To systematically mine large-scale, high-quality question-code pairs from Stack Overflow (focusing on \"how-to-do-it\" questions) with high precision and recall to support data-hungry models that associate natural language with programming language.",
+    "audience": [
+      "Machine Learning Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Code Retrieval",
+      "Code Generation",
+      "Code Annotation",
+      "Question-Code Pairing"
+    ],
+    "limitations": "Focuses only on \"how-to-do-it\" questions; considers only whether a code snippet is a standalone solution (binary label) and does not merge multi-step solution snippets; currently contains only Python and SQL question-code pairs.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Automatically mined from Stack Overflow accepted answer posts corresponding to \"how-to-do-it\" questions using the proposed framework (BiV-HNN and combined model). For accepted answer posts that contain exactly one code snippet, the question title was paired with that snippet as in prior work.",
+    "size": "147,546 Python question-code pairs; 119,519 SQL question-code pairs",
+    "format": "N/A",
+    "annotation": "For model development, four undergraduate annotators labeled code snippets as standalone solutions (1) or not (0); each code snippet was annotated by two annotators and the label was kept only when both agreed. Around 85% of code snippets were labeled for training/validation/testing. Average Cohen's kappa: 0.658 (Python) and 0.691 (SQL). StaQC itself was automatically mined using the trained models."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human annotation for ground truth",
+      "Model-based evaluation (training and evaluating models such as BiV-HNN and CODE-NN)"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1",
+      "Accuracy",
+      "Mean Reciprocal Rank (MRR)"
+    ],
+    "calculation": "Precision, recall, F1, and accuracy are defined in the standard binary classification way averaged over the test set. MRR is computed by ranking 50 candidate code snippets per query (one true answer plus 49 randomly selected negatives) and averaging reciprocal ranks across 20 runs as in the evaluation protocol from [21].",
+    "interpretation": "Higher Precision/Recall/F1/Accuracy indicate better performance at identifying standalone code solutions; higher MRR indicates better code retrieval performance. The authors consider >90% F1 and accuracy (for portions of the data using the combined model) as demonstrating reliable identification for large-scale mining.",
+    "baseline_results": "BiV-HNN on Python test set: Precision 0.808, Recall 0.876, F1 0.841, Accuracy 0.843. BiV-HNN on SQL test set: Precision 0.872, Recall 0.903, F1 0.888, Accuracy 0.867. Combined-model heuristic labeling: Python 69.2% coverage with F1 0.916 and Accuracy 0.911; SQL 78.7% coverage with F1 0.943 and Accuracy 0.926. Code retrieval (CODE-NN) MRR on EVAL: CODE-NN (original) 0.51 ± 0.02; CODE-NN (StaQC) 0.57 ± 0.02; CODE-NN (original + StaQC-multi) 0.54 ± 0.02.",
+    "validation": "Models were trained/validated/tested using manually annotated datasets (training/validation/testing splits given in Table 1). Model hyperparameters were selected based on validation set performance. For retrieval, DEV and EVAL sets (each ~100 QC pairs) from prior work [21] were used for model selection and final evaluation, with the described 20-run protocol."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy",
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "The paper is published under the Creative Commons Attribution 4.0 International (CC BY 4.0) license. Dataset licensing is not specified in the paper.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

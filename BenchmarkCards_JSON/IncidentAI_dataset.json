@@ -1,0 +1,76 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "IncidentAI dataset",
+    "abbreviation": "N/A",
+    "overview": "This paper introduces a new IncidentAI dataset for safety prevention, comprising three tasks: named entity recognition (NER), cause-effect extraction (CE), and information retrieval (IR), annotated by domain experts.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Healthcare"
+    ],
+    "languages": [
+      "Japanese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/Cinnamon/incident-ai-datasetwork"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a high-quality annotated dataset that can assist in the efficient analysis of incident reports using AI models.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Named Entity Recognition",
+      "Cause-Effect Extraction",
+      "Information Retrieval"
+    ],
+    "limitations": "The dataset size is quite small with 970 annotated samples for NER and CE, and 2,159 samples for IR.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Publicly available reports of high-gas incidents published in 2022 by the High-Pressure Gas Safety Institute of Japan.",
+    "size": "970 total annotated samples for NER and CE, 2,159 samples for IR",
+    "format": "N/A",
+    "annotation": "Annotated by three Japanese domain experts with at least six years of practical experience in high-pressure gas conservation."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score"
+    ],
+    "calculation": "Fleiss’ Kappa score was used for inter-annotator agreement assessment.",
+    "interpretation": "Higher F1 Scores indicate better performance in recognizing entities, causes, and effects.",
+    "baseline_results": "F1 Scores for NER tasks ranged around 87.53 for best-performing models.",
+    "validation": "Dataset was validated through expert annotation and cross-checking with high agreement scores."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "No confidential or personal information included; the data was obtained from public reports.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

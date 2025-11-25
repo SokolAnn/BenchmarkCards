@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Zhihu dataset",
+    "abbreviation": "N/A",
+    "overview": "Constructed because the KanShan-Cup dataset did not provide original texts; the authors crawled questions from Zhihu for the top 1,999 frequent topics to provide a dataset with original texts and topic labels for multi-label topic tagging research.",
+    "data_type": "text (question-topic pairs)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "KanShan-Cup dataset",
+      "Amazon Review Polarity",
+      "Amazon Review Full",
+      "AG's News",
+      "Yahoo! Answers",
+      "DBPedia"
+    ],
+    "resources": [
+      "https://biendata.com/competition/zhihu/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Provide a dataset with original Zhihu question texts and topic labels to enable analyses (e.g., visualization and case study) that were inconvenient with KanShan-Cup due to privacy-motivated text removal.",
+    "audience": [
+      "Researchers"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Multi-Label Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Crawled questions from Zhihu for the top 1,999 frequent topics (authors constructed the dataset).",
+    "size": "3,300,000 questions (3,000,000 train, 30,000 validation, 300,000 test)",
+    "format": "N/A",
+    "annotation": "Topic labels (multi-label, up to 5 topics per question)"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Model-based evaluation",
+      "Baseline comparison"
+    ],
+    "metrics": [
+      "Precision (weighted)",
+      "Recall@5",
+      "F1"
+    ],
+    "calculation": "Precision: weighted Precision = sum_{pos in {1..5}} Precision@pos / log(pos + 1) (as Eqn. 11). F1: harmonic average computed as F1 = 2 * Precision * Recall@5 / (Precision + Recall@5) (as Eqn. 12).",
+    "interpretation": "N/A",
+    "baseline_results": "On Zhihu dataset (Table 4): EXAM (Ours) — Precision 1.267, Recall@5 0.578, F1 0.397. Baselines (selected): FastText — Precision 1.235, Recall@5 0.564, F1 0.387; TextCNN — Precision 1.241, Recall@5 0.566, F1 0.389; Word-TextRNN — Precision 1.240, Recall@5 0.566, F1 0.389.",
+    "validation": "30,000-sample validation set used for early stopping; test set contains 300,000 samples."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Exposing personal information"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The paper explicitly mentions user privacy and data security as reasons KanShan-Cup did not provide original texts. The Zhihu dataset was constructed by crawling Zhihu, and the paper does not describe anonymization procedures.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

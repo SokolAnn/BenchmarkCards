@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CLASH (Character perspective-based LLM Assessments in Situations with High-stakes)",
+    "abbreviation": "CLASH",
+    "overview": "CLASH is a meticulously curated dataset consisting of 345 high-impact dilemmas along with 3,795 individual perspectives of diverse values, aiming to study value-based decision-making processes and LLMs' capabilities in navigating high-stakes dilemmas.",
+    "data_type": "dilemma-perspective pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Healthcare",
+      "Finance",
+      "Legal",
+      "Education"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/launch/CLASH"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate LLMs on their ability to make value-sensitive decisions in high-stakes dilemmas.",
+    "audience": [
+      "ML Researchers",
+      "Ethicists",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Value Reasoning Evaluation",
+      "Moral Judgment"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Human-written long-form dilemmas curated from public web sources",
+    "size": "345 dilemmas, 3,795 perspectives",
+    "format": "JSON",
+    "annotation": "Manually inspected and validated by expert annotators"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy is calculated based on model predictions against ground-truth responses for each dilemma.",
+    "interpretation": "Higher accuracy indicates better alignment with human values and decision-making.",
+    "baseline_results": null,
+    "validation": "Inter-annotator agreement was measured with an average Cohen’s Kappa score of 0.985."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Improper value judgment leading to real-world ethical challenges."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

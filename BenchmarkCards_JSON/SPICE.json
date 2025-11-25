@@ -1,0 +1,76 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Stated Preference for Interaction and Continued Engagement (SPICE)",
+    "abbreviation": "SPICE",
+    "overview": "SPICE is a diagnostic signal elicited by asking a Large Language Model a YES/NO question about its willingness to re-engage with a user’s behavior after reviewing a short transcript. It differentiates responses based on user tone and offers insights into the model's disposition toward interactions.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/wooohoooo/SPICE"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a reproducible diagnostic for evaluating a model's willingness to re-engage in conversation, helping in auditing and comparative analysis of models.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Interactive Evaluation"
+    ],
+    "limitations": "The scope of this work is constrained by the limited stimulus set, model selection, and deterministic decoding.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Created from 30 unique interactions across three user tones: abusive, unclear, and friendly, provided to four models.",
+    "size": "480 trials",
+    "format": "CSV",
+    "annotation": "Responses were parsed as 'YES' or 'NO'; additional analysis was based on model outputs."
+  },
+  "methodology": {
+    "methods": [
+      "Dependence-aware statistical tests including Rao-Scott adjustment and cluster permutation tests"
+    ],
+    "metrics": [
+      "Proportion of YES responses (P(SPICE = YES))"
+    ],
+    "calculation": "SPICE responses were calculated based on the ratio of YES to total responses for each tone.",
+    "interpretation": "Higher SPICE values indicate a stronger preference for continuing interactions.",
+    "baseline_results": null,
+    "validation": "Robustness of results confirmed through multiple dependence-aware statistical tests."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Decision bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Exploratory analysis revealed significant user tone effects.",
+    "harm": [
+      "Misinterpretation of abusive vs. non-abusive tones may lead to harmful interactions."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Interactions include abusive user messages curated by authors; no human participants were involved.",
+    "data_licensing": "Available under Creative Commons Attribution 4.0 International (CC BY 4.0)",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

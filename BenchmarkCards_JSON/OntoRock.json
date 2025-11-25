@@ -1,0 +1,80 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "OntoRock",
+    "abbreviation": "N/A",
+    "overview": "OntoRock is a benchmark created for evaluating the robustness of Named Entity Recognition (NER) models using natural adversarial examples generated from the OntoNotes dataset.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://inklab.usc.edu/rockner"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To audit the robustness of named entity recognition (NER) models through adversarial examples.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Named Entity Recognition"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Combination of the OntoNotes dataset and adversarial examples generated using the RockNER method.",
+    "size": "8,262 test sentences",
+    "format": "N/A",
+    "annotation": "Utilizes existing annotated data from OntoNotes for NER tasks."
+  },
+  "methodology": {
+    "methods": [
+      "Evaluation of NER models using adversarial examples generated via RockNER.",
+      "Comparison of model performance on original vs. OntoRock dataset."
+    ],
+    "metrics": [
+      "F1 Score",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "F1 score is calculated based on matches between predicted and true entities.",
+    "interpretation": "Higher scores indicate better robustness against adversarial attacks.",
+    "baseline_results": "RoBERTa-CRF F1 score drops from 92.4% on OntoNotes to 58.5% on OntoRock.",
+    "validation": "Evaluation based on performance metrics on both original and adversarial datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": []
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

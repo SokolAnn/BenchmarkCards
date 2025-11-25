@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "EMPATHETIC DIALOGUES",
+    "abbreviation": "N/A",
+    "overview": "We introduce a new task for dialogue systems to respond to people discussing situations that cover a wide range of emotions, and EMPATHETIC DIALOGUES (ED), a novel dataset with about 25k personal dialogues grounded in emotional situations, intended as a benchmark for empathetic dialogue generation.",
+    "data_type": "text (one-on-one conversational dialogues)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "DailyDialog",
+      "SEMEVAL 2019 EmoContext challenge",
+      "ConvAI2 (second conversational intelligence challenge) "
+    ],
+    "resources": [
+      "https://parl.ai/",
+      "https://github.com/facebookresearch/EmpatheticDialogues",
+      "https://arxiv.org/abs/1811.00207"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To facilitate evaluating models' ability to produce empathetic responses and to provide a training resource to improve empathetic response generation.",
+    "audience": [
+      "Researchers",
+      "Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Dialogue Generation",
+      "Response Generation",
+      "Emotion Classification"
+    ],
+    "limitations": "Some emotion labels are very closely related and researchers could merge similar emotions to obtain coarser labels.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Crowdsourced one-on-one conversations collected via the ParlAI platform interacting with Amazon Mechanical Turk; 810 US workers; each conversation grounded in a speaker-written situation associated with an emotion label (32 emotion labels).",
+    "size": "24,850 conversations (train/validation/test split: 19,533 / 2,770 / 2,547 conversations)",
+    "format": "Distributed via the ParlAI framework dataset format and accompanying code on GitHub (downloadable through ParlAI / GitHub repository).",
+    "annotation": "Emotion labels chosen by crowdworkers from a set of 32 labels; each speaker wrote a 1-3 sentence situation description associated with the selected emotion; two workers then conducted a short 4-8 utterance conversation (speaker and listener roles)."
+  },
+  "methodology": {
+    "methods": [
+      "Retrieval-based evaluation",
+      "Generative evaluation",
+      "Automated metrics",
+      "Human evaluation (crowdsourced ratings on Amazon Mechanical Turk)"
+    ],
+    "metrics": [
+      "Precision at 1 out of 100 (P@1,100)",
+      "BLEU (BLEU-1 through BLEU-4; reported as average BLEU)",
+      "Perplexity",
+      "Human Likert ratings: Empathy/Sympathy, Relevance, Fluency (1-5 scale)"
+    ],
+    "calculation": "BLEU computed comparing model response to the gold (target) response; P@1,100 computed as precision of selecting the correct response out of 100 candidates (the actual response included among candidates for this metric); Perplexity computed on the gold response for generative models; human ratings collected on a 1-5 Likert scale for Empathy, Relevance, and Fluency with at least 100 ratings per model.",
+    "interpretation": "Human evaluation is emphasized as automated metrics do not always correlate with human judgments; higher human Empathy scores indicate more empathetic responses. Fine-tuning on ED or using ED candidates tends to increase human-rated empathy.",
+    "baseline_results": "Human-rated baseline (Table 2): Retrieval Pretrained (Reddit candidates) Empathy 2.82 ±0.12, Relevance 3.03 ±0.13, Fluency 4.14 ±0.10. Fine-Tuned on ED (Retrieval) Empathy 3.76 ±0.11, Relevance 3.76 ±0.12, Fluency 4.37 ±0.09. Generative Fine-Tuned Empathy 3.25 ±0.12. Automated example: Pretrained generative AVG BLEU ~4.26 and Perplexity 27.96 (Table 1).",
+    "validation": "Data split into ~80% train / 10% validation / 10% test (19,533 / 2,770 / 2,547). Models selected based on lowest validation loss. Human evaluation collected via MTurk with at least 100 ratings per model; some manual quality checks of worker submissions were performed."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Value Alignment"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Value Alignment",
+          "subcategory": [
+            "Toxic output"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Aggressive or callous responses / toxic output from models trained on spontaneous internet conversation data"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CodeFlowBench",
+    "abbreviation": "N/A",
+    "overview": "CodeFlowBench is the first benchmark designed to comprehensively evaluate LLMs’ ability to perform codeflow – implementing new functionality by reusing existing functions over multiple turns. It comprises 5,258 problems from Codeforces and features a dual assessment protocol and structural metrics.",
+    "data_type": "programming problems with unit tests",
+    "domains": [
+      "Computer Science"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "HumanEval",
+      "MBPP",
+      "DevBench",
+      "SWE-Bench"
+    ],
+    "resources": [
+      "https://codeforces.com/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the multi-turn, iterative code generation capabilities for codeflow settings in LLMs.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Code Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Codeforces problem archive.",
+    "size": "5,258 problems",
+    "format": "N/A",
+    "annotation": "Automatically verified through an automated pipeline."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Pass@1",
+      "Average Pass Depth (APD)",
+      "Pass Turn (PT)"
+    ],
+    "calculation": "Metrics are calculated based on the success of code generation at specific turns and their depth complexity.",
+    "interpretation": "Higher values in metrics indicate better performance in multi-turn scenarios.",
+    "baseline_results": "Closed-source models and various configurations of open-source models were tested.",
+    "validation": "Extensive experiments were carried out on 1,000 selected problems."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

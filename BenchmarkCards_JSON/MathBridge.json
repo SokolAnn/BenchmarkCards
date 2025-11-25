@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MathBridge",
+    "abbreviation": "N/A",
+    "overview": "MathBridge is the first extensive dataset for translating mathematical spoken sentences into LaTeX formulas, comprising approximately 23 million LaTeX formulas paired with their corresponding mathematical spoken sentences.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing",
+      "Education"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "N/A"
+    ],
+    "resources": [
+      "https://github.com/MathBridge"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To facilitate the conversion of mathematical spoken expressions into LaTeX format for improved accessibility and comprehension in educational contexts.",
+    "audience": [
+      "ML Researchers",
+      "Education Technologists",
+      "Content Creators"
+    ],
+    "tasks": [
+      "Text-to-LaTeX Translation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated from pre-prints and articles on arXiv in 2023 and open-source textbooks.",
+    "size": "23 million examples",
+    "format": "N/A",
+    "annotation": "Automatically generated using language models and filtering steps."
+  },
+  "methodology": {
+    "methods": [
+      "Fine-tuning of pretrained language models"
+    ],
+    "metrics": [
+      "sacreBLEU",
+      "ROUGE",
+      "Character Error Rate (CER)",
+      "Word Error Rate (WER)"
+    ],
+    "calculation": "Metrics are calculated based on comparisons between the generated LaTeX and ground truth LaTeX outputs.",
+    "interpretation": "Increased scores indicate better translation accuracy for spoken mathematical expressions.",
+    "baseline_results": "For the T5-large model, the sacreBLEU score increased from 4.77 to 46.8 after fine-tuning with MathBridge.",
+    "validation": "Performance was evaluated through fine-tuning on the MathBridge dataset and subsequent testing on a held-out dataset."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

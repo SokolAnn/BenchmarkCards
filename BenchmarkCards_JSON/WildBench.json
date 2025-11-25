@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "WildBench",
+    "abbreviation": "N/A",
+    "overview": "WildBench is an automated evaluation framework designed to benchmark large language models (LLMs) using challenging, real-world user queries, consisting of 1,024 examples curated from human-chatbot conversation logs.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMLU",
+      "AlpacaEval",
+      "ArenaHard"
+    ],
+    "resources": [
+      "https://hf.co/spaces/allenai/WildBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a realistic, dynamic, contamination-resilient evaluation framework that accurately reflects the capabilities of LLMs.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Coding & Debugging",
+      "Creative Writing",
+      "Data Analysis",
+      "Information Seeking",
+      "Reasoning",
+      "Planning",
+      "Editing"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Sourced from the WildChat dataset, which includes one million human-chatbot conversations.",
+    "size": "1,024 examples",
+    "format": "N/A",
+    "annotation": "Curated through a multi-step process including manual review and difficulty annotation by multiple LLMs."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "WB-Score",
+      "WB-Reward"
+    ],
+    "calculation": "WB-Score evaluates each model's output individually and WB-Reward uses pairwise comparisons between model outputs.",
+    "interpretation": "Scores closer to 10 indicate a better performance, while scores below 5 indicate various levels of issues with the response.",
+    "baseline_results": "Three baseline models (GPT-4-Turbo, Claude-3-Haiku, Llama-2-70B-chat) are used for comprehensive evaluation.",
+    "validation": "The evaluation process includes structured checklists to ensure consistent and reliable judgments."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Privacy",
+      "Robustness",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Released under AI2’s ImpACT license.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

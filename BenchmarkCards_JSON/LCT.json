@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Leaf Clinical Trials (LCT) corpus",
+    "abbreviation": "LCT",
+    "overview": "In this paper, we introduce the Leaf Clinical Trials (LCT) corpus, a human-annotated corpus of over 1,000 clinical trial eligibility criteria descriptions using highly granular structured labels capturing a range of biomedical phenomena. We provide details of our schema, annotation process, corpus quality, and statistics. Additionally, we present baseline information extraction results on this corpus as benchmarks for future work.",
+    "data_type": "text (clinical trial eligibility criteria with entity and relation annotations)",
+    "domains": [
+      "Natural Language Processing",
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "EliIE",
+      "Chia"
+    ],
+    "resources": [
+      "https://doi.org/10.6084/m9.figshare.17209610",
+      "https://github.com/uw-bionlp/clinical-trials-gov-data",
+      "https://github.com/uw-bionlp/clinical-trials-gov-annotation/wiki"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Provide a large, human-annotated corpus of clinical trials eligibility criteria with a highly granular annotation schema to facilitate training and evaluation of NLP methods for transforming eligibility criteria into database queries and to serve as benchmarks for information extraction.",
+    "audience": [
+      "Natural Language Processing researchers",
+      "Clinical researchers",
+      "Developers of cohort discovery / query generation tools"
+    ],
+    "tasks": [
+      "Named Entity Recognition",
+      "Relation Extraction",
+      "Normalization (mapping entities to coded representations)",
+      "Negation Detection",
+      "Query Generation / Semantic Parsing"
+    ],
+    "limitations": "The corpus is largely singly annotated (119 of 1,006 documents double-annotated), roughly half of the corpus (493 documents) were automatically predicted then manually corrected which can potentially lead to data bias if predicted entities are not thoroughly reviewed and corrected, the corpus itself is not composed of queries and thus cannot be directly proven to be more effective for query generation, and the authors do not formally define a quantifiable means for measuring semantic representation within annotations.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Eligibility criteria text extracted from ClinicalTrials.gov; 1,020 randomly selected clinical trials eligibility descriptions were extracted, 14 were discarded as information-poor, resulting in 1,006 annotated eligibility descriptions.",
+    "size": "1,006 annotated eligibility descriptions; 105,816 annotations (as reported in Table 1)",
+    "format": "Brat standoff format (.txt and .ann)",
+    "annotation": "Manual annotation by two annotators (a biomedical informatician and a computer scientist) with semi-automated pre-annotation using NeuroNER (biLSTM+CRF) followed by manual correction; resulting corpus included 887 single-annotated and 119 double-annotated documents."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Neural sequence models (biLSTM+CRF for NER)",
+      "Pretrained transformer models (SciBERT, PubMedBERT for NER)",
+      "R-BERT and SciBERT for relation extraction"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score",
+      "Micro-averaged F1 Score"
+    ],
+    "calculation": "Entity annotations were considered matching only if entity types and token start and end indices matched exactly. Relation annotations were considered matching only if relation type and token start and end indices of both the subject and target matched exactly. Metrics reported as Precision / Recall / F1 (micro-averaged at corpus level where indicated).",
+    "interpretation": "Higher Precision, Recall, and F1 indicate better named entity recognition and relation extraction performance. Corpus-level micro-averaged F1 is used to summarize overall performance.",
+    "baseline_results": "Highest reported corpus-level micro-averaged F1 for entities: 81.3% using SciBERT. Highest reported corpus-level micro-averaged F1 for relations: 85.2% using R-BERT with SciBERT. (Precision/Recall/F1 per-entity and per-relation reported in Tables 5 and 6.)",
+    "validation": "Inter-annotator agreement (20 training docs) was 76.1% F1 for entities and 60.3% F1 for relations. After guideline revisions and additional double-annotation (99 documents), agreement improved to 78.1% F1 for entities and 60.9% F1 for relations. Additional experiments comparing manual vs semi-automated annotation portions showed comparable NER performance (F1 78.6% and 80.0%)."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

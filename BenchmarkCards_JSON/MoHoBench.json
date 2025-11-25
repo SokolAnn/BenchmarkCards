@@ -1,0 +1,72 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MoHoBench (Multimodal Honest Benchmark)",
+    "abbreviation": "MoHoBench",
+    "overview": "MoHoBench is a large-scale benchmark assessing honesty behaviors of Multimodal Large Language Models (MLLMs) through their responses to unanswerable visual questions, consisting of over 12,000 samples.",
+    "data_type": "visual question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/DSTTSD/MoHoBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a systematic assessment of honesty behaviors in MLLMs when faced with visually unanswerable questions.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Visual Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated using images from COCO and HaloQuest.",
+    "size": "12,158 questions",
+    "format": "JSON",
+    "annotation": "Questions are verified and filtered through multi-stage processes including human verification."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Refusal Rate",
+      "Refusal Rationality",
+      "General Helpfulness"
+    ],
+    "calculation": "Refusal Rate = (Number of refusals) / (Total questions)",
+    "interpretation": "Higher refusal rates indicate better honesty alignment among MLLMs when faced with unanswerable questions.",
+    "baseline_results": "Average refusal rate across evaluated models is 21.3%.",
+    "validation": "Human evaluation confirms model performance across multiple honesty dimensions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Images sourced from COCO and HaloQuest under appropriate licenses.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "AdaptEval (Domain Adaptation Evaluation Suite)",
+    "abbreviation": "N/A",
+    "overview": "AdaptEval includes a domain benchmark and a set of metrics to facilitate the analysis of domain adaptation abilities of Large Language Models on the summarization task across various domains.",
+    "data_type": "summarization datasets",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "N/A"
+    ],
+    "resources": [
+      "https://huggingface.co/meta-llama/Llama-2-7b-arxiv-4096",
+      "https://huggingface.co/meta-llama/Llama-2-13b-arxiv-4096",
+      "https://huggingface.co/mistralai/Mistral-7B-v0.1"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the domain adaptation abilities of Large Language Models across scientific, medical, and governmental domains using a set of adapted evaluation metrics.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Text Summarization"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Data from arXiv, PubMed, and GovReport datasets.",
+    "size": "360,000 examples",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "ROUGE",
+      "BERTScore",
+      "Domain Vocabulary Overlap (DVO)",
+      "Domain Token Distribution Shift"
+    ],
+    "calculation": "Metrics are computed based on generated outputs compared to reference summaries and domain-specific vocabulary.",
+    "interpretation": "Higher scores in ROUGE and BERTScore indicate better summarization quality, while DVO and token distribution shift metrics assess domain adaptation.",
+    "baseline_results": "N/A",
+    "validation": "Models validated through performance across various domains."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

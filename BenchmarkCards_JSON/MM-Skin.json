@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MM-Skin",
+    "abbreviation": "N/A",
+    "overview": "MM-Skin is the first large-scale multimodal dermatology dataset that encompasses 3 imaging modalities, including clinical, dermoscopic, and pathological, and nearly 10k high-quality image-text pairs collected from professional textbooks. It also generates over 27k diverse, instruction-following vision question answering samples.",
+    "data_type": "image-text pairs, question-answering pairs",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://arxiv.org/abs/2505.06152"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To develop a specialized dermatology vision-language model and to provide a rich dataset that enhances visual understanding of skin diseases.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Visual Question Answering",
+      "Supervised Fine-tuning",
+      "Zero-shot Classification"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Images and textual descriptions collected from 15 dermatology textbooks.",
+    "size": "10,000 image-text pairs, 27,000 QA pairs",
+    "format": "Image-Text pairs",
+    "annotation": "Expert-written image descriptions and question-answer pairs generated using LLMs."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "BLEU Score",
+      "ROUGE-L",
+      "Accuracy",
+      "Precision"
+    ],
+    "calculation": "Metrics are calculated based on model responses and ground truth comparisons on various tasks.",
+    "interpretation": "Higher BLEU and ROUGE scores indicate better linguistic accuracy and relevance of responses.",
+    "baseline_results": "MM-Skin achieves high performance on various VQA and classification tasks.",
+    "validation": "Evaluated on multiple existing medical datasets and through qualitative assessments."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Privacy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset includes demographic attributes like age and gender to evaluate model performance across different groups.",
+    "harm": "The dataset aims to prevent misdiagnosis in skin disease evaluation."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All images are sourced from textbooks, ensuring no personal patient data is included.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

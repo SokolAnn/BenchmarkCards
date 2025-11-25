@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CORE (Code Reasoning Benchmark)",
+    "abbreviation": "CORE",
+    "overview": "CORE is a high-quality, human-verified benchmark designed to evaluate LLMs on fundamental static analysis tasks including data dependency, control dependency, and information flow across programs written in C/C++, Java, and Python, containing 12,553 task instances.",
+    "data_type": "program analysis tasks",
+    "domains": [
+      "Software Engineering"
+    ],
+    "languages": [
+      "C",
+      "C++",
+      "Java",
+      "Python"
+    ],
+    "similar_benchmarks": [
+      "SWE-Bench",
+      "SWE-Lancer"
+    ],
+    "resources": [
+      "https://corebench.github.io/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a fine-grained evaluation of LLMs’ code semantic reasoning ability by assessing core program analysis skills.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Software Engineers"
+    ],
+    "tasks": [
+      "Data Dependency",
+      "Control Dependency",
+      "Information Flow"
+    ],
+    "limitations": "Focuses on relatively short functions (within 100 LoC) to manage annotation complexity.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Drawn from CodeNet and Google Code Jam datasets.",
+    "size": "12,553 task instances",
+    "format": "N/A",
+    "annotation": "Semi-automated with substantial human effort ensuring soundness and completeness."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Metrics computed as averages across evaluated models on dependency classification, trace generation, and dependency source enumeration.",
+    "interpretation": "Higher scores indicate better model performance in recognizing dependencies and generating accurate traces.",
+    "baseline_results": "Empirical evaluation reveals significant performance variance among LLMs, with reasoning models generally outperforming non-reasoning models.",
+    "validation": "Tested for reliability with human verification of task instances."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

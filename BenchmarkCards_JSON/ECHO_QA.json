@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ECHO QA",
+    "abbreviation": "N/A",
+    "overview": "ECHO QA is a benchmark spanning scientific, factual, and commonsense knowledge aimed at testing how well large language models (LLMs) can integrate their internal parametric knowledge with external contextual knowledge.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/sitaocheng/Knowledge Interplay"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To investigate the interplay between parametric knowledge and contextual knowledge in large language models.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "LLMs struggle to fully leverage their parametric knowledge when contextual knowledge is present.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Adapted from existing datasets including ALCUNA, ConflictQA, MuSiQue, and OpenBookQA.",
+    "size": "N/A",
+    "format": "N/A",
+    "annotation": "Constructed knowledge is based on structured relationships and types designed for various reasoning scenarios."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Memorization Ratio",
+      "Unknown Ratio"
+    ],
+    "calculation": "Metrics are calculated based on the relationship between parametric knowledge and contextual knowledge, evaluating how well LLMs answered questions requiring both types of knowledge.",
+    "interpretation": "Accuracy reflects the model's correct answer rate; memorization ratio indicates how often the model recalls parametric knowledge, and unknown ratio shows the frequency of 'unknown' responses.",
+    "baseline_results": "N/A",
+    "validation": "Evaluated through human evaluations regarding the quality of constructed knowledge."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination",
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

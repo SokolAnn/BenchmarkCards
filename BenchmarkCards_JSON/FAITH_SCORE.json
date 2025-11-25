@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "name": "FAITH SCORE",
+    "overview": "FAITH SCORE is a reference-free and fine-grained evaluation metric that measures the faithfulness of the generated free-form answers from large vision-language models (LVLMs) by verifying atomic facts against input images.",
+    "data_type": "Benchmark datasets for evaluating LMS",
+    "domains": [
+      "Vision-Language Models"
+    ],
+    "languages": [
+      "N/A"
+    ],
+    "similar_benchmarks": [
+      "CHAIR",
+      "POPE",
+      "NOPE"
+    ],
+    "resources": [
+      "https://github.com/bcdnlp/FAITHSCORE"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a reliable metric for evaluating the faithfulness of LVLMs in terms of hallucinations in free-form answers.",
+    "audience": [
+      "Researchers",
+      "Practitioners in AI and machine learning"
+    ],
+    "tasks": [
+      "Evaluating hallucinations in LVLM outputs",
+      "Fine-grained analysis of generated content"
+    ],
+    "limitations": "FAITH SCORE does not address factual recall, focusing instead on factual precision.",
+    "out_of_scope_uses": [
+      "Broader evaluations beyond LVLMs",
+      "Tasks not involving visual content"
+    ]
+  },
+  "data": {
+    "source": "LLaV A-1k and MSCOCO-Cap datasets",
+    "size": "2000 images across datasets",
+    "format": "Images with corresponding answer prompts",
+    "annotation": "Descriptive sub-sentences and atomic facts extracted and verified manually for evaluation"
+  },
+  "methodology": {
+    "methods": [
+      "Descriptive Sub-sentence Identification",
+      "Atomic Fact Generation",
+      "Fact Verification using a Visual Entailment Model"
+    ],
+    "metrics": [
+      "FAITH SCORE"
+    ],
+    "calculation": "The FAITH SCORE is computed by verifying atomic facts against visual input and measuring their consistency.",
+    "interpretation": "Higher FAITH SCORE indicates better faithfulness of the generated answer to the input image.",
+    "baseline_results": null,
+    "validation": "The correlation with human judgments of faithfulness was validated through meta-evaluation."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Hallucination in generated content",
+      "Lack of model interpretability",
+      "Inability to measure factual recall"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Explainability",
+          "subcategory": [
+            "Unexplainable output",
+            "Inaccessible training data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination",
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential for misinformation and safety concerns arising from hallucinations in model outputs."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All datasets used have been anonymized and do not contain personal information.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "Adheres to current ethical standards in AI research and evaluation."
+  }
+}

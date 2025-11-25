@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Bike-Bench: A Bicycle Design Benchmark for Generative Models with Objectives and Constraints",
+    "abbreviation": "Bike-Bench",
+    "overview": "Bike-Bench is an engineering design benchmark for evaluating generative models on problems with multiple real-world objectives and constraints in bicycle design. It quantifies performance characteristics such as aerodynamics, ergonomics, structural mechanics, and human usability, and supports a variety of design generation tasks.",
+    "data_type": "tabular",
+    "domains": [
+      "Engineering Design"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://decode.mit.edu/projects/bikebench/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a benchmark for generative models in constrained multi-objective engineering design problems, specifically bicycle design.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Design Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Includes several datasets: 1.4M synthetically-generated bicycle designs, 10K human-sourced ratings of bicycle designs, and additional datasets for cyclist aerodynamics.",
+    "size": "1.4 million designs, 10,350 ratings",
+    "format": "CSV, XML, SVG, PNG",
+    "annotation": "Human ratings collected through a controlled study and synthetic data generated using a custom pipeline."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Validity",
+      "Optimality",
+      "Similarity"
+    ],
+    "calculation": "Validity is the proportion of designs satisfying constraints; optimality is calculated using hypervolume; similarity is assessed via Maximum Mean Discrepancy.",
+    "interpretation": "A model must succeed in all three metrics to demonstrate adequate design capability.",
+    "baseline_results": null,
+    "validation": "Models are validated against their ability to meet multiple objectives and constraints across various design generations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Participants provided consent for their data to be used in AI model training and evaluation.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Informed consent from participants aged 18 or older.",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "HALLU SHIFT",
+    "abbreviation": "N/A",
+    "overview": "HALLU SHIFT is a hallucination detection technique designed to analyze distribution shifts in the internal state space and token probabilities of Large Language Models (LLMs) to distinguish between hallucinated and truthful generations.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "TruthfulQA",
+      "TriviaQA",
+      "CoQA",
+      "TydiQA"
+    ],
+    "resources": [
+      "https://github.com/sharanya-dasgupta001/hallushift"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a robust mechanism for detecting hallucinations in LLM-generated text by analyzing internal state shifts and token probabilities.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Five different question-answering datasets: CoQA, TruthfulQA, TriviaQA, TydiQA-GP(English), and HaluEval.",
+    "size": "30,000 task-specific instances across multiple datasets with distributions of 10,000 examples each.",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Distribution shift analysis",
+      "Token probability features"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "AUC-ROC"
+    ],
+    "calculation": "Metrics are calculated based on the output of the hallucination score assigned using a membership assignment function.",
+    "interpretation": "Scores are interpreted as likelihoods of hallucination; lower scores indicate truthful responses while higher scores indicate hallucinations.",
+    "baseline_results": "Not applicable.",
+    "validation": "Validated across multiple datasets and compared against existing state-of-the-art methods."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

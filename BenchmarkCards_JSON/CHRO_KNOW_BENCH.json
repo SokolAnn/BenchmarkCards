@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CHRO KNOW BENCH",
+    "abbreviation": "N/A",
+    "overview": "CHRO KNOW BENCH is a benchmark dataset designed to evaluate chronologically accumulated knowledge across multiple domains and aspects of temporal knowledge, including time dependency and temporal states.",
+    "data_type": "structured knowledge relations",
+    "domains": [
+      "Natural Language Processing",
+      "Biomedical",
+      "Legal",
+      "Computer Science",
+      "Commonsense",
+      "Mathematics"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/dmis-lab/ChroKnowledge"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess the ability of large language models to maintain and accurately recall knowledge over time, considering the dynamism of knowledge across various domains.",
+    "audience": [
+      "ML Researchers",
+      "NLP Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Knowledge Evaluation",
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Various structured datasets across domains including Wikidata, Unified Medical Language System (UMLS), Code of Federal Regulations (CFR), and others.",
+    "size": "17,000+ examples",
+    "format": "Structured triples with timestamps",
+    "annotation": "Automatically generated with manual verification"
+  },
+  "methodology": {
+    "methods": [
+      "Knowledge Elicitation via Temporal Snapshots",
+      "Sampling-based Evaluation",
+      "Automated metrics for accuracy assessment"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Metrics are calculated based on the number of correctly recalled knowledge points compared to a predefined answer set.",
+    "interpretation": "Higher accuracy indicates a better ability of the model to recall and adapt to temporal knowledge.",
+    "baseline_results": null,
+    "validation": "Validation through extensive testing across different LLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SimdBench",
+    "abbreviation": "N/A",
+    "overview": "SimdBench is the first code benchmark specifically designed for SIMD-intrinsic code generation, comprising 136 carefully crafted tasks and targeting five representative SIMD intrinsics: SSE (x86 Streaming SIMD Extension), AVX (x86 Advanced Vector Extension), Neon (ARM Advanced SIMD Extension), SVE (ARM Scalable Vector Extension), and RVV (RISC-V Vector Extension).",
+    "data_type": "code generation tasks",
+    "domains": [
+      "Computer Science"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "HumanEval"
+    ],
+    "resources": [
+      "https://anonymous.4open.science/r/SimdBench-1B3F/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the capabilities of large language models in generating vectorized code with SIMD intrinsics.",
+    "audience": [
+      "ML Researchers",
+      "Developers",
+      "Compiler Developers"
+    ],
+    "tasks": [
+      "Code Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Manually crafted and modified tasks from HumanEval.",
+    "size": "136 tasks",
+    "format": "N/A",
+    "annotation": "Each task includes functional descriptions, correctness test cases, and performance evaluation."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Pass@k",
+      "Speedup",
+      "Efficient@k"
+    ],
+    "calculation": "Pass@k represents the mean probability of correctness across tasks; Speedup measures performance improvement relative to scalar implementations.",
+    "interpretation": "A high pass@k indicates better LLM performance on generating valid SIMD-intrinsic code.",
+    "baseline_results": "N/A",
+    "validation": "Tasks validated by correctness tests against canonical scalar solutions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Performance",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

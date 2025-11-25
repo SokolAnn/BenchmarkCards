@@ -1,0 +1,75 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "BoolQ (Boolean Questions)",
+    "abbreviation": "BoolQ",
+    "overview": "We build a reading comprehension dataset, BoolQ, of naturally occurring yes/no questions. Each question is paired with a paragraph from Wikipedia that an independent annotator has marked as containing the answer. The task is to take a question and passage as input, and to return “yes” or “no” as output.",
+    "data_type": "question-passage pairs (text)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [],
+    "similar_benchmarks": [
+      "Natural Questions (NQ)",
+      "CoQA",
+      "QuAC",
+      "HotPotQA",
+      "ShARC",
+      "MS Marco",
+      "MultiNLI",
+      "SNLI",
+      "SQuAD 1.1",
+      "SQuAD 2.0",
+      "RACE",
+      "QQP"
+    ],
+    "resources": [
+      "https://goo.gl/boolq",
+      "https://arxiv.org/abs/1905.10044"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To test models on their ability to answer naturally occurring yes/no questions by providing a reading comprehension dataset of such questions paired with supporting passages.",
+    "audience": [],
+    "tasks": [
+      "Question Answering",
+      "Reading Comprehension"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Questions gathered from anonymized, aggregated queries to the Google search engine heuristically filtered for yes/no queries; kept when a Wikipedia page was returned among the top five results and paired with a paragraph from that Wikipedia article selected by annotators. Combined with 3k yes/no questions from the Natural Questions training set.",
+    "size": "16,000 examples (9,400 train, 3,200 dev, 3,200 test)",
+    "format": "N/A",
+    "annotation": "Single annotator labels produced via a three-step process: (1) decide if the question is 'good' (comprehensible, unambiguous, requesting factual information) before seeing the page; (2) for good questions, find a passage within the document that contains enough information to answer the question or mark as 'not answerable'; (3) mark whether the question's answer is 'yes' or 'no'. Authors labeled 110 random examples for quality assessment and reached 90% agreement with the gold-standard labels."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation",
+      "Transfer learning experiments"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy computed as percentage of examples with correct yes/no prediction. Model results are averaged over five runs for reported experiments.",
+    "interpretation": "Higher Accuracy indicates better performance on the yes/no QA task. The paper reports a majority-baseline of ~62%, model results (best) of 80.43% accuracy, and human annotator accuracy of 90%, indicating a significant gap between models and humans.",
+    "baseline_results": "Majority baseline: 62.31% (test). Recurrent model: 67.52% (test). Recurrent + MultiNLI: 74.24% (test). Pre-trained BERT L: 76.70% (test). Pre-trained BERT L + MultiNLI: 80.43% (test). Results averaged over five runs unless otherwise noted.",
+    "validation": "Dataset split into train (9.4k), dev (3.2k), test (3.2k); questions from Natural Questions kept in train. Annotation quality assessed by three authors labeling 110 random examples achieving 90% agreement with gold-standard; model results averaged over five runs."
+  },
+  "targeted_risks": {
+    "risk_categories": [],
+    "atlas_risks": {
+      "risks": null
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Questions are gathered from anonymized, aggregated queries to the Google search engine.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

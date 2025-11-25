@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "BenchIEFL (BenchIE Full Annotation)",
+    "abbreviation": "BenchIEFL",
+    "overview": "BenchIEFL is a new Open Information Extraction (OIE) benchmark created by re-annotating the existing BenchIE dataset to correct errors and improve annotation consistency and methodology.",
+    "data_type": "extraction tuples",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "BenchIE",
+      "CaRB",
+      "WiRE57"
+    ],
+    "resources": [
+      "https://github.com/rali-udem/benchie_fl.git"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a more reliable and accurate benchmark for evaluating Open Information Extraction systems, leading to better performance assessments on downstream tasks.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Open Information Extraction",
+      "Question Answering",
+      "Knowledge Base Population"
+    ],
+    "limitations": "The benchmark lacks a sufficient size for training models and is currently only available in English.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The benchmark is created from re-annotated sentences originally from BenchIE.",
+    "size": "300 sentences",
+    "format": "JSON",
+    "annotation": "Annotations were performed manually following specific guidelines aimed at improving accuracy and consistency."
+  },
+  "methodology": {
+    "methods": [
+      "Manual evaluation",
+      "Matching function using heuristics"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "Metrics are calculated based on the new matching function which allows more flexible captures of valid extractions.",
+    "interpretation": "Higher scores indicate better alignment of extractions with the annotated tuples while considering the validation of tuples across various defined heuristics.",
+    "baseline_results": "Comparison results from state-of-the-art extractors such as ReVerb and MinIE, with BenchIEFL showing more accurate reflections of performance.",
+    "validation": "Validation procedures included assessments from multiple expert annotators to ensure adherence to the benchmark guidelines."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "There is a lack of demographic breakdown in the dataset.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

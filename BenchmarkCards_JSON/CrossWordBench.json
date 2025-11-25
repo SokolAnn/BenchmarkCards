@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CrossWordBench",
+    "abbreviation": "N/A",
+    "overview": "CrossWordBench is a benchmark designed to evaluate the reasoning capabilities of both LLMs and LVLMs through the medium of crossword puzzles, integrating text-based clues and visual constraints. It allows for the dynamic generation of puzzles in text and image formats and supports adjustable difficulty levels and various evaluation strategies.",
+    "data_type": "multimodal",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/SeanLeng1/CrossWordBench",
+      "https://huggingface.co/datasets/HINT-lab/CrossWordBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To effectively evaluate the multimodal reasoning capabilities of LLMs and LVLMs using crossword puzzles that integrate both textual and visual constraints.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Question Answering",
+      "Reasoning Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Puzzles generated from a controllable framework leveraging multilingual word-clue pairs, dictionary definitions, and adapted question-answer pairs from existing benchmarks like CommonsenseQA.",
+    "size": "200 puzzles",
+    "format": "JSON, Image",
+    "annotation": "Automatically generated through a pipeline that controls puzzle difficulty and structural integrity."
+  },
+  "methodology": {
+    "methods": [
+      "Zero-shot Chain-of-Thought (CoT) prompting",
+      "Interactive evaluation mode",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Word Coverage Rate (WCR)",
+      "Letter Coverage Rate (LCR)",
+      "Intersection Consistency Rate (ICR)"
+    ],
+    "calculation": "WCR measures word-level accuracy by calculating the percentage of correctly solved words; LCR evaluates letter-level accuracy; ICR measures the internal consistency of answers at intersections.",
+    "interpretation": "Higher values in WCR, LCR, and ICR indicate better performance in solving crossword puzzles while adhering to structural constraints.",
+    "baseline_results": "Includes performance comparisons across 20 evaluated models, highlighting reasoning models like o3-mini and DeepSeek-R1.",
+    "validation": "Extensive evaluation across multiple model architectures, comparing performance on 7x7 and 14x14 grids."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": []
+        },
+        {
+          "category": "Robustness",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Current models exhibit performance disparities, particularly in grid-parsing accuracy affecting LVLMs."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

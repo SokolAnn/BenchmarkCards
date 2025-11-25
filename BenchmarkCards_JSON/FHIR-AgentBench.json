@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FHIR-AgentBench",
+    "abbreviation": "N/A",
+    "overview": "FHIR-AgentBench is a benchmark that grounds 2,931 real-world clinical questions in the HL7 FHIR standard, systematically evaluating agentic frameworks in retrieving data and reasoning over it.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MIMICSQL",
+      "EHRSQL",
+      "ICUDATA",
+      "MedAgentBench"
+    ],
+    "resources": [
+      "https://github.com/user/repo"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a realistic benchmark for evaluating LLM agents in clinical EHR question answering.",
+    "audience": [
+      "ML Researchers",
+      "Healthcare Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "MIMIC-IV-FHIR patient records and questions from EHRSQL.",
+    "size": "2,931 question–context–FHIR resource–answer pairs",
+    "format": "JSON",
+    "annotation": "Clinician-sourced questions."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "Answer Correctness"
+    ],
+    "calculation": "Precision and recall based on the intersection of predicted and true resources. Answer correctness determined by comparison with ground-truth answers.",
+    "interpretation": "Higher precision and recall indicate effective retrieval. Answer correctness reflects the agent's ability to answer clinical questions accurately.",
+    "baseline_results": "N/A",
+    "validation": "Systematic evaluation across different agent architectures."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Open Data Commons Open Database License v1.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

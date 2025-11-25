@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Reddit Authorship Profiling Corpus",
+    "abbreviation": "N/A",
+    "overview": "This paper introduces a corpus of short texts in the Romanian language, annotated with certain author characteristic keywords, based on posts extracted from over 100 Romanian subreddits, aimed at advancing authorship profiling technology for Romanian.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Romanian"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/roship-profiling"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To advance the capabilities of authorship profiling technology for the Romanian language.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Linguists"
+    ],
+    "tasks": [
+      "Authorship Profiling"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Posts extracted from 100+ Romanian subreddits using the Reddit API.",
+    "size": "29,317 examples",
+    "format": "CSV",
+    "annotation": "Manual annotation with keywords corresponding to author characteristics."
+  },
+  "methodology": {
+    "methods": [
+      "Fine-tuning of Large Language Models",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Intersection over Union (IoU)"
+    ],
+    "calculation": "Accuracy is calculated based on exact match of generated keywords against expected keywords.",
+    "interpretation": "Higher accuracy and IoU indicate better performance of the authorship profiling model.",
+    "baseline_results": "Accuracy of 78.5% on the test split.",
+    "validation": "Dataset was split into training (95%), evaluation (5%), and test (5%) sets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

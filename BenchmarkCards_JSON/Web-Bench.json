@@ -1,0 +1,98 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Web-Bench",
+    "abbreviation": "N/A",
+    "overview": "Web-Bench is a new benchmark containing 50 projects, each consisting of 20 tasks with sequential dependencies, simulating real-world human development workflows in web development using Web Standards and Web Frameworks.",
+    "data_type": "tasks with sequential dependencies",
+    "domains": [
+      "Natural Language Processing",
+      "Software Engineering"
+    ],
+    "languages": [
+      "JavaScript",
+      "TypeScript"
+    ],
+    "similar_benchmarks": [
+      "HumanEval",
+      "MBPP",
+      "SWE-Bench",
+      "RepoBench"
+    ],
+    "resources": [
+      "https://github.com/bytedance/web-bench",
+      "https://huggingface.co/datasets/bytedance-research/Web-Bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a more realistic evaluation of large language models in coding by simulating the complexities of real-world software development.",
+    "audience": [
+      "ML Researchers",
+      "Software Engineers",
+      "LLM Developers"
+    ],
+    "tasks": [
+      "Code Generation",
+      "Software Development"
+    ],
+    "limitations": "The current version of Web-Bench is limited to covering core standards and frameworks, and does not yet include all possible web technologies due to workload constraints.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Dynamic tasks based on real-world software engineering domains",
+    "size": "50 projects, each with 20 tasks",
+    "format": "JSON, YAML",
+    "annotation": "Automatically generated with expert reference"
+  },
+  "methodology": {
+    "methods": [
+      "End-to-end testing",
+      "Automated evaluation metrics"
+    ],
+    "metrics": [
+      "Pass@1",
+      "Pass@2"
+    ],
+    "calculation": "Pass@1 is the percentage of tasks passing all end-to-end tests on the first attempt; Pass@2 includes retries.",
+    "interpretation": "Higher Pass@1 and Pass@2 scores indicate better performance of LLMs in code generation tasks.",
+    "baseline_results": "Claude 3.7 Sonnet achieved a Pass@1 of 25.1% on the Web-Bench.",
+    "validation": "Validated through multiple passes and comparison with existing benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

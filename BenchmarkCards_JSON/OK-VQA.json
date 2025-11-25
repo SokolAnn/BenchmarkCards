@@ -1,0 +1,70 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "OK-VQA (Object Retrieval for Visual Question Answering with Outside Knowledge)",
+    "abbreviation": "OK-VQA",
+    "overview": "This paper introduces the task of object retrieval for visual question answering with outside knowledge, proposing a multi-scale group collaborative embedding learning (MS-GCEL) method for general object retrieval. The study includes the establishment of an OK-VQA evaluation benchmark.",
+    "data_type": "image-object pairs",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://arxiv.org/abs/2403.10798"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enhance the precision and relevance of visual question answering by improving object-level retrieval methods.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Object Retrieval",
+      "Visual Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Images extracted from COCO 2017, VOC 2007, BelgaLogos, Visual Genome, and LVIS datasets.",
+    "size": "121,298 training images, 9,904 validation images, 108,077 Generalization evaluation images.",
+    "format": "N/A",
+    "annotation": "Objects extracted using the segment anything model (SAM)."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Recall@1",
+      "Mean Average Precision (mAP)"
+    ],
+    "calculation": "Recall@1 measures the accuracy of the top 1 retrieved object, while mAP is computed based on ranking indices of matching objects.",
+    "interpretation": "Higher Recall@1 and mAP indicate better performance in object retrieval and question answering tasks.",
+    "baseline_results": "STML (previous method) performance serves as a baseline for evaluation against the proposed MS-GCEL method.",
+    "validation": "Cross-validation performed on various datasets to assess the generalization capability of the MS-GCEL model."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

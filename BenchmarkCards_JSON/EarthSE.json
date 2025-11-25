@@ -1,0 +1,99 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "EarthSE (Earth Scientific Exploration)",
+    "abbreviation": "EarthSE",
+    "overview": "EarthSE is a comprehensive benchmark for evaluating the capabilities of LLMs in Earth sciences, constructed from 100,000 research papers. It includes two QA datasets, Earth-Iron and Earth-Silver, and an open-ended dialogue dataset, Earth-Gold, covering fundamental and advanced evaluation tasks across five Earth spheres.",
+    "data_type": "question-answering pairs, open-ended dialogues",
+    "domains": [
+      "Natural Language Processing",
+      "Earth Sciences"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ScienceQA",
+      "SciBench",
+      "OceanBench"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/earthse"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To systematically evaluate the performance of LLMs in Earth science tasks, particularly their capabilities in scientific exploration and reasoning.",
+    "audience": [
+      "ML Researchers",
+      "Earth Science Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Open-ended Dialogue"
+    ],
+    "limitations": "No integration of the 11 tasks into a complex task chain.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated from 100,000 Earth science academic papers.",
+    "size": "100,000 papers, 4,133 QA questions in Earth-Iron, and multiple dialogue exchanges in Earth-Gold.",
+    "format": "JSON, structured question-answer pairs, open-ended dialogue format.",
+    "annotation": "Automated generation with human verification."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Win Rate",
+      "Semantic Similarity",
+      "Retention Rate",
+      "Diversity"
+    ],
+    "calculation": "Metrics like win rate are computed by comparing model outputs with reference answers based on relevance, scientific rigor, and specificity.",
+    "interpretation": "Higher scores in retention and diversity indicate better performance and scientific exploration capabilities.",
+    "baseline_results": "Models underperformed significantly in complex Earth science reasoning tasks.",
+    "validation": "Rigorously evaluated by domain experts and through automated cleaning protocols."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

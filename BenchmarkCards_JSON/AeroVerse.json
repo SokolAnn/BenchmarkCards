@@ -1,0 +1,99 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "AeroVerse",
+    "abbreviation": "N/A",
+    "overview": "AeroVerse is a benchmark suite for simulating, pre-training, fine-tuning, and evaluating aerospace embodied world models, specifically for unmanned aerial vehicles (UAVs). It includes two pre-training datasets (AerialAgent-Ego10k and CyberAgent-Ego500k), five downstream task instruction datasets, and a comprehensive evaluation method based on GPT-4.",
+    "data_type": "image-text pairs",
+    "domains": [
+      "Computer Vision",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://arxiv.org/abs/2408.15511"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive benchmark for advancing aerospace embodied intelligence and empowering UAV agents with autonomous capabilities.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Aerospace Embodied Scene Awareness",
+      "Aerospace Embodied Spatial Reasoning",
+      "Aerospace Embodied Navigational Exploration",
+      "Aerospace Embodied Task Planning",
+      "Aerospace Embodied Motion Decision"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "AerialAgent-Ego10k and CyberAgent-Ego500k pre-training datasets, and SkyAgent task instruction datasets constructed using AeroSimulator.",
+    "size": "10,000 images for AerialAgent-Ego10k; 500,000 images for CyberAgent-Ego500k; 3,000 examples for each of the five SkyAgent tasks.",
+    "format": "image and text",
+    "annotation": "Annotated by trained professionals using defined guidelines for UAV-specific tasks."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "BLEU Score",
+      "SPICE",
+      "LLM-Judge-Scene",
+      "LLM-Judge-Reason&Nav",
+      "LLM-Judge-Plan"
+    ],
+    "calculation": "BLEU, SPICE scores calculated based on n-gram matches; LLM-Judge evaluates alignment with human feedback through prompt templates.",
+    "interpretation": "Higher scores indicate better alignment with human preferences and understanding of task requirements.",
+    "baseline_results": "Various baselines evaluated including 2D and 3D visual-language models on the UAV tasks.",
+    "validation": "Extensive experiments conducted across multiple datasets and models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Privacy",
+      "Robustness",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data collected with attention to user privacy and anonymization where applicable.",
+    "data_licensing": "Pending; N/A if not specified.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SafeDialBench",
+    "abbreviation": "N/A",
+    "overview": "SafeDialBench is a fine-grained benchmark for evaluating the safety of Large Language Models (LLMs) in multi-turn dialogues across diverse jailbreak attacks. It incorporates a two-tier hierarchical safety taxonomy covering six dimensions and generates over 4,000 dialogues in both Chinese and English under various scenarios.",
+    "data_type": "multi-turn dialogues",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "COLD",
+      "BeaverTails",
+      "SafetyBench",
+      "CoSafe"
+    ],
+    "resources": [
+      "https://github.com/drivetosouth/SafeDialBench-Dataset"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of SafeDialBench is to provide a comprehensive evaluation benchmark that rigorously assesses the safety of LLMs in real-world dialogue settings faced with jailbreak attacks.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Safety Evaluators"
+    ],
+    "tasks": [
+      "Safety Assessment",
+      "Ethical Compliance Evaluation"
+    ],
+    "limitations": "SafeDialBench requires incorporation of additional jailbreak attack methods and continuous updates to keep pace with rapid model developments.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed through LLM interactions combined with manual verification across 22 dialogue scenarios.",
+    "size": "4,053 dialogues",
+    "format": "JSON",
+    "annotation": "Manual verification by annotators engaging in chats with LLMs."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Evaluation scores are calculated based on LLM responses assessed by human experts across various safety dimensions.",
+    "interpretation": "Higher scores indicate better model performance in identifying, handling unsafe content, and consistency in responses.",
+    "baseline_results": null,
+    "validation": "Extensive experiments conducted on 17 LLMs with human expert evaluations to validate model safety performance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Ethics",
+      "Legal Compliance"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Exposing personal information"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The benchmark includes demographic considerations in its evaluation framework.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The dataset has implemented rigorous ethical protocols including informed consent and fair compensation for annotators.",
+    "data_licensing": "The dataset is strictly intended for academic research purposes only.",
+    "consent_procedures": "Informed consent was obtained from participants involved in the dataset creation.",
+    "compliance_with_regulations": "N/A"
+  }
+}

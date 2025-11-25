@@ -1,0 +1,99 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "GeoLaux (Geometry Benchmark for Evaluating MLLMs’ Geometry Performance)",
+    "abbreviation": "GeoLaux",
+    "overview": "GeoLaux is a benchmark for evaluating Multimodal Large Language Models (MLLMs) on long-step geometry problems specifically addressing the auxiliary line construction. It contains 2,186 geometry problems with an average of 6.51 reasoning steps, facilitating fine-grained evaluation of MLLM reasoning.",
+    "data_type": "geometry problems",
+    "domains": [
+      "Natural Language Processing",
+      "Mathematics"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "Geometry3K",
+      "GeoQA+",
+      "UniGeo",
+      "PGDP9K",
+      "GPSM4K",
+      "GeoMath-QA",
+      "GeoEval"
+    ],
+    "resources": [
+      "https://github.com/Candice-yu/GeoLaux"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation benchmark for MLLMs in solving long-step geometry problems requiring auxiliary lines.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Educational Institutions"
+    ],
+    "tasks": [
+      "Geometry Problem Solving"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from Zhongkao mathematics papers across 34 provincial-level regions in China",
+    "size": "2,186 problems",
+    "format": "N/A",
+    "annotation": "Manually curated solutions and reasoning steps with auxiliary line constructions"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Answer Correctness Score (ACS)",
+      "Process Correctness Score (PCS)",
+      "Process Quality Score (PQS)"
+    ],
+    "calculation": "ACS evaluates final answer accuracy, PCS checks correctness of the entire solution process including errors, and PQS assesses the quality of reasoning steps evaluated via a weighted scoring system.",
+    "interpretation": "Higher scores indicate better performance in answering and reasoning accuracy of MLLMs on complex geometry problems.",
+    "baseline_results": "Performance results of 13 leading MLLMs were evaluated, with distinct findings based on step lengths and problem types.",
+    "validation": "The benchmark's effectiveness was validated through extensive testing across various MLLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Transparency"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Lack of training data transparency"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

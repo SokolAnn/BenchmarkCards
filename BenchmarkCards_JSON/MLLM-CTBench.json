@@ -1,0 +1,106 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MLLM-CTBench",
+    "abbreviation": "MLLM-CTBench",
+    "overview": "MLLM-CTBench is a comprehensive benchmark designed for evaluating continual instruction tuning of multimodal large language models (MLLMs). It curates a dataset consisting of seven tasks across six diverse domains to assess continual learning ability.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision",
+      "Medicine",
+      "Economics",
+      "Arts",
+      "Science",
+      "Mathematics"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "EMT",
+      "CITB",
+      "CoIN"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/yueluoshuangtian/MLLM-CITBench",
+      "https://anonymous.4open.science/r/MLLM-CTBench-5E56/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate continual instruction tuning of multimodal large language models, enabling fine-grained analysis of learning algorithms.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Mathematics Question Answering",
+      "Medical Question Answering",
+      "Art Visual Question Answering",
+      "Economics Question Answering",
+      "Science Visual Question Answering",
+      "General Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated from 16 public datasets covering various reasoning-intensive domains.",
+    "size": "70,000 instances",
+    "format": "N/A",
+    "annotation": "High-quality Chain-of-Thought (CoT) annotations are generated tailored to each benchmark task."
+  },
+  "methodology": {
+    "methods": [
+      "Automated Metrics",
+      "Human Evaluation",
+      "Chain-of-Thought Evaluation"
+    ],
+    "metrics": [
+      "Final Answer Accuracy",
+      "CoT Reasoning Quality"
+    ],
+    "calculation": "Metrics are calculated based on the performance of models on various tasks, combining final answer correctness with reasoning quality.",
+    "interpretation": "A higher score indicates better performance in retaining knowledge and reasoning ability.",
+    "baseline_results": "Comparative analysis included results from various continual learning algorithms across tasks.",
+    "validation": "Extensive testing was conducted across different model architectures and task orders."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

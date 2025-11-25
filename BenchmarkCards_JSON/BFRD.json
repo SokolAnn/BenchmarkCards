@@ -1,0 +1,122 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Bengali Fake Review Detection (BFRD) dataset",
+    "abbreviation": "BFRD",
+    "overview": "Introduces the Bengali Fake Review Detection (BFRD) dataset for identifying fake food-related reviews in Bengali; also proposes a text conversion pipeline (translation and back-transliteration) and a weighted ensemble detection model combining pre-trained Bengali transformers.",
+    "data_type": "text (food-related reviews)",
+    "domains": [
+      "Natural Language Processing",
+      "Social Media"
+    ],
+    "languages": [
+      "Bengali"
+    ],
+    "similar_benchmarks": [
+      "Ott dataset",
+      "Yelp dataset",
+      "Yelp Chi",
+      "Yelp NYC",
+      "Yelp ZIP",
+      "Yelp Consumer Electronic",
+      "BAD (Bengali aggressive text dataset)"
+    ],
+    "resources": [
+      "https://github.com/shahariar-shibli/Bengali-Fake-Reviews-A-Benchmark-Dataset-and-Detection-System",
+      "https://github.com/sagorbrur/bnaug",
+      "https://github.com/porimol/bnbphoneticparser",
+      "https://pastebin.ubuntu.com/p/8gQMnCtRVw/",
+      "https://gs.statcounter.com/social-media-stats/all/bangladesh",
+      "https://abiword.github.io/enchant/",
+      "https://py-googletrans.readthedocs.io/en/latest/",
+      "https://github.com/sagorbrur/bangla-bert",
+      "https://huggingface.co/neuropark/sahajBERT"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Create a publicly accessible dataset (BFRD) and detection system to identify fake food-related reviews in Bengali.",
+    "audience": [
+      "Consumers",
+      "Businesses",
+      "Online review industry"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Binary Classification",
+      "Fake Review Detection"
+    ],
+    "limitations": "Dataset is imbalanced; limited to food/restaurant reviews; limited number of skilled annotators; resource constraints resulted in shorter sequence lengths for some models.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Manually collected food-related reviews in Bengali from social media (15 public Bengali Facebook groups and two YouTube channels), including posts and comments, collected between January 2019 and January 2023.",
+    "size": "9,049 reviews (1,339 fake, 7,710 non-fake)",
+    "format": "N/A",
+    "annotation": "Manual annotation by four expert annotators (native Bengali speakers). Each review was annotated by three annotators; disagreements were resolved by an expert annotator via discussion; annotation quality measured using Fleiss' kappa (average 0.81). Annotation followed six predefined criteria for labeling a review as fake."
+  },
+  "methodology": {
+    "methods": [
+      "Human annotation",
+      "Model-based evaluation",
+      "Automated metrics",
+      "Explainable AI (LIME)"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1-score",
+      "Weighted F1-score",
+      "Accuracy",
+      "ROC-AUC",
+      "Matthews Correlation Coefficient (MCC)"
+    ],
+    "calculation": "Metrics computed using standard definitions: Precision = tp/(tp+fp); Recall = tp/(tp+fn); F1 = 2*(Precision*Recall)/(Precision+Recall). Weighted F1 computed by taking each class as positive separately and averaging. ROC-AUC and MCC computed as described in Appendix D of the paper.",
+    "interpretation": "Higher weighted F1 indicates better overall performance on the imbalanced binary task. The paper notes that a ROC-AUC between 0.7 and 0.8 is considered good. MCC close to 1 indicates robust performance across all confusion matrix entries.",
+    "baseline_results": "Best single-model without augmentation: BanglaBERT WF1 = 0.809 (Approach-1). With nlpaug augmentation BanglaBERT achieved WF1 = 0.981 (Approach-2). Proposed weighted ensemble achieved WF1 = 0.9843 on the nlpaug-augmented set (13,390 reviews) and WF1 = 0.9558 when using bnaug augmentation.",
+    "validation": "Dataset split into train/validation/test with 80%/10%/10%. Models were validated on the validation set and evaluated on a held-out test set. Annotation quality validated using Fleiss' kappa (average 0.81)."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Explainability",
+      "Societal Impact"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Explainability",
+          "subcategory": [
+            "Unexplainable output"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on affected communities"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": "Detecting fake reviews aims to prevent deception of customers and damage to the reputation of products or services."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "P-MME VAL (Parallel Multilingual Multitask Benchmark for Consistent Evaluation of LLMs)",
+    "abbreviation": "P-MME VAL",
+    "overview": "P-MME VAL is a comprehensive multilingual multitask benchmark that incorporates both fundamental and capability-specialized tasks, ensuring consistent language coverage and providing parallel samples across different languages.",
+    "data_type": "multimodal",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Chinese",
+      "Arabic",
+      "Spanish",
+      "Japanese",
+      "Korean",
+      "Thai",
+      "French",
+      "Portuguese",
+      "Vietnamese"
+    ],
+    "similar_benchmarks": [
+      "XTREME",
+      "XGLUE",
+      "MEGA",
+      "BUFFET"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/Qwen/P-MMEval"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To develop a comprehensive evaluation system that unifies diverse NLP and capability-specialized tasks, ensuring consistent language coverage per task and offering parallel samples across languages.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Question Answering",
+      "Code Generation",
+      "Mathematical Reasoning",
+      "Logical Reasoning",
+      "Knowledge Acquisition",
+      "Instruction Following"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Combinations of datasets such as XNLI, MH ELLA SWAG, HUMAN EVAL-XL, MGSM, ML OGIQA, MMMLU, and others.",
+    "size": "Data spans across multiple datasets with a combined total of approximately 15,000 examples per language across 10 languages.",
+    "format": "N/A",
+    "annotation": "Datasets involve both manual annotation and curated translations with expert reviews."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "BLEU Score"
+    ],
+    "calculation": "Metrics calculated based on the performance of models on various tasks across multiple languages, with results aggregated to analyze multilingual capabilities.",
+    "interpretation": "Higher scores indicate stronger multilingual capabilities of models across the evaluated tasks.",
+    "baseline_results": "N/A",
+    "validation": "Validation involves performance comparison using different models across the included multilingual tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Privacy",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Informed consent was obtained from all individual participants included in the study.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Informed consent from participants involved in the studies.",
+    "compliance_with_regulations": "All procedures were in accordance with ethical standards of institutional and/or national research committees."
+  }
+}

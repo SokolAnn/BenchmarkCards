@@ -1,0 +1,80 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ArticulateRules",
+    "abbreviation": "N/A",
+    "overview": "ArticulateRules is a dataset for evaluating how well language models can articulate rules which accurately describe their classification behavior when solving simple binary text classification tasks.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://openai.com/eval"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate how competent large language models are at providing high-level explanations of their own internal processes.",
+    "audience": [
+      "ML Researchers",
+      "AI Practitioners",
+      "Model Evaluators"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Question Answering"
+    ],
+    "limitations": "The benchmarks highlight limitations in LLMs' ability to articulate rules, particularly for GPT-3.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated according to predefined rule functions with adversarial inputs included.",
+    "size": "1500 examples (45 rule functions with multiple variations)",
+    "format": "JSONL",
+    "annotation": "Automatically generated based on defined rules."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Model outputs are compared to the expected results using predefined rules.",
+    "interpretation": "High accuracy indicates a model's ability to correctly articulate classification rules; low accuracy suggests a lack of understanding.",
+    "baseline_results": "GPT-3 scored below 10% articulation accuracy on most tasks, while GPT-4 achieved around 72% on select tasks.",
+    "validation": "Dataset validation performed by comparing model outputs against expected outcomes."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": []
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

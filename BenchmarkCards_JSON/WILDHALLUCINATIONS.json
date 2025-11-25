@@ -1,0 +1,102 @@
+{
+  "benchmark_details": {
+    "name": "WILDHALLUCINATIONS",
+    "overview": "WILDHALLUCINATIONS evaluates the factuality of large language models (LLMs) using entities mined from real-world user-chatbot conversations. It automatically fact-checks the generation of information about these entities using a curated knowledge source.",
+    "data_type": "Entities and text generations",
+    "domains": [
+      "computing",
+      "culture",
+      "finance",
+      "geography",
+      "science",
+      "people",
+      "personal attributes"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ExpertQA",
+      "HaluEval-Wild",
+      "FACTSCORE"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/wentingzhao/WildHallucinations"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the factual accuracy of LLMs in generating information about real-world entities.",
+    "audience": [
+      "Researchers",
+      "Model developers",
+      "Practitioners"
+    ],
+    "tasks": [
+      "Evaluating LLM factuality",
+      "Understanding LLM hallucination behaviors"
+    ],
+    "limitations": "Focuses only on English entities and cannot cover multilingual contexts.",
+    "out_of_scope_uses": [
+      "Evaluating LLMs in languages other than English",
+      "Using for non-factual tasks"
+    ]
+  },
+  "data": {
+    "source": "WildChat dataset",
+    "size": "7,917 entities",
+    "format": "Web documents and text",
+    "annotation": "Automatically fact-checked using FACTSCORE."
+  },
+  "methodology": {
+    "methods": [
+      "Entity extraction using GPT-3.5 and GPT-4o",
+      "Knowledge source building using Google Custom Search",
+      "Automatic fact-checking with FACTSCORE"
+    ],
+    "metrics": [
+      "WILDFACTSCORE",
+      "WILDFACTSCORE-STRICT"
+    ],
+    "calculation": "WILDFACTSCORE computes the percentage of atomic facts supported by a knowledge source.",
+    "interpretation": "Higher WILDFACTSCORE indicates better factual accuracy.",
+    "baseline_results": "Not available",
+    "validation": "Validation performed on a sampled dataset for accuracy."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Transparency"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Lack of training data transparency"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Analysis based on the distribution of entities from user queries.",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Compliance with data privacy regulations of user-generated content.",
+    "data_licensing": "Entities extracted from WildChat, which is released under ODC-By license.",
+    "consent_procedures": "User interactions are sourced from the WildChat dataset.",
+    "compliance_with_regulations": "N/A"
+  }
+}

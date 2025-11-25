@@ -1,0 +1,104 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "XRAG (eXamining the Core - Benchmarking Foundational Components in Advanced Retrieval-Augmented Generation)",
+    "abbreviation": "XRAG",
+    "overview": "XRAG is an open-source, modular codebase designed to evaluate foundational components of advanced Retrieval-Augmented Generation (RAG) systems, providing a comprehensive benchmark for assessing their effectiveness across pre-retrieval, retrieval, post-retrieval, and generation phases.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "HotpotQA",
+      "DropQA",
+      "NaturalQA"
+    ],
+    "resources": [
+      "https://github.com/DocAILab/XRAG",
+      "https://huggingface.co/datasets/DocAILab/XRAG_Dataset"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a standardized framework for benchmarking advanced Retrieval-Augmented Generation (RAG) systems and optimize their performance through comprehensive testing.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "While XRAG supports core RAG modules, its toolkit currently lacks comprehensive coverage of all RAG advancements and does not support RAG component training.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Three benchmark datasets: HotpotQA, DropQA, and NaturalQA, which are preprocessed into a unified format for RAG evaluations.",
+    "size": "Total of 265,164 examples across all datasets",
+    "format": "Unified dataset structured to facilitate performance testing for retrieval and generation modules.",
+    "annotation": "Dataset sources include metadata from the original datasets, annotated for extracting relevant information."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1",
+      "Mean Reciprocal Rank (MRR)",
+      "Mean Average Precision (MAP)",
+      "Hit@1",
+      "Hit@10",
+      "DCG",
+      "NDCG",
+      "ChrF",
+      "METEOR",
+      "ROUGE"
+    ],
+    "calculation": "Evaluation metrics are calculated based on the performance of RAG components across various configurations.",
+    "interpretation": "Higher scores indicate better retrieval and generation performance.",
+    "baseline_results": "Baseline performance metrics are provided for each dataset tested, with detailed comparisons between different approaches.",
+    "validation": "The framework incorporates validation procedures to ensure reliability and accuracy of the evaluations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data",
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias",
+            "Decision bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "The dataset is licensed under CC BY-NC-SA 4.0.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

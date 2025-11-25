@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TutorQA",
+    "abbreviation": "N/A",
+    "overview": "TutorQA is a new expert-verified NLP-focused benchmark for scientific graph reasoning and question-answering, consisting of five tasks with 500 QA pairs.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "LectureBankCD",
+      "FairytaleQA",
+      "ExpertQA"
+    ],
+    "resources": [
+      "https://github.com/IreneZihuiLi/CGPrompt"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess large language models’ capabilities in educational scenarios, particularly in recovering concept graphs and answering questions effectively.",
+    "audience": [
+      "ML Researchers",
+      "Educational Institutions",
+      "NLP Practitioners"
+    ],
+    "tasks": [
+      "Prerequisite Prediction",
+      "Path Searching",
+      "Shortest Path Searching",
+      "Concept Advising",
+      "Idea Hamster"
+    ],
+    "limitations": "Constructing a concept graph from scratch can be challenging due to the exponential growth in pair combinations as the number of concepts increases.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Expert-verified question-answering reference pairs generated based on educational concepts and their prerequisites.",
+    "size": "500 QA pairs",
+    "format": "JSON",
+    "annotation": "Manually verified by domain experts."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "Similarity-based F1"
+    ],
+    "calculation": "Metrics are calculated based on correct predictions and semantic similarity.",
+    "interpretation": "Higher scores indicate better performance in identifying concept relationships and answering questions.",
+    "baseline_results": "Comparison with existing benchmarks like LectureBankCD, showing competitive performance.",
+    "validation": "Performance validation against multiple models including LLaMa and GPT series."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "TutorQA has been expert-verified to ensure it contains no harmful or private information about individuals.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "GRS-QA (Graph Reasoning-Structured Question Answering Dataset)",
+    "abbreviation": "GRS-QA",
+    "overview": "GRS-QA introduces a novel dataset that captures explicit reasoning structures for multi-hop question answering, enabling fine-grained evaluation of LLM capabilities across various reasoning structures by constructing reasoning graphs.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "HotpotQA",
+      "MuSiQue",
+      "2WikiMultiHopQA"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2411.00369"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enable a fine-grained evaluation of LLM multi-hop reasoning capabilities and to facilitate understanding of logical structures in question answering.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "AI Practitioners"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "Imbalance in the distribution of reasoning graph types may bias models toward frequent types.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Constructed from the training sets of existing multi-hop QA datasets: HotpotQA, MuSiQue, and 2WikiMultiHopQA.",
+    "size": "Various graphs across multiple reasoning types, specific numbers not stated",
+    "format": "N/A",
+    "annotation": "Graphs constructed by treating sentences as nodes with logical relations defining edges."
+  },
+  "methodology": {
+    "methods": [
+      "Retrieval Performance Benchmark",
+      "LLM QA Performance Benchmark"
+    ],
+    "metrics": [
+      "Exact Match",
+      "F1 Score",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "Metrics calculated by comparing retrieved and generated answers against ground truth.",
+    "interpretation": "Performance metrics are analyzed to understand model reasoning capabilities.",
+    "baseline_results": "Current LLM models: GPT-3.5, Llama3, and GPT-4o-mini.",
+    "validation": "Conducted on a shared GPU environment with strict control of question types."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Creative Commons Attribution 4.0 International License (CC BY 4.0).",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FedMultimodal: A Benchmark For Multimodal Federated Learning",
+    "abbreviation": "N/A",
+    "overview": "We introduce FedMultimodal, the first federated learning benchmark for multimodal learning covering five representative multimodal applications from ten commonly used datasets with a total of eight unique modalities. FedMultimodal offers a systematic end-to-end FL pipeline (data partition, feature extraction, FL algorithms, and model evaluation) and provides a standardized approach to assess robustness against three common data corruptions in real-life multimodal applications: missing modalities, missing labels, and erroneous labels.",
+    "data_type": "multimodal (audio, text, image/video, accelerometer, gyroscope, ECG)",
+    "domains": [
+      "Emotion Recognition",
+      "Multimedia Action Recognition",
+      "Human Activity Recognition",
+      "Healthcare",
+      "Social Media Classification"
+    ],
+    "languages": [],
+    "similar_benchmarks": [
+      "LEAF",
+      "FedML",
+      "FedScale",
+      "FLUTE",
+      "FedAudio",
+      "FLamby",
+      "FederatedScope"
+    ],
+    "resources": [
+      "https://github.com/usc-sail/fed-multimodal",
+      "https://doi.org/10.1145/3580305.3599825"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To facilitate research in multimodal federated learning by providing the first FL benchmark for multimodal applications, including an end-to-end simulation framework, standardized datasets and pipelines, and robustness assessment modules for missing modalities, missing labels, and erroneous labels.",
+    "audience": [
+      "ML Researchers",
+      "ML Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Emotion Recognition",
+      "Multimedia Action Recognition",
+      "Human Activity Recognition",
+      "Healthcare (ECG Classification)",
+      "Social Media Classification"
+    ],
+    "limitations": "FedMultimodal currently does not cover several multimodal applications such as medical image analysis, autonomous driving, and virtual reality; the range of supported models is limited; only two basic fusion approaches (concatenation and attention) are included; label scarcity and privacy leakage remain open challenges noted for future work.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Ten publicly available multimodal datasets included in FedMultimodal: MELD, CREMA-D, UCF101, MiT10, MiT51, UCI-HAR, KU-HAR, PTB-XL, Hateful-Memes, CrisisMMD.",
+    "size": "Dataset sizes as reported in the paper: MELD: 9,718 examples; CREMA-D: 4,798 examples; UCF101 (subset with audio+video): 6,837 videos; MiT10: 41,600 videos; MiT51: 157,600 videos; UCI-HAR: 8,979 examples; KU-HAR: 10,300 examples; PTB-XL: 21,700 ECG recordings; Hateful-Memes: 10,000 examples; CrisisMMD: 18,100 examples.",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics evaluation",
+      "Federated simulation (end-to-end FL pipeline)",
+      "Predefined train/validation/test splits (when provided)",
+      "5-fold cross-validation (when predefined splits are not provided)",
+      "Repeated experiments with different random seeds"
+    ],
+    "metrics": [
+      "Unweighted Average Recall (UAR)",
+      "Accuracy",
+      "F1 Score",
+      "Area Under ROC Curve (AUC)"
+    ],
+    "calculation": "Metrics are computed following established practices per dataset: for datasets with predefined partitions experiments are repeated 5 times with different seeds; for datasets without predefined partitions 5-fold cross-validation is performed. Evaluation metrics are computed on validation/test splits according to each dataset's protocol.",
+    "interpretation": "Attention-based fusion outperforms concatenation-based fusion in the majority of datasets and heterogeneity conditions; FedOpt often yields stronger baselines across tasks (with exceptions in low heterogeneity conditions); multimodal learning generally outperforms unimodal learning, though the performance gap is within 5% for most datasets. Missing modalities, missing labels, and erroneous labels each reduce performance, with erroneous labels causing the largest relative drops.",
+    "baseline_results": null,
+    "validation": "For datasets with pre-defined partitions, experiments are repeated 5 times using different seeds; for datasets without pre-defined partitions, 5-fold cross-validation is used."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Privacy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Membership inference attack",
+            "Attribute inference attack",
+            "Reidentification"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": [
+      "Privacy leakage: membership inference attacks",
+      "Privacy leakage: reconstruction attacks (reidentification)",
+      "Privacy leakage: attribute inference attacks",
+      "Label inference attacks"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The paper discusses privacy leakage risks in multimodal federated learning (membership inference, reconstruction, attribute inference, label inference) and suggests exploring privacy-enhancing techniques such as differential privacy and secure aggregation as future work.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

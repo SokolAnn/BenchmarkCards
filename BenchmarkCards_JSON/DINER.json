@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DIsh NamE Recognition (DINER)",
+    "abbreviation": "DINER",
+    "overview": "DINER is a compositional generalization task involving dish name recognition from recipes, aimed at evaluating the capacity to comprehend and create new combinations of observed components, leveraging a large-scale realistic dataset of Chinese recipes.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/Jumpy-pku/DiNeR"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate natural language understanding ability under compositional generalization settings through the Dish Name Recognition task.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Dish Name Recognition"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Based on the XIACHUFANG Recipe Dataset consisting of 1,550,151 real-world recipes",
+    "size": "223,581 recipes",
+    "format": "N/A",
+    "annotation": "Manual parsing and cleaning of dish names and recipes."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Exact Match Accuracy"
+    ],
+    "calculation": "The F1 score is calculated based on the micro F1-score of predicted components against the golden components, allowing for partial credit depending on component recognition contributions.",
+    "interpretation": "Higher F1 scores indicate better performance, especially in identifying correct components of dish names.",
+    "baseline_results": "T5 + Continual Pretraining: F1 score of 59.2% on TMCD splits; GPT-3.5: F1 score of 52.9% on annotated test set.",
+    "validation": "Validation is conducted through TMCD splits against training data."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Risk of model bias towards certain dish types due to uneven representation in recipe data."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

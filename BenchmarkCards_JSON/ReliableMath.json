@@ -1,0 +1,97 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ReliableMath",
+    "abbreviation": "N/A",
+    "overview": "ReliableMath is a benchmark designed to systematically investigate the reliability of Large Language Models (LLMs) on reasoning tasks in mathematics by evaluating their performance on both solvable and unsolvable mathematical problems.",
+    "data_type": "mathematical problems",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MATH",
+      "AIME",
+      "AMC",
+      "Minerva"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/aimo/aimo-validation-aime",
+      "https://huggingface.co/datasets/AI-MO/aimo-validation-amc",
+      "https://huggingface.co/datasets/math-ai/minervamath",
+      "https://github.com/hendrycks/math/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate and enhance the reliability of LLMs in solving mathematical reasoning tasks, including both solvable and unsolvable problems.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Educators"
+    ],
+    "tasks": [
+      "Mathematical Reasoning"
+    ],
+    "limitations": "The investigation of ReliableMath is solely limited to mathematical reasoning, while other reasoning tasks have not been explored.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Open-source solvable and human-evaluated unsolvable mathematical problems",
+    "size": "1,375 problems (both solvable and unsolvable)",
+    "format": "structured data format containing questions and answers",
+    "annotation": "Human evaluations and synthesis from existing datasets"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Precision",
+      "Prudence"
+    ],
+    "calculation": "Precision is calculated as the ratio of successful answers to the total number of solvable questions, while Prudence evaluates the ratio of refused responses.",
+    "interpretation": "Higher precision indicates more reliable answers, while prudence evaluates the reliability of refusal responses.",
+    "baseline_results": "Baseline models evaluated include reasoning and instruction LLMs like DeepSeek-R1 and GPT-4.",
+    "validation": "The dataset and results were validated through extensive human evaluations and automated metrics."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All data was collected under ethical guidelines, ensuring participant privacy and informed consent were prioritized.",
+    "data_licensing": "The datasets used are open-source and publicly available.",
+    "consent_procedures": "Informed consent was obtained from contributors involved in data annotation.",
+    "compliance_with_regulations": "N/A"
+  }
+}

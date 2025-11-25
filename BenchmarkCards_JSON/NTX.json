@@ -1,0 +1,101 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "NTX (Numerical and Temporal eXpressions)",
+    "abbreviation": "NTX",
+    "overview": "A multi-lingual evaluation dataset - NTX - covering diverse temporal and numerical expressions across 14 languages and covering extraction, normalization, and resolution.",
+    "data_type": "text (sentences with temporal and numerical entity annotations, normalization, and resolution)",
+    "domains": [
+      "Natural Language Processing",
+      "Information Retrieval"
+    ],
+    "languages": [
+      "English",
+      "Chinese",
+      "Dutch",
+      "French",
+      "German",
+      "Italian",
+      "Japanese",
+      "Korean",
+      "Portuguese",
+      "Spanish",
+      "Swedish",
+      "Turkish",
+      "Hindi",
+      "Arabic"
+    ],
+    "similar_benchmarks": [
+      "TempEval",
+      "TimeBank",
+      "OntoNotes 5.0",
+      "Wikiwars",
+      "TIDES TIMEX2",
+      "TimeML TIMEX3",
+      "TempEval-3"
+    ],
+    "resources": [
+      "https://aka.ms/NTX",
+      "https://github.com/microsoft/Recognizers-Text"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a multi-lingual benchmark dataset that covers numerical and temporal entities and expressions at the extraction, normalization, and resolution levels, with fine-grained sub-types and representations designed for downstream usability.",
+    "audience": [
+      "Model Developers",
+      "ML Researchers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Entity Extraction",
+      "Entity Normalization",
+      "Temporal and Numerical Resolution"
+    ],
+    "limitations": "Ambiguities in type were resolved by consensus of expert annotators; future versions plan to include alternative type interpretations. The baseline rule-based system has known limitations including handling of false positives and certain languages/features are not supported by the baseline (temporal expressions in Swedish, Korean, and Arabic; numerical expressions with units in Arabic). The current dataset schema may be somewhat unintuitive to manual inspection.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Manually created and annotated sentences: initially generated and annotated in English and Chinese by hired specialist vendors with linguistic expertise, validated by two expert annotators; language expansion via native-speaker translations and additional examples collected from long-term commercial usage and Recognizers-Text failure feedback.",
+    "size": "Over 26,000 sentences across 14 languages",
+    "format": "JSON files",
+    "annotation": "Manual annotation by hired specialist vendors (level 1) with validation by two expert annotators (level 2); translations performed by native-speaker vendors; annotations reviewed and corrected informed by baseline system failures; metadata marks cases unsupported by the baseline."
+  },
+  "methodology": {
+    "methods": [
+      "Baseline rule-based system evaluation (Recognizers-Text)",
+      "Automated metrics (Precision/Recall/F1) via provided evaluation scripts"
+    ],
+    "metrics": [
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Precision/Recall/F1 are calculated using the provided evaluation scripts included with the open-sourced code.",
+    "interpretation": "N/A",
+    "baseline_results": null,
+    "validation": "Annotations validated by two expert annotators; the baseline rule-based system was run in parallel to surface failure cases which led to annotation corrections or extensions to the system; disputed/unsupported cases were documented in metadata."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FRIDA (Field Reasoning and Instruction Decoding Agent)",
+    "abbreviation": "FRIDA",
+    "overview": "This paper presents a dataset and pipeline to create FRIDA models, focusing on generating synthetic data for fine-tuning small language models (LLMs) specific to disaster response scenarios, particularly in assessing object reasoning in disastrous environments.",
+    "data_type": "instruction pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/mshich1/FRIDA"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To improve the physical common sense reasoning capabilities of smaller LLMs in disaster response scenarios by utilizing a specially designed dataset and fine-tuning pipeline.",
+    "audience": [
+      "ML Researchers",
+      "Robotics Developers",
+      "Disaster Response Professionals"
+    ],
+    "tasks": [
+      "Object Reasoning",
+      "Instruction Following"
+    ],
+    "limitations": "Training and evaluation are conducted on template-generated data rather than naturally occurring language.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Synthetic data generated from expert-guided templates focused on object reasoning in disaster scenarios.",
+    "size": "25,000 instructions",
+    "format": "JSON",
+    "annotation": "Expert-in-the-loop annotation process involves domain experts curating the synthetic data."
+  },
+  "methodology": {
+    "methods": [
+      "Ablation Study",
+      "Customized Evaluation Metrics"
+    ],
+    "metrics": [
+      "SemScore"
+    ],
+    "calculation": "SemScore is calculated using cosine similarity between model response vectors and gold standard responses.",
+    "interpretation": "Higher SemScore indicates better semantic similarity and understanding of the task-relevant instructions.",
+    "baseline_results": "FRIDA models achieved a SemScore accuracy of 94.6% compared to the base model.",
+    "validation": "Models evaluated using a custom set of at least four evaluation questions per template."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

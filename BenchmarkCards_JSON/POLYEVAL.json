@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "POLYEVAL",
+    "abbreviation": "N/A",
+    "overview": "POLYEVAL is a benchmark consisting of queries and documents collected from real-world healthcare scenarios, focusing on various medical contexts such as medical policy, hospital recommendations, and healthcare inquiries, with multiple annotations regarding timeliness and authoritativeness.",
+    "data_type": "text",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": null,
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a diverse and representative evaluation benchmark for retrieval-augmented generation models in medical applications.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "1,447 real-world user queries collected from a medical-related online platform in China along with 21,276 relevant documents searched from various sources including expert knowledge, online search engines, and news.",
+    "size": "21,276 documents",
+    "format": "N/A",
+    "annotation": "Annotated by human annotators, including three highly-skilled annotators for relevance, complement, and utility, with authority levels approximated from source authority."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "HIT",
+      "NDCG"
+    ],
+    "calculation": "Calculated based on user query relevance and document effectiveness in answering medical inquiries.",
+    "interpretation": "Higher scores indicate better retrieval performance and effective generation of relevant content.",
+    "baseline_results": "Evaluate models augmented with retrieval using public retrieval models like BM25, GTE, BGE-M3, and jina embedding.",
+    "validation": "Extensive experiments were conducted to validate the benchmark on various tasks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Privacy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential risk of bias in the queries and documents collected impacting the performance evaluation."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Patient data was collected and anonymized to maintain privacy standards.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "Complies with local regulations governing medical data usage."
+  }
+}

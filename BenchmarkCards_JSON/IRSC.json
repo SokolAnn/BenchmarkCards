@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "IRSC: A Zero-shot Evaluation Benchmark for Information Retrieval through Semantic Comprehension in Retrieval-Augmented Generation Scenarios",
+    "abbreviation": "IRSC",
+    "overview": "The IRSC benchmark aims to evaluate the performance of embedding models in multilingual Retrieval-Augmented Generation (RAG) tasks across five retrieval tasks: query retrieval, title retrieval, part-of-paragraph retrieval, keyword retrieval, and summary retrieval. It introduces new metrics, the Similarity of Semantic Comprehension Index (SSCI) and the Retrieval Capability Contest Index (RCCI), to address the need for comprehensive testing and effective comparison methods for embedding models in RAG scenarios.",
+    "data_type": "query-paragraph pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "MIRACL",
+      "RGB",
+      "MTEB",
+      "MKQA"
+    ],
+    "resources": [
+      "https://github.com/Jasaxion/IRSC_Benchmark"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive evaluation framework for assessing the performance of embedding models in RAG tasks.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Query Retrieval",
+      "Title Retrieval",
+      "Part-of-Paragraph Retrieval",
+      "Keyword Retrieval",
+      "Summary Retrieval"
+    ],
+    "limitations": "The benchmark primarily focuses on English and Chinese, which limits its applicability to other languages.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Datasets used include MsMARCO, XQuAD, Xtreme, MLQA, zhihu, New-Title-Chinese, Arxiv-Abstract, Sci-Docs, nfcorpus, AG News, and XSum.",
+    "size": "5,000 query-content pairs for each of the five tasks.",
+    "format": "Various formats depending on the dataset.",
+    "annotation": "Crowdsourced and expert-annotated based on existing benchmark standards."
+  },
+  "methodology": {
+    "methods": [
+      "Standard retrieval metrics",
+      "New evaluation metrics (SSCI and RCCI)"
+    ],
+    "metrics": [
+      "nDCG@10",
+      "MRR@10",
+      "MAP@10",
+      "precision@3",
+      "recall@10",
+      "Similarity of Semantic Comprehension Index (SSCI)",
+      "Retrieval Capability Contest Index (RCCI)"
+    ],
+    "calculation": "Standard metrics are calculated based on the ranking of the retrieved documents. SSCI and RCCI are calculated based on the difference in semantic understanding and retrieval capabilities between models.",
+    "interpretation": "Higher values in metrics denote better performance in retrieval capabilities. SSCI measures consistency of semantic understanding across queries.",
+    "baseline_results": "BGE-M3 model outperformed others across all tasks in various metrics.",
+    "validation": "Results compared against ground truth using a standardized evaluation approach."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The benchmark includes multilingual aspects but does not provide extensive demographic breakdowns.",
+    "harm": "Potential performance gaps in cross-lingual retrieval tasks may lead to inaccurate retrieval results."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

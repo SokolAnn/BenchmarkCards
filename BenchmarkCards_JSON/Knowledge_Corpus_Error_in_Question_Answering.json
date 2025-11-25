@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Knowledge Corpus Error in Question Answering",
+    "abbreviation": "N/A",
+    "overview": "This study introduces the concept of knowledge corpus error in open-domain question answering, empirically demonstrating that generated contexts can be more helpful than retrieved contexts from a conventional knowledge corpus. The paper shows that paraphrasing human-annotated gold contexts using large language models can enhance performance across multiple question-answering benchmarks.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "NQ",
+      "HotPotQA",
+      "StrategyQA",
+      "QASC"
+    ],
+    "resources": [
+      "https://github.com/xfactlab/emnlp2023-knowledge-corpus-error"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To empirically observe the knowledge corpus error in question answering and demonstrate the effectiveness of generated contexts.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts",
+      "NLP Practitioners"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "The study did not employ a retrieval setting and primarily focused on the analytic understanding of how generation can provide advantages over retrieval.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The data is derived from established question-answering benchmarks: NQ, HotPotQA, StrategyQA, and QASC, with specific context passages selected from these datasets.",
+    "size": "NQ: 2532 samples, HotPotQA: 7405 samples, StrategyQA: 2290 samples, QASC: 926 samples",
+    "format": "JSONL",
+    "annotation": "Human-annotated context passages were used for the experiments."
+  },
+  "methodology": {
+    "methods": [
+      "Empirical testing using paraphrasing with LLMs",
+      "Performance comparison using two different reader models: GPT and Claude"
+    ],
+    "metrics": [
+      "Exact Match",
+      "Accuracy"
+    ],
+    "calculation": "Performance is calculated as the percentage of correctly answered questions among the total.",
+    "interpretation": "An increase in performance indicates the effectiveness of paraphrased contexts over original gold contexts.",
+    "baseline_results": "NQ: 40.9% exact match, HotPotQA: 36.3% exact match, StrategyQA: 54.6% accuracy.",
+    "validation": "Results were validated through empirical testing across multiple question-answering benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

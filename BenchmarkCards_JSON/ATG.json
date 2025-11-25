@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Automated Theorem Generation (ATG)",
+    "abbreviation": "ATG",
+    "overview": "This paper introduces the Automated Theorem Generation (ATG) task, which evaluates generative language models' capability of generating high-quality theorems and reducing complex theorems. The proposed ATG benchmark aims to facilitate the development of language models' theorem generation and improve automated theorem proving.",
+    "data_type": "theorem statements",
+    "domains": [
+      "Mathematics",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/metamath/set.mm/blob/develop/set.mm"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the ability of generative language models to generate new and reusable theorems for automated theorem proving.",
+    "audience": [
+      "ML Researchers",
+      "Theorem Provers",
+      "Mathematicians"
+    ],
+    "tasks": [
+      "Automated Theorem Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Metamath formal language and its 'set.mm' library.",
+    "size": "38,000 theorems",
+    "format": "N/A",
+    "annotation": "Manually annotated from human-written theorems."
+  },
+  "methodology": {
+    "methods": [
+      "Monte Carlo Tree Search (MCTS)",
+      "Self-play learning"
+    ],
+    "metrics": [
+      "Average Proof Reduction (APR)",
+      "Precision"
+    ],
+    "calculation": "APR is calculated based on the reduction in proof length from using the expanded theorem library, while precision is calculated by comparing generated theorems to human-written theorems.",
+    "interpretation": "Higher APR indicates better generation quality and shorter proofs, and higher precision indicates better alignment with human-written theorems.",
+    "baseline_results": "N/A",
+    "validation": "Validated through extensive experiments comparing generated theorems with existing human-written proofs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Visual CounterFact",
+    "abbreviation": "N/A",
+    "overview": "Visual CounterFact is a dataset designed to study world knowledge priors related to visual attributes in Multimodal Large Language Models (MLLMs) through visually-realistic counterfactuals that introduce conflicts between memorized facts and visual input.",
+    "data_type": "image",
+    "domains": [
+      "Computer Vision",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "VL-Checklist",
+      "VALSE",
+      "FOIL-COCO",
+      "SVO-Probes",
+      "Winoground",
+      "COCO-Counterfactuals"
+    ],
+    "resources": [
+      "https://github.com/rsinghlab/pixels_vs_priors"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a benchmark for studying how multimodal large language models reconcile memorized world knowledge and visual input.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Visual Question Answering",
+      "Image Classification"
+    ],
+    "limitations": "The framework focuses on three state-of-the-art models and may not represent the full spectrum of multimodal architectures.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Images created through a four-step pipeline involving sourcing objects, retrieving images, and generating counterfactual relations.",
+    "size": "2,904 visually grounded examples",
+    "format": "Image files",
+    "annotation": "Automatically generated counterfactuals using model-based approaches."
+  },
+  "methodology": {
+    "methods": [
+      "Early decoding",
+      "Activation-level intervention"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy is calculated by evaluating how well models predict answers based on visual input and world knowledge.",
+    "interpretation": "High accuracy indicates that models effectively utilize visual input over memorized prior knowledge.",
+    "baseline_results": "Majority of models show above 80% accuracy on visual-based prompts.",
+    "validation": "Evaluated through experiments comparing performance with and without steering interventions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

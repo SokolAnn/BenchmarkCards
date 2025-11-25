@@ -1,0 +1,116 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "M4GT-Bench (Multi-generator, Multi-domain, and Multi-lingual Black-box Machine-Generated Text Detection)",
+    "abbreviation": "M4GT-Bench",
+    "overview": "M4GT-Bench is a benchmark designed for evaluating the detection of machine-generated text (MGT) across diverse languages, domains, and generator models. It includes tasks for binary MGT detection, generator identification, and human-machine text boundary detection.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English",
+      "Arabic",
+      "Chinese",
+      "German",
+      "Italian",
+      "Russian",
+      "Ukrainian",
+      "Spanish",
+      "Urdu"
+    ],
+    "similar_benchmarks": [
+      "M4 (Multi-generator, Multi-domain, and Multi-lingual Black-box Machine-Generated Text Detection)"
+    ],
+    "resources": [
+      "https://github.com/mbzuai-nlp/M4GT-Bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Provide a comprehensive benchmark for black-box machine-generated text detection methods, enabling researchers and developers to evaluate and improve the effectiveness of these detection systems.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Binary Human-Written vs. Machine-Generated Text Classification",
+      "Multi-Way Machine-Generated Text’s Generator Detection",
+      "Human-Written to Machine-Generated Text Change Point Detection"
+    ],
+    "limitations": "The current benchmark struggles to generalize across unseen domains and generators, indicative of an issue with the current methodology's adaptability.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Combination of multilingual, multi-domain datasets specifically curated for machine-generated text detection.",
+    "size": "Over 73,000 examples across 9 languages and multiple generators.",
+    "format": "JSON",
+    "annotation": "Annotations were conducted through crowd-sourcing and expert review to ensure quality and reliability."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated based on the performance of detection models on the benchmark tasks, compared against human-level performance where applicable.",
+    "interpretation": "Higher scores in metrics indicate better performance of models in distinguishing between human-generated and machine-generated texts.",
+    "baseline_results": "Models such as RoBERTa and XLM-R serve as baseline classifiers, demonstrating state-of-the-art performance on the benchmark tasks.",
+    "validation": "The tasks and metrics were validated against standard detection benchmarks and through human assessments to ensure reliability."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Privacy",
+      "Robustness",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The benchmark includes demographic factors in its evaluation metrics, focusing on representation across different languages and regions.",
+    "harm": [
+      "Potential misuse leading to misinformation spread due to false negative rates in detection."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All datasets used are publicly available and sourced from licensed datasets.",
+    "data_licensing": "Datasets adhere to their respective licenses, ensuring compliance with data usage regulations.",
+    "consent_procedures": "Data collected through existing, publicly available datasets with no personal identifiable information.",
+    "compliance_with_regulations": "N/A"
+  }
+}

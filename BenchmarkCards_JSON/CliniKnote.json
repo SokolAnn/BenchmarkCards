@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "CliniKnote",
+    "abbreviation": "N/A",
+    "overview": "CliniKnote is a comprehensive dataset consisting of 1,200 complex doctor-patient conversations paired with their clinical notes, created and curated by medical experts. It aims to provide a valuable resource for training and evaluating models in clinical note generation tasks.",
+    "data_type": "text",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MTS-DIALOG",
+      "ACI-BENCH"
+    ],
+    "resources": [
+      "https://github.com/catalwaysright/K-SOAP-GOODLABS.git"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective is to improve clinical note generation efficiency and accuracy using large language models.",
+    "audience": [
+      "Healthcare Professionals",
+      "ML Researchers"
+    ],
+    "tasks": [
+      "Clinical Note Generation",
+      "Keyword Extraction"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Doctor-patient conversations simulated and recorded by medical experts, with clinical notes written by the same experts.",
+    "size": "1,200 dialogues",
+    "format": "JSON",
+    "annotation": "Curated by medical experts using automatic speech recognition and validated manually with a low word error rate."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "BLEU Score",
+      "ROUGE-L",
+      "BERTScore",
+      "BLEURT",
+      "QuestEval"
+    ],
+    "calculation": "Metrics are calculated based on the alignment of generated notes with reference notes using various key performance indicators.",
+    "interpretation": "Higher scores in metrics indicate better alignment with quality clinical notes.",
+    "baseline_results": "Results from models like qCammel-13b and GPT-4 were found to achieve significant improvements in generating K-SOAP notes compared to standard methods.",
+    "validation": "Various evaluations were conducted to assess the quality of generated notes and their applicability in clinical settings."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All data is synthesized and does not contain personal health information.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

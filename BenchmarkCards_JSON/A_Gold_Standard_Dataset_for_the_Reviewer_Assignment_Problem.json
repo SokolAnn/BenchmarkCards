@@ -1,0 +1,119 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "A Gold Standard Dataset for the Reviewer Assignment Problem",
+    "abbreviation": "N/A",
+    "overview": "Collects and publicly releases a novel gold-standard dataset of reviewers' self-reported expertise (similarity scores) for reviewer-paper pairs to enable principled comparison and development of similarity-computation algorithms. The released dataset consists of 477 self-reported expertise evaluations provided by 58 researchers who evaluated papers they have read previously.",
+    "data_type": "text (paper titles, abstracts, optional full texts, paper metadata) and numeric self-reported expertise ratings",
+    "domains": [
+      "Computer Science"
+    ],
+    "languages": null,
+    "similar_benchmarks": null,
+    "resources": [
+      "https://github.com/niharshah/goldstandard-reviewer-paper-match",
+      "https://forms.gle/SP1Rh8eivGz54xR37",
+      "https://arxiv.org/abs/2303.16750"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Collect and release a high-quality dataset of reviewers' expertise that can be used for training and/or evaluation of similarity-computation algorithms for assigning reviewers to papers.",
+    "audience": [
+      "Research community",
+      "Venue organizers",
+      "Natural Language Processing researchers"
+    ],
+    "tasks": [
+      "Reviewer Assignment",
+      "Expertise Estimation",
+      "Similarity Computation between reviewer profiles and submissions"
+    ],
+    "limitations": "Size limitation: 477 data points from 58 researchers. Prominent geographical skew with 74% of participants from the USA. Potential sampling bias (e.g., about 40% of participants affiliated with a certain university). Reliance on Semantic Scholar profiles which are automatically constructed and may be inaccurate. Survey design can influence collected data. Many papers in the dataset are published in or after 2020; citations and incoming citations available in dataset may not reflect information available in real-time conference settings.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Self-reported expertise evaluations collected via a survey from 58 researchers. Reviewer profiles and paper metadata were obtained from Semantic Scholar (Semantic Scholar IDs and complete bibliographies crawled on May 1, 2022). Papers reported by participants are freely available online where possible (PDF links provided when available).",
+    "size": "477 expertise evaluations from 58 participants; 463 unique papers",
+    "format": "N/A",
+    "annotation": "Self-reported expertise ratings by participants on a scale from 1.0 to 5.0 with 0.25 step size (1.0 = I am not qualified to review this paper; 5.0 = I have background necessary to evaluate all aspects)."
+  },
+  "methodology": {
+    "methods": [
+      "Human survey (self-reported expertise by participants)",
+      "Automated evaluation metrics (rank-based and ranking metrics)",
+      "Bootstrapping to compute confidence intervals",
+      "Comparative algorithmic evaluation (TPMS, OpenReview algorithms ELMo/Specter/Specter+MFR/Specter2, ACL algorithm, off-the-shelf LLMs)"
+    ],
+    "metrics": [
+      "Weighted Kendall’s Tau distance (normalized loss)",
+      "Accuracy (pairwise ordering accuracy on easy and hard triplets)",
+      "Mean Reciprocal Rank (MRR)@k",
+      "Normalized Discounted Cumulative Gain (NDCG)@k",
+      "Precision@k"
+    ],
+    "calculation": "Loss defined as sum over participants of pairwise penalties: for each pair of papers reported by a participant, if algorithm ordering disagrees with ground-truth expertise ordering, penalize by the absolute difference in reported expertise (|ε_i - ε_j|); if algorithm indicates a tie while expertise differs, penalize by half the difference. The unnormalized sum is normalized by the loss of an adversarial algorithm that reverses ground-truth ordering to obtain a final loss in [0,1]. 95% confidence intervals computed by bootstrapping participants (1,000 iterations). Profile construction randomness averaged by repeating profile construction 10 times (or 5 times in some experiments).",
+    "interpretation": "Lower values of the normalized loss indicate better performance. Higher values of accuracy, MRR, NDCG, and Precision indicate better performance. Authors report error rates corresponding to pairwise comparisons: algorithms make 12%-30% mistakes in easy cases and 36%-43% mistakes in hard cases (as reported in the paper).",
+    "baseline_results": "Key results reported: Trivial baseline loss 0.50. TPMS loss 0.28 [0.23,0.33]. Specter loss 0.27 [0.21,0.34]. Specter+MFR loss 0.24 [0.18,0.30]. Specter2 (Max Pool) loss 0.22 [0.18,0.26]. ACL loss 0.30 [0.25,0.36]. Off-the-shelf LLMs: o1-mini loss 0.25 [0.21,0.29], Claude Sonnet 3.5 loss 0.31 [0.27,0.35], Gemini 2 Flash loss 0.38 [0.34,0.41]. Easy-triplet accuracies: Specter2 Max Pool 0.89 [0.82,0.94], TPMS (Title+Abstract) 0.80 [0.72,0.87], TPMS (Full Text) 0.84 [0.76,0.91]. Hard-triplet accuracies: TPMS (Title+Abstract) 0.62 [0.54,0.69], TPMS (Full Text) 0.64 [0.56,0.70]; best algorithms on hard triplets reach ~62%-64% accuracy.",
+    "validation": "Validation via bootstrapping participants (1,000 iterations) to build 95% confidence intervals. Randomness in reviewer profile construction averaged by repeating procedure 10 times (5 times for some TPMS experiments). Exclusions: removed papers not freely available (6 papers) and excluded participants without arXiv-linked papers for certain experiments."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Privacy",
+      "Robustness",
+      "Accuracy",
+      "Transparency",
+      "Governance"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy",
+            "Data contamination"
+          ]
+        },
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Uncertain data provenance"
+          ]
+        },
+        {
+          "category": "Governance",
+          "subcategory": [
+            "Unrepresentative risk testing",
+            "Lack of testing diversity"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Participant demographics (Table 1): 58 participants; 78% male; 74% from USA; positions: 45% PhD students, 28% faculty, 12% post-PhD (non-faculty); publications: min 2, max 492, mean 54, median 20.",
+    "harm": "The dataset and evaluations aim to detect and reduce incorrect reviewer assignments which can lead to poor review quality and negatively impact authors' careers (incorrect reviews may lead to rejection and hurt careers)."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Study performed under Institutional Review Board (IRB) approval. Data will be publicly released in non-anonymized form except email addresses will not be released. The authors explicitly avoid releasing sensitive data and note prior works that could not be released due to privacy concerns.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "IRB approval obtained. No explicit mention of GDPR, CCPA, or other legal/regulatory compliance in the paper."
+  }
+}

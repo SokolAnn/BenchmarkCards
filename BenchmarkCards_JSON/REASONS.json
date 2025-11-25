@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "REASONS (REtrieval and Automated citation SOf scieNtific Sentences)",
+    "abbreviation": "REASONS",
+    "overview": "REASONS is a novel dataset designed to address the limitations of citation ambiguity and overgeneralization in citation generation by large language models (LLMs). It features sentence-level annotations across 12 scientific domains from arXiv, facilitating evaluation of citation capabilities in scientific contexts.",
+    "data_type": "sentence-level annotations",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Science",
+      "Biology"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "UnarXive",
+      "S2ORC"
+    ],
+    "resources": [
+      "https://github.com/YashSaxena21/REASONS"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To serve as a challenging benchmark for evaluating the source attribution capabilities of large language models in scientific literature.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Citation Generation",
+      "Source Attribution"
+    ],
+    "limitations": "The dataset does not cover mathematics, statistics, and physics papers due to equation prevalence that complicates citation processing.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Sentences extracted from related work sections of IEEE-formatted papers in Computer Science and Biology published on arXiv between 2017-2024.",
+    "size": "Varies by domain, detailed breakdown available in the paper.",
+    "format": "JSON",
+    "annotation": "Sentence-level annotations created through a multi-stage process involving semantic parsing and citation verification."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Pass Percentage (PP)",
+      "Hallucination Rate (HR)",
+      "BLEU Score",
+      "F1 Score"
+    ],
+    "calculation": "Metrics such as PP and HR are calculated based on model responses to prompts during evaluation.",
+    "interpretation": "Higher F1 Scores and lower Hallucination Rates indicate better performance in citation accuracy and reliability.",
+    "baseline_results": null,
+    "validation": "The dataset established a standard for evaluating LLMs' citation capabilities with a focus on scientific contexts."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": []
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset includes cross-domain citation mapping and categorical classification tags, allowing analysis of disciplinary research propagation.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "No author contact information was utilized, and all processing received formal IRB approval.",
+    "data_licensing": "The dataset is designed specifically for attribution capability assessment, adhering to ethical safeguards.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

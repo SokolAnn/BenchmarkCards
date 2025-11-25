@@ -1,0 +1,79 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FRAME (Free-Text Rationale-LAbel Consistency Meta-Evaluation)",
+    "abbreviation": "FRAME",
+    "overview": "FRAME is a framework for evaluating rationale-label consistency (RLC) metrics for free-text rationales. FRAME assesses RLC metrics according to three axioms: (1) reference rationale upper bound (reference rationales should yield highest RLC scores), (2) sensitivity to semantic perturbation of rationales (appropriate response to equivalent and contrastive perturbations), and (3) robustness to variation in the task LM's task performance (stability across changes in training data, noisy labels, and model capacity).",
+    "data_type": "text classification instances with free-text rationales (input-label-rationale triplets)",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [],
+    "similar_benchmarks": [
+      "ERASER"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2207.00779"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Provide a protocol (FRAME) to meta-evaluate RLC metrics for free-text rationales based on three axioms (reference rationale upper bound, perturbation sensitivity, and robustness to task LM variation) and introduce a non-pretraining RLC metric (NP-GH-PRED) that better satisfies these axioms.",
+    "audience": [],
+    "tasks": [
+      "Text Classification",
+      "Natural Language Inference",
+      "Multiple-Choice Question Answering"
+    ],
+    "limitations": "RLC alone cannot sufficiently capture faithfulness or plausibility. Simulatability requires the task LM and simulator to be distinct, creating a strong assumption that the simulator's reasoning process is representative of the task LM's. Simulator pretraining can muddle the metric's signal.",
+    "out_of_scope_uses": [
+      "Applying FRAME to extractive rationales (the paper states they do not apply FRAME to extractive rationales)"
+    ]
+  },
+  "data": {
+    "source": "e-SNLI; CoS-E v1.0; CoS-E v1.1",
+    "size": "N/A",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Automated LM-based simulatability evaluation (LM simulators)",
+      "Human-subject plausibility evaluation (human simulators / user study)"
+    ],
+    "metrics": [
+      "Mean Accuracy Ratio (MAR)",
+      "Absolute Simulatability Difference (ASD)",
+      "SimCoefficient of Variation (SCV)",
+      "Normalized Relative Gain (NRG)",
+      "Rationale-Label Consistency (RLC) via simulatability",
+      "RLC metrics compared: F-GOLD, GH-GOLD, GH-PRED, NP-GH-PRED"
+    ],
+    "calculation": "RLC metric ϕ(ri) = 1_H(^y | x, ri) - 1_G(^y | x). Axiom 1 uses Mean Accuracy Ratio (MAR) = mean of 1_H(^y | x, ^y) / 1_H(^y | x, r_NR) over non-reference rationales. Axiom 2 uses Absolute Simulatability Difference (ASD) = |ϕ(a) - ϕ(b)| with a = ^y and b = perturbation(^y). Axiom 3 uses SimCoefficient of Variation (SCV) = std(ϕ(^y)) / mean(ϕ(^y)) across variation settings; and ASD between subpopulations (correct vs incorrect predictions). NRG normalizes and aggregates scores into [0,1].",
+    "interpretation": "For Axiom 1 higher MAR and higher ϕ(^y) are better (reference rationale should score highest). For Axiom 2 low ASD is better for equivalent perturbations and high ASD is better for contrastive perturbations. For Axiom 3 lower SCV indicates greater robustness; lower ASD between subpopulations indicates stability across correct/incorrect predictions. Higher NRG indicates better overall satisfaction of an axiom.",
+    "baseline_results": "The proposed NP-GH-PRED (non-pretraining GH-PRED) substantially outperforms pretrained baselines on FRAME meta-metrics: NP-GH-PRED improves Axiom 1 (mean NRG) by an average of 41.7% over the strongest per-dataset baseline, improves Axiom 3 (mean NRG) by an average of 42.9%, and in a human-simulator Axiom 1 user study NP-GH-PRED yields a 47.7% mean improvement over GH-GOLD.",
+    "validation": "Empirical evaluation across three text classification datasets (e-SNLI, CoS-E v1.0, CoS-E v1.1) using automated LM simulators (T5 variants) and a human-subject Axiom 1 user study with five annotators (50 sampled CoS-E v1.0 test instances). Results reported as mean and standard deviation over three seeds for automated experiments."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Hallucination"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

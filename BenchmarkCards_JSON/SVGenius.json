@@ -1,0 +1,102 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "SVGenius",
+    "abbreviation": "N/A",
+    "overview": "SVGenius is a comprehensive benchmark comprising 2,377 queries across three progressive dimensions: understanding, editing, and generation, designed to evaluate models' capabilities in SVG processing. It is built on real-world data from 24 application domains with systematic complexity stratification.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "SVGEditBench",
+      "MMSVG-2M",
+      "VGBench",
+      "SVGBench",
+      "ColorSVG-100K"
+    ],
+    "resources": [
+      "https://zju-real.github.io/SVGenius"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of SVGenius is to establish a systematic evaluation framework for SVG processing capabilities and provide crucial insights for developing more capable vector graphics models.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Understanding",
+      "Editing",
+      "Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Real-world SVG data from IconFont spanning 24 application domains.",
+    "size": "927 high-quality SVGs",
+    "format": "SVG",
+    "annotation": "Manually reviewed and filtered for semantic clarity."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Compression Code Ratio (CCR)",
+      "Mean Squared Error (MSE)",
+      "Relative Levenshtein Distance (RLD)"
+    ],
+    "calculation": "Metrics are computed based on strict equivalence checks against ground-truth SVGs, comparing model outputs to expected results across numerous editing tasks.",
+    "interpretation": "High accuracy denotes successful error correction while lower error rates and higher CCR indicate effective optimization and visual fidelity.",
+    "baseline_results": "Detailed leaderboard results presented in tables forming comparative performance analysis across different model architectures and sizes.",
+    "validation": "Each task is validated through systematic testing with a diverse range of models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Privacy",
+      "Robustness",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

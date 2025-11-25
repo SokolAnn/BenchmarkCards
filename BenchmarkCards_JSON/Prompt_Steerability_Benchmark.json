@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Prompt Steerability Benchmark",
+    "abbreviation": "N/A",
+    "overview": "A benchmark for evaluating the steerability of model personas based on prompting, measuring how well models can reflect various personas in their responses.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/IBM/prompt-steering"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the degree to which large language models can be steered to reflect various personas through prompting.",
+    "audience": [
+      "ML Researchers",
+      "AI Developers",
+      "Ethicists"
+    ],
+    "tasks": [
+      "Persona Evaluation",
+      "Model Calibration"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Anthropic's persona dataset, comprising various dimensions of personas.",
+    "size": "32 dimensions, each with 300 examples for both positive and negative prompts",
+    "format": "N/A",
+    "annotation": "Annotations based on label confidence indicating the expected accuracy of persona dimensions."
+  },
+  "methodology": {
+    "methods": [
+      "Profiling Questions",
+      "Steering Statements"
+    ],
+    "metrics": [
+      "Steerability Indices"
+    ],
+    "calculation": "Steerability indices calculated using the Wasserstein distance between baseline and steered profiles.",
+    "interpretation": "Higher values of steerability indices indicate better steerability towards intended personas.",
+    "baseline_results": "N/A",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

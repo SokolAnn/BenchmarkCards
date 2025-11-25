@@ -1,0 +1,84 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Llama3-SSL4EO-S12",
+    "abbreviation": "N/A",
+    "overview": "The largest multispectral image-caption dataset for Earth Observation, consisting of one million Sentinel-2 samples with corresponding textual descriptions generated for contrastive learning.",
+    "data_type": "image-caption pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ChatEarthNet",
+      "SkyScript",
+      "BLIP-2"
+    ],
+    "resources": [
+      "https://github.com/IBM/MS-CLIP",
+      "https://huggingface.co/datasets/ibm-esa-geospatial/Llama3-SSL4EO-S12-v1.1-captions"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To create a large-scale dataset of multispectral imagery with captions for improving vision-language models in Earth observation.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Zero-shot Classification",
+      "Text-to-Image Retrieval"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Multispectral imagery from Sentinel-2 satellites with generated captions.",
+    "size": "1,000,000 samples",
+    "format": "N/A",
+    "annotation": "Automated captioning using a multimodal large language model."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Mean Average Precision (mAP)"
+    ],
+    "calculation": "Calculated similarity scores between images and class labels for classification, and average precision for text-to-image retrieval.",
+    "interpretation": "Higher accuracy and mAP indicate better performance of the model.",
+    "baseline_results": "Llama3-MS-CLIP achieves a top-1 accuracy of 58.54% and mAP@100 of 42.79%.",
+    "validation": "Studied using zero-shot evaluation across three different datasets."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": []
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Permissive license",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

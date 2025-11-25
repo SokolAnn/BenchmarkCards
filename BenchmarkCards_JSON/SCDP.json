@@ -1,0 +1,71 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Swift Cross-Dataset Pruning (SCDP)",
+    "abbreviation": "SCDP",
+    "overview": "Swift Cross-Dataset Pruning (SCDP) enhances fine-tuning efficiency for NLP tasks in cross-dataset scenarios by rapidly evaluating sample importance using TF-IDF embeddings and applying dataset size-adaptive pruning to maintain diversity across various tasks and scales.",
+    "data_type": "N/A",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/he-y/NLP-Dataset-Pruning"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of SCDP is to enhance fine-tuning efficiency for NLP tasks in cross-dataset scenarios while reducing computational resources.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Paraphrase Identification",
+      "Natural Language Inference",
+      "Sentiment Analysis",
+      "Question Answering",
+      "Reasoning"
+    ],
+    "limitations": "While tested on six NLU tasks, the method’s performance on more complex tasks such as text generation is unknown.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Experimental evaluation on six diverse datasets (RTE, MRPC, CoLA, SST-2, SWAG, QNLI) for demonstrating the effectiveness of SCDP.",
+    "size": "2.49k to 105k examples",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Frequency Distance scores are calculated by assessing the importance of samples based on TF-IDF embeddings with geometric median.",
+    "interpretation": "Higher frequency distance scores indicate more important samples for dataset pruning.",
+    "baseline_results": null,
+    "validation": "Validation through extensive experiments on multiple datasets with varying tasks and scales."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

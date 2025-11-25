@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TGEA (Text Generation Error Analysis)",
+    "abbreviation": "TGEA",
+    "overview": "TGEA is an error-annotated dataset with multiple benchmark tasks for text generation from pretrained language models (PLMs), aimed at diagnosing and understanding text generation capabilities and errors.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://download.mindspore.cn/dataset/TGEA/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To analyze the capability of pretrained language models in text generation and to provide a dataset for automatic error detection and correction.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Erroneous Sentence Detection",
+      "Erroneous Span Detection",
+      "Error Type Classification",
+      "Error Correction",
+      "Error Rationale Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Machine-generated texts from a Chinese GPT-2 model using carefully crafted prompts.",
+    "size": "47,058 sentences",
+    "format": "JSON",
+    "annotation": "Manual annotation by crowdsourced workers, including error types and rationales."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "BLEU Score",
+      "ROUGE-L"
+    ],
+    "calculation": "Metrics are calculated based on predictions made by models against true labels.",
+    "interpretation": "Results are interpreted as indicative of model performance in accurately detecting and correcting errors.",
+    "baseline_results": "Results provided for models including BERT, RoBERTa, and ALBERT on various tasks.",
+    "validation": "N/A"
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

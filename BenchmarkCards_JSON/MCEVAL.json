@@ -1,0 +1,71 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MCEVAL",
+    "abbreviation": "N/A",
+    "overview": "MCEVAL is the first benchmark dataset and evaluation metrics specifically tailored for LLM-assisted motion control code, comprising 186 motion control programming tasks of varying complexity.",
+    "data_type": "motion control programming tasks",
+    "domains": [
+      "Industrial Automation"
+    ],
+    "languages": [
+      "Python"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/MCCodeAI/MCCoder"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The primary objective of MCEVAL is to provide a benchmark for evaluating the effectiveness and safety of generated motion control code using LLMs.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Code Generation"
+    ],
+    "limitations": "MCEVAL is currently limited to the WMX3 library with Python; future work will include more libraries and programming languages.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The MCEVAL dataset was constructed by verifying each task manually and through soft-motion simulations.",
+    "size": "186 tasks",
+    "format": "N/A",
+    "annotation": "Each task is defined by a TaskId, Instruction, CanonicalCode, and Difficulty."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "First Time Pass Rate (FTPR)",
+      "MatchEndPoints",
+      "Dynamic Time Warping (DTW)"
+    ],
+    "calculation": "FTPR is calculated as the percentage of codes that pass on the first attempt.",
+    "interpretation": "High FTPR indicates effective code generation, especially for complex motion control tasks.",
+    "baseline_results": "MCCoder outperformed the baseline models, showing an overall FTPR improvement of 33.09% and 131.77% for more complex tasks.",
+    "validation": "Validation procedure was conducted through soft-motion simulations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

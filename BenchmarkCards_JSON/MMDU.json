@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MMDU (Multi-Turn Multi-Image Dialog Understanding)",
+    "abbreviation": "MMDU",
+    "overview": "MMDU is a comprehensive benchmark designed to evaluate and improve Large Vision-Language Models (LVLMs) abilities in multi-turn and multi-image conversations, addressing the limitations of existing benchmarks which primarily focus on single-choice questions or short-form responses.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MMStar",
+      "MathVista",
+      "ChartQA"
+    ],
+    "resources": [
+      "https://github.com/Liuziyu77/MMDU",
+      "https://huggingface.co/datasets/laolao77/MMDU"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess the multi-turn, multi-image dialog understanding capabilities of LVLMs, specifically designed for human-AI interaction.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Data is sourced from Wikipedia entries, including images and textual information, which are clustered and annotated for creating multi-turn dialogues.",
+    "size": "45,000 dialogues",
+    "format": "N/A",
+    "annotation": "Human annotators reviewed and verified the dialogues generated with the assistance of the GPT-4o model."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Metrics are calculated based on the output quality in response to questions generated using the benchmark.",
+    "interpretation": "Higher scores indicate better understanding and reasoning abilities of the models evaluated.",
+    "baseline_results": "The best open-source model scores 42.8%, whereas closed-source models like GPT-4o reach 70.2%.",
+    "validation": "Benchmark validated using multiple rounds of human and model evaluations to ensure reliability and performance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ObjectCompose",
+    "abbreviation": "N/A",
+    "overview": "ObjectCompose is a method for generating diverse object-to-background compositional changes to evaluate the resilience of vision models. It quantitatively assesses the impact of background variations on deep learning model performance.",
+    "data_type": "image",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "N/A"
+    ],
+    "similar_benchmarks": [
+      "ImageNet",
+      "COCO"
+    ],
+    "resources": [
+      "https://github.com/Muhammad-Huzaifaa/ObjectCompose"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To analyze the resilience of vision models to natural and adversarial background changes.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Object Detection",
+      "Image Classification",
+      "Segmentation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "ImageNet and COCO datasets",
+    "size": "77,070 images in ImageNet-B and 5,635 images in COCO-DC",
+    "format": "N/A",
+    "annotation": "Segmentation masks generated using SAM and captions generated using BLIP-2."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Evaluation on various vision models"
+    ],
+    "metrics": [
+      "Top-1 Accuracy",
+      "Average Precision (AP)"
+    ],
+    "calculation": "Performance drop attributed to changes in background context.",
+    "interpretation": "A decrease in accuracy indicates a greater vulnerability to background changes.",
+    "baseline_results": "Original model performance compared against models subjected to background variations.",
+    "validation": "Evaluation performed on standard benchmarks using vision models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Prompt injection attack",
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

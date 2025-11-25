@@ -1,0 +1,106 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ViLBias",
+    "abbreviation": "N/A",
+    "overview": "ViLBias is a VQA-style benchmark and framework for detecting and reasoning about bias in multimodal news, comprising 40,945 text-image pairs from diverse outlets, each annotated with a bias label and concise rationale using a hybrid LLM-as-annotator pipeline.",
+    "data_type": "text-image pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "BiasLab",
+      "BIASsist",
+      "MDAM3",
+      "MMFakeBench",
+      "IndiTag",
+      "VERITE",
+      "MBIB",
+      "BABE",
+      "BASIL",
+      "NewsBag",
+      "FakeNewsNet"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2412.17052"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "The main goal is to assess the ability of language models, specifically vision-language models (VLMs), to detect and reason about media bias.",
+    "audience": [
+      "ML Researchers",
+      "Media Analysts",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Bias Detection",
+      "Visual Question Answering"
+    ],
+    "limitations": "The dataset coverage skews towards English-language and Western media, limiting cross-cultural generalizability.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "40,945 text-image pairs collected from diverse news sources including CNN, BBC, and The New York Times.",
+    "size": "40,945 examples",
+    "format": "JSON",
+    "annotation": "Combines LLM-based automated labeling with extensive human review for quality assurance."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics",
+      "LLM-as-judge evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Metrics are calculated using standard evaluation protocols across multiple model evaluations.",
+    "interpretation": "Higher accuracy indicates better bias detection, while reasoning quality is assessed by faithfulness to the evidence.",
+    "baseline_results": "RoBERTa+CLIP achieved F1 of 82.9% and accuracy of 83.6%.",
+    "validation": "5-fold cross-validation and human review ensure reliability of annotations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Lack of training data transparency"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The dataset lacks comprehensive coverage of diverse demographic groups.",
+    "harm": [
+      "Reinforcement of existing societal biases through biased media representations"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

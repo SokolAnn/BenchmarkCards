@@ -1,0 +1,89 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Spider-Mismatch",
+    "abbreviation": "N/A",
+    "overview": "Spider-Mismatch is a new dataset specifically designed to highlight the mismatch problem in SQL conditional clauses, which aims to bridge the gap between existing benchmarks and real-world scenarios.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Spider",
+      "Spider-SYN",
+      "Spider-DK",
+      "Spider-Realistic"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2408.16991"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enhance the SQL generation capabilities of LLMs in real-world scenarios by addressing common database mismatch problems.",
+    "audience": [
+      "ML Researchers",
+      "Database Engineers",
+      "Data Scientists"
+    ],
+    "tasks": [
+      "Text-to-SQL"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Derived from Spider and its variants by modifying questions and SQL queries.",
+    "size": "N/A",
+    "format": "N/A",
+    "annotation": "Manual modification to introduce conditions that reflect real-world scenarios."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Execution Accuracy",
+      "Exact Match Accuracy"
+    ],
+    "calculation": "Metrics are computed based on the comparison of predicted SQL queries with gold queries.",
+    "interpretation": "Higher accuracy scores indicate better performance in generating correct SQL queries.",
+    "baseline_results": "Tool-SQL outperformed existing methods by 9.6% on Spider-Mismatch using ChatGPT and 7.1% using GPT-4.",
+    "validation": "Evaluation conducted against standard Text-to-SQL benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": [
+      "Potential misrepresentations in SQL query generation affecting real-world applications."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

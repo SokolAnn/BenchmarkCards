@@ -1,0 +1,80 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LONG2RAG (Long-Context & Long-Form Retrieval-Augmented Generation)",
+    "abbreviation": "LONG2RAG",
+    "overview": "LONG2RAG comprises 280 questions spanning 10 domains and 8 question categories, each associated with 5 retrieved documents with an average length of 2,444 words. It evaluates the extent to which LLMs incorporate key points extracted from the retrieved documents into their generated responses using the Key Point Recall (KPR) metric.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Education",
+      "Healthcare",
+      "Finance",
+      "Legal",
+      "Technology",
+      "Arts",
+      "Social Sciences"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ProxyQA"
+    ],
+    "resources": [
+      "https://arxiv.org/abs/2410.23000"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a robust benchmark for evaluating long-context and long-form retrieval-augmented generation models in large language models (LLMs).",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "The dataset is constructed using an automated pipeline that ensures minimal data contamination, and questions are designed to reflect real-world complexities in retrieval-augmented generation.",
+    "size": "280 questions",
+    "format": "N/A",
+    "annotation": "Questions were generated and verified through a human-LLM collaborated verification process."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Key Point Recall (KPR)"
+    ],
+    "calculation": "KPR measures the average coverage of key points from the retrieved documents incorporated in the LLM's generated responses.",
+    "interpretation": "Higher KPR scores indicate better performance in leveraging retrieved information to construct answers.",
+    "baseline_results": "KPR results across various LLMs were evaluated and compared to determine relative performance.",
+    "validation": "LONG2RAG has been validated through extensive testing across 9 state-of-the-art LLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Robustness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "To ensure ethical standards, the dataset was curated to avoid personal data or sensitive information.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

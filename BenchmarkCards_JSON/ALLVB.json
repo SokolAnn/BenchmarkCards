@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ALLVB (All-in-One Long Video Understanding Benchmark)",
+    "abbreviation": "ALLVB",
+    "overview": "ALLVB is a long video understanding benchmark designed to assess the capabilities of Multi-modal LLMs (MLLMs) across 9 major video understanding tasks with 1,376 videos, each averaging nearly 2 hours, and a total of 252,420 Q&A pairs.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://huggingface.co/datasets/ALLVB/ALLVB"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive and challenging benchmark for evaluating long video understanding capabilities of MLLMs.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Video Classification",
+      "Scene Recognition",
+      "Object Detection and Tracking",
+      "Action Recognition",
+      "Temporal Action Localization",
+      "Event Detection",
+      "Video Captioning",
+      "Video Emotion Recognition",
+      "Needle-in-a-Haystack"
+    ],
+    "limitations": "The benchmark currently includes only movie videos.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "1,376 feature-length movies collected from open-source websites",
+    "size": "1,376 movies, 2,628 hours total",
+    "format": "JSON",
+    "annotation": "Automated using GPT-4 with human quality control"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy calculated based on the number of correct answers identified by models against the total Q&As.",
+    "interpretation": "Higher accuracy indicates better understanding of long video content by the modeled LLM.",
+    "baseline_results": null,
+    "validation": "Validation through rigorous manual review and testing various MLLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The benchmark does not target specific demographic characteristics.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "CC-BY-NC-SA-4.0",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

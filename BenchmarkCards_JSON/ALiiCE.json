@@ -1,0 +1,82 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ALiiCE (Automatic LLMs’ Positional Fine-grained Citation Evaluation)",
+    "abbreviation": "ALiiCE",
+    "overview": "ALiiCE is the first automatic evaluation framework for positional fine-grained citation generation, utilizing a dependency tree based approach to parse sentence-level claims into atomic claims and evaluate citation quality using three metrics: positional fine-grained citation recall, precision, and coefficient of variation of citation positions.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/ylXuu/ALiiCE"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the positional fine-grained citation generation performance of large language models and demonstrate the effectiveness of the ALiiCE framework.",
+    "audience": [
+      "ML Researchers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Long-form Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "ASQA (Ambiguous QA) and ELI5 (Explain Like I’m Five) datasets",
+    "size": "948 queries for ASQA, 1,000 examples for ELI5",
+    "format": "Text",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Citation Recall",
+      "Citation Precision",
+      "Coefficient of Variation of Citation Positions (CVCP)"
+    ],
+    "calculation": "Metrics are derived based on the performance of large language models in generating positional fine-grained citations in long-form QA responses.",
+    "interpretation": "Higher values of citation recall and precision indicate better citation quality, and CVCP measures the dispersion of citation positions within sentences.",
+    "baseline_results": null,
+    "validation": "Evaluation is validated through experiments comparing various language models."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

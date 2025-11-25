@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "BBT-CFLEB (Chinese Financial Language understanding and generation Evaluation Benchmark)",
+    "abbreviation": "BBT-CFLEB",
+    "overview": "BBT-CFLEB, a Chinese Financial Language understanding and generation Evaluation Benchmark, which includes six datasets covering both understanding and generation tasks. The benchmark is designed to facilitate research in the development of NLP within the Chinese financial domain.",
+    "data_type": "text (financial news articles, company announcements, research reports, social media posts, question-answer pairs, summary pairs)",
+    "domains": [
+      "Natural Language Processing",
+      "Finance"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "GLUE",
+      "SuperGLUE",
+      "CLUE",
+      "FLUE"
+    ],
+    "resources": [
+      "https://github.com/ssymmetry/BBT-FinCUGE-Applications",
+      "https://arxiv.org/abs/2302.09432",
+      "https://finance.sina.com.cn/",
+      "https://new.qq.com/ch/finance/",
+      "https://finance.ifeng.com/",
+      "https://36kr.com/",
+      "https://www.huxiu.com/",
+      "https://www.eastmoney.com/",
+      "https://guba.eastmoney.com/",
+      "https://xueqiu.com/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Facilitate research and evaluate Chinese language understanding and generation capabilities in the financial domain by providing a benchmark composed of six practical tasks.",
+    "audience": [
+      "Researchers",
+      "Open-source community"
+    ],
+    "tasks": [
+      "Multi-label Text Classification",
+      "Text Summarization",
+      "Relation Extraction",
+      "Sentiment Analysis",
+      "Question Answering",
+      "Event/Subject Detection"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "BBT-FinCorpus composed of corporate announcements, research reports, financial news, and social media posts. Crawled sources mentioned include Sina Finance, Tencent Finance, Phoenix Finance, 36Kr, Huxiu, Eastmoney, Guba, and Xueqiu.",
+    "size": "About 300GB raw text (per paper: corporate announcements ~105GB after conversion, research reports ~11GB after conversion, financial news ~20GB, social media ~120GB; paper states ~300GB overall).",
+    "format": "Text files (converted from PDF where applicable)",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics (task-specific)",
+      "Model fine-tuning (generative models: text-to-text; BERT-based models: classification head)",
+      "Leaderboards for ranking models"
+    ],
+    "metrics": [
+      "F1 Score",
+      "ROUGE",
+      "Accuracy"
+    ],
+    "calculation": "Each task is evaluated on its test set using the metric specified per task (e.g., F1 Score for FinNL on the test set, ROUGE for FinNA on the test set, Accuracy for FinFE on the test set). Train/validation/test splits are provided per task.",
+    "interpretation": "Higher metric scores indicate better performance; models are ranked on leaderboards (Overall, Understanding ability, Generation ability) based on these metrics.",
+    "baseline_results": "Table 4 (selected overall averages): GPT2-base Avg 68.37; T5-base Avg 74.89; BBT-FinT5-base Avg 76.29; BBT-FinT5-base-KE Avg 76.84; BBT-FinT5-large Avg 77.07. (Full per-task scores presented in Table 4 of the paper.)",
+    "validation": "Train/validation/test splits are specified per task (see task descriptions). Models are fine-tuned on training sets, validated on validation sets, and evaluated on test sets; results are reported on the test sets and collected on leaderboards."
+  },
+  "targeted_risks": {
+    "risk_categories": [],
+    "atlas_risks": {
+      "risks": null
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

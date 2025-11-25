@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DebugBench",
+    "abbreviation": "N/A",
+    "overview": "DebugBench is a new LLM debugging benchmark consisting of 4,253 instances to evaluate the debugging capabilities of large language models across various bug categories and types.",
+    "data_type": "code snippets with embedded bugs",
+    "domains": [
+      "Software Engineering"
+    ],
+    "languages": [
+      "Python",
+      "C++",
+      "Java"
+    ],
+    "similar_benchmarks": [
+      "QuixBugs",
+      "Defects4J"
+    ],
+    "resources": [
+      "https://github.com/user/repo",
+      "https://huggingface.co/datasets/DebugBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To comprehensively evaluate the debugging capabilities of large language models.",
+    "audience": [
+      "Researchers",
+      "Practitioners",
+      "Developers"
+    ],
+    "tasks": [
+      "Debugging"
+    ],
+    "limitations": "The benchmark's reliance on synthetic bugs may limit its applicability to real-world scenarios.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from LeetCode and synthesized with GPT-4.",
+    "size": "4,253 instances",
+    "format": "JSON",
+    "annotation": "Implemented using GPT-4 to create bugs and explanations."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Pass Rate"
+    ],
+    "calculation": "Pass Rate is calculated as the ratio of successfully fixed bug instances to total bug instances.",
+    "interpretation": "A higher Pass Rate indicates better debugging capability of the model.",
+    "baseline_results": null,
+    "validation": "Evaluations were performed on various models in zero-shot scenarios."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Apache-2.0 license",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

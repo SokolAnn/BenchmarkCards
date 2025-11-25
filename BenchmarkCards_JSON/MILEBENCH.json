@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MILEBENCH",
+    "abbreviation": "N/A",
+    "overview": "MILEBENCH is a pioneering benchmark designed to test the MultImodal Long-cont Ext capabilities of Multimodal Large Language Models (MLLMs). It comprises multimodal long contexts and multiple tasks requiring both comprehension and generation. Two distinct evaluation sets, diagnostic and realistic, are established to assess MLLMs' long-context adaptation capacity.",
+    "data_type": "multimodal",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://milebench.github.io/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To rigorously evaluate the multimodal long-context capabilities of MLLMs.",
+    "audience": [
+      "ML Researchers",
+      "AI Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Object Detection",
+      "Action Understanding",
+      "Visual Navigation",
+      "Knowledge Grounded QA",
+      "Visual Relation Inference"
+    ],
+    "limitations": "Some results from closed-source MLLMs may vary over time, and there is a risk of data leakage.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from 21 pre-existing or self-constructed datasets.",
+    "size": "6,440 examples",
+    "format": "N/A",
+    "annotation": "Manually verified with an Inter-annotator Agreement of 95%."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "ROUGE-L"
+    ],
+    "calculation": "Metrics for each dataset are consistent with the original work for tasks built on previous datasets.",
+    "interpretation": "Higher scores indicate better performance in long-context tasks.",
+    "baseline_results": "Closed-source MLLMs, specifically GPT-4V and GPT-4o, achieved the highest performance.",
+    "validation": "10% of the data is manually verified for precision."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "The benchmark assesses performance across different MLLM types without specific demographic breakdown.",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "The dataset used is composed of publicly accessible datasets licensed under Creative Commons (CC-BY) or other open-source licenses.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "The study followed all required legal procedures for data incorporation."
+  }
+}

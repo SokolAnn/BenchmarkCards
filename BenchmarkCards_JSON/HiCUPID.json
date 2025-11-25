@@ -1,0 +1,94 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "HiCUPID (Conversations with User Personal Information Dataset)",
+    "abbreviation": "HiCUPID",
+    "overview": "HiCUPID is a new benchmark for training and evaluating LLMs as personalized assistants, incorporating multi-faceted challenges of personalized AI assistants and providing an automated evaluation model.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/12kimih/HiCUPID"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To facilitate future efforts toward building LLM-powered personalized assistants and to evaluate their customization and personalization abilities.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Personalized Assistant Development",
+      "Quality Assessment of AI Responses"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Synthetic data generated using GPT-4o from PersonaHub profiles.",
+    "size": "1,500 users, 40,000 question-answer pairs",
+    "format": "JSON",
+    "annotation": "Automatically generated using GPT-4o"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics based on Llama-3.2"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "BLEU Score",
+      "ROUGE-L"
+    ],
+    "calculation": "Metrics calculated using human preference evaluations compared with metrics like BLEU and ROUGE-L.",
+    "interpretation": "Scores are interpreted based on how well model responses align with predefined human preferences for personalization.",
+    "baseline_results": null,
+    "validation": "Internal validation through comparison of multiple models and evaluation settings."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Privacy",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": [
+      "Potential for over-reliance on personalized assistants leading to diminished critical thinking."
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "HiCUPID uses synthetic data with no real user information, minimizing privacy risks.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

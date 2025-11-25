@@ -1,0 +1,71 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Saturation-Driven Dataset Generation for LLM",
+    "abbreviation": "N/A",
+    "overview": "The paper introduces a new framework for generating tasks for mathematical reasoning in LLMs, utilizing a saturation-driven approach to ensure logical validity of generated problems.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Mathematics"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/sileod/reasoning_core",
+      "https://hf.co/datasets/reasoning-core/rc1"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To generate a diverse set of logically valid reasoning tasks to assess and improve the reasoning capabilities of LLMs.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Conjecture Entailment Verification",
+      "Minimal Premise Selection",
+      "Proof Graph Reconstruction"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "TPTP axiom library used to generate theorems through saturation.",
+    "size": "3,000 problems",
+    "format": "N/A",
+    "annotation": "Automatically generated through a reasoning framework."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Metrics are calculated based on the proportion of correctly identified tasks and logical entailments.",
+    "interpretation": "Higher scores indicate better reasoning capabilities of LLMs.",
+    "baseline_results": "Performance of gpt-5 models evaluated across various tasks.",
+    "validation": "Tasks validated using advanced theorem provers like Vampire."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

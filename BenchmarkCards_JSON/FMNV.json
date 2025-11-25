@@ -1,0 +1,87 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "FMNV (Fake Media News Videos)",
+    "abbreviation": "FMNV",
+    "overview": "FMNV is a dataset of 2,393 professionally produced news videos sourced from verified YouTube and Twitter accounts, aimed at addressing the gap in the detection of multimodal fake news videos and providing a basis for robust fake news detection systems.",
+    "data_type": "video",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "FakeSV",
+      "FakeTT"
+    ],
+    "resources": [
+      "https://github.com/DennisIW/FMNV"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To construct a dataset of media-published news videos for effective fake news detection and to establish benchmarks for the methodologies involved in detecting high-impact fake news.",
+    "audience": [
+      "Researchers",
+      "Developers"
+    ],
+    "tasks": [
+      "Fake News Detection"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from verified YouTube and Twitter accounts of news media organizations.",
+    "size": "2,393 videos",
+    "format": "N/A",
+    "annotation": "Manual review and LLM-assisted modification for the generation of fake news videos."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "Metrics are calculated based on the classification performance of models tested on FMNV.",
+    "interpretation": "Higher scores in accuracy, F1, precision, and recall indicate better performance in detecting fake news.",
+    "baseline_results": "FMNVD achieved an accuracy of 74.17 on the dataset.",
+    "validation": "Models were validated through comparative experiments with established baselines."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

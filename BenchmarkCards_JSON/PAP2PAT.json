@@ -1,0 +1,86 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "PAP2PAT (Patent-Paper Pairs)",
+    "abbreviation": "PAP2PAT",
+    "overview": "PAP2PAT is an open and realistic benchmark for patent drafting consisting of 1.8k patent-paper pairs describing the same inventions, aimed at evaluating long-document generation tasks for LLMs.",
+    "data_type": "patent-paper pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Legal"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/boschresearch/Pap2Pat"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate and facilitate the generation of patent applications using large language models by providing a standard benchmark with matched patent-paper pairs.",
+    "audience": [
+      "ML Researchers",
+      "Patent Attorneys",
+      "Legal Researchers"
+    ],
+    "tasks": [
+      "Patent Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "1.8k matched Patent-Paper Pairs from USPTO dataset and SemOpenAlex.",
+    "size": "1,800 pairs",
+    "format": "JSON",
+    "annotation": "Manual annotation and validation of matches between patents and research papers."
+  },
+  "methodology": {
+    "methods": [
+      "Human Evaluation",
+      "Automated metrics",
+      "Model-based evaluation"
+    ],
+    "metrics": [
+      "Factuality",
+      "Coverage",
+      "BERTScore",
+      "ROUGE-L"
+    ],
+    "calculation": "Automatic evaluation metrics adapted for long documents assessing factual consistency, coverage of content, and stylistic similarity.",
+    "interpretation": "Higher scores indicate better factual correctness and adherence to patent language style.",
+    "baseline_results": "N/A",
+    "validation": "Manual validation of matching process and benchmark performance through human evaluations."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Released under permissive licenses allowing redistribution and commercial use.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MedChain",
+    "abbreviation": "N/A",
+    "overview": "MedChain is a comprehensive clinical decision-making benchmark designed to simulate real-world scenarios in healthcare, comprising 12,163 clinical cases that cover five key stages of clinical workflow.",
+    "data_type": "clinical cases and medical images",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "similar_benchmarks": [
+      "MedQA",
+      "PubMedQA",
+      "MedMCQA"
+    ],
+    "resources": [
+      "https://github.com/ljwztc/MedChain"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the capabilities of LLM-based agents in clinical decision-making by providing a realistic benchmark that incorporates personalization, interactivity, and sequentiality.",
+    "audience": [
+      "ML Researchers",
+      "Healthcare Practitioners",
+      "AI Developers"
+    ],
+    "tasks": [
+      "Diagnosis",
+      "Treatment Planning",
+      "History Taking",
+      "Specialty Referral"
+    ],
+    "limitations": "The dataset derived from a single source may limit generalizability; future work aims to incorporate diverse data sources.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Chinese medical website 'iiYi', which provides validated clinical cases.",
+    "size": "12,163 clinical cases",
+    "format": "N/A",
+    "annotation": "Validated by professional physicians and de-identified to ensure patient privacy."
+  },
+  "methodology": {
+    "methods": [
+      "Multiple-agent collaboration",
+      "Feedback mechanisms",
+      "Dynamic information gathering"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Intersection over Union (IoU)"
+    ],
+    "calculation": "Scores are based on the correctness of decisions through a multi-stage evaluation process.",
+    "interpretation": "Higher scores indicate better performance in clinical decision-making tasks.",
+    "baseline_results": "MedChain-Agent framework demonstrates significant improvements over existing approaches.",
+    "validation": "Performed by a panel of senior physicians ensuring data integrity and clinical relevance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data has been de-identified to protect patient privacy.",
+    "data_licensing": "Formal permission obtained for data use from the site administrators.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

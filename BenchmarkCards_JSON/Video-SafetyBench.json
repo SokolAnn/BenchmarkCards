@@ -1,0 +1,98 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Video-SafetyBench",
+    "abbreviation": "N/A",
+    "overview": "Video-SafetyBench is the first comprehensive benchmark designed to evaluate the safety of LVLMs under video-text attacks, comprising 2,264 video-text pairs spanning 48 fine-grained unsafe categories.",
+    "data_type": "video-text pairs",
+    "domains": [
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MM-SafetyBench",
+      "HADES",
+      "JailbreakV"
+    ],
+    "resources": [
+      "https://liuxuannan.github.io/Video-SafetyBench.github.io/",
+      "https://huggingface.co/datasets/BAAI/Video-SafetyBench",
+      "https://github.com/flageval-baai/Video-SafetyBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To systematically evaluate the safety of video LVLMs and identify vulnerabilities in model outputs.",
+    "audience": [
+      "AI Researchers",
+      "Safety Evaluators",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Safety Evaluation",
+      "Video Classification",
+      "Adversarial Testing"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Sourced from diverse datasets and generated using controlled pipelines combining LLMs and video synthesis models.",
+    "size": "2,264 video-text pairs",
+    "format": "N/A",
+    "annotation": "Generated and reviewed using LLM-guided prompts with human verification."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "RJScore"
+    ],
+    "calculation": "RJScore is calculated by assessing the confidence of judge models using logit distributions and calibrating decision thresholds through cross-validation.",
+    "interpretation": "A higher RJScore indicates greater toxicity and risk of harmful outputs.",
+    "baseline_results": null,
+    "validation": "Video-SafetyBench is validated through extensive evaluations across 24 state-of-the-art LVLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Safety",
+      "Privacy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack",
+            "Prompt injection attack"
+          ]
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Exposing personal information"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0).",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

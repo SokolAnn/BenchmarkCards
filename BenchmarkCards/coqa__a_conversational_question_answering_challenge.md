@@ -1,0 +1,100 @@
+# CoQA: A Conversational Question Answering Challenge
+
+## 📊 Benchmark Details
+
+**Name**: CoQA: A Conversational Question Answering Challenge
+
+**Overview**: We introduce CoQA, a novel dataset for building Conversational Question Answering systems. Our dataset contains 127k questions with answers, obtained from 8k conversations about text passages from seven diverse domains. The questions are conversational, and the answers are free-form text with their corresponding evidence highlighted in the passage.
+
+**Data Type**: text (conversational question-answering pairs with free-form answers and span-based rationales)
+
+**Domains**:
+- Children's Stories
+- Literature
+- Education (Mid/High School Exams)
+- News
+- Encyclopedic (Wikipedia)
+- Online Forums (Reddit)
+- Science
+
+**Languages**:
+- English
+
+**Similar Benchmarks**:
+- MCTest
+- CNN/Daily Mail
+- Children's Book Test
+- SQuAD
+- SQuAD 2.0
+- MS MARCO
+- NewsQA
+- SearchQA
+- TriviaQA
+- RACE
+- NarrativeQA
+- QuAC
+
+**Resources**:
+- [Resource](https://stanfordnlp.github.io/coqa)
+- [Resource](https://arxiv.org/abs/1808.07042)
+
+## 🎯 Purpose and Intended Users
+
+**Goal**: To provide a large-scale dataset for measuring and building systems that answer conversational questions about a passage, where questions depend on conversation history and answers are free-form text with span-based rationales, and to evaluate model generalization across seven diverse domains.
+
+**Target Audience**:
+- Research community
+- Machine Learning researchers
+- Natural Language Processing researchers
+- Model developers
+
+**Tasks**:
+- Question Answering
+- Conversational Machine Comprehension
+- Reading Comprehension
+
+**Limitations**: Finding the perfect evaluation metric for abstractive (free-form) responses is still a challenging problem and is beyond the scope of this work. The data collection setup allows the questioner to see the passage (complete independence of question and passage is not attainable). Due to Amazon Mechanical Turk terms of service, around 12% of the data had a single worker act as both questioner and answerer; this portion is included in the training set only.
+
+## 💾 Data
+
+**Source**: Passages selected from seven domains: Children's stories from MCTest, literature from Project Gutenberg, middle and high school English exams from RACE, news articles from CNN/Daily Mail, Wikipedia articles, Reddit articles from the Writing Prompts dataset, and science articles from AI2 Science Questions. Collected via paired annotators (questioner and answerer) on Amazon Mechanical Turk using the ParlAI MTurk API.
+
+**Size**: 127,000 questions and answers (127k Q/A pairs) collected from 8,399 passages across 8,399 conversations (total 8,399 passages; average conversation length 15.2 turns).
+
+**Format**: N/A
+
+**Annotation**: Manual annotation via Amazon Mechanical Turk; two annotators per conversation (questioner and answerer). Answerers highlight a contiguous text span as a rationale which is then edited into a free-form answer. For development and test data, three additional answers were collected per question (total n=4 human answers) using a verification procedure.
+
+## 🔬 Methodology
+
+**Methods**:
+- Automated metrics (macro-average F1 of word overlap)
+- Human evaluation (human F1 agreement)
+- Model-based evaluation (baseline neural models evaluated: seq2seq, Pointer-Generator network (PGNet), DrQA, Augmented DrQA, Combined DrQA+PGNet)
+
+**Metrics**:
+- Macro-average F1 (word overlap)
+- Exact Match (discussed in relation to SQuAD but F1 is used as main metric for CoQA)
+
+**Calculation**: Main metric is macro-average F1 of word overlap. For evaluation, n=4 human answers are used per question (the original answer plus 3 additional answers). Following SQuAD, individual predictions are compared against n human answers; for CoQA the evaluation averages F1 across n sets for both humans and models. Articles (a, an, the) and punctuation are excluded in evaluation.
+
+**Interpretation**: Higher macro-average F1 indicates better performance. Human performance on the test set is 88.8% F1; best automatic system reported in the paper achieves 65.4% F1 on the test set, indicating substantial room for improvement.
+
+**Baseline Results**: Test set overall F1 scores (reported): Augmented DrQA 65.4% (best), DrQA+PGNet 65.1%, DrQA 52.6%, PGNet 44.1%, seq2seq 26.3%, Human 88.8%.
+
+**Validation**: Collected three additional answers per question for development and test sets (n=4) to measure human agreement. Reserved Reddit and Science domains for out-of-domain evaluation. Domain-wise splits: for each in-domain dataset, 100 passages for development, 100 passages for test, rest for training; for out-of-domain datasets, 100 passages in test set.
+
+## ⚠️ Targeted Risks
+
+**Atlas Risks**:
+No specific atlas risks defined
+
+## 🔒 Ethical and Legal Considerations
+
+**Privacy And Anonymity**: Not Applicable
+
+**Data Licensing**: Not Applicable
+
+**Consent Procedures**: Not Applicable
+
+**Compliance With Regulations**: Not Applicable

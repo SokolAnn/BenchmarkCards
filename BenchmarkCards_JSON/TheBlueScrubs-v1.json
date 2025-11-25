@@ -1,0 +1,81 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TheBlueScrubs-v1",
+    "abbreviation": "N/A",
+    "overview": "TheBlueScrubs-v1 is a curated medical dataset derived from the internet, containing over 25 billion medical tokens and designed to train clinical large language models (cLLMs). It addresses the limitations of existing medical datasets by providing a broader range of medical discourse, including both formal and informal content.",
+    "data_type": "text",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "PubMed",
+      "Common Crawl",
+      "UMLS"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/TheBlueScrubs/TheBlueScrubs-v1"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a large, diverse dataset for training clinical large language models, enabling improved accuracy in biomedical AI applications.",
+    "audience": [
+      "Medical Researchers",
+      "AI Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text Classification",
+      "Synthetic Data Generation",
+      "Misinformation Detection",
+      "Safety Testing"
+    ],
+    "limitations": "The dataset may still contain biases or misinformation despite filtering efforts.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Dataset constructed from SlimPajama, a 627-billion-token deduplicated version of RedPajama, which includes data from Common Crawl, C4, GitHub, books, arXiv, Wikipedia, and Stack Exchange.",
+    "size": "25.1 billion tokens",
+    "format": "Sharded format with text and associated metadata.",
+    "annotation": "Annotated with medical relevance scores, factual precision scores, safety scores, and cancer-specific labels."
+  },
+  "methodology": {
+    "methods": [
+      "Logistic Regression for filtering",
+      "LLM-based scoring using Llama 3.1 for quality assessment"
+    ],
+    "metrics": [
+      "AUC",
+      "Medical Probability Score"
+    ],
+    "calculation": "Performance assessed via AUC with thresholds set at ≥0.8 for filtering quality.",
+    "interpretation": "Higher scores indicate greater medical relevance, precision, and safety of the texts.",
+    "baseline_results": "AUC of approximately 0.95 for classifier performance on external validation.",
+    "validation": "Validated through comparison with clinical reviews and external benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness",
+      "Privacy",
+      "Ethical Quality"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "The dataset emphasizes medical content, particularly focusing on oncology but does not provide detailed demographic breakdowns.",
+    "harm": [
+      "Misinformation exposure",
+      "Bias propagation"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "All original data sources comply with GDPR and local data protection regulations.",
+    "data_licensing": "Licensed under the Apache License, Version 2.0.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

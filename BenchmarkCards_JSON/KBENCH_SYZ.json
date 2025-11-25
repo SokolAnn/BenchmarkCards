@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "KBENCH SYZ",
+    "abbreviation": "N/A",
+    "overview": "KBENCH SYZ is a crash resolution benchmark drawn from real-world Linux kernel bugs, designed to evaluate large language models in resolving complex bugs in production-ready systems-level software.",
+    "data_type": "bug-resolution samples",
+    "domains": [
+      "Software Engineering"
+    ],
+    "languages": [
+      "C"
+    ],
+    "similar_benchmarks": [
+      "SWE-Bench"
+    ],
+    "resources": [
+      "https://github.com/Alex-Mathai-98/kGym-Kernel-Playground"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To benchmark the efficacy of large language models in resolving Linux kernel bugs.",
+    "audience": [
+      "ML Researchers",
+      "Software Engineers"
+    ],
+    "tasks": [
+      "Bug Resolution",
+      "Code Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Collected from reported and fixed bugs on Syzbot using Syzkaller.",
+    "size": "279 samples",
+    "format": "N/A",
+    "annotation": "Data includes crash reports, reproducer files, and developer-written patches."
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics",
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Patch Application Rate",
+      "Bug Solve Rate"
+    ],
+    "calculation": "Metrics calculated based on the percentage of successful patch applications and bug resolutions.",
+    "interpretation": "Higher percentages indicate better model performance in generating valid patches and successfully resolving bugs.",
+    "baseline_results": "Initial evaluations indicate a bug resolution rate of up to 5.38% under assisted conditions.",
+    "validation": "Validation performed through benchmarking against state-of-the-art LLMs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential consequences of incorrect bug resolutions leading to system instability."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

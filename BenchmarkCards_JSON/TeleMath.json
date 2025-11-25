@@ -1,0 +1,79 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "TeleMath",
+    "abbreviation": "N/A",
+    "overview": "TeleMath is the first benchmark dataset specifically designed to evaluate LLM performance in solving mathematical problems with numerical solutions in the telecommunications domain. Comprising 500 question-answer (QnA) pairs, it covers a wide spectrum of topics within telecommunications.",
+    "data_type": "question-answer pairs",
+    "domains": [
+      "Telecommunications Engineering",
+      "Electrical Engineering",
+      "Probability and Statistics",
+      "Signal Processing",
+      "Computer Networking",
+      "Operations Research",
+      "Information Theory"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MATH",
+      "GSM8K"
+    ],
+    "resources": [
+      "https://huggingface.co/datasets/netop/TeleMath"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a resource for evaluating Large Language Models on domain-specific mathematical problems in telecommunications.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Mathematical Problem Solving"
+    ],
+    "limitations": "The seed dataset does not fully represent the entire telecommunications domain.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated from a seed dataset composed of problems designed by Subject Matter Experts.",
+    "size": "500 question-answer pairs",
+    "format": "JSON",
+    "annotation": "Manual annotations by Subject Matter Experts."
+  },
+  "methodology": {
+    "methods": [
+      "Synthetic data generation",
+      "Benchmarking"
+    ],
+    "metrics": [
+      "pass@1",
+      "cons@16"
+    ],
+    "calculation": "Metrics are calculated over generated answers based on majority voting and single-attempt accuracy.",
+    "interpretation": "A higher pass@1 indicates that a model correctly generates the answer on its first attempt, while cons@16 reflects the consensus correctness across multiple attempts.",
+    "baseline_results": null,
+    "validation": "Semantic validation ensures questions are structurally equivalent to the original problems."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

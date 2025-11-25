@@ -1,0 +1,85 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MedAlign",
+    "abbreviation": "N/A",
+    "overview": "MedAlign is a benchmark dataset of 983 natural language instructions for electronic health record (EHR) data, curated by clinicians, to address the documentation burdens faced by healthcare providers. It includes clinician-written responses and allows for evaluation of large language models (LLMs) on realistic text generation tasks.",
+    "data_type": "instruction-response pairs",
+    "domains": [
+      "Healthcare"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MedQA",
+      "MMLU"
+    ],
+    "resources": [
+      "https://medalign.stanford.edu"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a benchmark dataset for evaluating LLMs on clinician-relevant tasks utilizing EHRs.",
+    "audience": [
+      "ML Researchers",
+      "Healthcare Professionals"
+    ],
+    "tasks": [
+      "Instruction Following"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Curated from natural language instructions provided by clinicians across various specialties paired with EHRs.",
+    "size": "983 instructions",
+    "format": "JSON",
+    "annotation": "Clinicians wrote reference responses based on instruction-EHR pairs."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "COMET",
+      "BERTScore"
+    ],
+    "calculation": "Metrics are calculated based on the correctness of LLM responses compared to clinician-generated gold standard answers.",
+    "interpretation": "Higher scores indicate better performance in following clinician instructions and generating appropriate responses.",
+    "baseline_results": "GPT-4 (32k) achieved 60.1% accuracy in its responses.",
+    "validation": "Evaluated by clinicians ranking LLM responses against reference answers."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Subset of data analyzed for potential biases in LLM performance across different demographic factors.",
+    "harm": "LLM errors could lead to poor clinical decision-making and compromise patient safety."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Data was de-identified using a ‘hiding in plain sight’ protocol.",
+    "data_licensing": "N/A",
+    "consent_procedures": "Patients provided consent for their medical records to be used for research.",
+    "compliance_with_regulations": "Conducted in accordance with HIPAA and institutional review board guidelines."
+  }
+}

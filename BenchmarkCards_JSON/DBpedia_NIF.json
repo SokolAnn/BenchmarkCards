@@ -1,0 +1,128 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "DBpedia NIF: Open, Large-Scale and Multilingual Knowledge Extraction Corpus",
+    "abbreviation": "DBpedia NIF",
+    "overview": "We present DBpedia NIF - a large-scale and multilingual knowledge extraction corpus. The aim of the dataset is two-fold: to dramatically broaden and deepen the amount of structured information in DBpedia, and to provide large-scale and multilingual language resource for development of various NLP and IR task. The dataset provides the content of all articles for 128 Wikipedia languages.",
+    "data_type": "text (Wikipedia article texts with sections, paragraphs, and annotated links)",
+    "domains": [
+      "Natural Language Processing",
+      "Information Retrieval",
+      "Semantic Web"
+    ],
+    "languages": [
+      "English",
+      "Cebuano",
+      "Swedish",
+      "German",
+      "French",
+      "Dutch",
+      "Russian",
+      "Italian",
+      "Spanish",
+      "Polish"
+    ],
+    "similar_benchmarks": [
+      "Linked Hypernyms Dataset (LHD)",
+      "Lector",
+      "Polyglot-NER",
+      "DBpedia Spotlight",
+      "Wikify!"
+    ],
+    "resources": [
+      "http://wiki.dbpedia.org/nif-abstract-datasets",
+      "https://github.com/dbpedia/extraction-framework/",
+      "http://persistence.uni-leipzig.org/nlp2rdf/",
+      "http://nlp2rdf.aksw.org/dbpedia-nif-examples/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To dramatically broaden and deepen the amount of structured information in DBpedia, and to provide large-scale and multilingual language resource for development of various NLP and IR task.",
+    "audience": [
+      "Semantic Web community",
+      "Natural Language Processing researchers",
+      "Information Retrieval researchers",
+      "Participants of the TextExt knowledge extraction challenge"
+    ],
+    "tasks": [
+      "Knowledge Extraction",
+      "Fact Extraction",
+      "Relation Extraction",
+      "Named Entity Recognition",
+      "Part-of-Speech Tagging",
+      "Dependency Parsing",
+      "Coreference Resolution",
+      "Entity Typing",
+      "Ontology Extraction",
+      "Information Retrieval"
+    ],
+    "limitations": "Only the English subset of the dataset is published according to the Linked Data principles with dereferenceable URIs; publishing of other language versions will be considered only if there is requirement within the community. Enrichment was not applied to the \"See also\", \"Notes\", \"Bibliography\", \"References\" and \"External Links\" sections.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Extracted from Wikipedia article texts (Wikipedia XML dumps) rendered via MediaWiki and processed with the DBpedia Extraction Framework; content semantically modeled using the NLP Interchange Format (NIF).",
+    "size": "Over 9 billion RDF triples (the DBpedia NIF dataset provides over 9 billion triples; overall DBpedia triples count brought up to 23 billion).",
+    "format": "RDF/OWL using the NLP Interchange Format (NIF) version 2.1; published as Linked Data (English subset published with dereferenceable URIs).",
+    "annotation": "Links, anchor texts and offsets automatically extracted from rendered HTML; dataset further enriched with automatically generated links via a string-matching enrichment process; enrichment validated via crowdsourced human evaluation (three judgments per annotation)."
+  },
+  "methodology": {
+    "methods": [
+      "Automated extraction from Wikipedia dumps using MediaWiki rendering and the DBpedia Extraction Framework",
+      "Automated enrichment of links via full string-matching (anchors sorted by length) applied across article text",
+      "Automated syntactic validation (Raptor RDF parser, iconv, wc)",
+      "RDFUnit validation against the NIF ontology",
+      "Crowdsourced human evaluation of enrichment (multiple annotators, three judgments per item)"
+    ],
+    "metrics": [
+      "Number of RDF triples (over 9 billion)",
+      "Articles, Paragraphs, Links per language (per-table statistics for top languages)",
+      "Mean and median number of annotations per article",
+      "Fraction of correct anchors (annotated correctness)",
+      "Fraction of correct links (annotated correctness)",
+      "Fraction of correct anchors and links combined",
+      "Inter-annotator agreement measured with Fleiss' kappa",
+      "Five-star dataset classification (Tim Berners-Lee five-star dataset)"
+    ],
+    "calculation": "A link is considered correct if at least two out of three annotators provided the same judgment. Inter-annotator agreement computed using Fleiss' kappa. Dataset statistics (articles, paragraphs, links, mean and median annotations) are reported per language as raw counts and summary statistics.",
+    "interpretation": "Fleiss' kappa values interpreted according to Landis and Koch: reported values classified as \"substantial agreement\" (0.61-0.80) for links and \"moderate agreement\" (0.41-0.60) for anchors and anchors+links combined. Higher fractions indicate better enrichment accuracy; results reported per-language (English and German).",
+    "baseline_results": null,
+    "validation": "Syntactic validation with Raptor RDF parsing, iconv and wc for unicode correctness, and RDFUnit tests ensuring adherence to NIF format (including checks that nif:anchorOf matches substring between begin and end offsets). Semantic validation via crowdsourced evaluation: top-10 PageRank articles for English and German, 30 random links per article, ten annotators, three judgments per annotation; results reported as fractions correct and Fleiss' kappa."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Transparency",
+      "Governance"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Lack of training data transparency"
+          ]
+        },
+        {
+          "category": "Governance",
+          "subcategory": [
+            "Lack of data transparency"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": null
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

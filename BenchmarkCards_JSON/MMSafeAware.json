@@ -1,0 +1,83 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "MMSafeAware (Multimodal Safety Awareness Benchmark)",
+    "abbreviation": "MMSafeAware",
+    "overview": "MMSafeAware is a comprehensive multimodal safety awareness benchmark designed to evaluate Multimodal Large Language Models (MLLMs) across 29 safety scenarios with 1,500 carefully curated image-prompt pairs. It includes both unsafe and over-safety subsets to assess the models' abilities to correctly identify unsafe content and avoid over-sensitivity.",
+    "data_type": "image-prompt pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MM-Safety",
+      "MossBench"
+    ],
+    "resources": [
+      "https://github.com/Jarviswang94/MMSafetyAwareness"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the safety awareness of Multimodal Large Language Models and to highlight shortcomings in their ability to identify unsafe content while avoiding over-sensitivity.",
+    "audience": [
+      "ML Researchers",
+      "AI Safety Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Safety Awareness Evaluation"
+    ],
+    "limitations": "Current methods to improve safety awareness do not fully address the challenges posed by the benchmark.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Carefully curated image-prompt pairs constructed from safety scenarios.",
+    "size": "1,500 image-prompt pairs",
+    "format": "N/A",
+    "annotation": "All data have been manually checked by human annotators to ensure quality."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation"
+    ],
+    "metrics": [
+      "Accuracy"
+    ],
+    "calculation": "Accuracy is computed based on the models' ability to correctly classify each image-prompt pair as safe or unsafe.",
+    "interpretation": "Higher accuracy indicates that the evaluated MLLM has better safety awareness.",
+    "baseline_results": "Accuracy of evaluated MLLMs ranges from 1.1% to 100.0% on different safety scenarios.",
+    "validation": "Validation was conducted through extensive testing on multiple models across various safety scenarios."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety",
+      "Bias"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The benchmark includes toxic images, but it does not aim to generate such images, rather to raise awareness of the safety issues in MLLMs.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

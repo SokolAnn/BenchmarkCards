@@ -1,0 +1,77 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "BABILong",
+    "abbreviation": "N/A",
+    "overview": "BABILong is a novel generative benchmark designed to evaluate the performance of NLP models in processing arbitrarily long documents with distributed facts, specifically addressing the challenge of extracting and processing these facts within extensive texts.",
+    "data_type": "question-answering pairs",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "bAbI",
+      "LongBench"
+    ],
+    "resources": [
+      "https://github.com/booydar/babilong"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To assess model capabilities in extracting and processing distributed facts within extremely long documents.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Question Answering"
+    ],
+    "limitations": "The benchmark uses background texts to hide facts, and the chosen background sources may affect results.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Randomly distributed facts inside book corpus using the PG19 dataset.",
+    "size": "11,000,000 tokens",
+    "format": "N/A",
+    "annotation": "Automatically generated"
+  },
+  "methodology": {
+    "methods": [
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "F1 Score"
+    ],
+    "calculation": "Evaluation is based on the performance of models on tasks involving question-answering with hidden facts in long texts.",
+    "interpretation": "Performance assessed based on how well models can identify and answer questions from distributed facts within extensive context.",
+    "baseline_results": "Evaluated against GPT-4 and RAG models.",
+    "validation": "Benchmarked across various models, showing performance degradation with increasing context length."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Unrepresentative data"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

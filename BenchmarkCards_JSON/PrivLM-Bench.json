@@ -1,0 +1,95 @@
+{
+  "benchmark_details": {
+    "name": "PrivLM-Bench",
+    "overview": "PrivLM-Bench is a multi-perspective privacy evaluation benchmark for language models (LMs), designed to quantify privacy leakage without ignoring inference data privacy. It defines multifaceted privacy objectives and utilizes a unified pipeline for private fine-tuning while performing privacy attacks to evaluate existing privacy-preserving language models (PPLMs).",
+    "data_type": "Text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": null,
+    "resources": [
+      "https://github.com/HKUST-KnowComp/PrivLM-Bench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To empirically and intuitively evaluate the privacy leakage of language models.",
+    "audience": [
+      "Researchers in natural language processing",
+      "Developers of privacy-preserving language models",
+      "Data scientists"
+    ],
+    "tasks": [
+      "Evaluate privacy performance of PPLMs",
+      "Conduct comparative studies on LMs",
+      "Verify PPLM implementations"
+    ],
+    "limitations": null,
+    "out_of_scope_uses": null
+  },
+  "data": {
+    "source": "GLUE benchmark datasets",
+    "size": "Three datasets: MNLI, SST2, QNLI",
+    "format": "Text classification tasks",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Full fine-tuning",
+      "Prompt tuning",
+      "Prefix tuning",
+      "Infilling"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Area Under Curve (AUC)",
+      "True Positive Rate (TPR)",
+      "Micro-level Precision",
+      "Recall",
+      "F1 Score"
+    ],
+    "calculation": "Empirical evaluations based on privacy attack effectiveness",
+    "interpretation": "Attack performance is used as a metric for privacy leakage.",
+    "baseline_results": null,
+    "validation": "Comparison against baseline PPLMs and multiple tuning methods."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Data Leakage",
+      "Privacy Violations"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data",
+            "Data privacy rights alignment"
+          ]
+        },
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        },
+        {
+          "category": "Governance",
+          "subcategory": [
+            "Lack of system transparency"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": null,
+    "harm": "Potential for privacy breaches through data extraction and inference attacks on sensitive personal data."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The research ensures that data used does not contain actual personal identifiable information and adheres to privacy laws.",
+    "data_licensing": "N/A",
+    "consent_procedures": "The paper ensures that no identifiable personal data is used without consent.",
+    "compliance_with_regulations": "The study adheres to EU GDPR and CCPA guidelines."
+  }
+}

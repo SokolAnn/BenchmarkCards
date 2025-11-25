@@ -1,0 +1,91 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Speech Gaslighting Attack Benchmark",
+    "abbreviation": "N/A",
+    "overview": "This paper presents a systematic and comprehensive evaluation benchmark that probes the robustness of Speech LLMs against Gaslighting attack prompts, spanning both linguistic and acoustic modalities.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "MELD",
+      "MMAU",
+      "MMSU",
+      "OpenBookQA",
+      "VocalSound"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the robustness of Speech LLMs against gaslighting attacks and to construct a behavior-aware benchmark.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Emotion Recognition",
+      "Speech Transcription",
+      "Vocal Sound Classification",
+      "Spoken Question Answering"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Derived from five speech-related benchmark datasets including MELD, MMAU, MMSU, VocalSound, and OpenBookQA.",
+    "size": "10,740 examples",
+    "format": "N/A",
+    "annotation": "Annotated with model misbehavior signals such as incorrect answers, unsolicited apologies, and refusal responses."
+  },
+  "methodology": {
+    "methods": [
+      "Adversarial prompting",
+      "Behavioral response annotation",
+      "Controlled acoustic ablation"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Contradiction rate"
+    ],
+    "calculation": "Metrics calculated based on the percentage of correct predictions that are reversed after exposure to gaslighting prompts.",
+    "interpretation": "Higher accuracy indicates better model robustness against gaslighting attacks.",
+    "baseline_results": "N/A",
+    "validation": "Evaluated across five state-of-the-art Speech LLMs under both clean and gaslighting conditions."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Robustness",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Output bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

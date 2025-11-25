@@ -1,0 +1,119 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "What can AI do for me? Evaluating Machine Learning Interpretations in Cooperative Play",
+    "abbreviation": "N/A",
+    "overview": "We propose an evaluation of interpretation on a real task with real human users, where the effectiveness of interpretation is measured by how much it improves human performance. We design a grounded, realistic human-computer cooperative setting using a question answering task, Quizbowl. We recruit both trivia experts and novices to play this game with computer as their teammate, who communicates its prediction via three different interpretations. We also provide design guidance for natural language processing human-in-the-loop settings.",
+    "data_type": "question-answering pairs (text)",
+    "domains": [
+      "Natural Language Processing",
+      "Human-Computer Interaction"
+    ],
+    "languages": [],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://doi.org/10.1145/3301275.3302265",
+      "https://www.elastic.co/guide/en/elasticsearch/reference/current/search-request-highlighting.html",
+      "https://youtu.be/bYFqMINXayc"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Measure interpretability by asking what machine learning can do for humans through interpretations: interpretations should augment human intelligence and improve human performance on a real task (Quizbowl).",
+    "audience": [
+      "Natural Language Processing researchers",
+      "Designers of human-in-the-loop systems",
+      "Human-Computer Interaction researchers"
+    ],
+    "tasks": [
+      "Question Answering",
+      "Evaluation of interpretability (human-in-the-loop)"
+    ],
+    "limitations": "Fixed placement of visualizations leads to uneven exposure; randomization of visualizations may confuse users; cannot derive causality from correlation in results; attention to visualizations not measured (eye tracking absent); suggested need for warm-up questions and further interface tuning.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "160 new Quizbowl questions collected by the authors that had not been previously seen by the Quizbowl community.",
+    "size": "160 questions",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Application-grounded human evaluation (real users performing a real task)",
+      "Controlled randomized exposure of interpretation conditions (2x2x2 = 8 conditions)",
+      "Within-subjects design",
+      "Regression analysis using a linear model trained on gameplay data"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Average buzzing position (relative to question length)",
+      "Regression coefficients of the linear model (effect sizes for features/interpretations)"
+    ],
+    "calculation": "For each gameplay record, features (player ID, question ID, interpretation combination, buzzing position, and expert-setting features where applicable) are extracted and fed into a linear model which predicts probability of a correct answer; the model is trained with gradient descent on gameplay data. Coefficients indicate the effect of each feature/interpretation on the probability of a correct answer.",
+    "interpretation": "Positive regression coefficients indicate that an interpretation improves player accuracy; negative coefficients indicate the interpretation hurts accuracy. Earlier buzzing position indicates greater aggressiveness; ideal behavior is answering correctly with as few words as possible.",
+    "baseline_results": null,
+    "validation": "Randomized sampling of interpretation combinations to achieve, in expectation, a uniform distribution over players, questions, and interpretation combinations; separate analyses for experts and novices; tutorial provided to users prior to experiments."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Transparency",
+      "Robustness",
+      "Value Alignment",
+      "Data Laws",
+      "Explainability"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Decision bias"
+          ]
+        },
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Lack of training data transparency"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Evasion attack"
+          ]
+        },
+        {
+          "category": "Value Alignment",
+          "subcategory": [
+            "Over- or under-reliance"
+          ]
+        },
+        {
+          "category": "Data Laws",
+          "subcategory": [
+            "Data usage restrictions"
+          ]
+        },
+        {
+          "category": "Explainability",
+          "subcategory": [
+            "Untraceable attribution"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "Comparison between two participant groups: experts (Quizbowl enthusiasts) and novices (Amazon Mechanical Turk workers); analyses report differences in accuracy, buzzing position, and sensitivity to interpretations.",
+    "harm": [
+      "Over-reliance on model predictions leading to incorrect decisions (novices trusting misleading interpretations)",
+      "False sense of security from unfaithful or fragile interpretations",
+      "Decision bias in high-risk decision-making domains due to insufficient interpretability"
+    ]
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Participants were not asked for identifying information other than an optional email address for prize collection; online play platforms are usually anonymous.",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

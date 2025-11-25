@@ -1,0 +1,74 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Postcondition Testing Benchmark",
+    "abbreviation": "N/A",
+    "overview": "This paper proposes a code LLM maturity model that utilizes a postcondition generation problem to assess a broader range of capabilities in code LLMs, augmenting the existing EvalPlus dataset to include postcondition testing.",
+    "data_type": "postcondition generation pairs",
+    "domains": [
+      "Software Engineering"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "EvalPlus"
+    ],
+    "resources": [
+      "https://github.com/MatureModel/PostcondGen"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive assessment of code LLM maturity and capabilities through postcondition generation.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Software Engineers"
+    ],
+    "tasks": [
+      "Code Generation",
+      "Postcondition Generation"
+    ],
+    "limitations": "The maturity model may not cover all possible scenarios and edge cases encountered in real-world programming tasks.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Augmented EvalPlus Dataset",
+    "size": "164 coding problems",
+    "format": "JSON",
+    "annotation": "Manual annotation with few-shot examples"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Correct Postcondition Count (CPC)",
+      "Coverage@k (C@k)",
+      "Bug Detection Rate (BDR)",
+      "Bug Coverage Rate (BCR)"
+    ],
+    "calculation": "Metrics were calculated based on the number of problems for which the code LLM generated correct postconditions.",
+    "interpretation": "Higher values indicate better performance in generating precise and accurate postconditions.",
+    "baseline_results": "Previous models evaluated against the original EvalPlus dataset.",
+    "validation": "The benchmark was validated through extensive evaluation of several open-sourced models using specific metrics."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Fairness",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

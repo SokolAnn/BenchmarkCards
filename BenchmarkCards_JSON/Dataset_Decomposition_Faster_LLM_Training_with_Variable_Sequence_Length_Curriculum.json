@@ -1,0 +1,88 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Dataset Decomposition: Faster LLM Training with Variable Sequence Length Curriculum",
+    "abbreviation": "N/A",
+    "overview": "This paper introduces dataset decomposition (DD), a novel method to efficiently decompose datasets of variable-length documents into buckets containing fixed-length sequences. It allows for variable sequence length training and length-based curriculum, leading to accelerated training and improved model accuracy.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "The Pile",
+      "RefinedWeb",
+      "RedPajama"
+    ],
+    "resources": [
+      "https://github.com/apple/ml-dataset-decomposition"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To propose a method that enhances the training of large language models by improving dataset preparation and training efficiency.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers",
+      "Industry Practitioners"
+    ],
+    "tasks": [
+      "Language Modeling",
+      "Long Context Performance Evaluation"
+    ],
+    "limitations": "The training speed gains compared to the baseline are significant only when the target sequence length is long enough.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "OpenLM training sets based on various web-sourced documents.",
+    "size": "1.1 trillion tokens",
+    "format": "N/A",
+    "annotation": "N/A"
+  },
+  "methodology": {
+    "methods": [
+      "Variable Sequence Length Training",
+      "Length-based Curriculum Sampling"
+    ],
+    "metrics": [
+      "Regular evaluation metrics (accuracy)",
+      "Multi-Document Question Answering accuracy"
+    ],
+    "calculation": "Metrics calculated by evaluating model performance on established benchmarks and comparing results against baseline models.",
+    "interpretation": "Models trained using dataset decomposition show improved performance in both regular evaluations and long-context tasks compared to baseline models.",
+    "baseline_results": "Results indicate significant accuracy improvements with a combined LLM training acceleration of up to 6×.",
+    "validation": "Benchmarks validated through extensive experiments on long-context tasks and comparison against existing methods."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Fairness",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        },
+        {
+          "category": "Robustness",
+          "subcategory": [
+            "Data poisoning"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

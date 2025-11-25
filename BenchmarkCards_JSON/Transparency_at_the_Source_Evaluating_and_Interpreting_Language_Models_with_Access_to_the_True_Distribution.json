@@ -1,0 +1,70 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Transparency at the Source: Evaluating and Interpreting Language Models with Access to the True Distribution",
+    "abbreviation": "N/A",
+    "overview": "We present a setup for training, evaluating and interpreting neural language models, that uses artificial, language-like data derived from a large natural language corpus, allowing us to compute exact lower bounds on perplexity and assess model behaviour.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/clclab/pcfg-lm"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a controlled environment for training and evaluating language models with synthetic data that approximates natural language complexity.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Language Modelling",
+      "Interpretability"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generated from a state-split Probabilistic Context-Free Grammar (PCFG) that is derived from a large natural language corpus.",
+    "size": "7.5 million sentences",
+    "format": "N/A",
+    "annotation": "Automatically generated from a parsed corpus."
+  },
+  "methodology": {
+    "methods": [
+      "Language modelling",
+      "Interpretability probing"
+    ],
+    "metrics": [
+      "Perplexity",
+      "Spearman's ρ",
+      "R²"
+    ],
+    "calculation": "Perplexity is computed based on the log probabilities from the language model compared to the true distribution.",
+    "interpretation": "A lower perplexity indicates better alignment with the true data distribution.",
+    "baseline_results": null,
+    "validation": "The model's performance is validated against the perplexity of the underlying PCFG."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "MIT License",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

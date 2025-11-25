@@ -1,0 +1,102 @@
+{
+  "benchmark_details": {
+    "name": "SORRY-Bench",
+    "overview": "SORRY-Bench is designed to systematically evaluate large language models' (LLMs) safety refusal capabilities in response to unsafe user requests. It addresses limitations in previous benchmarks by employing a fine-grained taxonomy of potentially unsafe topics.",
+    "data_type": "Unsafe instructions",
+    "domains": [
+      "Hate Speech Generation",
+      "Assistance with Crimes or Torts",
+      "Potentially Inappropriate Topics",
+      "Potentially Unqualified Advice"
+    ],
+    "languages": [
+      "English",
+      "French",
+      "Tamil",
+      "Malayalam",
+      "Marathi",
+      "Chinese (Simplified)"
+    ],
+    "similar_benchmarks": [
+      "HarmBench",
+      "SALAD-Bench",
+      "StrongREJECT"
+    ],
+    "resources": [
+      "https://sorry-bench.github.io"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To evaluate the safety refusal capabilities of aligned large language models in a balanced and comprehensive manner.",
+    "audience": [
+      "Researchers",
+      "Developers of AI models"
+    ],
+    "tasks": [
+      "Evaluate model responses to potentially unsafe instructions",
+      "Analyze safety refusal behaviors across different models"
+    ],
+    "limitations": "Focused exclusively on refusal safety evaluation and does not capture all dimensions of model safety.",
+    "out_of_scope_uses": [
+      "Evaluation of non-unsafe instructions",
+      "Detection of neutral prompts"
+    ]
+  },
+  "data": {
+    "source": "SORRY-Bench dataset",
+    "size": "440 unsafe instructions with an additional 8.8K augmented unsafe instructions",
+    "format": "Textual instructions categorized into 44 safety topics",
+    "annotation": "Human-annotated with over 7K labels for model responses"
+  },
+  "methodology": {
+    "methods": [
+      "Meta-evaluation of LLMs as judges",
+      "Human judgment comparisons"
+    ],
+    "metrics": [
+      "Fulfillment rate",
+      "Safety refusal agreement with human judges"
+    ],
+    "calculation": "Fulfillment rate calculated as the ratio of model responses fulfilling unsafe instructions over total responses.",
+    "interpretation": "High fulfillment rates indicate lower safety refusal; low fulfillment rates indicate higher safety refusal.",
+    "baseline_results": "27 out of 56 LLMs show medium fulfillment rate of 20% to 50%.",
+    "validation": "Meta-evaluated numerous LLMs and collected extensive human annotations to validate the benchmarks."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Safety refusal behaviors",
+      "Potential misuse of safety evaluation results"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Data contamination",
+            "Unrepresentative data"
+          ]
+        },
+        {
+          "category": "Transparency",
+          "subcategory": [
+            "Lack of training data transparency"
+          ]
+        },
+        {
+          "category": "Fairness",
+          "subcategory": [
+            "Data bias"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential risk of misuse in deploying LLMs evaluated in the benchmark."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Collected data contains sensitive information and requires handling to mitigate privacy risks.",
+    "data_licensing": "The dataset and models are available under appropriate licenses on specified hosting platforms.",
+    "consent_procedures": "Informed consent obtained for all human annotations.",
+    "compliance_with_regulations": "Ensures adherence to applicable data protection laws."
+  }
+}

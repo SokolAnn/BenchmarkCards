@@ -1,0 +1,74 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "InpaintCOCO",
+    "abbreviation": "N/A",
+    "overview": "InpaintCOCO is a new challenging dataset for assessing the fine-grained alignment of colors, objects, and sizes in vision-language models, created using generative inpainting from COCO images by altering visual concepts.",
+    "data_type": "image-text pairs",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "ARO",
+      "VL-CheckList",
+      "SVO"
+    ],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To enhance fine-grained concept understanding in vision-language models through a new dataset and a novel pretraining method with synthetic hard negative samples.",
+    "audience": [
+      "ML Researchers",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Visual Question Answering",
+      "Text-to-Image Retrieval"
+    ],
+    "limitations": "The dataset only includes minor changes to visual components, which may not generalize well outside the Western context.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Generative inpainting from COCO images, creating adversarial examples to evaluate models",
+    "size": "1,260 images",
+    "format": "Inpainted images with textual descriptions",
+    "annotation": "Manual annotation by student workers with specific guidelines for generating hard negatives"
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Recall@5"
+    ],
+    "calculation": "Model performance is calculated based on ranking evaluation for fine-grained understanding and retrieval capabilities.",
+    "interpretation": "Accuracy measures how well specific visual concepts are learned, while Recall@5 indicates general retrieval performance.",
+    "baseline_results": "Original OpenAI CLIP model, classical pre-trained CLIP model, models trained with 1, 2, or 3 hard negatives per batch.",
+    "validation": "Extensive evaluations across various vision-language datasets to verify robustness and performance."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy",
+      "Fairness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": "Potential for misuse in large-scale video surveillance and bias toward Western perspectives"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "Images from COCO follow Creative Commons Attribution 4.0 License.",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

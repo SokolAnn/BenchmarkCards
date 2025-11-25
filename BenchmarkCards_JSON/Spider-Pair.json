@@ -1,0 +1,79 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Spider-Pair",
+    "abbreviation": "N/A",
+    "overview": "Spider-Pair is a dataset for evaluating the functional correctness of SQL generation, comprising a training set and two testing sets with pairs of SQL queries to simulate diverse evaluation scenarios.",
+    "data_type": "pairs of SQL queries",
+    "domains": [
+      "Natural Language Processing",
+      "Software Engineering"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "Spider"
+    ],
+    "resources": [
+      "https://github.com/hggforget/NL2SQL_partial_matching"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To provide a comprehensive benchmark for evaluating the functional correctness of generated SQL queries.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers"
+    ],
+    "tasks": [
+      "Text-to-SQL Evaluation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Derived from the Spider dataset, containing natural language and SQL query pairs labeled for functional correctness.",
+    "size": "10,181 examples",
+    "format": "N/A",
+    "annotation": "Generated SQL pairs using LLMs; manual validation and equivalence rewriting applied."
+  },
+  "methodology": {
+    "methods": [
+      "Graph Matching Network",
+      "Rule-based Partial Matching"
+    ],
+    "metrics": [
+      "Area Under the Curve (AUC)",
+      "Spearman R",
+      "Kendall-Tau"
+    ],
+    "calculation": "Metrics are calculated based on the functional correctness scores of the generated SQL compared to the reference SQL.",
+    "interpretation": "Higher AUC indicates better functional correctness evaluation performance.",
+    "baseline_results": "FuncEvalGMN achieves AUCs of 94.32% and 84.80% on test sets.",
+    "validation": "Results validated against existing SQL evaluation methods and through comparative analysis."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Accuracy",
+          "subcategory": [
+            "Poor model accuracy"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": "N/A"
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "LLM4SecHW",
+    "abbreviation": "N/A",
+    "overview": "This paper presents a novel framework LLM4SecHW for hardware debugging that leverages domain-specific Large Language Models and compiles a dataset of open-source hardware design defects and their remediation steps, utilizing version control data. This dataset addresses the scarcity of functional hardware data and provides a substantial foundation for training machine learning models.",
+    "data_type": "hardware design files with bug information",
+    "domains": [
+      "Hardware",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "N/A"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To automate the identification and rectification of hardware design bugs using domain-specific large language models.",
+    "audience": [
+      "Researchers in Hardware Debugging",
+      "Machine Learning Practitioners"
+    ],
+    "tasks": [
+      "Bug Localization",
+      "Bug Repair"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Dataset constructed from version control information of notable open-source hardware designs retrieved from GitHub.",
+    "size": "15,000 samples",
+    "format": "N/A",
+    "annotation": "Filtered and processed version control data with pre- and post-correction hardware design files."
+  },
+  "methodology": {
+    "methods": [
+      "Fine-tuning of Large Language Models",
+      "Evaluation on Bug Localization and Bug Repair tasks"
+    ],
+    "metrics": [
+      "ROUGE-1 F1 Score",
+      "ROUGE-2 F1 Score",
+      "ROUGE-L F1 Score"
+    ],
+    "calculation": "Metrics calculated based on the direct n-gram overlap between model outputs and reference outputs.",
+    "interpretation": "Higher ROUGE scores indicate better performance in identifying and repairing bugs.",
+    "baseline_results": "N/A",
+    "validation": "Models evaluated on a testing set of hardware designs."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Robustness"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ResponseNet",
+    "abbreviation": "N/A",
+    "overview": "ResponseNet is a new dataset comprising 696 high-quality dyadic interactions featuring synchronized split-screen videos, multichannel audio, transcripts, and facial behavior annotations. It supports the Online Multimodal Conversational Response Generation (OMCRG) task by providing multimodal data suitable for generating synchronized verbal and non-verbal listener responses.",
+    "data_type": "synchronized split-screen videos, multichannel audio, transcripts, facial behavior annotations",
+    "domains": [
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://omniresponse.github.io/"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To establish a standardized evaluation for the Online Multimodal Conversational Response Generation (OMCRG) task.",
+    "audience": [
+      "ML Researchers",
+      "Industry Practitioners",
+      "Model Developers",
+      "Domain Experts"
+    ],
+    "tasks": [
+      "Multimodal Response Generation"
+    ],
+    "limitations": "N/A",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Automated sourcing from YouTube and manual curation for quality assurance.",
+    "size": "696 dyadic conversation pairs",
+    "format": "synchronized video files, transcriptions in text format",
+    "annotation": "Manual annotation by experts for facial behavior and speech transcriptions."
+  },
+  "methodology": {
+    "methods": [
+      "Human evaluation",
+      "Automated metrics"
+    ],
+    "metrics": [
+      "METEOR",
+      "BERTScore F1",
+      "ROUGE-L",
+      "Distinct-2",
+      "UTMOSv2",
+      "LSE-D",
+      "Fréchet Distance (FD)",
+      "Fréchet Video Distance (FVD)"
+    ],
+    "calculation": "Metrics calculated based on comparisons between generated outputs and reference responses.",
+    "interpretation": "Performance interpreted based on scores, with higher values indicating better generation quality and synchronization.",
+    "baseline_results": "Comparative results against several established baselines are provided in the paper.",
+    "validation": "Extensive evaluations against baseline models to ensure accuracy and consistency of the dataset."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Privacy",
+      "Safety"
+    ],
+    "atlas_risks": {
+      "risks": [
+        {
+          "category": "Fairness",
+          "subcategory": []
+        },
+        {
+          "category": "Privacy",
+          "subcategory": [
+            "Personal information in data"
+          ]
+        },
+        {
+          "category": "Societal Impact",
+          "subcategory": [
+            "Impact on education: plagiarism",
+            "Impact on Jobs"
+          ]
+        }
+      ]
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "Privacy measures are in place due to the collection of multimodal data involving human participants.",
+    "data_licensing": "CC BY-NC-SA license for non-commercial use with attribution required.",
+    "consent_procedures": "Informed consent obtained from participants involved in data collection.",
+    "compliance_with_regulations": "N/A"
+  }
+}

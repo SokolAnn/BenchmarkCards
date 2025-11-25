@@ -1,0 +1,70 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "Intertextual Parallel Detection in Biblical Hebrew: A Transformer-Based Benchmark",
+    "abbreviation": "N/A",
+    "overview": "This study provides the first comprehensive benchmark of transformer-based models for detecting parallels in biblical texts, evaluating their effectiveness in creating embeddings for Hebrew verses.",
+    "data_type": "text",
+    "domains": [
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "Hebrew"
+    ],
+    "similar_benchmarks": [],
+    "resources": [
+      "https://github.com/dmsmiley/detect-bh"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "Assess the effectiveness of transformer-based language models in identifying parallel passages within Hebrew texts.",
+    "audience": [
+      "Biblical Scholars",
+      "NLP Researchers"
+    ],
+    "tasks": [
+      "Text Similarity"
+    ],
+    "limitations": "Focuses exclusively on narrative texts and known parallels between Samuel/Kings and Chronicles; may not generalize across all biblical literature genres.",
+    "out_of_scope_uses": []
+  },
+  "data": {
+    "source": "Biblia Hebraica Stuttgartensia Amstelodamensis corpus, compiled by the Eep Talstra Centre for Bible and Computer at Vrije Universiteit Amsterdam.",
+    "size": "558 verses",
+    "format": "Plain text",
+    "annotation": "Manual comparison of parallel passages."
+  },
+  "methodology": {
+    "methods": [
+      "Cosine Similarity",
+      "Wasserstein Distance",
+      "Classification Metrics"
+    ],
+    "metrics": [
+      "F1 Score",
+      "Precision",
+      "Recall"
+    ],
+    "calculation": "Cosine similarity computed for parallel and non-parallel texts, with statistical tests confirming significance of results.",
+    "interpretation": "Scores indicate how well models distinguish between parallel and non-parallel passages.",
+    "baseline_results": "E5 achieved a F1 Score of 0.88, while AlephBERT achieved 0.87.",
+    "validation": "Performance evaluated through statistical significance tests and comparison of cosine similarities."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Bias",
+      "Accuracy"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "N/A",
+    "harm": []
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "N/A",
+    "data_licensing": "N/A",
+    "consent_procedures": "N/A",
+    "compliance_with_regulations": "N/A"
+  }
+}
