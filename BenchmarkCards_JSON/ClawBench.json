@@ -1,0 +1,99 @@
+{
+  "benchmark_details": {
+    "is_benchmark": true,
+    "name": "ClawBench",
+    "abbreviation": "N/A",
+    "overview": "ClawBench evaluates AI browser agents on everyday online tasks performed against live websites. Its V1 and V2 suites contain 283 tasks, and each run preserves synchronized evidence for end-to-end task-completion evaluation.",
+    "data_type": "Multimodal browser-interaction tasks and execution traces",
+    "domains": [
+      "Browser automation",
+      "Computer use",
+      "Agent evaluation",
+      "Natural Language Processing"
+    ],
+    "languages": [
+      "English"
+    ],
+    "similar_benchmarks": [
+      "WebArena",
+      "VisualWebArena",
+      "Online-Mind2Web",
+      "OSWorld",
+      "WebVoyager"
+    ],
+    "resources": [
+      "https://claw-bench.com/",
+      "https://arxiv.org/abs/2604.08523",
+      "https://github.com/TIGER-AI-Lab/ClawBench",
+      "https://huggingface.co/datasets/NAIL-Group/ClawBench",
+      "https://huggingface.co/spaces/TIGER-Lab/ClawBench"
+    ]
+  },
+  "purpose_and_intended_users": {
+    "goal": "To measure whether a model-and-harness combination can complete realistic, multi-step browser workflows on production websites while preserving auditable evidence and blocking the final irreversible request by default.",
+    "audience": [
+      "AI agent researchers",
+      "Browser-agent developers",
+      "Model and harness evaluators",
+      "Reliability and observability engineers"
+    ],
+    "tasks": [
+      "Multi-step web navigation",
+      "Search and comparison",
+      "Form completion",
+      "Booking and shopping workflows",
+      "Email and productivity workflows",
+      "Job-application workflows"
+    ],
+    "limitations": "Live websites can change layout, availability, anti-bot behavior, or workflow paths over time. Full-suite runs are costly, public tasks can become familiar to models, and results depend on the selected task suite, model, harness, judge, and run date. The benchmark does not provide demographic fairness coverage.",
+    "out_of_scope_uses": [
+      "Treating browser-task pass rate as a general intelligence score",
+      "Comparing results produced with different suites, harnesses, or judging configurations without reporting those differences",
+      "Using the benchmark as a safety, fairness, or cybersecurity certification",
+      "Allowing intercepted irreversible requests to reach production services without separate authorization and controls"
+    ]
+  },
+  "data": {
+    "source": "Manually authored everyday online tasks executed on live websites. V1 contains 153 tasks across 144 websites and 15 life categories; V2 adds 130 tasks. V1 Lite links 20 selected V1 tasks for lower-cost iteration.",
+    "size": "283 tasks across the V1 and V2 suites, plus a 20-task linked V1 Lite subset",
+    "format": "JSON task definitions and evaluation schemas; run artifacts include JSONL browser actions, HTTP requests, and agent messages, PNG screenshots, and MP4 session recordings.",
+    "annotation": "Task authors define natural-language instructions and interception schemas. V1 evaluation can compare agent trajectories with human reference runs; V2 and newer leaderboard runs combine request-schema matching with an LLM judge of the captured request payload."
+  },
+  "methodology": {
+    "methods": [
+      "Containerized execution against live websites",
+      "Selectable agent harnesses",
+      "Final-request interception",
+      "Five-layer execution-trace capture",
+      "Post-session trajectory evaluation"
+    ],
+    "metrics": [
+      "Task pass rate",
+      "Completed-task count",
+      "Intercepted-request rate"
+    ],
+    "calculation": "Pass rate is the number of tasks judged successful divided by the number evaluated. For original V1 results, an agentic evaluator reviews the recorded trajectory against human references. For V2 and newer runs, the interceptor first checks the final blocked request against the task schema, then an LLM judge evaluates whether its payload fulfills the instruction.",
+    "interpretation": "Higher pass rates indicate stronger end-to-end completion for the reported model, harness, suite, judge, and run configuration. Scores should not be attributed to a model alone when the harness or evaluation setup differs.",
+    "baseline_results": "Results evolve with new models and harnesses; the project publishes configuration-specific results on its live leaderboard.",
+    "validation": "Runs preserve session video, action screenshots, HTTP traffic, browser actions, and agent messages. Published task definitions, evaluation schemas, run metadata, and trace datasets support audit and reproduction, while repeated runs can reveal live-site drift."
+  },
+  "targeted_risks": {
+    "risk_categories": [
+      "Task failure",
+      "Unintended external action",
+      "Evaluation instability from live-site drift",
+      "Performance overgeneralization"
+    ],
+    "atlas_risks": {
+      "risks": []
+    },
+    "demographic_analysis": "Not applicable; ClawBench evaluates browser-task completion and does not include a demographic fairness analysis.",
+    "harm": "A misconfigured run could submit a purchase, message, application, or other external action. The default request interceptor is designed to capture and block irreversible final requests, but operators remain responsible for credentials, trace data, and any configuration that relaxes those controls."
+  },
+  "ethical_and_legal_considerations": {
+    "privacy_and_anonymity": "The benchmark uses a shared test profile and benchmark credentials. Five-layer traces can still contain session or service data and should be stored, shared, and deleted under appropriate access controls.",
+    "data_licensing": "Apache License 2.0 for the ClawBench repository; third-party websites, services, and converted datasets retain their own terms and licenses.",
+    "consent_procedures": "No human-subject consent procedure is specified for the benchmark tasks. Human reference runs are benchmark artifacts rather than participant studies.",
+    "compliance_with_regulations": "Users are responsible for complying with applicable website terms, privacy obligations, and laws. The default interceptor blocks purchases, account creation, outbound messages, and similar irreversible actions before they reach the service."
+  }
+}
